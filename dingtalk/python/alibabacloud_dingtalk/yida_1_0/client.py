@@ -4237,6 +4237,86 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListConnectorInformation', 'yida_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/yida/plugins/infos/{instance_id}', 'json', req, runtime)
         )
 
+    def list_form_remarks(
+        self,
+        request: dingtalkyida__1__0_models.ListFormRemarksRequest,
+    ) -> dingtalkyida__1__0_models.ListFormRemarksResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.ListFormRemarksHeaders()
+        return self.list_form_remarks_with_options(request, headers, runtime)
+
+    async def list_form_remarks_async(
+        self,
+        request: dingtalkyida__1__0_models.ListFormRemarksRequest,
+    ) -> dingtalkyida__1__0_models.ListFormRemarksResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.ListFormRemarksHeaders()
+        return await self.list_form_remarks_with_options_async(request, headers, runtime)
+
+    def list_form_remarks_with_options(
+        self,
+        request: dingtalkyida__1__0_models.ListFormRemarksRequest,
+        headers: dingtalkyida__1__0_models.ListFormRemarksHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.ListFormRemarksResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.form_instance_id_list):
+            body['formInstanceIdList'] = request.form_instance_id_list
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.ListFormRemarksResponse(),
+            self.do_roarequest('ListFormRemarks', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/forms/remarks/query', 'json', req, runtime)
+        )
+
+    async def list_form_remarks_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.ListFormRemarksRequest,
+        headers: dingtalkyida__1__0_models.ListFormRemarksHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.ListFormRemarksResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.form_instance_id_list):
+            body['formInstanceIdList'] = request.form_instance_id_list
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.ListFormRemarksResponse(),
+            await self.do_roarequest_async('ListFormRemarks', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/forms/remarks/query', 'json', req, runtime)
+        )
+
     def list_navigation_by_form_type(
         self,
         request: dingtalkyida__1__0_models.ListNavigationByFormTypeRequest,

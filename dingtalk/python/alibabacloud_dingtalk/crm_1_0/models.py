@@ -2648,6 +2648,7 @@ class CreateGroupSetRequest(TeaModel):
         owner_user_id: str = None,
         relation_type: str = None,
         template_id: str = None,
+        welcome: str = None,
     ):
         self.creator_user_id = creator_user_id
         self.manager_user_ids = manager_user_ids
@@ -2658,6 +2659,7 @@ class CreateGroupSetRequest(TeaModel):
         self.owner_user_id = owner_user_id
         self.relation_type = relation_type
         self.template_id = template_id
+        self.welcome = welcome
 
     def validate(self):
         pass
@@ -2686,6 +2688,8 @@ class CreateGroupSetRequest(TeaModel):
             result['relationType'] = self.relation_type
         if self.template_id is not None:
             result['templateId'] = self.template_id
+        if self.welcome is not None:
+            result['welcome'] = self.welcome
         return result
 
     def from_map(self, m: dict = None):
@@ -2708,6 +2712,8 @@ class CreateGroupSetRequest(TeaModel):
             self.relation_type = m.get('relationType')
         if m.get('templateId') is not None:
             self.template_id = m.get('templateId')
+        if m.get('welcome') is not None:
+            self.welcome = m.get('welcome')
         return self
 
 
@@ -2782,6 +2788,7 @@ class CreateGroupSetResponseBody(TeaModel):
         self,
         gmt_create: str = None,
         gmt_modified: str = None,
+        invite_link: str = None,
         last_open_conversation_id: str = None,
         manager: List[CreateGroupSetResponseBodyManager] = None,
         manager_user_ids: str = None,
@@ -2798,6 +2805,7 @@ class CreateGroupSetResponseBody(TeaModel):
     ):
         self.gmt_create = gmt_create
         self.gmt_modified = gmt_modified
+        self.invite_link = invite_link
         self.last_open_conversation_id = last_open_conversation_id
         self.manager = manager
         self.manager_user_ids = manager_user_ids
@@ -2830,6 +2838,8 @@ class CreateGroupSetResponseBody(TeaModel):
             result['gmtCreate'] = self.gmt_create
         if self.gmt_modified is not None:
             result['gmtModified'] = self.gmt_modified
+        if self.invite_link is not None:
+            result['inviteLink'] = self.invite_link
         if self.last_open_conversation_id is not None:
             result['lastOpenConversationId'] = self.last_open_conversation_id
         result['manager'] = []
@@ -2866,6 +2876,8 @@ class CreateGroupSetResponseBody(TeaModel):
             self.gmt_create = m.get('gmtCreate')
         if m.get('gmtModified') is not None:
             self.gmt_modified = m.get('gmtModified')
+        if m.get('inviteLink') is not None:
+            self.invite_link = m.get('inviteLink')
         if m.get('lastOpenConversationId') is not None:
             self.last_open_conversation_id = m.get('lastOpenConversationId')
         self.manager = []
@@ -9066,6 +9078,7 @@ class GetGroupSetResponseBody(TeaModel):
         gmt_create: str = None,
         gmt_modified: str = None,
         group_chat_count: int = None,
+        invite_link: str = None,
         last_open_conversation_id: str = None,
         manager: List[GetGroupSetResponseBodyManager] = None,
         manager_user_ids: str = None,
@@ -9084,6 +9097,7 @@ class GetGroupSetResponseBody(TeaModel):
         self.gmt_modified = gmt_modified
         # 群组内群数量（不包含已解散的群）。
         self.group_chat_count = group_chat_count
+        self.invite_link = invite_link
         self.last_open_conversation_id = last_open_conversation_id
         self.manager = manager
         self.manager_user_ids = manager_user_ids
@@ -9118,6 +9132,8 @@ class GetGroupSetResponseBody(TeaModel):
             result['gmtModified'] = self.gmt_modified
         if self.group_chat_count is not None:
             result['groupChatCount'] = self.group_chat_count
+        if self.invite_link is not None:
+            result['inviteLink'] = self.invite_link
         if self.last_open_conversation_id is not None:
             result['lastOpenConversationId'] = self.last_open_conversation_id
         result['manager'] = []
@@ -9156,6 +9172,8 @@ class GetGroupSetResponseBody(TeaModel):
             self.gmt_modified = m.get('gmtModified')
         if m.get('groupChatCount') is not None:
             self.group_chat_count = m.get('groupChatCount')
+        if m.get('inviteLink') is not None:
+            self.invite_link = m.get('inviteLink')
         if m.get('lastOpenConversationId') is not None:
             self.last_open_conversation_id = m.get('lastOpenConversationId')
         self.manager = []

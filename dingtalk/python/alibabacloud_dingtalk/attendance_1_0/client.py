@@ -711,6 +711,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetClosingAccounts', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/closingAccounts/rules/query', 'json', req, runtime)
         )
 
+    def get_leave_type(
+        self,
+        request: dingtalkattendance__1__0_models.GetLeaveTypeRequest,
+    ) -> dingtalkattendance__1__0_models.GetLeaveTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetLeaveTypeHeaders()
+        return self.get_leave_type_with_options(request, headers, runtime)
+
+    async def get_leave_type_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetLeaveTypeRequest,
+    ) -> dingtalkattendance__1__0_models.GetLeaveTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetLeaveTypeHeaders()
+        return await self.get_leave_type_with_options_async(request, headers, runtime)
+
+    def get_leave_type_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.GetLeaveTypeRequest,
+        headers: dingtalkattendance__1__0_models.GetLeaveTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetLeaveTypeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.vacation_source):
+            query['vacationSource'] = request.vacation_source
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetLeaveTypeResponse(),
+            self.do_roarequest('GetLeaveType', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/leaves/types', 'json', req, runtime)
+        )
+
+    async def get_leave_type_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetLeaveTypeRequest,
+        headers: dingtalkattendance__1__0_models.GetLeaveTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetLeaveTypeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.vacation_source):
+            query['vacationSource'] = request.vacation_source
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetLeaveTypeResponse(),
+            await self.do_roarequest_async('GetLeaveType', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/leaves/types', 'json', req, runtime)
+        )
+
     def get_machine(
         self,
         dev_id: str,
@@ -975,6 +1043,90 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GetUserHolidaysResponse(),
             await self.do_roarequest_async('GetUserHolidays', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/holidays', 'json', req, runtime)
+        )
+
+    def process_approve_create(
+        self,
+        request: dingtalkattendance__1__0_models.ProcessApproveCreateRequest,
+    ) -> dingtalkattendance__1__0_models.ProcessApproveCreateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.ProcessApproveCreateHeaders()
+        return self.process_approve_create_with_options(request, headers, runtime)
+
+    async def process_approve_create_async(
+        self,
+        request: dingtalkattendance__1__0_models.ProcessApproveCreateRequest,
+    ) -> dingtalkattendance__1__0_models.ProcessApproveCreateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.ProcessApproveCreateHeaders()
+        return await self.process_approve_create_with_options_async(request, headers, runtime)
+
+    def process_approve_create_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.ProcessApproveCreateRequest,
+        headers: dingtalkattendance__1__0_models.ProcessApproveCreateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.ProcessApproveCreateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.approve_id):
+            body['approveId'] = request.approve_id
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.punch_param):
+            body['punchParam'] = request.punch_param
+        if not UtilClient.is_unset(request.sub_type):
+            body['subType'] = request.sub_type
+        if not UtilClient.is_unset(request.tag_name):
+            body['tagName'] = request.tag_name
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.ProcessApproveCreateResponse(),
+            self.do_roarequest('ProcessApproveCreate', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/workflows/checkInForms', 'json', req, runtime)
+        )
+
+    async def process_approve_create_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.ProcessApproveCreateRequest,
+        headers: dingtalkattendance__1__0_models.ProcessApproveCreateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.ProcessApproveCreateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.approve_id):
+            body['approveId'] = request.approve_id
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.punch_param):
+            body['punchParam'] = request.punch_param
+        if not UtilClient.is_unset(request.sub_type):
+            body['subType'] = request.sub_type
+        if not UtilClient.is_unset(request.tag_name):
+            body['tagName'] = request.tag_name
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.ProcessApproveCreateResponse(),
+            await self.do_roarequest_async('ProcessApproveCreate', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/workflows/checkInForms', 'json', req, runtime)
         )
 
     def sync_schedule_info(

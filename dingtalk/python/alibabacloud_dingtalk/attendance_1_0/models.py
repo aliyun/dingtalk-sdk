@@ -2170,6 +2170,348 @@ class GetClosingAccountsResponse(TeaModel):
         return self
 
 
+class GetLeaveTypeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetLeaveTypeRequest(TeaModel):
+    def __init__(
+        self,
+        op_user_id: str = None,
+        vacation_source: str = None,
+    ):
+        # 操作者ID
+        self.op_user_id = op_user_id
+        # 空:开放接口定义假期类型;all:所有假期类型
+        self.vacation_source = vacation_source
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.vacation_source is not None:
+            result['vacationSource'] = self.vacation_source
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('vacationSource') is not None:
+            self.vacation_source = m.get('vacationSource')
+        return self
+
+
+class GetLeaveTypeResponseBodyResultLeaveCertificate(TeaModel):
+    def __init__(
+        self,
+        duration: float = None,
+        enable: bool = None,
+        prompt_information: str = None,
+        unit: str = None,
+    ):
+        # 超过多长时间需提供请假证明
+        self.duration = duration
+        # 是否开启请假证明
+        self.enable = enable
+        # 请假提示文案
+        self.prompt_information = prompt_information
+        # 请假证明单位hour，day
+        self.unit = unit
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.enable is not None:
+            result['enable'] = self.enable
+        if self.prompt_information is not None:
+            result['promptInformation'] = self.prompt_information
+        if self.unit is not None:
+            result['unit'] = self.unit
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('enable') is not None:
+            self.enable = m.get('enable')
+        if m.get('promptInformation') is not None:
+            self.prompt_information = m.get('promptInformation')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        return self
+
+
+class GetLeaveTypeResponseBodyResultSubmitTimeRule(TeaModel):
+    def __init__(
+        self,
+        enable_time_limit: bool = None,
+        time_type: str = None,
+        time_unit: str = None,
+        time_value: int = None,
+    ):
+        # 是否开启限时提交功能：仅且为true时开启
+        self.enable_time_limit = enable_time_limit
+        # 限制类型：before-提前；after-补交
+        self.time_type = time_type
+        # 时间单位：day-天；hour-小时
+        self.time_unit = time_unit
+        # 限制值：timeUnit=day时，有效值范围[0~30] 天；timeUnit=hour时，有效值范围[0~24] 小时
+        self.time_value = time_value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.enable_time_limit is not None:
+            result['enableTimeLimit'] = self.enable_time_limit
+        if self.time_type is not None:
+            result['timeType'] = self.time_type
+        if self.time_unit is not None:
+            result['timeUnit'] = self.time_unit
+        if self.time_value is not None:
+            result['timeValue'] = self.time_value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enableTimeLimit') is not None:
+            self.enable_time_limit = m.get('enableTimeLimit')
+        if m.get('timeType') is not None:
+            self.time_type = m.get('timeType')
+        if m.get('timeUnit') is not None:
+            self.time_unit = m.get('timeUnit')
+        if m.get('timeValue') is not None:
+            self.time_value = m.get('timeValue')
+        return self
+
+
+class GetLeaveTypeResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        biz_type: str = None,
+        hours_in_per_day: int = None,
+        leave_certificate: GetLeaveTypeResponseBodyResultLeaveCertificate = None,
+        leave_code: str = None,
+        leave_name: str = None,
+        leave_view_unit: str = None,
+        natural_day_leave: bool = None,
+        source: str = None,
+        submit_time_rule: GetLeaveTypeResponseBodyResultSubmitTimeRule = None,
+        validity_type: str = None,
+        validity_value: str = None,
+    ):
+        # 假期类型，普通假期或者加班转调休假期。(general_leave、lieu_leave其中一种)
+        self.biz_type = biz_type
+        # 每天折算的工作时长(百分之一 例如1天=10小时=1000)
+        self.hours_in_per_day = hours_in_per_day
+        # 请假证明
+        self.leave_certificate = leave_certificate
+        # 假期类型唯一标识
+        self.leave_code = leave_code
+        # 假期名称
+        self.leave_name = leave_name
+        # 请假单位，可以按照天半天或者小时请假。(day、halfDay、hour其中一种)
+        self.leave_view_unit = leave_view_unit
+        # 是否按照自然日统计请假时长，当为false的时候，用户发起请假时候会根据用户在请假时间段内的排班情况来计算请假时长。
+        self.natural_day_leave = natural_day_leave
+        # 开放接口自定义的:external oa后台新建的：inner
+        self.source = source
+        # 限时提交规则
+        self.submit_time_rule = submit_time_rule
+        # 有效类型 absolute_time(绝对时间)、relative_time(相对时间)其中一种
+        self.validity_type = validity_type
+        # 延长日期(当validity_type为absolute_time该值该值不为空且满足yy-mm格式 validity_type为relative_time该值为大于1的整数)
+        self.validity_value = validity_value
+
+    def validate(self):
+        if self.leave_certificate:
+            self.leave_certificate.validate()
+        if self.submit_time_rule:
+            self.submit_time_rule.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.hours_in_per_day is not None:
+            result['hoursInPerDay'] = self.hours_in_per_day
+        if self.leave_certificate is not None:
+            result['leaveCertificate'] = self.leave_certificate.to_map()
+        if self.leave_code is not None:
+            result['leaveCode'] = self.leave_code
+        if self.leave_name is not None:
+            result['leaveName'] = self.leave_name
+        if self.leave_view_unit is not None:
+            result['leaveViewUnit'] = self.leave_view_unit
+        if self.natural_day_leave is not None:
+            result['naturalDayLeave'] = self.natural_day_leave
+        if self.source is not None:
+            result['source'] = self.source
+        if self.submit_time_rule is not None:
+            result['submitTimeRule'] = self.submit_time_rule.to_map()
+        if self.validity_type is not None:
+            result['validityType'] = self.validity_type
+        if self.validity_value is not None:
+            result['validityValue'] = self.validity_value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('hoursInPerDay') is not None:
+            self.hours_in_per_day = m.get('hoursInPerDay')
+        if m.get('leaveCertificate') is not None:
+            temp_model = GetLeaveTypeResponseBodyResultLeaveCertificate()
+            self.leave_certificate = temp_model.from_map(m['leaveCertificate'])
+        if m.get('leaveCode') is not None:
+            self.leave_code = m.get('leaveCode')
+        if m.get('leaveName') is not None:
+            self.leave_name = m.get('leaveName')
+        if m.get('leaveViewUnit') is not None:
+            self.leave_view_unit = m.get('leaveViewUnit')
+        if m.get('naturalDayLeave') is not None:
+            self.natural_day_leave = m.get('naturalDayLeave')
+        if m.get('source') is not None:
+            self.source = m.get('source')
+        if m.get('submitTimeRule') is not None:
+            temp_model = GetLeaveTypeResponseBodyResultSubmitTimeRule()
+            self.submit_time_rule = temp_model.from_map(m['submitTimeRule'])
+        if m.get('validityType') is not None:
+            self.validity_type = m.get('validityType')
+        if m.get('validityValue') is not None:
+            self.validity_value = m.get('validityValue')
+        return self
+
+
+class GetLeaveTypeResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[GetLeaveTypeResponseBodyResult] = None,
+    ):
+        # 返回参数
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetLeaveTypeResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class GetLeaveTypeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetLeaveTypeResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetLeaveTypeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetMachineHeaders(TeaModel):
     def __init__(
         self,
@@ -3443,6 +3785,248 @@ class GetUserHolidaysResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetUserHolidaysResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ProcessApproveCreateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ProcessApproveCreateRequestPunchParam(TeaModel):
+    def __init__(
+        self,
+        position_id: str = None,
+        position_name: str = None,
+        position_type: str = None,
+        punch_time: int = None,
+    ):
+        # 地理位置标识：wifi:ssid_macAddress ble: deviceId gps:longitude_latitude
+        self.position_id = position_id
+        # 地理位置名称
+        self.position_name = position_name
+        # 地理位置类型：wifi/ble/gps
+        self.position_type = position_type
+        # 审批单关联的打卡时间，单位毫秒
+        self.punch_time = punch_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.position_id is not None:
+            result['positionId'] = self.position_id
+        if self.position_name is not None:
+            result['positionName'] = self.position_name
+        if self.position_type is not None:
+            result['positionType'] = self.position_type
+        if self.punch_time is not None:
+            result['punchTime'] = self.punch_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('positionId') is not None:
+            self.position_id = m.get('positionId')
+        if m.get('positionName') is not None:
+            self.position_name = m.get('positionName')
+        if m.get('positionType') is not None:
+            self.position_type = m.get('positionType')
+        if m.get('punchTime') is not None:
+            self.punch_time = m.get('punchTime')
+        return self
+
+
+class ProcessApproveCreateRequest(TeaModel):
+    def __init__(
+        self,
+        approve_id: str = None,
+        op_user_id: str = None,
+        punch_param: ProcessApproveCreateRequestPunchParam = None,
+        sub_type: str = None,
+        tag_name: str = None,
+        user_id: str = None,
+    ):
+        # 三方审批单id，全局唯一
+        self.approve_id = approve_id
+        # 审批人员工userId
+        self.op_user_id = op_user_id
+        # 审批单关联的打卡信息
+        self.punch_param = punch_param
+        # 审批单子类型名称：调店:shiftGroup
+        self.sub_type = sub_type
+        # 审批单类型名称
+        self.tag_name = tag_name
+        # 员工的userId
+        self.user_id = user_id
+
+    def validate(self):
+        if self.punch_param:
+            self.punch_param.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.approve_id is not None:
+            result['approveId'] = self.approve_id
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.punch_param is not None:
+            result['punchParam'] = self.punch_param.to_map()
+        if self.sub_type is not None:
+            result['subType'] = self.sub_type
+        if self.tag_name is not None:
+            result['tagName'] = self.tag_name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('approveId') is not None:
+            self.approve_id = m.get('approveId')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('punchParam') is not None:
+            temp_model = ProcessApproveCreateRequestPunchParam()
+            self.punch_param = temp_model.from_map(m['punchParam'])
+        if m.get('subType') is not None:
+            self.sub_type = m.get('subType')
+        if m.get('tagName') is not None:
+            self.tag_name = m.get('tagName')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ProcessApproveCreateResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        dingtalk_approve_id: str = None,
+    ):
+        # 钉钉侧生成的审批单id
+        self.dingtalk_approve_id = dingtalk_approve_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dingtalk_approve_id is not None:
+            result['dingtalkApproveId'] = self.dingtalk_approve_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingtalkApproveId') is not None:
+            self.dingtalk_approve_id = m.get('dingtalkApproveId')
+        return self
+
+
+class ProcessApproveCreateResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: ProcessApproveCreateResponseBodyResult = None,
+    ):
+        # 审批单返回对象
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = ProcessApproveCreateResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class ProcessApproveCreateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ProcessApproveCreateResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ProcessApproveCreateResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

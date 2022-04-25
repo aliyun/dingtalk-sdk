@@ -9149,6 +9149,596 @@ class QueueNotifyResponse(TeaModel):
         return self
 
 
+class ReportCustomerDetailHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ReportCustomerDetailRequest(TeaModel):
+    def __init__(
+        self,
+        has_login: bool = None,
+        has_open_conv: bool = None,
+        max_dt: str = None,
+        min_dt: str = None,
+        open_conversation_id: str = None,
+        open_team_id: str = None,
+        page_number: int = None,
+        page_size: int = None,
+    ):
+        # 是否登录钉钉
+        self.has_login = has_login
+        # 是否打开群
+        self.has_open_conv = has_open_conv
+        # 截止日期
+        self.max_dt = max_dt
+        # 起始日期
+        self.min_dt = min_dt
+        # 开放群id
+        self.open_conversation_id = open_conversation_id
+        # 开发团队ID
+        self.open_team_id = open_team_id
+        # 页码
+        self.page_number = page_number
+        # 每页大小
+        self.page_size = page_size
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_login is not None:
+            result['hasLogin'] = self.has_login
+        if self.has_open_conv is not None:
+            result['hasOpenConv'] = self.has_open_conv
+        if self.max_dt is not None:
+            result['maxDt'] = self.max_dt
+        if self.min_dt is not None:
+            result['minDt'] = self.min_dt
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasLogin') is not None:
+            self.has_login = m.get('hasLogin')
+        if m.get('hasOpenConv') is not None:
+            self.has_open_conv = m.get('hasOpenConv')
+        if m.get('maxDt') is not None:
+            self.max_dt = m.get('maxDt')
+        if m.get('minDt') is not None:
+            self.min_dt = m.get('minDt')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        return self
+
+
+class ReportCustomerDetailResponseBodyRecords(TeaModel):
+    def __init__(
+        self,
+        at_robot_cnt: int = None,
+        customer_name: str = None,
+        group_name: str = None,
+        has_login: bool = None,
+        has_open_conv: bool = None,
+        send_msg_cnt: int = None,
+        union_id: str = None,
+        user_id: str = None,
+    ):
+        # at机器人消息数
+        self.at_robot_cnt = at_robot_cnt
+        # 客户名称
+        self.customer_name = customer_name
+        # 群名称
+        self.group_name = group_name
+        # 是否登录钉钉
+        self.has_login = has_login
+        # 是否打开群
+        self.has_open_conv = has_open_conv
+        # 发送消息数
+        self.send_msg_cnt = send_msg_cnt
+        # 开放用户ID
+        self.union_id = union_id
+        # 用户ID
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.at_robot_cnt is not None:
+            result['atRobotCnt'] = self.at_robot_cnt
+        if self.customer_name is not None:
+            result['customerName'] = self.customer_name
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.has_login is not None:
+            result['hasLogin'] = self.has_login
+        if self.has_open_conv is not None:
+            result['hasOpenConv'] = self.has_open_conv
+        if self.send_msg_cnt is not None:
+            result['sendMsgCnt'] = self.send_msg_cnt
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('atRobotCnt') is not None:
+            self.at_robot_cnt = m.get('atRobotCnt')
+        if m.get('customerName') is not None:
+            self.customer_name = m.get('customerName')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('hasLogin') is not None:
+            self.has_login = m.get('hasLogin')
+        if m.get('hasOpenConv') is not None:
+            self.has_open_conv = m.get('hasOpenConv')
+        if m.get('sendMsgCnt') is not None:
+            self.send_msg_cnt = m.get('sendMsgCnt')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ReportCustomerDetailResponseBody(TeaModel):
+    def __init__(
+        self,
+        current_page: int = None,
+        page_size: int = None,
+        records: List[ReportCustomerDetailResponseBodyRecords] = None,
+        total_count: int = None,
+    ):
+        # 页码
+        self.current_page = current_page
+        # 每页大小
+        self.page_size = page_size
+        # 数据列表
+        self.records = records
+        # 总数目
+        self.total_count = total_count
+
+    def validate(self):
+        if self.records:
+            for k in self.records:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.current_page is not None:
+            result['currentPage'] = self.current_page
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        result['records'] = []
+        if self.records is not None:
+            for k in self.records:
+                result['records'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('currentPage') is not None:
+            self.current_page = m.get('currentPage')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        self.records = []
+        if m.get('records') is not None:
+            for k in m.get('records'):
+                temp_model = ReportCustomerDetailResponseBodyRecords()
+                self.records.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class ReportCustomerDetailResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ReportCustomerDetailResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ReportCustomerDetailResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ReportCustomerStatisticsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ReportCustomerStatisticsRequest(TeaModel):
+    def __init__(
+        self,
+        group_owner_user_ids: List[str] = None,
+        group_tags: List[str] = None,
+        max_dt: str = None,
+        min_dt: str = None,
+        open_conversation_ids: List[str] = None,
+        open_group_set_id: str = None,
+        open_team_id: str = None,
+        page_number: int = None,
+        page_size: int = None,
+    ):
+        # 群主列表
+        self.group_owner_user_ids = group_owner_user_ids
+        # 群标签列表
+        self.group_tags = group_tags
+        # 截止日期
+        self.max_dt = max_dt
+        # 起始日期
+        self.min_dt = min_dt
+        # 开放群id列表
+        self.open_conversation_ids = open_conversation_ids
+        # 开放群组id
+        self.open_group_set_id = open_group_set_id
+        # 开发团队ID
+        self.open_team_id = open_team_id
+        # 页码
+        self.page_number = page_number
+        # 每页大小
+        self.page_size = page_size
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group_owner_user_ids is not None:
+            result['groupOwnerUserIds'] = self.group_owner_user_ids
+        if self.group_tags is not None:
+            result['groupTags'] = self.group_tags
+        if self.max_dt is not None:
+            result['maxDt'] = self.max_dt
+        if self.min_dt is not None:
+            result['minDt'] = self.min_dt
+        if self.open_conversation_ids is not None:
+            result['openConversationIds'] = self.open_conversation_ids
+        if self.open_group_set_id is not None:
+            result['openGroupSetId'] = self.open_group_set_id
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('groupOwnerUserIds') is not None:
+            self.group_owner_user_ids = m.get('groupOwnerUserIds')
+        if m.get('groupTags') is not None:
+            self.group_tags = m.get('groupTags')
+        if m.get('maxDt') is not None:
+            self.max_dt = m.get('maxDt')
+        if m.get('minDt') is not None:
+            self.min_dt = m.get('minDt')
+        if m.get('openConversationIds') is not None:
+            self.open_conversation_ids = m.get('openConversationIds')
+        if m.get('openGroupSetId') is not None:
+            self.open_group_set_id = m.get('openGroupSetId')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        return self
+
+
+class ReportCustomerStatisticsResponseBodyRecords(TeaModel):
+    def __init__(
+        self,
+        at_robot_cnt: int = None,
+        biz_id: str = None,
+        customer_cnt: int = None,
+        group_name: str = None,
+        group_set_name: str = None,
+        login_cnt: int = None,
+        open_conv_cnt: int = None,
+        open_conversation_id: str = None,
+        open_group_set_id: str = None,
+        send_msg_cnt: int = None,
+        sender_cnt: int = None,
+    ):
+        # at机器人消息数
+        self.at_robot_cnt = at_robot_cnt
+        # 业务ID
+        self.biz_id = biz_id
+        # 客户数
+        self.customer_cnt = customer_cnt
+        # 群名称
+        self.group_name = group_name
+        # 群分组名称
+        self.group_set_name = group_set_name
+        # 打开钉钉客户数
+        self.login_cnt = login_cnt
+        # 打开群客户数
+        self.open_conv_cnt = open_conv_cnt
+        # 开放群ID
+        self.open_conversation_id = open_conversation_id
+        # 开放群分组ID
+        self.open_group_set_id = open_group_set_id
+        # 发送消息数
+        self.send_msg_cnt = send_msg_cnt
+        # 发消息的客户数
+        self.sender_cnt = sender_cnt
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.at_robot_cnt is not None:
+            result['atRobotCnt'] = self.at_robot_cnt
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.customer_cnt is not None:
+            result['customerCnt'] = self.customer_cnt
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.group_set_name is not None:
+            result['groupSetName'] = self.group_set_name
+        if self.login_cnt is not None:
+            result['loginCnt'] = self.login_cnt
+        if self.open_conv_cnt is not None:
+            result['openConvCnt'] = self.open_conv_cnt
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.open_group_set_id is not None:
+            result['openGroupSetId'] = self.open_group_set_id
+        if self.send_msg_cnt is not None:
+            result['sendMsgCnt'] = self.send_msg_cnt
+        if self.sender_cnt is not None:
+            result['senderCnt'] = self.sender_cnt
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('atRobotCnt') is not None:
+            self.at_robot_cnt = m.get('atRobotCnt')
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('customerCnt') is not None:
+            self.customer_cnt = m.get('customerCnt')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('groupSetName') is not None:
+            self.group_set_name = m.get('groupSetName')
+        if m.get('loginCnt') is not None:
+            self.login_cnt = m.get('loginCnt')
+        if m.get('openConvCnt') is not None:
+            self.open_conv_cnt = m.get('openConvCnt')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('openGroupSetId') is not None:
+            self.open_group_set_id = m.get('openGroupSetId')
+        if m.get('sendMsgCnt') is not None:
+            self.send_msg_cnt = m.get('sendMsgCnt')
+        if m.get('senderCnt') is not None:
+            self.sender_cnt = m.get('senderCnt')
+        return self
+
+
+class ReportCustomerStatisticsResponseBody(TeaModel):
+    def __init__(
+        self,
+        current_page: int = None,
+        page_size: int = None,
+        records: List[ReportCustomerStatisticsResponseBodyRecords] = None,
+        total_count: int = None,
+    ):
+        # 页码
+        self.current_page = current_page
+        # 每页大小
+        self.page_size = page_size
+        # 数据列表
+        self.records = records
+        # 总数目
+        self.total_count = total_count
+
+    def validate(self):
+        if self.records:
+            for k in self.records:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.current_page is not None:
+            result['currentPage'] = self.current_page
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        result['records'] = []
+        if self.records is not None:
+            for k in self.records:
+                result['records'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('currentPage') is not None:
+            self.current_page = m.get('currentPage')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        self.records = []
+        if m.get('records') is not None:
+            for k in m.get('records'):
+                temp_model = ReportCustomerStatisticsResponseBodyRecords()
+                self.records.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class ReportCustomerStatisticsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ReportCustomerStatisticsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ReportCustomerStatisticsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ResubmitTicketHeaders(TeaModel):
     def __init__(
         self,

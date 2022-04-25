@@ -3431,6 +3431,194 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueueNotify', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/dts', 'json', req, runtime)
         )
 
+    def report_customer_detail(
+        self,
+        request: dingtalkservice_group__1__0_models.ReportCustomerDetailRequest,
+    ) -> dingtalkservice_group__1__0_models.ReportCustomerDetailResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.ReportCustomerDetailHeaders()
+        return self.report_customer_detail_with_options(request, headers, runtime)
+
+    async def report_customer_detail_async(
+        self,
+        request: dingtalkservice_group__1__0_models.ReportCustomerDetailRequest,
+    ) -> dingtalkservice_group__1__0_models.ReportCustomerDetailResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.ReportCustomerDetailHeaders()
+        return await self.report_customer_detail_with_options_async(request, headers, runtime)
+
+    def report_customer_detail_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.ReportCustomerDetailRequest,
+        headers: dingtalkservice_group__1__0_models.ReportCustomerDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.ReportCustomerDetailResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.has_login):
+            body['hasLogin'] = request.has_login
+        if not UtilClient.is_unset(request.has_open_conv):
+            body['hasOpenConv'] = request.has_open_conv
+        if not UtilClient.is_unset(request.max_dt):
+            body['maxDt'] = request.max_dt
+        if not UtilClient.is_unset(request.min_dt):
+            body['minDt'] = request.min_dt
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.ReportCustomerDetailResponse(),
+            self.do_roarequest('ReportCustomerDetail', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customers/activities/details/query', 'json', req, runtime)
+        )
+
+    async def report_customer_detail_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.ReportCustomerDetailRequest,
+        headers: dingtalkservice_group__1__0_models.ReportCustomerDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.ReportCustomerDetailResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.has_login):
+            body['hasLogin'] = request.has_login
+        if not UtilClient.is_unset(request.has_open_conv):
+            body['hasOpenConv'] = request.has_open_conv
+        if not UtilClient.is_unset(request.max_dt):
+            body['maxDt'] = request.max_dt
+        if not UtilClient.is_unset(request.min_dt):
+            body['minDt'] = request.min_dt
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.ReportCustomerDetailResponse(),
+            await self.do_roarequest_async('ReportCustomerDetail', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customers/activities/details/query', 'json', req, runtime)
+        )
+
+    def report_customer_statistics(
+        self,
+        request: dingtalkservice_group__1__0_models.ReportCustomerStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.ReportCustomerStatisticsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.ReportCustomerStatisticsHeaders()
+        return self.report_customer_statistics_with_options(request, headers, runtime)
+
+    async def report_customer_statistics_async(
+        self,
+        request: dingtalkservice_group__1__0_models.ReportCustomerStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.ReportCustomerStatisticsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.ReportCustomerStatisticsHeaders()
+        return await self.report_customer_statistics_with_options_async(request, headers, runtime)
+
+    def report_customer_statistics_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.ReportCustomerStatisticsRequest,
+        headers: dingtalkservice_group__1__0_models.ReportCustomerStatisticsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.ReportCustomerStatisticsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.group_owner_user_ids):
+            body['groupOwnerUserIds'] = request.group_owner_user_ids
+        if not UtilClient.is_unset(request.group_tags):
+            body['groupTags'] = request.group_tags
+        if not UtilClient.is_unset(request.max_dt):
+            body['maxDt'] = request.max_dt
+        if not UtilClient.is_unset(request.min_dt):
+            body['minDt'] = request.min_dt
+        if not UtilClient.is_unset(request.open_conversation_ids):
+            body['openConversationIds'] = request.open_conversation_ids
+        if not UtilClient.is_unset(request.open_group_set_id):
+            body['openGroupSetId'] = request.open_group_set_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.ReportCustomerStatisticsResponse(),
+            self.do_roarequest('ReportCustomerStatistics', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customers/activities/statistics/query', 'json', req, runtime)
+        )
+
+    async def report_customer_statistics_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.ReportCustomerStatisticsRequest,
+        headers: dingtalkservice_group__1__0_models.ReportCustomerStatisticsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.ReportCustomerStatisticsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.group_owner_user_ids):
+            body['groupOwnerUserIds'] = request.group_owner_user_ids
+        if not UtilClient.is_unset(request.group_tags):
+            body['groupTags'] = request.group_tags
+        if not UtilClient.is_unset(request.max_dt):
+            body['maxDt'] = request.max_dt
+        if not UtilClient.is_unset(request.min_dt):
+            body['minDt'] = request.min_dt
+        if not UtilClient.is_unset(request.open_conversation_ids):
+            body['openConversationIds'] = request.open_conversation_ids
+        if not UtilClient.is_unset(request.open_group_set_id):
+            body['openGroupSetId'] = request.open_group_set_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.ReportCustomerStatisticsResponse(),
+            await self.do_roarequest_async('ReportCustomerStatistics', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customers/activities/statistics/query', 'json', req, runtime)
+        )
+
     def resubmit_ticket(
         self,
         request: dingtalkservice_group__1__0_models.ResubmitTicketRequest,
