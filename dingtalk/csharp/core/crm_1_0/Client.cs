@@ -960,6 +960,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             {
                 body["templateId"] = request.TemplateId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Welcome))
+            {
+                body["welcome"] = request.Welcome;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1016,6 +1020,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
             {
                 body["templateId"] = request.TemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Welcome))
+            {
+                body["welcome"] = request.Welcome;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

@@ -24,6 +24,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public int? GroupChatCount { get; set; }
 
+        [NameInMap("inviteLink")]
+        [Validation(Required=false)]
+        public string InviteLink { get; set; }
+
         [NameInMap("lastOpenConversationId")]
         [Validation(Required=false)]
         public string LastOpenConversationId { get; set; }
