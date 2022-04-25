@@ -133,6 +133,12 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryServiceGroupMessage
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueueNotifyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueueNotifyRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueueNotifyResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ReportCustomerDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ReportCustomerDetailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ReportCustomerDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ReportCustomerStatisticsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ReportCustomerStatisticsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ReportCustomerStatisticsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ResubmitTicketHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ResubmitTicketRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ResubmitTicketResponse;
@@ -2488,6 +2494,135 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueueNotifyResponse::fromMap($this->doROARequest('QueueNotify', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/dts', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ReportCustomerDetailRequest $request
+     *
+     * @return ReportCustomerDetailResponse
+     */
+    public function reportCustomerDetail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ReportCustomerDetailHeaders([]);
+
+        return $this->reportCustomerDetailWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ReportCustomerDetailRequest $request
+     * @param ReportCustomerDetailHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return ReportCustomerDetailResponse
+     */
+    public function reportCustomerDetailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->hasLogin)) {
+            @$body['hasLogin'] = $request->hasLogin;
+        }
+        if (!Utils::isUnset($request->hasOpenConv)) {
+            @$body['hasOpenConv'] = $request->hasOpenConv;
+        }
+        if (!Utils::isUnset($request->maxDt)) {
+            @$body['maxDt'] = $request->maxDt;
+        }
+        if (!Utils::isUnset($request->minDt)) {
+            @$body['minDt'] = $request->minDt;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ReportCustomerDetailResponse::fromMap($this->doROARequest('ReportCustomerDetail', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/customers/activities/details/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ReportCustomerStatisticsRequest $request
+     *
+     * @return ReportCustomerStatisticsResponse
+     */
+    public function reportCustomerStatistics($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ReportCustomerStatisticsHeaders([]);
+
+        return $this->reportCustomerStatisticsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ReportCustomerStatisticsRequest $request
+     * @param ReportCustomerStatisticsHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return ReportCustomerStatisticsResponse
+     */
+    public function reportCustomerStatisticsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->groupOwnerUserIds)) {
+            @$body['groupOwnerUserIds'] = $request->groupOwnerUserIds;
+        }
+        if (!Utils::isUnset($request->groupTags)) {
+            @$body['groupTags'] = $request->groupTags;
+        }
+        if (!Utils::isUnset($request->maxDt)) {
+            @$body['maxDt'] = $request->maxDt;
+        }
+        if (!Utils::isUnset($request->minDt)) {
+            @$body['minDt'] = $request->minDt;
+        }
+        if (!Utils::isUnset($request->openConversationIds)) {
+            @$body['openConversationIds'] = $request->openConversationIds;
+        }
+        if (!Utils::isUnset($request->openGroupSetId)) {
+            @$body['openGroupSetId'] = $request->openGroupSetId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ReportCustomerStatisticsResponse::fromMap($this->doROARequest('ReportCustomerStatistics', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/customers/activities/statistics/query', 'json', $req, $runtime));
     }
 
     /**

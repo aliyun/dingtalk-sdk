@@ -149,6 +149,9 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListCommodityResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListConnectorInformationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListConnectorInformationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListConnectorInformationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListFormRemarksHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListFormRemarksRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListFormRemarksResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListNavigationByFormTypeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListNavigationByFormTypeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListNavigationByFormTypeResponse;
@@ -3116,6 +3119,60 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListConnectorInformationResponse::fromMap($this->doROARequest('ListConnectorInformation', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/plugins/infos/' . $instanceId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListFormRemarksRequest $request
+     *
+     * @return ListFormRemarksResponse
+     */
+    public function listFormRemarks($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListFormRemarksHeaders([]);
+
+        return $this->listFormRemarksWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListFormRemarksRequest $request
+     * @param ListFormRemarksHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return ListFormRemarksResponse
+     */
+    public function listFormRemarksWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->formInstanceIdList)) {
+            @$body['formInstanceIdList'] = $request->formInstanceIdList;
+        }
+        if (!Utils::isUnset($request->formUuid)) {
+            @$body['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ListFormRemarksResponse::fromMap($this->doROARequest('ListFormRemarks', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/forms/remarks/query', 'json', $req, $runtime));
     }
 
     /**

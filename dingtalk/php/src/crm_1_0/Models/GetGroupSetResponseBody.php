@@ -30,6 +30,11 @@ class GetGroupSetResponseBody extends Model
     /**
      * @var string
      */
+    public $inviteLink;
+
+    /**
+     * @var string
+     */
     public $lastOpenConversationId;
 
     /**
@@ -95,6 +100,7 @@ class GetGroupSetResponseBody extends Model
         'gmtCreate'              => 'gmtCreate',
         'gmtModified'            => 'gmtModified',
         'groupChatCount'         => 'groupChatCount',
+        'inviteLink'             => 'inviteLink',
         'lastOpenConversationId' => 'lastOpenConversationId',
         'manager'                => 'manager',
         'managerUserIds'         => 'managerUserIds',
@@ -125,6 +131,9 @@ class GetGroupSetResponseBody extends Model
         }
         if (null !== $this->groupChatCount) {
             $res['groupChatCount'] = $this->groupChatCount;
+        }
+        if (null !== $this->inviteLink) {
+            $res['inviteLink'] = $this->inviteLink;
         }
         if (null !== $this->lastOpenConversationId) {
             $res['lastOpenConversationId'] = $this->lastOpenConversationId;
@@ -191,6 +200,9 @@ class GetGroupSetResponseBody extends Model
         }
         if (isset($map['groupChatCount'])) {
             $model->groupChatCount = $map['groupChatCount'];
+        }
+        if (isset($map['inviteLink'])) {
+            $model->inviteLink = $map['inviteLink'];
         }
         if (isset($map['lastOpenConversationId'])) {
             $model->lastOpenConversationId = $map['lastOpenConversationId'];

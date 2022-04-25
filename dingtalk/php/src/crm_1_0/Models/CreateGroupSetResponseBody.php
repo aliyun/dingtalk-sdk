@@ -23,6 +23,11 @@ class CreateGroupSetResponseBody extends Model
     /**
      * @var string
      */
+    public $inviteLink;
+
+    /**
+     * @var string
+     */
     public $lastOpenConversationId;
 
     /**
@@ -87,6 +92,7 @@ class CreateGroupSetResponseBody extends Model
     protected $_name = [
         'gmtCreate'              => 'gmtCreate',
         'gmtModified'            => 'gmtModified',
+        'inviteLink'             => 'inviteLink',
         'lastOpenConversationId' => 'lastOpenConversationId',
         'manager'                => 'manager',
         'managerUserIds'         => 'managerUserIds',
@@ -114,6 +120,9 @@ class CreateGroupSetResponseBody extends Model
         }
         if (null !== $this->gmtModified) {
             $res['gmtModified'] = $this->gmtModified;
+        }
+        if (null !== $this->inviteLink) {
+            $res['inviteLink'] = $this->inviteLink;
         }
         if (null !== $this->lastOpenConversationId) {
             $res['lastOpenConversationId'] = $this->lastOpenConversationId;
@@ -177,6 +186,9 @@ class CreateGroupSetResponseBody extends Model
         }
         if (isset($map['gmtModified'])) {
             $model->gmtModified = $map['gmtModified'];
+        }
+        if (isset($map['inviteLink'])) {
+            $model->inviteLink = $map['inviteLink'];
         }
         if (isset($map['lastOpenConversationId'])) {
             $model->lastOpenConversationId = $map['lastOpenConversationId'];

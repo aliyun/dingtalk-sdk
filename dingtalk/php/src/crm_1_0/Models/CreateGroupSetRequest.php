@@ -52,6 +52,11 @@ class CreateGroupSetRequest extends Model
      * @var string
      */
     public $templateId;
+
+    /**
+     * @var string
+     */
+    public $welcome;
     protected $_name = [
         'creatorUserId'  => 'creatorUserId',
         'managerUserIds' => 'managerUserIds',
@@ -62,6 +67,7 @@ class CreateGroupSetRequest extends Model
         'ownerUserId'    => 'ownerUserId',
         'relationType'   => 'relationType',
         'templateId'     => 'templateId',
+        'welcome'        => 'welcome',
     ];
 
     public function validate()
@@ -97,6 +103,9 @@ class CreateGroupSetRequest extends Model
         }
         if (null !== $this->templateId) {
             $res['templateId'] = $this->templateId;
+        }
+        if (null !== $this->welcome) {
+            $res['welcome'] = $this->welcome;
         }
 
         return $res;
@@ -136,6 +145,9 @@ class CreateGroupSetRequest extends Model
         }
         if (isset($map['templateId'])) {
             $model->templateId = $map['templateId'];
+        }
+        if (isset($map['welcome'])) {
+            $model->welcome = $map['welcome'];
         }
 
         return $model;

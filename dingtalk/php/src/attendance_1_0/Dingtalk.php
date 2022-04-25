@@ -32,6 +32,9 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\DingTalkSecurityCheckRespon
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetClosingAccountsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetClosingAccountsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetClosingAccountsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetLeaveTypeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetLeaveTypeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetLeaveTypeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetMachineHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetMachineResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetMachineUserHeaders;
@@ -43,6 +46,9 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetOvertimeSettingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ProcessApproveCreateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ProcessApproveCreateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ProcessApproveCreateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SyncScheduleInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SyncScheduleInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SyncScheduleInfoResponse;
@@ -527,6 +533,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetLeaveTypeRequest $request
+     *
+     * @return GetLeaveTypeResponse
+     */
+    public function getLeaveType($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetLeaveTypeHeaders([]);
+
+        return $this->getLeaveTypeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetLeaveTypeRequest $request
+     * @param GetLeaveTypeHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return GetLeaveTypeResponse
+     */
+    public function getLeaveTypeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            @$query['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->vacationSource)) {
+            @$query['vacationSource'] = $request->vacationSource;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetLeaveTypeResponse::fromMap($this->doROARequest('GetLeaveType', 'attendance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/attendance/leaves/types', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string $devId
      *
      * @return GetMachineResponse
@@ -699,6 +750,63 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetUserHolidaysResponse::fromMap($this->doROARequest('GetUserHolidays', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/holidays', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ProcessApproveCreateRequest $request
+     *
+     * @return ProcessApproveCreateResponse
+     */
+    public function processApproveCreate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ProcessApproveCreateHeaders([]);
+
+        return $this->processApproveCreateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ProcessApproveCreateRequest $request
+     * @param ProcessApproveCreateHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return ProcessApproveCreateResponse
+     */
+    public function processApproveCreateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->approveId)) {
+            @$body['approveId'] = $request->approveId;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            @$body['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->punchParam)) {
+            @$body['punchParam'] = $request->punchParam;
+        }
+        if (!Utils::isUnset($request->subType)) {
+            @$body['subType'] = $request->subType;
+        }
+        if (!Utils::isUnset($request->tagName)) {
+            @$body['tagName'] = $request->tagName;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ProcessApproveCreateResponse::fromMap($this->doROARequest('ProcessApproveCreate', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/workflows/checkInForms', 'json', $req, $runtime));
     }
 
     /**
