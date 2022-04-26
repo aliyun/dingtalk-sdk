@@ -3512,10 +3512,12 @@ export class GetBindChildInfoRequest extends $tea.Model {
 
 export class GetBindChildInfoResponseBody extends $tea.Model {
   childUserId?: string;
+  currentUserId?: string;
   familyCorpId?: string;
   static names(): { [key: string]: string } {
     return {
       childUserId: 'childUserId',
+      currentUserId: 'currentUserId',
       familyCorpId: 'familyCorpId',
     };
   }
@@ -3523,6 +3525,7 @@ export class GetBindChildInfoResponseBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       childUserId: 'string',
+      currentUserId: 'string',
       familyCorpId: 'string',
     };
   }

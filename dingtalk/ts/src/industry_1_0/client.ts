@@ -2954,6 +2954,88 @@ export class QueryMedicalEventsResponse extends $tea.Model {
   }
 }
 
+export class QueryUserCredentialsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserCredentialsRequest extends $tea.Model {
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserCredentialsResponseBody extends $tea.Model {
+  content?: QueryUserCredentialsResponseBodyContent[];
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': QueryUserCredentialsResponseBodyContent },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserCredentialsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryUserCredentialsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryUserCredentialsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryUserExtInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4863,6 +4945,53 @@ export class QueryMedicalEventsResponseBodyContent extends $tea.Model {
   }
 }
 
+export class QueryUserCredentialsResponseBodyContentCredentialList extends $tea.Model {
+  credentialName?: number;
+  credentialType?: number;
+  termOfValidity?: string;
+  static names(): { [key: string]: string } {
+    return {
+      credentialName: 'credentialName',
+      credentialType: 'credentialType',
+      termOfValidity: 'termOfValidity',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      credentialName: 'number',
+      credentialType: 'number',
+      termOfValidity: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserCredentialsResponseBodyContent extends $tea.Model {
+  credentialList?: QueryUserCredentialsResponseBodyContentCredentialList[];
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      credentialList: 'credentialList',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      credentialList: { 'type': 'array', 'itemType': QueryUserCredentialsResponseBodyContentCredentialList },
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryUserExtInfoResponseBodyContent extends $tea.Model {
   gmtCreate?: string;
   gmtModified?: string;
@@ -6521,6 +6650,35 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<QueryMedicalEventsResponse>(await this.doROARequest("QueryMedicalEvents", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/events`, "json", req, runtime), new QueryMedicalEventsResponse({}));
+  }
+
+  async queryUserCredentials(request: QueryUserCredentialsRequest): Promise<QueryUserCredentialsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryUserCredentialsHeaders({ });
+    return await this.queryUserCredentialsWithOptions(request, headers, runtime);
+  }
+
+  async queryUserCredentialsWithOptions(request: QueryUserCredentialsRequest, headers: QueryUserCredentialsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserCredentialsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QueryUserCredentialsResponse>(await this.doROARequest("QueryUserCredentials", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/medicals/users/credentials/query`, "json", req, runtime), new QueryUserCredentialsResponse({}));
   }
 
   async queryUserExtInfo(userId: string): Promise<QueryUserExtInfoResponse> {

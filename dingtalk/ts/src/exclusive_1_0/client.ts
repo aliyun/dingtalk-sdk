@@ -3547,10 +3547,12 @@ export class GetOaOperatorLogListResponseBodyData extends $tea.Model {
 }
 
 export class GetPartnerTypeByParentIdResponseBodyData extends $tea.Model {
+  labelId?: string;
   typeId?: number;
   typeName?: string;
   static names(): { [key: string]: string } {
     return {
+      labelId: 'labelId',
       typeId: 'typeId',
       typeName: 'typeName',
     };
@@ -3558,6 +3560,7 @@ export class GetPartnerTypeByParentIdResponseBodyData extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      labelId: 'string',
       typeId: 'number',
       typeName: 'string',
     };
