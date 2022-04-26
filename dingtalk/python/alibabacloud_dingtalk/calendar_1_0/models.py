@@ -41,8 +41,10 @@ class AddAttendeeRequestAttendeesToAdd(TeaModel):
     def __init__(
         self,
         id: str = None,
+        is_optional: bool = None,
     ):
         self.id = id
+        self.is_optional = is_optional
 
     def validate(self):
         pass
@@ -55,12 +57,16 @@ class AddAttendeeRequestAttendeesToAdd(TeaModel):
         result = dict()
         if self.id is not None:
             result['id'] = self.id
+        if self.is_optional is not None:
+            result['isOptional'] = self.is_optional
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('id') is not None:
             self.id = m.get('id')
+        if m.get('isOptional') is not None:
+            self.is_optional = m.get('isOptional')
         return self
 
 
@@ -614,8 +620,10 @@ class CreateEventRequestAttendees(TeaModel):
     def __init__(
         self,
         id: str = None,
+        is_optional: bool = None,
     ):
         self.id = id
+        self.is_optional = is_optional
 
     def validate(self):
         pass
@@ -628,12 +636,16 @@ class CreateEventRequestAttendees(TeaModel):
         result = dict()
         if self.id is not None:
             result['id'] = self.id
+        if self.is_optional is not None:
+            result['isOptional'] = self.is_optional
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('id') is not None:
             self.id = m.get('id')
+        if m.get('isOptional') is not None:
+            self.is_optional = m.get('isOptional')
         return self
 
 
@@ -1070,11 +1082,13 @@ class CreateEventResponseBodyAttendees(TeaModel):
         self,
         display_name: str = None,
         id: str = None,
+        is_optional: bool = None,
         response_status: str = None,
         self_: bool = None,
     ):
         self.display_name = display_name
         self.id = id
+        self.is_optional = is_optional
         # 回复状态
         self.response_status = response_status
         self.self_ = self_
@@ -1092,6 +1106,8 @@ class CreateEventResponseBodyAttendees(TeaModel):
             result['displayName'] = self.display_name
         if self.id is not None:
             result['id'] = self.id
+        if self.is_optional is not None:
+            result['isOptional'] = self.is_optional
         if self.response_status is not None:
             result['responseStatus'] = self.response_status
         if self.self_ is not None:
@@ -1104,6 +1120,8 @@ class CreateEventResponseBodyAttendees(TeaModel):
             self.display_name = m.get('displayName')
         if m.get('id') is not None:
             self.id = m.get('id')
+        if m.get('isOptional') is not None:
+            self.is_optional = m.get('isOptional')
         if m.get('responseStatus') is not None:
             self.response_status = m.get('responseStatus')
         if m.get('self') is not None:
@@ -1979,12 +1997,14 @@ class GetEventResponseBodyAttendees(TeaModel):
         self,
         display_name: str = None,
         id: str = None,
+        is_optional: bool = None,
         response_status: str = None,
         self_: bool = None,
     ):
         # 用户名
         self.display_name = display_name
         self.id = id
+        self.is_optional = is_optional
         # 回复状态
         self.response_status = response_status
         # 是否是当前登陆用户
@@ -2003,6 +2023,8 @@ class GetEventResponseBodyAttendees(TeaModel):
             result['displayName'] = self.display_name
         if self.id is not None:
             result['id'] = self.id
+        if self.is_optional is not None:
+            result['isOptional'] = self.is_optional
         if self.response_status is not None:
             result['responseStatus'] = self.response_status
         if self.self_ is not None:
@@ -2015,6 +2037,8 @@ class GetEventResponseBodyAttendees(TeaModel):
             self.display_name = m.get('displayName')
         if m.get('id') is not None:
             self.id = m.get('id')
+        if m.get('isOptional') is not None:
+            self.is_optional = m.get('isOptional')
         if m.get('responseStatus') is not None:
             self.response_status = m.get('responseStatus')
         if m.get('self') is not None:
@@ -3560,6 +3584,7 @@ class ListAttendeesResponseBodyAttendees(TeaModel):
         self,
         display_name: str = None,
         id: str = None,
+        is_optional: bool = None,
         response_status: str = None,
         self_: bool = None,
     ):
@@ -3567,6 +3592,7 @@ class ListAttendeesResponseBodyAttendees(TeaModel):
         self.display_name = display_name
         # 用户id
         self.id = id
+        self.is_optional = is_optional
         # 回复状态
         self.response_status = response_status
         # 是否当前用户
@@ -3585,6 +3611,8 @@ class ListAttendeesResponseBodyAttendees(TeaModel):
             result['displayName'] = self.display_name
         if self.id is not None:
             result['id'] = self.id
+        if self.is_optional is not None:
+            result['isOptional'] = self.is_optional
         if self.response_status is not None:
             result['responseStatus'] = self.response_status
         if self.self_ is not None:
@@ -3597,6 +3625,8 @@ class ListAttendeesResponseBodyAttendees(TeaModel):
             self.display_name = m.get('displayName')
         if m.get('id') is not None:
             self.id = m.get('id')
+        if m.get('isOptional') is not None:
+            self.is_optional = m.get('isOptional')
         if m.get('responseStatus') is not None:
             self.response_status = m.get('responseStatus')
         if m.get('self') is not None:
@@ -3997,6 +4027,7 @@ class ListEventsResponseBodyEventsAttendees(TeaModel):
         self,
         display_name: str = None,
         id: str = None,
+        is_optional: bool = None,
         response_status: str = None,
         self_: bool = None,
     ):
@@ -4004,6 +4035,7 @@ class ListEventsResponseBodyEventsAttendees(TeaModel):
         self.display_name = display_name
         # 用户id
         self.id = id
+        self.is_optional = is_optional
         # 回复状态
         self.response_status = response_status
         # 是否是当前登陆用户
@@ -4022,6 +4054,8 @@ class ListEventsResponseBodyEventsAttendees(TeaModel):
             result['displayName'] = self.display_name
         if self.id is not None:
             result['id'] = self.id
+        if self.is_optional is not None:
+            result['isOptional'] = self.is_optional
         if self.response_status is not None:
             result['responseStatus'] = self.response_status
         if self.self_ is not None:
@@ -4034,6 +4068,8 @@ class ListEventsResponseBodyEventsAttendees(TeaModel):
             self.display_name = m.get('displayName')
         if m.get('id') is not None:
             self.id = m.get('id')
+        if m.get('isOptional') is not None:
+            self.is_optional = m.get('isOptional')
         if m.get('responseStatus') is not None:
             self.response_status = m.get('responseStatus')
         if m.get('self') is not None:
@@ -4749,6 +4785,7 @@ class ListEventsInstancesResponseBodyEventsAttendees(TeaModel):
         self,
         display_name: str = None,
         id: str = None,
+        is_optional: bool = None,
         response_status: str = None,
         self_: bool = None,
     ):
@@ -4756,6 +4793,7 @@ class ListEventsInstancesResponseBodyEventsAttendees(TeaModel):
         self.display_name = display_name
         # 用户id
         self.id = id
+        self.is_optional = is_optional
         # 回复状态
         self.response_status = response_status
         # 是否是当前登陆用户
@@ -4774,6 +4812,8 @@ class ListEventsInstancesResponseBodyEventsAttendees(TeaModel):
             result['displayName'] = self.display_name
         if self.id is not None:
             result['id'] = self.id
+        if self.is_optional is not None:
+            result['isOptional'] = self.is_optional
         if self.response_status is not None:
             result['responseStatus'] = self.response_status
         if self.self_ is not None:
@@ -4786,6 +4826,8 @@ class ListEventsInstancesResponseBodyEventsAttendees(TeaModel):
             self.display_name = m.get('displayName')
         if m.get('id') is not None:
             self.id = m.get('id')
+        if m.get('isOptional') is not None:
+            self.is_optional = m.get('isOptional')
         if m.get('responseStatus') is not None:
             self.response_status = m.get('responseStatus')
         if m.get('self') is not None:
@@ -5504,6 +5546,7 @@ class ListEventsViewResponseBodyEventsAttendees(TeaModel):
         self,
         display_name: str = None,
         id: str = None,
+        is_optional: bool = None,
         response_status: str = None,
         self_: bool = None,
     ):
@@ -5511,6 +5554,7 @@ class ListEventsViewResponseBodyEventsAttendees(TeaModel):
         self.display_name = display_name
         # 用户id
         self.id = id
+        self.is_optional = is_optional
         # 回复状态
         self.response_status = response_status
         # 是否是当前登陆用户
@@ -5529,6 +5573,8 @@ class ListEventsViewResponseBodyEventsAttendees(TeaModel):
             result['displayName'] = self.display_name
         if self.id is not None:
             result['id'] = self.id
+        if self.is_optional is not None:
+            result['isOptional'] = self.is_optional
         if self.response_status is not None:
             result['responseStatus'] = self.response_status
         if self.self_ is not None:
@@ -5541,6 +5587,8 @@ class ListEventsViewResponseBodyEventsAttendees(TeaModel):
             self.display_name = m.get('displayName')
         if m.get('id') is not None:
             self.id = m.get('id')
+        if m.get('isOptional') is not None:
+            self.is_optional = m.get('isOptional')
         if m.get('responseStatus') is not None:
             self.response_status = m.get('responseStatus')
         if m.get('self') is not None:
@@ -6151,8 +6199,10 @@ class PatchEventRequestAttendees(TeaModel):
     def __init__(
         self,
         id: str = None,
+        is_optional: bool = None,
     ):
         self.id = id
+        self.is_optional = is_optional
 
     def validate(self):
         pass
@@ -6165,12 +6215,16 @@ class PatchEventRequestAttendees(TeaModel):
         result = dict()
         if self.id is not None:
             result['id'] = self.id
+        if self.is_optional is not None:
+            result['isOptional'] = self.is_optional
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('id') is not None:
             self.id = m.get('id')
+        if m.get('isOptional') is not None:
+            self.is_optional = m.get('isOptional')
         return self
 
 
@@ -6565,12 +6619,14 @@ class PatchEventResponseBodyAttendees(TeaModel):
         self,
         display_name: str = None,
         id: str = None,
+        is_optional: bool = None,
         response_status: str = None,
         self_: bool = None,
     ):
         # 用户名
         self.display_name = display_name
         self.id = id
+        self.is_optional = is_optional
         # 回复状态
         self.response_status = response_status
         # 是否是当前登陆用户
@@ -6589,6 +6645,8 @@ class PatchEventResponseBodyAttendees(TeaModel):
             result['displayName'] = self.display_name
         if self.id is not None:
             result['id'] = self.id
+        if self.is_optional is not None:
+            result['isOptional'] = self.is_optional
         if self.response_status is not None:
             result['responseStatus'] = self.response_status
         if self.self_ is not None:
@@ -6601,6 +6659,8 @@ class PatchEventResponseBodyAttendees(TeaModel):
             self.display_name = m.get('displayName')
         if m.get('id') is not None:
             self.id = m.get('id')
+        if m.get('isOptional') is not None:
+            self.is_optional = m.get('isOptional')
         if m.get('responseStatus') is not None:
             self.response_status = m.get('responseStatus')
         if m.get('self') is not None:
