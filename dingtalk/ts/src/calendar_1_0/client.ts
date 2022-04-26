@@ -1972,15 +1972,18 @@ export class SubscribeCalendarResponse extends $tea.Model {
 
 export class AddAttendeeRequestAttendeesToAdd extends $tea.Model {
   id?: string;
+  isOptional?: boolean;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
+      isOptional: 'isOptional',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       id: 'string',
+      isOptional: 'boolean',
     };
   }
 
@@ -2035,15 +2038,18 @@ export class CreateAclsResponseBodyScope extends $tea.Model {
 
 export class CreateEventRequestAttendees extends $tea.Model {
   id?: string;
+  isOptional?: boolean;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
+      isOptional: 'isOptional',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       id: 'string',
+      isOptional: 'boolean',
     };
   }
 
@@ -2243,12 +2249,14 @@ export class CreateEventRequestStart extends $tea.Model {
 export class CreateEventResponseBodyAttendees extends $tea.Model {
   displayName?: string;
   id?: string;
+  isOptional?: boolean;
   responseStatus?: string;
   self?: boolean;
   static names(): { [key: string]: string } {
     return {
       displayName: 'displayName',
       id: 'id',
+      isOptional: 'isOptional',
       responseStatus: 'responseStatus',
       self: 'self',
     };
@@ -2258,6 +2266,7 @@ export class CreateEventResponseBodyAttendees extends $tea.Model {
     return {
       displayName: 'string',
       id: 'string',
+      isOptional: 'boolean',
       responseStatus: 'string',
       self: 'boolean',
     };
@@ -2496,12 +2505,14 @@ export class CreateEventResponseBodyStart extends $tea.Model {
 export class GetEventResponseBodyAttendees extends $tea.Model {
   displayName?: string;
   id?: string;
+  isOptional?: boolean;
   responseStatus?: string;
   self?: boolean;
   static names(): { [key: string]: string } {
     return {
       displayName: 'displayName',
       id: 'id',
+      isOptional: 'isOptional',
       responseStatus: 'responseStatus',
       self: 'self',
     };
@@ -2511,6 +2522,7 @@ export class GetEventResponseBodyAttendees extends $tea.Model {
     return {
       displayName: 'string',
       id: 'string',
+      isOptional: 'boolean',
       responseStatus: 'string',
       self: 'boolean',
     };
@@ -2946,12 +2958,14 @@ export class ListAclsResponseBodyAcls extends $tea.Model {
 export class ListAttendeesResponseBodyAttendees extends $tea.Model {
   displayName?: string;
   id?: string;
+  isOptional?: boolean;
   responseStatus?: string;
   self?: boolean;
   static names(): { [key: string]: string } {
     return {
       displayName: 'displayName',
       id: 'id',
+      isOptional: 'isOptional',
       responseStatus: 'responseStatus',
       self: 'self',
     };
@@ -2961,6 +2975,7 @@ export class ListAttendeesResponseBodyAttendees extends $tea.Model {
     return {
       displayName: 'string',
       id: 'string',
+      isOptional: 'boolean',
       responseStatus: 'string',
       self: 'boolean',
     };
@@ -3030,12 +3045,14 @@ export class ListCalendarsResponseBodyResponse extends $tea.Model {
 export class ListEventsResponseBodyEventsAttendees extends $tea.Model {
   displayName?: string;
   id?: string;
+  isOptional?: boolean;
   responseStatus?: string;
   self?: boolean;
   static names(): { [key: string]: string } {
     return {
       displayName: 'displayName',
       id: 'id',
+      isOptional: 'isOptional',
       responseStatus: 'responseStatus',
       self: 'self',
     };
@@ -3045,6 +3062,7 @@ export class ListEventsResponseBodyEventsAttendees extends $tea.Model {
     return {
       displayName: 'string',
       id: 'string',
+      isOptional: 'boolean',
       responseStatus: 'string',
       self: 'boolean',
     };
@@ -3347,12 +3365,14 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
 export class ListEventsInstancesResponseBodyEventsAttendees extends $tea.Model {
   displayName?: string;
   id?: string;
+  isOptional?: boolean;
   responseStatus?: string;
   self?: boolean;
   static names(): { [key: string]: string } {
     return {
       displayName: 'displayName',
       id: 'id',
+      isOptional: 'isOptional',
       responseStatus: 'responseStatus',
       self: 'self',
     };
@@ -3362,6 +3382,7 @@ export class ListEventsInstancesResponseBodyEventsAttendees extends $tea.Model {
     return {
       displayName: 'string',
       id: 'string',
+      isOptional: 'boolean',
       responseStatus: 'string',
       self: 'boolean',
     };
@@ -3661,12 +3682,14 @@ export class ListEventsInstancesResponseBodyEvents extends $tea.Model {
 export class ListEventsViewResponseBodyEventsAttendees extends $tea.Model {
   displayName?: string;
   id?: string;
+  isOptional?: boolean;
   responseStatus?: string;
   self?: boolean;
   static names(): { [key: string]: string } {
     return {
       displayName: 'displayName',
       id: 'id',
+      isOptional: 'isOptional',
       responseStatus: 'responseStatus',
       self: 'self',
     };
@@ -3676,6 +3699,7 @@ export class ListEventsViewResponseBodyEventsAttendees extends $tea.Model {
     return {
       displayName: 'string',
       id: 'string',
+      isOptional: 'boolean',
       responseStatus: 'string',
       self: 'boolean',
     };
@@ -3952,15 +3976,18 @@ export class ListEventsViewResponseBodyEvents extends $tea.Model {
 
 export class PatchEventRequestAttendees extends $tea.Model {
   id?: string;
+  isOptional?: boolean;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
+      isOptional: 'isOptional',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       id: 'string',
+      isOptional: 'boolean',
     };
   }
 
@@ -4141,12 +4168,14 @@ export class PatchEventRequestStart extends $tea.Model {
 export class PatchEventResponseBodyAttendees extends $tea.Model {
   displayName?: string;
   id?: string;
+  isOptional?: boolean;
   responseStatus?: string;
   self?: boolean;
   static names(): { [key: string]: string } {
     return {
       displayName: 'displayName',
       id: 'id',
+      isOptional: 'isOptional',
       responseStatus: 'responseStatus',
       self: 'self',
     };
@@ -4156,6 +4185,7 @@ export class PatchEventResponseBodyAttendees extends $tea.Model {
     return {
       displayName: 'string',
       id: 'string',
+      isOptional: 'boolean',
       responseStatus: 'string',
       self: 'boolean',
     };
