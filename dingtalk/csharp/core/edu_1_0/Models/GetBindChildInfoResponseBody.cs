@@ -17,6 +17,13 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string ChildUserId { get; set; }
 
         /// <summary>
+        /// 当前用户id
+        /// </summary>
+        [NameInMap("currentUserId")]
+        [Validation(Required=false)]
+        public string CurrentUserId { get; set; }
+
+        /// <summary>
         /// 家庭id
         /// </summary>
         [NameInMap("familyCorpId")]

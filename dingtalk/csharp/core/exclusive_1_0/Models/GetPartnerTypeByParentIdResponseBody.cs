@@ -17,7 +17,14 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public List<GetPartnerTypeByParentIdResponseBodyData> Data { get; set; }
         public class GetPartnerTypeByParentIdResponseBodyData : TeaModel {
             /// <summary>
-            /// 自标签id
+            /// 子标签id
+            /// </summary>
+            [NameInMap("labelId")]
+            [Validation(Required=false)]
+            public string LabelId { get; set; }
+
+            /// <summary>
+            /// 目前无意义
             /// </summary>
             [NameInMap("typeId")]
             [Validation(Required=false)]
