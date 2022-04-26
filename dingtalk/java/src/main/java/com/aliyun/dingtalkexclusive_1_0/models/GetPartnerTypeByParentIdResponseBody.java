@@ -22,7 +22,11 @@ public class GetPartnerTypeByParentIdResponseBody extends TeaModel {
     }
 
     public static class GetPartnerTypeByParentIdResponseBodyData extends TeaModel {
-        // 自标签id
+        // 子标签id
+        @NameInMap("labelId")
+        public String labelId;
+
+        // 目前无意义
         @NameInMap("typeId")
         public Float typeId;
 
@@ -33,6 +37,14 @@ public class GetPartnerTypeByParentIdResponseBody extends TeaModel {
         public static GetPartnerTypeByParentIdResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
             GetPartnerTypeByParentIdResponseBodyData self = new GetPartnerTypeByParentIdResponseBodyData();
             return TeaModel.build(map, self);
+        }
+
+        public GetPartnerTypeByParentIdResponseBodyData setLabelId(String labelId) {
+            this.labelId = labelId;
+            return this;
+        }
+        public String getLabelId() {
+            return this.labelId;
         }
 
         public GetPartnerTypeByParentIdResponseBodyData setTypeId(Float typeId) {

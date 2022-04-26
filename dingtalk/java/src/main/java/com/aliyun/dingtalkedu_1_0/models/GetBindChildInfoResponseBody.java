@@ -8,6 +8,10 @@ public class GetBindChildInfoResponseBody extends TeaModel {
     @NameInMap("childUserId")
     public String childUserId;
 
+    // 当前用户id
+    @NameInMap("currentUserId")
+    public String currentUserId;
+
     // 家庭id
     @NameInMap("familyCorpId")
     public String familyCorpId;
@@ -23,6 +27,14 @@ public class GetBindChildInfoResponseBody extends TeaModel {
     }
     public String getChildUserId() {
         return this.childUserId;
+    }
+
+    public GetBindChildInfoResponseBody setCurrentUserId(String currentUserId) {
+        this.currentUserId = currentUserId;
+        return this;
+    }
+    public String getCurrentUserId() {
+        return this.currentUserId;
     }
 
     public GetBindChildInfoResponseBody setFamilyCorpId(String familyCorpId) {
