@@ -2310,6 +2310,188 @@ class DeployFunctionCallbackResponse(TeaModel):
         return self
 
 
+class ExecuteBatchTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ExecuteBatchTaskRequest(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        files: str = None,
+        out_result: str = None,
+        remark: str = None,
+        system_token: str = None,
+        task_information_list: str = None,
+        user_id: str = None,
+    ):
+        # 宜搭应用编码
+        self.app_type = app_type
+        # 文件
+        self.files = files
+        # 审批动作
+        self.out_result = out_result
+        # 审批意见
+        self.remark = remark
+        # 宜搭应用秘钥
+        self.system_token = system_token
+        # taskInfoList
+        self.task_information_list = task_information_list
+        # 钉钉userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.files is not None:
+            result['files'] = self.files
+        if self.out_result is not None:
+            result['outResult'] = self.out_result
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.task_information_list is not None:
+            result['taskInformationList'] = self.task_information_list
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('files') is not None:
+            self.files = m.get('files')
+        if m.get('outResult') is not None:
+            self.out_result = m.get('outResult')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('taskInformationList') is not None:
+            self.task_information_list = m.get('taskInformationList')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ExecuteBatchTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        fail_number: int = None,
+        success_number: int = None,
+        total: int = None,
+    ):
+        # 审批失败的任务数
+        self.fail_number = fail_number
+        # 审批成功的任务数
+        self.success_number = success_number
+        # 总任务数
+        self.total = total
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.fail_number is not None:
+            result['failNumber'] = self.fail_number
+        if self.success_number is not None:
+            result['successNumber'] = self.success_number
+        if self.total is not None:
+            result['total'] = self.total
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('failNumber') is not None:
+            self.fail_number = m.get('failNumber')
+        if m.get('successNumber') is not None:
+            self.success_number = m.get('successNumber')
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        return self
+
+
+class ExecuteBatchTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ExecuteBatchTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ExecuteBatchTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ExecuteCustomApiHeaders(TeaModel):
     def __init__(
         self,
@@ -12693,6 +12875,160 @@ class ListNavigationByFormTypeResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = ListNavigationByFormTypeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListOperationLogsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListOperationLogsRequest(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        form_instance_id_list: List[str] = None,
+        form_uuid: str = None,
+        system_token: str = None,
+        user_id: str = None,
+    ):
+        # 宜搭应用编码
+        self.app_type = app_type
+        # 表单实例id列表
+        self.form_instance_id_list = form_instance_id_list
+        # 表单编码
+        self.form_uuid = form_uuid
+        # 宜搭应用秘钥
+        self.system_token = system_token
+        # 钉钉userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.form_instance_id_list is not None:
+            result['formInstanceIdList'] = self.form_instance_id_list
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('formInstanceIdList') is not None:
+            self.form_instance_id_list = m.get('formInstanceIdList')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ListOperationLogsResponseBody(TeaModel):
+    def __init__(
+        self,
+        operation_log_map: Dict[str, Any] = None,
+    ):
+        # 操作记录对象
+        self.operation_log_map = operation_log_map
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operation_log_map is not None:
+            result['operationLogMap'] = self.operation_log_map
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operationLogMap') is not None:
+            self.operation_log_map = m.get('operationLogMap')
+        return self
+
+
+class ListOperationLogsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListOperationLogsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListOperationLogsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

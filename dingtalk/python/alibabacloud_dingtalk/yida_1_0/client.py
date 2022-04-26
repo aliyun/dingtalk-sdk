@@ -1173,6 +1173,94 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DeployFunctionCallback', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/functionComputeConnectors/completeDeployments/notify', 'json', req, runtime)
         )
 
+    def execute_batch_task(
+        self,
+        request: dingtalkyida__1__0_models.ExecuteBatchTaskRequest,
+    ) -> dingtalkyida__1__0_models.ExecuteBatchTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.ExecuteBatchTaskHeaders()
+        return self.execute_batch_task_with_options(request, headers, runtime)
+
+    async def execute_batch_task_async(
+        self,
+        request: dingtalkyida__1__0_models.ExecuteBatchTaskRequest,
+    ) -> dingtalkyida__1__0_models.ExecuteBatchTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.ExecuteBatchTaskHeaders()
+        return await self.execute_batch_task_with_options_async(request, headers, runtime)
+
+    def execute_batch_task_with_options(
+        self,
+        request: dingtalkyida__1__0_models.ExecuteBatchTaskRequest,
+        headers: dingtalkyida__1__0_models.ExecuteBatchTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.ExecuteBatchTaskResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.files):
+            body['files'] = request.files
+        if not UtilClient.is_unset(request.out_result):
+            body['outResult'] = request.out_result
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.task_information_list):
+            body['taskInformationList'] = request.task_information_list
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.ExecuteBatchTaskResponse(),
+            self.do_roarequest('ExecuteBatchTask', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/tasks/batches/execute', 'json', req, runtime)
+        )
+
+    async def execute_batch_task_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.ExecuteBatchTaskRequest,
+        headers: dingtalkyida__1__0_models.ExecuteBatchTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.ExecuteBatchTaskResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.files):
+            body['files'] = request.files
+        if not UtilClient.is_unset(request.out_result):
+            body['outResult'] = request.out_result
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.task_information_list):
+            body['taskInformationList'] = request.task_information_list
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.ExecuteBatchTaskResponse(),
+            await self.do_roarequest_async('ExecuteBatchTask', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/tasks/batches/execute', 'json', req, runtime)
+        )
+
     def execute_custom_api(
         self,
         request: dingtalkyida__1__0_models.ExecuteCustomApiRequest,
@@ -4395,6 +4483,86 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkyida__1__0_models.ListNavigationByFormTypeResponse(),
             await self.do_roarequest_async('ListNavigationByFormType', 'yida_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/yida/apps/navigations', 'json', req, runtime)
+        )
+
+    def list_operation_logs(
+        self,
+        request: dingtalkyida__1__0_models.ListOperationLogsRequest,
+    ) -> dingtalkyida__1__0_models.ListOperationLogsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.ListOperationLogsHeaders()
+        return self.list_operation_logs_with_options(request, headers, runtime)
+
+    async def list_operation_logs_async(
+        self,
+        request: dingtalkyida__1__0_models.ListOperationLogsRequest,
+    ) -> dingtalkyida__1__0_models.ListOperationLogsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.ListOperationLogsHeaders()
+        return await self.list_operation_logs_with_options_async(request, headers, runtime)
+
+    def list_operation_logs_with_options(
+        self,
+        request: dingtalkyida__1__0_models.ListOperationLogsRequest,
+        headers: dingtalkyida__1__0_models.ListOperationLogsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.ListOperationLogsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.form_instance_id_list):
+            body['formInstanceIdList'] = request.form_instance_id_list
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.ListOperationLogsResponse(),
+            self.do_roarequest('ListOperationLogs', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/forms/operationsLogs/query', 'json', req, runtime)
+        )
+
+    async def list_operation_logs_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.ListOperationLogsRequest,
+        headers: dingtalkyida__1__0_models.ListOperationLogsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.ListOperationLogsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.form_instance_id_list):
+            body['formInstanceIdList'] = request.form_instance_id_list
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.ListOperationLogsResponse(),
+            await self.do_roarequest_async('ListOperationLogs', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/forms/operationsLogs/query', 'json', req, runtime)
         )
 
     def list_table_data_by_form_instance_id_table_id(
