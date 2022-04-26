@@ -138,6 +138,9 @@ public class PatchEventRequest extends TeaModel {
         @NameInMap("id")
         public String id;
 
+        @NameInMap("isOptional")
+        public Boolean isOptional;
+
         public static PatchEventRequestAttendees build(java.util.Map<String, ?> map) throws Exception {
             PatchEventRequestAttendees self = new PatchEventRequestAttendees();
             return TeaModel.build(map, self);
@@ -149,6 +152,14 @@ public class PatchEventRequest extends TeaModel {
         }
         public String getId() {
             return this.id;
+        }
+
+        public PatchEventRequestAttendees setIsOptional(Boolean isOptional) {
+            this.isOptional = isOptional;
+            return this;
+        }
+        public Boolean getIsOptional() {
+            return this.isOptional;
         }
 
     }

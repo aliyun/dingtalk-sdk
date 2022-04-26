@@ -30,6 +30,9 @@ public class ListEventsInstancesResponseBody extends TeaModel {
         @NameInMap("id")
         public String id;
 
+        @NameInMap("isOptional")
+        public Boolean isOptional;
+
         // 回复状态
         @NameInMap("responseStatus")
         public String responseStatus;
@@ -57,6 +60,14 @@ public class ListEventsInstancesResponseBody extends TeaModel {
         }
         public String getId() {
             return this.id;
+        }
+
+        public ListEventsInstancesResponseBodyEventsAttendees setIsOptional(Boolean isOptional) {
+            this.isOptional = isOptional;
+            return this;
+        }
+        public Boolean getIsOptional() {
+            return this.isOptional;
         }
 
         public ListEventsInstancesResponseBodyEventsAttendees setResponseStatus(String responseStatus) {

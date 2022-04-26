@@ -141,6 +141,9 @@ public class CreateEventRequest extends TeaModel {
         @NameInMap("id")
         public String id;
 
+        @NameInMap("isOptional")
+        public Boolean isOptional;
+
         public static CreateEventRequestAttendees build(java.util.Map<String, ?> map) throws Exception {
             CreateEventRequestAttendees self = new CreateEventRequestAttendees();
             return TeaModel.build(map, self);
@@ -152,6 +155,14 @@ public class CreateEventRequest extends TeaModel {
         }
         public String getId() {
             return this.id;
+        }
+
+        public CreateEventRequestAttendees setIsOptional(Boolean isOptional) {
+            this.isOptional = isOptional;
+            return this;
+        }
+        public Boolean getIsOptional() {
+            return this.isOptional;
         }
 
     }

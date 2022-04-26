@@ -24,6 +24,9 @@ public class AddAttendeeRequest extends TeaModel {
         @NameInMap("id")
         public String id;
 
+        @NameInMap("isOptional")
+        public Boolean isOptional;
+
         public static AddAttendeeRequestAttendeesToAdd build(java.util.Map<String, ?> map) throws Exception {
             AddAttendeeRequestAttendeesToAdd self = new AddAttendeeRequestAttendeesToAdd();
             return TeaModel.build(map, self);
@@ -35,6 +38,14 @@ public class AddAttendeeRequest extends TeaModel {
         }
         public String getId() {
             return this.id;
+        }
+
+        public AddAttendeeRequestAttendeesToAdd setIsOptional(Boolean isOptional) {
+            this.isOptional = isOptional;
+            return this;
+        }
+        public Boolean getIsOptional() {
+            return this.isOptional;
         }
 
     }

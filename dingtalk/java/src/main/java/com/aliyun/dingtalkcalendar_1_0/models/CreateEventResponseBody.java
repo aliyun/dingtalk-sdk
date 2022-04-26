@@ -173,6 +173,9 @@ public class CreateEventResponseBody extends TeaModel {
         @NameInMap("id")
         public String id;
 
+        @NameInMap("isOptional")
+        public Boolean isOptional;
+
         // 回复状态
         @NameInMap("responseStatus")
         public String responseStatus;
@@ -199,6 +202,14 @@ public class CreateEventResponseBody extends TeaModel {
         }
         public String getId() {
             return this.id;
+        }
+
+        public CreateEventResponseBodyAttendees setIsOptional(Boolean isOptional) {
+            this.isOptional = isOptional;
+            return this;
+        }
+        public Boolean getIsOptional() {
+            return this.isOptional;
         }
 
         public CreateEventResponseBodyAttendees setResponseStatus(String responseStatus) {
