@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [Validation(Required=false)]
             public string Id { get; set; }
 
+            [NameInMap("isOptional")]
+            [Validation(Required=false)]
+            public bool? IsOptional { get; set; }
+
         }
 
     }
