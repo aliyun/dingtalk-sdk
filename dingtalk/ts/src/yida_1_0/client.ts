@@ -1219,6 +1219,112 @@ export class DeployFunctionCallbackResponse extends $tea.Model {
   }
 }
 
+export class ExecuteBatchTaskHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExecuteBatchTaskRequest extends $tea.Model {
+  appType?: string;
+  files?: string;
+  outResult?: string;
+  remark?: string;
+  systemToken?: string;
+  taskInformationList?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      files: 'files',
+      outResult: 'outResult',
+      remark: 'remark',
+      systemToken: 'systemToken',
+      taskInformationList: 'taskInformationList',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      files: 'string',
+      outResult: 'string',
+      remark: 'string',
+      systemToken: 'string',
+      taskInformationList: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExecuteBatchTaskResponseBody extends $tea.Model {
+  failNumber?: number;
+  successNumber?: number;
+  total?: number;
+  static names(): { [key: string]: string } {
+    return {
+      failNumber: 'failNumber',
+      successNumber: 'successNumber',
+      total: 'total',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      failNumber: 'number',
+      successNumber: 'number',
+      total: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExecuteBatchTaskResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ExecuteBatchTaskResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ExecuteBatchTaskResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ExecuteCustomApiHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4978,6 +5084,100 @@ export class ListNavigationByFormTypeResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: ListNavigationByFormTypeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListOperationLogsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListOperationLogsRequest extends $tea.Model {
+  appType?: string;
+  formInstanceIdList?: string[];
+  formUuid?: string;
+  systemToken?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      formInstanceIdList: 'formInstanceIdList',
+      formUuid: 'formUuid',
+      systemToken: 'systemToken',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      formInstanceIdList: { 'type': 'array', 'itemType': 'string' },
+      formUuid: 'string',
+      systemToken: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListOperationLogsResponseBody extends $tea.Model {
+  operationLogMap?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      operationLogMap: 'operationLogMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operationLogMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListOperationLogsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListOperationLogsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListOperationLogsResponseBody,
     };
   }
 
@@ -11952,6 +12152,59 @@ export default class Client extends OpenApi {
     return $tea.cast<DeployFunctionCallbackResponse>(await this.doROARequest("DeployFunctionCallback", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/functionComputeConnectors/completeDeployments/notify`, "json", req, runtime), new DeployFunctionCallbackResponse({}));
   }
 
+  async executeBatchTask(request: ExecuteBatchTaskRequest): Promise<ExecuteBatchTaskResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ExecuteBatchTaskHeaders({ });
+    return await this.executeBatchTaskWithOptions(request, headers, runtime);
+  }
+
+  async executeBatchTaskWithOptions(request: ExecuteBatchTaskRequest, headers: ExecuteBatchTaskHeaders, runtime: $Util.RuntimeOptions): Promise<ExecuteBatchTaskResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      body["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.files)) {
+      body["files"] = request.files;
+    }
+
+    if (!Util.isUnset(request.outResult)) {
+      body["outResult"] = request.outResult;
+    }
+
+    if (!Util.isUnset(request.remark)) {
+      body["remark"] = request.remark;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      body["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.taskInformationList)) {
+      body["taskInformationList"] = request.taskInformationList;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ExecuteBatchTaskResponse>(await this.doROARequest("ExecuteBatchTask", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/tasks/batches/execute`, "json", req, runtime), new ExecuteBatchTaskResponse({}));
+  }
+
   async executeCustomApi(request: ExecuteCustomApiRequest): Promise<ExecuteCustomApiResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ExecuteCustomApiHeaders({ });
@@ -13785,6 +14038,51 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<ListNavigationByFormTypeResponse>(await this.doROARequest("ListNavigationByFormType", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/apps/navigations`, "json", req, runtime), new ListNavigationByFormTypeResponse({}));
+  }
+
+  async listOperationLogs(request: ListOperationLogsRequest): Promise<ListOperationLogsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListOperationLogsHeaders({ });
+    return await this.listOperationLogsWithOptions(request, headers, runtime);
+  }
+
+  async listOperationLogsWithOptions(request: ListOperationLogsRequest, headers: ListOperationLogsHeaders, runtime: $Util.RuntimeOptions): Promise<ListOperationLogsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      body["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.formInstanceIdList)) {
+      body["formInstanceIdList"] = request.formInstanceIdList;
+    }
+
+    if (!Util.isUnset(request.formUuid)) {
+      body["formUuid"] = request.formUuid;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      body["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ListOperationLogsResponse>(await this.doROARequest("ListOperationLogs", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/operationsLogs/query`, "json", req, runtime), new ListOperationLogsResponse({}));
   }
 
   async listTableDataByFormInstanceIdTableId(formInstanceId: string, request: ListTableDataByFormInstanceIdTableIdRequest): Promise<ListTableDataByFormInstanceIdTableIdResponse> {
