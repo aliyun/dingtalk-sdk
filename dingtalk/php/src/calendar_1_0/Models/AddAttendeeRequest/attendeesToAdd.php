@@ -12,8 +12,14 @@ class attendeesToAdd extends Model
      * @var string
      */
     public $id;
+
+    /**
+     * @var bool
+     */
+    public $isOptional;
     protected $_name = [
-        'id' => 'id',
+        'id'         => 'id',
+        'isOptional' => 'isOptional',
     ];
 
     public function validate()
@@ -25,6 +31,9 @@ class attendeesToAdd extends Model
         $res = [];
         if (null !== $this->id) {
             $res['id'] = $this->id;
+        }
+        if (null !== $this->isOptional) {
+            $res['isOptional'] = $this->isOptional;
         }
 
         return $res;
@@ -40,6 +49,9 @@ class attendeesToAdd extends Model
         $model = new self();
         if (isset($map['id'])) {
             $model->id = $map['id'];
+        }
+        if (isset($map['isOptional'])) {
+            $model->isOptional = $map['isOptional'];
         }
 
         return $model;

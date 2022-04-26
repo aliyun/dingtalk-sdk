@@ -21,6 +21,11 @@ class attendees extends Model
     public $id;
 
     /**
+     * @var bool
+     */
+    public $isOptional;
+
+    /**
      * @description 回复状态
      *
      * @var string
@@ -36,6 +41,7 @@ class attendees extends Model
     protected $_name = [
         'displayName'    => 'displayName',
         'id'             => 'id',
+        'isOptional'     => 'isOptional',
         'responseStatus' => 'responseStatus',
         'self'           => 'self',
     ];
@@ -52,6 +58,9 @@ class attendees extends Model
         }
         if (null !== $this->id) {
             $res['id'] = $this->id;
+        }
+        if (null !== $this->isOptional) {
+            $res['isOptional'] = $this->isOptional;
         }
         if (null !== $this->responseStatus) {
             $res['responseStatus'] = $this->responseStatus;
@@ -76,6 +85,9 @@ class attendees extends Model
         }
         if (isset($map['id'])) {
             $model->id = $map['id'];
+        }
+        if (isset($map['isOptional'])) {
+            $model->isOptional = $map['isOptional'];
         }
         if (isset($map['responseStatus'])) {
             $model->responseStatus = $map['responseStatus'];
