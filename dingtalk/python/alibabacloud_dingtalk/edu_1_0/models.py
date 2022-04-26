@@ -7590,10 +7590,13 @@ class GetBindChildInfoResponseBody(TeaModel):
     def __init__(
         self,
         child_user_id: str = None,
+        current_user_id: str = None,
         family_corp_id: str = None,
     ):
         # 孩子id
         self.child_user_id = child_user_id
+        # 当前用户id
+        self.current_user_id = current_user_id
         # 家庭id
         self.family_corp_id = family_corp_id
 
@@ -7608,6 +7611,8 @@ class GetBindChildInfoResponseBody(TeaModel):
         result = dict()
         if self.child_user_id is not None:
             result['childUserId'] = self.child_user_id
+        if self.current_user_id is not None:
+            result['currentUserId'] = self.current_user_id
         if self.family_corp_id is not None:
             result['familyCorpId'] = self.family_corp_id
         return result
@@ -7616,6 +7621,8 @@ class GetBindChildInfoResponseBody(TeaModel):
         m = m or dict()
         if m.get('childUserId') is not None:
             self.child_user_id = m.get('childUserId')
+        if m.get('currentUserId') is not None:
+            self.current_user_id = m.get('currentUserId')
         if m.get('familyCorpId') is not None:
             self.family_corp_id = m.get('familyCorpId')
         return self

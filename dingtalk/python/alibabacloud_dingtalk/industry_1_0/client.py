@@ -2423,6 +2423,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryMedicalEvents', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/events', 'json', req, runtime)
         )
 
+    def query_user_credentials(
+        self,
+        request: dingtalkindustry__1__0_models.QueryUserCredentialsRequest,
+    ) -> dingtalkindustry__1__0_models.QueryUserCredentialsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryUserCredentialsHeaders()
+        return self.query_user_credentials_with_options(request, headers, runtime)
+
+    async def query_user_credentials_async(
+        self,
+        request: dingtalkindustry__1__0_models.QueryUserCredentialsRequest,
+    ) -> dingtalkindustry__1__0_models.QueryUserCredentialsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryUserCredentialsHeaders()
+        return await self.query_user_credentials_with_options_async(request, headers, runtime)
+
+    def query_user_credentials_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.QueryUserCredentialsRequest,
+        headers: dingtalkindustry__1__0_models.QueryUserCredentialsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryUserCredentialsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryUserCredentialsResponse(),
+            self.do_roarequest('QueryUserCredentials', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/medicals/users/credentials/query', 'json', req, runtime)
+        )
+
+    async def query_user_credentials_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.QueryUserCredentialsRequest,
+        headers: dingtalkindustry__1__0_models.QueryUserCredentialsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryUserCredentialsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryUserCredentialsResponse(),
+            await self.do_roarequest_async('QueryUserCredentials', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/medicals/users/credentials/query', 'json', req, runtime)
+        )
+
     def query_user_ext_info(
         self,
         user_id: str,

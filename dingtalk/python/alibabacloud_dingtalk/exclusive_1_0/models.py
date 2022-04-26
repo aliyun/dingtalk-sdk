@@ -3207,10 +3207,13 @@ class GetPartnerTypeByParentIdHeaders(TeaModel):
 class GetPartnerTypeByParentIdResponseBodyData(TeaModel):
     def __init__(
         self,
+        label_id: str = None,
         type_id: float = None,
         type_name: str = None,
     ):
-        # 自标签id
+        # 子标签id
+        self.label_id = label_id
+        # 目前无意义
         self.type_id = type_id
         # 子标签名
         self.type_name = type_name
@@ -3224,6 +3227,8 @@ class GetPartnerTypeByParentIdResponseBodyData(TeaModel):
             return _map
 
         result = dict()
+        if self.label_id is not None:
+            result['labelId'] = self.label_id
         if self.type_id is not None:
             result['typeId'] = self.type_id
         if self.type_name is not None:
@@ -3232,6 +3237,8 @@ class GetPartnerTypeByParentIdResponseBodyData(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('labelId') is not None:
+            self.label_id = m.get('labelId')
         if m.get('typeId') is not None:
             self.type_id = m.get('typeId')
         if m.get('typeName') is not None:
