@@ -44,6 +44,9 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\DeleteSequenceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\DeployFunctionCallbackHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\DeployFunctionCallbackRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\DeployFunctionCallbackResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ExecuteBatchTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ExecuteBatchTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ExecuteBatchTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ExecuteCustomApiHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ExecuteCustomApiRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ExecuteCustomApiResponse;
@@ -155,6 +158,9 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListFormRemarksResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListNavigationByFormTypeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListNavigationByFormTypeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListNavigationByFormTypeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListOperationLogsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListOperationLogsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListOperationLogsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListTableDataByFormInstanceIdTableIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListTableDataByFormInstanceIdTableIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListTableDataByFormInstanceIdTableIdResponse;
@@ -1060,6 +1066,66 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeployFunctionCallbackResponse::fromMap($this->doROARequest('DeployFunctionCallback', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/functionComputeConnectors/completeDeployments/notify', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ExecuteBatchTaskRequest $request
+     *
+     * @return ExecuteBatchTaskResponse
+     */
+    public function executeBatchTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ExecuteBatchTaskHeaders([]);
+
+        return $this->executeBatchTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ExecuteBatchTaskRequest $request
+     * @param ExecuteBatchTaskHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return ExecuteBatchTaskResponse
+     */
+    public function executeBatchTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->files)) {
+            @$body['files'] = $request->files;
+        }
+        if (!Utils::isUnset($request->outResult)) {
+            @$body['outResult'] = $request->outResult;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            @$body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->taskInformationList)) {
+            @$body['taskInformationList'] = $request->taskInformationList;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ExecuteBatchTaskResponse::fromMap($this->doROARequest('ExecuteBatchTask', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/tasks/batches/execute', 'json', $req, $runtime));
     }
 
     /**
@@ -3227,6 +3293,60 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListNavigationByFormTypeResponse::fromMap($this->doROARequest('ListNavigationByFormType', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/apps/navigations', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListOperationLogsRequest $request
+     *
+     * @return ListOperationLogsResponse
+     */
+    public function listOperationLogs($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListOperationLogsHeaders([]);
+
+        return $this->listOperationLogsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListOperationLogsRequest $request
+     * @param ListOperationLogsHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return ListOperationLogsResponse
+     */
+    public function listOperationLogsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->formInstanceIdList)) {
+            @$body['formInstanceIdList'] = $request->formInstanceIdList;
+        }
+        if (!Utils::isUnset($request->formUuid)) {
+            @$body['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ListOperationLogsResponse::fromMap($this->doROARequest('ListOperationLogs', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/forms/operationsLogs/query', 'json', $req, $runtime));
     }
 
     /**
