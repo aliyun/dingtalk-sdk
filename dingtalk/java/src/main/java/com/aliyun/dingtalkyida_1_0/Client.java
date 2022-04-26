@@ -711,6 +711,59 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("DeployFunctionCallback", "yida_1.0", "HTTP", "POST", "AK", "/v1.0/yida/functionComputeConnectors/completeDeployments/notify", "json", req, runtime), new DeployFunctionCallbackResponse());
     }
 
+    public ExecuteBatchTaskResponse executeBatchTask(ExecuteBatchTaskRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        ExecuteBatchTaskHeaders headers = new ExecuteBatchTaskHeaders();
+        return this.executeBatchTaskWithOptions(request, headers, runtime);
+    }
+
+    public ExecuteBatchTaskResponse executeBatchTaskWithOptions(ExecuteBatchTaskRequest request, ExecuteBatchTaskHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.appType)) {
+            body.put("appType", request.appType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.files)) {
+            body.put("files", request.files);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outResult)) {
+            body.put("outResult", request.outResult);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.remark)) {
+            body.put("remark", request.remark);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.systemToken)) {
+            body.put("systemToken", request.systemToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskInformationList)) {
+            body.put("taskInformationList", request.taskInformationList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("ExecuteBatchTask", "yida_1.0", "HTTP", "POST", "AK", "/v1.0/yida/tasks/batches/execute", "json", req, runtime), new ExecuteBatchTaskResponse());
+    }
+
     public ExecuteCustomApiResponse executeCustomApi(ExecuteCustomApiRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         ExecuteCustomApiHeaders headers = new ExecuteCustomApiHeaders();
@@ -2544,6 +2597,51 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("ListNavigationByFormType", "yida_1.0", "HTTP", "GET", "AK", "/v1.0/yida/apps/navigations", "json", req, runtime), new ListNavigationByFormTypeResponse());
+    }
+
+    public ListOperationLogsResponse listOperationLogs(ListOperationLogsRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        ListOperationLogsHeaders headers = new ListOperationLogsHeaders();
+        return this.listOperationLogsWithOptions(request, headers, runtime);
+    }
+
+    public ListOperationLogsResponse listOperationLogsWithOptions(ListOperationLogsRequest request, ListOperationLogsHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.appType)) {
+            body.put("appType", request.appType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.formInstanceIdList)) {
+            body.put("formInstanceIdList", request.formInstanceIdList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.formUuid)) {
+            body.put("formUuid", request.formUuid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.systemToken)) {
+            body.put("systemToken", request.systemToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("ListOperationLogs", "yida_1.0", "HTTP", "POST", "AK", "/v1.0/yida/forms/operationsLogs/query", "json", req, runtime), new ListOperationLogsResponse());
     }
 
     public ListTableDataByFormInstanceIdTableIdResponse listTableDataByFormInstanceIdTableId(String formInstanceId, ListTableDataByFormInstanceIdTableIdRequest request) throws Exception {
