@@ -9,7 +9,14 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 自标签id
+     * @description 子标签id
+     *
+     * @var string
+     */
+    public $labelId;
+
+    /**
+     * @description 目前无意义
      *
      * @var float
      */
@@ -22,6 +29,7 @@ class data extends Model
      */
     public $typeName;
     protected $_name = [
+        'labelId'  => 'labelId',
         'typeId'   => 'typeId',
         'typeName' => 'typeName',
     ];
@@ -33,6 +41,9 @@ class data extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->labelId) {
+            $res['labelId'] = $this->labelId;
+        }
         if (null !== $this->typeId) {
             $res['typeId'] = $this->typeId;
         }
@@ -51,6 +62,9 @@ class data extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['labelId'])) {
+            $model->labelId = $map['labelId'];
+        }
         if (isset($map['typeId'])) {
             $model->typeId = $map['typeId'];
         }

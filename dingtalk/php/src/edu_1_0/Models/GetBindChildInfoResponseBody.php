@@ -16,14 +16,22 @@ class GetBindChildInfoResponseBody extends Model
     public $childUserId;
 
     /**
+     * @description 当前用户id
+     *
+     * @var string
+     */
+    public $currentUserId;
+
+    /**
      * @description 家庭id
      *
      * @var string
      */
     public $familyCorpId;
     protected $_name = [
-        'childUserId'  => 'childUserId',
-        'familyCorpId' => 'familyCorpId',
+        'childUserId'   => 'childUserId',
+        'currentUserId' => 'currentUserId',
+        'familyCorpId'  => 'familyCorpId',
     ];
 
     public function validate()
@@ -35,6 +43,9 @@ class GetBindChildInfoResponseBody extends Model
         $res = [];
         if (null !== $this->childUserId) {
             $res['childUserId'] = $this->childUserId;
+        }
+        if (null !== $this->currentUserId) {
+            $res['currentUserId'] = $this->currentUserId;
         }
         if (null !== $this->familyCorpId) {
             $res['familyCorpId'] = $this->familyCorpId;
@@ -53,6 +64,9 @@ class GetBindChildInfoResponseBody extends Model
         $model = new self();
         if (isset($map['childUserId'])) {
             $model->childUserId = $map['childUserId'];
+        }
+        if (isset($map['currentUserId'])) {
+            $model->currentUserId = $map['currentUserId'];
         }
         if (isset($map['familyCorpId'])) {
             $model->familyCorpId = $map['familyCorpId'];

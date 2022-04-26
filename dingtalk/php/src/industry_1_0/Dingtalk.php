@@ -94,6 +94,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryJobStatusCodeDictionaryH
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryJobStatusCodeDictionaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryMedicalEventsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryMedicalEventsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserCredentialsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserCredentialsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserCredentialsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserExtendValuesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserExtendValuesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserExtendValuesResponse;
@@ -1753,6 +1756,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryMedicalEventsResponse::fromMap($this->doROARequest('QueryMedicalEvents', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/events', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryUserCredentialsRequest $request
+     *
+     * @return QueryUserCredentialsResponse
+     */
+    public function queryUserCredentials($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryUserCredentialsHeaders([]);
+
+        return $this->queryUserCredentialsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryUserCredentialsRequest $request
+     * @param QueryUserCredentialsHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return QueryUserCredentialsResponse
+     */
+    public function queryUserCredentialsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userIds)) {
+            @$body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return QueryUserCredentialsResponse::fromMap($this->doROARequest('QueryUserCredentials', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/medicals/users/credentials/query', 'json', $req, $runtime));
     }
 
     /**
