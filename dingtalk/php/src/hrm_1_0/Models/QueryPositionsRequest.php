@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class QueryPositionsRequest extends Model
 {
     /**
+     * @description 部门id
+     *
+     * @var int
+     */
+    public $deptId;
+
+    /**
      * @description 职位类别列表
      *
      * @var string[]
@@ -43,6 +50,7 @@ class QueryPositionsRequest extends Model
      */
     public $nextToken;
     protected $_name = [
+        'deptId'        => 'deptId',
         'inCategoryIds' => 'inCategoryIds',
         'inPositionIds' => 'inPositionIds',
         'positionName'  => 'positionName',
@@ -57,6 +65,9 @@ class QueryPositionsRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->deptId) {
+            $res['deptId'] = $this->deptId;
+        }
         if (null !== $this->inCategoryIds) {
             $res['inCategoryIds'] = $this->inCategoryIds;
         }
@@ -84,6 +95,9 @@ class QueryPositionsRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['deptId'])) {
+            $model->deptId = $map['deptId'];
+        }
         if (isset($map['inCategoryIds'])) {
             if (!empty($map['inCategoryIds'])) {
                 $model->inCategoryIds = $map['inCategoryIds'];

@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class resultList extends Model
 {
     /**
-     * @description 客户群chatId
-     *
-     * @var string
-     */
-    public $chatId;
-
-    /**
      * @description 创建时间(时间戳)
      *
      * @var int
@@ -64,7 +57,6 @@ class resultList extends Model
      */
     public $ownerUserName;
     protected $_name = [
-        'chatId'             => 'chatId',
         'gmtCreate'          => 'gmtCreate',
         'memberCount'        => 'memberCount',
         'name'               => 'name',
@@ -81,9 +73,6 @@ class resultList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->chatId) {
-            $res['chatId'] = $this->chatId;
-        }
         if (null !== $this->gmtCreate) {
             $res['gmtCreate'] = $this->gmtCreate;
         }
@@ -117,9 +106,6 @@ class resultList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['chatId'])) {
-            $model->chatId = $map['chatId'];
-        }
         if (isset($map['gmtCreate'])) {
             $model->gmtCreate = $map['gmtCreate'];
         }

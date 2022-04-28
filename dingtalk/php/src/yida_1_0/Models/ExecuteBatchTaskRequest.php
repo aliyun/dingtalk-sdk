@@ -16,13 +16,6 @@ class ExecuteBatchTaskRequest extends Model
     public $appType;
 
     /**
-     * @description 文件
-     *
-     * @var string
-     */
-    public $files;
-
-    /**
      * @description 审批动作
      *
      * @var string
@@ -58,7 +51,6 @@ class ExecuteBatchTaskRequest extends Model
     public $userId;
     protected $_name = [
         'appType'             => 'appType',
-        'files'               => 'files',
         'outResult'           => 'outResult',
         'remark'              => 'remark',
         'systemToken'         => 'systemToken',
@@ -75,9 +67,6 @@ class ExecuteBatchTaskRequest extends Model
         $res = [];
         if (null !== $this->appType) {
             $res['appType'] = $this->appType;
-        }
-        if (null !== $this->files) {
-            $res['files'] = $this->files;
         }
         if (null !== $this->outResult) {
             $res['outResult'] = $this->outResult;
@@ -108,9 +97,6 @@ class ExecuteBatchTaskRequest extends Model
         $model = new self();
         if (isset($map['appType'])) {
             $model->appType = $map['appType'];
-        }
-        if (isset($map['files'])) {
-            $model->files = $map['files'];
         }
         if (isset($map['outResult'])) {
             $model->outResult = $map['outResult'];

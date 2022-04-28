@@ -17,12 +17,18 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddCustomerTrackResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddRelationMetaFieldHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddRelationMetaFieldRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddRelationMetaFieldResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddContactsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddContactsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddContactsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddRelationDatasHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddRelationDatasRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddRelationDatasResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchSendOfficialAccountOTOMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchSendOfficialAccountOTOMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchSendOfficialAccountOTOMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchUpdateContactsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchUpdateContactsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchUpdateContactsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchUpdateRelationDatasHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchUpdateRelationDatasRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchUpdateRelationDatasResponse;
@@ -374,6 +380,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param BatchAddContactsRequest $request
+     *
+     * @return BatchAddContactsResponse
+     */
+    public function batchAddContacts($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchAddContactsHeaders([]);
+
+        return $this->batchAddContactsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchAddContactsRequest $request
+     * @param BatchAddContactsHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return BatchAddContactsResponse
+     */
+    public function batchAddContactsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operatorUserId)) {
+            @$body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->relationList)) {
+            @$body['relationList'] = $request->relationList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchAddContactsResponse::fromMap($this->doROARequest('BatchAddContacts', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/contacts/batch', 'json', $req, $runtime));
+    }
+
+    /**
      * @param BatchAddRelationDatasRequest $request
      *
      * @return BatchAddRelationDatasResponse
@@ -470,6 +521,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return BatchSendOfficialAccountOTOMessageResponse::fromMap($this->doROARequest('BatchSendOfficialAccountOTOMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/officialAccounts/oToMessages/batchSend', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BatchUpdateContactsRequest $request
+     *
+     * @return BatchUpdateContactsResponse
+     */
+    public function batchUpdateContacts($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchUpdateContactsHeaders([]);
+
+        return $this->batchUpdateContactsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchUpdateContactsRequest $request
+     * @param BatchUpdateContactsHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return BatchUpdateContactsResponse
+     */
+    public function batchUpdateContactsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operatorUserId)) {
+            @$body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->relationList)) {
+            @$body['relationList'] = $request->relationList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchUpdateContactsResponse::fromMap($this->doROARequest('BatchUpdateContacts', 'crm_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/crm/contacts/batch', 'json', $req, $runtime));
     }
 
     /**

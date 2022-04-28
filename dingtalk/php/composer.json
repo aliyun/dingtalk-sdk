@@ -46,6 +46,7 @@
       "AlibabaCloud\\SDK\\Dingtalk\\Vexclusive_1_0\\": "src/exclusive_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vfinance_1_0\\": "src/finance_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vflashmeeting_1_0\\": "src/flashmeeting_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vgroup_blackboard_1_0\\": "src/group_blackboard_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vh3yun_1_0\\": "src/h3yun_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vhrbrain_1_0\\": "src/hrbrain_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vhrm_1_0\\": "src/hrm_1_0/",

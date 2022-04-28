@@ -1095,9 +1095,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->appType)) {
             @$body['appType'] = $request->appType;
         }
-        if (!Utils::isUnset($request->files)) {
-            @$body['files'] = $request->files;
-        }
         if (!Utils::isUnset($request->outResult)) {
             @$body['outResult'] = $request->outResult;
         }

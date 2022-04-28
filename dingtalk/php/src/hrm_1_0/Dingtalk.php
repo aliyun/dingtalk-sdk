@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmPreentryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessTransferHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessTransferRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessTransferResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryResponse;
@@ -152,6 +155,72 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ECertQueryResponse::fromMap($this->doROARequest('ECertQuery', 'hrm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/hrm/eCerts', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param HrmProcessTransferRequest $request
+     *
+     * @return HrmProcessTransferResponse
+     */
+    public function hrmProcessTransfer($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrmProcessTransferHeaders([]);
+
+        return $this->hrmProcessTransferWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param HrmProcessTransferRequest $request
+     * @param HrmProcessTransferHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return HrmProcessTransferResponse
+     */
+    public function hrmProcessTransferWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deptIdsAfterTransfer)) {
+            @$body['deptIdsAfterTransfer'] = $request->deptIdsAfterTransfer;
+        }
+        if (!Utils::isUnset($request->jobIdAfterTransfer)) {
+            @$body['jobIdAfterTransfer'] = $request->jobIdAfterTransfer;
+        }
+        if (!Utils::isUnset($request->mainDeptIdAfterTransfer)) {
+            @$body['mainDeptIdAfterTransfer'] = $request->mainDeptIdAfterTransfer;
+        }
+        if (!Utils::isUnset($request->operateUserId)) {
+            @$body['operateUserId'] = $request->operateUserId;
+        }
+        if (!Utils::isUnset($request->positionIdAfterTransfer)) {
+            @$body['positionIdAfterTransfer'] = $request->positionIdAfterTransfer;
+        }
+        if (!Utils::isUnset($request->positionLevelAfterTransfer)) {
+            @$body['positionLevelAfterTransfer'] = $request->positionLevelAfterTransfer;
+        }
+        if (!Utils::isUnset($request->positionNameAfterTransfer)) {
+            @$body['positionNameAfterTransfer'] = $request->positionNameAfterTransfer;
+        }
+        if (!Utils::isUnset($request->rankIdAfterTransfer)) {
+            @$body['rankIdAfterTransfer'] = $request->rankIdAfterTransfer;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return HrmProcessTransferResponse::fromMap($this->doROARequest('HrmProcessTransfer', 'hrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrm/processes/transfer', 'json', $req, $runtime));
     }
 
     /**
@@ -536,6 +605,9 @@ class Dingtalk extends OpenApiClient
             @$query['nextToken'] = $request->nextToken;
         }
         $body = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$body['deptId'] = $request->deptId;
+        }
         if (!Utils::isUnset($request->inCategoryIds)) {
             @$body['inCategoryIds'] = $request->inCategoryIds;
         }
