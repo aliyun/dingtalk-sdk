@@ -31,13 +31,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public List<QueryCrmGroupChatsResponseBodyResultList> ResultList { get; set; }
         public class QueryCrmGroupChatsResponseBodyResultList : TeaModel {
             /// <summary>
-            /// 客户群chatId
-            /// </summary>
-            [NameInMap("chatId")]
-            [Validation(Required=false)]
-            public string ChatId { get; set; }
-
-            /// <summary>
             /// 创建时间(时间戳)
             /// </summary>
             [NameInMap("gmtCreate")]

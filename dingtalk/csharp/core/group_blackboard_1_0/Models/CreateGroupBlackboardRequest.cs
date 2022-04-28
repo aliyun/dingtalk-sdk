@@ -6,46 +6,46 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkgroup_blackboard_1_0.Models
 {
-    public class ExecuteBatchTaskRequest : TeaModel {
+    public class CreateGroupBlackboardRequest : TeaModel {
         /// <summary>
-        /// 宜搭应用编码
+        /// 文本内容
         /// </summary>
-        [NameInMap("appType")]
+        [NameInMap("content")]
         [Validation(Required=false)]
-        public string AppType { get; set; }
+        public string Content { get; set; }
 
         /// <summary>
-        /// 审批动作
+        /// 群会话的 Id
         /// </summary>
-        [NameInMap("outResult")]
+        [NameInMap("openConversationId")]
         [Validation(Required=false)]
-        public string OutResult { get; set; }
+        public string OpenConversationId { get; set; }
 
         /// <summary>
-        /// 审批意见
+        /// 是否发DING
         /// </summary>
-        [NameInMap("remark")]
+        [NameInMap("sendDing")]
         [Validation(Required=false)]
-        public string Remark { get; set; }
+        public bool? SendDing { get; set; }
 
         /// <summary>
-        /// 宜搭应用秘钥
+        /// 是否设为置顶
         /// </summary>
-        [NameInMap("systemToken")]
+        [NameInMap("sticky")]
         [Validation(Required=false)]
-        public string SystemToken { get; set; }
+        public bool? Sticky { get; set; }
 
         /// <summary>
-        /// taskInfoList
+        /// 业务唯一键
         /// </summary>
-        [NameInMap("taskInformationList")]
+        [NameInMap("uniqueId")]
         [Validation(Required=false)]
-        public string TaskInformationList { get; set; }
+        public string UniqueId { get; set; }
 
         /// <summary>
-        /// 钉钉userId
+        /// 操作用户的 userId
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

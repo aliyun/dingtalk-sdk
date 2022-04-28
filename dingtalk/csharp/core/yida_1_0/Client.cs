@@ -1506,10 +1506,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             {
                 body["appType"] = request.AppType;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Files))
-            {
-                body["files"] = request.Files;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutResult))
             {
                 body["outResult"] = request.OutResult;
@@ -1554,10 +1550,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppType))
             {
                 body["appType"] = request.AppType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Files))
-            {
-                body["files"] = request.Files;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutResult))
             {

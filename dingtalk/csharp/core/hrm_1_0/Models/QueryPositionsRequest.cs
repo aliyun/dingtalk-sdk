@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class QueryPositionsRequest : TeaModel {
         /// <summary>
+        /// 部门id
+        /// </summary>
+        [NameInMap("deptId")]
+        [Validation(Required=false)]
+        public long? DeptId { get; set; }
+
+        /// <summary>
         /// 职位类别列表
         /// </summary>
         [NameInMap("inCategoryIds")]

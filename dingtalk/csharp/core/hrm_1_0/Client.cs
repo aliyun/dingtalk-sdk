@@ -186,6 +186,134 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             return TeaModel.ToObject<ECertQueryResponse>(await DoROARequestAsync("ECertQuery", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/eCerts", "json", req, runtime));
         }
 
+        public HrmProcessTransferResponse HrmProcessTransfer(HrmProcessTransferRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrmProcessTransferHeaders headers = new HrmProcessTransferHeaders();
+            return HrmProcessTransferWithOptions(request, headers, runtime);
+        }
+
+        public async Task<HrmProcessTransferResponse> HrmProcessTransferAsync(HrmProcessTransferRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrmProcessTransferHeaders headers = new HrmProcessTransferHeaders();
+            return await HrmProcessTransferWithOptionsAsync(request, headers, runtime);
+        }
+
+        public HrmProcessTransferResponse HrmProcessTransferWithOptions(HrmProcessTransferRequest request, HrmProcessTransferHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIdsAfterTransfer))
+            {
+                body["deptIdsAfterTransfer"] = request.DeptIdsAfterTransfer;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobIdAfterTransfer))
+            {
+                body["jobIdAfterTransfer"] = request.JobIdAfterTransfer;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MainDeptIdAfterTransfer))
+            {
+                body["mainDeptIdAfterTransfer"] = request.MainDeptIdAfterTransfer;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperateUserId))
+            {
+                body["operateUserId"] = request.OperateUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PositionIdAfterTransfer))
+            {
+                body["positionIdAfterTransfer"] = request.PositionIdAfterTransfer;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PositionLevelAfterTransfer))
+            {
+                body["positionLevelAfterTransfer"] = request.PositionLevelAfterTransfer;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PositionNameAfterTransfer))
+            {
+                body["positionNameAfterTransfer"] = request.PositionNameAfterTransfer;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RankIdAfterTransfer))
+            {
+                body["rankIdAfterTransfer"] = request.RankIdAfterTransfer;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<HrmProcessTransferResponse>(DoROARequest("HrmProcessTransfer", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/processes/transfer", "json", req, runtime));
+        }
+
+        public async Task<HrmProcessTransferResponse> HrmProcessTransferWithOptionsAsync(HrmProcessTransferRequest request, HrmProcessTransferHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIdsAfterTransfer))
+            {
+                body["deptIdsAfterTransfer"] = request.DeptIdsAfterTransfer;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobIdAfterTransfer))
+            {
+                body["jobIdAfterTransfer"] = request.JobIdAfterTransfer;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MainDeptIdAfterTransfer))
+            {
+                body["mainDeptIdAfterTransfer"] = request.MainDeptIdAfterTransfer;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperateUserId))
+            {
+                body["operateUserId"] = request.OperateUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PositionIdAfterTransfer))
+            {
+                body["positionIdAfterTransfer"] = request.PositionIdAfterTransfer;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PositionLevelAfterTransfer))
+            {
+                body["positionLevelAfterTransfer"] = request.PositionLevelAfterTransfer;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PositionNameAfterTransfer))
+            {
+                body["positionNameAfterTransfer"] = request.PositionNameAfterTransfer;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RankIdAfterTransfer))
+            {
+                body["rankIdAfterTransfer"] = request.RankIdAfterTransfer;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<HrmProcessTransferResponse>(await DoROARequestAsync("HrmProcessTransfer", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/processes/transfer", "json", req, runtime));
+        }
+
         public MasterDataQueryResponse MasterDataQuery(MasterDataQueryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -811,6 +939,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 query["nextToken"] = request.NextToken;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InCategoryIds))
             {
                 body["inCategoryIds"] = request.InCategoryIds;
@@ -854,6 +986,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 query["nextToken"] = request.NextToken;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InCategoryIds))
             {
                 body["inCategoryIds"] = request.InCategoryIds;
