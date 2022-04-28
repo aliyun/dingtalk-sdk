@@ -217,6 +217,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("AddRelationMetaField", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/relations/metas/fields", "json", req, runtime), new AddRelationMetaFieldResponse());
     }
 
+    public BatchAddContactsResponse batchAddContacts(BatchAddContactsRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        BatchAddContactsHeaders headers = new BatchAddContactsHeaders();
+        return this.batchAddContactsWithOptions(request, headers, runtime);
+    }
+
+    public BatchAddContactsResponse batchAddContactsWithOptions(BatchAddContactsRequest request, BatchAddContactsHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorUserId)) {
+            body.put("operatorUserId", request.operatorUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.relationList)) {
+            body.put("relationList", request.relationList);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("BatchAddContacts", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/contacts/batch", "json", req, runtime), new BatchAddContactsResponse());
+    }
+
     public BatchAddRelationDatasResponse batchAddRelationDatas(BatchAddRelationDatasRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         BatchAddRelationDatasHeaders headers = new BatchAddRelationDatasHeaders();
@@ -293,6 +326,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("BatchSendOfficialAccountOTOMessage", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/officialAccounts/oToMessages/batchSend", "json", req, runtime), new BatchSendOfficialAccountOTOMessageResponse());
+    }
+
+    public BatchUpdateContactsResponse batchUpdateContacts(BatchUpdateContactsRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        BatchUpdateContactsHeaders headers = new BatchUpdateContactsHeaders();
+        return this.batchUpdateContactsWithOptions(request, headers, runtime);
+    }
+
+    public BatchUpdateContactsResponse batchUpdateContactsWithOptions(BatchUpdateContactsRequest request, BatchUpdateContactsHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorUserId)) {
+            body.put("operatorUserId", request.operatorUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.relationList)) {
+            body.put("relationList", request.relationList);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("BatchUpdateContacts", "crm_1.0", "HTTP", "PUT", "AK", "/v1.0/crm/contacts/batch", "json", req, runtime), new BatchUpdateContactsResponse());
     }
 
     public BatchUpdateRelationDatasResponse batchUpdateRelationDatas(BatchUpdateRelationDatasRequest request) throws Exception {

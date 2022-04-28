@@ -95,6 +95,67 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("ECertQuery", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/eCerts", "json", req, runtime), new ECertQueryResponse());
     }
 
+    public HrmProcessTransferResponse hrmProcessTransfer(HrmProcessTransferRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        HrmProcessTransferHeaders headers = new HrmProcessTransferHeaders();
+        return this.hrmProcessTransferWithOptions(request, headers, runtime);
+    }
+
+    public HrmProcessTransferResponse hrmProcessTransferWithOptions(HrmProcessTransferRequest request, HrmProcessTransferHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deptIdsAfterTransfer)) {
+            body.put("deptIdsAfterTransfer", request.deptIdsAfterTransfer);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.jobIdAfterTransfer)) {
+            body.put("jobIdAfterTransfer", request.jobIdAfterTransfer);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.mainDeptIdAfterTransfer)) {
+            body.put("mainDeptIdAfterTransfer", request.mainDeptIdAfterTransfer);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operateUserId)) {
+            body.put("operateUserId", request.operateUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.positionIdAfterTransfer)) {
+            body.put("positionIdAfterTransfer", request.positionIdAfterTransfer);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.positionLevelAfterTransfer)) {
+            body.put("positionLevelAfterTransfer", request.positionLevelAfterTransfer);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.positionNameAfterTransfer)) {
+            body.put("positionNameAfterTransfer", request.positionNameAfterTransfer);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.rankIdAfterTransfer)) {
+            body.put("rankIdAfterTransfer", request.rankIdAfterTransfer);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("HrmProcessTransfer", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/processes/transfer", "json", req, runtime), new HrmProcessTransferResponse());
+    }
+
     public MasterDataQueryResponse masterDataQuery(MasterDataQueryRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         MasterDataQueryHeaders headers = new MasterDataQueryHeaders();
@@ -391,6 +452,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deptId)) {
+            body.put("deptId", request.deptId);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.inCategoryIds)) {
             body.put("inCategoryIds", request.inCategoryIds);
         }

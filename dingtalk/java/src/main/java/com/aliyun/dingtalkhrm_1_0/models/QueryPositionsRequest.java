@@ -4,6 +4,10 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPositionsRequest extends TeaModel {
+    // 部门id
+    @NameInMap("deptId")
+    public Long deptId;
+
     // 职位类别列表
     @NameInMap("inCategoryIds")
     public java.util.List<String> inCategoryIds;
@@ -27,6 +31,14 @@ public class QueryPositionsRequest extends TeaModel {
     public static QueryPositionsRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryPositionsRequest self = new QueryPositionsRequest();
         return TeaModel.build(map, self);
+    }
+
+    public QueryPositionsRequest setDeptId(Long deptId) {
+        this.deptId = deptId;
+        return this;
+    }
+    public Long getDeptId() {
+        return this.deptId;
     }
 
     public QueryPositionsRequest setInCategoryIds(java.util.List<String> inCategoryIds) {

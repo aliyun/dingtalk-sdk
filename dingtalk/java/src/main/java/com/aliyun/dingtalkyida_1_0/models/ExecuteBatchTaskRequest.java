@@ -8,10 +8,6 @@ public class ExecuteBatchTaskRequest extends TeaModel {
     @NameInMap("appType")
     public String appType;
 
-    // 文件
-    @NameInMap("files")
-    public String files;
-
     // 审批动作
     @NameInMap("outResult")
     public String outResult;
@@ -43,14 +39,6 @@ public class ExecuteBatchTaskRequest extends TeaModel {
     }
     public String getAppType() {
         return this.appType;
-    }
-
-    public ExecuteBatchTaskRequest setFiles(String files) {
-        this.files = files;
-        return this;
-    }
-    public String getFiles() {
-        return this.files;
     }
 
     public ExecuteBatchTaskRequest setOutResult(String outResult) {

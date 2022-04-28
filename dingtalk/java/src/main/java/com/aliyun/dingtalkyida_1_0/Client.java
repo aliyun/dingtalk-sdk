@@ -724,10 +724,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("appType", request.appType);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.files)) {
-            body.put("files", request.files);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.outResult)) {
             body.put("outResult", request.outResult);
         }

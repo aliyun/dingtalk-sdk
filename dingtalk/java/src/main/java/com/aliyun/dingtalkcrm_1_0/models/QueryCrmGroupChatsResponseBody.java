@@ -58,10 +58,6 @@ public class QueryCrmGroupChatsResponseBody extends TeaModel {
     }
 
     public static class QueryCrmGroupChatsResponseBodyResultList extends TeaModel {
-        // 客户群chatId
-        @NameInMap("chatId")
-        public String chatId;
-
         // 创建时间(时间戳)
         @NameInMap("gmtCreate")
         public Long gmtCreate;
@@ -93,14 +89,6 @@ public class QueryCrmGroupChatsResponseBody extends TeaModel {
         public static QueryCrmGroupChatsResponseBodyResultList build(java.util.Map<String, ?> map) throws Exception {
             QueryCrmGroupChatsResponseBodyResultList self = new QueryCrmGroupChatsResponseBodyResultList();
             return TeaModel.build(map, self);
-        }
-
-        public QueryCrmGroupChatsResponseBodyResultList setChatId(String chatId) {
-            this.chatId = chatId;
-            return this;
-        }
-        public String getChatId() {
-            return this.chatId;
         }
 
         public QueryCrmGroupChatsResponseBodyResultList setGmtCreate(Long gmtCreate) {

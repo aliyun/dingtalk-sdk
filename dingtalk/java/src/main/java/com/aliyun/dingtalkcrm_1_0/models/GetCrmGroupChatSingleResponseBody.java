@@ -4,10 +4,6 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCrmGroupChatSingleResponseBody extends TeaModel {
-    // 客户群chatId
-    @NameInMap("chatId")
-    public String chatId;
-
     // 创建时间(时间戳)
     @NameInMap("gmtCreate")
     public Long gmtCreate;
@@ -43,14 +39,6 @@ public class GetCrmGroupChatSingleResponseBody extends TeaModel {
     public static GetCrmGroupChatSingleResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetCrmGroupChatSingleResponseBody self = new GetCrmGroupChatSingleResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public GetCrmGroupChatSingleResponseBody setChatId(String chatId) {
-        this.chatId = chatId;
-        return this;
-    }
-    public String getChatId() {
-        return this.chatId;
     }
 
     public GetCrmGroupChatSingleResponseBody setGmtCreate(Long gmtCreate) {
