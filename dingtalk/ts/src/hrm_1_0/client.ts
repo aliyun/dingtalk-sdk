@@ -225,6 +225,112 @@ export class ECertQueryResponse extends $tea.Model {
   }
 }
 
+export class HrmProcessTransferHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmProcessTransferRequest extends $tea.Model {
+  deptIdsAfterTransfer?: number[];
+  jobIdAfterTransfer?: string;
+  mainDeptIdAfterTransfer?: number;
+  operateUserId?: string;
+  positionIdAfterTransfer?: string;
+  positionLevelAfterTransfer?: string;
+  positionNameAfterTransfer?: string;
+  rankIdAfterTransfer?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptIdsAfterTransfer: 'deptIdsAfterTransfer',
+      jobIdAfterTransfer: 'jobIdAfterTransfer',
+      mainDeptIdAfterTransfer: 'mainDeptIdAfterTransfer',
+      operateUserId: 'operateUserId',
+      positionIdAfterTransfer: 'positionIdAfterTransfer',
+      positionLevelAfterTransfer: 'positionLevelAfterTransfer',
+      positionNameAfterTransfer: 'positionNameAfterTransfer',
+      rankIdAfterTransfer: 'rankIdAfterTransfer',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptIdsAfterTransfer: { 'type': 'array', 'itemType': 'number' },
+      jobIdAfterTransfer: 'string',
+      mainDeptIdAfterTransfer: 'number',
+      operateUserId: 'string',
+      positionIdAfterTransfer: 'string',
+      positionLevelAfterTransfer: 'string',
+      positionNameAfterTransfer: 'string',
+      rankIdAfterTransfer: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmProcessTransferResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmProcessTransferResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: HrmProcessTransferResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: HrmProcessTransferResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class MasterDataQueryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -928,6 +1034,7 @@ export class QueryPositionsHeaders extends $tea.Model {
 }
 
 export class QueryPositionsRequest extends $tea.Model {
+  deptId?: number;
   inCategoryIds?: string[];
   inPositionIds?: string[];
   positionName?: string;
@@ -935,6 +1042,7 @@ export class QueryPositionsRequest extends $tea.Model {
   nextToken?: number;
   static names(): { [key: string]: string } {
     return {
+      deptId: 'deptId',
       inCategoryIds: 'inCategoryIds',
       inPositionIds: 'inPositionIds',
       positionName: 'positionName',
@@ -945,6 +1053,7 @@ export class QueryPositionsRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      deptId: 'number',
       inCategoryIds: { 'type': 'array', 'itemType': 'string' },
       inPositionIds: { 'type': 'array', 'itemType': 'string' },
       positionName: 'string',
@@ -1836,6 +1945,67 @@ export default class Client extends OpenApi {
     return $tea.cast<ECertQueryResponse>(await this.doROARequest("ECertQuery", "hrm_1.0", "HTTP", "GET", "AK", `/v1.0/hrm/eCerts`, "json", req, runtime), new ECertQueryResponse({}));
   }
 
+  async hrmProcessTransfer(request: HrmProcessTransferRequest): Promise<HrmProcessTransferResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new HrmProcessTransferHeaders({ });
+    return await this.hrmProcessTransferWithOptions(request, headers, runtime);
+  }
+
+  async hrmProcessTransferWithOptions(request: HrmProcessTransferRequest, headers: HrmProcessTransferHeaders, runtime: $Util.RuntimeOptions): Promise<HrmProcessTransferResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptIdsAfterTransfer)) {
+      body["deptIdsAfterTransfer"] = request.deptIdsAfterTransfer;
+    }
+
+    if (!Util.isUnset(request.jobIdAfterTransfer)) {
+      body["jobIdAfterTransfer"] = request.jobIdAfterTransfer;
+    }
+
+    if (!Util.isUnset(request.mainDeptIdAfterTransfer)) {
+      body["mainDeptIdAfterTransfer"] = request.mainDeptIdAfterTransfer;
+    }
+
+    if (!Util.isUnset(request.operateUserId)) {
+      body["operateUserId"] = request.operateUserId;
+    }
+
+    if (!Util.isUnset(request.positionIdAfterTransfer)) {
+      body["positionIdAfterTransfer"] = request.positionIdAfterTransfer;
+    }
+
+    if (!Util.isUnset(request.positionLevelAfterTransfer)) {
+      body["positionLevelAfterTransfer"] = request.positionLevelAfterTransfer;
+    }
+
+    if (!Util.isUnset(request.positionNameAfterTransfer)) {
+      body["positionNameAfterTransfer"] = request.positionNameAfterTransfer;
+    }
+
+    if (!Util.isUnset(request.rankIdAfterTransfer)) {
+      body["rankIdAfterTransfer"] = request.rankIdAfterTransfer;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<HrmProcessTransferResponse>(await this.doROARequest("HrmProcessTransfer", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/processes/transfer`, "json", req, runtime), new HrmProcessTransferResponse({}));
+  }
+
   async masterDataQuery(request: MasterDataQueryRequest): Promise<MasterDataQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new MasterDataQueryHeaders({ });
@@ -2132,6 +2302,10 @@ export default class Client extends OpenApi {
     }
 
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      body["deptId"] = request.deptId;
+    }
+
     if (!Util.isUnset(request.inCategoryIds)) {
       body["inCategoryIds"] = request.inCategoryIds;
     }

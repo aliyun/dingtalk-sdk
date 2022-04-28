@@ -1243,7 +1243,6 @@ export class ExecuteBatchTaskHeaders extends $tea.Model {
 
 export class ExecuteBatchTaskRequest extends $tea.Model {
   appType?: string;
-  files?: string;
   outResult?: string;
   remark?: string;
   systemToken?: string;
@@ -1252,7 +1251,6 @@ export class ExecuteBatchTaskRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       appType: 'appType',
-      files: 'files',
       outResult: 'outResult',
       remark: 'remark',
       systemToken: 'systemToken',
@@ -1264,7 +1262,6 @@ export class ExecuteBatchTaskRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       appType: 'string',
-      files: 'string',
       outResult: 'string',
       remark: 'string',
       systemToken: 'string',
@@ -12163,10 +12160,6 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.appType)) {
       body["appType"] = request.appType;
-    }
-
-    if (!Util.isUnset(request.files)) {
-      body["files"] = request.files;
     }
 
     if (!Util.isUnset(request.outResult)) {

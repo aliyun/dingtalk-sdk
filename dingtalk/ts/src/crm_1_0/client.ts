@@ -395,6 +395,91 @@ export class AddRelationMetaFieldResponse extends $tea.Model {
   }
 }
 
+export class BatchAddContactsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchAddContactsRequest extends $tea.Model {
+  operatorUserId?: string;
+  relationList?: BatchAddContactsRequestRelationList[];
+  static names(): { [key: string]: string } {
+    return {
+      operatorUserId: 'operatorUserId',
+      relationList: 'relationList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorUserId: 'string',
+      relationList: { 'type': 'array', 'itemType': BatchAddContactsRequestRelationList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchAddContactsResponseBody extends $tea.Model {
+  results?: BatchAddContactsResponseBodyResults[];
+  static names(): { [key: string]: string } {
+    return {
+      results: 'results',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      results: { 'type': 'array', 'itemType': BatchAddContactsResponseBodyResults },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchAddContactsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchAddContactsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchAddContactsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchAddRelationDatasHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -569,6 +654,91 @@ export class BatchSendOfficialAccountOTOMessageResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: BatchSendOfficialAccountOTOMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchUpdateContactsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchUpdateContactsRequest extends $tea.Model {
+  operatorUserId?: string;
+  relationList?: BatchUpdateContactsRequestRelationList[];
+  static names(): { [key: string]: string } {
+    return {
+      operatorUserId: 'operatorUserId',
+      relationList: 'relationList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorUserId: 'string',
+      relationList: { 'type': 'array', 'itemType': BatchUpdateContactsRequestRelationList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchUpdateContactsResponseBody extends $tea.Model {
+  results?: BatchUpdateContactsResponseBodyResults[];
+  static names(): { [key: string]: string } {
+    return {
+      results: 'results',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      results: { 'type': 'array', 'itemType': BatchUpdateContactsResponseBodyResults },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchUpdateContactsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchUpdateContactsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchUpdateContactsResponseBody,
     };
   }
 
@@ -1764,7 +1934,6 @@ export class GetCrmGroupChatSingleRequest extends $tea.Model {
 }
 
 export class GetCrmGroupChatSingleResponseBody extends $tea.Model {
-  chatId?: string;
   gmtCreate?: number;
   iconUrl?: string;
   memberCount?: number;
@@ -1775,7 +1944,6 @@ export class GetCrmGroupChatSingleResponseBody extends $tea.Model {
   ownerUserName?: string;
   static names(): { [key: string]: string } {
     return {
-      chatId: 'chatId',
       gmtCreate: 'gmtCreate',
       iconUrl: 'iconUrl',
       memberCount: 'memberCount',
@@ -1789,7 +1957,6 @@ export class GetCrmGroupChatSingleResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      chatId: 'string',
       gmtCreate: 'number',
       iconUrl: 'string',
       memberCount: 'number',
@@ -4106,6 +4273,81 @@ export class AddRelationMetaFieldRequestFieldDTOList extends $tea.Model {
   }
 }
 
+export class BatchAddContactsRequestRelationListBizDataList extends $tea.Model {
+  extendValue?: string;
+  key?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      extendValue: 'extendValue',
+      key: 'key',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      extendValue: 'string',
+      key: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchAddContactsRequestRelationList extends $tea.Model {
+  bizDataList?: BatchAddContactsRequestRelationListBizDataList[];
+  bizExtMap?: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      bizDataList: 'bizDataList',
+      bizExtMap: 'bizExtMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizDataList: { 'type': 'array', 'itemType': BatchAddContactsRequestRelationListBizDataList },
+      bizExtMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchAddContactsResponseBodyResults extends $tea.Model {
+  errorCode?: string;
+  errorMsg?: string;
+  relationId?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      errorCode: 'errorCode',
+      errorMsg: 'errorMsg',
+      relationId: 'relationId',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      errorCode: 'string',
+      errorMsg: 'string',
+      relationId: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchAddRelationDatasRequestRelationListBizDataList extends $tea.Model {
   extendValue?: string;
   key?: string;
@@ -4407,6 +4649,84 @@ export class BatchSendOfficialAccountOTOMessageResponseBodyResult extends $tea.M
   static types(): { [key: string]: any } {
     return {
       openPushId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchUpdateContactsRequestRelationListBizDataList extends $tea.Model {
+  extendValue?: string;
+  key?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      extendValue: 'extendValue',
+      key: 'key',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      extendValue: 'string',
+      key: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchUpdateContactsRequestRelationList extends $tea.Model {
+  bizDataList?: BatchUpdateContactsRequestRelationListBizDataList[];
+  bizExtMap?: { [key: string]: string };
+  relationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizDataList: 'bizDataList',
+      bizExtMap: 'bizExtMap',
+      relationId: 'relationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizDataList: { 'type': 'array', 'itemType': BatchUpdateContactsRequestRelationListBizDataList },
+      bizExtMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      relationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchUpdateContactsResponseBodyResults extends $tea.Model {
+  errorCode?: string;
+  errorMsg?: string;
+  relationId?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      errorCode: 'errorCode',
+      errorMsg: 'errorMsg',
+      relationId: 'relationId',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      errorCode: 'string',
+      errorMsg: 'string',
+      relationId: 'string',
+      success: 'boolean',
     };
   }
 
@@ -7447,7 +7767,6 @@ export class QueryAllTracksResponseBodyValues extends $tea.Model {
 }
 
 export class QueryCrmGroupChatsResponseBodyResultList extends $tea.Model {
-  chatId?: string;
   gmtCreate?: number;
   memberCount?: number;
   name?: string;
@@ -7457,7 +7776,6 @@ export class QueryCrmGroupChatsResponseBodyResultList extends $tea.Model {
   ownerUserName?: string;
   static names(): { [key: string]: string } {
     return {
-      chatId: 'chatId',
       gmtCreate: 'gmtCreate',
       memberCount: 'memberCount',
       name: 'name',
@@ -7470,7 +7788,6 @@ export class QueryCrmGroupChatsResponseBodyResultList extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      chatId: 'string',
       gmtCreate: 'number',
       memberCount: 'number',
       name: 'string',
@@ -8592,6 +8909,39 @@ export default class Client extends OpenApi {
     return $tea.cast<AddRelationMetaFieldResponse>(await this.doROARequest("AddRelationMetaField", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/relations/metas/fields`, "json", req, runtime), new AddRelationMetaFieldResponse({}));
   }
 
+  async batchAddContacts(request: BatchAddContactsRequest): Promise<BatchAddContactsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchAddContactsHeaders({ });
+    return await this.batchAddContactsWithOptions(request, headers, runtime);
+  }
+
+  async batchAddContactsWithOptions(request: BatchAddContactsRequest, headers: BatchAddContactsHeaders, runtime: $Util.RuntimeOptions): Promise<BatchAddContactsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorUserId)) {
+      body["operatorUserId"] = request.operatorUserId;
+    }
+
+    if (!Util.isUnset(request.relationList)) {
+      body["relationList"] = request.relationList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchAddContactsResponse>(await this.doROARequest("BatchAddContacts", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/contacts/batch`, "json", req, runtime), new BatchAddContactsResponse({}));
+  }
+
   async batchAddRelationDatas(request: BatchAddRelationDatasRequest): Promise<BatchAddRelationDatasResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchAddRelationDatasHeaders({ });
@@ -8668,6 +9018,39 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<BatchSendOfficialAccountOTOMessageResponse>(await this.doROARequest("BatchSendOfficialAccountOTOMessage", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/officialAccounts/oToMessages/batchSend`, "json", req, runtime), new BatchSendOfficialAccountOTOMessageResponse({}));
+  }
+
+  async batchUpdateContacts(request: BatchUpdateContactsRequest): Promise<BatchUpdateContactsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchUpdateContactsHeaders({ });
+    return await this.batchUpdateContactsWithOptions(request, headers, runtime);
+  }
+
+  async batchUpdateContactsWithOptions(request: BatchUpdateContactsRequest, headers: BatchUpdateContactsHeaders, runtime: $Util.RuntimeOptions): Promise<BatchUpdateContactsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorUserId)) {
+      body["operatorUserId"] = request.operatorUserId;
+    }
+
+    if (!Util.isUnset(request.relationList)) {
+      body["relationList"] = request.relationList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchUpdateContactsResponse>(await this.doROARequest("BatchUpdateContacts", "crm_1.0", "HTTP", "PUT", "AK", `/v1.0/crm/contacts/batch`, "json", req, runtime), new BatchUpdateContactsResponse({}));
   }
 
   async batchUpdateRelationDatas(request: BatchUpdateRelationDatasRequest): Promise<BatchUpdateRelationDatasResponse> {

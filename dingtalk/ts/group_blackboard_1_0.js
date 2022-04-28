@@ -1,0 +1,1 @@
+module.exports = require('./dist').group_blackboard_1_0;

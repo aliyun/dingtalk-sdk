@@ -26,6 +26,7 @@ import * as esign_2_0 from './esign_2_0/client';
 import * as exclusive_1_0 from './exclusive_1_0/client';
 import * as finance_1_0 from './finance_1_0/client';
 import * as flashmeeting_1_0 from './flashmeeting_1_0/client';
+import * as group_blackboard_1_0 from './group_blackboard_1_0/client';
 import * as h3yun_1_0 from './h3yun_1_0/client';
 import * as hrbrain_1_0 from './hrbrain_1_0/client';
 import * as hrm_1_0 from './hrm_1_0/client';
@@ -88,6 +89,7 @@ export = {
   exclusive_1_0,
   finance_1_0,
   flashmeeting_1_0,
+  group_blackboard_1_0,
   h3yun_1_0,
   hrbrain_1_0,
   hrm_1_0,
