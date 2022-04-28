@@ -500,6 +500,188 @@ class ECertQueryResponse(TeaModel):
         return self
 
 
+class HrmProcessTransferHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class HrmProcessTransferRequest(TeaModel):
+    def __init__(
+        self,
+        dept_ids_after_transfer: List[int] = None,
+        job_id_after_transfer: str = None,
+        main_dept_id_after_transfer: int = None,
+        operate_user_id: str = None,
+        position_id_after_transfer: str = None,
+        position_level_after_transfer: str = None,
+        position_name_after_transfer: str = None,
+        rank_id_after_transfer: str = None,
+        user_id: str = None,
+    ):
+        # 员工调岗后的部门id列表
+        self.dept_ids_after_transfer = dept_ids_after_transfer
+        # 员工调岗后的职务id
+        self.job_id_after_transfer = job_id_after_transfer
+        # 员工调岗后的人事主部门id
+        self.main_dept_id_after_transfer = main_dept_id_after_transfer
+        # 操作人
+        self.operate_user_id = operate_user_id
+        # 员工调岗后的职位id，参数同时有职位名称以及id，以id为准
+        self.position_id_after_transfer = position_id_after_transfer
+        # 员工调岗后的职级名称，长度不超过64，参数同时有职级名称以及id，以id为准
+        self.position_level_after_transfer = position_level_after_transfer
+        # 员工调岗后的职位名称，长度不超过124，参数同时有职位名称以及id，以id为准
+        self.position_name_after_transfer = position_name_after_transfer
+        # 员工调岗后的职级id，参数同时有职级名称以及id，以id为准
+        self.rank_id_after_transfer = rank_id_after_transfer
+        # 被调岗员工userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_ids_after_transfer is not None:
+            result['deptIdsAfterTransfer'] = self.dept_ids_after_transfer
+        if self.job_id_after_transfer is not None:
+            result['jobIdAfterTransfer'] = self.job_id_after_transfer
+        if self.main_dept_id_after_transfer is not None:
+            result['mainDeptIdAfterTransfer'] = self.main_dept_id_after_transfer
+        if self.operate_user_id is not None:
+            result['operateUserId'] = self.operate_user_id
+        if self.position_id_after_transfer is not None:
+            result['positionIdAfterTransfer'] = self.position_id_after_transfer
+        if self.position_level_after_transfer is not None:
+            result['positionLevelAfterTransfer'] = self.position_level_after_transfer
+        if self.position_name_after_transfer is not None:
+            result['positionNameAfterTransfer'] = self.position_name_after_transfer
+        if self.rank_id_after_transfer is not None:
+            result['rankIdAfterTransfer'] = self.rank_id_after_transfer
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptIdsAfterTransfer') is not None:
+            self.dept_ids_after_transfer = m.get('deptIdsAfterTransfer')
+        if m.get('jobIdAfterTransfer') is not None:
+            self.job_id_after_transfer = m.get('jobIdAfterTransfer')
+        if m.get('mainDeptIdAfterTransfer') is not None:
+            self.main_dept_id_after_transfer = m.get('mainDeptIdAfterTransfer')
+        if m.get('operateUserId') is not None:
+            self.operate_user_id = m.get('operateUserId')
+        if m.get('positionIdAfterTransfer') is not None:
+            self.position_id_after_transfer = m.get('positionIdAfterTransfer')
+        if m.get('positionLevelAfterTransfer') is not None:
+            self.position_level_after_transfer = m.get('positionLevelAfterTransfer')
+        if m.get('positionNameAfterTransfer') is not None:
+            self.position_name_after_transfer = m.get('positionNameAfterTransfer')
+        if m.get('rankIdAfterTransfer') is not None:
+            self.rank_id_after_transfer = m.get('rankIdAfterTransfer')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class HrmProcessTransferResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        # 是否转岗成功
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class HrmProcessTransferResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: HrmProcessTransferResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = HrmProcessTransferResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class MasterDataQueryHeaders(TeaModel):
     def __init__(
         self,
@@ -2509,12 +2691,15 @@ class QueryPositionsHeaders(TeaModel):
 class QueryPositionsRequest(TeaModel):
     def __init__(
         self,
+        dept_id: int = None,
         in_category_ids: List[str] = None,
         in_position_ids: List[str] = None,
         position_name: str = None,
         max_results: int = None,
         next_token: int = None,
     ):
+        # 部门id
+        self.dept_id = dept_id
         # 职位类别列表
         self.in_category_ids = in_category_ids
         # 职位id列表
@@ -2535,6 +2720,8 @@ class QueryPositionsRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
         if self.in_category_ids is not None:
             result['inCategoryIds'] = self.in_category_ids
         if self.in_position_ids is not None:
@@ -2549,6 +2736,8 @@ class QueryPositionsRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
         if m.get('inCategoryIds') is not None:
             self.in_category_ids = m.get('inCategoryIds')
         if m.get('inPositionIds') is not None:

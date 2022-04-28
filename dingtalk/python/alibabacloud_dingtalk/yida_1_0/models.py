@@ -2347,7 +2347,6 @@ class ExecuteBatchTaskRequest(TeaModel):
     def __init__(
         self,
         app_type: str = None,
-        files: str = None,
         out_result: str = None,
         remark: str = None,
         system_token: str = None,
@@ -2356,8 +2355,6 @@ class ExecuteBatchTaskRequest(TeaModel):
     ):
         # 宜搭应用编码
         self.app_type = app_type
-        # 文件
-        self.files = files
         # 审批动作
         self.out_result = out_result
         # 审批意见
@@ -2380,8 +2377,6 @@ class ExecuteBatchTaskRequest(TeaModel):
         result = dict()
         if self.app_type is not None:
             result['appType'] = self.app_type
-        if self.files is not None:
-            result['files'] = self.files
         if self.out_result is not None:
             result['outResult'] = self.out_result
         if self.remark is not None:
@@ -2398,8 +2393,6 @@ class ExecuteBatchTaskRequest(TeaModel):
         m = m or dict()
         if m.get('appType') is not None:
             self.app_type = m.get('appType')
-        if m.get('files') is not None:
-            self.files = m.get('files')
         if m.get('outResult') is not None:
             self.out_result = m.get('outResult')
         if m.get('remark') is not None:

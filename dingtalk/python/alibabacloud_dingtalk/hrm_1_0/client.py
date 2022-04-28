@@ -167,6 +167,102 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ECertQuery', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/eCerts', 'json', req, runtime)
         )
 
+    def hrm_process_transfer(
+        self,
+        request: dingtalkhrm__1__0_models.HrmProcessTransferRequest,
+    ) -> dingtalkhrm__1__0_models.HrmProcessTransferResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.HrmProcessTransferHeaders()
+        return self.hrm_process_transfer_with_options(request, headers, runtime)
+
+    async def hrm_process_transfer_async(
+        self,
+        request: dingtalkhrm__1__0_models.HrmProcessTransferRequest,
+    ) -> dingtalkhrm__1__0_models.HrmProcessTransferResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.HrmProcessTransferHeaders()
+        return await self.hrm_process_transfer_with_options_async(request, headers, runtime)
+
+    def hrm_process_transfer_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.HrmProcessTransferRequest,
+        headers: dingtalkhrm__1__0_models.HrmProcessTransferHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.HrmProcessTransferResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_ids_after_transfer):
+            body['deptIdsAfterTransfer'] = request.dept_ids_after_transfer
+        if not UtilClient.is_unset(request.job_id_after_transfer):
+            body['jobIdAfterTransfer'] = request.job_id_after_transfer
+        if not UtilClient.is_unset(request.main_dept_id_after_transfer):
+            body['mainDeptIdAfterTransfer'] = request.main_dept_id_after_transfer
+        if not UtilClient.is_unset(request.operate_user_id):
+            body['operateUserId'] = request.operate_user_id
+        if not UtilClient.is_unset(request.position_id_after_transfer):
+            body['positionIdAfterTransfer'] = request.position_id_after_transfer
+        if not UtilClient.is_unset(request.position_level_after_transfer):
+            body['positionLevelAfterTransfer'] = request.position_level_after_transfer
+        if not UtilClient.is_unset(request.position_name_after_transfer):
+            body['positionNameAfterTransfer'] = request.position_name_after_transfer
+        if not UtilClient.is_unset(request.rank_id_after_transfer):
+            body['rankIdAfterTransfer'] = request.rank_id_after_transfer
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.HrmProcessTransferResponse(),
+            self.do_roarequest('HrmProcessTransfer', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/processes/transfer', 'json', req, runtime)
+        )
+
+    async def hrm_process_transfer_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.HrmProcessTransferRequest,
+        headers: dingtalkhrm__1__0_models.HrmProcessTransferHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.HrmProcessTransferResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_ids_after_transfer):
+            body['deptIdsAfterTransfer'] = request.dept_ids_after_transfer
+        if not UtilClient.is_unset(request.job_id_after_transfer):
+            body['jobIdAfterTransfer'] = request.job_id_after_transfer
+        if not UtilClient.is_unset(request.main_dept_id_after_transfer):
+            body['mainDeptIdAfterTransfer'] = request.main_dept_id_after_transfer
+        if not UtilClient.is_unset(request.operate_user_id):
+            body['operateUserId'] = request.operate_user_id
+        if not UtilClient.is_unset(request.position_id_after_transfer):
+            body['positionIdAfterTransfer'] = request.position_id_after_transfer
+        if not UtilClient.is_unset(request.position_level_after_transfer):
+            body['positionLevelAfterTransfer'] = request.position_level_after_transfer
+        if not UtilClient.is_unset(request.position_name_after_transfer):
+            body['positionNameAfterTransfer'] = request.position_name_after_transfer
+        if not UtilClient.is_unset(request.rank_id_after_transfer):
+            body['rankIdAfterTransfer'] = request.rank_id_after_transfer
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.HrmProcessTransferResponse(),
+            await self.do_roarequest_async('HrmProcessTransfer', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/processes/transfer', 'json', req, runtime)
+        )
+
     def master_data_query(
         self,
         request: dingtalkhrm__1__0_models.MasterDataQueryRequest,
@@ -722,6 +818,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
         body = {}
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
         if not UtilClient.is_unset(request.in_category_ids):
             body['inCategoryIds'] = request.in_category_ids
         if not UtilClient.is_unset(request.in_position_ids):
@@ -756,6 +854,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
         body = {}
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
         if not UtilClient.is_unset(request.in_category_ids):
             body['inCategoryIds'] = request.in_category_ids
         if not UtilClient.is_unset(request.in_position_ids):

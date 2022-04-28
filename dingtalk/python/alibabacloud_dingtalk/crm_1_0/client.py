@@ -359,6 +359,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('AddRelationMetaField', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/relations/metas/fields', 'json', req, runtime)
         )
 
+    def batch_add_contacts(
+        self,
+        request: dingtalkcrm__1__0_models.BatchAddContactsRequest,
+    ) -> dingtalkcrm__1__0_models.BatchAddContactsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.BatchAddContactsHeaders()
+        return self.batch_add_contacts_with_options(request, headers, runtime)
+
+    async def batch_add_contacts_async(
+        self,
+        request: dingtalkcrm__1__0_models.BatchAddContactsRequest,
+    ) -> dingtalkcrm__1__0_models.BatchAddContactsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.BatchAddContactsHeaders()
+        return await self.batch_add_contacts_with_options_async(request, headers, runtime)
+
+    def batch_add_contacts_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.BatchAddContactsRequest,
+        headers: dingtalkcrm__1__0_models.BatchAddContactsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.BatchAddContactsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.relation_list):
+            body['relationList'] = request.relation_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.BatchAddContactsResponse(),
+            self.do_roarequest('BatchAddContacts', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/contacts/batch', 'json', req, runtime)
+        )
+
+    async def batch_add_contacts_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.BatchAddContactsRequest,
+        headers: dingtalkcrm__1__0_models.BatchAddContactsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.BatchAddContactsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.relation_list):
+            body['relationList'] = request.relation_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.BatchAddContactsResponse(),
+            await self.do_roarequest_async('BatchAddContacts', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/contacts/batch', 'json', req, runtime)
+        )
+
     def batch_add_relation_datas(
         self,
         request: dingtalkcrm__1__0_models.BatchAddRelationDatasRequest,
@@ -505,6 +573,74 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageResponse(),
             await self.do_roarequest_async('BatchSendOfficialAccountOTOMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/officialAccounts/oToMessages/batchSend', 'json', req, runtime)
+        )
+
+    def batch_update_contacts(
+        self,
+        request: dingtalkcrm__1__0_models.BatchUpdateContactsRequest,
+    ) -> dingtalkcrm__1__0_models.BatchUpdateContactsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.BatchUpdateContactsHeaders()
+        return self.batch_update_contacts_with_options(request, headers, runtime)
+
+    async def batch_update_contacts_async(
+        self,
+        request: dingtalkcrm__1__0_models.BatchUpdateContactsRequest,
+    ) -> dingtalkcrm__1__0_models.BatchUpdateContactsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.BatchUpdateContactsHeaders()
+        return await self.batch_update_contacts_with_options_async(request, headers, runtime)
+
+    def batch_update_contacts_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.BatchUpdateContactsRequest,
+        headers: dingtalkcrm__1__0_models.BatchUpdateContactsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.BatchUpdateContactsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.relation_list):
+            body['relationList'] = request.relation_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.BatchUpdateContactsResponse(),
+            self.do_roarequest('BatchUpdateContacts', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/contacts/batch', 'json', req, runtime)
+        )
+
+    async def batch_update_contacts_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.BatchUpdateContactsRequest,
+        headers: dingtalkcrm__1__0_models.BatchUpdateContactsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.BatchUpdateContactsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.relation_list):
+            body['relationList'] = request.relation_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.BatchUpdateContactsResponse(),
+            await self.do_roarequest_async('BatchUpdateContacts', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/contacts/batch', 'json', req, runtime)
         )
 
     def batch_update_relation_datas(

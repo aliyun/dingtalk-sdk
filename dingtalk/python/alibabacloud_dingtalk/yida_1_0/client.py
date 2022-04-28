@@ -1199,8 +1199,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.app_type):
             body['appType'] = request.app_type
-        if not UtilClient.is_unset(request.files):
-            body['files'] = request.files
         if not UtilClient.is_unset(request.out_result):
             body['outResult'] = request.out_result
         if not UtilClient.is_unset(request.remark):
@@ -1235,8 +1233,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.app_type):
             body['appType'] = request.app_type
-        if not UtilClient.is_unset(request.files):
-            body['files'] = request.files
         if not UtilClient.is_unset(request.out_result):
             body['outResult'] = request.out_result
         if not UtilClient.is_unset(request.remark):
