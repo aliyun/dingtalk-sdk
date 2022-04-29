@@ -57,11 +57,25 @@ class messageContent extends Model
     public $messageType;
 
     /**
+     * @description 是否提醒群成员
+     *
+     * @var bool
+     */
+    public $remind;
+
+    /**
      * @description 标题
      *
      * @var string
      */
     public $title;
+
+    /**
+     * @description 是否置顶
+     *
+     * @var bool
+     */
+    public $top;
     protected $_name = [
         'atActiveMemberNum' => 'atActiveMemberNum',
         'atActiveUser'      => 'atActiveUser',
@@ -70,7 +84,9 @@ class messageContent extends Model
         'content'           => 'content',
         'images'            => 'images',
         'messageType'       => 'messageType',
+        'remind'            => 'remind',
         'title'             => 'title',
+        'top'               => 'top',
     ];
 
     public function validate()
@@ -107,8 +123,14 @@ class messageContent extends Model
         if (null !== $this->messageType) {
             $res['messageType'] = $this->messageType;
         }
+        if (null !== $this->remind) {
+            $res['remind'] = $this->remind;
+        }
         if (null !== $this->title) {
             $res['title'] = $this->title;
+        }
+        if (null !== $this->top) {
+            $res['top'] = $this->top;
         }
 
         return $res;
@@ -151,8 +173,14 @@ class messageContent extends Model
         if (isset($map['messageType'])) {
             $model->messageType = $map['messageType'];
         }
+        if (isset($map['remind'])) {
+            $model->remind = $map['remind'];
+        }
         if (isset($map['title'])) {
             $model->title = $map['title'];
+        }
+        if (isset($map['top'])) {
+            $model->top = $map['top'];
         }
 
         return $model;
