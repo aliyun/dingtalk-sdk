@@ -457,6 +457,97 @@ export class CreateEventResponse extends $tea.Model {
   }
 }
 
+export class CreateSubscribedCalendarHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSubscribedCalendarRequest extends $tea.Model {
+  description?: string;
+  managers?: string[];
+  name?: string;
+  subscribeScope?: CreateSubscribedCalendarRequestSubscribeScope;
+  static names(): { [key: string]: string } {
+    return {
+      description: 'description',
+      managers: 'managers',
+      name: 'name',
+      subscribeScope: 'subscribeScope',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      description: 'string',
+      managers: { 'type': 'array', 'itemType': 'string' },
+      name: 'string',
+      subscribeScope: CreateSubscribedCalendarRequestSubscribeScope,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSubscribedCalendarResponseBody extends $tea.Model {
+  calendarId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      calendarId: 'calendarId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      calendarId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSubscribedCalendarResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateSubscribedCalendarResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateSubscribedCalendarResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteAclHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -531,6 +622,69 @@ export class DeleteEventResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteSubscribedCalendarHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteSubscribedCalendarResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteSubscribedCalendarResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DeleteSubscribedCalendarResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DeleteSubscribedCalendarResponseBody,
     };
   }
 
@@ -1019,6 +1173,84 @@ export class GetSignOutListResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetSignOutListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSubscribedCalendarHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSubscribedCalendarResponseBody extends $tea.Model {
+  author?: string;
+  calendarId?: string;
+  description?: string;
+  managers?: string[];
+  name?: string;
+  subscribeScope?: GetSubscribedCalendarResponseBodySubscribeScope;
+  static names(): { [key: string]: string } {
+    return {
+      author: 'author',
+      calendarId: 'calendarId',
+      description: 'description',
+      managers: 'managers',
+      name: 'name',
+      subscribeScope: 'subscribeScope',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      author: 'string',
+      calendarId: 'string',
+      description: 'string',
+      managers: { 'type': 'array', 'itemType': 'string' },
+      name: 'string',
+      subscribeScope: GetSubscribedCalendarResponseBodySubscribeScope,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSubscribedCalendarResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetSubscribedCalendarResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetSubscribedCalendarResponseBody,
     };
   }
 
@@ -1970,6 +2202,97 @@ export class SubscribeCalendarResponse extends $tea.Model {
   }
 }
 
+export class UpdateSubscribedCalendarsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateSubscribedCalendarsRequest extends $tea.Model {
+  description?: string;
+  managers?: string[];
+  name?: string;
+  subscribeScope?: UpdateSubscribedCalendarsRequestSubscribeScope;
+  static names(): { [key: string]: string } {
+    return {
+      description: 'description',
+      managers: 'managers',
+      name: 'name',
+      subscribeScope: 'subscribeScope',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      description: 'string',
+      managers: { 'type': 'array', 'itemType': 'string' },
+      name: 'string',
+      subscribeScope: UpdateSubscribedCalendarsRequestSubscribeScope,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateSubscribedCalendarsResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateSubscribedCalendarsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateSubscribedCalendarsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateSubscribedCalendarsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddAttendeeRequestAttendeesToAdd extends $tea.Model {
   id?: string;
   isOptional?: boolean;
@@ -2502,6 +2825,31 @@ export class CreateEventResponseBodyStart extends $tea.Model {
   }
 }
 
+export class CreateSubscribedCalendarRequestSubscribeScope extends $tea.Model {
+  corpIds?: string[];
+  openConversationIds?: string[];
+  unionIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      corpIds: 'corpIds',
+      openConversationIds: 'openConversationIds',
+      unionIds: 'unionIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpIds: { 'type': 'array', 'itemType': 'string' },
+      openConversationIds: { 'type': 'array', 'itemType': 'string' },
+      unionIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetEventResponseBodyAttendees extends $tea.Model {
   displayName?: string;
   id?: string;
@@ -2900,6 +3248,31 @@ export class GetSignOutListResponseBodyUsers extends $tea.Model {
       checkOutTime: 'number',
       displayName: 'string',
       userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSubscribedCalendarResponseBodySubscribeScope extends $tea.Model {
+  corpIds?: string[];
+  openConversationIds?: string[];
+  unionIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      corpIds: 'corpIds',
+      openConversationIds: 'openConversationIds',
+      unionIds: 'unionIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpIds: { 'type': 'array', 'itemType': 'string' },
+      openConversationIds: { 'type': 'array', 'itemType': 'string' },
+      unionIds: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
@@ -4412,6 +4785,31 @@ export class RemoveAttendeeRequestAttendeesToRemove extends $tea.Model {
   }
 }
 
+export class UpdateSubscribedCalendarsRequestSubscribeScope extends $tea.Model {
+  corpIds?: string[];
+  openConversationIds?: string[];
+  unionIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      corpIds: 'corpIds',
+      openConversationIds: 'openConversationIds',
+      unionIds: 'unionIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpIds: { 'type': 'array', 'itemType': 'string' },
+      openConversationIds: { 'type': 'array', 'itemType': 'string' },
+      unionIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -4622,6 +5020,48 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateEventResponse>(await this.doROARequest("CreateEvent", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events`, "json", req, runtime), new CreateEventResponse({}));
   }
 
+  async createSubscribedCalendar(userId: string, request: CreateSubscribedCalendarRequest): Promise<CreateSubscribedCalendarResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateSubscribedCalendarHeaders({ });
+    return await this.createSubscribedCalendarWithOptions(userId, request, headers, runtime);
+  }
+
+  async createSubscribedCalendarWithOptions(userId: string, request: CreateSubscribedCalendarRequest, headers: CreateSubscribedCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSubscribedCalendarResponse> {
+    Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.description)) {
+      body["description"] = request.description;
+    }
+
+    if (!Util.isUnset(request.managers)) {
+      body["managers"] = request.managers;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.subscribeScope))) {
+      body["subscribeScope"] = request.subscribeScope;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateSubscribedCalendarResponse>(await this.doROARequest("CreateSubscribedCalendar", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/subscribedCalendars`, "json", req, runtime), new CreateSubscribedCalendarResponse({}));
+  }
+
   async deleteAcl(userId: string, calendarId: string, aclId: string): Promise<DeleteAclResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteAclHeaders({ });
@@ -4670,6 +5110,30 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<DeleteEventResponse>(await this.doROARequest("DeleteEvent", "calendar_1.0", "HTTP", "DELETE", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}`, "none", req, runtime), new DeleteEventResponse({}));
+  }
+
+  async deleteSubscribedCalendar(userId: string, calendarId: string): Promise<DeleteSubscribedCalendarResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteSubscribedCalendarHeaders({ });
+    return await this.deleteSubscribedCalendarWithOptions(userId, calendarId, headers, runtime);
+  }
+
+  async deleteSubscribedCalendarWithOptions(userId: string, calendarId: string, headers: DeleteSubscribedCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSubscribedCalendarResponse> {
+    userId = OpenApiUtil.getEncodeParam(userId);
+    calendarId = OpenApiUtil.getEncodeParam(calendarId);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<DeleteSubscribedCalendarResponse>(await this.doROARequest("DeleteSubscribedCalendar", "calendar_1.0", "HTTP", "DELETE", "AK", `/v1.0/calendar/users/${userId}/subscribedCalendars/${calendarId}`, "json", req, runtime), new DeleteSubscribedCalendarResponse({}));
   }
 
   async generateCaldavAccount(userId: string, request: GenerateCaldavAccountRequest): Promise<GenerateCaldavAccountResponse> {
@@ -4854,6 +5318,30 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetSignOutListResponse>(await this.doROARequest("GetSignOutList", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/signOut`, "json", req, runtime), new GetSignOutListResponse({}));
+  }
+
+  async getSubscribedCalendar(userId: string, calendarId: string): Promise<GetSubscribedCalendarResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetSubscribedCalendarHeaders({ });
+    return await this.getSubscribedCalendarWithOptions(userId, calendarId, headers, runtime);
+  }
+
+  async getSubscribedCalendarWithOptions(userId: string, calendarId: string, headers: GetSubscribedCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<GetSubscribedCalendarResponse> {
+    userId = OpenApiUtil.getEncodeParam(userId);
+    calendarId = OpenApiUtil.getEncodeParam(calendarId);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetSubscribedCalendarResponse>(await this.doROARequest("GetSubscribedCalendar", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/subscribedCalendars/${calendarId}`, "json", req, runtime), new GetSubscribedCalendarResponse({}));
   }
 
   async listAcls(userId: string, calendarId: string): Promise<ListAclsResponse> {
@@ -5292,6 +5780,49 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<SubscribeCalendarResponse>(await this.doROARequest("SubscribeCalendar", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/subscribe`, "none", req, runtime), new SubscribeCalendarResponse({}));
+  }
+
+  async updateSubscribedCalendars(calendarId: string, userId: string, request: UpdateSubscribedCalendarsRequest): Promise<UpdateSubscribedCalendarsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateSubscribedCalendarsHeaders({ });
+    return await this.updateSubscribedCalendarsWithOptions(calendarId, userId, request, headers, runtime);
+  }
+
+  async updateSubscribedCalendarsWithOptions(calendarId: string, userId: string, request: UpdateSubscribedCalendarsRequest, headers: UpdateSubscribedCalendarsHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateSubscribedCalendarsResponse> {
+    Util.validateModel(request);
+    calendarId = OpenApiUtil.getEncodeParam(calendarId);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.description)) {
+      body["description"] = request.description;
+    }
+
+    if (!Util.isUnset(request.managers)) {
+      body["managers"] = request.managers;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.subscribeScope))) {
+      body["subscribeScope"] = request.subscribeScope;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateSubscribedCalendarsResponse>(await this.doROARequest("UpdateSubscribedCalendars", "calendar_1.0", "HTTP", "PUT", "AK", `/v1.0/calendar/users/${userId}/subscribedCalendars/${calendarId}`, "json", req, runtime), new UpdateSubscribedCalendarsResponse({}));
   }
 
 }

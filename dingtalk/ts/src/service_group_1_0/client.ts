@@ -696,6 +696,91 @@ export class AssignTicketResponse extends $tea.Model {
   }
 }
 
+export class BatchBindingGroupBizIdsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchBindingGroupBizIdsRequest extends $tea.Model {
+  bindingGroupBizIds?: BatchBindingGroupBizIdsRequestBindingGroupBizIds[];
+  openTeamId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bindingGroupBizIds: 'bindingGroupBizIds',
+      openTeamId: 'openTeamId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bindingGroupBizIds: { 'type': 'array', 'itemType': BatchBindingGroupBizIdsRequestBindingGroupBizIds },
+      openTeamId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchBindingGroupBizIdsResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchBindingGroupBizIdsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchBindingGroupBizIdsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchBindingGroupBizIdsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchGetGroupSetConfigHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1775,6 +1860,121 @@ export class CreateGroupResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: CreateGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupConversationHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupConversationRequest extends $tea.Model {
+  corpId?: string;
+  dingGroupId?: string;
+  dingSuiteKey?: string;
+  dingTokenGrantType?: number;
+  dingUserId?: string;
+  dingUserName?: string;
+  extValues?: string;
+  openTeamId?: string;
+  serverGroupId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      dingGroupId: 'dingGroupId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingTokenGrantType: 'dingTokenGrantType',
+      dingUserId: 'dingUserId',
+      dingUserName: 'dingUserName',
+      extValues: 'extValues',
+      openTeamId: 'openTeamId',
+      serverGroupId: 'serverGroupId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      dingGroupId: 'string',
+      dingSuiteKey: 'string',
+      dingTokenGrantType: 'number',
+      dingUserId: 'string',
+      dingUserName: 'string',
+      extValues: 'string',
+      openTeamId: 'string',
+      serverGroupId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupConversationResponseBody extends $tea.Model {
+  dingOpenErrcode?: number;
+  errorMsg?: string;
+  result?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      dingOpenErrcode: 'dingOpenErrcode',
+      errorMsg: 'errorMsg',
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingOpenErrcode: 'number',
+      errorMsg: 'string',
+      result: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupConversationResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateGroupConversationResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateGroupConversationResponseBody,
     };
   }
 
@@ -5765,6 +5965,28 @@ export class AssignTicketRequestTicketMemo extends $tea.Model {
   }
 }
 
+export class BatchBindingGroupBizIdsRequestBindingGroupBizIds extends $tea.Model {
+  bizId?: string;
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizId: 'bizId',
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizId: 'string',
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchGetGroupSetConfigResponseBodyGroupSetConfigs extends $tea.Model {
   configKey?: string;
   configValue?: string;
@@ -7088,7 +7310,9 @@ export class SendMsgByTaskRequestMessageContent extends $tea.Model {
   content?: string;
   images?: string[];
   messageType?: string;
+  remind?: boolean;
   title?: string;
+  top?: boolean;
   static names(): { [key: string]: string } {
     return {
       atActiveMemberNum: 'atActiveMemberNum',
@@ -7098,7 +7322,9 @@ export class SendMsgByTaskRequestMessageContent extends $tea.Model {
       content: 'content',
       images: 'images',
       messageType: 'messageType',
+      remind: 'remind',
       title: 'title',
+      top: 'top',
     };
   }
 
@@ -7111,7 +7337,9 @@ export class SendMsgByTaskRequestMessageContent extends $tea.Model {
       content: 'string',
       images: { 'type': 'array', 'itemType': 'string' },
       messageType: 'string',
+      remind: 'boolean',
       title: 'string',
+      top: 'boolean',
     };
   }
 
@@ -7855,6 +8083,39 @@ export default class Client extends OpenApi {
     return $tea.cast<AssignTicketResponse>(await this.doROARequest("AssignTicket", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/tickets/assign`, "none", req, runtime), new AssignTicketResponse({}));
   }
 
+  async batchBindingGroupBizIds(request: BatchBindingGroupBizIdsRequest): Promise<BatchBindingGroupBizIdsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchBindingGroupBizIdsHeaders({ });
+    return await this.batchBindingGroupBizIdsWithOptions(request, headers, runtime);
+  }
+
+  async batchBindingGroupBizIdsWithOptions(request: BatchBindingGroupBizIdsRequest, headers: BatchBindingGroupBizIdsHeaders, runtime: $Util.RuntimeOptions): Promise<BatchBindingGroupBizIdsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bindingGroupBizIds)) {
+      body["bindingGroupBizIds"] = request.bindingGroupBizIds;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchBindingGroupBizIdsResponse>(await this.doROARequest("BatchBindingGroupBizIds", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/groups/bind`, "json", req, runtime), new BatchBindingGroupBizIdsResponse({}));
+  }
+
   async batchGetGroupSetConfig(request: BatchGetGroupSetConfigRequest): Promise<BatchGetGroupSetConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchGetGroupSetConfigHeaders({ });
@@ -8380,6 +8641,67 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateGroupResponse>(await this.doROARequest("CreateGroup", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/groups`, "json", req, runtime), new CreateGroupResponse({}));
+  }
+
+  async createGroupConversation(request: CreateGroupConversationRequest): Promise<CreateGroupConversationResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateGroupConversationHeaders({ });
+    return await this.createGroupConversationWithOptions(request, headers, runtime);
+  }
+
+  async createGroupConversationWithOptions(request: CreateGroupConversationRequest, headers: CreateGroupConversationHeaders, runtime: $Util.RuntimeOptions): Promise<CreateGroupConversationResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.dingGroupId)) {
+      body["dingGroupId"] = request.dingGroupId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.dingUserId)) {
+      body["dingUserId"] = request.dingUserId;
+    }
+
+    if (!Util.isUnset(request.dingUserName)) {
+      body["dingUserName"] = request.dingUserName;
+    }
+
+    if (!Util.isUnset(request.extValues)) {
+      body["extValues"] = request.extValues;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.serverGroupId)) {
+      body["serverGroupId"] = request.serverGroupId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateGroupConversationResponse>(await this.doROARequest("CreateGroupConversation", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/create/conversations`, "json", req, runtime), new CreateGroupConversationResponse({}));
   }
 
   async createGroupSet(request: CreateGroupSetRequest): Promise<CreateGroupSetResponse> {
