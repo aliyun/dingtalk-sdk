@@ -41,9 +41,15 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             [NameInMap("messageType")]
             [Validation(Required=false)]
             public string MessageType { get; set; }
+            [NameInMap("remind")]
+            [Validation(Required=false)]
+            public bool? Remind { get; set; }
             [NameInMap("title")]
             [Validation(Required=false)]
             public string Title { get; set; }
+            [NameInMap("top")]
+            [Validation(Required=false)]
+            public bool? Top { get; set; }
         };
 
         /// <summary>
