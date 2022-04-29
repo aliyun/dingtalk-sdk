@@ -126,9 +126,17 @@ public class SendMsgByTaskRequest extends TeaModel {
         @NameInMap("messageType")
         public String messageType;
 
+        // 是否提醒群成员
+        @NameInMap("remind")
+        public Boolean remind;
+
         // 标题
         @NameInMap("title")
         public String title;
+
+        // 是否置顶
+        @NameInMap("top")
+        public Boolean top;
 
         public static SendMsgByTaskRequestMessageContent build(java.util.Map<String, ?> map) throws Exception {
             SendMsgByTaskRequestMessageContent self = new SendMsgByTaskRequestMessageContent();
@@ -191,12 +199,28 @@ public class SendMsgByTaskRequest extends TeaModel {
             return this.messageType;
         }
 
+        public SendMsgByTaskRequestMessageContent setRemind(Boolean remind) {
+            this.remind = remind;
+            return this;
+        }
+        public Boolean getRemind() {
+            return this.remind;
+        }
+
         public SendMsgByTaskRequestMessageContent setTitle(String title) {
             this.title = title;
             return this;
         }
         public String getTitle() {
             return this.title;
+        }
+
+        public SendMsgByTaskRequestMessageContent setTop(Boolean top) {
+            this.top = top;
+            return this;
+        }
+        public Boolean getTop() {
+            return this.top;
         }
 
     }

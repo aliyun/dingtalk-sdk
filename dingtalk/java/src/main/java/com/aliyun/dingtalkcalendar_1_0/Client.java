@@ -218,6 +218,48 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("CreateEvent", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events", "json", req, runtime), new CreateEventResponse());
     }
 
+    public CreateSubscribedCalendarResponse createSubscribedCalendar(String userId, CreateSubscribedCalendarRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CreateSubscribedCalendarHeaders headers = new CreateSubscribedCalendarHeaders();
+        return this.createSubscribedCalendarWithOptions(userId, request, headers, runtime);
+    }
+
+    public CreateSubscribedCalendarResponse createSubscribedCalendarWithOptions(String userId, CreateSubscribedCalendarRequest request, CreateSubscribedCalendarHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            body.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.managers)) {
+            body.put("managers", request.managers);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.subscribeScope))) {
+            body.put("subscribeScope", request.subscribeScope);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CreateSubscribedCalendar", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/subscribedCalendars", "json", req, runtime), new CreateSubscribedCalendarResponse());
+    }
+
     public DeleteAclResponse deleteAcl(String userId, String calendarId, String aclId) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         DeleteAclHeaders headers = new DeleteAclHeaders();
@@ -266,6 +308,30 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders)
         ));
         return TeaModel.toModel(this.doROARequest("DeleteEvent", "calendar_1.0", "HTTP", "DELETE", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "", "none", req, runtime), new DeleteEventResponse());
+    }
+
+    public DeleteSubscribedCalendarResponse deleteSubscribedCalendar(String userId, String calendarId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        DeleteSubscribedCalendarHeaders headers = new DeleteSubscribedCalendarHeaders();
+        return this.deleteSubscribedCalendarWithOptions(userId, calendarId, headers, runtime);
+    }
+
+    public DeleteSubscribedCalendarResponse deleteSubscribedCalendarWithOptions(String userId, String calendarId, DeleteSubscribedCalendarHeaders headers, RuntimeOptions runtime) throws Exception {
+        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
+        calendarId = com.aliyun.openapiutil.Client.getEncodeParam(calendarId);
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("DeleteSubscribedCalendar", "calendar_1.0", "HTTP", "DELETE", "AK", "/v1.0/calendar/users/" + userId + "/subscribedCalendars/" + calendarId + "", "json", req, runtime), new DeleteSubscribedCalendarResponse());
     }
 
     public GenerateCaldavAccountResponse generateCaldavAccount(String userId, GenerateCaldavAccountRequest request) throws Exception {
@@ -450,6 +516,30 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("GetSignOutList", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/signOut", "json", req, runtime), new GetSignOutListResponse());
+    }
+
+    public GetSubscribedCalendarResponse getSubscribedCalendar(String userId, String calendarId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetSubscribedCalendarHeaders headers = new GetSubscribedCalendarHeaders();
+        return this.getSubscribedCalendarWithOptions(userId, calendarId, headers, runtime);
+    }
+
+    public GetSubscribedCalendarResponse getSubscribedCalendarWithOptions(String userId, String calendarId, GetSubscribedCalendarHeaders headers, RuntimeOptions runtime) throws Exception {
+        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
+        calendarId = com.aliyun.openapiutil.Client.getEncodeParam(calendarId);
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("GetSubscribedCalendar", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/subscribedCalendars/" + calendarId + "", "json", req, runtime), new GetSubscribedCalendarResponse());
     }
 
     public ListAclsResponse listAcls(String userId, String calendarId) throws Exception {
@@ -888,5 +978,48 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders)
         ));
         return TeaModel.toModel(this.doROARequest("SubscribeCalendar", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/subscribe", "none", req, runtime), new SubscribeCalendarResponse());
+    }
+
+    public UpdateSubscribedCalendarsResponse updateSubscribedCalendars(String calendarId, String userId, UpdateSubscribedCalendarsRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        UpdateSubscribedCalendarsHeaders headers = new UpdateSubscribedCalendarsHeaders();
+        return this.updateSubscribedCalendarsWithOptions(calendarId, userId, request, headers, runtime);
+    }
+
+    public UpdateSubscribedCalendarsResponse updateSubscribedCalendarsWithOptions(String calendarId, String userId, UpdateSubscribedCalendarsRequest request, UpdateSubscribedCalendarsHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        calendarId = com.aliyun.openapiutil.Client.getEncodeParam(calendarId);
+        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            body.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.managers)) {
+            body.put("managers", request.managers);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.subscribeScope))) {
+            body.put("subscribeScope", request.subscribeScope);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UpdateSubscribedCalendars", "calendar_1.0", "HTTP", "PUT", "AK", "/v1.0/calendar/users/" + userId + "/subscribedCalendars/" + calendarId + "", "json", req, runtime), new UpdateSubscribedCalendarsResponse());
     }
 }
