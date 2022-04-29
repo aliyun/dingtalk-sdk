@@ -1667,6 +1667,197 @@ class CreateEventResponse(TeaModel):
         return self
 
 
+class CreateSubscribedCalendarHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateSubscribedCalendarRequestSubscribeScope(TeaModel):
+    def __init__(
+        self,
+        corp_ids: List[str] = None,
+        open_conversation_ids: List[str] = None,
+        union_ids: List[str] = None,
+    ):
+        # 可订阅组织列表
+        self.corp_ids = corp_ids
+        # 可订阅群组列表
+        self.open_conversation_ids = open_conversation_ids
+        # 可订阅人员列表
+        self.union_ids = union_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_ids is not None:
+            result['corpIds'] = self.corp_ids
+        if self.open_conversation_ids is not None:
+            result['openConversationIds'] = self.open_conversation_ids
+        if self.union_ids is not None:
+            result['unionIds'] = self.union_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpIds') is not None:
+            self.corp_ids = m.get('corpIds')
+        if m.get('openConversationIds') is not None:
+            self.open_conversation_ids = m.get('openConversationIds')
+        if m.get('unionIds') is not None:
+            self.union_ids = m.get('unionIds')
+        return self
+
+
+class CreateSubscribedCalendarRequest(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        managers: List[str] = None,
+        name: str = None,
+        subscribe_scope: CreateSubscribedCalendarRequestSubscribeScope = None,
+    ):
+        # 日历介绍
+        self.description = description
+        # 日历管理员列表
+        self.managers = managers
+        # 日历名
+        self.name = name
+        # 可订阅列表
+        self.subscribe_scope = subscribe_scope
+
+    def validate(self):
+        if self.subscribe_scope:
+            self.subscribe_scope.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.managers is not None:
+            result['managers'] = self.managers
+        if self.name is not None:
+            result['name'] = self.name
+        if self.subscribe_scope is not None:
+            result['subscribeScope'] = self.subscribe_scope.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('managers') is not None:
+            self.managers = m.get('managers')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('subscribeScope') is not None:
+            temp_model = CreateSubscribedCalendarRequestSubscribeScope()
+            self.subscribe_scope = temp_model.from_map(m['subscribeScope'])
+        return self
+
+
+class CreateSubscribedCalendarResponseBody(TeaModel):
+    def __init__(
+        self,
+        calendar_id: str = None,
+    ):
+        # 日历id
+        self.calendar_id = calendar_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.calendar_id is not None:
+            result['calendarId'] = self.calendar_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('calendarId') is not None:
+            self.calendar_id = m.get('calendarId')
+        return self
+
+
+class CreateSubscribedCalendarResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateSubscribedCalendarResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateSubscribedCalendarResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DeleteAclHeaders(TeaModel):
     def __init__(
         self,
@@ -1784,6 +1975,103 @@ class DeleteEventResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        return self
+
+
+class DeleteSubscribedCalendarHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteSubscribedCalendarResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class DeleteSubscribedCalendarResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DeleteSubscribedCalendarResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DeleteSubscribedCalendarResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 
@@ -3324,6 +3612,183 @@ class GetSignOutListResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetSignOutListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetSubscribedCalendarHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetSubscribedCalendarResponseBodySubscribeScope(TeaModel):
+    def __init__(
+        self,
+        corp_ids: List[str] = None,
+        open_conversation_ids: List[str] = None,
+        union_ids: List[str] = None,
+    ):
+        # 可订阅组织
+        self.corp_ids = corp_ids
+        # 可订阅群组
+        self.open_conversation_ids = open_conversation_ids
+        # 可订阅用户
+        self.union_ids = union_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_ids is not None:
+            result['corpIds'] = self.corp_ids
+        if self.open_conversation_ids is not None:
+            result['openConversationIds'] = self.open_conversation_ids
+        if self.union_ids is not None:
+            result['unionIds'] = self.union_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpIds') is not None:
+            self.corp_ids = m.get('corpIds')
+        if m.get('openConversationIds') is not None:
+            self.open_conversation_ids = m.get('openConversationIds')
+        if m.get('unionIds') is not None:
+            self.union_ids = m.get('unionIds')
+        return self
+
+
+class GetSubscribedCalendarResponseBody(TeaModel):
+    def __init__(
+        self,
+        author: str = None,
+        calendar_id: str = None,
+        description: str = None,
+        managers: List[str] = None,
+        name: str = None,
+        subscribe_scope: GetSubscribedCalendarResponseBodySubscribeScope = None,
+    ):
+        # 日历作者
+        self.author = author
+        # 订阅日历id
+        self.calendar_id = calendar_id
+        # 日历描述
+        self.description = description
+        # 可管理人群
+        self.managers = managers
+        # 日历名
+        self.name = name
+        # 可订阅范围
+        self.subscribe_scope = subscribe_scope
+
+    def validate(self):
+        if self.subscribe_scope:
+            self.subscribe_scope.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.author is not None:
+            result['author'] = self.author
+        if self.calendar_id is not None:
+            result['calendarId'] = self.calendar_id
+        if self.description is not None:
+            result['description'] = self.description
+        if self.managers is not None:
+            result['managers'] = self.managers
+        if self.name is not None:
+            result['name'] = self.name
+        if self.subscribe_scope is not None:
+            result['subscribeScope'] = self.subscribe_scope.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('author') is not None:
+            self.author = m.get('author')
+        if m.get('calendarId') is not None:
+            self.calendar_id = m.get('calendarId')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('managers') is not None:
+            self.managers = m.get('managers')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('subscribeScope') is not None:
+            temp_model = GetSubscribedCalendarResponseBodySubscribeScope()
+            self.subscribe_scope = temp_model.from_map(m['subscribeScope'])
+        return self
+
+
+class GetSubscribedCalendarResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetSubscribedCalendarResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetSubscribedCalendarResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -7615,6 +8080,196 @@ class SubscribeCalendarResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        return self
+
+
+class UpdateSubscribedCalendarsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateSubscribedCalendarsRequestSubscribeScope(TeaModel):
+    def __init__(
+        self,
+        corp_ids: List[str] = None,
+        open_conversation_ids: List[str] = None,
+        union_ids: List[str] = None,
+    ):
+        # 可订阅组织列表
+        self.corp_ids = corp_ids
+        # 可订阅群组列表
+        self.open_conversation_ids = open_conversation_ids
+        # 可订阅人员列表
+        self.union_ids = union_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_ids is not None:
+            result['corpIds'] = self.corp_ids
+        if self.open_conversation_ids is not None:
+            result['openConversationIds'] = self.open_conversation_ids
+        if self.union_ids is not None:
+            result['unionIds'] = self.union_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpIds') is not None:
+            self.corp_ids = m.get('corpIds')
+        if m.get('openConversationIds') is not None:
+            self.open_conversation_ids = m.get('openConversationIds')
+        if m.get('unionIds') is not None:
+            self.union_ids = m.get('unionIds')
+        return self
+
+
+class UpdateSubscribedCalendarsRequest(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        managers: List[str] = None,
+        name: str = None,
+        subscribe_scope: UpdateSubscribedCalendarsRequestSubscribeScope = None,
+    ):
+        # 日历介绍
+        self.description = description
+        # 日历管理员列表
+        self.managers = managers
+        # 日历名
+        self.name = name
+        # 可订阅列表
+        self.subscribe_scope = subscribe_scope
+
+    def validate(self):
+        if self.subscribe_scope:
+            self.subscribe_scope.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.managers is not None:
+            result['managers'] = self.managers
+        if self.name is not None:
+            result['name'] = self.name
+        if self.subscribe_scope is not None:
+            result['subscribeScope'] = self.subscribe_scope.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('managers') is not None:
+            self.managers = m.get('managers')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('subscribeScope') is not None:
+            temp_model = UpdateSubscribedCalendarsRequestSubscribeScope()
+            self.subscribe_scope = temp_model.from_map(m['subscribeScope'])
+        return self
+
+
+class UpdateSubscribedCalendarsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class UpdateSubscribedCalendarsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateSubscribedCalendarsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateSubscribedCalendarsResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 

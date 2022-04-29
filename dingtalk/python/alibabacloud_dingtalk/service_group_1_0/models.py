@@ -1642,6 +1642,181 @@ class AssignTicketResponse(TeaModel):
         return self
 
 
+class BatchBindingGroupBizIdsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchBindingGroupBizIdsRequestBindingGroupBizIds(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        open_conversation_id: str = None,
+    ):
+        # 业务ID
+        self.biz_id = biz_id
+        # 群会话ID
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class BatchBindingGroupBizIdsRequest(TeaModel):
+    def __init__(
+        self,
+        binding_group_biz_ids: List[BatchBindingGroupBizIdsRequestBindingGroupBizIds] = None,
+        open_team_id: str = None,
+    ):
+        self.binding_group_biz_ids = binding_group_biz_ids
+        # 开放团队ID
+        self.open_team_id = open_team_id
+
+    def validate(self):
+        if self.binding_group_biz_ids:
+            for k in self.binding_group_biz_ids:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['bindingGroupBizIds'] = []
+        if self.binding_group_biz_ids is not None:
+            for k in self.binding_group_biz_ids:
+                result['bindingGroupBizIds'].append(k.to_map() if k else None)
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.binding_group_biz_ids = []
+        if m.get('bindingGroupBizIds') is not None:
+            for k in m.get('bindingGroupBizIds'):
+                temp_model = BatchBindingGroupBizIdsRequestBindingGroupBizIds()
+                self.binding_group_biz_ids.append(temp_model.from_map(k))
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        return self
+
+
+class BatchBindingGroupBizIdsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        # 是否执行成功
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class BatchBindingGroupBizIdsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BatchBindingGroupBizIdsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BatchBindingGroupBizIdsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchGetGroupSetConfigHeaders(TeaModel):
     def __init__(
         self,
@@ -3810,6 +3985,206 @@ class CreateGroupResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CreateGroupResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateGroupConversationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateGroupConversationRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        ding_group_id: str = None,
+        ding_suite_key: str = None,
+        ding_token_grant_type: int = None,
+        ding_user_id: str = None,
+        ding_user_name: str = None,
+        ext_values: str = None,
+        open_team_id: str = None,
+        server_group_id: str = None,
+    ):
+        # 开放corpid
+        self.corp_id = corp_id
+        # 钉群openID
+        self.ding_group_id = ding_group_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_token_grant_type = ding_token_grant_type
+        # 钉群内发起人工服务的客户的ID
+        self.ding_user_id = ding_user_id
+        # 钉群内发起人工服务的客户的名称
+        self.ding_user_name = ding_user_name
+        # 扩展信息
+        self.ext_values = ext_values
+        self.open_team_id = open_team_id
+        # 小二技能组ID
+        self.server_group_id = server_group_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.ding_group_id is not None:
+            result['dingGroupId'] = self.ding_group_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.ding_user_id is not None:
+            result['dingUserId'] = self.ding_user_id
+        if self.ding_user_name is not None:
+            result['dingUserName'] = self.ding_user_name
+        if self.ext_values is not None:
+            result['extValues'] = self.ext_values
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.server_group_id is not None:
+            result['serverGroupId'] = self.server_group_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('dingGroupId') is not None:
+            self.ding_group_id = m.get('dingGroupId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('dingUserId') is not None:
+            self.ding_user_id = m.get('dingUserId')
+        if m.get('dingUserName') is not None:
+            self.ding_user_name = m.get('dingUserName')
+        if m.get('extValues') is not None:
+            self.ext_values = m.get('extValues')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('serverGroupId') is not None:
+            self.server_group_id = m.get('serverGroupId')
+        return self
+
+
+class CreateGroupConversationResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_open_errcode: int = None,
+        error_msg: str = None,
+        result: str = None,
+        success: bool = None,
+    ):
+        # dingOpenErrcode
+        self.ding_open_errcode = ding_open_errcode
+        # errorMsg
+        self.error_msg = error_msg
+        # 执行是否成功
+        self.result = result
+        # 回调是否成功
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_open_errcode is not None:
+            result['dingOpenErrcode'] = self.ding_open_errcode
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingOpenErrcode') is not None:
+            self.ding_open_errcode = m.get('dingOpenErrcode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateGroupConversationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateGroupConversationResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateGroupConversationResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -10673,7 +11048,9 @@ class SendMsgByTaskRequestMessageContent(TeaModel):
         content: str = None,
         images: List[str] = None,
         message_type: str = None,
+        remind: bool = None,
         title: str = None,
+        top: bool = None,
     ):
         # at活跃成员数量
         self.at_active_member_num = at_active_member_num
@@ -10688,8 +11065,12 @@ class SendMsgByTaskRequestMessageContent(TeaModel):
         self.images = images
         # 消息类型
         self.message_type = message_type
+        # 是否提醒群成员
+        self.remind = remind
         # 标题
         self.title = title
+        # 是否置顶
+        self.top = top
 
     def validate(self):
         if self.btns:
@@ -10719,8 +11100,12 @@ class SendMsgByTaskRequestMessageContent(TeaModel):
             result['images'] = self.images
         if self.message_type is not None:
             result['messageType'] = self.message_type
+        if self.remind is not None:
+            result['remind'] = self.remind
         if self.title is not None:
             result['title'] = self.title
+        if self.top is not None:
+            result['top'] = self.top
         return result
 
     def from_map(self, m: dict = None):
@@ -10742,8 +11127,12 @@ class SendMsgByTaskRequestMessageContent(TeaModel):
             self.images = m.get('images')
         if m.get('messageType') is not None:
             self.message_type = m.get('messageType')
+        if m.get('remind') is not None:
+            self.remind = m.get('remind')
         if m.get('title') is not None:
             self.title = m.get('title')
+        if m.get('top') is not None:
+            self.top = m.get('top')
         return self
 
 
