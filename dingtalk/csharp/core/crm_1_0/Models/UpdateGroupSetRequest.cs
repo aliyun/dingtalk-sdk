@@ -41,6 +41,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public string TemplateId { get; set; }
 
+        [NameInMap("welcome")]
+        [Validation(Required=false)]
+        public string Welcome { get; set; }
+
     }
 
 }

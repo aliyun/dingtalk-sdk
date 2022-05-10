@@ -964,6 +964,580 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactUpdateResponse>(await DoROARequestAsync("CustomizeContactUpdate", "industry_1.0", "HTTP", "PUT", "AK", "/v1.0/industry/customizations/contacts", "json", req, runtime));
         }
 
+        public DigitalStoreContactInfoResponse DigitalStoreContactInfo()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DigitalStoreContactInfoHeaders headers = new DigitalStoreContactInfoHeaders();
+            return DigitalStoreContactInfoWithOptions(headers, runtime);
+        }
+
+        public async Task<DigitalStoreContactInfoResponse> DigitalStoreContactInfoAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DigitalStoreContactInfoHeaders headers = new DigitalStoreContactInfoHeaders();
+            return await DigitalStoreContactInfoWithOptionsAsync(headers, runtime);
+        }
+
+        public DigitalStoreContactInfoResponse DigitalStoreContactInfoWithOptions(DigitalStoreContactInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<DigitalStoreContactInfoResponse>(DoROARequest("DigitalStoreContactInfo", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/digitalStores/contactInfos", "json", req, runtime));
+        }
+
+        public async Task<DigitalStoreContactInfoResponse> DigitalStoreContactInfoWithOptionsAsync(DigitalStoreContactInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<DigitalStoreContactInfoResponse>(await DoROARequestAsync("DigitalStoreContactInfo", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/digitalStores/contactInfos", "json", req, runtime));
+        }
+
+        public DigitalStoreGroupInfoResponse DigitalStoreGroupInfo(DigitalStoreGroupInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DigitalStoreGroupInfoHeaders headers = new DigitalStoreGroupInfoHeaders();
+            return DigitalStoreGroupInfoWithOptions(request, headers, runtime);
+        }
+
+        public async Task<DigitalStoreGroupInfoResponse> DigitalStoreGroupInfoAsync(DigitalStoreGroupInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DigitalStoreGroupInfoHeaders headers = new DigitalStoreGroupInfoHeaders();
+            return await DigitalStoreGroupInfoWithOptionsAsync(request, headers, runtime);
+        }
+
+        public DigitalStoreGroupInfoResponse DigitalStoreGroupInfoWithOptions(DigitalStoreGroupInfoRequest request, DigitalStoreGroupInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupId))
+            {
+                query["groupId"] = request.GroupId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<DigitalStoreGroupInfoResponse>(DoROARequest("DigitalStoreGroupInfo", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/digitalStores/groupInfos", "json", req, runtime));
+        }
+
+        public async Task<DigitalStoreGroupInfoResponse> DigitalStoreGroupInfoWithOptionsAsync(DigitalStoreGroupInfoRequest request, DigitalStoreGroupInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupId))
+            {
+                query["groupId"] = request.GroupId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<DigitalStoreGroupInfoResponse>(await DoROARequestAsync("DigitalStoreGroupInfo", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/digitalStores/groupInfos", "json", req, runtime));
+        }
+
+        public DigitalStoreGroupsResponse DigitalStoreGroups()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DigitalStoreGroupsHeaders headers = new DigitalStoreGroupsHeaders();
+            return DigitalStoreGroupsWithOptions(headers, runtime);
+        }
+
+        public async Task<DigitalStoreGroupsResponse> DigitalStoreGroupsAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DigitalStoreGroupsHeaders headers = new DigitalStoreGroupsHeaders();
+            return await DigitalStoreGroupsWithOptionsAsync(headers, runtime);
+        }
+
+        public DigitalStoreGroupsResponse DigitalStoreGroupsWithOptions(DigitalStoreGroupsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<DigitalStoreGroupsResponse>(DoROARequest("DigitalStoreGroups", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/digitalStores/groups", "json", req, runtime));
+        }
+
+        public async Task<DigitalStoreGroupsResponse> DigitalStoreGroupsWithOptionsAsync(DigitalStoreGroupsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<DigitalStoreGroupsResponse>(await DoROARequestAsync("DigitalStoreGroups", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/digitalStores/groups", "json", req, runtime));
+        }
+
+        public DigitalStoreNodeInfoResponse DigitalStoreNodeInfo(DigitalStoreNodeInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DigitalStoreNodeInfoHeaders headers = new DigitalStoreNodeInfoHeaders();
+            return DigitalStoreNodeInfoWithOptions(request, headers, runtime);
+        }
+
+        public async Task<DigitalStoreNodeInfoResponse> DigitalStoreNodeInfoAsync(DigitalStoreNodeInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DigitalStoreNodeInfoHeaders headers = new DigitalStoreNodeInfoHeaders();
+            return await DigitalStoreNodeInfoWithOptionsAsync(request, headers, runtime);
+        }
+
+        public DigitalStoreNodeInfoResponse DigitalStoreNodeInfoWithOptions(DigitalStoreNodeInfoRequest request, DigitalStoreNodeInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                query["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NodeId))
+            {
+                query["nodeId"] = request.NodeId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<DigitalStoreNodeInfoResponse>(DoROARequest("DigitalStoreNodeInfo", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/digitalStores/nodeInfos", "json", req, runtime));
+        }
+
+        public async Task<DigitalStoreNodeInfoResponse> DigitalStoreNodeInfoWithOptionsAsync(DigitalStoreNodeInfoRequest request, DigitalStoreNodeInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                query["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NodeId))
+            {
+                query["nodeId"] = request.NodeId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<DigitalStoreNodeInfoResponse>(await DoROARequestAsync("DigitalStoreNodeInfo", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/digitalStores/nodeInfos", "json", req, runtime));
+        }
+
+        public DigitalStoreRolesResponse DigitalStoreRoles()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DigitalStoreRolesHeaders headers = new DigitalStoreRolesHeaders();
+            return DigitalStoreRolesWithOptions(headers, runtime);
+        }
+
+        public async Task<DigitalStoreRolesResponse> DigitalStoreRolesAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DigitalStoreRolesHeaders headers = new DigitalStoreRolesHeaders();
+            return await DigitalStoreRolesWithOptionsAsync(headers, runtime);
+        }
+
+        public DigitalStoreRolesResponse DigitalStoreRolesWithOptions(DigitalStoreRolesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<DigitalStoreRolesResponse>(DoROARequest("DigitalStoreRoles", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/digitalStores/roles", "json", req, runtime));
+        }
+
+        public async Task<DigitalStoreRolesResponse> DigitalStoreRolesWithOptionsAsync(DigitalStoreRolesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<DigitalStoreRolesResponse>(await DoROARequestAsync("DigitalStoreRoles", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/digitalStores/roles", "json", req, runtime));
+        }
+
+        public DigitalStoreStoreInfoResponse DigitalStoreStoreInfo(DigitalStoreStoreInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DigitalStoreStoreInfoHeaders headers = new DigitalStoreStoreInfoHeaders();
+            return DigitalStoreStoreInfoWithOptions(request, headers, runtime);
+        }
+
+        public async Task<DigitalStoreStoreInfoResponse> DigitalStoreStoreInfoAsync(DigitalStoreStoreInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DigitalStoreStoreInfoHeaders headers = new DigitalStoreStoreInfoHeaders();
+            return await DigitalStoreStoreInfoWithOptionsAsync(request, headers, runtime);
+        }
+
+        public DigitalStoreStoreInfoResponse DigitalStoreStoreInfoWithOptions(DigitalStoreStoreInfoRequest request, DigitalStoreStoreInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                query["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StoreId))
+            {
+                query["storeId"] = request.StoreId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<DigitalStoreStoreInfoResponse>(DoROARequest("DigitalStoreStoreInfo", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/digitalStores/storeInfos", "json", req, runtime));
+        }
+
+        public async Task<DigitalStoreStoreInfoResponse> DigitalStoreStoreInfoWithOptionsAsync(DigitalStoreStoreInfoRequest request, DigitalStoreStoreInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                query["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StoreId))
+            {
+                query["storeId"] = request.StoreId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<DigitalStoreStoreInfoResponse>(await DoROARequestAsync("DigitalStoreStoreInfo", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/digitalStores/storeInfos", "json", req, runtime));
+        }
+
+        public DigitalStoreSubNodesResponse DigitalStoreSubNodes(DigitalStoreSubNodesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DigitalStoreSubNodesHeaders headers = new DigitalStoreSubNodesHeaders();
+            return DigitalStoreSubNodesWithOptions(request, headers, runtime);
+        }
+
+        public async Task<DigitalStoreSubNodesResponse> DigitalStoreSubNodesAsync(DigitalStoreSubNodesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DigitalStoreSubNodesHeaders headers = new DigitalStoreSubNodesHeaders();
+            return await DigitalStoreSubNodesWithOptionsAsync(request, headers, runtime);
+        }
+
+        public DigitalStoreSubNodesResponse DigitalStoreSubNodesWithOptions(DigitalStoreSubNodesRequest request, DigitalStoreSubNodesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                query["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NodeId))
+            {
+                query["nodeId"] = request.NodeId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<DigitalStoreSubNodesResponse>(DoROARequest("DigitalStoreSubNodes", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/digitalStores/subsidiaryNodes", "json", req, runtime));
+        }
+
+        public async Task<DigitalStoreSubNodesResponse> DigitalStoreSubNodesWithOptionsAsync(DigitalStoreSubNodesRequest request, DigitalStoreSubNodesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                query["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NodeId))
+            {
+                query["nodeId"] = request.NodeId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<DigitalStoreSubNodesResponse>(await DoROARequestAsync("DigitalStoreSubNodes", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/digitalStores/subsidiaryNodes", "json", req, runtime));
+        }
+
+        public DigitalStoreUserInfoResponse DigitalStoreUserInfo(DigitalStoreUserInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DigitalStoreUserInfoHeaders headers = new DigitalStoreUserInfoHeaders();
+            return DigitalStoreUserInfoWithOptions(request, headers, runtime);
+        }
+
+        public async Task<DigitalStoreUserInfoResponse> DigitalStoreUserInfoAsync(DigitalStoreUserInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DigitalStoreUserInfoHeaders headers = new DigitalStoreUserInfoHeaders();
+            return await DigitalStoreUserInfoWithOptionsAsync(request, headers, runtime);
+        }
+
+        public DigitalStoreUserInfoResponse DigitalStoreUserInfoWithOptions(DigitalStoreUserInfoRequest request, DigitalStoreUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                query["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<DigitalStoreUserInfoResponse>(DoROARequest("DigitalStoreUserInfo", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/digitalStores/userInfos", "json", req, runtime));
+        }
+
+        public async Task<DigitalStoreUserInfoResponse> DigitalStoreUserInfoWithOptionsAsync(DigitalStoreUserInfoRequest request, DigitalStoreUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                query["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<DigitalStoreUserInfoResponse>(await DoROARequestAsync("DigitalStoreUserInfo", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/digitalStores/userInfos", "json", req, runtime));
+        }
+
+        public DigitalStoreUsersResponse DigitalStoreUsers(DigitalStoreUsersRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DigitalStoreUsersHeaders headers = new DigitalStoreUsersHeaders();
+            return DigitalStoreUsersWithOptions(request, headers, runtime);
+        }
+
+        public async Task<DigitalStoreUsersResponse> DigitalStoreUsersAsync(DigitalStoreUsersRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DigitalStoreUsersHeaders headers = new DigitalStoreUsersHeaders();
+            return await DigitalStoreUsersWithOptionsAsync(request, headers, runtime);
+        }
+
+        public DigitalStoreUsersResponse DigitalStoreUsersWithOptions(DigitalStoreUsersRequest request, DigitalStoreUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                query["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NodeId))
+            {
+                query["nodeId"] = request.NodeId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<DigitalStoreUsersResponse>(DoROARequest("DigitalStoreUsers", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/digitalStores/nodes/users", "json", req, runtime));
+        }
+
+        public async Task<DigitalStoreUsersResponse> DigitalStoreUsersWithOptionsAsync(DigitalStoreUsersRequest request, DigitalStoreUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                query["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NodeId))
+            {
+                query["nodeId"] = request.NodeId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<DigitalStoreUsersResponse>(await DoROARequestAsync("DigitalStoreUsers", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/digitalStores/nodes/users", "json", req, runtime));
+        }
+
         public IndustryManufactureCostRecordListGetResponse IndustryManufactureCostRecordListGet(IndustryManufactureCostRecordListGetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

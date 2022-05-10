@@ -44,6 +44,13 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public string Platforms { get; set; }
 
+        /// <summary>
+        /// 接收人的员工号列表
+        /// </summary>
+        [NameInMap("receiverUserIdList")]
+        [Validation(Required=false)]
+        public List<string> ReceiverUserIdList { get; set; }
+
     }
 
 }

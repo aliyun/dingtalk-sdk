@@ -1836,6 +1836,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["platforms"] = request.Platforms;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUserIdList))
+            {
+                body["receiverUserIdList"] = request.ReceiverUserIdList;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1876,6 +1880,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Platforms))
             {
                 body["platforms"] = request.Platforms;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUserIdList))
+            {
+                body["receiverUserIdList"] = request.ReceiverUserIdList;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

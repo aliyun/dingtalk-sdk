@@ -32,6 +32,7 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
                 public string ArrDate { get; set; }
                 public string ArrLocation { get; set; }
                 public string ArrTime { get; set; }
+                public string BillRecordTime { get; set; }
                 public string BookTime { get; set; }
                 public string BookerId { get; set; }
                 public string BookerJobNo { get; set; }

@@ -380,6 +380,58 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             return TeaModel.ToObject<DeleteContactHideSettingResponse>(await DoROARequestAsync("DeleteContactHideSetting", "contact_1.0", "HTTP", "DELETE", "AK", "/v1.0/contact/contactHideSettings/" + settingId, "none", req, runtime));
         }
 
+        public DeleteContactRestrictSettingResponse DeleteContactRestrictSetting(string settingId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteContactRestrictSettingHeaders headers = new DeleteContactRestrictSettingHeaders();
+            return DeleteContactRestrictSettingWithOptions(settingId, headers, runtime);
+        }
+
+        public async Task<DeleteContactRestrictSettingResponse> DeleteContactRestrictSettingAsync(string settingId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteContactRestrictSettingHeaders headers = new DeleteContactRestrictSettingHeaders();
+            return await DeleteContactRestrictSettingWithOptionsAsync(settingId, headers, runtime);
+        }
+
+        public DeleteContactRestrictSettingResponse DeleteContactRestrictSettingWithOptions(string settingId, DeleteContactRestrictSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            settingId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(settingId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<DeleteContactRestrictSettingResponse>(DoROARequest("DeleteContactRestrictSetting", "contact_1.0", "HTTP", "DELETE", "AK", "/v1.0/contact/restrictions/settings/" + settingId, "json", req, runtime));
+        }
+
+        public async Task<DeleteContactRestrictSettingResponse> DeleteContactRestrictSettingWithOptionsAsync(string settingId, DeleteContactRestrictSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            settingId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(settingId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<DeleteContactRestrictSettingResponse>(await DoROARequestAsync("DeleteContactRestrictSetting", "contact_1.0", "HTTP", "DELETE", "AK", "/v1.0/contact/restrictions/settings/" + settingId, "json", req, runtime));
+        }
+
         public DeleteEmpAttributeVisibilityResponse DeleteEmpAttributeVisibility(string settingId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1574,6 +1626,78 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             return TeaModel.ToObject<ListContactHideSettingsResponse>(await DoROARequestAsync("ListContactHideSettings", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/contactHideSettings", "json", req, runtime));
+        }
+
+        public ListContactRestrictSettingResponse ListContactRestrictSetting(ListContactRestrictSettingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListContactRestrictSettingHeaders headers = new ListContactRestrictSettingHeaders();
+            return ListContactRestrictSettingWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ListContactRestrictSettingResponse> ListContactRestrictSettingAsync(ListContactRestrictSettingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListContactRestrictSettingHeaders headers = new ListContactRestrictSettingHeaders();
+            return await ListContactRestrictSettingWithOptionsAsync(request, headers, runtime);
+        }
+
+        public ListContactRestrictSettingResponse ListContactRestrictSettingWithOptions(ListContactRestrictSettingRequest request, ListContactRestrictSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<ListContactRestrictSettingResponse>(DoROARequest("ListContactRestrictSetting", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/restrictions/settings", "json", req, runtime));
+        }
+
+        public async Task<ListContactRestrictSettingResponse> ListContactRestrictSettingWithOptionsAsync(ListContactRestrictSettingRequest request, ListContactRestrictSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<ListContactRestrictSettingResponse>(await DoROARequestAsync("ListContactRestrictSetting", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/restrictions/settings", "json", req, runtime));
         }
 
         public ListEmpAttributeVisibilityResponse ListEmpAttributeVisibility(ListEmpAttributeVisibilityRequest request)
@@ -3106,6 +3230,150 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<UpdateContactHideSettingResponse>(await DoROARequestAsync("UpdateContactHideSetting", "contact_1.0", "HTTP", "PUT", "AK", "/v1.0/contact/contactHideSettings", "json", req, runtime));
+        }
+
+        public UpdateContactRestrictSettingResponse UpdateContactRestrictSetting(UpdateContactRestrictSettingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateContactRestrictSettingHeaders headers = new UpdateContactRestrictSettingHeaders();
+            return UpdateContactRestrictSettingWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UpdateContactRestrictSettingResponse> UpdateContactRestrictSettingAsync(UpdateContactRestrictSettingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateContactRestrictSettingHeaders headers = new UpdateContactRestrictSettingHeaders();
+            return await UpdateContactRestrictSettingWithOptionsAsync(request, headers, runtime);
+        }
+
+        public UpdateContactRestrictSettingResponse UpdateContactRestrictSettingWithOptions(UpdateContactRestrictSettingRequest request, UpdateContactRestrictSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Active))
+            {
+                body["active"] = request.Active;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeDeptIds))
+            {
+                body["excludeDeptIds"] = request.ExcludeDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeTagIds))
+            {
+                body["excludeTagIds"] = request.ExcludeTagIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeUserIds))
+            {
+                body["excludeUserIds"] = request.ExcludeUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubjectDeptIds))
+            {
+                body["subjectDeptIds"] = request.SubjectDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubjectTagIds))
+            {
+                body["subjectTagIds"] = request.SubjectTagIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubjectUserIds))
+            {
+                body["subjectUserIds"] = request.SubjectUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateContactRestrictSettingResponse>(DoROARequest("UpdateContactRestrictSetting", "contact_1.0", "HTTP", "PUT", "AK", "/v1.0/contact/restrictions/settings", "json", req, runtime));
+        }
+
+        public async Task<UpdateContactRestrictSettingResponse> UpdateContactRestrictSettingWithOptionsAsync(UpdateContactRestrictSettingRequest request, UpdateContactRestrictSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Active))
+            {
+                body["active"] = request.Active;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeDeptIds))
+            {
+                body["excludeDeptIds"] = request.ExcludeDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeTagIds))
+            {
+                body["excludeTagIds"] = request.ExcludeTagIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeUserIds))
+            {
+                body["excludeUserIds"] = request.ExcludeUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubjectDeptIds))
+            {
+                body["subjectDeptIds"] = request.SubjectDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubjectTagIds))
+            {
+                body["subjectTagIds"] = request.SubjectTagIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubjectUserIds))
+            {
+                body["subjectUserIds"] = request.SubjectUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateContactRestrictSettingResponse>(await DoROARequestAsync("UpdateContactRestrictSetting", "contact_1.0", "HTTP", "PUT", "AK", "/v1.0/contact/restrictions/settings", "json", req, runtime));
         }
 
         public UpdateDeptSettngTailFirstResponse UpdateDeptSettngTailFirst(UpdateDeptSettngTailFirstRequest request)

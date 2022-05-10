@@ -1,0 +1,21 @@
+// This file is auto-generated, don't edit it. Thanks.
+
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+using Tea;
+
+namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
+{
+    public class RangeFindNextResponseBody : TeaModel {
+        /// <summary>
+        /// 找到的单元格的地址，使用A1表示法
+        /// </summary>
+        [NameInMap("a1Notation")]
+        [Validation(Required=false)]
+        public string A1Notation { get; set; }
+
+    }
+
+}

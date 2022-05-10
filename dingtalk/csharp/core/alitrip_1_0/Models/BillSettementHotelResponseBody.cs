@@ -28,6 +28,7 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
             public class BillSettementHotelResponseBodyModuleDataList : TeaModel {
                 public string AlipayTradeNo { get; set; }
                 public string ApplyId { get; set; }
+                public string BillRecordTime { get; set; }
                 public string BookTime { get; set; }
                 public string BookerId { get; set; }
                 public string BookerJobNo { get; set; }

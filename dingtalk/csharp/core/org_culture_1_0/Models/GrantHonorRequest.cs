@@ -31,7 +31,7 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
         public string GranterName { get; set; }
 
         /// <summary>
-        /// 是否使用官宣号通知获奖人
+        /// 是否使用官宣号发送内网动态
         /// </summary>
         [NameInMap("noticeAnnouncer")]
         [Validation(Required=false)]
