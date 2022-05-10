@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict, List
+from typing import Dict, List, Any
 
 
 class BatchQueryGroupMemberHeaders(TeaModel):
@@ -1536,6 +1536,497 @@ class GetSceneGroupMembersResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetSceneGroupMembersResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GroupCapacityInquiryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GroupCapacityInquiryRequest(TeaModel):
+    def __init__(
+        self,
+        effective_duration: str = None,
+        open_conversation_id: str = None,
+        operator: str = None,
+        options: Dict[str, Any] = None,
+        target_capacity: int = None,
+    ):
+        # 有效生命周期
+        self.effective_duration = effective_duration
+        # 开放的群id
+        self.open_conversation_id = open_conversation_id
+        # 当前操作人工号
+        self.operator = operator
+        # 扩展参数
+        self.options = options
+        # 目标容量
+        self.target_capacity = target_capacity
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.effective_duration is not None:
+            result['effectiveDuration'] = self.effective_duration
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.operator is not None:
+            result['operator'] = self.operator
+        if self.options is not None:
+            result['options'] = self.options
+        if self.target_capacity is not None:
+            result['targetCapacity'] = self.target_capacity
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('effectiveDuration') is not None:
+            self.effective_duration = m.get('effectiveDuration')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
+        if m.get('options') is not None:
+            self.options = m.get('options')
+        if m.get('targetCapacity') is not None:
+            self.target_capacity = m.get('targetCapacity')
+        return self
+
+
+class GroupCapacityInquiryResponseBody(TeaModel):
+    def __init__(
+        self,
+        actual_price: int = None,
+        created_at: int = None,
+        current_capacity: int = None,
+        current_effect_until: int = None,
+        discount: int = None,
+        ext_info: Dict[str, Any] = None,
+        group_owner: str = None,
+        group_title: str = None,
+        marked_price: int = None,
+        member_count: int = None,
+        open_conversation_id: str = None,
+        operator: str = None,
+        target_capacity: int = None,
+        target_effect_until: int = None,
+        token: str = None,
+    ):
+        # 实际价格
+        self.actual_price = actual_price
+        # 群创建时间
+        self.created_at = created_at
+        # 当前容量
+        self.current_capacity = current_capacity
+        # 当前容量生效至何时
+        self.current_effect_until = current_effect_until
+        # 折扣
+        self.discount = discount
+        # 扩展信息
+        self.ext_info = ext_info
+        # 群主userId
+        self.group_owner = group_owner
+        # 群标题
+        self.group_title = group_title
+        # 标价
+        self.marked_price = marked_price
+        # 群人数
+        self.member_count = member_count
+        # 开放的群id
+        self.open_conversation_id = open_conversation_id
+        # 当前操作人工号
+        self.operator = operator
+        # 目标容量
+        self.target_capacity = target_capacity
+        # 目标容量生效至何时
+        self.target_effect_until = target_effect_until
+        # 校验令牌
+        self.token = token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.actual_price is not None:
+            result['actualPrice'] = self.actual_price
+        if self.created_at is not None:
+            result['createdAt'] = self.created_at
+        if self.current_capacity is not None:
+            result['currentCapacity'] = self.current_capacity
+        if self.current_effect_until is not None:
+            result['currentEffectUntil'] = self.current_effect_until
+        if self.discount is not None:
+            result['discount'] = self.discount
+        if self.ext_info is not None:
+            result['extInfo'] = self.ext_info
+        if self.group_owner is not None:
+            result['groupOwner'] = self.group_owner
+        if self.group_title is not None:
+            result['groupTitle'] = self.group_title
+        if self.marked_price is not None:
+            result['markedPrice'] = self.marked_price
+        if self.member_count is not None:
+            result['memberCount'] = self.member_count
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.operator is not None:
+            result['operator'] = self.operator
+        if self.target_capacity is not None:
+            result['targetCapacity'] = self.target_capacity
+        if self.target_effect_until is not None:
+            result['targetEffectUntil'] = self.target_effect_until
+        if self.token is not None:
+            result['token'] = self.token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actualPrice') is not None:
+            self.actual_price = m.get('actualPrice')
+        if m.get('createdAt') is not None:
+            self.created_at = m.get('createdAt')
+        if m.get('currentCapacity') is not None:
+            self.current_capacity = m.get('currentCapacity')
+        if m.get('currentEffectUntil') is not None:
+            self.current_effect_until = m.get('currentEffectUntil')
+        if m.get('discount') is not None:
+            self.discount = m.get('discount')
+        if m.get('extInfo') is not None:
+            self.ext_info = m.get('extInfo')
+        if m.get('groupOwner') is not None:
+            self.group_owner = m.get('groupOwner')
+        if m.get('groupTitle') is not None:
+            self.group_title = m.get('groupTitle')
+        if m.get('markedPrice') is not None:
+            self.marked_price = m.get('markedPrice')
+        if m.get('memberCount') is not None:
+            self.member_count = m.get('memberCount')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
+        if m.get('targetCapacity') is not None:
+            self.target_capacity = m.get('targetCapacity')
+        if m.get('targetEffectUntil') is not None:
+            self.target_effect_until = m.get('targetEffectUntil')
+        if m.get('token') is not None:
+            self.token = m.get('token')
+        return self
+
+
+class GroupCapacityInquiryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GroupCapacityInquiryResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GroupCapacityInquiryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GroupManageQueryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GroupManageQueryRequest(TeaModel):
+    def __init__(
+        self,
+        group_id: str = None,
+        group_member_samples: List[str] = None,
+        group_owner: str = None,
+        group_title_keywords: List[str] = None,
+        group_url: str = None,
+        open_conversation_id: str = None,
+    ):
+        # 群号
+        self.group_id = group_id
+        # 群成员样例工号列表
+        self.group_member_samples = group_member_samples
+        # 群主工号
+        self.group_owner = group_owner
+        # 群标题关键词列表
+        self.group_title_keywords = group_title_keywords
+        # 群链接
+        self.group_url = group_url
+        # 开放群id
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        if self.group_member_samples is not None:
+            result['groupMemberSamples'] = self.group_member_samples
+        if self.group_owner is not None:
+            result['groupOwner'] = self.group_owner
+        if self.group_title_keywords is not None:
+            result['groupTitleKeywords'] = self.group_title_keywords
+        if self.group_url is not None:
+            result['groupUrl'] = self.group_url
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        if m.get('groupMemberSamples') is not None:
+            self.group_member_samples = m.get('groupMemberSamples')
+        if m.get('groupOwner') is not None:
+            self.group_owner = m.get('groupOwner')
+        if m.get('groupTitleKeywords') is not None:
+            self.group_title_keywords = m.get('groupTitleKeywords')
+        if m.get('groupUrl') is not None:
+            self.group_url = m.get('groupUrl')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class GroupManageQueryResponseBodyGroupInfoList(TeaModel):
+    def __init__(
+        self,
+        capacity: int = None,
+        created_at: int = None,
+        ext_info: Dict[str, Any] = None,
+        group_owner: str = None,
+        group_title: str = None,
+        member_count: int = None,
+        open_conversation_id: str = None,
+    ):
+        # 群容量
+        self.capacity = capacity
+        # 群创建时间
+        self.created_at = created_at
+        # 扩展信息
+        self.ext_info = ext_info
+        # 群主userid
+        self.group_owner = group_owner
+        # 群标题
+        self.group_title = group_title
+        # 当前群人数
+        self.member_count = member_count
+        # 开放的群id
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.capacity is not None:
+            result['capacity'] = self.capacity
+        if self.created_at is not None:
+            result['createdAt'] = self.created_at
+        if self.ext_info is not None:
+            result['extInfo'] = self.ext_info
+        if self.group_owner is not None:
+            result['groupOwner'] = self.group_owner
+        if self.group_title is not None:
+            result['groupTitle'] = self.group_title
+        if self.member_count is not None:
+            result['memberCount'] = self.member_count
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('capacity') is not None:
+            self.capacity = m.get('capacity')
+        if m.get('createdAt') is not None:
+            self.created_at = m.get('createdAt')
+        if m.get('extInfo') is not None:
+            self.ext_info = m.get('extInfo')
+        if m.get('groupOwner') is not None:
+            self.group_owner = m.get('groupOwner')
+        if m.get('groupTitle') is not None:
+            self.group_title = m.get('groupTitle')
+        if m.get('memberCount') is not None:
+            self.member_count = m.get('memberCount')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class GroupManageQueryResponseBody(TeaModel):
+    def __init__(
+        self,
+        group_info_list: List[GroupManageQueryResponseBodyGroupInfoList] = None,
+    ):
+        # 群信息列表
+        self.group_info_list = group_info_list
+
+    def validate(self):
+        if self.group_info_list:
+            for k in self.group_info_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['groupInfoList'] = []
+        if self.group_info_list is not None:
+            for k in self.group_info_list:
+                result['groupInfoList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.group_info_list = []
+        if m.get('groupInfoList') is not None:
+            for k in m.get('groupInfoList'):
+                temp_model = GroupManageQueryResponseBodyGroupInfoList()
+                self.group_info_list.append(temp_model.from_map(k))
+        return self
+
+
+class GroupManageQueryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GroupManageQueryResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GroupManageQueryResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

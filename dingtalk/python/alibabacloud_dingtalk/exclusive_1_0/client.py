@@ -307,6 +307,62 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateTrustedDeviceBatch', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/trusts/devices', 'json', req, runtime)
         )
 
+    def delete_across_cloud_stroage_configs(
+        self,
+        target_corp_id: str,
+    ) -> dingtalkexclusive__1__0_models.DeleteAcrossCloudStroageConfigsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.DeleteAcrossCloudStroageConfigsHeaders()
+        return self.delete_across_cloud_stroage_configs_with_options(target_corp_id, headers, runtime)
+
+    async def delete_across_cloud_stroage_configs_async(
+        self,
+        target_corp_id: str,
+    ) -> dingtalkexclusive__1__0_models.DeleteAcrossCloudStroageConfigsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.DeleteAcrossCloudStroageConfigsHeaders()
+        return await self.delete_across_cloud_stroage_configs_with_options_async(target_corp_id, headers, runtime)
+
+    def delete_across_cloud_stroage_configs_with_options(
+        self,
+        target_corp_id: str,
+        headers: dingtalkexclusive__1__0_models.DeleteAcrossCloudStroageConfigsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.DeleteAcrossCloudStroageConfigsResponse:
+        target_corp_id = OpenApiUtilClient.get_encode_param(target_corp_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.DeleteAcrossCloudStroageConfigsResponse(),
+            self.do_roarequest('DeleteAcrossCloudStroageConfigs', 'exclusive_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/exclusive/fileStorages/acrossClouds/configurations/{target_corp_id}', 'json', req, runtime)
+        )
+
+    async def delete_across_cloud_stroage_configs_with_options_async(
+        self,
+        target_corp_id: str,
+        headers: dingtalkexclusive__1__0_models.DeleteAcrossCloudStroageConfigsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.DeleteAcrossCloudStroageConfigsResponse:
+        target_corp_id = OpenApiUtilClient.get_encode_param(target_corp_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.DeleteAcrossCloudStroageConfigsResponse(),
+            await self.do_roarequest_async('DeleteAcrossCloudStroageConfigs', 'exclusive_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/exclusive/fileStorages/acrossClouds/configurations/{target_corp_id}', 'json', req, runtime)
+        )
+
     def delete_comment(
         self,
         publisher_id: str,
@@ -2559,6 +2615,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('PublishFileChangeNotice', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/comments/send', 'none', req, runtime)
         )
 
+    def query_across_cloud_stroage_configs(
+        self,
+        request: dingtalkexclusive__1__0_models.QueryAcrossCloudStroageConfigsRequest,
+    ) -> dingtalkexclusive__1__0_models.QueryAcrossCloudStroageConfigsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.QueryAcrossCloudStroageConfigsHeaders()
+        return self.query_across_cloud_stroage_configs_with_options(request, headers, runtime)
+
+    async def query_across_cloud_stroage_configs_async(
+        self,
+        request: dingtalkexclusive__1__0_models.QueryAcrossCloudStroageConfigsRequest,
+    ) -> dingtalkexclusive__1__0_models.QueryAcrossCloudStroageConfigsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.QueryAcrossCloudStroageConfigsHeaders()
+        return await self.query_across_cloud_stroage_configs_with_options_async(request, headers, runtime)
+
+    def query_across_cloud_stroage_configs_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.QueryAcrossCloudStroageConfigsRequest,
+        headers: dingtalkexclusive__1__0_models.QueryAcrossCloudStroageConfigsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.QueryAcrossCloudStroageConfigsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.target_cloud_type):
+            query['targetCloudType'] = request.target_cloud_type
+        if not UtilClient.is_unset(request.target_corp_id):
+            query['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.QueryAcrossCloudStroageConfigsResponse(),
+            self.do_roarequest('QueryAcrossCloudStroageConfigs', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/fileStorages/acrossClouds/configurations', 'json', req, runtime)
+        )
+
+    async def query_across_cloud_stroage_configs_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.QueryAcrossCloudStroageConfigsRequest,
+        headers: dingtalkexclusive__1__0_models.QueryAcrossCloudStroageConfigsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.QueryAcrossCloudStroageConfigsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.target_cloud_type):
+            query['targetCloudType'] = request.target_cloud_type
+        if not UtilClient.is_unset(request.target_corp_id):
+            query['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.QueryAcrossCloudStroageConfigsResponse(),
+            await self.do_roarequest_async('QueryAcrossCloudStroageConfigs', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/fileStorages/acrossClouds/configurations', 'json', req, runtime)
+        )
+
     def rollback_mini_app_version(
         self,
         request: dingtalkexclusive__1__0_models.RollbackMiniAppVersionRequest,
@@ -2629,6 +2753,90 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkexclusive__1__0_models.RollbackMiniAppVersionResponse(),
             await self.do_roarequest_async('RollbackMiniAppVersion', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/miniApps/versions/rollback', 'json', req, runtime)
+        )
+
+    def save_across_cloud_stroage_configs(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveAcrossCloudStroageConfigsRequest,
+    ) -> dingtalkexclusive__1__0_models.SaveAcrossCloudStroageConfigsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SaveAcrossCloudStroageConfigsHeaders()
+        return self.save_across_cloud_stroage_configs_with_options(request, headers, runtime)
+
+    async def save_across_cloud_stroage_configs_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveAcrossCloudStroageConfigsRequest,
+    ) -> dingtalkexclusive__1__0_models.SaveAcrossCloudStroageConfigsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SaveAcrossCloudStroageConfigsHeaders()
+        return await self.save_across_cloud_stroage_configs_with_options_async(request, headers, runtime)
+
+    def save_across_cloud_stroage_configs_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveAcrossCloudStroageConfigsRequest,
+        headers: dingtalkexclusive__1__0_models.SaveAcrossCloudStroageConfigsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SaveAcrossCloudStroageConfigsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.access_key_id):
+            body['accessKeyId'] = request.access_key_id
+        if not UtilClient.is_unset(request.access_key_secret):
+            body['accessKeySecret'] = request.access_key_secret
+        if not UtilClient.is_unset(request.bucket_name):
+            body['bucketName'] = request.bucket_name
+        if not UtilClient.is_unset(request.cloud_type):
+            body['cloudType'] = request.cloud_type
+        if not UtilClient.is_unset(request.endpoint):
+            body['endpoint'] = request.endpoint
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SaveAcrossCloudStroageConfigsResponse(),
+            self.do_roarequest('SaveAcrossCloudStroageConfigs', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/fileStorages/acrossClouds/configurations', 'json', req, runtime)
+        )
+
+    async def save_across_cloud_stroage_configs_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveAcrossCloudStroageConfigsRequest,
+        headers: dingtalkexclusive__1__0_models.SaveAcrossCloudStroageConfigsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SaveAcrossCloudStroageConfigsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.access_key_id):
+            body['accessKeyId'] = request.access_key_id
+        if not UtilClient.is_unset(request.access_key_secret):
+            body['accessKeySecret'] = request.access_key_secret
+        if not UtilClient.is_unset(request.bucket_name):
+            body['bucketName'] = request.bucket_name
+        if not UtilClient.is_unset(request.cloud_type):
+            body['cloudType'] = request.cloud_type
+        if not UtilClient.is_unset(request.endpoint):
+            body['endpoint'] = request.endpoint
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SaveAcrossCloudStroageConfigsResponse(),
+            await self.do_roarequest_async('SaveAcrossCloudStroageConfigs', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/fileStorages/acrossClouds/configurations', 'json', req, runtime)
         )
 
     def save_and_submit_auth_info(
@@ -3369,4 +3577,72 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkexclusive__1__0_models.UpdateRoleVisibilityResponse(),
             await self.do_roarequest_async('UpdateRoleVisibility', 'exclusive_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/exclusive/partnerDepartments/visibilityRoles', 'boolean', req, runtime)
+        )
+
+    def update_storage_mode(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateStorageModeRequest,
+    ) -> dingtalkexclusive__1__0_models.UpdateStorageModeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.UpdateStorageModeHeaders()
+        return self.update_storage_mode_with_options(request, headers, runtime)
+
+    async def update_storage_mode_async(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateStorageModeRequest,
+    ) -> dingtalkexclusive__1__0_models.UpdateStorageModeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.UpdateStorageModeHeaders()
+        return await self.update_storage_mode_with_options_async(request, headers, runtime)
+
+    def update_storage_mode_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateStorageModeRequest,
+        headers: dingtalkexclusive__1__0_models.UpdateStorageModeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.UpdateStorageModeResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.file_storage_mode):
+            body['fileStorageMode'] = request.file_storage_mode
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.UpdateStorageModeResponse(),
+            self.do_roarequest('UpdateStorageMode', 'exclusive_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/exclusive/fileStorages/acrossClouds/storageModes', 'json', req, runtime)
+        )
+
+    async def update_storage_mode_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateStorageModeRequest,
+        headers: dingtalkexclusive__1__0_models.UpdateStorageModeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.UpdateStorageModeResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.file_storage_mode):
+            body['fileStorageMode'] = request.file_storage_mode
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.UpdateStorageModeResponse(),
+            await self.do_roarequest_async('UpdateStorageMode', 'exclusive_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/exclusive/fileStorages/acrossClouds/storageModes', 'json', req, runtime)
         )

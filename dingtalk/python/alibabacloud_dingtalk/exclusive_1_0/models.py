@@ -563,6 +563,104 @@ class CreateTrustedDeviceBatchResponse(TeaModel):
         return self
 
 
+class DeleteAcrossCloudStroageConfigsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteAcrossCloudStroageConfigsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        # 执行结果
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class DeleteAcrossCloudStroageConfigsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DeleteAcrossCloudStroageConfigsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DeleteAcrossCloudStroageConfigsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DeleteCommentHeaders(TeaModel):
     def __init__(
         self,
@@ -7060,6 +7158,167 @@ class PublishFileChangeNoticeResponse(TeaModel):
         return self
 
 
+class QueryAcrossCloudStroageConfigsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryAcrossCloudStroageConfigsRequest(TeaModel):
+    def __init__(
+        self,
+        target_cloud_type: int = None,
+        target_corp_id: str = None,
+    ):
+        # 云厂商类型
+        self.target_cloud_type = target_cloud_type
+        # 企业的corpId
+        self.target_corp_id = target_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.target_cloud_type is not None:
+            result['targetCloudType'] = self.target_cloud_type
+        if self.target_corp_id is not None:
+            result['targetCorpId'] = self.target_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('targetCloudType') is not None:
+            self.target_cloud_type = m.get('targetCloudType')
+        if m.get('targetCorpId') is not None:
+            self.target_corp_id = m.get('targetCorpId')
+        return self
+
+
+class QueryAcrossCloudStroageConfigsResponseBody(TeaModel):
+    def __init__(
+        self,
+        access_key_id: str = None,
+        access_key_secret: str = None,
+        bucket_name: str = None,
+        cloud_type: int = None,
+        endpoint: str = None,
+    ):
+        # 密匙id
+        self.access_key_id = access_key_id
+        # 密匙密码
+        self.access_key_secret = access_key_secret
+        # bucket名称
+        self.bucket_name = bucket_name
+        # 云厂商类型
+        self.cloud_type = cloud_type
+        # 存储域名地址
+        self.endpoint = endpoint
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.access_key_id is not None:
+            result['accessKeyId'] = self.access_key_id
+        if self.access_key_secret is not None:
+            result['accessKeySecret'] = self.access_key_secret
+        if self.bucket_name is not None:
+            result['bucketName'] = self.bucket_name
+        if self.cloud_type is not None:
+            result['cloudType'] = self.cloud_type
+        if self.endpoint is not None:
+            result['endpoint'] = self.endpoint
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accessKeyId') is not None:
+            self.access_key_id = m.get('accessKeyId')
+        if m.get('accessKeySecret') is not None:
+            self.access_key_secret = m.get('accessKeySecret')
+        if m.get('bucketName') is not None:
+            self.bucket_name = m.get('bucketName')
+        if m.get('cloudType') is not None:
+            self.cloud_type = m.get('cloudType')
+        if m.get('endpoint') is not None:
+            self.endpoint = m.get('endpoint')
+        return self
+
+
+class QueryAcrossCloudStroageConfigsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryAcrossCloudStroageConfigsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryAcrossCloudStroageConfigsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class RollbackMiniAppVersionHeaders(TeaModel):
     def __init__(
         self,
@@ -7203,6 +7462,181 @@ class RollbackMiniAppVersionResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = RollbackMiniAppVersionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SaveAcrossCloudStroageConfigsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SaveAcrossCloudStroageConfigsRequest(TeaModel):
+    def __init__(
+        self,
+        access_key_id: str = None,
+        access_key_secret: str = None,
+        bucket_name: str = None,
+        cloud_type: int = None,
+        endpoint: str = None,
+        target_corp_id: str = None,
+    ):
+        # 密匙id
+        self.access_key_id = access_key_id
+        # 密匙密码
+        self.access_key_secret = access_key_secret
+        # bucket名称
+        self.bucket_name = bucket_name
+        # 云厂商类型
+        self.cloud_type = cloud_type
+        # 存储域名地址
+        self.endpoint = endpoint
+        # 企业id
+        self.target_corp_id = target_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.access_key_id is not None:
+            result['accessKeyId'] = self.access_key_id
+        if self.access_key_secret is not None:
+            result['accessKeySecret'] = self.access_key_secret
+        if self.bucket_name is not None:
+            result['bucketName'] = self.bucket_name
+        if self.cloud_type is not None:
+            result['cloudType'] = self.cloud_type
+        if self.endpoint is not None:
+            result['endpoint'] = self.endpoint
+        if self.target_corp_id is not None:
+            result['targetCorpId'] = self.target_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accessKeyId') is not None:
+            self.access_key_id = m.get('accessKeyId')
+        if m.get('accessKeySecret') is not None:
+            self.access_key_secret = m.get('accessKeySecret')
+        if m.get('bucketName') is not None:
+            self.bucket_name = m.get('bucketName')
+        if m.get('cloudType') is not None:
+            self.cloud_type = m.get('cloudType')
+        if m.get('endpoint') is not None:
+            self.endpoint = m.get('endpoint')
+        if m.get('targetCorpId') is not None:
+            self.target_corp_id = m.get('targetCorpId')
+        return self
+
+
+class SaveAcrossCloudStroageConfigsResponseBody(TeaModel):
+    def __init__(
+        self,
+        access_key_id: str = None,
+        endpoint: str = None,
+        state: int = None,
+    ):
+        # 密匙ID
+        self.access_key_id = access_key_id
+        # 存储域名地址
+        self.endpoint = endpoint
+        # 执行结果
+        self.state = state
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.access_key_id is not None:
+            result['accessKeyId'] = self.access_key_id
+        if self.endpoint is not None:
+            result['endpoint'] = self.endpoint
+        if self.state is not None:
+            result['state'] = self.state
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accessKeyId') is not None:
+            self.access_key_id = m.get('accessKeyId')
+        if m.get('endpoint') is not None:
+            self.endpoint = m.get('endpoint')
+        if m.get('state') is not None:
+            self.state = m.get('state')
+        return self
+
+
+class SaveAcrossCloudStroageConfigsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SaveAcrossCloudStroageConfigsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SaveAcrossCloudStroageConfigsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -7376,13 +7810,10 @@ class SaveAndSubmitAuthInfoRequest(TeaModel):
 class SaveAndSubmitAuthInfoResponseBody(TeaModel):
     def __init__(
         self,
-        access_key_id: str = None,
-        oss: str = None,
+        success: bool = None,
     ):
-        # 密匙ID
-        self.access_key_id = access_key_id
-        # OSS链接
-        self.oss = oss
+        # 是否成功。
+        self.success = success
 
     def validate(self):
         pass
@@ -7393,18 +7824,14 @@ class SaveAndSubmitAuthInfoResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.access_key_id is not None:
-            result['accessKeyId'] = self.access_key_id
-        if self.oss is not None:
-            result['oss'] = self.oss
+        if self.success is not None:
+            result['success'] = self.success
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('accessKeyId') is not None:
-            self.access_key_id = m.get('accessKeyId')
-        if m.get('oss') is not None:
-            self.oss = m.get('oss')
+        if m.get('success') is not None:
+            self.success = m.get('success')
         return self
 
 
@@ -8587,6 +9014,139 @@ class UpdateRoleVisibilityResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             self.body = m.get('body')
+        return self
+
+
+class UpdateStorageModeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateStorageModeRequest(TeaModel):
+    def __init__(
+        self,
+        file_storage_mode: str = None,
+        target_corp_id: str = None,
+    ):
+        # 专属文件跨云存储类型 0：公有模式，1：私有模式，注意，如不更新，则不填写这个字段，字段一旦有值，都会触发原有配置的删除
+        self.file_storage_mode = file_storage_mode
+        # 企业id
+        self.target_corp_id = target_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_storage_mode is not None:
+            result['fileStorageMode'] = self.file_storage_mode
+        if self.target_corp_id is not None:
+            result['targetCorpId'] = self.target_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileStorageMode') is not None:
+            self.file_storage_mode = m.get('fileStorageMode')
+        if m.get('targetCorpId') is not None:
+            self.target_corp_id = m.get('targetCorpId')
+        return self
+
+
+class UpdateStorageModeResponseBody(TeaModel):
+    def __init__(
+        self,
+        target_corp_id: str = None,
+    ):
+        # 组织id
+        self.target_corp_id = target_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.target_corp_id is not None:
+            result['targetCorpId'] = self.target_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('targetCorpId') is not None:
+            self.target_corp_id = m.get('targetCorpId')
+        return self
+
+
+class UpdateStorageModeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateStorageModeResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateStorageModeResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 
