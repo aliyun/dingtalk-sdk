@@ -66,6 +66,10 @@ public class BillSettementHotelResponseBody extends TeaModel {
         @NameInMap("applyId")
         public String applyId;
 
+        // 入账时间
+        @NameInMap("billRecordTime")
+        public String billRecordTime;
+
         // 预定时间
         @NameInMap("bookTime")
         public String bookTime;
@@ -277,6 +281,14 @@ public class BillSettementHotelResponseBody extends TeaModel {
         }
         public String getApplyId() {
             return this.applyId;
+        }
+
+        public BillSettementHotelResponseBodyModuleDataList setBillRecordTime(String billRecordTime) {
+            this.billRecordTime = billRecordTime;
+            return this;
+        }
+        public String getBillRecordTime() {
+            return this.billRecordTime;
         }
 
         public BillSettementHotelResponseBodyModuleDataList setBookTime(String bookTime) {

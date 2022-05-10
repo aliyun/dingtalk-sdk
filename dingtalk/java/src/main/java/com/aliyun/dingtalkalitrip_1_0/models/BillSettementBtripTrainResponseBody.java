@@ -78,6 +78,10 @@ public class BillSettementBtripTrainResponseBody extends TeaModel {
         @NameInMap("arrTime")
         public String arrTime;
 
+        // 入账时间
+        @NameInMap("billRecordTime")
+        public String billRecordTime;
+
         // 预定时间
         @NameInMap("bookTime")
         public String bookTime;
@@ -285,6 +289,14 @@ public class BillSettementBtripTrainResponseBody extends TeaModel {
         }
         public String getArrTime() {
             return this.arrTime;
+        }
+
+        public BillSettementBtripTrainResponseBodyModuleDataList setBillRecordTime(String billRecordTime) {
+            this.billRecordTime = billRecordTime;
+            return this;
+        }
+        public String getBillRecordTime() {
+            return this.billRecordTime;
         }
 
         public BillSettementBtripTrainResponseBodyModuleDataList setBookTime(String bookTime) {

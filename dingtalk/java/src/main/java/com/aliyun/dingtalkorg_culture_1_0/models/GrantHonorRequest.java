@@ -16,7 +16,7 @@ public class GrantHonorRequest extends TeaModel {
     @NameInMap("granterName")
     public String granterName;
 
-    // 是否使用官宣号通知获奖人
+    // 是否使用官宣号发送内网动态
     @NameInMap("noticeAnnouncer")
     public Boolean noticeAnnouncer;
 

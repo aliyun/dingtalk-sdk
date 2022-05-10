@@ -24,6 +24,10 @@ public class TopboxOpenRequest extends TeaModel {
     @NameInMap("platforms")
     public String platforms;
 
+    // 接收人的员工号列表
+    @NameInMap("receiverUserIdList")
+    public java.util.List<String> receiverUserIdList;
+
     public static TopboxOpenRequest build(java.util.Map<String, ?> map) throws Exception {
         TopboxOpenRequest self = new TopboxOpenRequest();
         return TeaModel.build(map, self);
@@ -67,6 +71,14 @@ public class TopboxOpenRequest extends TeaModel {
     }
     public String getPlatforms() {
         return this.platforms;
+    }
+
+    public TopboxOpenRequest setReceiverUserIdList(java.util.List<String> receiverUserIdList) {
+        this.receiverUserIdList = receiverUserIdList;
+        return this;
+    }
+    public java.util.List<String> getReceiverUserIdList() {
+        return this.receiverUserIdList;
     }
 
 }

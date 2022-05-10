@@ -183,6 +183,29 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("DeleteContactHideSetting", "contact_1.0", "HTTP", "DELETE", "AK", "/v1.0/contact/contactHideSettings/" + settingId + "", "none", req, runtime), new DeleteContactHideSettingResponse());
     }
 
+    public DeleteContactRestrictSettingResponse deleteContactRestrictSetting(String settingId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        DeleteContactRestrictSettingHeaders headers = new DeleteContactRestrictSettingHeaders();
+        return this.deleteContactRestrictSettingWithOptions(settingId, headers, runtime);
+    }
+
+    public DeleteContactRestrictSettingResponse deleteContactRestrictSettingWithOptions(String settingId, DeleteContactRestrictSettingHeaders headers, RuntimeOptions runtime) throws Exception {
+        settingId = com.aliyun.openapiutil.Client.getEncodeParam(settingId);
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("DeleteContactRestrictSetting", "contact_1.0", "HTTP", "DELETE", "AK", "/v1.0/contact/restrictions/settings/" + settingId + "", "json", req, runtime), new DeleteContactRestrictSettingResponse());
+    }
+
     public DeleteEmpAttributeVisibilityResponse deleteEmpAttributeVisibility(String settingId) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         DeleteEmpAttributeVisibilityHeaders headers = new DeleteEmpAttributeVisibilityHeaders();
@@ -722,6 +745,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("ListContactHideSettings", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/contactHideSettings", "json", req, runtime), new ListContactHideSettingsResponse());
+    }
+
+    public ListContactRestrictSettingResponse listContactRestrictSetting(ListContactRestrictSettingRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        ListContactRestrictSettingHeaders headers = new ListContactRestrictSettingHeaders();
+        return this.listContactRestrictSettingWithOptions(request, headers, runtime);
+    }
+
+    public ListContactRestrictSettingResponse listContactRestrictSettingWithOptions(ListContactRestrictSettingRequest request, ListContactRestrictSettingHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("ListContactRestrictSetting", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/restrictions/settings", "json", req, runtime), new ListContactRestrictSettingResponse());
     }
 
     public ListEmpAttributeVisibilityResponse listEmpAttributeVisibility(ListEmpAttributeVisibilityRequest request) throws Exception {
@@ -1425,6 +1481,75 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("UpdateContactHideSetting", "contact_1.0", "HTTP", "PUT", "AK", "/v1.0/contact/contactHideSettings", "json", req, runtime), new UpdateContactHideSettingResponse());
+    }
+
+    public UpdateContactRestrictSettingResponse updateContactRestrictSetting(UpdateContactRestrictSettingRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        UpdateContactRestrictSettingHeaders headers = new UpdateContactRestrictSettingHeaders();
+        return this.updateContactRestrictSettingWithOptions(request, headers, runtime);
+    }
+
+    public UpdateContactRestrictSettingResponse updateContactRestrictSettingWithOptions(UpdateContactRestrictSettingRequest request, UpdateContactRestrictSettingHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.active)) {
+            body.put("active", request.active);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            body.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.excludeDeptIds)) {
+            body.put("excludeDeptIds", request.excludeDeptIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.excludeTagIds)) {
+            body.put("excludeTagIds", request.excludeTagIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.excludeUserIds)) {
+            body.put("excludeUserIds", request.excludeUserIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.id)) {
+            body.put("id", request.id);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.subjectDeptIds)) {
+            body.put("subjectDeptIds", request.subjectDeptIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.subjectTagIds)) {
+            body.put("subjectTagIds", request.subjectTagIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.subjectUserIds)) {
+            body.put("subjectUserIds", request.subjectUserIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.type)) {
+            body.put("type", request.type);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UpdateContactRestrictSetting", "contact_1.0", "HTTP", "PUT", "AK", "/v1.0/contact/restrictions/settings", "json", req, runtime), new UpdateContactRestrictSettingResponse());
     }
 
     public UpdateDeptSettngTailFirstResponse updateDeptSettngTailFirst(UpdateDeptSettngTailFirstRequest request) throws Exception {
