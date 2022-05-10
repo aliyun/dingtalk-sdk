@@ -51,6 +51,13 @@ class dataList extends Model
     public $arrTime;
 
     /**
+     * @description 入账时间
+     *
+     * @var string
+     */
+    public $billRecordTime;
+
+    /**
      * @description 预定时间
      *
      * @var string
@@ -390,6 +397,7 @@ class dataList extends Model
         'arrDate'               => 'arrDate',
         'arrLocation'           => 'arrLocation',
         'arrTime'               => 'arrTime',
+        'billRecordTime'        => 'billRecordTime',
         'bookTime'              => 'bookTime',
         'bookerId'              => 'bookerId',
         'bookerJobNo'           => 'bookerJobNo',
@@ -464,6 +472,9 @@ class dataList extends Model
         }
         if (null !== $this->arrTime) {
             $res['arrTime'] = $this->arrTime;
+        }
+        if (null !== $this->billRecordTime) {
+            $res['billRecordTime'] = $this->billRecordTime;
         }
         if (null !== $this->bookTime) {
             $res['bookTime'] = $this->bookTime;
@@ -638,6 +649,9 @@ class dataList extends Model
         }
         if (isset($map['arrTime'])) {
             $model->arrTime = $map['arrTime'];
+        }
+        if (isset($map['billRecordTime'])) {
+            $model->billRecordTime = $map['billRecordTime'];
         }
         if (isset($map['bookTime'])) {
             $model->bookTime = $map['bookTime'];

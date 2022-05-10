@@ -42,12 +42,20 @@ class TopboxOpenRequest extends Model
      * @var string
      */
     public $platforms;
+
+    /**
+     * @description 接收人的员工号列表
+     *
+     * @var string[]
+     */
+    public $receiverUserIdList;
     protected $_name = [
         'coolAppCode'        => 'coolAppCode',
         'expiredTime'        => 'expiredTime',
         'openConversationId' => 'openConversationId',
         'outTrackId'         => 'outTrackId',
         'platforms'          => 'platforms',
+        'receiverUserIdList' => 'receiverUserIdList',
     ];
 
     public function validate()
@@ -71,6 +79,9 @@ class TopboxOpenRequest extends Model
         }
         if (null !== $this->platforms) {
             $res['platforms'] = $this->platforms;
+        }
+        if (null !== $this->receiverUserIdList) {
+            $res['receiverUserIdList'] = $this->receiverUserIdList;
         }
 
         return $res;
@@ -98,6 +109,11 @@ class TopboxOpenRequest extends Model
         }
         if (isset($map['platforms'])) {
             $model->platforms = $map['platforms'];
+        }
+        if (isset($map['receiverUserIdList'])) {
+            if (!empty($map['receiverUserIdList'])) {
+                $model->receiverUserIdList = $map['receiverUserIdList'];
+            }
         }
 
         return $model;

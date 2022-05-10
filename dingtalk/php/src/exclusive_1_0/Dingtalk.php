@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\AddOrgHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\AddOrgRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\AddOrgResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\BanOrOpenGroupWordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\BanOrOpenGroupWordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\BanOrOpenGroupWordsResponse;
@@ -16,6 +19,21 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteCommentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteCommentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageActiveStorageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageActiveStorageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageActiveStorageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageCheckConnectionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageCheckConnectionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageCheckConnectionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageGetQuotaDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageGetQuotaDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageGetQuotaDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageGetStorageStateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageGetStorageStateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageGetStorageStateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageUpdateStorageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageUpdateStorageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageUpdateStorageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetActiveUserSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetActiveUserSummaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAllLabelableDeptsHeaders;
@@ -48,6 +66,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupActiveInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetInActiveUserListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetInActiveUserListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetInActiveUserListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetLastOrgAuthDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetLastOrgAuthDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetLastOrgAuthDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListResponse;
@@ -68,6 +89,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserAppVersionSummaryResp
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListAuditLogHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListAuditLogRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListAuditLogResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListJoinOrgInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListJoinOrgInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListJoinOrgInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListMiniAppAvailableVersionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListMiniAppAvailableVersionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListMiniAppAvailableVersionResponse;
@@ -85,6 +109,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PublishFileChangeNoticeRespo
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\RollbackMiniAppVersionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\RollbackMiniAppVersionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\RollbackMiniAppVersionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveAndSubmitAuthInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveAndSubmitAuthInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveAndSubmitAuthInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SearchOrgInnerGroupInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SearchOrgInnerGroupInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SearchOrgInnerGroupInfoResponse;
@@ -123,6 +150,51 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param AddOrgRequest $request
+     *
+     * @return AddOrgResponse
+     */
+    public function addOrg($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddOrgHeaders([]);
+
+        return $this->addOrgWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddOrgRequest  $request
+     * @param AddOrgHeaders  $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return AddOrgResponse
+     */
+    public function addOrgWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->mobileNum)) {
+            @$body['mobileNum'] = $request->mobileNum;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddOrgResponse::fromMap($this->doROARequest('AddOrg', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/orgnizations', 'json', $req, $runtime));
     }
 
     /**
@@ -307,6 +379,249 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeleteCommentResponse::fromMap($this->doROARequest('DeleteComment', 'exclusive_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/exclusive/publishers/' . $publisherId . '/comments/' . $commentId . '', 'boolean', $req, $runtime));
+    }
+
+    /**
+     * @param FileStorageActiveStorageRequest $request
+     *
+     * @return FileStorageActiveStorageResponse
+     */
+    public function fileStorageActiveStorage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new FileStorageActiveStorageHeaders([]);
+
+        return $this->fileStorageActiveStorageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param FileStorageActiveStorageRequest $request
+     * @param FileStorageActiveStorageHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return FileStorageActiveStorageResponse
+     */
+    public function fileStorageActiveStorageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->accessKeyId)) {
+            @$body['accessKeyId'] = $request->accessKeyId;
+        }
+        if (!Utils::isUnset($request->accessKeySecret)) {
+            @$body['accessKeySecret'] = $request->accessKeySecret;
+        }
+        if (!Utils::isUnset($request->oss)) {
+            @$body['oss'] = $request->oss;
+        }
+        if (!Utils::isUnset($request->targetCorpId)) {
+            @$body['targetCorpId'] = $request->targetCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return FileStorageActiveStorageResponse::fromMap($this->doROARequest('FileStorageActiveStorage', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/fileStorages/active', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param FileStorageCheckConnectionRequest $request
+     *
+     * @return FileStorageCheckConnectionResponse
+     */
+    public function fileStorageCheckConnection($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new FileStorageCheckConnectionHeaders([]);
+
+        return $this->fileStorageCheckConnectionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param FileStorageCheckConnectionRequest $request
+     * @param FileStorageCheckConnectionHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return FileStorageCheckConnectionResponse
+     */
+    public function fileStorageCheckConnectionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->accessKeyId)) {
+            @$body['accessKeyId'] = $request->accessKeyId;
+        }
+        if (!Utils::isUnset($request->accessKeySecret)) {
+            @$body['accessKeySecret'] = $request->accessKeySecret;
+        }
+        if (!Utils::isUnset($request->oss)) {
+            @$body['oss'] = $request->oss;
+        }
+        if (!Utils::isUnset($request->targetCorpId)) {
+            @$body['targetCorpId'] = $request->targetCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return FileStorageCheckConnectionResponse::fromMap($this->doROARequest('FileStorageCheckConnection', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/fileStorages/connections/check', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param FileStorageGetQuotaDataRequest $request
+     *
+     * @return FileStorageGetQuotaDataResponse
+     */
+    public function fileStorageGetQuotaData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new FileStorageGetQuotaDataHeaders([]);
+
+        return $this->fileStorageGetQuotaDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param FileStorageGetQuotaDataRequest $request
+     * @param FileStorageGetQuotaDataHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return FileStorageGetQuotaDataResponse
+     */
+    public function fileStorageGetQuotaDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->endTime)) {
+            @$query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$query['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->targetCorpId)) {
+            @$query['targetCorpId'] = $request->targetCorpId;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$query['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return FileStorageGetQuotaDataResponse::fromMap($this->doROARequest('FileStorageGetQuotaData', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/fileStorages/quotaDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param FileStorageGetStorageStateRequest $request
+     *
+     * @return FileStorageGetStorageStateResponse
+     */
+    public function fileStorageGetStorageState($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new FileStorageGetStorageStateHeaders([]);
+
+        return $this->fileStorageGetStorageStateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param FileStorageGetStorageStateRequest $request
+     * @param FileStorageGetStorageStateHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return FileStorageGetStorageStateResponse
+     */
+    public function fileStorageGetStorageStateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->targetCorpId)) {
+            @$query['targetCorpId'] = $request->targetCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return FileStorageGetStorageStateResponse::fromMap($this->doROARequest('FileStorageGetStorageState', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/fileStorages/states', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param FileStorageUpdateStorageRequest $request
+     *
+     * @return FileStorageUpdateStorageResponse
+     */
+    public function fileStorageUpdateStorage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new FileStorageUpdateStorageHeaders([]);
+
+        return $this->fileStorageUpdateStorageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param FileStorageUpdateStorageRequest $request
+     * @param FileStorageUpdateStorageHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return FileStorageUpdateStorageResponse
+     */
+    public function fileStorageUpdateStorageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->accessKeyId)) {
+            @$body['accessKeyId'] = $request->accessKeyId;
+        }
+        if (!Utils::isUnset($request->accessKeySecret)) {
+            @$body['accessKeySecret'] = $request->accessKeySecret;
+        }
+        if (!Utils::isUnset($request->targetCorpId)) {
+            @$body['targetCorpId'] = $request->targetCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return FileStorageUpdateStorageResponse::fromMap($this->doROARequest('FileStorageUpdateStorage', 'exclusive_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/exclusive/fileStorages/configurations', 'json', $req, $runtime));
     }
 
     /**
@@ -859,6 +1174,48 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetLastOrgAuthDataRequest $request
+     *
+     * @return GetLastOrgAuthDataResponse
+     */
+    public function getLastOrgAuthData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetLastOrgAuthDataHeaders([]);
+
+        return $this->getLastOrgAuthDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetLastOrgAuthDataRequest $request
+     * @param GetLastOrgAuthDataHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return GetLastOrgAuthDataResponse
+     */
+    public function getLastOrgAuthDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->targetCorpId)) {
+            @$query['targetCorpId'] = $request->targetCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetLastOrgAuthDataResponse::fromMap($this->doROARequest('GetLastOrgAuthData', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/organizations/authInfos', 'json', $req, $runtime));
+    }
+
+    /**
      * @param GetOaOperatorLogListRequest $request
      *
      * @return GetOaOperatorLogListResponse
@@ -1193,6 +1550,48 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param ListJoinOrgInfoRequest $request
+     *
+     * @return ListJoinOrgInfoResponse
+     */
+    public function listJoinOrgInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListJoinOrgInfoHeaders([]);
+
+        return $this->listJoinOrgInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListJoinOrgInfoRequest $request
+     * @param ListJoinOrgInfoHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return ListJoinOrgInfoResponse
+     */
+    public function listJoinOrgInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->mobile)) {
+            @$query['mobile'] = $request->mobile;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListJoinOrgInfoResponse::fromMap($this->doROARequest('ListJoinOrgInfo', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/exclusiveAccounts/organizations/infos', 'json', $req, $runtime));
+    }
+
+    /**
      * @param ListMiniAppAvailableVersionRequest $request
      *
      * @return ListMiniAppAvailableVersionResponse
@@ -1482,6 +1881,93 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return RollbackMiniAppVersionResponse::fromMap($this->doROARequest('RollbackMiniAppVersion', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/miniApps/versions/rollback', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SaveAndSubmitAuthInfoRequest $request
+     *
+     * @return SaveAndSubmitAuthInfoResponse
+     */
+    public function saveAndSubmitAuthInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SaveAndSubmitAuthInfoHeaders([]);
+
+        return $this->saveAndSubmitAuthInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SaveAndSubmitAuthInfoRequest $request
+     * @param SaveAndSubmitAuthInfoHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return SaveAndSubmitAuthInfoResponse
+     */
+    public function saveAndSubmitAuthInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->applyRemark)) {
+            @$body['applyRemark'] = $request->applyRemark;
+        }
+        if (!Utils::isUnset($request->authorizeMediaId)) {
+            @$body['authorizeMediaId'] = $request->authorizeMediaId;
+        }
+        if (!Utils::isUnset($request->industry)) {
+            @$body['industry'] = $request->industry;
+        }
+        if (!Utils::isUnset($request->legalPerson)) {
+            @$body['legalPerson'] = $request->legalPerson;
+        }
+        if (!Utils::isUnset($request->legalPersonIdCard)) {
+            @$body['legalPersonIdCard'] = $request->legalPersonIdCard;
+        }
+        if (!Utils::isUnset($request->licenseMediaId)) {
+            @$body['licenseMediaId'] = $request->licenseMediaId;
+        }
+        if (!Utils::isUnset($request->locCityName)) {
+            @$body['locCityName'] = $request->locCityName;
+        }
+        if (!Utils::isUnset($request->locProvinceName)) {
+            @$body['locProvinceName'] = $request->locProvinceName;
+        }
+        if (!Utils::isUnset($request->mobileNum)) {
+            @$body['mobileNum'] = $request->mobileNum;
+        }
+        if (!Utils::isUnset($request->orgName)) {
+            @$body['orgName'] = $request->orgName;
+        }
+        if (!Utils::isUnset($request->organizationCode)) {
+            @$body['organizationCode'] = $request->organizationCode;
+        }
+        if (!Utils::isUnset($request->organizationCodeMediaId)) {
+            @$body['organizationCodeMediaId'] = $request->organizationCodeMediaId;
+        }
+        if (!Utils::isUnset($request->registLocation)) {
+            @$body['registLocation'] = $request->registLocation;
+        }
+        if (!Utils::isUnset($request->registNum)) {
+            @$body['registNum'] = $request->registNum;
+        }
+        if (!Utils::isUnset($request->targetCorpId)) {
+            @$body['targetCorpId'] = $request->targetCorpId;
+        }
+        if (!Utils::isUnset($request->unifiedSocialCredit)) {
+            @$body['unifiedSocialCredit'] = $request->unifiedSocialCredit;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SaveAndSubmitAuthInfoResponse::fromMap($this->doROARequest('SaveAndSubmitAuthInfo', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/ognizations/authInfos/saveAndSubmit', 'json', $req, $runtime));
     }
 
     /**

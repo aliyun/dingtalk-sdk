@@ -67,6 +67,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertBlocksResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ListTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ListTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ListTemplateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\RangeFindNextHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\RangeFindNextRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\RangeFindNextResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SearchWorkspaceDocsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SearchWorkspaceDocsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SearchWorkspaceDocsResponse;
@@ -1124,6 +1127,65 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListTemplateResponse::fromMap($this->doROARequest('ListTemplate', 'doc_1.0', 'HTTP', 'GET', 'AK', '/v1.0/doc/templates', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string               $workbookId
+     * @param string               $sheetId
+     * @param string               $rangeAddress
+     * @param RangeFindNextRequest $request
+     *
+     * @return RangeFindNextResponse
+     */
+    public function rangeFindNext($workbookId, $sheetId, $rangeAddress, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RangeFindNextHeaders([]);
+
+        return $this->rangeFindNextWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string               $workbookId
+     * @param string               $sheetId
+     * @param string               $rangeAddress
+     * @param RangeFindNextRequest $request
+     * @param RangeFindNextHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return RangeFindNextResponse
+     */
+    public function rangeFindNextWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $workbookId   = OpenApiUtilClient::getEncodeParam($workbookId);
+        $sheetId      = OpenApiUtilClient::getEncodeParam($sheetId);
+        $rangeAddress = OpenApiUtilClient::getEncodeParam($rangeAddress);
+        $query        = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->findOptions)) {
+            @$body['findOptions'] = $request->findOptions;
+        }
+        if (!Utils::isUnset($request->text)) {
+            @$body['text'] = $request->text;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return RangeFindNextResponse::fromMap($this->doROARequest('RangeFindNext', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/findNext', 'json', $req, $runtime));
     }
 
     /**

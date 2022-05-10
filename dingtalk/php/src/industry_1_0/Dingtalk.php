@@ -40,6 +40,30 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactUpdateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactUpdateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactUpdateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreContactInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreContactInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreGroupInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreGroupInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreGroupInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreGroupsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreGroupsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreNodeInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreNodeInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreNodeInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreRolesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreRolesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreStoreInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreStoreInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreStoreInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreSubNodesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreSubNodesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreSubNodesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreUserInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreUserInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreUserInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreUsersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreUsersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreUsersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureCostRecordListGetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureCostRecordListGetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureCostRecordListGetResponse;
@@ -692,6 +716,372 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CustomizeContactUpdateResponse::fromMap($this->doROARequest('CustomizeContactUpdate', 'industry_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/industry/customizations/contacts', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return DigitalStoreContactInfoResponse
+     */
+    public function digitalStoreContactInfo()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DigitalStoreContactInfoHeaders([]);
+
+        return $this->digitalStoreContactInfoWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param DigitalStoreContactInfoHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return DigitalStoreContactInfoResponse
+     */
+    public function digitalStoreContactInfoWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return DigitalStoreContactInfoResponse::fromMap($this->doROARequest('DigitalStoreContactInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/digitalStores/contactInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DigitalStoreGroupInfoRequest $request
+     *
+     * @return DigitalStoreGroupInfoResponse
+     */
+    public function digitalStoreGroupInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DigitalStoreGroupInfoHeaders([]);
+
+        return $this->digitalStoreGroupInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DigitalStoreGroupInfoRequest $request
+     * @param DigitalStoreGroupInfoHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return DigitalStoreGroupInfoResponse
+     */
+    public function digitalStoreGroupInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->groupId)) {
+            @$query['groupId'] = $request->groupId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return DigitalStoreGroupInfoResponse::fromMap($this->doROARequest('DigitalStoreGroupInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/digitalStores/groupInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return DigitalStoreGroupsResponse
+     */
+    public function digitalStoreGroups()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DigitalStoreGroupsHeaders([]);
+
+        return $this->digitalStoreGroupsWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param DigitalStoreGroupsHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return DigitalStoreGroupsResponse
+     */
+    public function digitalStoreGroupsWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return DigitalStoreGroupsResponse::fromMap($this->doROARequest('DigitalStoreGroups', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/digitalStores/groups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DigitalStoreNodeInfoRequest $request
+     *
+     * @return DigitalStoreNodeInfoResponse
+     */
+    public function digitalStoreNodeInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DigitalStoreNodeInfoHeaders([]);
+
+        return $this->digitalStoreNodeInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DigitalStoreNodeInfoRequest $request
+     * @param DigitalStoreNodeInfoHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return DigitalStoreNodeInfoResponse
+     */
+    public function digitalStoreNodeInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->code)) {
+            @$query['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->nodeId)) {
+            @$query['nodeId'] = $request->nodeId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return DigitalStoreNodeInfoResponse::fromMap($this->doROARequest('DigitalStoreNodeInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/digitalStores/nodeInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return DigitalStoreRolesResponse
+     */
+    public function digitalStoreRoles()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DigitalStoreRolesHeaders([]);
+
+        return $this->digitalStoreRolesWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param DigitalStoreRolesHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return DigitalStoreRolesResponse
+     */
+    public function digitalStoreRolesWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return DigitalStoreRolesResponse::fromMap($this->doROARequest('DigitalStoreRoles', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/digitalStores/roles', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DigitalStoreStoreInfoRequest $request
+     *
+     * @return DigitalStoreStoreInfoResponse
+     */
+    public function digitalStoreStoreInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DigitalStoreStoreInfoHeaders([]);
+
+        return $this->digitalStoreStoreInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DigitalStoreStoreInfoRequest $request
+     * @param DigitalStoreStoreInfoHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return DigitalStoreStoreInfoResponse
+     */
+    public function digitalStoreStoreInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->code)) {
+            @$query['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->storeId)) {
+            @$query['storeId'] = $request->storeId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return DigitalStoreStoreInfoResponse::fromMap($this->doROARequest('DigitalStoreStoreInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/digitalStores/storeInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DigitalStoreSubNodesRequest $request
+     *
+     * @return DigitalStoreSubNodesResponse
+     */
+    public function digitalStoreSubNodes($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DigitalStoreSubNodesHeaders([]);
+
+        return $this->digitalStoreSubNodesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DigitalStoreSubNodesRequest $request
+     * @param DigitalStoreSubNodesHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return DigitalStoreSubNodesResponse
+     */
+    public function digitalStoreSubNodesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->code)) {
+            @$query['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->nodeId)) {
+            @$query['nodeId'] = $request->nodeId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return DigitalStoreSubNodesResponse::fromMap($this->doROARequest('DigitalStoreSubNodes', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/digitalStores/subsidiaryNodes', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DigitalStoreUserInfoRequest $request
+     *
+     * @return DigitalStoreUserInfoResponse
+     */
+    public function digitalStoreUserInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DigitalStoreUserInfoHeaders([]);
+
+        return $this->digitalStoreUserInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DigitalStoreUserInfoRequest $request
+     * @param DigitalStoreUserInfoHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return DigitalStoreUserInfoResponse
+     */
+    public function digitalStoreUserInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->code)) {
+            @$query['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return DigitalStoreUserInfoResponse::fromMap($this->doROARequest('DigitalStoreUserInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/digitalStores/userInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DigitalStoreUsersRequest $request
+     *
+     * @return DigitalStoreUsersResponse
+     */
+    public function digitalStoreUsers($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DigitalStoreUsersHeaders([]);
+
+        return $this->digitalStoreUsersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DigitalStoreUsersRequest $request
+     * @param DigitalStoreUsersHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return DigitalStoreUsersResponse
+     */
+    public function digitalStoreUsersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->code)) {
+            @$query['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->nodeId)) {
+            @$query['nodeId'] = $request->nodeId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return DigitalStoreUsersResponse::fromMap($this->doROARequest('DigitalStoreUsers', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/digitalStores/nodes/users', 'json', $req, $runtime));
     }
 
     /**

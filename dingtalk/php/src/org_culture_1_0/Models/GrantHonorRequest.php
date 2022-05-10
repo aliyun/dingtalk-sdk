@@ -30,7 +30,7 @@ class GrantHonorRequest extends Model
     public $granterName;
 
     /**
-     * @description 是否使用官宣号通知获奖人
+     * @description 是否使用官宣号发送内网动态
      *
      * @var bool
      */

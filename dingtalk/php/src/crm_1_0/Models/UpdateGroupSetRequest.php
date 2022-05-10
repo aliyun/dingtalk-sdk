@@ -47,6 +47,11 @@ class UpdateGroupSetRequest extends Model
      * @var string
      */
     public $templateId;
+
+    /**
+     * @var string
+     */
+    public $welcome;
     protected $_name = [
         'managerUserIds' => 'managerUserIds',
         'memberQuota'    => 'memberQuota',
@@ -56,6 +61,7 @@ class UpdateGroupSetRequest extends Model
         'openGroupSetId' => 'openGroupSetId',
         'ownerUserId'    => 'ownerUserId',
         'templateId'     => 'templateId',
+        'welcome'        => 'welcome',
     ];
 
     public function validate()
@@ -88,6 +94,9 @@ class UpdateGroupSetRequest extends Model
         }
         if (null !== $this->templateId) {
             $res['templateId'] = $this->templateId;
+        }
+        if (null !== $this->welcome) {
+            $res['welcome'] = $this->welcome;
         }
 
         return $res;
@@ -124,6 +133,9 @@ class UpdateGroupSetRequest extends Model
         }
         if (isset($map['templateId'])) {
             $model->templateId = $map['templateId'];
+        }
+        if (isset($map['welcome'])) {
+            $model->welcome = $map['welcome'];
         }
 
         return $model;
