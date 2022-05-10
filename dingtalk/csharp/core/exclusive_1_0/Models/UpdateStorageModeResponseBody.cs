@@ -8,13 +8,13 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
-    public class SaveAndSubmitAuthInfoResponseBody : TeaModel {
+    public class UpdateStorageModeResponseBody : TeaModel {
         /// <summary>
-        /// 是否成功。
+        /// 组织id
         /// </summary>
-        [NameInMap("success")]
+        [NameInMap("targetCorpId")]
         [Validation(Required=false)]
-        public bool? Success { get; set; }
+        public string TargetCorpId { get; set; }
 
     }
 

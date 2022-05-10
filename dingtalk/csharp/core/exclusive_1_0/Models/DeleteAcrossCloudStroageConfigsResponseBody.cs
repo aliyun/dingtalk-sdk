@@ -8,13 +8,13 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
-    public class SaveAndSubmitAuthInfoResponseBody : TeaModel {
+    public class DeleteAcrossCloudStroageConfigsResponseBody : TeaModel {
         /// <summary>
-        /// 是否成功。
+        /// 执行结果
         /// </summary>
-        [NameInMap("success")]
+        [NameInMap("result")]
         [Validation(Required=false)]
-        public bool? Success { get; set; }
+        public bool? Result { get; set; }
 
     }
 
