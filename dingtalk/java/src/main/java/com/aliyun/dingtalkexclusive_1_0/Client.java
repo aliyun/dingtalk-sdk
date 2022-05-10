@@ -165,6 +165,29 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("CreateTrustedDeviceBatch", "exclusive_1.0", "HTTP", "POST", "AK", "/v1.0/exclusive/trusts/devices", "json", req, runtime), new CreateTrustedDeviceBatchResponse());
     }
 
+    public DeleteAcrossCloudStroageConfigsResponse deleteAcrossCloudStroageConfigs(String targetCorpId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        DeleteAcrossCloudStroageConfigsHeaders headers = new DeleteAcrossCloudStroageConfigsHeaders();
+        return this.deleteAcrossCloudStroageConfigsWithOptions(targetCorpId, headers, runtime);
+    }
+
+    public DeleteAcrossCloudStroageConfigsResponse deleteAcrossCloudStroageConfigsWithOptions(String targetCorpId, DeleteAcrossCloudStroageConfigsHeaders headers, RuntimeOptions runtime) throws Exception {
+        targetCorpId = com.aliyun.openapiutil.Client.getEncodeParam(targetCorpId);
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("DeleteAcrossCloudStroageConfigs", "exclusive_1.0", "HTTP", "DELETE", "AK", "/v1.0/exclusive/fileStorages/acrossClouds/configurations/" + targetCorpId + "", "json", req, runtime), new DeleteAcrossCloudStroageConfigsResponse());
+    }
+
     public DeleteCommentResponse deleteComment(String publisherId, String commentId) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         DeleteCommentHeaders headers = new DeleteCommentHeaders();
@@ -1256,6 +1279,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("PublishFileChangeNotice", "exclusive_1.0", "HTTP", "POST", "AK", "/v1.0/exclusive/comments/send", "none", req, runtime), new PublishFileChangeNoticeResponse());
     }
 
+    public QueryAcrossCloudStroageConfigsResponse queryAcrossCloudStroageConfigs(QueryAcrossCloudStroageConfigsRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryAcrossCloudStroageConfigsHeaders headers = new QueryAcrossCloudStroageConfigsHeaders();
+        return this.queryAcrossCloudStroageConfigsWithOptions(request, headers, runtime);
+    }
+
+    public QueryAcrossCloudStroageConfigsResponse queryAcrossCloudStroageConfigsWithOptions(QueryAcrossCloudStroageConfigsRequest request, QueryAcrossCloudStroageConfigsHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.targetCloudType)) {
+            query.put("targetCloudType", request.targetCloudType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetCorpId)) {
+            query.put("targetCorpId", request.targetCorpId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryAcrossCloudStroageConfigs", "exclusive_1.0", "HTTP", "GET", "AK", "/v1.0/exclusive/fileStorages/acrossClouds/configurations", "json", req, runtime), new QueryAcrossCloudStroageConfigsResponse());
+    }
+
     public RollbackMiniAppVersionResponse rollbackMiniAppVersion(RollbackMiniAppVersionRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         RollbackMiniAppVersionHeaders headers = new RollbackMiniAppVersionHeaders();
@@ -1291,6 +1347,55 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("RollbackMiniAppVersion", "exclusive_1.0", "HTTP", "POST", "AK", "/v1.0/exclusive/miniApps/versions/rollback", "json", req, runtime), new RollbackMiniAppVersionResponse());
+    }
+
+    public SaveAcrossCloudStroageConfigsResponse saveAcrossCloudStroageConfigs(SaveAcrossCloudStroageConfigsRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        SaveAcrossCloudStroageConfigsHeaders headers = new SaveAcrossCloudStroageConfigsHeaders();
+        return this.saveAcrossCloudStroageConfigsWithOptions(request, headers, runtime);
+    }
+
+    public SaveAcrossCloudStroageConfigsResponse saveAcrossCloudStroageConfigsWithOptions(SaveAcrossCloudStroageConfigsRequest request, SaveAcrossCloudStroageConfigsHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.accessKeyId)) {
+            body.put("accessKeyId", request.accessKeyId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.accessKeySecret)) {
+            body.put("accessKeySecret", request.accessKeySecret);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bucketName)) {
+            body.put("bucketName", request.bucketName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.cloudType)) {
+            body.put("cloudType", request.cloudType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.endpoint)) {
+            body.put("endpoint", request.endpoint);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetCorpId)) {
+            body.put("targetCorpId", request.targetCorpId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("SaveAcrossCloudStroageConfigs", "exclusive_1.0", "HTTP", "POST", "AK", "/v1.0/exclusive/fileStorages/acrossClouds/configurations", "json", req, runtime), new SaveAcrossCloudStroageConfigsResponse());
     }
 
     public SaveAndSubmitAuthInfoResponse saveAndSubmitAuthInfo(SaveAndSubmitAuthInfoRequest request) throws Exception {
@@ -1716,5 +1821,38 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("UpdateRoleVisibility", "exclusive_1.0", "HTTP", "PUT", "AK", "/v1.0/exclusive/partnerDepartments/visibilityRoles", "boolean", req, runtime), new UpdateRoleVisibilityResponse());
+    }
+
+    public UpdateStorageModeResponse updateStorageMode(UpdateStorageModeRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        UpdateStorageModeHeaders headers = new UpdateStorageModeHeaders();
+        return this.updateStorageModeWithOptions(request, headers, runtime);
+    }
+
+    public UpdateStorageModeResponse updateStorageModeWithOptions(UpdateStorageModeRequest request, UpdateStorageModeHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.fileStorageMode)) {
+            body.put("fileStorageMode", request.fileStorageMode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetCorpId)) {
+            body.put("targetCorpId", request.targetCorpId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UpdateStorageMode", "exclusive_1.0", "HTTP", "PUT", "AK", "/v1.0/exclusive/fileStorages/acrossClouds/storageModes", "json", req, runtime), new UpdateStorageModeResponse());
     }
 }
