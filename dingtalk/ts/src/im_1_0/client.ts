@@ -855,6 +855,239 @@ export class GetSceneGroupMembersResponse extends $tea.Model {
   }
 }
 
+export class GroupCapacityInquiryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupCapacityInquiryRequest extends $tea.Model {
+  effectiveDuration?: string;
+  openConversationId?: string;
+  operator?: string;
+  options?: { [key: string]: any };
+  targetCapacity?: number;
+  static names(): { [key: string]: string } {
+    return {
+      effectiveDuration: 'effectiveDuration',
+      openConversationId: 'openConversationId',
+      operator: 'operator',
+      options: 'options',
+      targetCapacity: 'targetCapacity',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      effectiveDuration: 'string',
+      openConversationId: 'string',
+      operator: 'string',
+      options: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      targetCapacity: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupCapacityInquiryResponseBody extends $tea.Model {
+  actualPrice?: number;
+  createdAt?: number;
+  currentCapacity?: number;
+  currentEffectUntil?: number;
+  discount?: number;
+  extInfo?: { [key: string]: any };
+  groupOwner?: string;
+  groupTitle?: string;
+  markedPrice?: number;
+  memberCount?: number;
+  openConversationId?: string;
+  operator?: string;
+  targetCapacity?: number;
+  targetEffectUntil?: number;
+  token?: string;
+  static names(): { [key: string]: string } {
+    return {
+      actualPrice: 'actualPrice',
+      createdAt: 'createdAt',
+      currentCapacity: 'currentCapacity',
+      currentEffectUntil: 'currentEffectUntil',
+      discount: 'discount',
+      extInfo: 'extInfo',
+      groupOwner: 'groupOwner',
+      groupTitle: 'groupTitle',
+      markedPrice: 'markedPrice',
+      memberCount: 'memberCount',
+      openConversationId: 'openConversationId',
+      operator: 'operator',
+      targetCapacity: 'targetCapacity',
+      targetEffectUntil: 'targetEffectUntil',
+      token: 'token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actualPrice: 'number',
+      createdAt: 'number',
+      currentCapacity: 'number',
+      currentEffectUntil: 'number',
+      discount: 'number',
+      extInfo: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      groupOwner: 'string',
+      groupTitle: 'string',
+      markedPrice: 'number',
+      memberCount: 'number',
+      openConversationId: 'string',
+      operator: 'string',
+      targetCapacity: 'number',
+      targetEffectUntil: 'number',
+      token: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupCapacityInquiryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GroupCapacityInquiryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GroupCapacityInquiryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupManageQueryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupManageQueryRequest extends $tea.Model {
+  groupId?: string;
+  groupMemberSamples?: string[];
+  groupOwner?: string;
+  groupTitleKeywords?: string[];
+  groupUrl?: string;
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      groupId: 'groupId',
+      groupMemberSamples: 'groupMemberSamples',
+      groupOwner: 'groupOwner',
+      groupTitleKeywords: 'groupTitleKeywords',
+      groupUrl: 'groupUrl',
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupId: 'string',
+      groupMemberSamples: { 'type': 'array', 'itemType': 'string' },
+      groupOwner: 'string',
+      groupTitleKeywords: { 'type': 'array', 'itemType': 'string' },
+      groupUrl: 'string',
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupManageQueryResponseBody extends $tea.Model {
+  groupInfoList?: GroupManageQueryResponseBodyGroupInfoList[];
+  static names(): { [key: string]: string } {
+    return {
+      groupInfoList: 'groupInfoList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupInfoList: { 'type': 'array', 'itemType': GroupManageQueryResponseBodyGroupInfoList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupManageQueryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GroupManageQueryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GroupManageQueryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class InteractiveCardCreateInstanceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2819,6 +3052,43 @@ export class CreateInterconnectionResponseBodyResults extends $tea.Model {
   }
 }
 
+export class GroupManageQueryResponseBodyGroupInfoList extends $tea.Model {
+  capacity?: number;
+  createdAt?: number;
+  extInfo?: { [key: string]: any };
+  groupOwner?: string;
+  groupTitle?: string;
+  memberCount?: number;
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      capacity: 'capacity',
+      createdAt: 'createdAt',
+      extInfo: 'extInfo',
+      groupOwner: 'groupOwner',
+      groupTitle: 'groupTitle',
+      memberCount: 'memberCount',
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      capacity: 'number',
+      createdAt: 'number',
+      extInfo: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      groupOwner: 'string',
+      groupTitle: 'string',
+      memberCount: 'number',
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class InteractiveCardCreateInstanceRequestCardData extends $tea.Model {
   cardMediaIdParamMap?: { [key: string]: string };
   cardParamMap?: { [key: string]: string };
@@ -3508,6 +3778,100 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<GetSceneGroupMembersResponse>(await this.doROARequest("GetSceneGroupMembers", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/sceneGroups/members/query`, "json", req, runtime), new GetSceneGroupMembersResponse({}));
+  }
+
+  async groupCapacityInquiry(request: GroupCapacityInquiryRequest): Promise<GroupCapacityInquiryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GroupCapacityInquiryHeaders({ });
+    return await this.groupCapacityInquiryWithOptions(request, headers, runtime);
+  }
+
+  async groupCapacityInquiryWithOptions(request: GroupCapacityInquiryRequest, headers: GroupCapacityInquiryHeaders, runtime: $Util.RuntimeOptions): Promise<GroupCapacityInquiryResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.effectiveDuration)) {
+      body["effectiveDuration"] = request.effectiveDuration;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
+    }
+
+    if (!Util.isUnset(request.options)) {
+      body["options"] = request.options;
+    }
+
+    if (!Util.isUnset(request.targetCapacity)) {
+      body["targetCapacity"] = request.targetCapacity;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GroupCapacityInquiryResponse>(await this.doROARequest("GroupCapacityInquiry", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/groups/capacities/inquiries/query`, "json", req, runtime), new GroupCapacityInquiryResponse({}));
+  }
+
+  async groupManageQuery(request: GroupManageQueryRequest): Promise<GroupManageQueryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GroupManageQueryHeaders({ });
+    return await this.groupManageQueryWithOptions(request, headers, runtime);
+  }
+
+  async groupManageQueryWithOptions(request: GroupManageQueryRequest, headers: GroupManageQueryHeaders, runtime: $Util.RuntimeOptions): Promise<GroupManageQueryResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.groupId)) {
+      body["groupId"] = request.groupId;
+    }
+
+    if (!Util.isUnset(request.groupMemberSamples)) {
+      body["groupMemberSamples"] = request.groupMemberSamples;
+    }
+
+    if (!Util.isUnset(request.groupOwner)) {
+      body["groupOwner"] = request.groupOwner;
+    }
+
+    if (!Util.isUnset(request.groupTitleKeywords)) {
+      body["groupTitleKeywords"] = request.groupTitleKeywords;
+    }
+
+    if (!Util.isUnset(request.groupUrl)) {
+      body["groupUrl"] = request.groupUrl;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GroupManageQueryResponse>(await this.doROARequest("GroupManageQuery", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/groups/managements/query`, "json", req, runtime), new GroupManageQueryResponse({}));
   }
 
   async interactiveCardCreateInstance(request: InteractiveCardCreateInstanceRequest): Promise<InteractiveCardCreateInstanceResponse> {

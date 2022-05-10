@@ -359,6 +359,69 @@ export class CreateTrustedDeviceBatchResponse extends $tea.Model {
   }
 }
 
+export class DeleteAcrossCloudStroageConfigsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteAcrossCloudStroageConfigsResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteAcrossCloudStroageConfigsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DeleteAcrossCloudStroageConfigsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DeleteAcrossCloudStroageConfigsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteCommentHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3119,6 +3182,103 @@ export class PublishFileChangeNoticeResponse extends $tea.Model {
   }
 }
 
+export class QueryAcrossCloudStroageConfigsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAcrossCloudStroageConfigsRequest extends $tea.Model {
+  targetCloudType?: number;
+  targetCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      targetCloudType: 'targetCloudType',
+      targetCorpId: 'targetCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      targetCloudType: 'number',
+      targetCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAcrossCloudStroageConfigsResponseBody extends $tea.Model {
+  accessKeyId?: string;
+  accessKeySecret?: string;
+  bucketName?: string;
+  cloudType?: number;
+  endpoint?: string;
+  static names(): { [key: string]: string } {
+    return {
+      accessKeyId: 'accessKeyId',
+      accessKeySecret: 'accessKeySecret',
+      bucketName: 'bucketName',
+      cloudType: 'cloudType',
+      endpoint: 'endpoint',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accessKeyId: 'string',
+      accessKeySecret: 'string',
+      bucketName: 'string',
+      cloudType: 'number',
+      endpoint: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAcrossCloudStroageConfigsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryAcrossCloudStroageConfigsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryAcrossCloudStroageConfigsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RollbackMiniAppVersionHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3202,6 +3362,109 @@ export class RollbackMiniAppVersionResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: RollbackMiniAppVersionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveAcrossCloudStroageConfigsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveAcrossCloudStroageConfigsRequest extends $tea.Model {
+  accessKeyId?: string;
+  accessKeySecret?: string;
+  bucketName?: string;
+  cloudType?: number;
+  endpoint?: string;
+  targetCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      accessKeyId: 'accessKeyId',
+      accessKeySecret: 'accessKeySecret',
+      bucketName: 'bucketName',
+      cloudType: 'cloudType',
+      endpoint: 'endpoint',
+      targetCorpId: 'targetCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accessKeyId: 'string',
+      accessKeySecret: 'string',
+      bucketName: 'string',
+      cloudType: 'number',
+      endpoint: 'string',
+      targetCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveAcrossCloudStroageConfigsResponseBody extends $tea.Model {
+  accessKeyId?: string;
+  endpoint?: string;
+  state?: number;
+  static names(): { [key: string]: string } {
+    return {
+      accessKeyId: 'accessKeyId',
+      endpoint: 'endpoint',
+      state: 'state',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accessKeyId: 'string',
+      endpoint: 'string',
+      state: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveAcrossCloudStroageConfigsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SaveAcrossCloudStroageConfigsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SaveAcrossCloudStroageConfigsResponseBody,
     };
   }
 
@@ -3297,19 +3560,16 @@ export class SaveAndSubmitAuthInfoRequest extends $tea.Model {
 }
 
 export class SaveAndSubmitAuthInfoResponseBody extends $tea.Model {
-  accessKeyId?: string;
-  oss?: string;
+  success?: boolean;
   static names(): { [key: string]: string } {
     return {
-      accessKeyId: 'accessKeyId',
-      oss: 'oss',
+      success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      accessKeyId: 'string',
-      oss: 'string',
+      success: 'boolean',
     };
   }
 
@@ -3971,6 +4231,91 @@ export class UpdateRoleVisibilityResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateStorageModeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateStorageModeRequest extends $tea.Model {
+  fileStorageMode?: string;
+  targetCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fileStorageMode: 'fileStorageMode',
+      targetCorpId: 'targetCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileStorageMode: 'string',
+      targetCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateStorageModeResponseBody extends $tea.Model {
+  targetCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      targetCorpId: 'targetCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      targetCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateStorageModeResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateStorageModeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateStorageModeResponseBody,
     };
   }
 
@@ -5193,6 +5538,29 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateTrustedDeviceBatchResponse>(await this.doROARequest("CreateTrustedDeviceBatch", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/trusts/devices`, "json", req, runtime), new CreateTrustedDeviceBatchResponse({}));
   }
 
+  async deleteAcrossCloudStroageConfigs(targetCorpId: string): Promise<DeleteAcrossCloudStroageConfigsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteAcrossCloudStroageConfigsHeaders({ });
+    return await this.deleteAcrossCloudStroageConfigsWithOptions(targetCorpId, headers, runtime);
+  }
+
+  async deleteAcrossCloudStroageConfigsWithOptions(targetCorpId: string, headers: DeleteAcrossCloudStroageConfigsHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteAcrossCloudStroageConfigsResponse> {
+    targetCorpId = OpenApiUtil.getEncodeParam(targetCorpId);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<DeleteAcrossCloudStroageConfigsResponse>(await this.doROARequest("DeleteAcrossCloudStroageConfigs", "exclusive_1.0", "HTTP", "DELETE", "AK", `/v1.0/exclusive/fileStorages/acrossClouds/configurations/${targetCorpId}`, "json", req, runtime), new DeleteAcrossCloudStroageConfigsResponse({}));
+  }
+
   async deleteComment(publisherId: string, commentId: string): Promise<DeleteCommentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteCommentHeaders({ });
@@ -6284,6 +6652,39 @@ export default class Client extends OpenApi {
     return $tea.cast<PublishFileChangeNoticeResponse>(await this.doROARequest("PublishFileChangeNotice", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/comments/send`, "none", req, runtime), new PublishFileChangeNoticeResponse({}));
   }
 
+  async queryAcrossCloudStroageConfigs(request: QueryAcrossCloudStroageConfigsRequest): Promise<QueryAcrossCloudStroageConfigsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryAcrossCloudStroageConfigsHeaders({ });
+    return await this.queryAcrossCloudStroageConfigsWithOptions(request, headers, runtime);
+  }
+
+  async queryAcrossCloudStroageConfigsWithOptions(request: QueryAcrossCloudStroageConfigsRequest, headers: QueryAcrossCloudStroageConfigsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAcrossCloudStroageConfigsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.targetCloudType)) {
+      query["targetCloudType"] = request.targetCloudType;
+    }
+
+    if (!Util.isUnset(request.targetCorpId)) {
+      query["targetCorpId"] = request.targetCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryAcrossCloudStroageConfigsResponse>(await this.doROARequest("QueryAcrossCloudStroageConfigs", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/fileStorages/acrossClouds/configurations`, "json", req, runtime), new QueryAcrossCloudStroageConfigsResponse({}));
+  }
+
   async rollbackMiniAppVersion(request: RollbackMiniAppVersionRequest): Promise<RollbackMiniAppVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RollbackMiniAppVersionHeaders({ });
@@ -6319,6 +6720,55 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<RollbackMiniAppVersionResponse>(await this.doROARequest("RollbackMiniAppVersion", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/miniApps/versions/rollback`, "json", req, runtime), new RollbackMiniAppVersionResponse({}));
+  }
+
+  async saveAcrossCloudStroageConfigs(request: SaveAcrossCloudStroageConfigsRequest): Promise<SaveAcrossCloudStroageConfigsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SaveAcrossCloudStroageConfigsHeaders({ });
+    return await this.saveAcrossCloudStroageConfigsWithOptions(request, headers, runtime);
+  }
+
+  async saveAcrossCloudStroageConfigsWithOptions(request: SaveAcrossCloudStroageConfigsRequest, headers: SaveAcrossCloudStroageConfigsHeaders, runtime: $Util.RuntimeOptions): Promise<SaveAcrossCloudStroageConfigsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.accessKeyId)) {
+      body["accessKeyId"] = request.accessKeyId;
+    }
+
+    if (!Util.isUnset(request.accessKeySecret)) {
+      body["accessKeySecret"] = request.accessKeySecret;
+    }
+
+    if (!Util.isUnset(request.bucketName)) {
+      body["bucketName"] = request.bucketName;
+    }
+
+    if (!Util.isUnset(request.cloudType)) {
+      body["cloudType"] = request.cloudType;
+    }
+
+    if (!Util.isUnset(request.endpoint)) {
+      body["endpoint"] = request.endpoint;
+    }
+
+    if (!Util.isUnset(request.targetCorpId)) {
+      body["targetCorpId"] = request.targetCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SaveAcrossCloudStroageConfigsResponse>(await this.doROARequest("SaveAcrossCloudStroageConfigs", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/fileStorages/acrossClouds/configurations`, "json", req, runtime), new SaveAcrossCloudStroageConfigsResponse({}));
   }
 
   async saveAndSubmitAuthInfo(request: SaveAndSubmitAuthInfoRequest): Promise<SaveAndSubmitAuthInfoResponse> {
@@ -6744,6 +7194,39 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateRoleVisibilityResponse>(await this.doROARequest("UpdateRoleVisibility", "exclusive_1.0", "HTTP", "PUT", "AK", `/v1.0/exclusive/partnerDepartments/visibilityRoles`, "boolean", req, runtime), new UpdateRoleVisibilityResponse({}));
+  }
+
+  async updateStorageMode(request: UpdateStorageModeRequest): Promise<UpdateStorageModeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateStorageModeHeaders({ });
+    return await this.updateStorageModeWithOptions(request, headers, runtime);
+  }
+
+  async updateStorageModeWithOptions(request: UpdateStorageModeRequest, headers: UpdateStorageModeHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateStorageModeResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.fileStorageMode)) {
+      body["fileStorageMode"] = request.fileStorageMode;
+    }
+
+    if (!Util.isUnset(request.targetCorpId)) {
+      body["targetCorpId"] = request.targetCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateStorageModeResponse>(await this.doROARequest("UpdateStorageMode", "exclusive_1.0", "HTTP", "PUT", "AK", `/v1.0/exclusive/fileStorages/acrossClouds/storageModes`, "json", req, runtime), new UpdateStorageModeResponse({}));
   }
 
 }
