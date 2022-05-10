@@ -1962,6 +1962,1442 @@ class CustomizeContactUpdateResponse(TeaModel):
         return self
 
 
+class DigitalStoreContactInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DigitalStoreContactInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+        root_dept_id: int = None,
+    ):
+        # 门店通通讯录Code
+        self.code = code
+        # 门店通通讯录名称
+        self.name = name
+        # 门店通通讯录根节点Id
+        self.root_dept_id = root_dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        if self.root_dept_id is not None:
+            result['rootDeptId'] = self.root_dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('rootDeptId') is not None:
+            self.root_dept_id = m.get('rootDeptId')
+        return self
+
+
+class DigitalStoreContactInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DigitalStoreContactInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DigitalStoreContactInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DigitalStoreGroupInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DigitalStoreGroupInfoRequest(TeaModel):
+    def __init__(
+        self,
+        group_id: int = None,
+    ):
+        # 门店分组Id
+        self.group_id = group_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        return self
+
+
+class DigitalStoreGroupInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        group_id: int = None,
+        group_name: str = None,
+        store_id_list: List[int] = None,
+    ):
+        # 分组Id
+        self.group_id = group_id
+        # 分组名称
+        self.group_name = group_name
+        # 分组中门店Id列表
+        self.store_id_list = store_id_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.store_id_list is not None:
+            result['storeIdList'] = self.store_id_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('storeIdList') is not None:
+            self.store_id_list = m.get('storeIdList')
+        return self
+
+
+class DigitalStoreGroupInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DigitalStoreGroupInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DigitalStoreGroupInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DigitalStoreGroupsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DigitalStoreGroupsResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        group_id: int = None,
+        group_name: str = None,
+    ):
+        # 分组Id
+        self.group_id = group_id
+        # 分组名称
+        self.group_name = group_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        return self
+
+
+class DigitalStoreGroupsResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[DigitalStoreGroupsResponseBodyContent] = None,
+    ):
+        self.content = content
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = DigitalStoreGroupsResponseBodyContent()
+                self.content.append(temp_model.from_map(k))
+        return self
+
+
+class DigitalStoreGroupsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DigitalStoreGroupsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DigitalStoreGroupsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DigitalStoreNodeInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DigitalStoreNodeInfoRequest(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        node_id: int = None,
+    ):
+        # 门店通通讯录Code
+        self.code = code
+        # 节点Id
+        self.node_id = node_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.node_id is not None:
+            result['nodeId'] = self.node_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('nodeId') is not None:
+            self.node_id = m.get('nodeId')
+        return self
+
+
+class DigitalStoreNodeInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: int = None,
+        name: str = None,
+        parent_id: int = None,
+        type: int = None,
+    ):
+        # 节点Id
+        self.id = id
+        # 门店名称
+        self.name = name
+        # 上级节点id
+        self.parent_id = parent_id
+        # 节点类型
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.parent_id is not None:
+            result['parentId'] = self.parent_id
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('parentId') is not None:
+            self.parent_id = m.get('parentId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class DigitalStoreNodeInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DigitalStoreNodeInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DigitalStoreNodeInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DigitalStoreRolesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DigitalStoreRolesResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        level: int = None,
+        role_code: str = None,
+        role_id: int = None,
+        role_name: str = None,
+    ):
+        # 优先级
+        self.level = level
+        # 角色Code
+        self.role_code = role_code
+        # 角色Id
+        self.role_id = role_id
+        # 角色名称
+        self.role_name = role_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.level is not None:
+            result['level'] = self.level
+        if self.role_code is not None:
+            result['roleCode'] = self.role_code
+        if self.role_id is not None:
+            result['roleId'] = self.role_id
+        if self.role_name is not None:
+            result['roleName'] = self.role_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('level') is not None:
+            self.level = m.get('level')
+        if m.get('roleCode') is not None:
+            self.role_code = m.get('roleCode')
+        if m.get('roleId') is not None:
+            self.role_id = m.get('roleId')
+        if m.get('roleName') is not None:
+            self.role_name = m.get('roleName')
+        return self
+
+
+class DigitalStoreRolesResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[DigitalStoreRolesResponseBodyContent] = None,
+    ):
+        self.content = content
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = DigitalStoreRolesResponseBodyContent()
+                self.content.append(temp_model.from_map(k))
+        return self
+
+
+class DigitalStoreRolesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DigitalStoreRolesResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DigitalStoreRolesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DigitalStoreStoreInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DigitalStoreStoreInfoRequest(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        store_id: int = None,
+    ):
+        # 门店通通讯录Code
+        self.code = code
+        # 门店Id
+        self.store_id = store_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.store_id is not None:
+            result['storeId'] = self.store_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('storeId') is not None:
+            self.store_id = m.get('storeId')
+        return self
+
+
+class DigitalStoreStoreInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        address: str = None,
+        business_hours: str = None,
+        latitude: str = None,
+        location_address: str = None,
+        longitude: str = None,
+        name: str = None,
+        parent_id: int = None,
+        status: str = None,
+        store_acreage: str = None,
+        store_bandwidth: str = None,
+        store_code: str = None,
+        store_id: int = None,
+        telephone: str = None,
+    ):
+        # 门店地址
+        self.address = address
+        # 营业时间
+        self.business_hours = business_hours
+        # 纬度
+        self.latitude = latitude
+        # 定位地址
+        self.location_address = location_address
+        # 经度
+        self.longitude = longitude
+        # 门店名称
+        self.name = name
+        # 上级节点id
+        self.parent_id = parent_id
+        # 门店状态
+        self.status = status
+        # 门店面积
+        self.store_acreage = store_acreage
+        # 门店带宽
+        self.store_bandwidth = store_bandwidth
+        # 门店编号
+        self.store_code = store_code
+        # 门店Id
+        self.store_id = store_id
+        # 门店电话
+        self.telephone = telephone
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.address is not None:
+            result['address'] = self.address
+        if self.business_hours is not None:
+            result['businessHours'] = self.business_hours
+        if self.latitude is not None:
+            result['latitude'] = self.latitude
+        if self.location_address is not None:
+            result['locationAddress'] = self.location_address
+        if self.longitude is not None:
+            result['longitude'] = self.longitude
+        if self.name is not None:
+            result['name'] = self.name
+        if self.parent_id is not None:
+            result['parentId'] = self.parent_id
+        if self.status is not None:
+            result['status'] = self.status
+        if self.store_acreage is not None:
+            result['storeAcreage'] = self.store_acreage
+        if self.store_bandwidth is not None:
+            result['storeBandwidth'] = self.store_bandwidth
+        if self.store_code is not None:
+            result['storeCode'] = self.store_code
+        if self.store_id is not None:
+            result['storeId'] = self.store_id
+        if self.telephone is not None:
+            result['telephone'] = self.telephone
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('address') is not None:
+            self.address = m.get('address')
+        if m.get('businessHours') is not None:
+            self.business_hours = m.get('businessHours')
+        if m.get('latitude') is not None:
+            self.latitude = m.get('latitude')
+        if m.get('locationAddress') is not None:
+            self.location_address = m.get('locationAddress')
+        if m.get('longitude') is not None:
+            self.longitude = m.get('longitude')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('parentId') is not None:
+            self.parent_id = m.get('parentId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('storeAcreage') is not None:
+            self.store_acreage = m.get('storeAcreage')
+        if m.get('storeBandwidth') is not None:
+            self.store_bandwidth = m.get('storeBandwidth')
+        if m.get('storeCode') is not None:
+            self.store_code = m.get('storeCode')
+        if m.get('storeId') is not None:
+            self.store_id = m.get('storeId')
+        if m.get('telephone') is not None:
+            self.telephone = m.get('telephone')
+        return self
+
+
+class DigitalStoreStoreInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DigitalStoreStoreInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DigitalStoreStoreInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DigitalStoreSubNodesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DigitalStoreSubNodesRequest(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        node_id: int = None,
+    ):
+        # 门店通通讯录Code
+        self.code = code
+        # 节点Id
+        self.node_id = node_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.node_id is not None:
+            result['nodeId'] = self.node_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('nodeId') is not None:
+            self.node_id = m.get('nodeId')
+        return self
+
+
+class DigitalStoreSubNodesResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        id: int = None,
+        name: str = None,
+        parent_id: int = None,
+        type: int = None,
+    ):
+        # 节点Id
+        self.id = id
+        # 门店名称
+        self.name = name
+        # 上级节点id
+        self.parent_id = parent_id
+        # 节点类型
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.parent_id is not None:
+            result['parentId'] = self.parent_id
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('parentId') is not None:
+            self.parent_id = m.get('parentId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class DigitalStoreSubNodesResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[DigitalStoreSubNodesResponseBodyContent] = None,
+    ):
+        self.content = content
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = DigitalStoreSubNodesResponseBodyContent()
+                self.content.append(temp_model.from_map(k))
+        return self
+
+
+class DigitalStoreSubNodesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DigitalStoreSubNodesResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DigitalStoreSubNodesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DigitalStoreUserInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DigitalStoreUserInfoRequest(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        user_id: str = None,
+    ):
+        # 门店通迅录Code
+        self.code = code
+        # 人员Id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class DigitalStoreUserInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        scope_list: List[int] = None,
+        store_list: List[int] = None,
+        user_id: str = None,
+    ):
+        # 人员名称
+        self.name = name
+        # 管理范围
+        self.scope_list = scope_list
+        # 所在节点列表
+        self.store_list = store_list
+        # 人员Id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.scope_list is not None:
+            result['scopeList'] = self.scope_list
+        if self.store_list is not None:
+            result['storeList'] = self.store_list
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('scopeList') is not None:
+            self.scope_list = m.get('scopeList')
+        if m.get('storeList') is not None:
+            self.store_list = m.get('storeList')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class DigitalStoreUserInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DigitalStoreUserInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DigitalStoreUserInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DigitalStoreUsersHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DigitalStoreUsersRequest(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        node_id: int = None,
+    ):
+        # 门店通通讯录Cod
+        self.code = code
+        # 节点Id
+        self.node_id = node_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.node_id is not None:
+            result['nodeId'] = self.node_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('nodeId') is not None:
+            self.node_id = m.get('nodeId')
+        return self
+
+
+class DigitalStoreUsersResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        user_id: str = None,
+    ):
+        # 人员姓名
+        self.name = name
+        # 人员Id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class DigitalStoreUsersResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[DigitalStoreUsersResponseBodyContent] = None,
+    ):
+        # 人员列表
+        self.content = content
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = DigitalStoreUsersResponseBodyContent()
+                self.content.append(temp_model.from_map(k))
+        return self
+
+
+class DigitalStoreUsersResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DigitalStoreUsersResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DigitalStoreUsersResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class IndustryManufactureCostRecordListGetHeaders(TeaModel):
     def __init__(
         self,

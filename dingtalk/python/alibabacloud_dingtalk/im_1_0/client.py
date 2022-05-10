@@ -1549,6 +1549,8 @@ class Client(OpenApiClient):
             body['outTrackId'] = request.out_track_id
         if not UtilClient.is_unset(request.platforms):
             body['platforms'] = request.platforms
+        if not UtilClient.is_unset(request.receiver_user_id_list):
+            body['receiverUserIdList'] = request.receiver_user_id_list
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1581,6 +1583,8 @@ class Client(OpenApiClient):
             body['outTrackId'] = request.out_track_id
         if not UtilClient.is_unset(request.platforms):
             body['platforms'] = request.platforms
+        if not UtilClient.is_unset(request.receiver_user_id_list):
+            body['receiverUserIdList'] = request.receiver_user_id_list
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

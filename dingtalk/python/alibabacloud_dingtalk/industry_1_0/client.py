@@ -865,6 +865,548 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CustomizeContactUpdate', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/customizations/contacts', 'json', req, runtime)
         )
 
+    def digital_store_contact_info(self) -> dingtalkindustry__1__0_models.DigitalStoreContactInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreContactInfoHeaders()
+        return self.digital_store_contact_info_with_options(headers, runtime)
+
+    async def digital_store_contact_info_async(self) -> dingtalkindustry__1__0_models.DigitalStoreContactInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreContactInfoHeaders()
+        return await self.digital_store_contact_info_with_options_async(headers, runtime)
+
+    def digital_store_contact_info_with_options(
+        self,
+        headers: dingtalkindustry__1__0_models.DigitalStoreContactInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreContactInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreContactInfoResponse(),
+            self.do_roarequest('DigitalStoreContactInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/contactInfos', 'json', req, runtime)
+        )
+
+    async def digital_store_contact_info_with_options_async(
+        self,
+        headers: dingtalkindustry__1__0_models.DigitalStoreContactInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreContactInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreContactInfoResponse(),
+            await self.do_roarequest_async('DigitalStoreContactInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/contactInfos', 'json', req, runtime)
+        )
+
+    def digital_store_group_info(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreGroupInfoRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreGroupInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreGroupInfoHeaders()
+        return self.digital_store_group_info_with_options(request, headers, runtime)
+
+    async def digital_store_group_info_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreGroupInfoRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreGroupInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreGroupInfoHeaders()
+        return await self.digital_store_group_info_with_options_async(request, headers, runtime)
+
+    def digital_store_group_info_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreGroupInfoRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreGroupInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreGroupInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.group_id):
+            query['groupId'] = request.group_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreGroupInfoResponse(),
+            self.do_roarequest('DigitalStoreGroupInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/groupInfos', 'json', req, runtime)
+        )
+
+    async def digital_store_group_info_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreGroupInfoRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreGroupInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreGroupInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.group_id):
+            query['groupId'] = request.group_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreGroupInfoResponse(),
+            await self.do_roarequest_async('DigitalStoreGroupInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/groupInfos', 'json', req, runtime)
+        )
+
+    def digital_store_groups(self) -> dingtalkindustry__1__0_models.DigitalStoreGroupsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreGroupsHeaders()
+        return self.digital_store_groups_with_options(headers, runtime)
+
+    async def digital_store_groups_async(self) -> dingtalkindustry__1__0_models.DigitalStoreGroupsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreGroupsHeaders()
+        return await self.digital_store_groups_with_options_async(headers, runtime)
+
+    def digital_store_groups_with_options(
+        self,
+        headers: dingtalkindustry__1__0_models.DigitalStoreGroupsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreGroupsResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreGroupsResponse(),
+            self.do_roarequest('DigitalStoreGroups', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/groups', 'json', req, runtime)
+        )
+
+    async def digital_store_groups_with_options_async(
+        self,
+        headers: dingtalkindustry__1__0_models.DigitalStoreGroupsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreGroupsResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreGroupsResponse(),
+            await self.do_roarequest_async('DigitalStoreGroups', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/groups', 'json', req, runtime)
+        )
+
+    def digital_store_node_info(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreNodeInfoRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreNodeInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreNodeInfoHeaders()
+        return self.digital_store_node_info_with_options(request, headers, runtime)
+
+    async def digital_store_node_info_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreNodeInfoRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreNodeInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreNodeInfoHeaders()
+        return await self.digital_store_node_info_with_options_async(request, headers, runtime)
+
+    def digital_store_node_info_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreNodeInfoRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreNodeInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreNodeInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        if not UtilClient.is_unset(request.node_id):
+            query['nodeId'] = request.node_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreNodeInfoResponse(),
+            self.do_roarequest('DigitalStoreNodeInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/nodeInfos', 'json', req, runtime)
+        )
+
+    async def digital_store_node_info_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreNodeInfoRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreNodeInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreNodeInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        if not UtilClient.is_unset(request.node_id):
+            query['nodeId'] = request.node_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreNodeInfoResponse(),
+            await self.do_roarequest_async('DigitalStoreNodeInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/nodeInfos', 'json', req, runtime)
+        )
+
+    def digital_store_roles(self) -> dingtalkindustry__1__0_models.DigitalStoreRolesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreRolesHeaders()
+        return self.digital_store_roles_with_options(headers, runtime)
+
+    async def digital_store_roles_async(self) -> dingtalkindustry__1__0_models.DigitalStoreRolesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreRolesHeaders()
+        return await self.digital_store_roles_with_options_async(headers, runtime)
+
+    def digital_store_roles_with_options(
+        self,
+        headers: dingtalkindustry__1__0_models.DigitalStoreRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreRolesResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreRolesResponse(),
+            self.do_roarequest('DigitalStoreRoles', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/roles', 'json', req, runtime)
+        )
+
+    async def digital_store_roles_with_options_async(
+        self,
+        headers: dingtalkindustry__1__0_models.DigitalStoreRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreRolesResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreRolesResponse(),
+            await self.do_roarequest_async('DigitalStoreRoles', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/roles', 'json', req, runtime)
+        )
+
+    def digital_store_store_info(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreStoreInfoRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreStoreInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreStoreInfoHeaders()
+        return self.digital_store_store_info_with_options(request, headers, runtime)
+
+    async def digital_store_store_info_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreStoreInfoRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreStoreInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreStoreInfoHeaders()
+        return await self.digital_store_store_info_with_options_async(request, headers, runtime)
+
+    def digital_store_store_info_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreStoreInfoRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreStoreInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreStoreInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        if not UtilClient.is_unset(request.store_id):
+            query['storeId'] = request.store_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreStoreInfoResponse(),
+            self.do_roarequest('DigitalStoreStoreInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/storeInfos', 'json', req, runtime)
+        )
+
+    async def digital_store_store_info_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreStoreInfoRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreStoreInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreStoreInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        if not UtilClient.is_unset(request.store_id):
+            query['storeId'] = request.store_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreStoreInfoResponse(),
+            await self.do_roarequest_async('DigitalStoreStoreInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/storeInfos', 'json', req, runtime)
+        )
+
+    def digital_store_sub_nodes(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreSubNodesRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreSubNodesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreSubNodesHeaders()
+        return self.digital_store_sub_nodes_with_options(request, headers, runtime)
+
+    async def digital_store_sub_nodes_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreSubNodesRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreSubNodesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreSubNodesHeaders()
+        return await self.digital_store_sub_nodes_with_options_async(request, headers, runtime)
+
+    def digital_store_sub_nodes_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreSubNodesRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreSubNodesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreSubNodesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        if not UtilClient.is_unset(request.node_id):
+            query['nodeId'] = request.node_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreSubNodesResponse(),
+            self.do_roarequest('DigitalStoreSubNodes', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/subsidiaryNodes', 'json', req, runtime)
+        )
+
+    async def digital_store_sub_nodes_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreSubNodesRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreSubNodesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreSubNodesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        if not UtilClient.is_unset(request.node_id):
+            query['nodeId'] = request.node_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreSubNodesResponse(),
+            await self.do_roarequest_async('DigitalStoreSubNodes', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/subsidiaryNodes', 'json', req, runtime)
+        )
+
+    def digital_store_user_info(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreUserInfoRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreUserInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreUserInfoHeaders()
+        return self.digital_store_user_info_with_options(request, headers, runtime)
+
+    async def digital_store_user_info_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreUserInfoRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreUserInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreUserInfoHeaders()
+        return await self.digital_store_user_info_with_options_async(request, headers, runtime)
+
+    def digital_store_user_info_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreUserInfoRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreUserInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreUserInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreUserInfoResponse(),
+            self.do_roarequest('DigitalStoreUserInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/userInfos', 'json', req, runtime)
+        )
+
+    async def digital_store_user_info_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreUserInfoRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreUserInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreUserInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreUserInfoResponse(),
+            await self.do_roarequest_async('DigitalStoreUserInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/userInfos', 'json', req, runtime)
+        )
+
+    def digital_store_users(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreUsersRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreUsersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreUsersHeaders()
+        return self.digital_store_users_with_options(request, headers, runtime)
+
+    async def digital_store_users_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreUsersRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreUsersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreUsersHeaders()
+        return await self.digital_store_users_with_options_async(request, headers, runtime)
+
+    def digital_store_users_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreUsersRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreUsersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreUsersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        if not UtilClient.is_unset(request.node_id):
+            query['nodeId'] = request.node_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreUsersResponse(),
+            self.do_roarequest('DigitalStoreUsers', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/nodes/users', 'json', req, runtime)
+        )
+
+    async def digital_store_users_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreUsersRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreUsersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreUsersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        if not UtilClient.is_unset(request.node_id):
+            query['nodeId'] = request.node_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreUsersResponse(),
+            await self.do_roarequest_async('DigitalStoreUsers', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/nodes/users', 'json', req, runtime)
+        )
+
     def industry_manufacture_cost_record_list_get(
         self,
         request: dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetRequest,

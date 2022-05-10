@@ -670,6 +670,104 @@ class DeleteContactHideSettingResponse(TeaModel):
         return self
 
 
+class DeleteContactRestrictSettingHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteContactRestrictSettingResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        # 是否成功
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class DeleteContactRestrictSettingResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DeleteContactRestrictSettingResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DeleteContactRestrictSettingResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DeleteEmpAttributeVisibilityHeaders(TeaModel):
     def __init__(
         self,
@@ -3754,6 +3852,259 @@ class ListContactHideSettingsResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = ListContactHideSettingsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListContactRestrictSettingHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListContactRestrictSettingRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: int = None,
+    ):
+        # 最大返回结果数
+        self.max_results = max_results
+        # 分页token
+        self.next_token = next_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class ListContactRestrictSettingResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+        description: str = None,
+        exclude_dept_ids: List[int] = None,
+        exclude_tag_ids: List[int] = None,
+        exclude_user_ids: List[str] = None,
+        id: int = None,
+        name: str = None,
+        subject_dept_ids: List[int] = None,
+        subject_tag_ids: List[int] = None,
+        subject_user_ids: List[str] = None,
+        type: str = None,
+    ):
+        # 是否生效
+        self.active = active
+        # 规则描述
+        self.description = description
+        # 白名单用户deptId列表
+        self.exclude_dept_ids = exclude_dept_ids
+        # 白名单用户tagId列表
+        self.exclude_tag_ids = exclude_tag_ids
+        # 白名单用户userId列表
+        self.exclude_user_ids = exclude_user_ids
+        # 设置id
+        self.id = id
+        # 规则名称
+        self.name = name
+        # 主体用户deptId列表
+        self.subject_dept_ids = subject_dept_ids
+        # 主体用户tagId列表
+        self.subject_tag_ids = subject_tag_ids
+        # 主体用户userId列表
+        self.subject_user_ids = subject_user_ids
+        # 限制类型
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        if self.description is not None:
+            result['description'] = self.description
+        if self.exclude_dept_ids is not None:
+            result['excludeDeptIds'] = self.exclude_dept_ids
+        if self.exclude_tag_ids is not None:
+            result['excludeTagIds'] = self.exclude_tag_ids
+        if self.exclude_user_ids is not None:
+            result['excludeUserIds'] = self.exclude_user_ids
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.subject_dept_ids is not None:
+            result['subjectDeptIds'] = self.subject_dept_ids
+        if self.subject_tag_ids is not None:
+            result['subjectTagIds'] = self.subject_tag_ids
+        if self.subject_user_ids is not None:
+            result['subjectUserIds'] = self.subject_user_ids
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('excludeDeptIds') is not None:
+            self.exclude_dept_ids = m.get('excludeDeptIds')
+        if m.get('excludeTagIds') is not None:
+            self.exclude_tag_ids = m.get('excludeTagIds')
+        if m.get('excludeUserIds') is not None:
+            self.exclude_user_ids = m.get('excludeUserIds')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('subjectDeptIds') is not None:
+            self.subject_dept_ids = m.get('subjectDeptIds')
+        if m.get('subjectTagIds') is not None:
+            self.subject_tag_ids = m.get('subjectTagIds')
+        if m.get('subjectUserIds') is not None:
+            self.subject_user_ids = m.get('subjectUserIds')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class ListContactRestrictSettingResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        list: List[ListContactRestrictSettingResponseBodyList] = None,
+        next_token: int = None,
+    ):
+        # 是否还有数据
+        self.has_more = has_more
+        # 设置列表
+        self.list = list
+        # 下一次拉取数据时的token
+        self.next_token = next_token
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = ListContactRestrictSettingResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class ListContactRestrictSettingResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListContactRestrictSettingResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListContactRestrictSettingResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -6926,6 +7277,202 @@ class UpdateContactHideSettingResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = UpdateContactHideSettingResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateContactRestrictSettingHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateContactRestrictSettingRequest(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+        description: str = None,
+        exclude_dept_ids: List[int] = None,
+        exclude_tag_ids: List[int] = None,
+        exclude_user_ids: List[str] = None,
+        id: int = None,
+        name: str = None,
+        subject_dept_ids: List[int] = None,
+        subject_tag_ids: List[int] = None,
+        subject_user_ids: List[str] = None,
+        type: str = None,
+    ):
+        # 是否生效
+        self.active = active
+        # 规则描述
+        self.description = description
+        # 白名单deptId列表
+        self.exclude_dept_ids = exclude_dept_ids
+        # 白名单tagId列表
+        self.exclude_tag_ids = exclude_tag_ids
+        # 白名单userid列表
+        self.exclude_user_ids = exclude_user_ids
+        # id
+        self.id = id
+        # 规则名称
+        self.name = name
+        # 主体的部门id列表
+        self.subject_dept_ids = subject_dept_ids
+        # 主体的角色id列表
+        self.subject_tag_ids = subject_tag_ids
+        # 主体的userId列表
+        self.subject_user_ids = subject_user_ids
+        # 限制类型
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        if self.description is not None:
+            result['description'] = self.description
+        if self.exclude_dept_ids is not None:
+            result['excludeDeptIds'] = self.exclude_dept_ids
+        if self.exclude_tag_ids is not None:
+            result['excludeTagIds'] = self.exclude_tag_ids
+        if self.exclude_user_ids is not None:
+            result['excludeUserIds'] = self.exclude_user_ids
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.subject_dept_ids is not None:
+            result['subjectDeptIds'] = self.subject_dept_ids
+        if self.subject_tag_ids is not None:
+            result['subjectTagIds'] = self.subject_tag_ids
+        if self.subject_user_ids is not None:
+            result['subjectUserIds'] = self.subject_user_ids
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('excludeDeptIds') is not None:
+            self.exclude_dept_ids = m.get('excludeDeptIds')
+        if m.get('excludeTagIds') is not None:
+            self.exclude_tag_ids = m.get('excludeTagIds')
+        if m.get('excludeUserIds') is not None:
+            self.exclude_user_ids = m.get('excludeUserIds')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('subjectDeptIds') is not None:
+            self.subject_dept_ids = m.get('subjectDeptIds')
+        if m.get('subjectTagIds') is not None:
+            self.subject_tag_ids = m.get('subjectTagIds')
+        if m.get('subjectUserIds') is not None:
+            self.subject_user_ids = m.get('subjectUserIds')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class UpdateContactRestrictSettingResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: int = None,
+    ):
+        # settingId
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class UpdateContactRestrictSettingResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateContactRestrictSettingResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateContactRestrictSettingResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

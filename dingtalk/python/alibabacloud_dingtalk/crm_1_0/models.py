@@ -14915,6 +14915,7 @@ class UpdateGroupSetRequest(TeaModel):
         open_group_set_id: str = None,
         owner_user_id: str = None,
         template_id: str = None,
+        welcome: str = None,
     ):
         self.manager_user_ids = manager_user_ids
         self.member_quota = member_quota
@@ -14924,6 +14925,7 @@ class UpdateGroupSetRequest(TeaModel):
         self.open_group_set_id = open_group_set_id
         self.owner_user_id = owner_user_id
         self.template_id = template_id
+        self.welcome = welcome
 
     def validate(self):
         pass
@@ -14950,6 +14952,8 @@ class UpdateGroupSetRequest(TeaModel):
             result['ownerUserId'] = self.owner_user_id
         if self.template_id is not None:
             result['templateId'] = self.template_id
+        if self.welcome is not None:
+            result['welcome'] = self.welcome
         return result
 
     def from_map(self, m: dict = None):
@@ -14970,6 +14974,8 @@ class UpdateGroupSetRequest(TeaModel):
             self.owner_user_id = m.get('ownerUserId')
         if m.get('templateId') is not None:
             self.template_id = m.get('templateId')
+        if m.get('welcome') is not None:
+            self.welcome = m.get('welcome')
         return self
 
 

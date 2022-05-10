@@ -494,6 +494,7 @@ class BillSettementBtripTrainResponseBodyModuleDataList(TeaModel):
         arr_date: str = None,
         arr_station: str = None,
         arr_time: str = None,
+        bill_record_time: str = None,
         book_time: str = None,
         booker_id: str = None,
         booker_job_no: str = None,
@@ -546,6 +547,8 @@ class BillSettementBtripTrainResponseBodyModuleDataList(TeaModel):
         self.arr_station = arr_station
         # 到达时间
         self.arr_time = arr_time
+        # 入账时间
+        self.bill_record_time = bill_record_time
         # 预定时间
         self.book_time = book_time
         # 预定人use id
@@ -648,6 +651,8 @@ class BillSettementBtripTrainResponseBodyModuleDataList(TeaModel):
             result['arrStation'] = self.arr_station
         if self.arr_time is not None:
             result['arrTime'] = self.arr_time
+        if self.bill_record_time is not None:
+            result['billRecordTime'] = self.bill_record_time
         if self.book_time is not None:
             result['bookTime'] = self.book_time
         if self.booker_id is not None:
@@ -744,6 +749,8 @@ class BillSettementBtripTrainResponseBodyModuleDataList(TeaModel):
             self.arr_station = m.get('arrStation')
         if m.get('arrTime') is not None:
             self.arr_time = m.get('arrTime')
+        if m.get('billRecordTime') is not None:
+            self.bill_record_time = m.get('billRecordTime')
         if m.get('bookTime') is not None:
             self.book_time = m.get('bookTime')
         if m.get('bookerId') is not None:
@@ -1087,6 +1094,7 @@ class BillSettementCarResponseBodyModuleDataList(TeaModel):
         arr_date: str = None,
         arr_location: str = None,
         arr_time: str = None,
+        bill_record_time: str = None,
         book_time: str = None,
         booker_id: str = None,
         booker_job_no: str = None,
@@ -1148,6 +1156,8 @@ class BillSettementCarResponseBodyModuleDataList(TeaModel):
         self.arr_location = arr_location
         # 到达时间
         self.arr_time = arr_time
+        # 入账时间
+        self.bill_record_time = bill_record_time
         # 预定时间
         self.book_time = book_time
         # 预定人use id
@@ -1265,6 +1275,8 @@ class BillSettementCarResponseBodyModuleDataList(TeaModel):
             result['arrLocation'] = self.arr_location
         if self.arr_time is not None:
             result['arrTime'] = self.arr_time
+        if self.bill_record_time is not None:
+            result['billRecordTime'] = self.bill_record_time
         if self.book_time is not None:
             result['bookTime'] = self.book_time
         if self.booker_id is not None:
@@ -1377,6 +1389,8 @@ class BillSettementCarResponseBodyModuleDataList(TeaModel):
             self.arr_location = m.get('arrLocation')
         if m.get('arrTime') is not None:
             self.arr_time = m.get('arrTime')
+        if m.get('billRecordTime') is not None:
+            self.bill_record_time = m.get('billRecordTime')
         if m.get('bookTime') is not None:
             self.book_time = m.get('bookTime')
         if m.get('bookerId') is not None:
@@ -1744,6 +1758,7 @@ class BillSettementFlightResponseBodyModuleDataList(TeaModel):
         arr_date: str = None,
         arr_station: str = None,
         arr_time: str = None,
+        bill_record_time: str = None,
         book_time: str = None,
         booker_id: str = None,
         booker_job_no: str = None,
@@ -1823,6 +1838,8 @@ class BillSettementFlightResponseBodyModuleDataList(TeaModel):
         self.arr_station = arr_station
         # 到达时间
         self.arr_time = arr_time
+        # 入账时间
+        self.bill_record_time = bill_record_time
         # 预定时间
         self.book_time = book_time
         # 预订人use id
@@ -1969,6 +1986,8 @@ class BillSettementFlightResponseBodyModuleDataList(TeaModel):
             result['arrStation'] = self.arr_station
         if self.arr_time is not None:
             result['arrTime'] = self.arr_time
+        if self.bill_record_time is not None:
+            result['billRecordTime'] = self.bill_record_time
         if self.book_time is not None:
             result['bookTime'] = self.book_time
         if self.booker_id is not None:
@@ -2109,6 +2128,8 @@ class BillSettementFlightResponseBodyModuleDataList(TeaModel):
             self.arr_station = m.get('arrStation')
         if m.get('arrTime') is not None:
             self.arr_time = m.get('arrTime')
+        if m.get('billRecordTime') is not None:
+            self.bill_record_time = m.get('billRecordTime')
         if m.get('bookTime') is not None:
             self.book_time = m.get('bookTime')
         if m.get('bookerId') is not None:
@@ -2488,6 +2509,7 @@ class BillSettementHotelResponseBodyModuleDataList(TeaModel):
         self,
         alipay_trade_no: str = None,
         apply_id: str = None,
+        bill_record_time: str = None,
         book_time: str = None,
         booker_id: str = None,
         booker_job_no: str = None,
@@ -2541,6 +2563,8 @@ class BillSettementHotelResponseBodyModuleDataList(TeaModel):
         self.alipay_trade_no = alipay_trade_no
         # 审批单号
         self.apply_id = apply_id
+        # 入账时间
+        self.bill_record_time = bill_record_time
         # 预定时间
         self.book_time = book_time
         # 预定人use id
@@ -2651,6 +2675,8 @@ class BillSettementHotelResponseBodyModuleDataList(TeaModel):
             result['alipayTradeNo'] = self.alipay_trade_no
         if self.apply_id is not None:
             result['applyId'] = self.apply_id
+        if self.bill_record_time is not None:
+            result['billRecordTime'] = self.bill_record_time
         if self.book_time is not None:
             result['bookTime'] = self.book_time
         if self.booker_id is not None:
@@ -2755,6 +2781,8 @@ class BillSettementHotelResponseBodyModuleDataList(TeaModel):
             self.alipay_trade_no = m.get('alipayTradeNo')
         if m.get('applyId') is not None:
             self.apply_id = m.get('applyId')
+        if m.get('billRecordTime') is not None:
+            self.bill_record_time = m.get('billRecordTime')
         if m.get('bookTime') is not None:
             self.book_time = m.get('bookTime')
         if m.get('bookerId') is not None:

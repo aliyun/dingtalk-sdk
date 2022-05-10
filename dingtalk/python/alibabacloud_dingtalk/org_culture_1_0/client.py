@@ -23,6 +23,84 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def consume_user_points(
+        self,
+        user_id: str,
+        request: dingtalkorg_culture__1__0_models.ConsumeUserPointsRequest,
+    ) -> dingtalkorg_culture__1__0_models.ConsumeUserPointsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkorg_culture__1__0_models.ConsumeUserPointsHeaders()
+        return self.consume_user_points_with_options(user_id, request, headers, runtime)
+
+    async def consume_user_points_async(
+        self,
+        user_id: str,
+        request: dingtalkorg_culture__1__0_models.ConsumeUserPointsRequest,
+    ) -> dingtalkorg_culture__1__0_models.ConsumeUserPointsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkorg_culture__1__0_models.ConsumeUserPointsHeaders()
+        return await self.consume_user_points_with_options_async(user_id, request, headers, runtime)
+
+    def consume_user_points_with_options(
+        self,
+        user_id: str,
+        request: dingtalkorg_culture__1__0_models.ConsumeUserPointsRequest,
+        headers: dingtalkorg_culture__1__0_models.ConsumeUserPointsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkorg_culture__1__0_models.ConsumeUserPointsResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        body = {}
+        if not UtilClient.is_unset(request.amount):
+            body['amount'] = request.amount
+        if not UtilClient.is_unset(request.out_id):
+            body['outId'] = request.out_id
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkorg_culture__1__0_models.ConsumeUserPointsResponse(),
+            self.do_roarequest('ConsumeUserPoints', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/orgCulture/users/{user_id}/points/deduct', 'json', req, runtime)
+        )
+
+    async def consume_user_points_with_options_async(
+        self,
+        user_id: str,
+        request: dingtalkorg_culture__1__0_models.ConsumeUserPointsRequest,
+        headers: dingtalkorg_culture__1__0_models.ConsumeUserPointsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkorg_culture__1__0_models.ConsumeUserPointsResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        body = {}
+        if not UtilClient.is_unset(request.amount):
+            body['amount'] = request.amount
+        if not UtilClient.is_unset(request.out_id):
+            body['outId'] = request.out_id
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkorg_culture__1__0_models.ConsumeUserPointsResponse(),
+            await self.do_roarequest_async('ConsumeUserPoints', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/orgCulture/users/{user_id}/points/deduct', 'json', req, runtime)
+        )
+
     def grant_honor(
         self,
         honor_id: str,
@@ -115,6 +193,70 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkorg_culture__1__0_models.GrantHonorResponse(),
             await self.do_roarequest_async('GrantHonor', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/orgCulture/honors/{honor_id}/grant', 'json', req, runtime)
+        )
+
+    def query_corp_points(
+        self,
+        request: dingtalkorg_culture__1__0_models.QueryCorpPointsRequest,
+    ) -> dingtalkorg_culture__1__0_models.QueryCorpPointsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkorg_culture__1__0_models.QueryCorpPointsHeaders()
+        return self.query_corp_points_with_options(request, headers, runtime)
+
+    async def query_corp_points_async(
+        self,
+        request: dingtalkorg_culture__1__0_models.QueryCorpPointsRequest,
+    ) -> dingtalkorg_culture__1__0_models.QueryCorpPointsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkorg_culture__1__0_models.QueryCorpPointsHeaders()
+        return await self.query_corp_points_with_options_async(request, headers, runtime)
+
+    def query_corp_points_with_options(
+        self,
+        request: dingtalkorg_culture__1__0_models.QueryCorpPointsRequest,
+        headers: dingtalkorg_culture__1__0_models.QueryCorpPointsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkorg_culture__1__0_models.QueryCorpPointsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.opt_user_id):
+            query['optUserId'] = request.opt_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkorg_culture__1__0_models.QueryCorpPointsResponse(),
+            self.do_roarequest('QueryCorpPoints', 'orgCulture_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/orgCulture/organizations/points', 'json', req, runtime)
+        )
+
+    async def query_corp_points_with_options_async(
+        self,
+        request: dingtalkorg_culture__1__0_models.QueryCorpPointsRequest,
+        headers: dingtalkorg_culture__1__0_models.QueryCorpPointsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkorg_culture__1__0_models.QueryCorpPointsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.opt_user_id):
+            query['optUserId'] = request.opt_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkorg_culture__1__0_models.QueryCorpPointsResponse(),
+            await self.do_roarequest_async('QueryCorpPoints', 'orgCulture_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/orgCulture/organizations/points', 'json', req, runtime)
         )
 
     def query_org_honors(
@@ -257,4 +399,60 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkorg_culture__1__0_models.QueryUserHonorsResponse(),
             await self.do_roarequest_async('QueryUserHonors', 'orgCulture_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/orgCulture/honors/users/{user_id}', 'json', req, runtime)
+        )
+
+    def query_user_points(
+        self,
+        user_id: str,
+    ) -> dingtalkorg_culture__1__0_models.QueryUserPointsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkorg_culture__1__0_models.QueryUserPointsHeaders()
+        return self.query_user_points_with_options(user_id, headers, runtime)
+
+    async def query_user_points_async(
+        self,
+        user_id: str,
+    ) -> dingtalkorg_culture__1__0_models.QueryUserPointsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkorg_culture__1__0_models.QueryUserPointsHeaders()
+        return await self.query_user_points_with_options_async(user_id, headers, runtime)
+
+    def query_user_points_with_options(
+        self,
+        user_id: str,
+        headers: dingtalkorg_culture__1__0_models.QueryUserPointsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkorg_culture__1__0_models.QueryUserPointsResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkorg_culture__1__0_models.QueryUserPointsResponse(),
+            self.do_roarequest('QueryUserPoints', 'orgCulture_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/orgCulture/users/{user_id}/points', 'json', req, runtime)
+        )
+
+    async def query_user_points_with_options_async(
+        self,
+        user_id: str,
+        headers: dingtalkorg_culture__1__0_models.QueryUserPointsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkorg_culture__1__0_models.QueryUserPointsResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkorg_culture__1__0_models.QueryUserPointsResponse(),
+            await self.do_roarequest_async('QueryUserPoints', 'orgCulture_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/orgCulture/users/{user_id}/points', 'json', req, runtime)
         )

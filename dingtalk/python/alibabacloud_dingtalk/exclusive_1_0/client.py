@@ -23,6 +23,74 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def add_org(
+        self,
+        request: dingtalkexclusive__1__0_models.AddOrgRequest,
+    ) -> dingtalkexclusive__1__0_models.AddOrgResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.AddOrgHeaders()
+        return self.add_org_with_options(request, headers, runtime)
+
+    async def add_org_async(
+        self,
+        request: dingtalkexclusive__1__0_models.AddOrgRequest,
+    ) -> dingtalkexclusive__1__0_models.AddOrgResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.AddOrgHeaders()
+        return await self.add_org_with_options_async(request, headers, runtime)
+
+    def add_org_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.AddOrgRequest,
+        headers: dingtalkexclusive__1__0_models.AddOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.AddOrgResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.mobile_num):
+            body['mobileNum'] = request.mobile_num
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.AddOrgResponse(),
+            self.do_roarequest('AddOrg', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/orgnizations', 'json', req, runtime)
+        )
+
+    async def add_org_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.AddOrgRequest,
+        headers: dingtalkexclusive__1__0_models.AddOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.AddOrgResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.mobile_num):
+            body['mobileNum'] = request.mobile_num
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.AddOrgResponse(),
+            await self.do_roarequest_async('AddOrg', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/orgnizations', 'json', req, runtime)
+        )
+
     def ban_or_open_group_words(
         self,
         request: dingtalkexclusive__1__0_models.BanOrOpenGroupWordsRequest,
@@ -299,6 +367,370 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkexclusive__1__0_models.DeleteCommentResponse(),
             await self.do_roarequest_async('DeleteComment', 'exclusive_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/exclusive/publishers/{publisher_id}/comments/{comment_id}', 'boolean', req, runtime)
+        )
+
+    def file_storage_active_storage(
+        self,
+        request: dingtalkexclusive__1__0_models.FileStorageActiveStorageRequest,
+    ) -> dingtalkexclusive__1__0_models.FileStorageActiveStorageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.FileStorageActiveStorageHeaders()
+        return self.file_storage_active_storage_with_options(request, headers, runtime)
+
+    async def file_storage_active_storage_async(
+        self,
+        request: dingtalkexclusive__1__0_models.FileStorageActiveStorageRequest,
+    ) -> dingtalkexclusive__1__0_models.FileStorageActiveStorageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.FileStorageActiveStorageHeaders()
+        return await self.file_storage_active_storage_with_options_async(request, headers, runtime)
+
+    def file_storage_active_storage_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.FileStorageActiveStorageRequest,
+        headers: dingtalkexclusive__1__0_models.FileStorageActiveStorageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.FileStorageActiveStorageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.access_key_id):
+            body['accessKeyId'] = request.access_key_id
+        if not UtilClient.is_unset(request.access_key_secret):
+            body['accessKeySecret'] = request.access_key_secret
+        if not UtilClient.is_unset(request.oss):
+            body['oss'] = request.oss
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.FileStorageActiveStorageResponse(),
+            self.do_roarequest('FileStorageActiveStorage', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/fileStorages/active', 'json', req, runtime)
+        )
+
+    async def file_storage_active_storage_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.FileStorageActiveStorageRequest,
+        headers: dingtalkexclusive__1__0_models.FileStorageActiveStorageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.FileStorageActiveStorageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.access_key_id):
+            body['accessKeyId'] = request.access_key_id
+        if not UtilClient.is_unset(request.access_key_secret):
+            body['accessKeySecret'] = request.access_key_secret
+        if not UtilClient.is_unset(request.oss):
+            body['oss'] = request.oss
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.FileStorageActiveStorageResponse(),
+            await self.do_roarequest_async('FileStorageActiveStorage', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/fileStorages/active', 'json', req, runtime)
+        )
+
+    def file_storage_check_connection(
+        self,
+        request: dingtalkexclusive__1__0_models.FileStorageCheckConnectionRequest,
+    ) -> dingtalkexclusive__1__0_models.FileStorageCheckConnectionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.FileStorageCheckConnectionHeaders()
+        return self.file_storage_check_connection_with_options(request, headers, runtime)
+
+    async def file_storage_check_connection_async(
+        self,
+        request: dingtalkexclusive__1__0_models.FileStorageCheckConnectionRequest,
+    ) -> dingtalkexclusive__1__0_models.FileStorageCheckConnectionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.FileStorageCheckConnectionHeaders()
+        return await self.file_storage_check_connection_with_options_async(request, headers, runtime)
+
+    def file_storage_check_connection_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.FileStorageCheckConnectionRequest,
+        headers: dingtalkexclusive__1__0_models.FileStorageCheckConnectionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.FileStorageCheckConnectionResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.access_key_id):
+            body['accessKeyId'] = request.access_key_id
+        if not UtilClient.is_unset(request.access_key_secret):
+            body['accessKeySecret'] = request.access_key_secret
+        if not UtilClient.is_unset(request.oss):
+            body['oss'] = request.oss
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.FileStorageCheckConnectionResponse(),
+            self.do_roarequest('FileStorageCheckConnection', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/fileStorages/connections/check', 'json', req, runtime)
+        )
+
+    async def file_storage_check_connection_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.FileStorageCheckConnectionRequest,
+        headers: dingtalkexclusive__1__0_models.FileStorageCheckConnectionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.FileStorageCheckConnectionResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.access_key_id):
+            body['accessKeyId'] = request.access_key_id
+        if not UtilClient.is_unset(request.access_key_secret):
+            body['accessKeySecret'] = request.access_key_secret
+        if not UtilClient.is_unset(request.oss):
+            body['oss'] = request.oss
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.FileStorageCheckConnectionResponse(),
+            await self.do_roarequest_async('FileStorageCheckConnection', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/fileStorages/connections/check', 'json', req, runtime)
+        )
+
+    def file_storage_get_quota_data(
+        self,
+        request: dingtalkexclusive__1__0_models.FileStorageGetQuotaDataRequest,
+    ) -> dingtalkexclusive__1__0_models.FileStorageGetQuotaDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.FileStorageGetQuotaDataHeaders()
+        return self.file_storage_get_quota_data_with_options(request, headers, runtime)
+
+    async def file_storage_get_quota_data_async(
+        self,
+        request: dingtalkexclusive__1__0_models.FileStorageGetQuotaDataRequest,
+    ) -> dingtalkexclusive__1__0_models.FileStorageGetQuotaDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.FileStorageGetQuotaDataHeaders()
+        return await self.file_storage_get_quota_data_with_options_async(request, headers, runtime)
+
+    def file_storage_get_quota_data_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.FileStorageGetQuotaDataRequest,
+        headers: dingtalkexclusive__1__0_models.FileStorageGetQuotaDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.FileStorageGetQuotaDataResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.target_corp_id):
+            query['targetCorpId'] = request.target_corp_id
+        if not UtilClient.is_unset(request.type):
+            query['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.FileStorageGetQuotaDataResponse(),
+            self.do_roarequest('FileStorageGetQuotaData', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/fileStorages/quotaDatas', 'json', req, runtime)
+        )
+
+    async def file_storage_get_quota_data_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.FileStorageGetQuotaDataRequest,
+        headers: dingtalkexclusive__1__0_models.FileStorageGetQuotaDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.FileStorageGetQuotaDataResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.target_corp_id):
+            query['targetCorpId'] = request.target_corp_id
+        if not UtilClient.is_unset(request.type):
+            query['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.FileStorageGetQuotaDataResponse(),
+            await self.do_roarequest_async('FileStorageGetQuotaData', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/fileStorages/quotaDatas', 'json', req, runtime)
+        )
+
+    def file_storage_get_storage_state(
+        self,
+        request: dingtalkexclusive__1__0_models.FileStorageGetStorageStateRequest,
+    ) -> dingtalkexclusive__1__0_models.FileStorageGetStorageStateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.FileStorageGetStorageStateHeaders()
+        return self.file_storage_get_storage_state_with_options(request, headers, runtime)
+
+    async def file_storage_get_storage_state_async(
+        self,
+        request: dingtalkexclusive__1__0_models.FileStorageGetStorageStateRequest,
+    ) -> dingtalkexclusive__1__0_models.FileStorageGetStorageStateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.FileStorageGetStorageStateHeaders()
+        return await self.file_storage_get_storage_state_with_options_async(request, headers, runtime)
+
+    def file_storage_get_storage_state_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.FileStorageGetStorageStateRequest,
+        headers: dingtalkexclusive__1__0_models.FileStorageGetStorageStateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.FileStorageGetStorageStateResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.target_corp_id):
+            query['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.FileStorageGetStorageStateResponse(),
+            self.do_roarequest('FileStorageGetStorageState', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/fileStorages/states', 'json', req, runtime)
+        )
+
+    async def file_storage_get_storage_state_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.FileStorageGetStorageStateRequest,
+        headers: dingtalkexclusive__1__0_models.FileStorageGetStorageStateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.FileStorageGetStorageStateResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.target_corp_id):
+            query['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.FileStorageGetStorageStateResponse(),
+            await self.do_roarequest_async('FileStorageGetStorageState', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/fileStorages/states', 'json', req, runtime)
+        )
+
+    def file_storage_update_storage(
+        self,
+        request: dingtalkexclusive__1__0_models.FileStorageUpdateStorageRequest,
+    ) -> dingtalkexclusive__1__0_models.FileStorageUpdateStorageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.FileStorageUpdateStorageHeaders()
+        return self.file_storage_update_storage_with_options(request, headers, runtime)
+
+    async def file_storage_update_storage_async(
+        self,
+        request: dingtalkexclusive__1__0_models.FileStorageUpdateStorageRequest,
+    ) -> dingtalkexclusive__1__0_models.FileStorageUpdateStorageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.FileStorageUpdateStorageHeaders()
+        return await self.file_storage_update_storage_with_options_async(request, headers, runtime)
+
+    def file_storage_update_storage_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.FileStorageUpdateStorageRequest,
+        headers: dingtalkexclusive__1__0_models.FileStorageUpdateStorageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.FileStorageUpdateStorageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.access_key_id):
+            body['accessKeyId'] = request.access_key_id
+        if not UtilClient.is_unset(request.access_key_secret):
+            body['accessKeySecret'] = request.access_key_secret
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.FileStorageUpdateStorageResponse(),
+            self.do_roarequest('FileStorageUpdateStorage', 'exclusive_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/exclusive/fileStorages/configurations', 'json', req, runtime)
+        )
+
+    async def file_storage_update_storage_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.FileStorageUpdateStorageRequest,
+        headers: dingtalkexclusive__1__0_models.FileStorageUpdateStorageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.FileStorageUpdateStorageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.access_key_id):
+            body['accessKeyId'] = request.access_key_id
+        if not UtilClient.is_unset(request.access_key_secret):
+            body['accessKeySecret'] = request.access_key_secret
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.FileStorageUpdateStorageResponse(),
+            await self.do_roarequest_async('FileStorageUpdateStorage', 'exclusive_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/exclusive/fileStorages/configurations', 'json', req, runtime)
         )
 
     def get_active_user_summary(
@@ -1131,6 +1563,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetInActiveUserList', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/inactives/users/query', 'json', req, runtime)
         )
 
+    def get_last_org_auth_data(
+        self,
+        request: dingtalkexclusive__1__0_models.GetLastOrgAuthDataRequest,
+    ) -> dingtalkexclusive__1__0_models.GetLastOrgAuthDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetLastOrgAuthDataHeaders()
+        return self.get_last_org_auth_data_with_options(request, headers, runtime)
+
+    async def get_last_org_auth_data_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetLastOrgAuthDataRequest,
+    ) -> dingtalkexclusive__1__0_models.GetLastOrgAuthDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetLastOrgAuthDataHeaders()
+        return await self.get_last_org_auth_data_with_options_async(request, headers, runtime)
+
+    def get_last_org_auth_data_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetLastOrgAuthDataRequest,
+        headers: dingtalkexclusive__1__0_models.GetLastOrgAuthDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetLastOrgAuthDataResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.target_corp_id):
+            query['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetLastOrgAuthDataResponse(),
+            self.do_roarequest('GetLastOrgAuthData', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/organizations/authInfos', 'json', req, runtime)
+        )
+
+    async def get_last_org_auth_data_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetLastOrgAuthDataRequest,
+        headers: dingtalkexclusive__1__0_models.GetLastOrgAuthDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetLastOrgAuthDataResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.target_corp_id):
+            query['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetLastOrgAuthDataResponse(),
+            await self.do_roarequest_async('GetLastOrgAuthData', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/organizations/authInfos', 'json', req, runtime)
+        )
+
     def get_oa_operator_log_list(
         self,
         request: dingtalkexclusive__1__0_models.GetOaOperatorLogListRequest,
@@ -1635,6 +2131,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListAuditLog', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/fileAuditLogs', 'json', req, runtime)
         )
 
+    def list_join_org_info(
+        self,
+        request: dingtalkexclusive__1__0_models.ListJoinOrgInfoRequest,
+    ) -> dingtalkexclusive__1__0_models.ListJoinOrgInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ListJoinOrgInfoHeaders()
+        return self.list_join_org_info_with_options(request, headers, runtime)
+
+    async def list_join_org_info_async(
+        self,
+        request: dingtalkexclusive__1__0_models.ListJoinOrgInfoRequest,
+    ) -> dingtalkexclusive__1__0_models.ListJoinOrgInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ListJoinOrgInfoHeaders()
+        return await self.list_join_org_info_with_options_async(request, headers, runtime)
+
+    def list_join_org_info_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.ListJoinOrgInfoRequest,
+        headers: dingtalkexclusive__1__0_models.ListJoinOrgInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ListJoinOrgInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.mobile):
+            query['mobile'] = request.mobile
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ListJoinOrgInfoResponse(),
+            self.do_roarequest('ListJoinOrgInfo', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/exclusiveAccounts/organizations/infos', 'json', req, runtime)
+        )
+
+    async def list_join_org_info_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.ListJoinOrgInfoRequest,
+        headers: dingtalkexclusive__1__0_models.ListJoinOrgInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ListJoinOrgInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.mobile):
+            query['mobile'] = request.mobile
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ListJoinOrgInfoResponse(),
+            await self.do_roarequest_async('ListJoinOrgInfo', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/exclusiveAccounts/organizations/infos', 'json', req, runtime)
+        )
+
     def list_mini_app_available_version(
         self,
         request: dingtalkexclusive__1__0_models.ListMiniAppAvailableVersionRequest,
@@ -2069,6 +2629,130 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkexclusive__1__0_models.RollbackMiniAppVersionResponse(),
             await self.do_roarequest_async('RollbackMiniAppVersion', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/miniApps/versions/rollback', 'json', req, runtime)
+        )
+
+    def save_and_submit_auth_info(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveAndSubmitAuthInfoRequest,
+    ) -> dingtalkexclusive__1__0_models.SaveAndSubmitAuthInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SaveAndSubmitAuthInfoHeaders()
+        return self.save_and_submit_auth_info_with_options(request, headers, runtime)
+
+    async def save_and_submit_auth_info_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveAndSubmitAuthInfoRequest,
+    ) -> dingtalkexclusive__1__0_models.SaveAndSubmitAuthInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SaveAndSubmitAuthInfoHeaders()
+        return await self.save_and_submit_auth_info_with_options_async(request, headers, runtime)
+
+    def save_and_submit_auth_info_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveAndSubmitAuthInfoRequest,
+        headers: dingtalkexclusive__1__0_models.SaveAndSubmitAuthInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SaveAndSubmitAuthInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.apply_remark):
+            body['applyRemark'] = request.apply_remark
+        if not UtilClient.is_unset(request.authorize_media_id):
+            body['authorizeMediaId'] = request.authorize_media_id
+        if not UtilClient.is_unset(request.industry):
+            body['industry'] = request.industry
+        if not UtilClient.is_unset(request.legal_person):
+            body['legalPerson'] = request.legal_person
+        if not UtilClient.is_unset(request.legal_person_id_card):
+            body['legalPersonIdCard'] = request.legal_person_id_card
+        if not UtilClient.is_unset(request.license_media_id):
+            body['licenseMediaId'] = request.license_media_id
+        if not UtilClient.is_unset(request.loc_city_name):
+            body['locCityName'] = request.loc_city_name
+        if not UtilClient.is_unset(request.loc_province_name):
+            body['locProvinceName'] = request.loc_province_name
+        if not UtilClient.is_unset(request.mobile_num):
+            body['mobileNum'] = request.mobile_num
+        if not UtilClient.is_unset(request.org_name):
+            body['orgName'] = request.org_name
+        if not UtilClient.is_unset(request.organization_code):
+            body['organizationCode'] = request.organization_code
+        if not UtilClient.is_unset(request.organization_code_media_id):
+            body['organizationCodeMediaId'] = request.organization_code_media_id
+        if not UtilClient.is_unset(request.regist_location):
+            body['registLocation'] = request.regist_location
+        if not UtilClient.is_unset(request.regist_num):
+            body['registNum'] = request.regist_num
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        if not UtilClient.is_unset(request.unified_social_credit):
+            body['unifiedSocialCredit'] = request.unified_social_credit
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SaveAndSubmitAuthInfoResponse(),
+            self.do_roarequest('SaveAndSubmitAuthInfo', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/ognizations/authInfos/saveAndSubmit', 'json', req, runtime)
+        )
+
+    async def save_and_submit_auth_info_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveAndSubmitAuthInfoRequest,
+        headers: dingtalkexclusive__1__0_models.SaveAndSubmitAuthInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SaveAndSubmitAuthInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.apply_remark):
+            body['applyRemark'] = request.apply_remark
+        if not UtilClient.is_unset(request.authorize_media_id):
+            body['authorizeMediaId'] = request.authorize_media_id
+        if not UtilClient.is_unset(request.industry):
+            body['industry'] = request.industry
+        if not UtilClient.is_unset(request.legal_person):
+            body['legalPerson'] = request.legal_person
+        if not UtilClient.is_unset(request.legal_person_id_card):
+            body['legalPersonIdCard'] = request.legal_person_id_card
+        if not UtilClient.is_unset(request.license_media_id):
+            body['licenseMediaId'] = request.license_media_id
+        if not UtilClient.is_unset(request.loc_city_name):
+            body['locCityName'] = request.loc_city_name
+        if not UtilClient.is_unset(request.loc_province_name):
+            body['locProvinceName'] = request.loc_province_name
+        if not UtilClient.is_unset(request.mobile_num):
+            body['mobileNum'] = request.mobile_num
+        if not UtilClient.is_unset(request.org_name):
+            body['orgName'] = request.org_name
+        if not UtilClient.is_unset(request.organization_code):
+            body['organizationCode'] = request.organization_code
+        if not UtilClient.is_unset(request.organization_code_media_id):
+            body['organizationCodeMediaId'] = request.organization_code_media_id
+        if not UtilClient.is_unset(request.regist_location):
+            body['registLocation'] = request.regist_location
+        if not UtilClient.is_unset(request.regist_num):
+            body['registNum'] = request.regist_num
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        if not UtilClient.is_unset(request.unified_social_credit):
+            body['unifiedSocialCredit'] = request.unified_social_credit
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SaveAndSubmitAuthInfoResponse(),
+            await self.do_roarequest_async('SaveAndSubmitAuthInfo', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/ognizations/authInfos/saveAndSubmit', 'json', req, runtime)
         )
 
     def search_org_inner_group_info(

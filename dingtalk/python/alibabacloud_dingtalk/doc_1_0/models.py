@@ -4092,6 +4092,197 @@ class ListTemplateResponse(TeaModel):
         return self
 
 
+class RangeFindNextHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RangeFindNextRequestFindOptions(TeaModel):
+    def __init__(
+        self,
+        match_case: bool = None,
+        match_entire_cell: bool = None,
+        match_formula_text: bool = None,
+        use_reg_exp: bool = None,
+    ):
+        # 匹配大小写
+        self.match_case = match_case
+        # 匹配整个单元格
+        self.match_entire_cell = match_entire_cell
+        # 在公式内搜索
+        self.match_formula_text = match_formula_text
+        # text是正则表达式
+        self.use_reg_exp = use_reg_exp
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.match_case is not None:
+            result['matchCase'] = self.match_case
+        if self.match_entire_cell is not None:
+            result['matchEntireCell'] = self.match_entire_cell
+        if self.match_formula_text is not None:
+            result['matchFormulaText'] = self.match_formula_text
+        if self.use_reg_exp is not None:
+            result['useRegExp'] = self.use_reg_exp
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('matchCase') is not None:
+            self.match_case = m.get('matchCase')
+        if m.get('matchEntireCell') is not None:
+            self.match_entire_cell = m.get('matchEntireCell')
+        if m.get('matchFormulaText') is not None:
+            self.match_formula_text = m.get('matchFormulaText')
+        if m.get('useRegExp') is not None:
+            self.use_reg_exp = m.get('useRegExp')
+        return self
+
+
+class RangeFindNextRequest(TeaModel):
+    def __init__(
+        self,
+        find_options: RangeFindNextRequestFindOptions = None,
+        text: str = None,
+        operator_id: str = None,
+    ):
+        # 查找选项
+        self.find_options = find_options
+        # 要查找的文本
+        self.text = text
+        # 操作人unionId
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.find_options:
+            self.find_options.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.find_options is not None:
+            result['findOptions'] = self.find_options.to_map()
+        if self.text is not None:
+            result['text'] = self.text
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('findOptions') is not None:
+            temp_model = RangeFindNextRequestFindOptions()
+            self.find_options = temp_model.from_map(m['findOptions'])
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class RangeFindNextResponseBody(TeaModel):
+    def __init__(
+        self,
+        a_1notation: str = None,
+    ):
+        # 找到的单元格的地址，使用A1表示法
+        self.a_1notation = a_1notation
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.a_1notation is not None:
+            result['a1Notation'] = self.a_1notation
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('a1Notation') is not None:
+            self.a_1notation = m.get('a1Notation')
+        return self
+
+
+class RangeFindNextResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: RangeFindNextResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = RangeFindNextResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SearchWorkspaceDocsHeaders(TeaModel):
     def __init__(
         self,

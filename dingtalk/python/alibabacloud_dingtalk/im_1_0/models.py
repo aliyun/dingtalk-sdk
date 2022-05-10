@@ -3657,6 +3657,7 @@ class TopboxOpenRequest(TeaModel):
         open_conversation_id: str = None,
         out_track_id: str = None,
         platforms: str = None,
+        receiver_user_id_list: List[str] = None,
     ):
         # 酷应用编码
         self.cool_app_code = cool_app_code
@@ -3668,6 +3669,8 @@ class TopboxOpenRequest(TeaModel):
         self.out_track_id = out_track_id
         # 期望吊顶的端（多个'|'隔开，如："ios|win|"）
         self.platforms = platforms
+        # 接收人的员工号列表
+        self.receiver_user_id_list = receiver_user_id_list
 
     def validate(self):
         pass
@@ -3688,6 +3691,8 @@ class TopboxOpenRequest(TeaModel):
             result['outTrackId'] = self.out_track_id
         if self.platforms is not None:
             result['platforms'] = self.platforms
+        if self.receiver_user_id_list is not None:
+            result['receiverUserIdList'] = self.receiver_user_id_list
         return result
 
     def from_map(self, m: dict = None):
@@ -3702,6 +3707,8 @@ class TopboxOpenRequest(TeaModel):
             self.out_track_id = m.get('outTrackId')
         if m.get('platforms') is not None:
             self.platforms = m.get('platforms')
+        if m.get('receiverUserIdList') is not None:
+            self.receiver_user_id_list = m.get('receiverUserIdList')
         return self
 
 

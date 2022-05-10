@@ -1607,6 +1607,100 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListTemplate', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/templates', 'json', req, runtime)
         )
 
+    def range_find_next(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.RangeFindNextRequest,
+    ) -> dingtalkdoc__1__0_models.RangeFindNextResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.RangeFindNextHeaders()
+        return self.range_find_next_with_options(workbook_id, sheet_id, range_address, request, headers, runtime)
+
+    async def range_find_next_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.RangeFindNextRequest,
+    ) -> dingtalkdoc__1__0_models.RangeFindNextResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.RangeFindNextHeaders()
+        return await self.range_find_next_with_options_async(workbook_id, sheet_id, range_address, request, headers, runtime)
+
+    def range_find_next_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.RangeFindNextRequest,
+        headers: dingtalkdoc__1__0_models.RangeFindNextHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.RangeFindNextResponse:
+        UtilClient.validate_model(request)
+        workbook_id = OpenApiUtilClient.get_encode_param(workbook_id)
+        sheet_id = OpenApiUtilClient.get_encode_param(sheet_id)
+        range_address = OpenApiUtilClient.get_encode_param(range_address)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.find_options):
+            body['findOptions'] = request.find_options
+        if not UtilClient.is_unset(request.text):
+            body['text'] = request.text
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.RangeFindNextResponse(),
+            self.do_roarequest('RangeFindNext', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/ranges/{range_address}/findNext', 'json', req, runtime)
+        )
+
+    async def range_find_next_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.RangeFindNextRequest,
+        headers: dingtalkdoc__1__0_models.RangeFindNextHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.RangeFindNextResponse:
+        UtilClient.validate_model(request)
+        workbook_id = OpenApiUtilClient.get_encode_param(workbook_id)
+        sheet_id = OpenApiUtilClient.get_encode_param(sheet_id)
+        range_address = OpenApiUtilClient.get_encode_param(range_address)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.find_options):
+            body['findOptions'] = request.find_options
+        if not UtilClient.is_unset(request.text):
+            body['text'] = request.text
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.RangeFindNextResponse(),
+            await self.do_roarequest_async('RangeFindNext', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/ranges/{range_address}/findNext', 'json', req, runtime)
+        )
+
     def search_workspace_docs(
         self,
         request: dingtalkdoc__1__0_models.SearchWorkspaceDocsRequest,

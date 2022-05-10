@@ -4,6 +4,183 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class ConsumeUserPointsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ConsumeUserPointsRequest(TeaModel):
+    def __init__(
+        self,
+        amount: int = None,
+        out_id: str = None,
+        remark: str = None,
+    ):
+        # 扣减积分数量，1～1000000
+        self.amount = amount
+        # 幂等外部ID，最大长度32个字符
+        self.out_id = out_id
+        # 备注，最长32个字符
+        self.remark = remark
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.out_id is not None:
+            result['outId'] = self.out_id
+        if self.remark is not None:
+            result['remark'] = self.remark
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('outId') is not None:
+            self.out_id = m.get('outId')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        return self
+
+
+class ConsumeUserPointsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        amount: int = None,
+    ):
+        # 扣减后剩余积分数量
+        self.amount = amount
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        return self
+
+
+class ConsumeUserPointsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: ConsumeUserPointsResponseBodyResult = None,
+        success: bool = None,
+    ):
+        # 响应数据
+        self.result = result
+        # 请求响应状态
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = ConsumeUserPointsResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ConsumeUserPointsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ConsumeUserPointsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ConsumeUserPointsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GrantHonorHeaders(TeaModel):
     def __init__(
         self,
@@ -54,7 +231,7 @@ class GrantHonorRequest(TeaModel):
         self.grant_reason = grant_reason
         # 颁奖人名字，最多15个字
         self.granter_name = granter_name
-        # 是否使用官宣号通知获奖人
+        # 是否使用官宣号发送内网动态
         self.notice_announcer = notice_announcer
         # 是否触达单聊会话通知
         self.notice_single = notice_single
@@ -214,6 +391,169 @@ class GrantHonorResponse(TeaModel):
         return self
 
 
+class QueryCorpPointsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryCorpPointsRequest(TeaModel):
+    def __init__(
+        self,
+        opt_user_id: str = None,
+    ):
+        # 操作用户ID
+        self.opt_user_id = opt_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.opt_user_id is not None:
+            result['optUserId'] = self.opt_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('optUserId') is not None:
+            self.opt_user_id = m.get('optUserId')
+        return self
+
+
+class QueryCorpPointsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        amount: int = None,
+    ):
+        # 企业员工可用于兑换积分总额
+        self.amount = amount
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        return self
+
+
+class QueryCorpPointsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryCorpPointsResponseBodyResult = None,
+        success: bool = None,
+    ):
+        # 响应数据
+        self.result = result
+        # 请求响应状态
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryCorpPointsResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryCorpPointsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryCorpPointsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryCorpPointsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryOrgHonorsHeaders(TeaModel):
     def __init__(
         self,
@@ -253,7 +593,9 @@ class QueryOrgHonorsRequest(TeaModel):
         max_results: int = None,
         next_token: str = None,
     ):
+        # 分页获取数据时，数据的数量，默认为20，最大可传入100
         self.max_results = max_results
+        # 分页获取数据的标记，第一页调用时传0，非第一页传入上次调用本接口返回值中的nextToken
         self.next_token = next_token
 
     def validate(self):
@@ -489,7 +831,9 @@ class QueryUserHonorsRequest(TeaModel):
         max_results: int = None,
         next_token: str = None,
     ):
+        # 查询数据的条数，默认查询20条，最大可传100
         self.max_results = max_results
+        # 分页查询的标记，查询第一页时传0，非第一页时传入上次调用本接口返回值中的nextToken
         self.next_token = next_token
 
     def validate(self):
@@ -724,6 +1068,141 @@ class QueryUserHonorsResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryUserHonorsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryUserPointsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryUserPointsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        amount: int = None,
+    ):
+        # 员工积分数量
+        self.amount = amount
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        return self
+
+
+class QueryUserPointsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryUserPointsResponseBodyResult = None,
+        success: bool = None,
+    ):
+        # 响应数据
+        self.result = result
+        # 请求响应状态
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryUserPointsResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryUserPointsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryUserPointsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryUserPointsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
