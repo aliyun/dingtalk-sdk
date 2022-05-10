@@ -7,6 +7,91 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class AddOrgHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddOrgRequest extends $tea.Model {
+  mobileNum?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      mobileNum: 'mobileNum',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      mobileNum: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddOrgResponseBody extends $tea.Model {
+  corpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddOrgResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AddOrgResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AddOrgResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BanOrOpenGroupWordsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -310,6 +395,482 @@ export class DeleteCommentResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FileStorageActiveStorageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FileStorageActiveStorageRequest extends $tea.Model {
+  accessKeyId?: string;
+  accessKeySecret?: string;
+  oss?: string;
+  targetCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      accessKeyId: 'accessKeyId',
+      accessKeySecret: 'accessKeySecret',
+      oss: 'oss',
+      targetCorpId: 'targetCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accessKeyId: 'string',
+      accessKeySecret: 'string',
+      oss: 'string',
+      targetCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FileStorageActiveStorageResponseBody extends $tea.Model {
+  createDate?: string;
+  fileStorageOpenStatus?: number;
+  storageStatus?: number;
+  usedQuota?: number;
+  static names(): { [key: string]: string } {
+    return {
+      createDate: 'createDate',
+      fileStorageOpenStatus: 'fileStorageOpenStatus',
+      storageStatus: 'storageStatus',
+      usedQuota: 'usedQuota',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      createDate: 'string',
+      fileStorageOpenStatus: 'number',
+      storageStatus: 'number',
+      usedQuota: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FileStorageActiveStorageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: FileStorageActiveStorageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: FileStorageActiveStorageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FileStorageCheckConnectionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FileStorageCheckConnectionRequest extends $tea.Model {
+  accessKeyId?: string;
+  accessKeySecret?: string;
+  oss?: string;
+  targetCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      accessKeyId: 'accessKeyId',
+      accessKeySecret: 'accessKeySecret',
+      oss: 'oss',
+      targetCorpId: 'targetCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accessKeyId: 'string',
+      accessKeySecret: 'string',
+      oss: 'string',
+      targetCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FileStorageCheckConnectionResponseBody extends $tea.Model {
+  accessKeyId?: string;
+  checkState?: number;
+  oss?: string;
+  static names(): { [key: string]: string } {
+    return {
+      accessKeyId: 'accessKeyId',
+      checkState: 'checkState',
+      oss: 'oss',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accessKeyId: 'string',
+      checkState: 'number',
+      oss: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FileStorageCheckConnectionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: FileStorageCheckConnectionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: FileStorageCheckConnectionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FileStorageGetQuotaDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FileStorageGetQuotaDataRequest extends $tea.Model {
+  endTime?: string;
+  startTime?: string;
+  targetCorpId?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      startTime: 'startTime',
+      targetCorpId: 'targetCorpId',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'string',
+      startTime: 'string',
+      targetCorpId: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FileStorageGetQuotaDataResponseBody extends $tea.Model {
+  quotaModelList?: FileStorageGetQuotaDataResponseBodyQuotaModelList[];
+  static names(): { [key: string]: string } {
+    return {
+      quotaModelList: 'quotaModelList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      quotaModelList: { 'type': 'array', 'itemType': FileStorageGetQuotaDataResponseBodyQuotaModelList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FileStorageGetQuotaDataResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: FileStorageGetQuotaDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: FileStorageGetQuotaDataResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FileStorageGetStorageStateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FileStorageGetStorageStateRequest extends $tea.Model {
+  targetCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      targetCorpId: 'targetCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      targetCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FileStorageGetStorageStateResponseBody extends $tea.Model {
+  accessKeyId?: string;
+  createDate?: string;
+  fileStorageOpenStatus?: number;
+  oss?: string;
+  storageStatus?: number;
+  usedQuota?: number;
+  static names(): { [key: string]: string } {
+    return {
+      accessKeyId: 'accessKeyId',
+      createDate: 'createDate',
+      fileStorageOpenStatus: 'fileStorageOpenStatus',
+      oss: 'oss',
+      storageStatus: 'storageStatus',
+      usedQuota: 'usedQuota',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accessKeyId: 'string',
+      createDate: 'string',
+      fileStorageOpenStatus: 'number',
+      oss: 'string',
+      storageStatus: 'number',
+      usedQuota: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FileStorageGetStorageStateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: FileStorageGetStorageStateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: FileStorageGetStorageStateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FileStorageUpdateStorageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FileStorageUpdateStorageRequest extends $tea.Model {
+  accessKeyId?: string;
+  accessKeySecret?: string;
+  targetCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      accessKeyId: 'accessKeyId',
+      accessKeySecret: 'accessKeySecret',
+      targetCorpId: 'targetCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accessKeyId: 'string',
+      accessKeySecret: 'string',
+      targetCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FileStorageUpdateStorageResponseBody extends $tea.Model {
+  accessKeyId?: string;
+  oss?: string;
+  static names(): { [key: string]: string } {
+    return {
+      accessKeyId: 'accessKeyId',
+      oss: 'oss',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accessKeyId: 'string',
+      oss: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FileStorageUpdateStorageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: FileStorageUpdateStorageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: FileStorageUpdateStorageResponseBody,
     };
   }
 
@@ -1347,6 +1908,91 @@ export class GetInActiveUserListResponse extends $tea.Model {
   }
 }
 
+export class GetLastOrgAuthDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetLastOrgAuthDataRequest extends $tea.Model {
+  targetCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      targetCorpId: 'targetCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      targetCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetLastOrgAuthDataResponseBody extends $tea.Model {
+  authRemark?: string;
+  authStatus?: number;
+  static names(): { [key: string]: string } {
+    return {
+      authRemark: 'authRemark',
+      authStatus: 'authStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      authRemark: 'string',
+      authStatus: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetLastOrgAuthDataResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetLastOrgAuthDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetLastOrgAuthDataResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetOaOperatorLogListHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1977,6 +2623,88 @@ export class ListAuditLogResponse extends $tea.Model {
   }
 }
 
+export class ListJoinOrgInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListJoinOrgInfoRequest extends $tea.Model {
+  mobile?: string;
+  static names(): { [key: string]: string } {
+    return {
+      mobile: 'mobile',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      mobile: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListJoinOrgInfoResponseBody extends $tea.Model {
+  orgInfoList?: ListJoinOrgInfoResponseBodyOrgInfoList[];
+  static names(): { [key: string]: string } {
+    return {
+      orgInfoList: 'orgInfoList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      orgInfoList: { 'type': 'array', 'itemType': ListJoinOrgInfoResponseBodyOrgInfoList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListJoinOrgInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListJoinOrgInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListJoinOrgInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListMiniAppAvailableVersionHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2474,6 +3202,136 @@ export class RollbackMiniAppVersionResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: RollbackMiniAppVersionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveAndSubmitAuthInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveAndSubmitAuthInfoRequest extends $tea.Model {
+  applyRemark?: string;
+  authorizeMediaId?: string;
+  industry?: string;
+  legalPerson?: string;
+  legalPersonIdCard?: string;
+  licenseMediaId?: string;
+  locCityName?: string;
+  locProvinceName?: string;
+  mobileNum?: string;
+  orgName?: string;
+  organizationCode?: string;
+  organizationCodeMediaId?: string;
+  registLocation?: string;
+  registNum?: string;
+  targetCorpId?: string;
+  unifiedSocialCredit?: string;
+  static names(): { [key: string]: string } {
+    return {
+      applyRemark: 'applyRemark',
+      authorizeMediaId: 'authorizeMediaId',
+      industry: 'industry',
+      legalPerson: 'legalPerson',
+      legalPersonIdCard: 'legalPersonIdCard',
+      licenseMediaId: 'licenseMediaId',
+      locCityName: 'locCityName',
+      locProvinceName: 'locProvinceName',
+      mobileNum: 'mobileNum',
+      orgName: 'orgName',
+      organizationCode: 'organizationCode',
+      organizationCodeMediaId: 'organizationCodeMediaId',
+      registLocation: 'registLocation',
+      registNum: 'registNum',
+      targetCorpId: 'targetCorpId',
+      unifiedSocialCredit: 'unifiedSocialCredit',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      applyRemark: 'string',
+      authorizeMediaId: 'string',
+      industry: 'string',
+      legalPerson: 'string',
+      legalPersonIdCard: 'string',
+      licenseMediaId: 'string',
+      locCityName: 'string',
+      locProvinceName: 'string',
+      mobileNum: 'string',
+      orgName: 'string',
+      organizationCode: 'string',
+      organizationCodeMediaId: 'string',
+      registLocation: 'string',
+      registNum: 'string',
+      targetCorpId: 'string',
+      unifiedSocialCredit: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveAndSubmitAuthInfoResponseBody extends $tea.Model {
+  accessKeyId?: string;
+  oss?: string;
+  static names(): { [key: string]: string } {
+    return {
+      accessKeyId: 'accessKeyId',
+      oss: 'oss',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accessKeyId: 'string',
+      oss: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveAndSubmitAuthInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SaveAndSubmitAuthInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SaveAndSubmitAuthInfoResponseBody,
     };
   }
 
@@ -3113,6 +3971,28 @@ export class UpdateRoleVisibilityResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FileStorageGetQuotaDataResponseBodyQuotaModelList extends $tea.Model {
+  statisticTime?: string;
+  usedStorage?: number;
+  static names(): { [key: string]: string } {
+    return {
+      statisticTime: 'statisticTime',
+      usedStorage: 'usedStorage',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      statisticTime: 'string',
+      usedStorage: 'number',
     };
   }
 
@@ -3861,6 +4741,34 @@ export class ListAuditLogResponseBodyList extends $tea.Model {
   }
 }
 
+export class ListJoinOrgInfoResponseBodyOrgInfoList extends $tea.Model {
+  corpId?: string;
+  domain?: string;
+  orgFullName?: string;
+  orgName?: number;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      domain: 'domain',
+      orgFullName: 'orgFullName',
+      orgName: 'orgName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      domain: 'string',
+      orgFullName: 'string',
+      orgName: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListMiniAppAvailableVersionResponseBodyList extends $tea.Model {
   buildStatus?: number;
   version?: string;
@@ -4141,6 +5049,39 @@ export default class Client extends OpenApi {
   }
 
 
+  async addOrg(request: AddOrgRequest): Promise<AddOrgResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddOrgHeaders({ });
+    return await this.addOrgWithOptions(request, headers, runtime);
+  }
+
+  async addOrgWithOptions(request: AddOrgRequest, headers: AddOrgHeaders, runtime: $Util.RuntimeOptions): Promise<AddOrgResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.mobileNum)) {
+      body["mobileNum"] = request.mobileNum;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AddOrgResponse>(await this.doROARequest("AddOrg", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/orgnizations`, "json", req, runtime), new AddOrgResponse({}));
+  }
+
   async banOrOpenGroupWords(request: BanOrOpenGroupWordsRequest): Promise<BanOrOpenGroupWordsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BanOrOpenGroupWordsHeaders({ });
@@ -4274,6 +5215,195 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<DeleteCommentResponse>(await this.doROARequest("DeleteComment", "exclusive_1.0", "HTTP", "DELETE", "AK", `/v1.0/exclusive/publishers/${publisherId}/comments/${commentId}`, "boolean", req, runtime), new DeleteCommentResponse({}));
+  }
+
+  async fileStorageActiveStorage(request: FileStorageActiveStorageRequest): Promise<FileStorageActiveStorageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new FileStorageActiveStorageHeaders({ });
+    return await this.fileStorageActiveStorageWithOptions(request, headers, runtime);
+  }
+
+  async fileStorageActiveStorageWithOptions(request: FileStorageActiveStorageRequest, headers: FileStorageActiveStorageHeaders, runtime: $Util.RuntimeOptions): Promise<FileStorageActiveStorageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.accessKeyId)) {
+      body["accessKeyId"] = request.accessKeyId;
+    }
+
+    if (!Util.isUnset(request.accessKeySecret)) {
+      body["accessKeySecret"] = request.accessKeySecret;
+    }
+
+    if (!Util.isUnset(request.oss)) {
+      body["oss"] = request.oss;
+    }
+
+    if (!Util.isUnset(request.targetCorpId)) {
+      body["targetCorpId"] = request.targetCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<FileStorageActiveStorageResponse>(await this.doROARequest("FileStorageActiveStorage", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/fileStorages/active`, "json", req, runtime), new FileStorageActiveStorageResponse({}));
+  }
+
+  async fileStorageCheckConnection(request: FileStorageCheckConnectionRequest): Promise<FileStorageCheckConnectionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new FileStorageCheckConnectionHeaders({ });
+    return await this.fileStorageCheckConnectionWithOptions(request, headers, runtime);
+  }
+
+  async fileStorageCheckConnectionWithOptions(request: FileStorageCheckConnectionRequest, headers: FileStorageCheckConnectionHeaders, runtime: $Util.RuntimeOptions): Promise<FileStorageCheckConnectionResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.accessKeyId)) {
+      body["accessKeyId"] = request.accessKeyId;
+    }
+
+    if (!Util.isUnset(request.accessKeySecret)) {
+      body["accessKeySecret"] = request.accessKeySecret;
+    }
+
+    if (!Util.isUnset(request.oss)) {
+      body["oss"] = request.oss;
+    }
+
+    if (!Util.isUnset(request.targetCorpId)) {
+      body["targetCorpId"] = request.targetCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<FileStorageCheckConnectionResponse>(await this.doROARequest("FileStorageCheckConnection", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/fileStorages/connections/check`, "json", req, runtime), new FileStorageCheckConnectionResponse({}));
+  }
+
+  async fileStorageGetQuotaData(request: FileStorageGetQuotaDataRequest): Promise<FileStorageGetQuotaDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new FileStorageGetQuotaDataHeaders({ });
+    return await this.fileStorageGetQuotaDataWithOptions(request, headers, runtime);
+  }
+
+  async fileStorageGetQuotaDataWithOptions(request: FileStorageGetQuotaDataRequest, headers: FileStorageGetQuotaDataHeaders, runtime: $Util.RuntimeOptions): Promise<FileStorageGetQuotaDataResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.endTime)) {
+      query["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      query["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.targetCorpId)) {
+      query["targetCorpId"] = request.targetCorpId;
+    }
+
+    if (!Util.isUnset(request.type)) {
+      query["type"] = request.type;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<FileStorageGetQuotaDataResponse>(await this.doROARequest("FileStorageGetQuotaData", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/fileStorages/quotaDatas`, "json", req, runtime), new FileStorageGetQuotaDataResponse({}));
+  }
+
+  async fileStorageGetStorageState(request: FileStorageGetStorageStateRequest): Promise<FileStorageGetStorageStateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new FileStorageGetStorageStateHeaders({ });
+    return await this.fileStorageGetStorageStateWithOptions(request, headers, runtime);
+  }
+
+  async fileStorageGetStorageStateWithOptions(request: FileStorageGetStorageStateRequest, headers: FileStorageGetStorageStateHeaders, runtime: $Util.RuntimeOptions): Promise<FileStorageGetStorageStateResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.targetCorpId)) {
+      query["targetCorpId"] = request.targetCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<FileStorageGetStorageStateResponse>(await this.doROARequest("FileStorageGetStorageState", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/fileStorages/states`, "json", req, runtime), new FileStorageGetStorageStateResponse({}));
+  }
+
+  async fileStorageUpdateStorage(request: FileStorageUpdateStorageRequest): Promise<FileStorageUpdateStorageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new FileStorageUpdateStorageHeaders({ });
+    return await this.fileStorageUpdateStorageWithOptions(request, headers, runtime);
+  }
+
+  async fileStorageUpdateStorageWithOptions(request: FileStorageUpdateStorageRequest, headers: FileStorageUpdateStorageHeaders, runtime: $Util.RuntimeOptions): Promise<FileStorageUpdateStorageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.accessKeyId)) {
+      body["accessKeyId"] = request.accessKeyId;
+    }
+
+    if (!Util.isUnset(request.accessKeySecret)) {
+      body["accessKeySecret"] = request.accessKeySecret;
+    }
+
+    if (!Util.isUnset(request.targetCorpId)) {
+      body["targetCorpId"] = request.targetCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<FileStorageUpdateStorageResponse>(await this.doROARequest("FileStorageUpdateStorage", "exclusive_1.0", "HTTP", "PUT", "AK", `/v1.0/exclusive/fileStorages/configurations`, "json", req, runtime), new FileStorageUpdateStorageResponse({}));
   }
 
   async getActiveUserSummary(dataId: string): Promise<GetActiveUserSummaryResponse> {
@@ -4654,6 +5784,35 @@ export default class Client extends OpenApi {
     return $tea.cast<GetInActiveUserListResponse>(await this.doROARequest("GetInActiveUserList", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/inactives/users/query`, "json", req, runtime), new GetInActiveUserListResponse({}));
   }
 
+  async getLastOrgAuthData(request: GetLastOrgAuthDataRequest): Promise<GetLastOrgAuthDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetLastOrgAuthDataHeaders({ });
+    return await this.getLastOrgAuthDataWithOptions(request, headers, runtime);
+  }
+
+  async getLastOrgAuthDataWithOptions(request: GetLastOrgAuthDataRequest, headers: GetLastOrgAuthDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetLastOrgAuthDataResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.targetCorpId)) {
+      query["targetCorpId"] = request.targetCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetLastOrgAuthDataResponse>(await this.doROARequest("GetLastOrgAuthData", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/organizations/authInfos`, "json", req, runtime), new GetLastOrgAuthDataResponse({}));
+  }
+
   async getOaOperatorLogList(request: GetOaOperatorLogListRequest): Promise<GetOaOperatorLogListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetOaOperatorLogListHeaders({ });
@@ -4905,6 +6064,35 @@ export default class Client extends OpenApi {
     return $tea.cast<ListAuditLogResponse>(await this.doROARequest("ListAuditLog", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/fileAuditLogs`, "json", req, runtime), new ListAuditLogResponse({}));
   }
 
+  async listJoinOrgInfo(request: ListJoinOrgInfoRequest): Promise<ListJoinOrgInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListJoinOrgInfoHeaders({ });
+    return await this.listJoinOrgInfoWithOptions(request, headers, runtime);
+  }
+
+  async listJoinOrgInfoWithOptions(request: ListJoinOrgInfoRequest, headers: ListJoinOrgInfoHeaders, runtime: $Util.RuntimeOptions): Promise<ListJoinOrgInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.mobile)) {
+      query["mobile"] = request.mobile;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ListJoinOrgInfoResponse>(await this.doROARequest("ListJoinOrgInfo", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/exclusiveAccounts/organizations/infos`, "json", req, runtime), new ListJoinOrgInfoResponse({}));
+  }
+
   async listMiniAppAvailableVersion(request: ListMiniAppAvailableVersionRequest): Promise<ListMiniAppAvailableVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListMiniAppAvailableVersionHeaders({ });
@@ -5131,6 +6319,95 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<RollbackMiniAppVersionResponse>(await this.doROARequest("RollbackMiniAppVersion", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/miniApps/versions/rollback`, "json", req, runtime), new RollbackMiniAppVersionResponse({}));
+  }
+
+  async saveAndSubmitAuthInfo(request: SaveAndSubmitAuthInfoRequest): Promise<SaveAndSubmitAuthInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SaveAndSubmitAuthInfoHeaders({ });
+    return await this.saveAndSubmitAuthInfoWithOptions(request, headers, runtime);
+  }
+
+  async saveAndSubmitAuthInfoWithOptions(request: SaveAndSubmitAuthInfoRequest, headers: SaveAndSubmitAuthInfoHeaders, runtime: $Util.RuntimeOptions): Promise<SaveAndSubmitAuthInfoResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.applyRemark)) {
+      body["applyRemark"] = request.applyRemark;
+    }
+
+    if (!Util.isUnset(request.authorizeMediaId)) {
+      body["authorizeMediaId"] = request.authorizeMediaId;
+    }
+
+    if (!Util.isUnset(request.industry)) {
+      body["industry"] = request.industry;
+    }
+
+    if (!Util.isUnset(request.legalPerson)) {
+      body["legalPerson"] = request.legalPerson;
+    }
+
+    if (!Util.isUnset(request.legalPersonIdCard)) {
+      body["legalPersonIdCard"] = request.legalPersonIdCard;
+    }
+
+    if (!Util.isUnset(request.licenseMediaId)) {
+      body["licenseMediaId"] = request.licenseMediaId;
+    }
+
+    if (!Util.isUnset(request.locCityName)) {
+      body["locCityName"] = request.locCityName;
+    }
+
+    if (!Util.isUnset(request.locProvinceName)) {
+      body["locProvinceName"] = request.locProvinceName;
+    }
+
+    if (!Util.isUnset(request.mobileNum)) {
+      body["mobileNum"] = request.mobileNum;
+    }
+
+    if (!Util.isUnset(request.orgName)) {
+      body["orgName"] = request.orgName;
+    }
+
+    if (!Util.isUnset(request.organizationCode)) {
+      body["organizationCode"] = request.organizationCode;
+    }
+
+    if (!Util.isUnset(request.organizationCodeMediaId)) {
+      body["organizationCodeMediaId"] = request.organizationCodeMediaId;
+    }
+
+    if (!Util.isUnset(request.registLocation)) {
+      body["registLocation"] = request.registLocation;
+    }
+
+    if (!Util.isUnset(request.registNum)) {
+      body["registNum"] = request.registNum;
+    }
+
+    if (!Util.isUnset(request.targetCorpId)) {
+      body["targetCorpId"] = request.targetCorpId;
+    }
+
+    if (!Util.isUnset(request.unifiedSocialCredit)) {
+      body["unifiedSocialCredit"] = request.unifiedSocialCredit;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SaveAndSubmitAuthInfoResponse>(await this.doROARequest("SaveAndSubmitAuthInfo", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/ognizations/authInfos/saveAndSubmit`, "json", req, runtime), new SaveAndSubmitAuthInfoResponse({}));
   }
 
   async searchOrgInnerGroupInfo(request: SearchOrgInnerGroupInfoRequest): Promise<SearchOrgInnerGroupInfoResponse> {

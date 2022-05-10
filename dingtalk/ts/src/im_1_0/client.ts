@@ -1819,6 +1819,7 @@ export class TopboxOpenRequest extends $tea.Model {
   openConversationId?: string;
   outTrackId?: string;
   platforms?: string;
+  receiverUserIdList?: string[];
   static names(): { [key: string]: string } {
     return {
       coolAppCode: 'coolAppCode',
@@ -1826,6 +1827,7 @@ export class TopboxOpenRequest extends $tea.Model {
       openConversationId: 'openConversationId',
       outTrackId: 'outTrackId',
       platforms: 'platforms',
+      receiverUserIdList: 'receiverUserIdList',
     };
   }
 
@@ -1836,6 +1838,7 @@ export class TopboxOpenRequest extends $tea.Model {
       openConversationId: 'string',
       outTrackId: 'string',
       platforms: 'string',
+      receiverUserIdList: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
@@ -3992,6 +3995,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.platforms)) {
       body["platforms"] = request.platforms;
+    }
+
+    if (!Util.isUnset(request.receiverUserIdList)) {
+      body["receiverUserIdList"] = request.receiverUserIdList;
     }
 
     let realHeaders : {[key: string ]: string} = { };

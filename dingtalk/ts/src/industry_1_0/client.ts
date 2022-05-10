@@ -1041,6 +1041,768 @@ export class CustomizeContactUpdateResponse extends $tea.Model {
   }
 }
 
+export class DigitalStoreContactInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreContactInfoResponseBody extends $tea.Model {
+  code?: string;
+  name?: string;
+  rootDeptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      name: 'name',
+      rootDeptId: 'rootDeptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      name: 'string',
+      rootDeptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreContactInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DigitalStoreContactInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DigitalStoreContactInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreGroupInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreGroupInfoRequest extends $tea.Model {
+  groupId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      groupId: 'groupId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreGroupInfoResponseBody extends $tea.Model {
+  groupId?: number;
+  groupName?: string;
+  storeIdList?: number[];
+  static names(): { [key: string]: string } {
+    return {
+      groupId: 'groupId',
+      groupName: 'groupName',
+      storeIdList: 'storeIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupId: 'number',
+      groupName: 'string',
+      storeIdList: { 'type': 'array', 'itemType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreGroupInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DigitalStoreGroupInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DigitalStoreGroupInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreGroupsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreGroupsResponseBody extends $tea.Model {
+  content?: DigitalStoreGroupsResponseBodyContent[];
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': DigitalStoreGroupsResponseBodyContent },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreGroupsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DigitalStoreGroupsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DigitalStoreGroupsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreNodeInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreNodeInfoRequest extends $tea.Model {
+  code?: string;
+  nodeId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      nodeId: 'nodeId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      nodeId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreNodeInfoResponseBody extends $tea.Model {
+  id?: number;
+  name?: string;
+  parentId?: number;
+  type?: number;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      name: 'name',
+      parentId: 'parentId',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      name: 'string',
+      parentId: 'number',
+      type: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreNodeInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DigitalStoreNodeInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DigitalStoreNodeInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreRolesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreRolesResponseBody extends $tea.Model {
+  content?: DigitalStoreRolesResponseBodyContent[];
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': DigitalStoreRolesResponseBodyContent },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreRolesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DigitalStoreRolesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DigitalStoreRolesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreStoreInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreStoreInfoRequest extends $tea.Model {
+  code?: string;
+  storeId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      storeId: 'storeId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      storeId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreStoreInfoResponseBody extends $tea.Model {
+  address?: string;
+  businessHours?: string;
+  latitude?: string;
+  locationAddress?: string;
+  longitude?: string;
+  name?: string;
+  parentId?: number;
+  status?: string;
+  storeAcreage?: string;
+  storeBandwidth?: string;
+  storeCode?: string;
+  storeId?: number;
+  telephone?: string;
+  static names(): { [key: string]: string } {
+    return {
+      address: 'address',
+      businessHours: 'businessHours',
+      latitude: 'latitude',
+      locationAddress: 'locationAddress',
+      longitude: 'longitude',
+      name: 'name',
+      parentId: 'parentId',
+      status: 'status',
+      storeAcreage: 'storeAcreage',
+      storeBandwidth: 'storeBandwidth',
+      storeCode: 'storeCode',
+      storeId: 'storeId',
+      telephone: 'telephone',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      address: 'string',
+      businessHours: 'string',
+      latitude: 'string',
+      locationAddress: 'string',
+      longitude: 'string',
+      name: 'string',
+      parentId: 'number',
+      status: 'string',
+      storeAcreage: 'string',
+      storeBandwidth: 'string',
+      storeCode: 'string',
+      storeId: 'number',
+      telephone: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreStoreInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DigitalStoreStoreInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DigitalStoreStoreInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreSubNodesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreSubNodesRequest extends $tea.Model {
+  code?: string;
+  nodeId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      nodeId: 'nodeId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      nodeId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreSubNodesResponseBody extends $tea.Model {
+  content?: DigitalStoreSubNodesResponseBodyContent[];
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': DigitalStoreSubNodesResponseBodyContent },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreSubNodesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DigitalStoreSubNodesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DigitalStoreSubNodesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreUserInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreUserInfoRequest extends $tea.Model {
+  code?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreUserInfoResponseBody extends $tea.Model {
+  name?: string;
+  scopeList?: number[];
+  storeList?: number[];
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      scopeList: 'scopeList',
+      storeList: 'storeList',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      scopeList: { 'type': 'array', 'itemType': 'number' },
+      storeList: { 'type': 'array', 'itemType': 'number' },
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreUserInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DigitalStoreUserInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DigitalStoreUserInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreUsersHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreUsersRequest extends $tea.Model {
+  code?: string;
+  nodeId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      nodeId: 'nodeId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      nodeId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreUsersResponseBody extends $tea.Model {
+  content?: DigitalStoreUsersResponseBodyContent[];
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': DigitalStoreUsersResponseBodyContent },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreUsersResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DigitalStoreUsersResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DigitalStoreUsersResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class IndustryManufactureCostRecordListGetHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3694,6 +4456,106 @@ export class CustomizeContactListResponseBodyContent extends $tea.Model {
   }
 }
 
+export class DigitalStoreGroupsResponseBodyContent extends $tea.Model {
+  groupId?: number;
+  groupName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      groupId: 'groupId',
+      groupName: 'groupName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupId: 'number',
+      groupName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreRolesResponseBodyContent extends $tea.Model {
+  level?: number;
+  roleCode?: string;
+  roleId?: number;
+  roleName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      level: 'level',
+      roleCode: 'roleCode',
+      roleId: 'roleId',
+      roleName: 'roleName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      level: 'number',
+      roleCode: 'string',
+      roleId: 'number',
+      roleName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreSubNodesResponseBodyContent extends $tea.Model {
+  id?: number;
+  name?: string;
+  parentId?: number;
+  type?: number;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      name: 'name',
+      parentId: 'parentId',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      name: 'string',
+      parentId: 'number',
+      type: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreUsersResponseBodyContent extends $tea.Model {
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class IndustryManufactureCostRecordListGetResponseBodyList extends $tea.Model {
   corpId?: string;
   count?: number;
@@ -5759,6 +6621,266 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CustomizeContactUpdateResponse>(await this.doROARequest("CustomizeContactUpdate", "industry_1.0", "HTTP", "PUT", "AK", `/v1.0/industry/customizations/contacts`, "json", req, runtime), new CustomizeContactUpdateResponse({}));
+  }
+
+  async digitalStoreContactInfo(): Promise<DigitalStoreContactInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DigitalStoreContactInfoHeaders({ });
+    return await this.digitalStoreContactInfoWithOptions(headers, runtime);
+  }
+
+  async digitalStoreContactInfoWithOptions(headers: DigitalStoreContactInfoHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreContactInfoResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<DigitalStoreContactInfoResponse>(await this.doROARequest("DigitalStoreContactInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/contactInfos`, "json", req, runtime), new DigitalStoreContactInfoResponse({}));
+  }
+
+  async digitalStoreGroupInfo(request: DigitalStoreGroupInfoRequest): Promise<DigitalStoreGroupInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DigitalStoreGroupInfoHeaders({ });
+    return await this.digitalStoreGroupInfoWithOptions(request, headers, runtime);
+  }
+
+  async digitalStoreGroupInfoWithOptions(request: DigitalStoreGroupInfoRequest, headers: DigitalStoreGroupInfoHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreGroupInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.groupId)) {
+      query["groupId"] = request.groupId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<DigitalStoreGroupInfoResponse>(await this.doROARequest("DigitalStoreGroupInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/groupInfos`, "json", req, runtime), new DigitalStoreGroupInfoResponse({}));
+  }
+
+  async digitalStoreGroups(): Promise<DigitalStoreGroupsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DigitalStoreGroupsHeaders({ });
+    return await this.digitalStoreGroupsWithOptions(headers, runtime);
+  }
+
+  async digitalStoreGroupsWithOptions(headers: DigitalStoreGroupsHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreGroupsResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<DigitalStoreGroupsResponse>(await this.doROARequest("DigitalStoreGroups", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/groups`, "json", req, runtime), new DigitalStoreGroupsResponse({}));
+  }
+
+  async digitalStoreNodeInfo(request: DigitalStoreNodeInfoRequest): Promise<DigitalStoreNodeInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DigitalStoreNodeInfoHeaders({ });
+    return await this.digitalStoreNodeInfoWithOptions(request, headers, runtime);
+  }
+
+  async digitalStoreNodeInfoWithOptions(request: DigitalStoreNodeInfoRequest, headers: DigitalStoreNodeInfoHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreNodeInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.code)) {
+      query["code"] = request.code;
+    }
+
+    if (!Util.isUnset(request.nodeId)) {
+      query["nodeId"] = request.nodeId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<DigitalStoreNodeInfoResponse>(await this.doROARequest("DigitalStoreNodeInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/nodeInfos`, "json", req, runtime), new DigitalStoreNodeInfoResponse({}));
+  }
+
+  async digitalStoreRoles(): Promise<DigitalStoreRolesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DigitalStoreRolesHeaders({ });
+    return await this.digitalStoreRolesWithOptions(headers, runtime);
+  }
+
+  async digitalStoreRolesWithOptions(headers: DigitalStoreRolesHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreRolesResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<DigitalStoreRolesResponse>(await this.doROARequest("DigitalStoreRoles", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/roles`, "json", req, runtime), new DigitalStoreRolesResponse({}));
+  }
+
+  async digitalStoreStoreInfo(request: DigitalStoreStoreInfoRequest): Promise<DigitalStoreStoreInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DigitalStoreStoreInfoHeaders({ });
+    return await this.digitalStoreStoreInfoWithOptions(request, headers, runtime);
+  }
+
+  async digitalStoreStoreInfoWithOptions(request: DigitalStoreStoreInfoRequest, headers: DigitalStoreStoreInfoHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreStoreInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.code)) {
+      query["code"] = request.code;
+    }
+
+    if (!Util.isUnset(request.storeId)) {
+      query["storeId"] = request.storeId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<DigitalStoreStoreInfoResponse>(await this.doROARequest("DigitalStoreStoreInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/storeInfos`, "json", req, runtime), new DigitalStoreStoreInfoResponse({}));
+  }
+
+  async digitalStoreSubNodes(request: DigitalStoreSubNodesRequest): Promise<DigitalStoreSubNodesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DigitalStoreSubNodesHeaders({ });
+    return await this.digitalStoreSubNodesWithOptions(request, headers, runtime);
+  }
+
+  async digitalStoreSubNodesWithOptions(request: DigitalStoreSubNodesRequest, headers: DigitalStoreSubNodesHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreSubNodesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.code)) {
+      query["code"] = request.code;
+    }
+
+    if (!Util.isUnset(request.nodeId)) {
+      query["nodeId"] = request.nodeId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<DigitalStoreSubNodesResponse>(await this.doROARequest("DigitalStoreSubNodes", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/subsidiaryNodes`, "json", req, runtime), new DigitalStoreSubNodesResponse({}));
+  }
+
+  async digitalStoreUserInfo(request: DigitalStoreUserInfoRequest): Promise<DigitalStoreUserInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DigitalStoreUserInfoHeaders({ });
+    return await this.digitalStoreUserInfoWithOptions(request, headers, runtime);
+  }
+
+  async digitalStoreUserInfoWithOptions(request: DigitalStoreUserInfoRequest, headers: DigitalStoreUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreUserInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.code)) {
+      query["code"] = request.code;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<DigitalStoreUserInfoResponse>(await this.doROARequest("DigitalStoreUserInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/userInfos`, "json", req, runtime), new DigitalStoreUserInfoResponse({}));
+  }
+
+  async digitalStoreUsers(request: DigitalStoreUsersRequest): Promise<DigitalStoreUsersResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DigitalStoreUsersHeaders({ });
+    return await this.digitalStoreUsersWithOptions(request, headers, runtime);
+  }
+
+  async digitalStoreUsersWithOptions(request: DigitalStoreUsersRequest, headers: DigitalStoreUsersHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreUsersResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.code)) {
+      query["code"] = request.code;
+    }
+
+    if (!Util.isUnset(request.nodeId)) {
+      query["nodeId"] = request.nodeId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<DigitalStoreUsersResponse>(await this.doROARequest("DigitalStoreUsers", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/nodes/users`, "json", req, runtime), new DigitalStoreUsersResponse({}));
   }
 
   async industryManufactureCostRecordListGet(request: IndustryManufactureCostRecordListGetRequest): Promise<IndustryManufactureCostRecordListGetResponse> {

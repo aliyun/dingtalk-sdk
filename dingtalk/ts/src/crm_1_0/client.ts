@@ -3981,6 +3981,7 @@ export class UpdateGroupSetRequest extends $tea.Model {
   openGroupSetId?: string;
   ownerUserId?: string;
   templateId?: string;
+  welcome?: string;
   static names(): { [key: string]: string } {
     return {
       managerUserIds: 'managerUserIds',
@@ -3991,6 +3992,7 @@ export class UpdateGroupSetRequest extends $tea.Model {
       openGroupSetId: 'openGroupSetId',
       ownerUserId: 'ownerUserId',
       templateId: 'templateId',
+      welcome: 'welcome',
     };
   }
 
@@ -4004,6 +4006,7 @@ export class UpdateGroupSetRequest extends $tea.Model {
       openGroupSetId: 'string',
       ownerUserId: 'string',
       templateId: 'string',
+      welcome: 'string',
     };
   }
 
@@ -10350,6 +10353,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.templateId)) {
       body["templateId"] = request.templateId;
+    }
+
+    if (!Util.isUnset(request.welcome)) {
+      body["welcome"] = request.welcome;
     }
 
     let realHeaders : {[key: string ]: string} = { };

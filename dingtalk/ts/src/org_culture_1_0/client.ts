@@ -7,6 +7,97 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class ConsumeUserPointsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsumeUserPointsRequest extends $tea.Model {
+  amount?: number;
+  outId?: string;
+  remark?: string;
+  static names(): { [key: string]: string } {
+    return {
+      amount: 'amount',
+      outId: 'outId',
+      remark: 'remark',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      amount: 'number',
+      outId: 'string',
+      remark: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsumeUserPointsResponseBody extends $tea.Model {
+  result?: ConsumeUserPointsResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: ConsumeUserPointsResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsumeUserPointsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ConsumeUserPointsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ConsumeUserPointsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GrantHonorHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -102,6 +193,91 @@ export class GrantHonorResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GrantHonorResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCorpPointsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCorpPointsRequest extends $tea.Model {
+  optUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      optUserId: 'optUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      optUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCorpPointsResponseBody extends $tea.Model {
+  result?: QueryCorpPointsResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryCorpPointsResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCorpPointsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryCorpPointsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryCorpPointsResponseBody,
     };
   }
 
@@ -286,6 +462,91 @@ export class QueryUserHonorsResponse extends $tea.Model {
   }
 }
 
+export class QueryUserPointsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserPointsResponseBody extends $tea.Model {
+  result?: QueryUserPointsResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryUserPointsResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserPointsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryUserPointsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryUserPointsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsumeUserPointsResponseBodyResult extends $tea.Model {
+  amount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      amount: 'amount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      amount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GrantHonorResponseBodyResult extends $tea.Model {
   failedUserIds?: string[];
   successUserIds?: string[];
@@ -300,6 +561,25 @@ export class GrantHonorResponseBodyResult extends $tea.Model {
     return {
       failedUserIds: { 'type': 'array', 'itemType': 'string' },
       successUserIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCorpPointsResponseBodyResult extends $tea.Model {
+  amount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      amount: 'amount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      amount: 'number',
     };
   }
 
@@ -436,6 +716,25 @@ export class QueryUserHonorsResponseBodyResult extends $tea.Model {
   }
 }
 
+export class QueryUserPointsResponseBodyResult extends $tea.Model {
+  amount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      amount: 'amount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      amount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -448,6 +747,44 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async consumeUserPoints(userId: string, request: ConsumeUserPointsRequest): Promise<ConsumeUserPointsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ConsumeUserPointsHeaders({ });
+    return await this.consumeUserPointsWithOptions(userId, request, headers, runtime);
+  }
+
+  async consumeUserPointsWithOptions(userId: string, request: ConsumeUserPointsRequest, headers: ConsumeUserPointsHeaders, runtime: $Util.RuntimeOptions): Promise<ConsumeUserPointsResponse> {
+    Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.amount)) {
+      body["amount"] = request.amount;
+    }
+
+    if (!Util.isUnset(request.outId)) {
+      body["outId"] = request.outId;
+    }
+
+    if (!Util.isUnset(request.remark)) {
+      body["remark"] = request.remark;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ConsumeUserPointsResponse>(await this.doROARequest("ConsumeUserPoints", "orgCulture_1.0", "HTTP", "POST", "AK", `/v1.0/orgCulture/users/${userId}/points/deduct`, "json", req, runtime), new ConsumeUserPointsResponse({}));
+  }
 
   async grantHonor(honorId: string, request: GrantHonorRequest): Promise<GrantHonorResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -501,6 +838,35 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<GrantHonorResponse>(await this.doROARequest("GrantHonor", "orgCulture_1.0", "HTTP", "POST", "AK", `/v1.0/orgCulture/honors/${honorId}/grant`, "json", req, runtime), new GrantHonorResponse({}));
+  }
+
+  async queryCorpPoints(request: QueryCorpPointsRequest): Promise<QueryCorpPointsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryCorpPointsHeaders({ });
+    return await this.queryCorpPointsWithOptions(request, headers, runtime);
+  }
+
+  async queryCorpPointsWithOptions(request: QueryCorpPointsRequest, headers: QueryCorpPointsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCorpPointsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.optUserId)) {
+      query["optUserId"] = request.optUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryCorpPointsResponse>(await this.doROARequest("QueryCorpPoints", "orgCulture_1.0", "HTTP", "GET", "AK", `/v1.0/orgCulture/organizations/points`, "json", req, runtime), new QueryCorpPointsResponse({}));
   }
 
   async queryOrgHonors(request: QueryOrgHonorsRequest): Promise<QueryOrgHonorsResponse> {
@@ -568,6 +934,29 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryUserHonorsResponse>(await this.doROARequest("QueryUserHonors", "orgCulture_1.0", "HTTP", "GET", "AK", `/v1.0/orgCulture/honors/users/${userId}`, "json", req, runtime), new QueryUserHonorsResponse({}));
+  }
+
+  async queryUserPoints(userId: string): Promise<QueryUserPointsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryUserPointsHeaders({ });
+    return await this.queryUserPointsWithOptions(userId, headers, runtime);
+  }
+
+  async queryUserPointsWithOptions(userId: string, headers: QueryUserPointsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserPointsResponse> {
+    userId = OpenApiUtil.getEncodeParam(userId);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<QueryUserPointsResponse>(await this.doROARequest("QueryUserPoints", "orgCulture_1.0", "HTTP", "GET", "AK", `/v1.0/orgCulture/users/${userId}/points`, "json", req, runtime), new QueryUserPointsResponse({}));
   }
 
 }

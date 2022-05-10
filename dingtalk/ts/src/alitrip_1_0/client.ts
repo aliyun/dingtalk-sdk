@@ -1306,6 +1306,7 @@ export class BillSettementBtripTrainResponseBodyModuleDataList extends $tea.Mode
   arrDate?: string;
   arrStation?: string;
   arrTime?: string;
+  billRecordTime?: string;
   bookTime?: string;
   bookerId?: string;
   bookerJobNo?: string;
@@ -1354,6 +1355,7 @@ export class BillSettementBtripTrainResponseBodyModuleDataList extends $tea.Mode
       arrDate: 'arrDate',
       arrStation: 'arrStation',
       arrTime: 'arrTime',
+      billRecordTime: 'billRecordTime',
       bookTime: 'bookTime',
       bookerId: 'bookerId',
       bookerJobNo: 'bookerJobNo',
@@ -1405,6 +1407,7 @@ export class BillSettementBtripTrainResponseBodyModuleDataList extends $tea.Mode
       arrDate: 'string',
       arrStation: 'string',
       arrTime: 'string',
+      billRecordTime: 'string',
       bookTime: 'string',
       bookerId: 'string',
       bookerJobNo: 'string',
@@ -1495,6 +1498,7 @@ export class BillSettementCarResponseBodyModuleDataList extends $tea.Model {
   arrDate?: string;
   arrLocation?: string;
   arrTime?: string;
+  billRecordTime?: string;
   bookTime?: string;
   bookerId?: string;
   bookerJobNo?: string;
@@ -1551,6 +1555,7 @@ export class BillSettementCarResponseBodyModuleDataList extends $tea.Model {
       arrDate: 'arrDate',
       arrLocation: 'arrLocation',
       arrTime: 'arrTime',
+      billRecordTime: 'billRecordTime',
       bookTime: 'bookTime',
       bookerId: 'bookerId',
       bookerJobNo: 'bookerJobNo',
@@ -1610,6 +1615,7 @@ export class BillSettementCarResponseBodyModuleDataList extends $tea.Model {
       arrDate: 'string',
       arrLocation: 'string',
       arrTime: 'string',
+      billRecordTime: 'string',
       bookTime: 'string',
       bookerId: 'string',
       bookerJobNo: 'string',
@@ -1711,6 +1717,7 @@ export class BillSettementFlightResponseBodyModuleDataList extends $tea.Model {
   arrDate?: string;
   arrStation?: string;
   arrTime?: string;
+  billRecordTime?: string;
   bookTime?: string;
   bookerId?: string;
   bookerJobNo?: string;
@@ -1781,6 +1788,7 @@ export class BillSettementFlightResponseBodyModuleDataList extends $tea.Model {
       arrDate: 'arrDate',
       arrStation: 'arrStation',
       arrTime: 'arrTime',
+      billRecordTime: 'billRecordTime',
       bookTime: 'bookTime',
       bookerId: 'bookerId',
       bookerJobNo: 'bookerJobNo',
@@ -1854,6 +1862,7 @@ export class BillSettementFlightResponseBodyModuleDataList extends $tea.Model {
       arrDate: 'string',
       arrStation: 'string',
       arrTime: 'string',
+      billRecordTime: 'string',
       bookTime: 'string',
       bookerId: 'string',
       bookerJobNo: 'string',
@@ -1957,6 +1966,7 @@ export class BillSettementFlightResponseBodyModule extends $tea.Model {
 export class BillSettementHotelResponseBodyModuleDataList extends $tea.Model {
   alipayTradeNo?: string;
   applyId?: string;
+  billRecordTime?: string;
   bookTime?: string;
   bookerId?: string;
   bookerJobNo?: string;
@@ -2009,6 +2019,7 @@ export class BillSettementHotelResponseBodyModuleDataList extends $tea.Model {
     return {
       alipayTradeNo: 'alipayTradeNo',
       applyId: 'applyId',
+      billRecordTime: 'billRecordTime',
       bookTime: 'bookTime',
       bookerId: 'bookerId',
       bookerJobNo: 'bookerJobNo',
@@ -2064,6 +2075,7 @@ export class BillSettementHotelResponseBodyModuleDataList extends $tea.Model {
     return {
       alipayTradeNo: 'string',
       applyId: 'string',
+      billRecordTime: 'string',
       bookTime: 'string',
       bookerId: 'string',
       bookerJobNo: 'string',

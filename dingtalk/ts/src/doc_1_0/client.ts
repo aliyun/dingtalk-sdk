@@ -1694,6 +1694,94 @@ export class ListTemplateResponse extends $tea.Model {
   }
 }
 
+export class RangeFindNextHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RangeFindNextRequest extends $tea.Model {
+  findOptions?: RangeFindNextRequestFindOptions;
+  text?: string;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      findOptions: 'findOptions',
+      text: 'text',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      findOptions: RangeFindNextRequestFindOptions,
+      text: 'string',
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RangeFindNextResponseBody extends $tea.Model {
+  a1Notation?: string;
+  static names(): { [key: string]: string } {
+    return {
+      a1Notation: 'a1Notation',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      a1Notation: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RangeFindNextResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: RangeFindNextResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: RangeFindNextResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchWorkspaceDocsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2800,6 +2888,34 @@ export class ListTemplateResponseBodyTemplateList extends $tea.Model {
   }
 }
 
+export class RangeFindNextRequestFindOptions extends $tea.Model {
+  matchCase?: boolean;
+  matchEntireCell?: boolean;
+  matchFormulaText?: boolean;
+  useRegExp?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      matchCase: 'matchCase',
+      matchEntireCell: 'matchEntireCell',
+      matchFormulaText: 'matchFormulaText',
+      useRegExp: 'useRegExp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      matchCase: 'boolean',
+      matchEntireCell: 'boolean',
+      matchFormulaText: 'boolean',
+      useRegExp: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchWorkspaceDocsResponseBodyDocsNodeBO extends $tea.Model {
   docType?: string;
   lastEditTime?: number;
@@ -3676,6 +3792,48 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<ListTemplateResponse>(await this.doROARequest("ListTemplate", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/templates`, "json", req, runtime), new ListTemplateResponse({}));
+  }
+
+  async rangeFindNext(workbookId: string, sheetId: string, rangeAddress: string, request: RangeFindNextRequest): Promise<RangeFindNextResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RangeFindNextHeaders({ });
+    return await this.rangeFindNextWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
+  }
+
+  async rangeFindNextWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: RangeFindNextRequest, headers: RangeFindNextHeaders, runtime: $Util.RuntimeOptions): Promise<RangeFindNextResponse> {
+    Util.validateModel(request);
+    workbookId = OpenApiUtil.getEncodeParam(workbookId);
+    sheetId = OpenApiUtil.getEncodeParam(sheetId);
+    rangeAddress = OpenApiUtil.getEncodeParam(rangeAddress);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.findOptions))) {
+      body["findOptions"] = request.findOptions;
+    }
+
+    if (!Util.isUnset(request.text)) {
+      body["text"] = request.text;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<RangeFindNextResponse>(await this.doROARequest("RangeFindNext", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}/findNext`, "json", req, runtime), new RangeFindNextResponse({}));
   }
 
   async searchWorkspaceDocs(request: SearchWorkspaceDocsRequest): Promise<SearchWorkspaceDocsResponse> {
