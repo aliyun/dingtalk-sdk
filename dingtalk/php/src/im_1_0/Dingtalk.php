@@ -34,6 +34,12 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupCapacityInquiryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupCapacityInquiryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupCapacityInquiryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupManageQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupManageQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupManageQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceResponse;
@@ -568,6 +574,117 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetSceneGroupMembersResponse::fromMap($this->doROARequest('GetSceneGroupMembers', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/sceneGroups/members/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GroupCapacityInquiryRequest $request
+     *
+     * @return GroupCapacityInquiryResponse
+     */
+    public function groupCapacityInquiry($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GroupCapacityInquiryHeaders([]);
+
+        return $this->groupCapacityInquiryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GroupCapacityInquiryRequest $request
+     * @param GroupCapacityInquiryHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GroupCapacityInquiryResponse
+     */
+    public function groupCapacityInquiryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->effectiveDuration)) {
+            @$body['effectiveDuration'] = $request->effectiveDuration;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            @$body['operator'] = $request->operator;
+        }
+        if (!Utils::isUnset($request->options)) {
+            @$body['options'] = $request->options;
+        }
+        if (!Utils::isUnset($request->targetCapacity)) {
+            @$body['targetCapacity'] = $request->targetCapacity;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GroupCapacityInquiryResponse::fromMap($this->doROARequest('GroupCapacityInquiry', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/groups/capacities/inquiries/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GroupManageQueryRequest $request
+     *
+     * @return GroupManageQueryResponse
+     */
+    public function groupManageQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GroupManageQueryHeaders([]);
+
+        return $this->groupManageQueryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GroupManageQueryRequest $request
+     * @param GroupManageQueryHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return GroupManageQueryResponse
+     */
+    public function groupManageQueryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->groupId)) {
+            @$body['groupId'] = $request->groupId;
+        }
+        if (!Utils::isUnset($request->groupMemberSamples)) {
+            @$body['groupMemberSamples'] = $request->groupMemberSamples;
+        }
+        if (!Utils::isUnset($request->groupOwner)) {
+            @$body['groupOwner'] = $request->groupOwner;
+        }
+        if (!Utils::isUnset($request->groupTitleKeywords)) {
+            @$body['groupTitleKeywords'] = $request->groupTitleKeywords;
+        }
+        if (!Utils::isUnset($request->groupUrl)) {
+            @$body['groupUrl'] = $request->groupUrl;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GroupManageQueryResponse::fromMap($this->doROARequest('GroupManageQuery', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/groups/managements/query', 'json', $req, $runtime));
     }
 
     /**

@@ -17,6 +17,8 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceBatchResp
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteAcrossCloudStroageConfigsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteAcrossCloudStroageConfigsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteCommentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteCommentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageActiveStorageHeaders;
@@ -106,9 +108,15 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListPunchScheduleByCondition
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PublishFileChangeNoticeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PublishFileChangeNoticeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PublishFileChangeNoticeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryAcrossCloudStroageConfigsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryAcrossCloudStroageConfigsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryAcrossCloudStroageConfigsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\RollbackMiniAppVersionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\RollbackMiniAppVersionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\RollbackMiniAppVersionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveAcrossCloudStroageConfigsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveAcrossCloudStroageConfigsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveAcrossCloudStroageConfigsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveAndSubmitAuthInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveAndSubmitAuthInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveAndSubmitAuthInfoResponse;
@@ -136,6 +144,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdatePartnerVisibilityRespo
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateRoleVisibilityHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateRoleVisibilityRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateRoleVisibilityResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateStorageModeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateStorageModeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateStorageModeResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -339,6 +350,43 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateTrustedDeviceBatchResponse::fromMap($this->doROARequest('CreateTrustedDeviceBatch', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/trusts/devices', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $targetCorpId
+     *
+     * @return DeleteAcrossCloudStroageConfigsResponse
+     */
+    public function deleteAcrossCloudStroageConfigs($targetCorpId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteAcrossCloudStroageConfigsHeaders([]);
+
+        return $this->deleteAcrossCloudStroageConfigsWithOptions($targetCorpId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                                 $targetCorpId
+     * @param DeleteAcrossCloudStroageConfigsHeaders $headers
+     * @param RuntimeOptions                         $runtime
+     *
+     * @return DeleteAcrossCloudStroageConfigsResponse
+     */
+    public function deleteAcrossCloudStroageConfigsWithOptions($targetCorpId, $headers, $runtime)
+    {
+        $targetCorpId = OpenApiUtilClient::getEncodeParam($targetCorpId);
+        $realHeaders  = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return DeleteAcrossCloudStroageConfigsResponse::fromMap($this->doROARequest('DeleteAcrossCloudStroageConfigs', 'exclusive_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/exclusive/fileStorages/acrossClouds/configurations/' . $targetCorpId . '', 'json', $req, $runtime));
     }
 
     /**
@@ -1836,6 +1884,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param QueryAcrossCloudStroageConfigsRequest $request
+     *
+     * @return QueryAcrossCloudStroageConfigsResponse
+     */
+    public function queryAcrossCloudStroageConfigs($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryAcrossCloudStroageConfigsHeaders([]);
+
+        return $this->queryAcrossCloudStroageConfigsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryAcrossCloudStroageConfigsRequest $request
+     * @param QueryAcrossCloudStroageConfigsHeaders $headers
+     * @param RuntimeOptions                        $runtime
+     *
+     * @return QueryAcrossCloudStroageConfigsResponse
+     */
+    public function queryAcrossCloudStroageConfigsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->targetCloudType)) {
+            @$query['targetCloudType'] = $request->targetCloudType;
+        }
+        if (!Utils::isUnset($request->targetCorpId)) {
+            @$query['targetCorpId'] = $request->targetCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryAcrossCloudStroageConfigsResponse::fromMap($this->doROARequest('QueryAcrossCloudStroageConfigs', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/fileStorages/acrossClouds/configurations', 'json', $req, $runtime));
+    }
+
+    /**
      * @param RollbackMiniAppVersionRequest $request
      *
      * @return RollbackMiniAppVersionResponse
@@ -1881,6 +1974,63 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return RollbackMiniAppVersionResponse::fromMap($this->doROARequest('RollbackMiniAppVersion', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/miniApps/versions/rollback', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SaveAcrossCloudStroageConfigsRequest $request
+     *
+     * @return SaveAcrossCloudStroageConfigsResponse
+     */
+    public function saveAcrossCloudStroageConfigs($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SaveAcrossCloudStroageConfigsHeaders([]);
+
+        return $this->saveAcrossCloudStroageConfigsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SaveAcrossCloudStroageConfigsRequest $request
+     * @param SaveAcrossCloudStroageConfigsHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return SaveAcrossCloudStroageConfigsResponse
+     */
+    public function saveAcrossCloudStroageConfigsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->accessKeyId)) {
+            @$body['accessKeyId'] = $request->accessKeyId;
+        }
+        if (!Utils::isUnset($request->accessKeySecret)) {
+            @$body['accessKeySecret'] = $request->accessKeySecret;
+        }
+        if (!Utils::isUnset($request->bucketName)) {
+            @$body['bucketName'] = $request->bucketName;
+        }
+        if (!Utils::isUnset($request->cloudType)) {
+            @$body['cloudType'] = $request->cloudType;
+        }
+        if (!Utils::isUnset($request->endpoint)) {
+            @$body['endpoint'] = $request->endpoint;
+        }
+        if (!Utils::isUnset($request->targetCorpId)) {
+            @$body['targetCorpId'] = $request->targetCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SaveAcrossCloudStroageConfigsResponse::fromMap($this->doROARequest('SaveAcrossCloudStroageConfigs', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/fileStorages/acrossClouds/configurations', 'json', $req, $runtime));
     }
 
     /**
@@ -2382,5 +2532,50 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateRoleVisibilityResponse::fromMap($this->doROARequest('UpdateRoleVisibility', 'exclusive_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/exclusive/partnerDepartments/visibilityRoles', 'boolean', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateStorageModeRequest $request
+     *
+     * @return UpdateStorageModeResponse
+     */
+    public function updateStorageMode($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateStorageModeHeaders([]);
+
+        return $this->updateStorageModeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateStorageModeRequest $request
+     * @param UpdateStorageModeHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return UpdateStorageModeResponse
+     */
+    public function updateStorageModeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->fileStorageMode)) {
+            @$body['fileStorageMode'] = $request->fileStorageMode;
+        }
+        if (!Utils::isUnset($request->targetCorpId)) {
+            @$body['targetCorpId'] = $request->targetCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateStorageModeResponse::fromMap($this->doROARequest('UpdateStorageMode', 'exclusive_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/exclusive/fileStorages/acrossClouds/storageModes', 'json', $req, $runtime));
     }
 }

@@ -6,16 +6,16 @@ namespace AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class SaveAndSubmitAuthInfoResponseBody extends Model
+class DeleteAcrossCloudStroageConfigsResponseBody extends Model
 {
     /**
-     * @description 是否成功。
+     * @description 执行结果
      *
      * @var bool
      */
-    public $success;
+    public $result;
     protected $_name = [
-        'success' => 'success',
+        'result' => 'result',
     ];
 
     public function validate()
@@ -25,8 +25,8 @@ class SaveAndSubmitAuthInfoResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->success) {
-            $res['success'] = $this->success;
+        if (null !== $this->result) {
+            $res['result'] = $this->result;
         }
 
         return $res;
@@ -35,13 +35,13 @@ class SaveAndSubmitAuthInfoResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return SaveAndSubmitAuthInfoResponseBody
+     * @return DeleteAcrossCloudStroageConfigsResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['success'])) {
-            $model->success = $map['success'];
+        if (isset($map['result'])) {
+            $model->result = $map['result'];
         }
 
         return $model;
