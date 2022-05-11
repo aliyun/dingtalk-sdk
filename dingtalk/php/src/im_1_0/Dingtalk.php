@@ -97,6 +97,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateMemberBanWordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateMemberGroupNickHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateMemberGroupNickRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateMemberGroupNickResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateRobotInteractiveCardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateRobotInteractiveCardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateRobotInteractiveCardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateTheGroupRolesOfGroupMemberHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateTheGroupRolesOfGroupMemberRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateTheGroupRolesOfGroupMemberResponse;
@@ -1086,6 +1089,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->callbackUrl)) {
+            @$body['callbackUrl'] = $request->callbackUrl;
+        }
         if (!Utils::isUnset($request->cardBizId)) {
             @$body['cardBizId'] = $request->cardBizId;
         }
@@ -1106,6 +1112,12 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->singleChatReceiver)) {
             @$body['singleChatReceiver'] = $request->singleChatReceiver;
+        }
+        if (!Utils::isUnset($request->unionIdPrivateDataMap)) {
+            @$body['unionIdPrivateDataMap'] = $request->unionIdPrivateDataMap;
+        }
+        if (!Utils::isUnset($request->userIdPrivateDataMap)) {
+            @$body['userIdPrivateDataMap'] = $request->userIdPrivateDataMap;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -1537,6 +1549,60 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateMemberGroupNickResponse::fromMap($this->doROARequest('UpdateMemberGroupNick', 'im_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/im/sceneGroups/members/groupNicks', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateRobotInteractiveCardRequest $request
+     *
+     * @return UpdateRobotInteractiveCardResponse
+     */
+    public function updateRobotInteractiveCard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateRobotInteractiveCardHeaders([]);
+
+        return $this->updateRobotInteractiveCardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateRobotInteractiveCardRequest $request
+     * @param UpdateRobotInteractiveCardHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return UpdateRobotInteractiveCardResponse
+     */
+    public function updateRobotInteractiveCardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->cardBizId)) {
+            @$body['cardBizId'] = $request->cardBizId;
+        }
+        if (!Utils::isUnset($request->cardData)) {
+            @$body['cardData'] = $request->cardData;
+        }
+        if (!Utils::isUnset($request->unionIdPrivateDataMap)) {
+            @$body['unionIdPrivateDataMap'] = $request->unionIdPrivateDataMap;
+        }
+        if (!Utils::isUnset($request->updateOptions)) {
+            @$body['updateOptions'] = $request->updateOptions;
+        }
+        if (!Utils::isUnset($request->userIdPrivateDataMap)) {
+            @$body['userIdPrivateDataMap'] = $request->userIdPrivateDataMap;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateRobotInteractiveCardResponse::fromMap($this->doROARequest('UpdateRobotInteractiveCard', 'im_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/im/robots/interactiveCards', 'json', $req, $runtime));
     }
 
     /**

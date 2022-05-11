@@ -37,7 +37,7 @@ class TopboxOpenRequest extends Model
     public $outTrackId;
 
     /**
-     * @description 期望吊顶的端（多个'|'隔开，如："ios|win|"）
+     * @description 期望吊顶的端（多个"|"隔开，如："ios|win|"）
      *
      * @var string
      */

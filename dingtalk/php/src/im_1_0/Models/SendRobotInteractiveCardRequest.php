@@ -10,6 +10,13 @@ use AlibabaCloud\Tea\Model;
 class SendRobotInteractiveCardRequest extends Model
 {
     /**
+     * @description 可交互卡片回调的url【可空：不填写无需回调】
+     *
+     * @var string
+     */
+    public $callbackUrl;
+
+    /**
      * @description 唯一标识一张卡片的外部ID（卡片幂等ID，可用于更新或重复发送同一卡片到多个群会话）【备注：同一个outTrackId重复创建，卡片数据不覆盖更新】
      *
      * @var string
@@ -57,14 +64,31 @@ class SendRobotInteractiveCardRequest extends Model
      * @var string
      */
     public $singleChatReceiver;
+
+    /**
+     * @description 卡片模板-userId差异用户参数（json结构体）
+     *
+     * @var string
+     */
+    public $unionIdPrivateDataMap;
+
+    /**
+     * @description 卡片模板-userId差异用户参数（json结构体）
+     *
+     * @var string
+     */
+    public $userIdPrivateDataMap;
     protected $_name = [
-        'cardBizId'          => 'cardBizId',
-        'cardData'           => 'cardData',
-        'cardTemplateId'     => 'cardTemplateId',
-        'openConversationId' => 'openConversationId',
-        'robotCode'          => 'robotCode',
-        'sendOptions'        => 'sendOptions',
-        'singleChatReceiver' => 'singleChatReceiver',
+        'callbackUrl'           => 'callbackUrl',
+        'cardBizId'             => 'cardBizId',
+        'cardData'              => 'cardData',
+        'cardTemplateId'        => 'cardTemplateId',
+        'openConversationId'    => 'openConversationId',
+        'robotCode'             => 'robotCode',
+        'sendOptions'           => 'sendOptions',
+        'singleChatReceiver'    => 'singleChatReceiver',
+        'unionIdPrivateDataMap' => 'unionIdPrivateDataMap',
+        'userIdPrivateDataMap'  => 'userIdPrivateDataMap',
     ];
 
     public function validate()
@@ -74,6 +98,9 @@ class SendRobotInteractiveCardRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->callbackUrl) {
+            $res['callbackUrl'] = $this->callbackUrl;
+        }
         if (null !== $this->cardBizId) {
             $res['cardBizId'] = $this->cardBizId;
         }
@@ -95,6 +122,12 @@ class SendRobotInteractiveCardRequest extends Model
         if (null !== $this->singleChatReceiver) {
             $res['singleChatReceiver'] = $this->singleChatReceiver;
         }
+        if (null !== $this->unionIdPrivateDataMap) {
+            $res['unionIdPrivateDataMap'] = $this->unionIdPrivateDataMap;
+        }
+        if (null !== $this->userIdPrivateDataMap) {
+            $res['userIdPrivateDataMap'] = $this->userIdPrivateDataMap;
+        }
 
         return $res;
     }
@@ -107,6 +140,9 @@ class SendRobotInteractiveCardRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['callbackUrl'])) {
+            $model->callbackUrl = $map['callbackUrl'];
+        }
         if (isset($map['cardBizId'])) {
             $model->cardBizId = $map['cardBizId'];
         }
@@ -127,6 +163,12 @@ class SendRobotInteractiveCardRequest extends Model
         }
         if (isset($map['singleChatReceiver'])) {
             $model->singleChatReceiver = $map['singleChatReceiver'];
+        }
+        if (isset($map['unionIdPrivateDataMap'])) {
+            $model->unionIdPrivateDataMap = $map['unionIdPrivateDataMap'];
+        }
+        if (isset($map['userIdPrivateDataMap'])) {
+            $model->userIdPrivateDataMap = $map['userIdPrivateDataMap'];
         }
 
         return $model;

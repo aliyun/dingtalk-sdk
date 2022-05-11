@@ -21,6 +21,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteAcrossCloudStroageConf
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteAcrossCloudStroageConfigsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteCommentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteCommentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DistributePartnerAppHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DistributePartnerAppRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DistributePartnerAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageActiveStorageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageActiveStorageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageActiveStorageResponse;
@@ -427,6 +430,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeleteCommentResponse::fromMap($this->doROARequest('DeleteComment', 'exclusive_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/exclusive/publishers/' . $publisherId . '/comments/' . $commentId . '', 'boolean', $req, $runtime));
+    }
+
+    /**
+     * @param DistributePartnerAppRequest $request
+     *
+     * @return DistributePartnerAppResponse
+     */
+    public function distributePartnerApp($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DistributePartnerAppHeaders([]);
+
+        return $this->distributePartnerAppWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DistributePartnerAppRequest $request
+     * @param DistributePartnerAppHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return DistributePartnerAppResponse
+     */
+    public function distributePartnerAppWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appId)) {
+            @$body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->deptId)) {
+            @$body['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->subCorpId)) {
+            @$body['subCorpId'] = $request->subCorpId;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$body['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DistributePartnerAppResponse::fromMap($this->doROARequest('DistributePartnerApp', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/partners/applications/distribute', 'json', $req, $runtime));
     }
 
     /**
