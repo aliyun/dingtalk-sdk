@@ -38,7 +38,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public string OutTrackId { get; set; }
 
         /// <summary>
-        /// 期望吊顶的端（多个'|'隔开，如："ios|win|"）
+        /// 期望吊顶的端（多个"|"隔开，如："ios|win|"）
         /// </summary>
         [NameInMap("platforms")]
         [Validation(Required=false)]
