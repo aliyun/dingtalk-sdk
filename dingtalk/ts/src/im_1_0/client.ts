@@ -1778,6 +1778,7 @@ export class SendRobotInteractiveCardHeaders extends $tea.Model {
 }
 
 export class SendRobotInteractiveCardRequest extends $tea.Model {
+  callbackUrl?: string;
   cardBizId?: string;
   cardData?: string;
   cardTemplateId?: string;
@@ -1785,8 +1786,11 @@ export class SendRobotInteractiveCardRequest extends $tea.Model {
   robotCode?: string;
   sendOptions?: SendRobotInteractiveCardRequestSendOptions;
   singleChatReceiver?: string;
+  unionIdPrivateDataMap?: string;
+  userIdPrivateDataMap?: string;
   static names(): { [key: string]: string } {
     return {
+      callbackUrl: 'callbackUrl',
       cardBizId: 'cardBizId',
       cardData: 'cardData',
       cardTemplateId: 'cardTemplateId',
@@ -1794,11 +1798,14 @@ export class SendRobotInteractiveCardRequest extends $tea.Model {
       robotCode: 'robotCode',
       sendOptions: 'sendOptions',
       singleChatReceiver: 'singleChatReceiver',
+      unionIdPrivateDataMap: 'unionIdPrivateDataMap',
+      userIdPrivateDataMap: 'userIdPrivateDataMap',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      callbackUrl: 'string',
       cardBizId: 'string',
       cardData: 'string',
       cardTemplateId: 'string',
@@ -1806,6 +1813,8 @@ export class SendRobotInteractiveCardRequest extends $tea.Model {
       robotCode: 'string',
       sendOptions: SendRobotInteractiveCardRequestSendOptions,
       singleChatReceiver: 'string',
+      unionIdPrivateDataMap: 'string',
+      userIdPrivateDataMap: 'string',
     };
   }
 
@@ -2518,6 +2527,100 @@ export class UpdateMemberGroupNickResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: UpdateMemberGroupNickResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRobotInteractiveCardHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRobotInteractiveCardRequest extends $tea.Model {
+  cardBizId?: string;
+  cardData?: string;
+  unionIdPrivateDataMap?: string;
+  updateOptions?: UpdateRobotInteractiveCardRequestUpdateOptions;
+  userIdPrivateDataMap?: string;
+  static names(): { [key: string]: string } {
+    return {
+      cardBizId: 'cardBizId',
+      cardData: 'cardData',
+      unionIdPrivateDataMap: 'unionIdPrivateDataMap',
+      updateOptions: 'updateOptions',
+      userIdPrivateDataMap: 'userIdPrivateDataMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardBizId: 'string',
+      cardData: 'string',
+      unionIdPrivateDataMap: 'string',
+      updateOptions: UpdateRobotInteractiveCardRequestUpdateOptions,
+      userIdPrivateDataMap: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRobotInteractiveCardResponseBody extends $tea.Model {
+  processQueryKey?: string;
+  static names(): { [key: string]: string } {
+    return {
+      processQueryKey: 'processQueryKey',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      processQueryKey: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRobotInteractiveCardResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateRobotInteractiveCardResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateRobotInteractiveCardResponseBody,
     };
   }
 
@@ -3396,6 +3499,28 @@ export class UpdateInteractiveCardRequestCardOptions extends $tea.Model {
   }
 }
 
+export class UpdateRobotInteractiveCardRequestUpdateOptions extends $tea.Model {
+  updateCardDataByKey?: boolean;
+  updatePrivateDataByKey?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      updateCardDataByKey: 'updateCardDataByKey',
+      updatePrivateDataByKey: 'updatePrivateDataByKey',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      updateCardDataByKey: 'boolean',
+      updatePrivateDataByKey: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -4194,6 +4319,10 @@ export default class Client extends OpenApi {
   async sendRobotInteractiveCardWithOptions(request: SendRobotInteractiveCardRequest, headers: SendRobotInteractiveCardHeaders, runtime: $Util.RuntimeOptions): Promise<SendRobotInteractiveCardResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.callbackUrl)) {
+      body["callbackUrl"] = request.callbackUrl;
+    }
+
     if (!Util.isUnset(request.cardBizId)) {
       body["cardBizId"] = request.cardBizId;
     }
@@ -4220,6 +4349,14 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.singleChatReceiver)) {
       body["singleChatReceiver"] = request.singleChatReceiver;
+    }
+
+    if (!Util.isUnset(request.unionIdPrivateDataMap)) {
+      body["unionIdPrivateDataMap"] = request.unionIdPrivateDataMap;
+    }
+
+    if (!Util.isUnset(request.userIdPrivateDataMap)) {
+      body["userIdPrivateDataMap"] = request.userIdPrivateDataMap;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -4576,6 +4713,51 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateMemberGroupNickResponse>(await this.doROARequest("UpdateMemberGroupNick", "im_1.0", "HTTP", "PUT", "AK", `/v1.0/im/sceneGroups/members/groupNicks`, "json", req, runtime), new UpdateMemberGroupNickResponse({}));
+  }
+
+  async updateRobotInteractiveCard(request: UpdateRobotInteractiveCardRequest): Promise<UpdateRobotInteractiveCardResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateRobotInteractiveCardHeaders({ });
+    return await this.updateRobotInteractiveCardWithOptions(request, headers, runtime);
+  }
+
+  async updateRobotInteractiveCardWithOptions(request: UpdateRobotInteractiveCardRequest, headers: UpdateRobotInteractiveCardHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateRobotInteractiveCardResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.cardBizId)) {
+      body["cardBizId"] = request.cardBizId;
+    }
+
+    if (!Util.isUnset(request.cardData)) {
+      body["cardData"] = request.cardData;
+    }
+
+    if (!Util.isUnset(request.unionIdPrivateDataMap)) {
+      body["unionIdPrivateDataMap"] = request.unionIdPrivateDataMap;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.updateOptions))) {
+      body["updateOptions"] = request.updateOptions;
+    }
+
+    if (!Util.isUnset(request.userIdPrivateDataMap)) {
+      body["userIdPrivateDataMap"] = request.userIdPrivateDataMap;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateRobotInteractiveCardResponse>(await this.doROARequest("UpdateRobotInteractiveCard", "im_1.0", "HTTP", "PUT", "AK", `/v1.0/im/robots/interactiveCards`, "json", req, runtime), new UpdateRobotInteractiveCardResponse({}));
   }
 
   async updateTheGroupRolesOfGroupMember(request: UpdateTheGroupRolesOfGroupMemberRequest): Promise<UpdateTheGroupRolesOfGroupMemberResponse> {
