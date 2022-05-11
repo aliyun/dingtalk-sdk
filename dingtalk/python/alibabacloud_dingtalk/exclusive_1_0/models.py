@@ -728,6 +728,151 @@ class DeleteCommentResponse(TeaModel):
         return self
 
 
+class DistributePartnerAppHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DistributePartnerAppRequest(TeaModel):
+    def __init__(
+        self,
+        app_id: int = None,
+        dept_id: int = None,
+        sub_corp_id: str = None,
+        type: int = None,
+    ):
+        # 应用id
+        self.app_id = app_id
+        self.dept_id = dept_id
+        self.sub_corp_id = sub_corp_id
+        # 分发对象类型
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_id is not None:
+            result['appId'] = self.app_id
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.sub_corp_id is not None:
+            result['subCorpId'] = self.sub_corp_id
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('subCorpId') is not None:
+            self.sub_corp_id = m.get('subCorpId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class DistributePartnerAppResponseBody(TeaModel):
+    def __init__(
+        self,
+        invite_url: str = None,
+    ):
+        # 安装邀请链接
+        self.invite_url = invite_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.invite_url is not None:
+            result['inviteUrl'] = self.invite_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('inviteUrl') is not None:
+            self.invite_url = m.get('inviteUrl')
+        return self
+
+
+class DistributePartnerAppResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DistributePartnerAppResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DistributePartnerAppResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class FileStorageActiveStorageHeaders(TeaModel):
     def __init__(
         self,

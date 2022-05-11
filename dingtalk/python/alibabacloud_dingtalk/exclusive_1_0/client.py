@@ -425,6 +425,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DeleteComment', 'exclusive_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/exclusive/publishers/{publisher_id}/comments/{comment_id}', 'boolean', req, runtime)
         )
 
+    def distribute_partner_app(
+        self,
+        request: dingtalkexclusive__1__0_models.DistributePartnerAppRequest,
+    ) -> dingtalkexclusive__1__0_models.DistributePartnerAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.DistributePartnerAppHeaders()
+        return self.distribute_partner_app_with_options(request, headers, runtime)
+
+    async def distribute_partner_app_async(
+        self,
+        request: dingtalkexclusive__1__0_models.DistributePartnerAppRequest,
+    ) -> dingtalkexclusive__1__0_models.DistributePartnerAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.DistributePartnerAppHeaders()
+        return await self.distribute_partner_app_with_options_async(request, headers, runtime)
+
+    def distribute_partner_app_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.DistributePartnerAppRequest,
+        headers: dingtalkexclusive__1__0_models.DistributePartnerAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.DistributePartnerAppResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.sub_corp_id):
+            body['subCorpId'] = request.sub_corp_id
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.DistributePartnerAppResponse(),
+            self.do_roarequest('DistributePartnerApp', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/partners/applications/distribute', 'json', req, runtime)
+        )
+
+    async def distribute_partner_app_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.DistributePartnerAppRequest,
+        headers: dingtalkexclusive__1__0_models.DistributePartnerAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.DistributePartnerAppResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.sub_corp_id):
+            body['subCorpId'] = request.sub_corp_id
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.DistributePartnerAppResponse(),
+            await self.do_roarequest_async('DistributePartnerApp', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/partners/applications/distribute', 'json', req, runtime)
+        )
+
     def file_storage_active_storage(
         self,
         request: dingtalkexclusive__1__0_models.FileStorageActiveStorageRequest,

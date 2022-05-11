@@ -1451,6 +1451,8 @@ class Client(OpenApiClient):
     ) -> dingtalkim__1__0_models.SendRobotInteractiveCardResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.callback_url):
+            body['callbackUrl'] = request.callback_url
         if not UtilClient.is_unset(request.card_biz_id):
             body['cardBizId'] = request.card_biz_id
         if not UtilClient.is_unset(request.card_data):
@@ -1465,6 +1467,10 @@ class Client(OpenApiClient):
             body['sendOptions'] = request.send_options
         if not UtilClient.is_unset(request.single_chat_receiver):
             body['singleChatReceiver'] = request.single_chat_receiver
+        if not UtilClient.is_unset(request.union_id_private_data_map):
+            body['unionIdPrivateDataMap'] = request.union_id_private_data_map
+        if not UtilClient.is_unset(request.user_id_private_data_map):
+            body['userIdPrivateDataMap'] = request.user_id_private_data_map
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1487,6 +1493,8 @@ class Client(OpenApiClient):
     ) -> dingtalkim__1__0_models.SendRobotInteractiveCardResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.callback_url):
+            body['callbackUrl'] = request.callback_url
         if not UtilClient.is_unset(request.card_biz_id):
             body['cardBizId'] = request.card_biz_id
         if not UtilClient.is_unset(request.card_data):
@@ -1501,6 +1509,10 @@ class Client(OpenApiClient):
             body['sendOptions'] = request.send_options
         if not UtilClient.is_unset(request.single_chat_receiver):
             body['singleChatReceiver'] = request.single_chat_receiver
+        if not UtilClient.is_unset(request.union_id_private_data_map):
+            body['unionIdPrivateDataMap'] = request.union_id_private_data_map
+        if not UtilClient.is_unset(request.user_id_private_data_map):
+            body['userIdPrivateDataMap'] = request.user_id_private_data_map
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2133,6 +2145,86 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateMemberGroupNickResponse(),
             await self.do_roarequest_async('UpdateMemberGroupNick', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/sceneGroups/members/groupNicks', 'json', req, runtime)
+        )
+
+    def update_robot_interactive_card(
+        self,
+        request: dingtalkim__1__0_models.UpdateRobotInteractiveCardRequest,
+    ) -> dingtalkim__1__0_models.UpdateRobotInteractiveCardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateRobotInteractiveCardHeaders()
+        return self.update_robot_interactive_card_with_options(request, headers, runtime)
+
+    async def update_robot_interactive_card_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateRobotInteractiveCardRequest,
+    ) -> dingtalkim__1__0_models.UpdateRobotInteractiveCardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateRobotInteractiveCardHeaders()
+        return await self.update_robot_interactive_card_with_options_async(request, headers, runtime)
+
+    def update_robot_interactive_card_with_options(
+        self,
+        request: dingtalkim__1__0_models.UpdateRobotInteractiveCardRequest,
+        headers: dingtalkim__1__0_models.UpdateRobotInteractiveCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateRobotInteractiveCardResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.card_biz_id):
+            body['cardBizId'] = request.card_biz_id
+        if not UtilClient.is_unset(request.card_data):
+            body['cardData'] = request.card_data
+        if not UtilClient.is_unset(request.union_id_private_data_map):
+            body['unionIdPrivateDataMap'] = request.union_id_private_data_map
+        if not UtilClient.is_unset(request.update_options):
+            body['updateOptions'] = request.update_options
+        if not UtilClient.is_unset(request.user_id_private_data_map):
+            body['userIdPrivateDataMap'] = request.user_id_private_data_map
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateRobotInteractiveCardResponse(),
+            self.do_roarequest('UpdateRobotInteractiveCard', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/robots/interactiveCards', 'json', req, runtime)
+        )
+
+    async def update_robot_interactive_card_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateRobotInteractiveCardRequest,
+        headers: dingtalkim__1__0_models.UpdateRobotInteractiveCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateRobotInteractiveCardResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.card_biz_id):
+            body['cardBizId'] = request.card_biz_id
+        if not UtilClient.is_unset(request.card_data):
+            body['cardData'] = request.card_data
+        if not UtilClient.is_unset(request.union_id_private_data_map):
+            body['unionIdPrivateDataMap'] = request.union_id_private_data_map
+        if not UtilClient.is_unset(request.update_options):
+            body['updateOptions'] = request.update_options
+        if not UtilClient.is_unset(request.user_id_private_data_map):
+            body['userIdPrivateDataMap'] = request.user_id_private_data_map
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateRobotInteractiveCardResponse(),
+            await self.do_roarequest_async('UpdateRobotInteractiveCard', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/robots/interactiveCards', 'json', req, runtime)
         )
 
     def update_the_group_roles_of_group_member(

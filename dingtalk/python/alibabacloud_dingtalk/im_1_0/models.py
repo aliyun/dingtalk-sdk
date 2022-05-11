@@ -3645,6 +3645,7 @@ class SendRobotInteractiveCardRequestSendOptions(TeaModel):
 class SendRobotInteractiveCardRequest(TeaModel):
     def __init__(
         self,
+        callback_url: str = None,
         card_biz_id: str = None,
         card_data: str = None,
         card_template_id: str = None,
@@ -3652,7 +3653,11 @@ class SendRobotInteractiveCardRequest(TeaModel):
         robot_code: str = None,
         send_options: SendRobotInteractiveCardRequestSendOptions = None,
         single_chat_receiver: str = None,
+        union_id_private_data_map: str = None,
+        user_id_private_data_map: str = None,
     ):
+        # 可交互卡片回调的url【可空：不填写无需回调】
+        self.callback_url = callback_url
         # 唯一标识一张卡片的外部ID（卡片幂等ID，可用于更新或重复发送同一卡片到多个群会话）【备注：同一个outTrackId重复创建，卡片数据不覆盖更新】
         self.card_biz_id = card_biz_id
         # 卡片模板-文本内容参数（卡片json结构体）
@@ -3667,6 +3672,10 @@ class SendRobotInteractiveCardRequest(TeaModel):
         self.send_options = send_options
         # 【openConversationId & singleChatReceiver 二选一必填】单聊会话接受者json串
         self.single_chat_receiver = single_chat_receiver
+        # 卡片模板-userId差异用户参数（json结构体）
+        self.union_id_private_data_map = union_id_private_data_map
+        # 卡片模板-userId差异用户参数（json结构体）
+        self.user_id_private_data_map = user_id_private_data_map
 
     def validate(self):
         if self.send_options:
@@ -3678,6 +3687,8 @@ class SendRobotInteractiveCardRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.callback_url is not None:
+            result['callbackUrl'] = self.callback_url
         if self.card_biz_id is not None:
             result['cardBizId'] = self.card_biz_id
         if self.card_data is not None:
@@ -3692,10 +3703,16 @@ class SendRobotInteractiveCardRequest(TeaModel):
             result['sendOptions'] = self.send_options.to_map()
         if self.single_chat_receiver is not None:
             result['singleChatReceiver'] = self.single_chat_receiver
+        if self.union_id_private_data_map is not None:
+            result['unionIdPrivateDataMap'] = self.union_id_private_data_map
+        if self.user_id_private_data_map is not None:
+            result['userIdPrivateDataMap'] = self.user_id_private_data_map
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('callbackUrl') is not None:
+            self.callback_url = m.get('callbackUrl')
         if m.get('cardBizId') is not None:
             self.card_biz_id = m.get('cardBizId')
         if m.get('cardData') is not None:
@@ -3711,6 +3728,10 @@ class SendRobotInteractiveCardRequest(TeaModel):
             self.send_options = temp_model.from_map(m['sendOptions'])
         if m.get('singleChatReceiver') is not None:
             self.single_chat_receiver = m.get('singleChatReceiver')
+        if m.get('unionIdPrivateDataMap') is not None:
+            self.union_id_private_data_map = m.get('unionIdPrivateDataMap')
+        if m.get('userIdPrivateDataMap') is not None:
+            self.user_id_private_data_map = m.get('userIdPrivateDataMap')
         return self
 
 
@@ -4158,7 +4179,7 @@ class TopboxOpenRequest(TeaModel):
         self.open_conversation_id = open_conversation_id
         # 唯一标识一张卡片的外部ID（卡片幂等ID，可用于更新或重复发送同一卡片到多个群会话）
         self.out_track_id = out_track_id
-        # 期望吊顶的端（多个'|'隔开，如："ios|win|"）
+        # 期望吊顶的端（多个"|"隔开，如："ios|win|"）
         self.platforms = platforms
         # 接收人的员工号列表
         self.receiver_user_id_list = receiver_user_id_list
@@ -4993,6 +5014,197 @@ class UpdateMemberGroupNickResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = UpdateMemberGroupNickResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateRobotInteractiveCardHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateRobotInteractiveCardRequestUpdateOptions(TeaModel):
+    def __init__(
+        self,
+        update_card_data_by_key: bool = None,
+        update_private_data_by_key: bool = None,
+    ):
+        # 按key更新数据(默认全量更新)
+        self.update_card_data_by_key = update_card_data_by_key
+        # 按key更新用户数据(默认全量更新)
+        self.update_private_data_by_key = update_private_data_by_key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.update_card_data_by_key is not None:
+            result['updateCardDataByKey'] = self.update_card_data_by_key
+        if self.update_private_data_by_key is not None:
+            result['updatePrivateDataByKey'] = self.update_private_data_by_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('updateCardDataByKey') is not None:
+            self.update_card_data_by_key = m.get('updateCardDataByKey')
+        if m.get('updatePrivateDataByKey') is not None:
+            self.update_private_data_by_key = m.get('updatePrivateDataByKey')
+        return self
+
+
+class UpdateRobotInteractiveCardRequest(TeaModel):
+    def __init__(
+        self,
+        card_biz_id: str = None,
+        card_data: str = None,
+        union_id_private_data_map: str = None,
+        update_options: UpdateRobotInteractiveCardRequestUpdateOptions = None,
+        user_id_private_data_map: str = None,
+    ):
+        # 唯一标识一张卡片的外部ID（卡片幂等ID，可用于更新或重复发送同一卡片到多个群会话）【备注：同一个outTrackId重复创建，卡片数据不覆盖更新】
+        self.card_biz_id = card_biz_id
+        # 卡片模板-文本内容参数（卡片json结构体）
+        self.card_data = card_data
+        # 卡片模板-userId差异用户参数（json结构体）
+        self.union_id_private_data_map = union_id_private_data_map
+        # 互动卡片更新选项
+        self.update_options = update_options
+        # 卡片模板-userId差异用户参数（json结构体）
+        self.user_id_private_data_map = user_id_private_data_map
+
+    def validate(self):
+        if self.update_options:
+            self.update_options.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_biz_id is not None:
+            result['cardBizId'] = self.card_biz_id
+        if self.card_data is not None:
+            result['cardData'] = self.card_data
+        if self.union_id_private_data_map is not None:
+            result['unionIdPrivateDataMap'] = self.union_id_private_data_map
+        if self.update_options is not None:
+            result['updateOptions'] = self.update_options.to_map()
+        if self.user_id_private_data_map is not None:
+            result['userIdPrivateDataMap'] = self.user_id_private_data_map
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardBizId') is not None:
+            self.card_biz_id = m.get('cardBizId')
+        if m.get('cardData') is not None:
+            self.card_data = m.get('cardData')
+        if m.get('unionIdPrivateDataMap') is not None:
+            self.union_id_private_data_map = m.get('unionIdPrivateDataMap')
+        if m.get('updateOptions') is not None:
+            temp_model = UpdateRobotInteractiveCardRequestUpdateOptions()
+            self.update_options = temp_model.from_map(m['updateOptions'])
+        if m.get('userIdPrivateDataMap') is not None:
+            self.user_id_private_data_map = m.get('userIdPrivateDataMap')
+        return self
+
+
+class UpdateRobotInteractiveCardResponseBody(TeaModel):
+    def __init__(
+        self,
+        process_query_key: str = None,
+    ):
+        # 用于业务方后续查看已读列表的查询key
+        self.process_query_key = process_query_key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.process_query_key is not None:
+            result['processQueryKey'] = self.process_query_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('processQueryKey') is not None:
+            self.process_query_key = m.get('processQueryKey')
+        return self
+
+
+class UpdateRobotInteractiveCardResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateRobotInteractiveCardResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateRobotInteractiveCardResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
