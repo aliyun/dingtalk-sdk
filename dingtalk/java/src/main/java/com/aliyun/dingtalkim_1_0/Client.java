@@ -806,6 +806,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public SendRobotInteractiveCardResponse sendRobotInteractiveCardWithOptions(SendRobotInteractiveCardRequest request, SendRobotInteractiveCardHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.callbackUrl)) {
+            body.put("callbackUrl", request.callbackUrl);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.cardBizId)) {
             body.put("cardBizId", request.cardBizId);
         }
@@ -832,6 +836,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.singleChatReceiver)) {
             body.put("singleChatReceiver", request.singleChatReceiver);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionIdPrivateDataMap)) {
+            body.put("unionIdPrivateDataMap", request.unionIdPrivateDataMap);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userIdPrivateDataMap)) {
+            body.put("userIdPrivateDataMap", request.userIdPrivateDataMap);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -1188,6 +1200,51 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("UpdateMemberGroupNick", "im_1.0", "HTTP", "PUT", "AK", "/v1.0/im/sceneGroups/members/groupNicks", "json", req, runtime), new UpdateMemberGroupNickResponse());
+    }
+
+    public UpdateRobotInteractiveCardResponse updateRobotInteractiveCard(UpdateRobotInteractiveCardRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        UpdateRobotInteractiveCardHeaders headers = new UpdateRobotInteractiveCardHeaders();
+        return this.updateRobotInteractiveCardWithOptions(request, headers, runtime);
+    }
+
+    public UpdateRobotInteractiveCardResponse updateRobotInteractiveCardWithOptions(UpdateRobotInteractiveCardRequest request, UpdateRobotInteractiveCardHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.cardBizId)) {
+            body.put("cardBizId", request.cardBizId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.cardData)) {
+            body.put("cardData", request.cardData);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionIdPrivateDataMap)) {
+            body.put("unionIdPrivateDataMap", request.unionIdPrivateDataMap);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.updateOptions))) {
+            body.put("updateOptions", request.updateOptions);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userIdPrivateDataMap)) {
+            body.put("userIdPrivateDataMap", request.userIdPrivateDataMap);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UpdateRobotInteractiveCard", "im_1.0", "HTTP", "PUT", "AK", "/v1.0/im/robots/interactiveCards", "json", req, runtime), new UpdateRobotInteractiveCardResponse());
     }
 
     public UpdateTheGroupRolesOfGroupMemberResponse updateTheGroupRolesOfGroupMember(UpdateTheGroupRolesOfGroupMemberRequest request) throws Exception {

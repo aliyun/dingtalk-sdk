@@ -20,7 +20,7 @@ public class TopboxOpenRequest extends TeaModel {
     @NameInMap("outTrackId")
     public String outTrackId;
 
-    // 期望吊顶的端（多个'|'隔开，如："ios|win|"）
+    // 期望吊顶的端（多个"|"隔开，如："ios|win|"）
     @NameInMap("platforms")
     public String platforms;
 

@@ -4,6 +4,10 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendRobotInteractiveCardRequest extends TeaModel {
+    // 可交互卡片回调的url【可空：不填写无需回调】
+    @NameInMap("callbackUrl")
+    public String callbackUrl;
+
     // 唯一标识一张卡片的外部ID（卡片幂等ID，可用于更新或重复发送同一卡片到多个群会话）【备注：同一个outTrackId重复创建，卡片数据不覆盖更新】
     @NameInMap("cardBizId")
     public String cardBizId;
@@ -32,9 +36,25 @@ public class SendRobotInteractiveCardRequest extends TeaModel {
     @NameInMap("singleChatReceiver")
     public String singleChatReceiver;
 
+    // 卡片模板-userId差异用户参数（json结构体）
+    @NameInMap("unionIdPrivateDataMap")
+    public String unionIdPrivateDataMap;
+
+    // 卡片模板-userId差异用户参数（json结构体）
+    @NameInMap("userIdPrivateDataMap")
+    public String userIdPrivateDataMap;
+
     public static SendRobotInteractiveCardRequest build(java.util.Map<String, ?> map) throws Exception {
         SendRobotInteractiveCardRequest self = new SendRobotInteractiveCardRequest();
         return TeaModel.build(map, self);
+    }
+
+    public SendRobotInteractiveCardRequest setCallbackUrl(String callbackUrl) {
+        this.callbackUrl = callbackUrl;
+        return this;
+    }
+    public String getCallbackUrl() {
+        return this.callbackUrl;
     }
 
     public SendRobotInteractiveCardRequest setCardBizId(String cardBizId) {
@@ -91,6 +111,22 @@ public class SendRobotInteractiveCardRequest extends TeaModel {
     }
     public String getSingleChatReceiver() {
         return this.singleChatReceiver;
+    }
+
+    public SendRobotInteractiveCardRequest setUnionIdPrivateDataMap(String unionIdPrivateDataMap) {
+        this.unionIdPrivateDataMap = unionIdPrivateDataMap;
+        return this;
+    }
+    public String getUnionIdPrivateDataMap() {
+        return this.unionIdPrivateDataMap;
+    }
+
+    public SendRobotInteractiveCardRequest setUserIdPrivateDataMap(String userIdPrivateDataMap) {
+        this.userIdPrivateDataMap = userIdPrivateDataMap;
+        return this;
+    }
+    public String getUserIdPrivateDataMap() {
+        return this.userIdPrivateDataMap;
     }
 
     public static class SendRobotInteractiveCardRequestSendOptions extends TeaModel {
