@@ -659,6 +659,162 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('RegisterDevice', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/devices', 'json', req, runtime)
         )
 
+    def send_card(
+        self,
+        request: dingtalkdevicemng__1__0_models.SendCardRequest,
+    ) -> dingtalkdevicemng__1__0_models.SendCardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.SendCardHeaders()
+        return self.send_card_with_options(request, headers, runtime)
+
+    async def send_card_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.SendCardRequest,
+    ) -> dingtalkdevicemng__1__0_models.SendCardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.SendCardHeaders()
+        return await self.send_card_with_options_async(request, headers, runtime)
+
+    def send_card_with_options(
+        self,
+        request: dingtalkdevicemng__1__0_models.SendCardRequest,
+        headers: dingtalkdevicemng__1__0_models.SendCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.SendCardResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.card_data):
+            body['cardData'] = request.card_data
+        if not UtilClient.is_unset(request.device_code):
+            body['deviceCode'] = request.device_code
+        if not UtilClient.is_unset(request.device_uuid):
+            body['deviceUuid'] = request.device_uuid
+        if not UtilClient.is_unset(request.encode_cid):
+            body['encodeCid'] = request.encode_cid
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.SendCardResponse(),
+            self.do_roarequest('SendCard', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/cards/send', 'json', req, runtime)
+        )
+
+    async def send_card_with_options_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.SendCardRequest,
+        headers: dingtalkdevicemng__1__0_models.SendCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.SendCardResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.card_data):
+            body['cardData'] = request.card_data
+        if not UtilClient.is_unset(request.device_code):
+            body['deviceCode'] = request.device_code
+        if not UtilClient.is_unset(request.device_uuid):
+            body['deviceUuid'] = request.device_uuid
+        if not UtilClient.is_unset(request.encode_cid):
+            body['encodeCid'] = request.encode_cid
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.SendCardResponse(),
+            await self.do_roarequest_async('SendCard', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/cards/send', 'json', req, runtime)
+        )
+
+    def update_card(
+        self,
+        request: dingtalkdevicemng__1__0_models.UpdateCardRequest,
+    ) -> dingtalkdevicemng__1__0_models.UpdateCardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.UpdateCardHeaders()
+        return self.update_card_with_options(request, headers, runtime)
+
+    async def update_card_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.UpdateCardRequest,
+    ) -> dingtalkdevicemng__1__0_models.UpdateCardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.UpdateCardHeaders()
+        return await self.update_card_with_options_async(request, headers, runtime)
+
+    def update_card_with_options(
+        self,
+        request: dingtalkdevicemng__1__0_models.UpdateCardRequest,
+        headers: dingtalkdevicemng__1__0_models.UpdateCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.UpdateCardResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.card_data):
+            body['cardData'] = request.card_data
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.UpdateCardResponse(),
+            self.do_roarequest('UpdateCard', 'devicemng_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/devicemng/customers/cards', 'json', req, runtime)
+        )
+
+    async def update_card_with_options_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.UpdateCardRequest,
+        headers: dingtalkdevicemng__1__0_models.UpdateCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.UpdateCardResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.card_data):
+            body['cardData'] = request.card_data
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.UpdateCardResponse(),
+            await self.do_roarequest_async('UpdateCard', 'devicemng_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/devicemng/customers/cards', 'json', req, runtime)
+        )
+
     def upload_event(
         self,
         request: dingtalkdevicemng__1__0_models.UploadEventRequest,
