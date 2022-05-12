@@ -377,6 +377,92 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("RegisterDevice", "devicemng_1.0", "HTTP", "POST", "AK", "/v1.0/devicemng/devices", "json", req, runtime), new RegisterDeviceResponse());
     }
 
+    public SendCardResponse sendCard(SendCardRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        SendCardHeaders headers = new SendCardHeaders();
+        return this.sendCardWithOptions(request, headers, runtime);
+    }
+
+    public SendCardResponse sendCardWithOptions(SendCardRequest request, SendCardHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizId)) {
+            body.put("bizId", request.bizId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.cardData)) {
+            body.put("cardData", request.cardData);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceCode)) {
+            body.put("deviceCode", request.deviceCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceUuid)) {
+            body.put("deviceUuid", request.deviceUuid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.encodeCid)) {
+            body.put("encodeCid", request.encodeCid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.templateId)) {
+            body.put("templateId", request.templateId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("SendCard", "devicemng_1.0", "HTTP", "POST", "AK", "/v1.0/devicemng/customers/cards/send", "json", req, runtime), new SendCardResponse());
+    }
+
+    public UpdateCardResponse updateCard(UpdateCardRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        UpdateCardHeaders headers = new UpdateCardHeaders();
+        return this.updateCardWithOptions(request, headers, runtime);
+    }
+
+    public UpdateCardResponse updateCardWithOptions(UpdateCardRequest request, UpdateCardHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizId)) {
+            body.put("bizId", request.bizId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.cardData)) {
+            body.put("cardData", request.cardData);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UpdateCard", "devicemng_1.0", "HTTP", "PUT", "AK", "/v1.0/devicemng/customers/cards", "json", req, runtime), new UpdateCardResponse());
+    }
+
     public UploadEventResponse uploadEvent(UploadEventRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         UploadEventHeaders headers = new UploadEventHeaders();
