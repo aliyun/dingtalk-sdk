@@ -29,6 +29,12 @@ use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\RegisterAndActivateDeviceRes
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\RegisterDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\RegisterDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\RegisterDeviceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\SendCardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\SendCardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\SendCardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\UpdateCardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\UpdateCardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\UpdateCardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\UploadEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\UploadEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\UploadEventResponse;
@@ -475,6 +481,111 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return RegisterDeviceResponse::fromMap($this->doROARequest('RegisterDevice', 'devicemng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/devicemng/devices', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SendCardRequest $request
+     *
+     * @return SendCardResponse
+     */
+    public function sendCard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendCardHeaders([]);
+
+        return $this->sendCardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SendCardRequest $request
+     * @param SendCardHeaders $headers
+     * @param RuntimeOptions  $runtime
+     *
+     * @return SendCardResponse
+     */
+    public function sendCardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            @$body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->cardData)) {
+            @$body['cardData'] = $request->cardData;
+        }
+        if (!Utils::isUnset($request->deviceCode)) {
+            @$body['deviceCode'] = $request->deviceCode;
+        }
+        if (!Utils::isUnset($request->deviceUuid)) {
+            @$body['deviceUuid'] = $request->deviceUuid;
+        }
+        if (!Utils::isUnset($request->encodeCid)) {
+            @$body['encodeCid'] = $request->encodeCid;
+        }
+        if (!Utils::isUnset($request->templateId)) {
+            @$body['templateId'] = $request->templateId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SendCardResponse::fromMap($this->doROARequest('SendCard', 'devicemng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/devicemng/customers/cards/send', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateCardRequest $request
+     *
+     * @return UpdateCardResponse
+     */
+    public function updateCard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateCardHeaders([]);
+
+        return $this->updateCardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateCardRequest $request
+     * @param UpdateCardHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return UpdateCardResponse
+     */
+    public function updateCardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            @$body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->cardData)) {
+            @$body['cardData'] = $request->cardData;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateCardResponse::fromMap($this->doROARequest('UpdateCard', 'devicemng_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/devicemng/customers/cards', 'json', $req, $runtime));
     }
 
     /**
