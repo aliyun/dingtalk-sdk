@@ -1472,8 +1472,16 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("licenseMediaId", request.licenseMediaId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.locCity)) {
+            body.put("locCity", request.locCity);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.locCityName)) {
             body.put("locCityName", request.locCityName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.locProvince)) {
+            body.put("locProvince", request.locProvince);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.locProvinceName)) {

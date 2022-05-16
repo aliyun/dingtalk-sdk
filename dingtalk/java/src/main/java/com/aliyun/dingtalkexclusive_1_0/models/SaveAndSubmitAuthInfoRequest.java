@@ -28,9 +28,17 @@ public class SaveAndSubmitAuthInfoRequest extends TeaModel {
     @NameInMap("licenseMediaId")
     public String licenseMediaId;
 
+    // 城市编码
+    @NameInMap("locCity")
+    public Long locCity;
+
     // 城市名字
     @NameInMap("locCityName")
     public String locCityName;
+
+    // 省份编码
+    @NameInMap("locProvince")
+    public Long locProvince;
 
     // 省份名字
     @NameInMap("locProvinceName")
@@ -121,12 +129,28 @@ public class SaveAndSubmitAuthInfoRequest extends TeaModel {
         return this.licenseMediaId;
     }
 
+    public SaveAndSubmitAuthInfoRequest setLocCity(Long locCity) {
+        this.locCity = locCity;
+        return this;
+    }
+    public Long getLocCity() {
+        return this.locCity;
+    }
+
     public SaveAndSubmitAuthInfoRequest setLocCityName(String locCityName) {
         this.locCityName = locCityName;
         return this;
     }
     public String getLocCityName() {
         return this.locCityName;
+    }
+
+    public SaveAndSubmitAuthInfoRequest setLocProvince(Long locProvince) {
+        this.locProvince = locProvince;
+        return this;
+    }
+    public Long getLocProvince() {
+        return this.locProvince;
     }
 
     public SaveAndSubmitAuthInfoRequest setLocProvinceName(String locProvinceName) {
