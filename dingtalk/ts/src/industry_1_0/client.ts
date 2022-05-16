@@ -2356,6 +2356,130 @@ export class IndustryManufactureMaterialListResponse extends $tea.Model {
   }
 }
 
+export class IndustryManufactureMesTeamMgmtHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesTeamMgmtRequest extends $tea.Model {
+  action?: string;
+  appKey?: string;
+  baseDataName?: string;
+  events?: string[];
+  extendData?: IndustryManufactureMesTeamMgmtRequestExtendData[];
+  groupConfig?: { [key: string]: any };
+  groupPlugins?: IndustryManufactureMesTeamMgmtRequestGroupPlugins[];
+  groupType?: string;
+  id?: string;
+  leaders?: IndustryManufactureMesTeamMgmtRequestLeaders[];
+  members?: IndustryManufactureMesTeamMgmtRequestMembers[];
+  name?: string;
+  processIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      action: 'action',
+      appKey: 'appKey',
+      baseDataName: 'baseDataName',
+      events: 'events',
+      extendData: 'extendData',
+      groupConfig: 'groupConfig',
+      groupPlugins: 'groupPlugins',
+      groupType: 'groupType',
+      id: 'id',
+      leaders: 'leaders',
+      members: 'members',
+      name: 'name',
+      processIds: 'processIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      action: 'string',
+      appKey: 'string',
+      baseDataName: 'string',
+      events: { 'type': 'array', 'itemType': 'string' },
+      extendData: { 'type': 'array', 'itemType': IndustryManufactureMesTeamMgmtRequestExtendData },
+      groupConfig: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      groupPlugins: { 'type': 'array', 'itemType': IndustryManufactureMesTeamMgmtRequestGroupPlugins },
+      groupType: 'string',
+      id: 'string',
+      leaders: { 'type': 'array', 'itemType': IndustryManufactureMesTeamMgmtRequestLeaders },
+      members: { 'type': 'array', 'itemType': IndustryManufactureMesTeamMgmtRequestMembers },
+      name: 'string',
+      processIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesTeamMgmtResponseBody extends $tea.Model {
+  dingOpenErrcode?: number;
+  errorMsg?: string;
+  result?: IndustryManufactureMesTeamMgmtResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      dingOpenErrcode: 'dingOpenErrcode',
+      errorMsg: 'errorMsg',
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingOpenErrcode: 'number',
+      errorMsg: 'string',
+      result: IndustryManufactureMesTeamMgmtResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesTeamMgmtResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: IndustryManufactureMesTeamMgmtResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: IndustryManufactureMesTeamMgmtResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class IndustryMmanufactureMaterialCostGetHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4818,6 +4942,119 @@ export class IndustryManufactureMaterialListResponseBodyList extends $tea.Model 
   }
 }
 
+export class IndustryManufactureMesTeamMgmtRequestExtendData extends $tea.Model {
+  code?: string;
+  name?: string;
+  value?: string;
+  valueType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      name: 'name',
+      value: 'value',
+      valueType: 'valueType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      name: 'string',
+      value: 'string',
+      valueType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesTeamMgmtRequestGroupPlugins extends $tea.Model {
+  label?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      label: 'label',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      label: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesTeamMgmtRequestLeaders extends $tea.Model {
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesTeamMgmtRequestMembers extends $tea.Model {
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesTeamMgmtResponseBodyResult extends $tea.Model {
+  content?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class IndustryMmanufactureMaterialCostGetResponseBodyList extends $tea.Model {
   actPrice?: number;
   corpId?: string;
@@ -7249,6 +7486,83 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<IndustryManufactureMaterialListResponse>(await this.doROARequest("IndustryManufactureMaterialList", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufactures/materials/query`, "json", req, runtime), new IndustryManufactureMaterialListResponse({}));
+  }
+
+  async industryManufactureMesTeamMgmt(request: IndustryManufactureMesTeamMgmtRequest): Promise<IndustryManufactureMesTeamMgmtResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new IndustryManufactureMesTeamMgmtHeaders({ });
+    return await this.industryManufactureMesTeamMgmtWithOptions(request, headers, runtime);
+  }
+
+  async industryManufactureMesTeamMgmtWithOptions(request: IndustryManufactureMesTeamMgmtRequest, headers: IndustryManufactureMesTeamMgmtHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureMesTeamMgmtResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.action)) {
+      body["action"] = request.action;
+    }
+
+    if (!Util.isUnset(request.appKey)) {
+      body["appKey"] = request.appKey;
+    }
+
+    if (!Util.isUnset(request.baseDataName)) {
+      body["baseDataName"] = request.baseDataName;
+    }
+
+    if (!Util.isUnset(request.events)) {
+      body["events"] = request.events;
+    }
+
+    if (!Util.isUnset(request.extendData)) {
+      body["extendData"] = request.extendData;
+    }
+
+    if (!Util.isUnset(request.groupConfig)) {
+      body["groupConfig"] = request.groupConfig;
+    }
+
+    if (!Util.isUnset(request.groupPlugins)) {
+      body["groupPlugins"] = request.groupPlugins;
+    }
+
+    if (!Util.isUnset(request.groupType)) {
+      body["groupType"] = request.groupType;
+    }
+
+    if (!Util.isUnset(request.id)) {
+      body["id"] = request.id;
+    }
+
+    if (!Util.isUnset(request.leaders)) {
+      body["leaders"] = request.leaders;
+    }
+
+    if (!Util.isUnset(request.members)) {
+      body["members"] = request.members;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.processIds)) {
+      body["processIds"] = request.processIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<IndustryManufactureMesTeamMgmtResponse>(await this.doROARequest("IndustryManufactureMesTeamMgmt", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufacturing/base/data/team`, "json", req, runtime), new IndustryManufactureMesTeamMgmtResponse({}));
   }
 
   async industryMmanufactureMaterialCostGet(request: IndustryMmanufactureMaterialCostGetRequest): Promise<IndustryMmanufactureMaterialCostGetResponse> {

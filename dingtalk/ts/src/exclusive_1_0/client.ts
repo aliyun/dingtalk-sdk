@@ -3593,7 +3593,9 @@ export class SaveAndSubmitAuthInfoRequest extends $tea.Model {
   legalPerson?: string;
   legalPersonIdCard?: string;
   licenseMediaId?: string;
+  locCity?: number;
   locCityName?: string;
+  locProvince?: number;
   locProvinceName?: string;
   mobileNum?: string;
   orgName?: string;
@@ -3611,7 +3613,9 @@ export class SaveAndSubmitAuthInfoRequest extends $tea.Model {
       legalPerson: 'legalPerson',
       legalPersonIdCard: 'legalPersonIdCard',
       licenseMediaId: 'licenseMediaId',
+      locCity: 'locCity',
       locCityName: 'locCityName',
+      locProvince: 'locProvince',
       locProvinceName: 'locProvinceName',
       mobileNum: 'mobileNum',
       orgName: 'orgName',
@@ -3632,7 +3636,9 @@ export class SaveAndSubmitAuthInfoRequest extends $tea.Model {
       legalPerson: 'string',
       legalPersonIdCard: 'string',
       licenseMediaId: 'string',
+      locCity: 'number',
       locCityName: 'string',
+      locProvince: 'number',
       locProvinceName: 'string',
       mobileNum: 'string',
       orgName: 'string',
@@ -6936,8 +6942,16 @@ export default class Client extends OpenApi {
       body["licenseMediaId"] = request.licenseMediaId;
     }
 
+    if (!Util.isUnset(request.locCity)) {
+      body["locCity"] = request.locCity;
+    }
+
     if (!Util.isUnset(request.locCityName)) {
       body["locCityName"] = request.locCityName;
+    }
+
+    if (!Util.isUnset(request.locProvince)) {
+      body["locProvince"] = request.locProvince;
     }
 
     if (!Util.isUnset(request.locProvinceName)) {
