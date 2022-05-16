@@ -2129,8 +2129,14 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->licenseMediaId)) {
             @$body['licenseMediaId'] = $request->licenseMediaId;
         }
+        if (!Utils::isUnset($request->locCity)) {
+            @$body['locCity'] = $request->locCity;
+        }
         if (!Utils::isUnset($request->locCityName)) {
             @$body['locCityName'] = $request->locCityName;
+        }
+        if (!Utils::isUnset($request->locProvince)) {
+            @$body['locProvince'] = $request->locProvince;
         }
         if (!Utils::isUnset($request->locProvinceName)) {
             @$body['locProvinceName'] = $request->locProvinceName;

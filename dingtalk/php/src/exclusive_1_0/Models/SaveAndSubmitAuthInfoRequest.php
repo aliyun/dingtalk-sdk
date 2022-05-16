@@ -51,11 +51,25 @@ class SaveAndSubmitAuthInfoRequest extends Model
     public $licenseMediaId;
 
     /**
+     * @description 城市编码
+     *
+     * @var int
+     */
+    public $locCity;
+
+    /**
      * @description 城市名字
      *
      * @var string
      */
     public $locCityName;
+
+    /**
+     * @description 省份编码
+     *
+     * @var int
+     */
+    public $locProvince;
 
     /**
      * @description 省份名字
@@ -126,7 +140,9 @@ class SaveAndSubmitAuthInfoRequest extends Model
         'legalPerson'             => 'legalPerson',
         'legalPersonIdCard'       => 'legalPersonIdCard',
         'licenseMediaId'          => 'licenseMediaId',
+        'locCity'                 => 'locCity',
         'locCityName'             => 'locCityName',
+        'locProvince'             => 'locProvince',
         'locProvinceName'         => 'locProvinceName',
         'mobileNum'               => 'mobileNum',
         'orgName'                 => 'orgName',
@@ -163,8 +179,14 @@ class SaveAndSubmitAuthInfoRequest extends Model
         if (null !== $this->licenseMediaId) {
             $res['licenseMediaId'] = $this->licenseMediaId;
         }
+        if (null !== $this->locCity) {
+            $res['locCity'] = $this->locCity;
+        }
         if (null !== $this->locCityName) {
             $res['locCityName'] = $this->locCityName;
+        }
+        if (null !== $this->locProvince) {
+            $res['locProvince'] = $this->locProvince;
         }
         if (null !== $this->locProvinceName) {
             $res['locProvinceName'] = $this->locProvinceName;
@@ -223,8 +245,14 @@ class SaveAndSubmitAuthInfoRequest extends Model
         if (isset($map['licenseMediaId'])) {
             $model->licenseMediaId = $map['licenseMediaId'];
         }
+        if (isset($map['locCity'])) {
+            $model->locCity = $map['locCity'];
+        }
         if (isset($map['locCityName'])) {
             $model->locCityName = $map['locCityName'];
+        }
+        if (isset($map['locProvince'])) {
+            $model->locProvince = $map['locProvince'];
         }
         if (isset($map['locProvinceName'])) {
             $model->locProvinceName = $map['locProvinceName'];

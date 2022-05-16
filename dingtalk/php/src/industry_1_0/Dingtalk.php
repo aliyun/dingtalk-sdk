@@ -76,6 +76,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureLabourCost
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMaterialListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMaterialListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMaterialListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesTeamMgmtHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesTeamMgmtRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesTeamMgmtResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryMmanufactureMaterialCostGetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryMmanufactureMaterialCostGetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryMmanufactureMaterialCostGetResponse;
@@ -1439,6 +1442,84 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return IndustryManufactureMaterialListResponse::fromMap($this->doROARequest('IndustryManufactureMaterialList', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufactures/materials/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param IndustryManufactureMesTeamMgmtRequest $request
+     *
+     * @return IndustryManufactureMesTeamMgmtResponse
+     */
+    public function industryManufactureMesTeamMgmt($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IndustryManufactureMesTeamMgmtHeaders([]);
+
+        return $this->industryManufactureMesTeamMgmtWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IndustryManufactureMesTeamMgmtRequest $request
+     * @param IndustryManufactureMesTeamMgmtHeaders $headers
+     * @param RuntimeOptions                        $runtime
+     *
+     * @return IndustryManufactureMesTeamMgmtResponse
+     */
+    public function industryManufactureMesTeamMgmtWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->action)) {
+            @$body['action'] = $request->action;
+        }
+        if (!Utils::isUnset($request->appKey)) {
+            @$body['appKey'] = $request->appKey;
+        }
+        if (!Utils::isUnset($request->baseDataName)) {
+            @$body['baseDataName'] = $request->baseDataName;
+        }
+        if (!Utils::isUnset($request->events)) {
+            @$body['events'] = $request->events;
+        }
+        if (!Utils::isUnset($request->extendData)) {
+            @$body['extendData'] = $request->extendData;
+        }
+        if (!Utils::isUnset($request->groupConfig)) {
+            @$body['groupConfig'] = $request->groupConfig;
+        }
+        if (!Utils::isUnset($request->groupPlugins)) {
+            @$body['groupPlugins'] = $request->groupPlugins;
+        }
+        if (!Utils::isUnset($request->groupType)) {
+            @$body['groupType'] = $request->groupType;
+        }
+        if (!Utils::isUnset($request->id)) {
+            @$body['id'] = $request->id;
+        }
+        if (!Utils::isUnset($request->leaders)) {
+            @$body['leaders'] = $request->leaders;
+        }
+        if (!Utils::isUnset($request->members)) {
+            @$body['members'] = $request->members;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->processIds)) {
+            @$body['processIds'] = $request->processIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return IndustryManufactureMesTeamMgmtResponse::fromMap($this->doROARequest('IndustryManufactureMesTeamMgmt', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufacturing/base/data/team', 'json', $req, $runtime));
     }
 
     /**
