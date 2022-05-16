@@ -52,11 +52,25 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public string LicenseMediaId { get; set; }
 
         /// <summary>
+        /// 城市编码
+        /// </summary>
+        [NameInMap("locCity")]
+        [Validation(Required=false)]
+        public long? LocCity { get; set; }
+
+        /// <summary>
         /// 城市名字
         /// </summary>
         [NameInMap("locCityName")]
         [Validation(Required=false)]
         public string LocCityName { get; set; }
+
+        /// <summary>
+        /// 省份编码
+        /// </summary>
+        [NameInMap("locProvince")]
+        [Validation(Required=false)]
+        public long? LocProvince { get; set; }
 
         /// <summary>
         /// 省份名字

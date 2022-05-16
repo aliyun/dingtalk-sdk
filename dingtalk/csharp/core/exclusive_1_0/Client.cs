@@ -3156,9 +3156,17 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             {
                 body["licenseMediaId"] = request.LicenseMediaId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LocCity))
+            {
+                body["locCity"] = request.LocCity;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LocCityName))
             {
                 body["locCityName"] = request.LocCityName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LocProvince))
+            {
+                body["locProvince"] = request.LocProvince;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LocProvinceName))
             {
@@ -3241,9 +3249,17 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             {
                 body["licenseMediaId"] = request.LicenseMediaId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LocCity))
+            {
+                body["locCity"] = request.LocCity;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LocCityName))
             {
                 body["locCityName"] = request.LocCityName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LocProvince))
+            {
+                body["locProvince"] = request.LocProvince;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LocProvinceName))
             {
