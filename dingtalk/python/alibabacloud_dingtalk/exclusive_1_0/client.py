@@ -2951,8 +2951,12 @@ class Client(OpenApiClient):
             body['legalPersonIdCard'] = request.legal_person_id_card
         if not UtilClient.is_unset(request.license_media_id):
             body['licenseMediaId'] = request.license_media_id
+        if not UtilClient.is_unset(request.loc_city):
+            body['locCity'] = request.loc_city
         if not UtilClient.is_unset(request.loc_city_name):
             body['locCityName'] = request.loc_city_name
+        if not UtilClient.is_unset(request.loc_province):
+            body['locProvince'] = request.loc_province
         if not UtilClient.is_unset(request.loc_province_name):
             body['locProvinceName'] = request.loc_province_name
         if not UtilClient.is_unset(request.mobile_num):
@@ -3005,8 +3009,12 @@ class Client(OpenApiClient):
             body['legalPersonIdCard'] = request.legal_person_id_card
         if not UtilClient.is_unset(request.license_media_id):
             body['licenseMediaId'] = request.license_media_id
+        if not UtilClient.is_unset(request.loc_city):
+            body['locCity'] = request.loc_city
         if not UtilClient.is_unset(request.loc_city_name):
             body['locCityName'] = request.loc_city_name
+        if not UtilClient.is_unset(request.loc_province):
+            body['locProvince'] = request.loc_province
         if not UtilClient.is_unset(request.loc_province_name):
             body['locProvinceName'] = request.loc_province_name
         if not UtilClient.is_unset(request.mobile_num):

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict, List
+from typing import Dict, List, Any
 
 
 class CustomizeContactCreateHeaders(TeaModel):
@@ -4852,6 +4852,443 @@ class IndustryManufactureMaterialListResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = IndustryManufactureMaterialListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class IndustryManufactureMesTeamMgmtHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class IndustryManufactureMesTeamMgmtRequestExtendData(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+        value: str = None,
+        value_type: str = None,
+    ):
+        # 字段唯一标识
+        self.code = code
+        # 字段中文描述
+        self.name = name
+        # 字段的取值
+        self.value = value
+        # 字段的类型(string,number,boolean)
+        self.value_type = value_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        if self.value_type is not None:
+            result['valueType'] = self.value_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('valueType') is not None:
+            self.value_type = m.get('valueType')
+        return self
+
+
+class IndustryManufactureMesTeamMgmtRequestGroupPlugins(TeaModel):
+    def __init__(
+        self,
+        label: str = None,
+        value: str = None,
+    ):
+        self.label = label
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.label is not None:
+            result['label'] = self.label
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class IndustryManufactureMesTeamMgmtRequestLeaders(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        user_id: str = None,
+    ):
+        # 工人姓名
+        self.name = name
+        # 工人staffNo
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class IndustryManufactureMesTeamMgmtRequestMembers(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        user_id: str = None,
+    ):
+        # 工人姓名
+        self.name = name
+        # 工人staffNo
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class IndustryManufactureMesTeamMgmtRequest(TeaModel):
+    def __init__(
+        self,
+        action: str = None,
+        app_key: str = None,
+        base_data_name: str = None,
+        events: List[str] = None,
+        extend_data: List[IndustryManufactureMesTeamMgmtRequestExtendData] = None,
+        group_config: Dict[str, Any] = None,
+        group_plugins: List[IndustryManufactureMesTeamMgmtRequestGroupPlugins] = None,
+        group_type: str = None,
+        id: str = None,
+        leaders: List[IndustryManufactureMesTeamMgmtRequestLeaders] = None,
+        members: List[IndustryManufactureMesTeamMgmtRequestMembers] = None,
+        name: str = None,
+        process_ids: List[str] = None,
+    ):
+        # 本次操作的行为，取值： ● add：增加   -- 创建群 ● update：更新 -- 群成员变更
+        self.action = action
+        # ISV的唯一标识,由BPaaS分配
+        self.app_key = app_key
+        # 基础数据名称。比如班组
+        self.base_data_name = base_data_name
+        # 事件配置列表(启用卡片列表),所有枚举值： 任务分配提醒: TASK_ASSIGN_REMINDER 任务逾期提醒: TASK_OVERDUE_REMINDER 置顶加急任务: STICK_URGET_TASK 报工审批提醒: OUTPUT_APPROVE_REMINDER 报工审批反馈: OUTPUT_APPROVE_RESULT 班组概览 :TEAM_OVERVIEW 我的任务:MYTASK_OVERVIEW     例如： ["STICK_URGET_TASK","OUTPUT_APPROVE_REMINDER"]
+        self.events = events
+        # 扩展字段
+        self.extend_data = extend_data
+        # 群配置
+        self.group_config = group_config
+        # 群插件列表
+        self.group_plugins = group_plugins
+        # 群类型，枚举
+        self.group_type = group_type
+        # 班组模型实例的唯一Id， 由业务方传递
+        self.id = id
+        # 班组长(支持多个)
+        self.leaders = leaders
+        # 班组成员(群成员)
+        self.members = members
+        # 班组群名称
+        self.name = name
+        # 关联的工序
+        self.process_ids = process_ids
+
+    def validate(self):
+        if self.extend_data:
+            for k in self.extend_data:
+                if k:
+                    k.validate()
+        if self.group_plugins:
+            for k in self.group_plugins:
+                if k:
+                    k.validate()
+        if self.leaders:
+            for k in self.leaders:
+                if k:
+                    k.validate()
+        if self.members:
+            for k in self.members:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action is not None:
+            result['action'] = self.action
+        if self.app_key is not None:
+            result['appKey'] = self.app_key
+        if self.base_data_name is not None:
+            result['baseDataName'] = self.base_data_name
+        if self.events is not None:
+            result['events'] = self.events
+        result['extendData'] = []
+        if self.extend_data is not None:
+            for k in self.extend_data:
+                result['extendData'].append(k.to_map() if k else None)
+        if self.group_config is not None:
+            result['groupConfig'] = self.group_config
+        result['groupPlugins'] = []
+        if self.group_plugins is not None:
+            for k in self.group_plugins:
+                result['groupPlugins'].append(k.to_map() if k else None)
+        if self.group_type is not None:
+            result['groupType'] = self.group_type
+        if self.id is not None:
+            result['id'] = self.id
+        result['leaders'] = []
+        if self.leaders is not None:
+            for k in self.leaders:
+                result['leaders'].append(k.to_map() if k else None)
+        result['members'] = []
+        if self.members is not None:
+            for k in self.members:
+                result['members'].append(k.to_map() if k else None)
+        if self.name is not None:
+            result['name'] = self.name
+        if self.process_ids is not None:
+            result['processIds'] = self.process_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('action') is not None:
+            self.action = m.get('action')
+        if m.get('appKey') is not None:
+            self.app_key = m.get('appKey')
+        if m.get('baseDataName') is not None:
+            self.base_data_name = m.get('baseDataName')
+        if m.get('events') is not None:
+            self.events = m.get('events')
+        self.extend_data = []
+        if m.get('extendData') is not None:
+            for k in m.get('extendData'):
+                temp_model = IndustryManufactureMesTeamMgmtRequestExtendData()
+                self.extend_data.append(temp_model.from_map(k))
+        if m.get('groupConfig') is not None:
+            self.group_config = m.get('groupConfig')
+        self.group_plugins = []
+        if m.get('groupPlugins') is not None:
+            for k in m.get('groupPlugins'):
+                temp_model = IndustryManufactureMesTeamMgmtRequestGroupPlugins()
+                self.group_plugins.append(temp_model.from_map(k))
+        if m.get('groupType') is not None:
+            self.group_type = m.get('groupType')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        self.leaders = []
+        if m.get('leaders') is not None:
+            for k in m.get('leaders'):
+                temp_model = IndustryManufactureMesTeamMgmtRequestLeaders()
+                self.leaders.append(temp_model.from_map(k))
+        self.members = []
+        if m.get('members') is not None:
+            for k in m.get('members'):
+                temp_model = IndustryManufactureMesTeamMgmtRequestMembers()
+                self.members.append(temp_model.from_map(k))
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('processIds') is not None:
+            self.process_ids = m.get('processIds')
+        return self
+
+
+class IndustryManufactureMesTeamMgmtResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+    ):
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class IndustryManufactureMesTeamMgmtResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_open_errcode: int = None,
+        error_msg: str = None,
+        result: IndustryManufactureMesTeamMgmtResponseBodyResult = None,
+    ):
+        self.ding_open_errcode = ding_open_errcode
+        self.error_msg = error_msg
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_open_errcode is not None:
+            result['dingOpenErrcode'] = self.ding_open_errcode
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingOpenErrcode') is not None:
+            self.ding_open_errcode = m.get('dingOpenErrcode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            temp_model = IndustryManufactureMesTeamMgmtResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class IndustryManufactureMesTeamMgmtResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: IndustryManufactureMesTeamMgmtResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = IndustryManufactureMesTeamMgmtResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

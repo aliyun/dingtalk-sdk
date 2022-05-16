@@ -7828,7 +7828,9 @@ class SaveAndSubmitAuthInfoRequest(TeaModel):
         legal_person: str = None,
         legal_person_id_card: str = None,
         license_media_id: str = None,
+        loc_city: int = None,
         loc_city_name: str = None,
+        loc_province: int = None,
         loc_province_name: str = None,
         mobile_num: str = None,
         org_name: str = None,
@@ -7851,8 +7853,12 @@ class SaveAndSubmitAuthInfoRequest(TeaModel):
         self.legal_person_id_card = legal_person_id_card
         # 营业执照图片mediaId
         self.license_media_id = license_media_id
+        # 城市编码
+        self.loc_city = loc_city
         # 城市名字
         self.loc_city_name = loc_city_name
+        # 省份编码
+        self.loc_province = loc_province
         # 省份名字
         self.loc_province_name = loc_province_name
         # 申请人手机号（需要实名认证）
@@ -7893,8 +7899,12 @@ class SaveAndSubmitAuthInfoRequest(TeaModel):
             result['legalPersonIdCard'] = self.legal_person_id_card
         if self.license_media_id is not None:
             result['licenseMediaId'] = self.license_media_id
+        if self.loc_city is not None:
+            result['locCity'] = self.loc_city
         if self.loc_city_name is not None:
             result['locCityName'] = self.loc_city_name
+        if self.loc_province is not None:
+            result['locProvince'] = self.loc_province
         if self.loc_province_name is not None:
             result['locProvinceName'] = self.loc_province_name
         if self.mobile_num is not None:
@@ -7929,8 +7939,12 @@ class SaveAndSubmitAuthInfoRequest(TeaModel):
             self.legal_person_id_card = m.get('legalPersonIdCard')
         if m.get('licenseMediaId') is not None:
             self.license_media_id = m.get('licenseMediaId')
+        if m.get('locCity') is not None:
+            self.loc_city = m.get('locCity')
         if m.get('locCityName') is not None:
             self.loc_city_name = m.get('locCityName')
+        if m.get('locProvince') is not None:
+            self.loc_province = m.get('locProvince')
         if m.get('locProvinceName') is not None:
             self.loc_province_name = m.get('locProvinceName')
         if m.get('mobileNum') is not None:
