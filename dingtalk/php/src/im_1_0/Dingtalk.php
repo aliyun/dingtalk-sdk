@@ -34,12 +34,24 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupBanWordsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupBanWordsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupBanWordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupCapacityInquiryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupCapacityInquiryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupCapacityInquiryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupCapacityOrderConfirmHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupCapacityOrderConfirmRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupCapacityOrderConfirmResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupCapacityOrderPlaceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupCapacityOrderPlaceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupCapacityOrderPlaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupManageQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupManageQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupManageQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupManageReduceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupManageReduceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupManageReduceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceResponse;
@@ -580,6 +592,54 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GroupBanWordsRequest $request
+     *
+     * @return GroupBanWordsResponse
+     */
+    public function groupBanWords($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GroupBanWordsHeaders([]);
+
+        return $this->groupBanWordsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GroupBanWordsRequest $request
+     * @param GroupBanWordsHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return GroupBanWordsResponse
+     */
+    public function groupBanWordsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->banWordsMode)) {
+            @$body['banWordsMode'] = $request->banWordsMode;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->options)) {
+            @$body['options'] = $request->options;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GroupBanWordsResponse::fromMap($this->doROARequest('GroupBanWords', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/groups/words/ban', 'none', $req, $runtime));
+    }
+
+    /**
      * @param GroupCapacityInquiryRequest $request
      *
      * @return GroupCapacityInquiryResponse
@@ -634,6 +694,123 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GroupCapacityOrderConfirmRequest $request
+     *
+     * @return GroupCapacityOrderConfirmResponse
+     */
+    public function groupCapacityOrderConfirm($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GroupCapacityOrderConfirmHeaders([]);
+
+        return $this->groupCapacityOrderConfirmWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GroupCapacityOrderConfirmRequest $request
+     * @param GroupCapacityOrderConfirmHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return GroupCapacityOrderConfirmResponse
+     */
+    public function groupCapacityOrderConfirmWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operator)) {
+            @$body['operator'] = $request->operator;
+        }
+        if (!Utils::isUnset($request->orderId)) {
+            @$body['orderId'] = $request->orderId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GroupCapacityOrderConfirmResponse::fromMap($this->doROARequest('GroupCapacityOrderConfirm', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/groups/capacities/orders/confirm', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param GroupCapacityOrderPlaceRequest $request
+     *
+     * @return GroupCapacityOrderPlaceResponse
+     */
+    public function groupCapacityOrderPlace($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GroupCapacityOrderPlaceHeaders([]);
+
+        return $this->groupCapacityOrderPlaceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GroupCapacityOrderPlaceRequest $request
+     * @param GroupCapacityOrderPlaceHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return GroupCapacityOrderPlaceResponse
+     */
+    public function groupCapacityOrderPlaceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->actualPrice)) {
+            @$body['actualPrice'] = $request->actualPrice;
+        }
+        if (!Utils::isUnset($request->currentCapacity)) {
+            @$body['currentCapacity'] = $request->currentCapacity;
+        }
+        if (!Utils::isUnset($request->currentEffectUntil)) {
+            @$body['currentEffectUntil'] = $request->currentEffectUntil;
+        }
+        if (!Utils::isUnset($request->discount)) {
+            @$body['discount'] = $request->discount;
+        }
+        if (!Utils::isUnset($request->extInfo)) {
+            @$body['extInfo'] = $request->extInfo;
+        }
+        if (!Utils::isUnset($request->markedPrice)) {
+            @$body['markedPrice'] = $request->markedPrice;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            @$body['operator'] = $request->operator;
+        }
+        if (!Utils::isUnset($request->targetCapacity)) {
+            @$body['targetCapacity'] = $request->targetCapacity;
+        }
+        if (!Utils::isUnset($request->targetEffectUntil)) {
+            @$body['targetEffectUntil'] = $request->targetEffectUntil;
+        }
+        if (!Utils::isUnset($request->token)) {
+            @$body['token'] = $request->token;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GroupCapacityOrderPlaceResponse::fromMap($this->doROARequest('GroupCapacityOrderPlace', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/groups/capacities/orders/place', 'json', $req, $runtime));
+    }
+
+    /**
      * @param GroupManageQueryRequest $request
      *
      * @return GroupManageQueryResponse
@@ -657,6 +834,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->createdAfter)) {
+            @$body['createdAfter'] = $request->createdAfter;
+        }
         if (!Utils::isUnset($request->groupId)) {
             @$body['groupId'] = $request->groupId;
         }
@@ -671,6 +851,15 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->groupUrl)) {
             @$body['groupUrl'] = $request->groupUrl;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->membersOver)) {
+            @$body['membersOver'] = $request->membersOver;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$body['nextToken'] = $request->nextToken;
         }
         if (!Utils::isUnset($request->openConversationId)) {
             @$body['openConversationId'] = $request->openConversationId;
@@ -688,6 +877,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GroupManageQueryResponse::fromMap($this->doROARequest('GroupManageQuery', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/groups/managements/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GroupManageReduceRequest $request
+     *
+     * @return GroupManageReduceResponse
+     */
+    public function groupManageReduce($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GroupManageReduceHeaders([]);
+
+        return $this->groupManageReduceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GroupManageReduceRequest $request
+     * @param GroupManageReduceHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return GroupManageReduceResponse
+     */
+    public function groupManageReduceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->capacityLimit)) {
+            @$body['capacityLimit'] = $request->capacityLimit;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->options)) {
+            @$body['options'] = $request->options;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GroupManageReduceResponse::fromMap($this->doROARequest('GroupManageReduce', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/groups/capacities/reduce', 'none', $req, $runtime));
     }
 
     /**

@@ -91,6 +91,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetTrustDeviceListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserAppVersionSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserAppVersionSummaryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserAppVersionSummaryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserStayLengthHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserStayLengthRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserStayLengthResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListAuditLogHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListAuditLogRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListAuditLogResponse;
@@ -1595,6 +1598,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetUserAppVersionSummaryResponse::fromMap($this->doROARequest('GetUserAppVersionSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/data/appVersion/org/' . $dataId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetUserStayLengthRequest $request
+     *
+     * @return GetUserStayLengthResponse
+     */
+    public function getUserStayLength($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetUserStayLengthHeaders([]);
+
+        return $this->getUserStayLengthWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetUserStayLengthRequest $request
+     * @param GetUserStayLengthHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return GetUserStayLengthResponse
+     */
+    public function getUserStayLengthWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetUserStayLengthResponse::fromMap($this->doROARequest('GetUserStayLength', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/data/users/stayTimes', 'json', $req, $runtime));
     }
 
     /**

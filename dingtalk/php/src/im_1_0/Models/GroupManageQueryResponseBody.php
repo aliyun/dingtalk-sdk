@@ -15,8 +15,24 @@ class GroupManageQueryResponseBody extends Model
      * @var groupInfoList[]
      */
     public $groupInfoList;
+
+    /**
+     * @description 分页拉取时, 是否还有更多
+     *
+     * @var bool
+     */
+    public $hasMore;
+
+    /**
+     * @description 分页拉取游标, 请求下一页时回传
+     *
+     * @var string
+     */
+    public $nextToken;
     protected $_name = [
         'groupInfoList' => 'groupInfoList',
+        'hasMore'       => 'hasMore',
+        'nextToken'     => 'nextToken',
     ];
 
     public function validate()
@@ -34,6 +50,12 @@ class GroupManageQueryResponseBody extends Model
                     $res['groupInfoList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->hasMore) {
+            $res['hasMore'] = $this->hasMore;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -55,6 +77,12 @@ class GroupManageQueryResponseBody extends Model
                     $model->groupInfoList[$n++] = null !== $item ? groupInfoList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['hasMore'])) {
+            $model->hasMore = $map['hasMore'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

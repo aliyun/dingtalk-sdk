@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GroupManageQueryRequest extends Model
 {
     /**
+     * @description 建群时间不早于（辅助性条件，结合非排他条件使用）
+     *
+     * @var int
+     */
+    public $createdAfter;
+
+    /**
      * @description 群号
      *
      * @var string
@@ -44,17 +51,42 @@ class GroupManageQueryRequest extends Model
     public $groupUrl;
 
     /**
+     * @description 分页拉取的页大小, 最大不可超过1000
+     *
+     * @var int
+     */
+    public $maxResults;
+
+    /**
+     * @description 群成员数下限（辅助性条件，结合非排他条件使用）
+     *
+     * @var int
+     */
+    public $membersOver;
+
+    /**
+     * @description 分页拉取游标, 若不指定，则从头开始拉
+     *
+     * @var string
+     */
+    public $nextToken;
+
+    /**
      * @description 开放群id
      *
      * @var string
      */
     public $openConversationId;
     protected $_name = [
+        'createdAfter'       => 'createdAfter',
         'groupId'            => 'groupId',
         'groupMemberSamples' => 'groupMemberSamples',
         'groupOwner'         => 'groupOwner',
         'groupTitleKeywords' => 'groupTitleKeywords',
         'groupUrl'           => 'groupUrl',
+        'maxResults'         => 'maxResults',
+        'membersOver'        => 'membersOver',
+        'nextToken'          => 'nextToken',
         'openConversationId' => 'openConversationId',
     ];
 
@@ -65,6 +97,9 @@ class GroupManageQueryRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->createdAfter) {
+            $res['createdAfter'] = $this->createdAfter;
+        }
         if (null !== $this->groupId) {
             $res['groupId'] = $this->groupId;
         }
@@ -79,6 +114,15 @@ class GroupManageQueryRequest extends Model
         }
         if (null !== $this->groupUrl) {
             $res['groupUrl'] = $this->groupUrl;
+        }
+        if (null !== $this->maxResults) {
+            $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->membersOver) {
+            $res['membersOver'] = $this->membersOver;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
@@ -95,6 +139,9 @@ class GroupManageQueryRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['createdAfter'])) {
+            $model->createdAfter = $map['createdAfter'];
+        }
         if (isset($map['groupId'])) {
             $model->groupId = $map['groupId'];
         }
@@ -113,6 +160,15 @@ class GroupManageQueryRequest extends Model
         }
         if (isset($map['groupUrl'])) {
             $model->groupUrl = $map['groupUrl'];
+        }
+        if (isset($map['maxResults'])) {
+            $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['membersOver'])) {
+            $model->membersOver = $map['membersOver'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];

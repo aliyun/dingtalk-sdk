@@ -28,10 +28,18 @@ class ConsumeUserPointsRequest extends Model
      * @var string
      */
     public $remark;
+
+    /**
+     * @description 用途，可用值：OPEN_EMP_POINT_CONSUME_DEFAULT-默认扣减，OPEN_EMP_POINT_PUNISH_CONSUME-惩罚扣减；默认为: OPEN_EMP_POINT_CONSUME_DEFAULT
+     *
+     * @var string
+     */
+    public $usage;
     protected $_name = [
         'amount' => 'amount',
         'outId'  => 'outId',
         'remark' => 'remark',
+        'usage'  => 'usage',
     ];
 
     public function validate()
@@ -49,6 +57,9 @@ class ConsumeUserPointsRequest extends Model
         }
         if (null !== $this->remark) {
             $res['remark'] = $this->remark;
+        }
+        if (null !== $this->usage) {
+            $res['usage'] = $this->usage;
         }
 
         return $res;
@@ -70,6 +81,9 @@ class ConsumeUserPointsRequest extends Model
         }
         if (isset($map['remark'])) {
             $model->remark = $map['remark'];
+        }
+        if (isset($map['usage'])) {
+            $model->usage = $map['usage'];
         }
 
         return $model;

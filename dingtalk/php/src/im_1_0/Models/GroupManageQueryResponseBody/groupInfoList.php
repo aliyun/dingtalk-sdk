@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class groupInfoList extends Model
 {
     /**
+     * @description 禁言模式
+     *
+     * @var int
+     */
+    public $banWordsMode;
+
+    /**
      * @description 群容量
      *
      * @var int
@@ -28,6 +35,11 @@ class groupInfoList extends Model
      * @var mixed[]
      */
     public $extInfo;
+
+    /**
+     * @var string[]
+     */
+    public $groupAdminList;
 
     /**
      * @description 群主userid
@@ -56,14 +68,24 @@ class groupInfoList extends Model
      * @var string
      */
     public $openConversationId;
+
+    /**
+     * @description 群类型
+     *
+     * @var string
+     */
+    public $type;
     protected $_name = [
+        'banWordsMode'       => 'banWordsMode',
         'capacity'           => 'capacity',
         'createdAt'          => 'createdAt',
         'extInfo'            => 'extInfo',
+        'groupAdminList'     => 'groupAdminList',
         'groupOwner'         => 'groupOwner',
         'groupTitle'         => 'groupTitle',
         'memberCount'        => 'memberCount',
         'openConversationId' => 'openConversationId',
+        'type'               => 'type',
     ];
 
     public function validate()
@@ -73,6 +95,9 @@ class groupInfoList extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->banWordsMode) {
+            $res['banWordsMode'] = $this->banWordsMode;
+        }
         if (null !== $this->capacity) {
             $res['capacity'] = $this->capacity;
         }
@@ -81,6 +106,9 @@ class groupInfoList extends Model
         }
         if (null !== $this->extInfo) {
             $res['extInfo'] = $this->extInfo;
+        }
+        if (null !== $this->groupAdminList) {
+            $res['groupAdminList'] = $this->groupAdminList;
         }
         if (null !== $this->groupOwner) {
             $res['groupOwner'] = $this->groupOwner;
@@ -94,6 +122,9 @@ class groupInfoList extends Model
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
         }
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
+        }
 
         return $res;
     }
@@ -106,6 +137,9 @@ class groupInfoList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['banWordsMode'])) {
+            $model->banWordsMode = $map['banWordsMode'];
+        }
         if (isset($map['capacity'])) {
             $model->capacity = $map['capacity'];
         }
@@ -114,6 +148,11 @@ class groupInfoList extends Model
         }
         if (isset($map['extInfo'])) {
             $model->extInfo = $map['extInfo'];
+        }
+        if (isset($map['groupAdminList'])) {
+            if (!empty($map['groupAdminList'])) {
+                $model->groupAdminList = $map['groupAdminList'];
+            }
         }
         if (isset($map['groupOwner'])) {
             $model->groupOwner = $map['groupOwner'];
@@ -126,6 +165,9 @@ class groupInfoList extends Model
         }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
+        }
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
 
         return $model;

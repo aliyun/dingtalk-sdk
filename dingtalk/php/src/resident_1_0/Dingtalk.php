@@ -11,18 +11,27 @@ use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\AddPointResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\AddResidentDepartmentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\AddResidentDepartmentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\AddResidentDepartmentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\AddResidentMemberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\AddResidentMemberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\AddResidentMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\AddResidentUsersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\AddResidentUsersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\AddResidentUsersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\CreateResidentBlackBoardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\CreateResidentBlackBoardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\CreateResidentBlackBoardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\CreateSpaceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\CreateSpaceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\CreateSpaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\DeleteResidentBlackBoardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\DeleteResidentBlackBoardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\DeleteResidentBlackBoardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\DeleteResidentDepartmentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\DeleteResidentDepartmentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\DeleteResidentDepartmentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\DeleteSpaceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\DeleteSpaceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\DeleteSpaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\GetConversationIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\GetConversationIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\GetConversationIdResponse;
@@ -49,6 +58,9 @@ use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListPointRulesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListSubSpaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListSubSpaceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListSubSpaceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListUncheckUsersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListUncheckUsersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListUncheckUsersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\PagePointHistoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\PagePointHistoryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\PagePointHistoryResponse;
@@ -67,9 +79,18 @@ use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateResidenceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateResidentBlackBoardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateResidentBlackBoardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateResidentBlackBoardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateResidentInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateResidentInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateResidentInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateResidentMemberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateResidentMemberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateResidentMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateResidentUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateResidentUserRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateResidentUserResponse;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateSpaceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateSpaceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\UpdateSpaceResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -195,6 +216,48 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param AddResidentMemberRequest $request
+     *
+     * @return AddResidentMemberResponse
+     */
+    public function addResidentMember($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddResidentMemberHeaders([]);
+
+        return $this->addResidentMemberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddResidentMemberRequest $request
+     * @param AddResidentMemberHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return AddResidentMemberResponse
+     */
+    public function addResidentMemberWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->residentAddInfo)) {
+            @$body['residentAddInfo'] = $request->residentAddInfo;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddResidentMemberResponse::fromMap($this->doROARequest('AddResidentMember', 'resident_1.0', 'HTTP', 'POST', 'AK', '/v1.0/resident/members', 'json', $req, $runtime));
+    }
+
+    /**
      * @param AddResidentUsersRequest $request
      *
      * @return AddResidentUsersResponse
@@ -306,6 +369,57 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param CreateSpaceRequest $request
+     *
+     * @return CreateSpaceResponse
+     */
+    public function createSpace($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateSpaceHeaders([]);
+
+        return $this->createSpaceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateSpaceRequest $request
+     * @param CreateSpaceHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return CreateSpaceResponse
+     */
+    public function createSpaceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->parentDeptId)) {
+            @$body['parentDeptId'] = $request->parentDeptId;
+        }
+        if (!Utils::isUnset($request->tagCode)) {
+            @$body['tagCode'] = $request->tagCode;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$body['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateSpaceResponse::fromMap($this->doROARequest('CreateSpace', 'resident_1.0', 'HTTP', 'POST', 'AK', '/v1.0/resident/spaces', 'json', $req, $runtime));
+    }
+
+    /**
      * @param DeleteResidentBlackBoardRequest $request
      *
      * @return DeleteResidentBlackBoardResponse
@@ -387,6 +501,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeleteResidentDepartmentResponse::fromMap($this->doROARequest('DeleteResidentDepartment', 'resident_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/resident/departments', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DeleteSpaceRequest $request
+     *
+     * @return DeleteSpaceResponse
+     */
+    public function deleteSpace($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteSpaceHeaders([]);
+
+        return $this->deleteSpaceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DeleteSpaceRequest $request
+     * @param DeleteSpaceHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return DeleteSpaceResponse
+     */
+    public function deleteSpaceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deptIds)) {
+            @$body['deptIds'] = $request->deptIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DeleteSpaceResponse::fromMap($this->doROARequest('DeleteSpace', 'resident_1.0', 'HTTP', 'POST', 'AK', '/v1.0/resident/spaces/remove', 'json', $req, $runtime));
     }
 
     /**
@@ -768,6 +924,57 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param ListUncheckUsersRequest $request
+     *
+     * @return ListUncheckUsersResponse
+     */
+    public function listUncheckUsers($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListUncheckUsersHeaders([]);
+
+        return $this->listUncheckUsersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListUncheckUsersRequest $request
+     * @param ListUncheckUsersHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return ListUncheckUsersResponse
+     */
+    public function listUncheckUsersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$query['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->status)) {
+            @$query['status'] = $request->status;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListUncheckUsersResponse::fromMap($this->doROARequest('ListUncheckUsers', 'resident_1.0', 'HTTP', 'GET', 'AK', '/v1.0/resident/organizations/noJoinUsers', 'json', $req, $runtime));
+    }
+
+    /**
      * @param PagePointHistoryRequest $request
      *
      * @return PagePointHistoryResponse
@@ -1074,6 +1281,99 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param UpdateResidentInfoRequest $request
+     *
+     * @return UpdateResidentInfoResponse
+     */
+    public function updateResidentInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateResidentInfoHeaders([]);
+
+        return $this->updateResidentInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateResidentInfoRequest $request
+     * @param UpdateResidentInfoHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return UpdateResidentInfoResponse
+     */
+    public function updateResidentInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->address)) {
+            @$body['address'] = $request->address;
+        }
+        if (!Utils::isUnset($request->communityType)) {
+            @$body['communityType'] = $request->communityType;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->state)) {
+            @$body['state'] = $request->state;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateResidentInfoResponse::fromMap($this->doROARequest('UpdateResidentInfo', 'resident_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/resident/residences', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateResidentMemberRequest $request
+     *
+     * @return UpdateResidentMemberResponse
+     */
+    public function updateResidentMember($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateResidentMemberHeaders([]);
+
+        return $this->updateResidentMemberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateResidentMemberRequest $request
+     * @param UpdateResidentMemberHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return UpdateResidentMemberResponse
+     */
+    public function updateResidentMemberWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->residentUpdateInfo)) {
+            @$body['residentUpdateInfo'] = $request->residentUpdateInfo;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateResidentMemberResponse::fromMap($this->doROARequest('UpdateResidentMember', 'resident_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/resident/members', 'json', $req, $runtime));
+    }
+
+    /**
      * @param UpdateResidentUserRequest $request
      *
      * @return UpdateResidentUserResponse
@@ -1137,5 +1437,47 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateResidentUserResponse::fromMap($this->doROARequest('UpdateResidentUser', 'resident_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/resident/users', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateSpaceRequest $request
+     *
+     * @return UpdateSpaceResponse
+     */
+    public function updateSpace($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateSpaceHeaders([]);
+
+        return $this->updateSpaceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateSpaceRequest $request
+     * @param UpdateSpaceHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return UpdateSpaceResponse
+     */
+    public function updateSpaceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->spaceInfoVOList)) {
+            @$body['spaceInfoVOList'] = $request->spaceInfoVOList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateSpaceResponse::fromMap($this->doROARequest('UpdateSpace', 'resident_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/resident/spaces', 'json', $req, $runtime));
     }
 }
