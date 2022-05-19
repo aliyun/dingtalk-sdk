@@ -173,6 +173,88 @@ export class AddResidentDepartmentResponse extends $tea.Model {
   }
 }
 
+export class AddResidentMemberHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddResidentMemberRequest extends $tea.Model {
+  residentAddInfo?: AddResidentMemberRequestResidentAddInfo;
+  static names(): { [key: string]: string } {
+    return {
+      residentAddInfo: 'residentAddInfo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      residentAddInfo: AddResidentMemberRequestResidentAddInfo,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddResidentMemberResponseBody extends $tea.Model {
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddResidentMemberResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AddResidentMemberResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AddResidentMemberResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddResidentUsersHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -364,6 +446,97 @@ export class CreateResidentBlackBoardResponse extends $tea.Model {
   }
 }
 
+export class CreateSpaceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSpaceRequest extends $tea.Model {
+  name?: string;
+  parentDeptId?: string;
+  tagCode?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      parentDeptId: 'parentDeptId',
+      tagCode: 'tagCode',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      parentDeptId: 'string',
+      tagCode: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSpaceResponseBody extends $tea.Model {
+  deptId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSpaceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateSpaceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateSpaceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteResidentBlackBoardHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -520,6 +693,91 @@ export class DeleteResidentDepartmentResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: DeleteResidentDepartmentResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteSpaceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteSpaceRequest extends $tea.Model {
+  deptIds?: number[];
+  static names(): { [key: string]: string } {
+    return {
+      deptIds: 'deptIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptIds: { 'type': 'array', 'itemType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteSpaceResponseBody extends $tea.Model {
+  delFailedDept?: DeleteSpaceResponseBodyDelFailedDept[];
+  delSuccessCount?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      delFailedDept: 'delFailedDept',
+      delSuccessCount: 'delSuccessCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      delFailedDept: { 'type': 'array', 'itemType': DeleteSpaceResponseBodyDelFailedDept },
+      delSuccessCount: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteSpaceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DeleteSpaceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DeleteSpaceResponseBody,
     };
   }
 
@@ -1328,6 +1586,103 @@ export class ListSubSpaceResponse extends $tea.Model {
   }
 }
 
+export class ListUncheckUsersHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListUncheckUsersRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: number;
+  startTime?: number;
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      startTime: 'startTime',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'number',
+      startTime: 'number',
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListUncheckUsersResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  nextToken?: number;
+  values?: ListUncheckUsersResponseBodyValues[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      nextToken: 'nextToken',
+      values: 'values',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      nextToken: 'number',
+      values: { 'type': 'array', 'itemType': ListUncheckUsersResponseBodyValues },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListUncheckUsersResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListUncheckUsersResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListUncheckUsersResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class PagePointHistoryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1883,6 +2238,179 @@ export class UpdateResidentBlackBoardResponse extends $tea.Model {
   }
 }
 
+export class UpdateResidentInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateResidentInfoRequest extends $tea.Model {
+  address?: string;
+  communityType?: number;
+  name?: string;
+  state?: number;
+  static names(): { [key: string]: string } {
+    return {
+      address: 'address',
+      communityType: 'communityType',
+      name: 'name',
+      state: 'state',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      address: 'string',
+      communityType: 'number',
+      name: 'string',
+      state: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateResidentInfoResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateResidentInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateResidentInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateResidentInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateResidentMemberHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateResidentMemberRequest extends $tea.Model {
+  residentUpdateInfo?: UpdateResidentMemberRequestResidentUpdateInfo;
+  static names(): { [key: string]: string } {
+    return {
+      residentUpdateInfo: 'residentUpdateInfo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      residentUpdateInfo: UpdateResidentMemberRequestResidentUpdateInfo,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateResidentMemberResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateResidentMemberResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateResidentMemberResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateResidentMemberResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateResidentUserHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1989,6 +2517,122 @@ export class UpdateResidentUserResponse extends $tea.Model {
   }
 }
 
+export class UpdateSpaceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateSpaceRequest extends $tea.Model {
+  spaceInfoVOList?: UpdateSpaceRequestSpaceInfoVOList[];
+  static names(): { [key: string]: string } {
+    return {
+      spaceInfoVOList: 'spaceInfoVOList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      spaceInfoVOList: { 'type': 'array', 'itemType': UpdateSpaceRequestSpaceInfoVOList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateSpaceResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateSpaceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateSpaceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateSpaceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddResidentMemberRequestResidentAddInfo extends $tea.Model {
+  deptId?: number;
+  isPropertyOwner?: boolean;
+  memberDeptExtension?: { [key: string]: any };
+  mobile?: string;
+  name?: string;
+  relateType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      isPropertyOwner: 'isPropertyOwner',
+      memberDeptExtension: 'memberDeptExtension',
+      mobile: 'mobile',
+      name: 'name',
+      relateType: 'relateType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      isPropertyOwner: 'boolean',
+      memberDeptExtension: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      mobile: 'string',
+      name: 'string',
+      relateType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddResidentUsersRequestExtField extends $tea.Model {
   itemName?: string;
   itemValue?: string;
@@ -2003,6 +2647,25 @@ export class AddResidentUsersRequestExtField extends $tea.Model {
     return {
       itemName: 'string',
       itemValue: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteSpaceResponseBodyDelFailedDept extends $tea.Model {
+  deptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
     };
   }
 
@@ -2202,6 +2865,46 @@ export class ListSubSpaceResponseBodySpaceList extends $tea.Model {
   }
 }
 
+export class ListUncheckUsersResponseBodyValues extends $tea.Model {
+  deptId?: number;
+  extension?: string;
+  gmtCreate?: number;
+  gmtModified?: number;
+  isPropertyOwner?: boolean;
+  name?: string;
+  status?: number;
+  unionId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      extension: 'extension',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+      isPropertyOwner: 'isPropertyOwner',
+      name: 'name',
+      status: 'status',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      extension: 'string',
+      gmtCreate: 'number',
+      gmtModified: 'number',
+      isPropertyOwner: 'boolean',
+      name: 'string',
+      status: 'number',
+      unionId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class PagePointHistoryResponseBodyPointRecordList extends $tea.Model {
   corpId?: string;
   createAt?: number;
@@ -2270,6 +2973,46 @@ export class SearchResidentResponseBodyResidenceList extends $tea.Model {
   }
 }
 
+export class UpdateResidentMemberRequestResidentUpdateInfo extends $tea.Model {
+  deptId?: number;
+  isPropertyOwner?: boolean;
+  isRetainOldDept?: boolean;
+  memberDeptExtension?: { [key: string]: any };
+  name?: string;
+  oldDeptId?: number;
+  relateType?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      isPropertyOwner: 'isPropertyOwner',
+      isRetainOldDept: 'isRetainOldDept',
+      memberDeptExtension: 'memberDeptExtension',
+      name: 'name',
+      oldDeptId: 'oldDeptId',
+      relateType: 'relateType',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      isPropertyOwner: 'boolean',
+      isRetainOldDept: 'boolean',
+      memberDeptExtension: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      name: 'string',
+      oldDeptId: 'number',
+      relateType: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateResidentUserRequestExtField extends $tea.Model {
   itemName?: string;
   itemValue?: string;
@@ -2284,6 +3027,52 @@ export class UpdateResidentUserRequestExtField extends $tea.Model {
     return {
       itemName: 'string',
       itemValue: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateSpaceRequestSpaceInfoVOList extends $tea.Model {
+  billingArea?: number;
+  buildingArea?: number;
+  buildingType?: number;
+  deptId?: number;
+  floor?: string;
+  houseState?: number;
+  houseType?: number;
+  name?: string;
+  parentDeptId?: number;
+  tagCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      billingArea: 'billingArea',
+      buildingArea: 'buildingArea',
+      buildingType: 'buildingType',
+      deptId: 'deptId',
+      floor: 'floor',
+      houseState: 'houseState',
+      houseType: 'houseType',
+      name: 'name',
+      parentDeptId: 'parentDeptId',
+      tagCode: 'tagCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      billingArea: 'number',
+      buildingArea: 'number',
+      buildingType: 'number',
+      deptId: 'number',
+      floor: 'string',
+      houseState: 'number',
+      houseType: 'number',
+      name: 'string',
+      parentDeptId: 'number',
+      tagCode: 'string',
     };
   }
 
@@ -2395,6 +3184,35 @@ export default class Client extends OpenApi {
     return $tea.cast<AddResidentDepartmentResponse>(await this.doROARequest("AddResidentDepartment", "resident_1.0", "HTTP", "POST", "AK", `/v1.0/resident/departments`, "json", req, runtime), new AddResidentDepartmentResponse({}));
   }
 
+  async addResidentMember(request: AddResidentMemberRequest): Promise<AddResidentMemberResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddResidentMemberHeaders({ });
+    return await this.addResidentMemberWithOptions(request, headers, runtime);
+  }
+
+  async addResidentMemberWithOptions(request: AddResidentMemberRequest, headers: AddResidentMemberHeaders, runtime: $Util.RuntimeOptions): Promise<AddResidentMemberResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.residentAddInfo))) {
+      body["residentAddInfo"] = request.residentAddInfo;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AddResidentMemberResponse>(await this.doROARequest("AddResidentMember", "resident_1.0", "HTTP", "POST", "AK", `/v1.0/resident/members`, "json", req, runtime), new AddResidentMemberResponse({}));
+  }
+
   async addResidentUsers(request: AddResidentUsersRequest): Promise<AddResidentUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddResidentUsersHeaders({ });
@@ -2489,6 +3307,47 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateResidentBlackBoardResponse>(await this.doROARequest("CreateResidentBlackBoard", "resident_1.0", "HTTP", "POST", "AK", `/v1.0/resident/blackboards`, "json", req, runtime), new CreateResidentBlackBoardResponse({}));
   }
 
+  async createSpace(request: CreateSpaceRequest): Promise<CreateSpaceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateSpaceHeaders({ });
+    return await this.createSpaceWithOptions(request, headers, runtime);
+  }
+
+  async createSpaceWithOptions(request: CreateSpaceRequest, headers: CreateSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSpaceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.parentDeptId)) {
+      body["parentDeptId"] = request.parentDeptId;
+    }
+
+    if (!Util.isUnset(request.tagCode)) {
+      body["tagCode"] = request.tagCode;
+    }
+
+    if (!Util.isUnset(request.type)) {
+      body["type"] = request.type;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateSpaceResponse>(await this.doROARequest("CreateSpace", "resident_1.0", "HTTP", "POST", "AK", `/v1.0/resident/spaces`, "json", req, runtime), new CreateSpaceResponse({}));
+  }
+
   async deleteResidentBlackBoard(request: DeleteResidentBlackBoardRequest): Promise<DeleteResidentBlackBoardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteResidentBlackBoardHeaders({ });
@@ -2545,6 +3404,35 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<DeleteResidentDepartmentResponse>(await this.doROARequest("DeleteResidentDepartment", "resident_1.0", "HTTP", "DELETE", "AK", `/v1.0/resident/departments`, "json", req, runtime), new DeleteResidentDepartmentResponse({}));
+  }
+
+  async deleteSpace(request: DeleteSpaceRequest): Promise<DeleteSpaceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteSpaceHeaders({ });
+    return await this.deleteSpaceWithOptions(request, headers, runtime);
+  }
+
+  async deleteSpaceWithOptions(request: DeleteSpaceRequest, headers: DeleteSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSpaceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptIds)) {
+      body["deptIds"] = request.deptIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<DeleteSpaceResponse>(await this.doROARequest("DeleteSpace", "resident_1.0", "HTTP", "POST", "AK", `/v1.0/resident/spaces/remove`, "json", req, runtime), new DeleteSpaceResponse({}));
   }
 
   async getConversationId(request: GetConversationIdRequest): Promise<GetConversationIdResponse> {
@@ -2813,6 +3701,47 @@ export default class Client extends OpenApi {
     return $tea.cast<ListSubSpaceResponse>(await this.doROARequest("ListSubSpace", "resident_1.0", "HTTP", "GET", "AK", `/v1.0/resident/spaces/subSpaces`, "json", req, runtime), new ListSubSpaceResponse({}));
   }
 
+  async listUncheckUsers(request: ListUncheckUsersRequest): Promise<ListUncheckUsersResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListUncheckUsersHeaders({ });
+    return await this.listUncheckUsersWithOptions(request, headers, runtime);
+  }
+
+  async listUncheckUsersWithOptions(request: ListUncheckUsersRequest, headers: ListUncheckUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListUncheckUsersResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      query["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.status)) {
+      query["status"] = request.status;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ListUncheckUsersResponse>(await this.doROARequest("ListUncheckUsers", "resident_1.0", "HTTP", "GET", "AK", `/v1.0/resident/organizations/noJoinUsers`, "json", req, runtime), new ListUncheckUsersResponse({}));
+  }
+
   async pagePointHistory(request: PagePointHistoryRequest): Promise<PagePointHistoryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PagePointHistoryHeaders({ });
@@ -3059,6 +3988,76 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateResidentBlackBoardResponse>(await this.doROARequest("UpdateResidentBlackBoard", "resident_1.0", "HTTP", "PUT", "AK", `/v1.0/resident/blackboards`, "json", req, runtime), new UpdateResidentBlackBoardResponse({}));
   }
 
+  async updateResidentInfo(request: UpdateResidentInfoRequest): Promise<UpdateResidentInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateResidentInfoHeaders({ });
+    return await this.updateResidentInfoWithOptions(request, headers, runtime);
+  }
+
+  async updateResidentInfoWithOptions(request: UpdateResidentInfoRequest, headers: UpdateResidentInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResidentInfoResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.address)) {
+      body["address"] = request.address;
+    }
+
+    if (!Util.isUnset(request.communityType)) {
+      body["communityType"] = request.communityType;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.state)) {
+      body["state"] = request.state;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateResidentInfoResponse>(await this.doROARequest("UpdateResidentInfo", "resident_1.0", "HTTP", "PUT", "AK", `/v1.0/resident/residences`, "json", req, runtime), new UpdateResidentInfoResponse({}));
+  }
+
+  async updateResidentMember(request: UpdateResidentMemberRequest): Promise<UpdateResidentMemberResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateResidentMemberHeaders({ });
+    return await this.updateResidentMemberWithOptions(request, headers, runtime);
+  }
+
+  async updateResidentMemberWithOptions(request: UpdateResidentMemberRequest, headers: UpdateResidentMemberHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResidentMemberResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.residentUpdateInfo))) {
+      body["residentUpdateInfo"] = request.residentUpdateInfo;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateResidentMemberResponse>(await this.doROARequest("UpdateResidentMember", "resident_1.0", "HTTP", "PUT", "AK", `/v1.0/resident/members`, "json", req, runtime), new UpdateResidentMemberResponse({}));
+  }
+
   async updateResidentUser(request: UpdateResidentUserRequest): Promise<UpdateResidentUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateResidentUserHeaders({ });
@@ -3118,6 +4117,35 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<UpdateResidentUserResponse>(await this.doROARequest("UpdateResidentUser", "resident_1.0", "HTTP", "PUT", "AK", `/v1.0/resident/users`, "json", req, runtime), new UpdateResidentUserResponse({}));
+  }
+
+  async updateSpace(request: UpdateSpaceRequest): Promise<UpdateSpaceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateSpaceHeaders({ });
+    return await this.updateSpaceWithOptions(request, headers, runtime);
+  }
+
+  async updateSpaceWithOptions(request: UpdateSpaceRequest, headers: UpdateSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateSpaceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.spaceInfoVOList)) {
+      body["spaceInfoVOList"] = request.spaceInfoVOList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateSpaceResponse>(await this.doROARequest("UpdateSpace", "resident_1.0", "HTTP", "PUT", "AK", `/v1.0/resident/spaces`, "json", req, runtime), new UpdateSpaceResponse({}));
   }
 
 }

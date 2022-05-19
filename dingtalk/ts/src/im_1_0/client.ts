@@ -855,6 +855,72 @@ export class GetSceneGroupMembersResponse extends $tea.Model {
   }
 }
 
+export class GroupBanWordsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupBanWordsRequest extends $tea.Model {
+  banWordsMode?: number;
+  openConversationId?: string;
+  options?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      banWordsMode: 'banWordsMode',
+      openConversationId: 'openConversationId',
+      options: 'options',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      banWordsMode: 'number',
+      openConversationId: 'string',
+      options: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupBanWordsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GroupCapacityInquiryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -991,6 +1057,214 @@ export class GroupCapacityInquiryResponse extends $tea.Model {
   }
 }
 
+export class GroupCapacityOrderConfirmHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupCapacityOrderConfirmRequest extends $tea.Model {
+  operator?: string;
+  orderId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operator: 'operator',
+      orderId: 'orderId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operator: 'string',
+      orderId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupCapacityOrderConfirmResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupCapacityOrderPlaceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupCapacityOrderPlaceRequest extends $tea.Model {
+  actualPrice?: number;
+  currentCapacity?: number;
+  currentEffectUntil?: number;
+  discount?: number;
+  extInfo?: { [key: string]: any };
+  markedPrice?: number;
+  openConversationId?: string;
+  operator?: string;
+  targetCapacity?: number;
+  targetEffectUntil?: number;
+  token?: string;
+  static names(): { [key: string]: string } {
+    return {
+      actualPrice: 'actualPrice',
+      currentCapacity: 'currentCapacity',
+      currentEffectUntil: 'currentEffectUntil',
+      discount: 'discount',
+      extInfo: 'extInfo',
+      markedPrice: 'markedPrice',
+      openConversationId: 'openConversationId',
+      operator: 'operator',
+      targetCapacity: 'targetCapacity',
+      targetEffectUntil: 'targetEffectUntil',
+      token: 'token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actualPrice: 'number',
+      currentCapacity: 'number',
+      currentEffectUntil: 'number',
+      discount: 'number',
+      extInfo: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      markedPrice: 'number',
+      openConversationId: 'string',
+      operator: 'string',
+      targetCapacity: 'number',
+      targetEffectUntil: 'number',
+      token: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupCapacityOrderPlaceResponseBody extends $tea.Model {
+  actualPrice?: number;
+  currentCapacity?: number;
+  currentEffectUntil?: number;
+  discount?: number;
+  extInfo?: { [key: string]: string };
+  markedPrice?: number;
+  openConversationId?: string;
+  operator?: string;
+  orderId?: string;
+  targetCapacity?: number;
+  targetEffectUntil?: number;
+  token?: string;
+  static names(): { [key: string]: string } {
+    return {
+      actualPrice: 'actualPrice',
+      currentCapacity: 'currentCapacity',
+      currentEffectUntil: 'currentEffectUntil',
+      discount: 'discount',
+      extInfo: 'extInfo',
+      markedPrice: 'markedPrice',
+      openConversationId: 'openConversationId',
+      operator: 'operator',
+      orderId: 'orderId',
+      targetCapacity: 'targetCapacity',
+      targetEffectUntil: 'targetEffectUntil',
+      token: 'token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actualPrice: 'number',
+      currentCapacity: 'number',
+      currentEffectUntil: 'number',
+      discount: 'number',
+      extInfo: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      markedPrice: 'number',
+      openConversationId: 'string',
+      operator: 'string',
+      orderId: 'string',
+      targetCapacity: 'number',
+      targetEffectUntil: 'number',
+      token: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupCapacityOrderPlaceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GroupCapacityOrderPlaceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GroupCapacityOrderPlaceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GroupManageQueryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1014,30 +1288,42 @@ export class GroupManageQueryHeaders extends $tea.Model {
 }
 
 export class GroupManageQueryRequest extends $tea.Model {
+  createdAfter?: number;
   groupId?: string;
   groupMemberSamples?: string[];
   groupOwner?: string;
   groupTitleKeywords?: string[];
   groupUrl?: string;
+  maxResults?: number;
+  membersOver?: number;
+  nextToken?: string;
   openConversationId?: string;
   static names(): { [key: string]: string } {
     return {
+      createdAfter: 'createdAfter',
       groupId: 'groupId',
       groupMemberSamples: 'groupMemberSamples',
       groupOwner: 'groupOwner',
       groupTitleKeywords: 'groupTitleKeywords',
       groupUrl: 'groupUrl',
+      maxResults: 'maxResults',
+      membersOver: 'membersOver',
+      nextToken: 'nextToken',
       openConversationId: 'openConversationId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      createdAfter: 'number',
       groupId: 'string',
       groupMemberSamples: { 'type': 'array', 'itemType': 'string' },
       groupOwner: 'string',
       groupTitleKeywords: { 'type': 'array', 'itemType': 'string' },
       groupUrl: 'string',
+      maxResults: 'number',
+      membersOver: 'number',
+      nextToken: 'string',
       openConversationId: 'string',
     };
   }
@@ -1049,15 +1335,21 @@ export class GroupManageQueryRequest extends $tea.Model {
 
 export class GroupManageQueryResponseBody extends $tea.Model {
   groupInfoList?: GroupManageQueryResponseBodyGroupInfoList[];
+  hasMore?: boolean;
+  nextToken?: string;
   static names(): { [key: string]: string } {
     return {
       groupInfoList: 'groupInfoList',
+      hasMore: 'hasMore',
+      nextToken: 'nextToken',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       groupInfoList: { 'type': 'array', 'itemType': GroupManageQueryResponseBodyGroupInfoList },
+      hasMore: 'boolean',
+      nextToken: 'string',
     };
   }
 
@@ -1080,6 +1372,72 @@ export class GroupManageQueryResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GroupManageQueryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupManageReduceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupManageReduceRequest extends $tea.Model {
+  capacityLimit?: number;
+  openConversationId?: string;
+  options?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      capacityLimit: 'capacityLimit',
+      openConversationId: 'openConversationId',
+      options: 'options',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      capacityLimit: 'number',
+      openConversationId: 'string',
+      options: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupManageReduceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
     };
   }
 
@@ -3156,34 +3514,43 @@ export class CreateInterconnectionResponseBodyResults extends $tea.Model {
 }
 
 export class GroupManageQueryResponseBodyGroupInfoList extends $tea.Model {
+  banWordsMode?: number;
   capacity?: number;
   createdAt?: number;
   extInfo?: { [key: string]: any };
+  groupAdminList?: string[];
   groupOwner?: string;
   groupTitle?: string;
   memberCount?: number;
   openConversationId?: string;
+  type?: string;
   static names(): { [key: string]: string } {
     return {
+      banWordsMode: 'banWordsMode',
       capacity: 'capacity',
       createdAt: 'createdAt',
       extInfo: 'extInfo',
+      groupAdminList: 'groupAdminList',
       groupOwner: 'groupOwner',
       groupTitle: 'groupTitle',
       memberCount: 'memberCount',
       openConversationId: 'openConversationId',
+      type: 'type',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      banWordsMode: 'number',
       capacity: 'number',
       createdAt: 'number',
       extInfo: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      groupAdminList: { 'type': 'array', 'itemType': 'string' },
       groupOwner: 'string',
       groupTitle: 'string',
       memberCount: 'number',
       openConversationId: 'string',
+      type: 'string',
     };
   }
 
@@ -3905,6 +4272,43 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSceneGroupMembersResponse>(await this.doROARequest("GetSceneGroupMembers", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/sceneGroups/members/query`, "json", req, runtime), new GetSceneGroupMembersResponse({}));
   }
 
+  async groupBanWords(request: GroupBanWordsRequest): Promise<GroupBanWordsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GroupBanWordsHeaders({ });
+    return await this.groupBanWordsWithOptions(request, headers, runtime);
+  }
+
+  async groupBanWordsWithOptions(request: GroupBanWordsRequest, headers: GroupBanWordsHeaders, runtime: $Util.RuntimeOptions): Promise<GroupBanWordsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.banWordsMode)) {
+      body["banWordsMode"] = request.banWordsMode;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.options)) {
+      body["options"] = request.options;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GroupBanWordsResponse>(await this.doROARequest("GroupBanWords", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/groups/words/ban`, "none", req, runtime), new GroupBanWordsResponse({}));
+  }
+
   async groupCapacityInquiry(request: GroupCapacityInquiryRequest): Promise<GroupCapacityInquiryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GroupCapacityInquiryHeaders({ });
@@ -3950,6 +4354,108 @@ export default class Client extends OpenApi {
     return $tea.cast<GroupCapacityInquiryResponse>(await this.doROARequest("GroupCapacityInquiry", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/groups/capacities/inquiries/query`, "json", req, runtime), new GroupCapacityInquiryResponse({}));
   }
 
+  async groupCapacityOrderConfirm(request: GroupCapacityOrderConfirmRequest): Promise<GroupCapacityOrderConfirmResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GroupCapacityOrderConfirmHeaders({ });
+    return await this.groupCapacityOrderConfirmWithOptions(request, headers, runtime);
+  }
+
+  async groupCapacityOrderConfirmWithOptions(request: GroupCapacityOrderConfirmRequest, headers: GroupCapacityOrderConfirmHeaders, runtime: $Util.RuntimeOptions): Promise<GroupCapacityOrderConfirmResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
+    }
+
+    if (!Util.isUnset(request.orderId)) {
+      body["orderId"] = request.orderId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GroupCapacityOrderConfirmResponse>(await this.doROARequest("GroupCapacityOrderConfirm", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/groups/capacities/orders/confirm`, "none", req, runtime), new GroupCapacityOrderConfirmResponse({}));
+  }
+
+  async groupCapacityOrderPlace(request: GroupCapacityOrderPlaceRequest): Promise<GroupCapacityOrderPlaceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GroupCapacityOrderPlaceHeaders({ });
+    return await this.groupCapacityOrderPlaceWithOptions(request, headers, runtime);
+  }
+
+  async groupCapacityOrderPlaceWithOptions(request: GroupCapacityOrderPlaceRequest, headers: GroupCapacityOrderPlaceHeaders, runtime: $Util.RuntimeOptions): Promise<GroupCapacityOrderPlaceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.actualPrice)) {
+      body["actualPrice"] = request.actualPrice;
+    }
+
+    if (!Util.isUnset(request.currentCapacity)) {
+      body["currentCapacity"] = request.currentCapacity;
+    }
+
+    if (!Util.isUnset(request.currentEffectUntil)) {
+      body["currentEffectUntil"] = request.currentEffectUntil;
+    }
+
+    if (!Util.isUnset(request.discount)) {
+      body["discount"] = request.discount;
+    }
+
+    if (!Util.isUnset(request.extInfo)) {
+      body["extInfo"] = request.extInfo;
+    }
+
+    if (!Util.isUnset(request.markedPrice)) {
+      body["markedPrice"] = request.markedPrice;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
+    }
+
+    if (!Util.isUnset(request.targetCapacity)) {
+      body["targetCapacity"] = request.targetCapacity;
+    }
+
+    if (!Util.isUnset(request.targetEffectUntil)) {
+      body["targetEffectUntil"] = request.targetEffectUntil;
+    }
+
+    if (!Util.isUnset(request.token)) {
+      body["token"] = request.token;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GroupCapacityOrderPlaceResponse>(await this.doROARequest("GroupCapacityOrderPlace", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/groups/capacities/orders/place`, "json", req, runtime), new GroupCapacityOrderPlaceResponse({}));
+  }
+
   async groupManageQuery(request: GroupManageQueryRequest): Promise<GroupManageQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GroupManageQueryHeaders({ });
@@ -3959,6 +4465,10 @@ export default class Client extends OpenApi {
   async groupManageQueryWithOptions(request: GroupManageQueryRequest, headers: GroupManageQueryHeaders, runtime: $Util.RuntimeOptions): Promise<GroupManageQueryResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.createdAfter)) {
+      body["createdAfter"] = request.createdAfter;
+    }
+
     if (!Util.isUnset(request.groupId)) {
       body["groupId"] = request.groupId;
     }
@@ -3979,6 +4489,18 @@ export default class Client extends OpenApi {
       body["groupUrl"] = request.groupUrl;
     }
 
+    if (!Util.isUnset(request.maxResults)) {
+      body["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.membersOver)) {
+      body["membersOver"] = request.membersOver;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      body["nextToken"] = request.nextToken;
+    }
+
     if (!Util.isUnset(request.openConversationId)) {
       body["openConversationId"] = request.openConversationId;
     }
@@ -3997,6 +4519,43 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<GroupManageQueryResponse>(await this.doROARequest("GroupManageQuery", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/groups/managements/query`, "json", req, runtime), new GroupManageQueryResponse({}));
+  }
+
+  async groupManageReduce(request: GroupManageReduceRequest): Promise<GroupManageReduceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GroupManageReduceHeaders({ });
+    return await this.groupManageReduceWithOptions(request, headers, runtime);
+  }
+
+  async groupManageReduceWithOptions(request: GroupManageReduceRequest, headers: GroupManageReduceHeaders, runtime: $Util.RuntimeOptions): Promise<GroupManageReduceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.capacityLimit)) {
+      body["capacityLimit"] = request.capacityLimit;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.options)) {
+      body["options"] = request.options;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GroupManageReduceResponse>(await this.doROARequest("GroupManageReduce", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/groups/capacities/reduce`, "none", req, runtime), new GroupManageReduceResponse({}));
   }
 
   async interactiveCardCreateInstance(request: InteractiveCardCreateInstanceRequest): Promise<InteractiveCardCreateInstanceResponse> {

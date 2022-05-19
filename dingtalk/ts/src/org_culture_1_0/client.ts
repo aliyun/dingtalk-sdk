@@ -33,11 +33,13 @@ export class ConsumeUserPointsRequest extends $tea.Model {
   amount?: number;
   outId?: string;
   remark?: string;
+  usage?: string;
   static names(): { [key: string]: string } {
     return {
       amount: 'amount',
       outId: 'outId',
       remark: 'remark',
+      usage: 'usage',
     };
   }
 
@@ -46,6 +48,7 @@ export class ConsumeUserPointsRequest extends $tea.Model {
       amount: 'number',
       outId: 'string',
       remark: 'string',
+      usage: 'string',
     };
   }
 
@@ -768,6 +771,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.remark)) {
       body["remark"] = request.remark;
+    }
+
+    if (!Util.isUnset(request.usage)) {
+      body["usage"] = request.usage;
     }
 
     let realHeaders : {[key: string ]: string} = { };

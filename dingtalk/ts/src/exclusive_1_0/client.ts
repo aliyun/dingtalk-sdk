@@ -2683,6 +2683,97 @@ export class GetUserAppVersionSummaryResponse extends $tea.Model {
   }
 }
 
+export class GetUserStayLengthHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserStayLengthRequest extends $tea.Model {
+  pageNumber?: number;
+  pageSize?: number;
+  statDate?: string;
+  static names(): { [key: string]: string } {
+    return {
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      statDate: 'statDate',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pageNumber: 'number',
+      pageSize: 'number',
+      statDate: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserStayLengthResponseBody extends $tea.Model {
+  itemList?: GetUserStayLengthResponseBodyItemList[];
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      itemList: 'itemList',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      itemList: { 'type': 'array', 'itemType': GetUserStayLengthResponseBodyItemList },
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserStayLengthResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetUserStayLengthResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetUserStayLengthResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListAuditLogHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5039,6 +5130,37 @@ export class GetUserAppVersionSummaryResponseBodyData extends $tea.Model {
   }
 }
 
+export class GetUserStayLengthResponseBodyItemList extends $tea.Model {
+  name?: string;
+  statDate?: string;
+  stayTimeLenApp1d?: number;
+  stayTimeLenPc1d?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      statDate: 'statDate',
+      stayTimeLenApp1d: 'stayTimeLenApp1d',
+      stayTimeLenPc1d: 'stayTimeLenPc1d',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      statDate: 'string',
+      stayTimeLenApp1d: 'number',
+      stayTimeLenPc1d: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListAuditLogResponseBodyListDocMemberList extends $tea.Model {
   memberName?: string;
   memberType?: number;
@@ -6523,6 +6645,43 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetUserAppVersionSummaryResponse>(await this.doROARequest("GetUserAppVersionSummary", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/appVersion/org/${dataId}`, "json", req, runtime), new GetUserAppVersionSummaryResponse({}));
+  }
+
+  async getUserStayLength(request: GetUserStayLengthRequest): Promise<GetUserStayLengthResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetUserStayLengthHeaders({ });
+    return await this.getUserStayLengthWithOptions(request, headers, runtime);
+  }
+
+  async getUserStayLengthWithOptions(request: GetUserStayLengthRequest, headers: GetUserStayLengthHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserStayLengthResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.statDate)) {
+      query["statDate"] = request.statDate;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetUserStayLengthResponse>(await this.doROARequest("GetUserStayLength", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/users/stayTimes`, "json", req, runtime), new GetUserStayLengthResponse({}));
   }
 
   async listAuditLog(request: ListAuditLogRequest): Promise<ListAuditLogResponse> {
