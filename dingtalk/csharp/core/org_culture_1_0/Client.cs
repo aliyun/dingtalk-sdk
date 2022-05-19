@@ -57,6 +57,10 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
             {
                 body["remark"] = request.Remark;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Usage))
+            {
+                body["usage"] = request.Usage;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -90,6 +94,10 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
             {
                 body["remark"] = request.Remark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Usage))
+            {
+                body["usage"] = request.Usage;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

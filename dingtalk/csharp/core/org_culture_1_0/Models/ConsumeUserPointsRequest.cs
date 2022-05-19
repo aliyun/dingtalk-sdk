@@ -30,6 +30,13 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
         [Validation(Required=false)]
         public string Remark { get; set; }
 
+        /// <summary>
+        /// 用途，可用值：OPEN_EMP_POINT_CONSUME_DEFAULT-默认扣减，OPEN_EMP_POINT_PUNISH_CONSUME-惩罚扣减；默认为: OPEN_EMP_POINT_CONSUME_DEFAULT
+        /// </summary>
+        [NameInMap("usage")]
+        [Validation(Required=false)]
+        public string Usage { get; set; }
+
     }
 
 }

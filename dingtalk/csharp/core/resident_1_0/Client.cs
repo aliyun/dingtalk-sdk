@@ -218,6 +218,70 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<AddResidentDepartmentResponse>(await DoROARequestAsync("AddResidentDepartment", "resident_1.0", "HTTP", "POST", "AK", "/v1.0/resident/departments", "json", req, runtime));
         }
 
+        public AddResidentMemberResponse AddResidentMember(AddResidentMemberRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddResidentMemberHeaders headers = new AddResidentMemberHeaders();
+            return AddResidentMemberWithOptions(request, headers, runtime);
+        }
+
+        public async Task<AddResidentMemberResponse> AddResidentMemberAsync(AddResidentMemberRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddResidentMemberHeaders headers = new AddResidentMemberHeaders();
+            return await AddResidentMemberWithOptionsAsync(request, headers, runtime);
+        }
+
+        public AddResidentMemberResponse AddResidentMemberWithOptions(AddResidentMemberRequest request, AddResidentMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResidentAddInfo.ToMap()))
+            {
+                body["residentAddInfo"] = request.ResidentAddInfo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<AddResidentMemberResponse>(DoROARequest("AddResidentMember", "resident_1.0", "HTTP", "POST", "AK", "/v1.0/resident/members", "json", req, runtime));
+        }
+
+        public async Task<AddResidentMemberResponse> AddResidentMemberWithOptionsAsync(AddResidentMemberRequest request, AddResidentMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResidentAddInfo.ToMap()))
+            {
+                body["residentAddInfo"] = request.ResidentAddInfo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<AddResidentMemberResponse>(await DoROARequestAsync("AddResidentMember", "resident_1.0", "HTTP", "POST", "AK", "/v1.0/resident/members", "json", req, runtime));
+        }
+
         public AddResidentUsersResponse AddResidentUsers(AddResidentUsersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -418,6 +482,94 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<CreateResidentBlackBoardResponse>(await DoROARequestAsync("CreateResidentBlackBoard", "resident_1.0", "HTTP", "POST", "AK", "/v1.0/resident/blackboards", "json", req, runtime));
         }
 
+        public CreateSpaceResponse CreateSpace(CreateSpaceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateSpaceHeaders headers = new CreateSpaceHeaders();
+            return CreateSpaceWithOptions(request, headers, runtime);
+        }
+
+        public async Task<CreateSpaceResponse> CreateSpaceAsync(CreateSpaceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateSpaceHeaders headers = new CreateSpaceHeaders();
+            return await CreateSpaceWithOptionsAsync(request, headers, runtime);
+        }
+
+        public CreateSpaceResponse CreateSpaceWithOptions(CreateSpaceRequest request, CreateSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentDeptId))
+            {
+                body["parentDeptId"] = request.ParentDeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagCode))
+            {
+                body["tagCode"] = request.TagCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CreateSpaceResponse>(DoROARequest("CreateSpace", "resident_1.0", "HTTP", "POST", "AK", "/v1.0/resident/spaces", "json", req, runtime));
+        }
+
+        public async Task<CreateSpaceResponse> CreateSpaceWithOptionsAsync(CreateSpaceRequest request, CreateSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentDeptId))
+            {
+                body["parentDeptId"] = request.ParentDeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagCode))
+            {
+                body["tagCode"] = request.TagCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CreateSpaceResponse>(await DoROARequestAsync("CreateSpace", "resident_1.0", "HTTP", "POST", "AK", "/v1.0/resident/spaces", "json", req, runtime));
+        }
+
         public DeleteResidentBlackBoardResponse DeleteResidentBlackBoard(DeleteResidentBlackBoardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -544,6 +696,70 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             return TeaModel.ToObject<DeleteResidentDepartmentResponse>(await DoROARequestAsync("DeleteResidentDepartment", "resident_1.0", "HTTP", "DELETE", "AK", "/v1.0/resident/departments", "json", req, runtime));
+        }
+
+        public DeleteSpaceResponse DeleteSpace(DeleteSpaceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteSpaceHeaders headers = new DeleteSpaceHeaders();
+            return DeleteSpaceWithOptions(request, headers, runtime);
+        }
+
+        public async Task<DeleteSpaceResponse> DeleteSpaceAsync(DeleteSpaceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteSpaceHeaders headers = new DeleteSpaceHeaders();
+            return await DeleteSpaceWithOptionsAsync(request, headers, runtime);
+        }
+
+        public DeleteSpaceResponse DeleteSpaceWithOptions(DeleteSpaceRequest request, DeleteSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIds))
+            {
+                body["deptIds"] = request.DeptIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<DeleteSpaceResponse>(DoROARequest("DeleteSpace", "resident_1.0", "HTTP", "POST", "AK", "/v1.0/resident/spaces/remove", "json", req, runtime));
+        }
+
+        public async Task<DeleteSpaceResponse> DeleteSpaceWithOptionsAsync(DeleteSpaceRequest request, DeleteSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIds))
+            {
+                body["deptIds"] = request.DeptIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<DeleteSpaceResponse>(await DoROARequestAsync("DeleteSpace", "resident_1.0", "HTTP", "POST", "AK", "/v1.0/resident/spaces/remove", "json", req, runtime));
         }
 
         public GetConversationIdResponse GetConversationId(GetConversationIdRequest request)
@@ -1132,6 +1348,94 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<ListSubSpaceResponse>(await DoROARequestAsync("ListSubSpace", "resident_1.0", "HTTP", "GET", "AK", "/v1.0/resident/spaces/subSpaces", "json", req, runtime));
         }
 
+        public ListUncheckUsersResponse ListUncheckUsers(ListUncheckUsersRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListUncheckUsersHeaders headers = new ListUncheckUsersHeaders();
+            return ListUncheckUsersWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ListUncheckUsersResponse> ListUncheckUsersAsync(ListUncheckUsersRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListUncheckUsersHeaders headers = new ListUncheckUsersHeaders();
+            return await ListUncheckUsersWithOptionsAsync(request, headers, runtime);
+        }
+
+        public ListUncheckUsersResponse ListUncheckUsersWithOptions(ListUncheckUsersRequest request, ListUncheckUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                query["startTime"] = request.StartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                query["status"] = request.Status;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<ListUncheckUsersResponse>(DoROARequest("ListUncheckUsers", "resident_1.0", "HTTP", "GET", "AK", "/v1.0/resident/organizations/noJoinUsers", "json", req, runtime));
+        }
+
+        public async Task<ListUncheckUsersResponse> ListUncheckUsersWithOptionsAsync(ListUncheckUsersRequest request, ListUncheckUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                query["startTime"] = request.StartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                query["status"] = request.Status;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<ListUncheckUsersResponse>(await DoROARequestAsync("ListUncheckUsers", "resident_1.0", "HTTP", "GET", "AK", "/v1.0/resident/organizations/noJoinUsers", "json", req, runtime));
+        }
+
         public PagePointHistoryResponse PagePointHistory(PagePointHistoryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1660,6 +1964,158 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<UpdateResidentBlackBoardResponse>(await DoROARequestAsync("UpdateResidentBlackBoard", "resident_1.0", "HTTP", "PUT", "AK", "/v1.0/resident/blackboards", "json", req, runtime));
         }
 
+        public UpdateResidentInfoResponse UpdateResidentInfo(UpdateResidentInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateResidentInfoHeaders headers = new UpdateResidentInfoHeaders();
+            return UpdateResidentInfoWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UpdateResidentInfoResponse> UpdateResidentInfoAsync(UpdateResidentInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateResidentInfoHeaders headers = new UpdateResidentInfoHeaders();
+            return await UpdateResidentInfoWithOptionsAsync(request, headers, runtime);
+        }
+
+        public UpdateResidentInfoResponse UpdateResidentInfoWithOptions(UpdateResidentInfoRequest request, UpdateResidentInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Address))
+            {
+                body["address"] = request.Address;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CommunityType))
+            {
+                body["communityType"] = request.CommunityType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.State))
+            {
+                body["state"] = request.State;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateResidentInfoResponse>(DoROARequest("UpdateResidentInfo", "resident_1.0", "HTTP", "PUT", "AK", "/v1.0/resident/residences", "json", req, runtime));
+        }
+
+        public async Task<UpdateResidentInfoResponse> UpdateResidentInfoWithOptionsAsync(UpdateResidentInfoRequest request, UpdateResidentInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Address))
+            {
+                body["address"] = request.Address;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CommunityType))
+            {
+                body["communityType"] = request.CommunityType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.State))
+            {
+                body["state"] = request.State;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateResidentInfoResponse>(await DoROARequestAsync("UpdateResidentInfo", "resident_1.0", "HTTP", "PUT", "AK", "/v1.0/resident/residences", "json", req, runtime));
+        }
+
+        public UpdateResidentMemberResponse UpdateResidentMember(UpdateResidentMemberRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateResidentMemberHeaders headers = new UpdateResidentMemberHeaders();
+            return UpdateResidentMemberWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UpdateResidentMemberResponse> UpdateResidentMemberAsync(UpdateResidentMemberRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateResidentMemberHeaders headers = new UpdateResidentMemberHeaders();
+            return await UpdateResidentMemberWithOptionsAsync(request, headers, runtime);
+        }
+
+        public UpdateResidentMemberResponse UpdateResidentMemberWithOptions(UpdateResidentMemberRequest request, UpdateResidentMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResidentUpdateInfo.ToMap()))
+            {
+                body["residentUpdateInfo"] = request.ResidentUpdateInfo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateResidentMemberResponse>(DoROARequest("UpdateResidentMember", "resident_1.0", "HTTP", "PUT", "AK", "/v1.0/resident/members", "json", req, runtime));
+        }
+
+        public async Task<UpdateResidentMemberResponse> UpdateResidentMemberWithOptionsAsync(UpdateResidentMemberRequest request, UpdateResidentMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResidentUpdateInfo.ToMap()))
+            {
+                body["residentUpdateInfo"] = request.ResidentUpdateInfo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateResidentMemberResponse>(await DoROARequestAsync("UpdateResidentMember", "resident_1.0", "HTTP", "PUT", "AK", "/v1.0/resident/members", "json", req, runtime));
+        }
+
         public UpdateResidentUserResponse UpdateResidentUser(UpdateResidentUserRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1786,6 +2242,70 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             return TeaModel.ToObject<UpdateResidentUserResponse>(await DoROARequestAsync("UpdateResidentUser", "resident_1.0", "HTTP", "PUT", "AK", "/v1.0/resident/users", "json", req, runtime));
+        }
+
+        public UpdateSpaceResponse UpdateSpace(UpdateSpaceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateSpaceHeaders headers = new UpdateSpaceHeaders();
+            return UpdateSpaceWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UpdateSpaceResponse> UpdateSpaceAsync(UpdateSpaceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateSpaceHeaders headers = new UpdateSpaceHeaders();
+            return await UpdateSpaceWithOptionsAsync(request, headers, runtime);
+        }
+
+        public UpdateSpaceResponse UpdateSpaceWithOptions(UpdateSpaceRequest request, UpdateSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpaceInfoVOList))
+            {
+                body["spaceInfoVOList"] = request.SpaceInfoVOList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateSpaceResponse>(DoROARequest("UpdateSpace", "resident_1.0", "HTTP", "PUT", "AK", "/v1.0/resident/spaces", "json", req, runtime));
+        }
+
+        public async Task<UpdateSpaceResponse> UpdateSpaceWithOptionsAsync(UpdateSpaceRequest request, UpdateSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpaceInfoVOList))
+            {
+                body["spaceInfoVOList"] = request.SpaceInfoVOList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateSpaceResponse>(await DoROARequestAsync("UpdateSpace", "resident_1.0", "HTTP", "PUT", "AK", "/v1.0/resident/spaces", "json", req, runtime));
         }
 
     }

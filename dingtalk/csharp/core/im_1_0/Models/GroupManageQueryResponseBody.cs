@@ -17,6 +17,13 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public List<GroupManageQueryResponseBodyGroupInfoList> GroupInfoList { get; set; }
         public class GroupManageQueryResponseBodyGroupInfoList : TeaModel {
             /// <summary>
+            /// 禁言模式
+            /// </summary>
+            [NameInMap("banWordsMode")]
+            [Validation(Required=false)]
+            public int? BanWordsMode { get; set; }
+
+            /// <summary>
             /// 群容量
             /// </summary>
             [NameInMap("capacity")]
@@ -36,6 +43,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
             [NameInMap("extInfo")]
             [Validation(Required=false)]
             public Dictionary<string, object> ExtInfo { get; set; }
+
+            [NameInMap("groupAdminList")]
+            [Validation(Required=false)]
+            public List<string> GroupAdminList { get; set; }
 
             /// <summary>
             /// 群主userid
@@ -65,7 +76,28 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
             [Validation(Required=false)]
             public string OpenConversationId { get; set; }
 
+            /// <summary>
+            /// 群类型
+            /// </summary>
+            [NameInMap("type")]
+            [Validation(Required=false)]
+            public string Type { get; set; }
+
         }
+
+        /// <summary>
+        /// 分页拉取时, 是否还有更多
+        /// </summary>
+        [NameInMap("hasMore")]
+        [Validation(Required=false)]
+        public bool? HasMore { get; set; }
+
+        /// <summary>
+        /// 分页拉取游标, 请求下一页时回传
+        /// </summary>
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public string NextToken { get; set; }
 
     }
 
