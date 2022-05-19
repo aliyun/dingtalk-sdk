@@ -16,6 +16,10 @@ public class ConsumeUserPointsRequest extends TeaModel {
     @NameInMap("remark")
     public String remark;
 
+    // 用途，可用值：OPEN_EMP_POINT_CONSUME_DEFAULT-默认扣减，OPEN_EMP_POINT_PUNISH_CONSUME-惩罚扣减；默认为: OPEN_EMP_POINT_CONSUME_DEFAULT
+    @NameInMap("usage")
+    public String usage;
+
     public static ConsumeUserPointsRequest build(java.util.Map<String, ?> map) throws Exception {
         ConsumeUserPointsRequest self = new ConsumeUserPointsRequest();
         return TeaModel.build(map, self);
@@ -43,6 +47,14 @@ public class ConsumeUserPointsRequest extends TeaModel {
     }
     public String getRemark() {
         return this.remark;
+    }
+
+    public ConsumeUserPointsRequest setUsage(String usage) {
+        this.usage = usage;
+        return this;
+    }
+    public String getUsage() {
+        return this.usage;
     }
 
 }
