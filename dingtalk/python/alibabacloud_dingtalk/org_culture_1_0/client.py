@@ -57,6 +57,8 @@ class Client(OpenApiClient):
             body['outId'] = request.out_id
         if not UtilClient.is_unset(request.remark):
             body['remark'] = request.remark
+        if not UtilClient.is_unset(request.usage):
+            body['usage'] = request.usage
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -87,6 +89,8 @@ class Client(OpenApiClient):
             body['outId'] = request.out_id
         if not UtilClient.is_unset(request.remark):
             body['remark'] = request.remark
+        if not UtilClient.is_unset(request.usage):
+            body['usage'] = request.usage
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

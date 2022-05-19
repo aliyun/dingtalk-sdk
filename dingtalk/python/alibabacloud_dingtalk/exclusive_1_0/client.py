@@ -2183,6 +2183,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetUserAppVersionSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/appVersion/org/{data_id}', 'json', req, runtime)
         )
 
+    def get_user_stay_length(
+        self,
+        request: dingtalkexclusive__1__0_models.GetUserStayLengthRequest,
+    ) -> dingtalkexclusive__1__0_models.GetUserStayLengthResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetUserStayLengthHeaders()
+        return self.get_user_stay_length_with_options(request, headers, runtime)
+
+    async def get_user_stay_length_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetUserStayLengthRequest,
+    ) -> dingtalkexclusive__1__0_models.GetUserStayLengthResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetUserStayLengthHeaders()
+        return await self.get_user_stay_length_with_options_async(request, headers, runtime)
+
+    def get_user_stay_length_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetUserStayLengthRequest,
+        headers: dingtalkexclusive__1__0_models.GetUserStayLengthHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetUserStayLengthResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.stat_date):
+            query['statDate'] = request.stat_date
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetUserStayLengthResponse(),
+            self.do_roarequest('GetUserStayLength', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/users/stayTimes', 'json', req, runtime)
+        )
+
+    async def get_user_stay_length_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetUserStayLengthRequest,
+        headers: dingtalkexclusive__1__0_models.GetUserStayLengthHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetUserStayLengthResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.stat_date):
+            query['statDate'] = request.stat_date
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetUserStayLengthResponse(),
+            await self.do_roarequest_async('GetUserStayLength', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/users/stayTimes', 'json', req, runtime)
+        )
+
     def list_audit_log(
         self,
         request: dingtalkexclusive__1__0_models.ListAuditLogRequest,

@@ -43,6 +43,7 @@ class ConsumeUserPointsRequest(TeaModel):
         amount: int = None,
         out_id: str = None,
         remark: str = None,
+        usage: str = None,
     ):
         # 扣减积分数量，1～1000000
         self.amount = amount
@@ -50,6 +51,8 @@ class ConsumeUserPointsRequest(TeaModel):
         self.out_id = out_id
         # 备注，最长32个字符
         self.remark = remark
+        # 用途，可用值：OPEN_EMP_POINT_CONSUME_DEFAULT-默认扣减，OPEN_EMP_POINT_PUNISH_CONSUME-惩罚扣减；默认为: OPEN_EMP_POINT_CONSUME_DEFAULT
+        self.usage = usage
 
     def validate(self):
         pass
@@ -66,6 +69,8 @@ class ConsumeUserPointsRequest(TeaModel):
             result['outId'] = self.out_id
         if self.remark is not None:
             result['remark'] = self.remark
+        if self.usage is not None:
+            result['usage'] = self.usage
         return result
 
     def from_map(self, m: dict = None):
@@ -76,6 +81,8 @@ class ConsumeUserPointsRequest(TeaModel):
             self.out_id = m.get('outId')
         if m.get('remark') is not None:
             self.remark = m.get('remark')
+        if m.get('usage') is not None:
+            self.usage = m.get('usage')
         return self
 
 
