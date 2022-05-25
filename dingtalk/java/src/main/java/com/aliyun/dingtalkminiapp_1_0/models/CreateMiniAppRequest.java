@@ -10,6 +10,9 @@ public class CreateMiniAppRequest extends TeaModel {
     @NameInMap("bizType")
     public Integer bizType;
 
+    @NameInMap("bundleId")
+    public String bundleId;
+
     @NameInMap("desc")
     public String desc;
 
@@ -38,6 +41,14 @@ public class CreateMiniAppRequest extends TeaModel {
     }
     public Integer getBizType() {
         return this.bizType;
+    }
+
+    public CreateMiniAppRequest setBundleId(String bundleId) {
+        this.bundleId = bundleId;
+        return this;
+    }
+    public String getBundleId() {
+        return this.bundleId;
     }
 
     public CreateMiniAppRequest setDesc(String desc) {

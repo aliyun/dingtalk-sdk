@@ -74,6 +74,43 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("AddDevice", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/devices", "json", req, runtime), new AddDeviceResponse());
     }
 
+    public AddSchoolConfigResponse addSchoolConfig(AddSchoolConfigRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        AddSchoolConfigHeaders headers = new AddSchoolConfigHeaders();
+        return this.addSchoolConfigWithOptions(request, headers, runtime);
+    }
+
+    public AddSchoolConfigResponse addSchoolConfigWithOptions(AddSchoolConfigRequest request, AddSchoolConfigHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            body.put("operatorId", request.operatorId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorName)) {
+            body.put("operatorName", request.operatorName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.temperatureUpLimit)) {
+            body.put("temperatureUpLimit", request.temperatureUpLimit);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("AddSchoolConfig", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/schools/configurations", "json", req, runtime), new AddSchoolConfigResponse());
+    }
+
     public BatchCreateResponse batchCreate(BatchCreateRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         BatchCreateHeaders headers = new BatchCreateHeaders();

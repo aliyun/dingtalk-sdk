@@ -413,4 +413,54 @@ public class Client extends com.aliyun.teaopenapi.Client {
         ));
         return TeaModel.toModel(this.doROARequest("UpdateVideoConferenceExtInfo", "conference_1.0", "HTTP", "PUT", "AK", "/v1.0/conference/videoConferences/" + conferenceId + "/extInfo", "json", req, runtime), new UpdateVideoConferenceExtInfoResponse());
     }
+
+    public UpdateVideoConferenceSettingResponse updateVideoConferenceSetting(String conferenceId, UpdateVideoConferenceSettingRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        UpdateVideoConferenceSettingHeaders headers = new UpdateVideoConferenceSettingHeaders();
+        return this.updateVideoConferenceSettingWithOptions(conferenceId, request, headers, runtime);
+    }
+
+    public UpdateVideoConferenceSettingResponse updateVideoConferenceSettingWithOptions(String conferenceId, UpdateVideoConferenceSettingRequest request, UpdateVideoConferenceSettingHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        conferenceId = com.aliyun.openapiutil.Client.getEncodeParam(conferenceId);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.allowUnmuteSelf)) {
+            body.put("allowUnmuteSelf", request.allowUnmuteSelf);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.autoTransferHost)) {
+            body.put("autoTransferHost", request.autoTransferHost);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.forbiddenShareScreen)) {
+            body.put("forbiddenShareScreen", request.forbiddenShareScreen);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.lockConference)) {
+            body.put("lockConference", request.lockConference);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.muteAll)) {
+            body.put("muteAll", request.muteAll);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.onlyInternalEmployeesJoin)) {
+            body.put("onlyInternalEmployeesJoin", request.onlyInternalEmployeesJoin);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UpdateVideoConferenceSetting", "conference_1.0", "HTTP", "PUT", "AK", "/v1.0/conference/videoConferences/" + conferenceId + "", "json", req, runtime), new UpdateVideoConferenceSettingResponse());
+    }
 }

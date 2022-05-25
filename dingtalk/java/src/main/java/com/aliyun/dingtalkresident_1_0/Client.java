@@ -243,6 +243,22 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public CreateSpaceResponse createSpaceWithOptions(CreateSpaceRequest request, CreateSpaceHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.billingArea)) {
+            body.put("billingArea", request.billingArea);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.buildingArea)) {
+            body.put("buildingArea", request.buildingArea);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.floor)) {
+            body.put("floor", request.floor);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.houseState)) {
+            body.put("houseState", request.houseState);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.name)) {
             body.put("name", request.name);
         }
@@ -718,6 +734,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("PagePointHistory", "resident_1.0", "HTTP", "GET", "AK", "/v1.0/resident/points/records", "json", req, runtime), new PagePointHistoryResponse());
     }
 
+    public RemoveResidentMemberResponse removeResidentMember(RemoveResidentMemberRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        RemoveResidentMemberHeaders headers = new RemoveResidentMemberHeaders();
+        return this.removeResidentMemberWithOptions(request, headers, runtime);
+    }
+
+    public RemoveResidentMemberResponse removeResidentMemberWithOptions(RemoveResidentMemberRequest request, RemoveResidentMemberHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deptId)) {
+            body.put("deptId", request.deptId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("RemoveResidentMember", "resident_1.0", "HTTP", "POST", "AK", "/v1.0/resident/members/remove", "json", req, runtime), new RemoveResidentMemberResponse());
+    }
+
     public RemoveResidentUserResponse removeResidentUser(RemoveResidentUserRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         RemoveResidentUserHeaders headers = new RemoveResidentUserHeaders();
@@ -928,16 +977,40 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("address", request.address);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.buildingArea)) {
+            body.put("buildingArea", request.buildingArea);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.cityName)) {
+            body.put("cityName", request.cityName);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.communityType)) {
             body.put("communityType", request.communityType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.countyName)) {
+            body.put("countyName", request.countyName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.location)) {
+            body.put("location", request.location);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.name)) {
             body.put("name", request.name);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.provName)) {
+            body.put("provName", request.provName);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.state)) {
             body.put("state", request.state);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.telephone)) {
+            body.put("telephone", request.telephone);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();

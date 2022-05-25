@@ -4,6 +4,22 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateSpaceRequest extends TeaModel {
+    // 仅当tag未房屋时有用
+    @NameInMap("billingArea")
+    public Float billingArea;
+
+    // 仅当tag未房屋时有用
+    @NameInMap("buildingArea")
+    public Float buildingArea;
+
+    // 仅当tag未房屋时有用
+    @NameInMap("floor")
+    public String floor;
+
+    // 仅当tag未房屋时有用
+    @NameInMap("houseState")
+    public Long houseState;
+
     // 空间名称，如A栋，二单元，406室等
     @NameInMap("name")
     public String name;
@@ -23,6 +39,38 @@ public class CreateSpaceRequest extends TeaModel {
     public static CreateSpaceRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateSpaceRequest self = new CreateSpaceRequest();
         return TeaModel.build(map, self);
+    }
+
+    public CreateSpaceRequest setBillingArea(Float billingArea) {
+        this.billingArea = billingArea;
+        return this;
+    }
+    public Float getBillingArea() {
+        return this.billingArea;
+    }
+
+    public CreateSpaceRequest setBuildingArea(Float buildingArea) {
+        this.buildingArea = buildingArea;
+        return this;
+    }
+    public Float getBuildingArea() {
+        return this.buildingArea;
+    }
+
+    public CreateSpaceRequest setFloor(String floor) {
+        this.floor = floor;
+        return this;
+    }
+    public String getFloor() {
+        return this.floor;
+    }
+
+    public CreateSpaceRequest setHouseState(Long houseState) {
+        this.houseState = houseState;
+        return this;
+    }
+    public Long getHouseState() {
+        return this.houseState;
     }
 
     public CreateSpaceRequest setName(String name) {

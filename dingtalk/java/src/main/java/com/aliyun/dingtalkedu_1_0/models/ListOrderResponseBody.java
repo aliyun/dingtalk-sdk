@@ -55,6 +55,9 @@ public class ListOrderResponseBody extends TeaModel {
         @NameInMap("payTime")
         public Long payTime;
 
+        @NameInMap("refundNo")
+        public String refundNo;
+
         @NameInMap("scene")
         public Long scene;
 
@@ -129,6 +132,14 @@ public class ListOrderResponseBody extends TeaModel {
         }
         public Long getPayTime() {
             return this.payTime;
+        }
+
+        public ListOrderResponseBodyList setRefundNo(String refundNo) {
+            this.refundNo = refundNo;
+            return this;
+        }
+        public String getRefundNo() {
+            return this.refundNo;
         }
 
         public ListOrderResponseBodyList setScene(Long scene) {
