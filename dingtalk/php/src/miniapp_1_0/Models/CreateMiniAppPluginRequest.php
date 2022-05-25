@@ -21,6 +21,11 @@ class CreateMiniAppPluginRequest extends Model
     /**
      * @var string
      */
+    public $bundleId;
+
+    /**
+     * @var string
+     */
     public $desc;
 
     /**
@@ -33,11 +38,12 @@ class CreateMiniAppPluginRequest extends Model
      */
     public $name;
     protected $_name = [
-        'bizId'   => 'bizId',
-        'bizType' => 'bizType',
-        'desc'    => 'desc',
-        'icon'    => 'icon',
-        'name'    => 'name',
+        'bizId'    => 'bizId',
+        'bizType'  => 'bizType',
+        'bundleId' => 'bundleId',
+        'desc'     => 'desc',
+        'icon'     => 'icon',
+        'name'     => 'name',
     ];
 
     public function validate()
@@ -52,6 +58,9 @@ class CreateMiniAppPluginRequest extends Model
         }
         if (null !== $this->bizType) {
             $res['bizType'] = $this->bizType;
+        }
+        if (null !== $this->bundleId) {
+            $res['bundleId'] = $this->bundleId;
         }
         if (null !== $this->desc) {
             $res['desc'] = $this->desc;
@@ -79,6 +88,9 @@ class CreateMiniAppPluginRequest extends Model
         }
         if (isset($map['bizType'])) {
             $model->bizType = $map['bizType'];
+        }
+        if (isset($map['bundleId'])) {
+            $model->bundleId = $map['bundleId'];
         }
         if (isset($map['desc'])) {
             $model->desc = $map['desc'];

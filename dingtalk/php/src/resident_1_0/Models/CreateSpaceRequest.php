@@ -9,6 +9,34 @@ use AlibabaCloud\Tea\Model;
 class CreateSpaceRequest extends Model
 {
     /**
+     * @description 仅当tag未房屋时有用
+     *
+     * @var float
+     */
+    public $billingArea;
+
+    /**
+     * @description 仅当tag未房屋时有用
+     *
+     * @var float
+     */
+    public $buildingArea;
+
+    /**
+     * @description 仅当tag未房屋时有用
+     *
+     * @var string
+     */
+    public $floor;
+
+    /**
+     * @description 仅当tag未房屋时有用
+     *
+     * @var int
+     */
+    public $houseState;
+
+    /**
      * @description 空间名称，如A栋，二单元，406室等
      *
      * @var string
@@ -36,6 +64,10 @@ class CreateSpaceRequest extends Model
      */
     public $type;
     protected $_name = [
+        'billingArea'  => 'billingArea',
+        'buildingArea' => 'buildingArea',
+        'floor'        => 'floor',
+        'houseState'   => 'houseState',
         'name'         => 'name',
         'parentDeptId' => 'parentDeptId',
         'tagCode'      => 'tagCode',
@@ -49,6 +81,18 @@ class CreateSpaceRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->billingArea) {
+            $res['billingArea'] = $this->billingArea;
+        }
+        if (null !== $this->buildingArea) {
+            $res['buildingArea'] = $this->buildingArea;
+        }
+        if (null !== $this->floor) {
+            $res['floor'] = $this->floor;
+        }
+        if (null !== $this->houseState) {
+            $res['houseState'] = $this->houseState;
+        }
         if (null !== $this->name) {
             $res['name'] = $this->name;
         }
@@ -73,6 +117,18 @@ class CreateSpaceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['billingArea'])) {
+            $model->billingArea = $map['billingArea'];
+        }
+        if (isset($map['buildingArea'])) {
+            $model->buildingArea = $map['buildingArea'];
+        }
+        if (isset($map['floor'])) {
+            $model->floor = $map['floor'];
+        }
+        if (isset($map['houseState'])) {
+            $model->houseState = $map['houseState'];
+        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }

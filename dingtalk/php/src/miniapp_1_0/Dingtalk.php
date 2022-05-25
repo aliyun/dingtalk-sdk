@@ -80,6 +80,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->bizType)) {
             @$body['bizType'] = $request->bizType;
         }
+        if (!Utils::isUnset($request->bundleId)) {
+            @$body['bundleId'] = $request->bundleId;
+        }
         if (!Utils::isUnset($request->desc)) {
             @$body['desc'] = $request->desc;
         }
@@ -133,6 +136,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->bizType)) {
             @$body['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->bundleId)) {
+            @$body['bundleId'] = $request->bundleId;
         }
         if (!Utils::isUnset($request->desc)) {
             @$body['desc'] = $request->desc;

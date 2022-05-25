@@ -44,6 +44,11 @@ class list_ extends Model
     public $payTime;
 
     /**
+     * @var string
+     */
+    public $refundNo;
+
+    /**
      * @var int
      */
     public $scene;
@@ -75,6 +80,7 @@ class list_ extends Model
         'endTime'      => 'endTime',
         'orderNo'      => 'orderNo',
         'payTime'      => 'payTime',
+        'refundNo'     => 'refundNo',
         'scene'        => 'scene',
         'startTime'    => 'startTime',
         'status'       => 'status',
@@ -109,6 +115,9 @@ class list_ extends Model
         }
         if (null !== $this->payTime) {
             $res['payTime'] = $this->payTime;
+        }
+        if (null !== $this->refundNo) {
+            $res['refundNo'] = $this->refundNo;
         }
         if (null !== $this->scene) {
             $res['scene'] = $this->scene;
@@ -157,6 +166,9 @@ class list_ extends Model
         }
         if (isset($map['payTime'])) {
             $model->payTime = $map['payTime'];
+        }
+        if (isset($map['refundNo'])) {
+            $model->refundNo = $map['refundNo'];
         }
         if (isset($map['scene'])) {
             $model->scene = $map['scene'];

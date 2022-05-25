@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddDeviceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddSchoolConfigHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddSchoolConfigRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddSchoolConfigResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchCreateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchCreateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchCreateResponse;
@@ -331,6 +334,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return AddDeviceResponse::fromMap($this->doROARequest('AddDevice', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/devices', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param AddSchoolConfigRequest $request
+     *
+     * @return AddSchoolConfigResponse
+     */
+    public function addSchoolConfig($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddSchoolConfigHeaders([]);
+
+        return $this->addSchoolConfigWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddSchoolConfigRequest $request
+     * @param AddSchoolConfigHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return AddSchoolConfigResponse
+     */
+    public function addSchoolConfigWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$body['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->operatorName)) {
+            @$body['operatorName'] = $request->operatorName;
+        }
+        if (!Utils::isUnset($request->temperatureUpLimit)) {
+            @$body['temperatureUpLimit'] = $request->temperatureUpLimit;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddSchoolConfigResponse::fromMap($this->doROARequest('AddSchoolConfig', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/schools/configurations', 'json', $req, $runtime));
     }
 
     /**

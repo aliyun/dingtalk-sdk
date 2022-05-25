@@ -37,6 +37,9 @@ use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StopStreamOutRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StopStreamOutResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateVideoConferenceExtInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateVideoConferenceExtInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateVideoConferenceSettingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateVideoConferenceSettingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateVideoConferenceSettingResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -586,5 +589,65 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateVideoConferenceExtInfoResponse::fromMap($this->doROARequest('UpdateVideoConferenceExtInfo', 'conference_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/conference/videoConferences/' . $conferenceId . '/extInfo', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                              $conferenceId
+     * @param UpdateVideoConferenceSettingRequest $request
+     *
+     * @return UpdateVideoConferenceSettingResponse
+     */
+    public function updateVideoConferenceSetting($conferenceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateVideoConferenceSettingHeaders([]);
+
+        return $this->updateVideoConferenceSettingWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                              $conferenceId
+     * @param UpdateVideoConferenceSettingRequest $request
+     * @param UpdateVideoConferenceSettingHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return UpdateVideoConferenceSettingResponse
+     */
+    public function updateVideoConferenceSettingWithOptions($conferenceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
+        $body         = [];
+        if (!Utils::isUnset($request->allowUnmuteSelf)) {
+            @$body['allowUnmuteSelf'] = $request->allowUnmuteSelf;
+        }
+        if (!Utils::isUnset($request->autoTransferHost)) {
+            @$body['autoTransferHost'] = $request->autoTransferHost;
+        }
+        if (!Utils::isUnset($request->forbiddenShareScreen)) {
+            @$body['forbiddenShareScreen'] = $request->forbiddenShareScreen;
+        }
+        if (!Utils::isUnset($request->lockConference)) {
+            @$body['lockConference'] = $request->lockConference;
+        }
+        if (!Utils::isUnset($request->muteAll)) {
+            @$body['muteAll'] = $request->muteAll;
+        }
+        if (!Utils::isUnset($request->onlyInternalEmployeesJoin)) {
+            @$body['onlyInternalEmployeesJoin'] = $request->onlyInternalEmployeesJoin;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateVideoConferenceSettingResponse::fromMap($this->doROARequest('UpdateVideoConferenceSetting', 'conference_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/conference/videoConferences/' . $conferenceId . '', 'json', $req, $runtime));
     }
 }

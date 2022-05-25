@@ -64,6 +64,9 @@ use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListUncheckUsersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\PagePointHistoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\PagePointHistoryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\PagePointHistoryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\RemoveResidentMemberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\RemoveResidentMemberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\RemoveResidentMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\RemoveResidentUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\RemoveResidentUserRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\RemoveResidentUserResponse;
@@ -392,6 +395,18 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->billingArea)) {
+            @$body['billingArea'] = $request->billingArea;
+        }
+        if (!Utils::isUnset($request->buildingArea)) {
+            @$body['buildingArea'] = $request->buildingArea;
+        }
+        if (!Utils::isUnset($request->floor)) {
+            @$body['floor'] = $request->floor;
+        }
+        if (!Utils::isUnset($request->houseState)) {
+            @$body['houseState'] = $request->houseState;
+        }
         if (!Utils::isUnset($request->name)) {
             @$body['name'] = $request->name;
         }
@@ -1032,6 +1047,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param RemoveResidentMemberRequest $request
+     *
+     * @return RemoveResidentMemberResponse
+     */
+    public function removeResidentMember($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RemoveResidentMemberHeaders([]);
+
+        return $this->removeResidentMemberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RemoveResidentMemberRequest $request
+     * @param RemoveResidentMemberHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return RemoveResidentMemberResponse
+     */
+    public function removeResidentMemberWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$body['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return RemoveResidentMemberResponse::fromMap($this->doROARequest('RemoveResidentMember', 'resident_1.0', 'HTTP', 'POST', 'AK', '/v1.0/resident/members/remove', 'json', $req, $runtime));
+    }
+
+    /**
      * @param RemoveResidentUserRequest $request
      *
      * @return RemoveResidentUserResponse
@@ -1307,14 +1367,32 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->address)) {
             @$body['address'] = $request->address;
         }
+        if (!Utils::isUnset($request->buildingArea)) {
+            @$body['buildingArea'] = $request->buildingArea;
+        }
+        if (!Utils::isUnset($request->cityName)) {
+            @$body['cityName'] = $request->cityName;
+        }
         if (!Utils::isUnset($request->communityType)) {
             @$body['communityType'] = $request->communityType;
+        }
+        if (!Utils::isUnset($request->countyName)) {
+            @$body['countyName'] = $request->countyName;
+        }
+        if (!Utils::isUnset($request->location)) {
+            @$body['location'] = $request->location;
         }
         if (!Utils::isUnset($request->name)) {
             @$body['name'] = $request->name;
         }
+        if (!Utils::isUnset($request->provName)) {
+            @$body['provName'] = $request->provName;
+        }
         if (!Utils::isUnset($request->state)) {
             @$body['state'] = $request->state;
+        }
+        if (!Utils::isUnset($request->telephone)) {
+            @$body['telephone'] = $request->telephone;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
