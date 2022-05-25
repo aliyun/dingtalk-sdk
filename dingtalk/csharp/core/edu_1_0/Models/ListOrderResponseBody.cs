@@ -44,6 +44,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public long? PayTime { get; set; }
 
+            [NameInMap("refundNo")]
+            [Validation(Required=false)]
+            public string RefundNo { get; set; }
+
             [NameInMap("scene")]
             [Validation(Required=false)]
             public long? Scene { get; set; }

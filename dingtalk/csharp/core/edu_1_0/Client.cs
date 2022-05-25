@@ -138,6 +138,86 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             return TeaModel.ToObject<AddDeviceResponse>(await DoROARequestAsync("AddDevice", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/devices", "json", req, runtime));
         }
 
+        public AddSchoolConfigResponse AddSchoolConfig(AddSchoolConfigRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddSchoolConfigHeaders headers = new AddSchoolConfigHeaders();
+            return AddSchoolConfigWithOptions(request, headers, runtime);
+        }
+
+        public async Task<AddSchoolConfigResponse> AddSchoolConfigAsync(AddSchoolConfigRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddSchoolConfigHeaders headers = new AddSchoolConfigHeaders();
+            return await AddSchoolConfigWithOptionsAsync(request, headers, runtime);
+        }
+
+        public AddSchoolConfigResponse AddSchoolConfigWithOptions(AddSchoolConfigRequest request, AddSchoolConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                body["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorName))
+            {
+                body["operatorName"] = request.OperatorName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemperatureUpLimit))
+            {
+                body["temperatureUpLimit"] = request.TemperatureUpLimit;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<AddSchoolConfigResponse>(DoROARequest("AddSchoolConfig", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/schools/configurations", "json", req, runtime));
+        }
+
+        public async Task<AddSchoolConfigResponse> AddSchoolConfigWithOptionsAsync(AddSchoolConfigRequest request, AddSchoolConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                body["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorName))
+            {
+                body["operatorName"] = request.OperatorName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemperatureUpLimit))
+            {
+                body["temperatureUpLimit"] = request.TemperatureUpLimit;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<AddSchoolConfigResponse>(await DoROARequestAsync("AddSchoolConfig", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/schools/configurations", "json", req, runtime));
+        }
+
         public BatchCreateResponse BatchCreate(BatchCreateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

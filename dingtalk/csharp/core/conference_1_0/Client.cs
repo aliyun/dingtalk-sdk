@@ -878,5 +878,111 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<UpdateVideoConferenceExtInfoResponse>(await DoROARequestAsync("UpdateVideoConferenceExtInfo", "conference_1.0", "HTTP", "PUT", "AK", "/v1.0/conference/videoConferences/" + conferenceId + "/extInfo", "json", req, runtime));
         }
 
+        public UpdateVideoConferenceSettingResponse UpdateVideoConferenceSetting(string conferenceId, UpdateVideoConferenceSettingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateVideoConferenceSettingHeaders headers = new UpdateVideoConferenceSettingHeaders();
+            return UpdateVideoConferenceSettingWithOptions(conferenceId, request, headers, runtime);
+        }
+
+        public async Task<UpdateVideoConferenceSettingResponse> UpdateVideoConferenceSettingAsync(string conferenceId, UpdateVideoConferenceSettingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateVideoConferenceSettingHeaders headers = new UpdateVideoConferenceSettingHeaders();
+            return await UpdateVideoConferenceSettingWithOptionsAsync(conferenceId, request, headers, runtime);
+        }
+
+        public UpdateVideoConferenceSettingResponse UpdateVideoConferenceSettingWithOptions(string conferenceId, UpdateVideoConferenceSettingRequest request, UpdateVideoConferenceSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            conferenceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(conferenceId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AllowUnmuteSelf))
+            {
+                body["allowUnmuteSelf"] = request.AllowUnmuteSelf;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AutoTransferHost))
+            {
+                body["autoTransferHost"] = request.AutoTransferHost;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ForbiddenShareScreen))
+            {
+                body["forbiddenShareScreen"] = request.ForbiddenShareScreen;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LockConference))
+            {
+                body["lockConference"] = request.LockConference;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MuteAll))
+            {
+                body["muteAll"] = request.MuteAll;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnlyInternalEmployeesJoin))
+            {
+                body["onlyInternalEmployeesJoin"] = request.OnlyInternalEmployeesJoin;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateVideoConferenceSettingResponse>(DoROARequest("UpdateVideoConferenceSetting", "conference_1.0", "HTTP", "PUT", "AK", "/v1.0/conference/videoConferences/" + conferenceId, "json", req, runtime));
+        }
+
+        public async Task<UpdateVideoConferenceSettingResponse> UpdateVideoConferenceSettingWithOptionsAsync(string conferenceId, UpdateVideoConferenceSettingRequest request, UpdateVideoConferenceSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            conferenceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(conferenceId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AllowUnmuteSelf))
+            {
+                body["allowUnmuteSelf"] = request.AllowUnmuteSelf;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AutoTransferHost))
+            {
+                body["autoTransferHost"] = request.AutoTransferHost;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ForbiddenShareScreen))
+            {
+                body["forbiddenShareScreen"] = request.ForbiddenShareScreen;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LockConference))
+            {
+                body["lockConference"] = request.LockConference;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MuteAll))
+            {
+                body["muteAll"] = request.MuteAll;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnlyInternalEmployeesJoin))
+            {
+                body["onlyInternalEmployeesJoin"] = request.OnlyInternalEmployeesJoin;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateVideoConferenceSettingResponse>(await DoROARequestAsync("UpdateVideoConferenceSetting", "conference_1.0", "HTTP", "PUT", "AK", "/v1.0/conference/videoConferences/" + conferenceId, "json", req, runtime));
+        }
+
     }
 }

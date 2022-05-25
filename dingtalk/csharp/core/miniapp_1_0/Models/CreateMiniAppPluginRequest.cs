@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0.Models
         [Validation(Required=false)]
         public int? BizType { get; set; }
 
+        [NameInMap("bundleId")]
+        [Validation(Required=false)]
+        public string BundleId { get; set; }
+
         [NameInMap("desc")]
         [Validation(Required=false)]
         public string Desc { get; set; }

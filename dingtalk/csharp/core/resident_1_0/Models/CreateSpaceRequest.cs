@@ -10,6 +10,34 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
 {
     public class CreateSpaceRequest : TeaModel {
         /// <summary>
+        /// 仅当tag未房屋时有用
+        /// </summary>
+        [NameInMap("billingArea")]
+        [Validation(Required=false)]
+        public float? BillingArea { get; set; }
+
+        /// <summary>
+        /// 仅当tag未房屋时有用
+        /// </summary>
+        [NameInMap("buildingArea")]
+        [Validation(Required=false)]
+        public float? BuildingArea { get; set; }
+
+        /// <summary>
+        /// 仅当tag未房屋时有用
+        /// </summary>
+        [NameInMap("floor")]
+        [Validation(Required=false)]
+        public string Floor { get; set; }
+
+        /// <summary>
+        /// 仅当tag未房屋时有用
+        /// </summary>
+        [NameInMap("houseState")]
+        [Validation(Required=false)]
+        public long? HouseState { get; set; }
+
+        /// <summary>
         /// 空间名称，如A栋，二单元，406室等
         /// </summary>
         [NameInMap("name")]

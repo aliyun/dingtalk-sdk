@@ -500,6 +500,22 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BillingArea))
+            {
+                body["billingArea"] = request.BillingArea;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BuildingArea))
+            {
+                body["buildingArea"] = request.BuildingArea;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Floor))
+            {
+                body["floor"] = request.Floor;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HouseState))
+            {
+                body["houseState"] = request.HouseState;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
                 body["name"] = request.Name;
@@ -537,6 +553,22 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BillingArea))
+            {
+                body["billingArea"] = request.BillingArea;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BuildingArea))
+            {
+                body["buildingArea"] = request.BuildingArea;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Floor))
+            {
+                body["floor"] = request.Floor;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HouseState))
+            {
+                body["houseState"] = request.HouseState;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
                 body["name"] = request.Name;
@@ -1540,6 +1572,78 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<PagePointHistoryResponse>(await DoROARequestAsync("PagePointHistory", "resident_1.0", "HTTP", "GET", "AK", "/v1.0/resident/points/records", "json", req, runtime));
         }
 
+        public RemoveResidentMemberResponse RemoveResidentMember(RemoveResidentMemberRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RemoveResidentMemberHeaders headers = new RemoveResidentMemberHeaders();
+            return RemoveResidentMemberWithOptions(request, headers, runtime);
+        }
+
+        public async Task<RemoveResidentMemberResponse> RemoveResidentMemberAsync(RemoveResidentMemberRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RemoveResidentMemberHeaders headers = new RemoveResidentMemberHeaders();
+            return await RemoveResidentMemberWithOptionsAsync(request, headers, runtime);
+        }
+
+        public RemoveResidentMemberResponse RemoveResidentMemberWithOptions(RemoveResidentMemberRequest request, RemoveResidentMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<RemoveResidentMemberResponse>(DoROARequest("RemoveResidentMember", "resident_1.0", "HTTP", "POST", "AK", "/v1.0/resident/members/remove", "json", req, runtime));
+        }
+
+        public async Task<RemoveResidentMemberResponse> RemoveResidentMemberWithOptionsAsync(RemoveResidentMemberRequest request, RemoveResidentMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<RemoveResidentMemberResponse>(await DoROARequestAsync("RemoveResidentMember", "resident_1.0", "HTTP", "POST", "AK", "/v1.0/resident/members/remove", "json", req, runtime));
+        }
+
         public RemoveResidentUserResponse RemoveResidentUser(RemoveResidentUserRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1986,17 +2090,41 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             {
                 body["address"] = request.Address;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BuildingArea))
+            {
+                body["buildingArea"] = request.BuildingArea;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CityName))
+            {
+                body["cityName"] = request.CityName;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CommunityType))
             {
                 body["communityType"] = request.CommunityType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CountyName))
+            {
+                body["countyName"] = request.CountyName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location))
+            {
+                body["location"] = request.Location;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
                 body["name"] = request.Name;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProvName))
+            {
+                body["provName"] = request.ProvName;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.State))
             {
                 body["state"] = request.State;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Telephone))
+            {
+                body["telephone"] = request.Telephone;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -2023,17 +2151,41 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             {
                 body["address"] = request.Address;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BuildingArea))
+            {
+                body["buildingArea"] = request.BuildingArea;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CityName))
+            {
+                body["cityName"] = request.CityName;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CommunityType))
             {
                 body["communityType"] = request.CommunityType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CountyName))
+            {
+                body["countyName"] = request.CountyName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location))
+            {
+                body["location"] = request.Location;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
                 body["name"] = request.Name;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProvName))
+            {
+                body["provName"] = request.ProvName;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.State))
             {
                 body["state"] = request.State;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Telephone))
+            {
+                body["telephone"] = request.Telephone;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
