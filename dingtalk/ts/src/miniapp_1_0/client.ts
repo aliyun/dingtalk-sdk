@@ -32,6 +32,7 @@ export class CreateMiniAppHeaders extends $tea.Model {
 export class CreateMiniAppRequest extends $tea.Model {
   bizId?: string;
   bizType?: number;
+  bundleId?: string;
   desc?: string;
   icon?: string;
   name?: string;
@@ -39,6 +40,7 @@ export class CreateMiniAppRequest extends $tea.Model {
     return {
       bizId: 'bizId',
       bizType: 'bizType',
+      bundleId: 'bundleId',
       desc: 'desc',
       icon: 'icon',
       name: 'name',
@@ -49,6 +51,7 @@ export class CreateMiniAppRequest extends $tea.Model {
     return {
       bizId: 'string',
       bizType: 'number',
+      bundleId: 'string',
       desc: 'string',
       icon: 'string',
       name: 'string',
@@ -126,6 +129,7 @@ export class CreateMiniAppPluginHeaders extends $tea.Model {
 export class CreateMiniAppPluginRequest extends $tea.Model {
   bizId?: string;
   bizType?: number;
+  bundleId?: string;
   desc?: string;
   icon?: string;
   name?: string;
@@ -133,6 +137,7 @@ export class CreateMiniAppPluginRequest extends $tea.Model {
     return {
       bizId: 'bizId',
       bizType: 'bizType',
+      bundleId: 'bundleId',
       desc: 'desc',
       icon: 'icon',
       name: 'name',
@@ -143,6 +148,7 @@ export class CreateMiniAppPluginRequest extends $tea.Model {
     return {
       bizId: 'string',
       bizType: 'number',
+      bundleId: 'string',
       desc: 'string',
       icon: 'string',
       name: 'string',
@@ -947,6 +953,10 @@ export default class Client extends OpenApi {
       body["bizType"] = request.bizType;
     }
 
+    if (!Util.isUnset(request.bundleId)) {
+      body["bundleId"] = request.bundleId;
+    }
+
     if (!Util.isUnset(request.desc)) {
       body["desc"] = request.desc;
     }
@@ -990,6 +1000,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.bizType)) {
       body["bizType"] = request.bizType;
+    }
+
+    if (!Util.isUnset(request.bundleId)) {
+      body["bundleId"] = request.bundleId;
     }
 
     if (!Util.isUnset(request.desc)) {

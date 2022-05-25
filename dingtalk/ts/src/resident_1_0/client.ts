@@ -469,12 +469,20 @@ export class CreateSpaceHeaders extends $tea.Model {
 }
 
 export class CreateSpaceRequest extends $tea.Model {
+  billingArea?: number;
+  buildingArea?: number;
+  floor?: string;
+  houseState?: number;
   name?: string;
   parentDeptId?: string;
   tagCode?: string;
   type?: string;
   static names(): { [key: string]: string } {
     return {
+      billingArea: 'billingArea',
+      buildingArea: 'buildingArea',
+      floor: 'floor',
+      houseState: 'houseState',
       name: 'name',
       parentDeptId: 'parentDeptId',
       tagCode: 'tagCode',
@@ -484,6 +492,10 @@ export class CreateSpaceRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      billingArea: 'number',
+      buildingArea: 'number',
+      floor: 'string',
+      houseState: 'number',
       name: 'string',
       parentDeptId: 'string',
       tagCode: 'string',
@@ -1789,6 +1801,91 @@ export class PagePointHistoryResponse extends $tea.Model {
   }
 }
 
+export class RemoveResidentMemberHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RemoveResidentMemberRequest extends $tea.Model {
+  deptId?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RemoveResidentMemberResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RemoveResidentMemberResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: RemoveResidentMemberResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: RemoveResidentMemberResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RemoveResidentUserHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2262,24 +2359,42 @@ export class UpdateResidentInfoHeaders extends $tea.Model {
 
 export class UpdateResidentInfoRequest extends $tea.Model {
   address?: string;
+  buildingArea?: number;
+  cityName?: string;
   communityType?: number;
+  countyName?: string;
+  location?: string;
   name?: string;
+  provName?: string;
   state?: number;
+  telephone?: string;
   static names(): { [key: string]: string } {
     return {
       address: 'address',
+      buildingArea: 'buildingArea',
+      cityName: 'cityName',
       communityType: 'communityType',
+      countyName: 'countyName',
+      location: 'location',
       name: 'name',
+      provName: 'provName',
       state: 'state',
+      telephone: 'telephone',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       address: 'string',
+      buildingArea: 'number',
+      cityName: 'string',
       communityType: 'number',
+      countyName: 'string',
+      location: 'string',
       name: 'string',
+      provName: 'string',
       state: 'number',
+      telephone: 'string',
     };
   }
 
@@ -3316,6 +3431,22 @@ export default class Client extends OpenApi {
   async createSpaceWithOptions(request: CreateSpaceRequest, headers: CreateSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSpaceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.billingArea)) {
+      body["billingArea"] = request.billingArea;
+    }
+
+    if (!Util.isUnset(request.buildingArea)) {
+      body["buildingArea"] = request.buildingArea;
+    }
+
+    if (!Util.isUnset(request.floor)) {
+      body["floor"] = request.floor;
+    }
+
+    if (!Util.isUnset(request.houseState)) {
+      body["houseState"] = request.houseState;
+    }
+
     if (!Util.isUnset(request.name)) {
       body["name"] = request.name;
     }
@@ -3791,6 +3922,39 @@ export default class Client extends OpenApi {
     return $tea.cast<PagePointHistoryResponse>(await this.doROARequest("PagePointHistory", "resident_1.0", "HTTP", "GET", "AK", `/v1.0/resident/points/records`, "json", req, runtime), new PagePointHistoryResponse({}));
   }
 
+  async removeResidentMember(request: RemoveResidentMemberRequest): Promise<RemoveResidentMemberResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RemoveResidentMemberHeaders({ });
+    return await this.removeResidentMemberWithOptions(request, headers, runtime);
+  }
+
+  async removeResidentMemberWithOptions(request: RemoveResidentMemberRequest, headers: RemoveResidentMemberHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveResidentMemberResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      body["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<RemoveResidentMemberResponse>(await this.doROARequest("RemoveResidentMember", "resident_1.0", "HTTP", "POST", "AK", `/v1.0/resident/members/remove`, "json", req, runtime), new RemoveResidentMemberResponse({}));
+  }
+
   async removeResidentUser(request: RemoveResidentUserRequest): Promise<RemoveResidentUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RemoveResidentUserHeaders({ });
@@ -4001,16 +4165,40 @@ export default class Client extends OpenApi {
       body["address"] = request.address;
     }
 
+    if (!Util.isUnset(request.buildingArea)) {
+      body["buildingArea"] = request.buildingArea;
+    }
+
+    if (!Util.isUnset(request.cityName)) {
+      body["cityName"] = request.cityName;
+    }
+
     if (!Util.isUnset(request.communityType)) {
       body["communityType"] = request.communityType;
+    }
+
+    if (!Util.isUnset(request.countyName)) {
+      body["countyName"] = request.countyName;
+    }
+
+    if (!Util.isUnset(request.location)) {
+      body["location"] = request.location;
     }
 
     if (!Util.isUnset(request.name)) {
       body["name"] = request.name;
     }
 
+    if (!Util.isUnset(request.provName)) {
+      body["provName"] = request.provName;
+    }
+
     if (!Util.isUnset(request.state)) {
       body["state"] = request.state;
+    }
+
+    if (!Util.isUnset(request.telephone)) {
+      body["telephone"] = request.telephone;
     }
 
     let realHeaders : {[key: string ]: string} = { };

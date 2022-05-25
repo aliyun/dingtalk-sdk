@@ -119,6 +119,94 @@ export class AddDeviceResponse extends $tea.Model {
   }
 }
 
+export class AddSchoolConfigHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddSchoolConfigRequest extends $tea.Model {
+  operatorId?: string;
+  operatorName?: string;
+  temperatureUpLimit?: number;
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+      operatorName: 'operatorName',
+      temperatureUpLimit: 'temperatureUpLimit',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+      operatorName: 'string',
+      temperatureUpLimit: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddSchoolConfigResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddSchoolConfigResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AddSchoolConfigResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AddSchoolConfigResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchCreateHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -9527,6 +9615,7 @@ export class ListOrderResponseBodyList extends $tea.Model {
   endTime?: number;
   orderNo?: string;
   payTime?: number;
+  refundNo?: string;
   scene?: number;
   startTime?: number;
   status?: number;
@@ -9541,6 +9630,7 @@ export class ListOrderResponseBodyList extends $tea.Model {
       endTime: 'endTime',
       orderNo: 'orderNo',
       payTime: 'payTime',
+      refundNo: 'refundNo',
       scene: 'scene',
       startTime: 'startTime',
       status: 'status',
@@ -9558,6 +9648,7 @@ export class ListOrderResponseBodyList extends $tea.Model {
       endTime: 'number',
       orderNo: 'string',
       payTime: 'number',
+      refundNo: 'string',
       scene: 'number',
       startTime: 'number',
       status: 'number',
@@ -11287,6 +11378,43 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<AddDeviceResponse>(await this.doROARequest("AddDevice", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/devices`, "json", req, runtime), new AddDeviceResponse({}));
+  }
+
+  async addSchoolConfig(request: AddSchoolConfigRequest): Promise<AddSchoolConfigResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddSchoolConfigHeaders({ });
+    return await this.addSchoolConfigWithOptions(request, headers, runtime);
+  }
+
+  async addSchoolConfigWithOptions(request: AddSchoolConfigRequest, headers: AddSchoolConfigHeaders, runtime: $Util.RuntimeOptions): Promise<AddSchoolConfigResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      body["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.operatorName)) {
+      body["operatorName"] = request.operatorName;
+    }
+
+    if (!Util.isUnset(request.temperatureUpLimit)) {
+      body["temperatureUpLimit"] = request.temperatureUpLimit;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AddSchoolConfigResponse>(await this.doROARequest("AddSchoolConfig", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/schools/configurations`, "json", req, runtime), new AddSchoolConfigResponse({}));
   }
 
   async batchCreate(request: BatchCreateRequest): Promise<BatchCreateResponse> {

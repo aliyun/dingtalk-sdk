@@ -19,6 +19,7 @@ import * as devicemng_1_0 from './devicemng_1_0/client';
 import * as dingmi_1_0 from './dingmi_1_0/client';
 import * as diot_1_0 from './diot_1_0/client';
 import * as doc_1_0 from './doc_1_0/client';
+import * as doc_2_0 from './doc_2_0/client';
 import * as drive_1_0 from './drive_1_0/client';
 import * as edu_1_0 from './edu_1_0/client';
 import * as esign_1_0 from './esign_1_0/client';
@@ -82,6 +83,7 @@ export = {
   dingmi_1_0,
   diot_1_0,
   doc_1_0,
+  doc_2_0,
   drive_1_0,
   edu_1_0,
   esign_1_0,

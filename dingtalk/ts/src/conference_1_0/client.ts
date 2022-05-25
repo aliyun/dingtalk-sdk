@@ -989,6 +989,106 @@ export class UpdateVideoConferenceExtInfoResponse extends $tea.Model {
   }
 }
 
+export class UpdateVideoConferenceSettingHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateVideoConferenceSettingRequest extends $tea.Model {
+  allowUnmuteSelf?: boolean;
+  autoTransferHost?: boolean;
+  forbiddenShareScreen?: boolean;
+  lockConference?: boolean;
+  muteAll?: boolean;
+  onlyInternalEmployeesJoin?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      allowUnmuteSelf: 'allowUnmuteSelf',
+      autoTransferHost: 'autoTransferHost',
+      forbiddenShareScreen: 'forbiddenShareScreen',
+      lockConference: 'lockConference',
+      muteAll: 'muteAll',
+      onlyInternalEmployeesJoin: 'onlyInternalEmployeesJoin',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      allowUnmuteSelf: 'boolean',
+      autoTransferHost: 'boolean',
+      forbiddenShareScreen: 'boolean',
+      lockConference: 'boolean',
+      muteAll: 'boolean',
+      onlyInternalEmployeesJoin: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateVideoConferenceSettingResponseBody extends $tea.Model {
+  case?: string;
+  code?: string;
+  static names(): { [key: string]: string } {
+    return {
+      case: 'case',
+      code: 'code',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      case: 'string',
+      code: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateVideoConferenceSettingResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateVideoConferenceSettingResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateVideoConferenceSettingResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryCloudRecordTextResponseBodyParagraphListSentenceListWordList extends $tea.Model {
   endTime?: number;
   startTime?: number;
@@ -1606,6 +1706,56 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<UpdateVideoConferenceExtInfoResponse>(await this.doROARequest("UpdateVideoConferenceExtInfo", "conference_1.0", "HTTP", "PUT", "AK", `/v1.0/conference/videoConferences/${conferenceId}/extInfo`, "json", req, runtime), new UpdateVideoConferenceExtInfoResponse({}));
+  }
+
+  async updateVideoConferenceSetting(conferenceId: string, request: UpdateVideoConferenceSettingRequest): Promise<UpdateVideoConferenceSettingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateVideoConferenceSettingHeaders({ });
+    return await this.updateVideoConferenceSettingWithOptions(conferenceId, request, headers, runtime);
+  }
+
+  async updateVideoConferenceSettingWithOptions(conferenceId: string, request: UpdateVideoConferenceSettingRequest, headers: UpdateVideoConferenceSettingHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateVideoConferenceSettingResponse> {
+    Util.validateModel(request);
+    conferenceId = OpenApiUtil.getEncodeParam(conferenceId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.allowUnmuteSelf)) {
+      body["allowUnmuteSelf"] = request.allowUnmuteSelf;
+    }
+
+    if (!Util.isUnset(request.autoTransferHost)) {
+      body["autoTransferHost"] = request.autoTransferHost;
+    }
+
+    if (!Util.isUnset(request.forbiddenShareScreen)) {
+      body["forbiddenShareScreen"] = request.forbiddenShareScreen;
+    }
+
+    if (!Util.isUnset(request.lockConference)) {
+      body["lockConference"] = request.lockConference;
+    }
+
+    if (!Util.isUnset(request.muteAll)) {
+      body["muteAll"] = request.muteAll;
+    }
+
+    if (!Util.isUnset(request.onlyInternalEmployeesJoin)) {
+      body["onlyInternalEmployeesJoin"] = request.onlyInternalEmployeesJoin;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateVideoConferenceSettingResponse>(await this.doROARequest("UpdateVideoConferenceSetting", "conference_1.0", "HTTP", "PUT", "AK", `/v1.0/conference/videoConferences/${conferenceId}`, "json", req, runtime), new UpdateVideoConferenceSettingResponse({}));
   }
 
 }
