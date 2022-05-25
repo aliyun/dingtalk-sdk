@@ -111,6 +111,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('AddDevice', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/devices', 'json', req, runtime)
         )
 
+    def add_school_config(
+        self,
+        request: dingtalkedu__1__0_models.AddSchoolConfigRequest,
+    ) -> dingtalkedu__1__0_models.AddSchoolConfigResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.AddSchoolConfigHeaders()
+        return self.add_school_config_with_options(request, headers, runtime)
+
+    async def add_school_config_async(
+        self,
+        request: dingtalkedu__1__0_models.AddSchoolConfigRequest,
+    ) -> dingtalkedu__1__0_models.AddSchoolConfigResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.AddSchoolConfigHeaders()
+        return await self.add_school_config_with_options_async(request, headers, runtime)
+
+    def add_school_config_with_options(
+        self,
+        request: dingtalkedu__1__0_models.AddSchoolConfigRequest,
+        headers: dingtalkedu__1__0_models.AddSchoolConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.AddSchoolConfigResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.operator_name):
+            body['operatorName'] = request.operator_name
+        if not UtilClient.is_unset(request.temperature_up_limit):
+            body['temperatureUpLimit'] = request.temperature_up_limit
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.AddSchoolConfigResponse(),
+            self.do_roarequest('AddSchoolConfig', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/schools/configurations', 'json', req, runtime)
+        )
+
+    async def add_school_config_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.AddSchoolConfigRequest,
+        headers: dingtalkedu__1__0_models.AddSchoolConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.AddSchoolConfigResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.operator_name):
+            body['operatorName'] = request.operator_name
+        if not UtilClient.is_unset(request.temperature_up_limit):
+            body['temperatureUpLimit'] = request.temperature_up_limit
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.AddSchoolConfigResponse(),
+            await self.do_roarequest_async('AddSchoolConfig', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/schools/configurations', 'json', req, runtime)
+        )
+
     def batch_create(
         self,
         request: dingtalkedu__1__0_models.BatchCreateRequest,

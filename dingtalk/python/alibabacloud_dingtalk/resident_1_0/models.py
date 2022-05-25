@@ -855,11 +855,23 @@ class CreateSpaceHeaders(TeaModel):
 class CreateSpaceRequest(TeaModel):
     def __init__(
         self,
+        billing_area: float = None,
+        building_area: float = None,
+        floor: str = None,
+        house_state: int = None,
         name: str = None,
         parent_dept_id: str = None,
         tag_code: str = None,
         type: str = None,
     ):
+        # 仅当tag未房屋时有用
+        self.billing_area = billing_area
+        # 仅当tag未房屋时有用
+        self.building_area = building_area
+        # 仅当tag未房屋时有用
+        self.floor = floor
+        # 仅当tag未房屋时有用
+        self.house_state = house_state
         # 空间名称，如A栋，二单元，406室等
         self.name = name
         # 父节点id，根节点为-7
@@ -878,6 +890,14 @@ class CreateSpaceRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.billing_area is not None:
+            result['billingArea'] = self.billing_area
+        if self.building_area is not None:
+            result['buildingArea'] = self.building_area
+        if self.floor is not None:
+            result['floor'] = self.floor
+        if self.house_state is not None:
+            result['houseState'] = self.house_state
         if self.name is not None:
             result['name'] = self.name
         if self.parent_dept_id is not None:
@@ -890,6 +910,14 @@ class CreateSpaceRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('billingArea') is not None:
+            self.billing_area = m.get('billingArea')
+        if m.get('buildingArea') is not None:
+            self.building_area = m.get('buildingArea')
+        if m.get('floor') is not None:
+            self.floor = m.get('floor')
+        if m.get('houseState') is not None:
+            self.house_state = m.get('houseState')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('parentDeptId') is not None:
@@ -3552,6 +3580,139 @@ class PagePointHistoryResponse(TeaModel):
         return self
 
 
+class RemoveResidentMemberHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RemoveResidentMemberRequest(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        user_id: str = None,
+    ):
+        # 空位标识
+        self.dept_id = dept_id
+        # 人员标识
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class RemoveResidentMemberResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        # 是否成功
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class RemoveResidentMemberResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: RemoveResidentMemberResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = RemoveResidentMemberResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class RemoveResidentUserHeaders(TeaModel):
     def __init__(
         self,
@@ -4366,18 +4527,35 @@ class UpdateResidentInfoRequest(TeaModel):
     def __init__(
         self,
         address: str = None,
+        building_area: float = None,
+        city_name: str = None,
         community_type: int = None,
+        county_name: str = None,
+        location: str = None,
         name: str = None,
+        prov_name: str = None,
         state: int = None,
+        telephone: str = None,
     ):
-        # 小区地址
         self.address = address
-        # 小区类型1纯住宅；2:商住混合；3:办公；4:办公商业混合；5:商业；6:公共场所；7:其他
+        # 建筑面积，组多支持2位小数，总长不超过8位
+        self.building_area = building_area
+        # 市的名字，有值时provName必填
+        self.city_name = city_name
+        # 1纯住宅；2:商住混合；3:办公；4:办公商业混合；5:商业；6:公共场所；7:其他
         self.community_type = community_type
+        # 区/县名，有值是provName，cityName必填
+        self.county_name = county_name
+        # 经纬度，格式：经度,纬度
+        self.location = location
         # 小区名
         self.name = name
+        # 省的名字
+        self.prov_name = prov_name
         # 小区状态：0正常/1关闭/2作废
         self.state = state
+        # 小区服务电话
+        self.telephone = telephone
 
     def validate(self):
         pass
@@ -4390,24 +4568,48 @@ class UpdateResidentInfoRequest(TeaModel):
         result = dict()
         if self.address is not None:
             result['address'] = self.address
+        if self.building_area is not None:
+            result['buildingArea'] = self.building_area
+        if self.city_name is not None:
+            result['cityName'] = self.city_name
         if self.community_type is not None:
             result['communityType'] = self.community_type
+        if self.county_name is not None:
+            result['countyName'] = self.county_name
+        if self.location is not None:
+            result['location'] = self.location
         if self.name is not None:
             result['name'] = self.name
+        if self.prov_name is not None:
+            result['provName'] = self.prov_name
         if self.state is not None:
             result['state'] = self.state
+        if self.telephone is not None:
+            result['telephone'] = self.telephone
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('address') is not None:
             self.address = m.get('address')
+        if m.get('buildingArea') is not None:
+            self.building_area = m.get('buildingArea')
+        if m.get('cityName') is not None:
+            self.city_name = m.get('cityName')
         if m.get('communityType') is not None:
             self.community_type = m.get('communityType')
+        if m.get('countyName') is not None:
+            self.county_name = m.get('countyName')
+        if m.get('location') is not None:
+            self.location = m.get('location')
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('provName') is not None:
+            self.prov_name = m.get('provName')
         if m.get('state') is not None:
             self.state = m.get('state')
+        if m.get('telephone') is not None:
+            self.telephone = m.get('telephone')
         return self
 
 

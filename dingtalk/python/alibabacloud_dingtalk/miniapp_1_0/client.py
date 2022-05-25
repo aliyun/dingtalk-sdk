@@ -51,6 +51,8 @@ class Client(OpenApiClient):
             body['bizId'] = request.biz_id
         if not UtilClient.is_unset(request.biz_type):
             body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.bundle_id):
+            body['bundleId'] = request.bundle_id
         if not UtilClient.is_unset(request.desc):
             body['desc'] = request.desc
         if not UtilClient.is_unset(request.icon):
@@ -83,6 +85,8 @@ class Client(OpenApiClient):
             body['bizId'] = request.biz_id
         if not UtilClient.is_unset(request.biz_type):
             body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.bundle_id):
+            body['bundleId'] = request.bundle_id
         if not UtilClient.is_unset(request.desc):
             body['desc'] = request.desc
         if not UtilClient.is_unset(request.icon):
@@ -131,6 +135,8 @@ class Client(OpenApiClient):
             body['bizId'] = request.biz_id
         if not UtilClient.is_unset(request.biz_type):
             body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.bundle_id):
+            body['bundleId'] = request.bundle_id
         if not UtilClient.is_unset(request.desc):
             body['desc'] = request.desc
         if not UtilClient.is_unset(request.icon):
@@ -163,6 +169,8 @@ class Client(OpenApiClient):
             body['bizId'] = request.biz_id
         if not UtilClient.is_unset(request.biz_type):
             body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.bundle_id):
+            body['bundleId'] = request.bundle_id
         if not UtilClient.is_unset(request.desc):
             body['desc'] = request.desc
         if not UtilClient.is_unset(request.icon):

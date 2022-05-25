@@ -200,6 +200,146 @@ class AddDeviceResponse(TeaModel):
         return self
 
 
+class AddSchoolConfigHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddSchoolConfigRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+        operator_name: str = None,
+        temperature_up_limit: int = None,
+    ):
+        # 123
+        self.operator_id = operator_id
+        # 123
+        self.operator_name = operator_name
+        # 3700
+        self.temperature_up_limit = temperature_up_limit
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.operator_name is not None:
+            result['operatorName'] = self.operator_name
+        if self.temperature_up_limit is not None:
+            result['temperatureUpLimit'] = self.temperature_up_limit
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('operatorName') is not None:
+            self.operator_name = m.get('operatorName')
+        if m.get('temperatureUpLimit') is not None:
+            self.temperature_up_limit = m.get('temperatureUpLimit')
+        return self
+
+
+class AddSchoolConfigResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        # 结果
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class AddSchoolConfigResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AddSchoolConfigResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AddSchoolConfigResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchCreateHeaders(TeaModel):
     def __init__(
         self,
@@ -10169,6 +10309,7 @@ class ListOrderResponseBodyList(TeaModel):
         end_time: int = None,
         order_no: str = None,
         pay_time: int = None,
+        refund_no: str = None,
         scene: int = None,
         start_time: int = None,
         status: int = None,
@@ -10182,6 +10323,7 @@ class ListOrderResponseBodyList(TeaModel):
         self.end_time = end_time
         self.order_no = order_no
         self.pay_time = pay_time
+        self.refund_no = refund_no
         self.scene = scene
         self.start_time = start_time
         self.status = status
@@ -10211,6 +10353,8 @@ class ListOrderResponseBodyList(TeaModel):
             result['orderNo'] = self.order_no
         if self.pay_time is not None:
             result['payTime'] = self.pay_time
+        if self.refund_no is not None:
+            result['refundNo'] = self.refund_no
         if self.scene is not None:
             result['scene'] = self.scene
         if self.start_time is not None:
@@ -10239,6 +10383,8 @@ class ListOrderResponseBodyList(TeaModel):
             self.order_no = m.get('orderNo')
         if m.get('payTime') is not None:
             self.pay_time = m.get('payTime')
+        if m.get('refundNo') is not None:
+            self.refund_no = m.get('refundNo')
         if m.get('scene') is not None:
             self.scene = m.get('scene')
         if m.get('startTime') is not None:

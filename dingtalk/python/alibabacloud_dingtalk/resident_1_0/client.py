@@ -435,6 +435,14 @@ class Client(OpenApiClient):
     ) -> dingtalkresident__1__0_models.CreateSpaceResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.billing_area):
+            body['billingArea'] = request.billing_area
+        if not UtilClient.is_unset(request.building_area):
+            body['buildingArea'] = request.building_area
+        if not UtilClient.is_unset(request.floor):
+            body['floor'] = request.floor
+        if not UtilClient.is_unset(request.house_state):
+            body['houseState'] = request.house_state
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
         if not UtilClient.is_unset(request.parent_dept_id):
@@ -465,6 +473,14 @@ class Client(OpenApiClient):
     ) -> dingtalkresident__1__0_models.CreateSpaceResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.billing_area):
+            body['billingArea'] = request.billing_area
+        if not UtilClient.is_unset(request.building_area):
+            body['buildingArea'] = request.building_area
+        if not UtilClient.is_unset(request.floor):
+            body['floor'] = request.floor
+        if not UtilClient.is_unset(request.house_state):
+            body['houseState'] = request.house_state
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
         if not UtilClient.is_unset(request.parent_dept_id):
@@ -1409,6 +1425,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('PagePointHistory', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/points/records', 'json', req, runtime)
         )
 
+    def remove_resident_member(
+        self,
+        request: dingtalkresident__1__0_models.RemoveResidentMemberRequest,
+    ) -> dingtalkresident__1__0_models.RemoveResidentMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.RemoveResidentMemberHeaders()
+        return self.remove_resident_member_with_options(request, headers, runtime)
+
+    async def remove_resident_member_async(
+        self,
+        request: dingtalkresident__1__0_models.RemoveResidentMemberRequest,
+    ) -> dingtalkresident__1__0_models.RemoveResidentMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.RemoveResidentMemberHeaders()
+        return await self.remove_resident_member_with_options_async(request, headers, runtime)
+
+    def remove_resident_member_with_options(
+        self,
+        request: dingtalkresident__1__0_models.RemoveResidentMemberRequest,
+        headers: dingtalkresident__1__0_models.RemoveResidentMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.RemoveResidentMemberResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.RemoveResidentMemberResponse(),
+            self.do_roarequest('RemoveResidentMember', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/members/remove', 'json', req, runtime)
+        )
+
+    async def remove_resident_member_with_options_async(
+        self,
+        request: dingtalkresident__1__0_models.RemoveResidentMemberRequest,
+        headers: dingtalkresident__1__0_models.RemoveResidentMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.RemoveResidentMemberResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.RemoveResidentMemberResponse(),
+            await self.do_roarequest_async('RemoveResidentMember', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/members/remove', 'json', req, runtime)
+        )
+
     def remove_resident_user(
         self,
         request: dingtalkresident__1__0_models.RemoveResidentUserRequest,
@@ -1807,12 +1891,24 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.address):
             body['address'] = request.address
+        if not UtilClient.is_unset(request.building_area):
+            body['buildingArea'] = request.building_area
+        if not UtilClient.is_unset(request.city_name):
+            body['cityName'] = request.city_name
         if not UtilClient.is_unset(request.community_type):
             body['communityType'] = request.community_type
+        if not UtilClient.is_unset(request.county_name):
+            body['countyName'] = request.county_name
+        if not UtilClient.is_unset(request.location):
+            body['location'] = request.location
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
+        if not UtilClient.is_unset(request.prov_name):
+            body['provName'] = request.prov_name
         if not UtilClient.is_unset(request.state):
             body['state'] = request.state
+        if not UtilClient.is_unset(request.telephone):
+            body['telephone'] = request.telephone
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1837,12 +1933,24 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.address):
             body['address'] = request.address
+        if not UtilClient.is_unset(request.building_area):
+            body['buildingArea'] = request.building_area
+        if not UtilClient.is_unset(request.city_name):
+            body['cityName'] = request.city_name
         if not UtilClient.is_unset(request.community_type):
             body['communityType'] = request.community_type
+        if not UtilClient.is_unset(request.county_name):
+            body['countyName'] = request.county_name
+        if not UtilClient.is_unset(request.location):
+            body['location'] = request.location
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
+        if not UtilClient.is_unset(request.prov_name):
+            body['provName'] = request.prov_name
         if not UtilClient.is_unset(request.state):
             body['state'] = request.state
+        if not UtilClient.is_unset(request.telephone):
+            body['telephone'] = request.telephone
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

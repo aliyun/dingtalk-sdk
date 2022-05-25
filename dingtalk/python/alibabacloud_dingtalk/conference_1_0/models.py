@@ -2036,3 +2036,171 @@ class UpdateVideoConferenceExtInfoResponse(TeaModel):
         return self
 
 
+class UpdateVideoConferenceSettingHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateVideoConferenceSettingRequest(TeaModel):
+    def __init__(
+        self,
+        allow_unmute_self: bool = None,
+        auto_transfer_host: bool = None,
+        forbidden_share_screen: bool = None,
+        lock_conference: bool = None,
+        mute_all: bool = None,
+        only_internal_employees_join: bool = None,
+    ):
+        # 允许参会人员取消静音
+        self.allow_unmute_self = allow_unmute_self
+        # 主持人离会，是否自动转移主持人角色
+        self.auto_transfer_host = auto_transfer_host
+        # 禁止共享屏幕
+        self.forbidden_share_screen = forbidden_share_screen
+        # 锁定会议，禁止邀请入会
+        self.lock_conference = lock_conference
+        # 全员静音
+        self.mute_all = mute_all
+        # 仅允许企业内员工加入会议
+        self.only_internal_employees_join = only_internal_employees_join
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.allow_unmute_self is not None:
+            result['allowUnmuteSelf'] = self.allow_unmute_self
+        if self.auto_transfer_host is not None:
+            result['autoTransferHost'] = self.auto_transfer_host
+        if self.forbidden_share_screen is not None:
+            result['forbiddenShareScreen'] = self.forbidden_share_screen
+        if self.lock_conference is not None:
+            result['lockConference'] = self.lock_conference
+        if self.mute_all is not None:
+            result['muteAll'] = self.mute_all
+        if self.only_internal_employees_join is not None:
+            result['onlyInternalEmployeesJoin'] = self.only_internal_employees_join
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('allowUnmuteSelf') is not None:
+            self.allow_unmute_self = m.get('allowUnmuteSelf')
+        if m.get('autoTransferHost') is not None:
+            self.auto_transfer_host = m.get('autoTransferHost')
+        if m.get('forbiddenShareScreen') is not None:
+            self.forbidden_share_screen = m.get('forbiddenShareScreen')
+        if m.get('lockConference') is not None:
+            self.lock_conference = m.get('lockConference')
+        if m.get('muteAll') is not None:
+            self.mute_all = m.get('muteAll')
+        if m.get('onlyInternalEmployeesJoin') is not None:
+            self.only_internal_employees_join = m.get('onlyInternalEmployeesJoin')
+        return self
+
+
+class UpdateVideoConferenceSettingResponseBody(TeaModel):
+    def __init__(
+        self,
+        case: str = None,
+        code: str = None,
+    ):
+        # 结果详情
+        self.case = case
+        # 返回编码
+        self.code = code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.case is not None:
+            result['case'] = self.case
+        if self.code is not None:
+            result['code'] = self.code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('case') is not None:
+            self.case = m.get('case')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        return self
+
+
+class UpdateVideoConferenceSettingResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateVideoConferenceSettingResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateVideoConferenceSettingResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+

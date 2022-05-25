@@ -42,12 +42,14 @@ class CreateMiniAppRequest(TeaModel):
         self,
         biz_id: str = None,
         biz_type: int = None,
+        bundle_id: str = None,
         desc: str = None,
         icon: str = None,
         name: str = None,
     ):
         self.biz_id = biz_id
         self.biz_type = biz_type
+        self.bundle_id = bundle_id
         self.desc = desc
         self.icon = icon
         self.name = name
@@ -65,6 +67,8 @@ class CreateMiniAppRequest(TeaModel):
             result['bizId'] = self.biz_id
         if self.biz_type is not None:
             result['bizType'] = self.biz_type
+        if self.bundle_id is not None:
+            result['bundleId'] = self.bundle_id
         if self.desc is not None:
             result['desc'] = self.desc
         if self.icon is not None:
@@ -79,6 +83,8 @@ class CreateMiniAppRequest(TeaModel):
             self.biz_id = m.get('bizId')
         if m.get('bizType') is not None:
             self.biz_type = m.get('bizType')
+        if m.get('bundleId') is not None:
+            self.bundle_id = m.get('bundleId')
         if m.get('desc') is not None:
             self.desc = m.get('desc')
         if m.get('icon') is not None:
@@ -191,12 +197,14 @@ class CreateMiniAppPluginRequest(TeaModel):
         self,
         biz_id: str = None,
         biz_type: int = None,
+        bundle_id: str = None,
         desc: str = None,
         icon: str = None,
         name: str = None,
     ):
         self.biz_id = biz_id
         self.biz_type = biz_type
+        self.bundle_id = bundle_id
         self.desc = desc
         self.icon = icon
         self.name = name
@@ -214,6 +222,8 @@ class CreateMiniAppPluginRequest(TeaModel):
             result['bizId'] = self.biz_id
         if self.biz_type is not None:
             result['bizType'] = self.biz_type
+        if self.bundle_id is not None:
+            result['bundleId'] = self.bundle_id
         if self.desc is not None:
             result['desc'] = self.desc
         if self.icon is not None:
@@ -228,6 +238,8 @@ class CreateMiniAppPluginRequest(TeaModel):
             self.biz_id = m.get('bizId')
         if m.get('bizType') is not None:
             self.biz_type = m.get('bizType')
+        if m.get('bundleId') is not None:
+            self.bundle_id = m.get('bundleId')
         if m.get('desc') is not None:
             self.desc = m.get('desc')
         if m.get('icon') is not None:

@@ -838,3 +838,93 @@ class Client(OpenApiClient):
             dingtalkconference__1__0_models.UpdateVideoConferenceExtInfoResponse(),
             await self.do_roarequest_async('UpdateVideoConferenceExtInfo', 'conference_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/conference/videoConferences/{conference_id}/extInfo', 'json', req, runtime)
         )
+
+    def update_video_conference_setting(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.UpdateVideoConferenceSettingRequest,
+    ) -> dingtalkconference__1__0_models.UpdateVideoConferenceSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.UpdateVideoConferenceSettingHeaders()
+        return self.update_video_conference_setting_with_options(conference_id, request, headers, runtime)
+
+    async def update_video_conference_setting_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.UpdateVideoConferenceSettingRequest,
+    ) -> dingtalkconference__1__0_models.UpdateVideoConferenceSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.UpdateVideoConferenceSettingHeaders()
+        return await self.update_video_conference_setting_with_options_async(conference_id, request, headers, runtime)
+
+    def update_video_conference_setting_with_options(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.UpdateVideoConferenceSettingRequest,
+        headers: dingtalkconference__1__0_models.UpdateVideoConferenceSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.UpdateVideoConferenceSettingResponse:
+        UtilClient.validate_model(request)
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
+        body = {}
+        if not UtilClient.is_unset(request.allow_unmute_self):
+            body['allowUnmuteSelf'] = request.allow_unmute_self
+        if not UtilClient.is_unset(request.auto_transfer_host):
+            body['autoTransferHost'] = request.auto_transfer_host
+        if not UtilClient.is_unset(request.forbidden_share_screen):
+            body['forbiddenShareScreen'] = request.forbidden_share_screen
+        if not UtilClient.is_unset(request.lock_conference):
+            body['lockConference'] = request.lock_conference
+        if not UtilClient.is_unset(request.mute_all):
+            body['muteAll'] = request.mute_all
+        if not UtilClient.is_unset(request.only_internal_employees_join):
+            body['onlyInternalEmployeesJoin'] = request.only_internal_employees_join
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.UpdateVideoConferenceSettingResponse(),
+            self.do_roarequest('UpdateVideoConferenceSetting', 'conference_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/conference/videoConferences/{conference_id}', 'json', req, runtime)
+        )
+
+    async def update_video_conference_setting_with_options_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.UpdateVideoConferenceSettingRequest,
+        headers: dingtalkconference__1__0_models.UpdateVideoConferenceSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.UpdateVideoConferenceSettingResponse:
+        UtilClient.validate_model(request)
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
+        body = {}
+        if not UtilClient.is_unset(request.allow_unmute_self):
+            body['allowUnmuteSelf'] = request.allow_unmute_self
+        if not UtilClient.is_unset(request.auto_transfer_host):
+            body['autoTransferHost'] = request.auto_transfer_host
+        if not UtilClient.is_unset(request.forbidden_share_screen):
+            body['forbiddenShareScreen'] = request.forbidden_share_screen
+        if not UtilClient.is_unset(request.lock_conference):
+            body['lockConference'] = request.lock_conference
+        if not UtilClient.is_unset(request.mute_all):
+            body['muteAll'] = request.mute_all
+        if not UtilClient.is_unset(request.only_internal_employees_join):
+            body['onlyInternalEmployeesJoin'] = request.only_internal_employees_join
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.UpdateVideoConferenceSettingResponse(),
+            await self.do_roarequest_async('UpdateVideoConferenceSetting', 'conference_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/conference/videoConferences/{conference_id}', 'json', req, runtime)
+        )
