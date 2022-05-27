@@ -647,6 +647,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DingTalkSecurityCheck', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/securities/check', 'json', req, runtime)
         )
 
+    def get_adjustments(
+        self,
+        request: dingtalkattendance__1__0_models.GetAdjustmentsRequest,
+    ) -> dingtalkattendance__1__0_models.GetAdjustmentsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetAdjustmentsHeaders()
+        return self.get_adjustments_with_options(request, headers, runtime)
+
+    async def get_adjustments_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetAdjustmentsRequest,
+    ) -> dingtalkattendance__1__0_models.GetAdjustmentsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetAdjustmentsHeaders()
+        return await self.get_adjustments_with_options_async(request, headers, runtime)
+
+    def get_adjustments_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.GetAdjustmentsRequest,
+        headers: dingtalkattendance__1__0_models.GetAdjustmentsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetAdjustmentsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetAdjustmentsResponse(),
+            self.do_roarequest('GetAdjustments', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/adjustments', 'json', req, runtime)
+        )
+
+    async def get_adjustments_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetAdjustmentsRequest,
+        headers: dingtalkattendance__1__0_models.GetAdjustmentsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetAdjustmentsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetAdjustmentsResponse(),
+            await self.do_roarequest_async('GetAdjustments', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/adjustments', 'json', req, runtime)
+        )
+
     def get_closing_accounts(
         self,
         request: dingtalkattendance__1__0_models.GetClosingAccountsRequest,
@@ -971,6 +1039,74 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GetOvertimeSettingResponse(),
             await self.do_roarequest_async('GetOvertimeSetting', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/overtimeSettings/query', 'json', req, runtime)
+        )
+
+    def get_simple_overtime_setting(
+        self,
+        request: dingtalkattendance__1__0_models.GetSimpleOvertimeSettingRequest,
+    ) -> dingtalkattendance__1__0_models.GetSimpleOvertimeSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetSimpleOvertimeSettingHeaders()
+        return self.get_simple_overtime_setting_with_options(request, headers, runtime)
+
+    async def get_simple_overtime_setting_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetSimpleOvertimeSettingRequest,
+    ) -> dingtalkattendance__1__0_models.GetSimpleOvertimeSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetSimpleOvertimeSettingHeaders()
+        return await self.get_simple_overtime_setting_with_options_async(request, headers, runtime)
+
+    def get_simple_overtime_setting_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.GetSimpleOvertimeSettingRequest,
+        headers: dingtalkattendance__1__0_models.GetSimpleOvertimeSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetSimpleOvertimeSettingResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetSimpleOvertimeSettingResponse(),
+            self.do_roarequest('GetSimpleOvertimeSetting', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/overtimeSettings', 'json', req, runtime)
+        )
+
+    async def get_simple_overtime_setting_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetSimpleOvertimeSettingRequest,
+        headers: dingtalkattendance__1__0_models.GetSimpleOvertimeSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetSimpleOvertimeSettingResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetSimpleOvertimeSettingResponse(),
+            await self.do_roarequest_async('GetSimpleOvertimeSetting', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/overtimeSettings', 'json', req, runtime)
         )
 
     def get_user_holidays(

@@ -343,6 +343,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetMaxVersion', 'miniapp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/miniapp/apps/maxVersions', 'json', req, runtime)
         )
 
+    def get_mini_app_meta_data(
+        self,
+        request: dingtalkminiapp__1__0_models.GetMiniAppMetaDataRequest,
+    ) -> dingtalkminiapp__1__0_models.GetMiniAppMetaDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminiapp__1__0_models.GetMiniAppMetaDataHeaders()
+        return self.get_mini_app_meta_data_with_options(request, headers, runtime)
+
+    async def get_mini_app_meta_data_async(
+        self,
+        request: dingtalkminiapp__1__0_models.GetMiniAppMetaDataRequest,
+    ) -> dingtalkminiapp__1__0_models.GetMiniAppMetaDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminiapp__1__0_models.GetMiniAppMetaDataHeaders()
+        return await self.get_mini_app_meta_data_with_options_async(request, headers, runtime)
+
+    def get_mini_app_meta_data_with_options(
+        self,
+        request: dingtalkminiapp__1__0_models.GetMiniAppMetaDataRequest,
+        headers: dingtalkminiapp__1__0_models.GetMiniAppMetaDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminiapp__1__0_models.GetMiniAppMetaDataResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.bundle_id):
+            body['bundleId'] = request.bundle_id
+        if not UtilClient.is_unset(request.bundle_id_table_gmt_modified):
+            body['bundleIdTableGmtModified'] = request.bundle_id_table_gmt_modified
+        if not UtilClient.is_unset(request.from_app_name):
+            body['fromAppName'] = request.from_app_name
+        if not UtilClient.is_unset(request.mini_app_id_table_gmt_modified):
+            body['miniAppIdTableGmtModified'] = request.mini_app_id_table_gmt_modified
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkminiapp__1__0_models.GetMiniAppMetaDataResponse(),
+            self.do_roarequest('GetMiniAppMetaData', 'miniapp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/miniapp/apps/metadata', 'json', req, runtime)
+        )
+
+    async def get_mini_app_meta_data_with_options_async(
+        self,
+        request: dingtalkminiapp__1__0_models.GetMiniAppMetaDataRequest,
+        headers: dingtalkminiapp__1__0_models.GetMiniAppMetaDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminiapp__1__0_models.GetMiniAppMetaDataResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.bundle_id):
+            body['bundleId'] = request.bundle_id
+        if not UtilClient.is_unset(request.bundle_id_table_gmt_modified):
+            body['bundleIdTableGmtModified'] = request.bundle_id_table_gmt_modified
+        if not UtilClient.is_unset(request.from_app_name):
+            body['fromAppName'] = request.from_app_name
+        if not UtilClient.is_unset(request.mini_app_id_table_gmt_modified):
+            body['miniAppIdTableGmtModified'] = request.mini_app_id_table_gmt_modified
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkminiapp__1__0_models.GetMiniAppMetaDataResponse(),
+            await self.do_roarequest_async('GetMiniAppMetaData', 'miniapp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/miniapp/apps/metadata', 'json', req, runtime)
+        )
+
     def get_setting_by_mini_app_id(
         self,
         mini_app_id: str,

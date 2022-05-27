@@ -1415,11 +1415,8 @@ class StartCloudRecordRequest(TeaModel):
 class StartCloudRecordResponseBody(TeaModel):
     def __init__(
         self,
-        cause: str = None,
         code: str = None,
     ):
-        # 是否成功
-        self.cause = cause
         # 返回码
         self.code = code
 
@@ -1432,16 +1429,12 @@ class StartCloudRecordResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.cause is not None:
-            result['cause'] = self.cause
         if self.code is not None:
             result['code'] = self.code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('cause') is not None:
-            self.cause = m.get('cause')
         if m.get('code') is not None:
             self.code = m.get('code')
         return self
@@ -1715,11 +1708,8 @@ class StopCloudRecordRequest(TeaModel):
 class StopCloudRecordResponseBody(TeaModel):
     def __init__(
         self,
-        cause: str = None,
         code: str = None,
     ):
-        # 是否成功
-        self.cause = cause
         # 返回码
         self.code = code
 
@@ -1732,16 +1722,12 @@ class StopCloudRecordResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.cause is not None:
-            result['cause'] = self.cause
         if self.code is not None:
             result['code'] = self.code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('cause') is not None:
-            self.cause = m.get('cause')
         if m.get('code') is not None:
             self.code = m.get('code')
         return self
@@ -1862,11 +1848,8 @@ class StopStreamOutRequest(TeaModel):
 class StopStreamOutResponseBody(TeaModel):
     def __init__(
         self,
-        cause: str = None,
         code: str = None,
     ):
-        # 会议密码
-        self.cause = cause
         # conferenceId
         self.code = code
 
@@ -1879,16 +1862,12 @@ class StopStreamOutResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.cause is not None:
-            result['cause'] = self.cause
         if self.code is not None:
             result['code'] = self.code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('cause') is not None:
-            self.cause = m.get('cause')
         if m.get('code') is not None:
             self.code = m.get('code')
         return self

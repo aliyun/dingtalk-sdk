@@ -8815,9 +8815,12 @@ class GetCrmRolePermissionRequest(TeaModel):
     def __init__(
         self,
         biz_type: str = None,
+        resource_id: str = None,
     ):
         # 表单bizType
         self.biz_type = biz_type
+        # 资源id，填表单code
+        self.resource_id = resource_id
 
     def validate(self):
         pass
@@ -8830,12 +8833,16 @@ class GetCrmRolePermissionRequest(TeaModel):
         result = dict()
         if self.biz_type is not None:
             result['bizType'] = self.biz_type
+        if self.resource_id is not None:
+            result['resourceId'] = self.resource_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('bizType') is not None:
             self.biz_type = m.get('bizType')
+        if m.get('resourceId') is not None:
+            self.resource_id = m.get('resourceId')
         return self
 
 

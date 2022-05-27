@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict, List
+from typing import Dict, Any, List
 
 
 class CreateMiniAppHeaders(TeaModel):
@@ -603,6 +603,200 @@ class GetMaxVersionResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetMaxVersionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetMiniAppMetaDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetMiniAppMetaDataRequest(TeaModel):
+    def __init__(
+        self,
+        bundle_id: str = None,
+        bundle_id_table_gmt_modified: Dict[str, Any] = None,
+        from_app_name: str = None,
+        mini_app_id_table_gmt_modified: Dict[str, Any] = None,
+    ):
+        self.bundle_id = bundle_id
+        self.bundle_id_table_gmt_modified = bundle_id_table_gmt_modified
+        self.from_app_name = from_app_name
+        self.mini_app_id_table_gmt_modified = mini_app_id_table_gmt_modified
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.bundle_id is not None:
+            result['bundleId'] = self.bundle_id
+        if self.bundle_id_table_gmt_modified is not None:
+            result['bundleIdTableGmtModified'] = self.bundle_id_table_gmt_modified
+        if self.from_app_name is not None:
+            result['fromAppName'] = self.from_app_name
+        if self.mini_app_id_table_gmt_modified is not None:
+            result['miniAppIdTableGmtModified'] = self.mini_app_id_table_gmt_modified
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bundleId') is not None:
+            self.bundle_id = m.get('bundleId')
+        if m.get('bundleIdTableGmtModified') is not None:
+            self.bundle_id_table_gmt_modified = m.get('bundleIdTableGmtModified')
+        if m.get('fromAppName') is not None:
+            self.from_app_name = m.get('fromAppName')
+        if m.get('miniAppIdTableGmtModified') is not None:
+            self.mini_app_id_table_gmt_modified = m.get('miniAppIdTableGmtModified')
+        return self
+
+
+class GetMiniAppMetaDataResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        data: Dict[str, Any] = None,
+    ):
+        # data
+        self.data = data
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        return self
+
+
+class GetMiniAppMetaDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_open_errcode: int = None,
+        error_msg: str = None,
+        result: GetMiniAppMetaDataResponseBodyResult = None,
+        success: bool = None,
+    ):
+        # receiveTime
+        self.ding_open_errcode = ding_open_errcode
+        # errorMsg
+        self.error_msg = error_msg
+        # result
+        self.result = result
+        # requestId
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_open_errcode is not None:
+            result['dingOpenErrcode'] = self.ding_open_errcode
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingOpenErrcode') is not None:
+            self.ding_open_errcode = m.get('dingOpenErrcode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            temp_model = GetMiniAppMetaDataResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetMiniAppMetaDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetMiniAppMetaDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetMiniAppMetaDataResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

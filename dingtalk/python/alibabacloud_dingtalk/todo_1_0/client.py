@@ -685,12 +685,20 @@ class Client(OpenApiClient):
         UtilClient.validate_model(request)
         union_id = OpenApiUtilClient.get_encode_param(union_id)
         body = {}
+        if not UtilClient.is_unset(request.from_due_time):
+            body['fromDueTime'] = request.from_due_time
         if not UtilClient.is_unset(request.is_done):
             body['isDone'] = request.is_done
         if not UtilClient.is_unset(request.max_results):
             body['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
             body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.role_types):
+            body['roleTypes'] = request.role_types
+        if not UtilClient.is_unset(request.subject):
+            body['subject'] = request.subject
+        if not UtilClient.is_unset(request.to_due_time):
+            body['toDueTime'] = request.to_due_time
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -715,12 +723,20 @@ class Client(OpenApiClient):
         UtilClient.validate_model(request)
         union_id = OpenApiUtilClient.get_encode_param(union_id)
         body = {}
+        if not UtilClient.is_unset(request.from_due_time):
+            body['fromDueTime'] = request.from_due_time
         if not UtilClient.is_unset(request.is_done):
             body['isDone'] = request.is_done
         if not UtilClient.is_unset(request.max_results):
             body['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
             body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.role_types):
+            body['roleTypes'] = request.role_types
+        if not UtilClient.is_unset(request.subject):
+            body['subject'] = request.subject
+        if not UtilClient.is_unset(request.to_due_time):
+            body['toDueTime'] = request.to_due_time
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

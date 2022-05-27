@@ -2677,16 +2677,28 @@ class QueryOrgTodoByUserHeaders(TeaModel):
 class QueryOrgTodoByUserRequest(TeaModel):
     def __init__(
         self,
+        from_due_time: int = None,
         is_done: bool = None,
         max_results: int = None,
         next_token: str = None,
+        role_types: List[List[str]] = None,
+        subject: str = None,
+        to_due_time: int = None,
     ):
+        # 查询从计划完成时间开始
+        self.from_due_time = from_due_time
         # 待办完成状态。
         self.is_done = is_done
         # 每页数量。
         self.max_results = max_results
         # 分页游标。如果一个查询条件一次无法全部返回结果，会返回分页token，下次查询带上该token后会返回后续数据，直到分页token为null表示数据已经全部查询完毕。
         self.next_token = next_token
+        # 查询目标用户角色类型，执行人 | 创建人 | 参与人，可以同时传多个值。如：[["executor"], ["creator"],["participant"]] 或 [["executor", "creator"]]
+        self.role_types = role_types
+        # 待办标题
+        self.subject = subject
+        # 查询到计划完成时间结束
+        self.to_due_time = to_due_time
 
     def validate(self):
         pass
@@ -2697,22 +2709,38 @@ class QueryOrgTodoByUserRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.from_due_time is not None:
+            result['fromDueTime'] = self.from_due_time
         if self.is_done is not None:
             result['isDone'] = self.is_done
         if self.max_results is not None:
             result['maxResults'] = self.max_results
         if self.next_token is not None:
             result['nextToken'] = self.next_token
+        if self.role_types is not None:
+            result['roleTypes'] = self.role_types
+        if self.subject is not None:
+            result['subject'] = self.subject
+        if self.to_due_time is not None:
+            result['toDueTime'] = self.to_due_time
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('fromDueTime') is not None:
+            self.from_due_time = m.get('fromDueTime')
         if m.get('isDone') is not None:
             self.is_done = m.get('isDone')
         if m.get('maxResults') is not None:
             self.max_results = m.get('maxResults')
         if m.get('nextToken') is not None:
             self.next_token = m.get('nextToken')
+        if m.get('roleTypes') is not None:
+            self.role_types = m.get('roleTypes')
+        if m.get('subject') is not None:
+            self.subject = m.get('subject')
+        if m.get('toDueTime') is not None:
+            self.to_due_time = m.get('toDueTime')
         return self
 
 

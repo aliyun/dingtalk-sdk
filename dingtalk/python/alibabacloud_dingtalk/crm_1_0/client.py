@@ -1629,6 +1629,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.biz_type):
             query['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.resource_id):
+            query['resourceId'] = request.resource_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1653,6 +1655,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.biz_type):
             query['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.resource_id):
+            query['resourceId'] = request.resource_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

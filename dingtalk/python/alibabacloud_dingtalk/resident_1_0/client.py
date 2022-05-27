@@ -1133,6 +1133,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetSpacesInfo', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/spaces/query', 'json', req, runtime)
         )
 
+    def list_industry_role_users(
+        self,
+        request: dingtalkresident__1__0_models.ListIndustryRoleUsersRequest,
+    ) -> dingtalkresident__1__0_models.ListIndustryRoleUsersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.ListIndustryRoleUsersHeaders()
+        return self.list_industry_role_users_with_options(request, headers, runtime)
+
+    async def list_industry_role_users_async(
+        self,
+        request: dingtalkresident__1__0_models.ListIndustryRoleUsersRequest,
+    ) -> dingtalkresident__1__0_models.ListIndustryRoleUsersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.ListIndustryRoleUsersHeaders()
+        return await self.list_industry_role_users_with_options_async(request, headers, runtime)
+
+    def list_industry_role_users_with_options(
+        self,
+        request: dingtalkresident__1__0_models.ListIndustryRoleUsersRequest,
+        headers: dingtalkresident__1__0_models.ListIndustryRoleUsersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.ListIndustryRoleUsersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.tag_code):
+            query['tagCode'] = request.tag_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.ListIndustryRoleUsersResponse(),
+            self.do_roarequest('ListIndustryRoleUsers', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/industryRoles/users', 'json', req, runtime)
+        )
+
+    async def list_industry_role_users_with_options_async(
+        self,
+        request: dingtalkresident__1__0_models.ListIndustryRoleUsersRequest,
+        headers: dingtalkresident__1__0_models.ListIndustryRoleUsersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.ListIndustryRoleUsersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.tag_code):
+            query['tagCode'] = request.tag_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.ListIndustryRoleUsersResponse(),
+            await self.do_roarequest_async('ListIndustryRoleUsers', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/industryRoles/users', 'json', req, runtime)
+        )
+
     def list_point_rules(
         self,
         request: dingtalkresident__1__0_models.ListPointRulesRequest,
@@ -1339,6 +1403,70 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkresident__1__0_models.ListUncheckUsersResponse(),
             await self.do_roarequest_async('ListUncheckUsers', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/organizations/noJoinUsers', 'json', req, runtime)
+        )
+
+    def list_user_industry_roles(
+        self,
+        request: dingtalkresident__1__0_models.ListUserIndustryRolesRequest,
+    ) -> dingtalkresident__1__0_models.ListUserIndustryRolesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.ListUserIndustryRolesHeaders()
+        return self.list_user_industry_roles_with_options(request, headers, runtime)
+
+    async def list_user_industry_roles_async(
+        self,
+        request: dingtalkresident__1__0_models.ListUserIndustryRolesRequest,
+    ) -> dingtalkresident__1__0_models.ListUserIndustryRolesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.ListUserIndustryRolesHeaders()
+        return await self.list_user_industry_roles_with_options_async(request, headers, runtime)
+
+    def list_user_industry_roles_with_options(
+        self,
+        request: dingtalkresident__1__0_models.ListUserIndustryRolesRequest,
+        headers: dingtalkresident__1__0_models.ListUserIndustryRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.ListUserIndustryRolesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.ListUserIndustryRolesResponse(),
+            self.do_roarequest('ListUserIndustryRoles', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/users/industryRoles', 'json', req, runtime)
+        )
+
+    async def list_user_industry_roles_with_options_async(
+        self,
+        request: dingtalkresident__1__0_models.ListUserIndustryRolesRequest,
+        headers: dingtalkresident__1__0_models.ListUserIndustryRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.ListUserIndustryRolesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.ListUserIndustryRolesResponse(),
+            await self.do_roarequest_async('ListUserIndustryRoles', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/users/industryRoles', 'json', req, runtime)
         )
 
     def page_point_history(

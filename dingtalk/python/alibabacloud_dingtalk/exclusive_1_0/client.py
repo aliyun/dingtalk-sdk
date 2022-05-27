@@ -1097,6 +1097,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetCommentList', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/publishers/{publisher_id}/comments/list', 'json', req, runtime)
         )
 
+    def get_conf_base_info_by_logical_id(
+        self,
+        request: dingtalkexclusive__1__0_models.GetConfBaseInfoByLogicalIdRequest,
+    ) -> dingtalkexclusive__1__0_models.GetConfBaseInfoByLogicalIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetConfBaseInfoByLogicalIdHeaders()
+        return self.get_conf_base_info_by_logical_id_with_options(request, headers, runtime)
+
+    async def get_conf_base_info_by_logical_id_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetConfBaseInfoByLogicalIdRequest,
+    ) -> dingtalkexclusive__1__0_models.GetConfBaseInfoByLogicalIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetConfBaseInfoByLogicalIdHeaders()
+        return await self.get_conf_base_info_by_logical_id_with_options_async(request, headers, runtime)
+
+    def get_conf_base_info_by_logical_id_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetConfBaseInfoByLogicalIdRequest,
+        headers: dingtalkexclusive__1__0_models.GetConfBaseInfoByLogicalIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetConfBaseInfoByLogicalIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.logical_conference_id):
+            query['logicalConferenceId'] = request.logical_conference_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetConfBaseInfoByLogicalIdResponse(),
+            self.do_roarequest('GetConfBaseInfoByLogicalId', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/conferences', 'json', req, runtime)
+        )
+
+    async def get_conf_base_info_by_logical_id_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetConfBaseInfoByLogicalIdRequest,
+        headers: dingtalkexclusive__1__0_models.GetConfBaseInfoByLogicalIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetConfBaseInfoByLogicalIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.logical_conference_id):
+            query['logicalConferenceId'] = request.logical_conference_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetConfBaseInfoByLogicalIdResponse(),
+            await self.do_roarequest_async('GetConfBaseInfoByLogicalId', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/conferences', 'json', req, runtime)
+        )
+
     def get_conference_detail(
         self,
         conference_id: str,

@@ -2526,6 +2526,167 @@ class GetCommentListResponse(TeaModel):
         return self
 
 
+class GetConfBaseInfoByLogicalIdHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetConfBaseInfoByLogicalIdRequest(TeaModel):
+    def __init__(
+        self,
+        logical_conference_id: str = None,
+    ):
+        # 会议id
+        self.logical_conference_id = logical_conference_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.logical_conference_id is not None:
+            result['logicalConferenceId'] = self.logical_conference_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('logicalConferenceId') is not None:
+            self.logical_conference_id = m.get('logicalConferenceId')
+        return self
+
+
+class GetConfBaseInfoByLogicalIdResponseBody(TeaModel):
+    def __init__(
+        self,
+        conference_id: str = None,
+        logical_conference_id: str = None,
+        nickname: str = None,
+        start_time: float = None,
+        title: str = None,
+        union_id: str = None,
+    ):
+        # 会议ID（仅在会议正式开始后才返回该字段）
+        self.conference_id = conference_id
+        # 会议逻辑id
+        self.logical_conference_id = logical_conference_id
+        # 会议创建用户昵称
+        self.nickname = nickname
+        # 开始时间
+        self.start_time = start_time
+        # 会议标题
+        self.title = title
+        # 会议创建用户id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.conference_id is not None:
+            result['conferenceId'] = self.conference_id
+        if self.logical_conference_id is not None:
+            result['logicalConferenceId'] = self.logical_conference_id
+        if self.nickname is not None:
+            result['nickname'] = self.nickname
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.title is not None:
+            result['title'] = self.title
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('conferenceId') is not None:
+            self.conference_id = m.get('conferenceId')
+        if m.get('logicalConferenceId') is not None:
+            self.logical_conference_id = m.get('logicalConferenceId')
+        if m.get('nickname') is not None:
+            self.nickname = m.get('nickname')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class GetConfBaseInfoByLogicalIdResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetConfBaseInfoByLogicalIdResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetConfBaseInfoByLogicalIdResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetConferenceDetailHeaders(TeaModel):
     def __init__(
         self,

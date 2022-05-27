@@ -2633,6 +2633,132 @@ class GetSpacesInfoResponse(TeaModel):
         return self
 
 
+class ListIndustryRoleUsersHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListIndustryRoleUsersRequest(TeaModel):
+    def __init__(
+        self,
+        tag_code: str = None,
+    ):
+        # 行业角色编码
+        self.tag_code = tag_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.tag_code is not None:
+            result['tagCode'] = self.tag_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('tagCode') is not None:
+            self.tag_code = m.get('tagCode')
+        return self
+
+
+class ListIndustryRoleUsersResponseBody(TeaModel):
+    def __init__(
+        self,
+        user_id_list: List[str] = None,
+    ):
+        # 用户id列表
+        self.user_id_list = user_id_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id_list is not None:
+            result['userIdList'] = self.user_id_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userIdList') is not None:
+            self.user_id_list = m.get('userIdList')
+        return self
+
+
+class ListIndustryRoleUsersResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListIndustryRoleUsersResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListIndustryRoleUsersResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ListPointRulesHeaders(TeaModel):
     def __init__(
         self,
@@ -3316,6 +3442,182 @@ class ListUncheckUsersResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = ListUncheckUsersResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListUserIndustryRolesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListUserIndustryRolesRequest(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+    ):
+        # 用户id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ListUserIndustryRolesResponseBodyRoleList(TeaModel):
+    def __init__(
+        self,
+        role_id: int = None,
+        role_name: str = None,
+        tag_code: str = None,
+    ):
+        # 角色id
+        self.role_id = role_id
+        # 角色名字
+        self.role_name = role_name
+        # 行业角色编码
+        self.tag_code = tag_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.role_id is not None:
+            result['roleId'] = self.role_id
+        if self.role_name is not None:
+            result['roleName'] = self.role_name
+        if self.tag_code is not None:
+            result['tagCode'] = self.tag_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('roleId') is not None:
+            self.role_id = m.get('roleId')
+        if m.get('roleName') is not None:
+            self.role_name = m.get('roleName')
+        if m.get('tagCode') is not None:
+            self.tag_code = m.get('tagCode')
+        return self
+
+
+class ListUserIndustryRolesResponseBody(TeaModel):
+    def __init__(
+        self,
+        role_list: List[ListUserIndustryRolesResponseBodyRoleList] = None,
+    ):
+        # result
+        self.role_list = role_list
+
+    def validate(self):
+        if self.role_list:
+            for k in self.role_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['roleList'] = []
+        if self.role_list is not None:
+            for k in self.role_list:
+                result['roleList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.role_list = []
+        if m.get('roleList') is not None:
+            for k in m.get('roleList'):
+                temp_model = ListUserIndustryRolesResponseBodyRoleList()
+                self.role_list.append(temp_model.from_map(k))
+        return self
+
+
+class ListUserIndustryRolesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListUserIndustryRolesResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListUserIndustryRolesResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
