@@ -24,6 +24,16 @@ class AddKnowledgeRequest extends Model
     public $content;
 
     /**
+     * @var int
+     */
+    public $effectTimeend;
+
+    /**
+     * @var int
+     */
+    public $effectTimestart;
+
+    /**
      * @description 知识点扩展问(多个用英文逗号隔开)
      *
      * @var string
@@ -95,6 +105,8 @@ class AddKnowledgeRequest extends Model
     protected $_name = [
         'attachmentList'   => 'attachmentList',
         'content'          => 'content',
+        'effectTimeend'    => 'effectTimeend',
+        'effectTimestart'  => 'effectTimestart',
         'extTitle'         => 'extTitle',
         'keyword'          => 'keyword',
         'libraryKey'       => 'libraryKey',
@@ -125,6 +137,12 @@ class AddKnowledgeRequest extends Model
         }
         if (null !== $this->content) {
             $res['content'] = $this->content;
+        }
+        if (null !== $this->effectTimeend) {
+            $res['effectTimeend'] = $this->effectTimeend;
+        }
+        if (null !== $this->effectTimestart) {
+            $res['effectTimestart'] = $this->effectTimestart;
         }
         if (null !== $this->extTitle) {
             $res['extTitle'] = $this->extTitle;
@@ -179,6 +197,12 @@ class AddKnowledgeRequest extends Model
         }
         if (isset($map['content'])) {
             $model->content = $map['content'];
+        }
+        if (isset($map['effectTimeend'])) {
+            $model->effectTimeend = $map['effectTimeend'];
+        }
+        if (isset($map['effectTimestart'])) {
+            $model->effectTimestart = $map['effectTimestart'];
         }
         if (isset($map['extTitle'])) {
             $model->extTitle = $map['extTitle'];

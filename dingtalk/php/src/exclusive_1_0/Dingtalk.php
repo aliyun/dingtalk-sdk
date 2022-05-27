@@ -48,6 +48,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCalenderSummaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCommentListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCommentListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCommentListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConfBaseInfoByLogicalIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConfBaseInfoByLogicalIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConfBaseInfoByLogicalIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConferenceDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConferenceDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDingReportDeptSummaryHeaders;
@@ -882,6 +885,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetCommentListResponse::fromMap($this->doROARequest('GetCommentList', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/publishers/' . $publisherId . '/comments/list', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetConfBaseInfoByLogicalIdRequest $request
+     *
+     * @return GetConfBaseInfoByLogicalIdResponse
+     */
+    public function getConfBaseInfoByLogicalId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetConfBaseInfoByLogicalIdHeaders([]);
+
+        return $this->getConfBaseInfoByLogicalIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetConfBaseInfoByLogicalIdRequest $request
+     * @param GetConfBaseInfoByLogicalIdHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return GetConfBaseInfoByLogicalIdResponse
+     */
+    public function getConfBaseInfoByLogicalIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->logicalConferenceId)) {
+            @$query['logicalConferenceId'] = $request->logicalConferenceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetConfBaseInfoByLogicalIdResponse::fromMap($this->doROARequest('GetConfBaseInfoByLogicalId', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/data/conferences', 'json', $req, $runtime));
     }
 
     /**

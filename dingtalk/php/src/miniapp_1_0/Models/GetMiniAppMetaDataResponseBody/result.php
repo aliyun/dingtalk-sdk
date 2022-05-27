@@ -2,20 +2,20 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vminiapp_1_0\Models\GetMiniAppMetaDataResponseBody;
 
 use AlibabaCloud\Tea\Model;
 
-class StopStreamOutResponseBody extends Model
+class result extends Model
 {
     /**
-     * @description conferenceId
+     * @description data
      *
-     * @var string
+     * @var mixed[]
      */
-    public $code;
+    public $data;
     protected $_name = [
-        'code' => 'code',
+        'data' => 'data',
     ];
 
     public function validate()
@@ -25,8 +25,8 @@ class StopStreamOutResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->code) {
-            $res['code'] = $this->code;
+        if (null !== $this->data) {
+            $res['data'] = $this->data;
         }
 
         return $res;
@@ -35,13 +35,13 @@ class StopStreamOutResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return StopStreamOutResponseBody
+     * @return result
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['code'])) {
-            $model->code = $map['code'];
+        if (isset($map['data'])) {
+            $model->data = $map['data'];
         }
 
         return $model;

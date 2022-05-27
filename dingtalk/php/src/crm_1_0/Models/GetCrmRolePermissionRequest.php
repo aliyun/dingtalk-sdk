@@ -14,8 +14,16 @@ class GetCrmRolePermissionRequest extends Model
      * @var string
      */
     public $bizType;
+
+    /**
+     * @description 资源id，填表单code
+     *
+     * @var string
+     */
+    public $resourceId;
     protected $_name = [
-        'bizType' => 'bizType',
+        'bizType'    => 'bizType',
+        'resourceId' => 'resourceId',
     ];
 
     public function validate()
@@ -27,6 +35,9 @@ class GetCrmRolePermissionRequest extends Model
         $res = [];
         if (null !== $this->bizType) {
             $res['bizType'] = $this->bizType;
+        }
+        if (null !== $this->resourceId) {
+            $res['resourceId'] = $this->resourceId;
         }
 
         return $res;
@@ -42,6 +53,9 @@ class GetCrmRolePermissionRequest extends Model
         $model = new self();
         if (isset($map['bizType'])) {
             $model->bizType = $map['bizType'];
+        }
+        if (isset($map['resourceId'])) {
+            $model->resourceId = $map['resourceId'];
         }
 
         return $model;

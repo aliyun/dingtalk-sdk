@@ -122,6 +122,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryCustomerCardHeaders
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryCustomerCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryCustomerCardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupMemberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupMemberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupSetHeaders;
@@ -232,6 +235,12 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->content)) {
             @$body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->effectTimeend)) {
+            @$body['effectTimeend'] = $request->effectTimeend;
+        }
+        if (!Utils::isUnset($request->effectTimestart)) {
+            @$body['effectTimestart'] = $request->effectTimestart;
         }
         if (!Utils::isUnset($request->extTitle)) {
             @$body['extTitle'] = $request->extTitle;
@@ -2350,6 +2359,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryGroupResponse::fromMap($this->doROARequest('QueryGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/groups/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryGroupMemberRequest $request
+     *
+     * @return QueryGroupMemberResponse
+     */
+    public function queryGroupMember($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryGroupMemberHeaders([]);
+
+        return $this->queryGroupMemberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryGroupMemberRequest $request
+     * @param QueryGroupMemberHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return QueryGroupMemberResponse
+     */
+    public function queryGroupMemberWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->targetCorpId)) {
+            @$body['targetCorpId'] = $request->targetCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return QueryGroupMemberResponse::fromMap($this->doROARequest('QueryGroupMember', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/groups/members/query', 'json', $req, $runtime));
     }
 
     /**

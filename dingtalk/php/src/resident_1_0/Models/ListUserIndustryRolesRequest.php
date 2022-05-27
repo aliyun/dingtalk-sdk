@@ -2,20 +2,20 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class StopStreamOutResponseBody extends Model
+class ListUserIndustryRolesRequest extends Model
 {
     /**
-     * @description conferenceId
+     * @description 用户id
      *
      * @var string
      */
-    public $code;
+    public $userId;
     protected $_name = [
-        'code' => 'code',
+        'userId' => 'userId',
     ];
 
     public function validate()
@@ -25,8 +25,8 @@ class StopStreamOutResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->code) {
-            $res['code'] = $this->code;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -35,13 +35,13 @@ class StopStreamOutResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return StopStreamOutResponseBody
+     * @return ListUserIndustryRolesRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['code'])) {
-            $model->code = $map['code'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

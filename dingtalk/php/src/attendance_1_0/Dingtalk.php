@@ -29,6 +29,9 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CreateApproveResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\DingTalkSecurityCheckHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\DingTalkSecurityCheckRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\DingTalkSecurityCheckResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetAdjustmentsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetAdjustmentsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetAdjustmentsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetClosingAccountsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetClosingAccountsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetClosingAccountsResponse;
@@ -43,6 +46,9 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetMachineUserResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetOvertimeSettingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetOvertimeSettingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetOvertimeSettingResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetSimpleOvertimeSettingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetSimpleOvertimeSettingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetSimpleOvertimeSettingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysResponse;
@@ -491,6 +497,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetAdjustmentsRequest $request
+     *
+     * @return GetAdjustmentsResponse
+     */
+    public function getAdjustments($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAdjustmentsHeaders([]);
+
+        return $this->getAdjustmentsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetAdjustmentsRequest $request
+     * @param GetAdjustmentsHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return GetAdjustmentsResponse
+     */
+    public function getAdjustmentsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetAdjustmentsResponse::fromMap($this->doROARequest('GetAdjustments', 'attendance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/attendance/adjustments', 'json', $req, $runtime));
+    }
+
+    /**
      * @param GetClosingAccountsRequest $request
      *
      * @return GetClosingAccountsResponse
@@ -702,6 +753,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetOvertimeSettingResponse::fromMap($this->doROARequest('GetOvertimeSetting', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/overtimeSettings/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetSimpleOvertimeSettingRequest $request
+     *
+     * @return GetSimpleOvertimeSettingResponse
+     */
+    public function getSimpleOvertimeSetting($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetSimpleOvertimeSettingHeaders([]);
+
+        return $this->getSimpleOvertimeSettingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetSimpleOvertimeSettingRequest $request
+     * @param GetSimpleOvertimeSettingHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return GetSimpleOvertimeSettingResponse
+     */
+    public function getSimpleOvertimeSettingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetSimpleOvertimeSettingResponse::fromMap($this->doROARequest('GetSimpleOvertimeSetting', 'attendance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/attendance/overtimeSettings', 'json', $req, $runtime));
     }
 
     /**

@@ -502,6 +502,9 @@ class Dingtalk extends OpenApiClient
         Utils::validateModel($request);
         $unionId = OpenApiUtilClient::getEncodeParam($unionId);
         $body    = [];
+        if (!Utils::isUnset($request->fromDueTime)) {
+            @$body['fromDueTime'] = $request->fromDueTime;
+        }
         if (!Utils::isUnset($request->isDone)) {
             @$body['isDone'] = $request->isDone;
         }
@@ -510,6 +513,15 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->nextToken)) {
             @$body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->roleTypes)) {
+            @$body['roleTypes'] = $request->roleTypes;
+        }
+        if (!Utils::isUnset($request->subject)) {
+            @$body['subject'] = $request->subject;
+        }
+        if (!Utils::isUnset($request->toDueTime)) {
+            @$body['toDueTime'] = $request->toDueTime;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vminiapp_1_0\Models\CreateVersionAcrossBundleRespo
 use AlibabaCloud\SDK\Dingtalk\Vminiapp_1_0\Models\GetMaxVersionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminiapp_1_0\Models\GetMaxVersionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminiapp_1_0\Models\GetMaxVersionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminiapp_1_0\Models\GetMiniAppMetaDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminiapp_1_0\Models\GetMiniAppMetaDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminiapp_1_0\Models\GetMiniAppMetaDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminiapp_1_0\Models\GetSettingByMiniAppIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminiapp_1_0\Models\GetSettingByMiniAppIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminiapp_1_0\Models\InvokeHtmlBundleBuildHeaders;
@@ -264,6 +267,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetMaxVersionResponse::fromMap($this->doROARequest('GetMaxVersion', 'miniapp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/miniapp/apps/maxVersions', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetMiniAppMetaDataRequest $request
+     *
+     * @return GetMiniAppMetaDataResponse
+     */
+    public function getMiniAppMetaData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetMiniAppMetaDataHeaders([]);
+
+        return $this->getMiniAppMetaDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetMiniAppMetaDataRequest $request
+     * @param GetMiniAppMetaDataHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return GetMiniAppMetaDataResponse
+     */
+    public function getMiniAppMetaDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bundleId)) {
+            @$body['bundleId'] = $request->bundleId;
+        }
+        if (!Utils::isUnset($request->bundleIdTableGmtModified)) {
+            @$body['bundleIdTableGmtModified'] = $request->bundleIdTableGmtModified;
+        }
+        if (!Utils::isUnset($request->fromAppName)) {
+            @$body['fromAppName'] = $request->fromAppName;
+        }
+        if (!Utils::isUnset($request->miniAppIdTableGmtModified)) {
+            @$body['miniAppIdTableGmtModified'] = $request->miniAppIdTableGmtModified;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetMiniAppMetaDataResponse::fromMap($this->doROARequest('GetMiniAppMetaData', 'miniapp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/miniapp/apps/metadata', 'json', $req, $runtime));
     }
 
     /**

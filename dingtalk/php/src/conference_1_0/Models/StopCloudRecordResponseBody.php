@@ -9,21 +9,13 @@ use AlibabaCloud\Tea\Model;
 class StopCloudRecordResponseBody extends Model
 {
     /**
-     * @description 是否成功
-     *
-     * @var string
-     */
-    public $cause;
-
-    /**
      * @description 返回码
      *
      * @var string
      */
     public $code;
     protected $_name = [
-        'cause' => 'cause',
-        'code'  => 'code',
+        'code' => 'code',
     ];
 
     public function validate()
@@ -33,9 +25,6 @@ class StopCloudRecordResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->cause) {
-            $res['cause'] = $this->cause;
-        }
         if (null !== $this->code) {
             $res['code'] = $this->code;
         }
@@ -51,9 +40,6 @@ class StopCloudRecordResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['cause'])) {
-            $model->cause = $map['cause'];
-        }
         if (isset($map['code'])) {
             $model->code = $map['code'];
         }

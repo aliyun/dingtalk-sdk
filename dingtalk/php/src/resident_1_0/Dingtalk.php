@@ -52,6 +52,9 @@ use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\GetSpaceIdByTypeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\GetSpacesInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\GetSpacesInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\GetSpacesInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListIndustryRoleUsersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListIndustryRoleUsersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListIndustryRoleUsersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListPointRulesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListPointRulesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListPointRulesResponse;
@@ -61,6 +64,9 @@ use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListSubSpaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListUncheckUsersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListUncheckUsersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListUncheckUsersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListUserIndustryRolesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListUserIndustryRolesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListUserIndustryRolesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\PagePointHistoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\PagePointHistoryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\PagePointHistoryResponse;
@@ -852,6 +858,48 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param ListIndustryRoleUsersRequest $request
+     *
+     * @return ListIndustryRoleUsersResponse
+     */
+    public function listIndustryRoleUsers($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListIndustryRoleUsersHeaders([]);
+
+        return $this->listIndustryRoleUsersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListIndustryRoleUsersRequest $request
+     * @param ListIndustryRoleUsersHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return ListIndustryRoleUsersResponse
+     */
+    public function listIndustryRoleUsersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->tagCode)) {
+            @$query['tagCode'] = $request->tagCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListIndustryRoleUsersResponse::fromMap($this->doROARequest('ListIndustryRoleUsers', 'resident_1.0', 'HTTP', 'GET', 'AK', '/v1.0/resident/industryRoles/users', 'json', $req, $runtime));
+    }
+
+    /**
      * @param ListPointRulesRequest $request
      *
      * @return ListPointRulesResponse
@@ -987,6 +1035,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListUncheckUsersResponse::fromMap($this->doROARequest('ListUncheckUsers', 'resident_1.0', 'HTTP', 'GET', 'AK', '/v1.0/resident/organizations/noJoinUsers', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListUserIndustryRolesRequest $request
+     *
+     * @return ListUserIndustryRolesResponse
+     */
+    public function listUserIndustryRoles($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListUserIndustryRolesHeaders([]);
+
+        return $this->listUserIndustryRolesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListUserIndustryRolesRequest $request
+     * @param ListUserIndustryRolesHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return ListUserIndustryRolesResponse
+     */
+    public function listUserIndustryRolesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListUserIndustryRolesResponse::fromMap($this->doROARequest('ListUserIndustryRoles', 'resident_1.0', 'HTTP', 'GET', 'AK', '/v1.0/resident/users/industryRoles', 'json', $req, $runtime));
     }
 
     /**
