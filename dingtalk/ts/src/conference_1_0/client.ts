@@ -604,18 +604,15 @@ export class StartCloudRecordRequest extends $tea.Model {
 }
 
 export class StartCloudRecordResponseBody extends $tea.Model {
-  cause?: string;
   code?: string;
   static names(): { [key: string]: string } {
     return {
-      cause: 'cause',
       code: 'code',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      cause: 'string',
       code: 'string',
     };
   }
@@ -789,18 +786,15 @@ export class StopCloudRecordRequest extends $tea.Model {
 }
 
 export class StopCloudRecordResponseBody extends $tea.Model {
-  cause?: string;
   code?: string;
   static names(): { [key: string]: string } {
     return {
-      cause: 'cause',
       code: 'code',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      cause: 'string',
       code: 'string',
     };
   }
@@ -880,18 +874,15 @@ export class StopStreamOutRequest extends $tea.Model {
 }
 
 export class StopStreamOutResponseBody extends $tea.Model {
-  cause?: string;
   code?: string;
   static names(): { [key: string]: string } {
     return {
-      cause: 'cause',
       code: 'code',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      cause: 'string',
       code: 'string',
     };
   }

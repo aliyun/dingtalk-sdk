@@ -756,6 +756,91 @@ export class DingTalkSecurityCheckResponse extends $tea.Model {
   }
 }
 
+export class GetAdjustmentsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAdjustmentsRequest extends $tea.Model {
+  pageNumber?: number;
+  pageSize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pageNumber: 'number',
+      pageSize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAdjustmentsResponseBody extends $tea.Model {
+  result?: GetAdjustmentsResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetAdjustmentsResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAdjustmentsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetAdjustmentsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetAdjustmentsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetClosingAccountsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1145,6 +1230,91 @@ export class GetOvertimeSettingResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetOvertimeSettingResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleOvertimeSettingHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleOvertimeSettingRequest extends $tea.Model {
+  pageNumber?: number;
+  pageSize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pageNumber: 'number',
+      pageSize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleOvertimeSettingResponseBody extends $tea.Model {
+  result?: GetSimpleOvertimeSettingResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetSimpleOvertimeSettingResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleOvertimeSettingResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetSimpleOvertimeSettingResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetSimpleOvertimeSettingResponseBody,
     };
   }
 
@@ -1911,6 +2081,53 @@ export class DingTalkSecurityCheckResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetAdjustmentsResponseBodyResultItems extends $tea.Model {
+  id?: number;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAdjustmentsResponseBodyResult extends $tea.Model {
+  items?: GetAdjustmentsResponseBodyResultItems[];
+  pageNumber?: number;
+  totalPage?: number;
+  static names(): { [key: string]: string } {
+    return {
+      items: 'items',
+      pageNumber: 'pageNumber',
+      totalPage: 'totalPage',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      items: { 'type': 'array', 'itemType': GetAdjustmentsResponseBodyResultItems },
+      pageNumber: 'number',
+      totalPage: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetClosingAccountsResponseBodyResultClosingAccountModel extends $tea.Model {
   closingDay?: number;
   closingHourMinutes?: number;
@@ -2330,6 +2547,53 @@ export class GetOvertimeSettingResponseBodyResult extends $tea.Model {
       stepValue: 'number',
       warningSettings: { 'type': 'array', 'itemType': GetOvertimeSettingResponseBodyResultWarningSettings },
       workMinutesPerDay: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleOvertimeSettingResponseBodyResultItems extends $tea.Model {
+  id?: number;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleOvertimeSettingResponseBodyResult extends $tea.Model {
+  items?: GetSimpleOvertimeSettingResponseBodyResultItems[];
+  pageNumber?: number;
+  totalPage?: number;
+  static names(): { [key: string]: string } {
+    return {
+      items: 'items',
+      pageNumber: 'pageNumber',
+      totalPage: 'totalPage',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      items: { 'type': 'array', 'itemType': GetSimpleOvertimeSettingResponseBodyResultItems },
+      pageNumber: 'number',
+      totalPage: 'number',
     };
   }
 
@@ -3017,6 +3281,39 @@ export default class Client extends OpenApi {
     return $tea.cast<DingTalkSecurityCheckResponse>(await this.doROARequest("DingTalkSecurityCheck", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/securities/check`, "json", req, runtime), new DingTalkSecurityCheckResponse({}));
   }
 
+  async getAdjustments(request: GetAdjustmentsRequest): Promise<GetAdjustmentsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetAdjustmentsHeaders({ });
+    return await this.getAdjustmentsWithOptions(request, headers, runtime);
+  }
+
+  async getAdjustmentsWithOptions(request: GetAdjustmentsRequest, headers: GetAdjustmentsHeaders, runtime: $Util.RuntimeOptions): Promise<GetAdjustmentsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetAdjustmentsResponse>(await this.doROARequest("GetAdjustments", "attendance_1.0", "HTTP", "GET", "AK", `/v1.0/attendance/adjustments`, "json", req, runtime), new GetAdjustmentsResponse({}));
+  }
+
   async getClosingAccounts(request: GetClosingAccountsRequest): Promise<GetClosingAccountsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetClosingAccountsHeaders({ });
@@ -3163,6 +3460,39 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<GetOvertimeSettingResponse>(await this.doROARequest("GetOvertimeSetting", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/overtimeSettings/query`, "json", req, runtime), new GetOvertimeSettingResponse({}));
+  }
+
+  async getSimpleOvertimeSetting(request: GetSimpleOvertimeSettingRequest): Promise<GetSimpleOvertimeSettingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetSimpleOvertimeSettingHeaders({ });
+    return await this.getSimpleOvertimeSettingWithOptions(request, headers, runtime);
+  }
+
+  async getSimpleOvertimeSettingWithOptions(request: GetSimpleOvertimeSettingRequest, headers: GetSimpleOvertimeSettingHeaders, runtime: $Util.RuntimeOptions): Promise<GetSimpleOvertimeSettingResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetSimpleOvertimeSettingResponse>(await this.doROARequest("GetSimpleOvertimeSetting", "attendance_1.0", "HTTP", "GET", "AK", `/v1.0/attendance/overtimeSettings`, "json", req, runtime), new GetSimpleOvertimeSettingResponse({}));
   }
 
   async getUserHolidays(request: GetUserHolidaysRequest): Promise<GetUserHolidaysResponse> {

@@ -53,6 +53,7 @@ import * as smart_device_1_0 from './smart_device_1_0/client';
 import * as todo_1_0 from './todo_1_0/client';
 import * as trade_1_0 from './trade_1_0/client';
 import * as trajectory_1_0 from './trajectory_1_0/client';
+import * as trip_1_0 from './trip_1_0/client';
 import * as village_1_0 from './village_1_0/client';
 import * as wiki_1_0 from './wiki_1_0/client';
 import * as wms_1_0 from './wms_1_0/client';
@@ -117,6 +118,7 @@ export = {
   todo_1_0,
   trade_1_0,
   trajectory_1_0,
+  trip_1_0,
   village_1_0,
   wiki_1_0,
   wms_1_0,

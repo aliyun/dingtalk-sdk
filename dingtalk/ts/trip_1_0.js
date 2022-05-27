@@ -1,0 +1,1 @@
+module.exports = require('./dist').trip_1_0;

@@ -1431,6 +1431,88 @@ export class GetSpacesInfoResponse extends $tea.Model {
   }
 }
 
+export class ListIndustryRoleUsersHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListIndustryRoleUsersRequest extends $tea.Model {
+  tagCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      tagCode: 'tagCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      tagCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListIndustryRoleUsersResponseBody extends $tea.Model {
+  userIdList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      userIdList: 'userIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userIdList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListIndustryRoleUsersResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListIndustryRoleUsersResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListIndustryRoleUsersResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListPointRulesHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1687,6 +1769,88 @@ export class ListUncheckUsersResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: ListUncheckUsersResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListUserIndustryRolesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListUserIndustryRolesRequest extends $tea.Model {
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListUserIndustryRolesResponseBody extends $tea.Model {
+  roleList?: ListUserIndustryRolesResponseBodyRoleList[];
+  static names(): { [key: string]: string } {
+    return {
+      roleList: 'roleList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      roleList: { 'type': 'array', 'itemType': ListUserIndustryRolesResponseBodyRoleList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListUserIndustryRolesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListUserIndustryRolesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListUserIndustryRolesResponseBody,
     };
   }
 
@@ -3020,6 +3184,31 @@ export class ListUncheckUsersResponseBodyValues extends $tea.Model {
   }
 }
 
+export class ListUserIndustryRolesResponseBodyRoleList extends $tea.Model {
+  roleId?: number;
+  roleName?: string;
+  tagCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      roleId: 'roleId',
+      roleName: 'roleName',
+      tagCode: 'tagCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      roleId: 'number',
+      roleName: 'string',
+      tagCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class PagePointHistoryResponseBodyPointRecordList extends $tea.Model {
   corpId?: string;
   createAt?: number;
@@ -3770,6 +3959,35 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSpacesInfoResponse>(await this.doROARequest("GetSpacesInfo", "resident_1.0", "HTTP", "POST", "AK", `/v1.0/resident/spaces/query`, "json", req, runtime), new GetSpacesInfoResponse({}));
   }
 
+  async listIndustryRoleUsers(request: ListIndustryRoleUsersRequest): Promise<ListIndustryRoleUsersResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListIndustryRoleUsersHeaders({ });
+    return await this.listIndustryRoleUsersWithOptions(request, headers, runtime);
+  }
+
+  async listIndustryRoleUsersWithOptions(request: ListIndustryRoleUsersRequest, headers: ListIndustryRoleUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListIndustryRoleUsersResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.tagCode)) {
+      query["tagCode"] = request.tagCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ListIndustryRoleUsersResponse>(await this.doROARequest("ListIndustryRoleUsers", "resident_1.0", "HTTP", "GET", "AK", `/v1.0/resident/industryRoles/users`, "json", req, runtime), new ListIndustryRoleUsersResponse({}));
+  }
+
   async listPointRules(request: ListPointRulesRequest): Promise<ListPointRulesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListPointRulesHeaders({ });
@@ -3871,6 +4089,35 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<ListUncheckUsersResponse>(await this.doROARequest("ListUncheckUsers", "resident_1.0", "HTTP", "GET", "AK", `/v1.0/resident/organizations/noJoinUsers`, "json", req, runtime), new ListUncheckUsersResponse({}));
+  }
+
+  async listUserIndustryRoles(request: ListUserIndustryRolesRequest): Promise<ListUserIndustryRolesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListUserIndustryRolesHeaders({ });
+    return await this.listUserIndustryRolesWithOptions(request, headers, runtime);
+  }
+
+  async listUserIndustryRolesWithOptions(request: ListUserIndustryRolesRequest, headers: ListUserIndustryRolesHeaders, runtime: $Util.RuntimeOptions): Promise<ListUserIndustryRolesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ListUserIndustryRolesResponse>(await this.doROARequest("ListUserIndustryRoles", "resident_1.0", "HTTP", "GET", "AK", `/v1.0/resident/users/industryRoles`, "json", req, runtime), new ListUserIndustryRolesResponse({}));
   }
 
   async pagePointHistory(request: PagePointHistoryRequest): Promise<PagePointHistoryResponse> {

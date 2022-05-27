@@ -2019,15 +2019,18 @@ export class GetCrmRolePermissionHeaders extends $tea.Model {
 
 export class GetCrmRolePermissionRequest extends $tea.Model {
   bizType?: string;
+  resourceId?: string;
   static names(): { [key: string]: string } {
     return {
       bizType: 'bizType',
+      resourceId: 'resourceId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       bizType: 'string',
+      resourceId: 'string',
     };
   }
 
@@ -9564,6 +9567,10 @@ export default class Client extends OpenApi {
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.bizType)) {
       query["bizType"] = request.bizType;
+    }
+
+    if (!Util.isUnset(request.resourceId)) {
+      query["resourceId"] = request.resourceId;
     }
 
     let realHeaders : {[key: string ]: string} = { };

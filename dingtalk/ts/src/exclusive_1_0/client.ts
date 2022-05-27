@@ -1316,6 +1316,103 @@ export class GetCommentListResponse extends $tea.Model {
   }
 }
 
+export class GetConfBaseInfoByLogicalIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetConfBaseInfoByLogicalIdRequest extends $tea.Model {
+  logicalConferenceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      logicalConferenceId: 'logicalConferenceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      logicalConferenceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetConfBaseInfoByLogicalIdResponseBody extends $tea.Model {
+  conferenceId?: string;
+  logicalConferenceId?: string;
+  nickname?: string;
+  startTime?: number;
+  title?: string;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      conferenceId: 'conferenceId',
+      logicalConferenceId: 'logicalConferenceId',
+      nickname: 'nickname',
+      startTime: 'startTime',
+      title: 'title',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conferenceId: 'string',
+      logicalConferenceId: 'string',
+      nickname: 'string',
+      startTime: 'number',
+      title: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetConfBaseInfoByLogicalIdResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetConfBaseInfoByLogicalIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetConfBaseInfoByLogicalIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetConferenceDetailHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6134,6 +6231,35 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetCommentListResponse>(await this.doROARequest("GetCommentList", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/publishers/${publisherId}/comments/list`, "json", req, runtime), new GetCommentListResponse({}));
+  }
+
+  async getConfBaseInfoByLogicalId(request: GetConfBaseInfoByLogicalIdRequest): Promise<GetConfBaseInfoByLogicalIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetConfBaseInfoByLogicalIdHeaders({ });
+    return await this.getConfBaseInfoByLogicalIdWithOptions(request, headers, runtime);
+  }
+
+  async getConfBaseInfoByLogicalIdWithOptions(request: GetConfBaseInfoByLogicalIdRequest, headers: GetConfBaseInfoByLogicalIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetConfBaseInfoByLogicalIdResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.logicalConferenceId)) {
+      query["logicalConferenceId"] = request.logicalConferenceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetConfBaseInfoByLogicalIdResponse>(await this.doROARequest("GetConfBaseInfoByLogicalId", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/conferences`, "json", req, runtime), new GetConfBaseInfoByLogicalIdResponse({}));
   }
 
   async getConferenceDetail(conferenceId: string): Promise<GetConferenceDetailResponse> {

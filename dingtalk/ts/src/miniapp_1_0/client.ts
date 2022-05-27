@@ -383,6 +383,106 @@ export class GetMaxVersionResponse extends $tea.Model {
   }
 }
 
+export class GetMiniAppMetaDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMiniAppMetaDataRequest extends $tea.Model {
+  bundleId?: string;
+  bundleIdTableGmtModified?: { [key: string]: any };
+  fromAppName?: string;
+  miniAppIdTableGmtModified?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      bundleId: 'bundleId',
+      bundleIdTableGmtModified: 'bundleIdTableGmtModified',
+      fromAppName: 'fromAppName',
+      miniAppIdTableGmtModified: 'miniAppIdTableGmtModified',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bundleId: 'string',
+      bundleIdTableGmtModified: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      fromAppName: 'string',
+      miniAppIdTableGmtModified: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMiniAppMetaDataResponseBody extends $tea.Model {
+  dingOpenErrcode?: number;
+  errorMsg?: string;
+  result?: GetMiniAppMetaDataResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      dingOpenErrcode: 'dingOpenErrcode',
+      errorMsg: 'errorMsg',
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingOpenErrcode: 'number',
+      errorMsg: 'string',
+      result: GetMiniAppMetaDataResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMiniAppMetaDataResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetMiniAppMetaDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetMiniAppMetaDataResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetSettingByMiniAppIdHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -892,6 +992,25 @@ export class UpdateVersionStatusResponse extends $tea.Model {
   }
 }
 
+export class GetMiniAppMetaDataResponseBodyResult extends $tea.Model {
+  data?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListAvaiableVersionResponseBodyVersions extends $tea.Model {
   buildStatus?: number;
   h5Bundle?: string;
@@ -1114,6 +1233,47 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetMaxVersionResponse>(await this.doROARequest("GetMaxVersion", "miniapp_1.0", "HTTP", "GET", "AK", `/v1.0/miniapp/apps/maxVersions`, "json", req, runtime), new GetMaxVersionResponse({}));
+  }
+
+  async getMiniAppMetaData(request: GetMiniAppMetaDataRequest): Promise<GetMiniAppMetaDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetMiniAppMetaDataHeaders({ });
+    return await this.getMiniAppMetaDataWithOptions(request, headers, runtime);
+  }
+
+  async getMiniAppMetaDataWithOptions(request: GetMiniAppMetaDataRequest, headers: GetMiniAppMetaDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetMiniAppMetaDataResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bundleId)) {
+      body["bundleId"] = request.bundleId;
+    }
+
+    if (!Util.isUnset(request.bundleIdTableGmtModified)) {
+      body["bundleIdTableGmtModified"] = request.bundleIdTableGmtModified;
+    }
+
+    if (!Util.isUnset(request.fromAppName)) {
+      body["fromAppName"] = request.fromAppName;
+    }
+
+    if (!Util.isUnset(request.miniAppIdTableGmtModified)) {
+      body["miniAppIdTableGmtModified"] = request.miniAppIdTableGmtModified;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetMiniAppMetaDataResponse>(await this.doROARequest("GetMiniAppMetaData", "miniapp_1.0", "HTTP", "POST", "AK", `/v1.0/miniapp/apps/metadata`, "json", req, runtime), new GetMiniAppMetaDataResponse({}));
   }
 
   async getSettingByMiniAppId(miniAppId: string): Promise<GetSettingByMiniAppIdResponse> {

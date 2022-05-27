@@ -1018,22 +1018,34 @@ export class QueryOrgTodoByUserHeaders extends $tea.Model {
 }
 
 export class QueryOrgTodoByUserRequest extends $tea.Model {
+  fromDueTime?: number;
   isDone?: boolean;
   maxResults?: number;
   nextToken?: string;
+  roleTypes?: string[][];
+  subject?: string;
+  toDueTime?: number;
   static names(): { [key: string]: string } {
     return {
+      fromDueTime: 'fromDueTime',
       isDone: 'isDone',
       maxResults: 'maxResults',
       nextToken: 'nextToken',
+      roleTypes: 'roleTypes',
+      subject: 'subject',
+      toDueTime: 'toDueTime',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      fromDueTime: 'number',
       isDone: 'boolean',
       maxResults: 'number',
       nextToken: 'string',
+      roleTypes: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': 'string' } },
+      subject: 'string',
+      toDueTime: 'number',
     };
   }
 
@@ -2735,6 +2747,10 @@ export default class Client extends OpenApi {
     Util.validateModel(request);
     unionId = OpenApiUtil.getEncodeParam(unionId);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.fromDueTime)) {
+      body["fromDueTime"] = request.fromDueTime;
+    }
+
     if (!Util.isUnset(request.isDone)) {
       body["isDone"] = request.isDone;
     }
@@ -2745,6 +2761,18 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.nextToken)) {
       body["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.roleTypes)) {
+      body["roleTypes"] = request.roleTypes;
+    }
+
+    if (!Util.isUnset(request.subject)) {
+      body["subject"] = request.subject;
+    }
+
+    if (!Util.isUnset(request.toDueTime)) {
+      body["toDueTime"] = request.toDueTime;
     }
 
     let realHeaders : {[key: string ]: string} = { };
