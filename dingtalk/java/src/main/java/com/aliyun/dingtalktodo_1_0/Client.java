@@ -344,6 +344,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.Common.validateModel(request);
         unionId = com.aliyun.openapiutil.Client.getEncodeParam(unionId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.fromDueTime)) {
+            body.put("fromDueTime", request.fromDueTime);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.isDone)) {
             body.put("isDone", request.isDone);
         }
@@ -354,6 +358,18 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
             body.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.roleTypes)) {
+            body.put("roleTypes", request.roleTypes);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.subject)) {
+            body.put("subject", request.subject);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.toDueTime)) {
+            body.put("toDueTime", request.toDueTime);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();

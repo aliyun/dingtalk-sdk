@@ -4,6 +4,10 @@ package com.aliyun.dingtalktodo_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryOrgTodoByUserRequest extends TeaModel {
+    // 查询从计划完成时间开始
+    @NameInMap("fromDueTime")
+    public Long fromDueTime;
+
     // 待办完成状态。
     @NameInMap("isDone")
     public Boolean isDone;
@@ -16,9 +20,29 @@ public class QueryOrgTodoByUserRequest extends TeaModel {
     @NameInMap("nextToken")
     public String nextToken;
 
+    // 查询目标用户角色类型，执行人 | 创建人 | 参与人，可以同时传多个值。如：[["executor"], ["creator"],["participant"]] 或 [["executor", "creator"]]
+    @NameInMap("roleTypes")
+    public java.util.List<java.util.List<String>> roleTypes;
+
+    // 待办标题
+    @NameInMap("subject")
+    public String subject;
+
+    // 查询到计划完成时间结束
+    @NameInMap("toDueTime")
+    public Long toDueTime;
+
     public static QueryOrgTodoByUserRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryOrgTodoByUserRequest self = new QueryOrgTodoByUserRequest();
         return TeaModel.build(map, self);
+    }
+
+    public QueryOrgTodoByUserRequest setFromDueTime(Long fromDueTime) {
+        this.fromDueTime = fromDueTime;
+        return this;
+    }
+    public Long getFromDueTime() {
+        return this.fromDueTime;
     }
 
     public QueryOrgTodoByUserRequest setIsDone(Boolean isDone) {
@@ -43,6 +67,30 @@ public class QueryOrgTodoByUserRequest extends TeaModel {
     }
     public String getNextToken() {
         return this.nextToken;
+    }
+
+    public QueryOrgTodoByUserRequest setRoleTypes(java.util.List<java.util.List<String>> roleTypes) {
+        this.roleTypes = roleTypes;
+        return this;
+    }
+    public java.util.List<java.util.List<String>> getRoleTypes() {
+        return this.roleTypes;
+    }
+
+    public QueryOrgTodoByUserRequest setSubject(String subject) {
+        this.subject = subject;
+        return this;
+    }
+    public String getSubject() {
+        return this.subject;
+    }
+
+    public QueryOrgTodoByUserRequest setToDueTime(Long toDueTime) {
+        this.toDueTime = toDueTime;
+        return this;
+    }
+    public Long getToDueTime() {
+        return this.toDueTime;
     }
 
 }

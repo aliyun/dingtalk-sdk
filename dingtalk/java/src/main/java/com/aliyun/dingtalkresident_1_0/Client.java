@@ -582,6 +582,35 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetSpacesInfo", "resident_1.0", "HTTP", "POST", "AK", "/v1.0/resident/spaces/query", "json", req, runtime), new GetSpacesInfoResponse());
     }
 
+    public ListIndustryRoleUsersResponse listIndustryRoleUsers(ListIndustryRoleUsersRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        ListIndustryRoleUsersHeaders headers = new ListIndustryRoleUsersHeaders();
+        return this.listIndustryRoleUsersWithOptions(request, headers, runtime);
+    }
+
+    public ListIndustryRoleUsersResponse listIndustryRoleUsersWithOptions(ListIndustryRoleUsersRequest request, ListIndustryRoleUsersHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.tagCode)) {
+            query.put("tagCode", request.tagCode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("ListIndustryRoleUsers", "resident_1.0", "HTTP", "GET", "AK", "/v1.0/resident/industryRoles/users", "json", req, runtime), new ListIndustryRoleUsersResponse());
+    }
+
     public ListPointRulesResponse listPointRules(ListPointRulesRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         ListPointRulesHeaders headers = new ListPointRulesHeaders();
@@ -683,6 +712,35 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("ListUncheckUsers", "resident_1.0", "HTTP", "GET", "AK", "/v1.0/resident/organizations/noJoinUsers", "json", req, runtime), new ListUncheckUsersResponse());
+    }
+
+    public ListUserIndustryRolesResponse listUserIndustryRoles(ListUserIndustryRolesRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        ListUserIndustryRolesHeaders headers = new ListUserIndustryRolesHeaders();
+        return this.listUserIndustryRolesWithOptions(request, headers, runtime);
+    }
+
+    public ListUserIndustryRolesResponse listUserIndustryRolesWithOptions(ListUserIndustryRolesRequest request, ListUserIndustryRolesHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("ListUserIndustryRoles", "resident_1.0", "HTTP", "GET", "AK", "/v1.0/resident/users/industryRoles", "json", req, runtime), new ListUserIndustryRolesResponse());
     }
 
     public PagePointHistoryResponse pagePointHistory(PagePointHistoryRequest request) throws Exception {

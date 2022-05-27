@@ -12,6 +12,12 @@ public class AddKnowledgeRequest extends TeaModel {
     @NameInMap("content")
     public String content;
 
+    @NameInMap("effectTimeend")
+    public Long effectTimeend;
+
+    @NameInMap("effectTimestart")
+    public Long effectTimestart;
+
     // 知识点扩展问(多个用英文逗号隔开)
     @NameInMap("extTitle")
     public String extTitle;
@@ -71,6 +77,22 @@ public class AddKnowledgeRequest extends TeaModel {
     }
     public String getContent() {
         return this.content;
+    }
+
+    public AddKnowledgeRequest setEffectTimeend(Long effectTimeend) {
+        this.effectTimeend = effectTimeend;
+        return this;
+    }
+    public Long getEffectTimeend() {
+        return this.effectTimeend;
+    }
+
+    public AddKnowledgeRequest setEffectTimestart(Long effectTimestart) {
+        this.effectTimestart = effectTimestart;
+        return this;
+    }
+    public Long getEffectTimestart() {
+        return this.effectTimestart;
     }
 
     public AddKnowledgeRequest setExtTitle(String extTitle) {

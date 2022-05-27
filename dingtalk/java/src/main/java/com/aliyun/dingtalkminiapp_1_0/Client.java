@@ -201,6 +201,47 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetMaxVersion", "miniapp_1.0", "HTTP", "GET", "AK", "/v1.0/miniapp/apps/maxVersions", "json", req, runtime), new GetMaxVersionResponse());
     }
 
+    public GetMiniAppMetaDataResponse getMiniAppMetaData(GetMiniAppMetaDataRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetMiniAppMetaDataHeaders headers = new GetMiniAppMetaDataHeaders();
+        return this.getMiniAppMetaDataWithOptions(request, headers, runtime);
+    }
+
+    public GetMiniAppMetaDataResponse getMiniAppMetaDataWithOptions(GetMiniAppMetaDataRequest request, GetMiniAppMetaDataHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bundleId)) {
+            body.put("bundleId", request.bundleId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bundleIdTableGmtModified)) {
+            body.put("bundleIdTableGmtModified", request.bundleIdTableGmtModified);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fromAppName)) {
+            body.put("fromAppName", request.fromAppName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.miniAppIdTableGmtModified)) {
+            body.put("miniAppIdTableGmtModified", request.miniAppIdTableGmtModified);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetMiniAppMetaData", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/apps/metadata", "json", req, runtime), new GetMiniAppMetaDataResponse());
+    }
+
     public GetSettingByMiniAppIdResponse getSettingByMiniAppId(String miniAppId) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetSettingByMiniAppIdHeaders headers = new GetSettingByMiniAppIdHeaders();

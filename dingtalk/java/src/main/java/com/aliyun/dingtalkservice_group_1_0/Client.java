@@ -38,6 +38,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("content", request.content);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.effectTimeend)) {
+            body.put("effectTimeend", request.effectTimeend);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.effectTimestart)) {
+            body.put("effectTimestart", request.effectTimestart);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.extTitle)) {
             body.put("extTitle", request.extTitle);
         }
@@ -1805,6 +1813,43 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("QueryGroup", "serviceGroup_1.0", "HTTP", "POST", "AK", "/v1.0/serviceGroup/groups/query", "json", req, runtime), new QueryGroupResponse());
+    }
+
+    public QueryGroupMemberResponse queryGroupMember(QueryGroupMemberRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryGroupMemberHeaders headers = new QueryGroupMemberHeaders();
+        return this.queryGroupMemberWithOptions(request, headers, runtime);
+    }
+
+    public QueryGroupMemberResponse queryGroupMemberWithOptions(QueryGroupMemberRequest request, QueryGroupMemberHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openTeamId)) {
+            body.put("openTeamId", request.openTeamId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetCorpId)) {
+            body.put("targetCorpId", request.targetCorpId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryGroupMember", "serviceGroup_1.0", "HTTP", "POST", "AK", "/v1.0/serviceGroup/groups/members/query", "json", req, runtime), new QueryGroupMemberResponse());
     }
 
     public QueryGroupSetResponse queryGroupSet(QueryGroupSetRequest request) throws Exception {
