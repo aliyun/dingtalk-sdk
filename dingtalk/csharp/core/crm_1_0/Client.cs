@@ -1848,6 +1848,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             {
                 query["bizType"] = request.BizType;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResourceId))
+            {
+                query["resourceId"] = request.ResourceId;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1872,6 +1876,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
             {
                 query["bizType"] = request.BizType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResourceId))
+            {
+                query["resourceId"] = request.ResourceId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

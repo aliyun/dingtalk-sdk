@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
 {
     public class QueryOrgTodoByUserRequest : TeaModel {
         /// <summary>
+        /// 查询从计划完成时间开始
+        /// </summary>
+        [NameInMap("fromDueTime")]
+        [Validation(Required=false)]
+        public long? FromDueTime { get; set; }
+
+        /// <summary>
         /// 待办完成状态。
         /// </summary>
         [NameInMap("isDone")]
@@ -29,6 +36,27 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public string NextToken { get; set; }
+
+        /// <summary>
+        /// 查询目标用户角色类型，执行人 | 创建人 | 参与人，可以同时传多个值。如：[["executor"], ["creator"],["participant"]] 或 [["executor", "creator"]]
+        /// </summary>
+        [NameInMap("roleTypes")]
+        [Validation(Required=false)]
+        public List<List<string>> RoleTypes { get; set; }
+
+        /// <summary>
+        /// 待办标题
+        /// </summary>
+        [NameInMap("subject")]
+        [Validation(Required=false)]
+        public string Subject { get; set; }
+
+        /// <summary>
+        /// 查询到计划完成时间结束
+        /// </summary>
+        [NameInMap("toDueTime")]
+        [Validation(Required=false)]
+        public long? ToDueTime { get; set; }
 
     }
 

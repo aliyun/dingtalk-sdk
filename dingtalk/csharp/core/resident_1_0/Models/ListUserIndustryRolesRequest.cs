@@ -6,15 +6,15 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
 {
-    public class StopStreamOutResponseBody : TeaModel {
+    public class ListUserIndustryRolesRequest : TeaModel {
         /// <summary>
-        /// conferenceId
+        /// 用户id
         /// </summary>
-        [NameInMap("code")]
+        [NameInMap("userId")]
         [Validation(Required=false)]
-        public string Code { get; set; }
+        public string UserId { get; set; }
 
     }
 

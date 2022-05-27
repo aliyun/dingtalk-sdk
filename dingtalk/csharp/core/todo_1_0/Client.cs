@@ -719,6 +719,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FromDueTime))
+            {
+                body["fromDueTime"] = request.FromDueTime;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsDone))
             {
                 body["isDone"] = request.IsDone;
@@ -730,6 +734,18 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
                 body["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleTypes))
+            {
+                body["roleTypes"] = request.RoleTypes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Subject))
+            {
+                body["subject"] = request.Subject;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToDueTime))
+            {
+                body["toDueTime"] = request.ToDueTime;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -753,6 +769,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FromDueTime))
+            {
+                body["fromDueTime"] = request.FromDueTime;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsDone))
             {
                 body["isDone"] = request.IsDone;
@@ -764,6 +784,18 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
                 body["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleTypes))
+            {
+                body["roleTypes"] = request.RoleTypes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Subject))
+            {
+                body["subject"] = request.Subject;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToDueTime))
+            {
+                body["toDueTime"] = request.ToDueTime;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

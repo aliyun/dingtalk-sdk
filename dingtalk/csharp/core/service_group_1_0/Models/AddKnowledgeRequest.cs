@@ -60,6 +60,14 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public string Content { get; set; }
 
+        [NameInMap("effectTimeend")]
+        [Validation(Required=false)]
+        public long? EffectTimeend { get; set; }
+
+        [NameInMap("effectTimestart")]
+        [Validation(Required=false)]
+        public long? EffectTimestart { get; set; }
+
         /// <summary>
         /// 知识点扩展问(多个用英文逗号隔开)
         /// </summary>

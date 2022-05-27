@@ -16,6 +16,13 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public string BizType { get; set; }
 
+        /// <summary>
+        /// 资源id，填表单code
+        /// </summary>
+        [NameInMap("resourceId")]
+        [Validation(Required=false)]
+        public string ResourceId { get; set; }
+
     }
 
 }

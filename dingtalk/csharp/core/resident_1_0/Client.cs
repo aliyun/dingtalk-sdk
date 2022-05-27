@@ -1244,6 +1244,70 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<GetSpacesInfoResponse>(await DoROARequestAsync("GetSpacesInfo", "resident_1.0", "HTTP", "POST", "AK", "/v1.0/resident/spaces/query", "json", req, runtime));
         }
 
+        public ListIndustryRoleUsersResponse ListIndustryRoleUsers(ListIndustryRoleUsersRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListIndustryRoleUsersHeaders headers = new ListIndustryRoleUsersHeaders();
+            return ListIndustryRoleUsersWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ListIndustryRoleUsersResponse> ListIndustryRoleUsersAsync(ListIndustryRoleUsersRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListIndustryRoleUsersHeaders headers = new ListIndustryRoleUsersHeaders();
+            return await ListIndustryRoleUsersWithOptionsAsync(request, headers, runtime);
+        }
+
+        public ListIndustryRoleUsersResponse ListIndustryRoleUsersWithOptions(ListIndustryRoleUsersRequest request, ListIndustryRoleUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagCode))
+            {
+                query["tagCode"] = request.TagCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<ListIndustryRoleUsersResponse>(DoROARequest("ListIndustryRoleUsers", "resident_1.0", "HTTP", "GET", "AK", "/v1.0/resident/industryRoles/users", "json", req, runtime));
+        }
+
+        public async Task<ListIndustryRoleUsersResponse> ListIndustryRoleUsersWithOptionsAsync(ListIndustryRoleUsersRequest request, ListIndustryRoleUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagCode))
+            {
+                query["tagCode"] = request.TagCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<ListIndustryRoleUsersResponse>(await DoROARequestAsync("ListIndustryRoleUsers", "resident_1.0", "HTTP", "GET", "AK", "/v1.0/resident/industryRoles/users", "json", req, runtime));
+        }
+
         public ListPointRulesResponse ListPointRules(ListPointRulesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1466,6 +1530,70 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             return TeaModel.ToObject<ListUncheckUsersResponse>(await DoROARequestAsync("ListUncheckUsers", "resident_1.0", "HTTP", "GET", "AK", "/v1.0/resident/organizations/noJoinUsers", "json", req, runtime));
+        }
+
+        public ListUserIndustryRolesResponse ListUserIndustryRoles(ListUserIndustryRolesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListUserIndustryRolesHeaders headers = new ListUserIndustryRolesHeaders();
+            return ListUserIndustryRolesWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ListUserIndustryRolesResponse> ListUserIndustryRolesAsync(ListUserIndustryRolesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListUserIndustryRolesHeaders headers = new ListUserIndustryRolesHeaders();
+            return await ListUserIndustryRolesWithOptionsAsync(request, headers, runtime);
+        }
+
+        public ListUserIndustryRolesResponse ListUserIndustryRolesWithOptions(ListUserIndustryRolesRequest request, ListUserIndustryRolesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<ListUserIndustryRolesResponse>(DoROARequest("ListUserIndustryRoles", "resident_1.0", "HTTP", "GET", "AK", "/v1.0/resident/users/industryRoles", "json", req, runtime));
+        }
+
+        public async Task<ListUserIndustryRolesResponse> ListUserIndustryRolesWithOptionsAsync(ListUserIndustryRolesRequest request, ListUserIndustryRolesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<ListUserIndustryRolesResponse>(await DoROARequestAsync("ListUserIndustryRoles", "resident_1.0", "HTTP", "GET", "AK", "/v1.0/resident/users/industryRoles", "json", req, runtime));
         }
 
         public PagePointHistoryResponse PagePointHistory(PagePointHistoryRequest request)

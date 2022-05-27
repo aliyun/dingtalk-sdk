@@ -52,6 +52,14 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0
             {
                 body["content"] = request.Content;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EffectTimeend))
+            {
+                body["effectTimeend"] = request.EffectTimeend;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EffectTimestart))
+            {
+                body["effectTimestart"] = request.EffectTimestart;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExtTitle))
             {
                 body["extTitle"] = request.ExtTitle;
@@ -120,6 +128,14 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
             {
                 body["content"] = request.Content;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EffectTimeend))
+            {
+                body["effectTimeend"] = request.EffectTimeend;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EffectTimestart))
+            {
+                body["effectTimestart"] = request.EffectTimestart;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExtTitle))
             {
@@ -3836,6 +3852,86 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<QueryGroupResponse>(await DoROARequestAsync("QueryGroup", "serviceGroup_1.0", "HTTP", "POST", "AK", "/v1.0/serviceGroup/groups/query", "json", req, runtime));
+        }
+
+        public QueryGroupMemberResponse QueryGroupMember(QueryGroupMemberRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryGroupMemberHeaders headers = new QueryGroupMemberHeaders();
+            return QueryGroupMemberWithOptions(request, headers, runtime);
+        }
+
+        public async Task<QueryGroupMemberResponse> QueryGroupMemberAsync(QueryGroupMemberRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryGroupMemberHeaders headers = new QueryGroupMemberHeaders();
+            return await QueryGroupMemberWithOptionsAsync(request, headers, runtime);
+        }
+
+        public QueryGroupMemberResponse QueryGroupMemberWithOptions(QueryGroupMemberRequest request, QueryGroupMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenTeamId))
+            {
+                body["openTeamId"] = request.OpenTeamId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetCorpId))
+            {
+                body["targetCorpId"] = request.TargetCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<QueryGroupMemberResponse>(DoROARequest("QueryGroupMember", "serviceGroup_1.0", "HTTP", "POST", "AK", "/v1.0/serviceGroup/groups/members/query", "json", req, runtime));
+        }
+
+        public async Task<QueryGroupMemberResponse> QueryGroupMemberWithOptionsAsync(QueryGroupMemberRequest request, QueryGroupMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenTeamId))
+            {
+                body["openTeamId"] = request.OpenTeamId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetCorpId))
+            {
+                body["targetCorpId"] = request.TargetCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<QueryGroupMemberResponse>(await DoROARequestAsync("QueryGroupMember", "serviceGroup_1.0", "HTTP", "POST", "AK", "/v1.0/serviceGroup/groups/members/query", "json", req, runtime));
         }
 
         public QueryGroupSetResponse QueryGroupSet(QueryGroupSetRequest request)

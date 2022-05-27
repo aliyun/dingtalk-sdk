@@ -410,6 +410,94 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
             return TeaModel.ToObject<GetMaxVersionResponse>(await DoROARequestAsync("GetMaxVersion", "miniapp_1.0", "HTTP", "GET", "AK", "/v1.0/miniapp/apps/maxVersions", "json", req, runtime));
         }
 
+        public GetMiniAppMetaDataResponse GetMiniAppMetaData(GetMiniAppMetaDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetMiniAppMetaDataHeaders headers = new GetMiniAppMetaDataHeaders();
+            return GetMiniAppMetaDataWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetMiniAppMetaDataResponse> GetMiniAppMetaDataAsync(GetMiniAppMetaDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetMiniAppMetaDataHeaders headers = new GetMiniAppMetaDataHeaders();
+            return await GetMiniAppMetaDataWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetMiniAppMetaDataResponse GetMiniAppMetaDataWithOptions(GetMiniAppMetaDataRequest request, GetMiniAppMetaDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BundleId))
+            {
+                body["bundleId"] = request.BundleId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BundleIdTableGmtModified))
+            {
+                body["bundleIdTableGmtModified"] = request.BundleIdTableGmtModified;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FromAppName))
+            {
+                body["fromAppName"] = request.FromAppName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MiniAppIdTableGmtModified))
+            {
+                body["miniAppIdTableGmtModified"] = request.MiniAppIdTableGmtModified;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<GetMiniAppMetaDataResponse>(DoROARequest("GetMiniAppMetaData", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/apps/metadata", "json", req, runtime));
+        }
+
+        public async Task<GetMiniAppMetaDataResponse> GetMiniAppMetaDataWithOptionsAsync(GetMiniAppMetaDataRequest request, GetMiniAppMetaDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BundleId))
+            {
+                body["bundleId"] = request.BundleId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BundleIdTableGmtModified))
+            {
+                body["bundleIdTableGmtModified"] = request.BundleIdTableGmtModified;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FromAppName))
+            {
+                body["fromAppName"] = request.FromAppName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MiniAppIdTableGmtModified))
+            {
+                body["miniAppIdTableGmtModified"] = request.MiniAppIdTableGmtModified;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<GetMiniAppMetaDataResponse>(await DoROARequestAsync("GetMiniAppMetaData", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/apps/metadata", "json", req, runtime));
+        }
+
         public GetSettingByMiniAppIdResponse GetSettingByMiniAppId(string miniAppId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

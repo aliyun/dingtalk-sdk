@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 {
     public class StopCloudRecordResponseBody : TeaModel {
         /// <summary>
-        /// 是否成功
-        /// </summary>
-        [NameInMap("cause")]
-        [Validation(Required=false)]
-        public string Cause { get; set; }
-
-        /// <summary>
         /// 返回码
         /// </summary>
         [NameInMap("code")]
