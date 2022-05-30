@@ -3023,6 +3023,10 @@ class Client(OpenApiClient):
             body['excludeStaffIds'] = request.exclude_staff_ids
         if not UtilClient.is_unset(request.exclude_tag_ids):
             body['excludeTagIds'] = request.exclude_tag_ids
+        if not UtilClient.is_unset(request.hide_in_search):
+            body['hideInSearch'] = request.hide_in_search
+        if not UtilClient.is_unset(request.hide_in_user_profile):
+            body['hideInUserProfile'] = request.hide_in_user_profile
         if not UtilClient.is_unset(request.id):
             body['id'] = request.id
         if not UtilClient.is_unset(request.name):
@@ -3065,6 +3069,10 @@ class Client(OpenApiClient):
             body['excludeStaffIds'] = request.exclude_staff_ids
         if not UtilClient.is_unset(request.exclude_tag_ids):
             body['excludeTagIds'] = request.exclude_tag_ids
+        if not UtilClient.is_unset(request.hide_in_search):
+            body['hideInSearch'] = request.hide_in_search
+        if not UtilClient.is_unset(request.hide_in_user_profile):
+            body['hideInUserProfile'] = request.hide_in_user_profile
         if not UtilClient.is_unset(request.id):
             body['id'] = request.id
         if not UtilClient.is_unset(request.name):
@@ -3127,6 +3135,10 @@ class Client(OpenApiClient):
             body['id'] = request.id
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
+        if not UtilClient.is_unset(request.restrict_in_search):
+            body['restrictInSearch'] = request.restrict_in_search
+        if not UtilClient.is_unset(request.restrict_in_user_profile):
+            body['restrictInUserProfile'] = request.restrict_in_user_profile
         if not UtilClient.is_unset(request.subject_dept_ids):
             body['subjectDeptIds'] = request.subject_dept_ids
         if not UtilClient.is_unset(request.subject_tag_ids):
@@ -3171,6 +3183,10 @@ class Client(OpenApiClient):
             body['id'] = request.id
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
+        if not UtilClient.is_unset(request.restrict_in_search):
+            body['restrictInSearch'] = request.restrict_in_search
+        if not UtilClient.is_unset(request.restrict_in_user_profile):
+            body['restrictInUserProfile'] = request.restrict_in_user_profile
         if not UtilClient.is_unset(request.subject_dept_ids):
             body['subjectDeptIds'] = request.subject_dept_ids
         if not UtilClient.is_unset(request.subject_tag_ids):

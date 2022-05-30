@@ -7133,6 +7133,8 @@ class UpdateContactHideSettingRequest(TeaModel):
         exclude_dept_ids: List[int] = None,
         exclude_staff_ids: List[str] = None,
         exclude_tag_ids: List[int] = None,
+        hide_in_search: bool = None,
+        hide_in_user_profile: bool = None,
         id: int = None,
         name: str = None,
         object_dept_ids: List[int] = None,
@@ -7149,6 +7151,10 @@ class UpdateContactHideSettingRequest(TeaModel):
         self.exclude_staff_ids = exclude_staff_ids
         # 白名单角色列表
         self.exclude_tag_ids = exclude_tag_ids
+        # 是否同时在被搜索时隐藏
+        self.hide_in_search = hide_in_search
+        # 是否同时在被查看个人资料页时隐藏
+        self.hide_in_user_profile = hide_in_user_profile
         # settingId
         self.id = id
         # 设置名称
@@ -7179,6 +7185,10 @@ class UpdateContactHideSettingRequest(TeaModel):
             result['excludeStaffIds'] = self.exclude_staff_ids
         if self.exclude_tag_ids is not None:
             result['excludeTagIds'] = self.exclude_tag_ids
+        if self.hide_in_search is not None:
+            result['hideInSearch'] = self.hide_in_search
+        if self.hide_in_user_profile is not None:
+            result['hideInUserProfile'] = self.hide_in_user_profile
         if self.id is not None:
             result['id'] = self.id
         if self.name is not None:
@@ -7203,6 +7213,10 @@ class UpdateContactHideSettingRequest(TeaModel):
             self.exclude_staff_ids = m.get('excludeStaffIds')
         if m.get('excludeTagIds') is not None:
             self.exclude_tag_ids = m.get('excludeTagIds')
+        if m.get('hideInSearch') is not None:
+            self.hide_in_search = m.get('hideInSearch')
+        if m.get('hideInUserProfile') is not None:
+            self.hide_in_user_profile = m.get('hideInUserProfile')
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('name') is not None:
@@ -7324,6 +7338,8 @@ class UpdateContactRestrictSettingRequest(TeaModel):
         exclude_user_ids: List[str] = None,
         id: int = None,
         name: str = None,
+        restrict_in_search: bool = None,
+        restrict_in_user_profile: bool = None,
         subject_dept_ids: List[int] = None,
         subject_tag_ids: List[int] = None,
         subject_user_ids: List[str] = None,
@@ -7343,6 +7359,10 @@ class UpdateContactRestrictSettingRequest(TeaModel):
         self.id = id
         # 规则名称
         self.name = name
+        # 是否同时限制搜索
+        self.restrict_in_search = restrict_in_search
+        # 是否同时限制查看个人资料页
+        self.restrict_in_user_profile = restrict_in_user_profile
         # 主体的部门id列表
         self.subject_dept_ids = subject_dept_ids
         # 主体的角色id列表
@@ -7375,6 +7395,10 @@ class UpdateContactRestrictSettingRequest(TeaModel):
             result['id'] = self.id
         if self.name is not None:
             result['name'] = self.name
+        if self.restrict_in_search is not None:
+            result['restrictInSearch'] = self.restrict_in_search
+        if self.restrict_in_user_profile is not None:
+            result['restrictInUserProfile'] = self.restrict_in_user_profile
         if self.subject_dept_ids is not None:
             result['subjectDeptIds'] = self.subject_dept_ids
         if self.subject_tag_ids is not None:
@@ -7401,6 +7425,10 @@ class UpdateContactRestrictSettingRequest(TeaModel):
             self.id = m.get('id')
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('restrictInSearch') is not None:
+            self.restrict_in_search = m.get('restrictInSearch')
+        if m.get('restrictInUserProfile') is not None:
+            self.restrict_in_user_profile = m.get('restrictInUserProfile')
         if m.get('subjectDeptIds') is not None:
             self.subject_dept_ids = m.get('subjectDeptIds')
         if m.get('subjectTagIds') is not None:
