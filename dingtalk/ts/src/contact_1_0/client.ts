@@ -3606,6 +3606,8 @@ export class UpdateContactHideSettingRequest extends $tea.Model {
   excludeDeptIds?: number[];
   excludeStaffIds?: string[];
   excludeTagIds?: number[];
+  hideInSearch?: boolean;
+  hideInUserProfile?: boolean;
   id?: number;
   name?: string;
   objectDeptIds?: number[];
@@ -3618,6 +3620,8 @@ export class UpdateContactHideSettingRequest extends $tea.Model {
       excludeDeptIds: 'excludeDeptIds',
       excludeStaffIds: 'excludeStaffIds',
       excludeTagIds: 'excludeTagIds',
+      hideInSearch: 'hideInSearch',
+      hideInUserProfile: 'hideInUserProfile',
       id: 'id',
       name: 'name',
       objectDeptIds: 'objectDeptIds',
@@ -3633,6 +3637,8 @@ export class UpdateContactHideSettingRequest extends $tea.Model {
       excludeDeptIds: { 'type': 'array', 'itemType': 'number' },
       excludeStaffIds: { 'type': 'array', 'itemType': 'string' },
       excludeTagIds: { 'type': 'array', 'itemType': 'number' },
+      hideInSearch: 'boolean',
+      hideInUserProfile: 'boolean',
       id: 'number',
       name: 'string',
       objectDeptIds: { 'type': 'array', 'itemType': 'number' },
@@ -3717,6 +3723,8 @@ export class UpdateContactRestrictSettingRequest extends $tea.Model {
   excludeUserIds?: string[];
   id?: number;
   name?: string;
+  restrictInSearch?: boolean;
+  restrictInUserProfile?: boolean;
   subjectDeptIds?: number[];
   subjectTagIds?: number[];
   subjectUserIds?: string[];
@@ -3730,6 +3738,8 @@ export class UpdateContactRestrictSettingRequest extends $tea.Model {
       excludeUserIds: 'excludeUserIds',
       id: 'id',
       name: 'name',
+      restrictInSearch: 'restrictInSearch',
+      restrictInUserProfile: 'restrictInUserProfile',
       subjectDeptIds: 'subjectDeptIds',
       subjectTagIds: 'subjectTagIds',
       subjectUserIds: 'subjectUserIds',
@@ -3746,6 +3756,8 @@ export class UpdateContactRestrictSettingRequest extends $tea.Model {
       excludeUserIds: { 'type': 'array', 'itemType': 'string' },
       id: 'number',
       name: 'string',
+      restrictInSearch: 'boolean',
+      restrictInUserProfile: 'boolean',
       subjectDeptIds: { 'type': 'array', 'itemType': 'number' },
       subjectTagIds: { 'type': 'array', 'itemType': 'number' },
       subjectUserIds: { 'type': 'array', 'itemType': 'string' },
@@ -6403,6 +6415,14 @@ export default class Client extends OpenApi {
       body["excludeTagIds"] = request.excludeTagIds;
     }
 
+    if (!Util.isUnset(request.hideInSearch)) {
+      body["hideInSearch"] = request.hideInSearch;
+    }
+
+    if (!Util.isUnset(request.hideInUserProfile)) {
+      body["hideInUserProfile"] = request.hideInUserProfile;
+    }
+
     if (!Util.isUnset(request.id)) {
       body["id"] = request.id;
     }
@@ -6474,6 +6494,14 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.name)) {
       body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.restrictInSearch)) {
+      body["restrictInSearch"] = request.restrictInSearch;
+    }
+
+    if (!Util.isUnset(request.restrictInUserProfile)) {
+      body["restrictInUserProfile"] = request.restrictInUserProfile;
     }
 
     if (!Util.isUnset(request.subjectDeptIds)) {
