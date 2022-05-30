@@ -45,6 +45,20 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public List<long?> ExcludeTagIds { get; set; }
 
         /// <summary>
+        /// 是否同时在被搜索时隐藏
+        /// </summary>
+        [NameInMap("hideInSearch")]
+        [Validation(Required=false)]
+        public bool? HideInSearch { get; set; }
+
+        /// <summary>
+        /// 是否同时在被查看个人资料页时隐藏
+        /// </summary>
+        [NameInMap("hideInUserProfile")]
+        [Validation(Required=false)]
+        public bool? HideInUserProfile { get; set; }
+
+        /// <summary>
         /// settingId
         /// </summary>
         [NameInMap("id")]

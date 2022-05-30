@@ -3134,6 +3134,14 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             {
                 body["excludeTagIds"] = request.ExcludeTagIds;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideInSearch))
+            {
+                body["hideInSearch"] = request.HideInSearch;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideInUserProfile))
+            {
+                body["hideInUserProfile"] = request.HideInUserProfile;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
             {
                 body["id"] = request.Id;
@@ -3194,6 +3202,14 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeTagIds))
             {
                 body["excludeTagIds"] = request.ExcludeTagIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideInSearch))
+            {
+                body["hideInSearch"] = request.HideInSearch;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideInUserProfile))
+            {
+                body["hideInUserProfile"] = request.HideInUserProfile;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
             {
@@ -3278,6 +3294,14 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             {
                 body["name"] = request.Name;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RestrictInSearch))
+            {
+                body["restrictInSearch"] = request.RestrictInSearch;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RestrictInUserProfile))
+            {
+                body["restrictInUserProfile"] = request.RestrictInUserProfile;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubjectDeptIds))
             {
                 body["subjectDeptIds"] = request.SubjectDeptIds;
@@ -3342,6 +3366,14 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
                 body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RestrictInSearch))
+            {
+                body["restrictInSearch"] = request.RestrictInSearch;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RestrictInUserProfile))
+            {
+                body["restrictInUserProfile"] = request.RestrictInUserProfile;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubjectDeptIds))
             {
