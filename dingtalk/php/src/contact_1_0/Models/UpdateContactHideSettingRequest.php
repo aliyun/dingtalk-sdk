@@ -44,6 +44,20 @@ class UpdateContactHideSettingRequest extends Model
     public $excludeTagIds;
 
     /**
+     * @description 是否同时在被搜索时隐藏
+     *
+     * @var bool
+     */
+    public $hideInSearch;
+
+    /**
+     * @description 是否同时在被查看个人资料页时隐藏
+     *
+     * @var bool
+     */
+    public $hideInUserProfile;
+
+    /**
      * @description settingId
      *
      * @var int
@@ -78,16 +92,18 @@ class UpdateContactHideSettingRequest extends Model
      */
     public $objectTagIds;
     protected $_name = [
-        'active'          => 'active',
-        'description'     => 'description',
-        'excludeDeptIds'  => 'excludeDeptIds',
-        'excludeStaffIds' => 'excludeStaffIds',
-        'excludeTagIds'   => 'excludeTagIds',
-        'id'              => 'id',
-        'name'            => 'name',
-        'objectDeptIds'   => 'objectDeptIds',
-        'objectStaffIds'  => 'objectStaffIds',
-        'objectTagIds'    => 'objectTagIds',
+        'active'            => 'active',
+        'description'       => 'description',
+        'excludeDeptIds'    => 'excludeDeptIds',
+        'excludeStaffIds'   => 'excludeStaffIds',
+        'excludeTagIds'     => 'excludeTagIds',
+        'hideInSearch'      => 'hideInSearch',
+        'hideInUserProfile' => 'hideInUserProfile',
+        'id'                => 'id',
+        'name'              => 'name',
+        'objectDeptIds'     => 'objectDeptIds',
+        'objectStaffIds'    => 'objectStaffIds',
+        'objectTagIds'      => 'objectTagIds',
     ];
 
     public function validate()
@@ -111,6 +127,12 @@ class UpdateContactHideSettingRequest extends Model
         }
         if (null !== $this->excludeTagIds) {
             $res['excludeTagIds'] = $this->excludeTagIds;
+        }
+        if (null !== $this->hideInSearch) {
+            $res['hideInSearch'] = $this->hideInSearch;
+        }
+        if (null !== $this->hideInUserProfile) {
+            $res['hideInUserProfile'] = $this->hideInUserProfile;
         }
         if (null !== $this->id) {
             $res['id'] = $this->id;
@@ -159,6 +181,12 @@ class UpdateContactHideSettingRequest extends Model
             if (!empty($map['excludeTagIds'])) {
                 $model->excludeTagIds = $map['excludeTagIds'];
             }
+        }
+        if (isset($map['hideInSearch'])) {
+            $model->hideInSearch = $map['hideInSearch'];
+        }
+        if (isset($map['hideInUserProfile'])) {
+            $model->hideInUserProfile = $map['hideInUserProfile'];
         }
         if (isset($map['id'])) {
             $model->id = $map['id'];

@@ -2174,6 +2174,12 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->excludeTagIds)) {
             @$body['excludeTagIds'] = $request->excludeTagIds;
         }
+        if (!Utils::isUnset($request->hideInSearch)) {
+            @$body['hideInSearch'] = $request->hideInSearch;
+        }
+        if (!Utils::isUnset($request->hideInUserProfile)) {
+            @$body['hideInUserProfile'] = $request->hideInUserProfile;
+        }
         if (!Utils::isUnset($request->id)) {
             @$body['id'] = $request->id;
         }
@@ -2248,6 +2254,12 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->name)) {
             @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->restrictInSearch)) {
+            @$body['restrictInSearch'] = $request->restrictInSearch;
+        }
+        if (!Utils::isUnset($request->restrictInUserProfile)) {
+            @$body['restrictInUserProfile'] = $request->restrictInUserProfile;
         }
         if (!Utils::isUnset($request->subjectDeptIds)) {
             @$body['subjectDeptIds'] = $request->subjectDeptIds;
