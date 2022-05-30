@@ -1447,6 +1447,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("excludeTagIds", request.excludeTagIds);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.hideInSearch)) {
+            body.put("hideInSearch", request.hideInSearch);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.hideInUserProfile)) {
+            body.put("hideInUserProfile", request.hideInUserProfile);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.id)) {
             body.put("id", request.id);
         }
@@ -1518,6 +1526,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.name)) {
             body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.restrictInSearch)) {
+            body.put("restrictInSearch", request.restrictInSearch);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.restrictInUserProfile)) {
+            body.put("restrictInUserProfile", request.restrictInUserProfile);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.subjectDeptIds)) {

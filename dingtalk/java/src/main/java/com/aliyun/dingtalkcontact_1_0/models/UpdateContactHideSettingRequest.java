@@ -24,6 +24,14 @@ public class UpdateContactHideSettingRequest extends TeaModel {
     @NameInMap("excludeTagIds")
     public java.util.List<Long> excludeTagIds;
 
+    // 是否同时在被搜索时隐藏
+    @NameInMap("hideInSearch")
+    public Boolean hideInSearch;
+
+    // 是否同时在被查看个人资料页时隐藏
+    @NameInMap("hideInUserProfile")
+    public Boolean hideInUserProfile;
+
     // settingId
     @NameInMap("id")
     public Long id;
@@ -87,6 +95,22 @@ public class UpdateContactHideSettingRequest extends TeaModel {
     }
     public java.util.List<Long> getExcludeTagIds() {
         return this.excludeTagIds;
+    }
+
+    public UpdateContactHideSettingRequest setHideInSearch(Boolean hideInSearch) {
+        this.hideInSearch = hideInSearch;
+        return this;
+    }
+    public Boolean getHideInSearch() {
+        return this.hideInSearch;
+    }
+
+    public UpdateContactHideSettingRequest setHideInUserProfile(Boolean hideInUserProfile) {
+        this.hideInUserProfile = hideInUserProfile;
+        return this;
+    }
+    public Boolean getHideInUserProfile() {
+        return this.hideInUserProfile;
     }
 
     public UpdateContactHideSettingRequest setId(Long id) {

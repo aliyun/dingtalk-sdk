@@ -32,6 +32,14 @@ public class UpdateContactRestrictSettingRequest extends TeaModel {
     @NameInMap("name")
     public String name;
 
+    // 是否同时限制搜索
+    @NameInMap("restrictInSearch")
+    public Boolean restrictInSearch;
+
+    // 是否同时限制查看个人资料页
+    @NameInMap("restrictInUserProfile")
+    public Boolean restrictInUserProfile;
+
     // 主体的部门id列表
     @NameInMap("subjectDeptIds")
     public java.util.List<Long> subjectDeptIds;
@@ -107,6 +115,22 @@ public class UpdateContactRestrictSettingRequest extends TeaModel {
     }
     public String getName() {
         return this.name;
+    }
+
+    public UpdateContactRestrictSettingRequest setRestrictInSearch(Boolean restrictInSearch) {
+        this.restrictInSearch = restrictInSearch;
+        return this;
+    }
+    public Boolean getRestrictInSearch() {
+        return this.restrictInSearch;
+    }
+
+    public UpdateContactRestrictSettingRequest setRestrictInUserProfile(Boolean restrictInUserProfile) {
+        this.restrictInUserProfile = restrictInUserProfile;
+        return this;
+    }
+    public Boolean getRestrictInUserProfile() {
+        return this.restrictInUserProfile;
     }
 
     public UpdateContactRestrictSettingRequest setSubjectDeptIds(java.util.List<Long> subjectDeptIds) {
