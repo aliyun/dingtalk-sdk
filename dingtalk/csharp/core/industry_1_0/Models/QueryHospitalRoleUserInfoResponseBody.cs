@@ -51,6 +51,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [Validation(Required=false)]
             public string RoleName { get; set; }
 
+            [NameInMap("status")]
+            [Validation(Required=false)]
+            public int? Status { get; set; }
+
             /// <summary>
             /// 用户编码
             /// </summary>
