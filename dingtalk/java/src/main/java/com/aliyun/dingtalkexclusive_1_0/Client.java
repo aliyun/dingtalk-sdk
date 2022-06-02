@@ -253,6 +253,47 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("DistributePartnerApp", "exclusive_1.0", "HTTP", "POST", "AK", "/v1.0/exclusive/partners/applications/distribute", "json", req, runtime), new DistributePartnerAppResponse());
     }
 
+    public ExclusiveCreateDingPortalResponse exclusiveCreateDingPortal(ExclusiveCreateDingPortalRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        ExclusiveCreateDingPortalHeaders headers = new ExclusiveCreateDingPortalHeaders();
+        return this.exclusiveCreateDingPortalWithOptions(request, headers, runtime);
+    }
+
+    public ExclusiveCreateDingPortalResponse exclusiveCreateDingPortalWithOptions(ExclusiveCreateDingPortalRequest request, ExclusiveCreateDingPortalHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dingPortalName)) {
+            body.put("dingPortalName", request.dingPortalName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetCorpId)) {
+            body.put("targetCorpId", request.targetCorpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.templateAppUuid)) {
+            body.put("templateAppUuid", request.templateAppUuid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.templateCorpId)) {
+            body.put("templateCorpId", request.templateCorpId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("ExclusiveCreateDingPortal", "exclusive_1.0", "HTTP", "POST", "AK", "/v1.0/exclusive/workbenches/templates/spread", "json", req, runtime), new ExclusiveCreateDingPortalResponse());
+    }
+
     public FileStorageActiveStorageResponse fileStorageActiveStorage(FileStorageActiveStorageRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         FileStorageActiveStorageHeaders headers = new FileStorageActiveStorageHeaders();
@@ -1384,6 +1425,47 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("PublishFileChangeNotice", "exclusive_1.0", "HTTP", "POST", "AK", "/v1.0/exclusive/comments/send", "none", req, runtime), new PublishFileChangeNoticeResponse());
+    }
+
+    public PushBadgeResponse pushBadge(PushBadgeRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        PushBadgeHeaders headers = new PushBadgeHeaders();
+        return this.pushBadgeWithOptions(request, headers, runtime);
+    }
+
+    public PushBadgeResponse pushBadgeWithOptions(PushBadgeRequest request, PushBadgeHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.agentId)) {
+            body.put("agentId", request.agentId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pushType)) {
+            body.put("pushType", request.pushType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pushValue)) {
+            body.put("pushValue", request.pushValue);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userIdList)) {
+            body.put("userIdList", request.userIdList);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("PushBadge", "exclusive_1.0", "HTTP", "POST", "AK", "/v1.0/exclusive/exclusiveDesigns/redPoints/push", "json", req, runtime), new PushBadgeResponse());
     }
 
     public QueryAcrossCloudStroageConfigsResponse queryAcrossCloudStroageConfigs(QueryAcrossCloudStroageConfigsRequest request) throws Exception {

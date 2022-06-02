@@ -78,6 +78,9 @@ public class QueryHospitalRoleUserInfoResponseBody extends TeaModel {
         @NameInMap("roleName")
         public String roleName;
 
+        @NameInMap("status")
+        public Integer status;
+
         // 用户编码
         @NameInMap("userCode")
         public String userCode;
@@ -129,6 +132,14 @@ public class QueryHospitalRoleUserInfoResponseBody extends TeaModel {
         }
         public String getRoleName() {
             return this.roleName;
+        }
+
+        public QueryHospitalRoleUserInfoResponseBodyContent setStatus(Integer status) {
+            this.status = status;
+            return this;
+        }
+        public Integer getStatus() {
+            return this.status;
         }
 
         public QueryHospitalRoleUserInfoResponseBodyContent setUserCode(String userCode) {
