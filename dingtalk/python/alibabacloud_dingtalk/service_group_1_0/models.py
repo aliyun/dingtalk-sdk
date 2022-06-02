@@ -4340,6 +4340,174 @@ class CreateGroupSetResponse(TeaModel):
         return self
 
 
+class CreateInstanceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateInstanceRequest(TeaModel):
+    def __init__(
+        self,
+        channel: str = None,
+        external_biz_id: str = None,
+        form_code: str = None,
+        form_data_list: str = None,
+        open_team_id: str = None,
+        operator_union_id: str = None,
+        owner_union_id: str = None,
+    ):
+        # 渠道
+        self.channel = channel
+        # 外部业务ID，由英文、数字构成
+        self.external_biz_id = external_biz_id
+        # 表单CODE,客户表单：DING_CUSTOMER；联系人表单：DING_CONTACT
+        self.form_code = form_code
+        # 表单数据，JSON格式
+        self.form_data_list = form_data_list
+        # 开放团队ID，从服务群后台ID信息中获取
+        self.open_team_id = open_team_id
+        # 操作人unionId
+        self.operator_union_id = operator_union_id
+        # 拥有人unionId
+        self.owner_union_id = owner_union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.channel is not None:
+            result['channel'] = self.channel
+        if self.external_biz_id is not None:
+            result['externalBizId'] = self.external_biz_id
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        if self.form_data_list is not None:
+            result['formDataList'] = self.form_data_list
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.operator_union_id is not None:
+            result['operatorUnionId'] = self.operator_union_id
+        if self.owner_union_id is not None:
+            result['ownerUnionId'] = self.owner_union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('channel') is not None:
+            self.channel = m.get('channel')
+        if m.get('externalBizId') is not None:
+            self.external_biz_id = m.get('externalBizId')
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        if m.get('formDataList') is not None:
+            self.form_data_list = m.get('formDataList')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('operatorUnionId') is not None:
+            self.operator_union_id = m.get('operatorUnionId')
+        if m.get('ownerUnionId') is not None:
+            self.owner_union_id = m.get('ownerUnionId')
+        return self
+
+
+class CreateInstanceResponseBody(TeaModel):
+    def __init__(
+        self,
+        open_data_instance_id: str = None,
+    ):
+        # 数据实例ID
+        self.open_data_instance_id = open_data_instance_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_data_instance_id is not None:
+            result['openDataInstanceId'] = self.open_data_instance_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openDataInstanceId') is not None:
+            self.open_data_instance_id = m.get('openDataInstanceId')
+        return self
+
+
+class CreateInstanceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateInstanceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateInstanceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateTeamHeaders(TeaModel):
     def __init__(
         self,
@@ -4790,6 +4958,153 @@ class CreateTicketResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CreateTicketResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteInstanceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteInstanceRequest(TeaModel):
+    def __init__(
+        self,
+        form_code: str = None,
+        open_data_instance_id: str = None,
+        open_team_id: str = None,
+        operator_union_id: str = None,
+    ):
+        # 表单CODE
+        self.form_code = form_code
+        # 开放数据实例ID
+        self.open_data_instance_id = open_data_instance_id
+        # 开放团队ID
+        self.open_team_id = open_team_id
+        # 操作人unionid
+        self.operator_union_id = operator_union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        if self.open_data_instance_id is not None:
+            result['openDataInstanceId'] = self.open_data_instance_id
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.operator_union_id is not None:
+            result['operatorUnionId'] = self.operator_union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        if m.get('openDataInstanceId') is not None:
+            self.open_data_instance_id = m.get('openDataInstanceId')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('operatorUnionId') is not None:
+            self.operator_union_id = m.get('operatorUnionId')
+        return self
+
+
+class DeleteInstanceResponseBody(TeaModel):
+    def __init__(
+        self,
+        open_data_instance_id: str = None,
+    ):
+        # Id of the request
+        self.open_data_instance_id = open_data_instance_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_data_instance_id is not None:
+            result['openDataInstanceId'] = self.open_data_instance_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openDataInstanceId') is not None:
+            self.open_data_instance_id = m.get('openDataInstanceId')
+        return self
+
+
+class DeleteInstanceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DeleteInstanceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DeleteInstanceResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -5628,6 +5943,229 @@ class GetAuthTokenResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetAuthTokenResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetInstancesByIdsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetInstancesByIdsRequest(TeaModel):
+    def __init__(
+        self,
+        form_code: str = None,
+        open_data_instance_id_list: List[str] = None,
+        open_team_id: str = None,
+    ):
+        # 表单CODE
+        self.form_code = form_code
+        # 开放数据实例ID集合
+        self.open_data_instance_id_list = open_data_instance_id_list
+        # 开放团队ID
+        self.open_team_id = open_team_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        if self.open_data_instance_id_list is not None:
+            result['openDataInstanceIdList'] = self.open_data_instance_id_list
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        if m.get('openDataInstanceIdList') is not None:
+            self.open_data_instance_id_list = m.get('openDataInstanceIdList')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        return self
+
+
+class GetInstancesByIdsResponseBodyCustomFormInstanceResponseList(TeaModel):
+    def __init__(
+        self,
+        creator_union_id: str = None,
+        fields: str = None,
+        form_code: str = None,
+        gmt_create: str = None,
+        gmt_modified: str = None,
+        modified_union_id: str = None,
+        open_data_instance_id: str = None,
+        open_team_id: str = None,
+        owner_union_id: str = None,
+    ):
+        self.creator_union_id = creator_union_id
+        self.fields = fields
+        self.form_code = form_code
+        self.gmt_create = gmt_create
+        self.gmt_modified = gmt_modified
+        self.modified_union_id = modified_union_id
+        self.open_data_instance_id = open_data_instance_id
+        self.open_team_id = open_team_id
+        self.owner_union_id = owner_union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.creator_union_id is not None:
+            result['creatorUnionId'] = self.creator_union_id
+        if self.fields is not None:
+            result['fields'] = self.fields
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.modified_union_id is not None:
+            result['modifiedUnionId'] = self.modified_union_id
+        if self.open_data_instance_id is not None:
+            result['openDataInstanceId'] = self.open_data_instance_id
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.owner_union_id is not None:
+            result['ownerUnionId'] = self.owner_union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('creatorUnionId') is not None:
+            self.creator_union_id = m.get('creatorUnionId')
+        if m.get('fields') is not None:
+            self.fields = m.get('fields')
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('modifiedUnionId') is not None:
+            self.modified_union_id = m.get('modifiedUnionId')
+        if m.get('openDataInstanceId') is not None:
+            self.open_data_instance_id = m.get('openDataInstanceId')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('ownerUnionId') is not None:
+            self.owner_union_id = m.get('ownerUnionId')
+        return self
+
+
+class GetInstancesByIdsResponseBody(TeaModel):
+    def __init__(
+        self,
+        custom_form_instance_response_list: List[GetInstancesByIdsResponseBodyCustomFormInstanceResponseList] = None,
+    ):
+        # Id of the request
+        self.custom_form_instance_response_list = custom_form_instance_response_list
+
+    def validate(self):
+        if self.custom_form_instance_response_list:
+            for k in self.custom_form_instance_response_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['customFormInstanceResponseList'] = []
+        if self.custom_form_instance_response_list is not None:
+            for k in self.custom_form_instance_response_list:
+                result['customFormInstanceResponseList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.custom_form_instance_response_list = []
+        if m.get('customFormInstanceResponseList') is not None:
+            for k in m.get('customFormInstanceResponseList'):
+                temp_model = GetInstancesByIdsResponseBodyCustomFormInstanceResponseList()
+                self.custom_form_instance_response_list.append(temp_model.from_map(k))
+        return self
+
+
+class GetInstancesByIdsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetInstancesByIdsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetInstancesByIdsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -8767,6 +9305,311 @@ class QueryGroupSetResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryGroupSetResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryInstancesByMultiConditionsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryInstancesByMultiConditionsRequestSortFields(TeaModel):
+    def __init__(
+        self,
+        field_code: str = None,
+        sort_by: str = None,
+    ):
+        # 排序字段
+        self.field_code = field_code
+        # 排序方式
+        self.sort_by = sort_by
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_code is not None:
+            result['fieldCode'] = self.field_code
+        if self.sort_by is not None:
+            result['sortBy'] = self.sort_by
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldCode') is not None:
+            self.field_code = m.get('fieldCode')
+        if m.get('sortBy') is not None:
+            self.sort_by = m.get('sortBy')
+        return self
+
+
+class QueryInstancesByMultiConditionsRequest(TeaModel):
+    def __init__(
+        self,
+        form_code: str = None,
+        max_results: int = None,
+        next_token: str = None,
+        open_team_id: str = None,
+        search_fields: str = None,
+        sort_fields: List[QueryInstancesByMultiConditionsRequestSortFields] = None,
+    ):
+        # 表单CODE
+        self.form_code = form_code
+        # 分页大小
+        self.max_results = max_results
+        # 游标位置
+        self.next_token = next_token
+        # 开放团队ID
+        self.open_team_id = open_team_id
+        # 检索条件
+        self.search_fields = search_fields
+        # 排序条件
+        self.sort_fields = sort_fields
+
+    def validate(self):
+        if self.sort_fields:
+            for k in self.sort_fields:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.search_fields is not None:
+            result['searchFields'] = self.search_fields
+        result['sortFields'] = []
+        if self.sort_fields is not None:
+            for k in self.sort_fields:
+                result['sortFields'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('searchFields') is not None:
+            self.search_fields = m.get('searchFields')
+        self.sort_fields = []
+        if m.get('sortFields') is not None:
+            for k in m.get('sortFields'):
+                temp_model = QueryInstancesByMultiConditionsRequestSortFields()
+                self.sort_fields.append(temp_model.from_map(k))
+        return self
+
+
+class QueryInstancesByMultiConditionsResponseBodyRecords(TeaModel):
+    def __init__(
+        self,
+        creator_union_id: str = None,
+        fields: str = None,
+        form_code: str = None,
+        gmt_create: str = None,
+        gmt_modified: str = None,
+        modified_union_id: str = None,
+        open_data_instance_id: str = None,
+        open_team_id: str = None,
+        owner_union_id: str = None,
+    ):
+        self.creator_union_id = creator_union_id
+        self.fields = fields
+        self.form_code = form_code
+        self.gmt_create = gmt_create
+        self.gmt_modified = gmt_modified
+        self.modified_union_id = modified_union_id
+        self.open_data_instance_id = open_data_instance_id
+        self.open_team_id = open_team_id
+        self.owner_union_id = owner_union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.creator_union_id is not None:
+            result['creatorUnionId'] = self.creator_union_id
+        if self.fields is not None:
+            result['fields'] = self.fields
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.modified_union_id is not None:
+            result['modifiedUnionId'] = self.modified_union_id
+        if self.open_data_instance_id is not None:
+            result['openDataInstanceId'] = self.open_data_instance_id
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.owner_union_id is not None:
+            result['ownerUnionId'] = self.owner_union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('creatorUnionId') is not None:
+            self.creator_union_id = m.get('creatorUnionId')
+        if m.get('fields') is not None:
+            self.fields = m.get('fields')
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('modifiedUnionId') is not None:
+            self.modified_union_id = m.get('modifiedUnionId')
+        if m.get('openDataInstanceId') is not None:
+            self.open_data_instance_id = m.get('openDataInstanceId')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('ownerUnionId') is not None:
+            self.owner_union_id = m.get('ownerUnionId')
+        return self
+
+
+class QueryInstancesByMultiConditionsResponseBody(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        records: List[QueryInstancesByMultiConditionsResponseBodyRecords] = None,
+        total_count: int = None,
+    ):
+        self.max_results = max_results
+        # Id of the request
+        self.next_token = next_token
+        self.records = records
+        self.total_count = total_count
+
+    def validate(self):
+        if self.records:
+            for k in self.records:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['records'] = []
+        if self.records is not None:
+            for k in self.records:
+                result['records'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.records = []
+        if m.get('records') is not None:
+            for k in m.get('records'):
+                temp_model = QueryInstancesByMultiConditionsResponseBodyRecords()
+                self.records.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QueryInstancesByMultiConditionsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryInstancesByMultiConditionsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryInstancesByMultiConditionsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -12809,6 +13652,174 @@ class UpdateGroupTagResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        return self
+
+
+class UpdateInstanceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateInstanceRequest(TeaModel):
+    def __init__(
+        self,
+        external_biz_id: str = None,
+        form_code: str = None,
+        form_data_list: str = None,
+        open_data_instance_id: str = None,
+        open_team_id: str = None,
+        operator_union_id: str = None,
+        owner_union_id: str = None,
+    ):
+        # 外部业务ID
+        self.external_biz_id = external_biz_id
+        # 表单CODE
+        self.form_code = form_code
+        # 数据表单实例数据，JSON格式
+        self.form_data_list = form_data_list
+        # 开放数据实例ID
+        self.open_data_instance_id = open_data_instance_id
+        # 开放团队ID
+        self.open_team_id = open_team_id
+        # 操作人unionId
+        self.operator_union_id = operator_union_id
+        # 拥有人unionId
+        self.owner_union_id = owner_union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.external_biz_id is not None:
+            result['externalBizId'] = self.external_biz_id
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        if self.form_data_list is not None:
+            result['formDataList'] = self.form_data_list
+        if self.open_data_instance_id is not None:
+            result['openDataInstanceId'] = self.open_data_instance_id
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.operator_union_id is not None:
+            result['operatorUnionId'] = self.operator_union_id
+        if self.owner_union_id is not None:
+            result['ownerUnionId'] = self.owner_union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('externalBizId') is not None:
+            self.external_biz_id = m.get('externalBizId')
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        if m.get('formDataList') is not None:
+            self.form_data_list = m.get('formDataList')
+        if m.get('openDataInstanceId') is not None:
+            self.open_data_instance_id = m.get('openDataInstanceId')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('operatorUnionId') is not None:
+            self.operator_union_id = m.get('operatorUnionId')
+        if m.get('ownerUnionId') is not None:
+            self.owner_union_id = m.get('ownerUnionId')
+        return self
+
+
+class UpdateInstanceResponseBody(TeaModel):
+    def __init__(
+        self,
+        open_data_instance_id: str = None,
+    ):
+        # Id of the request
+        self.open_data_instance_id = open_data_instance_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_data_instance_id is not None:
+            result['openDataInstanceId'] = self.open_data_instance_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openDataInstanceId') is not None:
+            self.open_data_instance_id = m.get('openDataInstanceId')
+        return self
+
+
+class UpdateInstanceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateInstanceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateInstanceResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 

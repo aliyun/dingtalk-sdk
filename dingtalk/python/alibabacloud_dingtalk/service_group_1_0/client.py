@@ -1827,6 +1827,94 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateGroupSet', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groupSets', 'json', req, runtime)
         )
 
+    def create_instance(
+        self,
+        request: dingtalkservice_group__1__0_models.CreateInstanceRequest,
+    ) -> dingtalkservice_group__1__0_models.CreateInstanceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.CreateInstanceHeaders()
+        return self.create_instance_with_options(request, headers, runtime)
+
+    async def create_instance_async(
+        self,
+        request: dingtalkservice_group__1__0_models.CreateInstanceRequest,
+    ) -> dingtalkservice_group__1__0_models.CreateInstanceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.CreateInstanceHeaders()
+        return await self.create_instance_with_options_async(request, headers, runtime)
+
+    def create_instance_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.CreateInstanceRequest,
+        headers: dingtalkservice_group__1__0_models.CreateInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.CreateInstanceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel):
+            body['channel'] = request.channel
+        if not UtilClient.is_unset(request.external_biz_id):
+            body['externalBizId'] = request.external_biz_id
+        if not UtilClient.is_unset(request.form_code):
+            body['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.form_data_list):
+            body['formDataList'] = request.form_data_list
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.operator_union_id):
+            body['operatorUnionId'] = request.operator_union_id
+        if not UtilClient.is_unset(request.owner_union_id):
+            body['ownerUnionId'] = request.owner_union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.CreateInstanceResponse(),
+            self.do_roarequest('CreateInstance', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customForms/instances', 'json', req, runtime)
+        )
+
+    async def create_instance_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.CreateInstanceRequest,
+        headers: dingtalkservice_group__1__0_models.CreateInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.CreateInstanceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel):
+            body['channel'] = request.channel
+        if not UtilClient.is_unset(request.external_biz_id):
+            body['externalBizId'] = request.external_biz_id
+        if not UtilClient.is_unset(request.form_code):
+            body['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.form_data_list):
+            body['formDataList'] = request.form_data_list
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.operator_union_id):
+            body['operatorUnionId'] = request.operator_union_id
+        if not UtilClient.is_unset(request.owner_union_id):
+            body['ownerUnionId'] = request.owner_union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.CreateInstanceResponse(),
+            await self.do_roarequest_async('CreateInstance', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customForms/instances', 'json', req, runtime)
+        )
+
     def create_team(
         self,
         request: dingtalkservice_group__1__0_models.CreateTeamRequest,
@@ -1989,6 +2077,82 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.CreateTicketResponse(),
             await self.do_roarequest_async('CreateTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets', 'json', req, runtime)
+        )
+
+    def delete_instance(
+        self,
+        request: dingtalkservice_group__1__0_models.DeleteInstanceRequest,
+    ) -> dingtalkservice_group__1__0_models.DeleteInstanceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.DeleteInstanceHeaders()
+        return self.delete_instance_with_options(request, headers, runtime)
+
+    async def delete_instance_async(
+        self,
+        request: dingtalkservice_group__1__0_models.DeleteInstanceRequest,
+    ) -> dingtalkservice_group__1__0_models.DeleteInstanceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.DeleteInstanceHeaders()
+        return await self.delete_instance_with_options_async(request, headers, runtime)
+
+    def delete_instance_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.DeleteInstanceRequest,
+        headers: dingtalkservice_group__1__0_models.DeleteInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.DeleteInstanceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.form_code):
+            body['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.open_data_instance_id):
+            body['openDataInstanceId'] = request.open_data_instance_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.operator_union_id):
+            body['operatorUnionId'] = request.operator_union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.DeleteInstanceResponse(),
+            self.do_roarequest('DeleteInstance', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customForms/instances/remove', 'json', req, runtime)
+        )
+
+    async def delete_instance_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.DeleteInstanceRequest,
+        headers: dingtalkservice_group__1__0_models.DeleteInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.DeleteInstanceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.form_code):
+            body['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.open_data_instance_id):
+            body['openDataInstanceId'] = request.open_data_instance_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.operator_union_id):
+            body['operatorUnionId'] = request.operator_union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.DeleteInstanceResponse(),
+            await self.do_roarequest_async('DeleteInstance', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customForms/instances/remove', 'json', req, runtime)
         )
 
     def delete_knowledge(
@@ -2313,6 +2477,78 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.GetAuthTokenResponse(),
             await self.do_roarequest_async('GetAuthToken', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/get/tokens', 'json', req, runtime)
+        )
+
+    def get_instances_by_ids(
+        self,
+        request: dingtalkservice_group__1__0_models.GetInstancesByIdsRequest,
+    ) -> dingtalkservice_group__1__0_models.GetInstancesByIdsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.GetInstancesByIdsHeaders()
+        return self.get_instances_by_ids_with_options(request, headers, runtime)
+
+    async def get_instances_by_ids_async(
+        self,
+        request: dingtalkservice_group__1__0_models.GetInstancesByIdsRequest,
+    ) -> dingtalkservice_group__1__0_models.GetInstancesByIdsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.GetInstancesByIdsHeaders()
+        return await self.get_instances_by_ids_with_options_async(request, headers, runtime)
+
+    def get_instances_by_ids_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.GetInstancesByIdsRequest,
+        headers: dingtalkservice_group__1__0_models.GetInstancesByIdsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.GetInstancesByIdsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.form_code):
+            body['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.open_data_instance_id_list):
+            body['openDataInstanceIdList'] = request.open_data_instance_id_list
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.GetInstancesByIdsResponse(),
+            self.do_roarequest('GetInstancesByIds', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customForms/instances/batchQuery', 'json', req, runtime)
+        )
+
+    async def get_instances_by_ids_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.GetInstancesByIdsRequest,
+        headers: dingtalkservice_group__1__0_models.GetInstancesByIdsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.GetInstancesByIdsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.form_code):
+            body['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.open_data_instance_id_list):
+            body['openDataInstanceIdList'] = request.open_data_instance_id_list
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.GetInstancesByIdsResponse(),
+            await self.do_roarequest_async('GetInstancesByIds', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customForms/instances/batchQuery', 'json', req, runtime)
         )
 
     def get_negative_word_cloud(
@@ -3349,6 +3585,90 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QueryGroupSetResponse(),
             await self.do_roarequest_async('QueryGroupSet', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/groupSets', 'json', req, runtime)
+        )
+
+    def query_instances_by_multi_conditions(
+        self,
+        request: dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsHeaders()
+        return self.query_instances_by_multi_conditions_with_options(request, headers, runtime)
+
+    async def query_instances_by_multi_conditions_async(
+        self,
+        request: dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsHeaders()
+        return await self.query_instances_by_multi_conditions_with_options_async(request, headers, runtime)
+
+    def query_instances_by_multi_conditions_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsRequest,
+        headers: dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.form_code):
+            body['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.search_fields):
+            body['searchFields'] = request.search_fields
+        if not UtilClient.is_unset(request.sort_fields):
+            body['sortFields'] = request.sort_fields
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsResponse(),
+            self.do_roarequest('QueryInstancesByMultiConditions', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customForms/instances/multiConditions/batchQuery', 'json', req, runtime)
+        )
+
+    async def query_instances_by_multi_conditions_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsRequest,
+        headers: dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.form_code):
+            body['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.search_fields):
+            body['searchFields'] = request.search_fields
+        if not UtilClient.is_unset(request.sort_fields):
+            body['sortFields'] = request.sort_fields
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsResponse(),
+            await self.do_roarequest_async('QueryInstancesByMultiConditions', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customForms/instances/multiConditions/batchQuery', 'json', req, runtime)
         )
 
     def query_send_msg_task_statistics(
@@ -4725,6 +5045,94 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.UpdateGroupTagResponse(),
             await self.do_roarequest_async('UpdateGroupTag', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/serviceGroup/tags', 'none', req, runtime)
+        )
+
+    def update_instance(
+        self,
+        request: dingtalkservice_group__1__0_models.UpdateInstanceRequest,
+    ) -> dingtalkservice_group__1__0_models.UpdateInstanceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.UpdateInstanceHeaders()
+        return self.update_instance_with_options(request, headers, runtime)
+
+    async def update_instance_async(
+        self,
+        request: dingtalkservice_group__1__0_models.UpdateInstanceRequest,
+    ) -> dingtalkservice_group__1__0_models.UpdateInstanceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.UpdateInstanceHeaders()
+        return await self.update_instance_with_options_async(request, headers, runtime)
+
+    def update_instance_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.UpdateInstanceRequest,
+        headers: dingtalkservice_group__1__0_models.UpdateInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.UpdateInstanceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.external_biz_id):
+            body['externalBizId'] = request.external_biz_id
+        if not UtilClient.is_unset(request.form_code):
+            body['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.form_data_list):
+            body['formDataList'] = request.form_data_list
+        if not UtilClient.is_unset(request.open_data_instance_id):
+            body['openDataInstanceId'] = request.open_data_instance_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.operator_union_id):
+            body['operatorUnionId'] = request.operator_union_id
+        if not UtilClient.is_unset(request.owner_union_id):
+            body['ownerUnionId'] = request.owner_union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.UpdateInstanceResponse(),
+            self.do_roarequest('UpdateInstance', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/serviceGroup/customForms/instances', 'json', req, runtime)
+        )
+
+    async def update_instance_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.UpdateInstanceRequest,
+        headers: dingtalkservice_group__1__0_models.UpdateInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.UpdateInstanceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.external_biz_id):
+            body['externalBizId'] = request.external_biz_id
+        if not UtilClient.is_unset(request.form_code):
+            body['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.form_data_list):
+            body['formDataList'] = request.form_data_list
+        if not UtilClient.is_unset(request.open_data_instance_id):
+            body['openDataInstanceId'] = request.open_data_instance_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.operator_union_id):
+            body['operatorUnionId'] = request.operator_union_id
+        if not UtilClient.is_unset(request.owner_union_id):
+            body['ownerUnionId'] = request.owner_union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.UpdateInstanceResponse(),
+            await self.do_roarequest_async('UpdateInstance', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/serviceGroup/customForms/instances', 'json', req, runtime)
         )
 
     def update_ticket(

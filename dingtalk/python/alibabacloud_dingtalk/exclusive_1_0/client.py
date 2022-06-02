@@ -501,6 +501,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DistributePartnerApp', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/partners/applications/distribute', 'json', req, runtime)
         )
 
+    def exclusive_create_ding_portal(
+        self,
+        request: dingtalkexclusive__1__0_models.ExclusiveCreateDingPortalRequest,
+    ) -> dingtalkexclusive__1__0_models.ExclusiveCreateDingPortalResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ExclusiveCreateDingPortalHeaders()
+        return self.exclusive_create_ding_portal_with_options(request, headers, runtime)
+
+    async def exclusive_create_ding_portal_async(
+        self,
+        request: dingtalkexclusive__1__0_models.ExclusiveCreateDingPortalRequest,
+    ) -> dingtalkexclusive__1__0_models.ExclusiveCreateDingPortalResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ExclusiveCreateDingPortalHeaders()
+        return await self.exclusive_create_ding_portal_with_options_async(request, headers, runtime)
+
+    def exclusive_create_ding_portal_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.ExclusiveCreateDingPortalRequest,
+        headers: dingtalkexclusive__1__0_models.ExclusiveCreateDingPortalHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ExclusiveCreateDingPortalResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_portal_name):
+            body['dingPortalName'] = request.ding_portal_name
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        if not UtilClient.is_unset(request.template_app_uuid):
+            body['templateAppUuid'] = request.template_app_uuid
+        if not UtilClient.is_unset(request.template_corp_id):
+            body['templateCorpId'] = request.template_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ExclusiveCreateDingPortalResponse(),
+            self.do_roarequest('ExclusiveCreateDingPortal', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/workbenches/templates/spread', 'json', req, runtime)
+        )
+
+    async def exclusive_create_ding_portal_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.ExclusiveCreateDingPortalRequest,
+        headers: dingtalkexclusive__1__0_models.ExclusiveCreateDingPortalHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ExclusiveCreateDingPortalResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_portal_name):
+            body['dingPortalName'] = request.ding_portal_name
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        if not UtilClient.is_unset(request.template_app_uuid):
+            body['templateAppUuid'] = request.template_app_uuid
+        if not UtilClient.is_unset(request.template_corp_id):
+            body['templateCorpId'] = request.template_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ExclusiveCreateDingPortalResponse(),
+            await self.do_roarequest_async('ExclusiveCreateDingPortal', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/workbenches/templates/spread', 'json', req, runtime)
+        )
+
     def file_storage_active_storage(
         self,
         request: dingtalkexclusive__1__0_models.FileStorageActiveStorageRequest,
@@ -2825,6 +2901,82 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkexclusive__1__0_models.PublishFileChangeNoticeResponse(),
             await self.do_roarequest_async('PublishFileChangeNotice', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/comments/send', 'none', req, runtime)
+        )
+
+    def push_badge(
+        self,
+        request: dingtalkexclusive__1__0_models.PushBadgeRequest,
+    ) -> dingtalkexclusive__1__0_models.PushBadgeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.PushBadgeHeaders()
+        return self.push_badge_with_options(request, headers, runtime)
+
+    async def push_badge_async(
+        self,
+        request: dingtalkexclusive__1__0_models.PushBadgeRequest,
+    ) -> dingtalkexclusive__1__0_models.PushBadgeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.PushBadgeHeaders()
+        return await self.push_badge_with_options_async(request, headers, runtime)
+
+    def push_badge_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.PushBadgeRequest,
+        headers: dingtalkexclusive__1__0_models.PushBadgeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.PushBadgeResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_id):
+            body['agentId'] = request.agent_id
+        if not UtilClient.is_unset(request.push_type):
+            body['pushType'] = request.push_type
+        if not UtilClient.is_unset(request.push_value):
+            body['pushValue'] = request.push_value
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.PushBadgeResponse(),
+            self.do_roarequest('PushBadge', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/exclusiveDesigns/redPoints/push', 'json', req, runtime)
+        )
+
+    async def push_badge_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.PushBadgeRequest,
+        headers: dingtalkexclusive__1__0_models.PushBadgeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.PushBadgeResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_id):
+            body['agentId'] = request.agent_id
+        if not UtilClient.is_unset(request.push_type):
+            body['pushType'] = request.push_type
+        if not UtilClient.is_unset(request.push_value):
+            body['pushValue'] = request.push_value
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.PushBadgeResponse(),
+            await self.do_roarequest_async('PushBadge', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/exclusiveDesigns/redPoints/push', 'json', req, runtime)
         )
 
     def query_across_cloud_stroage_configs(

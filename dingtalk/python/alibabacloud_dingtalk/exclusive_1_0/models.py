@@ -873,6 +873,153 @@ class DistributePartnerAppResponse(TeaModel):
         return self
 
 
+class ExclusiveCreateDingPortalHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ExclusiveCreateDingPortalRequest(TeaModel):
+    def __init__(
+        self,
+        ding_portal_name: str = None,
+        target_corp_id: str = None,
+        template_app_uuid: str = None,
+        template_corp_id: str = None,
+    ):
+        # 工作台名称。
+        self.ding_portal_name = ding_portal_name
+        # 被操纵企业ID。
+        self.target_corp_id = target_corp_id
+        # 模版id。
+        self.template_app_uuid = template_app_uuid
+        # 模版所属的组织id。
+        self.template_corp_id = template_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_portal_name is not None:
+            result['dingPortalName'] = self.ding_portal_name
+        if self.target_corp_id is not None:
+            result['targetCorpId'] = self.target_corp_id
+        if self.template_app_uuid is not None:
+            result['templateAppUuid'] = self.template_app_uuid
+        if self.template_corp_id is not None:
+            result['templateCorpId'] = self.template_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingPortalName') is not None:
+            self.ding_portal_name = m.get('dingPortalName')
+        if m.get('targetCorpId') is not None:
+            self.target_corp_id = m.get('targetCorpId')
+        if m.get('templateAppUuid') is not None:
+            self.template_app_uuid = m.get('templateAppUuid')
+        if m.get('templateCorpId') is not None:
+            self.template_corp_id = m.get('templateCorpId')
+        return self
+
+
+class ExclusiveCreateDingPortalResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: str = None,
+    ):
+        # 是否成功。
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ExclusiveCreateDingPortalResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ExclusiveCreateDingPortalResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ExclusiveCreateDingPortalResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class FileStorageActiveStorageHeaders(TeaModel):
     def __init__(
         self,
@@ -7672,6 +7819,153 @@ class PublishFileChangeNoticeResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        return self
+
+
+class PushBadgeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PushBadgeRequest(TeaModel):
+    def __init__(
+        self,
+        agent_id: str = None,
+        push_type: str = None,
+        push_value: str = None,
+        user_id_list: List[str] = None,
+    ):
+        # 微应用agentId
+        self.agent_id = agent_id
+        # 推送类型
+        self.push_type = push_type
+        # 推送的内容（目前仅限数字）
+        self.push_value = push_value
+        # 员工userId列表
+        self.user_id_list = user_id_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.push_type is not None:
+            result['pushType'] = self.push_type
+        if self.push_value is not None:
+            result['pushValue'] = self.push_value
+        if self.user_id_list is not None:
+            result['userIdList'] = self.user_id_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('pushType') is not None:
+            self.push_type = m.get('pushType')
+        if m.get('pushValue') is not None:
+            self.push_value = m.get('pushValue')
+        if m.get('userIdList') is not None:
+            self.user_id_list = m.get('userIdList')
+        return self
+
+
+class PushBadgeResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        # 是否成功
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class PushBadgeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: PushBadgeResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = PushBadgeResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 

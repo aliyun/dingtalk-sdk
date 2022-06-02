@@ -8679,6 +8679,7 @@ class QueryHospitalRoleUserInfoResponseBodyContent(TeaModel):
         job_number: str = None,
         role_code: str = None,
         role_name: str = None,
+        status: int = None,
         user_code: str = None,
         user_name: str = None,
     ):
@@ -8692,6 +8693,7 @@ class QueryHospitalRoleUserInfoResponseBodyContent(TeaModel):
         self.role_code = role_code
         # 角色名称
         self.role_name = role_name
+        self.status = status
         # 用户编码
         self.user_code = user_code
         # 用户名称
@@ -8716,6 +8718,8 @@ class QueryHospitalRoleUserInfoResponseBodyContent(TeaModel):
             result['roleCode'] = self.role_code
         if self.role_name is not None:
             result['roleName'] = self.role_name
+        if self.status is not None:
+            result['status'] = self.status
         if self.user_code is not None:
             result['userCode'] = self.user_code
         if self.user_name is not None:
@@ -8734,6 +8738,8 @@ class QueryHospitalRoleUserInfoResponseBodyContent(TeaModel):
             self.role_code = m.get('roleCode')
         if m.get('roleName') is not None:
             self.role_name = m.get('roleName')
+        if m.get('status') is not None:
+            self.status = m.get('status')
         if m.get('userCode') is not None:
             self.user_code = m.get('userCode')
         if m.get('userName') is not None:
