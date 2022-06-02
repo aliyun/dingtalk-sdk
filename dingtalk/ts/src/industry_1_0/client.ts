@@ -5895,6 +5895,7 @@ export class QueryHospitalRoleUserInfoResponseBodyContent extends $tea.Model {
   jobNumber?: string;
   roleCode?: string;
   roleName?: string;
+  status?: number;
   userCode?: string;
   userName?: string;
   static names(): { [key: string]: string } {
@@ -5904,6 +5905,7 @@ export class QueryHospitalRoleUserInfoResponseBodyContent extends $tea.Model {
       jobNumber: 'jobNumber',
       roleCode: 'roleCode',
       roleName: 'roleName',
+      status: 'status',
       userCode: 'userCode',
       userName: 'userName',
     };
@@ -5916,6 +5918,7 @@ export class QueryHospitalRoleUserInfoResponseBodyContent extends $tea.Model {
       jobNumber: 'string',
       roleCode: 'string',
       roleName: 'string',
+      status: 'number',
       userCode: 'string',
       userName: 'string',
     };

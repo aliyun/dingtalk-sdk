@@ -2077,6 +2077,106 @@ export class CreateGroupSetResponse extends $tea.Model {
   }
 }
 
+export class CreateInstanceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateInstanceRequest extends $tea.Model {
+  channel?: string;
+  externalBizId?: string;
+  formCode?: string;
+  formDataList?: string;
+  openTeamId?: string;
+  operatorUnionId?: string;
+  ownerUnionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      channel: 'channel',
+      externalBizId: 'externalBizId',
+      formCode: 'formCode',
+      formDataList: 'formDataList',
+      openTeamId: 'openTeamId',
+      operatorUnionId: 'operatorUnionId',
+      ownerUnionId: 'ownerUnionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      channel: 'string',
+      externalBizId: 'string',
+      formCode: 'string',
+      formDataList: 'string',
+      openTeamId: 'string',
+      operatorUnionId: 'string',
+      ownerUnionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateInstanceResponseBody extends $tea.Model {
+  openDataInstanceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openDataInstanceId: 'openDataInstanceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openDataInstanceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateInstanceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateInstanceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateInstanceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateTeamHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2260,6 +2360,97 @@ export class CreateTicketResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: CreateTicketResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteInstanceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteInstanceRequest extends $tea.Model {
+  formCode?: string;
+  openDataInstanceId?: string;
+  openTeamId?: string;
+  operatorUnionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      formCode: 'formCode',
+      openDataInstanceId: 'openDataInstanceId',
+      openTeamId: 'openTeamId',
+      operatorUnionId: 'operatorUnionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      formCode: 'string',
+      openDataInstanceId: 'string',
+      openTeamId: 'string',
+      operatorUnionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteInstanceResponseBody extends $tea.Model {
+  openDataInstanceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openDataInstanceId: 'openDataInstanceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openDataInstanceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteInstanceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DeleteInstanceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DeleteInstanceResponseBody,
     };
   }
 
@@ -2626,6 +2817,94 @@ export class GetAuthTokenResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetAuthTokenResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetInstancesByIdsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetInstancesByIdsRequest extends $tea.Model {
+  formCode?: string;
+  openDataInstanceIdList?: string[];
+  openTeamId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      formCode: 'formCode',
+      openDataInstanceIdList: 'openDataInstanceIdList',
+      openTeamId: 'openTeamId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      formCode: 'string',
+      openDataInstanceIdList: { 'type': 'array', 'itemType': 'string' },
+      openTeamId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetInstancesByIdsResponseBody extends $tea.Model {
+  customFormInstanceResponseList?: GetInstancesByIdsResponseBodyCustomFormInstanceResponseList[];
+  static names(): { [key: string]: string } {
+    return {
+      customFormInstanceResponseList: 'customFormInstanceResponseList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customFormInstanceResponseList: { 'type': 'array', 'itemType': GetInstancesByIdsResponseBodyCustomFormInstanceResponseList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetInstancesByIdsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetInstancesByIdsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetInstancesByIdsResponseBody,
     };
   }
 
@@ -3993,6 +4272,112 @@ export class QueryGroupSetResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryGroupSetResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryInstancesByMultiConditionsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryInstancesByMultiConditionsRequest extends $tea.Model {
+  formCode?: string;
+  maxResults?: number;
+  nextToken?: string;
+  openTeamId?: string;
+  searchFields?: string;
+  sortFields?: QueryInstancesByMultiConditionsRequestSortFields[];
+  static names(): { [key: string]: string } {
+    return {
+      formCode: 'formCode',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      openTeamId: 'openTeamId',
+      searchFields: 'searchFields',
+      sortFields: 'sortFields',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      formCode: 'string',
+      maxResults: 'number',
+      nextToken: 'string',
+      openTeamId: 'string',
+      searchFields: 'string',
+      sortFields: { 'type': 'array', 'itemType': QueryInstancesByMultiConditionsRequestSortFields },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryInstancesByMultiConditionsResponseBody extends $tea.Model {
+  maxResults?: number;
+  nextToken?: string;
+  records?: QueryInstancesByMultiConditionsResponseBodyRecords[];
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      records: 'records',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'string',
+      records: { 'type': 'array', 'itemType': QueryInstancesByMultiConditionsResponseBodyRecords },
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryInstancesByMultiConditionsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryInstancesByMultiConditionsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryInstancesByMultiConditionsResponseBody,
     };
   }
 
@@ -5530,6 +5915,106 @@ export class UpdateGroupTagResponse extends $tea.Model {
   }
 }
 
+export class UpdateInstanceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInstanceRequest extends $tea.Model {
+  externalBizId?: string;
+  formCode?: string;
+  formDataList?: string;
+  openDataInstanceId?: string;
+  openTeamId?: string;
+  operatorUnionId?: string;
+  ownerUnionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      externalBizId: 'externalBizId',
+      formCode: 'formCode',
+      formDataList: 'formDataList',
+      openDataInstanceId: 'openDataInstanceId',
+      openTeamId: 'openTeamId',
+      operatorUnionId: 'operatorUnionId',
+      ownerUnionId: 'ownerUnionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      externalBizId: 'string',
+      formCode: 'string',
+      formDataList: 'string',
+      openDataInstanceId: 'string',
+      openTeamId: 'string',
+      operatorUnionId: 'string',
+      ownerUnionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInstanceResponseBody extends $tea.Model {
+  openDataInstanceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openDataInstanceId: 'openDataInstanceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openDataInstanceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInstanceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateInstanceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateInstanceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateTicketHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6468,6 +6953,49 @@ export class GetAuthTokenResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetInstancesByIdsResponseBodyCustomFormInstanceResponseList extends $tea.Model {
+  creatorUnionId?: string;
+  fields?: string;
+  formCode?: string;
+  gmtCreate?: string;
+  gmtModified?: string;
+  modifiedUnionId?: string;
+  openDataInstanceId?: string;
+  openTeamId?: string;
+  ownerUnionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      creatorUnionId: 'creatorUnionId',
+      fields: 'fields',
+      formCode: 'formCode',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+      modifiedUnionId: 'modifiedUnionId',
+      openDataInstanceId: 'openDataInstanceId',
+      openTeamId: 'openTeamId',
+      ownerUnionId: 'ownerUnionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      creatorUnionId: 'string',
+      fields: 'string',
+      formCode: 'string',
+      gmtCreate: 'string',
+      gmtModified: 'string',
+      modifiedUnionId: 'string',
+      openDataInstanceId: 'string',
+      openTeamId: 'string',
+      ownerUnionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetNegativeWordCloudResponseBodyWords extends $tea.Model {
   count?: number;
   word?: string;
@@ -6950,6 +7478,71 @@ export class QueryGroupSetResponseBodyRecords extends $tea.Model {
       groupSetName: 'string',
       openGroupSetId: 'string',
       templateId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryInstancesByMultiConditionsRequestSortFields extends $tea.Model {
+  fieldCode?: string;
+  sortBy?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldCode: 'fieldCode',
+      sortBy: 'sortBy',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldCode: 'string',
+      sortBy: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryInstancesByMultiConditionsResponseBodyRecords extends $tea.Model {
+  creatorUnionId?: string;
+  fields?: string;
+  formCode?: string;
+  gmtCreate?: string;
+  gmtModified?: string;
+  modifiedUnionId?: string;
+  openDataInstanceId?: string;
+  openTeamId?: string;
+  ownerUnionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      creatorUnionId: 'creatorUnionId',
+      fields: 'fields',
+      formCode: 'formCode',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+      modifiedUnionId: 'modifiedUnionId',
+      openDataInstanceId: 'openDataInstanceId',
+      openTeamId: 'openTeamId',
+      ownerUnionId: 'ownerUnionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      creatorUnionId: 'string',
+      fields: 'string',
+      formCode: 'string',
+      gmtCreate: 'string',
+      gmtModified: 'string',
+      modifiedUnionId: 'string',
+      openDataInstanceId: 'string',
+      openTeamId: 'string',
+      ownerUnionId: 'string',
     };
   }
 
@@ -8902,6 +9495,59 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateGroupSetResponse>(await this.doROARequest("CreateGroupSet", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/groupSets`, "json", req, runtime), new CreateGroupSetResponse({}));
   }
 
+  async createInstance(request: CreateInstanceRequest): Promise<CreateInstanceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateInstanceHeaders({ });
+    return await this.createInstanceWithOptions(request, headers, runtime);
+  }
+
+  async createInstanceWithOptions(request: CreateInstanceRequest, headers: CreateInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateInstanceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.channel)) {
+      body["channel"] = request.channel;
+    }
+
+    if (!Util.isUnset(request.externalBizId)) {
+      body["externalBizId"] = request.externalBizId;
+    }
+
+    if (!Util.isUnset(request.formCode)) {
+      body["formCode"] = request.formCode;
+    }
+
+    if (!Util.isUnset(request.formDataList)) {
+      body["formDataList"] = request.formDataList;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.operatorUnionId)) {
+      body["operatorUnionId"] = request.operatorUnionId;
+    }
+
+    if (!Util.isUnset(request.ownerUnionId)) {
+      body["ownerUnionId"] = request.ownerUnionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateInstanceResponse>(await this.doROARequest("CreateInstance", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/customForms/instances`, "json", req, runtime), new CreateInstanceResponse({}));
+  }
+
   async createTeam(request: CreateTeamRequest): Promise<CreateTeamResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateTeamHeaders({ });
@@ -8994,6 +9640,47 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateTicketResponse>(await this.doROARequest("CreateTicket", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/tickets`, "json", req, runtime), new CreateTicketResponse({}));
+  }
+
+  async deleteInstance(request: DeleteInstanceRequest): Promise<DeleteInstanceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteInstanceHeaders({ });
+    return await this.deleteInstanceWithOptions(request, headers, runtime);
+  }
+
+  async deleteInstanceWithOptions(request: DeleteInstanceRequest, headers: DeleteInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteInstanceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.formCode)) {
+      body["formCode"] = request.formCode;
+    }
+
+    if (!Util.isUnset(request.openDataInstanceId)) {
+      body["openDataInstanceId"] = request.openDataInstanceId;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.operatorUnionId)) {
+      body["operatorUnionId"] = request.operatorUnionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<DeleteInstanceResponse>(await this.doROARequest("DeleteInstance", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/customForms/instances/remove`, "json", req, runtime), new DeleteInstanceResponse({}));
   }
 
   async deleteKnowledge(request: DeleteKnowledgeRequest): Promise<DeleteKnowledgeResponse> {
@@ -9178,6 +9865,43 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<GetAuthTokenResponse>(await this.doROARequest("GetAuthToken", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/get/tokens`, "json", req, runtime), new GetAuthTokenResponse({}));
+  }
+
+  async getInstancesByIds(request: GetInstancesByIdsRequest): Promise<GetInstancesByIdsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetInstancesByIdsHeaders({ });
+    return await this.getInstancesByIdsWithOptions(request, headers, runtime);
+  }
+
+  async getInstancesByIdsWithOptions(request: GetInstancesByIdsRequest, headers: GetInstancesByIdsHeaders, runtime: $Util.RuntimeOptions): Promise<GetInstancesByIdsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.formCode)) {
+      body["formCode"] = request.formCode;
+    }
+
+    if (!Util.isUnset(request.openDataInstanceIdList)) {
+      body["openDataInstanceIdList"] = request.openDataInstanceIdList;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetInstancesByIdsResponse>(await this.doROARequest("GetInstancesByIds", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/customForms/instances/batchQuery`, "json", req, runtime), new GetInstancesByIdsResponse({}));
   }
 
   async getNegativeWordCloud(request: GetNegativeWordCloudRequest): Promise<GetNegativeWordCloudResponse> {
@@ -9691,6 +10415,55 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryGroupSetResponse>(await this.doROARequest("QueryGroupSet", "serviceGroup_1.0", "HTTP", "GET", "AK", `/v1.0/serviceGroup/groupSets`, "json", req, runtime), new QueryGroupSetResponse({}));
+  }
+
+  async queryInstancesByMultiConditions(request: QueryInstancesByMultiConditionsRequest): Promise<QueryInstancesByMultiConditionsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryInstancesByMultiConditionsHeaders({ });
+    return await this.queryInstancesByMultiConditionsWithOptions(request, headers, runtime);
+  }
+
+  async queryInstancesByMultiConditionsWithOptions(request: QueryInstancesByMultiConditionsRequest, headers: QueryInstancesByMultiConditionsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryInstancesByMultiConditionsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.formCode)) {
+      body["formCode"] = request.formCode;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      body["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      body["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.searchFields)) {
+      body["searchFields"] = request.searchFields;
+    }
+
+    if (!Util.isUnset(request.sortFields)) {
+      body["sortFields"] = request.sortFields;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QueryInstancesByMultiConditionsResponse>(await this.doROARequest("QueryInstancesByMultiConditions", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/customForms/instances/multiConditions/batchQuery`, "json", req, runtime), new QueryInstancesByMultiConditionsResponse({}));
   }
 
   async querySendMsgTaskStatistics(request: QuerySendMsgTaskStatisticsRequest): Promise<QuerySendMsgTaskStatisticsResponse> {
@@ -10507,6 +11280,59 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateGroupTagResponse>(await this.doROARequest("UpdateGroupTag", "serviceGroup_1.0", "HTTP", "PUT", "AK", `/v1.0/serviceGroup/tags`, "none", req, runtime), new UpdateGroupTagResponse({}));
+  }
+
+  async updateInstance(request: UpdateInstanceRequest): Promise<UpdateInstanceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateInstanceHeaders({ });
+    return await this.updateInstanceWithOptions(request, headers, runtime);
+  }
+
+  async updateInstanceWithOptions(request: UpdateInstanceRequest, headers: UpdateInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInstanceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.externalBizId)) {
+      body["externalBizId"] = request.externalBizId;
+    }
+
+    if (!Util.isUnset(request.formCode)) {
+      body["formCode"] = request.formCode;
+    }
+
+    if (!Util.isUnset(request.formDataList)) {
+      body["formDataList"] = request.formDataList;
+    }
+
+    if (!Util.isUnset(request.openDataInstanceId)) {
+      body["openDataInstanceId"] = request.openDataInstanceId;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.operatorUnionId)) {
+      body["operatorUnionId"] = request.operatorUnionId;
+    }
+
+    if (!Util.isUnset(request.ownerUnionId)) {
+      body["ownerUnionId"] = request.ownerUnionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateInstanceResponse>(await this.doROARequest("UpdateInstance", "serviceGroup_1.0", "HTTP", "PUT", "AK", `/v1.0/serviceGroup/customForms/instances`, "json", req, runtime), new UpdateInstanceResponse({}));
   }
 
   async updateTicket(request: UpdateTicketRequest): Promise<UpdateTicketResponse> {

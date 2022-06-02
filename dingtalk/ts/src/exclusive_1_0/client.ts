@@ -557,6 +557,97 @@ export class DistributePartnerAppResponse extends $tea.Model {
   }
 }
 
+export class ExclusiveCreateDingPortalHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExclusiveCreateDingPortalRequest extends $tea.Model {
+  dingPortalName?: string;
+  targetCorpId?: string;
+  templateAppUuid?: string;
+  templateCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingPortalName: 'dingPortalName',
+      targetCorpId: 'targetCorpId',
+      templateAppUuid: 'templateAppUuid',
+      templateCorpId: 'templateCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingPortalName: 'string',
+      targetCorpId: 'string',
+      templateAppUuid: 'string',
+      templateCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExclusiveCreateDingPortalResponseBody extends $tea.Model {
+  success?: string;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExclusiveCreateDingPortalResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ExclusiveCreateDingPortalResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ExclusiveCreateDingPortalResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class FileStorageActiveStorageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3461,6 +3552,97 @@ export class PublishFileChangeNoticeResponse extends $tea.Model {
   }
 }
 
+export class PushBadgeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushBadgeRequest extends $tea.Model {
+  agentId?: string;
+  pushType?: string;
+  pushValue?: string;
+  userIdList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      agentId: 'agentId',
+      pushType: 'pushType',
+      pushValue: 'pushValue',
+      userIdList: 'userIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      agentId: 'string',
+      pushType: 'string',
+      pushValue: 'string',
+      userIdList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushBadgeResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushBadgeResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: PushBadgeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: PushBadgeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryAcrossCloudStroageConfigsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5942,6 +6124,47 @@ export default class Client extends OpenApi {
     return $tea.cast<DistributePartnerAppResponse>(await this.doROARequest("DistributePartnerApp", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/partners/applications/distribute`, "json", req, runtime), new DistributePartnerAppResponse({}));
   }
 
+  async exclusiveCreateDingPortal(request: ExclusiveCreateDingPortalRequest): Promise<ExclusiveCreateDingPortalResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ExclusiveCreateDingPortalHeaders({ });
+    return await this.exclusiveCreateDingPortalWithOptions(request, headers, runtime);
+  }
+
+  async exclusiveCreateDingPortalWithOptions(request: ExclusiveCreateDingPortalRequest, headers: ExclusiveCreateDingPortalHeaders, runtime: $Util.RuntimeOptions): Promise<ExclusiveCreateDingPortalResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingPortalName)) {
+      body["dingPortalName"] = request.dingPortalName;
+    }
+
+    if (!Util.isUnset(request.targetCorpId)) {
+      body["targetCorpId"] = request.targetCorpId;
+    }
+
+    if (!Util.isUnset(request.templateAppUuid)) {
+      body["templateAppUuid"] = request.templateAppUuid;
+    }
+
+    if (!Util.isUnset(request.templateCorpId)) {
+      body["templateCorpId"] = request.templateCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ExclusiveCreateDingPortalResponse>(await this.doROARequest("ExclusiveCreateDingPortal", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/workbenches/templates/spread`, "json", req, runtime), new ExclusiveCreateDingPortalResponse({}));
+  }
+
   async fileStorageActiveStorage(request: FileStorageActiveStorageRequest): Promise<FileStorageActiveStorageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new FileStorageActiveStorageHeaders({ });
@@ -7073,6 +7296,47 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<PublishFileChangeNoticeResponse>(await this.doROARequest("PublishFileChangeNotice", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/comments/send`, "none", req, runtime), new PublishFileChangeNoticeResponse({}));
+  }
+
+  async pushBadge(request: PushBadgeRequest): Promise<PushBadgeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PushBadgeHeaders({ });
+    return await this.pushBadgeWithOptions(request, headers, runtime);
+  }
+
+  async pushBadgeWithOptions(request: PushBadgeRequest, headers: PushBadgeHeaders, runtime: $Util.RuntimeOptions): Promise<PushBadgeResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.agentId)) {
+      body["agentId"] = request.agentId;
+    }
+
+    if (!Util.isUnset(request.pushType)) {
+      body["pushType"] = request.pushType;
+    }
+
+    if (!Util.isUnset(request.pushValue)) {
+      body["pushValue"] = request.pushValue;
+    }
+
+    if (!Util.isUnset(request.userIdList)) {
+      body["userIdList"] = request.userIdList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<PushBadgeResponse>(await this.doROARequest("PushBadge", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/exclusiveDesigns/redPoints/push`, "json", req, runtime), new PushBadgeResponse({}));
   }
 
   async queryAcrossCloudStroageConfigs(request: QueryAcrossCloudStroageConfigsRequest): Promise<QueryAcrossCloudStroageConfigsResponse> {
