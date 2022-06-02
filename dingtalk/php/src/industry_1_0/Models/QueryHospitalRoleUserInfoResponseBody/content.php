@@ -44,6 +44,11 @@ class content extends Model
     public $roleName;
 
     /**
+     * @var int
+     */
+    public $status;
+
+    /**
      * @description 用户编码
      *
      * @var string
@@ -62,6 +67,7 @@ class content extends Model
         'jobNumber'   => 'jobNumber',
         'roleCode'    => 'roleCode',
         'roleName'    => 'roleName',
+        'status'      => 'status',
         'userCode'    => 'userCode',
         'userName'    => 'userName',
     ];
@@ -87,6 +93,9 @@ class content extends Model
         }
         if (null !== $this->roleName) {
             $res['roleName'] = $this->roleName;
+        }
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
         }
         if (null !== $this->userCode) {
             $res['userCode'] = $this->userCode;
@@ -120,6 +129,9 @@ class content extends Model
         }
         if (isset($map['roleName'])) {
             $model->roleName = $map['roleName'];
+        }
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
         }
         if (isset($map['userCode'])) {
             $model->userCode = $map['userCode'];

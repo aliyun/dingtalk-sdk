@@ -68,12 +68,18 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateGroupSetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateGroupSetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateGroupSetResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateInstanceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateInstanceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateTeamHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateTeamRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateTeamResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateTicketHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateTicketRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateTicketResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\DeleteInstanceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\DeleteInstanceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\DeleteInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\DeleteKnowledgeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\DeleteKnowledgeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\DeleteKnowledgeResponse;
@@ -86,6 +92,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\FinishTicketResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetAuthTokenHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetAuthTokenRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetAuthTokenResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetInstancesByIdsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetInstancesByIdsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetInstancesByIdsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetNegativeWordCloudHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetNegativeWordCloudRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetNegativeWordCloudResponse;
@@ -130,6 +139,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupSetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupSetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupSetResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryInstancesByMultiConditionsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryInstancesByMultiConditionsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryInstancesByMultiConditionsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QuerySendMsgTaskStatisticsDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QuerySendMsgTaskStatisticsDetailRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QuerySendMsgTaskStatisticsDetailResponse;
@@ -178,6 +190,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\TransferTicketResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateGroupTagHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateGroupTagRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateGroupTagResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateInstanceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateInstanceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateTicketHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateTicketRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateTicketResponse;
@@ -1434,6 +1449,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param CreateInstanceRequest $request
+     *
+     * @return CreateInstanceResponse
+     */
+    public function createInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateInstanceHeaders([]);
+
+        return $this->createInstanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateInstanceRequest $request
+     * @param CreateInstanceHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return CreateInstanceResponse
+     */
+    public function createInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->channel)) {
+            @$body['channel'] = $request->channel;
+        }
+        if (!Utils::isUnset($request->externalBizId)) {
+            @$body['externalBizId'] = $request->externalBizId;
+        }
+        if (!Utils::isUnset($request->formCode)) {
+            @$body['formCode'] = $request->formCode;
+        }
+        if (!Utils::isUnset($request->formDataList)) {
+            @$body['formDataList'] = $request->formDataList;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->operatorUnionId)) {
+            @$body['operatorUnionId'] = $request->operatorUnionId;
+        }
+        if (!Utils::isUnset($request->ownerUnionId)) {
+            @$body['ownerUnionId'] = $request->ownerUnionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateInstanceResponse::fromMap($this->doROARequest('CreateInstance', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/customForms/instances', 'json', $req, $runtime));
+    }
+
+    /**
      * @param CreateTeamRequest $request
      *
      * @return CreateTeamResponse
@@ -1542,6 +1617,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateTicketResponse::fromMap($this->doROARequest('CreateTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/tickets', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DeleteInstanceRequest $request
+     *
+     * @return DeleteInstanceResponse
+     */
+    public function deleteInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteInstanceHeaders([]);
+
+        return $this->deleteInstanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DeleteInstanceRequest $request
+     * @param DeleteInstanceHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return DeleteInstanceResponse
+     */
+    public function deleteInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->formCode)) {
+            @$body['formCode'] = $request->formCode;
+        }
+        if (!Utils::isUnset($request->openDataInstanceId)) {
+            @$body['openDataInstanceId'] = $request->openDataInstanceId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->operatorUnionId)) {
+            @$body['operatorUnionId'] = $request->operatorUnionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DeleteInstanceResponse::fromMap($this->doROARequest('DeleteInstance', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/customForms/instances/remove', 'json', $req, $runtime));
     }
 
     /**
@@ -1761,6 +1887,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetAuthTokenResponse::fromMap($this->doROARequest('GetAuthToken', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/get/tokens', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetInstancesByIdsRequest $request
+     *
+     * @return GetInstancesByIdsResponse
+     */
+    public function getInstancesByIds($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetInstancesByIdsHeaders([]);
+
+        return $this->getInstancesByIdsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetInstancesByIdsRequest $request
+     * @param GetInstancesByIdsHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return GetInstancesByIdsResponse
+     */
+    public function getInstancesByIdsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->formCode)) {
+            @$body['formCode'] = $request->formCode;
+        }
+        if (!Utils::isUnset($request->openDataInstanceIdList)) {
+            @$body['openDataInstanceIdList'] = $request->openDataInstanceIdList;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetInstancesByIdsResponse::fromMap($this->doROARequest('GetInstancesByIds', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/customForms/instances/batchQuery', 'json', $req, $runtime));
     }
 
     /**
@@ -2449,6 +2623,63 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryGroupSetResponse::fromMap($this->doROARequest('QueryGroupSet', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', '/v1.0/serviceGroup/groupSets', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryInstancesByMultiConditionsRequest $request
+     *
+     * @return QueryInstancesByMultiConditionsResponse
+     */
+    public function queryInstancesByMultiConditions($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryInstancesByMultiConditionsHeaders([]);
+
+        return $this->queryInstancesByMultiConditionsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryInstancesByMultiConditionsRequest $request
+     * @param QueryInstancesByMultiConditionsHeaders $headers
+     * @param RuntimeOptions                         $runtime
+     *
+     * @return QueryInstancesByMultiConditionsResponse
+     */
+    public function queryInstancesByMultiConditionsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->formCode)) {
+            @$body['formCode'] = $request->formCode;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->searchFields)) {
+            @$body['searchFields'] = $request->searchFields;
+        }
+        if (!Utils::isUnset($request->sortFields)) {
+            @$body['sortFields'] = $request->sortFields;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return QueryInstancesByMultiConditionsResponse::fromMap($this->doROARequest('QueryInstancesByMultiConditions', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/customForms/instances/multiConditions/batchQuery', 'json', $req, $runtime));
     }
 
     /**
@@ -3385,6 +3616,66 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateGroupTagResponse::fromMap($this->doROARequest('UpdateGroupTag', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/serviceGroup/tags', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateInstanceRequest $request
+     *
+     * @return UpdateInstanceResponse
+     */
+    public function updateInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateInstanceHeaders([]);
+
+        return $this->updateInstanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateInstanceRequest $request
+     * @param UpdateInstanceHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return UpdateInstanceResponse
+     */
+    public function updateInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->externalBizId)) {
+            @$body['externalBizId'] = $request->externalBizId;
+        }
+        if (!Utils::isUnset($request->formCode)) {
+            @$body['formCode'] = $request->formCode;
+        }
+        if (!Utils::isUnset($request->formDataList)) {
+            @$body['formDataList'] = $request->formDataList;
+        }
+        if (!Utils::isUnset($request->openDataInstanceId)) {
+            @$body['openDataInstanceId'] = $request->openDataInstanceId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->operatorUnionId)) {
+            @$body['operatorUnionId'] = $request->operatorUnionId;
+        }
+        if (!Utils::isUnset($request->ownerUnionId)) {
+            @$body['ownerUnionId'] = $request->ownerUnionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateInstanceResponse::fromMap($this->doROARequest('UpdateInstance', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/serviceGroup/customForms/instances', 'json', $req, $runtime));
     }
 
     /**

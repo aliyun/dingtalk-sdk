@@ -24,6 +24,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteCommentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DistributePartnerAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DistributePartnerAppRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DistributePartnerAppResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusiveCreateDingPortalHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusiveCreateDingPortalRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusiveCreateDingPortalResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageActiveStorageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageActiveStorageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageActiveStorageResponse;
@@ -117,6 +120,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListPunchScheduleByCondition
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PublishFileChangeNoticeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PublishFileChangeNoticeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PublishFileChangeNoticeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PushBadgeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PushBadgeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PushBadgeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryAcrossCloudStroageConfigsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryAcrossCloudStroageConfigsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryAcrossCloudStroageConfigsResponse;
@@ -487,6 +493,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DistributePartnerAppResponse::fromMap($this->doROARequest('DistributePartnerApp', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/partners/applications/distribute', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ExclusiveCreateDingPortalRequest $request
+     *
+     * @return ExclusiveCreateDingPortalResponse
+     */
+    public function exclusiveCreateDingPortal($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ExclusiveCreateDingPortalHeaders([]);
+
+        return $this->exclusiveCreateDingPortalWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ExclusiveCreateDingPortalRequest $request
+     * @param ExclusiveCreateDingPortalHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return ExclusiveCreateDingPortalResponse
+     */
+    public function exclusiveCreateDingPortalWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingPortalName)) {
+            @$body['dingPortalName'] = $request->dingPortalName;
+        }
+        if (!Utils::isUnset($request->targetCorpId)) {
+            @$body['targetCorpId'] = $request->targetCorpId;
+        }
+        if (!Utils::isUnset($request->templateAppUuid)) {
+            @$body['templateAppUuid'] = $request->templateAppUuid;
+        }
+        if (!Utils::isUnset($request->templateCorpId)) {
+            @$body['templateCorpId'] = $request->templateCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ExclusiveCreateDingPortalResponse::fromMap($this->doROARequest('ExclusiveCreateDingPortal', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/workbenches/templates/spread', 'json', $req, $runtime));
     }
 
     /**
@@ -2031,6 +2088,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return PublishFileChangeNoticeResponse::fromMap($this->doROARequest('PublishFileChangeNotice', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/comments/send', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param PushBadgeRequest $request
+     *
+     * @return PushBadgeResponse
+     */
+    public function pushBadge($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PushBadgeHeaders([]);
+
+        return $this->pushBadgeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param PushBadgeRequest $request
+     * @param PushBadgeHeaders $headers
+     * @param RuntimeOptions   $runtime
+     *
+     * @return PushBadgeResponse
+     */
+    public function pushBadgeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->agentId)) {
+            @$body['agentId'] = $request->agentId;
+        }
+        if (!Utils::isUnset($request->pushType)) {
+            @$body['pushType'] = $request->pushType;
+        }
+        if (!Utils::isUnset($request->pushValue)) {
+            @$body['pushValue'] = $request->pushValue;
+        }
+        if (!Utils::isUnset($request->userIdList)) {
+            @$body['userIdList'] = $request->userIdList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return PushBadgeResponse::fromMap($this->doROARequest('PushBadge', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/exclusiveDesigns/redPoints/push', 'json', $req, $runtime));
     }
 
     /**
