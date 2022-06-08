@@ -11,11 +11,6 @@ class result extends Model
     /**
      * @var string
      */
-    public $corpId;
-
-    /**
-     * @var string
-     */
     public $deviceCode;
 
     /**
@@ -53,7 +48,6 @@ class result extends Model
      */
     public $userIds;
     protected $_name = [
-        'corpId'          => 'corpId',
         'deviceCode'      => 'deviceCode',
         'deviceDetailUrl' => 'deviceDetailUrl',
         'deviceName'      => 'deviceName',
@@ -71,9 +65,6 @@ class result extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
-        }
         if (null !== $this->deviceCode) {
             $res['deviceCode'] = $this->deviceCode;
         }
@@ -110,9 +101,6 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
-        }
         if (isset($map['deviceCode'])) {
             $model->deviceCode = $map['deviceCode'];
         }

@@ -14,12 +14,32 @@ use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\CreateChatRoomResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\CreateDepartmentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\CreateDepartmentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\CreateDepartmentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\CreateDeviceChatRoomHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\CreateDeviceChatRoomRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\CreateDeviceChatRoomResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\DeviceDingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\DeviceDingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\DeviceDingResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\DissolveGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\DissolveGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\DissolveGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\EditDeviceAdminHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\EditDeviceAdminRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\EditDeviceAdminResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\GetDeviceGroupInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\GetDeviceGroupInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\GetDeviceGroupInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\GetWholeDeviceGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\GetWholeDeviceGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\ListActivateDevicesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\ListActivateDevicesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\ListActivateDevicesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\PullDeviceToGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\PullDeviceToGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\PullDeviceToGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\PullUserToGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\PullUserToGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\PullUserToGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\RegisterAndActivateDeviceBatchHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\RegisterAndActivateDeviceBatchRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\RegisterAndActivateDeviceBatchResponse;
@@ -29,9 +49,18 @@ use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\RegisterAndActivateDeviceRes
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\RegisterDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\RegisterDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\RegisterDeviceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\RemoveDeviceFromGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\RemoveDeviceFromGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\RemoveDeviceFromGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\RemoveUserFromGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\RemoveUserFromGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\RemoveUserFromGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\SendCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\SendCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\SendCardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\UninstallDeviceRobotHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\UninstallDeviceRobotRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\UninstallDeviceRobotResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\UpdateCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\UpdateCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\UpdateCardResponse;
@@ -217,6 +246,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param CreateDeviceChatRoomRequest $request
+     *
+     * @return CreateDeviceChatRoomResponse
+     */
+    public function createDeviceChatRoom($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateDeviceChatRoomHeaders([]);
+
+        return $this->createDeviceChatRoomWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateDeviceChatRoomRequest $request
+     * @param CreateDeviceChatRoomHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return CreateDeviceChatRoomResponse
+     */
+    public function createDeviceChatRoomWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->chatType)) {
+            @$body['chatType'] = $request->chatType;
+        }
+        if (!Utils::isUnset($request->deviceCodes)) {
+            @$body['deviceCodes'] = $request->deviceCodes;
+        }
+        if (!Utils::isUnset($request->deviceUuids)) {
+            @$body['deviceUuids'] = $request->deviceUuids;
+        }
+        if (!Utils::isUnset($request->ownerUserId)) {
+            @$body['ownerUserId'] = $request->ownerUserId;
+        }
+        if (!Utils::isUnset($request->title)) {
+            @$body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            @$body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateDeviceChatRoomResponse::fromMap($this->doROARequest('CreateDeviceChatRoom', 'devicemng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/devicemng/customers/chatRooms/groups', 'json', $req, $runtime));
+    }
+
+    /**
      * @param DeviceDingRequest $request
      *
      * @return DeviceDingResponse
@@ -262,6 +348,174 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeviceDingResponse::fromMap($this->doROARequest('DeviceDing', 'devicemng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/devicemng/ding', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DissolveGroupRequest $request
+     *
+     * @return DissolveGroupResponse
+     */
+    public function dissolveGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DissolveGroupHeaders([]);
+
+        return $this->dissolveGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DissolveGroupRequest $request
+     * @param DissolveGroupHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return DissolveGroupResponse
+     */
+    public function dissolveGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DissolveGroupResponse::fromMap($this->doROARequest('DissolveGroup', 'devicemng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/devicemng/customers/chatRooms/groups/dissolve', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param EditDeviceAdminRequest $request
+     *
+     * @return EditDeviceAdminResponse
+     */
+    public function editDeviceAdmin($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new EditDeviceAdminHeaders([]);
+
+        return $this->editDeviceAdminWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param EditDeviceAdminRequest $request
+     * @param EditDeviceAdminHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return EditDeviceAdminResponse
+     */
+    public function editDeviceAdminWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deviceCode)) {
+            @$body['deviceCode'] = $request->deviceCode;
+        }
+        if (!Utils::isUnset($request->roleUuid)) {
+            @$body['roleUuid'] = $request->roleUuid;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            @$body['userIds'] = $request->userIds;
+        }
+        if (!Utils::isUnset($request->uuid)) {
+            @$body['uuid'] = $request->uuid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return EditDeviceAdminResponse::fromMap($this->doROARequest('EditDeviceAdmin', 'devicemng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/devicemng/customers/devices/administrators/edit', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetDeviceGroupInfoRequest $request
+     *
+     * @return GetDeviceGroupInfoResponse
+     */
+    public function getDeviceGroupInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetDeviceGroupInfoHeaders([]);
+
+        return $this->getDeviceGroupInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetDeviceGroupInfoRequest $request
+     * @param GetDeviceGroupInfoHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return GetDeviceGroupInfoResponse
+     */
+    public function getDeviceGroupInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetDeviceGroupInfoResponse::fromMap($this->doROARequest('GetDeviceGroupInfo', 'devicemng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/devicemng/customers/chatRooms/groupInfos/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return GetWholeDeviceGroupResponse
+     */
+    public function getWholeDeviceGroup()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetWholeDeviceGroupHeaders([]);
+
+        return $this->getWholeDeviceGroupWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param GetWholeDeviceGroupHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return GetWholeDeviceGroupResponse
+     */
+    public function getWholeDeviceGroupWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetWholeDeviceGroupResponse::fromMap($this->doROARequest('GetWholeDeviceGroup', 'devicemng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/devicemng/customers/chatRooms/wholeGroupId', 'json', $req, $runtime));
     }
 
     /**
@@ -316,6 +570,102 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListActivateDevicesResponse::fromMap($this->doROARequest('ListActivateDevices', 'devicemng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/devicemng/customers/devices/activations/infos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param PullDeviceToGroupRequest $request
+     *
+     * @return PullDeviceToGroupResponse
+     */
+    public function pullDeviceToGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PullDeviceToGroupHeaders([]);
+
+        return $this->pullDeviceToGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param PullDeviceToGroupRequest $request
+     * @param PullDeviceToGroupHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return PullDeviceToGroupResponse
+     */
+    public function pullDeviceToGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deviceCodes)) {
+            @$body['deviceCodes'] = $request->deviceCodes;
+        }
+        if (!Utils::isUnset($request->deviceUuids)) {
+            @$body['deviceUuids'] = $request->deviceUuids;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            @$body['operator'] = $request->operator;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return PullDeviceToGroupResponse::fromMap($this->doROARequest('PullDeviceToGroup', 'devicemng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/devicemng/customers/chatRooms/devices', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param PullUserToGroupRequest $request
+     *
+     * @return PullUserToGroupResponse
+     */
+    public function pullUserToGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PullUserToGroupHeaders([]);
+
+        return $this->pullUserToGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param PullUserToGroupRequest $request
+     * @param PullUserToGroupHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return PullUserToGroupResponse
+     */
+    public function pullUserToGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            @$body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return PullUserToGroupResponse::fromMap($this->doROARequest('PullUserToGroup', 'devicemng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/devicemng/customers/chatRooms/users', 'json', $req, $runtime));
     }
 
     /**
@@ -484,6 +834,102 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param RemoveDeviceFromGroupRequest $request
+     *
+     * @return RemoveDeviceFromGroupResponse
+     */
+    public function removeDeviceFromGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RemoveDeviceFromGroupHeaders([]);
+
+        return $this->removeDeviceFromGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RemoveDeviceFromGroupRequest $request
+     * @param RemoveDeviceFromGroupHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return RemoveDeviceFromGroupResponse
+     */
+    public function removeDeviceFromGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deviceCodes)) {
+            @$body['deviceCodes'] = $request->deviceCodes;
+        }
+        if (!Utils::isUnset($request->deviceUuids)) {
+            @$body['deviceUuids'] = $request->deviceUuids;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            @$body['operator'] = $request->operator;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return RemoveDeviceFromGroupResponse::fromMap($this->doROARequest('RemoveDeviceFromGroup', 'devicemng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/devicemng/customers/chatRooms/devices/remove', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param RemoveUserFromGroupRequest $request
+     *
+     * @return RemoveUserFromGroupResponse
+     */
+    public function removeUserFromGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RemoveUserFromGroupHeaders([]);
+
+        return $this->removeUserFromGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RemoveUserFromGroupRequest $request
+     * @param RemoveUserFromGroupHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return RemoveUserFromGroupResponse
+     */
+    public function removeUserFromGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            @$body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return RemoveUserFromGroupResponse::fromMap($this->doROARequest('RemoveUserFromGroup', 'devicemng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/devicemng/customers/chatRooms/users/remove', 'json', $req, $runtime));
+    }
+
+    /**
      * @param SendCardRequest $request
      *
      * @return SendCardResponse
@@ -519,11 +965,14 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->deviceUuid)) {
             @$body['deviceUuid'] = $request->deviceUuid;
         }
-        if (!Utils::isUnset($request->encodeCid)) {
-            @$body['encodeCid'] = $request->encodeCid;
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
         }
         if (!Utils::isUnset($request->templateId)) {
             @$body['templateId'] = $request->templateId;
+        }
+        if (!Utils::isUnset($request->topbox)) {
+            @$body['topbox'] = $request->topbox;
         }
         if (!Utils::isUnset($request->userId)) {
             @$body['userId'] = $request->userId;
@@ -541,6 +990,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SendCardResponse::fromMap($this->doROARequest('SendCard', 'devicemng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/devicemng/customers/cards/send', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UninstallDeviceRobotRequest $request
+     *
+     * @return UninstallDeviceRobotResponse
+     */
+    public function uninstallDeviceRobot($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UninstallDeviceRobotHeaders([]);
+
+        return $this->uninstallDeviceRobotWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UninstallDeviceRobotRequest $request
+     * @param UninstallDeviceRobotHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return UninstallDeviceRobotResponse
+     */
+    public function uninstallDeviceRobotWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deviceCode)) {
+            @$body['deviceCode'] = $request->deviceCode;
+        }
+        if (!Utils::isUnset($request->uuid)) {
+            @$body['uuid'] = $request->uuid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UninstallDeviceRobotResponse::fromMap($this->doROARequest('UninstallDeviceRobot', 'devicemng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/devicemng/customers/devices/uninstall', 'json', $req, $runtime));
     }
 
     /**

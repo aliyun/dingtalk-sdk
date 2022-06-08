@@ -65,9 +65,7 @@ class spaceInfoVOList extends Model
     public $name;
 
     /**
-     * @description 父节点id
-     *
-     * @var float
+     * @var int
      */
     public $parentDeptId;
 

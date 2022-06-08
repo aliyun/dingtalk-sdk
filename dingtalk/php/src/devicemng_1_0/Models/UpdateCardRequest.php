@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class UpdateCardRequest extends Model
 {
     /**
+     * @description 卡片实例唯一标识
+     *
      * @var string
      */
     public $bizId;
 
     /**
+     * @description 卡片变量赋值，json结构
+     *
      * @var string
      */
     public $cardData;

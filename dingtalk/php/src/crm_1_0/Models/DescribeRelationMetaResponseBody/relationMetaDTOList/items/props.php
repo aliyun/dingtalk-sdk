@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items;
 
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items\props\availableTemplates;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items\props\dataSource;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items\props\fields;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items\props\options;
@@ -25,6 +26,11 @@ class props extends Model
      * @var string
      */
     public $align;
+
+    /**
+     * @var availableTemplates[]
+     */
+    public $availableTemplates;
 
     /**
      * @description 字段别名
@@ -277,6 +283,7 @@ class props extends Model
     protected $_name = [
         'actionName'             => 'actionName',
         'align'                  => 'align',
+        'availableTemplates'     => 'availableTemplates',
         'bizAlias'               => 'bizAlias',
         'choice'                 => 'choice',
         'content'                => 'content',
@@ -328,6 +335,15 @@ class props extends Model
         }
         if (null !== $this->align) {
             $res['align'] = $this->align;
+        }
+        if (null !== $this->availableTemplates) {
+            $res['availableTemplates'] = [];
+            if (null !== $this->availableTemplates && \is_array($this->availableTemplates)) {
+                $n = 0;
+                foreach ($this->availableTemplates as $item) {
+                    $res['availableTemplates'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->bizAlias) {
             $res['bizAlias'] = $this->bizAlias;
@@ -487,6 +503,15 @@ class props extends Model
         }
         if (isset($map['align'])) {
             $model->align = $map['align'];
+        }
+        if (isset($map['availableTemplates'])) {
+            if (!empty($map['availableTemplates'])) {
+                $model->availableTemplates = [];
+                $n                         = 0;
+                foreach ($map['availableTemplates'] as $item) {
+                    $model->availableTemplates[$n++] = null !== $item ? availableTemplates::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['bizAlias'])) {
             $model->bizAlias = $map['bizAlias'];

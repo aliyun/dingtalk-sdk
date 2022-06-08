@@ -9,47 +9,69 @@ use AlibabaCloud\Tea\Model;
 class SendCardRequest extends Model
 {
     /**
+     * @description 卡片实例唯一标识
+     *
      * @var string
      */
     public $bizId;
 
     /**
+     * @description 卡片变量赋值，json结构
+     *
      * @var string
      */
     public $cardData;
 
     /**
+     * @description 设备业务标识
+     *
      * @var string
      */
     public $deviceCode;
 
     /**
+     * @description 设备uuid，唯一标识
+     *
      * @var string
      */
     public $deviceUuid;
 
     /**
+     * @description 群id，群的唯一标识
+     *
      * @var string
      */
-    public $encodeCid;
+    public $openConversationId;
 
     /**
+     * @description 卡片模板唯一标识，开放平台获取
+     *
      * @var string
      */
     public $templateId;
 
     /**
+     * @description 是否为吊顶卡片
+     *
+     * @var bool
+     */
+    public $topbox;
+
+    /**
+     * @description 用户通讯录唯一标识
+     *
      * @var string
      */
     public $userId;
     protected $_name = [
-        'bizId'      => 'bizId',
-        'cardData'   => 'cardData',
-        'deviceCode' => 'deviceCode',
-        'deviceUuid' => 'deviceUuid',
-        'encodeCid'  => 'encodeCid',
-        'templateId' => 'templateId',
-        'userId'     => 'userId',
+        'bizId'              => 'bizId',
+        'cardData'           => 'cardData',
+        'deviceCode'         => 'deviceCode',
+        'deviceUuid'         => 'deviceUuid',
+        'openConversationId' => 'openConversationId',
+        'templateId'         => 'templateId',
+        'topbox'             => 'topbox',
+        'userId'             => 'userId',
     ];
 
     public function validate()
@@ -71,11 +93,14 @@ class SendCardRequest extends Model
         if (null !== $this->deviceUuid) {
             $res['deviceUuid'] = $this->deviceUuid;
         }
-        if (null !== $this->encodeCid) {
-            $res['encodeCid'] = $this->encodeCid;
+        if (null !== $this->openConversationId) {
+            $res['openConversationId'] = $this->openConversationId;
         }
         if (null !== $this->templateId) {
             $res['templateId'] = $this->templateId;
+        }
+        if (null !== $this->topbox) {
+            $res['topbox'] = $this->topbox;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -104,11 +129,14 @@ class SendCardRequest extends Model
         if (isset($map['deviceUuid'])) {
             $model->deviceUuid = $map['deviceUuid'];
         }
-        if (isset($map['encodeCid'])) {
-            $model->encodeCid = $map['encodeCid'];
+        if (isset($map['openConversationId'])) {
+            $model->openConversationId = $map['openConversationId'];
         }
         if (isset($map['templateId'])) {
             $model->templateId = $map['templateId'];
+        }
+        if (isset($map['topbox'])) {
+            $model->topbox = $map['topbox'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];

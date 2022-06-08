@@ -16,11 +16,6 @@ class result extends Model
     /**
      * @var string
      */
-    public $corpId;
-
-    /**
-     * @var string
-     */
     public $deviceCallbackUrl;
 
     /**
@@ -64,7 +59,6 @@ class result extends Model
     public $uuid;
     protected $_name = [
         'bizExt'            => 'bizExt',
-        'corpId'            => 'corpId',
         'deviceCallbackUrl' => 'deviceCallbackUrl',
         'deviceCode'        => 'deviceCode',
         'deviceDetailUrl'   => 'deviceDetailUrl',
@@ -85,9 +79,6 @@ class result extends Model
         $res = [];
         if (null !== $this->bizExt) {
             $res['bizExt'] = $this->bizExt;
-        }
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
         }
         if (null !== $this->deviceCallbackUrl) {
             $res['deviceCallbackUrl'] = $this->deviceCallbackUrl;
@@ -130,9 +121,6 @@ class result extends Model
         $model = new self();
         if (isset($map['bizExt'])) {
             $model->bizExt = $map['bizExt'];
-        }
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
         }
         if (isset($map['deviceCallbackUrl'])) {
             $model->deviceCallbackUrl = $map['deviceCallbackUrl'];

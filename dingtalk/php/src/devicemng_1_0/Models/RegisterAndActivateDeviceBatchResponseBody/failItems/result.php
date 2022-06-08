@@ -11,11 +11,6 @@ class result extends Model
     /**
      * @var string
      */
-    public $corpId;
-
-    /**
-     * @var string
-     */
     public $deviceCallbackUrl;
 
     /**
@@ -73,7 +68,6 @@ class result extends Model
      */
     public $uuid;
     protected $_name = [
-        'corpId'            => 'corpId',
         'deviceCallbackUrl' => 'deviceCallbackUrl',
         'deviceCode'        => 'deviceCode',
         'deviceDetailUrl'   => 'deviceDetailUrl',
@@ -95,9 +89,6 @@ class result extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
-        }
         if (null !== $this->deviceCallbackUrl) {
             $res['deviceCallbackUrl'] = $this->deviceCallbackUrl;
         }
@@ -146,9 +137,6 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
-        }
         if (isset($map['deviceCallbackUrl'])) {
             $model->deviceCallbackUrl = $map['deviceCallbackUrl'];
         }
