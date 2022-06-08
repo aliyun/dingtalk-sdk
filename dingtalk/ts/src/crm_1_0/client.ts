@@ -5266,6 +5266,28 @@ export class DescribeCrmPersonalCustomerObjectMetaResponseBodyFields extends $te
   }
 }
 
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsAvailableTemplates extends $tea.Model {
+  id?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceParamsFilters extends $tea.Model {
   fieldId?: string;
   filterType?: string;
@@ -5942,6 +5964,7 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPro
 export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps extends $tea.Model {
   actionName?: string;
   align?: string;
+  availableTemplates?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsAvailableTemplates[];
   bizAlias?: string;
   choice?: number;
   content?: string;
@@ -5981,6 +6004,7 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPro
     return {
       actionName: 'actionName',
       align: 'align',
+      availableTemplates: 'availableTemplates',
       bizAlias: 'bizAlias',
       choice: 'choice',
       content: 'content',
@@ -6023,6 +6047,7 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPro
     return {
       actionName: 'string',
       align: 'string',
+      availableTemplates: { 'type': 'array', 'itemType': DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsAvailableTemplates },
       bizAlias: 'string',
       choice: 'number',
       content: 'string',
@@ -6080,6 +6105,28 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildren ex
     return {
       componentName: 'string',
       props: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates extends $tea.Model {
+  id?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'string',
+      name: 'string',
     };
   }
 
@@ -6789,6 +6836,7 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsStatFi
 export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps extends $tea.Model {
   actionName?: string;
   align?: string;
+  availableTemplates?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates[];
   bizAlias?: string;
   choice?: number;
   content?: string;
@@ -6830,6 +6878,7 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps exten
     return {
       actionName: 'actionName',
       align: 'align',
+      availableTemplates: 'availableTemplates',
       bizAlias: 'bizAlias',
       choice: 'choice',
       content: 'content',
@@ -6874,6 +6923,7 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps exten
     return {
       actionName: 'string',
       align: 'string',
+      availableTemplates: { 'type': 'array', 'itemType': DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates },
       bizAlias: 'string',
       choice: 'number',
       content: 'string',

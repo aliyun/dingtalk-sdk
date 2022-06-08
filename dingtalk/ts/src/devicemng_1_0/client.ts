@@ -292,6 +292,106 @@ export class CreateDepartmentResponse extends $tea.Model {
   }
 }
 
+export class CreateDeviceChatRoomHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateDeviceChatRoomRequest extends $tea.Model {
+  chatType?: string;
+  deviceCodes?: string[];
+  deviceUuids?: string[];
+  ownerUserId?: string;
+  title?: string;
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      chatType: 'chatType',
+      deviceCodes: 'deviceCodes',
+      deviceUuids: 'deviceUuids',
+      ownerUserId: 'ownerUserId',
+      title: 'title',
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      chatType: 'string',
+      deviceCodes: { 'type': 'array', 'itemType': 'string' },
+      deviceUuids: { 'type': 'array', 'itemType': 'string' },
+      ownerUserId: 'string',
+      title: 'string',
+      userIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateDeviceChatRoomResponseBody extends $tea.Model {
+  result?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateDeviceChatRoomResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateDeviceChatRoomResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateDeviceChatRoomResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeviceDingHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -372,6 +472,336 @@ export class DeviceDingResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: DeviceDingResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DissolveGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DissolveGroupRequest extends $tea.Model {
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DissolveGroupResponseBody extends $tea.Model {
+  result?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DissolveGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DissolveGroupResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DissolveGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditDeviceAdminHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditDeviceAdminRequest extends $tea.Model {
+  deviceCode?: string;
+  roleUuid?: string;
+  userIds?: string[];
+  uuid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deviceCode: 'deviceCode',
+      roleUuid: 'roleUuid',
+      userIds: 'userIds',
+      uuid: 'uuid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceCode: 'string',
+      roleUuid: 'string',
+      userIds: { 'type': 'array', 'itemType': 'string' },
+      uuid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditDeviceAdminResponseBody extends $tea.Model {
+  result?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EditDeviceAdminResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: EditDeviceAdminResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: EditDeviceAdminResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDeviceGroupInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDeviceGroupInfoRequest extends $tea.Model {
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDeviceGroupInfoResponseBody extends $tea.Model {
+  result?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDeviceGroupInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetDeviceGroupInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetDeviceGroupInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetWholeDeviceGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetWholeDeviceGroupResponseBody extends $tea.Model {
+  result?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetWholeDeviceGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetWholeDeviceGroupResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetWholeDeviceGroupResponseBody,
     };
   }
 
@@ -472,6 +902,188 @@ export class ListActivateDevicesResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: ListActivateDevicesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PullDeviceToGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PullDeviceToGroupRequest extends $tea.Model {
+  deviceCodes?: string[];
+  deviceUuids?: string[];
+  openConversationId?: string;
+  operator?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deviceCodes: 'deviceCodes',
+      deviceUuids: 'deviceUuids',
+      openConversationId: 'openConversationId',
+      operator: 'operator',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceCodes: { 'type': 'array', 'itemType': 'string' },
+      deviceUuids: { 'type': 'array', 'itemType': 'string' },
+      openConversationId: 'string',
+      operator: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PullDeviceToGroupResponseBody extends $tea.Model {
+  result?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PullDeviceToGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: PullDeviceToGroupResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: PullDeviceToGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PullUserToGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PullUserToGroupRequest extends $tea.Model {
+  openConversationId?: string;
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      userIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PullUserToGroupResponseBody extends $tea.Model {
+  result?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PullUserToGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: PullUserToGroupResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: PullUserToGroupResponseBody,
     };
   }
 
@@ -774,6 +1386,188 @@ export class RegisterDeviceResponse extends $tea.Model {
   }
 }
 
+export class RemoveDeviceFromGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RemoveDeviceFromGroupRequest extends $tea.Model {
+  deviceCodes?: string[];
+  deviceUuids?: string[];
+  openConversationId?: string;
+  operator?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deviceCodes: 'deviceCodes',
+      deviceUuids: 'deviceUuids',
+      openConversationId: 'openConversationId',
+      operator: 'operator',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceCodes: { 'type': 'array', 'itemType': 'string' },
+      deviceUuids: { 'type': 'array', 'itemType': 'string' },
+      openConversationId: 'string',
+      operator: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RemoveDeviceFromGroupResponseBody extends $tea.Model {
+  result?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RemoveDeviceFromGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: RemoveDeviceFromGroupResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: RemoveDeviceFromGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RemoveUserFromGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RemoveUserFromGroupRequest extends $tea.Model {
+  openConversationId?: string;
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      userIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RemoveUserFromGroupResponseBody extends $tea.Model {
+  result?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RemoveUserFromGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: RemoveUserFromGroupResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: RemoveUserFromGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SendCardHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -801,8 +1595,9 @@ export class SendCardRequest extends $tea.Model {
   cardData?: string;
   deviceCode?: string;
   deviceUuid?: string;
-  encodeCid?: string;
+  openConversationId?: string;
   templateId?: string;
+  topbox?: boolean;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -810,8 +1605,9 @@ export class SendCardRequest extends $tea.Model {
       cardData: 'cardData',
       deviceCode: 'deviceCode',
       deviceUuid: 'deviceUuid',
-      encodeCid: 'encodeCid',
+      openConversationId: 'openConversationId',
       templateId: 'templateId',
+      topbox: 'topbox',
       userId: 'userId',
     };
   }
@@ -822,8 +1618,9 @@ export class SendCardRequest extends $tea.Model {
       cardData: 'string',
       deviceCode: 'string',
       deviceUuid: 'string',
-      encodeCid: 'string',
+      openConversationId: 'string',
       templateId: 'string',
+      topbox: 'boolean',
       userId: 'string',
     };
   }
@@ -869,6 +1666,94 @@ export class SendCardResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: SendCardResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UninstallDeviceRobotHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UninstallDeviceRobotRequest extends $tea.Model {
+  deviceCode?: string;
+  uuid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deviceCode: 'deviceCode',
+      uuid: 'uuid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceCode: 'string',
+      uuid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UninstallDeviceRobotResponseBody extends $tea.Model {
+  result?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UninstallDeviceRobotResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UninstallDeviceRobotResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UninstallDeviceRobotResponseBody,
     };
   }
 
@@ -1104,7 +1989,6 @@ export class BatchRegisterDeviceRequestDeviceList extends $tea.Model {
 
 export class ListActivateDevicesResponseBodyResult extends $tea.Model {
   bizExt?: string;
-  corpId?: string;
   deviceCallbackUrl?: string;
   deviceCode?: string;
   deviceDetailUrl?: string;
@@ -1117,7 +2001,6 @@ export class ListActivateDevicesResponseBodyResult extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       bizExt: 'bizExt',
-      corpId: 'corpId',
       deviceCallbackUrl: 'deviceCallbackUrl',
       deviceCode: 'deviceCode',
       deviceDetailUrl: 'deviceDetailUrl',
@@ -1133,7 +2016,6 @@ export class ListActivateDevicesResponseBodyResult extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       bizExt: 'string',
-      corpId: 'string',
       deviceCallbackUrl: 'string',
       deviceCode: 'string',
       deviceDetailUrl: 'string',
@@ -1152,7 +2034,6 @@ export class ListActivateDevicesResponseBodyResult extends $tea.Model {
 }
 
 export class RegisterAndActivateDeviceResponseBodyResult extends $tea.Model {
-  corpId?: string;
   deviceCode?: string;
   deviceDetailUrl?: string;
   deviceName?: string;
@@ -1163,7 +2044,6 @@ export class RegisterAndActivateDeviceResponseBodyResult extends $tea.Model {
   userIds?: string[];
   static names(): { [key: string]: string } {
     return {
-      corpId: 'corpId',
       deviceCode: 'deviceCode',
       deviceDetailUrl: 'deviceDetailUrl',
       deviceName: 'deviceName',
@@ -1177,7 +2057,6 @@ export class RegisterAndActivateDeviceResponseBodyResult extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      corpId: 'string',
       deviceCode: 'string',
       deviceDetailUrl: 'string',
       deviceName: 'string',
@@ -1238,7 +2117,6 @@ export class RegisterAndActivateDeviceBatchRequestRegisterAndActivateVOS extends
 }
 
 export class RegisterAndActivateDeviceBatchResponseBodyFailItemsResult extends $tea.Model {
-  corpId?: string;
   deviceCallbackUrl?: string;
   deviceCode?: string;
   deviceDetailUrl?: string;
@@ -1253,7 +2131,6 @@ export class RegisterAndActivateDeviceBatchResponseBodyFailItemsResult extends $
   uuid?: string;
   static names(): { [key: string]: string } {
     return {
-      corpId: 'corpId',
       deviceCallbackUrl: 'deviceCallbackUrl',
       deviceCode: 'deviceCode',
       deviceDetailUrl: 'deviceDetailUrl',
@@ -1271,7 +2148,6 @@ export class RegisterAndActivateDeviceBatchResponseBodyFailItemsResult extends $
 
   static types(): { [key: string]: any } {
     return {
-      corpId: 'string',
       deviceCallbackUrl: 'string',
       deviceCode: 'string',
       deviceDetailUrl: 'string',
@@ -1321,7 +2197,6 @@ export class RegisterAndActivateDeviceBatchResponseBodyFailItems extends $tea.Mo
 }
 
 export class RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult extends $tea.Model {
-  corpId?: string;
   deviceCallbackUrl?: string;
   deviceCode?: string;
   deviceDetailUrl?: string;
@@ -1336,7 +2211,6 @@ export class RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult extend
   uuid?: string;
   static names(): { [key: string]: string } {
     return {
-      corpId: 'corpId',
       deviceCallbackUrl: 'deviceCallbackUrl',
       deviceCode: 'deviceCode',
       deviceDetailUrl: 'deviceDetailUrl',
@@ -1354,7 +2228,6 @@ export class RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult extend
 
   static types(): { [key: string]: any } {
     return {
-      corpId: 'string',
       deviceCallbackUrl: 'string',
       deviceCode: 'string',
       deviceDetailUrl: 'string',
@@ -1551,6 +2424,55 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateDepartmentResponse>(await this.doROARequest("CreateDepartment", "devicemng_1.0", "HTTP", "POST", "AK", `/v1.0/devicemng/departments`, "json", req, runtime), new CreateDepartmentResponse({}));
   }
 
+  async createDeviceChatRoom(request: CreateDeviceChatRoomRequest): Promise<CreateDeviceChatRoomResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateDeviceChatRoomHeaders({ });
+    return await this.createDeviceChatRoomWithOptions(request, headers, runtime);
+  }
+
+  async createDeviceChatRoomWithOptions(request: CreateDeviceChatRoomRequest, headers: CreateDeviceChatRoomHeaders, runtime: $Util.RuntimeOptions): Promise<CreateDeviceChatRoomResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.chatType)) {
+      body["chatType"] = request.chatType;
+    }
+
+    if (!Util.isUnset(request.deviceCodes)) {
+      body["deviceCodes"] = request.deviceCodes;
+    }
+
+    if (!Util.isUnset(request.deviceUuids)) {
+      body["deviceUuids"] = request.deviceUuids;
+    }
+
+    if (!Util.isUnset(request.ownerUserId)) {
+      body["ownerUserId"] = request.ownerUserId;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateDeviceChatRoomResponse>(await this.doROARequest("CreateDeviceChatRoom", "devicemng_1.0", "HTTP", "POST", "AK", `/v1.0/devicemng/customers/chatRooms/groups`, "json", req, runtime), new CreateDeviceChatRoomResponse({}));
+  }
+
   async deviceDing(request: DeviceDingRequest): Promise<DeviceDingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeviceDingHeaders({ });
@@ -1586,6 +2508,127 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<DeviceDingResponse>(await this.doROARequest("DeviceDing", "devicemng_1.0", "HTTP", "POST", "AK", `/v1.0/devicemng/ding`, "json", req, runtime), new DeviceDingResponse({}));
+  }
+
+  async dissolveGroup(request: DissolveGroupRequest): Promise<DissolveGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DissolveGroupHeaders({ });
+    return await this.dissolveGroupWithOptions(request, headers, runtime);
+  }
+
+  async dissolveGroupWithOptions(request: DissolveGroupRequest, headers: DissolveGroupHeaders, runtime: $Util.RuntimeOptions): Promise<DissolveGroupResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<DissolveGroupResponse>(await this.doROARequest("DissolveGroup", "devicemng_1.0", "HTTP", "POST", "AK", `/v1.0/devicemng/customers/chatRooms/groups/dissolve`, "json", req, runtime), new DissolveGroupResponse({}));
+  }
+
+  async editDeviceAdmin(request: EditDeviceAdminRequest): Promise<EditDeviceAdminResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new EditDeviceAdminHeaders({ });
+    return await this.editDeviceAdminWithOptions(request, headers, runtime);
+  }
+
+  async editDeviceAdminWithOptions(request: EditDeviceAdminRequest, headers: EditDeviceAdminHeaders, runtime: $Util.RuntimeOptions): Promise<EditDeviceAdminResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deviceCode)) {
+      body["deviceCode"] = request.deviceCode;
+    }
+
+    if (!Util.isUnset(request.roleUuid)) {
+      body["roleUuid"] = request.roleUuid;
+    }
+
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
+    if (!Util.isUnset(request.uuid)) {
+      body["uuid"] = request.uuid;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<EditDeviceAdminResponse>(await this.doROARequest("EditDeviceAdmin", "devicemng_1.0", "HTTP", "POST", "AK", `/v1.0/devicemng/customers/devices/administrators/edit`, "json", req, runtime), new EditDeviceAdminResponse({}));
+  }
+
+  async getDeviceGroupInfo(request: GetDeviceGroupInfoRequest): Promise<GetDeviceGroupInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetDeviceGroupInfoHeaders({ });
+    return await this.getDeviceGroupInfoWithOptions(request, headers, runtime);
+  }
+
+  async getDeviceGroupInfoWithOptions(request: GetDeviceGroupInfoRequest, headers: GetDeviceGroupInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetDeviceGroupInfoResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetDeviceGroupInfoResponse>(await this.doROARequest("GetDeviceGroupInfo", "devicemng_1.0", "HTTP", "POST", "AK", `/v1.0/devicemng/customers/chatRooms/groupInfos/query`, "json", req, runtime), new GetDeviceGroupInfoResponse({}));
+  }
+
+  async getWholeDeviceGroup(): Promise<GetWholeDeviceGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetWholeDeviceGroupHeaders({ });
+    return await this.getWholeDeviceGroupWithOptions(headers, runtime);
+  }
+
+  async getWholeDeviceGroupWithOptions(headers: GetWholeDeviceGroupHeaders, runtime: $Util.RuntimeOptions): Promise<GetWholeDeviceGroupResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetWholeDeviceGroupResponse>(await this.doROARequest("GetWholeDeviceGroup", "devicemng_1.0", "HTTP", "GET", "AK", `/v1.0/devicemng/customers/chatRooms/wholeGroupId`, "json", req, runtime), new GetWholeDeviceGroupResponse({}));
   }
 
   async listActivateDevices(request: ListActivateDevicesRequest): Promise<ListActivateDevicesResponse> {
@@ -1631,6 +2674,80 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<ListActivateDevicesResponse>(await this.doROARequest("ListActivateDevices", "devicemng_1.0", "HTTP", "GET", "AK", `/v1.0/devicemng/customers/devices/activations/infos`, "json", req, runtime), new ListActivateDevicesResponse({}));
+  }
+
+  async pullDeviceToGroup(request: PullDeviceToGroupRequest): Promise<PullDeviceToGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PullDeviceToGroupHeaders({ });
+    return await this.pullDeviceToGroupWithOptions(request, headers, runtime);
+  }
+
+  async pullDeviceToGroupWithOptions(request: PullDeviceToGroupRequest, headers: PullDeviceToGroupHeaders, runtime: $Util.RuntimeOptions): Promise<PullDeviceToGroupResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deviceCodes)) {
+      body["deviceCodes"] = request.deviceCodes;
+    }
+
+    if (!Util.isUnset(request.deviceUuids)) {
+      body["deviceUuids"] = request.deviceUuids;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<PullDeviceToGroupResponse>(await this.doROARequest("PullDeviceToGroup", "devicemng_1.0", "HTTP", "POST", "AK", `/v1.0/devicemng/customers/chatRooms/devices`, "json", req, runtime), new PullDeviceToGroupResponse({}));
+  }
+
+  async pullUserToGroup(request: PullUserToGroupRequest): Promise<PullUserToGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PullUserToGroupHeaders({ });
+    return await this.pullUserToGroupWithOptions(request, headers, runtime);
+  }
+
+  async pullUserToGroupWithOptions(request: PullUserToGroupRequest, headers: PullUserToGroupHeaders, runtime: $Util.RuntimeOptions): Promise<PullUserToGroupResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<PullUserToGroupResponse>(await this.doROARequest("PullUserToGroup", "devicemng_1.0", "HTTP", "POST", "AK", `/v1.0/devicemng/customers/chatRooms/users`, "json", req, runtime), new PullUserToGroupResponse({}));
   }
 
   async registerAndActivateDevice(request: RegisterAndActivateDeviceRequest): Promise<RegisterAndActivateDeviceResponse> {
@@ -1772,6 +2889,80 @@ export default class Client extends OpenApi {
     return $tea.cast<RegisterDeviceResponse>(await this.doROARequest("RegisterDevice", "devicemng_1.0", "HTTP", "POST", "AK", `/v1.0/devicemng/devices`, "json", req, runtime), new RegisterDeviceResponse({}));
   }
 
+  async removeDeviceFromGroup(request: RemoveDeviceFromGroupRequest): Promise<RemoveDeviceFromGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RemoveDeviceFromGroupHeaders({ });
+    return await this.removeDeviceFromGroupWithOptions(request, headers, runtime);
+  }
+
+  async removeDeviceFromGroupWithOptions(request: RemoveDeviceFromGroupRequest, headers: RemoveDeviceFromGroupHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveDeviceFromGroupResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deviceCodes)) {
+      body["deviceCodes"] = request.deviceCodes;
+    }
+
+    if (!Util.isUnset(request.deviceUuids)) {
+      body["deviceUuids"] = request.deviceUuids;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<RemoveDeviceFromGroupResponse>(await this.doROARequest("RemoveDeviceFromGroup", "devicemng_1.0", "HTTP", "POST", "AK", `/v1.0/devicemng/customers/chatRooms/devices/remove`, "json", req, runtime), new RemoveDeviceFromGroupResponse({}));
+  }
+
+  async removeUserFromGroup(request: RemoveUserFromGroupRequest): Promise<RemoveUserFromGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RemoveUserFromGroupHeaders({ });
+    return await this.removeUserFromGroupWithOptions(request, headers, runtime);
+  }
+
+  async removeUserFromGroupWithOptions(request: RemoveUserFromGroupRequest, headers: RemoveUserFromGroupHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveUserFromGroupResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<RemoveUserFromGroupResponse>(await this.doROARequest("RemoveUserFromGroup", "devicemng_1.0", "HTTP", "POST", "AK", `/v1.0/devicemng/customers/chatRooms/users/remove`, "json", req, runtime), new RemoveUserFromGroupResponse({}));
+  }
+
   async sendCard(request: SendCardRequest): Promise<SendCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendCardHeaders({ });
@@ -1797,12 +2988,16 @@ export default class Client extends OpenApi {
       body["deviceUuid"] = request.deviceUuid;
     }
 
-    if (!Util.isUnset(request.encodeCid)) {
-      body["encodeCid"] = request.encodeCid;
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
     }
 
     if (!Util.isUnset(request.templateId)) {
       body["templateId"] = request.templateId;
+    }
+
+    if (!Util.isUnset(request.topbox)) {
+      body["topbox"] = request.topbox;
     }
 
     if (!Util.isUnset(request.userId)) {
@@ -1823,6 +3018,39 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<SendCardResponse>(await this.doROARequest("SendCard", "devicemng_1.0", "HTTP", "POST", "AK", `/v1.0/devicemng/customers/cards/send`, "json", req, runtime), new SendCardResponse({}));
+  }
+
+  async uninstallDeviceRobot(request: UninstallDeviceRobotRequest): Promise<UninstallDeviceRobotResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UninstallDeviceRobotHeaders({ });
+    return await this.uninstallDeviceRobotWithOptions(request, headers, runtime);
+  }
+
+  async uninstallDeviceRobotWithOptions(request: UninstallDeviceRobotRequest, headers: UninstallDeviceRobotHeaders, runtime: $Util.RuntimeOptions): Promise<UninstallDeviceRobotResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deviceCode)) {
+      body["deviceCode"] = request.deviceCode;
+    }
+
+    if (!Util.isUnset(request.uuid)) {
+      body["uuid"] = request.uuid;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UninstallDeviceRobotResponse>(await this.doROARequest("UninstallDeviceRobot", "devicemng_1.0", "HTTP", "POST", "AK", `/v1.0/devicemng/customers/devices/uninstall`, "json", req, runtime), new UninstallDeviceRobotResponse({}));
   }
 
   async updateCard(request: UpdateCardRequest): Promise<UpdateCardResponse> {
