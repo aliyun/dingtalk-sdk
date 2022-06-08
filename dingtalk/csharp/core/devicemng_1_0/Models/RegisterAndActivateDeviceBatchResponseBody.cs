@@ -25,9 +25,6 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
             [Validation(Required=false)]
             public RegisterAndActivateDeviceBatchResponseBodyFailItemsResult Result { get; set; }
             public class RegisterAndActivateDeviceBatchResponseBodyFailItemsResult : TeaModel {
-                [NameInMap("corpId")]
-                [Validation(Required=false)]
-                public string CorpId { get; set; }
                 [NameInMap("deviceCallbackUrl")]
                 [Validation(Required=false)]
                 public string DeviceCallbackUrl { get; set; }
@@ -92,9 +89,6 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
             [Validation(Required=false)]
             public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult Result { get; set; }
             public class RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult : TeaModel {
-                [NameInMap("corpId")]
-                [Validation(Required=false)]
-                public string CorpId { get; set; }
                 [NameInMap("deviceCallbackUrl")]
                 [Validation(Required=false)]
                 public string DeviceCallbackUrl { get; set; }

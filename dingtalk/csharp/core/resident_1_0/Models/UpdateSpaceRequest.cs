@@ -72,12 +72,9 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
             [Validation(Required=false)]
             public string Name { get; set; }
 
-            /// <summary>
-            /// 父节点id
-            /// </summary>
             [NameInMap("parentDeptId")]
             [Validation(Required=false)]
-            public float? ParentDeptId { get; set; }
+            public long? ParentDeptId { get; set; }
 
             /// <summary>
             /// 空间类型

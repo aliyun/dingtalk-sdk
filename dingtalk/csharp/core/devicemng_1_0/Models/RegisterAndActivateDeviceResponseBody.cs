@@ -13,9 +13,6 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
         [Validation(Required=false)]
         public RegisterAndActivateDeviceResponseBodyResult Result { get; set; }
         public class RegisterAndActivateDeviceResponseBodyResult : TeaModel {
-            [NameInMap("corpId")]
-            [Validation(Required=false)]
-            public string CorpId { get; set; }
             [NameInMap("deviceCode")]
             [Validation(Required=false)]
             public string DeviceCode { get; set; }

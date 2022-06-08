@@ -17,10 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
             [Validation(Required=false)]
             public string BizExt { get; set; }
 
-            [NameInMap("corpId")]
-            [Validation(Required=false)]
-            public string CorpId { get; set; }
-
             [NameInMap("deviceCallbackUrl")]
             [Validation(Required=false)]
             public string DeviceCallbackUrl { get; set; }

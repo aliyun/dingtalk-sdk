@@ -8,20 +8,20 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
 {
-    public class UpdateCardRequest : TeaModel {
+    public class DissolveGroupResponseBody : TeaModel {
         /// <summary>
-        /// 卡片实例唯一标识
+        /// 接口处理返回结果。
         /// </summary>
-        [NameInMap("bizId")]
+        [NameInMap("result")]
         [Validation(Required=false)]
-        public string BizId { get; set; }
+        public string Result { get; set; }
 
         /// <summary>
-        /// 卡片变量赋值，json结构
+        /// 接口处理是否成功。
         /// </summary>
-        [NameInMap("cardData")]
+        [NameInMap("success")]
         [Validation(Required=false)]
-        public string CardData { get; set; }
+        public bool? Success { get; set; }
 
     }
 

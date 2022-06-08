@@ -69,6 +69,13 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                         [NameInMap("align")]
                         [Validation(Required=false)]
                         public string Align { get; set; }
+                        [NameInMap("availableTemplates")]
+                        [Validation(Required=false)]
+                        public List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsAvailableTemplates> AvailableTemplates { get; set; }
+                        public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsAvailableTemplates : TeaModel {
+                            public string Id { get; set; }
+                            public string Name { get; set; }
+                        }
                         [NameInMap("bizAlias")]
                         [Validation(Required=false)]
                         public string BizAlias { get; set; }
@@ -653,6 +660,13 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                     [NameInMap("align")]
                     [Validation(Required=false)]
                     public string Align { get; set; }
+                    [NameInMap("availableTemplates")]
+                    [Validation(Required=false)]
+                    public List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates> AvailableTemplates { get; set; }
+                    public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates : TeaModel {
+                        public string Id { get; set; }
+                        public string Name { get; set; }
+                    }
                     [NameInMap("bizAlias")]
                     [Validation(Required=false)]
                     public string BizAlias { get; set; }
