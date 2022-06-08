@@ -4,9 +4,11 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateCardRequest extends TeaModel {
+    // 卡片实例唯一标识
     @NameInMap("bizId")
     public String bizId;
 
+    // 卡片变量赋值，json结构
     @NameInMap("cardData")
     public String cardData;
 

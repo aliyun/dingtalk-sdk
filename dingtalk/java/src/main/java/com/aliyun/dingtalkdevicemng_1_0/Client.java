@@ -156,6 +156,55 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("CreateDepartment", "devicemng_1.0", "HTTP", "POST", "AK", "/v1.0/devicemng/departments", "json", req, runtime), new CreateDepartmentResponse());
     }
 
+    public CreateDeviceChatRoomResponse createDeviceChatRoom(CreateDeviceChatRoomRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CreateDeviceChatRoomHeaders headers = new CreateDeviceChatRoomHeaders();
+        return this.createDeviceChatRoomWithOptions(request, headers, runtime);
+    }
+
+    public CreateDeviceChatRoomResponse createDeviceChatRoomWithOptions(CreateDeviceChatRoomRequest request, CreateDeviceChatRoomHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.chatType)) {
+            body.put("chatType", request.chatType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceCodes)) {
+            body.put("deviceCodes", request.deviceCodes);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceUuids)) {
+            body.put("deviceUuids", request.deviceUuids);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.ownerUserId)) {
+            body.put("ownerUserId", request.ownerUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.title)) {
+            body.put("title", request.title);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
+            body.put("userIds", request.userIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CreateDeviceChatRoom", "devicemng_1.0", "HTTP", "POST", "AK", "/v1.0/devicemng/customers/chatRooms/groups", "json", req, runtime), new CreateDeviceChatRoomResponse());
+    }
+
     public DeviceDingResponse deviceDing(DeviceDingRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         DeviceDingHeaders headers = new DeviceDingHeaders();
@@ -191,6 +240,127 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("DeviceDing", "devicemng_1.0", "HTTP", "POST", "AK", "/v1.0/devicemng/ding", "json", req, runtime), new DeviceDingResponse());
+    }
+
+    public DissolveGroupResponse dissolveGroup(DissolveGroupRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        DissolveGroupHeaders headers = new DissolveGroupHeaders();
+        return this.dissolveGroupWithOptions(request, headers, runtime);
+    }
+
+    public DissolveGroupResponse dissolveGroupWithOptions(DissolveGroupRequest request, DissolveGroupHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("DissolveGroup", "devicemng_1.0", "HTTP", "POST", "AK", "/v1.0/devicemng/customers/chatRooms/groups/dissolve", "json", req, runtime), new DissolveGroupResponse());
+    }
+
+    public EditDeviceAdminResponse editDeviceAdmin(EditDeviceAdminRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        EditDeviceAdminHeaders headers = new EditDeviceAdminHeaders();
+        return this.editDeviceAdminWithOptions(request, headers, runtime);
+    }
+
+    public EditDeviceAdminResponse editDeviceAdminWithOptions(EditDeviceAdminRequest request, EditDeviceAdminHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceCode)) {
+            body.put("deviceCode", request.deviceCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.roleUuid)) {
+            body.put("roleUuid", request.roleUuid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
+            body.put("userIds", request.userIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.uuid)) {
+            body.put("uuid", request.uuid);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("EditDeviceAdmin", "devicemng_1.0", "HTTP", "POST", "AK", "/v1.0/devicemng/customers/devices/administrators/edit", "json", req, runtime), new EditDeviceAdminResponse());
+    }
+
+    public GetDeviceGroupInfoResponse getDeviceGroupInfo(GetDeviceGroupInfoRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetDeviceGroupInfoHeaders headers = new GetDeviceGroupInfoHeaders();
+        return this.getDeviceGroupInfoWithOptions(request, headers, runtime);
+    }
+
+    public GetDeviceGroupInfoResponse getDeviceGroupInfoWithOptions(GetDeviceGroupInfoRequest request, GetDeviceGroupInfoHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetDeviceGroupInfo", "devicemng_1.0", "HTTP", "POST", "AK", "/v1.0/devicemng/customers/chatRooms/groupInfos/query", "json", req, runtime), new GetDeviceGroupInfoResponse());
+    }
+
+    public GetWholeDeviceGroupResponse getWholeDeviceGroup() throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetWholeDeviceGroupHeaders headers = new GetWholeDeviceGroupHeaders();
+        return this.getWholeDeviceGroupWithOptions(headers, runtime);
+    }
+
+    public GetWholeDeviceGroupResponse getWholeDeviceGroupWithOptions(GetWholeDeviceGroupHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("GetWholeDeviceGroup", "devicemng_1.0", "HTTP", "GET", "AK", "/v1.0/devicemng/customers/chatRooms/wholeGroupId", "json", req, runtime), new GetWholeDeviceGroupResponse());
     }
 
     public ListActivateDevicesResponse listActivateDevices(ListActivateDevicesRequest request) throws Exception {
@@ -236,6 +406,80 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("ListActivateDevices", "devicemng_1.0", "HTTP", "GET", "AK", "/v1.0/devicemng/customers/devices/activations/infos", "json", req, runtime), new ListActivateDevicesResponse());
+    }
+
+    public PullDeviceToGroupResponse pullDeviceToGroup(PullDeviceToGroupRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        PullDeviceToGroupHeaders headers = new PullDeviceToGroupHeaders();
+        return this.pullDeviceToGroupWithOptions(request, headers, runtime);
+    }
+
+    public PullDeviceToGroupResponse pullDeviceToGroupWithOptions(PullDeviceToGroupRequest request, PullDeviceToGroupHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceCodes)) {
+            body.put("deviceCodes", request.deviceCodes);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceUuids)) {
+            body.put("deviceUuids", request.deviceUuids);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operator)) {
+            body.put("operator", request.operator);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("PullDeviceToGroup", "devicemng_1.0", "HTTP", "POST", "AK", "/v1.0/devicemng/customers/chatRooms/devices", "json", req, runtime), new PullDeviceToGroupResponse());
+    }
+
+    public PullUserToGroupResponse pullUserToGroup(PullUserToGroupRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        PullUserToGroupHeaders headers = new PullUserToGroupHeaders();
+        return this.pullUserToGroupWithOptions(request, headers, runtime);
+    }
+
+    public PullUserToGroupResponse pullUserToGroupWithOptions(PullUserToGroupRequest request, PullUserToGroupHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
+            body.put("userIds", request.userIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("PullUserToGroup", "devicemng_1.0", "HTTP", "POST", "AK", "/v1.0/devicemng/customers/chatRooms/users", "json", req, runtime), new PullUserToGroupResponse());
     }
 
     public RegisterAndActivateDeviceResponse registerAndActivateDevice(RegisterAndActivateDeviceRequest request) throws Exception {
@@ -377,6 +621,80 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("RegisterDevice", "devicemng_1.0", "HTTP", "POST", "AK", "/v1.0/devicemng/devices", "json", req, runtime), new RegisterDeviceResponse());
     }
 
+    public RemoveDeviceFromGroupResponse removeDeviceFromGroup(RemoveDeviceFromGroupRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        RemoveDeviceFromGroupHeaders headers = new RemoveDeviceFromGroupHeaders();
+        return this.removeDeviceFromGroupWithOptions(request, headers, runtime);
+    }
+
+    public RemoveDeviceFromGroupResponse removeDeviceFromGroupWithOptions(RemoveDeviceFromGroupRequest request, RemoveDeviceFromGroupHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceCodes)) {
+            body.put("deviceCodes", request.deviceCodes);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceUuids)) {
+            body.put("deviceUuids", request.deviceUuids);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operator)) {
+            body.put("operator", request.operator);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("RemoveDeviceFromGroup", "devicemng_1.0", "HTTP", "POST", "AK", "/v1.0/devicemng/customers/chatRooms/devices/remove", "json", req, runtime), new RemoveDeviceFromGroupResponse());
+    }
+
+    public RemoveUserFromGroupResponse removeUserFromGroup(RemoveUserFromGroupRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        RemoveUserFromGroupHeaders headers = new RemoveUserFromGroupHeaders();
+        return this.removeUserFromGroupWithOptions(request, headers, runtime);
+    }
+
+    public RemoveUserFromGroupResponse removeUserFromGroupWithOptions(RemoveUserFromGroupRequest request, RemoveUserFromGroupHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
+            body.put("userIds", request.userIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("RemoveUserFromGroup", "devicemng_1.0", "HTTP", "POST", "AK", "/v1.0/devicemng/customers/chatRooms/users/remove", "json", req, runtime), new RemoveUserFromGroupResponse());
+    }
+
     public SendCardResponse sendCard(SendCardRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         SendCardHeaders headers = new SendCardHeaders();
@@ -402,12 +720,16 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("deviceUuid", request.deviceUuid);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.encodeCid)) {
-            body.put("encodeCid", request.encodeCid);
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.templateId)) {
             body.put("templateId", request.templateId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.topbox)) {
+            body.put("topbox", request.topbox);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
@@ -428,6 +750,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("SendCard", "devicemng_1.0", "HTTP", "POST", "AK", "/v1.0/devicemng/customers/cards/send", "json", req, runtime), new SendCardResponse());
+    }
+
+    public UninstallDeviceRobotResponse uninstallDeviceRobot(UninstallDeviceRobotRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        UninstallDeviceRobotHeaders headers = new UninstallDeviceRobotHeaders();
+        return this.uninstallDeviceRobotWithOptions(request, headers, runtime);
+    }
+
+    public UninstallDeviceRobotResponse uninstallDeviceRobotWithOptions(UninstallDeviceRobotRequest request, UninstallDeviceRobotHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceCode)) {
+            body.put("deviceCode", request.deviceCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.uuid)) {
+            body.put("uuid", request.uuid);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UninstallDeviceRobot", "devicemng_1.0", "HTTP", "POST", "AK", "/v1.0/devicemng/customers/devices/uninstall", "json", req, runtime), new UninstallDeviceRobotResponse());
     }
 
     public UpdateCardResponse updateCard(UpdateCardRequest request) throws Exception {

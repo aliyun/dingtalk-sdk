@@ -43,9 +43,6 @@ public class RegisterAndActivateDeviceBatchResponseBody extends TeaModel {
     }
 
     public static class RegisterAndActivateDeviceBatchResponseBodyFailItemsResult extends TeaModel {
-        @NameInMap("corpId")
-        public String corpId;
-
         @NameInMap("deviceCallbackUrl")
         public String deviceCallbackUrl;
 
@@ -85,14 +82,6 @@ public class RegisterAndActivateDeviceBatchResponseBody extends TeaModel {
         public static RegisterAndActivateDeviceBatchResponseBodyFailItemsResult build(java.util.Map<String, ?> map) throws Exception {
             RegisterAndActivateDeviceBatchResponseBodyFailItemsResult self = new RegisterAndActivateDeviceBatchResponseBodyFailItemsResult();
             return TeaModel.build(map, self);
-        }
-
-        public RegisterAndActivateDeviceBatchResponseBodyFailItemsResult setCorpId(String corpId) {
-            this.corpId = corpId;
-            return this;
-        }
-        public String getCorpId() {
-            return this.corpId;
         }
 
         public RegisterAndActivateDeviceBatchResponseBodyFailItemsResult setDeviceCallbackUrl(String deviceCallbackUrl) {
@@ -246,9 +235,6 @@ public class RegisterAndActivateDeviceBatchResponseBody extends TeaModel {
     }
 
     public static class RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult extends TeaModel {
-        @NameInMap("corpId")
-        public String corpId;
-
         @NameInMap("deviceCallbackUrl")
         public String deviceCallbackUrl;
 
@@ -288,14 +274,6 @@ public class RegisterAndActivateDeviceBatchResponseBody extends TeaModel {
         public static RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult build(java.util.Map<String, ?> map) throws Exception {
             RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult self = new RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult();
             return TeaModel.build(map, self);
-        }
-
-        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setCorpId(String corpId) {
-            this.corpId = corpId;
-            return this;
-        }
-        public String getCorpId() {
-            return this.corpId;
         }
 
         public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setDeviceCallbackUrl(String deviceCallbackUrl) {

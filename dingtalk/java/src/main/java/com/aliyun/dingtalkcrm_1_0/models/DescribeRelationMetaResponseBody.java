@@ -20,6 +20,38 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         return this.relationMetaDTOList;
     }
 
+    public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsAvailableTemplates extends TeaModel {
+        // PROC-BFA563D4-BBC7-4B1F-8F72-886A302665FC
+        @NameInMap("id")
+        public String id;
+
+        // 补卡申请
+        @NameInMap("name")
+        public String name;
+
+        public static DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsAvailableTemplates build(java.util.Map<String, ?> map) throws Exception {
+            DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsAvailableTemplates self = new DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsAvailableTemplates();
+            return TeaModel.build(map, self);
+        }
+
+        public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsAvailableTemplates setId(String id) {
+            this.id = id;
+            return this;
+        }
+        public String getId() {
+            return this.id;
+        }
+
+        public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsAvailableTemplates setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+    }
+
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceParamsFilters extends TeaModel {
         @NameInMap("fieldId")
         public String fieldId;
@@ -1405,6 +1437,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         @NameInMap("align")
         public String align;
 
+        @NameInMap("availableTemplates")
+        public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsAvailableTemplates> availableTemplates;
+
         @NameInMap("bizAlias")
         public String bizAlias;
 
@@ -1529,6 +1564,14 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         }
         public String getAlign() {
             return this.align;
+        }
+
+        public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps setAvailableTemplates(java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsAvailableTemplates> availableTemplates) {
+            this.availableTemplates = availableTemplates;
+            return this;
+        }
+        public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsAvailableTemplates> getAvailableTemplates() {
+            return this.availableTemplates;
         }
 
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps setBizAlias(String bizAlias) {
@@ -1839,6 +1882,38 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         }
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps getProps() {
             return this.props;
+        }
+
+    }
+
+    public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates extends TeaModel {
+        // PROC-BFA563D4-BBC7-4B1F-8F72-886A302665FC
+        @NameInMap("id")
+        public String id;
+
+        // 补卡申请
+        @NameInMap("name")
+        public String name;
+
+        public static DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates build(java.util.Map<String, ?> map) throws Exception {
+            DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates self = new DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates();
+            return TeaModel.build(map, self);
+        }
+
+        public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates setId(String id) {
+            this.id = id;
+            return this;
+        }
+        public String getId() {
+            return this.id;
+        }
+
+        public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
         }
 
     }
@@ -3304,6 +3379,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         @NameInMap("align")
         public String align;
 
+        @NameInMap("availableTemplates")
+        public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates> availableTemplates;
+
         // 字段别名
         @NameInMap("bizAlias")
         public String bizAlias;
@@ -3466,6 +3544,14 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         }
         public String getAlign() {
             return this.align;
+        }
+
+        public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps setAvailableTemplates(java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates> availableTemplates) {
+            this.availableTemplates = availableTemplates;
+            return this;
+        }
+        public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates> getAvailableTemplates() {
+            return this.availableTemplates;
         }
 
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps setBizAlias(String bizAlias) {

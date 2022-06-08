@@ -4,24 +4,35 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendCardRequest extends TeaModel {
+    // 卡片实例唯一标识
     @NameInMap("bizId")
     public String bizId;
 
+    // 卡片变量赋值，json结构
     @NameInMap("cardData")
     public String cardData;
 
+    // 设备业务标识
     @NameInMap("deviceCode")
     public String deviceCode;
 
+    // 设备uuid，唯一标识
     @NameInMap("deviceUuid")
     public String deviceUuid;
 
-    @NameInMap("encodeCid")
-    public String encodeCid;
+    // 群id，群的唯一标识
+    @NameInMap("openConversationId")
+    public String openConversationId;
 
+    // 卡片模板唯一标识，开放平台获取
     @NameInMap("templateId")
     public String templateId;
 
+    // 是否为吊顶卡片
+    @NameInMap("topbox")
+    public Boolean topbox;
+
+    // 用户通讯录唯一标识
     @NameInMap("userId")
     public String userId;
 
@@ -62,12 +73,12 @@ public class SendCardRequest extends TeaModel {
         return this.deviceUuid;
     }
 
-    public SendCardRequest setEncodeCid(String encodeCid) {
-        this.encodeCid = encodeCid;
+    public SendCardRequest setOpenConversationId(String openConversationId) {
+        this.openConversationId = openConversationId;
         return this;
     }
-    public String getEncodeCid() {
-        return this.encodeCid;
+    public String getOpenConversationId() {
+        return this.openConversationId;
     }
 
     public SendCardRequest setTemplateId(String templateId) {
@@ -76,6 +87,14 @@ public class SendCardRequest extends TeaModel {
     }
     public String getTemplateId() {
         return this.templateId;
+    }
+
+    public SendCardRequest setTopbox(Boolean topbox) {
+        this.topbox = topbox;
+        return this;
+    }
+    public Boolean getTopbox() {
+        return this.topbox;
     }
 
     public SendCardRequest setUserId(String userId) {

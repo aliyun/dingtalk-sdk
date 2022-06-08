@@ -54,9 +54,8 @@ public class UpdateSpaceRequest extends TeaModel {
         @NameInMap("name")
         public String name;
 
-        // 父节点id
         @NameInMap("parentDeptId")
-        public Float parentDeptId;
+        public Long parentDeptId;
 
         // 空间类型
         @NameInMap("tagCode")
@@ -131,11 +130,11 @@ public class UpdateSpaceRequest extends TeaModel {
             return this.name;
         }
 
-        public UpdateSpaceRequestSpaceInfoVOList setParentDeptId(Float parentDeptId) {
+        public UpdateSpaceRequestSpaceInfoVOList setParentDeptId(Long parentDeptId) {
             this.parentDeptId = parentDeptId;
             return this;
         }
-        public Float getParentDeptId() {
+        public Long getParentDeptId() {
             return this.parentDeptId;
         }
 

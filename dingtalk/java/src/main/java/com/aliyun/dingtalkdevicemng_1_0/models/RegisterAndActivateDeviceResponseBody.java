@@ -33,9 +33,6 @@ public class RegisterAndActivateDeviceResponseBody extends TeaModel {
     }
 
     public static class RegisterAndActivateDeviceResponseBodyResult extends TeaModel {
-        @NameInMap("corpId")
-        public String corpId;
-
         @NameInMap("deviceCode")
         public String deviceCode;
 
@@ -63,14 +60,6 @@ public class RegisterAndActivateDeviceResponseBody extends TeaModel {
         public static RegisterAndActivateDeviceResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             RegisterAndActivateDeviceResponseBodyResult self = new RegisterAndActivateDeviceResponseBodyResult();
             return TeaModel.build(map, self);
-        }
-
-        public RegisterAndActivateDeviceResponseBodyResult setCorpId(String corpId) {
-            this.corpId = corpId;
-            return this;
-        }
-        public String getCorpId() {
-            return this.corpId;
         }
 
         public RegisterAndActivateDeviceResponseBodyResult setDeviceCode(String deviceCode) {

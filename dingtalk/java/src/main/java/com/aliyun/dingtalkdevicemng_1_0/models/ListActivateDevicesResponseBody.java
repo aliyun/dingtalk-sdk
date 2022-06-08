@@ -46,9 +46,6 @@ public class ListActivateDevicesResponseBody extends TeaModel {
         @NameInMap("bizExt")
         public String bizExt;
 
-        @NameInMap("corpId")
-        public String corpId;
-
         @NameInMap("deviceCallbackUrl")
         public String deviceCallbackUrl;
 
@@ -87,14 +84,6 @@ public class ListActivateDevicesResponseBody extends TeaModel {
         }
         public String getBizExt() {
             return this.bizExt;
-        }
-
-        public ListActivateDevicesResponseBodyResult setCorpId(String corpId) {
-            this.corpId = corpId;
-            return this;
-        }
-        public String getCorpId() {
-            return this.corpId;
         }
 
         public ListActivateDevicesResponseBodyResult setDeviceCallbackUrl(String deviceCallbackUrl) {
