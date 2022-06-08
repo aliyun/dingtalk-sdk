@@ -263,6 +263,90 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateDepartment', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/departments', 'json', req, runtime)
         )
 
+    def create_device_chat_room(
+        self,
+        request: dingtalkdevicemng__1__0_models.CreateDeviceChatRoomRequest,
+    ) -> dingtalkdevicemng__1__0_models.CreateDeviceChatRoomResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.CreateDeviceChatRoomHeaders()
+        return self.create_device_chat_room_with_options(request, headers, runtime)
+
+    async def create_device_chat_room_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.CreateDeviceChatRoomRequest,
+    ) -> dingtalkdevicemng__1__0_models.CreateDeviceChatRoomResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.CreateDeviceChatRoomHeaders()
+        return await self.create_device_chat_room_with_options_async(request, headers, runtime)
+
+    def create_device_chat_room_with_options(
+        self,
+        request: dingtalkdevicemng__1__0_models.CreateDeviceChatRoomRequest,
+        headers: dingtalkdevicemng__1__0_models.CreateDeviceChatRoomHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.CreateDeviceChatRoomResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.chat_type):
+            body['chatType'] = request.chat_type
+        if not UtilClient.is_unset(request.device_codes):
+            body['deviceCodes'] = request.device_codes
+        if not UtilClient.is_unset(request.device_uuids):
+            body['deviceUuids'] = request.device_uuids
+        if not UtilClient.is_unset(request.owner_user_id):
+            body['ownerUserId'] = request.owner_user_id
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.CreateDeviceChatRoomResponse(),
+            self.do_roarequest('CreateDeviceChatRoom', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/chatRooms/groups', 'json', req, runtime)
+        )
+
+    async def create_device_chat_room_with_options_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.CreateDeviceChatRoomRequest,
+        headers: dingtalkdevicemng__1__0_models.CreateDeviceChatRoomHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.CreateDeviceChatRoomResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.chat_type):
+            body['chatType'] = request.chat_type
+        if not UtilClient.is_unset(request.device_codes):
+            body['deviceCodes'] = request.device_codes
+        if not UtilClient.is_unset(request.device_uuids):
+            body['deviceUuids'] = request.device_uuids
+        if not UtilClient.is_unset(request.owner_user_id):
+            body['ownerUserId'] = request.owner_user_id
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.CreateDeviceChatRoomResponse(),
+            await self.do_roarequest_async('CreateDeviceChatRoom', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/chatRooms/groups', 'json', req, runtime)
+        )
+
     def device_ding(
         self,
         request: dingtalkdevicemng__1__0_models.DeviceDingRequest,
@@ -333,6 +417,256 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkdevicemng__1__0_models.DeviceDingResponse(),
             await self.do_roarequest_async('DeviceDing', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/ding', 'json', req, runtime)
+        )
+
+    def dissolve_group(
+        self,
+        request: dingtalkdevicemng__1__0_models.DissolveGroupRequest,
+    ) -> dingtalkdevicemng__1__0_models.DissolveGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.DissolveGroupHeaders()
+        return self.dissolve_group_with_options(request, headers, runtime)
+
+    async def dissolve_group_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.DissolveGroupRequest,
+    ) -> dingtalkdevicemng__1__0_models.DissolveGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.DissolveGroupHeaders()
+        return await self.dissolve_group_with_options_async(request, headers, runtime)
+
+    def dissolve_group_with_options(
+        self,
+        request: dingtalkdevicemng__1__0_models.DissolveGroupRequest,
+        headers: dingtalkdevicemng__1__0_models.DissolveGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.DissolveGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.DissolveGroupResponse(),
+            self.do_roarequest('DissolveGroup', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/chatRooms/groups/dissolve', 'json', req, runtime)
+        )
+
+    async def dissolve_group_with_options_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.DissolveGroupRequest,
+        headers: dingtalkdevicemng__1__0_models.DissolveGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.DissolveGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.DissolveGroupResponse(),
+            await self.do_roarequest_async('DissolveGroup', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/chatRooms/groups/dissolve', 'json', req, runtime)
+        )
+
+    def edit_device_admin(
+        self,
+        request: dingtalkdevicemng__1__0_models.EditDeviceAdminRequest,
+    ) -> dingtalkdevicemng__1__0_models.EditDeviceAdminResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.EditDeviceAdminHeaders()
+        return self.edit_device_admin_with_options(request, headers, runtime)
+
+    async def edit_device_admin_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.EditDeviceAdminRequest,
+    ) -> dingtalkdevicemng__1__0_models.EditDeviceAdminResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.EditDeviceAdminHeaders()
+        return await self.edit_device_admin_with_options_async(request, headers, runtime)
+
+    def edit_device_admin_with_options(
+        self,
+        request: dingtalkdevicemng__1__0_models.EditDeviceAdminRequest,
+        headers: dingtalkdevicemng__1__0_models.EditDeviceAdminHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.EditDeviceAdminResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.device_code):
+            body['deviceCode'] = request.device_code
+        if not UtilClient.is_unset(request.role_uuid):
+            body['roleUuid'] = request.role_uuid
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.EditDeviceAdminResponse(),
+            self.do_roarequest('EditDeviceAdmin', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/devices/administrators/edit', 'json', req, runtime)
+        )
+
+    async def edit_device_admin_with_options_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.EditDeviceAdminRequest,
+        headers: dingtalkdevicemng__1__0_models.EditDeviceAdminHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.EditDeviceAdminResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.device_code):
+            body['deviceCode'] = request.device_code
+        if not UtilClient.is_unset(request.role_uuid):
+            body['roleUuid'] = request.role_uuid
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.EditDeviceAdminResponse(),
+            await self.do_roarequest_async('EditDeviceAdmin', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/devices/administrators/edit', 'json', req, runtime)
+        )
+
+    def get_device_group_info(
+        self,
+        request: dingtalkdevicemng__1__0_models.GetDeviceGroupInfoRequest,
+    ) -> dingtalkdevicemng__1__0_models.GetDeviceGroupInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.GetDeviceGroupInfoHeaders()
+        return self.get_device_group_info_with_options(request, headers, runtime)
+
+    async def get_device_group_info_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.GetDeviceGroupInfoRequest,
+    ) -> dingtalkdevicemng__1__0_models.GetDeviceGroupInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.GetDeviceGroupInfoHeaders()
+        return await self.get_device_group_info_with_options_async(request, headers, runtime)
+
+    def get_device_group_info_with_options(
+        self,
+        request: dingtalkdevicemng__1__0_models.GetDeviceGroupInfoRequest,
+        headers: dingtalkdevicemng__1__0_models.GetDeviceGroupInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.GetDeviceGroupInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.GetDeviceGroupInfoResponse(),
+            self.do_roarequest('GetDeviceGroupInfo', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/chatRooms/groupInfos/query', 'json', req, runtime)
+        )
+
+    async def get_device_group_info_with_options_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.GetDeviceGroupInfoRequest,
+        headers: dingtalkdevicemng__1__0_models.GetDeviceGroupInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.GetDeviceGroupInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.GetDeviceGroupInfoResponse(),
+            await self.do_roarequest_async('GetDeviceGroupInfo', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/chatRooms/groupInfos/query', 'json', req, runtime)
+        )
+
+    def get_whole_device_group(self) -> dingtalkdevicemng__1__0_models.GetWholeDeviceGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.GetWholeDeviceGroupHeaders()
+        return self.get_whole_device_group_with_options(headers, runtime)
+
+    async def get_whole_device_group_async(self) -> dingtalkdevicemng__1__0_models.GetWholeDeviceGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.GetWholeDeviceGroupHeaders()
+        return await self.get_whole_device_group_with_options_async(headers, runtime)
+
+    def get_whole_device_group_with_options(
+        self,
+        headers: dingtalkdevicemng__1__0_models.GetWholeDeviceGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.GetWholeDeviceGroupResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.GetWholeDeviceGroupResponse(),
+            self.do_roarequest('GetWholeDeviceGroup', 'devicemng_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/devicemng/customers/chatRooms/wholeGroupId', 'json', req, runtime)
+        )
+
+    async def get_whole_device_group_with_options_async(
+        self,
+        headers: dingtalkdevicemng__1__0_models.GetWholeDeviceGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.GetWholeDeviceGroupResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.GetWholeDeviceGroupResponse(),
+            await self.do_roarequest_async('GetWholeDeviceGroup', 'devicemng_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/devicemng/customers/chatRooms/wholeGroupId', 'json', req, runtime)
         )
 
     def list_activate_devices(
@@ -413,6 +747,150 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkdevicemng__1__0_models.ListActivateDevicesResponse(),
             await self.do_roarequest_async('ListActivateDevices', 'devicemng_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/devicemng/customers/devices/activations/infos', 'json', req, runtime)
+        )
+
+    def pull_device_to_group(
+        self,
+        request: dingtalkdevicemng__1__0_models.PullDeviceToGroupRequest,
+    ) -> dingtalkdevicemng__1__0_models.PullDeviceToGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.PullDeviceToGroupHeaders()
+        return self.pull_device_to_group_with_options(request, headers, runtime)
+
+    async def pull_device_to_group_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.PullDeviceToGroupRequest,
+    ) -> dingtalkdevicemng__1__0_models.PullDeviceToGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.PullDeviceToGroupHeaders()
+        return await self.pull_device_to_group_with_options_async(request, headers, runtime)
+
+    def pull_device_to_group_with_options(
+        self,
+        request: dingtalkdevicemng__1__0_models.PullDeviceToGroupRequest,
+        headers: dingtalkdevicemng__1__0_models.PullDeviceToGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.PullDeviceToGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.device_codes):
+            body['deviceCodes'] = request.device_codes
+        if not UtilClient.is_unset(request.device_uuids):
+            body['deviceUuids'] = request.device_uuids
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.PullDeviceToGroupResponse(),
+            self.do_roarequest('PullDeviceToGroup', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/chatRooms/devices', 'json', req, runtime)
+        )
+
+    async def pull_device_to_group_with_options_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.PullDeviceToGroupRequest,
+        headers: dingtalkdevicemng__1__0_models.PullDeviceToGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.PullDeviceToGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.device_codes):
+            body['deviceCodes'] = request.device_codes
+        if not UtilClient.is_unset(request.device_uuids):
+            body['deviceUuids'] = request.device_uuids
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.PullDeviceToGroupResponse(),
+            await self.do_roarequest_async('PullDeviceToGroup', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/chatRooms/devices', 'json', req, runtime)
+        )
+
+    def pull_user_to_group(
+        self,
+        request: dingtalkdevicemng__1__0_models.PullUserToGroupRequest,
+    ) -> dingtalkdevicemng__1__0_models.PullUserToGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.PullUserToGroupHeaders()
+        return self.pull_user_to_group_with_options(request, headers, runtime)
+
+    async def pull_user_to_group_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.PullUserToGroupRequest,
+    ) -> dingtalkdevicemng__1__0_models.PullUserToGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.PullUserToGroupHeaders()
+        return await self.pull_user_to_group_with_options_async(request, headers, runtime)
+
+    def pull_user_to_group_with_options(
+        self,
+        request: dingtalkdevicemng__1__0_models.PullUserToGroupRequest,
+        headers: dingtalkdevicemng__1__0_models.PullUserToGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.PullUserToGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.PullUserToGroupResponse(),
+            self.do_roarequest('PullUserToGroup', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/chatRooms/users', 'json', req, runtime)
+        )
+
+    async def pull_user_to_group_with_options_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.PullUserToGroupRequest,
+        headers: dingtalkdevicemng__1__0_models.PullUserToGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.PullUserToGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.PullUserToGroupResponse(),
+            await self.do_roarequest_async('PullUserToGroup', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/chatRooms/users', 'json', req, runtime)
         )
 
     def register_and_activate_device(
@@ -659,6 +1137,150 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('RegisterDevice', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/devices', 'json', req, runtime)
         )
 
+    def remove_device_from_group(
+        self,
+        request: dingtalkdevicemng__1__0_models.RemoveDeviceFromGroupRequest,
+    ) -> dingtalkdevicemng__1__0_models.RemoveDeviceFromGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.RemoveDeviceFromGroupHeaders()
+        return self.remove_device_from_group_with_options(request, headers, runtime)
+
+    async def remove_device_from_group_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.RemoveDeviceFromGroupRequest,
+    ) -> dingtalkdevicemng__1__0_models.RemoveDeviceFromGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.RemoveDeviceFromGroupHeaders()
+        return await self.remove_device_from_group_with_options_async(request, headers, runtime)
+
+    def remove_device_from_group_with_options(
+        self,
+        request: dingtalkdevicemng__1__0_models.RemoveDeviceFromGroupRequest,
+        headers: dingtalkdevicemng__1__0_models.RemoveDeviceFromGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.RemoveDeviceFromGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.device_codes):
+            body['deviceCodes'] = request.device_codes
+        if not UtilClient.is_unset(request.device_uuids):
+            body['deviceUuids'] = request.device_uuids
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.RemoveDeviceFromGroupResponse(),
+            self.do_roarequest('RemoveDeviceFromGroup', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/chatRooms/devices/remove', 'json', req, runtime)
+        )
+
+    async def remove_device_from_group_with_options_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.RemoveDeviceFromGroupRequest,
+        headers: dingtalkdevicemng__1__0_models.RemoveDeviceFromGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.RemoveDeviceFromGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.device_codes):
+            body['deviceCodes'] = request.device_codes
+        if not UtilClient.is_unset(request.device_uuids):
+            body['deviceUuids'] = request.device_uuids
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.RemoveDeviceFromGroupResponse(),
+            await self.do_roarequest_async('RemoveDeviceFromGroup', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/chatRooms/devices/remove', 'json', req, runtime)
+        )
+
+    def remove_user_from_group(
+        self,
+        request: dingtalkdevicemng__1__0_models.RemoveUserFromGroupRequest,
+    ) -> dingtalkdevicemng__1__0_models.RemoveUserFromGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.RemoveUserFromGroupHeaders()
+        return self.remove_user_from_group_with_options(request, headers, runtime)
+
+    async def remove_user_from_group_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.RemoveUserFromGroupRequest,
+    ) -> dingtalkdevicemng__1__0_models.RemoveUserFromGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.RemoveUserFromGroupHeaders()
+        return await self.remove_user_from_group_with_options_async(request, headers, runtime)
+
+    def remove_user_from_group_with_options(
+        self,
+        request: dingtalkdevicemng__1__0_models.RemoveUserFromGroupRequest,
+        headers: dingtalkdevicemng__1__0_models.RemoveUserFromGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.RemoveUserFromGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.RemoveUserFromGroupResponse(),
+            self.do_roarequest('RemoveUserFromGroup', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/chatRooms/users/remove', 'json', req, runtime)
+        )
+
+    async def remove_user_from_group_with_options_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.RemoveUserFromGroupRequest,
+        headers: dingtalkdevicemng__1__0_models.RemoveUserFromGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.RemoveUserFromGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.RemoveUserFromGroupResponse(),
+            await self.do_roarequest_async('RemoveUserFromGroup', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/chatRooms/users/remove', 'json', req, runtime)
+        )
+
     def send_card(
         self,
         request: dingtalkdevicemng__1__0_models.SendCardRequest,
@@ -691,10 +1313,12 @@ class Client(OpenApiClient):
             body['deviceCode'] = request.device_code
         if not UtilClient.is_unset(request.device_uuid):
             body['deviceUuid'] = request.device_uuid
-        if not UtilClient.is_unset(request.encode_cid):
-            body['encodeCid'] = request.encode_cid
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
         if not UtilClient.is_unset(request.template_id):
             body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.topbox):
+            body['topbox'] = request.topbox
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         real_headers = {}
@@ -727,10 +1351,12 @@ class Client(OpenApiClient):
             body['deviceCode'] = request.device_code
         if not UtilClient.is_unset(request.device_uuid):
             body['deviceUuid'] = request.device_uuid
-        if not UtilClient.is_unset(request.encode_cid):
-            body['encodeCid'] = request.encode_cid
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
         if not UtilClient.is_unset(request.template_id):
             body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.topbox):
+            body['topbox'] = request.topbox
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         real_headers = {}
@@ -745,6 +1371,74 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkdevicemng__1__0_models.SendCardResponse(),
             await self.do_roarequest_async('SendCard', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/cards/send', 'json', req, runtime)
+        )
+
+    def uninstall_device_robot(
+        self,
+        request: dingtalkdevicemng__1__0_models.UninstallDeviceRobotRequest,
+    ) -> dingtalkdevicemng__1__0_models.UninstallDeviceRobotResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.UninstallDeviceRobotHeaders()
+        return self.uninstall_device_robot_with_options(request, headers, runtime)
+
+    async def uninstall_device_robot_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.UninstallDeviceRobotRequest,
+    ) -> dingtalkdevicemng__1__0_models.UninstallDeviceRobotResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.UninstallDeviceRobotHeaders()
+        return await self.uninstall_device_robot_with_options_async(request, headers, runtime)
+
+    def uninstall_device_robot_with_options(
+        self,
+        request: dingtalkdevicemng__1__0_models.UninstallDeviceRobotRequest,
+        headers: dingtalkdevicemng__1__0_models.UninstallDeviceRobotHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.UninstallDeviceRobotResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.device_code):
+            body['deviceCode'] = request.device_code
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.UninstallDeviceRobotResponse(),
+            self.do_roarequest('UninstallDeviceRobot', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/devices/uninstall', 'json', req, runtime)
+        )
+
+    async def uninstall_device_robot_with_options_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.UninstallDeviceRobotRequest,
+        headers: dingtalkdevicemng__1__0_models.UninstallDeviceRobotHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.UninstallDeviceRobotResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.device_code):
+            body['deviceCode'] = request.device_code
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.UninstallDeviceRobotResponse(),
+            await self.do_roarequest_async('UninstallDeviceRobot', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/devices/uninstall', 'json', req, runtime)
         )
 
     def update_card(

@@ -5454,7 +5454,7 @@ class UpdateSpaceRequestSpaceInfoVOList(TeaModel):
         house_state: int = None,
         house_type: int = None,
         name: str = None,
-        parent_dept_id: float = None,
+        parent_dept_id: int = None,
         tag_code: str = None,
     ):
         # 计费面积
@@ -5473,7 +5473,6 @@ class UpdateSpaceRequestSpaceInfoVOList(TeaModel):
         self.house_type = house_type
         # 修改后名称
         self.name = name
-        # 父节点id
         self.parent_dept_id = parent_dept_id
         # 空间类型
         self.tag_code = tag_code

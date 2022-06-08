@@ -4870,6 +4870,41 @@ class DescribeRelationMetaRequest(TeaModel):
         return self
 
 
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsAvailableTemplates(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        name: str = None,
+    ):
+        # PROC-BFA563D4-BBC7-4B1F-8F72-886A302665FC
+        self.id = id
+        # 补卡申请
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
 class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceParamsFilters(TeaModel):
     def __init__(
         self,
@@ -6083,6 +6118,7 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps(TeaM
         self,
         action_name: str = None,
         align: str = None,
+        available_templates: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsAvailableTemplates] = None,
         biz_alias: str = None,
         choice: int = None,
         content: str = None,
@@ -6121,6 +6157,7 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps(TeaM
     ):
         self.action_name = action_name
         self.align = align
+        self.available_templates = available_templates
         self.biz_alias = biz_alias
         self.choice = choice
         self.content = content
@@ -6158,6 +6195,10 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps(TeaM
         self.watermark = watermark
 
     def validate(self):
+        if self.available_templates:
+            for k in self.available_templates:
+                if k:
+                    k.validate()
         if self.data_source:
             self.data_source.validate()
         if self.fields:
@@ -6191,6 +6232,10 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps(TeaM
             result['actionName'] = self.action_name
         if self.align is not None:
             result['align'] = self.align
+        result['availableTemplates'] = []
+        if self.available_templates is not None:
+            for k in self.available_templates:
+                result['availableTemplates'].append(k.to_map() if k else None)
         if self.biz_alias is not None:
             result['bizAlias'] = self.biz_alias
         if self.choice is not None:
@@ -6279,6 +6324,11 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps(TeaM
             self.action_name = m.get('actionName')
         if m.get('align') is not None:
             self.align = m.get('align')
+        self.available_templates = []
+        if m.get('availableTemplates') is not None:
+            for k in m.get('availableTemplates'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsAvailableTemplates()
+                self.available_templates.append(temp_model.from_map(k))
         if m.get('bizAlias') is not None:
             self.biz_alias = m.get('bizAlias')
         if m.get('choice') is not None:
@@ -6400,6 +6450,41 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildren(TeaModel)
         if m.get('props') is not None:
             temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps()
             self.props = temp_model.from_map(m['props'])
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        name: str = None,
+    ):
+        # PROC-BFA563D4-BBC7-4B1F-8F72-886A302665FC
+        self.id = id
+        # 补卡申请
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
         return self
 
 
@@ -7691,6 +7776,7 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps(TeaModel):
         self,
         action_name: str = None,
         align: str = None,
+        available_templates: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates] = None,
         biz_alias: str = None,
         choice: int = None,
         content: str = None,
@@ -7732,6 +7818,7 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps(TeaModel):
         self.action_name = action_name
         # textnote的样式
         self.align = align
+        self.available_templates = available_templates
         # 字段别名
         self.biz_alias = biz_alias
         # 内部联系人choice
@@ -7803,6 +7890,10 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps(TeaModel):
         self.watermark = watermark
 
     def validate(self):
+        if self.available_templates:
+            for k in self.available_templates:
+                if k:
+                    k.validate()
         if self.data_source:
             self.data_source.validate()
         if self.fields:
@@ -7836,6 +7927,10 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps(TeaModel):
             result['actionName'] = self.action_name
         if self.align is not None:
             result['align'] = self.align
+        result['availableTemplates'] = []
+        if self.available_templates is not None:
+            for k in self.available_templates:
+                result['availableTemplates'].append(k.to_map() if k else None)
         if self.biz_alias is not None:
             result['bizAlias'] = self.biz_alias
         if self.choice is not None:
@@ -7928,6 +8023,11 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps(TeaModel):
             self.action_name = m.get('actionName')
         if m.get('align') is not None:
             self.align = m.get('align')
+        self.available_templates = []
+        if m.get('availableTemplates') is not None:
+            for k in m.get('availableTemplates'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates()
+                self.available_templates.append(temp_model.from_map(k))
         if m.get('bizAlias') is not None:
             self.biz_alias = m.get('bizAlias')
         if m.get('choice') is not None:
