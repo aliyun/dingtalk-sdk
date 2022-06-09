@@ -6,16 +6,16 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
-    public class BatchApproveUnionApplyResponse : TeaModel {
+    public class GetAgentIdByRelatedAppIdResponse : TeaModel {
         [NameInMap("headers")]
         [Validation(Required=true)]
         public Dictionary<string, string> Headers { get; set; }
 
         [NameInMap("body")]
         [Validation(Required=true)]
-        public BatchApproveUnionApplyResponseBody Body { get; set; }
+        public GetAgentIdByRelatedAppIdResponseBody Body { get; set; }
 
     }
 

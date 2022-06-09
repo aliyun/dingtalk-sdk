@@ -28,13 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 public QueryAllDepartmentResponseBodyContentDeptAndExtDepartment Department { get; set; }
                 public class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment : TeaModel {
                     /// <summary>
-                    /// 租户CorpID
-                    /// </summary>
-                    [NameInMap("corpId")]
-                    [Validation(Required=false)]
-                    public string CorpId { get; set; }
-
-                    /// <summary>
                     /// 部门code
                     /// </summary>
                     [NameInMap("deptCode")]
@@ -123,7 +116,6 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 [Validation(Required=false)]
                 public List<QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos> ExtendInfos { get; set; }
                 public class QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos : TeaModel {
-                    public string CorpId { get; set; }
                     public string DeptCode { get; set; }
                     public string DeptExtendDisplayName { get; set; }
                     public string DeptExtendKey { get; set; }
@@ -149,13 +141,6 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 [Validation(Required=false)]
                 public List<QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos> ExtendInfos { get; set; }
                 public class QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos : TeaModel {
-                    /// <summary>
-                    /// 租户CorpID
-                    /// </summary>
-                    [NameInMap("corpId")]
-                    [Validation(Required=false)]
-                    public string CorpId { get; set; }
-
                     /// <summary>
                     /// 部门code
                     /// </summary>
@@ -221,9 +206,6 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 [Validation(Required=false)]
                 public QueryAllDepartmentResponseBodyContentGroupAndExtListGroup Group { get; set; }
                 public class QueryAllDepartmentResponseBodyContentGroupAndExtListGroup : TeaModel {
-                    [NameInMap("corpId")]
-                    [Validation(Required=false)]
-                    public string CorpId { get; set; }
                     [NameInMap("deptId")]
                     [Validation(Required=false)]
                     public long? DeptId { get; set; }

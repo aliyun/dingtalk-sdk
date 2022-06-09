@@ -31,13 +31,6 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             public string AssessGroupName { get; set; }
 
             /// <summary>
-            /// 租户CorpId
-            /// </summary>
-            [NameInMap("corpId")]
-            [Validation(Required=false)]
-            public string CorpId { get; set; }
-
-            /// <summary>
             /// 关联的部门id
             /// </summary>
             [NameInMap("deptCode")]

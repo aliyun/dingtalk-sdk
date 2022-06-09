@@ -57,7 +57,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
             };
-            return TeaModel.ToObject<BatchApproveUnionApplyResponse>(DoROARequest("BatchApproveUnionApply", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/cooperateCorps/unionApplications/approve", "none", req, runtime));
+            return TeaModel.ToObject<BatchApproveUnionApplyResponse>(DoROARequest("BatchApproveUnionApply", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/cooperateCorps/unionApplications/approve", "json", req, runtime));
         }
 
         public async Task<BatchApproveUnionApplyResponse> BatchApproveUnionApplyWithOptionsAsync(BatchApproveUnionApplyRequest request, BatchApproveUnionApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -77,7 +77,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
             };
-            return TeaModel.ToObject<BatchApproveUnionApplyResponse>(await DoROARequestAsync("BatchApproveUnionApply", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/cooperateCorps/unionApplications/approve", "none", req, runtime));
+            return TeaModel.ToObject<BatchApproveUnionApplyResponse>(await DoROARequestAsync("BatchApproveUnionApply", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/cooperateCorps/unionApplications/approve", "json", req, runtime));
         }
 
         public ChangeMainAdminResponse ChangeMainAdmin(ChangeMainAdminRequest request)
