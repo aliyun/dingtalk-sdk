@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class department extends Model
 {
     /**
-     * @description 租户CorpID
-     *
-     * @var string
-     */
-    public $corpId;
-
-    /**
      * @description 部门code
      *
      * @var string
@@ -99,7 +92,6 @@ class department extends Model
      */
     public $wardIdList;
     protected $_name = [
-        'corpId'         => 'corpId',
         'deptCode'       => 'deptCode',
         'deptName'       => 'deptName',
         'deptOrder'      => 'deptOrder',
@@ -121,9 +113,6 @@ class department extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
-        }
         if (null !== $this->deptCode) {
             $res['deptCode'] = $this->deptCode;
         }
@@ -172,9 +161,6 @@ class department extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
-        }
         if (isset($map['deptCode'])) {
             $model->deptCode = $map['deptCode'];
         }

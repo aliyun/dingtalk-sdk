@@ -32,7 +32,7 @@ class residentUpdateInfo extends Model
     /**
      * @description 人员扩展信息，目前只有租客的起止时间
      *
-     * @var mixed[]
+     * @var string[]
      */
     public $memberDeptExtension;
 

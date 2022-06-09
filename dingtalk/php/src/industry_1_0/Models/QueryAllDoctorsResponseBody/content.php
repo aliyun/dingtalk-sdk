@@ -23,13 +23,6 @@ class content extends Model
     public $assessGroupName;
 
     /**
-     * @description 租户CorpId
-     *
-     * @var string
-     */
-    public $corpId;
-
-    /**
      * @description 关联的部门id
      *
      * @var string
@@ -101,7 +94,6 @@ class content extends Model
     protected $_name = [
         'assessGroupId'   => 'assessGroupId',
         'assessGroupName' => 'assessGroupName',
-        'corpId'          => 'corpId',
         'deptCode'        => 'deptCode',
         'deptType'        => 'deptType',
         'gmtCreateStr'    => 'gmtCreateStr',
@@ -126,9 +118,6 @@ class content extends Model
         }
         if (null !== $this->assessGroupName) {
             $res['assessGroupName'] = $this->assessGroupName;
-        }
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
         }
         if (null !== $this->deptCode) {
             $res['deptCode'] = $this->deptCode;
@@ -177,9 +166,6 @@ class content extends Model
         }
         if (isset($map['assessGroupName'])) {
             $model->assessGroupName = $map['assessGroupName'];
-        }
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
         }
         if (isset($map['deptCode'])) {
             $model->deptCode = $map['deptCode'];

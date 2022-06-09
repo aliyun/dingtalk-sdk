@@ -44,6 +44,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageUpdateStorageRequ
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageUpdateStorageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetActiveUserSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetActiveUserSummaryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAgentIdByRelatedAppIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAgentIdByRelatedAppIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAgentIdByRelatedAppIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAllLabelableDeptsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAllLabelableDeptsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCalenderSummaryHeaders;
@@ -824,6 +827,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetActiveUserSummaryResponse::fromMap($this->doROARequest('GetActiveUserSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/data/dau/org/' . $dataId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetAgentIdByRelatedAppIdRequest $request
+     *
+     * @return GetAgentIdByRelatedAppIdResponse
+     */
+    public function getAgentIdByRelatedAppId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAgentIdByRelatedAppIdHeaders([]);
+
+        return $this->getAgentIdByRelatedAppIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetAgentIdByRelatedAppIdRequest $request
+     * @param GetAgentIdByRelatedAppIdHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return GetAgentIdByRelatedAppIdResponse
+     */
+    public function getAgentIdByRelatedAppIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appId)) {
+            @$query['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->targetCorpId)) {
+            @$query['targetCorpId'] = $request->targetCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetAgentIdByRelatedAppIdResponse::fromMap($this->doROARequest('GetAgentIdByRelatedAppId', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/exclusiveDesigns/agentId', 'json', $req, $runtime));
     }
 
     /**

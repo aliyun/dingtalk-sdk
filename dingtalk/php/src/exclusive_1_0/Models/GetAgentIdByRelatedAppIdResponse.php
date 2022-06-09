@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class BatchApproveUnionApplyResponse extends Model
+class GetAgentIdByRelatedAppIdResponse extends Model
 {
     /**
      * @var string[]
@@ -14,7 +14,7 @@ class BatchApproveUnionApplyResponse extends Model
     public $headers;
 
     /**
-     * @var BatchApproveUnionApplyResponseBody
+     * @var GetAgentIdByRelatedAppIdResponseBody
      */
     public $body;
     protected $_name = [
@@ -44,7 +44,7 @@ class BatchApproveUnionApplyResponse extends Model
     /**
      * @param array $map
      *
-     * @return BatchApproveUnionApplyResponse
+     * @return GetAgentIdByRelatedAppIdResponse
      */
     public static function fromMap($map = [])
     {
@@ -53,7 +53,7 @@ class BatchApproveUnionApplyResponse extends Model
             $model->headers = $map['headers'];
         }
         if (isset($map['body'])) {
-            $model->body = BatchApproveUnionApplyResponseBody::fromMap($map['body']);
+            $model->body = GetAgentIdByRelatedAppIdResponseBody::fromMap($map['body']);
         }
 
         return $model;

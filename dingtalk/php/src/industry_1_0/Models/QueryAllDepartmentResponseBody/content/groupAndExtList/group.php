@@ -10,13 +10,6 @@ use AlibabaCloud\Tea\Model;
 class group extends Model
 {
     /**
-     * @description 租户CorpID
-     *
-     * @var string
-     */
-    public $corpId;
-
-    /**
      * @description 科室ID，同parentDeptCode，这里保留是做兼容，原来定义成Long不太好改成了String了
      *
      * @var int
@@ -79,7 +72,6 @@ class group extends Model
      */
     public $remark;
     protected $_name = [
-        'corpId'         => 'corpId',
         'deptId'         => 'deptId',
         'deptStatus'     => 'deptStatus',
         'gmtCreateStr'   => 'gmtCreateStr',
@@ -98,9 +90,6 @@ class group extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
-        }
         if (null !== $this->deptId) {
             $res['deptId'] = $this->deptId;
         }
@@ -140,9 +129,6 @@ class group extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
-        }
         if (isset($map['deptId'])) {
             $model->deptId = $map['deptId'];
         }

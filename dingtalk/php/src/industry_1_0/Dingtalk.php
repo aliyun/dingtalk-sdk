@@ -64,6 +64,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreUserInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreUsersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreUsersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreUsersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureCommonEventHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureCommonEventRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureCommonEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureCostRecordListGetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureCostRecordListGetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureCostRecordListGetResponse;
@@ -1085,6 +1088,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DigitalStoreUsersResponse::fromMap($this->doROARequest('DigitalStoreUsers', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/digitalStores/nodes/users', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param IndustryManufactureCommonEventRequest $request
+     *
+     * @return IndustryManufactureCommonEventResponse
+     */
+    public function industryManufactureCommonEvent($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IndustryManufactureCommonEventHeaders([]);
+
+        return $this->industryManufactureCommonEventWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IndustryManufactureCommonEventRequest $request
+     * @param IndustryManufactureCommonEventHeaders $headers
+     * @param RuntimeOptions                        $runtime
+     *
+     * @return IndustryManufactureCommonEventResponse
+     */
+    public function industryManufactureCommonEventWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->action)) {
+            @$body['action'] = $request->action;
+        }
+        if (!Utils::isUnset($request->appKey)) {
+            @$body['appKey'] = $request->appKey;
+        }
+        if (!Utils::isUnset($request->bizData)) {
+            @$body['bizData'] = $request->bizData;
+        }
+        if (!Utils::isUnset($request->eventType)) {
+            @$body['eventType'] = $request->eventType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return IndustryManufactureCommonEventResponse::fromMap($this->doROARequest('IndustryManufactureCommonEvent', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufacturing/bases/commons/events', 'json', $req, $runtime));
     }
 
     /**

@@ -203,7 +203,7 @@ class Dingtalk extends OpenApiClient
             'body'    => Utils::toArray($request->body),
         ]);
 
-        return BatchApproveUnionApplyResponse::fromMap($this->doROARequest('BatchApproveUnionApply', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/cooperateCorps/unionApplications/approve', 'none', $req, $runtime));
+        return BatchApproveUnionApplyResponse::fromMap($this->doROARequest('BatchApproveUnionApply', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/cooperateCorps/unionApplications/approve', 'json', $req, $runtime));
     }
 
     /**
