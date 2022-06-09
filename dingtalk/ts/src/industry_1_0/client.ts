@@ -1803,6 +1803,103 @@ export class DigitalStoreUsersResponse extends $tea.Model {
   }
 }
 
+export class IndustryManufactureCommonEventHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureCommonEventRequest extends $tea.Model {
+  action?: string;
+  appKey?: string;
+  bizData?: { [key: string]: any };
+  eventType?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      action: 'action',
+      appKey: 'appKey',
+      bizData: 'bizData',
+      eventType: 'eventType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      action: 'string',
+      appKey: 'string',
+      bizData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      eventType: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureCommonEventResponseBody extends $tea.Model {
+  requestId?: string;
+  result?: any;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+      result: 'any',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureCommonEventResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: IndustryManufactureCommonEventResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: IndustryManufactureCommonEventResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class IndustryManufactureCostRecordListGetHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5114,7 +5211,6 @@ export class IndustryMmanufactureMaterialCostGetResponseBodyList extends $tea.Mo
 }
 
 export class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment extends $tea.Model {
-  corpId?: string;
   deptCode?: string;
   deptName?: string;
   deptOrder?: number;
@@ -5129,7 +5225,6 @@ export class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment extends $
   wardIdList?: number[];
   static names(): { [key: string]: string } {
     return {
-      corpId: 'corpId',
       deptCode: 'deptCode',
       deptName: 'deptName',
       deptOrder: 'deptOrder',
@@ -5147,7 +5242,6 @@ export class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment extends $
 
   static types(): { [key: string]: any } {
     return {
-      corpId: 'string',
       deptCode: 'string',
       deptName: 'string',
       deptOrder: 'number',
@@ -5169,7 +5263,6 @@ export class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment extends $
 }
 
 export class QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos extends $tea.Model {
-  corpId?: string;
   deptCode?: string;
   deptExtendDisplayName?: string;
   deptExtendKey?: string;
@@ -5180,7 +5273,6 @@ export class QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos extends 
   status?: number;
   static names(): { [key: string]: string } {
     return {
-      corpId: 'corpId',
       deptCode: 'deptCode',
       deptExtendDisplayName: 'deptExtendDisplayName',
       deptExtendKey: 'deptExtendKey',
@@ -5194,7 +5286,6 @@ export class QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos extends 
 
   static types(): { [key: string]: any } {
     return {
-      corpId: 'string',
       deptCode: 'string',
       deptExtendDisplayName: 'string',
       deptExtendKey: 'string',
@@ -5234,7 +5325,6 @@ export class QueryAllDepartmentResponseBodyContentDeptAndExt extends $tea.Model 
 }
 
 export class QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos extends $tea.Model {
-  corpId?: string;
   deptCode?: string;
   deptExtendDisplayName?: string;
   deptExtendKey?: string;
@@ -5245,7 +5335,6 @@ export class QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos ext
   status?: number;
   static names(): { [key: string]: string } {
     return {
-      corpId: 'corpId',
       deptCode: 'deptCode',
       deptExtendDisplayName: 'deptExtendDisplayName',
       deptExtendKey: 'deptExtendKey',
@@ -5259,7 +5348,6 @@ export class QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos ext
 
   static types(): { [key: string]: any } {
     return {
-      corpId: 'string',
       deptCode: 'string',
       deptExtendDisplayName: 'string',
       deptExtendKey: 'string',
@@ -5302,7 +5390,6 @@ export class QueryAllDepartmentResponseBodyContentGroupAndExtListGroupLeader ext
 }
 
 export class QueryAllDepartmentResponseBodyContentGroupAndExtListGroup extends $tea.Model {
-  corpId?: string;
   deptId?: number;
   deptStatus?: number;
   gmtCreateStr?: string;
@@ -5314,7 +5401,6 @@ export class QueryAllDepartmentResponseBodyContentGroupAndExtListGroup extends $
   remark?: string;
   static names(): { [key: string]: string } {
     return {
-      corpId: 'corpId',
       deptId: 'deptId',
       deptStatus: 'deptStatus',
       gmtCreateStr: 'gmtCreateStr',
@@ -5329,7 +5415,6 @@ export class QueryAllDepartmentResponseBodyContentGroupAndExtListGroup extends $
 
   static types(): { [key: string]: any } {
     return {
-      corpId: 'string',
       deptId: 'number',
       deptStatus: 'number',
       gmtCreateStr: 'string',
@@ -5400,7 +5485,6 @@ export class QueryAllDepartmentResponseBodyContent extends $tea.Model {
 export class QueryAllDoctorsResponseBodyContent extends $tea.Model {
   assessGroupId?: string;
   assessGroupName?: string;
-  corpId?: string;
   deptCode?: string;
   deptType?: string;
   gmtCreateStr?: string;
@@ -5415,7 +5499,6 @@ export class QueryAllDoctorsResponseBodyContent extends $tea.Model {
     return {
       assessGroupId: 'assessGroupId',
       assessGroupName: 'assessGroupName',
-      corpId: 'corpId',
       deptCode: 'deptCode',
       deptType: 'deptType',
       gmtCreateStr: 'gmtCreateStr',
@@ -5433,7 +5516,6 @@ export class QueryAllDoctorsResponseBodyContent extends $tea.Model {
     return {
       assessGroupId: 'string',
       assessGroupName: 'string',
-      corpId: 'string',
       deptCode: 'string',
       deptType: 'string',
       gmtCreateStr: 'string',
@@ -7121,6 +7203,47 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<DigitalStoreUsersResponse>(await this.doROARequest("DigitalStoreUsers", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/nodes/users`, "json", req, runtime), new DigitalStoreUsersResponse({}));
+  }
+
+  async industryManufactureCommonEvent(request: IndustryManufactureCommonEventRequest): Promise<IndustryManufactureCommonEventResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new IndustryManufactureCommonEventHeaders({ });
+    return await this.industryManufactureCommonEventWithOptions(request, headers, runtime);
+  }
+
+  async industryManufactureCommonEventWithOptions(request: IndustryManufactureCommonEventRequest, headers: IndustryManufactureCommonEventHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureCommonEventResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.action)) {
+      body["action"] = request.action;
+    }
+
+    if (!Util.isUnset(request.appKey)) {
+      body["appKey"] = request.appKey;
+    }
+
+    if (!Util.isUnset(request.bizData)) {
+      body["bizData"] = request.bizData;
+    }
+
+    if (!Util.isUnset(request.eventType)) {
+      body["eventType"] = request.eventType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<IndustryManufactureCommonEventResponse>(await this.doROARequest("IndustryManufactureCommonEvent", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufacturing/bases/commons/events`, "json", req, runtime), new IndustryManufactureCommonEventResponse({}));
   }
 
   async industryManufactureCostRecordListGet(request: IndustryManufactureCostRecordListGetRequest): Promise<IndustryManufactureCostRecordListGetResponse> {

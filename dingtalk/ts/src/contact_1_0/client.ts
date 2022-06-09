@@ -48,17 +48,39 @@ export class BatchApproveUnionApplyRequest extends $tea.Model {
   }
 }
 
+export class BatchApproveUnionApplyResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchApproveUnionApplyResponse extends $tea.Model {
   headers: { [key: string]: string };
+  body: BatchApproveUnionApplyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      body: 'body',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchApproveUnionApplyResponseBody,
     };
   }
 
@@ -5010,7 +5032,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: Util.toArray(request.body),
     });
-    return $tea.cast<BatchApproveUnionApplyResponse>(await this.doROARequest("BatchApproveUnionApply", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/cooperateCorps/unionApplications/approve`, "none", req, runtime), new BatchApproveUnionApplyResponse({}));
+    return $tea.cast<BatchApproveUnionApplyResponse>(await this.doROARequest("BatchApproveUnionApply", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/cooperateCorps/unionApplications/approve`, "json", req, runtime), new BatchApproveUnionApplyResponse({}));
   }
 
   async changeMainAdmin(request: ChangeMainAdminRequest): Promise<ChangeMainAdminResponse> {

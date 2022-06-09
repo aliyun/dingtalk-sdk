@@ -1187,6 +1187,91 @@ export class GetActiveUserSummaryResponse extends $tea.Model {
   }
 }
 
+export class GetAgentIdByRelatedAppIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAgentIdByRelatedAppIdRequest extends $tea.Model {
+  appId?: number;
+  targetCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appId: 'appId',
+      targetCorpId: 'targetCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appId: 'number',
+      targetCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAgentIdByRelatedAppIdResponseBody extends $tea.Model {
+  agentId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      agentId: 'agentId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      agentId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAgentIdByRelatedAppIdResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetAgentIdByRelatedAppIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetAgentIdByRelatedAppIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetAllLabelableDeptsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6375,6 +6460,39 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<GetActiveUserSummaryResponse>(await this.doROARequest("GetActiveUserSummary", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/dau/org/${dataId}`, "json", req, runtime), new GetActiveUserSummaryResponse({}));
+  }
+
+  async getAgentIdByRelatedAppId(request: GetAgentIdByRelatedAppIdRequest): Promise<GetAgentIdByRelatedAppIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetAgentIdByRelatedAppIdHeaders({ });
+    return await this.getAgentIdByRelatedAppIdWithOptions(request, headers, runtime);
+  }
+
+  async getAgentIdByRelatedAppIdWithOptions(request: GetAgentIdByRelatedAppIdRequest, headers: GetAgentIdByRelatedAppIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetAgentIdByRelatedAppIdResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appId)) {
+      query["appId"] = request.appId;
+    }
+
+    if (!Util.isUnset(request.targetCorpId)) {
+      query["targetCorpId"] = request.targetCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetAgentIdByRelatedAppIdResponse>(await this.doROARequest("GetAgentIdByRelatedAppId", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/exclusiveDesigns/agentId`, "json", req, runtime), new GetAgentIdByRelatedAppIdResponse({}));
   }
 
   async getAllLabelableDepts(): Promise<GetAllLabelableDeptsResponse> {

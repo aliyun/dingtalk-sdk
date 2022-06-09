@@ -3281,7 +3281,7 @@ export class UpdateResidentMemberRequestResidentUpdateInfo extends $tea.Model {
   deptId?: number;
   isPropertyOwner?: boolean;
   isRetainOldDept?: boolean;
-  memberDeptExtension?: { [key: string]: any };
+  memberDeptExtension?: { [key: string]: string };
   name?: string;
   oldDeptId?: number;
   relateType?: string;
@@ -3304,7 +3304,7 @@ export class UpdateResidentMemberRequestResidentUpdateInfo extends $tea.Model {
       deptId: 'number',
       isPropertyOwner: 'boolean',
       isRetainOldDept: 'boolean',
-      memberDeptExtension: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      memberDeptExtension: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       name: 'string',
       oldDeptId: 'number',
       relateType: 'string',
