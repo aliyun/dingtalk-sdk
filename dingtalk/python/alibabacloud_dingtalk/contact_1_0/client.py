@@ -57,7 +57,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.BatchApproveUnionApplyResponse(),
-            self.do_roarequest('BatchApproveUnionApply', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/cooperateCorps/unionApplications/approve', 'none', req, runtime)
+            self.do_roarequest('BatchApproveUnionApply', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/cooperateCorps/unionApplications/approve', 'json', req, runtime)
         )
 
     async def batch_approve_union_apply_with_options_async(
@@ -78,7 +78,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.BatchApproveUnionApplyResponse(),
-            await self.do_roarequest_async('BatchApproveUnionApply', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/cooperateCorps/unionApplications/approve', 'none', req, runtime)
+            await self.do_roarequest_async('BatchApproveUnionApply', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/cooperateCorps/unionApplications/approve', 'json', req, runtime)
         )
 
     def change_main_admin(

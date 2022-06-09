@@ -3398,6 +3398,165 @@ class DigitalStoreUsersResponse(TeaModel):
         return self
 
 
+class IndustryManufactureCommonEventHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class IndustryManufactureCommonEventRequest(TeaModel):
+    def __init__(
+        self,
+        action: str = None,
+        app_key: str = None,
+        biz_data: Dict[str, Any] = None,
+        event_type: List[str] = None,
+    ):
+        # add 创建事件/update 更新事件
+        self.action = action
+        # 应用appkey
+        self.app_key = app_key
+        # 业务参数，作为事件业务body
+        self.biz_data = biz_data
+        # 事件集合，目前仅1个有效
+        self.event_type = event_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action is not None:
+            result['action'] = self.action
+        if self.app_key is not None:
+            result['appKey'] = self.app_key
+        if self.biz_data is not None:
+            result['bizData'] = self.biz_data
+        if self.event_type is not None:
+            result['eventType'] = self.event_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('action') is not None:
+            self.action = m.get('action')
+        if m.get('appKey') is not None:
+            self.app_key = m.get('appKey')
+        if m.get('bizData') is not None:
+            self.biz_data = m.get('bizData')
+        if m.get('eventType') is not None:
+            self.event_type = m.get('eventType')
+        return self
+
+
+class IndustryManufactureCommonEventResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: Any = None,
+        success: bool = None,
+    ):
+        # Id of the request
+        self.request_id = request_id
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class IndustryManufactureCommonEventResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: IndustryManufactureCommonEventResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = IndustryManufactureCommonEventResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class IndustryManufactureCostRecordListGetHeaders(TeaModel):
     def __init__(
         self,
@@ -5709,7 +5868,6 @@ class QueryAllDepartmentRequest(TeaModel):
 class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment(TeaModel):
     def __init__(
         self,
-        corp_id: str = None,
         dept_code: str = None,
         dept_name: str = None,
         dept_order: int = None,
@@ -5723,8 +5881,6 @@ class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment(TeaModel):
         remark: str = None,
         ward_id_list: List[int] = None,
     ):
-        # 租户CorpID
-        self.corp_id = corp_id
         # 部门code
         self.dept_code = dept_code
         # 科室名称，同name
@@ -5759,8 +5915,6 @@ class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment(TeaModel):
             return _map
 
         result = dict()
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
         if self.dept_code is not None:
             result['deptCode'] = self.dept_code
         if self.dept_name is not None:
@@ -5789,8 +5943,6 @@ class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
         if m.get('deptCode') is not None:
             self.dept_code = m.get('deptCode')
         if m.get('deptName') is not None:
@@ -5821,7 +5973,6 @@ class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment(TeaModel):
 class QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos(TeaModel):
     def __init__(
         self,
-        corp_id: str = None,
         dept_code: str = None,
         dept_extend_display_name: str = None,
         dept_extend_key: str = None,
@@ -5831,8 +5982,6 @@ class QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos(TeaModel):
         id: int = None,
         status: int = None,
     ):
-        # 租户CorpID
-        self.corp_id = corp_id
         # 部门code
         self.dept_code = dept_code
         # 科室扩展字段描述
@@ -5859,8 +6008,6 @@ class QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos(TeaModel):
             return _map
 
         result = dict()
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
         if self.dept_code is not None:
             result['deptCode'] = self.dept_code
         if self.dept_extend_display_name is not None:
@@ -5881,8 +6028,6 @@ class QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
         if m.get('deptCode') is not None:
             self.dept_code = m.get('deptCode')
         if m.get('deptExtendDisplayName') is not None:
@@ -5951,7 +6096,6 @@ class QueryAllDepartmentResponseBodyContentDeptAndExt(TeaModel):
 class QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos(TeaModel):
     def __init__(
         self,
-        corp_id: str = None,
         dept_code: str = None,
         dept_extend_display_name: str = None,
         dept_extend_key: str = None,
@@ -5961,8 +6105,6 @@ class QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos(TeaModel):
         id: int = None,
         status: int = None,
     ):
-        # 租户CorpID
-        self.corp_id = corp_id
         # 部门code
         self.dept_code = dept_code
         # 医疗组扩展字段描述
@@ -5989,8 +6131,6 @@ class QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos(TeaModel):
             return _map
 
         result = dict()
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
         if self.dept_code is not None:
             result['deptCode'] = self.dept_code
         if self.dept_extend_display_name is not None:
@@ -6011,8 +6151,6 @@ class QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
         if m.get('deptCode') is not None:
             self.dept_code = m.get('deptCode')
         if m.get('deptExtendDisplayName') is not None:
@@ -6077,7 +6215,6 @@ class QueryAllDepartmentResponseBodyContentGroupAndExtListGroupLeader(TeaModel):
 class QueryAllDepartmentResponseBodyContentGroupAndExtListGroup(TeaModel):
     def __init__(
         self,
-        corp_id: str = None,
         dept_id: int = None,
         dept_status: int = None,
         gmt_create_str: str = None,
@@ -6088,8 +6225,6 @@ class QueryAllDepartmentResponseBodyContentGroupAndExtListGroup(TeaModel):
         parent_dept_code: str = None,
         remark: str = None,
     ):
-        # 租户CorpID
-        self.corp_id = corp_id
         # 科室ID，同parentDeptCode，这里保留是做兼容，原来定义成Long不太好改成了String了
         self.dept_id = dept_id
         # 部门状态：0-正常，1-删除
@@ -6119,8 +6254,6 @@ class QueryAllDepartmentResponseBodyContentGroupAndExtListGroup(TeaModel):
             return _map
 
         result = dict()
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
         if self.dept_id is not None:
             result['deptId'] = self.dept_id
         if self.dept_status is not None:
@@ -6143,8 +6276,6 @@ class QueryAllDepartmentResponseBodyContentGroupAndExtListGroup(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
         if m.get('deptId') is not None:
             self.dept_id = m.get('deptId')
         if m.get('deptStatus') is not None:
@@ -6440,7 +6571,6 @@ class QueryAllDoctorsResponseBodyContent(TeaModel):
         self,
         assess_group_id: str = None,
         assess_group_name: str = None,
-        corp_id: str = None,
         dept_code: str = None,
         dept_type: str = None,
         gmt_create_str: str = None,
@@ -6456,8 +6586,6 @@ class QueryAllDoctorsResponseBodyContent(TeaModel):
         self.assess_group_id = assess_group_id
         # 考核医疗组名称
         self.assess_group_name = assess_group_name
-        # 租户CorpId
-        self.corp_id = corp_id
         # 关联的部门id
         self.dept_code = dept_code
         # 科室医疗组标识
@@ -6492,8 +6620,6 @@ class QueryAllDoctorsResponseBodyContent(TeaModel):
             result['assessGroupId'] = self.assess_group_id
         if self.assess_group_name is not None:
             result['assessGroupName'] = self.assess_group_name
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
         if self.dept_code is not None:
             result['deptCode'] = self.dept_code
         if self.dept_type is not None:
@@ -6522,8 +6648,6 @@ class QueryAllDoctorsResponseBodyContent(TeaModel):
             self.assess_group_id = m.get('assessGroupId')
         if m.get('assessGroupName') is not None:
             self.assess_group_name = m.get('assessGroupName')
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
         if m.get('deptCode') is not None:
             self.dept_code = m.get('deptCode')
         if m.get('deptType') is not None:

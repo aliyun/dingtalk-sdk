@@ -5019,7 +5019,7 @@ class UpdateResidentMemberRequestResidentUpdateInfo(TeaModel):
         dept_id: int = None,
         is_property_owner: bool = None,
         is_retain_old_dept: bool = None,
-        member_dept_extension: Dict[str, Any] = None,
+        member_dept_extension: Dict[str, str] = None,
         name: str = None,
         old_dept_id: int = None,
         relate_type: str = None,

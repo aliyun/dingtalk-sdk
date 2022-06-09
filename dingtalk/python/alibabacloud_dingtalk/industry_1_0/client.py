@@ -1407,6 +1407,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DigitalStoreUsers', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/nodes/users', 'json', req, runtime)
         )
 
+    def industry_manufacture_common_event(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryManufactureCommonEventRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureCommonEventResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.IndustryManufactureCommonEventHeaders()
+        return self.industry_manufacture_common_event_with_options(request, headers, runtime)
+
+    async def industry_manufacture_common_event_async(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryManufactureCommonEventRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureCommonEventResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.IndustryManufactureCommonEventHeaders()
+        return await self.industry_manufacture_common_event_with_options_async(request, headers, runtime)
+
+    def industry_manufacture_common_event_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryManufactureCommonEventRequest,
+        headers: dingtalkindustry__1__0_models.IndustryManufactureCommonEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureCommonEventResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action):
+            body['action'] = request.action
+        if not UtilClient.is_unset(request.app_key):
+            body['appKey'] = request.app_key
+        if not UtilClient.is_unset(request.biz_data):
+            body['bizData'] = request.biz_data
+        if not UtilClient.is_unset(request.event_type):
+            body['eventType'] = request.event_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.IndustryManufactureCommonEventResponse(),
+            self.do_roarequest('IndustryManufactureCommonEvent', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufacturing/bases/commons/events', 'json', req, runtime)
+        )
+
+    async def industry_manufacture_common_event_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.IndustryManufactureCommonEventRequest,
+        headers: dingtalkindustry__1__0_models.IndustryManufactureCommonEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureCommonEventResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action):
+            body['action'] = request.action
+        if not UtilClient.is_unset(request.app_key):
+            body['appKey'] = request.app_key
+        if not UtilClient.is_unset(request.biz_data):
+            body['bizData'] = request.biz_data
+        if not UtilClient.is_unset(request.event_type):
+            body['eventType'] = request.event_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.IndustryManufactureCommonEventResponse(),
+            await self.do_roarequest_async('IndustryManufactureCommonEvent', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufacturing/bases/commons/events', 'json', req, runtime)
+        )
+
     def industry_manufacture_cost_record_list_get(
         self,
         request: dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetRequest,

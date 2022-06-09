@@ -997,6 +997,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetActiveUserSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/dau/org/{data_id}', 'json', req, runtime)
         )
 
+    def get_agent_id_by_related_app_id(
+        self,
+        request: dingtalkexclusive__1__0_models.GetAgentIdByRelatedAppIdRequest,
+    ) -> dingtalkexclusive__1__0_models.GetAgentIdByRelatedAppIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetAgentIdByRelatedAppIdHeaders()
+        return self.get_agent_id_by_related_app_id_with_options(request, headers, runtime)
+
+    async def get_agent_id_by_related_app_id_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetAgentIdByRelatedAppIdRequest,
+    ) -> dingtalkexclusive__1__0_models.GetAgentIdByRelatedAppIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetAgentIdByRelatedAppIdHeaders()
+        return await self.get_agent_id_by_related_app_id_with_options_async(request, headers, runtime)
+
+    def get_agent_id_by_related_app_id_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetAgentIdByRelatedAppIdRequest,
+        headers: dingtalkexclusive__1__0_models.GetAgentIdByRelatedAppIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetAgentIdByRelatedAppIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_id):
+            query['appId'] = request.app_id
+        if not UtilClient.is_unset(request.target_corp_id):
+            query['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetAgentIdByRelatedAppIdResponse(),
+            self.do_roarequest('GetAgentIdByRelatedAppId', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/exclusiveDesigns/agentId', 'json', req, runtime)
+        )
+
+    async def get_agent_id_by_related_app_id_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetAgentIdByRelatedAppIdRequest,
+        headers: dingtalkexclusive__1__0_models.GetAgentIdByRelatedAppIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetAgentIdByRelatedAppIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_id):
+            query['appId'] = request.app_id
+        if not UtilClient.is_unset(request.target_corp_id):
+            query['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetAgentIdByRelatedAppIdResponse(),
+            await self.do_roarequest_async('GetAgentIdByRelatedAppId', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/exclusiveDesigns/agentId', 'json', req, runtime)
+        )
+
     def get_all_labelable_depts(self) -> dingtalkexclusive__1__0_models.GetAllLabelableDeptsResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkexclusive__1__0_models.GetAllLabelableDeptsHeaders()
