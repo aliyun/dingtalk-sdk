@@ -36,7 +36,7 @@ public class UpdateResidentMemberRequest extends TeaModel {
 
         // 人员扩展信息，目前只有租客的起止时间
         @NameInMap("memberDeptExtension")
-        public java.util.Map<String, ?> memberDeptExtension;
+        public java.util.Map<String, String> memberDeptExtension;
 
         // 姓名
         @NameInMap("name")
@@ -83,11 +83,11 @@ public class UpdateResidentMemberRequest extends TeaModel {
             return this.isRetainOldDept;
         }
 
-        public UpdateResidentMemberRequestResidentUpdateInfo setMemberDeptExtension(java.util.Map<String, ?> memberDeptExtension) {
+        public UpdateResidentMemberRequestResidentUpdateInfo setMemberDeptExtension(java.util.Map<String, String> memberDeptExtension) {
             this.memberDeptExtension = memberDeptExtension;
             return this;
         }
-        public java.util.Map<String, ?> getMemberDeptExtension() {
+        public java.util.Map<String, String> getMemberDeptExtension() {
             return this.memberDeptExtension;
         }
 

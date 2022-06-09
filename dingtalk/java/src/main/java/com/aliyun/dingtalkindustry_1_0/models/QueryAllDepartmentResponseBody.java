@@ -58,10 +58,6 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     }
 
     public static class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment extends TeaModel {
-        // 租户CorpID
-        @NameInMap("corpId")
-        public String corpId;
-
         // 部门code
         @NameInMap("deptCode")
         public String deptCode;
@@ -113,14 +109,6 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
         public static QueryAllDepartmentResponseBodyContentDeptAndExtDepartment build(java.util.Map<String, ?> map) throws Exception {
             QueryAllDepartmentResponseBodyContentDeptAndExtDepartment self = new QueryAllDepartmentResponseBodyContentDeptAndExtDepartment();
             return TeaModel.build(map, self);
-        }
-
-        public QueryAllDepartmentResponseBodyContentDeptAndExtDepartment setCorpId(String corpId) {
-            this.corpId = corpId;
-            return this;
-        }
-        public String getCorpId() {
-            return this.corpId;
         }
 
         public QueryAllDepartmentResponseBodyContentDeptAndExtDepartment setDeptCode(String deptCode) {
@@ -222,10 +210,6 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     }
 
     public static class QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos extends TeaModel {
-        // 租户CorpID
-        @NameInMap("corpId")
-        public String corpId;
-
         // 部门code
         @NameInMap("deptCode")
         public String deptCode;
@@ -261,14 +245,6 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
         public static QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos build(java.util.Map<String, ?> map) throws Exception {
             QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos self = new QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos();
             return TeaModel.build(map, self);
-        }
-
-        public QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos setCorpId(String corpId) {
-            this.corpId = corpId;
-            return this;
-        }
-        public String getCorpId() {
-            return this.corpId;
         }
 
         public QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos setDeptCode(String deptCode) {
@@ -370,10 +346,6 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     }
 
     public static class QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos extends TeaModel {
-        // 租户CorpID
-        @NameInMap("corpId")
-        public String corpId;
-
         // 部门code
         @NameInMap("deptCode")
         public String deptCode;
@@ -409,14 +381,6 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
         public static QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos build(java.util.Map<String, ?> map) throws Exception {
             QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos self = new QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos();
             return TeaModel.build(map, self);
-        }
-
-        public QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos setCorpId(String corpId) {
-            this.corpId = corpId;
-            return this;
-        }
-        public String getCorpId() {
-            return this.corpId;
         }
 
         public QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos setDeptCode(String deptCode) {
@@ -530,10 +494,6 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     }
 
     public static class QueryAllDepartmentResponseBodyContentGroupAndExtListGroup extends TeaModel {
-        // 租户CorpID
-        @NameInMap("corpId")
-        public String corpId;
-
         // 科室ID，同parentDeptCode，这里保留是做兼容，原来定义成Long不太好改成了String了
         @NameInMap("deptId")
         public Long deptId;
@@ -573,14 +533,6 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
         public static QueryAllDepartmentResponseBodyContentGroupAndExtListGroup build(java.util.Map<String, ?> map) throws Exception {
             QueryAllDepartmentResponseBodyContentGroupAndExtListGroup self = new QueryAllDepartmentResponseBodyContentGroupAndExtListGroup();
             return TeaModel.build(map, self);
-        }
-
-        public QueryAllDepartmentResponseBodyContentGroupAndExtListGroup setCorpId(String corpId) {
-            this.corpId = corpId;
-            return this;
-        }
-        public String getCorpId() {
-            return this.corpId;
         }
 
         public QueryAllDepartmentResponseBodyContentGroupAndExtListGroup setDeptId(Long deptId) {

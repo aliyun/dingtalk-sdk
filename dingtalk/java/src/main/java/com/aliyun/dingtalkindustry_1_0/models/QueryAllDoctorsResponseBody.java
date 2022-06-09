@@ -66,10 +66,6 @@ public class QueryAllDoctorsResponseBody extends TeaModel {
         @NameInMap("assessGroupName")
         public String assessGroupName;
 
-        // 租户CorpId
-        @NameInMap("corpId")
-        public String corpId;
-
         // 关联的部门id
         @NameInMap("deptCode")
         public String deptCode;
@@ -129,14 +125,6 @@ public class QueryAllDoctorsResponseBody extends TeaModel {
         }
         public String getAssessGroupName() {
             return this.assessGroupName;
-        }
-
-        public QueryAllDoctorsResponseBodyContent setCorpId(String corpId) {
-            this.corpId = corpId;
-            return this;
-        }
-        public String getCorpId() {
-            return this.corpId;
         }
 
         public QueryAllDoctorsResponseBodyContent setDeptCode(String deptCode) {

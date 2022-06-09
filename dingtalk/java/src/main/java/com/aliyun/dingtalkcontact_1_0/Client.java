@@ -42,7 +42,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.teautil.Common.toArray(request.body))
         ));
-        return TeaModel.toModel(this.doROARequest("BatchApproveUnionApply", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/cooperateCorps/unionApplications/approve", "none", req, runtime), new BatchApproveUnionApplyResponse());
+        return TeaModel.toModel(this.doROARequest("BatchApproveUnionApply", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/cooperateCorps/unionApplications/approve", "json", req, runtime), new BatchApproveUnionApplyResponse());
     }
 
     public ChangeMainAdminResponse changeMainAdmin(ChangeMainAdminRequest request) throws Exception {
