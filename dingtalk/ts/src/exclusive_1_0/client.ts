@@ -3661,24 +3661,21 @@ export class PushBadgeHeaders extends $tea.Model {
 
 export class PushBadgeRequest extends $tea.Model {
   agentId?: string;
+  badgeItems?: PushBadgeRequestBadgeItems[];
   pushType?: string;
-  pushValue?: string;
-  userIdList?: string[];
   static names(): { [key: string]: string } {
     return {
       agentId: 'agentId',
+      badgeItems: 'badgeItems',
       pushType: 'pushType',
-      pushValue: 'pushValue',
-      userIdList: 'userIdList',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       agentId: 'string',
+      badgeItems: { 'type': 'array', 'itemType': PushBadgeRequestBadgeItems },
       pushType: 'string',
-      pushValue: 'string',
-      userIdList: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
@@ -5906,6 +5903,28 @@ export class ListPunchScheduleByConditionWithPagingResponseBodyList extends $tea
   }
 }
 
+export class PushBadgeRequestBadgeItems extends $tea.Model {
+  pushValue?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      pushValue: 'pushValue',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pushValue: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchOrgInnerGroupInfoResponseBodyItems extends $tea.Model {
   groupAdminsCount?: number;
   groupCreateTime?: number;
@@ -7429,16 +7448,12 @@ export default class Client extends OpenApi {
       body["agentId"] = request.agentId;
     }
 
+    if (!Util.isUnset(request.badgeItems)) {
+      body["badgeItems"] = request.badgeItems;
+    }
+
     if (!Util.isUnset(request.pushType)) {
       body["pushType"] = request.pushType;
-    }
-
-    if (!Util.isUnset(request.pushValue)) {
-      body["pushValue"] = request.pushValue;
-    }
-
-    if (!Util.isUnset(request.userIdList)) {
-      body["userIdList"] = request.userIdList;
     }
 
     let realHeaders : {[key: string ]: string} = { };

@@ -2830,10 +2830,12 @@ export class QueryAllDoctorsHeaders extends $tea.Model {
 }
 
 export class QueryAllDoctorsRequest extends $tea.Model {
+  monthMark?: string;
   pageNum?: number;
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
+      monthMark: 'monthMark',
       pageNum: 'pageNum',
       pageSize: 'pageSize',
     };
@@ -2841,6 +2843,7 @@ export class QueryAllDoctorsRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      monthMark: 'string',
       pageNum: 'number',
       pageSize: 'number',
     };
@@ -7822,6 +7825,10 @@ export default class Client extends OpenApi {
   async queryAllDoctorsWithOptions(request: QueryAllDoctorsRequest, headers: QueryAllDoctorsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllDoctorsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.monthMark)) {
+      query["monthMark"] = request.monthMark;
+    }
+
     if (!Util.isUnset(request.pageNum)) {
       query["pageNum"] = request.pageNum;
     }

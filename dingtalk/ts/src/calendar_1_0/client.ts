@@ -2908,15 +2908,18 @@ export class GetEventResponseBodyEnd extends $tea.Model {
 
 export class GetEventResponseBodyLocation extends $tea.Model {
   displayName?: string;
+  meetingRooms?: string[];
   static names(): { [key: string]: string } {
     return {
       displayName: 'displayName',
+      meetingRooms: 'meetingRooms',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       displayName: 'string',
+      meetingRooms: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
@@ -3473,15 +3476,18 @@ export class ListEventsResponseBodyEventsEnd extends $tea.Model {
 
 export class ListEventsResponseBodyEventsLocation extends $tea.Model {
   displayName?: string;
+  meetingRooms?: string[];
   static names(): { [key: string]: string } {
     return {
       displayName: 'displayName',
+      meetingRooms: 'meetingRooms',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       displayName: 'string',
+      meetingRooms: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
@@ -3793,15 +3799,18 @@ export class ListEventsInstancesResponseBodyEventsEnd extends $tea.Model {
 
 export class ListEventsInstancesResponseBodyEventsLocation extends $tea.Model {
   displayName?: string;
+  meetingRooms?: string[];
   static names(): { [key: string]: string } {
     return {
       displayName: 'displayName',
+      meetingRooms: 'meetingRooms',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       displayName: 'string',
+      meetingRooms: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
@@ -4110,15 +4119,18 @@ export class ListEventsViewResponseBodyEventsEnd extends $tea.Model {
 
 export class ListEventsViewResponseBodyEventsLocation extends $tea.Model {
   displayName?: string;
+  meetingRooms?: string[];
   static names(): { [key: string]: string } {
     return {
       displayName: 'displayName',
+      meetingRooms: 'meetingRooms',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       displayName: 'string',
+      meetingRooms: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
@@ -4596,15 +4608,18 @@ export class PatchEventResponseBodyEnd extends $tea.Model {
 
 export class PatchEventResponseBodyLocation extends $tea.Model {
   displayName?: string;
+  meetingRooms?: string[];
   static names(): { [key: string]: string } {
     return {
       displayName: 'displayName',
+      meetingRooms: 'meetingRooms',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       displayName: 'string',
+      meetingRooms: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
