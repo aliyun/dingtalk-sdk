@@ -2377,8 +2377,10 @@ class GetEventResponseBodyLocation(TeaModel):
     def __init__(
         self,
         display_name: str = None,
+        meeting_rooms: List[str] = None,
     ):
         self.display_name = display_name
+        self.meeting_rooms = meeting_rooms
 
     def validate(self):
         pass
@@ -2391,12 +2393,16 @@ class GetEventResponseBodyLocation(TeaModel):
         result = dict()
         if self.display_name is not None:
             result['displayName'] = self.display_name
+        if self.meeting_rooms is not None:
+            result['meetingRooms'] = self.meeting_rooms
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('displayName') is not None:
             self.display_name = m.get('displayName')
+        if m.get('meetingRooms') is not None:
+            self.meeting_rooms = m.get('meetingRooms')
         return self
 
 
@@ -4585,9 +4591,11 @@ class ListEventsResponseBodyEventsLocation(TeaModel):
     def __init__(
         self,
         display_name: str = None,
+        meeting_rooms: List[str] = None,
     ):
         # 展示名称
         self.display_name = display_name
+        self.meeting_rooms = meeting_rooms
 
     def validate(self):
         pass
@@ -4600,12 +4608,16 @@ class ListEventsResponseBodyEventsLocation(TeaModel):
         result = dict()
         if self.display_name is not None:
             result['displayName'] = self.display_name
+        if self.meeting_rooms is not None:
+            result['meetingRooms'] = self.meeting_rooms
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('displayName') is not None:
             self.display_name = m.get('displayName')
+        if m.get('meetingRooms') is not None:
+            self.meeting_rooms = m.get('meetingRooms')
         return self
 
 
@@ -5346,9 +5358,11 @@ class ListEventsInstancesResponseBodyEventsLocation(TeaModel):
     def __init__(
         self,
         display_name: str = None,
+        meeting_rooms: List[str] = None,
     ):
         # 展示名称
         self.display_name = display_name
+        self.meeting_rooms = meeting_rooms
 
     def validate(self):
         pass
@@ -5361,12 +5375,16 @@ class ListEventsInstancesResponseBodyEventsLocation(TeaModel):
         result = dict()
         if self.display_name is not None:
             result['displayName'] = self.display_name
+        if self.meeting_rooms is not None:
+            result['meetingRooms'] = self.meeting_rooms
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('displayName') is not None:
             self.display_name = m.get('displayName')
+        if m.get('meetingRooms') is not None:
+            self.meeting_rooms = m.get('meetingRooms')
         return self
 
 
@@ -6104,9 +6122,11 @@ class ListEventsViewResponseBodyEventsLocation(TeaModel):
     def __init__(
         self,
         display_name: str = None,
+        meeting_rooms: List[str] = None,
     ):
         # 展示名称
         self.display_name = display_name
+        self.meeting_rooms = meeting_rooms
 
     def validate(self):
         pass
@@ -6119,12 +6139,16 @@ class ListEventsViewResponseBodyEventsLocation(TeaModel):
         result = dict()
         if self.display_name is not None:
             result['displayName'] = self.display_name
+        if self.meeting_rooms is not None:
+            result['meetingRooms'] = self.meeting_rooms
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('displayName') is not None:
             self.display_name = m.get('displayName')
+        if m.get('meetingRooms') is not None:
+            self.meeting_rooms = m.get('meetingRooms')
         return self
 
 
@@ -7176,8 +7200,10 @@ class PatchEventResponseBodyLocation(TeaModel):
     def __init__(
         self,
         display_name: str = None,
+        meeting_rooms: List[str] = None,
     ):
         self.display_name = display_name
+        self.meeting_rooms = meeting_rooms
 
     def validate(self):
         pass
@@ -7190,12 +7216,16 @@ class PatchEventResponseBodyLocation(TeaModel):
         result = dict()
         if self.display_name is not None:
             result['displayName'] = self.display_name
+        if self.meeting_rooms is not None:
+            result['meetingRooms'] = self.meeting_rooms
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('displayName') is not None:
             self.display_name = m.get('displayName')
+        if m.get('meetingRooms') is not None:
+            self.meeting_rooms = m.get('meetingRooms')
         return self
 
 

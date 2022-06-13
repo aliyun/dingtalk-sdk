@@ -7988,22 +7988,16 @@ class PushBadgeHeaders(TeaModel):
         return self
 
 
-class PushBadgeRequest(TeaModel):
+class PushBadgeRequestBadgeItems(TeaModel):
     def __init__(
         self,
-        agent_id: str = None,
-        push_type: str = None,
         push_value: str = None,
-        user_id_list: List[str] = None,
+        user_id: str = None,
     ):
-        # 微应用agentId
-        self.agent_id = agent_id
-        # 推送类型
-        self.push_type = push_type
         # 推送的内容（目前仅限数字）
         self.push_value = push_value
-        # 员工userId列表
-        self.user_id_list = user_id_list
+        # 员工ID。
+        self.user_id = user_id
 
     def validate(self):
         pass
@@ -8014,26 +8008,68 @@ class PushBadgeRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.agent_id is not None:
-            result['agentId'] = self.agent_id
-        if self.push_type is not None:
-            result['pushType'] = self.push_type
         if self.push_value is not None:
             result['pushValue'] = self.push_value
-        if self.user_id_list is not None:
-            result['userIdList'] = self.user_id_list
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pushValue') is not None:
+            self.push_value = m.get('pushValue')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class PushBadgeRequest(TeaModel):
+    def __init__(
+        self,
+        agent_id: str = None,
+        badge_items: List[PushBadgeRequestBadgeItems] = None,
+        push_type: str = None,
+    ):
+        # 微应用agentId
+        self.agent_id = agent_id
+        # 推送列表
+        self.badge_items = badge_items
+        # 推送类型
+        self.push_type = push_type
+
+    def validate(self):
+        if self.badge_items:
+            for k in self.badge_items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        result['badgeItems'] = []
+        if self.badge_items is not None:
+            for k in self.badge_items:
+                result['badgeItems'].append(k.to_map() if k else None)
+        if self.push_type is not None:
+            result['pushType'] = self.push_type
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('agentId') is not None:
             self.agent_id = m.get('agentId')
+        self.badge_items = []
+        if m.get('badgeItems') is not None:
+            for k in m.get('badgeItems'):
+                temp_model = PushBadgeRequestBadgeItems()
+                self.badge_items.append(temp_model.from_map(k))
         if m.get('pushType') is not None:
             self.push_type = m.get('pushType')
-        if m.get('pushValue') is not None:
-            self.push_value = m.get('pushValue')
-        if m.get('userIdList') is not None:
-            self.user_id_list = m.get('userIdList')
         return self
 
 

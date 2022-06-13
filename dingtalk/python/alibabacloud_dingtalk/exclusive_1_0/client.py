@@ -2997,12 +2997,10 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.agent_id):
             body['agentId'] = request.agent_id
+        if not UtilClient.is_unset(request.badge_items):
+            body['badgeItems'] = request.badge_items
         if not UtilClient.is_unset(request.push_type):
             body['pushType'] = request.push_type
-        if not UtilClient.is_unset(request.push_value):
-            body['pushValue'] = request.push_value
-        if not UtilClient.is_unset(request.user_id_list):
-            body['userIdList'] = request.user_id_list
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3027,12 +3025,10 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.agent_id):
             body['agentId'] = request.agent_id
+        if not UtilClient.is_unset(request.badge_items):
+            body['badgeItems'] = request.badge_items
         if not UtilClient.is_unset(request.push_type):
             body['pushType'] = request.push_type
-        if not UtilClient.is_unset(request.push_value):
-            body['pushValue'] = request.push_value
-        if not UtilClient.is_unset(request.user_id_list):
-            body['userIdList'] = request.user_id_list
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

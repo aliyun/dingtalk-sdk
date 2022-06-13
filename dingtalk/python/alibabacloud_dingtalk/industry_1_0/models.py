@@ -6534,9 +6534,11 @@ class QueryAllDoctorsHeaders(TeaModel):
 class QueryAllDoctorsRequest(TeaModel):
     def __init__(
         self,
+        month_mark: str = None,
         page_num: int = None,
         page_size: int = None,
     ):
+        self.month_mark = month_mark
         # 分页查询页码
         self.page_num = page_num
         # 分页查询页容量
@@ -6551,6 +6553,8 @@ class QueryAllDoctorsRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.month_mark is not None:
+            result['monthMark'] = self.month_mark
         if self.page_num is not None:
             result['pageNum'] = self.page_num
         if self.page_size is not None:
@@ -6559,6 +6563,8 @@ class QueryAllDoctorsRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('monthMark') is not None:
+            self.month_mark = m.get('monthMark')
         if m.get('pageNum') is not None:
             self.page_num = m.get('pageNum')
         if m.get('pageSize') is not None:

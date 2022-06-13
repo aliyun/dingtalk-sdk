@@ -2319,6 +2319,8 @@ class Client(OpenApiClient):
     ) -> dingtalkindustry__1__0_models.QueryAllDoctorsResponse:
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.month_mark):
+            query['monthMark'] = request.month_mark
         if not UtilClient.is_unset(request.page_num):
             query['pageNum'] = request.page_num
         if not UtilClient.is_unset(request.page_size):
@@ -2345,6 +2347,8 @@ class Client(OpenApiClient):
     ) -> dingtalkindustry__1__0_models.QueryAllDoctorsResponse:
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.month_mark):
+            query['monthMark'] = request.month_mark
         if not UtilClient.is_unset(request.page_num):
             query['pageNum'] = request.page_num
         if not UtilClient.is_unset(request.page_size):
