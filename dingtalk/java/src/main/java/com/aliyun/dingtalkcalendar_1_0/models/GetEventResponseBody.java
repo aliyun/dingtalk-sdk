@@ -305,6 +305,9 @@ public class GetEventResponseBody extends TeaModel {
         @NameInMap("displayName")
         public String displayName;
 
+        @NameInMap("meetingRooms")
+        public java.util.List<String> meetingRooms;
+
         public static GetEventResponseBodyLocation build(java.util.Map<String, ?> map) throws Exception {
             GetEventResponseBodyLocation self = new GetEventResponseBodyLocation();
             return TeaModel.build(map, self);
@@ -316,6 +319,14 @@ public class GetEventResponseBody extends TeaModel {
         }
         public String getDisplayName() {
             return this.displayName;
+        }
+
+        public GetEventResponseBodyLocation setMeetingRooms(java.util.List<String> meetingRooms) {
+            this.meetingRooms = meetingRooms;
+            return this;
+        }
+        public java.util.List<String> getMeetingRooms() {
+            return this.meetingRooms;
         }
 
     }

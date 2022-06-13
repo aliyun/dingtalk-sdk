@@ -1473,16 +1473,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("agentId", request.agentId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.badgeItems)) {
+            body.put("badgeItems", request.badgeItems);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.pushType)) {
             body.put("pushType", request.pushType);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.pushValue)) {
-            body.put("pushValue", request.pushValue);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.userIdList)) {
-            body.put("userIdList", request.userIdList);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
