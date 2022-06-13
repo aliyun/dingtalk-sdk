@@ -3184,17 +3184,13 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             {
                 body["agentId"] = request.AgentId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BadgeItems))
+            {
+                body["badgeItems"] = request.BadgeItems;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PushType))
             {
                 body["pushType"] = request.PushType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PushValue))
-            {
-                body["pushValue"] = request.PushValue;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdList))
-            {
-                body["userIdList"] = request.UserIdList;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -3221,17 +3217,13 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             {
                 body["agentId"] = request.AgentId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BadgeItems))
+            {
+                body["badgeItems"] = request.BadgeItems;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PushType))
             {
                 body["pushType"] = request.PushType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PushValue))
-            {
-                body["pushValue"] = request.PushValue;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdList))
-            {
-                body["userIdList"] = request.UserIdList;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

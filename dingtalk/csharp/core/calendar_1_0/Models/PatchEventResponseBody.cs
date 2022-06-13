@@ -85,6 +85,9 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [NameInMap("displayName")]
             [Validation(Required=false)]
             public string DisplayName { get; set; }
+            [NameInMap("meetingRooms")]
+            [Validation(Required=false)]
+            public List<string> MeetingRooms { get; set; }
         };
 
         [NameInMap("organizer")]

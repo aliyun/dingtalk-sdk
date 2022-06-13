@@ -2820,6 +2820,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MonthMark))
+            {
+                query["monthMark"] = request.MonthMark;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNum))
             {
                 query["pageNum"] = request.PageNum;
@@ -2849,6 +2853,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MonthMark))
+            {
+                query["monthMark"] = request.MonthMark;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNum))
             {
                 query["pageNum"] = request.PageNum;
