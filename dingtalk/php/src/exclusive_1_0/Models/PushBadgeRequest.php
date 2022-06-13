@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PushBadgeRequest\badgeItems;
 use AlibabaCloud\Tea\Model;
 
 class PushBadgeRequest extends Model
@@ -16,30 +17,22 @@ class PushBadgeRequest extends Model
     public $agentId;
 
     /**
+     * @description 推送列表
+     *
+     * @var badgeItems[]
+     */
+    public $badgeItems;
+
+    /**
      * @description 推送类型
      *
      * @var string
      */
     public $pushType;
-
-    /**
-     * @description 推送的内容（目前仅限数字）
-     *
-     * @var string
-     */
-    public $pushValue;
-
-    /**
-     * @description 员工userId列表
-     *
-     * @var string[]
-     */
-    public $userIdList;
     protected $_name = [
         'agentId'    => 'agentId',
+        'badgeItems' => 'badgeItems',
         'pushType'   => 'pushType',
-        'pushValue'  => 'pushValue',
-        'userIdList' => 'userIdList',
     ];
 
     public function validate()
@@ -52,14 +45,17 @@ class PushBadgeRequest extends Model
         if (null !== $this->agentId) {
             $res['agentId'] = $this->agentId;
         }
+        if (null !== $this->badgeItems) {
+            $res['badgeItems'] = [];
+            if (null !== $this->badgeItems && \is_array($this->badgeItems)) {
+                $n = 0;
+                foreach ($this->badgeItems as $item) {
+                    $res['badgeItems'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
         if (null !== $this->pushType) {
             $res['pushType'] = $this->pushType;
-        }
-        if (null !== $this->pushValue) {
-            $res['pushValue'] = $this->pushValue;
-        }
-        if (null !== $this->userIdList) {
-            $res['userIdList'] = $this->userIdList;
         }
 
         return $res;
@@ -76,16 +72,17 @@ class PushBadgeRequest extends Model
         if (isset($map['agentId'])) {
             $model->agentId = $map['agentId'];
         }
+        if (isset($map['badgeItems'])) {
+            if (!empty($map['badgeItems'])) {
+                $model->badgeItems = [];
+                $n                 = 0;
+                foreach ($map['badgeItems'] as $item) {
+                    $model->badgeItems[$n++] = null !== $item ? badgeItems::fromMap($item) : $item;
+                }
+            }
+        }
         if (isset($map['pushType'])) {
             $model->pushType = $map['pushType'];
-        }
-        if (isset($map['pushValue'])) {
-            $model->pushValue = $map['pushValue'];
-        }
-        if (isset($map['userIdList'])) {
-            if (!empty($map['userIdList'])) {
-                $model->userIdList = $map['userIdList'];
-            }
         }
 
         return $model;

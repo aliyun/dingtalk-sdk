@@ -1732,6 +1732,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
+        if (!Utils::isUnset($request->monthMark)) {
+            @$query['monthMark'] = $request->monthMark;
+        }
         if (!Utils::isUnset($request->pageNum)) {
             @$query['pageNum'] = $request->pageNum;
         }

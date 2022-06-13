@@ -2165,14 +2165,11 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->agentId)) {
             @$body['agentId'] = $request->agentId;
         }
+        if (!Utils::isUnset($request->badgeItems)) {
+            @$body['badgeItems'] = $request->badgeItems;
+        }
         if (!Utils::isUnset($request->pushType)) {
             @$body['pushType'] = $request->pushType;
-        }
-        if (!Utils::isUnset($request->pushValue)) {
-            @$body['pushValue'] = $request->pushValue;
-        }
-        if (!Utils::isUnset($request->userIdList)) {
-            @$body['userIdList'] = $request->userIdList;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

@@ -26,9 +26,6 @@ use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupRecallResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupSendHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupSendRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupSendResponse;
-use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotDingtalkIdHeaders;
-use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotDingtalkIdRequest;
-use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotDingtalkIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\SendRobotDingMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\SendRobotDingMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\SendRobotDingMessageResponse;
@@ -397,48 +394,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return OrgGroupSendResponse::fromMap($this->doROARequest('OrgGroupSend', 'robot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/robot/groupMessages/send', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryRobotDingtalkIdRequest $request
-     *
-     * @return QueryRobotDingtalkIdResponse
-     */
-    public function queryRobotDingtalkId($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryRobotDingtalkIdHeaders([]);
-
-        return $this->queryRobotDingtalkIdWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryRobotDingtalkIdRequest $request
-     * @param QueryRobotDingtalkIdHeaders $headers
-     * @param RuntimeOptions              $runtime
-     *
-     * @return QueryRobotDingtalkIdResponse
-     */
-    public function queryRobotDingtalkIdWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->robotCode)) {
-            @$query['robotCode'] = $request->robotCode;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryRobotDingtalkIdResponse::fromMap($this->doROARequest('QueryRobotDingtalkId', 'robot_1.0', 'HTTP', 'GET', 'AK', '/v1.0/robot/dingtalkId', 'json', $req, $runtime));
     }
 
     /**

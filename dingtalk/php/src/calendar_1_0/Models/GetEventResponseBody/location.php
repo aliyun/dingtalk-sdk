@@ -12,8 +12,14 @@ class location extends Model
      * @var string
      */
     public $displayName;
+
+    /**
+     * @var string[]
+     */
+    public $meetingRooms;
     protected $_name = [
-        'displayName' => 'displayName',
+        'displayName'  => 'displayName',
+        'meetingRooms' => 'meetingRooms',
     ];
 
     public function validate()
@@ -25,6 +31,9 @@ class location extends Model
         $res = [];
         if (null !== $this->displayName) {
             $res['displayName'] = $this->displayName;
+        }
+        if (null !== $this->meetingRooms) {
+            $res['meetingRooms'] = $this->meetingRooms;
         }
 
         return $res;
@@ -40,6 +49,11 @@ class location extends Model
         $model = new self();
         if (isset($map['displayName'])) {
             $model->displayName = $map['displayName'];
+        }
+        if (isset($map['meetingRooms'])) {
+            if (!empty($map['meetingRooms'])) {
+                $model->meetingRooms = $map['meetingRooms'];
+            }
         }
 
         return $model;

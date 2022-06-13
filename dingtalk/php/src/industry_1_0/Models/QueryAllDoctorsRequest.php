@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class QueryAllDoctorsRequest extends Model
 {
     /**
+     * @var string
+     */
+    public $monthMark;
+
+    /**
      * @description 分页查询页码
      *
      * @var int
@@ -22,8 +27,9 @@ class QueryAllDoctorsRequest extends Model
      */
     public $pageSize;
     protected $_name = [
-        'pageNum'  => 'pageNum',
-        'pageSize' => 'pageSize',
+        'monthMark' => 'monthMark',
+        'pageNum'   => 'pageNum',
+        'pageSize'  => 'pageSize',
     ];
 
     public function validate()
@@ -33,6 +39,9 @@ class QueryAllDoctorsRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->monthMark) {
+            $res['monthMark'] = $this->monthMark;
+        }
         if (null !== $this->pageNum) {
             $res['pageNum'] = $this->pageNum;
         }
@@ -51,6 +60,9 @@ class QueryAllDoctorsRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['monthMark'])) {
+            $model->monthMark = $map['monthMark'];
+        }
         if (isset($map['pageNum'])) {
             $model->pageNum = $map['pageNum'];
         }
