@@ -633,14 +633,16 @@ class CreateDeviceChatRoomRequest(TeaModel):
         return self
 
 
-class CreateDeviceChatRoomResponseBody(TeaModel):
+class CreateDeviceChatRoomResponseBodyResult(TeaModel):
     def __init__(
         self,
-        result: str = None,
-        success: bool = None,
+        chat_id: str = None,
+        encoded_cid: str = None,
+        open_conversation_id: str = None,
     ):
-        self.result = result
-        self.success = success
+        self.chat_id = chat_id
+        self.encoded_cid = encoded_cid
+        self.open_conversation_id = open_conversation_id
 
     def validate(self):
         pass
@@ -651,8 +653,46 @@ class CreateDeviceChatRoomResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.chat_id is not None:
+            result['chatId'] = self.chat_id
+        if self.encoded_cid is not None:
+            result['encodedCid'] = self.encoded_cid
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('chatId') is not None:
+            self.chat_id = m.get('chatId')
+        if m.get('encodedCid') is not None:
+            self.encoded_cid = m.get('encodedCid')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class CreateDeviceChatRoomResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CreateDeviceChatRoomResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
         if self.result is not None:
-            result['result'] = self.result
+            result['result'] = self.result.to_map()
         if self.success is not None:
             result['success'] = self.success
         return result
@@ -660,7 +700,8 @@ class CreateDeviceChatRoomResponseBody(TeaModel):
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('result') is not None:
-            self.result = m.get('result')
+            temp_model = CreateDeviceChatRoomResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
         if m.get('success') is not None:
             self.success = m.get('success')
         return self
@@ -1190,14 +1231,18 @@ class GetDeviceGroupInfoRequest(TeaModel):
         return self
 
 
-class GetDeviceGroupInfoResponseBody(TeaModel):
+class GetDeviceGroupInfoResponseBodyResultDevices(TeaModel):
     def __init__(
         self,
-        result: str = None,
-        success: bool = None,
+        device_code: str = None,
+        device_name: str = None,
+        device_uuid: str = None,
+        uuid: str = None,
     ):
-        self.result = result
-        self.success = success
+        self.device_code = device_code
+        self.device_name = device_name
+        self.device_uuid = device_uuid
+        self.uuid = uuid
 
     def validate(self):
         pass
@@ -1208,8 +1253,109 @@ class GetDeviceGroupInfoResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.device_code is not None:
+            result['deviceCode'] = self.device_code
+        if self.device_name is not None:
+            result['deviceName'] = self.device_name
+        if self.device_uuid is not None:
+            result['deviceUuid'] = self.device_uuid
+        if self.uuid is not None:
+            result['uuid'] = self.uuid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deviceCode') is not None:
+            self.device_code = m.get('deviceCode')
+        if m.get('deviceName') is not None:
+            self.device_name = m.get('deviceName')
+        if m.get('deviceUuid') is not None:
+            self.device_uuid = m.get('deviceUuid')
+        if m.get('uuid') is not None:
+            self.uuid = m.get('uuid')
+        return self
+
+
+class GetDeviceGroupInfoResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        devices: List[GetDeviceGroupInfoResponseBodyResultDevices] = None,
+        owner_user: str = None,
+        sub_admin_users: List[str] = None,
+        title: str = None,
+        users: Dict[str, str] = None,
+    ):
+        self.devices = devices
+        self.owner_user = owner_user
+        self.sub_admin_users = sub_admin_users
+        self.title = title
+        self.users = users
+
+    def validate(self):
+        if self.devices:
+            for k in self.devices:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['devices'] = []
+        if self.devices is not None:
+            for k in self.devices:
+                result['devices'].append(k.to_map() if k else None)
+        if self.owner_user is not None:
+            result['ownerUser'] = self.owner_user
+        if self.sub_admin_users is not None:
+            result['subAdminUsers'] = self.sub_admin_users
+        if self.title is not None:
+            result['title'] = self.title
+        if self.users is not None:
+            result['users'] = self.users
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.devices = []
+        if m.get('devices') is not None:
+            for k in m.get('devices'):
+                temp_model = GetDeviceGroupInfoResponseBodyResultDevices()
+                self.devices.append(temp_model.from_map(k))
+        if m.get('ownerUser') is not None:
+            self.owner_user = m.get('ownerUser')
+        if m.get('subAdminUsers') is not None:
+            self.sub_admin_users = m.get('subAdminUsers')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('users') is not None:
+            self.users = m.get('users')
+        return self
+
+
+class GetDeviceGroupInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetDeviceGroupInfoResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
         if self.result is not None:
-            result['result'] = self.result
+            result['result'] = self.result.to_map()
         if self.success is not None:
             result['success'] = self.success
         return result
@@ -1217,7 +1363,8 @@ class GetDeviceGroupInfoResponseBody(TeaModel):
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('result') is not None:
-            self.result = m.get('result')
+            temp_model = GetDeviceGroupInfoResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
         if m.get('success') is not None:
             self.success = m.get('success')
         return self
@@ -3302,6 +3449,165 @@ class SendCardResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = SendCardResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SendMsgHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SendMsgRequest(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        device_code: str = None,
+        device_uuid: str = None,
+        open_conversation_id: str = None,
+        user_list: List[str] = None,
+    ):
+        # 消息内容
+        self.content = content
+        # 设备业务标识
+        self.device_code = device_code
+        # 设备唯一系统标识
+        self.device_uuid = device_uuid
+        # 开放群唯一标识
+        self.open_conversation_id = open_conversation_id
+        # 用户列表，群聊时为被@的人，单聊时为目标对象
+        self.user_list = user_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.device_code is not None:
+            result['deviceCode'] = self.device_code
+        if self.device_uuid is not None:
+            result['deviceUuid'] = self.device_uuid
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.user_list is not None:
+            result['userList'] = self.user_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('deviceCode') is not None:
+            self.device_code = m.get('deviceCode')
+        if m.get('deviceUuid') is not None:
+            self.device_uuid = m.get('deviceUuid')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('userList') is not None:
+            self.user_list = m.get('userList')
+        return self
+
+
+class SendMsgResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SendMsgResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SendMsgResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SendMsgResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

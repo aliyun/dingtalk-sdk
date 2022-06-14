@@ -1373,6 +1373,86 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('SendCard', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/cards/send', 'json', req, runtime)
         )
 
+    def send_msg(
+        self,
+        request: dingtalkdevicemng__1__0_models.SendMsgRequest,
+    ) -> dingtalkdevicemng__1__0_models.SendMsgResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.SendMsgHeaders()
+        return self.send_msg_with_options(request, headers, runtime)
+
+    async def send_msg_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.SendMsgRequest,
+    ) -> dingtalkdevicemng__1__0_models.SendMsgResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.SendMsgHeaders()
+        return await self.send_msg_with_options_async(request, headers, runtime)
+
+    def send_msg_with_options(
+        self,
+        request: dingtalkdevicemng__1__0_models.SendMsgRequest,
+        headers: dingtalkdevicemng__1__0_models.SendMsgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.SendMsgResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.device_code):
+            body['deviceCode'] = request.device_code
+        if not UtilClient.is_unset(request.device_uuid):
+            body['deviceUuid'] = request.device_uuid
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_list):
+            body['userList'] = request.user_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.SendMsgResponse(),
+            self.do_roarequest('SendMsg', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/messages/send', 'json', req, runtime)
+        )
+
+    async def send_msg_with_options_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.SendMsgRequest,
+        headers: dingtalkdevicemng__1__0_models.SendMsgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.SendMsgResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.device_code):
+            body['deviceCode'] = request.device_code
+        if not UtilClient.is_unset(request.device_uuid):
+            body['deviceUuid'] = request.device_uuid
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_list):
+            body['userList'] = request.user_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.SendMsgResponse(),
+            await self.do_roarequest_async('SendMsg', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/messages/send', 'json', req, runtime)
+        )
+
     def uninstall_device_robot(
         self,
         request: dingtalkdevicemng__1__0_models.UninstallDeviceRobotRequest,
