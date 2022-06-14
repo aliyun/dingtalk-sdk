@@ -4,12 +4,13 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\GetDeviceGroupInfoResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
 class GetDeviceGroupInfoResponseBody extends Model
 {
     /**
-     * @var string
+     * @var result
      */
     public $result;
 
@@ -30,7 +31,7 @@ class GetDeviceGroupInfoResponseBody extends Model
     {
         $res = [];
         if (null !== $this->result) {
-            $res['result'] = $this->result;
+            $res['result'] = null !== $this->result ? $this->result->toMap() : null;
         }
         if (null !== $this->success) {
             $res['success'] = $this->success;
@@ -48,7 +49,7 @@ class GetDeviceGroupInfoResponseBody extends Model
     {
         $model = new self();
         if (isset($map['result'])) {
-            $model->result = $map['result'];
+            $model->result = result::fromMap($map['result']);
         }
         if (isset($map['success'])) {
             $model->success = $map['success'];

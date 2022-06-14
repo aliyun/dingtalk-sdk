@@ -4,13 +4,12 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\CreateDeviceChatRoomResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
-class CreateDeviceChatRoomResponseBody extends Model
+class SendMsgResponseBody extends Model
 {
     /**
-     * @var result
+     * @var string
      */
     public $result;
 
@@ -31,7 +30,7 @@ class CreateDeviceChatRoomResponseBody extends Model
     {
         $res = [];
         if (null !== $this->result) {
-            $res['result'] = null !== $this->result ? $this->result->toMap() : null;
+            $res['result'] = $this->result;
         }
         if (null !== $this->success) {
             $res['success'] = $this->success;
@@ -43,13 +42,13 @@ class CreateDeviceChatRoomResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return CreateDeviceChatRoomResponseBody
+     * @return SendMsgResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
         if (isset($map['result'])) {
-            $model->result = result::fromMap($map['result']);
+            $model->result = $map['result'];
         }
         if (isset($map['success'])) {
             $model->success = $map['success'];

@@ -58,6 +58,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\RemoveUserFromGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\SendCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\SendCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\SendCardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\SendMsgHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\SendMsgRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\SendMsgResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\UninstallDeviceRobotHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\UninstallDeviceRobotRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\UninstallDeviceRobotResponse;
@@ -990,6 +993,60 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SendCardResponse::fromMap($this->doROARequest('SendCard', 'devicemng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/devicemng/customers/cards/send', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SendMsgRequest $request
+     *
+     * @return SendMsgResponse
+     */
+    public function sendMsg($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendMsgHeaders([]);
+
+        return $this->sendMsgWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SendMsgRequest $request
+     * @param SendMsgHeaders $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return SendMsgResponse
+     */
+    public function sendMsgWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->content)) {
+            @$body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->deviceCode)) {
+            @$body['deviceCode'] = $request->deviceCode;
+        }
+        if (!Utils::isUnset($request->deviceUuid)) {
+            @$body['deviceUuid'] = $request->deviceUuid;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->userList)) {
+            @$body['userList'] = $request->userList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SendMsgResponse::fromMap($this->doROARequest('SendMsg', 'devicemng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/devicemng/customers/messages/send', 'json', $req, $runtime));
     }
 
     /**
