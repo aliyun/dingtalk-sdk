@@ -5,7 +5,7 @@ import com.aliyun.tea.*;
 
 public class CreateDeviceChatRoomResponseBody extends TeaModel {
     @NameInMap("result")
-    public String result;
+    public CreateDeviceChatRoomResponseBodyResult result;
 
     @NameInMap("success")
     public Boolean success;
@@ -15,11 +15,11 @@ public class CreateDeviceChatRoomResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public CreateDeviceChatRoomResponseBody setResult(String result) {
+    public CreateDeviceChatRoomResponseBody setResult(CreateDeviceChatRoomResponseBodyResult result) {
         this.result = result;
         return this;
     }
-    public String getResult() {
+    public CreateDeviceChatRoomResponseBodyResult getResult() {
         return this.result;
     }
 
@@ -29,6 +29,47 @@ public class CreateDeviceChatRoomResponseBody extends TeaModel {
     }
     public Boolean getSuccess() {
         return this.success;
+    }
+
+    public static class CreateDeviceChatRoomResponseBodyResult extends TeaModel {
+        @NameInMap("chatId")
+        public String chatId;
+
+        @NameInMap("encodedCid")
+        public String encodedCid;
+
+        @NameInMap("openConversationId")
+        public String openConversationId;
+
+        public static CreateDeviceChatRoomResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
+            CreateDeviceChatRoomResponseBodyResult self = new CreateDeviceChatRoomResponseBodyResult();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateDeviceChatRoomResponseBodyResult setChatId(String chatId) {
+            this.chatId = chatId;
+            return this;
+        }
+        public String getChatId() {
+            return this.chatId;
+        }
+
+        public CreateDeviceChatRoomResponseBodyResult setEncodedCid(String encodedCid) {
+            this.encodedCid = encodedCid;
+            return this;
+        }
+        public String getEncodedCid() {
+            return this.encodedCid;
+        }
+
+        public CreateDeviceChatRoomResponseBodyResult setOpenConversationId(String openConversationId) {
+            this.openConversationId = openConversationId;
+            return this;
+        }
+        public String getOpenConversationId() {
+            return this.openConversationId;
+        }
+
     }
 
 }
