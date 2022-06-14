@@ -11,7 +11,18 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
     public class CreateDeviceChatRoomResponseBody : TeaModel {
         [NameInMap("result")]
         [Validation(Required=false)]
-        public string Result { get; set; }
+        public CreateDeviceChatRoomResponseBodyResult Result { get; set; }
+        public class CreateDeviceChatRoomResponseBodyResult : TeaModel {
+            [NameInMap("chatId")]
+            [Validation(Required=false)]
+            public string ChatId { get; set; }
+            [NameInMap("encodedCid")]
+            [Validation(Required=false)]
+            public string EncodedCid { get; set; }
+            [NameInMap("openConversationId")]
+            [Validation(Required=false)]
+            public string OpenConversationId { get; set; }
+        };
 
         [NameInMap("success")]
         [Validation(Required=false)]
