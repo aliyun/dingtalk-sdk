@@ -8,18 +8,10 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
-    public class GetDeptsByOrgIdHeaders : TeaModel {
+    public class GetOrganizationTaskHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }
-
-        [NameInMap("dingAccessTokenType")]
-        [Validation(Required=false)]
-        public string DingAccessTokenType { get; set; }
-
-        [NameInMap("dingOrgId")]
-        [Validation(Required=false)]
-        public string DingOrgId { get; set; }
 
         [NameInMap("x-acs-dingtalk-access-token")]
         [Validation(Required=false)]

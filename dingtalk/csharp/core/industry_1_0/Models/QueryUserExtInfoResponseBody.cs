@@ -31,13 +31,6 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             public string GmtModified { get; set; }
 
             /// <summary>
-            /// 组织id
-            /// </summary>
-            [NameInMap("orgId")]
-            [Validation(Required=false)]
-            public string OrgId { get; set; }
-
-            /// <summary>
             /// 状态：0-有效，1-无效
             /// </summary>
             [NameInMap("status")]
