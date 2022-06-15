@@ -30,10 +30,6 @@ public class QueryUserExtInfoResponseBody extends TeaModel {
         @NameInMap("gmtModified")
         public String gmtModified;
 
-        // 组织id
-        @NameInMap("orgId")
-        public String orgId;
-
         // 状态：0-有效，1-无效
         @NameInMap("status")
         public Integer status;
@@ -73,14 +69,6 @@ public class QueryUserExtInfoResponseBody extends TeaModel {
         }
         public String getGmtModified() {
             return this.gmtModified;
-        }
-
-        public QueryUserExtInfoResponseBodyContent setOrgId(String orgId) {
-            this.orgId = orgId;
-            return this;
-        }
-        public String getOrgId() {
-            return this.orgId;
         }
 
         public QueryUserExtInfoResponseBodyContent setStatus(Integer status) {
