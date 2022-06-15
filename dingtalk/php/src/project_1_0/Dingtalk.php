@@ -5,17 +5,48 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vproject_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateOrganizationTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateOrganizationTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateOrganizationTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetDeptsByOrgIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetDeptsByOrgIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetDeptsByOrgIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetEmpsByOrgIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetEmpsByOrgIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetEmpsByOrgIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetOrganizationPriorityListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetOrganizationPriorityListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetOrganizationTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetOrganizationTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetOrganizatioTaskByIdsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetOrganizatioTaskByIdsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetOrganizatioTaskByIdsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbProjectGrayHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbProjectGrayRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbProjectGrayResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbProjectSourceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbProjectSourceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskContentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskContentRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskContentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskDueDateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskDueDateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskDueDateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskExecutorHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskExecutorRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskExecutorResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskInvolveMembersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskInvolveMembersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskInvolveMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskNoteHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskNoteRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskNoteResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskPriorityHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskPriorityRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskPriorityResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskStatusResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -30,6 +61,81 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param CreateOrganizationTaskRequest $request
+     *
+     * @return CreateOrganizationTaskResponse
+     */
+    public function createOrganizationTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateOrganizationTaskHeaders([]);
+
+        return $this->createOrganizationTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateOrganizationTaskRequest $request
+     * @param CreateOrganizationTaskHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return CreateOrganizationTaskResponse
+     */
+    public function createOrganizationTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->content)) {
+            @$body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->createTime)) {
+            @$body['createTime'] = $request->createTime;
+        }
+        if (!Utils::isUnset($request->disableActivity)) {
+            @$body['disableActivity'] = $request->disableActivity;
+        }
+        if (!Utils::isUnset($request->disableNotification)) {
+            @$body['disableNotification'] = $request->disableNotification;
+        }
+        if (!Utils::isUnset($request->dueDate)) {
+            @$body['dueDate'] = $request->dueDate;
+        }
+        if (!Utils::isUnset($request->executorId)) {
+            @$body['executorId'] = $request->executorId;
+        }
+        if (!Utils::isUnset($request->involveMembers)) {
+            @$body['involveMembers'] = $request->involveMembers;
+        }
+        if (!Utils::isUnset($request->isDone)) {
+            @$body['isDone'] = $request->isDone;
+        }
+        if (!Utils::isUnset($request->label)) {
+            @$body['label'] = $request->label;
+        }
+        if (!Utils::isUnset($request->note)) {
+            @$body['note'] = $request->note;
+        }
+        if (!Utils::isUnset($request->priority)) {
+            @$body['priority'] = $request->priority;
+        }
+        if (!Utils::isUnset($request->visible)) {
+            @$body['visible'] = $request->visible;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateOrganizationTaskResponse::fromMap($this->doROARequest('CreateOrganizationTask', 'project_1.0', 'HTTP', 'POST', 'AK', '/v1.0/project/organizations/tasks', 'json', $req, $runtime));
     }
 
     /**
@@ -138,6 +244,118 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetOrganizatioTaskByIdsRequest $request
+     *
+     * @return GetOrganizatioTaskByIdsResponse
+     */
+    public function getOrganizatioTaskByIds($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetOrganizatioTaskByIdsHeaders([]);
+
+        return $this->getOrganizatioTaskByIdsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetOrganizatioTaskByIdsRequest $request
+     * @param GetOrganizatioTaskByIdsHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return GetOrganizatioTaskByIdsResponse
+     */
+    public function getOrganizatioTaskByIdsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->taskIds)) {
+            @$query['taskIds'] = $request->taskIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetOrganizatioTaskByIdsResponse::fromMap($this->doROARequest('GetOrganizatioTaskByIds', 'project_1.0', 'HTTP', 'GET', 'AK', '/v1.0/project/organizations/tasks', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return GetOrganizationPriorityListResponse
+     */
+    public function getOrganizationPriorityList()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetOrganizationPriorityListHeaders([]);
+
+        return $this->getOrganizationPriorityListWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param GetOrganizationPriorityListHeaders $headers
+     * @param RuntimeOptions                     $runtime
+     *
+     * @return GetOrganizationPriorityListResponse
+     */
+    public function getOrganizationPriorityListWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetOrganizationPriorityListResponse::fromMap($this->doROARequest('GetOrganizationPriorityList', 'project_1.0', 'HTTP', 'GET', 'AK', '/v1.0/project/organizations/priorities', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $taskId
+     *
+     * @return GetOrganizationTaskResponse
+     */
+    public function getOrganizationTask($taskId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetOrganizationTaskHeaders([]);
+
+        return $this->getOrganizationTaskWithOptions($taskId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                     $taskId
+     * @param GetOrganizationTaskHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return GetOrganizationTaskResponse
+     */
+    public function getOrganizationTaskWithOptions($taskId, $headers, $runtime)
+    {
+        $taskId      = OpenApiUtilClient::getEncodeParam($taskId);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetOrganizationTaskResponse::fromMap($this->doROARequest('GetOrganizationTask', 'project_1.0', 'HTTP', 'GET', 'AK', '/v1.0/project/organizations/tasks/' . $taskId . '', 'json', $req, $runtime));
+    }
+
+    /**
      * @param GetTbProjectGrayRequest $request
      *
      * @return GetTbProjectGrayResponse
@@ -240,5 +458,368 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetTbProjectSourceResponse::fromMap($this->doROARequest('GetTbProjectSource', 'project_1.0', 'HTTP', 'POST', 'AK', '/v1.0/project/projects/source', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                               $taskId
+     * @param UpdateOrganizationTaskContentRequest $request
+     *
+     * @return UpdateOrganizationTaskContentResponse
+     */
+    public function updateOrganizationTaskContent($taskId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateOrganizationTaskContentHeaders([]);
+
+        return $this->updateOrganizationTaskContentWithOptions($taskId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                               $taskId
+     * @param UpdateOrganizationTaskContentRequest $request
+     * @param UpdateOrganizationTaskContentHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return UpdateOrganizationTaskContentResponse
+     */
+    public function updateOrganizationTaskContentWithOptions($taskId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $taskId = OpenApiUtilClient::getEncodeParam($taskId);
+        $body   = [];
+        if (!Utils::isUnset($request->content)) {
+            @$body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->disableActivity)) {
+            @$body['disableActivity'] = $request->disableActivity;
+        }
+        if (!Utils::isUnset($request->disableNotification)) {
+            @$body['disableNotification'] = $request->disableNotification;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateOrganizationTaskContentResponse::fromMap($this->doROARequest('UpdateOrganizationTaskContent', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/organizations/tasks/' . $taskId . '/contents', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                               $taskId
+     * @param UpdateOrganizationTaskDueDateRequest $request
+     *
+     * @return UpdateOrganizationTaskDueDateResponse
+     */
+    public function updateOrganizationTaskDueDate($taskId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateOrganizationTaskDueDateHeaders([]);
+
+        return $this->updateOrganizationTaskDueDateWithOptions($taskId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                               $taskId
+     * @param UpdateOrganizationTaskDueDateRequest $request
+     * @param UpdateOrganizationTaskDueDateHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return UpdateOrganizationTaskDueDateResponse
+     */
+    public function updateOrganizationTaskDueDateWithOptions($taskId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $taskId = OpenApiUtilClient::getEncodeParam($taskId);
+        $body   = [];
+        if (!Utils::isUnset($request->disableActivity)) {
+            @$body['disableActivity'] = $request->disableActivity;
+        }
+        if (!Utils::isUnset($request->disableNotification)) {
+            @$body['disableNotification'] = $request->disableNotification;
+        }
+        if (!Utils::isUnset($request->dueDate)) {
+            @$body['dueDate'] = $request->dueDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateOrganizationTaskDueDateResponse::fromMap($this->doROARequest('UpdateOrganizationTaskDueDate', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/organizations/tasks/' . $taskId . '/dueDates', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                                $taskId
+     * @param UpdateOrganizationTaskExecutorRequest $request
+     *
+     * @return UpdateOrganizationTaskExecutorResponse
+     */
+    public function updateOrganizationTaskExecutor($taskId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateOrganizationTaskExecutorHeaders([]);
+
+        return $this->updateOrganizationTaskExecutorWithOptions($taskId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                                $taskId
+     * @param UpdateOrganizationTaskExecutorRequest $request
+     * @param UpdateOrganizationTaskExecutorHeaders $headers
+     * @param RuntimeOptions                        $runtime
+     *
+     * @return UpdateOrganizationTaskExecutorResponse
+     */
+    public function updateOrganizationTaskExecutorWithOptions($taskId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $taskId = OpenApiUtilClient::getEncodeParam($taskId);
+        $body   = [];
+        if (!Utils::isUnset($request->disableActivity)) {
+            @$body['disableActivity'] = $request->disableActivity;
+        }
+        if (!Utils::isUnset($request->disableNotification)) {
+            @$body['disableNotification'] = $request->disableNotification;
+        }
+        if (!Utils::isUnset($request->executorId)) {
+            @$body['executorId'] = $request->executorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateOrganizationTaskExecutorResponse::fromMap($this->doROARequest('UpdateOrganizationTaskExecutor', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/organizations/tasks/' . $taskId . '/executors', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                                      $taskId
+     * @param UpdateOrganizationTaskInvolveMembersRequest $request
+     *
+     * @return UpdateOrganizationTaskInvolveMembersResponse
+     */
+    public function updateOrganizationTaskInvolveMembers($taskId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateOrganizationTaskInvolveMembersHeaders([]);
+
+        return $this->updateOrganizationTaskInvolveMembersWithOptions($taskId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                                      $taskId
+     * @param UpdateOrganizationTaskInvolveMembersRequest $request
+     * @param UpdateOrganizationTaskInvolveMembersHeaders $headers
+     * @param RuntimeOptions                              $runtime
+     *
+     * @return UpdateOrganizationTaskInvolveMembersResponse
+     */
+    public function updateOrganizationTaskInvolveMembersWithOptions($taskId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $taskId = OpenApiUtilClient::getEncodeParam($taskId);
+        $body   = [];
+        if (!Utils::isUnset($request->addInvolvers)) {
+            @$body['addInvolvers'] = $request->addInvolvers;
+        }
+        if (!Utils::isUnset($request->delInvolvers)) {
+            @$body['delInvolvers'] = $request->delInvolvers;
+        }
+        if (!Utils::isUnset($request->disableActivity)) {
+            @$body['disableActivity'] = $request->disableActivity;
+        }
+        if (!Utils::isUnset($request->disableNotification)) {
+            @$body['disableNotification'] = $request->disableNotification;
+        }
+        if (!Utils::isUnset($request->involveMembers)) {
+            @$body['involveMembers'] = $request->involveMembers;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateOrganizationTaskInvolveMembersResponse::fromMap($this->doROARequest('UpdateOrganizationTaskInvolveMembers', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/organizations/tasks/' . $taskId . '/involveMembers', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                            $taskId
+     * @param UpdateOrganizationTaskNoteRequest $request
+     *
+     * @return UpdateOrganizationTaskNoteResponse
+     */
+    public function updateOrganizationTaskNote($taskId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateOrganizationTaskNoteHeaders([]);
+
+        return $this->updateOrganizationTaskNoteWithOptions($taskId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                            $taskId
+     * @param UpdateOrganizationTaskNoteRequest $request
+     * @param UpdateOrganizationTaskNoteHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return UpdateOrganizationTaskNoteResponse
+     */
+    public function updateOrganizationTaskNoteWithOptions($taskId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $taskId = OpenApiUtilClient::getEncodeParam($taskId);
+        $body   = [];
+        if (!Utils::isUnset($request->disableActivity)) {
+            @$body['disableActivity'] = $request->disableActivity;
+        }
+        if (!Utils::isUnset($request->disableNotification)) {
+            @$body['disableNotification'] = $request->disableNotification;
+        }
+        if (!Utils::isUnset($request->note)) {
+            @$body['note'] = $request->note;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateOrganizationTaskNoteResponse::fromMap($this->doROARequest('UpdateOrganizationTaskNote', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/organizations/tasks/' . $taskId . '/notes', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                                $taskId
+     * @param UpdateOrganizationTaskPriorityRequest $request
+     *
+     * @return UpdateOrganizationTaskPriorityResponse
+     */
+    public function updateOrganizationTaskPriority($taskId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateOrganizationTaskPriorityHeaders([]);
+
+        return $this->updateOrganizationTaskPriorityWithOptions($taskId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                                $taskId
+     * @param UpdateOrganizationTaskPriorityRequest $request
+     * @param UpdateOrganizationTaskPriorityHeaders $headers
+     * @param RuntimeOptions                        $runtime
+     *
+     * @return UpdateOrganizationTaskPriorityResponse
+     */
+    public function updateOrganizationTaskPriorityWithOptions($taskId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $taskId = OpenApiUtilClient::getEncodeParam($taskId);
+        $body   = [];
+        if (!Utils::isUnset($request->disableActivity)) {
+            @$body['disableActivity'] = $request->disableActivity;
+        }
+        if (!Utils::isUnset($request->disableNotification)) {
+            @$body['disableNotification'] = $request->disableNotification;
+        }
+        if (!Utils::isUnset($request->priority)) {
+            @$body['priority'] = $request->priority;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateOrganizationTaskPriorityResponse::fromMap($this->doROARequest('UpdateOrganizationTaskPriority', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/organizations/tasks/' . $taskId . '/priorities', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                              $taskId
+     * @param UpdateOrganizationTaskStatusRequest $request
+     *
+     * @return UpdateOrganizationTaskStatusResponse
+     */
+    public function updateOrganizationTaskStatus($taskId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateOrganizationTaskStatusHeaders([]);
+
+        return $this->updateOrganizationTaskStatusWithOptions($taskId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                              $taskId
+     * @param UpdateOrganizationTaskStatusRequest $request
+     * @param UpdateOrganizationTaskStatusHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return UpdateOrganizationTaskStatusResponse
+     */
+    public function updateOrganizationTaskStatusWithOptions($taskId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $taskId = OpenApiUtilClient::getEncodeParam($taskId);
+        $body   = [];
+        if (!Utils::isUnset($request->disableActivity)) {
+            @$body['disableActivity'] = $request->disableActivity;
+        }
+        if (!Utils::isUnset($request->disableNotification)) {
+            @$body['disableNotification'] = $request->disableNotification;
+        }
+        if (!Utils::isUnset($request->isDone)) {
+            @$body['isDone'] = $request->isDone;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateOrganizationTaskStatusResponse::fromMap($this->doROARequest('UpdateOrganizationTaskStatus', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/organizations/tasks/' . $taskId . '/states', 'json', $req, $runtime));
     }
 }

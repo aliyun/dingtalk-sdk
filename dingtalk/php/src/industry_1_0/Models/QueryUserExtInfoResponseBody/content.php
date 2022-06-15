@@ -23,13 +23,6 @@ class content extends Model
     public $gmtModified;
 
     /**
-     * @description 组织id
-     *
-     * @var string
-     */
-    public $orgId;
-
-    /**
      * @description 状态：0-有效，1-无效
      *
      * @var int
@@ -66,7 +59,6 @@ class content extends Model
     protected $_name = [
         'gmtCreate'             => 'gmtCreate',
         'gmtModified'           => 'gmtModified',
-        'orgId'                 => 'orgId',
         'status'                => 'status',
         'userCode'              => 'userCode',
         'userExtendDisplayName' => 'userExtendDisplayName',
@@ -86,9 +78,6 @@ class content extends Model
         }
         if (null !== $this->gmtModified) {
             $res['gmtModified'] = $this->gmtModified;
-        }
-        if (null !== $this->orgId) {
-            $res['orgId'] = $this->orgId;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
@@ -122,9 +111,6 @@ class content extends Model
         }
         if (isset($map['gmtModified'])) {
             $model->gmtModified = $map['gmtModified'];
-        }
-        if (isset($map['orgId'])) {
-            $model->orgId = $map['orgId'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];

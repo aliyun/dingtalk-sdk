@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateDentryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetSpaceDirectoriesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetSpaceDirectoriesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetSpaceDirectoriesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUserInfoByOpenTokenHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUserInfoByOpenTokenRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUserInfoByOpenTokenResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\MoveDentryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\MoveDentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\MoveDentryResponse;
@@ -145,6 +148,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetSpaceDirectoriesResponse::fromMap($this->doROARequest('GetSpaceDirectories', 'doc_2.0', 'HTTP', 'GET', 'AK', '/v2.0/doc/spaces/' . $spaceId . '/directories', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetUserInfoByOpenTokenRequest $request
+     *
+     * @return GetUserInfoByOpenTokenResponse
+     */
+    public function getUserInfoByOpenToken($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetUserInfoByOpenTokenHeaders([]);
+
+        return $this->getUserInfoByOpenTokenWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetUserInfoByOpenTokenRequest $request
+     * @param GetUserInfoByOpenTokenHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return GetUserInfoByOpenTokenResponse
+     */
+    public function getUserInfoByOpenTokenWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->docKey)) {
+            @$query['docKey'] = $request->docKey;
+        }
+        if (!Utils::isUnset($request->openToken)) {
+            @$query['openToken'] = $request->openToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetUserInfoByOpenTokenResponse::fromMap($this->doROARequest('GetUserInfoByOpenToken', 'doc_2.0', 'HTTP', 'GET', 'AK', '/v2.0/doc/userInfos', 'json', $req, $runtime));
     }
 
     /**

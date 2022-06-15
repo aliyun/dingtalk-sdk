@@ -52,6 +52,9 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetSimpleOvertimeSettingRes
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\InitAndGetLeaveALlocationQuotasHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\InitAndGetLeaveALlocationQuotasRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\InitAndGetLeaveALlocationQuotasResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ProcessApproveCreateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ProcessApproveCreateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ProcessApproveCreateResponse;
@@ -846,6 +849,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetUserHolidaysResponse::fromMap($this->doROARequest('GetUserHolidays', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/holidays', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param InitAndGetLeaveALlocationQuotasRequest $request
+     *
+     * @return InitAndGetLeaveALlocationQuotasResponse
+     */
+    public function initAndGetLeaveALlocationQuotas($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InitAndGetLeaveALlocationQuotasHeaders([]);
+
+        return $this->initAndGetLeaveALlocationQuotasWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param InitAndGetLeaveALlocationQuotasRequest $request
+     * @param InitAndGetLeaveALlocationQuotasHeaders $headers
+     * @param RuntimeOptions                         $runtime
+     *
+     * @return InitAndGetLeaveALlocationQuotasResponse
+     */
+    public function initAndGetLeaveALlocationQuotasWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->leaveCode)) {
+            @$query['leaveCode'] = $request->leaveCode;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            @$query['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return InitAndGetLeaveALlocationQuotasResponse::fromMap($this->doROARequest('InitAndGetLeaveALlocationQuotas', 'attendance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/attendance/leaves/initializations/balances', 'json', $req, $runtime));
     }
 
     /**
