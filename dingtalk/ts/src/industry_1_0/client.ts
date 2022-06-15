@@ -6182,7 +6182,6 @@ export class QueryUserCredentialsResponseBodyContent extends $tea.Model {
 export class QueryUserExtInfoResponseBodyContent extends $tea.Model {
   gmtCreate?: string;
   gmtModified?: string;
-  orgId?: string;
   status?: number;
   userCode?: string;
   userExtendDisplayName?: string;
@@ -6192,7 +6191,6 @@ export class QueryUserExtInfoResponseBodyContent extends $tea.Model {
     return {
       gmtCreate: 'gmtCreate',
       gmtModified: 'gmtModified',
-      orgId: 'orgId',
       status: 'status',
       userCode: 'userCode',
       userExtendDisplayName: 'userExtendDisplayName',
@@ -6205,7 +6203,6 @@ export class QueryUserExtInfoResponseBodyContent extends $tea.Model {
     return {
       gmtCreate: 'string',
       gmtModified: 'string',
-      orgId: 'string',
       status: 'number',
       userCode: 'string',
       userExtendDisplayName: 'string',

@@ -388,6 +388,94 @@ export class GetSpaceDirectoriesResponse extends $tea.Model {
   }
 }
 
+export class GetUserInfoByOpenTokenHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserInfoByOpenTokenRequest extends $tea.Model {
+  docKey?: string;
+  openToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      docKey: 'docKey',
+      openToken: 'openToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      docKey: 'string',
+      openToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserInfoByOpenTokenResponseBody extends $tea.Model {
+  unionId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserInfoByOpenTokenResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetUserInfoByOpenTokenResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetUserInfoByOpenTokenResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class MoveDentryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -933,6 +1021,39 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetSpaceDirectoriesResponse>(await this.doROARequest("GetSpaceDirectories", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/spaces/${spaceId}/directories`, "json", req, runtime), new GetSpaceDirectoriesResponse({}));
+  }
+
+  async getUserInfoByOpenToken(request: GetUserInfoByOpenTokenRequest): Promise<GetUserInfoByOpenTokenResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetUserInfoByOpenTokenHeaders({ });
+    return await this.getUserInfoByOpenTokenWithOptions(request, headers, runtime);
+  }
+
+  async getUserInfoByOpenTokenWithOptions(request: GetUserInfoByOpenTokenRequest, headers: GetUserInfoByOpenTokenHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserInfoByOpenTokenResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.docKey)) {
+      query["docKey"] = request.docKey;
+    }
+
+    if (!Util.isUnset(request.openToken)) {
+      query["openToken"] = request.openToken;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetUserInfoByOpenTokenResponse>(await this.doROARequest("GetUserInfoByOpenToken", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/userInfos`, "json", req, runtime), new GetUserInfoByOpenTokenResponse({}));
   }
 
   async moveDentry(spaceId: string, dentryId: string, request: MoveDentryRequest): Promise<MoveDentryResponse> {

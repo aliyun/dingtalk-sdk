@@ -1411,6 +1411,94 @@ export class GetUserHolidaysResponse extends $tea.Model {
   }
 }
 
+export class InitAndGetLeaveALlocationQuotasHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InitAndGetLeaveALlocationQuotasRequest extends $tea.Model {
+  leaveCode?: string;
+  opUserId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      leaveCode: 'leaveCode',
+      opUserId: 'opUserId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      leaveCode: 'string',
+      opUserId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InitAndGetLeaveALlocationQuotasResponseBody extends $tea.Model {
+  result?: InitAndGetLeaveALlocationQuotasResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': InitAndGetLeaveALlocationQuotasResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InitAndGetLeaveALlocationQuotasResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: InitAndGetLeaveALlocationQuotasResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: InitAndGetLeaveALlocationQuotasResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ProcessApproveCreateHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2652,6 +2740,52 @@ export class GetUserHolidaysResponseBodyResult extends $tea.Model {
   }
 }
 
+export class InitAndGetLeaveALlocationQuotasResponseBodyResult extends $tea.Model {
+  endTime?: number;
+  leaveCode?: string;
+  quotaCycle?: string;
+  quotaId?: string;
+  quotaNumPerDay?: number;
+  quotaNumPerHour?: number;
+  startTime?: number;
+  usedNumPerDay?: number;
+  usedNumPerHour?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      leaveCode: 'leaveCode',
+      quotaCycle: 'quotaCycle',
+      quotaId: 'quotaId',
+      quotaNumPerDay: 'quotaNumPerDay',
+      quotaNumPerHour: 'quotaNumPerHour',
+      startTime: 'startTime',
+      usedNumPerDay: 'usedNumPerDay',
+      usedNumPerHour: 'usedNumPerHour',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'number',
+      leaveCode: 'string',
+      quotaCycle: 'string',
+      quotaId: 'string',
+      quotaNumPerDay: 'number',
+      quotaNumPerHour: 'number',
+      startTime: 'number',
+      usedNumPerDay: 'number',
+      usedNumPerHour: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ProcessApproveCreateRequestPunchParam extends $tea.Model {
   positionId?: string;
   positionName?: string;
@@ -3530,6 +3664,43 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<GetUserHolidaysResponse>(await this.doROARequest("GetUserHolidays", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/holidays`, "json", req, runtime), new GetUserHolidaysResponse({}));
+  }
+
+  async initAndGetLeaveALlocationQuotas(request: InitAndGetLeaveALlocationQuotasRequest): Promise<InitAndGetLeaveALlocationQuotasResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new InitAndGetLeaveALlocationQuotasHeaders({ });
+    return await this.initAndGetLeaveALlocationQuotasWithOptions(request, headers, runtime);
+  }
+
+  async initAndGetLeaveALlocationQuotasWithOptions(request: InitAndGetLeaveALlocationQuotasRequest, headers: InitAndGetLeaveALlocationQuotasHeaders, runtime: $Util.RuntimeOptions): Promise<InitAndGetLeaveALlocationQuotasResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.leaveCode)) {
+      query["leaveCode"] = request.leaveCode;
+    }
+
+    if (!Util.isUnset(request.opUserId)) {
+      query["opUserId"] = request.opUserId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<InitAndGetLeaveALlocationQuotasResponse>(await this.doROARequest("InitAndGetLeaveALlocationQuotas", "attendance_1.0", "HTTP", "GET", "AK", `/v1.0/attendance/leaves/initializations/balances`, "json", req, runtime), new InitAndGetLeaveALlocationQuotasResponse({}));
   }
 
   async processApproveCreate(request: ProcessApproveCreateRequest): Promise<ProcessApproveCreateResponse> {

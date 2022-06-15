@@ -7,6 +7,121 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class CreateOrganizationTaskHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateOrganizationTaskRequest extends $tea.Model {
+  content?: string;
+  createTime?: string;
+  disableActivity?: boolean;
+  disableNotification?: boolean;
+  dueDate?: string;
+  executorId?: string;
+  involveMembers?: string[];
+  isDone?: boolean;
+  label?: string;
+  note?: string;
+  priority?: number;
+  visible?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      createTime: 'createTime',
+      disableActivity: 'disableActivity',
+      disableNotification: 'disableNotification',
+      dueDate: 'dueDate',
+      executorId: 'executorId',
+      involveMembers: 'involveMembers',
+      isDone: 'isDone',
+      label: 'label',
+      note: 'note',
+      priority: 'priority',
+      visible: 'visible',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+      createTime: 'string',
+      disableActivity: 'boolean',
+      disableNotification: 'boolean',
+      dueDate: 'string',
+      executorId: 'string',
+      involveMembers: { 'type': 'array', 'itemType': 'string' },
+      isDone: 'boolean',
+      label: 'string',
+      note: 'string',
+      priority: 'number',
+      visible: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateOrganizationTaskResponseBody extends $tea.Model {
+  result?: CreateOrganizationTaskResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: CreateOrganizationTaskResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateOrganizationTaskResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateOrganizationTaskResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateOrganizationTaskResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetDeptsByOrgIdHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   dingAccessTokenType?: string;
@@ -207,6 +322,214 @@ export class GetEmpsByOrgIdResponse extends $tea.Model {
   }
 }
 
+export class GetOrganizatioTaskByIdsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrganizatioTaskByIdsRequest extends $tea.Model {
+  taskIds?: string;
+  static names(): { [key: string]: string } {
+    return {
+      taskIds: 'taskIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      taskIds: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrganizatioTaskByIdsResponseBody extends $tea.Model {
+  result?: GetOrganizatioTaskByIdsResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetOrganizatioTaskByIdsResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrganizatioTaskByIdsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetOrganizatioTaskByIdsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetOrganizatioTaskByIdsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrganizationPriorityListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrganizationPriorityListResponseBody extends $tea.Model {
+  result?: GetOrganizationPriorityListResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetOrganizationPriorityListResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrganizationPriorityListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetOrganizationPriorityListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetOrganizationPriorityListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrganizationTaskHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrganizationTaskResponseBody extends $tea.Model {
+  result?: GetOrganizationTaskResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetOrganizationTaskResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrganizationTaskResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetOrganizationTaskResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetOrganizationTaskResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetTbProjectGrayHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   dingAccessTokenType?: string;
@@ -385,6 +708,782 @@ export class GetTbProjectSourceResponse extends $tea.Model {
   }
 }
 
+export class UpdateOrganizationTaskContentHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskContentRequest extends $tea.Model {
+  content?: string;
+  disableActivity?: boolean;
+  disableNotification?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      disableActivity: 'disableActivity',
+      disableNotification: 'disableNotification',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+      disableActivity: 'boolean',
+      disableNotification: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskContentResponseBody extends $tea.Model {
+  result?: UpdateOrganizationTaskContentResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: UpdateOrganizationTaskContentResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskContentResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateOrganizationTaskContentResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateOrganizationTaskContentResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskDueDateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskDueDateRequest extends $tea.Model {
+  disableActivity?: boolean;
+  disableNotification?: boolean;
+  dueDate?: string;
+  static names(): { [key: string]: string } {
+    return {
+      disableActivity: 'disableActivity',
+      disableNotification: 'disableNotification',
+      dueDate: 'dueDate',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      disableActivity: 'boolean',
+      disableNotification: 'boolean',
+      dueDate: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskDueDateResponseBody extends $tea.Model {
+  result?: UpdateOrganizationTaskDueDateResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: UpdateOrganizationTaskDueDateResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskDueDateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateOrganizationTaskDueDateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateOrganizationTaskDueDateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskExecutorHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskExecutorRequest extends $tea.Model {
+  disableActivity?: boolean;
+  disableNotification?: boolean;
+  executorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      disableActivity: 'disableActivity',
+      disableNotification: 'disableNotification',
+      executorId: 'executorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      disableActivity: 'boolean',
+      disableNotification: 'boolean',
+      executorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskExecutorResponseBody extends $tea.Model {
+  result?: UpdateOrganizationTaskExecutorResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: UpdateOrganizationTaskExecutorResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskExecutorResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateOrganizationTaskExecutorResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateOrganizationTaskExecutorResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskInvolveMembersHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskInvolveMembersRequest extends $tea.Model {
+  addInvolvers?: string[];
+  delInvolvers?: string[];
+  disableActivity?: boolean;
+  disableNotification?: boolean;
+  involveMembers?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      addInvolvers: 'addInvolvers',
+      delInvolvers: 'delInvolvers',
+      disableActivity: 'disableActivity',
+      disableNotification: 'disableNotification',
+      involveMembers: 'involveMembers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      addInvolvers: { 'type': 'array', 'itemType': 'string' },
+      delInvolvers: { 'type': 'array', 'itemType': 'string' },
+      disableActivity: 'boolean',
+      disableNotification: 'boolean',
+      involveMembers: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskInvolveMembersResponseBody extends $tea.Model {
+  result?: UpdateOrganizationTaskInvolveMembersResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: UpdateOrganizationTaskInvolveMembersResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskInvolveMembersResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateOrganizationTaskInvolveMembersResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateOrganizationTaskInvolveMembersResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskNoteHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskNoteRequest extends $tea.Model {
+  disableActivity?: boolean;
+  disableNotification?: boolean;
+  note?: string;
+  static names(): { [key: string]: string } {
+    return {
+      disableActivity: 'disableActivity',
+      disableNotification: 'disableNotification',
+      note: 'note',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      disableActivity: 'boolean',
+      disableNotification: 'boolean',
+      note: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskNoteResponseBody extends $tea.Model {
+  result?: UpdateOrganizationTaskNoteResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: UpdateOrganizationTaskNoteResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskNoteResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateOrganizationTaskNoteResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateOrganizationTaskNoteResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskPriorityHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskPriorityRequest extends $tea.Model {
+  disableActivity?: boolean;
+  disableNotification?: boolean;
+  priority?: number;
+  static names(): { [key: string]: string } {
+    return {
+      disableActivity: 'disableActivity',
+      disableNotification: 'disableNotification',
+      priority: 'priority',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      disableActivity: 'boolean',
+      disableNotification: 'boolean',
+      priority: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskPriorityResponseBody extends $tea.Model {
+  result?: UpdateOrganizationTaskPriorityResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: UpdateOrganizationTaskPriorityResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskPriorityResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateOrganizationTaskPriorityResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateOrganizationTaskPriorityResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskStatusRequest extends $tea.Model {
+  disableActivity?: boolean;
+  disableNotification?: boolean;
+  isDone?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      disableActivity: 'disableActivity',
+      disableNotification: 'disableNotification',
+      isDone: 'isDone',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      disableActivity: 'boolean',
+      disableNotification: 'boolean',
+      isDone: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskStatusResponseBody extends $tea.Model {
+  result?: UpdateOrganizationTaskStatusResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: UpdateOrganizationTaskStatusResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskStatusResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateOrganizationTaskStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateOrganizationTaskStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateOrganizationTaskResponseBodyResultCreator extends $tea.Model {
+  avatarUrl?: string;
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      avatarUrl: 'avatarUrl',
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      avatarUrl: 'string',
+      name: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateOrganizationTaskResponseBodyResultExecutor extends $tea.Model {
+  avatarUrl?: string;
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      avatarUrl: 'avatarUrl',
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      avatarUrl: 'string',
+      name: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateOrganizationTaskResponseBodyResultInvolvers extends $tea.Model {
+  avatarUrl?: string;
+  id?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      avatarUrl: 'avatarUrl',
+      id: 'id',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      avatarUrl: 'string',
+      id: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateOrganizationTaskResponseBodyResult extends $tea.Model {
+  ancestorIds?: string[];
+  attachmentsCount?: number;
+  content?: string;
+  created?: string;
+  creator?: CreateOrganizationTaskResponseBodyResultCreator;
+  creatorId?: string;
+  dueDate?: string;
+  executor?: CreateOrganizationTaskResponseBodyResultExecutor;
+  executorId?: string;
+  hasReminder?: boolean;
+  id?: string;
+  involveMembers?: string[];
+  involvers?: CreateOrganizationTaskResponseBodyResultInvolvers[];
+  isDeleted?: boolean;
+  isDone?: string;
+  labels?: string[];
+  note?: string;
+  priority?: number;
+  tagIds?: string[];
+  updated?: string;
+  visible?: string;
+  static names(): { [key: string]: string } {
+    return {
+      ancestorIds: 'ancestorIds',
+      attachmentsCount: 'attachmentsCount',
+      content: 'content',
+      created: 'created',
+      creator: 'creator',
+      creatorId: 'creatorId',
+      dueDate: 'dueDate',
+      executor: 'executor',
+      executorId: 'executorId',
+      hasReminder: 'hasReminder',
+      id: 'id',
+      involveMembers: 'involveMembers',
+      involvers: 'involvers',
+      isDeleted: 'isDeleted',
+      isDone: 'isDone',
+      labels: 'labels',
+      note: 'note',
+      priority: 'priority',
+      tagIds: 'tagIds',
+      updated: 'updated',
+      visible: 'visible',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      ancestorIds: { 'type': 'array', 'itemType': 'string' },
+      attachmentsCount: 'number',
+      content: 'string',
+      created: 'string',
+      creator: CreateOrganizationTaskResponseBodyResultCreator,
+      creatorId: 'string',
+      dueDate: 'string',
+      executor: CreateOrganizationTaskResponseBodyResultExecutor,
+      executorId: 'string',
+      hasReminder: 'boolean',
+      id: 'string',
+      involveMembers: { 'type': 'array', 'itemType': 'string' },
+      involvers: { 'type': 'array', 'itemType': CreateOrganizationTaskResponseBodyResultInvolvers },
+      isDeleted: 'boolean',
+      isDone: 'string',
+      labels: { 'type': 'array', 'itemType': 'string' },
+      note: 'string',
+      priority: 'number',
+      tagIds: { 'type': 'array', 'itemType': 'string' },
+      updated: 'string',
+      visible: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetDeptsByOrgIdResponseBodyDeptList extends $tea.Model {
   deptId?: number;
   name?: string;
@@ -453,6 +1552,460 @@ export class GetEmpsByOrgIdResponseBodyEmpList extends $tea.Model {
   }
 }
 
+export class GetOrganizatioTaskByIdsResponseBodyResult extends $tea.Model {
+  ancestorIds?: string[];
+  content?: string;
+  created?: string;
+  creatorId?: string;
+  dueDate?: string;
+  executorId?: string;
+  involveMembers?: string[];
+  isDeleted?: boolean;
+  isDone?: boolean;
+  labels?: string[];
+  note?: string;
+  priority?: number;
+  startDate?: string;
+  taskId?: string;
+  updated?: string;
+  visible?: string;
+  static names(): { [key: string]: string } {
+    return {
+      ancestorIds: 'ancestorIds',
+      content: 'content',
+      created: 'created',
+      creatorId: 'creatorId',
+      dueDate: 'dueDate',
+      executorId: 'executorId',
+      involveMembers: 'involveMembers',
+      isDeleted: 'isDeleted',
+      isDone: 'isDone',
+      labels: 'labels',
+      note: 'note',
+      priority: 'priority',
+      startDate: 'startDate',
+      taskId: 'taskId',
+      updated: 'updated',
+      visible: 'visible',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      ancestorIds: { 'type': 'array', 'itemType': 'string' },
+      content: 'string',
+      created: 'string',
+      creatorId: 'string',
+      dueDate: 'string',
+      executorId: 'string',
+      involveMembers: { 'type': 'array', 'itemType': 'string' },
+      isDeleted: 'boolean',
+      isDone: 'boolean',
+      labels: { 'type': 'array', 'itemType': 'string' },
+      note: 'string',
+      priority: 'number',
+      startDate: 'string',
+      taskId: 'string',
+      updated: 'string',
+      visible: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrganizationPriorityListResponseBodyResultPayloadLocalesName extends $tea.Model {
+  en?: string;
+  zh?: string;
+  static names(): { [key: string]: string } {
+    return {
+      en: 'en',
+      zh: 'zh',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      en: 'string',
+      zh: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrganizationPriorityListResponseBodyResultPayloadLocales extends $tea.Model {
+  name?: GetOrganizationPriorityListResponseBodyResultPayloadLocalesName;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: GetOrganizationPriorityListResponseBodyResultPayloadLocalesName,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrganizationPriorityListResponseBodyResultPayload extends $tea.Model {
+  locales?: GetOrganizationPriorityListResponseBodyResultPayloadLocales;
+  static names(): { [key: string]: string } {
+    return {
+      locales: 'locales',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      locales: GetOrganizationPriorityListResponseBodyResultPayloadLocales,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrganizationPriorityListResponseBodyResult extends $tea.Model {
+  color?: string;
+  name?: string;
+  payload?: GetOrganizationPriorityListResponseBodyResultPayload;
+  priority?: string;
+  priorityId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      color: 'color',
+      name: 'name',
+      payload: 'payload',
+      priority: 'priority',
+      priorityId: 'priorityId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      color: 'string',
+      name: 'string',
+      payload: GetOrganizationPriorityListResponseBodyResultPayload,
+      priority: 'string',
+      priorityId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrganizationTaskResponseBodyResult extends $tea.Model {
+  ancestorIds?: string[];
+  content?: string;
+  created?: string;
+  creatorId?: string;
+  dueDate?: string;
+  executorId?: string;
+  involveMembers?: string[];
+  isDeleted?: boolean;
+  isDone?: boolean;
+  labels?: string[];
+  note?: string;
+  priority?: number;
+  startDate?: string;
+  taskId?: string;
+  updated?: string;
+  visible?: string;
+  static names(): { [key: string]: string } {
+    return {
+      ancestorIds: 'ancestorIds',
+      content: 'content',
+      created: 'created',
+      creatorId: 'creatorId',
+      dueDate: 'dueDate',
+      executorId: 'executorId',
+      involveMembers: 'involveMembers',
+      isDeleted: 'isDeleted',
+      isDone: 'isDone',
+      labels: 'labels',
+      note: 'note',
+      priority: 'priority',
+      startDate: 'startDate',
+      taskId: 'taskId',
+      updated: 'updated',
+      visible: 'visible',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      ancestorIds: { 'type': 'array', 'itemType': 'string' },
+      content: 'string',
+      created: 'string',
+      creatorId: 'string',
+      dueDate: 'string',
+      executorId: 'string',
+      involveMembers: { 'type': 'array', 'itemType': 'string' },
+      isDeleted: 'boolean',
+      isDone: 'boolean',
+      labels: { 'type': 'array', 'itemType': 'string' },
+      note: 'string',
+      priority: 'number',
+      startDate: 'string',
+      taskId: 'string',
+      updated: 'string',
+      visible: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskContentResponseBodyResult extends $tea.Model {
+  content?: string;
+  updated?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      updated: 'updated',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+      updated: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskDueDateResponseBodyResult extends $tea.Model {
+  dueDate?: string;
+  updateTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dueDate: 'dueDate',
+      updateTime: 'updateTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dueDate: 'string',
+      updateTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskExecutorResponseBodyResultExecutor extends $tea.Model {
+  avatarUrl?: string;
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      avatarUrl: 'avatarUrl',
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      avatarUrl: 'string',
+      name: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskExecutorResponseBodyResultInvolvers extends $tea.Model {
+  avatarUrl?: string;
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      avatarUrl: 'avatarUrl',
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      avatarUrl: 'string',
+      name: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskExecutorResponseBodyResult extends $tea.Model {
+  executor?: UpdateOrganizationTaskExecutorResponseBodyResultExecutor;
+  executorId?: string;
+  involvers?: UpdateOrganizationTaskExecutorResponseBodyResultInvolvers[];
+  updated?: string;
+  static names(): { [key: string]: string } {
+    return {
+      executor: 'executor',
+      executorId: 'executorId',
+      involvers: 'involvers',
+      updated: 'updated',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      executor: UpdateOrganizationTaskExecutorResponseBodyResultExecutor,
+      executorId: 'string',
+      involvers: { 'type': 'array', 'itemType': UpdateOrganizationTaskExecutorResponseBodyResultInvolvers },
+      updated: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskInvolveMembersResponseBodyResultInvolvers extends $tea.Model {
+  avatarUrl?: string;
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      avatarUrl: 'avatarUrl',
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      avatarUrl: 'string',
+      name: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskInvolveMembersResponseBodyResult extends $tea.Model {
+  involvers?: UpdateOrganizationTaskInvolveMembersResponseBodyResultInvolvers[];
+  updated?: string;
+  static names(): { [key: string]: string } {
+    return {
+      involvers: 'involvers',
+      updated: 'updated',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      involvers: { 'type': 'array', 'itemType': UpdateOrganizationTaskInvolveMembersResponseBodyResultInvolvers },
+      updated: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskNoteResponseBodyResult extends $tea.Model {
+  note?: string;
+  updated?: string;
+  static names(): { [key: string]: string } {
+    return {
+      note: 'note',
+      updated: 'updated',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      note: 'string',
+      updated: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskPriorityResponseBodyResult extends $tea.Model {
+  priority?: number;
+  updated?: string;
+  static names(): { [key: string]: string } {
+    return {
+      priority: 'priority',
+      updated: 'updated',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      priority: 'number',
+      updated: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateOrganizationTaskStatusResponseBodyResult extends $tea.Model {
+  isDone?: boolean;
+  updateTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      isDone: 'isDone',
+      updateTime: 'updateTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isDone: 'boolean',
+      updateTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -465,6 +2018,79 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async createOrganizationTask(request: CreateOrganizationTaskRequest): Promise<CreateOrganizationTaskResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateOrganizationTaskHeaders({ });
+    return await this.createOrganizationTaskWithOptions(request, headers, runtime);
+  }
+
+  async createOrganizationTaskWithOptions(request: CreateOrganizationTaskRequest, headers: CreateOrganizationTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CreateOrganizationTaskResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.content)) {
+      body["content"] = request.content;
+    }
+
+    if (!Util.isUnset(request.createTime)) {
+      body["createTime"] = request.createTime;
+    }
+
+    if (!Util.isUnset(request.disableActivity)) {
+      body["disableActivity"] = request.disableActivity;
+    }
+
+    if (!Util.isUnset(request.disableNotification)) {
+      body["disableNotification"] = request.disableNotification;
+    }
+
+    if (!Util.isUnset(request.dueDate)) {
+      body["dueDate"] = request.dueDate;
+    }
+
+    if (!Util.isUnset(request.executorId)) {
+      body["executorId"] = request.executorId;
+    }
+
+    if (!Util.isUnset(request.involveMembers)) {
+      body["involveMembers"] = request.involveMembers;
+    }
+
+    if (!Util.isUnset(request.isDone)) {
+      body["isDone"] = request.isDone;
+    }
+
+    if (!Util.isUnset(request.label)) {
+      body["label"] = request.label;
+    }
+
+    if (!Util.isUnset(request.note)) {
+      body["note"] = request.note;
+    }
+
+    if (!Util.isUnset(request.priority)) {
+      body["priority"] = request.priority;
+    }
+
+    if (!Util.isUnset(request.visible)) {
+      body["visible"] = request.visible;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateOrganizationTaskResponse>(await this.doROARequest("CreateOrganizationTask", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/organizations/tasks`, "json", req, runtime), new CreateOrganizationTaskResponse({}));
+  }
 
   async getDeptsByOrgId(request: GetDeptsByOrgIdRequest): Promise<GetDeptsByOrgIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -550,6 +2176,80 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetEmpsByOrgIdResponse>(await this.doROARequest("GetEmpsByOrgId", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/orgs/employees`, "json", req, runtime), new GetEmpsByOrgIdResponse({}));
+  }
+
+  async getOrganizatioTaskByIds(request: GetOrganizatioTaskByIdsRequest): Promise<GetOrganizatioTaskByIdsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetOrganizatioTaskByIdsHeaders({ });
+    return await this.getOrganizatioTaskByIdsWithOptions(request, headers, runtime);
+  }
+
+  async getOrganizatioTaskByIdsWithOptions(request: GetOrganizatioTaskByIdsRequest, headers: GetOrganizatioTaskByIdsHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrganizatioTaskByIdsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.taskIds)) {
+      query["taskIds"] = request.taskIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetOrganizatioTaskByIdsResponse>(await this.doROARequest("GetOrganizatioTaskByIds", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/organizations/tasks`, "json", req, runtime), new GetOrganizatioTaskByIdsResponse({}));
+  }
+
+  async getOrganizationPriorityList(): Promise<GetOrganizationPriorityListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetOrganizationPriorityListHeaders({ });
+    return await this.getOrganizationPriorityListWithOptions(headers, runtime);
+  }
+
+  async getOrganizationPriorityListWithOptions(headers: GetOrganizationPriorityListHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrganizationPriorityListResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetOrganizationPriorityListResponse>(await this.doROARequest("GetOrganizationPriorityList", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/organizations/priorities`, "json", req, runtime), new GetOrganizationPriorityListResponse({}));
+  }
+
+  async getOrganizationTask(taskId: string): Promise<GetOrganizationTaskResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetOrganizationTaskHeaders({ });
+    return await this.getOrganizationTaskWithOptions(taskId, headers, runtime);
+  }
+
+  async getOrganizationTaskWithOptions(taskId: string, headers: GetOrganizationTaskHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrganizationTaskResponse> {
+    taskId = OpenApiUtil.getEncodeParam(taskId);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetOrganizationTaskResponse>(await this.doROARequest("GetOrganizationTask", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/organizations/tasks/${taskId}`, "json", req, runtime), new GetOrganizationTaskResponse({}));
   }
 
   async getTbProjectGray(request: GetTbProjectGrayRequest): Promise<GetTbProjectGrayResponse> {
@@ -641,6 +2341,280 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<GetTbProjectSourceResponse>(await this.doROARequest("GetTbProjectSource", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/projects/source`, "json", req, runtime), new GetTbProjectSourceResponse({}));
+  }
+
+  async updateOrganizationTaskContent(taskId: string, request: UpdateOrganizationTaskContentRequest): Promise<UpdateOrganizationTaskContentResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateOrganizationTaskContentHeaders({ });
+    return await this.updateOrganizationTaskContentWithOptions(taskId, request, headers, runtime);
+  }
+
+  async updateOrganizationTaskContentWithOptions(taskId: string, request: UpdateOrganizationTaskContentRequest, headers: UpdateOrganizationTaskContentHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskContentResponse> {
+    Util.validateModel(request);
+    taskId = OpenApiUtil.getEncodeParam(taskId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.content)) {
+      body["content"] = request.content;
+    }
+
+    if (!Util.isUnset(request.disableActivity)) {
+      body["disableActivity"] = request.disableActivity;
+    }
+
+    if (!Util.isUnset(request.disableNotification)) {
+      body["disableNotification"] = request.disableNotification;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateOrganizationTaskContentResponse>(await this.doROARequest("UpdateOrganizationTaskContent", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/tasks/${taskId}/contents`, "json", req, runtime), new UpdateOrganizationTaskContentResponse({}));
+  }
+
+  async updateOrganizationTaskDueDate(taskId: string, request: UpdateOrganizationTaskDueDateRequest): Promise<UpdateOrganizationTaskDueDateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateOrganizationTaskDueDateHeaders({ });
+    return await this.updateOrganizationTaskDueDateWithOptions(taskId, request, headers, runtime);
+  }
+
+  async updateOrganizationTaskDueDateWithOptions(taskId: string, request: UpdateOrganizationTaskDueDateRequest, headers: UpdateOrganizationTaskDueDateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskDueDateResponse> {
+    Util.validateModel(request);
+    taskId = OpenApiUtil.getEncodeParam(taskId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.disableActivity)) {
+      body["disableActivity"] = request.disableActivity;
+    }
+
+    if (!Util.isUnset(request.disableNotification)) {
+      body["disableNotification"] = request.disableNotification;
+    }
+
+    if (!Util.isUnset(request.dueDate)) {
+      body["dueDate"] = request.dueDate;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateOrganizationTaskDueDateResponse>(await this.doROARequest("UpdateOrganizationTaskDueDate", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/tasks/${taskId}/dueDates`, "json", req, runtime), new UpdateOrganizationTaskDueDateResponse({}));
+  }
+
+  async updateOrganizationTaskExecutor(taskId: string, request: UpdateOrganizationTaskExecutorRequest): Promise<UpdateOrganizationTaskExecutorResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateOrganizationTaskExecutorHeaders({ });
+    return await this.updateOrganizationTaskExecutorWithOptions(taskId, request, headers, runtime);
+  }
+
+  async updateOrganizationTaskExecutorWithOptions(taskId: string, request: UpdateOrganizationTaskExecutorRequest, headers: UpdateOrganizationTaskExecutorHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskExecutorResponse> {
+    Util.validateModel(request);
+    taskId = OpenApiUtil.getEncodeParam(taskId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.disableActivity)) {
+      body["disableActivity"] = request.disableActivity;
+    }
+
+    if (!Util.isUnset(request.disableNotification)) {
+      body["disableNotification"] = request.disableNotification;
+    }
+
+    if (!Util.isUnset(request.executorId)) {
+      body["executorId"] = request.executorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateOrganizationTaskExecutorResponse>(await this.doROARequest("UpdateOrganizationTaskExecutor", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/tasks/${taskId}/executors`, "json", req, runtime), new UpdateOrganizationTaskExecutorResponse({}));
+  }
+
+  async updateOrganizationTaskInvolveMembers(taskId: string, request: UpdateOrganizationTaskInvolveMembersRequest): Promise<UpdateOrganizationTaskInvolveMembersResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateOrganizationTaskInvolveMembersHeaders({ });
+    return await this.updateOrganizationTaskInvolveMembersWithOptions(taskId, request, headers, runtime);
+  }
+
+  async updateOrganizationTaskInvolveMembersWithOptions(taskId: string, request: UpdateOrganizationTaskInvolveMembersRequest, headers: UpdateOrganizationTaskInvolveMembersHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskInvolveMembersResponse> {
+    Util.validateModel(request);
+    taskId = OpenApiUtil.getEncodeParam(taskId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.addInvolvers)) {
+      body["addInvolvers"] = request.addInvolvers;
+    }
+
+    if (!Util.isUnset(request.delInvolvers)) {
+      body["delInvolvers"] = request.delInvolvers;
+    }
+
+    if (!Util.isUnset(request.disableActivity)) {
+      body["disableActivity"] = request.disableActivity;
+    }
+
+    if (!Util.isUnset(request.disableNotification)) {
+      body["disableNotification"] = request.disableNotification;
+    }
+
+    if (!Util.isUnset(request.involveMembers)) {
+      body["involveMembers"] = request.involveMembers;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateOrganizationTaskInvolveMembersResponse>(await this.doROARequest("UpdateOrganizationTaskInvolveMembers", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/tasks/${taskId}/involveMembers`, "json", req, runtime), new UpdateOrganizationTaskInvolveMembersResponse({}));
+  }
+
+  async updateOrganizationTaskNote(taskId: string, request: UpdateOrganizationTaskNoteRequest): Promise<UpdateOrganizationTaskNoteResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateOrganizationTaskNoteHeaders({ });
+    return await this.updateOrganizationTaskNoteWithOptions(taskId, request, headers, runtime);
+  }
+
+  async updateOrganizationTaskNoteWithOptions(taskId: string, request: UpdateOrganizationTaskNoteRequest, headers: UpdateOrganizationTaskNoteHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskNoteResponse> {
+    Util.validateModel(request);
+    taskId = OpenApiUtil.getEncodeParam(taskId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.disableActivity)) {
+      body["disableActivity"] = request.disableActivity;
+    }
+
+    if (!Util.isUnset(request.disableNotification)) {
+      body["disableNotification"] = request.disableNotification;
+    }
+
+    if (!Util.isUnset(request.note)) {
+      body["note"] = request.note;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateOrganizationTaskNoteResponse>(await this.doROARequest("UpdateOrganizationTaskNote", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/tasks/${taskId}/notes`, "json", req, runtime), new UpdateOrganizationTaskNoteResponse({}));
+  }
+
+  async updateOrganizationTaskPriority(taskId: string, request: UpdateOrganizationTaskPriorityRequest): Promise<UpdateOrganizationTaskPriorityResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateOrganizationTaskPriorityHeaders({ });
+    return await this.updateOrganizationTaskPriorityWithOptions(taskId, request, headers, runtime);
+  }
+
+  async updateOrganizationTaskPriorityWithOptions(taskId: string, request: UpdateOrganizationTaskPriorityRequest, headers: UpdateOrganizationTaskPriorityHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskPriorityResponse> {
+    Util.validateModel(request);
+    taskId = OpenApiUtil.getEncodeParam(taskId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.disableActivity)) {
+      body["disableActivity"] = request.disableActivity;
+    }
+
+    if (!Util.isUnset(request.disableNotification)) {
+      body["disableNotification"] = request.disableNotification;
+    }
+
+    if (!Util.isUnset(request.priority)) {
+      body["priority"] = request.priority;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateOrganizationTaskPriorityResponse>(await this.doROARequest("UpdateOrganizationTaskPriority", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/tasks/${taskId}/priorities`, "json", req, runtime), new UpdateOrganizationTaskPriorityResponse({}));
+  }
+
+  async updateOrganizationTaskStatus(taskId: string, request: UpdateOrganizationTaskStatusRequest): Promise<UpdateOrganizationTaskStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateOrganizationTaskStatusHeaders({ });
+    return await this.updateOrganizationTaskStatusWithOptions(taskId, request, headers, runtime);
+  }
+
+  async updateOrganizationTaskStatusWithOptions(taskId: string, request: UpdateOrganizationTaskStatusRequest, headers: UpdateOrganizationTaskStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskStatusResponse> {
+    Util.validateModel(request);
+    taskId = OpenApiUtil.getEncodeParam(taskId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.disableActivity)) {
+      body["disableActivity"] = request.disableActivity;
+    }
+
+    if (!Util.isUnset(request.disableNotification)) {
+      body["disableNotification"] = request.disableNotification;
+    }
+
+    if (!Util.isUnset(request.isDone)) {
+      body["isDone"] = request.isDone;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateOrganizationTaskStatusResponse>(await this.doROARequest("UpdateOrganizationTaskStatus", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/tasks/${taskId}/states`, "json", req, runtime), new UpdateOrganizationTaskStatusResponse({}));
   }
 
 }
