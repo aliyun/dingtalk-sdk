@@ -1181,6 +1181,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetUserHolidays', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/holidays', 'json', req, runtime)
         )
 
+    def init_and_get_leave_allocation_quotas(
+        self,
+        request: dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasRequest,
+    ) -> dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasHeaders()
+        return self.init_and_get_leave_allocation_quotas_with_options(request, headers, runtime)
+
+    async def init_and_get_leave_allocation_quotas_async(
+        self,
+        request: dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasRequest,
+    ) -> dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasHeaders()
+        return await self.init_and_get_leave_allocation_quotas_with_options_async(request, headers, runtime)
+
+    def init_and_get_leave_allocation_quotas_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasRequest,
+        headers: dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.leave_code):
+            query['leaveCode'] = request.leave_code
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasResponse(),
+            self.do_roarequest('InitAndGetLeaveALlocationQuotas', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/leaves/initializations/balances', 'json', req, runtime)
+        )
+
+    async def init_and_get_leave_allocation_quotas_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasRequest,
+        headers: dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.leave_code):
+            query['leaveCode'] = request.leave_code
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasResponse(),
+            await self.do_roarequest_async('InitAndGetLeaveALlocationQuotas', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/leaves/initializations/balances', 'json', req, runtime)
+        )
+
     def process_approve_create(
         self,
         request: dingtalkattendance__1__0_models.ProcessApproveCreateRequest,

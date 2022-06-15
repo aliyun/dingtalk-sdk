@@ -9876,7 +9876,6 @@ class QueryUserExtInfoResponseBodyContent(TeaModel):
         self,
         gmt_create: str = None,
         gmt_modified: str = None,
-        org_id: str = None,
         status: int = None,
         user_code: str = None,
         user_extend_display_name: str = None,
@@ -9887,8 +9886,6 @@ class QueryUserExtInfoResponseBodyContent(TeaModel):
         self.gmt_create = gmt_create
         # 修改时间
         self.gmt_modified = gmt_modified
-        # 组织id
-        self.org_id = org_id
         # 状态：0-有效，1-无效
         self.status = status
         # 用户标识
@@ -9913,8 +9910,6 @@ class QueryUserExtInfoResponseBodyContent(TeaModel):
             result['gmtCreate'] = self.gmt_create
         if self.gmt_modified is not None:
             result['gmtModified'] = self.gmt_modified
-        if self.org_id is not None:
-            result['orgId'] = self.org_id
         if self.status is not None:
             result['status'] = self.status
         if self.user_code is not None:
@@ -9933,8 +9928,6 @@ class QueryUserExtInfoResponseBodyContent(TeaModel):
             self.gmt_create = m.get('gmtCreate')
         if m.get('gmtModified') is not None:
             self.gmt_modified = m.get('gmtModified')
-        if m.get('orgId') is not None:
-            self.org_id = m.get('orgId')
         if m.get('status') is not None:
             self.status = m.get('status')
         if m.get('userCode') is not None:

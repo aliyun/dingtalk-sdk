@@ -23,6 +23,114 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def create_organization_task(
+        self,
+        request: dingtalkproject__1__0_models.CreateOrganizationTaskRequest,
+    ) -> dingtalkproject__1__0_models.CreateOrganizationTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.CreateOrganizationTaskHeaders()
+        return self.create_organization_task_with_options(request, headers, runtime)
+
+    async def create_organization_task_async(
+        self,
+        request: dingtalkproject__1__0_models.CreateOrganizationTaskRequest,
+    ) -> dingtalkproject__1__0_models.CreateOrganizationTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.CreateOrganizationTaskHeaders()
+        return await self.create_organization_task_with_options_async(request, headers, runtime)
+
+    def create_organization_task_with_options(
+        self,
+        request: dingtalkproject__1__0_models.CreateOrganizationTaskRequest,
+        headers: dingtalkproject__1__0_models.CreateOrganizationTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.CreateOrganizationTaskResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.create_time):
+            body['createTime'] = request.create_time
+        if not UtilClient.is_unset(request.disable_activity):
+            body['disableActivity'] = request.disable_activity
+        if not UtilClient.is_unset(request.disable_notification):
+            body['disableNotification'] = request.disable_notification
+        if not UtilClient.is_unset(request.due_date):
+            body['dueDate'] = request.due_date
+        if not UtilClient.is_unset(request.executor_id):
+            body['executorId'] = request.executor_id
+        if not UtilClient.is_unset(request.involve_members):
+            body['involveMembers'] = request.involve_members
+        if not UtilClient.is_unset(request.is_done):
+            body['isDone'] = request.is_done
+        if not UtilClient.is_unset(request.label):
+            body['label'] = request.label
+        if not UtilClient.is_unset(request.note):
+            body['note'] = request.note
+        if not UtilClient.is_unset(request.priority):
+            body['priority'] = request.priority
+        if not UtilClient.is_unset(request.visible):
+            body['visible'] = request.visible
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.CreateOrganizationTaskResponse(),
+            self.do_roarequest('CreateOrganizationTask', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/organizations/tasks', 'json', req, runtime)
+        )
+
+    async def create_organization_task_with_options_async(
+        self,
+        request: dingtalkproject__1__0_models.CreateOrganizationTaskRequest,
+        headers: dingtalkproject__1__0_models.CreateOrganizationTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.CreateOrganizationTaskResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.create_time):
+            body['createTime'] = request.create_time
+        if not UtilClient.is_unset(request.disable_activity):
+            body['disableActivity'] = request.disable_activity
+        if not UtilClient.is_unset(request.disable_notification):
+            body['disableNotification'] = request.disable_notification
+        if not UtilClient.is_unset(request.due_date):
+            body['dueDate'] = request.due_date
+        if not UtilClient.is_unset(request.executor_id):
+            body['executorId'] = request.executor_id
+        if not UtilClient.is_unset(request.involve_members):
+            body['involveMembers'] = request.involve_members
+        if not UtilClient.is_unset(request.is_done):
+            body['isDone'] = request.is_done
+        if not UtilClient.is_unset(request.label):
+            body['label'] = request.label
+        if not UtilClient.is_unset(request.note):
+            body['note'] = request.note
+        if not UtilClient.is_unset(request.priority):
+            body['priority'] = request.priority
+        if not UtilClient.is_unset(request.visible):
+            body['visible'] = request.visible
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.CreateOrganizationTaskResponse(),
+            await self.do_roarequest_async('CreateOrganizationTask', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/organizations/tasks', 'json', req, runtime)
+        )
+
     def get_depts_by_org_id(
         self,
         request: dingtalkproject__1__0_models.GetDeptsByOrgIdRequest,
@@ -179,6 +287,172 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetEmpsByOrgId', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/orgs/employees', 'json', req, runtime)
         )
 
+    def get_organizatio_task_by_ids(
+        self,
+        request: dingtalkproject__1__0_models.GetOrganizatioTaskByIdsRequest,
+    ) -> dingtalkproject__1__0_models.GetOrganizatioTaskByIdsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.GetOrganizatioTaskByIdsHeaders()
+        return self.get_organizatio_task_by_ids_with_options(request, headers, runtime)
+
+    async def get_organizatio_task_by_ids_async(
+        self,
+        request: dingtalkproject__1__0_models.GetOrganizatioTaskByIdsRequest,
+    ) -> dingtalkproject__1__0_models.GetOrganizatioTaskByIdsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.GetOrganizatioTaskByIdsHeaders()
+        return await self.get_organizatio_task_by_ids_with_options_async(request, headers, runtime)
+
+    def get_organizatio_task_by_ids_with_options(
+        self,
+        request: dingtalkproject__1__0_models.GetOrganizatioTaskByIdsRequest,
+        headers: dingtalkproject__1__0_models.GetOrganizatioTaskByIdsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.GetOrganizatioTaskByIdsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.task_ids):
+            query['taskIds'] = request.task_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.GetOrganizatioTaskByIdsResponse(),
+            self.do_roarequest('GetOrganizatioTaskByIds', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/organizations/tasks', 'json', req, runtime)
+        )
+
+    async def get_organizatio_task_by_ids_with_options_async(
+        self,
+        request: dingtalkproject__1__0_models.GetOrganizatioTaskByIdsRequest,
+        headers: dingtalkproject__1__0_models.GetOrganizatioTaskByIdsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.GetOrganizatioTaskByIdsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.task_ids):
+            query['taskIds'] = request.task_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.GetOrganizatioTaskByIdsResponse(),
+            await self.do_roarequest_async('GetOrganizatioTaskByIds', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/organizations/tasks', 'json', req, runtime)
+        )
+
+    def get_organization_priority_list(self) -> dingtalkproject__1__0_models.GetOrganizationPriorityListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.GetOrganizationPriorityListHeaders()
+        return self.get_organization_priority_list_with_options(headers, runtime)
+
+    async def get_organization_priority_list_async(self) -> dingtalkproject__1__0_models.GetOrganizationPriorityListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.GetOrganizationPriorityListHeaders()
+        return await self.get_organization_priority_list_with_options_async(headers, runtime)
+
+    def get_organization_priority_list_with_options(
+        self,
+        headers: dingtalkproject__1__0_models.GetOrganizationPriorityListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.GetOrganizationPriorityListResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.GetOrganizationPriorityListResponse(),
+            self.do_roarequest('GetOrganizationPriorityList', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/organizations/priorities', 'json', req, runtime)
+        )
+
+    async def get_organization_priority_list_with_options_async(
+        self,
+        headers: dingtalkproject__1__0_models.GetOrganizationPriorityListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.GetOrganizationPriorityListResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.GetOrganizationPriorityListResponse(),
+            await self.do_roarequest_async('GetOrganizationPriorityList', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/organizations/priorities', 'json', req, runtime)
+        )
+
+    def get_organization_task(
+        self,
+        task_id: str,
+    ) -> dingtalkproject__1__0_models.GetOrganizationTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.GetOrganizationTaskHeaders()
+        return self.get_organization_task_with_options(task_id, headers, runtime)
+
+    async def get_organization_task_async(
+        self,
+        task_id: str,
+    ) -> dingtalkproject__1__0_models.GetOrganizationTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.GetOrganizationTaskHeaders()
+        return await self.get_organization_task_with_options_async(task_id, headers, runtime)
+
+    def get_organization_task_with_options(
+        self,
+        task_id: str,
+        headers: dingtalkproject__1__0_models.GetOrganizationTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.GetOrganizationTaskResponse:
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.GetOrganizationTaskResponse(),
+            self.do_roarequest('GetOrganizationTask', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/organizations/tasks/{task_id}', 'json', req, runtime)
+        )
+
+    async def get_organization_task_with_options_async(
+        self,
+        task_id: str,
+        headers: dingtalkproject__1__0_models.GetOrganizationTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.GetOrganizationTaskResponse:
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.GetOrganizationTaskResponse(),
+            await self.do_roarequest_async('GetOrganizationTask', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/organizations/tasks/{task_id}', 'json', req, runtime)
+        )
+
     def get_tb_project_gray(
         self,
         request: dingtalkproject__1__0_models.GetTbProjectGrayRequest,
@@ -327,4 +601,558 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkproject__1__0_models.GetTbProjectSourceResponse(),
             await self.do_roarequest_async('GetTbProjectSource', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/projects/source', 'json', req, runtime)
+        )
+
+    def update_organization_task_content(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskContentRequest,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskContentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateOrganizationTaskContentHeaders()
+        return self.update_organization_task_content_with_options(task_id, request, headers, runtime)
+
+    async def update_organization_task_content_async(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskContentRequest,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskContentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateOrganizationTaskContentHeaders()
+        return await self.update_organization_task_content_with_options_async(task_id, request, headers, runtime)
+
+    def update_organization_task_content_with_options(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskContentRequest,
+        headers: dingtalkproject__1__0_models.UpdateOrganizationTaskContentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskContentResponse:
+        UtilClient.validate_model(request)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.disable_activity):
+            body['disableActivity'] = request.disable_activity
+        if not UtilClient.is_unset(request.disable_notification):
+            body['disableNotification'] = request.disable_notification
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateOrganizationTaskContentResponse(),
+            self.do_roarequest('UpdateOrganizationTaskContent', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/organizations/tasks/{task_id}/contents', 'json', req, runtime)
+        )
+
+    async def update_organization_task_content_with_options_async(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskContentRequest,
+        headers: dingtalkproject__1__0_models.UpdateOrganizationTaskContentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskContentResponse:
+        UtilClient.validate_model(request)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.disable_activity):
+            body['disableActivity'] = request.disable_activity
+        if not UtilClient.is_unset(request.disable_notification):
+            body['disableNotification'] = request.disable_notification
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateOrganizationTaskContentResponse(),
+            await self.do_roarequest_async('UpdateOrganizationTaskContent', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/organizations/tasks/{task_id}/contents', 'json', req, runtime)
+        )
+
+    def update_organization_task_due_date(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskDueDateRequest,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskDueDateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateOrganizationTaskDueDateHeaders()
+        return self.update_organization_task_due_date_with_options(task_id, request, headers, runtime)
+
+    async def update_organization_task_due_date_async(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskDueDateRequest,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskDueDateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateOrganizationTaskDueDateHeaders()
+        return await self.update_organization_task_due_date_with_options_async(task_id, request, headers, runtime)
+
+    def update_organization_task_due_date_with_options(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskDueDateRequest,
+        headers: dingtalkproject__1__0_models.UpdateOrganizationTaskDueDateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskDueDateResponse:
+        UtilClient.validate_model(request)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.disable_activity):
+            body['disableActivity'] = request.disable_activity
+        if not UtilClient.is_unset(request.disable_notification):
+            body['disableNotification'] = request.disable_notification
+        if not UtilClient.is_unset(request.due_date):
+            body['dueDate'] = request.due_date
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateOrganizationTaskDueDateResponse(),
+            self.do_roarequest('UpdateOrganizationTaskDueDate', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/organizations/tasks/{task_id}/dueDates', 'json', req, runtime)
+        )
+
+    async def update_organization_task_due_date_with_options_async(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskDueDateRequest,
+        headers: dingtalkproject__1__0_models.UpdateOrganizationTaskDueDateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskDueDateResponse:
+        UtilClient.validate_model(request)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.disable_activity):
+            body['disableActivity'] = request.disable_activity
+        if not UtilClient.is_unset(request.disable_notification):
+            body['disableNotification'] = request.disable_notification
+        if not UtilClient.is_unset(request.due_date):
+            body['dueDate'] = request.due_date
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateOrganizationTaskDueDateResponse(),
+            await self.do_roarequest_async('UpdateOrganizationTaskDueDate', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/organizations/tasks/{task_id}/dueDates', 'json', req, runtime)
+        )
+
+    def update_organization_task_executor(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskExecutorRequest,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskExecutorResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateOrganizationTaskExecutorHeaders()
+        return self.update_organization_task_executor_with_options(task_id, request, headers, runtime)
+
+    async def update_organization_task_executor_async(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskExecutorRequest,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskExecutorResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateOrganizationTaskExecutorHeaders()
+        return await self.update_organization_task_executor_with_options_async(task_id, request, headers, runtime)
+
+    def update_organization_task_executor_with_options(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskExecutorRequest,
+        headers: dingtalkproject__1__0_models.UpdateOrganizationTaskExecutorHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskExecutorResponse:
+        UtilClient.validate_model(request)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.disable_activity):
+            body['disableActivity'] = request.disable_activity
+        if not UtilClient.is_unset(request.disable_notification):
+            body['disableNotification'] = request.disable_notification
+        if not UtilClient.is_unset(request.executor_id):
+            body['executorId'] = request.executor_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateOrganizationTaskExecutorResponse(),
+            self.do_roarequest('UpdateOrganizationTaskExecutor', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/organizations/tasks/{task_id}/executors', 'json', req, runtime)
+        )
+
+    async def update_organization_task_executor_with_options_async(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskExecutorRequest,
+        headers: dingtalkproject__1__0_models.UpdateOrganizationTaskExecutorHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskExecutorResponse:
+        UtilClient.validate_model(request)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.disable_activity):
+            body['disableActivity'] = request.disable_activity
+        if not UtilClient.is_unset(request.disable_notification):
+            body['disableNotification'] = request.disable_notification
+        if not UtilClient.is_unset(request.executor_id):
+            body['executorId'] = request.executor_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateOrganizationTaskExecutorResponse(),
+            await self.do_roarequest_async('UpdateOrganizationTaskExecutor', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/organizations/tasks/{task_id}/executors', 'json', req, runtime)
+        )
+
+    def update_organization_task_involve_members(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskInvolveMembersRequest,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskInvolveMembersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateOrganizationTaskInvolveMembersHeaders()
+        return self.update_organization_task_involve_members_with_options(task_id, request, headers, runtime)
+
+    async def update_organization_task_involve_members_async(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskInvolveMembersRequest,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskInvolveMembersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateOrganizationTaskInvolveMembersHeaders()
+        return await self.update_organization_task_involve_members_with_options_async(task_id, request, headers, runtime)
+
+    def update_organization_task_involve_members_with_options(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskInvolveMembersRequest,
+        headers: dingtalkproject__1__0_models.UpdateOrganizationTaskInvolveMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskInvolveMembersResponse:
+        UtilClient.validate_model(request)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.add_involvers):
+            body['addInvolvers'] = request.add_involvers
+        if not UtilClient.is_unset(request.del_involvers):
+            body['delInvolvers'] = request.del_involvers
+        if not UtilClient.is_unset(request.disable_activity):
+            body['disableActivity'] = request.disable_activity
+        if not UtilClient.is_unset(request.disable_notification):
+            body['disableNotification'] = request.disable_notification
+        if not UtilClient.is_unset(request.involve_members):
+            body['involveMembers'] = request.involve_members
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateOrganizationTaskInvolveMembersResponse(),
+            self.do_roarequest('UpdateOrganizationTaskInvolveMembers', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/organizations/tasks/{task_id}/involveMembers', 'json', req, runtime)
+        )
+
+    async def update_organization_task_involve_members_with_options_async(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskInvolveMembersRequest,
+        headers: dingtalkproject__1__0_models.UpdateOrganizationTaskInvolveMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskInvolveMembersResponse:
+        UtilClient.validate_model(request)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.add_involvers):
+            body['addInvolvers'] = request.add_involvers
+        if not UtilClient.is_unset(request.del_involvers):
+            body['delInvolvers'] = request.del_involvers
+        if not UtilClient.is_unset(request.disable_activity):
+            body['disableActivity'] = request.disable_activity
+        if not UtilClient.is_unset(request.disable_notification):
+            body['disableNotification'] = request.disable_notification
+        if not UtilClient.is_unset(request.involve_members):
+            body['involveMembers'] = request.involve_members
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateOrganizationTaskInvolveMembersResponse(),
+            await self.do_roarequest_async('UpdateOrganizationTaskInvolveMembers', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/organizations/tasks/{task_id}/involveMembers', 'json', req, runtime)
+        )
+
+    def update_organization_task_note(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskNoteRequest,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskNoteResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateOrganizationTaskNoteHeaders()
+        return self.update_organization_task_note_with_options(task_id, request, headers, runtime)
+
+    async def update_organization_task_note_async(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskNoteRequest,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskNoteResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateOrganizationTaskNoteHeaders()
+        return await self.update_organization_task_note_with_options_async(task_id, request, headers, runtime)
+
+    def update_organization_task_note_with_options(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskNoteRequest,
+        headers: dingtalkproject__1__0_models.UpdateOrganizationTaskNoteHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskNoteResponse:
+        UtilClient.validate_model(request)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.disable_activity):
+            body['disableActivity'] = request.disable_activity
+        if not UtilClient.is_unset(request.disable_notification):
+            body['disableNotification'] = request.disable_notification
+        if not UtilClient.is_unset(request.note):
+            body['note'] = request.note
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateOrganizationTaskNoteResponse(),
+            self.do_roarequest('UpdateOrganizationTaskNote', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/organizations/tasks/{task_id}/notes', 'json', req, runtime)
+        )
+
+    async def update_organization_task_note_with_options_async(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskNoteRequest,
+        headers: dingtalkproject__1__0_models.UpdateOrganizationTaskNoteHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskNoteResponse:
+        UtilClient.validate_model(request)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.disable_activity):
+            body['disableActivity'] = request.disable_activity
+        if not UtilClient.is_unset(request.disable_notification):
+            body['disableNotification'] = request.disable_notification
+        if not UtilClient.is_unset(request.note):
+            body['note'] = request.note
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateOrganizationTaskNoteResponse(),
+            await self.do_roarequest_async('UpdateOrganizationTaskNote', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/organizations/tasks/{task_id}/notes', 'json', req, runtime)
+        )
+
+    def update_organization_task_priority(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskPriorityRequest,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskPriorityResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateOrganizationTaskPriorityHeaders()
+        return self.update_organization_task_priority_with_options(task_id, request, headers, runtime)
+
+    async def update_organization_task_priority_async(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskPriorityRequest,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskPriorityResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateOrganizationTaskPriorityHeaders()
+        return await self.update_organization_task_priority_with_options_async(task_id, request, headers, runtime)
+
+    def update_organization_task_priority_with_options(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskPriorityRequest,
+        headers: dingtalkproject__1__0_models.UpdateOrganizationTaskPriorityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskPriorityResponse:
+        UtilClient.validate_model(request)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.disable_activity):
+            body['disableActivity'] = request.disable_activity
+        if not UtilClient.is_unset(request.disable_notification):
+            body['disableNotification'] = request.disable_notification
+        if not UtilClient.is_unset(request.priority):
+            body['priority'] = request.priority
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateOrganizationTaskPriorityResponse(),
+            self.do_roarequest('UpdateOrganizationTaskPriority', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/organizations/tasks/{task_id}/priorities', 'json', req, runtime)
+        )
+
+    async def update_organization_task_priority_with_options_async(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskPriorityRequest,
+        headers: dingtalkproject__1__0_models.UpdateOrganizationTaskPriorityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskPriorityResponse:
+        UtilClient.validate_model(request)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.disable_activity):
+            body['disableActivity'] = request.disable_activity
+        if not UtilClient.is_unset(request.disable_notification):
+            body['disableNotification'] = request.disable_notification
+        if not UtilClient.is_unset(request.priority):
+            body['priority'] = request.priority
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateOrganizationTaskPriorityResponse(),
+            await self.do_roarequest_async('UpdateOrganizationTaskPriority', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/organizations/tasks/{task_id}/priorities', 'json', req, runtime)
+        )
+
+    def update_organization_task_status(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskStatusRequest,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateOrganizationTaskStatusHeaders()
+        return self.update_organization_task_status_with_options(task_id, request, headers, runtime)
+
+    async def update_organization_task_status_async(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskStatusRequest,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateOrganizationTaskStatusHeaders()
+        return await self.update_organization_task_status_with_options_async(task_id, request, headers, runtime)
+
+    def update_organization_task_status_with_options(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskStatusRequest,
+        headers: dingtalkproject__1__0_models.UpdateOrganizationTaskStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskStatusResponse:
+        UtilClient.validate_model(request)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.disable_activity):
+            body['disableActivity'] = request.disable_activity
+        if not UtilClient.is_unset(request.disable_notification):
+            body['disableNotification'] = request.disable_notification
+        if not UtilClient.is_unset(request.is_done):
+            body['isDone'] = request.is_done
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateOrganizationTaskStatusResponse(),
+            self.do_roarequest('UpdateOrganizationTaskStatus', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/organizations/tasks/{task_id}/states', 'json', req, runtime)
+        )
+
+    async def update_organization_task_status_with_options_async(
+        self,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateOrganizationTaskStatusRequest,
+        headers: dingtalkproject__1__0_models.UpdateOrganizationTaskStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateOrganizationTaskStatusResponse:
+        UtilClient.validate_model(request)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.disable_activity):
+            body['disableActivity'] = request.disable_activity
+        if not UtilClient.is_unset(request.disable_notification):
+            body['disableNotification'] = request.disable_notification
+        if not UtilClient.is_unset(request.is_done):
+            body['isDone'] = request.is_done
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateOrganizationTaskStatusResponse(),
+            await self.do_roarequest_async('UpdateOrganizationTaskStatus', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/organizations/tasks/{task_id}/states', 'json', req, runtime)
         )

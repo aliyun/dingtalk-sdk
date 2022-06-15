@@ -191,6 +191,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetSpaceDirectories', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/spaces/{space_id}/directories', 'json', req, runtime)
         )
 
+    def get_user_info_by_open_token(
+        self,
+        request: dingtalkdoc__2__0_models.GetUserInfoByOpenTokenRequest,
+    ) -> dingtalkdoc__2__0_models.GetUserInfoByOpenTokenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetUserInfoByOpenTokenHeaders()
+        return self.get_user_info_by_open_token_with_options(request, headers, runtime)
+
+    async def get_user_info_by_open_token_async(
+        self,
+        request: dingtalkdoc__2__0_models.GetUserInfoByOpenTokenRequest,
+    ) -> dingtalkdoc__2__0_models.GetUserInfoByOpenTokenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetUserInfoByOpenTokenHeaders()
+        return await self.get_user_info_by_open_token_with_options_async(request, headers, runtime)
+
+    def get_user_info_by_open_token_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.GetUserInfoByOpenTokenRequest,
+        headers: dingtalkdoc__2__0_models.GetUserInfoByOpenTokenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetUserInfoByOpenTokenResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.doc_key):
+            query['docKey'] = request.doc_key
+        if not UtilClient.is_unset(request.open_token):
+            query['openToken'] = request.open_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetUserInfoByOpenTokenResponse(),
+            self.do_roarequest('GetUserInfoByOpenToken', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/userInfos', 'json', req, runtime)
+        )
+
+    async def get_user_info_by_open_token_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.GetUserInfoByOpenTokenRequest,
+        headers: dingtalkdoc__2__0_models.GetUserInfoByOpenTokenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetUserInfoByOpenTokenResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.doc_key):
+            query['docKey'] = request.doc_key
+        if not UtilClient.is_unset(request.open_token):
+            query['openToken'] = request.open_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetUserInfoByOpenTokenResponse(),
+            await self.do_roarequest_async('GetUserInfoByOpenToken', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/userInfos', 'json', req, runtime)
+        )
+
     def move_dentry(
         self,
         space_id: str,

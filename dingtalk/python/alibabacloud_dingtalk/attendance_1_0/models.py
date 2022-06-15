@@ -4237,6 +4237,245 @@ class GetUserHolidaysResponse(TeaModel):
         return self
 
 
+class InitAndGetLeaveALlocationQuotasHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class InitAndGetLeaveALlocationQuotasRequest(TeaModel):
+    def __init__(
+        self,
+        leave_code: str = None,
+        op_user_id: str = None,
+        user_id: str = None,
+    ):
+        # 假期类型的标识。
+        self.leave_code = leave_code
+        # 操作者的userId。
+        self.op_user_id = op_user_id
+        # 用户id。
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.leave_code is not None:
+            result['leaveCode'] = self.leave_code
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('leaveCode') is not None:
+            self.leave_code = m.get('leaveCode')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class InitAndGetLeaveALlocationQuotasResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        end_time: int = None,
+        leave_code: str = None,
+        quota_cycle: str = None,
+        quota_id: str = None,
+        quota_num_per_day: int = None,
+        quota_num_per_hour: int = None,
+        start_time: int = None,
+        used_num_per_day: int = None,
+        used_num_per_hour: int = None,
+        user_id: str = None,
+    ):
+        # 额度有效期结束时间。
+        self.end_time = end_time
+        # 假期类型标识。
+        self.leave_code = leave_code
+        # 年度。
+        self.quota_cycle = quota_cycle
+        # 余额标识。
+        self.quota_id = quota_id
+        # 以天计算额度总数。
+        self.quota_num_per_day = quota_num_per_day
+        # 以小时计算额度总数。
+        self.quota_num_per_hour = quota_num_per_hour
+        # 额度有效期开始时间。
+        self.start_time = start_time
+        # 用过的配额天数。
+        self.used_num_per_day = used_num_per_day
+        # 用过的配额小时数。
+        self.used_num_per_hour = used_num_per_hour
+        # 用户id。
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.leave_code is not None:
+            result['leaveCode'] = self.leave_code
+        if self.quota_cycle is not None:
+            result['quotaCycle'] = self.quota_cycle
+        if self.quota_id is not None:
+            result['quotaId'] = self.quota_id
+        if self.quota_num_per_day is not None:
+            result['quotaNumPerDay'] = self.quota_num_per_day
+        if self.quota_num_per_hour is not None:
+            result['quotaNumPerHour'] = self.quota_num_per_hour
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.used_num_per_day is not None:
+            result['usedNumPerDay'] = self.used_num_per_day
+        if self.used_num_per_hour is not None:
+            result['usedNumPerHour'] = self.used_num_per_hour
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('leaveCode') is not None:
+            self.leave_code = m.get('leaveCode')
+        if m.get('quotaCycle') is not None:
+            self.quota_cycle = m.get('quotaCycle')
+        if m.get('quotaId') is not None:
+            self.quota_id = m.get('quotaId')
+        if m.get('quotaNumPerDay') is not None:
+            self.quota_num_per_day = m.get('quotaNumPerDay')
+        if m.get('quotaNumPerHour') is not None:
+            self.quota_num_per_hour = m.get('quotaNumPerHour')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('usedNumPerDay') is not None:
+            self.used_num_per_day = m.get('usedNumPerDay')
+        if m.get('usedNumPerHour') is not None:
+            self.used_num_per_hour = m.get('usedNumPerHour')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class InitAndGetLeaveALlocationQuotasResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[InitAndGetLeaveALlocationQuotasResponseBodyResult] = None,
+    ):
+        # 返回结果。
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = InitAndGetLeaveALlocationQuotasResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class InitAndGetLeaveALlocationQuotasResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: InitAndGetLeaveALlocationQuotasResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = InitAndGetLeaveALlocationQuotasResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ProcessApproveCreateHeaders(TeaModel):
     def __init__(
         self,
