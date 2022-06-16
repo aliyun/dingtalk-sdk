@@ -2537,6 +2537,8 @@ class Client(OpenApiClient):
         UtilClient.validate_model(request)
         dept_id = OpenApiUtilClient.get_encode_param(dept_id)
         query = {}
+        if not UtilClient.is_unset(request.month_mark):
+            query['monthMark'] = request.month_mark
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
@@ -2565,6 +2567,8 @@ class Client(OpenApiClient):
         UtilClient.validate_model(request)
         dept_id = OpenApiUtilClient.get_encode_param(dept_id)
         query = {}
+        if not UtilClient.is_unset(request.month_mark):
+            query['monthMark'] = request.month_mark
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
@@ -2611,6 +2615,8 @@ class Client(OpenApiClient):
         UtilClient.validate_model(request)
         group_id = OpenApiUtilClient.get_encode_param(group_id)
         query = {}
+        if not UtilClient.is_unset(request.month_mark):
+            query['monthMark'] = request.month_mark
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
@@ -2639,6 +2645,8 @@ class Client(OpenApiClient):
         UtilClient.validate_model(request)
         group_id = OpenApiUtilClient.get_encode_param(group_id)
         query = {}
+        if not UtilClient.is_unset(request.month_mark):
+            query['monthMark'] = request.month_mark
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):

@@ -23,6 +23,52 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def auto_open_ding_talk_connect(self) -> dingtalkim__1__0_models.AutoOpenDingTalkConnectResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.AutoOpenDingTalkConnectHeaders()
+        return self.auto_open_ding_talk_connect_with_options(headers, runtime)
+
+    async def auto_open_ding_talk_connect_async(self) -> dingtalkim__1__0_models.AutoOpenDingTalkConnectResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.AutoOpenDingTalkConnectHeaders()
+        return await self.auto_open_ding_talk_connect_with_options_async(headers, runtime)
+
+    def auto_open_ding_talk_connect_with_options(
+        self,
+        headers: dingtalkim__1__0_models.AutoOpenDingTalkConnectHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.AutoOpenDingTalkConnectResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.AutoOpenDingTalkConnectResponse(),
+            self.do_roarequest('AutoOpenDingTalkConnect', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/apps/open', 'json', req, runtime)
+        )
+
+    async def auto_open_ding_talk_connect_with_options_async(
+        self,
+        headers: dingtalkim__1__0_models.AutoOpenDingTalkConnectHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.AutoOpenDingTalkConnectResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.AutoOpenDingTalkConnectResponse(),
+            await self.do_roarequest_async('AutoOpenDingTalkConnect', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/apps/open', 'json', req, runtime)
+        )
+
     def batch_query_group_member(
         self,
         request: dingtalkim__1__0_models.BatchQueryGroupMemberRequest,
