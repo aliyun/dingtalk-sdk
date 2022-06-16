@@ -37,6 +37,9 @@ public class GetTrustDeviceListResponseBody extends TeaModel {
         @NameInMap("status")
         public Integer status;
 
+        @NameInMap("title")
+        public String title;
+
         // 员工Id
         @NameInMap("userId")
         public String userId;
@@ -76,6 +79,14 @@ public class GetTrustDeviceListResponseBody extends TeaModel {
         }
         public Integer getStatus() {
             return this.status;
+        }
+
+        public GetTrustDeviceListResponseBodyData setTitle(String title) {
+            this.title = title;
+            return this;
+        }
+        public String getTitle() {
+            return this.title;
         }
 
         public GetTrustDeviceListResponseBodyData setUserId(String userId) {

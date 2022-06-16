@@ -562,10 +562,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.category)) {
-            body.put("category", request.category);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.claimTime)) {
             body.put("claimTime", request.claimTime);
         }
@@ -582,8 +578,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("outerId", request.outerId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.solutionInstanceId)) {
+            body.put("solutionInstanceId", request.solutionInstanceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startTime)) {
+            body.put("startTime", request.startTime);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.status)) {
             body.put("status", request.status);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskType)) {
+            body.put("taskType", request.taskType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.templateOuterId)) {
+            body.put("templateOuterId", request.templateOuterId);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.title)) {
@@ -609,5 +621,64 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("SolutionTaskSave", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/solutions/tasks/save", "json", req, runtime), new SolutionTaskSaveResponse());
+    }
+
+    public SyncTaskTemplateResponse syncTaskTemplate(SyncTaskTemplateRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        SyncTaskTemplateHeaders headers = new SyncTaskTemplateHeaders();
+        return this.syncTaskTemplateWithOptions(request, headers, runtime);
+    }
+
+    public SyncTaskTemplateResponse syncTaskTemplateWithOptions(SyncTaskTemplateRequest request, SyncTaskTemplateHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.solutionType)) {
+            query.put("solutionType", request.solutionType);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.des)) {
+            body.put("des", request.des);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.ext)) {
+            body.put("ext", request.ext);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.optUserId)) {
+            body.put("optUserId", request.optUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outerId)) {
+            body.put("outerId", request.outerId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.taskScopeVO))) {
+            body.put("taskScopeVO", request.taskScopeVO);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskType)) {
+            body.put("taskType", request.taskType);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("SyncTaskTemplate", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/solutions/tasks/templates/sync", "json", req, runtime), new SyncTaskTemplateResponse());
     }
 }

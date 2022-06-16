@@ -4,10 +4,6 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class SolutionTaskSaveRequest extends TeaModel {
-    // 任务业务模块，如training, performance等
-    @NameInMap("category")
-    public String category;
-
     // 任务要求的截止时间
     @NameInMap("claimTime")
     public Long claimTime;
@@ -24,9 +20,22 @@ public class SolutionTaskSaveRequest extends TeaModel {
     @NameInMap("outerId")
     public String outerId;
 
+    @NameInMap("solutionInstanceId")
+    public String solutionInstanceId;
+
+    @NameInMap("startTime")
+    public Long startTime;
+
     // 任务状态，如running,finished
     @NameInMap("status")
     public String status;
+
+    // 任务业务模块，如training, performance等
+    @NameInMap("taskType")
+    public String taskType;
+
+    @NameInMap("templateOuterId")
+    public String templateOuterId;
 
     // 任务名称
     @NameInMap("title")
@@ -43,14 +52,6 @@ public class SolutionTaskSaveRequest extends TeaModel {
     public static SolutionTaskSaveRequest build(java.util.Map<String, ?> map) throws Exception {
         SolutionTaskSaveRequest self = new SolutionTaskSaveRequest();
         return TeaModel.build(map, self);
-    }
-
-    public SolutionTaskSaveRequest setCategory(String category) {
-        this.category = category;
-        return this;
-    }
-    public String getCategory() {
-        return this.category;
     }
 
     public SolutionTaskSaveRequest setClaimTime(Long claimTime) {
@@ -85,12 +86,44 @@ public class SolutionTaskSaveRequest extends TeaModel {
         return this.outerId;
     }
 
+    public SolutionTaskSaveRequest setSolutionInstanceId(String solutionInstanceId) {
+        this.solutionInstanceId = solutionInstanceId;
+        return this;
+    }
+    public String getSolutionInstanceId() {
+        return this.solutionInstanceId;
+    }
+
+    public SolutionTaskSaveRequest setStartTime(Long startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+    public Long getStartTime() {
+        return this.startTime;
+    }
+
     public SolutionTaskSaveRequest setStatus(String status) {
         this.status = status;
         return this;
     }
     public String getStatus() {
         return this.status;
+    }
+
+    public SolutionTaskSaveRequest setTaskType(String taskType) {
+        this.taskType = taskType;
+        return this;
+    }
+    public String getTaskType() {
+        return this.taskType;
+    }
+
+    public SolutionTaskSaveRequest setTemplateOuterId(String templateOuterId) {
+        this.templateOuterId = templateOuterId;
+        return this;
+    }
+    public String getTemplateOuterId() {
+        return this.templateOuterId;
     }
 
     public SolutionTaskSaveRequest setTitle(String title) {

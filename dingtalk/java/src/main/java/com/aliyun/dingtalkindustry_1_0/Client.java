@@ -1535,6 +1535,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("QueryBizOptLog", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/medicals/bizOptLogs", "json", req, runtime), new QueryBizOptLogResponse());
     }
 
+    public QueryDepartmentExtendInfoResponse queryDepartmentExtendInfo(QueryDepartmentExtendInfoRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryDepartmentExtendInfoHeaders headers = new QueryDepartmentExtendInfoHeaders();
+        return this.queryDepartmentExtendInfoWithOptions(request, headers, runtime);
+    }
+
+    public QueryDepartmentExtendInfoResponse queryDepartmentExtendInfoWithOptions(QueryDepartmentExtendInfoRequest request, QueryDepartmentExtendInfoHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deptCode)) {
+            query.put("deptCode", request.deptCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.propCode)) {
+            query.put("propCode", request.propCode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryDepartmentExtendInfo", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/medicals/departments/extensions/infos", "json", req, runtime), new QueryDepartmentExtendInfoResponse());
+    }
+
     public QueryDepartmentInfoResponse queryDepartmentInfo(String deptId) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         QueryDepartmentInfoHeaders headers = new QueryDepartmentInfoHeaders();
