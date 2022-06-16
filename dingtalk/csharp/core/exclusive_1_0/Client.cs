@@ -1028,6 +1028,70 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             return TeaModel.ToObject<FileStorageUpdateStorageResponse>(await DoROARequestAsync("FileStorageUpdateStorage", "exclusive_1.0", "HTTP", "PUT", "AK", "/v1.0/exclusive/fileStorages/configurations", "json", req, runtime));
         }
 
+        public GenerateDarkWaterMarkResponse GenerateDarkWaterMark(GenerateDarkWaterMarkRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GenerateDarkWaterMarkHeaders headers = new GenerateDarkWaterMarkHeaders();
+            return GenerateDarkWaterMarkWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GenerateDarkWaterMarkResponse> GenerateDarkWaterMarkAsync(GenerateDarkWaterMarkRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GenerateDarkWaterMarkHeaders headers = new GenerateDarkWaterMarkHeaders();
+            return await GenerateDarkWaterMarkWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GenerateDarkWaterMarkResponse GenerateDarkWaterMarkWithOptions(GenerateDarkWaterMarkRequest request, GenerateDarkWaterMarkHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdList))
+            {
+                body["userIdList"] = request.UserIdList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<GenerateDarkWaterMarkResponse>(DoROARequest("GenerateDarkWaterMark", "exclusive_1.0", "HTTP", "POST", "AK", "/v1.0/exclusive/enterpriseSecurities/darkWatermarks/generate", "json", req, runtime));
+        }
+
+        public async Task<GenerateDarkWaterMarkResponse> GenerateDarkWaterMarkWithOptionsAsync(GenerateDarkWaterMarkRequest request, GenerateDarkWaterMarkHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdList))
+            {
+                body["userIdList"] = request.UserIdList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<GenerateDarkWaterMarkResponse>(await DoROARequestAsync("GenerateDarkWaterMark", "exclusive_1.0", "HTTP", "POST", "AK", "/v1.0/exclusive/enterpriseSecurities/darkWatermarks/generate", "json", req, runtime));
+        }
+
         public GetActiveUserSummaryResponse GetActiveUserSummary(string dataId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

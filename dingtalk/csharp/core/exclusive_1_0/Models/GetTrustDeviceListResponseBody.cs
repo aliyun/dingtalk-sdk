@@ -41,6 +41,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public int? Status { get; set; }
 
+            [NameInMap("title")]
+            [Validation(Required=false)]
+            public string Title { get; set; }
+
             /// <summary>
             /// 员工Id
             /// </summary>

@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class SolutionTaskSaveRequest : TeaModel {
         /// <summary>
-        /// 任务业务模块，如training, performance等
-        /// </summary>
-        [NameInMap("category")]
-        [Validation(Required=false)]
-        public string Category { get; set; }
-
-        /// <summary>
         /// 任务要求的截止时间
         /// </summary>
         [NameInMap("claimTime")]
@@ -44,12 +37,31 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         [Validation(Required=false)]
         public string OuterId { get; set; }
 
+        [NameInMap("solutionInstanceId")]
+        [Validation(Required=false)]
+        public string SolutionInstanceId { get; set; }
+
+        [NameInMap("startTime")]
+        [Validation(Required=false)]
+        public long? StartTime { get; set; }
+
         /// <summary>
         /// 任务状态，如running,finished
         /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]
         public string Status { get; set; }
+
+        /// <summary>
+        /// 任务业务模块，如training, performance等
+        /// </summary>
+        [NameInMap("taskType")]
+        [Validation(Required=false)]
+        public string TaskType { get; set; }
+
+        [NameInMap("templateOuterId")]
+        [Validation(Required=false)]
+        public string TemplateOuterId { get; set; }
 
         /// <summary>
         /// 任务名称
