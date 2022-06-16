@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class SolutionTaskSaveRequest extends Model
 {
     /**
-     * @description 任务业务模块，如training, performance等
-     *
-     * @var string
-     */
-    public $category;
-
-    /**
      * @description 任务要求的截止时间
      *
      * @var int
@@ -44,11 +37,33 @@ class SolutionTaskSaveRequest extends Model
     public $outerId;
 
     /**
+     * @var string
+     */
+    public $solutionInstanceId;
+
+    /**
+     * @var int
+     */
+    public $startTime;
+
+    /**
      * @description 任务状态，如running,finished
      *
      * @var string
      */
     public $status;
+
+    /**
+     * @description 任务业务模块，如training, performance等
+     *
+     * @var string
+     */
+    public $taskType;
+
+    /**
+     * @var string
+     */
+    public $templateOuterId;
 
     /**
      * @description 任务名称
@@ -71,15 +86,18 @@ class SolutionTaskSaveRequest extends Model
      */
     public $solutionType;
     protected $_name = [
-        'category'     => 'category',
-        'claimTime'    => 'claimTime',
-        'description'  => 'description',
-        'finishTime'   => 'finishTime',
-        'outerId'      => 'outerId',
-        'status'       => 'status',
-        'title'        => 'title',
-        'userId'       => 'userId',
-        'solutionType' => 'solutionType',
+        'claimTime'          => 'claimTime',
+        'description'        => 'description',
+        'finishTime'         => 'finishTime',
+        'outerId'            => 'outerId',
+        'solutionInstanceId' => 'solutionInstanceId',
+        'startTime'          => 'startTime',
+        'status'             => 'status',
+        'taskType'           => 'taskType',
+        'templateOuterId'    => 'templateOuterId',
+        'title'              => 'title',
+        'userId'             => 'userId',
+        'solutionType'       => 'solutionType',
     ];
 
     public function validate()
@@ -89,9 +107,6 @@ class SolutionTaskSaveRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->category) {
-            $res['category'] = $this->category;
-        }
         if (null !== $this->claimTime) {
             $res['claimTime'] = $this->claimTime;
         }
@@ -104,8 +119,20 @@ class SolutionTaskSaveRequest extends Model
         if (null !== $this->outerId) {
             $res['outerId'] = $this->outerId;
         }
+        if (null !== $this->solutionInstanceId) {
+            $res['solutionInstanceId'] = $this->solutionInstanceId;
+        }
+        if (null !== $this->startTime) {
+            $res['startTime'] = $this->startTime;
+        }
         if (null !== $this->status) {
             $res['status'] = $this->status;
+        }
+        if (null !== $this->taskType) {
+            $res['taskType'] = $this->taskType;
+        }
+        if (null !== $this->templateOuterId) {
+            $res['templateOuterId'] = $this->templateOuterId;
         }
         if (null !== $this->title) {
             $res['title'] = $this->title;
@@ -128,9 +155,6 @@ class SolutionTaskSaveRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['category'])) {
-            $model->category = $map['category'];
-        }
         if (isset($map['claimTime'])) {
             $model->claimTime = $map['claimTime'];
         }
@@ -143,8 +167,20 @@ class SolutionTaskSaveRequest extends Model
         if (isset($map['outerId'])) {
             $model->outerId = $map['outerId'];
         }
+        if (isset($map['solutionInstanceId'])) {
+            $model->solutionInstanceId = $map['solutionInstanceId'];
+        }
+        if (isset($map['startTime'])) {
+            $model->startTime = $map['startTime'];
+        }
         if (isset($map['status'])) {
             $model->status = $map['status'];
+        }
+        if (isset($map['taskType'])) {
+            $model->taskType = $map['taskType'];
+        }
+        if (isset($map['templateOuterId'])) {
+            $model->templateOuterId = $map['templateOuterId'];
         }
         if (isset($map['title'])) {
             $model->title = $map['title'];

@@ -42,6 +42,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageGetStorageStateRe
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageUpdateStorageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageUpdateStorageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageUpdateStorageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GenerateDarkWaterMarkHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GenerateDarkWaterMarkRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GenerateDarkWaterMarkResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetActiveUserSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetActiveUserSummaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAgentIdByRelatedAppIdHeaders;
@@ -790,6 +793,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return FileStorageUpdateStorageResponse::fromMap($this->doROARequest('FileStorageUpdateStorage', 'exclusive_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/exclusive/fileStorages/configurations', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GenerateDarkWaterMarkRequest $request
+     *
+     * @return GenerateDarkWaterMarkResponse
+     */
+    public function generateDarkWaterMark($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GenerateDarkWaterMarkHeaders([]);
+
+        return $this->generateDarkWaterMarkWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GenerateDarkWaterMarkRequest $request
+     * @param GenerateDarkWaterMarkHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return GenerateDarkWaterMarkResponse
+     */
+    public function generateDarkWaterMarkWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userIdList)) {
+            @$body['userIdList'] = $request->userIdList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GenerateDarkWaterMarkResponse::fromMap($this->doROARequest('GenerateDarkWaterMark', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/enterpriseSecurities/darkWatermarks/generate', 'json', $req, $runtime));
     }
 
     /**

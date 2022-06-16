@@ -106,6 +106,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryAllMemberByGroupResponse
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryBizOptLogHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryBizOptLogRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryBizOptLogResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentExtendInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentExtendInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentExtendInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryGroupInfoHeaders;
@@ -1994,6 +1997,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryBizOptLogResponse::fromMap($this->doROARequest('QueryBizOptLog', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/bizOptLogs', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryDepartmentExtendInfoRequest $request
+     *
+     * @return QueryDepartmentExtendInfoResponse
+     */
+    public function queryDepartmentExtendInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryDepartmentExtendInfoHeaders([]);
+
+        return $this->queryDepartmentExtendInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryDepartmentExtendInfoRequest $request
+     * @param QueryDepartmentExtendInfoHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return QueryDepartmentExtendInfoResponse
+     */
+    public function queryDepartmentExtendInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptCode)) {
+            @$query['deptCode'] = $request->deptCode;
+        }
+        if (!Utils::isUnset($request->propCode)) {
+            @$query['propCode'] = $request->propCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryDepartmentExtendInfoResponse::fromMap($this->doROARequest('QueryDepartmentExtendInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/departments/extensions/infos', 'json', $req, $runtime));
     }
 
     /**

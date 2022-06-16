@@ -37,6 +37,11 @@ class data extends Model
     public $status;
 
     /**
+     * @var string
+     */
+    public $title;
+
+    /**
      * @description 员工Id
      *
      * @var string
@@ -47,6 +52,7 @@ class data extends Model
         'macAddress' => 'macAddress',
         'platform'   => 'platform',
         'status'     => 'status',
+        'title'      => 'title',
         'userId'     => 'userId',
     ];
 
@@ -68,6 +74,9 @@ class data extends Model
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
+        }
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -95,6 +104,9 @@ class data extends Model
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
+        }
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];

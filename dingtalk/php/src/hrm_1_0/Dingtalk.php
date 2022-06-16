@@ -45,6 +45,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskInitResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskSaveHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskSaveRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskSaveResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncTaskTemplateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncTaskTemplateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncTaskTemplateResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -729,9 +732,6 @@ class Dingtalk extends OpenApiClient
             @$query['solutionType'] = $request->solutionType;
         }
         $body = [];
-        if (!Utils::isUnset($request->category)) {
-            @$body['category'] = $request->category;
-        }
         if (!Utils::isUnset($request->claimTime)) {
             @$body['claimTime'] = $request->claimTime;
         }
@@ -744,8 +744,20 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->outerId)) {
             @$body['outerId'] = $request->outerId;
         }
+        if (!Utils::isUnset($request->solutionInstanceId)) {
+            @$body['solutionInstanceId'] = $request->solutionInstanceId;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
         if (!Utils::isUnset($request->status)) {
             @$body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->taskType)) {
+            @$body['taskType'] = $request->taskType;
+        }
+        if (!Utils::isUnset($request->templateOuterId)) {
+            @$body['templateOuterId'] = $request->templateOuterId;
         }
         if (!Utils::isUnset($request->title)) {
             @$body['title'] = $request->title;
@@ -767,5 +779,70 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SolutionTaskSaveResponse::fromMap($this->doROARequest('SolutionTaskSave', 'hrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrm/solutions/tasks/save', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SyncTaskTemplateRequest $request
+     *
+     * @return SyncTaskTemplateResponse
+     */
+    public function syncTaskTemplate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SyncTaskTemplateHeaders([]);
+
+        return $this->syncTaskTemplateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SyncTaskTemplateRequest $request
+     * @param SyncTaskTemplateHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return SyncTaskTemplateResponse
+     */
+    public function syncTaskTemplateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->solutionType)) {
+            @$query['solutionType'] = $request->solutionType;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->des)) {
+            @$body['des'] = $request->des;
+        }
+        if (!Utils::isUnset($request->ext)) {
+            @$body['ext'] = $request->ext;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->optUserId)) {
+            @$body['optUserId'] = $request->optUserId;
+        }
+        if (!Utils::isUnset($request->outerId)) {
+            @$body['outerId'] = $request->outerId;
+        }
+        if (!Utils::isUnset($request->taskScopeVO)) {
+            @$body['taskScopeVO'] = $request->taskScopeVO;
+        }
+        if (!Utils::isUnset($request->taskType)) {
+            @$body['taskType'] = $request->taskType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SyncTaskTemplateResponse::fromMap($this->doROARequest('SyncTaskTemplate', 'hrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrm/solutions/tasks/templates/sync', 'json', $req, $runtime));
     }
 }
