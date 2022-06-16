@@ -3374,6 +3374,91 @@ export class QueryBizOptLogResponse extends $tea.Model {
   }
 }
 
+export class QueryDepartmentExtendInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDepartmentExtendInfoRequest extends $tea.Model {
+  deptCode?: number;
+  propCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptCode: 'deptCode',
+      propCode: 'propCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptCode: 'number',
+      propCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDepartmentExtendInfoResponseBody extends $tea.Model {
+  content?: QueryDepartmentExtendInfoResponseBodyContent[];
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': QueryDepartmentExtendInfoResponseBodyContent },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDepartmentExtendInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryDepartmentExtendInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryDepartmentExtendInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryDepartmentInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5702,6 +5787,46 @@ export class QueryBizOptLogResponseBodyContent extends $tea.Model {
       optUserCode: 'string',
       optUserName: 'string',
       remark: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDepartmentExtendInfoResponseBodyContent extends $tea.Model {
+  deptCode?: string;
+  deptExtendDisplayName?: string;
+  deptExtendKey?: string;
+  deptExtendValue?: string;
+  gmtCreateStr?: string;
+  gmtModifiedStr?: string;
+  id?: number;
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptCode: 'deptCode',
+      deptExtendDisplayName: 'deptExtendDisplayName',
+      deptExtendKey: 'deptExtendKey',
+      deptExtendValue: 'deptExtendValue',
+      gmtCreateStr: 'gmtCreateStr',
+      gmtModifiedStr: 'gmtModifiedStr',
+      id: 'id',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptCode: 'string',
+      deptExtendDisplayName: 'string',
+      deptExtendKey: 'string',
+      deptExtendValue: 'string',
+      gmtCreateStr: 'string',
+      gmtModifiedStr: 'string',
+      id: 'number',
+      status: 'number',
     };
   }
 
@@ -8044,6 +8169,39 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryBizOptLogResponse>(await this.doROARequest("QueryBizOptLog", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/bizOptLogs`, "json", req, runtime), new QueryBizOptLogResponse({}));
+  }
+
+  async queryDepartmentExtendInfo(request: QueryDepartmentExtendInfoRequest): Promise<QueryDepartmentExtendInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryDepartmentExtendInfoHeaders({ });
+    return await this.queryDepartmentExtendInfoWithOptions(request, headers, runtime);
+  }
+
+  async queryDepartmentExtendInfoWithOptions(request: QueryDepartmentExtendInfoRequest, headers: QueryDepartmentExtendInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDepartmentExtendInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptCode)) {
+      query["deptCode"] = request.deptCode;
+    }
+
+    if (!Util.isUnset(request.propCode)) {
+      query["propCode"] = request.propCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryDepartmentExtendInfoResponse>(await this.doROARequest("QueryDepartmentExtendInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/departments/extensions/infos`, "json", req, runtime), new QueryDepartmentExtendInfoResponse({}));
   }
 
   async queryDepartmentInfo(deptId: string): Promise<QueryDepartmentInfoResponse> {

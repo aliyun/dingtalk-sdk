@@ -1243,23 +1243,29 @@ export class SolutionTaskSaveHeaders extends $tea.Model {
 }
 
 export class SolutionTaskSaveRequest extends $tea.Model {
-  category?: string;
   claimTime?: number;
   description?: string;
   finishTime?: number;
   outerId?: string;
+  solutionInstanceId?: string;
+  startTime?: number;
   status?: string;
+  taskType?: string;
+  templateOuterId?: string;
   title?: string;
   userId?: string;
   solutionType?: string;
   static names(): { [key: string]: string } {
     return {
-      category: 'category',
       claimTime: 'claimTime',
       description: 'description',
       finishTime: 'finishTime',
       outerId: 'outerId',
+      solutionInstanceId: 'solutionInstanceId',
+      startTime: 'startTime',
       status: 'status',
+      taskType: 'taskType',
+      templateOuterId: 'templateOuterId',
       title: 'title',
       userId: 'userId',
       solutionType: 'solutionType',
@@ -1268,12 +1274,15 @@ export class SolutionTaskSaveRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      category: 'string',
       claimTime: 'number',
       description: 'string',
       finishTime: 'number',
       outerId: 'string',
+      solutionInstanceId: 'string',
+      startTime: 'number',
       status: 'string',
+      taskType: 'string',
+      templateOuterId: 'string',
       title: 'string',
       userId: 'string',
       solutionType: 'string',
@@ -1318,6 +1327,109 @@ export class SolutionTaskSaveResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: SolutionTaskSaveResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncTaskTemplateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncTaskTemplateRequest extends $tea.Model {
+  des?: string;
+  ext?: string;
+  name?: string;
+  optUserId?: string;
+  outerId?: string;
+  taskScopeVO?: SyncTaskTemplateRequestTaskScopeVO;
+  taskType?: string;
+  solutionType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      des: 'des',
+      ext: 'ext',
+      name: 'name',
+      optUserId: 'optUserId',
+      outerId: 'outerId',
+      taskScopeVO: 'taskScopeVO',
+      taskType: 'taskType',
+      solutionType: 'solutionType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      des: 'string',
+      ext: 'string',
+      name: 'string',
+      optUserId: 'string',
+      outerId: 'string',
+      taskScopeVO: SyncTaskTemplateRequestTaskScopeVO,
+      taskType: 'string',
+      solutionType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncTaskTemplateResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncTaskTemplateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SyncTaskTemplateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SyncTaskTemplateResponseBody,
     };
   }
 
@@ -1850,6 +1962,34 @@ export class QueryPositionsResponseBodyList extends $tea.Model {
       positionName: 'string',
       rankIdList: { 'type': 'array', 'itemType': 'string' },
       status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncTaskTemplateRequestTaskScopeVO extends $tea.Model {
+  deptIds?: number[];
+  positionIds?: string[];
+  roleIds?: string[];
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      deptIds: 'deptIds',
+      positionIds: 'positionIds',
+      roleIds: 'roleIds',
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptIds: { 'type': 'array', 'itemType': 'number' },
+      positionIds: { 'type': 'array', 'itemType': 'string' },
+      roleIds: { 'type': 'array', 'itemType': 'string' },
+      userIds: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
@@ -2412,10 +2552,6 @@ export default class Client extends OpenApi {
     }
 
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.category)) {
-      body["category"] = request.category;
-    }
-
     if (!Util.isUnset(request.claimTime)) {
       body["claimTime"] = request.claimTime;
     }
@@ -2432,8 +2568,24 @@ export default class Client extends OpenApi {
       body["outerId"] = request.outerId;
     }
 
+    if (!Util.isUnset(request.solutionInstanceId)) {
+      body["solutionInstanceId"] = request.solutionInstanceId;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      body["startTime"] = request.startTime;
+    }
+
     if (!Util.isUnset(request.status)) {
       body["status"] = request.status;
+    }
+
+    if (!Util.isUnset(request.taskType)) {
+      body["taskType"] = request.taskType;
+    }
+
+    if (!Util.isUnset(request.templateOuterId)) {
+      body["templateOuterId"] = request.templateOuterId;
     }
 
     if (!Util.isUnset(request.title)) {
@@ -2459,6 +2611,65 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<SolutionTaskSaveResponse>(await this.doROARequest("SolutionTaskSave", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/solutions/tasks/save`, "json", req, runtime), new SolutionTaskSaveResponse({}));
+  }
+
+  async syncTaskTemplate(request: SyncTaskTemplateRequest): Promise<SyncTaskTemplateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SyncTaskTemplateHeaders({ });
+    return await this.syncTaskTemplateWithOptions(request, headers, runtime);
+  }
+
+  async syncTaskTemplateWithOptions(request: SyncTaskTemplateRequest, headers: SyncTaskTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<SyncTaskTemplateResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.solutionType)) {
+      query["solutionType"] = request.solutionType;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.des)) {
+      body["des"] = request.des;
+    }
+
+    if (!Util.isUnset(request.ext)) {
+      body["ext"] = request.ext;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.optUserId)) {
+      body["optUserId"] = request.optUserId;
+    }
+
+    if (!Util.isUnset(request.outerId)) {
+      body["outerId"] = request.outerId;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.taskScopeVO))) {
+      body["taskScopeVO"] = request.taskScopeVO;
+    }
+
+    if (!Util.isUnset(request.taskType)) {
+      body["taskType"] = request.taskType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SyncTaskTemplateResponse>(await this.doROARequest("SyncTaskTemplate", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/solutions/tasks/templates/sync`, "json", req, runtime), new SyncTaskTemplateResponse({}));
   }
 
 }

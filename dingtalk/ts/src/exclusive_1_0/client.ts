@@ -1124,6 +1124,88 @@ export class FileStorageUpdateStorageResponse extends $tea.Model {
   }
 }
 
+export class GenerateDarkWaterMarkHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GenerateDarkWaterMarkRequest extends $tea.Model {
+  userIdList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      userIdList: 'userIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userIdList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GenerateDarkWaterMarkResponseBody extends $tea.Model {
+  darkWatermarkVOList?: GenerateDarkWaterMarkResponseBodyDarkWatermarkVOList[];
+  static names(): { [key: string]: string } {
+    return {
+      darkWatermarkVOList: 'darkWatermarkVOList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      darkWatermarkVOList: { 'type': 'array', 'itemType': GenerateDarkWaterMarkResponseBodyDarkWatermarkVOList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GenerateDarkWaterMarkResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GenerateDarkWaterMarkResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GenerateDarkWaterMarkResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetActiveUserSummaryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4895,6 +4977,28 @@ export class FileStorageGetQuotaDataResponseBodyQuotaModelList extends $tea.Mode
   }
 }
 
+export class GenerateDarkWaterMarkResponseBodyDarkWatermarkVOList extends $tea.Model {
+  darkWatermark?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      darkWatermark: 'darkWatermark',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      darkWatermark: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel1 extends $tea.Model {
   labelId?: number;
   labelName?: string;
@@ -5434,6 +5538,7 @@ export class GetTrustDeviceListResponseBodyData extends $tea.Model {
   macAddress?: string;
   platform?: string;
   status?: number;
+  title?: string;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5441,6 +5546,7 @@ export class GetTrustDeviceListResponseBodyData extends $tea.Model {
       macAddress: 'macAddress',
       platform: 'platform',
       status: 'status',
+      title: 'title',
       userId: 'userId',
     };
   }
@@ -5451,6 +5557,7 @@ export class GetTrustDeviceListResponseBodyData extends $tea.Model {
       macAddress: 'string',
       platform: 'string',
       status: 'number',
+      title: 'string',
       userId: 'string',
     };
   }
@@ -6456,6 +6563,35 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<FileStorageUpdateStorageResponse>(await this.doROARequest("FileStorageUpdateStorage", "exclusive_1.0", "HTTP", "PUT", "AK", `/v1.0/exclusive/fileStorages/configurations`, "json", req, runtime), new FileStorageUpdateStorageResponse({}));
+  }
+
+  async generateDarkWaterMark(request: GenerateDarkWaterMarkRequest): Promise<GenerateDarkWaterMarkResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GenerateDarkWaterMarkHeaders({ });
+    return await this.generateDarkWaterMarkWithOptions(request, headers, runtime);
+  }
+
+  async generateDarkWaterMarkWithOptions(request: GenerateDarkWaterMarkRequest, headers: GenerateDarkWaterMarkHeaders, runtime: $Util.RuntimeOptions): Promise<GenerateDarkWaterMarkResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userIdList)) {
+      body["userIdList"] = request.userIdList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GenerateDarkWaterMarkResponse>(await this.doROARequest("GenerateDarkWaterMark", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/enterpriseSecurities/darkWatermarks/generate`, "json", req, runtime), new GenerateDarkWaterMarkResponse({}));
   }
 
   async getActiveUserSummary(dataId: string): Promise<GetActiveUserSummaryResponse> {
