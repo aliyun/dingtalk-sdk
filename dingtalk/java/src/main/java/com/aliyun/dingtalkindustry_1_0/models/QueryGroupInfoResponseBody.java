@@ -21,93 +21,129 @@ public class QueryGroupInfoResponseBody extends TeaModel {
         return this.content;
     }
 
-    public static class QueryGroupInfoResponseBodyContentLeaderJob extends TeaModel {
-        // 业务类型
-        @NameInMap("bizType")
-        public String bizType;
+    public static class QueryGroupInfoResponseBodyContentExtendInfos extends TeaModel {
+        // 医疗组code
+        @NameInMap("deptCode")
+        public String deptCode;
 
-        // 分类
-        @NameInMap("category")
-        public String category;
+        // 扩展属性显示名称
+        @NameInMap("deptExtendDisplayName")
+        public String deptExtendDisplayName;
 
-        // 标签Code
-        @NameInMap("code")
-        public String code;
+        // 扩展属性key
+        @NameInMap("deptExtendKey")
+        public String deptExtendKey;
 
-        // 展示名称
-        @NameInMap("displayName")
-        public String displayName;
+        // 扩展属性value
+        @NameInMap("deptExtendValue")
+        public String deptExtendValue;
 
-        public static QueryGroupInfoResponseBodyContentLeaderJob build(java.util.Map<String, ?> map) throws Exception {
-            QueryGroupInfoResponseBodyContentLeaderJob self = new QueryGroupInfoResponseBodyContentLeaderJob();
+        // 创建时间
+        @NameInMap("gmtCreateStr")
+        public String gmtCreateStr;
+
+        // 修改时间
+        @NameInMap("gmtModifiedStr")
+        public String gmtModifiedStr;
+
+        // id
+        @NameInMap("id")
+        public Long id;
+
+        // 状态
+        @NameInMap("status")
+        public Integer status;
+
+        public static QueryGroupInfoResponseBodyContentExtendInfos build(java.util.Map<String, ?> map) throws Exception {
+            QueryGroupInfoResponseBodyContentExtendInfos self = new QueryGroupInfoResponseBodyContentExtendInfos();
             return TeaModel.build(map, self);
         }
 
-        public QueryGroupInfoResponseBodyContentLeaderJob setBizType(String bizType) {
-            this.bizType = bizType;
+        public QueryGroupInfoResponseBodyContentExtendInfos setDeptCode(String deptCode) {
+            this.deptCode = deptCode;
             return this;
         }
-        public String getBizType() {
-            return this.bizType;
+        public String getDeptCode() {
+            return this.deptCode;
         }
 
-        public QueryGroupInfoResponseBodyContentLeaderJob setCategory(String category) {
-            this.category = category;
+        public QueryGroupInfoResponseBodyContentExtendInfos setDeptExtendDisplayName(String deptExtendDisplayName) {
+            this.deptExtendDisplayName = deptExtendDisplayName;
             return this;
         }
-        public String getCategory() {
-            return this.category;
+        public String getDeptExtendDisplayName() {
+            return this.deptExtendDisplayName;
         }
 
-        public QueryGroupInfoResponseBodyContentLeaderJob setCode(String code) {
-            this.code = code;
+        public QueryGroupInfoResponseBodyContentExtendInfos setDeptExtendKey(String deptExtendKey) {
+            this.deptExtendKey = deptExtendKey;
             return this;
         }
-        public String getCode() {
-            return this.code;
+        public String getDeptExtendKey() {
+            return this.deptExtendKey;
         }
 
-        public QueryGroupInfoResponseBodyContentLeaderJob setDisplayName(String displayName) {
-            this.displayName = displayName;
+        public QueryGroupInfoResponseBodyContentExtendInfos setDeptExtendValue(String deptExtendValue) {
+            this.deptExtendValue = deptExtendValue;
             return this;
         }
-        public String getDisplayName() {
-            return this.displayName;
+        public String getDeptExtendValue() {
+            return this.deptExtendValue;
+        }
+
+        public QueryGroupInfoResponseBodyContentExtendInfos setGmtCreateStr(String gmtCreateStr) {
+            this.gmtCreateStr = gmtCreateStr;
+            return this;
+        }
+        public String getGmtCreateStr() {
+            return this.gmtCreateStr;
+        }
+
+        public QueryGroupInfoResponseBodyContentExtendInfos setGmtModifiedStr(String gmtModifiedStr) {
+            this.gmtModifiedStr = gmtModifiedStr;
+            return this;
+        }
+        public String getGmtModifiedStr() {
+            return this.gmtModifiedStr;
+        }
+
+        public QueryGroupInfoResponseBodyContentExtendInfos setId(Long id) {
+            this.id = id;
+            return this;
+        }
+        public Long getId() {
+            return this.id;
+        }
+
+        public QueryGroupInfoResponseBodyContentExtendInfos setStatus(Integer status) {
+            this.status = status;
+            return this;
+        }
+        public Integer getStatus() {
+            return this.status;
         }
 
     }
 
-    public static class QueryGroupInfoResponseBodyContentLeader extends TeaModel {
-        // 工作标签
-        @NameInMap("job")
-        public QueryGroupInfoResponseBodyContentLeaderJob job;
-
+    public static class QueryGroupInfoResponseBodyContentGroupLeader extends TeaModel {
         // 工号
         @NameInMap("jobNumber")
         public String jobNumber;
 
-        // 姓名
+        // 组长名称
         @NameInMap("name")
         public String name;
 
-        // 人员Id
+        // 用户id
         @NameInMap("userId")
         public String userId;
 
-        public static QueryGroupInfoResponseBodyContentLeader build(java.util.Map<String, ?> map) throws Exception {
-            QueryGroupInfoResponseBodyContentLeader self = new QueryGroupInfoResponseBodyContentLeader();
+        public static QueryGroupInfoResponseBodyContentGroupLeader build(java.util.Map<String, ?> map) throws Exception {
+            QueryGroupInfoResponseBodyContentGroupLeader self = new QueryGroupInfoResponseBodyContentGroupLeader();
             return TeaModel.build(map, self);
         }
 
-        public QueryGroupInfoResponseBodyContentLeader setJob(QueryGroupInfoResponseBodyContentLeaderJob job) {
-            this.job = job;
-            return this;
-        }
-        public QueryGroupInfoResponseBodyContentLeaderJob getJob() {
-            return this.job;
-        }
-
-        public QueryGroupInfoResponseBodyContentLeader setJobNumber(String jobNumber) {
+        public QueryGroupInfoResponseBodyContentGroupLeader setJobNumber(String jobNumber) {
             this.jobNumber = jobNumber;
             return this;
         }
@@ -115,7 +151,7 @@ public class QueryGroupInfoResponseBody extends TeaModel {
             return this.jobNumber;
         }
 
-        public QueryGroupInfoResponseBodyContentLeader setName(String name) {
+        public QueryGroupInfoResponseBodyContentGroupLeader setName(String name) {
             this.name = name;
             return this;
         }
@@ -123,7 +159,7 @@ public class QueryGroupInfoResponseBody extends TeaModel {
             return this.name;
         }
 
-        public QueryGroupInfoResponseBodyContentLeader setUserId(String userId) {
+        public QueryGroupInfoResponseBodyContentGroupLeader setUserId(String userId) {
             this.userId = userId;
             return this;
         }
@@ -133,37 +169,49 @@ public class QueryGroupInfoResponseBody extends TeaModel {
 
     }
 
-    public static class QueryGroupInfoResponseBodyContent extends TeaModel {
-        // 科室Id
+    public static class QueryGroupInfoResponseBodyContentGroup extends TeaModel {
+        // 医疗组id
         @NameInMap("deptId")
         public Long deptId;
 
-        // 有效期结束时间
-        @NameInMap("endTime")
-        public Long endTime;
+        // 医疗组状态
+        @NameInMap("deptStatus")
+        public Integer deptStatus;
 
-        // 医疗组Id
+        // 创建时间
+        @NameInMap("gmtCreateStr")
+        public String gmtCreateStr;
+
+        // 修改时间
+        @NameInMap("gmtModifiedStr")
+        public String gmtModifiedStr;
+
+        // id
         @NameInMap("id")
         public Long id;
 
-        // 医疗组组长
+        // 组长
         @NameInMap("leader")
-        public QueryGroupInfoResponseBodyContentLeader leader;
+        public QueryGroupInfoResponseBodyContentGroupLeader leader;
 
         // 医疗组名称
         @NameInMap("name")
         public String name;
 
-        // 有效期开始时间
-        @NameInMap("startTime")
-        public Long startTime;
+        // 父code
+        @NameInMap("parentDeptCode")
+        public String parentDeptCode;
 
-        public static QueryGroupInfoResponseBodyContent build(java.util.Map<String, ?> map) throws Exception {
-            QueryGroupInfoResponseBodyContent self = new QueryGroupInfoResponseBodyContent();
+        // 备注
+        @NameInMap("remark")
+        public String remark;
+
+        public static QueryGroupInfoResponseBodyContentGroup build(java.util.Map<String, ?> map) throws Exception {
+            QueryGroupInfoResponseBodyContentGroup self = new QueryGroupInfoResponseBodyContentGroup();
             return TeaModel.build(map, self);
         }
 
-        public QueryGroupInfoResponseBodyContent setDeptId(Long deptId) {
+        public QueryGroupInfoResponseBodyContentGroup setDeptId(Long deptId) {
             this.deptId = deptId;
             return this;
         }
@@ -171,15 +219,31 @@ public class QueryGroupInfoResponseBody extends TeaModel {
             return this.deptId;
         }
 
-        public QueryGroupInfoResponseBodyContent setEndTime(Long endTime) {
-            this.endTime = endTime;
+        public QueryGroupInfoResponseBodyContentGroup setDeptStatus(Integer deptStatus) {
+            this.deptStatus = deptStatus;
             return this;
         }
-        public Long getEndTime() {
-            return this.endTime;
+        public Integer getDeptStatus() {
+            return this.deptStatus;
         }
 
-        public QueryGroupInfoResponseBodyContent setId(Long id) {
+        public QueryGroupInfoResponseBodyContentGroup setGmtCreateStr(String gmtCreateStr) {
+            this.gmtCreateStr = gmtCreateStr;
+            return this;
+        }
+        public String getGmtCreateStr() {
+            return this.gmtCreateStr;
+        }
+
+        public QueryGroupInfoResponseBodyContentGroup setGmtModifiedStr(String gmtModifiedStr) {
+            this.gmtModifiedStr = gmtModifiedStr;
+            return this;
+        }
+        public String getGmtModifiedStr() {
+            return this.gmtModifiedStr;
+        }
+
+        public QueryGroupInfoResponseBodyContentGroup setId(Long id) {
             this.id = id;
             return this;
         }
@@ -187,15 +251,15 @@ public class QueryGroupInfoResponseBody extends TeaModel {
             return this.id;
         }
 
-        public QueryGroupInfoResponseBodyContent setLeader(QueryGroupInfoResponseBodyContentLeader leader) {
+        public QueryGroupInfoResponseBodyContentGroup setLeader(QueryGroupInfoResponseBodyContentGroupLeader leader) {
             this.leader = leader;
             return this;
         }
-        public QueryGroupInfoResponseBodyContentLeader getLeader() {
+        public QueryGroupInfoResponseBodyContentGroupLeader getLeader() {
             return this.leader;
         }
 
-        public QueryGroupInfoResponseBodyContent setName(String name) {
+        public QueryGroupInfoResponseBodyContentGroup setName(String name) {
             this.name = name;
             return this;
         }
@@ -203,12 +267,52 @@ public class QueryGroupInfoResponseBody extends TeaModel {
             return this.name;
         }
 
-        public QueryGroupInfoResponseBodyContent setStartTime(Long startTime) {
-            this.startTime = startTime;
+        public QueryGroupInfoResponseBodyContentGroup setParentDeptCode(String parentDeptCode) {
+            this.parentDeptCode = parentDeptCode;
             return this;
         }
-        public Long getStartTime() {
-            return this.startTime;
+        public String getParentDeptCode() {
+            return this.parentDeptCode;
+        }
+
+        public QueryGroupInfoResponseBodyContentGroup setRemark(String remark) {
+            this.remark = remark;
+            return this;
+        }
+        public String getRemark() {
+            return this.remark;
+        }
+
+    }
+
+    public static class QueryGroupInfoResponseBodyContent extends TeaModel {
+        // 扩展信息
+        @NameInMap("extendInfos")
+        public java.util.List<QueryGroupInfoResponseBodyContentExtendInfos> extendInfos;
+
+        // 医疗组
+        @NameInMap("group")
+        public QueryGroupInfoResponseBodyContentGroup group;
+
+        public static QueryGroupInfoResponseBodyContent build(java.util.Map<String, ?> map) throws Exception {
+            QueryGroupInfoResponseBodyContent self = new QueryGroupInfoResponseBodyContent();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryGroupInfoResponseBodyContent setExtendInfos(java.util.List<QueryGroupInfoResponseBodyContentExtendInfos> extendInfos) {
+            this.extendInfos = extendInfos;
+            return this;
+        }
+        public java.util.List<QueryGroupInfoResponseBodyContentExtendInfos> getExtendInfos() {
+            return this.extendInfos;
+        }
+
+        public QueryGroupInfoResponseBodyContent setGroup(QueryGroupInfoResponseBodyContentGroup group) {
+            this.group = group;
+            return this;
+        }
+        public QueryGroupInfoResponseBodyContentGroup getGroup() {
+            return this.group;
         }
 
     }

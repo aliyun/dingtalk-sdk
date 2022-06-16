@@ -21,6 +21,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public AutoOpenDingTalkConnectResponse autoOpenDingTalkConnect() throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        AutoOpenDingTalkConnectHeaders headers = new AutoOpenDingTalkConnectHeaders();
+        return this.autoOpenDingTalkConnectWithOptions(headers, runtime);
+    }
+
+    public AutoOpenDingTalkConnectResponse autoOpenDingTalkConnectWithOptions(AutoOpenDingTalkConnectHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("AutoOpenDingTalkConnect", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interconnections/apps/open", "json", req, runtime), new AutoOpenDingTalkConnectResponse());
+    }
+
     public BatchQueryGroupMemberResponse batchQueryGroupMember(BatchQueryGroupMemberRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         BatchQueryGroupMemberHeaders headers = new BatchQueryGroupMemberHeaders();

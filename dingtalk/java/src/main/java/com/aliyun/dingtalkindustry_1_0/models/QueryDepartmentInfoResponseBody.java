@@ -21,253 +21,117 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
         return this.content;
     }
 
-    public static class QueryDepartmentInfoResponseBodyContentLeaderJob extends TeaModel {
-        // 业务类型
-        @NameInMap("bizType")
-        public String bizType;
+    public static class QueryDepartmentInfoResponseBodyContentDepartment extends TeaModel {
+        // 科室code
+        @NameInMap("deptCode")
+        public String deptCode;
 
-        // 分类
-        @NameInMap("category")
-        public String category;
+        // 科室名称
+        @NameInMap("deptName")
+        public String deptName;
 
-        // 标签Code
-        @NameInMap("code")
-        public String code;
+        // 顺序
+        @NameInMap("deptOrder")
+        public Long deptOrder;
 
-        // 展示名称
-        @NameInMap("displayName")
-        public String displayName;
+        // 状态
+        @NameInMap("deptStatus")
+        public Integer deptStatus;
 
-        public static QueryDepartmentInfoResponseBodyContentLeaderJob build(java.util.Map<String, ?> map) throws Exception {
-            QueryDepartmentInfoResponseBodyContentLeaderJob self = new QueryDepartmentInfoResponseBodyContentLeaderJob();
-            return TeaModel.build(map, self);
-        }
+        // 类型
+        @NameInMap("deptType")
+        public Integer deptType;
 
-        public QueryDepartmentInfoResponseBodyContentLeaderJob setBizType(String bizType) {
-            this.bizType = bizType;
-            return this;
-        }
-        public String getBizType() {
-            return this.bizType;
-        }
+        // 创建时间
+        @NameInMap("gmtCreateStr")
+        public String gmtCreateStr;
 
-        public QueryDepartmentInfoResponseBodyContentLeaderJob setCategory(String category) {
-            this.category = category;
-            return this;
-        }
-        public String getCategory() {
-            return this.category;
-        }
+        // 修改时间
+        @NameInMap("gmtModifiedStr")
+        public String gmtModifiedStr;
 
-        public QueryDepartmentInfoResponseBodyContentLeaderJob setCode(String code) {
-            this.code = code;
-            return this;
-        }
-        public String getCode() {
-            return this.code;
-        }
-
-        public QueryDepartmentInfoResponseBodyContentLeaderJob setDisplayName(String displayName) {
-            this.displayName = displayName;
-            return this;
-        }
-        public String getDisplayName() {
-            return this.displayName;
-        }
-
-    }
-
-    public static class QueryDepartmentInfoResponseBodyContentLeader extends TeaModel {
-        // 工作标签
-        @NameInMap("job")
-        public QueryDepartmentInfoResponseBodyContentLeaderJob job;
-
-        // 工号
-        @NameInMap("jobNumber")
-        public String jobNumber;
-
-        // 姓名
-        @NameInMap("name")
-        public String name;
-
-        // 人员Id
-        @NameInMap("userId")
-        public String userId;
-
-        public static QueryDepartmentInfoResponseBodyContentLeader build(java.util.Map<String, ?> map) throws Exception {
-            QueryDepartmentInfoResponseBodyContentLeader self = new QueryDepartmentInfoResponseBodyContentLeader();
-            return TeaModel.build(map, self);
-        }
-
-        public QueryDepartmentInfoResponseBodyContentLeader setJob(QueryDepartmentInfoResponseBodyContentLeaderJob job) {
-            this.job = job;
-            return this;
-        }
-        public QueryDepartmentInfoResponseBodyContentLeaderJob getJob() {
-            return this.job;
-        }
-
-        public QueryDepartmentInfoResponseBodyContentLeader setJobNumber(String jobNumber) {
-            this.jobNumber = jobNumber;
-            return this;
-        }
-        public String getJobNumber() {
-            return this.jobNumber;
-        }
-
-        public QueryDepartmentInfoResponseBodyContentLeader setName(String name) {
-            this.name = name;
-            return this;
-        }
-        public String getName() {
-            return this.name;
-        }
-
-        public QueryDepartmentInfoResponseBodyContentLeader setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
-        }
-
-    }
-
-    public static class QueryDepartmentInfoResponseBodyContentResidentLeaderJob extends TeaModel {
-        // 业务类型
-        @NameInMap("bizType")
-        public String bizType;
-
-        // 分类
-        @NameInMap("category")
-        public String category;
-
-        // 标签Code
-        @NameInMap("code")
-        public String code;
-
-        // 展示名称
-        @NameInMap("displayName")
-        public String displayName;
-
-        public static QueryDepartmentInfoResponseBodyContentResidentLeaderJob build(java.util.Map<String, ?> map) throws Exception {
-            QueryDepartmentInfoResponseBodyContentResidentLeaderJob self = new QueryDepartmentInfoResponseBodyContentResidentLeaderJob();
-            return TeaModel.build(map, self);
-        }
-
-        public QueryDepartmentInfoResponseBodyContentResidentLeaderJob setBizType(String bizType) {
-            this.bizType = bizType;
-            return this;
-        }
-        public String getBizType() {
-            return this.bizType;
-        }
-
-        public QueryDepartmentInfoResponseBodyContentResidentLeaderJob setCategory(String category) {
-            this.category = category;
-            return this;
-        }
-        public String getCategory() {
-            return this.category;
-        }
-
-        public QueryDepartmentInfoResponseBodyContentResidentLeaderJob setCode(String code) {
-            this.code = code;
-            return this;
-        }
-        public String getCode() {
-            return this.code;
-        }
-
-        public QueryDepartmentInfoResponseBodyContentResidentLeaderJob setDisplayName(String displayName) {
-            this.displayName = displayName;
-            return this;
-        }
-        public String getDisplayName() {
-            return this.displayName;
-        }
-
-    }
-
-    public static class QueryDepartmentInfoResponseBodyContentResidentLeader extends TeaModel {
-        // 工作标签
-        @NameInMap("job")
-        public QueryDepartmentInfoResponseBodyContentResidentLeaderJob job;
-
-        // 工号
-        @NameInMap("jobNumber")
-        public String jobNumber;
-
-        // 姓名
-        @NameInMap("name")
-        public String name;
-
-        // 人员Id
-        @NameInMap("userId")
-        public String userId;
-
-        public static QueryDepartmentInfoResponseBodyContentResidentLeader build(java.util.Map<String, ?> map) throws Exception {
-            QueryDepartmentInfoResponseBodyContentResidentLeader self = new QueryDepartmentInfoResponseBodyContentResidentLeader();
-            return TeaModel.build(map, self);
-        }
-
-        public QueryDepartmentInfoResponseBodyContentResidentLeader setJob(QueryDepartmentInfoResponseBodyContentResidentLeaderJob job) {
-            this.job = job;
-            return this;
-        }
-        public QueryDepartmentInfoResponseBodyContentResidentLeaderJob getJob() {
-            return this.job;
-        }
-
-        public QueryDepartmentInfoResponseBodyContentResidentLeader setJobNumber(String jobNumber) {
-            this.jobNumber = jobNumber;
-            return this;
-        }
-        public String getJobNumber() {
-            return this.jobNumber;
-        }
-
-        public QueryDepartmentInfoResponseBodyContentResidentLeader setName(String name) {
-            this.name = name;
-            return this;
-        }
-        public String getName() {
-            return this.name;
-        }
-
-        public QueryDepartmentInfoResponseBodyContentResidentLeader setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
-        }
-
-    }
-
-    public static class QueryDepartmentInfoResponseBodyContent extends TeaModel {
-        // 科室Id
+        // 科室id
         @NameInMap("id")
         public Long id;
-
-        // 科室主任
-        @NameInMap("leader")
-        public QueryDepartmentInfoResponseBodyContentLeader leader;
 
         // 科室名称
         @NameInMap("name")
         public String name;
 
-        // 住院总医师
-        @NameInMap("residentLeader")
-        public QueryDepartmentInfoResponseBodyContentResidentLeader residentLeader;
+        // 父code
+        @NameInMap("parentDeptCode")
+        public String parentDeptCode;
 
-        public static QueryDepartmentInfoResponseBodyContent build(java.util.Map<String, ?> map) throws Exception {
-            QueryDepartmentInfoResponseBodyContent self = new QueryDepartmentInfoResponseBodyContent();
+        // 备注
+        @NameInMap("remark")
+        public String remark;
+
+        // 病区id
+        @NameInMap("wardIdList")
+        public java.util.List<Long> wardIdList;
+
+        public static QueryDepartmentInfoResponseBodyContentDepartment build(java.util.Map<String, ?> map) throws Exception {
+            QueryDepartmentInfoResponseBodyContentDepartment self = new QueryDepartmentInfoResponseBodyContentDepartment();
             return TeaModel.build(map, self);
         }
 
-        public QueryDepartmentInfoResponseBodyContent setId(Long id) {
+        public QueryDepartmentInfoResponseBodyContentDepartment setDeptCode(String deptCode) {
+            this.deptCode = deptCode;
+            return this;
+        }
+        public String getDeptCode() {
+            return this.deptCode;
+        }
+
+        public QueryDepartmentInfoResponseBodyContentDepartment setDeptName(String deptName) {
+            this.deptName = deptName;
+            return this;
+        }
+        public String getDeptName() {
+            return this.deptName;
+        }
+
+        public QueryDepartmentInfoResponseBodyContentDepartment setDeptOrder(Long deptOrder) {
+            this.deptOrder = deptOrder;
+            return this;
+        }
+        public Long getDeptOrder() {
+            return this.deptOrder;
+        }
+
+        public QueryDepartmentInfoResponseBodyContentDepartment setDeptStatus(Integer deptStatus) {
+            this.deptStatus = deptStatus;
+            return this;
+        }
+        public Integer getDeptStatus() {
+            return this.deptStatus;
+        }
+
+        public QueryDepartmentInfoResponseBodyContentDepartment setDeptType(Integer deptType) {
+            this.deptType = deptType;
+            return this;
+        }
+        public Integer getDeptType() {
+            return this.deptType;
+        }
+
+        public QueryDepartmentInfoResponseBodyContentDepartment setGmtCreateStr(String gmtCreateStr) {
+            this.gmtCreateStr = gmtCreateStr;
+            return this;
+        }
+        public String getGmtCreateStr() {
+            return this.gmtCreateStr;
+        }
+
+        public QueryDepartmentInfoResponseBodyContentDepartment setGmtModifiedStr(String gmtModifiedStr) {
+            this.gmtModifiedStr = gmtModifiedStr;
+            return this;
+        }
+        public String getGmtModifiedStr() {
+            return this.gmtModifiedStr;
+        }
+
+        public QueryDepartmentInfoResponseBodyContentDepartment setId(Long id) {
             this.id = id;
             return this;
         }
@@ -275,15 +139,7 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
             return this.id;
         }
 
-        public QueryDepartmentInfoResponseBodyContent setLeader(QueryDepartmentInfoResponseBodyContentLeader leader) {
-            this.leader = leader;
-            return this;
-        }
-        public QueryDepartmentInfoResponseBodyContentLeader getLeader() {
-            return this.leader;
-        }
-
-        public QueryDepartmentInfoResponseBodyContent setName(String name) {
+        public QueryDepartmentInfoResponseBodyContentDepartment setName(String name) {
             this.name = name;
             return this;
         }
@@ -291,12 +147,164 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
             return this.name;
         }
 
-        public QueryDepartmentInfoResponseBodyContent setResidentLeader(QueryDepartmentInfoResponseBodyContentResidentLeader residentLeader) {
-            this.residentLeader = residentLeader;
+        public QueryDepartmentInfoResponseBodyContentDepartment setParentDeptCode(String parentDeptCode) {
+            this.parentDeptCode = parentDeptCode;
             return this;
         }
-        public QueryDepartmentInfoResponseBodyContentResidentLeader getResidentLeader() {
-            return this.residentLeader;
+        public String getParentDeptCode() {
+            return this.parentDeptCode;
+        }
+
+        public QueryDepartmentInfoResponseBodyContentDepartment setRemark(String remark) {
+            this.remark = remark;
+            return this;
+        }
+        public String getRemark() {
+            return this.remark;
+        }
+
+        public QueryDepartmentInfoResponseBodyContentDepartment setWardIdList(java.util.List<Long> wardIdList) {
+            this.wardIdList = wardIdList;
+            return this;
+        }
+        public java.util.List<Long> getWardIdList() {
+            return this.wardIdList;
+        }
+
+    }
+
+    public static class QueryDepartmentInfoResponseBodyContentExtendInfos extends TeaModel {
+        // 部门code
+        @NameInMap("deptCode")
+        public String deptCode;
+
+        // 扩展属性描述
+        @NameInMap("deptExtendDisplayName")
+        public String deptExtendDisplayName;
+
+        // 扩展属性key
+        @NameInMap("deptExtendKey")
+        public String deptExtendKey;
+
+        // 扩展属性value
+        @NameInMap("deptExtendValue")
+        public String deptExtendValue;
+
+        // 创建时间
+        @NameInMap("gmtCreateStr")
+        public String gmtCreateStr;
+
+        // 修改时间
+        @NameInMap("gmtModifiedStr")
+        public String gmtModifiedStr;
+
+        // id
+        @NameInMap("id")
+        public Long id;
+
+        // 状态
+        @NameInMap("status")
+        public Integer status;
+
+        public static QueryDepartmentInfoResponseBodyContentExtendInfos build(java.util.Map<String, ?> map) throws Exception {
+            QueryDepartmentInfoResponseBodyContentExtendInfos self = new QueryDepartmentInfoResponseBodyContentExtendInfos();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryDepartmentInfoResponseBodyContentExtendInfos setDeptCode(String deptCode) {
+            this.deptCode = deptCode;
+            return this;
+        }
+        public String getDeptCode() {
+            return this.deptCode;
+        }
+
+        public QueryDepartmentInfoResponseBodyContentExtendInfos setDeptExtendDisplayName(String deptExtendDisplayName) {
+            this.deptExtendDisplayName = deptExtendDisplayName;
+            return this;
+        }
+        public String getDeptExtendDisplayName() {
+            return this.deptExtendDisplayName;
+        }
+
+        public QueryDepartmentInfoResponseBodyContentExtendInfos setDeptExtendKey(String deptExtendKey) {
+            this.deptExtendKey = deptExtendKey;
+            return this;
+        }
+        public String getDeptExtendKey() {
+            return this.deptExtendKey;
+        }
+
+        public QueryDepartmentInfoResponseBodyContentExtendInfos setDeptExtendValue(String deptExtendValue) {
+            this.deptExtendValue = deptExtendValue;
+            return this;
+        }
+        public String getDeptExtendValue() {
+            return this.deptExtendValue;
+        }
+
+        public QueryDepartmentInfoResponseBodyContentExtendInfos setGmtCreateStr(String gmtCreateStr) {
+            this.gmtCreateStr = gmtCreateStr;
+            return this;
+        }
+        public String getGmtCreateStr() {
+            return this.gmtCreateStr;
+        }
+
+        public QueryDepartmentInfoResponseBodyContentExtendInfos setGmtModifiedStr(String gmtModifiedStr) {
+            this.gmtModifiedStr = gmtModifiedStr;
+            return this;
+        }
+        public String getGmtModifiedStr() {
+            return this.gmtModifiedStr;
+        }
+
+        public QueryDepartmentInfoResponseBodyContentExtendInfos setId(Long id) {
+            this.id = id;
+            return this;
+        }
+        public Long getId() {
+            return this.id;
+        }
+
+        public QueryDepartmentInfoResponseBodyContentExtendInfos setStatus(Integer status) {
+            this.status = status;
+            return this;
+        }
+        public Integer getStatus() {
+            return this.status;
+        }
+
+    }
+
+    public static class QueryDepartmentInfoResponseBodyContent extends TeaModel {
+        // 科室列表
+        @NameInMap("department")
+        public QueryDepartmentInfoResponseBodyContentDepartment department;
+
+        // 科室扩展属性值
+        @NameInMap("extendInfos")
+        public java.util.List<QueryDepartmentInfoResponseBodyContentExtendInfos> extendInfos;
+
+        public static QueryDepartmentInfoResponseBodyContent build(java.util.Map<String, ?> map) throws Exception {
+            QueryDepartmentInfoResponseBodyContent self = new QueryDepartmentInfoResponseBodyContent();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryDepartmentInfoResponseBodyContent setDepartment(QueryDepartmentInfoResponseBodyContentDepartment department) {
+            this.department = department;
+            return this;
+        }
+        public QueryDepartmentInfoResponseBodyContentDepartment getDepartment() {
+            return this.department;
+        }
+
+        public QueryDepartmentInfoResponseBodyContent setExtendInfos(java.util.List<QueryDepartmentInfoResponseBodyContentExtendInfos> extendInfos) {
+            this.extendInfos = extendInfos;
+            return this;
+        }
+        public java.util.List<QueryDepartmentInfoResponseBodyContentExtendInfos> getExtendInfos() {
+            return this.extendInfos;
         }
 
     }

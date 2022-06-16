@@ -4,6 +4,10 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAllMemberByDeptRequest extends TeaModel {
+    // 按月查询标识
+    @NameInMap("monthMark")
+    public String monthMark;
+
     // 分页查询页码
     @NameInMap("pageNumber")
     public Integer pageNumber;
@@ -15,6 +19,14 @@ public class QueryAllMemberByDeptRequest extends TeaModel {
     public static QueryAllMemberByDeptRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryAllMemberByDeptRequest self = new QueryAllMemberByDeptRequest();
         return TeaModel.build(map, self);
+    }
+
+    public QueryAllMemberByDeptRequest setMonthMark(String monthMark) {
+        this.monthMark = monthMark;
+        return this;
+    }
+    public String getMonthMark() {
+        return this.monthMark;
     }
 
     public QueryAllMemberByDeptRequest setPageNumber(Integer pageNumber) {
