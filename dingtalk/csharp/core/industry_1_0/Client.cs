@@ -3047,6 +3047,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             deptId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(deptId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MonthMark))
+            {
+                query["monthMark"] = request.MonthMark;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {
                 query["pageNumber"] = request.PageNumber;
@@ -3077,6 +3081,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             deptId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(deptId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MonthMark))
+            {
+                query["monthMark"] = request.MonthMark;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {
                 query["pageNumber"] = request.PageNumber;
@@ -3121,6 +3129,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             groupId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(groupId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MonthMark))
+            {
+                query["monthMark"] = request.MonthMark;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {
                 query["pageNumber"] = request.PageNumber;
@@ -3151,6 +3163,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             groupId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(groupId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MonthMark))
+            {
+                query["monthMark"] = request.MonthMark;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {
                 query["pageNumber"] = request.PageNumber;

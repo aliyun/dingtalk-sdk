@@ -26,6 +26,56 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         }
 
 
+        public AutoOpenDingTalkConnectResponse AutoOpenDingTalkConnect()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AutoOpenDingTalkConnectHeaders headers = new AutoOpenDingTalkConnectHeaders();
+            return AutoOpenDingTalkConnectWithOptions(headers, runtime);
+        }
+
+        public async Task<AutoOpenDingTalkConnectResponse> AutoOpenDingTalkConnectAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AutoOpenDingTalkConnectHeaders headers = new AutoOpenDingTalkConnectHeaders();
+            return await AutoOpenDingTalkConnectWithOptionsAsync(headers, runtime);
+        }
+
+        public AutoOpenDingTalkConnectResponse AutoOpenDingTalkConnectWithOptions(AutoOpenDingTalkConnectHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<AutoOpenDingTalkConnectResponse>(DoROARequest("AutoOpenDingTalkConnect", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interconnections/apps/open", "json", req, runtime));
+        }
+
+        public async Task<AutoOpenDingTalkConnectResponse> AutoOpenDingTalkConnectWithOptionsAsync(AutoOpenDingTalkConnectHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<AutoOpenDingTalkConnectResponse>(await DoROARequestAsync("AutoOpenDingTalkConnect", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interconnections/apps/open", "json", req, runtime));
+        }
+
         public BatchQueryGroupMemberResponse BatchQueryGroupMember(BatchQueryGroupMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
