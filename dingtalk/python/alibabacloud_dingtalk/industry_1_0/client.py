@@ -2733,6 +2733,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryBizOptLog', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/bizOptLogs', 'json', req, runtime)
         )
 
+    def query_department_extend_info(
+        self,
+        request: dingtalkindustry__1__0_models.QueryDepartmentExtendInfoRequest,
+    ) -> dingtalkindustry__1__0_models.QueryDepartmentExtendInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryDepartmentExtendInfoHeaders()
+        return self.query_department_extend_info_with_options(request, headers, runtime)
+
+    async def query_department_extend_info_async(
+        self,
+        request: dingtalkindustry__1__0_models.QueryDepartmentExtendInfoRequest,
+    ) -> dingtalkindustry__1__0_models.QueryDepartmentExtendInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryDepartmentExtendInfoHeaders()
+        return await self.query_department_extend_info_with_options_async(request, headers, runtime)
+
+    def query_department_extend_info_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.QueryDepartmentExtendInfoRequest,
+        headers: dingtalkindustry__1__0_models.QueryDepartmentExtendInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryDepartmentExtendInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_code):
+            query['deptCode'] = request.dept_code
+        if not UtilClient.is_unset(request.prop_code):
+            query['propCode'] = request.prop_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryDepartmentExtendInfoResponse(),
+            self.do_roarequest('QueryDepartmentExtendInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/departments/extensions/infos', 'json', req, runtime)
+        )
+
+    async def query_department_extend_info_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.QueryDepartmentExtendInfoRequest,
+        headers: dingtalkindustry__1__0_models.QueryDepartmentExtendInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryDepartmentExtendInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_code):
+            query['deptCode'] = request.dept_code
+        if not UtilClient.is_unset(request.prop_code):
+            query['propCode'] = request.prop_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryDepartmentExtendInfoResponse(),
+            await self.do_roarequest_async('QueryDepartmentExtendInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/departments/extensions/infos', 'json', req, runtime)
+        )
+
     def query_department_info(
         self,
         dept_id: str,

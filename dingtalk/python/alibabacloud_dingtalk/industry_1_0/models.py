@@ -7889,6 +7889,224 @@ class QueryBizOptLogResponse(TeaModel):
         return self
 
 
+class QueryDepartmentExtendInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryDepartmentExtendInfoRequest(TeaModel):
+    def __init__(
+        self,
+        dept_code: int = None,
+        prop_code: str = None,
+    ):
+        # 科室或医疗组code
+        self.dept_code = dept_code
+        # 扩展属性code
+        self.prop_code = prop_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_code is not None:
+            result['deptCode'] = self.dept_code
+        if self.prop_code is not None:
+            result['propCode'] = self.prop_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptCode') is not None:
+            self.dept_code = m.get('deptCode')
+        if m.get('propCode') is not None:
+            self.prop_code = m.get('propCode')
+        return self
+
+
+class QueryDepartmentExtendInfoResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        dept_code: str = None,
+        dept_extend_display_name: str = None,
+        dept_extend_key: str = None,
+        dept_extend_value: str = None,
+        gmt_create_str: str = None,
+        gmt_modified_str: str = None,
+        id: int = None,
+        status: int = None,
+    ):
+        # 科室或医疗组code
+        self.dept_code = dept_code
+        # 扩展属性显示名称
+        self.dept_extend_display_name = dept_extend_display_name
+        # 扩展属性key
+        self.dept_extend_key = dept_extend_key
+        # 扩展属性value
+        self.dept_extend_value = dept_extend_value
+        # 创建时间
+        self.gmt_create_str = gmt_create_str
+        # 修改时间
+        self.gmt_modified_str = gmt_modified_str
+        # id
+        self.id = id
+        # 删除标识
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_code is not None:
+            result['deptCode'] = self.dept_code
+        if self.dept_extend_display_name is not None:
+            result['deptExtendDisplayName'] = self.dept_extend_display_name
+        if self.dept_extend_key is not None:
+            result['deptExtendKey'] = self.dept_extend_key
+        if self.dept_extend_value is not None:
+            result['deptExtendValue'] = self.dept_extend_value
+        if self.gmt_create_str is not None:
+            result['gmtCreateStr'] = self.gmt_create_str
+        if self.gmt_modified_str is not None:
+            result['gmtModifiedStr'] = self.gmt_modified_str
+        if self.id is not None:
+            result['id'] = self.id
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptCode') is not None:
+            self.dept_code = m.get('deptCode')
+        if m.get('deptExtendDisplayName') is not None:
+            self.dept_extend_display_name = m.get('deptExtendDisplayName')
+        if m.get('deptExtendKey') is not None:
+            self.dept_extend_key = m.get('deptExtendKey')
+        if m.get('deptExtendValue') is not None:
+            self.dept_extend_value = m.get('deptExtendValue')
+        if m.get('gmtCreateStr') is not None:
+            self.gmt_create_str = m.get('gmtCreateStr')
+        if m.get('gmtModifiedStr') is not None:
+            self.gmt_modified_str = m.get('gmtModifiedStr')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class QueryDepartmentExtendInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[QueryDepartmentExtendInfoResponseBodyContent] = None,
+    ):
+        # 扩展属性列表
+        self.content = content
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = QueryDepartmentExtendInfoResponseBodyContent()
+                self.content.append(temp_model.from_map(k))
+        return self
+
+
+class QueryDepartmentExtendInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryDepartmentExtendInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryDepartmentExtendInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryDepartmentInfoHeaders(TeaModel):
     def __init__(
         self,

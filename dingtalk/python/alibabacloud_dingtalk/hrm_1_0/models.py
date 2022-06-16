@@ -3126,18 +3126,19 @@ class SolutionTaskSaveHeaders(TeaModel):
 class SolutionTaskSaveRequest(TeaModel):
     def __init__(
         self,
-        category: str = None,
         claim_time: int = None,
         description: str = None,
         finish_time: int = None,
         outer_id: str = None,
+        solution_instance_id: str = None,
+        start_time: int = None,
         status: str = None,
+        task_type: str = None,
+        template_outer_id: str = None,
         title: str = None,
         user_id: str = None,
         solution_type: str = None,
     ):
-        # 任务业务模块，如training, performance等
-        self.category = category
         # 任务要求的截止时间
         self.claim_time = claim_time
         # 任务描述
@@ -3146,8 +3147,13 @@ class SolutionTaskSaveRequest(TeaModel):
         self.finish_time = finish_time
         # 外部的任务唯一标识
         self.outer_id = outer_id
+        self.solution_instance_id = solution_instance_id
+        self.start_time = start_time
         # 任务状态，如running,finished
         self.status = status
+        # 任务业务模块，如training, performance等
+        self.task_type = task_type
+        self.template_outer_id = template_outer_id
         # 任务名称
         self.title = title
         # 任务执行人userId
@@ -3164,8 +3170,6 @@ class SolutionTaskSaveRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.category is not None:
-            result['category'] = self.category
         if self.claim_time is not None:
             result['claimTime'] = self.claim_time
         if self.description is not None:
@@ -3174,8 +3178,16 @@ class SolutionTaskSaveRequest(TeaModel):
             result['finishTime'] = self.finish_time
         if self.outer_id is not None:
             result['outerId'] = self.outer_id
+        if self.solution_instance_id is not None:
+            result['solutionInstanceId'] = self.solution_instance_id
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
         if self.status is not None:
             result['status'] = self.status
+        if self.task_type is not None:
+            result['taskType'] = self.task_type
+        if self.template_outer_id is not None:
+            result['templateOuterId'] = self.template_outer_id
         if self.title is not None:
             result['title'] = self.title
         if self.user_id is not None:
@@ -3186,8 +3198,6 @@ class SolutionTaskSaveRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('category') is not None:
-            self.category = m.get('category')
         if m.get('claimTime') is not None:
             self.claim_time = m.get('claimTime')
         if m.get('description') is not None:
@@ -3196,8 +3206,16 @@ class SolutionTaskSaveRequest(TeaModel):
             self.finish_time = m.get('finishTime')
         if m.get('outerId') is not None:
             self.outer_id = m.get('outerId')
+        if m.get('solutionInstanceId') is not None:
+            self.solution_instance_id = m.get('solutionInstanceId')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
         if m.get('status') is not None:
             self.status = m.get('status')
+        if m.get('taskType') is not None:
+            self.task_type = m.get('taskType')
+        if m.get('templateOuterId') is not None:
+            self.template_outer_id = m.get('templateOuterId')
         if m.get('title') is not None:
             self.title = m.get('title')
         if m.get('userId') is not None:
@@ -3268,6 +3286,230 @@ class SolutionTaskSaveResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = SolutionTaskSaveResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SyncTaskTemplateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SyncTaskTemplateRequestTaskScopeVO(TeaModel):
+    def __init__(
+        self,
+        dept_ids: List[int] = None,
+        position_ids: List[str] = None,
+        role_ids: List[str] = None,
+        user_ids: List[str] = None,
+    ):
+        # 按照部门圈人
+        self.dept_ids = dept_ids
+        # 按照职位圈人
+        self.position_ids = position_ids
+        # 按照角色圈人
+        self.role_ids = role_ids
+        # 按照员工userId圈人
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_ids is not None:
+            result['deptIds'] = self.dept_ids
+        if self.position_ids is not None:
+            result['positionIds'] = self.position_ids
+        if self.role_ids is not None:
+            result['roleIds'] = self.role_ids
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptIds') is not None:
+            self.dept_ids = m.get('deptIds')
+        if m.get('positionIds') is not None:
+            self.position_ids = m.get('positionIds')
+        if m.get('roleIds') is not None:
+            self.role_ids = m.get('roleIds')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class SyncTaskTemplateRequest(TeaModel):
+    def __init__(
+        self,
+        des: str = None,
+        ext: str = None,
+        name: str = None,
+        opt_user_id: str = None,
+        outer_id: str = None,
+        task_scope_vo: SyncTaskTemplateRequestTaskScopeVO = None,
+        task_type: str = None,
+        solution_type: str = None,
+    ):
+        # 任务模板描述
+        self.des = des
+        # 扩展信息，json串
+        self.ext = ext
+        # 模版名称
+        self.name = name
+        # 任务模版创建人staffId
+        self.opt_user_id = opt_user_id
+        # isv对应的任务模版唯一键
+        self.outer_id = outer_id
+        # 圈人规则
+        self.task_scope_vo = task_scope_vo
+        # 任务模版类型：TRAIN_TASK、PERFORMANCE_TASK
+        self.task_type = task_type
+        self.solution_type = solution_type
+
+    def validate(self):
+        if self.task_scope_vo:
+            self.task_scope_vo.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.des is not None:
+            result['des'] = self.des
+        if self.ext is not None:
+            result['ext'] = self.ext
+        if self.name is not None:
+            result['name'] = self.name
+        if self.opt_user_id is not None:
+            result['optUserId'] = self.opt_user_id
+        if self.outer_id is not None:
+            result['outerId'] = self.outer_id
+        if self.task_scope_vo is not None:
+            result['taskScopeVO'] = self.task_scope_vo.to_map()
+        if self.task_type is not None:
+            result['taskType'] = self.task_type
+        if self.solution_type is not None:
+            result['solutionType'] = self.solution_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('des') is not None:
+            self.des = m.get('des')
+        if m.get('ext') is not None:
+            self.ext = m.get('ext')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('optUserId') is not None:
+            self.opt_user_id = m.get('optUserId')
+        if m.get('outerId') is not None:
+            self.outer_id = m.get('outerId')
+        if m.get('taskScopeVO') is not None:
+            temp_model = SyncTaskTemplateRequestTaskScopeVO()
+            self.task_scope_vo = temp_model.from_map(m['taskScopeVO'])
+        if m.get('taskType') is not None:
+            self.task_type = m.get('taskType')
+        if m.get('solutionType') is not None:
+            self.solution_type = m.get('solutionType')
+        return self
+
+
+class SyncTaskTemplateResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class SyncTaskTemplateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SyncTaskTemplateResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SyncTaskTemplateResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

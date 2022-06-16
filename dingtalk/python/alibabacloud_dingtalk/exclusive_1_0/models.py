@@ -1847,6 +1847,175 @@ class FileStorageUpdateStorageResponse(TeaModel):
         return self
 
 
+class GenerateDarkWaterMarkHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GenerateDarkWaterMarkRequest(TeaModel):
+    def __init__(
+        self,
+        user_id_list: List[str] = None,
+    ):
+        # 工号列表
+        self.user_id_list = user_id_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id_list is not None:
+            result['userIdList'] = self.user_id_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userIdList') is not None:
+            self.user_id_list = m.get('userIdList')
+        return self
+
+
+class GenerateDarkWaterMarkResponseBodyDarkWatermarkVOList(TeaModel):
+    def __init__(
+        self,
+        dark_watermark: str = None,
+        user_id: str = None,
+    ):
+        # 暗水印链接
+        self.dark_watermark = dark_watermark
+        # 员工工号
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dark_watermark is not None:
+            result['darkWatermark'] = self.dark_watermark
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('darkWatermark') is not None:
+            self.dark_watermark = m.get('darkWatermark')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GenerateDarkWaterMarkResponseBody(TeaModel):
+    def __init__(
+        self,
+        dark_watermark_volist: List[GenerateDarkWaterMarkResponseBodyDarkWatermarkVOList] = None,
+    ):
+        # 返回码
+        self.dark_watermark_volist = dark_watermark_volist
+
+    def validate(self):
+        if self.dark_watermark_volist:
+            for k in self.dark_watermark_volist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['darkWatermarkVOList'] = []
+        if self.dark_watermark_volist is not None:
+            for k in self.dark_watermark_volist:
+                result['darkWatermarkVOList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.dark_watermark_volist = []
+        if m.get('darkWatermarkVOList') is not None:
+            for k in m.get('darkWatermarkVOList'):
+                temp_model = GenerateDarkWaterMarkResponseBodyDarkWatermarkVOList()
+                self.dark_watermark_volist.append(temp_model.from_map(k))
+        return self
+
+
+class GenerateDarkWaterMarkResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GenerateDarkWaterMarkResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GenerateDarkWaterMarkResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetActiveUserSummaryHeaders(TeaModel):
     def __init__(
         self,
@@ -5671,6 +5840,7 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
         mac_address: str = None,
         platform: str = None,
         status: int = None,
+        title: str = None,
         user_id: str = None,
     ):
         # 创建时间
@@ -5681,6 +5851,7 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
         self.platform = platform
         # 设备状态
         self.status = status
+        self.title = title
         # 员工Id
         self.user_id = user_id
 
@@ -5701,6 +5872,8 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
             result['platform'] = self.platform
         if self.status is not None:
             result['status'] = self.status
+        if self.title is not None:
+            result['title'] = self.title
         if self.user_id is not None:
             result['userId'] = self.user_id
         return result
@@ -5715,6 +5888,8 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
             self.platform = m.get('platform')
         if m.get('status') is not None:
             self.status = m.get('status')
+        if m.get('title') is not None:
+            self.title = m.get('title')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
         return self

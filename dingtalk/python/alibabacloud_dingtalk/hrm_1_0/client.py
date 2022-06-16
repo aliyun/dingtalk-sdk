@@ -1004,8 +1004,6 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.solution_type):
             query['solutionType'] = request.solution_type
         body = {}
-        if not UtilClient.is_unset(request.category):
-            body['category'] = request.category
         if not UtilClient.is_unset(request.claim_time):
             body['claimTime'] = request.claim_time
         if not UtilClient.is_unset(request.description):
@@ -1014,8 +1012,16 @@ class Client(OpenApiClient):
             body['finishTime'] = request.finish_time
         if not UtilClient.is_unset(request.outer_id):
             body['outerId'] = request.outer_id
+        if not UtilClient.is_unset(request.solution_instance_id):
+            body['solutionInstanceId'] = request.solution_instance_id
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
         if not UtilClient.is_unset(request.status):
             body['status'] = request.status
+        if not UtilClient.is_unset(request.task_type):
+            body['taskType'] = request.task_type
+        if not UtilClient.is_unset(request.template_outer_id):
+            body['templateOuterId'] = request.template_outer_id
         if not UtilClient.is_unset(request.title):
             body['title'] = request.title
         if not UtilClient.is_unset(request.user_id):
@@ -1046,8 +1052,6 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.solution_type):
             query['solutionType'] = request.solution_type
         body = {}
-        if not UtilClient.is_unset(request.category):
-            body['category'] = request.category
         if not UtilClient.is_unset(request.claim_time):
             body['claimTime'] = request.claim_time
         if not UtilClient.is_unset(request.description):
@@ -1056,8 +1060,16 @@ class Client(OpenApiClient):
             body['finishTime'] = request.finish_time
         if not UtilClient.is_unset(request.outer_id):
             body['outerId'] = request.outer_id
+        if not UtilClient.is_unset(request.solution_instance_id):
+            body['solutionInstanceId'] = request.solution_instance_id
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
         if not UtilClient.is_unset(request.status):
             body['status'] = request.status
+        if not UtilClient.is_unset(request.task_type):
+            body['taskType'] = request.task_type
+        if not UtilClient.is_unset(request.template_outer_id):
+            body['templateOuterId'] = request.template_outer_id
         if not UtilClient.is_unset(request.title):
             body['title'] = request.title
         if not UtilClient.is_unset(request.user_id):
@@ -1075,4 +1087,100 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.SolutionTaskSaveResponse(),
             await self.do_roarequest_async('SolutionTaskSave', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/solutions/tasks/save', 'json', req, runtime)
+        )
+
+    def sync_task_template(
+        self,
+        request: dingtalkhrm__1__0_models.SyncTaskTemplateRequest,
+    ) -> dingtalkhrm__1__0_models.SyncTaskTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.SyncTaskTemplateHeaders()
+        return self.sync_task_template_with_options(request, headers, runtime)
+
+    async def sync_task_template_async(
+        self,
+        request: dingtalkhrm__1__0_models.SyncTaskTemplateRequest,
+    ) -> dingtalkhrm__1__0_models.SyncTaskTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.SyncTaskTemplateHeaders()
+        return await self.sync_task_template_with_options_async(request, headers, runtime)
+
+    def sync_task_template_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.SyncTaskTemplateRequest,
+        headers: dingtalkhrm__1__0_models.SyncTaskTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.SyncTaskTemplateResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.solution_type):
+            query['solutionType'] = request.solution_type
+        body = {}
+        if not UtilClient.is_unset(request.des):
+            body['des'] = request.des
+        if not UtilClient.is_unset(request.ext):
+            body['ext'] = request.ext
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.opt_user_id):
+            body['optUserId'] = request.opt_user_id
+        if not UtilClient.is_unset(request.outer_id):
+            body['outerId'] = request.outer_id
+        if not UtilClient.is_unset(request.task_scope_vo):
+            body['taskScopeVO'] = request.task_scope_vo
+        if not UtilClient.is_unset(request.task_type):
+            body['taskType'] = request.task_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.SyncTaskTemplateResponse(),
+            self.do_roarequest('SyncTaskTemplate', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/solutions/tasks/templates/sync', 'json', req, runtime)
+        )
+
+    async def sync_task_template_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.SyncTaskTemplateRequest,
+        headers: dingtalkhrm__1__0_models.SyncTaskTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.SyncTaskTemplateResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.solution_type):
+            query['solutionType'] = request.solution_type
+        body = {}
+        if not UtilClient.is_unset(request.des):
+            body['des'] = request.des
+        if not UtilClient.is_unset(request.ext):
+            body['ext'] = request.ext
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.opt_user_id):
+            body['optUserId'] = request.opt_user_id
+        if not UtilClient.is_unset(request.outer_id):
+            body['outerId'] = request.outer_id
+        if not UtilClient.is_unset(request.task_scope_vo):
+            body['taskScopeVO'] = request.task_scope_vo
+        if not UtilClient.is_unset(request.task_type):
+            body['taskType'] = request.task_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.SyncTaskTemplateResponse(),
+            await self.do_roarequest_async('SyncTaskTemplate', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/solutions/tasks/templates/sync', 'json', req, runtime)
         )

@@ -941,6 +941,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('FileStorageUpdateStorage', 'exclusive_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/exclusive/fileStorages/configurations', 'json', req, runtime)
         )
 
+    def generate_dark_water_mark(
+        self,
+        request: dingtalkexclusive__1__0_models.GenerateDarkWaterMarkRequest,
+    ) -> dingtalkexclusive__1__0_models.GenerateDarkWaterMarkResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GenerateDarkWaterMarkHeaders()
+        return self.generate_dark_water_mark_with_options(request, headers, runtime)
+
+    async def generate_dark_water_mark_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GenerateDarkWaterMarkRequest,
+    ) -> dingtalkexclusive__1__0_models.GenerateDarkWaterMarkResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GenerateDarkWaterMarkHeaders()
+        return await self.generate_dark_water_mark_with_options_async(request, headers, runtime)
+
+    def generate_dark_water_mark_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GenerateDarkWaterMarkRequest,
+        headers: dingtalkexclusive__1__0_models.GenerateDarkWaterMarkHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GenerateDarkWaterMarkResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GenerateDarkWaterMarkResponse(),
+            self.do_roarequest('GenerateDarkWaterMark', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/enterpriseSecurities/darkWatermarks/generate', 'json', req, runtime)
+        )
+
+    async def generate_dark_water_mark_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GenerateDarkWaterMarkRequest,
+        headers: dingtalkexclusive__1__0_models.GenerateDarkWaterMarkHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GenerateDarkWaterMarkResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GenerateDarkWaterMarkResponse(),
+            await self.do_roarequest_async('GenerateDarkWaterMark', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/enterpriseSecurities/darkWatermarks/generate', 'json', req, runtime)
+        )
+
     def get_active_user_summary(
         self,
         data_id: str,
