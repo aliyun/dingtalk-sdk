@@ -3115,10 +3115,12 @@ export class QueryAllMemberByDeptHeaders extends $tea.Model {
 }
 
 export class QueryAllMemberByDeptRequest extends $tea.Model {
+  monthMark?: string;
   pageNumber?: number;
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
+      monthMark: 'monthMark',
       pageNumber: 'pageNumber',
       pageSize: 'pageSize',
     };
@@ -3126,6 +3128,7 @@ export class QueryAllMemberByDeptRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      monthMark: 'string',
       pageNumber: 'number',
       pageSize: 'number',
     };
@@ -3209,10 +3212,12 @@ export class QueryAllMemberByGroupHeaders extends $tea.Model {
 }
 
 export class QueryAllMemberByGroupRequest extends $tea.Model {
+  monthMark?: string;
   pageNumber?: number;
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
+      monthMark: 'monthMark',
       pageNumber: 'pageNumber',
       pageSize: 'pageSize',
     };
@@ -3220,6 +3225,7 @@ export class QueryAllMemberByGroupRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      monthMark: 'string',
       pageNumber: 'number',
       pageSize: 'number',
     };
@@ -5704,54 +5710,50 @@ export class QueryBizOptLogResponseBodyContent extends $tea.Model {
   }
 }
 
-export class QueryDepartmentInfoResponseBodyContentLeaderJob extends $tea.Model {
-  bizType?: string;
-  category?: string;
-  code?: string;
-  displayName?: string;
-  static names(): { [key: string]: string } {
-    return {
-      bizType: 'bizType',
-      category: 'category',
-      code: 'code',
-      displayName: 'displayName',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      bizType: 'string',
-      category: 'string',
-      code: 'string',
-      displayName: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryDepartmentInfoResponseBodyContentLeader extends $tea.Model {
-  job?: QueryDepartmentInfoResponseBodyContentLeaderJob;
-  jobNumber?: string;
+export class QueryDepartmentInfoResponseBodyContentDepartment extends $tea.Model {
+  deptCode?: string;
+  deptName?: string;
+  deptOrder?: number;
+  deptStatus?: number;
+  deptType?: number;
+  gmtCreateStr?: string;
+  gmtModifiedStr?: string;
+  id?: number;
   name?: string;
-  userId?: string;
+  parentDeptCode?: string;
+  remark?: string;
+  wardIdList?: number[];
   static names(): { [key: string]: string } {
     return {
-      job: 'job',
-      jobNumber: 'jobNumber',
+      deptCode: 'deptCode',
+      deptName: 'deptName',
+      deptOrder: 'deptOrder',
+      deptStatus: 'deptStatus',
+      deptType: 'deptType',
+      gmtCreateStr: 'gmtCreateStr',
+      gmtModifiedStr: 'gmtModifiedStr',
+      id: 'id',
       name: 'name',
-      userId: 'userId',
+      parentDeptCode: 'parentDeptCode',
+      remark: 'remark',
+      wardIdList: 'wardIdList',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      job: QueryDepartmentInfoResponseBodyContentLeaderJob,
-      jobNumber: 'string',
+      deptCode: 'string',
+      deptName: 'string',
+      deptOrder: 'number',
+      deptStatus: 'number',
+      deptType: 'number',
+      gmtCreateStr: 'string',
+      gmtModifiedStr: 'string',
+      id: 'number',
       name: 'string',
-      userId: 'string',
+      parentDeptCode: 'string',
+      remark: 'string',
+      wardIdList: { 'type': 'array', 'itemType': 'number' },
     };
   }
 
@@ -5760,54 +5762,38 @@ export class QueryDepartmentInfoResponseBodyContentLeader extends $tea.Model {
   }
 }
 
-export class QueryDepartmentInfoResponseBodyContentResidentLeaderJob extends $tea.Model {
-  bizType?: string;
-  category?: string;
-  code?: string;
-  displayName?: string;
+export class QueryDepartmentInfoResponseBodyContentExtendInfos extends $tea.Model {
+  deptCode?: string;
+  deptExtendDisplayName?: string;
+  deptExtendKey?: string;
+  deptExtendValue?: string;
+  gmtCreateStr?: string;
+  gmtModifiedStr?: string;
+  id?: number;
+  status?: number;
   static names(): { [key: string]: string } {
     return {
-      bizType: 'bizType',
-      category: 'category',
-      code: 'code',
-      displayName: 'displayName',
+      deptCode: 'deptCode',
+      deptExtendDisplayName: 'deptExtendDisplayName',
+      deptExtendKey: 'deptExtendKey',
+      deptExtendValue: 'deptExtendValue',
+      gmtCreateStr: 'gmtCreateStr',
+      gmtModifiedStr: 'gmtModifiedStr',
+      id: 'id',
+      status: 'status',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      bizType: 'string',
-      category: 'string',
-      code: 'string',
-      displayName: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryDepartmentInfoResponseBodyContentResidentLeader extends $tea.Model {
-  job?: QueryDepartmentInfoResponseBodyContentResidentLeaderJob;
-  jobNumber?: string;
-  name?: string;
-  userId?: string;
-  static names(): { [key: string]: string } {
-    return {
-      job: 'job',
-      jobNumber: 'jobNumber',
-      name: 'name',
-      userId: 'userId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      job: QueryDepartmentInfoResponseBodyContentResidentLeaderJob,
-      jobNumber: 'string',
-      name: 'string',
-      userId: 'string',
+      deptCode: 'string',
+      deptExtendDisplayName: 'string',
+      deptExtendKey: 'string',
+      deptExtendValue: 'string',
+      gmtCreateStr: 'string',
+      gmtModifiedStr: 'string',
+      id: 'number',
+      status: 'number',
     };
   }
 
@@ -5817,25 +5803,59 @@ export class QueryDepartmentInfoResponseBodyContentResidentLeader extends $tea.M
 }
 
 export class QueryDepartmentInfoResponseBodyContent extends $tea.Model {
+  department?: QueryDepartmentInfoResponseBodyContentDepartment;
+  extendInfos?: QueryDepartmentInfoResponseBodyContentExtendInfos[];
+  static names(): { [key: string]: string } {
+    return {
+      department: 'department',
+      extendInfos: 'extendInfos',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      department: QueryDepartmentInfoResponseBodyContentDepartment,
+      extendInfos: { 'type': 'array', 'itemType': QueryDepartmentInfoResponseBodyContentExtendInfos },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGroupInfoResponseBodyContentExtendInfos extends $tea.Model {
+  deptCode?: string;
+  deptExtendDisplayName?: string;
+  deptExtendKey?: string;
+  deptExtendValue?: string;
+  gmtCreateStr?: string;
+  gmtModifiedStr?: string;
   id?: number;
-  leader?: QueryDepartmentInfoResponseBodyContentLeader;
-  name?: string;
-  residentLeader?: QueryDepartmentInfoResponseBodyContentResidentLeader;
+  status?: number;
   static names(): { [key: string]: string } {
     return {
+      deptCode: 'deptCode',
+      deptExtendDisplayName: 'deptExtendDisplayName',
+      deptExtendKey: 'deptExtendKey',
+      deptExtendValue: 'deptExtendValue',
+      gmtCreateStr: 'gmtCreateStr',
+      gmtModifiedStr: 'gmtModifiedStr',
       id: 'id',
-      leader: 'leader',
-      name: 'name',
-      residentLeader: 'residentLeader',
+      status: 'status',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      deptCode: 'string',
+      deptExtendDisplayName: 'string',
+      deptExtendKey: 'string',
+      deptExtendValue: 'string',
+      gmtCreateStr: 'string',
+      gmtModifiedStr: 'string',
       id: 'number',
-      leader: QueryDepartmentInfoResponseBodyContentLeader,
-      name: 'string',
-      residentLeader: QueryDepartmentInfoResponseBodyContentResidentLeader,
+      status: 'number',
     };
   }
 
@@ -5844,42 +5864,12 @@ export class QueryDepartmentInfoResponseBodyContent extends $tea.Model {
   }
 }
 
-export class QueryGroupInfoResponseBodyContentLeaderJob extends $tea.Model {
-  bizType?: string;
-  category?: string;
-  code?: string;
-  displayName?: string;
-  static names(): { [key: string]: string } {
-    return {
-      bizType: 'bizType',
-      category: 'category',
-      code: 'code',
-      displayName: 'displayName',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      bizType: 'string',
-      category: 'string',
-      code: 'string',
-      displayName: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryGroupInfoResponseBodyContentLeader extends $tea.Model {
-  job?: QueryGroupInfoResponseBodyContentLeaderJob;
+export class QueryGroupInfoResponseBodyContentGroupLeader extends $tea.Model {
   jobNumber?: string;
   name?: string;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
-      job: 'job',
       jobNumber: 'jobNumber',
       name: 'name',
       userId: 'userId',
@@ -5888,7 +5878,6 @@ export class QueryGroupInfoResponseBodyContentLeader extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      job: QueryGroupInfoResponseBodyContentLeaderJob,
       jobNumber: 'string',
       name: 'string',
       userId: 'string',
@@ -5900,32 +5889,63 @@ export class QueryGroupInfoResponseBodyContentLeader extends $tea.Model {
   }
 }
 
-export class QueryGroupInfoResponseBodyContent extends $tea.Model {
+export class QueryGroupInfoResponseBodyContentGroup extends $tea.Model {
   deptId?: number;
-  endTime?: number;
+  deptStatus?: number;
+  gmtCreateStr?: string;
+  gmtModifiedStr?: string;
   id?: number;
-  leader?: QueryGroupInfoResponseBodyContentLeader;
+  leader?: QueryGroupInfoResponseBodyContentGroupLeader;
   name?: string;
-  startTime?: number;
+  parentDeptCode?: string;
+  remark?: string;
   static names(): { [key: string]: string } {
     return {
       deptId: 'deptId',
-      endTime: 'endTime',
+      deptStatus: 'deptStatus',
+      gmtCreateStr: 'gmtCreateStr',
+      gmtModifiedStr: 'gmtModifiedStr',
       id: 'id',
       leader: 'leader',
       name: 'name',
-      startTime: 'startTime',
+      parentDeptCode: 'parentDeptCode',
+      remark: 'remark',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       deptId: 'number',
-      endTime: 'number',
+      deptStatus: 'number',
+      gmtCreateStr: 'string',
+      gmtModifiedStr: 'string',
       id: 'number',
-      leader: QueryGroupInfoResponseBodyContentLeader,
+      leader: QueryGroupInfoResponseBodyContentGroupLeader,
       name: 'string',
-      startTime: 'number',
+      parentDeptCode: 'string',
+      remark: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGroupInfoResponseBodyContent extends $tea.Model {
+  extendInfos?: QueryGroupInfoResponseBodyContentExtendInfos[];
+  group?: QueryGroupInfoResponseBodyContentGroup;
+  static names(): { [key: string]: string } {
+    return {
+      extendInfos: 'extendInfos',
+      group: 'group',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      extendInfos: { 'type': 'array', 'itemType': QueryGroupInfoResponseBodyContentExtendInfos },
+      group: QueryGroupInfoResponseBodyContentGroup,
     };
   }
 
@@ -7927,6 +7947,10 @@ export default class Client extends OpenApi {
     Util.validateModel(request);
     deptId = OpenApiUtil.getEncodeParam(deptId);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.monthMark)) {
+      query["monthMark"] = request.monthMark;
+    }
+
     if (!Util.isUnset(request.pageNumber)) {
       query["pageNumber"] = request.pageNumber;
     }
@@ -7961,6 +7985,10 @@ export default class Client extends OpenApi {
     Util.validateModel(request);
     groupId = OpenApiUtil.getEncodeParam(groupId);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.monthMark)) {
+      query["monthMark"] = request.monthMark;
+    }
+
     if (!Util.isUnset(request.pageNumber)) {
       query["pageNumber"] = request.pageNumber;
     }

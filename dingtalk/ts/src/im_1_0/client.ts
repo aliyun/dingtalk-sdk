@@ -7,6 +7,69 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class AutoOpenDingTalkConnectHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AutoOpenDingTalkConnectResponseBody extends $tea.Model {
+  message?: string;
+  static names(): { [key: string]: string } {
+    return {
+      message: 'message',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      message: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AutoOpenDingTalkConnectResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AutoOpenDingTalkConnectResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AutoOpenDingTalkConnectResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchQueryGroupMemberHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3900,6 +3963,28 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async autoOpenDingTalkConnect(): Promise<AutoOpenDingTalkConnectResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AutoOpenDingTalkConnectHeaders({ });
+    return await this.autoOpenDingTalkConnectWithOptions(headers, runtime);
+  }
+
+  async autoOpenDingTalkConnectWithOptions(headers: AutoOpenDingTalkConnectHeaders, runtime: $Util.RuntimeOptions): Promise<AutoOpenDingTalkConnectResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<AutoOpenDingTalkConnectResponse>(await this.doROARequest("AutoOpenDingTalkConnect", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/apps/open`, "json", req, runtime), new AutoOpenDingTalkConnectResponse({}));
+  }
 
   async batchQueryGroupMember(request: BatchQueryGroupMemberRequest): Promise<BatchQueryGroupMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
