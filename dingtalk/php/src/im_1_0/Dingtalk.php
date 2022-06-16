@@ -8,6 +8,8 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddGroupMemberHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddGroupMemberRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddGroupMemberResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AutoOpenDingTalkConnectHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AutoOpenDingTalkConnectResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\BatchQueryGroupMemberHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\BatchQueryGroupMemberRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\BatchQueryGroupMemberResponse;
@@ -129,6 +131,39 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @return AutoOpenDingTalkConnectResponse
+     */
+    public function autoOpenDingTalkConnect()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AutoOpenDingTalkConnectHeaders([]);
+
+        return $this->autoOpenDingTalkConnectWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param AutoOpenDingTalkConnectHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return AutoOpenDingTalkConnectResponse
+     */
+    public function autoOpenDingTalkConnectWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return AutoOpenDingTalkConnectResponse::fromMap($this->doROARequest('AutoOpenDingTalkConnect', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interconnections/apps/open', 'json', $req, $runtime));
     }
 
     /**

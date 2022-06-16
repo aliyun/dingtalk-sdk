@@ -4,44 +4,28 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentInfoResponseBody;
 
-use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentInfoResponseBody\content\leader;
-use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentInfoResponseBody\content\residentLeader;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentInfoResponseBody\content\department;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentInfoResponseBody\content\extendInfos;
 use AlibabaCloud\Tea\Model;
 
 class content extends Model
 {
     /**
-     * @description 科室Id
+     * @description 科室列表
      *
-     * @var int
+     * @var department
      */
-    public $id;
+    public $department;
 
     /**
-     * @description 科室主任
+     * @description 科室扩展属性值
      *
-     * @var leader
+     * @var extendInfos[]
      */
-    public $leader;
-
-    /**
-     * @description 科室名称
-     *
-     * @var string
-     */
-    public $name;
-
-    /**
-     * @description 住院总医师
-     *
-     * @var residentLeader
-     */
-    public $residentLeader;
+    public $extendInfos;
     protected $_name = [
-        'id'             => 'id',
-        'leader'         => 'leader',
-        'name'           => 'name',
-        'residentLeader' => 'residentLeader',
+        'department'  => 'department',
+        'extendInfos' => 'extendInfos',
     ];
 
     public function validate()
@@ -51,17 +35,17 @@ class content extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->id) {
-            $res['id'] = $this->id;
+        if (null !== $this->department) {
+            $res['department'] = null !== $this->department ? $this->department->toMap() : null;
         }
-        if (null !== $this->leader) {
-            $res['leader'] = null !== $this->leader ? $this->leader->toMap() : null;
-        }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
-        if (null !== $this->residentLeader) {
-            $res['residentLeader'] = null !== $this->residentLeader ? $this->residentLeader->toMap() : null;
+        if (null !== $this->extendInfos) {
+            $res['extendInfos'] = [];
+            if (null !== $this->extendInfos && \is_array($this->extendInfos)) {
+                $n = 0;
+                foreach ($this->extendInfos as $item) {
+                    $res['extendInfos'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
 
         return $res;
@@ -75,17 +59,17 @@ class content extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['id'])) {
-            $model->id = $map['id'];
+        if (isset($map['department'])) {
+            $model->department = department::fromMap($map['department']);
         }
-        if (isset($map['leader'])) {
-            $model->leader = leader::fromMap($map['leader']);
-        }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
-        if (isset($map['residentLeader'])) {
-            $model->residentLeader = residentLeader::fromMap($map['residentLeader']);
+        if (isset($map['extendInfos'])) {
+            if (!empty($map['extendInfos'])) {
+                $model->extendInfos = [];
+                $n                  = 0;
+                foreach ($map['extendInfos'] as $item) {
+                    $model->extendInfos[$n++] = null !== $item ? extendInfos::fromMap($item) : $item;
+                }
+            }
         }
 
         return $model;

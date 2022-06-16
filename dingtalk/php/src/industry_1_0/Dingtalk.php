@@ -1876,6 +1876,9 @@ class Dingtalk extends OpenApiClient
         Utils::validateModel($request);
         $deptId = OpenApiUtilClient::getEncodeParam($deptId);
         $query  = [];
+        if (!Utils::isUnset($request->monthMark)) {
+            @$query['monthMark'] = $request->monthMark;
+        }
         if (!Utils::isUnset($request->pageNumber)) {
             @$query['pageNumber'] = $request->pageNumber;
         }
@@ -1924,6 +1927,9 @@ class Dingtalk extends OpenApiClient
         Utils::validateModel($request);
         $groupId = OpenApiUtilClient::getEncodeParam($groupId);
         $query   = [];
+        if (!Utils::isUnset($request->monthMark)) {
+            @$query['monthMark'] = $request->monthMark;
+        }
         if (!Utils::isUnset($request->pageNumber)) {
             @$query['pageNumber'] = $request->pageNumber;
         }

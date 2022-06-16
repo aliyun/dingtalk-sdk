@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class QueryAllMemberByDeptRequest extends Model
 {
     /**
+     * @description 按月查询标识
+     *
+     * @var string
+     */
+    public $monthMark;
+
+    /**
      * @description 分页查询页码
      *
      * @var int
@@ -22,6 +29,7 @@ class QueryAllMemberByDeptRequest extends Model
      */
     public $pageSize;
     protected $_name = [
+        'monthMark'  => 'monthMark',
         'pageNumber' => 'pageNumber',
         'pageSize'   => 'pageSize',
     ];
@@ -33,6 +41,9 @@ class QueryAllMemberByDeptRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->monthMark) {
+            $res['monthMark'] = $this->monthMark;
+        }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
         }
@@ -51,6 +62,9 @@ class QueryAllMemberByDeptRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['monthMark'])) {
+            $model->monthMark = $map['monthMark'];
+        }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];
         }

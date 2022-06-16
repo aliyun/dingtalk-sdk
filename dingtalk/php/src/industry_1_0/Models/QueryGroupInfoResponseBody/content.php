@@ -4,59 +4,28 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryGroupInfoResponseBody;
 
-use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryGroupInfoResponseBody\content\leader;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryGroupInfoResponseBody\content\extendInfos;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryGroupInfoResponseBody\content\group;
 use AlibabaCloud\Tea\Model;
 
 class content extends Model
 {
     /**
-     * @description 科室Id
+     * @description 扩展信息
      *
-     * @var int
+     * @var extendInfos[]
      */
-    public $deptId;
+    public $extendInfos;
 
     /**
-     * @description 有效期结束时间
+     * @description 医疗组
      *
-     * @var int
+     * @var group
      */
-    public $endTime;
-
-    /**
-     * @description 医疗组Id
-     *
-     * @var int
-     */
-    public $id;
-
-    /**
-     * @description 医疗组组长
-     *
-     * @var leader
-     */
-    public $leader;
-
-    /**
-     * @description 医疗组名称
-     *
-     * @var string
-     */
-    public $name;
-
-    /**
-     * @description 有效期开始时间
-     *
-     * @var int
-     */
-    public $startTime;
+    public $group;
     protected $_name = [
-        'deptId'    => 'deptId',
-        'endTime'   => 'endTime',
-        'id'        => 'id',
-        'leader'    => 'leader',
-        'name'      => 'name',
-        'startTime' => 'startTime',
+        'extendInfos' => 'extendInfos',
+        'group'       => 'group',
     ];
 
     public function validate()
@@ -66,23 +35,17 @@ class content extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->deptId) {
-            $res['deptId'] = $this->deptId;
+        if (null !== $this->extendInfos) {
+            $res['extendInfos'] = [];
+            if (null !== $this->extendInfos && \is_array($this->extendInfos)) {
+                $n = 0;
+                foreach ($this->extendInfos as $item) {
+                    $res['extendInfos'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
-        if (null !== $this->endTime) {
-            $res['endTime'] = $this->endTime;
-        }
-        if (null !== $this->id) {
-            $res['id'] = $this->id;
-        }
-        if (null !== $this->leader) {
-            $res['leader'] = null !== $this->leader ? $this->leader->toMap() : null;
-        }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
-        if (null !== $this->startTime) {
-            $res['startTime'] = $this->startTime;
+        if (null !== $this->group) {
+            $res['group'] = null !== $this->group ? $this->group->toMap() : null;
         }
 
         return $res;
@@ -96,23 +59,17 @@ class content extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['deptId'])) {
-            $model->deptId = $map['deptId'];
+        if (isset($map['extendInfos'])) {
+            if (!empty($map['extendInfos'])) {
+                $model->extendInfos = [];
+                $n                  = 0;
+                foreach ($map['extendInfos'] as $item) {
+                    $model->extendInfos[$n++] = null !== $item ? extendInfos::fromMap($item) : $item;
+                }
+            }
         }
-        if (isset($map['endTime'])) {
-            $model->endTime = $map['endTime'];
-        }
-        if (isset($map['id'])) {
-            $model->id = $map['id'];
-        }
-        if (isset($map['leader'])) {
-            $model->leader = leader::fromMap($map['leader']);
-        }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
-        if (isset($map['startTime'])) {
-            $model->startTime = $map['startTime'];
+        if (isset($map['group'])) {
+            $model->group = group::fromMap($map['group']);
         }
 
         return $model;
