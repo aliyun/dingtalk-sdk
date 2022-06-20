@@ -10,7 +10,7 @@ use AlibabaCloud\Tea\Model;
 class RegisterDeviceRequest extends Model
 {
     /**
-     * @description 钉钉组织id
+     * @description 钉钉物联组织ID, 第三方平台必填，企业内部系统忽略
      *
      * @var string
      */

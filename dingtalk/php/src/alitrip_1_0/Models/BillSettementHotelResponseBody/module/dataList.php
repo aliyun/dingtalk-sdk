@@ -275,6 +275,13 @@ class dataList extends Model
     public $promotionFee;
 
     /**
+     * @description 备注
+     *
+     * @var string
+     */
+    public $remark;
+
+    /**
      * @description 房间数
      *
      * @var int
@@ -308,6 +315,13 @@ class dataList extends Model
      * @var float
      */
     public $settlementFee;
+
+    /**
+     * @description 预存赠送金额消费
+     *
+     * @var float
+     */
+    public $settlementGrantFee;
 
     /**
      * @description 结算时间
@@ -365,57 +379,59 @@ class dataList extends Model
      */
     public $voucherType;
     protected $_name = [
-        'alipayTradeNo'     => 'alipayTradeNo',
-        'applyId'           => 'applyId',
-        'billRecordTime'    => 'billRecordTime',
-        'bookTime'          => 'bookTime',
-        'bookerId'          => 'bookerId',
-        'bookerJobNo'       => 'bookerJobNo',
-        'bookerName'        => 'bookerName',
-        'capitalDirection'  => 'capitalDirection',
-        'cascadeDepartment' => 'cascadeDepartment',
-        'checkInDate'       => 'checkInDate',
-        'checkoutDate'      => 'checkoutDate',
-        'city'              => 'city',
-        'cityCode'          => 'cityCode',
-        'corpRefundFee'     => 'corpRefundFee',
-        'corpTotalFee'      => 'corpTotalFee',
-        'costCenter'        => 'costCenter',
-        'costCenterNumber'  => 'costCenterNumber',
-        'department'        => 'department',
-        'departmentId'      => 'departmentId',
-        'feeType'           => 'feeType',
-        'fees'              => 'fees',
-        'fuPointFee'        => 'fuPointFee',
-        'hotelName'         => 'hotelName',
-        'index'             => 'index',
-        'invoiceTitle'      => 'invoiceTitle',
-        'isNegotiation'     => 'isNegotiation',
-        'isShareStr'        => 'isShareStr',
-        'nights'            => 'nights',
-        'orderId'           => 'orderId',
-        'orderPrice'        => 'orderPrice',
-        'orderType'         => 'orderType',
-        'overApplyId'       => 'overApplyId',
-        'personRefundFee'   => 'personRefundFee',
-        'personSettlePrice' => 'personSettlePrice',
-        'primaryId'         => 'primaryId',
-        'projectCode'       => 'projectCode',
-        'projectName'       => 'projectName',
-        'promotionFee'      => 'promotionFee',
-        'roomNumber'        => 'roomNumber',
-        'roomPrice'         => 'roomPrice',
-        'roomType'          => 'roomType',
-        'serviceFee'        => 'serviceFee',
-        'settlementFee'     => 'settlementFee',
-        'settlementTime'    => 'settlementTime',
-        'settlementType'    => 'settlementType',
-        'status'            => 'status',
-        'totalNights'       => 'totalNights',
-        'travelerId'        => 'travelerId',
-        'travelerJobNo'     => 'travelerJobNo',
-        'travelerName'      => 'travelerName',
-        'voucherType'       => 'voucherType',
+        'alipayTradeNo'      => 'alipayTradeNo',
+        'applyId'            => 'applyId',
+        'billRecordTime'     => 'billRecordTime',
+        'bookTime'           => 'bookTime',
+        'bookerId'           => 'bookerId',
+        'bookerJobNo'        => 'bookerJobNo',
+        'bookerName'         => 'bookerName',
+        'capitalDirection'   => 'capitalDirection',
+        'cascadeDepartment'  => 'cascadeDepartment',
+        'checkInDate'        => 'checkInDate',
+        'checkoutDate'       => 'checkoutDate',
+        'city'               => 'city',
+        'cityCode'           => 'cityCode',
+        'corpRefundFee'      => 'corpRefundFee',
+        'corpTotalFee'       => 'corpTotalFee',
+        'costCenter'         => 'costCenter',
+        'costCenterNumber'   => 'costCenterNumber',
+        'department'         => 'department',
+        'departmentId'       => 'departmentId',
+        'feeType'            => 'feeType',
+        'fees'               => 'fees',
+        'fuPointFee'         => 'fuPointFee',
+        'hotelName'          => 'hotelName',
+        'index'              => 'index',
+        'invoiceTitle'       => 'invoiceTitle',
+        'isNegotiation'      => 'isNegotiation',
+        'isShareStr'         => 'isShareStr',
+        'nights'             => 'nights',
+        'orderId'            => 'orderId',
+        'orderPrice'         => 'orderPrice',
+        'orderType'          => 'orderType',
+        'overApplyId'        => 'overApplyId',
+        'personRefundFee'    => 'personRefundFee',
+        'personSettlePrice'  => 'personSettlePrice',
+        'primaryId'          => 'primaryId',
+        'projectCode'        => 'projectCode',
+        'projectName'        => 'projectName',
+        'promotionFee'       => 'promotionFee',
+        'remark'             => 'remark',
+        'roomNumber'         => 'roomNumber',
+        'roomPrice'          => 'roomPrice',
+        'roomType'           => 'roomType',
+        'serviceFee'         => 'serviceFee',
+        'settlementFee'      => 'settlementFee',
+        'settlementGrantFee' => 'settlementGrantFee',
+        'settlementTime'     => 'settlementTime',
+        'settlementType'     => 'settlementType',
+        'status'             => 'status',
+        'totalNights'        => 'totalNights',
+        'travelerId'         => 'travelerId',
+        'travelerJobNo'      => 'travelerJobNo',
+        'travelerName'       => 'travelerName',
+        'voucherType'        => 'voucherType',
     ];
 
     public function validate()
@@ -539,6 +555,9 @@ class dataList extends Model
         if (null !== $this->promotionFee) {
             $res['promotionFee'] = $this->promotionFee;
         }
+        if (null !== $this->remark) {
+            $res['remark'] = $this->remark;
+        }
         if (null !== $this->roomNumber) {
             $res['roomNumber'] = $this->roomNumber;
         }
@@ -553,6 +572,9 @@ class dataList extends Model
         }
         if (null !== $this->settlementFee) {
             $res['settlementFee'] = $this->settlementFee;
+        }
+        if (null !== $this->settlementGrantFee) {
+            $res['settlementGrantFee'] = $this->settlementGrantFee;
         }
         if (null !== $this->settlementTime) {
             $res['settlementTime'] = $this->settlementTime;
@@ -704,6 +726,9 @@ class dataList extends Model
         if (isset($map['promotionFee'])) {
             $model->promotionFee = $map['promotionFee'];
         }
+        if (isset($map['remark'])) {
+            $model->remark = $map['remark'];
+        }
         if (isset($map['roomNumber'])) {
             $model->roomNumber = $map['roomNumber'];
         }
@@ -718,6 +743,9 @@ class dataList extends Model
         }
         if (isset($map['settlementFee'])) {
             $model->settlementFee = $map['settlementFee'];
+        }
+        if (isset($map['settlementGrantFee'])) {
+            $model->settlementGrantFee = $map['settlementGrantFee'];
         }
         if (isset($map['settlementTime'])) {
             $model->settlementTime = $map['settlementTime'];

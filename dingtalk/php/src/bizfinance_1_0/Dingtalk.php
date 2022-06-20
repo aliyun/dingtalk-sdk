@@ -40,6 +40,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryCustomerByPageResponse
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryEnterpriseAccountByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryEnterpriseAccountByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryEnterpriseAccountByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryPermissionByUserIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryPermissionByUserIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryPermissionByUserIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryProjectByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryProjectByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryProjectByPageResponse;
@@ -576,6 +579,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryEnterpriseAccountByPageResponse::fromMap($this->doROARequest('QueryEnterpriseAccountByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/bizfinance/financeAccounts/list', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryPermissionByUserIdRequest $request
+     *
+     * @return QueryPermissionByUserIdResponse
+     */
+    public function queryPermissionByUserId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryPermissionByUserIdHeaders([]);
+
+        return $this->queryPermissionByUserIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryPermissionByUserIdRequest $request
+     * @param QueryPermissionByUserIdHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return QueryPermissionByUserIdResponse
+     */
+    public function queryPermissionByUserIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryPermissionByUserIdResponse::fromMap($this->doROARequest('QueryPermissionByUserId', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/bizfinance/permissions', 'json', $req, $runtime));
     }
 
     /**

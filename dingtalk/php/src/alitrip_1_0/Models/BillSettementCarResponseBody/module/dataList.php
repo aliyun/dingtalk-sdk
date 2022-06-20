@@ -301,6 +301,13 @@ class dataList extends Model
     public $realToAddr;
 
     /**
+     * @description 备注
+     *
+     * @var string
+     */
+    public $remark;
+
+    /**
      * @description 服务费，仅在feeType 40111 中展示
      *
      * @var string
@@ -313,6 +320,13 @@ class dataList extends Model
      * @var float
      */
     public $settlementFee;
+
+    /**
+     * @description 预存赠送金额消费
+     *
+     * @var float
+     */
+    public $settlementGrantFee;
 
     /**
      * @description 结算时间
@@ -433,8 +447,10 @@ class dataList extends Model
         'realDriveDistance'     => 'realDriveDistance',
         'realFromAddr'          => 'realFromAddr',
         'realToAddr'            => 'realToAddr',
+        'remark'                => 'remark',
         'serviceFee'            => 'serviceFee',
         'settlementFee'         => 'settlementFee',
+        'settlementGrantFee'    => 'settlementGrantFee',
         'settlementTime'        => 'settlementTime',
         'settlementType'        => 'settlementType',
         'specialOrder'          => 'specialOrder',
@@ -581,11 +597,17 @@ class dataList extends Model
         if (null !== $this->realToAddr) {
             $res['realToAddr'] = $this->realToAddr;
         }
+        if (null !== $this->remark) {
+            $res['remark'] = $this->remark;
+        }
         if (null !== $this->serviceFee) {
             $res['serviceFee'] = $this->serviceFee;
         }
         if (null !== $this->settlementFee) {
             $res['settlementFee'] = $this->settlementFee;
+        }
+        if (null !== $this->settlementGrantFee) {
+            $res['settlementGrantFee'] = $this->settlementGrantFee;
         }
         if (null !== $this->settlementTime) {
             $res['settlementTime'] = $this->settlementTime;
@@ -758,11 +780,17 @@ class dataList extends Model
         if (isset($map['realToAddr'])) {
             $model->realToAddr = $map['realToAddr'];
         }
+        if (isset($map['remark'])) {
+            $model->remark = $map['remark'];
+        }
         if (isset($map['serviceFee'])) {
             $model->serviceFee = $map['serviceFee'];
         }
         if (isset($map['settlementFee'])) {
             $model->settlementFee = $map['settlementFee'];
+        }
+        if (isset($map['settlementGrantFee'])) {
+            $model->settlementGrantFee = $map['settlementGrantFee'];
         }
         if (isset($map['settlementTime'])) {
             $model->settlementTime = $map['settlementTime'];

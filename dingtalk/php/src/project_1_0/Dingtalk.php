@@ -64,29 +64,32 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string                        $userId
      * @param CreateOrganizationTaskRequest $request
      *
      * @return CreateOrganizationTaskResponse
      */
-    public function createOrganizationTask($request)
+    public function createOrganizationTask($userId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new CreateOrganizationTaskHeaders([]);
 
-        return $this->createOrganizationTaskWithOptions($request, $headers, $runtime);
+        return $this->createOrganizationTaskWithOptions($userId, $request, $headers, $runtime);
     }
 
     /**
+     * @param string                        $userId
      * @param CreateOrganizationTaskRequest $request
      * @param CreateOrganizationTaskHeaders $headers
      * @param RuntimeOptions                $runtime
      *
      * @return CreateOrganizationTaskResponse
      */
-    public function createOrganizationTaskWithOptions($request, $headers, $runtime)
+    public function createOrganizationTaskWithOptions($userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $body   = [];
         if (!Utils::isUnset($request->content)) {
             @$body['content'] = $request->content;
         }
@@ -135,7 +138,7 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return CreateOrganizationTaskResponse::fromMap($this->doROARequest('CreateOrganizationTask', 'project_1.0', 'HTTP', 'POST', 'AK', '/v1.0/project/organizations/tasks', 'json', $req, $runtime));
+        return CreateOrganizationTaskResponse::fromMap($this->doROARequest('CreateOrganizationTask', 'project_1.0', 'HTTP', 'POST', 'AK', '/v1.0/project/organizations/users/' . $userId . '/tasks', 'json', $req, $runtime));
     }
 
     /**
@@ -244,29 +247,32 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string                         $userId
      * @param GetOrganizatioTaskByIdsRequest $request
      *
      * @return GetOrganizatioTaskByIdsResponse
      */
-    public function getOrganizatioTaskByIds($request)
+    public function getOrganizatioTaskByIds($userId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new GetOrganizatioTaskByIdsHeaders([]);
 
-        return $this->getOrganizatioTaskByIdsWithOptions($request, $headers, $runtime);
+        return $this->getOrganizatioTaskByIdsWithOptions($userId, $request, $headers, $runtime);
     }
 
     /**
+     * @param string                         $userId
      * @param GetOrganizatioTaskByIdsRequest $request
      * @param GetOrganizatioTaskByIdsHeaders $headers
      * @param RuntimeOptions                 $runtime
      *
      * @return GetOrganizatioTaskByIdsResponse
      */
-    public function getOrganizatioTaskByIdsWithOptions($request, $headers, $runtime)
+    public function getOrganizatioTaskByIdsWithOptions($userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $query  = [];
         if (!Utils::isUnset($request->taskIds)) {
             @$query['taskIds'] = $request->taskIds;
         }
@@ -282,28 +288,32 @@ class Dingtalk extends OpenApiClient
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return GetOrganizatioTaskByIdsResponse::fromMap($this->doROARequest('GetOrganizatioTaskByIds', 'project_1.0', 'HTTP', 'GET', 'AK', '/v1.0/project/organizations/tasks', 'json', $req, $runtime));
+        return GetOrganizatioTaskByIdsResponse::fromMap($this->doROARequest('GetOrganizatioTaskByIds', 'project_1.0', 'HTTP', 'GET', 'AK', '/v1.0/project/organizations/users/' . $userId . '/tasks', 'json', $req, $runtime));
     }
 
     /**
+     * @param string $userId
+     *
      * @return GetOrganizationPriorityListResponse
      */
-    public function getOrganizationPriorityList()
+    public function getOrganizationPriorityList($userId)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new GetOrganizationPriorityListHeaders([]);
 
-        return $this->getOrganizationPriorityListWithOptions($headers, $runtime);
+        return $this->getOrganizationPriorityListWithOptions($userId, $headers, $runtime);
     }
 
     /**
+     * @param string                             $userId
      * @param GetOrganizationPriorityListHeaders $headers
      * @param RuntimeOptions                     $runtime
      *
      * @return GetOrganizationPriorityListResponse
      */
-    public function getOrganizationPriorityListWithOptions($headers, $runtime)
+    public function getOrganizationPriorityListWithOptions($userId, $headers, $runtime)
     {
+        $userId      = OpenApiUtilClient::getEncodeParam($userId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -315,32 +325,35 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
 
-        return GetOrganizationPriorityListResponse::fromMap($this->doROARequest('GetOrganizationPriorityList', 'project_1.0', 'HTTP', 'GET', 'AK', '/v1.0/project/organizations/priorities', 'json', $req, $runtime));
+        return GetOrganizationPriorityListResponse::fromMap($this->doROARequest('GetOrganizationPriorityList', 'project_1.0', 'HTTP', 'GET', 'AK', '/v1.0/project/organizations/users/' . $userId . '/priorities', 'json', $req, $runtime));
     }
 
     /**
      * @param string $taskId
+     * @param string $userId
      *
      * @return GetOrganizationTaskResponse
      */
-    public function getOrganizationTask($taskId)
+    public function getOrganizationTask($taskId, $userId)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new GetOrganizationTaskHeaders([]);
 
-        return $this->getOrganizationTaskWithOptions($taskId, $headers, $runtime);
+        return $this->getOrganizationTaskWithOptions($taskId, $userId, $headers, $runtime);
     }
 
     /**
      * @param string                     $taskId
+     * @param string                     $userId
      * @param GetOrganizationTaskHeaders $headers
      * @param RuntimeOptions             $runtime
      *
      * @return GetOrganizationTaskResponse
      */
-    public function getOrganizationTaskWithOptions($taskId, $headers, $runtime)
+    public function getOrganizationTaskWithOptions($taskId, $userId, $headers, $runtime)
     {
         $taskId      = OpenApiUtilClient::getEncodeParam($taskId);
+        $userId      = OpenApiUtilClient::getEncodeParam($userId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -352,7 +365,7 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
 
-        return GetOrganizationTaskResponse::fromMap($this->doROARequest('GetOrganizationTask', 'project_1.0', 'HTTP', 'GET', 'AK', '/v1.0/project/organizations/tasks/' . $taskId . '', 'json', $req, $runtime));
+        return GetOrganizationTaskResponse::fromMap($this->doROARequest('GetOrganizationTask', 'project_1.0', 'HTTP', 'GET', 'AK', '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '', 'json', $req, $runtime));
     }
 
     /**
@@ -462,30 +475,33 @@ class Dingtalk extends OpenApiClient
 
     /**
      * @param string                               $taskId
+     * @param string                               $userId
      * @param UpdateOrganizationTaskContentRequest $request
      *
      * @return UpdateOrganizationTaskContentResponse
      */
-    public function updateOrganizationTaskContent($taskId, $request)
+    public function updateOrganizationTaskContent($taskId, $userId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new UpdateOrganizationTaskContentHeaders([]);
 
-        return $this->updateOrganizationTaskContentWithOptions($taskId, $request, $headers, $runtime);
+        return $this->updateOrganizationTaskContentWithOptions($taskId, $userId, $request, $headers, $runtime);
     }
 
     /**
      * @param string                               $taskId
+     * @param string                               $userId
      * @param UpdateOrganizationTaskContentRequest $request
      * @param UpdateOrganizationTaskContentHeaders $headers
      * @param RuntimeOptions                       $runtime
      *
      * @return UpdateOrganizationTaskContentResponse
      */
-    public function updateOrganizationTaskContentWithOptions($taskId, $request, $headers, $runtime)
+    public function updateOrganizationTaskContentWithOptions($taskId, $userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $taskId = OpenApiUtilClient::getEncodeParam($taskId);
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
         $body   = [];
         if (!Utils::isUnset($request->content)) {
             @$body['content'] = $request->content;
@@ -508,35 +524,38 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return UpdateOrganizationTaskContentResponse::fromMap($this->doROARequest('UpdateOrganizationTaskContent', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/organizations/tasks/' . $taskId . '/contents', 'json', $req, $runtime));
+        return UpdateOrganizationTaskContentResponse::fromMap($this->doROARequest('UpdateOrganizationTaskContent', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '/contents', 'json', $req, $runtime));
     }
 
     /**
      * @param string                               $taskId
+     * @param string                               $userId
      * @param UpdateOrganizationTaskDueDateRequest $request
      *
      * @return UpdateOrganizationTaskDueDateResponse
      */
-    public function updateOrganizationTaskDueDate($taskId, $request)
+    public function updateOrganizationTaskDueDate($taskId, $userId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new UpdateOrganizationTaskDueDateHeaders([]);
 
-        return $this->updateOrganizationTaskDueDateWithOptions($taskId, $request, $headers, $runtime);
+        return $this->updateOrganizationTaskDueDateWithOptions($taskId, $userId, $request, $headers, $runtime);
     }
 
     /**
      * @param string                               $taskId
+     * @param string                               $userId
      * @param UpdateOrganizationTaskDueDateRequest $request
      * @param UpdateOrganizationTaskDueDateHeaders $headers
      * @param RuntimeOptions                       $runtime
      *
      * @return UpdateOrganizationTaskDueDateResponse
      */
-    public function updateOrganizationTaskDueDateWithOptions($taskId, $request, $headers, $runtime)
+    public function updateOrganizationTaskDueDateWithOptions($taskId, $userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $taskId = OpenApiUtilClient::getEncodeParam($taskId);
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
         $body   = [];
         if (!Utils::isUnset($request->disableActivity)) {
             @$body['disableActivity'] = $request->disableActivity;
@@ -559,35 +578,38 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return UpdateOrganizationTaskDueDateResponse::fromMap($this->doROARequest('UpdateOrganizationTaskDueDate', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/organizations/tasks/' . $taskId . '/dueDates', 'json', $req, $runtime));
+        return UpdateOrganizationTaskDueDateResponse::fromMap($this->doROARequest('UpdateOrganizationTaskDueDate', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '/dueDates', 'json', $req, $runtime));
     }
 
     /**
      * @param string                                $taskId
+     * @param string                                $userId
      * @param UpdateOrganizationTaskExecutorRequest $request
      *
      * @return UpdateOrganizationTaskExecutorResponse
      */
-    public function updateOrganizationTaskExecutor($taskId, $request)
+    public function updateOrganizationTaskExecutor($taskId, $userId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new UpdateOrganizationTaskExecutorHeaders([]);
 
-        return $this->updateOrganizationTaskExecutorWithOptions($taskId, $request, $headers, $runtime);
+        return $this->updateOrganizationTaskExecutorWithOptions($taskId, $userId, $request, $headers, $runtime);
     }
 
     /**
      * @param string                                $taskId
+     * @param string                                $userId
      * @param UpdateOrganizationTaskExecutorRequest $request
      * @param UpdateOrganizationTaskExecutorHeaders $headers
      * @param RuntimeOptions                        $runtime
      *
      * @return UpdateOrganizationTaskExecutorResponse
      */
-    public function updateOrganizationTaskExecutorWithOptions($taskId, $request, $headers, $runtime)
+    public function updateOrganizationTaskExecutorWithOptions($taskId, $userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $taskId = OpenApiUtilClient::getEncodeParam($taskId);
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
         $body   = [];
         if (!Utils::isUnset($request->disableActivity)) {
             @$body['disableActivity'] = $request->disableActivity;
@@ -610,35 +632,38 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return UpdateOrganizationTaskExecutorResponse::fromMap($this->doROARequest('UpdateOrganizationTaskExecutor', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/organizations/tasks/' . $taskId . '/executors', 'json', $req, $runtime));
+        return UpdateOrganizationTaskExecutorResponse::fromMap($this->doROARequest('UpdateOrganizationTaskExecutor', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '/executors', 'json', $req, $runtime));
     }
 
     /**
      * @param string                                      $taskId
+     * @param string                                      $userId
      * @param UpdateOrganizationTaskInvolveMembersRequest $request
      *
      * @return UpdateOrganizationTaskInvolveMembersResponse
      */
-    public function updateOrganizationTaskInvolveMembers($taskId, $request)
+    public function updateOrganizationTaskInvolveMembers($taskId, $userId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new UpdateOrganizationTaskInvolveMembersHeaders([]);
 
-        return $this->updateOrganizationTaskInvolveMembersWithOptions($taskId, $request, $headers, $runtime);
+        return $this->updateOrganizationTaskInvolveMembersWithOptions($taskId, $userId, $request, $headers, $runtime);
     }
 
     /**
      * @param string                                      $taskId
+     * @param string                                      $userId
      * @param UpdateOrganizationTaskInvolveMembersRequest $request
      * @param UpdateOrganizationTaskInvolveMembersHeaders $headers
      * @param RuntimeOptions                              $runtime
      *
      * @return UpdateOrganizationTaskInvolveMembersResponse
      */
-    public function updateOrganizationTaskInvolveMembersWithOptions($taskId, $request, $headers, $runtime)
+    public function updateOrganizationTaskInvolveMembersWithOptions($taskId, $userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $taskId = OpenApiUtilClient::getEncodeParam($taskId);
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
         $body   = [];
         if (!Utils::isUnset($request->addInvolvers)) {
             @$body['addInvolvers'] = $request->addInvolvers;
@@ -667,35 +692,38 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return UpdateOrganizationTaskInvolveMembersResponse::fromMap($this->doROARequest('UpdateOrganizationTaskInvolveMembers', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/organizations/tasks/' . $taskId . '/involveMembers', 'json', $req, $runtime));
+        return UpdateOrganizationTaskInvolveMembersResponse::fromMap($this->doROARequest('UpdateOrganizationTaskInvolveMembers', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '/involveMembers', 'json', $req, $runtime));
     }
 
     /**
      * @param string                            $taskId
+     * @param string                            $userId
      * @param UpdateOrganizationTaskNoteRequest $request
      *
      * @return UpdateOrganizationTaskNoteResponse
      */
-    public function updateOrganizationTaskNote($taskId, $request)
+    public function updateOrganizationTaskNote($taskId, $userId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new UpdateOrganizationTaskNoteHeaders([]);
 
-        return $this->updateOrganizationTaskNoteWithOptions($taskId, $request, $headers, $runtime);
+        return $this->updateOrganizationTaskNoteWithOptions($taskId, $userId, $request, $headers, $runtime);
     }
 
     /**
      * @param string                            $taskId
+     * @param string                            $userId
      * @param UpdateOrganizationTaskNoteRequest $request
      * @param UpdateOrganizationTaskNoteHeaders $headers
      * @param RuntimeOptions                    $runtime
      *
      * @return UpdateOrganizationTaskNoteResponse
      */
-    public function updateOrganizationTaskNoteWithOptions($taskId, $request, $headers, $runtime)
+    public function updateOrganizationTaskNoteWithOptions($taskId, $userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $taskId = OpenApiUtilClient::getEncodeParam($taskId);
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
         $body   = [];
         if (!Utils::isUnset($request->disableActivity)) {
             @$body['disableActivity'] = $request->disableActivity;
@@ -718,35 +746,38 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return UpdateOrganizationTaskNoteResponse::fromMap($this->doROARequest('UpdateOrganizationTaskNote', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/organizations/tasks/' . $taskId . '/notes', 'json', $req, $runtime));
+        return UpdateOrganizationTaskNoteResponse::fromMap($this->doROARequest('UpdateOrganizationTaskNote', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '/notes', 'json', $req, $runtime));
     }
 
     /**
      * @param string                                $taskId
+     * @param string                                $userId
      * @param UpdateOrganizationTaskPriorityRequest $request
      *
      * @return UpdateOrganizationTaskPriorityResponse
      */
-    public function updateOrganizationTaskPriority($taskId, $request)
+    public function updateOrganizationTaskPriority($taskId, $userId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new UpdateOrganizationTaskPriorityHeaders([]);
 
-        return $this->updateOrganizationTaskPriorityWithOptions($taskId, $request, $headers, $runtime);
+        return $this->updateOrganizationTaskPriorityWithOptions($taskId, $userId, $request, $headers, $runtime);
     }
 
     /**
      * @param string                                $taskId
+     * @param string                                $userId
      * @param UpdateOrganizationTaskPriorityRequest $request
      * @param UpdateOrganizationTaskPriorityHeaders $headers
      * @param RuntimeOptions                        $runtime
      *
      * @return UpdateOrganizationTaskPriorityResponse
      */
-    public function updateOrganizationTaskPriorityWithOptions($taskId, $request, $headers, $runtime)
+    public function updateOrganizationTaskPriorityWithOptions($taskId, $userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $taskId = OpenApiUtilClient::getEncodeParam($taskId);
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
         $body   = [];
         if (!Utils::isUnset($request->disableActivity)) {
             @$body['disableActivity'] = $request->disableActivity;
@@ -769,35 +800,38 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return UpdateOrganizationTaskPriorityResponse::fromMap($this->doROARequest('UpdateOrganizationTaskPriority', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/organizations/tasks/' . $taskId . '/priorities', 'json', $req, $runtime));
+        return UpdateOrganizationTaskPriorityResponse::fromMap($this->doROARequest('UpdateOrganizationTaskPriority', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '/priorities', 'json', $req, $runtime));
     }
 
     /**
      * @param string                              $taskId
+     * @param string                              $userId
      * @param UpdateOrganizationTaskStatusRequest $request
      *
      * @return UpdateOrganizationTaskStatusResponse
      */
-    public function updateOrganizationTaskStatus($taskId, $request)
+    public function updateOrganizationTaskStatus($taskId, $userId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new UpdateOrganizationTaskStatusHeaders([]);
 
-        return $this->updateOrganizationTaskStatusWithOptions($taskId, $request, $headers, $runtime);
+        return $this->updateOrganizationTaskStatusWithOptions($taskId, $userId, $request, $headers, $runtime);
     }
 
     /**
      * @param string                              $taskId
+     * @param string                              $userId
      * @param UpdateOrganizationTaskStatusRequest $request
      * @param UpdateOrganizationTaskStatusHeaders $headers
      * @param RuntimeOptions                      $runtime
      *
      * @return UpdateOrganizationTaskStatusResponse
      */
-    public function updateOrganizationTaskStatusWithOptions($taskId, $request, $headers, $runtime)
+    public function updateOrganizationTaskStatusWithOptions($taskId, $userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $taskId = OpenApiUtilClient::getEncodeParam($taskId);
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
         $body   = [];
         if (!Utils::isUnset($request->disableActivity)) {
             @$body['disableActivity'] = $request->disableActivity;
@@ -820,6 +854,6 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return UpdateOrganizationTaskStatusResponse::fromMap($this->doROARequest('UpdateOrganizationTaskStatus', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/organizations/tasks/' . $taskId . '/states', 'json', $req, $runtime));
+        return UpdateOrganizationTaskStatusResponse::fromMap($this->doROARequest('UpdateOrganizationTaskStatus', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '/states', 'json', $req, $runtime));
     }
 }

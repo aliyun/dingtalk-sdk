@@ -226,6 +226,13 @@ class dataList extends Model
     public $refundFee;
 
     /**
+     * @description 备注
+     *
+     * @var string
+     */
+    public $remark;
+
+    /**
      * @description 运行时长
      *
      * @var string
@@ -259,6 +266,13 @@ class dataList extends Model
      * @var float
      */
     public $settlementFee;
+
+    /**
+     * @description 预存赠送金额消费
+     *
+     * @var float
+     */
+    public $settlementGrantFee;
 
     /**
      * @description 结算时间
@@ -337,53 +351,55 @@ class dataList extends Model
      */
     public $voucherType;
     protected $_name = [
-        'alipayTradeNo'     => 'alipayTradeNo',
-        'applyId'           => 'applyId',
-        'arrDate'           => 'arrDate',
-        'arrStation'        => 'arrStation',
-        'arrTime'           => 'arrTime',
-        'billRecordTime'    => 'billRecordTime',
-        'bookTime'          => 'bookTime',
-        'bookerId'          => 'bookerId',
-        'bookerJobNo'       => 'bookerJobNo',
-        'bookerName'        => 'bookerName',
-        'capitalDirection'  => 'capitalDirection',
-        'cascadeDepartment' => 'cascadeDepartment',
-        'changeFee'         => 'changeFee',
-        'costCenter'        => 'costCenter',
-        'costCenterNumber'  => 'costCenterNumber',
-        'coupon'            => 'coupon',
-        'department'        => 'department',
-        'departmentId'      => 'departmentId',
-        'deptDate'          => 'deptDate',
-        'deptStation'       => 'deptStation',
-        'deptTime'          => 'deptTime',
-        'feeType'           => 'feeType',
-        'index'             => 'index',
-        'invoiceTitle'      => 'invoiceTitle',
-        'orderId'           => 'orderId',
-        'orderPrice'        => 'orderPrice',
-        'overApplyId'       => 'overApplyId',
-        'primaryId'         => 'primaryId',
-        'projectCode'       => 'projectCode',
-        'projectName'       => 'projectName',
-        'refundFee'         => 'refundFee',
-        'runTime'           => 'runTime',
-        'seatNo'            => 'seatNo',
-        'seatType'          => 'seatType',
-        'serviceFee'        => 'serviceFee',
-        'settlementFee'     => 'settlementFee',
-        'settlementTime'    => 'settlementTime',
-        'settlementType'    => 'settlementType',
-        'status'            => 'status',
-        'ticketNo'          => 'ticketNo',
-        'ticketPrice'       => 'ticketPrice',
-        'trainNo'           => 'trainNo',
-        'trainType'         => 'trainType',
-        'travelerId'        => 'travelerId',
-        'travelerJobNo'     => 'travelerJobNo',
-        'travelerName'      => 'travelerName',
-        'voucherType'       => 'voucherType',
+        'alipayTradeNo'      => 'alipayTradeNo',
+        'applyId'            => 'applyId',
+        'arrDate'            => 'arrDate',
+        'arrStation'         => 'arrStation',
+        'arrTime'            => 'arrTime',
+        'billRecordTime'     => 'billRecordTime',
+        'bookTime'           => 'bookTime',
+        'bookerId'           => 'bookerId',
+        'bookerJobNo'        => 'bookerJobNo',
+        'bookerName'         => 'bookerName',
+        'capitalDirection'   => 'capitalDirection',
+        'cascadeDepartment'  => 'cascadeDepartment',
+        'changeFee'          => 'changeFee',
+        'costCenter'         => 'costCenter',
+        'costCenterNumber'   => 'costCenterNumber',
+        'coupon'             => 'coupon',
+        'department'         => 'department',
+        'departmentId'       => 'departmentId',
+        'deptDate'           => 'deptDate',
+        'deptStation'        => 'deptStation',
+        'deptTime'           => 'deptTime',
+        'feeType'            => 'feeType',
+        'index'              => 'index',
+        'invoiceTitle'       => 'invoiceTitle',
+        'orderId'            => 'orderId',
+        'orderPrice'         => 'orderPrice',
+        'overApplyId'        => 'overApplyId',
+        'primaryId'          => 'primaryId',
+        'projectCode'        => 'projectCode',
+        'projectName'        => 'projectName',
+        'refundFee'          => 'refundFee',
+        'remark'             => 'remark',
+        'runTime'            => 'runTime',
+        'seatNo'             => 'seatNo',
+        'seatType'           => 'seatType',
+        'serviceFee'         => 'serviceFee',
+        'settlementFee'      => 'settlementFee',
+        'settlementGrantFee' => 'settlementGrantFee',
+        'settlementTime'     => 'settlementTime',
+        'settlementType'     => 'settlementType',
+        'status'             => 'status',
+        'ticketNo'           => 'ticketNo',
+        'ticketPrice'        => 'ticketPrice',
+        'trainNo'            => 'trainNo',
+        'trainType'          => 'trainType',
+        'travelerId'         => 'travelerId',
+        'travelerJobNo'      => 'travelerJobNo',
+        'travelerName'       => 'travelerName',
+        'voucherType'        => 'voucherType',
     ];
 
     public function validate()
@@ -486,6 +502,9 @@ class dataList extends Model
         if (null !== $this->refundFee) {
             $res['refundFee'] = $this->refundFee;
         }
+        if (null !== $this->remark) {
+            $res['remark'] = $this->remark;
+        }
         if (null !== $this->runTime) {
             $res['runTime'] = $this->runTime;
         }
@@ -500,6 +519,9 @@ class dataList extends Model
         }
         if (null !== $this->settlementFee) {
             $res['settlementFee'] = $this->settlementFee;
+        }
+        if (null !== $this->settlementGrantFee) {
+            $res['settlementGrantFee'] = $this->settlementGrantFee;
         }
         if (null !== $this->settlementTime) {
             $res['settlementTime'] = $this->settlementTime;
@@ -639,6 +661,9 @@ class dataList extends Model
         if (isset($map['refundFee'])) {
             $model->refundFee = $map['refundFee'];
         }
+        if (isset($map['remark'])) {
+            $model->remark = $map['remark'];
+        }
         if (isset($map['runTime'])) {
             $model->runTime = $map['runTime'];
         }
@@ -653,6 +678,9 @@ class dataList extends Model
         }
         if (isset($map['settlementFee'])) {
             $model->settlementFee = $map['settlementFee'];
+        }
+        if (isset($map['settlementGrantFee'])) {
+            $model->settlementGrantFee = $map['settlementGrantFee'];
         }
         if (isset($map['settlementTime'])) {
             $model->settlementTime = $map['settlementTime'];

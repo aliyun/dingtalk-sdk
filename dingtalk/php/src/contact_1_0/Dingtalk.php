@@ -125,6 +125,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TransformToExclusiveAccountRes
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TranslateFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TranslateFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TranslateFileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UniqueQueryUserCardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UniqueQueryUserCardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UniqueQueryUserCardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateBranchAttributesInCooperateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateBranchAttributesInCooperateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateBranchAttributesInCooperateResponse;
@@ -2057,6 +2060,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return TranslateFileResponse::fromMap($this->doROARequest('TranslateFile', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/files/translate', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UniqueQueryUserCardRequest $request
+     *
+     * @return UniqueQueryUserCardResponse
+     */
+    public function uniqueQueryUserCard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UniqueQueryUserCardHeaders([]);
+
+        return $this->uniqueQueryUserCardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UniqueQueryUserCardRequest $request
+     * @param UniqueQueryUserCardHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return UniqueQueryUserCardResponse
+     */
+    public function uniqueQueryUserCardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return UniqueQueryUserCardResponse::fromMap($this->doROARequest('UniqueQueryUserCard', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/uniques/cards', 'json', $req, $runtime));
     }
 
     /**

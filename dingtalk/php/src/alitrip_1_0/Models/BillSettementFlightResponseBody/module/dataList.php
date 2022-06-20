@@ -401,6 +401,13 @@ class dataList extends Model
     public $refundUpgradeCost;
 
     /**
+     * @description 备注
+     *
+     * @var string
+     */
+    public $remark;
+
+    /**
      * @description 是否重复退
      *
      * @var string
@@ -427,6 +434,13 @@ class dataList extends Model
      * @var float
      */
     public $settlementFee;
+
+    /**
+     * @description 预存赠送金额消费
+     *
+     * @var float
+     */
+    public $settlementGrantFee;
 
     /**
      * @description 结算时间
@@ -547,10 +561,12 @@ class dataList extends Model
         'projectName'            => 'projectName',
         'refundFee'              => 'refundFee',
         'refundUpgradeCost'      => 'refundUpgradeCost',
+        'remark'                 => 'remark',
         'repeatRefund'           => 'repeatRefund',
         'sealPrice'              => 'sealPrice',
         'serviceFee'             => 'serviceFee',
         'settlementFee'          => 'settlementFee',
+        'settlementGrantFee'     => 'settlementGrantFee',
         'settlementTime'         => 'settlementTime',
         'settlementType'         => 'settlementType',
         'status'                 => 'status',
@@ -737,6 +753,9 @@ class dataList extends Model
         if (null !== $this->refundUpgradeCost) {
             $res['refundUpgradeCost'] = $this->refundUpgradeCost;
         }
+        if (null !== $this->remark) {
+            $res['remark'] = $this->remark;
+        }
         if (null !== $this->repeatRefund) {
             $res['repeatRefund'] = $this->repeatRefund;
         }
@@ -748,6 +767,9 @@ class dataList extends Model
         }
         if (null !== $this->settlementFee) {
             $res['settlementFee'] = $this->settlementFee;
+        }
+        if (null !== $this->settlementGrantFee) {
+            $res['settlementGrantFee'] = $this->settlementGrantFee;
         }
         if (null !== $this->settlementTime) {
             $res['settlementTime'] = $this->settlementTime;
@@ -956,6 +978,9 @@ class dataList extends Model
         if (isset($map['refundUpgradeCost'])) {
             $model->refundUpgradeCost = $map['refundUpgradeCost'];
         }
+        if (isset($map['remark'])) {
+            $model->remark = $map['remark'];
+        }
         if (isset($map['repeatRefund'])) {
             $model->repeatRefund = $map['repeatRefund'];
         }
@@ -967,6 +992,9 @@ class dataList extends Model
         }
         if (isset($map['settlementFee'])) {
             $model->settlementFee = $map['settlementFee'];
+        }
+        if (isset($map['settlementGrantFee'])) {
+            $model->settlementGrantFee = $map['settlementGrantFee'];
         }
         if (isset($map['settlementTime'])) {
             $model->settlementTime = $map['settlementTime'];
