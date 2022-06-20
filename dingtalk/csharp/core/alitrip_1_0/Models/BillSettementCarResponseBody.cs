@@ -68,8 +68,10 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
                 public string RealDriveDistance { get; set; }
                 public string RealFromAddr { get; set; }
                 public string RealToAddr { get; set; }
+                public string Remark { get; set; }
                 public string ServiceFee { get; set; }
                 public double? SettlementFee { get; set; }
+                public double? SettlementGrantFee { get; set; }
                 public string SettlementTime { get; set; }
                 public string SettlementType { get; set; }
                 public string SpecialOrder { get; set; }

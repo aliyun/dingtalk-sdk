@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0.Models
 {
     public class RegisterDeviceRequest : TeaModel {
         /// <summary>
-        /// 钉钉组织id
+        /// 钉钉物联组织ID, 第三方平台必填，企业内部系统忽略
         /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]

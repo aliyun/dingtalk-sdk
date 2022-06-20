@@ -64,11 +64,13 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
                 public string ProjectCode { get; set; }
                 public string ProjectName { get; set; }
                 public double? PromotionFee { get; set; }
+                public string Remark { get; set; }
                 public long? RoomNumber { get; set; }
                 public double? RoomPrice { get; set; }
                 public string RoomType { get; set; }
                 public double? ServiceFee { get; set; }
                 public double? SettlementFee { get; set; }
+                public double? SettlementGrantFee { get; set; }
                 public string SettlementTime { get; set; }
                 public string SettlementType { get; set; }
                 public long? Status { get; set; }
