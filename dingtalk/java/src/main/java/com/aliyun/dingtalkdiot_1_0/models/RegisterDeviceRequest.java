@@ -4,7 +4,7 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class RegisterDeviceRequest extends TeaModel {
-    // 钉钉组织id
+    // 钉钉物联组织ID, 第三方平台必填，企业内部系统忽略
     @NameInMap("corpId")
     public String corpId;
 

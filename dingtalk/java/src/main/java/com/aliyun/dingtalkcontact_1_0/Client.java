@@ -1370,6 +1370,35 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("TranslateFile", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/files/translate", "json", req, runtime), new TranslateFileResponse());
     }
 
+    public UniqueQueryUserCardResponse uniqueQueryUserCard(UniqueQueryUserCardRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        UniqueQueryUserCardHeaders headers = new UniqueQueryUserCardHeaders();
+        return this.uniqueQueryUserCardWithOptions(request, headers, runtime);
+    }
+
+    public UniqueQueryUserCardResponse uniqueQueryUserCardWithOptions(UniqueQueryUserCardRequest request, UniqueQueryUserCardHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("UniqueQueryUserCard", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/uniques/cards", "json", req, runtime), new UniqueQueryUserCardResponse());
+    }
+
     public UpdateBranchAttributesInCooperateResponse updateBranchAttributesInCooperate(UpdateBranchAttributesInCooperateRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         UpdateBranchAttributesInCooperateHeaders headers = new UpdateBranchAttributesInCooperateHeaders();

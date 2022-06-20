@@ -225,6 +225,10 @@ public class BillSettementCarResponseBody extends TeaModel {
         @NameInMap("realToAddr")
         public String realToAddr;
 
+        // 备注
+        @NameInMap("remark")
+        public String remark;
+
         // 服务费，仅在feeType 40111 中展示
         @NameInMap("serviceFee")
         public String serviceFee;
@@ -232,6 +236,10 @@ public class BillSettementCarResponseBody extends TeaModel {
         // 结算金额
         @NameInMap("settlementFee")
         public Double settlementFee;
+
+        // 预存赠送金额消费
+        @NameInMap("settlementGrantFee")
+        public Double settlementGrantFee;
 
         // 结算时间
         @NameInMap("settlementTime")
@@ -618,6 +626,14 @@ public class BillSettementCarResponseBody extends TeaModel {
             return this.realToAddr;
         }
 
+        public BillSettementCarResponseBodyModuleDataList setRemark(String remark) {
+            this.remark = remark;
+            return this;
+        }
+        public String getRemark() {
+            return this.remark;
+        }
+
         public BillSettementCarResponseBodyModuleDataList setServiceFee(String serviceFee) {
             this.serviceFee = serviceFee;
             return this;
@@ -632,6 +648,14 @@ public class BillSettementCarResponseBody extends TeaModel {
         }
         public Double getSettlementFee() {
             return this.settlementFee;
+        }
+
+        public BillSettementCarResponseBodyModuleDataList setSettlementGrantFee(Double settlementGrantFee) {
+            this.settlementGrantFee = settlementGrantFee;
+            return this;
+        }
+        public Double getSettlementGrantFee() {
+            return this.settlementGrantFee;
         }
 
         public BillSettementCarResponseBodyModuleDataList setSettlementTime(String settlementTime) {

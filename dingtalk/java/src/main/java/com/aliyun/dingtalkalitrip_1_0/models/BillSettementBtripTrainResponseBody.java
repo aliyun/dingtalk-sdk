@@ -182,6 +182,10 @@ public class BillSettementBtripTrainResponseBody extends TeaModel {
         @NameInMap("refundFee")
         public Double refundFee;
 
+        // 备注
+        @NameInMap("remark")
+        public String remark;
+
         // 运行时长
         @NameInMap("runTime")
         public String runTime;
@@ -201,6 +205,10 @@ public class BillSettementBtripTrainResponseBody extends TeaModel {
         // 结算金额
         @NameInMap("settlementFee")
         public Double settlementFee;
+
+        // 预存赠送金额消费
+        @NameInMap("settlementGrantFee")
+        public Double settlementGrantFee;
 
         // 结算时间
         @NameInMap("settlementTime")
@@ -499,6 +507,14 @@ public class BillSettementBtripTrainResponseBody extends TeaModel {
             return this.refundFee;
         }
 
+        public BillSettementBtripTrainResponseBodyModuleDataList setRemark(String remark) {
+            this.remark = remark;
+            return this;
+        }
+        public String getRemark() {
+            return this.remark;
+        }
+
         public BillSettementBtripTrainResponseBodyModuleDataList setRunTime(String runTime) {
             this.runTime = runTime;
             return this;
@@ -537,6 +553,14 @@ public class BillSettementBtripTrainResponseBody extends TeaModel {
         }
         public Double getSettlementFee() {
             return this.settlementFee;
+        }
+
+        public BillSettementBtripTrainResponseBodyModuleDataList setSettlementGrantFee(Double settlementGrantFee) {
+            this.settlementGrantFee = settlementGrantFee;
+            return this;
+        }
+        public Double getSettlementGrantFee() {
+            return this.settlementGrantFee;
         }
 
         public BillSettementBtripTrainResponseBodyModuleDataList setSettlementTime(String settlementTime) {

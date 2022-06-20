@@ -210,6 +210,10 @@ public class BillSettementHotelResponseBody extends TeaModel {
         @NameInMap("promotionFee")
         public Double promotionFee;
 
+        // 备注
+        @NameInMap("remark")
+        public String remark;
+
         // 房间数
         @NameInMap("roomNumber")
         public Long roomNumber;
@@ -229,6 +233,10 @@ public class BillSettementHotelResponseBody extends TeaModel {
         // 结算金额
         @NameInMap("settlementFee")
         public Double settlementFee;
+
+        // 预存赠送金额消费
+        @NameInMap("settlementGrantFee")
+        public Double settlementGrantFee;
 
         // 结算时间
         @NameInMap("settlementTime")
@@ -571,6 +579,14 @@ public class BillSettementHotelResponseBody extends TeaModel {
             return this.promotionFee;
         }
 
+        public BillSettementHotelResponseBodyModuleDataList setRemark(String remark) {
+            this.remark = remark;
+            return this;
+        }
+        public String getRemark() {
+            return this.remark;
+        }
+
         public BillSettementHotelResponseBodyModuleDataList setRoomNumber(Long roomNumber) {
             this.roomNumber = roomNumber;
             return this;
@@ -609,6 +625,14 @@ public class BillSettementHotelResponseBody extends TeaModel {
         }
         public Double getSettlementFee() {
             return this.settlementFee;
+        }
+
+        public BillSettementHotelResponseBodyModuleDataList setSettlementGrantFee(Double settlementGrantFee) {
+            this.settlementGrantFee = settlementGrantFee;
+            return this;
+        }
+        public Double getSettlementGrantFee() {
+            return this.settlementGrantFee;
         }
 
         public BillSettementHotelResponseBodyModuleDataList setSettlementTime(String settlementTime) {
