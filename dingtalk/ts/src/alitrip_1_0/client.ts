@@ -1332,11 +1332,13 @@ export class BillSettementBtripTrainResponseBodyModuleDataList extends $tea.Mode
   projectCode?: string;
   projectName?: string;
   refundFee?: number;
+  remark?: string;
   runTime?: string;
   seatNo?: string;
   seatType?: string;
   serviceFee?: number;
   settlementFee?: number;
+  settlementGrantFee?: number;
   settlementTime?: string;
   settlementType?: string;
   status?: number;
@@ -1381,11 +1383,13 @@ export class BillSettementBtripTrainResponseBodyModuleDataList extends $tea.Mode
       projectCode: 'projectCode',
       projectName: 'projectName',
       refundFee: 'refundFee',
+      remark: 'remark',
       runTime: 'runTime',
       seatNo: 'seatNo',
       seatType: 'seatType',
       serviceFee: 'serviceFee',
       settlementFee: 'settlementFee',
+      settlementGrantFee: 'settlementGrantFee',
       settlementTime: 'settlementTime',
       settlementType: 'settlementType',
       status: 'status',
@@ -1433,11 +1437,13 @@ export class BillSettementBtripTrainResponseBodyModuleDataList extends $tea.Mode
       projectCode: 'string',
       projectName: 'string',
       refundFee: 'number',
+      remark: 'string',
       runTime: 'string',
       seatNo: 'string',
       seatType: 'string',
       serviceFee: 'number',
       settlementFee: 'number',
+      settlementGrantFee: 'number',
       settlementTime: 'string',
       settlementType: 'string',
       status: 'number',
@@ -1534,8 +1540,10 @@ export class BillSettementCarResponseBodyModuleDataList extends $tea.Model {
   realDriveDistance?: string;
   realFromAddr?: string;
   realToAddr?: string;
+  remark?: string;
   serviceFee?: string;
   settlementFee?: number;
+  settlementGrantFee?: number;
   settlementTime?: string;
   settlementType?: string;
   specialOrder?: string;
@@ -1591,8 +1599,10 @@ export class BillSettementCarResponseBodyModuleDataList extends $tea.Model {
       realDriveDistance: 'realDriveDistance',
       realFromAddr: 'realFromAddr',
       realToAddr: 'realToAddr',
+      remark: 'remark',
       serviceFee: 'serviceFee',
       settlementFee: 'settlementFee',
+      settlementGrantFee: 'settlementGrantFee',
       settlementTime: 'settlementTime',
       settlementType: 'settlementType',
       specialOrder: 'specialOrder',
@@ -1651,8 +1661,10 @@ export class BillSettementCarResponseBodyModuleDataList extends $tea.Model {
       realDriveDistance: 'string',
       realFromAddr: 'string',
       realToAddr: 'string',
+      remark: 'string',
       serviceFee: 'string',
       settlementFee: 'number',
+      settlementGrantFee: 'number',
       settlementTime: 'string',
       settlementType: 'string',
       specialOrder: 'string',
@@ -1763,10 +1775,12 @@ export class BillSettementFlightResponseBodyModuleDataList extends $tea.Model {
   projectName?: string;
   refundFee?: number;
   refundUpgradeCost?: number;
+  remark?: string;
   repeatRefund?: string;
   sealPrice?: number;
   serviceFee?: number;
   settlementFee?: number;
+  settlementGrantFee?: number;
   settlementTime?: string;
   settlementType?: string;
   status?: number;
@@ -1834,10 +1848,12 @@ export class BillSettementFlightResponseBodyModuleDataList extends $tea.Model {
       projectName: 'projectName',
       refundFee: 'refundFee',
       refundUpgradeCost: 'refundUpgradeCost',
+      remark: 'remark',
       repeatRefund: 'repeatRefund',
       sealPrice: 'sealPrice',
       serviceFee: 'serviceFee',
       settlementFee: 'settlementFee',
+      settlementGrantFee: 'settlementGrantFee',
       settlementTime: 'settlementTime',
       settlementType: 'settlementType',
       status: 'status',
@@ -1908,10 +1924,12 @@ export class BillSettementFlightResponseBodyModuleDataList extends $tea.Model {
       projectName: 'string',
       refundFee: 'number',
       refundUpgradeCost: 'number',
+      remark: 'string',
       repeatRefund: 'string',
       sealPrice: 'number',
       serviceFee: 'number',
       settlementFee: 'number',
+      settlementGrantFee: 'number',
       settlementTime: 'string',
       settlementType: 'string',
       status: 'number',
@@ -2002,11 +2020,13 @@ export class BillSettementHotelResponseBodyModuleDataList extends $tea.Model {
   projectCode?: string;
   projectName?: string;
   promotionFee?: number;
+  remark?: string;
   roomNumber?: number;
   roomPrice?: number;
   roomType?: string;
   serviceFee?: number;
   settlementFee?: number;
+  settlementGrantFee?: number;
   settlementTime?: string;
   settlementType?: string;
   status?: number;
@@ -2055,11 +2075,13 @@ export class BillSettementHotelResponseBodyModuleDataList extends $tea.Model {
       projectCode: 'projectCode',
       projectName: 'projectName',
       promotionFee: 'promotionFee',
+      remark: 'remark',
       roomNumber: 'roomNumber',
       roomPrice: 'roomPrice',
       roomType: 'roomType',
       serviceFee: 'serviceFee',
       settlementFee: 'settlementFee',
+      settlementGrantFee: 'settlementGrantFee',
       settlementTime: 'settlementTime',
       settlementType: 'settlementType',
       status: 'status',
@@ -2111,11 +2133,13 @@ export class BillSettementHotelResponseBodyModuleDataList extends $tea.Model {
       projectCode: 'string',
       projectName: 'string',
       promotionFee: 'number',
+      remark: 'string',
       roomNumber: 'number',
       roomPrice: 'number',
       roomType: 'string',
       serviceFee: 'number',
       settlementFee: 'number',
+      settlementGrantFee: 'number',
       settlementTime: 'string',
       settlementType: 'string',
       status: 'number',

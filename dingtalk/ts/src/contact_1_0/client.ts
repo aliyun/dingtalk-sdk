@@ -3480,6 +3480,112 @@ export class TranslateFileResponse extends $tea.Model {
   }
 }
 
+export class UniqueQueryUserCardHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UniqueQueryUserCardRequest extends $tea.Model {
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UniqueQueryUserCardResponseBody extends $tea.Model {
+  avatarUrl?: string;
+  cardId?: string;
+  extension?: { [key: string]: any };
+  industryName?: string;
+  introduce?: string;
+  name?: string;
+  orgName?: string;
+  templateId?: string;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      avatarUrl: 'avatarUrl',
+      cardId: 'cardId',
+      extension: 'extension',
+      industryName: 'industryName',
+      introduce: 'introduce',
+      name: 'name',
+      orgName: 'orgName',
+      templateId: 'templateId',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      avatarUrl: 'string',
+      cardId: 'string',
+      extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      industryName: 'string',
+      introduce: 'string',
+      name: 'string',
+      orgName: 'string',
+      templateId: 'string',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UniqueQueryUserCardResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UniqueQueryUserCardResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UniqueQueryUserCardResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateBranchAttributesInCooperateHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6358,6 +6464,35 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<TranslateFileResponse>(await this.doROARequest("TranslateFile", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/files/translate`, "json", req, runtime), new TranslateFileResponse({}));
+  }
+
+  async uniqueQueryUserCard(request: UniqueQueryUserCardRequest): Promise<UniqueQueryUserCardResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UniqueQueryUserCardHeaders({ });
+    return await this.uniqueQueryUserCardWithOptions(request, headers, runtime);
+  }
+
+  async uniqueQueryUserCardWithOptions(request: UniqueQueryUserCardRequest, headers: UniqueQueryUserCardHeaders, runtime: $Util.RuntimeOptions): Promise<UniqueQueryUserCardResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<UniqueQueryUserCardResponse>(await this.doROARequest("UniqueQueryUserCard", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/uniques/cards`, "json", req, runtime), new UniqueQueryUserCardResponse({}));
   }
 
   async updateBranchAttributesInCooperate(request: UpdateBranchAttributesInCooperateRequest): Promise<UpdateBranchAttributesInCooperateResponse> {

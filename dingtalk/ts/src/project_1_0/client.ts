@@ -2019,14 +2019,15 @@ export default class Client extends OpenApi {
   }
 
 
-  async createOrganizationTask(request: CreateOrganizationTaskRequest): Promise<CreateOrganizationTaskResponse> {
+  async createOrganizationTask(userId: string, request: CreateOrganizationTaskRequest): Promise<CreateOrganizationTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateOrganizationTaskHeaders({ });
-    return await this.createOrganizationTaskWithOptions(request, headers, runtime);
+    return await this.createOrganizationTaskWithOptions(userId, request, headers, runtime);
   }
 
-  async createOrganizationTaskWithOptions(request: CreateOrganizationTaskRequest, headers: CreateOrganizationTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CreateOrganizationTaskResponse> {
+  async createOrganizationTaskWithOptions(userId: string, request: CreateOrganizationTaskRequest, headers: CreateOrganizationTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CreateOrganizationTaskResponse> {
     Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.content)) {
       body["content"] = request.content;
@@ -2089,7 +2090,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateOrganizationTaskResponse>(await this.doROARequest("CreateOrganizationTask", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/organizations/tasks`, "json", req, runtime), new CreateOrganizationTaskResponse({}));
+    return $tea.cast<CreateOrganizationTaskResponse>(await this.doROARequest("CreateOrganizationTask", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/organizations/users/${userId}/tasks`, "json", req, runtime), new CreateOrganizationTaskResponse({}));
   }
 
   async getDeptsByOrgId(request: GetDeptsByOrgIdRequest): Promise<GetDeptsByOrgIdResponse> {
@@ -2178,14 +2179,15 @@ export default class Client extends OpenApi {
     return $tea.cast<GetEmpsByOrgIdResponse>(await this.doROARequest("GetEmpsByOrgId", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/orgs/employees`, "json", req, runtime), new GetEmpsByOrgIdResponse({}));
   }
 
-  async getOrganizatioTaskByIds(request: GetOrganizatioTaskByIdsRequest): Promise<GetOrganizatioTaskByIdsResponse> {
+  async getOrganizatioTaskByIds(userId: string, request: GetOrganizatioTaskByIdsRequest): Promise<GetOrganizatioTaskByIdsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetOrganizatioTaskByIdsHeaders({ });
-    return await this.getOrganizatioTaskByIdsWithOptions(request, headers, runtime);
+    return await this.getOrganizatioTaskByIdsWithOptions(userId, request, headers, runtime);
   }
 
-  async getOrganizatioTaskByIdsWithOptions(request: GetOrganizatioTaskByIdsRequest, headers: GetOrganizatioTaskByIdsHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrganizatioTaskByIdsResponse> {
+  async getOrganizatioTaskByIdsWithOptions(userId: string, request: GetOrganizatioTaskByIdsRequest, headers: GetOrganizatioTaskByIdsHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrganizatioTaskByIdsResponse> {
     Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.taskIds)) {
       query["taskIds"] = request.taskIds;
@@ -2204,16 +2206,17 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetOrganizatioTaskByIdsResponse>(await this.doROARequest("GetOrganizatioTaskByIds", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/organizations/tasks`, "json", req, runtime), new GetOrganizatioTaskByIdsResponse({}));
+    return $tea.cast<GetOrganizatioTaskByIdsResponse>(await this.doROARequest("GetOrganizatioTaskByIds", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/organizations/users/${userId}/tasks`, "json", req, runtime), new GetOrganizatioTaskByIdsResponse({}));
   }
 
-  async getOrganizationPriorityList(): Promise<GetOrganizationPriorityListResponse> {
+  async getOrganizationPriorityList(userId: string): Promise<GetOrganizationPriorityListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetOrganizationPriorityListHeaders({ });
-    return await this.getOrganizationPriorityListWithOptions(headers, runtime);
+    return await this.getOrganizationPriorityListWithOptions(userId, headers, runtime);
   }
 
-  async getOrganizationPriorityListWithOptions(headers: GetOrganizationPriorityListHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrganizationPriorityListResponse> {
+  async getOrganizationPriorityListWithOptions(userId: string, headers: GetOrganizationPriorityListHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrganizationPriorityListResponse> {
+    userId = OpenApiUtil.getEncodeParam(userId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2226,17 +2229,18 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetOrganizationPriorityListResponse>(await this.doROARequest("GetOrganizationPriorityList", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/organizations/priorities`, "json", req, runtime), new GetOrganizationPriorityListResponse({}));
+    return $tea.cast<GetOrganizationPriorityListResponse>(await this.doROARequest("GetOrganizationPriorityList", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/organizations/users/${userId}/priorities`, "json", req, runtime), new GetOrganizationPriorityListResponse({}));
   }
 
-  async getOrganizationTask(taskId: string): Promise<GetOrganizationTaskResponse> {
+  async getOrganizationTask(taskId: string, userId: string): Promise<GetOrganizationTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetOrganizationTaskHeaders({ });
-    return await this.getOrganizationTaskWithOptions(taskId, headers, runtime);
+    return await this.getOrganizationTaskWithOptions(taskId, userId, headers, runtime);
   }
 
-  async getOrganizationTaskWithOptions(taskId: string, headers: GetOrganizationTaskHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrganizationTaskResponse> {
+  async getOrganizationTaskWithOptions(taskId: string, userId: string, headers: GetOrganizationTaskHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrganizationTaskResponse> {
     taskId = OpenApiUtil.getEncodeParam(taskId);
+    userId = OpenApiUtil.getEncodeParam(userId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2249,7 +2253,7 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetOrganizationTaskResponse>(await this.doROARequest("GetOrganizationTask", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/organizations/tasks/${taskId}`, "json", req, runtime), new GetOrganizationTaskResponse({}));
+    return $tea.cast<GetOrganizationTaskResponse>(await this.doROARequest("GetOrganizationTask", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/organizations/users/${userId}/tasks/${taskId}`, "json", req, runtime), new GetOrganizationTaskResponse({}));
   }
 
   async getTbProjectGray(request: GetTbProjectGrayRequest): Promise<GetTbProjectGrayResponse> {
@@ -2343,15 +2347,16 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTbProjectSourceResponse>(await this.doROARequest("GetTbProjectSource", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/projects/source`, "json", req, runtime), new GetTbProjectSourceResponse({}));
   }
 
-  async updateOrganizationTaskContent(taskId: string, request: UpdateOrganizationTaskContentRequest): Promise<UpdateOrganizationTaskContentResponse> {
+  async updateOrganizationTaskContent(taskId: string, userId: string, request: UpdateOrganizationTaskContentRequest): Promise<UpdateOrganizationTaskContentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateOrganizationTaskContentHeaders({ });
-    return await this.updateOrganizationTaskContentWithOptions(taskId, request, headers, runtime);
+    return await this.updateOrganizationTaskContentWithOptions(taskId, userId, request, headers, runtime);
   }
 
-  async updateOrganizationTaskContentWithOptions(taskId: string, request: UpdateOrganizationTaskContentRequest, headers: UpdateOrganizationTaskContentHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskContentResponse> {
+  async updateOrganizationTaskContentWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskContentRequest, headers: UpdateOrganizationTaskContentHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskContentResponse> {
     Util.validateModel(request);
     taskId = OpenApiUtil.getEncodeParam(taskId);
+    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.content)) {
       body["content"] = request.content;
@@ -2378,18 +2383,19 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateOrganizationTaskContentResponse>(await this.doROARequest("UpdateOrganizationTaskContent", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/tasks/${taskId}/contents`, "json", req, runtime), new UpdateOrganizationTaskContentResponse({}));
+    return $tea.cast<UpdateOrganizationTaskContentResponse>(await this.doROARequest("UpdateOrganizationTaskContent", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/users/${userId}/tasks/${taskId}/contents`, "json", req, runtime), new UpdateOrganizationTaskContentResponse({}));
   }
 
-  async updateOrganizationTaskDueDate(taskId: string, request: UpdateOrganizationTaskDueDateRequest): Promise<UpdateOrganizationTaskDueDateResponse> {
+  async updateOrganizationTaskDueDate(taskId: string, userId: string, request: UpdateOrganizationTaskDueDateRequest): Promise<UpdateOrganizationTaskDueDateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateOrganizationTaskDueDateHeaders({ });
-    return await this.updateOrganizationTaskDueDateWithOptions(taskId, request, headers, runtime);
+    return await this.updateOrganizationTaskDueDateWithOptions(taskId, userId, request, headers, runtime);
   }
 
-  async updateOrganizationTaskDueDateWithOptions(taskId: string, request: UpdateOrganizationTaskDueDateRequest, headers: UpdateOrganizationTaskDueDateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskDueDateResponse> {
+  async updateOrganizationTaskDueDateWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskDueDateRequest, headers: UpdateOrganizationTaskDueDateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskDueDateResponse> {
     Util.validateModel(request);
     taskId = OpenApiUtil.getEncodeParam(taskId);
+    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.disableActivity)) {
       body["disableActivity"] = request.disableActivity;
@@ -2416,18 +2422,19 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateOrganizationTaskDueDateResponse>(await this.doROARequest("UpdateOrganizationTaskDueDate", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/tasks/${taskId}/dueDates`, "json", req, runtime), new UpdateOrganizationTaskDueDateResponse({}));
+    return $tea.cast<UpdateOrganizationTaskDueDateResponse>(await this.doROARequest("UpdateOrganizationTaskDueDate", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/users/${userId}/tasks/${taskId}/dueDates`, "json", req, runtime), new UpdateOrganizationTaskDueDateResponse({}));
   }
 
-  async updateOrganizationTaskExecutor(taskId: string, request: UpdateOrganizationTaskExecutorRequest): Promise<UpdateOrganizationTaskExecutorResponse> {
+  async updateOrganizationTaskExecutor(taskId: string, userId: string, request: UpdateOrganizationTaskExecutorRequest): Promise<UpdateOrganizationTaskExecutorResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateOrganizationTaskExecutorHeaders({ });
-    return await this.updateOrganizationTaskExecutorWithOptions(taskId, request, headers, runtime);
+    return await this.updateOrganizationTaskExecutorWithOptions(taskId, userId, request, headers, runtime);
   }
 
-  async updateOrganizationTaskExecutorWithOptions(taskId: string, request: UpdateOrganizationTaskExecutorRequest, headers: UpdateOrganizationTaskExecutorHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskExecutorResponse> {
+  async updateOrganizationTaskExecutorWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskExecutorRequest, headers: UpdateOrganizationTaskExecutorHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskExecutorResponse> {
     Util.validateModel(request);
     taskId = OpenApiUtil.getEncodeParam(taskId);
+    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.disableActivity)) {
       body["disableActivity"] = request.disableActivity;
@@ -2454,18 +2461,19 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateOrganizationTaskExecutorResponse>(await this.doROARequest("UpdateOrganizationTaskExecutor", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/tasks/${taskId}/executors`, "json", req, runtime), new UpdateOrganizationTaskExecutorResponse({}));
+    return $tea.cast<UpdateOrganizationTaskExecutorResponse>(await this.doROARequest("UpdateOrganizationTaskExecutor", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/users/${userId}/tasks/${taskId}/executors`, "json", req, runtime), new UpdateOrganizationTaskExecutorResponse({}));
   }
 
-  async updateOrganizationTaskInvolveMembers(taskId: string, request: UpdateOrganizationTaskInvolveMembersRequest): Promise<UpdateOrganizationTaskInvolveMembersResponse> {
+  async updateOrganizationTaskInvolveMembers(taskId: string, userId: string, request: UpdateOrganizationTaskInvolveMembersRequest): Promise<UpdateOrganizationTaskInvolveMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateOrganizationTaskInvolveMembersHeaders({ });
-    return await this.updateOrganizationTaskInvolveMembersWithOptions(taskId, request, headers, runtime);
+    return await this.updateOrganizationTaskInvolveMembersWithOptions(taskId, userId, request, headers, runtime);
   }
 
-  async updateOrganizationTaskInvolveMembersWithOptions(taskId: string, request: UpdateOrganizationTaskInvolveMembersRequest, headers: UpdateOrganizationTaskInvolveMembersHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskInvolveMembersResponse> {
+  async updateOrganizationTaskInvolveMembersWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskInvolveMembersRequest, headers: UpdateOrganizationTaskInvolveMembersHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskInvolveMembersResponse> {
     Util.validateModel(request);
     taskId = OpenApiUtil.getEncodeParam(taskId);
+    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.addInvolvers)) {
       body["addInvolvers"] = request.addInvolvers;
@@ -2500,18 +2508,19 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateOrganizationTaskInvolveMembersResponse>(await this.doROARequest("UpdateOrganizationTaskInvolveMembers", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/tasks/${taskId}/involveMembers`, "json", req, runtime), new UpdateOrganizationTaskInvolveMembersResponse({}));
+    return $tea.cast<UpdateOrganizationTaskInvolveMembersResponse>(await this.doROARequest("UpdateOrganizationTaskInvolveMembers", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/users/${userId}/tasks/${taskId}/involveMembers`, "json", req, runtime), new UpdateOrganizationTaskInvolveMembersResponse({}));
   }
 
-  async updateOrganizationTaskNote(taskId: string, request: UpdateOrganizationTaskNoteRequest): Promise<UpdateOrganizationTaskNoteResponse> {
+  async updateOrganizationTaskNote(taskId: string, userId: string, request: UpdateOrganizationTaskNoteRequest): Promise<UpdateOrganizationTaskNoteResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateOrganizationTaskNoteHeaders({ });
-    return await this.updateOrganizationTaskNoteWithOptions(taskId, request, headers, runtime);
+    return await this.updateOrganizationTaskNoteWithOptions(taskId, userId, request, headers, runtime);
   }
 
-  async updateOrganizationTaskNoteWithOptions(taskId: string, request: UpdateOrganizationTaskNoteRequest, headers: UpdateOrganizationTaskNoteHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskNoteResponse> {
+  async updateOrganizationTaskNoteWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskNoteRequest, headers: UpdateOrganizationTaskNoteHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskNoteResponse> {
     Util.validateModel(request);
     taskId = OpenApiUtil.getEncodeParam(taskId);
+    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.disableActivity)) {
       body["disableActivity"] = request.disableActivity;
@@ -2538,18 +2547,19 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateOrganizationTaskNoteResponse>(await this.doROARequest("UpdateOrganizationTaskNote", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/tasks/${taskId}/notes`, "json", req, runtime), new UpdateOrganizationTaskNoteResponse({}));
+    return $tea.cast<UpdateOrganizationTaskNoteResponse>(await this.doROARequest("UpdateOrganizationTaskNote", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/users/${userId}/tasks/${taskId}/notes`, "json", req, runtime), new UpdateOrganizationTaskNoteResponse({}));
   }
 
-  async updateOrganizationTaskPriority(taskId: string, request: UpdateOrganizationTaskPriorityRequest): Promise<UpdateOrganizationTaskPriorityResponse> {
+  async updateOrganizationTaskPriority(taskId: string, userId: string, request: UpdateOrganizationTaskPriorityRequest): Promise<UpdateOrganizationTaskPriorityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateOrganizationTaskPriorityHeaders({ });
-    return await this.updateOrganizationTaskPriorityWithOptions(taskId, request, headers, runtime);
+    return await this.updateOrganizationTaskPriorityWithOptions(taskId, userId, request, headers, runtime);
   }
 
-  async updateOrganizationTaskPriorityWithOptions(taskId: string, request: UpdateOrganizationTaskPriorityRequest, headers: UpdateOrganizationTaskPriorityHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskPriorityResponse> {
+  async updateOrganizationTaskPriorityWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskPriorityRequest, headers: UpdateOrganizationTaskPriorityHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskPriorityResponse> {
     Util.validateModel(request);
     taskId = OpenApiUtil.getEncodeParam(taskId);
+    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.disableActivity)) {
       body["disableActivity"] = request.disableActivity;
@@ -2576,18 +2586,19 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateOrganizationTaskPriorityResponse>(await this.doROARequest("UpdateOrganizationTaskPriority", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/tasks/${taskId}/priorities`, "json", req, runtime), new UpdateOrganizationTaskPriorityResponse({}));
+    return $tea.cast<UpdateOrganizationTaskPriorityResponse>(await this.doROARequest("UpdateOrganizationTaskPriority", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/users/${userId}/tasks/${taskId}/priorities`, "json", req, runtime), new UpdateOrganizationTaskPriorityResponse({}));
   }
 
-  async updateOrganizationTaskStatus(taskId: string, request: UpdateOrganizationTaskStatusRequest): Promise<UpdateOrganizationTaskStatusResponse> {
+  async updateOrganizationTaskStatus(taskId: string, userId: string, request: UpdateOrganizationTaskStatusRequest): Promise<UpdateOrganizationTaskStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateOrganizationTaskStatusHeaders({ });
-    return await this.updateOrganizationTaskStatusWithOptions(taskId, request, headers, runtime);
+    return await this.updateOrganizationTaskStatusWithOptions(taskId, userId, request, headers, runtime);
   }
 
-  async updateOrganizationTaskStatusWithOptions(taskId: string, request: UpdateOrganizationTaskStatusRequest, headers: UpdateOrganizationTaskStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskStatusResponse> {
+  async updateOrganizationTaskStatusWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskStatusRequest, headers: UpdateOrganizationTaskStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskStatusResponse> {
     Util.validateModel(request);
     taskId = OpenApiUtil.getEncodeParam(taskId);
+    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.disableActivity)) {
       body["disableActivity"] = request.disableActivity;
@@ -2614,7 +2625,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateOrganizationTaskStatusResponse>(await this.doROARequest("UpdateOrganizationTaskStatus", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/tasks/${taskId}/states`, "json", req, runtime), new UpdateOrganizationTaskStatusResponse({}));
+    return $tea.cast<UpdateOrganizationTaskStatusResponse>(await this.doROARequest("UpdateOrganizationTaskStatus", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/users/${userId}/tasks/${taskId}/states`, "json", req, runtime), new UpdateOrganizationTaskStatusResponse({}));
   }
 
 }

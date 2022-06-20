@@ -1083,6 +1083,91 @@ export class QueryEnterpriseAccountByPageResponse extends $tea.Model {
   }
 }
 
+export class QueryPermissionByUserIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPermissionByUserIdRequest extends $tea.Model {
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPermissionByUserIdResponseBody extends $tea.Model {
+  permissionDTOList?: QueryPermissionByUserIdResponseBodyPermissionDTOList[];
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      permissionDTOList: 'permissionDTOList',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      permissionDTOList: { 'type': 'array', 'itemType': QueryPermissionByUserIdResponseBodyPermissionDTOList },
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPermissionByUserIdResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryPermissionByUserIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryPermissionByUserIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryProjectByPageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1685,6 +1770,28 @@ export class QueryEnterpriseAccountByPageResponseBodyList extends $tea.Model {
   }
 }
 
+export class QueryPermissionByUserIdResponseBodyPermissionDTOList extends $tea.Model {
+  actionIdList?: string[];
+  resourceIdentity?: string;
+  static names(): { [key: string]: string } {
+    return {
+      actionIdList: 'actionIdList',
+      resourceIdentity: 'resourceIdentity',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actionIdList: { 'type': 'array', 'itemType': 'string' },
+      resourceIdentity: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryProjectByPageResponseBodyList extends $tea.Model {
   corpId?: string;
   createTime?: number;
@@ -2239,6 +2346,35 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryEnterpriseAccountByPageResponse>(await this.doROARequest("QueryEnterpriseAccountByPage", "bizfinance_1.0", "HTTP", "GET", "AK", `/v1.0/bizfinance/financeAccounts/list`, "json", req, runtime), new QueryEnterpriseAccountByPageResponse({}));
+  }
+
+  async queryPermissionByUserId(request: QueryPermissionByUserIdRequest): Promise<QueryPermissionByUserIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryPermissionByUserIdHeaders({ });
+    return await this.queryPermissionByUserIdWithOptions(request, headers, runtime);
+  }
+
+  async queryPermissionByUserIdWithOptions(request: QueryPermissionByUserIdRequest, headers: QueryPermissionByUserIdHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPermissionByUserIdResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryPermissionByUserIdResponse>(await this.doROARequest("QueryPermissionByUserId", "bizfinance_1.0", "HTTP", "GET", "AK", `/v1.0/bizfinance/permissions`, "json", req, runtime), new QueryPermissionByUserIdResponse({}));
   }
 
   async queryProjectByPage(request: QueryProjectByPageRequest): Promise<QueryProjectByPageResponse> {
