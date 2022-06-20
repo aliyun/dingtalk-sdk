@@ -1721,7 +1721,7 @@ class RegisterDeviceRequest(TeaModel):
         parent_id: str = None,
         product_type: str = None,
     ):
-        # 钉钉组织id
+        # 钉钉物联组织ID, 第三方平台必填，企业内部系统忽略
         self.corp_id = corp_id
         # 设备名称
         self.device_name = device_name

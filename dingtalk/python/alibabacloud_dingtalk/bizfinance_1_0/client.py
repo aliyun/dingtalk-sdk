@@ -793,6 +793,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryEnterpriseAccountByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/financeAccounts/list', 'json', req, runtime)
         )
 
+    def query_permission_by_user_id(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryPermissionByUserIdRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryPermissionByUserIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.QueryPermissionByUserIdHeaders()
+        return self.query_permission_by_user_id_with_options(request, headers, runtime)
+
+    async def query_permission_by_user_id_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryPermissionByUserIdRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryPermissionByUserIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.QueryPermissionByUserIdHeaders()
+        return await self.query_permission_by_user_id_with_options_async(request, headers, runtime)
+
+    def query_permission_by_user_id_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryPermissionByUserIdRequest,
+        headers: dingtalkbizfinance__1__0_models.QueryPermissionByUserIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.QueryPermissionByUserIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.QueryPermissionByUserIdResponse(),
+            self.do_roarequest('QueryPermissionByUserId', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/permissions', 'json', req, runtime)
+        )
+
+    async def query_permission_by_user_id_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryPermissionByUserIdRequest,
+        headers: dingtalkbizfinance__1__0_models.QueryPermissionByUserIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.QueryPermissionByUserIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.QueryPermissionByUserIdResponse(),
+            await self.do_roarequest_async('QueryPermissionByUserId', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/permissions', 'json', req, runtime)
+        )
+
     def query_project_by_page(
         self,
         request: dingtalkbizfinance__1__0_models.QueryProjectByPageRequest,

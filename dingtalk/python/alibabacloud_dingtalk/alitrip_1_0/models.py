@@ -520,11 +520,13 @@ class BillSettementBtripTrainResponseBodyModuleDataList(TeaModel):
         project_code: str = None,
         project_name: str = None,
         refund_fee: float = None,
+        remark: str = None,
         run_time: str = None,
         seat_no: str = None,
         seat_type: str = None,
         service_fee: float = None,
         settlement_fee: float = None,
+        settlement_grant_fee: float = None,
         settlement_time: str = None,
         settlement_type: str = None,
         status: int = None,
@@ -599,6 +601,8 @@ class BillSettementBtripTrainResponseBodyModuleDataList(TeaModel):
         self.project_name = project_name
         # 退款手续费
         self.refund_fee = refund_fee
+        # 备注
+        self.remark = remark
         # 运行时长
         self.run_time = run_time
         # 座位号
@@ -609,6 +613,8 @@ class BillSettementBtripTrainResponseBodyModuleDataList(TeaModel):
         self.service_fee = service_fee
         # 结算金额
         self.settlement_fee = settlement_fee
+        # 预存赠送金额消费
+        self.settlement_grant_fee = settlement_grant_fee
         # 结算时间
         self.settlement_time = settlement_time
         # 结算类型
@@ -703,6 +709,8 @@ class BillSettementBtripTrainResponseBodyModuleDataList(TeaModel):
             result['projectName'] = self.project_name
         if self.refund_fee is not None:
             result['refundFee'] = self.refund_fee
+        if self.remark is not None:
+            result['remark'] = self.remark
         if self.run_time is not None:
             result['runTime'] = self.run_time
         if self.seat_no is not None:
@@ -713,6 +721,8 @@ class BillSettementBtripTrainResponseBodyModuleDataList(TeaModel):
             result['serviceFee'] = self.service_fee
         if self.settlement_fee is not None:
             result['settlementFee'] = self.settlement_fee
+        if self.settlement_grant_fee is not None:
+            result['settlementGrantFee'] = self.settlement_grant_fee
         if self.settlement_time is not None:
             result['settlementTime'] = self.settlement_time
         if self.settlement_type is not None:
@@ -801,6 +811,8 @@ class BillSettementBtripTrainResponseBodyModuleDataList(TeaModel):
             self.project_name = m.get('projectName')
         if m.get('refundFee') is not None:
             self.refund_fee = m.get('refundFee')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
         if m.get('runTime') is not None:
             self.run_time = m.get('runTime')
         if m.get('seatNo') is not None:
@@ -811,6 +823,8 @@ class BillSettementBtripTrainResponseBodyModuleDataList(TeaModel):
             self.service_fee = m.get('serviceFee')
         if m.get('settlementFee') is not None:
             self.settlement_fee = m.get('settlementFee')
+        if m.get('settlementGrantFee') is not None:
+            self.settlement_grant_fee = m.get('settlementGrantFee')
         if m.get('settlementTime') is not None:
             self.settlement_time = m.get('settlementTime')
         if m.get('settlementType') is not None:
@@ -1130,8 +1144,10 @@ class BillSettementCarResponseBodyModuleDataList(TeaModel):
         real_drive_distance: str = None,
         real_from_addr: str = None,
         real_to_addr: str = None,
+        remark: str = None,
         service_fee: str = None,
         settlement_fee: float = None,
+        settlement_grant_fee: float = None,
         settlement_time: str = None,
         settlement_type: str = None,
         special_order: str = None,
@@ -1227,10 +1243,14 @@ class BillSettementCarResponseBodyModuleDataList(TeaModel):
         self.real_from_addr = real_from_addr
         # 实际下车点
         self.real_to_addr = real_to_addr
+        # 备注
+        self.remark = remark
         # 服务费，仅在feeType 40111 中展示
         self.service_fee = service_fee
         # 结算金额
         self.settlement_fee = settlement_fee
+        # 预存赠送金额消费
+        self.settlement_grant_fee = settlement_grant_fee
         # 结算时间
         self.settlement_time = settlement_time
         # 结算类型
@@ -1347,10 +1367,14 @@ class BillSettementCarResponseBodyModuleDataList(TeaModel):
             result['realFromAddr'] = self.real_from_addr
         if self.real_to_addr is not None:
             result['realToAddr'] = self.real_to_addr
+        if self.remark is not None:
+            result['remark'] = self.remark
         if self.service_fee is not None:
             result['serviceFee'] = self.service_fee
         if self.settlement_fee is not None:
             result['settlementFee'] = self.settlement_fee
+        if self.settlement_grant_fee is not None:
+            result['settlementGrantFee'] = self.settlement_grant_fee
         if self.settlement_time is not None:
             result['settlementTime'] = self.settlement_time
         if self.settlement_type is not None:
@@ -1461,10 +1485,14 @@ class BillSettementCarResponseBodyModuleDataList(TeaModel):
             self.real_from_addr = m.get('realFromAddr')
         if m.get('realToAddr') is not None:
             self.real_to_addr = m.get('realToAddr')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
         if m.get('serviceFee') is not None:
             self.service_fee = m.get('serviceFee')
         if m.get('settlementFee') is not None:
             self.settlement_fee = m.get('settlementFee')
+        if m.get('settlementGrantFee') is not None:
+            self.settlement_grant_fee = m.get('settlementGrantFee')
         if m.get('settlementTime') is not None:
             self.settlement_time = m.get('settlementTime')
         if m.get('settlementType') is not None:
@@ -1804,10 +1832,12 @@ class BillSettementFlightResponseBodyModuleDataList(TeaModel):
         project_name: str = None,
         refund_fee: float = None,
         refund_upgrade_cost: float = None,
+        remark: str = None,
         repeat_refund: str = None,
         seal_price: float = None,
         service_fee: float = None,
         settlement_fee: float = None,
+        settlement_grant_fee: float = None,
         settlement_time: str = None,
         settlement_type: str = None,
         status: int = None,
@@ -1930,6 +1960,8 @@ class BillSettementFlightResponseBodyModuleDataList(TeaModel):
         self.refund_fee = refund_fee
         # 改签退票手续费
         self.refund_upgrade_cost = refund_upgrade_cost
+        # 备注
+        self.remark = remark
         # 是否重复退
         self.repeat_refund = repeat_refund
         # 销售价
@@ -1938,6 +1970,8 @@ class BillSettementFlightResponseBodyModuleDataList(TeaModel):
         self.service_fee = service_fee
         # 结算金额
         self.settlement_fee = settlement_fee
+        # 预存赠送金额消费
+        self.settlement_grant_fee = settlement_grant_fee
         # 结算时间
         self.settlement_time = settlement_time
         # 结算类型
@@ -2078,6 +2112,8 @@ class BillSettementFlightResponseBodyModuleDataList(TeaModel):
             result['refundFee'] = self.refund_fee
         if self.refund_upgrade_cost is not None:
             result['refundUpgradeCost'] = self.refund_upgrade_cost
+        if self.remark is not None:
+            result['remark'] = self.remark
         if self.repeat_refund is not None:
             result['repeatRefund'] = self.repeat_refund
         if self.seal_price is not None:
@@ -2086,6 +2122,8 @@ class BillSettementFlightResponseBodyModuleDataList(TeaModel):
             result['serviceFee'] = self.service_fee
         if self.settlement_fee is not None:
             result['settlementFee'] = self.settlement_fee
+        if self.settlement_grant_fee is not None:
+            result['settlementGrantFee'] = self.settlement_grant_fee
         if self.settlement_time is not None:
             result['settlementTime'] = self.settlement_time
         if self.settlement_type is not None:
@@ -2220,6 +2258,8 @@ class BillSettementFlightResponseBodyModuleDataList(TeaModel):
             self.refund_fee = m.get('refundFee')
         if m.get('refundUpgradeCost') is not None:
             self.refund_upgrade_cost = m.get('refundUpgradeCost')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
         if m.get('repeatRefund') is not None:
             self.repeat_refund = m.get('repeatRefund')
         if m.get('sealPrice') is not None:
@@ -2228,6 +2268,8 @@ class BillSettementFlightResponseBodyModuleDataList(TeaModel):
             self.service_fee = m.get('serviceFee')
         if m.get('settlementFee') is not None:
             self.settlement_fee = m.get('settlementFee')
+        if m.get('settlementGrantFee') is not None:
+            self.settlement_grant_fee = m.get('settlementGrantFee')
         if m.get('settlementTime') is not None:
             self.settlement_time = m.get('settlementTime')
         if m.get('settlementType') is not None:
@@ -2545,11 +2587,13 @@ class BillSettementHotelResponseBodyModuleDataList(TeaModel):
         project_code: str = None,
         project_name: str = None,
         promotion_fee: float = None,
+        remark: str = None,
         room_number: int = None,
         room_price: float = None,
         room_type: str = None,
         service_fee: float = None,
         settlement_fee: float = None,
+        settlement_grant_fee: float = None,
         settlement_time: str = None,
         settlement_type: str = None,
         status: int = None,
@@ -2635,6 +2679,8 @@ class BillSettementHotelResponseBodyModuleDataList(TeaModel):
         self.project_name = project_name
         # 优惠券
         self.promotion_fee = promotion_fee
+        # 备注
+        self.remark = remark
         # 房间数
         self.room_number = room_number
         # 房价
@@ -2645,6 +2691,8 @@ class BillSettementHotelResponseBodyModuleDataList(TeaModel):
         self.service_fee = service_fee
         # 结算金额
         self.settlement_fee = settlement_fee
+        # 预存赠送金额消费
+        self.settlement_grant_fee = settlement_grant_fee
         # 结算时间
         self.settlement_time = settlement_time
         # 结算类型
@@ -2747,6 +2795,8 @@ class BillSettementHotelResponseBodyModuleDataList(TeaModel):
             result['projectName'] = self.project_name
         if self.promotion_fee is not None:
             result['promotionFee'] = self.promotion_fee
+        if self.remark is not None:
+            result['remark'] = self.remark
         if self.room_number is not None:
             result['roomNumber'] = self.room_number
         if self.room_price is not None:
@@ -2757,6 +2807,8 @@ class BillSettementHotelResponseBodyModuleDataList(TeaModel):
             result['serviceFee'] = self.service_fee
         if self.settlement_fee is not None:
             result['settlementFee'] = self.settlement_fee
+        if self.settlement_grant_fee is not None:
+            result['settlementGrantFee'] = self.settlement_grant_fee
         if self.settlement_time is not None:
             result['settlementTime'] = self.settlement_time
         if self.settlement_type is not None:
@@ -2853,6 +2905,8 @@ class BillSettementHotelResponseBodyModuleDataList(TeaModel):
             self.project_name = m.get('projectName')
         if m.get('promotionFee') is not None:
             self.promotion_fee = m.get('promotionFee')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
         if m.get('roomNumber') is not None:
             self.room_number = m.get('roomNumber')
         if m.get('roomPrice') is not None:
@@ -2863,6 +2917,8 @@ class BillSettementHotelResponseBodyModuleDataList(TeaModel):
             self.service_fee = m.get('serviceFee')
         if m.get('settlementFee') is not None:
             self.settlement_fee = m.get('settlementFee')
+        if m.get('settlementGrantFee') is not None:
+            self.settlement_grant_fee = m.get('settlementGrantFee')
         if m.get('settlementTime') is not None:
             self.settlement_time = m.get('settlementTime')
         if m.get('settlementType') is not None:

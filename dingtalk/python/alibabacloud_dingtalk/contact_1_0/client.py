@@ -2873,6 +2873,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('TranslateFile', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/files/translate', 'json', req, runtime)
         )
 
+    def unique_query_user_card(
+        self,
+        request: dingtalkcontact__1__0_models.UniqueQueryUserCardRequest,
+    ) -> dingtalkcontact__1__0_models.UniqueQueryUserCardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UniqueQueryUserCardHeaders()
+        return self.unique_query_user_card_with_options(request, headers, runtime)
+
+    async def unique_query_user_card_async(
+        self,
+        request: dingtalkcontact__1__0_models.UniqueQueryUserCardRequest,
+    ) -> dingtalkcontact__1__0_models.UniqueQueryUserCardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UniqueQueryUserCardHeaders()
+        return await self.unique_query_user_card_with_options_async(request, headers, runtime)
+
+    def unique_query_user_card_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.UniqueQueryUserCardRequest,
+        headers: dingtalkcontact__1__0_models.UniqueQueryUserCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UniqueQueryUserCardResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UniqueQueryUserCardResponse(),
+            self.do_roarequest('UniqueQueryUserCard', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/uniques/cards', 'json', req, runtime)
+        )
+
+    async def unique_query_user_card_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.UniqueQueryUserCardRequest,
+        headers: dingtalkcontact__1__0_models.UniqueQueryUserCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UniqueQueryUserCardResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UniqueQueryUserCardResponse(),
+            await self.do_roarequest_async('UniqueQueryUserCard', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/uniques/cards', 'json', req, runtime)
+        )
+
     def update_branch_attributes_in_cooperate(
         self,
         request: dingtalkcontact__1__0_models.UpdateBranchAttributesInCooperateRequest,

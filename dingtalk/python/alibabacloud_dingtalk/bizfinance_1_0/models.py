@@ -2258,6 +2258,180 @@ class QueryEnterpriseAccountByPageResponse(TeaModel):
         return self
 
 
+class QueryPermissionByUserIdHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryPermissionByUserIdRequest(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+    ):
+        # 用户ID
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryPermissionByUserIdResponseBodyPermissionDTOList(TeaModel):
+    def __init__(
+        self,
+        action_id_list: List[str] = None,
+        resource_identity: str = None,
+    ):
+        self.action_id_list = action_id_list
+        self.resource_identity = resource_identity
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_id_list is not None:
+            result['actionIdList'] = self.action_id_list
+        if self.resource_identity is not None:
+            result['resourceIdentity'] = self.resource_identity
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionIdList') is not None:
+            self.action_id_list = m.get('actionIdList')
+        if m.get('resourceIdentity') is not None:
+            self.resource_identity = m.get('resourceIdentity')
+        return self
+
+
+class QueryPermissionByUserIdResponseBody(TeaModel):
+    def __init__(
+        self,
+        permission_dtolist: List[QueryPermissionByUserIdResponseBodyPermissionDTOList] = None,
+        user_id: str = None,
+    ):
+        # 权限信息列表
+        self.permission_dtolist = permission_dtolist
+        # 用户ID
+        self.user_id = user_id
+
+    def validate(self):
+        if self.permission_dtolist:
+            for k in self.permission_dtolist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['permissionDTOList'] = []
+        if self.permission_dtolist is not None:
+            for k in self.permission_dtolist:
+                result['permissionDTOList'].append(k.to_map() if k else None)
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.permission_dtolist = []
+        if m.get('permissionDTOList') is not None:
+            for k in m.get('permissionDTOList'):
+                temp_model = QueryPermissionByUserIdResponseBodyPermissionDTOList()
+                self.permission_dtolist.append(temp_model.from_map(k))
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryPermissionByUserIdResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryPermissionByUserIdResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryPermissionByUserIdResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryProjectByPageHeaders(TeaModel):
     def __init__(
         self,
