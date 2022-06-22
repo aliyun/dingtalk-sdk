@@ -1722,6 +1722,10 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             {
                 body["deptId"] = request.DeptId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
                 body["userId"] = request.UserId;
@@ -1750,6 +1754,10 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
             {
                 body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
@@ -2354,6 +2362,10 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             {
                 body["residentUpdateInfo"] = request.ResidentUpdateInfo;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -2378,6 +2390,10 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResidentUpdateInfo.ToMap()))
             {
                 body["residentUpdateInfo"] = request.ResidentUpdateInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

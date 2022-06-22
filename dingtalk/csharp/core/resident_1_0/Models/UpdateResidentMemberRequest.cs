@@ -22,9 +22,6 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
             [NameInMap("isPropertyOwner")]
             [Validation(Required=false)]
             public bool? IsPropertyOwner { get; set; }
-            [NameInMap("isRetainOldDept")]
-            [Validation(Required=false)]
-            public bool? IsRetainOldDept { get; set; }
             [NameInMap("memberDeptExtension")]
             [Validation(Required=false)]
             public Dictionary<string, string> MemberDeptExtension { get; set; }
@@ -41,6 +38,13 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
             [Validation(Required=false)]
             public string UserId { get; set; }
         };
+
+        /// <summary>
+        /// unionId
+        /// </summary>
+        [NameInMap("unionId")]
+        [Validation(Required=false)]
+        public string UnionId { get; set; }
 
     }
 

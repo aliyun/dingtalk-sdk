@@ -23,9 +23,6 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public string AppKey { get; set; }
 
-        /// <summary>
-        /// 业务参数，作为事件业务body
-        /// </summary>
         [NameInMap("bizData")]
         [Validation(Required=false)]
         public Dictionary<string, object> BizData { get; set; }

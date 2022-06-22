@@ -172,6 +172,20 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public List<string> ProcessIds { get; set; }
 
+        /// <summary>
+        /// 业务tagKey
+        /// </summary>
+        [NameInMap("tagKey")]
+        [Validation(Required=false)]
+        public string TagKey { get; set; }
+
+        /// <summary>
+        /// 业务tagValues
+        /// </summary>
+        [NameInMap("tagValues")]
+        [Validation(Required=false)]
+        public List<string> TagValues { get; set; }
+
     }
 
 }

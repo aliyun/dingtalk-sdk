@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class SyncTaskTemplateRequest : TeaModel {
         /// <summary>
+        /// 是否删除任务模版，true删除，false不删除
+        /// </summary>
+        [NameInMap("delete")]
+        [Validation(Required=false)]
+        public bool? Delete { get; set; }
+
+        /// <summary>
         /// 任务模板描述
         /// </summary>
         [NameInMap("des")]

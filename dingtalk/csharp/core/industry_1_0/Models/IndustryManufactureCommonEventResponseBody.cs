@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class IndustryManufactureCommonEventResponseBody : TeaModel {
+        [NameInMap("errorMsg")]
+        [Validation(Required=false)]
+        public string ErrorMsg { get; set; }
+
         /// <summary>
         /// Id of the request
         /// </summary>
@@ -19,10 +23,6 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [NameInMap("result")]
         [Validation(Required=false)]
         public object Result { get; set; }
-
-        [NameInMap("success")]
-        [Validation(Required=false)]
-        public bool? Success { get; set; }
 
     }
 

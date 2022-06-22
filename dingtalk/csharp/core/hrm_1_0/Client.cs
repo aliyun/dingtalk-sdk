@@ -1331,6 +1331,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 query["solutionType"] = request.SolutionType;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Delete))
+            {
+                body["delete"] = request.Delete;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Des))
             {
                 body["des"] = request.Des;
@@ -1386,6 +1390,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 query["solutionType"] = request.SolutionType;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Delete))
+            {
+                body["delete"] = request.Delete;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Des))
             {
                 body["des"] = request.Des;
