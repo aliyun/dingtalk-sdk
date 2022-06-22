@@ -2432,6 +2432,225 @@ class QueryPermissionByUserIdResponse(TeaModel):
         return self
 
 
+class QueryPermissionRoleMemberHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryPermissionRoleMemberRequest(TeaModel):
+    def __init__(
+        self,
+        role_code_list: List[str] = None,
+    ):
+        # 角色的唯一标识列表
+        self.role_code_list = role_code_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.role_code_list is not None:
+            result['roleCodeList'] = self.role_code_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('roleCodeList') is not None:
+            self.role_code_list = m.get('roleCodeList')
+        return self
+
+
+class RoleMemberMapValueMemberList(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+        nick: str = None,
+        avatar_url: str = None,
+    ):
+        # 用户ID
+        self.user_id = user_id
+        # 昵称
+        self.nick = nick
+        # 头像URL
+        self.avatar_url = avatar_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.nick is not None:
+            result['nick'] = self.nick
+        if self.avatar_url is not None:
+            result['avatarUrl'] = self.avatar_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('nick') is not None:
+            self.nick = m.get('nick')
+        if m.get('avatarUrl') is not None:
+            self.avatar_url = m.get('avatarUrl')
+        return self
+
+
+class RoleMemberMapValue(TeaModel):
+    def __init__(
+        self,
+        role_code: str = None,
+        member_list: List[RoleMemberMapValueMemberList] = None,
+    ):
+        # 角色唯一标识
+        self.role_code = role_code
+        # 成员信息列表
+        self.member_list = member_list
+
+    def validate(self):
+        if self.member_list:
+            for k in self.member_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.role_code is not None:
+            result['roleCode'] = self.role_code
+        result['memberList'] = []
+        if self.member_list is not None:
+            for k in self.member_list:
+                result['memberList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('roleCode') is not None:
+            self.role_code = m.get('roleCode')
+        self.member_list = []
+        if m.get('memberList') is not None:
+            for k in m.get('memberList'):
+                temp_model = RoleMemberMapValueMemberList()
+                self.member_list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryPermissionRoleMemberResponseBody(TeaModel):
+    def __init__(
+        self,
+        role_member_map: Dict[str, RoleMemberMapValue] = None,
+    ):
+        # 角色下的成员MAP
+        self.role_member_map = role_member_map
+
+    def validate(self):
+        if self.role_member_map:
+            for v in self.role_member_map.values():
+                if v:
+                    v.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['roleMemberMap'] = {}
+        if self.role_member_map is not None:
+            for k, v in self.role_member_map.items():
+                result['roleMemberMap'][k] = v.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.role_member_map = {}
+        if m.get('roleMemberMap') is not None:
+            for k, v in m.get('roleMemberMap').items():
+                temp_model = RoleMemberMapValue()
+                self.role_member_map[k] = temp_model.from_map(v)
+        return self
+
+
+class QueryPermissionRoleMemberResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryPermissionRoleMemberResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryPermissionRoleMemberResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryProjectByPageHeaders(TeaModel):
     def __init__(
         self,

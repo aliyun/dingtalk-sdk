@@ -1175,6 +1175,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetAllLabelableDepts', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/partnerDepartments', 'json', req, runtime)
         )
 
+    def get_app_dispatch_info(
+        self,
+        request: dingtalkexclusive__1__0_models.GetAppDispatchInfoRequest,
+    ) -> dingtalkexclusive__1__0_models.GetAppDispatchInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetAppDispatchInfoHeaders()
+        return self.get_app_dispatch_info_with_options(request, headers, runtime)
+
+    async def get_app_dispatch_info_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetAppDispatchInfoRequest,
+    ) -> dingtalkexclusive__1__0_models.GetAppDispatchInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetAppDispatchInfoHeaders()
+        return await self.get_app_dispatch_info_with_options_async(request, headers, runtime)
+
+    def get_app_dispatch_info_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetAppDispatchInfoRequest,
+        headers: dingtalkexclusive__1__0_models.GetAppDispatchInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetAppDispatchInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetAppDispatchInfoResponse(),
+            self.do_roarequest('GetAppDispatchInfo', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/apps/distributionInfos', 'json', req, runtime)
+        )
+
+    async def get_app_dispatch_info_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetAppDispatchInfoRequest,
+        headers: dingtalkexclusive__1__0_models.GetAppDispatchInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetAppDispatchInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetAppDispatchInfoResponse(),
+            await self.do_roarequest_async('GetAppDispatchInfo', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/apps/distributionInfos', 'json', req, runtime)
+        )
+
     def get_calender_summary(
         self,
         data_id: str,

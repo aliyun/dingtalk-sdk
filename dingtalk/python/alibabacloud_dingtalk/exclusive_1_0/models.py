@@ -2668,6 +2668,483 @@ class GetAllLabelableDeptsResponse(TeaModel):
         return self
 
 
+class GetAppDispatchInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetAppDispatchInfoRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: int = None,
+        start_time: int = None,
+    ):
+        # 打包结束日期查询参数
+        self.end_time = end_time
+        # 打包开始日期查询参数
+        self.start_time = start_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        return self
+
+
+class GetAppDispatchInfoResponseBodyAndroid(TeaModel):
+    def __init__(
+        self,
+        base_line_version: str = None,
+        download_url: str = None,
+        in_gray: bool = None,
+        pack_time: int = None,
+        platform: str = None,
+        version: str = None,
+    ):
+        # 基线版本
+        self.base_line_version = base_line_version
+        # 下载地址
+        self.download_url = download_url
+        # 是否灰度。true 灰度发布中 | false 全量灰度发布。为空则为未发布
+        self.in_gray = in_gray
+        # 打包时间
+        self.pack_time = pack_time
+        # 客户端类型
+        self.platform = platform
+        # 版本号
+        self.version = version
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.base_line_version is not None:
+            result['baseLineVersion'] = self.base_line_version
+        if self.download_url is not None:
+            result['downloadUrl'] = self.download_url
+        if self.in_gray is not None:
+            result['inGray'] = self.in_gray
+        if self.pack_time is not None:
+            result['packTime'] = self.pack_time
+        if self.platform is not None:
+            result['platform'] = self.platform
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('baseLineVersion') is not None:
+            self.base_line_version = m.get('baseLineVersion')
+        if m.get('downloadUrl') is not None:
+            self.download_url = m.get('downloadUrl')
+        if m.get('inGray') is not None:
+            self.in_gray = m.get('inGray')
+        if m.get('packTime') is not None:
+            self.pack_time = m.get('packTime')
+        if m.get('platform') is not None:
+            self.platform = m.get('platform')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class GetAppDispatchInfoResponseBodyIOSExt(TeaModel):
+    def __init__(
+        self,
+        plist: str = None,
+    ):
+        # plist下载地址
+        self.plist = plist
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.plist is not None:
+            result['plist'] = self.plist
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('plist') is not None:
+            self.plist = m.get('plist')
+        return self
+
+
+class GetAppDispatchInfoResponseBodyIOS(TeaModel):
+    def __init__(
+        self,
+        base_line_version: str = None,
+        download_url: str = None,
+        ext: GetAppDispatchInfoResponseBodyIOSExt = None,
+        in_gray: bool = None,
+        pack_time: int = None,
+        platform: str = None,
+        version: str = None,
+    ):
+        # 基线版本
+        self.base_line_version = base_line_version
+        # 下载地址
+        self.download_url = download_url
+        self.ext = ext
+        # 是否灰度。true 灰度发布中 | false 全量灰度发布。为空则为未发布
+        self.in_gray = in_gray
+        # 打包时间
+        self.pack_time = pack_time
+        # 客户端类型
+        self.platform = platform
+        # 版本号
+        self.version = version
+
+    def validate(self):
+        if self.ext:
+            self.ext.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.base_line_version is not None:
+            result['baseLineVersion'] = self.base_line_version
+        if self.download_url is not None:
+            result['downloadUrl'] = self.download_url
+        if self.ext is not None:
+            result['ext'] = self.ext.to_map()
+        if self.in_gray is not None:
+            result['inGray'] = self.in_gray
+        if self.pack_time is not None:
+            result['packTime'] = self.pack_time
+        if self.platform is not None:
+            result['platform'] = self.platform
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('baseLineVersion') is not None:
+            self.base_line_version = m.get('baseLineVersion')
+        if m.get('downloadUrl') is not None:
+            self.download_url = m.get('downloadUrl')
+        if m.get('ext') is not None:
+            temp_model = GetAppDispatchInfoResponseBodyIOSExt()
+            self.ext = temp_model.from_map(m['ext'])
+        if m.get('inGray') is not None:
+            self.in_gray = m.get('inGray')
+        if m.get('packTime') is not None:
+            self.pack_time = m.get('packTime')
+        if m.get('platform') is not None:
+            self.platform = m.get('platform')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class GetAppDispatchInfoResponseBodyMac(TeaModel):
+    def __init__(
+        self,
+        base_line_version: str = None,
+        download_url: str = None,
+        in_gray: bool = None,
+        pack_time: int = None,
+        platform: str = None,
+        version: str = None,
+    ):
+        # 基线版本
+        self.base_line_version = base_line_version
+        # 下载地址
+        self.download_url = download_url
+        # 是否灰度。true 灰度发布中 | false 全量灰度发布。为空则为未发布
+        self.in_gray = in_gray
+        # 打包时间
+        self.pack_time = pack_time
+        # 客户端类型
+        self.platform = platform
+        # 版本号
+        self.version = version
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.base_line_version is not None:
+            result['baseLineVersion'] = self.base_line_version
+        if self.download_url is not None:
+            result['downloadUrl'] = self.download_url
+        if self.in_gray is not None:
+            result['inGray'] = self.in_gray
+        if self.pack_time is not None:
+            result['packTime'] = self.pack_time
+        if self.platform is not None:
+            result['platform'] = self.platform
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('baseLineVersion') is not None:
+            self.base_line_version = m.get('baseLineVersion')
+        if m.get('downloadUrl') is not None:
+            self.download_url = m.get('downloadUrl')
+        if m.get('inGray') is not None:
+            self.in_gray = m.get('inGray')
+        if m.get('packTime') is not None:
+            self.pack_time = m.get('packTime')
+        if m.get('platform') is not None:
+            self.platform = m.get('platform')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class GetAppDispatchInfoResponseBodyWindows(TeaModel):
+    def __init__(
+        self,
+        base_line_version: str = None,
+        download_url: str = None,
+        in_gray: bool = None,
+        pack_time: int = None,
+        platform: str = None,
+        version: str = None,
+    ):
+        # 基线版本
+        self.base_line_version = base_line_version
+        # 下载地址
+        self.download_url = download_url
+        # 是否灰度。true 灰度发布中 | false 全量灰度发布。为空则为未发布
+        self.in_gray = in_gray
+        # 打包时间
+        self.pack_time = pack_time
+        # 客户端类型
+        self.platform = platform
+        # 版本号
+        self.version = version
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.base_line_version is not None:
+            result['baseLineVersion'] = self.base_line_version
+        if self.download_url is not None:
+            result['downloadUrl'] = self.download_url
+        if self.in_gray is not None:
+            result['inGray'] = self.in_gray
+        if self.pack_time is not None:
+            result['packTime'] = self.pack_time
+        if self.platform is not None:
+            result['platform'] = self.platform
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('baseLineVersion') is not None:
+            self.base_line_version = m.get('baseLineVersion')
+        if m.get('downloadUrl') is not None:
+            self.download_url = m.get('downloadUrl')
+        if m.get('inGray') is not None:
+            self.in_gray = m.get('inGray')
+        if m.get('packTime') is not None:
+            self.pack_time = m.get('packTime')
+        if m.get('platform') is not None:
+            self.platform = m.get('platform')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class GetAppDispatchInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        android: List[GetAppDispatchInfoResponseBodyAndroid] = None,
+        i_os: List[GetAppDispatchInfoResponseBodyIOS] = None,
+        mac: List[GetAppDispatchInfoResponseBodyMac] = None,
+        windows: List[GetAppDispatchInfoResponseBodyWindows] = None,
+    ):
+        # android打包记录
+        self.android = android
+        # iOS打包记录
+        self.i_os = i_os
+        # mac打包记录
+        self.mac = mac
+        # windows打包记录
+        self.windows = windows
+
+    def validate(self):
+        if self.android:
+            for k in self.android:
+                if k:
+                    k.validate()
+        if self.i_os:
+            for k in self.i_os:
+                if k:
+                    k.validate()
+        if self.mac:
+            for k in self.mac:
+                if k:
+                    k.validate()
+        if self.windows:
+            for k in self.windows:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['android'] = []
+        if self.android is not None:
+            for k in self.android:
+                result['android'].append(k.to_map() if k else None)
+        result['iOS'] = []
+        if self.i_os is not None:
+            for k in self.i_os:
+                result['iOS'].append(k.to_map() if k else None)
+        result['mac'] = []
+        if self.mac is not None:
+            for k in self.mac:
+                result['mac'].append(k.to_map() if k else None)
+        result['windows'] = []
+        if self.windows is not None:
+            for k in self.windows:
+                result['windows'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.android = []
+        if m.get('android') is not None:
+            for k in m.get('android'):
+                temp_model = GetAppDispatchInfoResponseBodyAndroid()
+                self.android.append(temp_model.from_map(k))
+        self.i_os = []
+        if m.get('iOS') is not None:
+            for k in m.get('iOS'):
+                temp_model = GetAppDispatchInfoResponseBodyIOS()
+                self.i_os.append(temp_model.from_map(k))
+        self.mac = []
+        if m.get('mac') is not None:
+            for k in m.get('mac'):
+                temp_model = GetAppDispatchInfoResponseBodyMac()
+                self.mac.append(temp_model.from_map(k))
+        self.windows = []
+        if m.get('windows') is not None:
+            for k in m.get('windows'):
+                temp_model = GetAppDispatchInfoResponseBodyWindows()
+                self.windows.append(temp_model.from_map(k))
+        return self
+
+
+class GetAppDispatchInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetAppDispatchInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetAppDispatchInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetCalenderSummaryHeaders(TeaModel):
     def __init__(
         self,

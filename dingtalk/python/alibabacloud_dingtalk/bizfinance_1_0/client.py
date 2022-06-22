@@ -857,6 +857,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryPermissionByUserId', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/permissions', 'json', req, runtime)
         )
 
+    def query_permission_role_member(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberHeaders()
+        return self.query_permission_role_member_with_options(request, headers, runtime)
+
+    async def query_permission_role_member_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberHeaders()
+        return await self.query_permission_role_member_with_options_async(request, headers, runtime)
+
+    def query_permission_role_member_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberRequest,
+        headers: dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.role_code_list):
+            body['roleCodeList'] = request.role_code_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberResponse(),
+            self.do_roarequest('QueryPermissionRoleMember', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/roles/members/query', 'json', req, runtime)
+        )
+
+    async def query_permission_role_member_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberRequest,
+        headers: dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.role_code_list):
+            body['roleCodeList'] = request.role_code_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberResponse(),
+            await self.do_roarequest_async('QueryPermissionRoleMember', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/roles/members/query', 'json', req, runtime)
+        )
+
     def query_project_by_page(
         self,
         request: dingtalkbizfinance__1__0_models.QueryProjectByPageRequest,

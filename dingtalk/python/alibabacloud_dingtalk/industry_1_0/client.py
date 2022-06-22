@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
+from typing import Dict
 
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
@@ -22,6 +23,1388 @@ class Client(OpenApiClient):
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
+
+    def campus_add_renter_member(
+        self,
+        request: dingtalkindustry__1__0_models.CampusAddRenterMemberRequest,
+    ) -> dingtalkindustry__1__0_models.CampusAddRenterMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusAddRenterMemberHeaders()
+        return self.campus_add_renter_member_with_options(request, headers, runtime)
+
+    async def campus_add_renter_member_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusAddRenterMemberRequest,
+    ) -> dingtalkindustry__1__0_models.CampusAddRenterMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusAddRenterMemberHeaders()
+        return await self.campus_add_renter_member_with_options_async(request, headers, runtime)
+
+    def campus_add_renter_member_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CampusAddRenterMemberRequest,
+        headers: dingtalkindustry__1__0_models.CampusAddRenterMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusAddRenterMemberResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.extend):
+            body['extend'] = request.extend
+        if not UtilClient.is_unset(request.mobile):
+            body['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.renter_id):
+            body['renterId'] = request.renter_id
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusAddRenterMemberResponse(),
+            self.do_roarequest('CampusAddRenterMember', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/campuses/renters/members', 'json', req, runtime)
+        )
+
+    async def campus_add_renter_member_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusAddRenterMemberRequest,
+        headers: dingtalkindustry__1__0_models.CampusAddRenterMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusAddRenterMemberResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.extend):
+            body['extend'] = request.extend
+        if not UtilClient.is_unset(request.mobile):
+            body['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.renter_id):
+            body['renterId'] = request.renter_id
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusAddRenterMemberResponse(),
+            await self.do_roarequest_async('CampusAddRenterMember', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/campuses/renters/members', 'json', req, runtime)
+        )
+
+    def campus_create_campus(
+        self,
+        request: dingtalkindustry__1__0_models.CampusCreateCampusRequest,
+    ) -> dingtalkindustry__1__0_models.CampusCreateCampusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusCreateCampusHeaders()
+        return self.campus_create_campus_with_options(request, headers, runtime)
+
+    async def campus_create_campus_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusCreateCampusRequest,
+    ) -> dingtalkindustry__1__0_models.CampusCreateCampusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusCreateCampusHeaders()
+        return await self.campus_create_campus_with_options_async(request, headers, runtime)
+
+    def campus_create_campus_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CampusCreateCampusRequest,
+        headers: dingtalkindustry__1__0_models.CampusCreateCampusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusCreateCampusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.address):
+            body['address'] = request.address
+        if not UtilClient.is_unset(request.area):
+            body['area'] = request.area
+        if not UtilClient.is_unset(request.belong_project_group_id):
+            body['belongProjectGroupId'] = request.belong_project_group_id
+        if not UtilClient.is_unset(request.campus_name):
+            body['campusName'] = request.campus_name
+        if not UtilClient.is_unset(request.capacity):
+            body['capacity'] = request.capacity
+        if not UtilClient.is_unset(request.city_id):
+            body['cityId'] = request.city_id
+        if not UtilClient.is_unset(request.country):
+            body['country'] = request.country
+        if not UtilClient.is_unset(request.county_id):
+            body['countyId'] = request.county_id
+        if not UtilClient.is_unset(request.creator_union_id):
+            body['creatorUnionId'] = request.creator_union_id
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.extend):
+            body['extend'] = request.extend
+        if not UtilClient.is_unset(request.order_info):
+            body['orderInfo'] = request.order_info
+        if not UtilClient.is_unset(request.order_start_time):
+            body['orderStartTime'] = request.order_start_time
+        if not UtilClient.is_unset(request.prov_id):
+            body['provId'] = request.prov_id
+        if not UtilClient.is_unset(request.telephone):
+            body['telephone'] = request.telephone
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusCreateCampusResponse(),
+            self.do_roarequest('CampusCreateCampus', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/campuses/projects', 'json', req, runtime)
+        )
+
+    async def campus_create_campus_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusCreateCampusRequest,
+        headers: dingtalkindustry__1__0_models.CampusCreateCampusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusCreateCampusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.address):
+            body['address'] = request.address
+        if not UtilClient.is_unset(request.area):
+            body['area'] = request.area
+        if not UtilClient.is_unset(request.belong_project_group_id):
+            body['belongProjectGroupId'] = request.belong_project_group_id
+        if not UtilClient.is_unset(request.campus_name):
+            body['campusName'] = request.campus_name
+        if not UtilClient.is_unset(request.capacity):
+            body['capacity'] = request.capacity
+        if not UtilClient.is_unset(request.city_id):
+            body['cityId'] = request.city_id
+        if not UtilClient.is_unset(request.country):
+            body['country'] = request.country
+        if not UtilClient.is_unset(request.county_id):
+            body['countyId'] = request.county_id
+        if not UtilClient.is_unset(request.creator_union_id):
+            body['creatorUnionId'] = request.creator_union_id
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.extend):
+            body['extend'] = request.extend
+        if not UtilClient.is_unset(request.order_info):
+            body['orderInfo'] = request.order_info
+        if not UtilClient.is_unset(request.order_start_time):
+            body['orderStartTime'] = request.order_start_time
+        if not UtilClient.is_unset(request.prov_id):
+            body['provId'] = request.prov_id
+        if not UtilClient.is_unset(request.telephone):
+            body['telephone'] = request.telephone
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusCreateCampusResponse(),
+            await self.do_roarequest_async('CampusCreateCampus', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/campuses/projects', 'json', req, runtime)
+        )
+
+    def campus_create_campus_group(
+        self,
+        request: dingtalkindustry__1__0_models.CampusCreateCampusGroupRequest,
+    ) -> dingtalkindustry__1__0_models.CampusCreateCampusGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusCreateCampusGroupHeaders()
+        return self.campus_create_campus_group_with_options(request, headers, runtime)
+
+    async def campus_create_campus_group_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusCreateCampusGroupRequest,
+    ) -> dingtalkindustry__1__0_models.CampusCreateCampusGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusCreateCampusGroupHeaders()
+        return await self.campus_create_campus_group_with_options_async(request, headers, runtime)
+
+    def campus_create_campus_group_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CampusCreateCampusGroupRequest,
+        headers: dingtalkindustry__1__0_models.CampusCreateCampusGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusCreateCampusGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.extend):
+            body['extend'] = request.extend
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusCreateCampusGroupResponse(),
+            self.do_roarequest('CampusCreateCampusGroup', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/campuses/projects/groups', 'json', req, runtime)
+        )
+
+    async def campus_create_campus_group_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusCreateCampusGroupRequest,
+        headers: dingtalkindustry__1__0_models.CampusCreateCampusGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusCreateCampusGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.extend):
+            body['extend'] = request.extend
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusCreateCampusGroupResponse(),
+            await self.do_roarequest_async('CampusCreateCampusGroup', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/campuses/projects/groups', 'json', req, runtime)
+        )
+
+    def campus_create_renter(
+        self,
+        request: dingtalkindustry__1__0_models.CampusCreateRenterRequest,
+    ) -> dingtalkindustry__1__0_models.CampusCreateRenterResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusCreateRenterHeaders()
+        return self.campus_create_renter_with_options(request, headers, runtime)
+
+    async def campus_create_renter_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusCreateRenterRequest,
+    ) -> dingtalkindustry__1__0_models.CampusCreateRenterResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusCreateRenterHeaders()
+        return await self.campus_create_renter_with_options_async(request, headers, runtime)
+
+    def campus_create_renter_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CampusCreateRenterRequest,
+        headers: dingtalkindustry__1__0_models.CampusCreateRenterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusCreateRenterResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.credit_code):
+            body['creditCode'] = request.credit_code
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.extend):
+            body['extend'] = request.extend
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.state):
+            body['state'] = request.state
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusCreateRenterResponse(),
+            self.do_roarequest('CampusCreateRenter', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/campuses/renters', 'json', req, runtime)
+        )
+
+    async def campus_create_renter_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusCreateRenterRequest,
+        headers: dingtalkindustry__1__0_models.CampusCreateRenterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusCreateRenterResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.credit_code):
+            body['creditCode'] = request.credit_code
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.extend):
+            body['extend'] = request.extend
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.state):
+            body['state'] = request.state
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusCreateRenterResponse(),
+            await self.do_roarequest_async('CampusCreateRenter', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/campuses/renters', 'json', req, runtime)
+        )
+
+    def campus_del_renter_member(
+        self,
+        request: dingtalkindustry__1__0_models.CampusDelRenterMemberRequest,
+    ) -> dingtalkindustry__1__0_models.CampusDelRenterMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.campus_del_renter_member_with_options(request, headers, runtime)
+
+    async def campus_del_renter_member_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusDelRenterMemberRequest,
+    ) -> dingtalkindustry__1__0_models.CampusDelRenterMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.campus_del_renter_member_with_options_async(request, headers, runtime)
+
+    def campus_del_renter_member_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CampusDelRenterMemberRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusDelRenterMemberResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.renter_id):
+            query['renterId'] = request.renter_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusDelRenterMemberResponse(),
+            self.do_roarequest('CampusDelRenterMember', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/campuses/renters/members', 'json', req, runtime)
+        )
+
+    async def campus_del_renter_member_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusDelRenterMemberRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusDelRenterMemberResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.renter_id):
+            query['renterId'] = request.renter_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusDelRenterMemberResponse(),
+            await self.do_roarequest_async('CampusDelRenterMember', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/campuses/renters/members', 'json', req, runtime)
+        )
+
+    def campus_delete_campus_group(
+        self,
+        request: dingtalkindustry__1__0_models.CampusDeleteCampusGroupRequest,
+    ) -> dingtalkindustry__1__0_models.CampusDeleteCampusGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusDeleteCampusGroupHeaders()
+        return self.campus_delete_campus_group_with_options(request, headers, runtime)
+
+    async def campus_delete_campus_group_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusDeleteCampusGroupRequest,
+    ) -> dingtalkindustry__1__0_models.CampusDeleteCampusGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusDeleteCampusGroupHeaders()
+        return await self.campus_delete_campus_group_with_options_async(request, headers, runtime)
+
+    def campus_delete_campus_group_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CampusDeleteCampusGroupRequest,
+        headers: dingtalkindustry__1__0_models.CampusDeleteCampusGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusDeleteCampusGroupResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.campus_project_group_id):
+            query['campusProjectGroupId'] = request.campus_project_group_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusDeleteCampusGroupResponse(),
+            self.do_roarequest('CampusDeleteCampusGroup', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/campuses/projects/groups', 'json', req, runtime)
+        )
+
+    async def campus_delete_campus_group_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusDeleteCampusGroupRequest,
+        headers: dingtalkindustry__1__0_models.CampusDeleteCampusGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusDeleteCampusGroupResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.campus_project_group_id):
+            query['campusProjectGroupId'] = request.campus_project_group_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusDeleteCampusGroupResponse(),
+            await self.do_roarequest_async('CampusDeleteCampusGroup', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/campuses/projects/groups', 'json', req, runtime)
+        )
+
+    def campus_delete_renter(
+        self,
+        request: dingtalkindustry__1__0_models.CampusDeleteRenterRequest,
+    ) -> dingtalkindustry__1__0_models.CampusDeleteRenterResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusDeleteRenterHeaders()
+        return self.campus_delete_renter_with_options(request, headers, runtime)
+
+    async def campus_delete_renter_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusDeleteRenterRequest,
+    ) -> dingtalkindustry__1__0_models.CampusDeleteRenterResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusDeleteRenterHeaders()
+        return await self.campus_delete_renter_with_options_async(request, headers, runtime)
+
+    def campus_delete_renter_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CampusDeleteRenterRequest,
+        headers: dingtalkindustry__1__0_models.CampusDeleteRenterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusDeleteRenterResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.renter_id):
+            query['renterId'] = request.renter_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusDeleteRenterResponse(),
+            self.do_roarequest('CampusDeleteRenter', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/campuses/renters', 'none', req, runtime)
+        )
+
+    async def campus_delete_renter_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusDeleteRenterRequest,
+        headers: dingtalkindustry__1__0_models.CampusDeleteRenterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusDeleteRenterResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.renter_id):
+            query['renterId'] = request.renter_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusDeleteRenterResponse(),
+            await self.do_roarequest_async('CampusDeleteRenter', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/campuses/renters', 'none', req, runtime)
+        )
+
+    def campus_get_campus(
+        self,
+        request: dingtalkindustry__1__0_models.CampusGetCampusRequest,
+    ) -> dingtalkindustry__1__0_models.CampusGetCampusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusGetCampusHeaders()
+        return self.campus_get_campus_with_options(request, headers, runtime)
+
+    async def campus_get_campus_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusGetCampusRequest,
+    ) -> dingtalkindustry__1__0_models.CampusGetCampusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusGetCampusHeaders()
+        return await self.campus_get_campus_with_options_async(request, headers, runtime)
+
+    def campus_get_campus_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CampusGetCampusRequest,
+        headers: dingtalkindustry__1__0_models.CampusGetCampusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusGetCampusResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.campus_dept_id):
+            query['campusDeptId'] = request.campus_dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusGetCampusResponse(),
+            self.do_roarequest('CampusGetCampus', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/projectInfos', 'json', req, runtime)
+        )
+
+    async def campus_get_campus_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusGetCampusRequest,
+        headers: dingtalkindustry__1__0_models.CampusGetCampusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusGetCampusResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.campus_dept_id):
+            query['campusDeptId'] = request.campus_dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusGetCampusResponse(),
+            await self.do_roarequest_async('CampusGetCampus', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/projectInfos', 'json', req, runtime)
+        )
+
+    def campus_get_campus_group(
+        self,
+        request: dingtalkindustry__1__0_models.CampusGetCampusGroupRequest,
+    ) -> dingtalkindustry__1__0_models.CampusGetCampusGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusGetCampusGroupHeaders()
+        return self.campus_get_campus_group_with_options(request, headers, runtime)
+
+    async def campus_get_campus_group_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusGetCampusGroupRequest,
+    ) -> dingtalkindustry__1__0_models.CampusGetCampusGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusGetCampusGroupHeaders()
+        return await self.campus_get_campus_group_with_options_async(request, headers, runtime)
+
+    def campus_get_campus_group_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CampusGetCampusGroupRequest,
+        headers: dingtalkindustry__1__0_models.CampusGetCampusGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusGetCampusGroupResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.group_id):
+            query['groupId'] = request.group_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusGetCampusGroupResponse(),
+            self.do_roarequest('CampusGetCampusGroup', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/projects/groupInfos', 'json', req, runtime)
+        )
+
+    async def campus_get_campus_group_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusGetCampusGroupRequest,
+        headers: dingtalkindustry__1__0_models.CampusGetCampusGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusGetCampusGroupResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.group_id):
+            query['groupId'] = request.group_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusGetCampusGroupResponse(),
+            await self.do_roarequest_async('CampusGetCampusGroup', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/projects/groupInfos', 'json', req, runtime)
+        )
+
+    def campus_get_renter(
+        self,
+        request: dingtalkindustry__1__0_models.CampusGetRenterRequest,
+    ) -> dingtalkindustry__1__0_models.CampusGetRenterResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusGetRenterHeaders()
+        return self.campus_get_renter_with_options(request, headers, runtime)
+
+    async def campus_get_renter_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusGetRenterRequest,
+    ) -> dingtalkindustry__1__0_models.CampusGetRenterResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusGetRenterHeaders()
+        return await self.campus_get_renter_with_options_async(request, headers, runtime)
+
+    def campus_get_renter_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CampusGetRenterRequest,
+        headers: dingtalkindustry__1__0_models.CampusGetRenterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusGetRenterResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.renter_id):
+            query['renterId'] = request.renter_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusGetRenterResponse(),
+            self.do_roarequest('CampusGetRenter', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/renterInfos', 'json', req, runtime)
+        )
+
+    async def campus_get_renter_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusGetRenterRequest,
+        headers: dingtalkindustry__1__0_models.CampusGetRenterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusGetRenterResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.renter_id):
+            query['renterId'] = request.renter_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusGetRenterResponse(),
+            await self.do_roarequest_async('CampusGetRenter', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/renterInfos', 'json', req, runtime)
+        )
+
+    def campus_get_renter_member(
+        self,
+        request: dingtalkindustry__1__0_models.CampusGetRenterMemberRequest,
+    ) -> dingtalkindustry__1__0_models.CampusGetRenterMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusGetRenterMemberHeaders()
+        return self.campus_get_renter_member_with_options(request, headers, runtime)
+
+    async def campus_get_renter_member_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusGetRenterMemberRequest,
+    ) -> dingtalkindustry__1__0_models.CampusGetRenterMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusGetRenterMemberHeaders()
+        return await self.campus_get_renter_member_with_options_async(request, headers, runtime)
+
+    def campus_get_renter_member_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CampusGetRenterMemberRequest,
+        headers: dingtalkindustry__1__0_models.CampusGetRenterMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusGetRenterMemberResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.renter_id):
+            query['renterId'] = request.renter_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusGetRenterMemberResponse(),
+            self.do_roarequest('CampusGetRenterMember', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/renters/memberInfos', 'json', req, runtime)
+        )
+
+    async def campus_get_renter_member_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusGetRenterMemberRequest,
+        headers: dingtalkindustry__1__0_models.CampusGetRenterMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusGetRenterMemberResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.renter_id):
+            query['renterId'] = request.renter_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusGetRenterMemberResponse(),
+            await self.do_roarequest_async('CampusGetRenterMember', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/renters/memberInfos', 'json', req, runtime)
+        )
+
+    def campus_list_campus(
+        self,
+        request: dingtalkindustry__1__0_models.CampusListCampusRequest,
+    ) -> dingtalkindustry__1__0_models.CampusListCampusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusListCampusHeaders()
+        return self.campus_list_campus_with_options(request, headers, runtime)
+
+    async def campus_list_campus_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusListCampusRequest,
+    ) -> dingtalkindustry__1__0_models.CampusListCampusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusListCampusHeaders()
+        return await self.campus_list_campus_with_options_async(request, headers, runtime)
+
+    def campus_list_campus_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CampusListCampusRequest,
+        headers: dingtalkindustry__1__0_models.CampusListCampusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusListCampusResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.group_dept_id):
+            query['groupDeptId'] = request.group_dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusListCampusResponse(),
+            self.do_roarequest('CampusListCampus', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/projects', 'json', req, runtime)
+        )
+
+    async def campus_list_campus_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusListCampusRequest,
+        headers: dingtalkindustry__1__0_models.CampusListCampusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusListCampusResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.group_dept_id):
+            query['groupDeptId'] = request.group_dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusListCampusResponse(),
+            await self.do_roarequest_async('CampusListCampus', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/projects', 'json', req, runtime)
+        )
+
+    def campus_list_campus_group(self) -> dingtalkindustry__1__0_models.CampusListCampusGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusListCampusGroupHeaders()
+        return self.campus_list_campus_group_with_options(headers, runtime)
+
+    async def campus_list_campus_group_async(self) -> dingtalkindustry__1__0_models.CampusListCampusGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusListCampusGroupHeaders()
+        return await self.campus_list_campus_group_with_options_async(headers, runtime)
+
+    def campus_list_campus_group_with_options(
+        self,
+        headers: dingtalkindustry__1__0_models.CampusListCampusGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusListCampusGroupResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusListCampusGroupResponse(),
+            self.do_roarequest('CampusListCampusGroup', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/projects/groups', 'json', req, runtime)
+        )
+
+    async def campus_list_campus_group_with_options_async(
+        self,
+        headers: dingtalkindustry__1__0_models.CampusListCampusGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusListCampusGroupResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusListCampusGroupResponse(),
+            await self.do_roarequest_async('CampusListCampusGroup', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/projects/groups', 'json', req, runtime)
+        )
+
+    def campus_list_renter(self) -> dingtalkindustry__1__0_models.CampusListRenterResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusListRenterHeaders()
+        return self.campus_list_renter_with_options(headers, runtime)
+
+    async def campus_list_renter_async(self) -> dingtalkindustry__1__0_models.CampusListRenterResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusListRenterHeaders()
+        return await self.campus_list_renter_with_options_async(headers, runtime)
+
+    def campus_list_renter_with_options(
+        self,
+        headers: dingtalkindustry__1__0_models.CampusListRenterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusListRenterResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusListRenterResponse(),
+            self.do_roarequest('CampusListRenter', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/renters', 'json', req, runtime)
+        )
+
+    async def campus_list_renter_with_options_async(
+        self,
+        headers: dingtalkindustry__1__0_models.CampusListRenterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusListRenterResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusListRenterResponse(),
+            await self.do_roarequest_async('CampusListRenter', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/renters', 'json', req, runtime)
+        )
+
+    def campus_list_renter_members(
+        self,
+        request: dingtalkindustry__1__0_models.CampusListRenterMembersRequest,
+    ) -> dingtalkindustry__1__0_models.CampusListRenterMembersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusListRenterMembersHeaders()
+        return self.campus_list_renter_members_with_options(request, headers, runtime)
+
+    async def campus_list_renter_members_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusListRenterMembersRequest,
+    ) -> dingtalkindustry__1__0_models.CampusListRenterMembersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusListRenterMembersHeaders()
+        return await self.campus_list_renter_members_with_options_async(request, headers, runtime)
+
+    def campus_list_renter_members_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CampusListRenterMembersRequest,
+        headers: dingtalkindustry__1__0_models.CampusListRenterMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusListRenterMembersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.renter_id):
+            query['renterId'] = request.renter_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusListRenterMembersResponse(),
+            self.do_roarequest('CampusListRenterMembers', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/renters/members', 'json', req, runtime)
+        )
+
+    async def campus_list_renter_members_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusListRenterMembersRequest,
+        headers: dingtalkindustry__1__0_models.CampusListRenterMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusListRenterMembersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.renter_id):
+            query['renterId'] = request.renter_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusListRenterMembersResponse(),
+            await self.do_roarequest_async('CampusListRenterMembers', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/renters/members', 'json', req, runtime)
+        )
+
+    def campus_update_campus(
+        self,
+        request: dingtalkindustry__1__0_models.CampusUpdateCampusRequest,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateCampusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusUpdateCampusHeaders()
+        return self.campus_update_campus_with_options(request, headers, runtime)
+
+    async def campus_update_campus_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusUpdateCampusRequest,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateCampusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusUpdateCampusHeaders()
+        return await self.campus_update_campus_with_options_async(request, headers, runtime)
+
+    def campus_update_campus_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CampusUpdateCampusRequest,
+        headers: dingtalkindustry__1__0_models.CampusUpdateCampusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateCampusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.address):
+            body['address'] = request.address
+        if not UtilClient.is_unset(request.area):
+            body['area'] = request.area
+        if not UtilClient.is_unset(request.belong_project_group_id):
+            body['belongProjectGroupId'] = request.belong_project_group_id
+        if not UtilClient.is_unset(request.campus_dept_id):
+            body['campusDeptId'] = request.campus_dept_id
+        if not UtilClient.is_unset(request.campus_name):
+            body['campusName'] = request.campus_name
+        if not UtilClient.is_unset(request.capacity):
+            body['capacity'] = request.capacity
+        if not UtilClient.is_unset(request.city_id):
+            body['cityId'] = request.city_id
+        if not UtilClient.is_unset(request.country):
+            body['country'] = request.country
+        if not UtilClient.is_unset(request.county_id):
+            body['countyId'] = request.county_id
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.extend):
+            body['extend'] = request.extend
+        if not UtilClient.is_unset(request.order_end_time):
+            body['orderEndTime'] = request.order_end_time
+        if not UtilClient.is_unset(request.order_info):
+            body['orderInfo'] = request.order_info
+        if not UtilClient.is_unset(request.order_start_time):
+            body['orderStartTime'] = request.order_start_time
+        if not UtilClient.is_unset(request.prov_id):
+            body['provId'] = request.prov_id
+        if not UtilClient.is_unset(request.telephone):
+            body['telephone'] = request.telephone
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusUpdateCampusResponse(),
+            self.do_roarequest('CampusUpdateCampus', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/campuses/projects', 'json', req, runtime)
+        )
+
+    async def campus_update_campus_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusUpdateCampusRequest,
+        headers: dingtalkindustry__1__0_models.CampusUpdateCampusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateCampusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.address):
+            body['address'] = request.address
+        if not UtilClient.is_unset(request.area):
+            body['area'] = request.area
+        if not UtilClient.is_unset(request.belong_project_group_id):
+            body['belongProjectGroupId'] = request.belong_project_group_id
+        if not UtilClient.is_unset(request.campus_dept_id):
+            body['campusDeptId'] = request.campus_dept_id
+        if not UtilClient.is_unset(request.campus_name):
+            body['campusName'] = request.campus_name
+        if not UtilClient.is_unset(request.capacity):
+            body['capacity'] = request.capacity
+        if not UtilClient.is_unset(request.city_id):
+            body['cityId'] = request.city_id
+        if not UtilClient.is_unset(request.country):
+            body['country'] = request.country
+        if not UtilClient.is_unset(request.county_id):
+            body['countyId'] = request.county_id
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.extend):
+            body['extend'] = request.extend
+        if not UtilClient.is_unset(request.order_end_time):
+            body['orderEndTime'] = request.order_end_time
+        if not UtilClient.is_unset(request.order_info):
+            body['orderInfo'] = request.order_info
+        if not UtilClient.is_unset(request.order_start_time):
+            body['orderStartTime'] = request.order_start_time
+        if not UtilClient.is_unset(request.prov_id):
+            body['provId'] = request.prov_id
+        if not UtilClient.is_unset(request.telephone):
+            body['telephone'] = request.telephone
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusUpdateCampusResponse(),
+            await self.do_roarequest_async('CampusUpdateCampus', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/campuses/projects', 'json', req, runtime)
+        )
+
+    def campus_update_campus_group(
+        self,
+        request: dingtalkindustry__1__0_models.CampusUpdateCampusGroupRequest,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateCampusGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusUpdateCampusGroupHeaders()
+        return self.campus_update_campus_group_with_options(request, headers, runtime)
+
+    async def campus_update_campus_group_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusUpdateCampusGroupRequest,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateCampusGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusUpdateCampusGroupHeaders()
+        return await self.campus_update_campus_group_with_options_async(request, headers, runtime)
+
+    def campus_update_campus_group_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CampusUpdateCampusGroupRequest,
+        headers: dingtalkindustry__1__0_models.CampusUpdateCampusGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateCampusGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.campus_project_group_id):
+            body['campusProjectGroupId'] = request.campus_project_group_id
+        if not UtilClient.is_unset(request.extend):
+            body['extend'] = request.extend
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusUpdateCampusGroupResponse(),
+            self.do_roarequest('CampusUpdateCampusGroup', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/campuses/projects/groups', 'json', req, runtime)
+        )
+
+    async def campus_update_campus_group_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusUpdateCampusGroupRequest,
+        headers: dingtalkindustry__1__0_models.CampusUpdateCampusGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateCampusGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.campus_project_group_id):
+            body['campusProjectGroupId'] = request.campus_project_group_id
+        if not UtilClient.is_unset(request.extend):
+            body['extend'] = request.extend
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusUpdateCampusGroupResponse(),
+            await self.do_roarequest_async('CampusUpdateCampusGroup', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/campuses/projects/groups', 'json', req, runtime)
+        )
+
+    def campus_update_renter(
+        self,
+        request: dingtalkindustry__1__0_models.CampusUpdateRenterRequest,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateRenterResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusUpdateRenterHeaders()
+        return self.campus_update_renter_with_options(request, headers, runtime)
+
+    async def campus_update_renter_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusUpdateRenterRequest,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateRenterResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusUpdateRenterHeaders()
+        return await self.campus_update_renter_with_options_async(request, headers, runtime)
+
+    def campus_update_renter_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CampusUpdateRenterRequest,
+        headers: dingtalkindustry__1__0_models.CampusUpdateRenterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateRenterResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.credit_code):
+            body['creditCode'] = request.credit_code
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.extend):
+            body['extend'] = request.extend
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.renter_id):
+            body['renterId'] = request.renter_id
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.state):
+            body['state'] = request.state
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusUpdateRenterResponse(),
+            self.do_roarequest('CampusUpdateRenter', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/campuses/renters', 'json', req, runtime)
+        )
+
+    async def campus_update_renter_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusUpdateRenterRequest,
+        headers: dingtalkindustry__1__0_models.CampusUpdateRenterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateRenterResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.credit_code):
+            body['creditCode'] = request.credit_code
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.extend):
+            body['extend'] = request.extend
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.renter_id):
+            body['renterId'] = request.renter_id
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.state):
+            body['state'] = request.state
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusUpdateRenterResponse(),
+            await self.do_roarequest_async('CampusUpdateRenter', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/campuses/renters', 'json', req, runtime)
+        )
+
+    def campus_update_renter_member(
+        self,
+        request: dingtalkindustry__1__0_models.CampusUpdateRenterMemberRequest,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateRenterMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusUpdateRenterMemberHeaders()
+        return self.campus_update_renter_member_with_options(request, headers, runtime)
+
+    async def campus_update_renter_member_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusUpdateRenterMemberRequest,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateRenterMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CampusUpdateRenterMemberHeaders()
+        return await self.campus_update_renter_member_with_options_async(request, headers, runtime)
+
+    def campus_update_renter_member_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CampusUpdateRenterMemberRequest,
+        headers: dingtalkindustry__1__0_models.CampusUpdateRenterMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateRenterMemberResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.extend):
+            body['extend'] = request.extend
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.renter_id):
+            body['renterId'] = request.renter_id
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusUpdateRenterMemberResponse(),
+            self.do_roarequest('CampusUpdateRenterMember', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/campuses/renters/members', 'json', req, runtime)
+        )
+
+    async def campus_update_renter_member_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusUpdateRenterMemberRequest,
+        headers: dingtalkindustry__1__0_models.CampusUpdateRenterMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateRenterMemberResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.extend):
+            body['extend'] = request.extend
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.renter_id):
+            body['renterId'] = request.renter_id
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CampusUpdateRenterMemberResponse(),
+            await self.do_roarequest_async('CampusUpdateRenterMember', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/campuses/renters/members', 'json', req, runtime)
+        )
 
     def customize_contact_create(
         self,
@@ -2041,6 +3424,10 @@ class Client(OpenApiClient):
             body['name'] = request.name
         if not UtilClient.is_unset(request.process_ids):
             body['processIds'] = request.process_ids
+        if not UtilClient.is_unset(request.tag_key):
+            body['tagKey'] = request.tag_key
+        if not UtilClient.is_unset(request.tag_values):
+            body['tagValues'] = request.tag_values
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2089,6 +3476,10 @@ class Client(OpenApiClient):
             body['name'] = request.name
         if not UtilClient.is_unset(request.process_ids):
             body['processIds'] = request.process_ids
+        if not UtilClient.is_unset(request.tag_key):
+            body['tagKey'] = request.tag_key
+        if not UtilClient.is_unset(request.tag_values):
+            body['tagValues'] = request.tag_values
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

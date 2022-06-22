@@ -3375,6 +3375,7 @@ class SyncTaskTemplateRequestTaskScopeVO(TeaModel):
 class SyncTaskTemplateRequest(TeaModel):
     def __init__(
         self,
+        delete: bool = None,
         des: str = None,
         ext: str = None,
         name: str = None,
@@ -3384,6 +3385,8 @@ class SyncTaskTemplateRequest(TeaModel):
         task_type: str = None,
         solution_type: str = None,
     ):
+        # 是否删除任务模版，true删除，false不删除
+        self.delete = delete
         # 任务模板描述
         self.des = des
         # 扩展信息，json串
@@ -3410,6 +3413,8 @@ class SyncTaskTemplateRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.delete is not None:
+            result['delete'] = self.delete
         if self.des is not None:
             result['des'] = self.des
         if self.ext is not None:
@@ -3430,6 +3435,8 @@ class SyncTaskTemplateRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('delete') is not None:
+            self.delete = m.get('delete')
         if m.get('des') is not None:
             self.des = m.get('des')
         if m.get('ext') is not None:

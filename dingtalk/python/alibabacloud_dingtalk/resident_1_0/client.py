@@ -1579,6 +1579,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.dept_id):
             body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         real_headers = {}
@@ -1605,6 +1607,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.dept_id):
             body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         real_headers = {}
@@ -2119,6 +2123,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.resident_update_info):
             body['residentUpdateInfo'] = request.resident_update_info
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2143,6 +2149,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.resident_update_info):
             body['residentUpdateInfo'] = request.resident_update_info
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

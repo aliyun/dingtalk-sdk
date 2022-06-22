@@ -4,6 +4,3228 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
+class CampusAddRenterMemberHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CampusAddRenterMemberRequest(TeaModel):
+    def __init__(
+        self,
+        extend: str = None,
+        mobile: str = None,
+        name: str = None,
+        renter_id: int = None,
+        type: str = None,
+    ):
+        # 扩展字段
+        self.extend = extend
+        # 手机号
+        self.mobile = mobile
+        # 名字
+        self.name = name
+        # 租客id
+        self.renter_id = renter_id
+        # 类型
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.extend is not None:
+            result['extend'] = self.extend
+        if self.mobile is not None:
+            result['mobile'] = self.mobile
+        if self.name is not None:
+            result['name'] = self.name
+        if self.renter_id is not None:
+            result['renterId'] = self.renter_id
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('extend') is not None:
+            self.extend = m.get('extend')
+        if m.get('mobile') is not None:
+            self.mobile = m.get('mobile')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('renterId') is not None:
+            self.renter_id = m.get('renterId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class CampusAddRenterMemberResponseBody(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+        user_id: str = None,
+        user_state: str = None,
+    ):
+        self.union_id = union_id
+        self.user_id = user_id
+        self.user_state = user_state
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_state is not None:
+            result['userState'] = self.user_state
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userState') is not None:
+            self.user_state = m.get('userState')
+        return self
+
+
+class CampusAddRenterMemberResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CampusAddRenterMemberResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CampusAddRenterMemberResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CampusCreateCampusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CampusCreateCampusRequest(TeaModel):
+    def __init__(
+        self,
+        address: str = None,
+        area: float = None,
+        belong_project_group_id: int = None,
+        campus_name: str = None,
+        capacity: int = None,
+        city_id: int = None,
+        country: str = None,
+        county_id: int = None,
+        creator_union_id: str = None,
+        description: str = None,
+        extend: str = None,
+        order_info: int = None,
+        order_start_time: int = None,
+        prov_id: int = None,
+        telephone: str = None,
+    ):
+        # 园区所在详细地址
+        self.address = address
+        # 园区面积
+        self.area = area
+        # 归属项目组
+        self.belong_project_group_id = belong_project_group_id
+        # 园区项目名
+        self.campus_name = campus_name
+        # 园区容量
+        self.capacity = capacity
+        # 园区所在市行政编码
+        self.city_id = city_id
+        # 园区所在国家
+        self.country = country
+        # 园区所在区行政编码
+        self.county_id = county_id
+        # 创建人的unionId
+        self.creator_union_id = creator_union_id
+        # 园区项目描述
+        self.description = description
+        # 扩展字段
+        self.extend = extend
+        # 项目订购结束时间
+        self.order_info = order_info
+        # 项目订购开始时间
+        self.order_start_time = order_start_time
+        # 园区所在省行政编码
+        self.prov_id = prov_id
+        # 联系电话
+        self.telephone = telephone
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.address is not None:
+            result['address'] = self.address
+        if self.area is not None:
+            result['area'] = self.area
+        if self.belong_project_group_id is not None:
+            result['belongProjectGroupId'] = self.belong_project_group_id
+        if self.campus_name is not None:
+            result['campusName'] = self.campus_name
+        if self.capacity is not None:
+            result['capacity'] = self.capacity
+        if self.city_id is not None:
+            result['cityId'] = self.city_id
+        if self.country is not None:
+            result['country'] = self.country
+        if self.county_id is not None:
+            result['countyId'] = self.county_id
+        if self.creator_union_id is not None:
+            result['creatorUnionId'] = self.creator_union_id
+        if self.description is not None:
+            result['description'] = self.description
+        if self.extend is not None:
+            result['extend'] = self.extend
+        if self.order_info is not None:
+            result['orderInfo'] = self.order_info
+        if self.order_start_time is not None:
+            result['orderStartTime'] = self.order_start_time
+        if self.prov_id is not None:
+            result['provId'] = self.prov_id
+        if self.telephone is not None:
+            result['telephone'] = self.telephone
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('address') is not None:
+            self.address = m.get('address')
+        if m.get('area') is not None:
+            self.area = m.get('area')
+        if m.get('belongProjectGroupId') is not None:
+            self.belong_project_group_id = m.get('belongProjectGroupId')
+        if m.get('campusName') is not None:
+            self.campus_name = m.get('campusName')
+        if m.get('capacity') is not None:
+            self.capacity = m.get('capacity')
+        if m.get('cityId') is not None:
+            self.city_id = m.get('cityId')
+        if m.get('country') is not None:
+            self.country = m.get('country')
+        if m.get('countyId') is not None:
+            self.county_id = m.get('countyId')
+        if m.get('creatorUnionId') is not None:
+            self.creator_union_id = m.get('creatorUnionId')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('extend') is not None:
+            self.extend = m.get('extend')
+        if m.get('orderInfo') is not None:
+            self.order_info = m.get('orderInfo')
+        if m.get('orderStartTime') is not None:
+            self.order_start_time = m.get('orderStartTime')
+        if m.get('provId') is not None:
+            self.prov_id = m.get('provId')
+        if m.get('telephone') is not None:
+            self.telephone = m.get('telephone')
+        return self
+
+
+class CampusCreateCampusResponseBody(TeaModel):
+    def __init__(
+        self,
+        campus_corp_id: str = None,
+        campus_dept_id: str = None,
+    ):
+        # 园区组织ID
+        self.campus_corp_id = campus_corp_id
+        # 园区部门ID
+        self.campus_dept_id = campus_dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.campus_corp_id is not None:
+            result['campusCorpId'] = self.campus_corp_id
+        if self.campus_dept_id is not None:
+            result['campusDeptId'] = self.campus_dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('campusCorpId') is not None:
+            self.campus_corp_id = m.get('campusCorpId')
+        if m.get('campusDeptId') is not None:
+            self.campus_dept_id = m.get('campusDeptId')
+        return self
+
+
+class CampusCreateCampusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CampusCreateCampusResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CampusCreateCampusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CampusCreateCampusGroupHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CampusCreateCampusGroupRequest(TeaModel):
+    def __init__(
+        self,
+        extend: str = None,
+        name: str = None,
+    ):
+        # 扩展信息
+        self.extend = extend
+        # 园区项目组
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.extend is not None:
+            result['extend'] = self.extend
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('extend') is not None:
+            self.extend = m.get('extend')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class CampusCreateCampusGroupResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: int = None,
+    ):
+        # 项目组ID
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class CampusCreateCampusGroupResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CampusCreateCampusGroupResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CampusCreateCampusGroupResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CampusCreateRenterHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CampusCreateRenterRequest(TeaModel):
+    def __init__(
+        self,
+        credit_code: str = None,
+        end_time: int = None,
+        extend: str = None,
+        name: str = None,
+        start_time: int = None,
+        state: int = None,
+    ):
+        # 企业信用代码
+        self.credit_code = credit_code
+        # 租期结束时间
+        self.end_time = end_time
+        # 扩展信息
+        self.extend = extend
+        # 租客名称
+        self.name = name
+        # 租期开始时间
+        self.start_time = start_time
+        # 状态
+        self.state = state
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.credit_code is not None:
+            result['creditCode'] = self.credit_code
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.extend is not None:
+            result['extend'] = self.extend
+        if self.name is not None:
+            result['name'] = self.name
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.state is not None:
+            result['state'] = self.state
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('creditCode') is not None:
+            self.credit_code = m.get('creditCode')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('extend') is not None:
+            self.extend = m.get('extend')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('state') is not None:
+            self.state = m.get('state')
+        return self
+
+
+class CampusCreateRenterResponseBody(TeaModel):
+    def __init__(
+        self,
+        renter_id: str = None,
+    ):
+        # 租客ID
+        self.renter_id = renter_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.renter_id is not None:
+            result['renterId'] = self.renter_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('renterId') is not None:
+            self.renter_id = m.get('renterId')
+        return self
+
+
+class CampusCreateRenterResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CampusCreateRenterResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CampusCreateRenterResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CampusDelRenterMemberRequest(TeaModel):
+    def __init__(
+        self,
+        renter_id: int = None,
+        union_id: str = None,
+    ):
+        # 租客唯一id
+        self.renter_id = renter_id
+        # 人员唯一标识
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.renter_id is not None:
+            result['renterId'] = self.renter_id
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('renterId') is not None:
+            self.renter_id = m.get('renterId')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class CampusDelRenterMemberResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+    ):
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class CampusDelRenterMemberResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CampusDelRenterMemberResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CampusDelRenterMemberResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CampusDeleteCampusGroupHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CampusDeleteCampusGroupRequest(TeaModel):
+    def __init__(
+        self,
+        campus_project_group_id: int = None,
+    ):
+        # 园区项目组ID
+        self.campus_project_group_id = campus_project_group_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.campus_project_group_id is not None:
+            result['campusProjectGroupId'] = self.campus_project_group_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('campusProjectGroupId') is not None:
+            self.campus_project_group_id = m.get('campusProjectGroupId')
+        return self
+
+
+class CampusDeleteCampusGroupResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+    ):
+        # result
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class CampusDeleteCampusGroupResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CampusDeleteCampusGroupResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CampusDeleteCampusGroupResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CampusDeleteRenterHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CampusDeleteRenterRequest(TeaModel):
+    def __init__(
+        self,
+        renter_id: int = None,
+    ):
+        # 租客ID
+        self.renter_id = renter_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.renter_id is not None:
+            result['renterId'] = self.renter_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('renterId') is not None:
+            self.renter_id = m.get('renterId')
+        return self
+
+
+class CampusDeleteRenterResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        return self
+
+
+class CampusGetCampusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CampusGetCampusRequest(TeaModel):
+    def __init__(
+        self,
+        campus_dept_id: int = None,
+    ):
+        # 园区部门ID
+        self.campus_dept_id = campus_dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.campus_dept_id is not None:
+            result['campusDeptId'] = self.campus_dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('campusDeptId') is not None:
+            self.campus_dept_id = m.get('campusDeptId')
+        return self
+
+
+class CampusGetCampusResponseBody(TeaModel):
+    def __init__(
+        self,
+        address: str = None,
+        area: float = None,
+        belong_project_group_id: str = None,
+        campus_corp_id: str = None,
+        campus_dept_id: int = None,
+        campus_name: str = None,
+        capacity: str = None,
+        city_id: int = None,
+        country: str = None,
+        county_id: int = None,
+        description: str = None,
+        extend: str = None,
+        location: str = None,
+        order_end_time: int = None,
+        order_info: str = None,
+        order_start_time: int = None,
+        prov_id: int = None,
+        telephone: str = None,
+    ):
+        # 详细地址
+        self.address = address
+        # 面积
+        self.area = area
+        # 项目组ID
+        self.belong_project_group_id = belong_project_group_id
+        # 园区组织ID
+        self.campus_corp_id = campus_corp_id
+        # 园区部门ID
+        self.campus_dept_id = campus_dept_id
+        # 园区名称
+        self.campus_name = campus_name
+        # 容纳人数
+        self.capacity = capacity
+        # 市
+        self.city_id = city_id
+        # 国家
+        self.country = country
+        # 区
+        self.county_id = county_id
+        # 描述
+        self.description = description
+        # 扩展属性
+        self.extend = extend
+        # 经纬度
+        self.location = location
+        # 过期时间
+        self.order_end_time = order_end_time
+        # 购买信息
+        self.order_info = order_info
+        # 订购时间
+        self.order_start_time = order_start_time
+        # 省
+        self.prov_id = prov_id
+        # 电话
+        self.telephone = telephone
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.address is not None:
+            result['address'] = self.address
+        if self.area is not None:
+            result['area'] = self.area
+        if self.belong_project_group_id is not None:
+            result['belongProjectGroupId'] = self.belong_project_group_id
+        if self.campus_corp_id is not None:
+            result['campusCorpId'] = self.campus_corp_id
+        if self.campus_dept_id is not None:
+            result['campusDeptId'] = self.campus_dept_id
+        if self.campus_name is not None:
+            result['campusName'] = self.campus_name
+        if self.capacity is not None:
+            result['capacity'] = self.capacity
+        if self.city_id is not None:
+            result['cityId'] = self.city_id
+        if self.country is not None:
+            result['country'] = self.country
+        if self.county_id is not None:
+            result['countyId'] = self.county_id
+        if self.description is not None:
+            result['description'] = self.description
+        if self.extend is not None:
+            result['extend'] = self.extend
+        if self.location is not None:
+            result['location'] = self.location
+        if self.order_end_time is not None:
+            result['orderEndTime'] = self.order_end_time
+        if self.order_info is not None:
+            result['orderInfo'] = self.order_info
+        if self.order_start_time is not None:
+            result['orderStartTime'] = self.order_start_time
+        if self.prov_id is not None:
+            result['provId'] = self.prov_id
+        if self.telephone is not None:
+            result['telephone'] = self.telephone
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('address') is not None:
+            self.address = m.get('address')
+        if m.get('area') is not None:
+            self.area = m.get('area')
+        if m.get('belongProjectGroupId') is not None:
+            self.belong_project_group_id = m.get('belongProjectGroupId')
+        if m.get('campusCorpId') is not None:
+            self.campus_corp_id = m.get('campusCorpId')
+        if m.get('campusDeptId') is not None:
+            self.campus_dept_id = m.get('campusDeptId')
+        if m.get('campusName') is not None:
+            self.campus_name = m.get('campusName')
+        if m.get('capacity') is not None:
+            self.capacity = m.get('capacity')
+        if m.get('cityId') is not None:
+            self.city_id = m.get('cityId')
+        if m.get('country') is not None:
+            self.country = m.get('country')
+        if m.get('countyId') is not None:
+            self.county_id = m.get('countyId')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('extend') is not None:
+            self.extend = m.get('extend')
+        if m.get('location') is not None:
+            self.location = m.get('location')
+        if m.get('orderEndTime') is not None:
+            self.order_end_time = m.get('orderEndTime')
+        if m.get('orderInfo') is not None:
+            self.order_info = m.get('orderInfo')
+        if m.get('orderStartTime') is not None:
+            self.order_start_time = m.get('orderStartTime')
+        if m.get('provId') is not None:
+            self.prov_id = m.get('provId')
+        if m.get('telephone') is not None:
+            self.telephone = m.get('telephone')
+        return self
+
+
+class CampusGetCampusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CampusGetCampusResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CampusGetCampusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CampusGetCampusGroupHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CampusGetCampusGroupRequest(TeaModel):
+    def __init__(
+        self,
+        group_id: int = None,
+    ):
+        # 项目组ID
+        self.group_id = group_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        return self
+
+
+class CampusGetCampusGroupResponseBody(TeaModel):
+    def __init__(
+        self,
+        extend: str = None,
+        project_group_name: str = None,
+    ):
+        # 扩展信息
+        self.extend = extend
+        # 项目名
+        self.project_group_name = project_group_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.extend is not None:
+            result['extend'] = self.extend
+        if self.project_group_name is not None:
+            result['projectGroupName'] = self.project_group_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('extend') is not None:
+            self.extend = m.get('extend')
+        if m.get('projectGroupName') is not None:
+            self.project_group_name = m.get('projectGroupName')
+        return self
+
+
+class CampusGetCampusGroupResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CampusGetCampusGroupResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CampusGetCampusGroupResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CampusGetRenterHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CampusGetRenterRequest(TeaModel):
+    def __init__(
+        self,
+        renter_id: int = None,
+    ):
+        # 租客ID
+        self.renter_id = renter_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.renter_id is not None:
+            result['renterId'] = self.renter_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('renterId') is not None:
+            self.renter_id = m.get('renterId')
+        return self
+
+
+class CampusGetRenterResponseBody(TeaModel):
+    def __init__(
+        self,
+        bind_renter_corp_id: str = None,
+        bind_time: int = None,
+        credit_code: str = None,
+        end_time: int = None,
+        extend: str = None,
+        name: str = None,
+        renter_dept_id: int = None,
+        start_time: int = None,
+        state: int = None,
+    ):
+        # 绑定组织
+        self.bind_renter_corp_id = bind_renter_corp_id
+        # 绑定时间
+        self.bind_time = bind_time
+        # 企业信用代码
+        self.credit_code = credit_code
+        # 结束时间
+        self.end_time = end_time
+        # 扩展信息
+        self.extend = extend
+        # 租客名称
+        self.name = name
+        # 部门iD
+        self.renter_dept_id = renter_dept_id
+        # 开始时间
+        self.start_time = start_time
+        # 状态
+        self.state = state
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.bind_renter_corp_id is not None:
+            result['bindRenterCorpId'] = self.bind_renter_corp_id
+        if self.bind_time is not None:
+            result['bindTime'] = self.bind_time
+        if self.credit_code is not None:
+            result['creditCode'] = self.credit_code
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.extend is not None:
+            result['extend'] = self.extend
+        if self.name is not None:
+            result['name'] = self.name
+        if self.renter_dept_id is not None:
+            result['renterDeptId'] = self.renter_dept_id
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.state is not None:
+            result['state'] = self.state
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bindRenterCorpId') is not None:
+            self.bind_renter_corp_id = m.get('bindRenterCorpId')
+        if m.get('bindTime') is not None:
+            self.bind_time = m.get('bindTime')
+        if m.get('creditCode') is not None:
+            self.credit_code = m.get('creditCode')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('extend') is not None:
+            self.extend = m.get('extend')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('renterDeptId') is not None:
+            self.renter_dept_id = m.get('renterDeptId')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('state') is not None:
+            self.state = m.get('state')
+        return self
+
+
+class CampusGetRenterResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CampusGetRenterResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CampusGetRenterResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CampusGetRenterMemberHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CampusGetRenterMemberRequest(TeaModel):
+    def __init__(
+        self,
+        renter_id: int = None,
+        union_id: str = None,
+    ):
+        # 租客id
+        self.renter_id = renter_id
+        # 用户ID
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.renter_id is not None:
+            result['renterId'] = self.renter_id
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('renterId') is not None:
+            self.renter_id = m.get('renterId')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class CampusGetRenterMemberResponseBody(TeaModel):
+    def __init__(
+        self,
+        extend: str = None,
+        invite_state: int = None,
+        name: str = None,
+        state: str = None,
+        type: str = None,
+        user_id: str = None,
+    ):
+        self.extend = extend
+        self.invite_state = invite_state
+        self.name = name
+        self.state = state
+        self.type = type
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.extend is not None:
+            result['extend'] = self.extend
+        if self.invite_state is not None:
+            result['inviteState'] = self.invite_state
+        if self.name is not None:
+            result['name'] = self.name
+        if self.state is not None:
+            result['state'] = self.state
+        if self.type is not None:
+            result['type'] = self.type
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('extend') is not None:
+            self.extend = m.get('extend')
+        if m.get('inviteState') is not None:
+            self.invite_state = m.get('inviteState')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('state') is not None:
+            self.state = m.get('state')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CampusGetRenterMemberResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CampusGetRenterMemberResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CampusGetRenterMemberResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CampusListCampusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CampusListCampusRequest(TeaModel):
+    def __init__(
+        self,
+        group_dept_id: int = None,
+    ):
+        # 项目组ID
+        self.group_dept_id = group_dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group_dept_id is not None:
+            result['groupDeptId'] = self.group_dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('groupDeptId') is not None:
+            self.group_dept_id = m.get('groupDeptId')
+        return self
+
+
+class CampusListCampusResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        address: str = None,
+        area: float = None,
+        belong_project_group_id: int = None,
+        campus_corp_id: str = None,
+        campus_dept_id: int = None,
+        campus_name: str = None,
+        city_id: int = None,
+        country: str = None,
+        county_id: int = None,
+        description: str = None,
+        extend: str = None,
+        location: str = None,
+        order_end_time: int = None,
+        order_info: str = None,
+        order_start_time: int = None,
+        prov_id: int = None,
+        telephone: str = None,
+    ):
+        # 地址
+        self.address = address
+        # 面积
+        self.area = area
+        # 项目组ID
+        self.belong_project_group_id = belong_project_group_id
+        # 园区组织ID
+        self.campus_corp_id = campus_corp_id
+        # 园区部门ID
+        self.campus_dept_id = campus_dept_id
+        # 园区名称
+        self.campus_name = campus_name
+        # 市
+        self.city_id = city_id
+        # 国家
+        self.country = country
+        # 区
+        self.county_id = county_id
+        # 描述
+        self.description = description
+        # 扩展信息
+        self.extend = extend
+        # 经纬度
+        self.location = location
+        # 结束时间
+        self.order_end_time = order_end_time
+        # 订购信息
+        self.order_info = order_info
+        # 订购时间
+        self.order_start_time = order_start_time
+        # 省
+        self.prov_id = prov_id
+        # 手机号
+        self.telephone = telephone
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.address is not None:
+            result['address'] = self.address
+        if self.area is not None:
+            result['area'] = self.area
+        if self.belong_project_group_id is not None:
+            result['belongProjectGroupId'] = self.belong_project_group_id
+        if self.campus_corp_id is not None:
+            result['campusCorpId'] = self.campus_corp_id
+        if self.campus_dept_id is not None:
+            result['campusDeptId'] = self.campus_dept_id
+        if self.campus_name is not None:
+            result['campusName'] = self.campus_name
+        if self.city_id is not None:
+            result['cityId'] = self.city_id
+        if self.country is not None:
+            result['country'] = self.country
+        if self.county_id is not None:
+            result['countyId'] = self.county_id
+        if self.description is not None:
+            result['description'] = self.description
+        if self.extend is not None:
+            result['extend'] = self.extend
+        if self.location is not None:
+            result['location'] = self.location
+        if self.order_end_time is not None:
+            result['orderEndTime'] = self.order_end_time
+        if self.order_info is not None:
+            result['orderInfo'] = self.order_info
+        if self.order_start_time is not None:
+            result['orderStartTime'] = self.order_start_time
+        if self.prov_id is not None:
+            result['provId'] = self.prov_id
+        if self.telephone is not None:
+            result['telephone'] = self.telephone
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('address') is not None:
+            self.address = m.get('address')
+        if m.get('area') is not None:
+            self.area = m.get('area')
+        if m.get('belongProjectGroupId') is not None:
+            self.belong_project_group_id = m.get('belongProjectGroupId')
+        if m.get('campusCorpId') is not None:
+            self.campus_corp_id = m.get('campusCorpId')
+        if m.get('campusDeptId') is not None:
+            self.campus_dept_id = m.get('campusDeptId')
+        if m.get('campusName') is not None:
+            self.campus_name = m.get('campusName')
+        if m.get('cityId') is not None:
+            self.city_id = m.get('cityId')
+        if m.get('country') is not None:
+            self.country = m.get('country')
+        if m.get('countyId') is not None:
+            self.county_id = m.get('countyId')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('extend') is not None:
+            self.extend = m.get('extend')
+        if m.get('location') is not None:
+            self.location = m.get('location')
+        if m.get('orderEndTime') is not None:
+            self.order_end_time = m.get('orderEndTime')
+        if m.get('orderInfo') is not None:
+            self.order_info = m.get('orderInfo')
+        if m.get('orderStartTime') is not None:
+            self.order_start_time = m.get('orderStartTime')
+        if m.get('provId') is not None:
+            self.prov_id = m.get('provId')
+        if m.get('telephone') is not None:
+            self.telephone = m.get('telephone')
+        return self
+
+
+class CampusListCampusResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[CampusListCampusResponseBodyResult] = None,
+    ):
+        # 返回信息
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = CampusListCampusResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class CampusListCampusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CampusListCampusResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CampusListCampusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CampusListCampusGroupHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CampusListCampusGroupResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        extend: str = None,
+        group_dept_id: int = None,
+        group_name: str = None,
+    ):
+        # 扩展信息
+        self.extend = extend
+        # 项目组ID
+        self.group_dept_id = group_dept_id
+        # 项目组名称
+        self.group_name = group_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.extend is not None:
+            result['extend'] = self.extend
+        if self.group_dept_id is not None:
+            result['groupDeptId'] = self.group_dept_id
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('extend') is not None:
+            self.extend = m.get('extend')
+        if m.get('groupDeptId') is not None:
+            self.group_dept_id = m.get('groupDeptId')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        return self
+
+
+class CampusListCampusGroupResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[CampusListCampusGroupResponseBodyResult] = None,
+    ):
+        # 返回项目组
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = CampusListCampusGroupResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class CampusListCampusGroupResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CampusListCampusGroupResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CampusListCampusGroupResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CampusListRenterHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CampusListRenterResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        bind_renter_corp_id: str = None,
+        bind_time: int = None,
+        credit_code: str = None,
+        end_time: int = None,
+        extend: str = None,
+        name: str = None,
+        renter_dept_id: int = None,
+        start_time: int = None,
+        state: int = None,
+    ):
+        # 绑定钉钉组织ID
+        self.bind_renter_corp_id = bind_renter_corp_id
+        # 绑定时间
+        self.bind_time = bind_time
+        # 企业信用代码
+        self.credit_code = credit_code
+        # 到期时间
+        self.end_time = end_time
+        # 扩展信息
+        self.extend = extend
+        # 租客名称
+        self.name = name
+        # 租客部门ID
+        self.renter_dept_id = renter_dept_id
+        # 起始时间
+        self.start_time = start_time
+        # 状态
+        self.state = state
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.bind_renter_corp_id is not None:
+            result['bindRenterCorpId'] = self.bind_renter_corp_id
+        if self.bind_time is not None:
+            result['bindTime'] = self.bind_time
+        if self.credit_code is not None:
+            result['creditCode'] = self.credit_code
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.extend is not None:
+            result['extend'] = self.extend
+        if self.name is not None:
+            result['name'] = self.name
+        if self.renter_dept_id is not None:
+            result['renterDeptId'] = self.renter_dept_id
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.state is not None:
+            result['state'] = self.state
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bindRenterCorpId') is not None:
+            self.bind_renter_corp_id = m.get('bindRenterCorpId')
+        if m.get('bindTime') is not None:
+            self.bind_time = m.get('bindTime')
+        if m.get('creditCode') is not None:
+            self.credit_code = m.get('creditCode')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('extend') is not None:
+            self.extend = m.get('extend')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('renterDeptId') is not None:
+            self.renter_dept_id = m.get('renterDeptId')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('state') is not None:
+            self.state = m.get('state')
+        return self
+
+
+class CampusListRenterResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[CampusListRenterResponseBodyResult] = None,
+    ):
+        # 租客列表
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = CampusListRenterResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class CampusListRenterResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CampusListRenterResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CampusListRenterResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CampusListRenterMembersHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CampusListRenterMembersRequest(TeaModel):
+    def __init__(
+        self,
+        renter_id: int = None,
+    ):
+        # 租客id
+        self.renter_id = renter_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.renter_id is not None:
+            result['renterId'] = self.renter_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('renterId') is not None:
+            self.renter_id = m.get('renterId')
+        return self
+
+
+class CampusListRenterMembersResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        extend: str = None,
+        invite_state: str = None,
+        name: str = None,
+        state: str = None,
+        type: str = None,
+        union_id: str = None,
+        user_id: str = None,
+    ):
+        self.extend = extend
+        self.invite_state = invite_state
+        self.name = name
+        self.state = state
+        self.type = type
+        self.union_id = union_id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.extend is not None:
+            result['extend'] = self.extend
+        if self.invite_state is not None:
+            result['inviteState'] = self.invite_state
+        if self.name is not None:
+            result['name'] = self.name
+        if self.state is not None:
+            result['state'] = self.state
+        if self.type is not None:
+            result['type'] = self.type
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('extend') is not None:
+            self.extend = m.get('extend')
+        if m.get('inviteState') is not None:
+            self.invite_state = m.get('inviteState')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('state') is not None:
+            self.state = m.get('state')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CampusListRenterMembersResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[CampusListRenterMembersResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = CampusListRenterMembersResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class CampusListRenterMembersResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CampusListRenterMembersResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CampusListRenterMembersResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CampusUpdateCampusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CampusUpdateCampusRequest(TeaModel):
+    def __init__(
+        self,
+        address: str = None,
+        area: float = None,
+        belong_project_group_id: int = None,
+        campus_dept_id: int = None,
+        campus_name: str = None,
+        capacity: int = None,
+        city_id: int = None,
+        country: str = None,
+        county_id: int = None,
+        description: str = None,
+        extend: str = None,
+        order_end_time: int = None,
+        order_info: int = None,
+        order_start_time: int = None,
+        prov_id: int = None,
+        telephone: str = None,
+    ):
+        # 所在具体地址
+        self.address = address
+        # 面积
+        self.area = area
+        # 归属项目组
+        self.belong_project_group_id = belong_project_group_id
+        # 项目部门id
+        self.campus_dept_id = campus_dept_id
+        # 园区项目名
+        self.campus_name = campus_name
+        # 容量
+        self.capacity = capacity
+        # 所在市行政编码
+        self.city_id = city_id
+        # 国家
+        self.country = country
+        # 所在区行政编码
+        self.county_id = county_id
+        # 园区项目描述
+        self.description = description
+        # 扩展信息
+        self.extend = extend
+        # 项目订阅到期时间
+        self.order_end_time = order_end_time
+        # 购买信息
+        self.order_info = order_info
+        # 项目订阅开始时间
+        self.order_start_time = order_start_time
+        # 所在省行政编码
+        self.prov_id = prov_id
+        # 联系电话
+        self.telephone = telephone
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.address is not None:
+            result['address'] = self.address
+        if self.area is not None:
+            result['area'] = self.area
+        if self.belong_project_group_id is not None:
+            result['belongProjectGroupId'] = self.belong_project_group_id
+        if self.campus_dept_id is not None:
+            result['campusDeptId'] = self.campus_dept_id
+        if self.campus_name is not None:
+            result['campusName'] = self.campus_name
+        if self.capacity is not None:
+            result['capacity'] = self.capacity
+        if self.city_id is not None:
+            result['cityId'] = self.city_id
+        if self.country is not None:
+            result['country'] = self.country
+        if self.county_id is not None:
+            result['countyId'] = self.county_id
+        if self.description is not None:
+            result['description'] = self.description
+        if self.extend is not None:
+            result['extend'] = self.extend
+        if self.order_end_time is not None:
+            result['orderEndTime'] = self.order_end_time
+        if self.order_info is not None:
+            result['orderInfo'] = self.order_info
+        if self.order_start_time is not None:
+            result['orderStartTime'] = self.order_start_time
+        if self.prov_id is not None:
+            result['provId'] = self.prov_id
+        if self.telephone is not None:
+            result['telephone'] = self.telephone
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('address') is not None:
+            self.address = m.get('address')
+        if m.get('area') is not None:
+            self.area = m.get('area')
+        if m.get('belongProjectGroupId') is not None:
+            self.belong_project_group_id = m.get('belongProjectGroupId')
+        if m.get('campusDeptId') is not None:
+            self.campus_dept_id = m.get('campusDeptId')
+        if m.get('campusName') is not None:
+            self.campus_name = m.get('campusName')
+        if m.get('capacity') is not None:
+            self.capacity = m.get('capacity')
+        if m.get('cityId') is not None:
+            self.city_id = m.get('cityId')
+        if m.get('country') is not None:
+            self.country = m.get('country')
+        if m.get('countyId') is not None:
+            self.county_id = m.get('countyId')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('extend') is not None:
+            self.extend = m.get('extend')
+        if m.get('orderEndTime') is not None:
+            self.order_end_time = m.get('orderEndTime')
+        if m.get('orderInfo') is not None:
+            self.order_info = m.get('orderInfo')
+        if m.get('orderStartTime') is not None:
+            self.order_start_time = m.get('orderStartTime')
+        if m.get('provId') is not None:
+            self.prov_id = m.get('provId')
+        if m.get('telephone') is not None:
+            self.telephone = m.get('telephone')
+        return self
+
+
+class CampusUpdateCampusResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+    ):
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class CampusUpdateCampusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CampusUpdateCampusResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CampusUpdateCampusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CampusUpdateCampusGroupHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CampusUpdateCampusGroupRequest(TeaModel):
+    def __init__(
+        self,
+        campus_project_group_id: int = None,
+        extend: str = None,
+        name: str = None,
+    ):
+        self.campus_project_group_id = campus_project_group_id
+        # 扩展信息
+        self.extend = extend
+        # 项目组名
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.campus_project_group_id is not None:
+            result['campusProjectGroupId'] = self.campus_project_group_id
+        if self.extend is not None:
+            result['extend'] = self.extend
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('campusProjectGroupId') is not None:
+            self.campus_project_group_id = m.get('campusProjectGroupId')
+        if m.get('extend') is not None:
+            self.extend = m.get('extend')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class CampusUpdateCampusGroupResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+    ):
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class CampusUpdateCampusGroupResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CampusUpdateCampusGroupResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CampusUpdateCampusGroupResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CampusUpdateRenterHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CampusUpdateRenterRequest(TeaModel):
+    def __init__(
+        self,
+        credit_code: str = None,
+        end_time: int = None,
+        extend: str = None,
+        name: str = None,
+        renter_id: int = None,
+        start_time: int = None,
+        state: int = None,
+    ):
+        # 企业信用代码
+        self.credit_code = credit_code
+        # 租期开始时间
+        self.end_time = end_time
+        # 扩展字段
+        self.extend = extend
+        # 租客名字
+        self.name = name
+        # 租客ID
+        self.renter_id = renter_id
+        # 租期结束时间
+        self.start_time = start_time
+        # 启用状态
+        self.state = state
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.credit_code is not None:
+            result['creditCode'] = self.credit_code
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.extend is not None:
+            result['extend'] = self.extend
+        if self.name is not None:
+            result['name'] = self.name
+        if self.renter_id is not None:
+            result['renterId'] = self.renter_id
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.state is not None:
+            result['state'] = self.state
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('creditCode') is not None:
+            self.credit_code = m.get('creditCode')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('extend') is not None:
+            self.extend = m.get('extend')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('renterId') is not None:
+            self.renter_id = m.get('renterId')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('state') is not None:
+            self.state = m.get('state')
+        return self
+
+
+class CampusUpdateRenterResponseBody(TeaModel):
+    def __init__(
+        self,
+        renter_id: str = None,
+    ):
+        # 租客ID
+        self.renter_id = renter_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.renter_id is not None:
+            result['renterId'] = self.renter_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('renterId') is not None:
+            self.renter_id = m.get('renterId')
+        return self
+
+
+class CampusUpdateRenterResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CampusUpdateRenterResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CampusUpdateRenterResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CampusUpdateRenterMemberHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CampusUpdateRenterMemberRequest(TeaModel):
+    def __init__(
+        self,
+        extend: str = None,
+        name: str = None,
+        renter_id: int = None,
+        type: str = None,
+        union_id: str = None,
+    ):
+        # 扩展字段
+        self.extend = extend
+        # 名字
+        self.name = name
+        # 租客id
+        self.renter_id = renter_id
+        # 类型
+        self.type = type
+        # 人员唯一标识
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.extend is not None:
+            result['extend'] = self.extend
+        if self.name is not None:
+            result['name'] = self.name
+        if self.renter_id is not None:
+            result['renterId'] = self.renter_id
+        if self.type is not None:
+            result['type'] = self.type
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('extend') is not None:
+            self.extend = m.get('extend')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('renterId') is not None:
+            self.renter_id = m.get('renterId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class CampusUpdateRenterMemberResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+    ):
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class CampusUpdateRenterMemberResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CampusUpdateRenterMemberResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CampusUpdateRenterMemberResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CustomizeContactCreateHeaders(TeaModel):
     def __init__(
         self,
@@ -3443,7 +6665,6 @@ class IndustryManufactureCommonEventRequest(TeaModel):
         self.action = action
         # 应用appkey
         self.app_key = app_key
-        # 业务参数，作为事件业务body
         self.biz_data = biz_data
         # 事件集合，目前仅1个有效
         self.event_type = event_type
@@ -3483,14 +6704,14 @@ class IndustryManufactureCommonEventRequest(TeaModel):
 class IndustryManufactureCommonEventResponseBody(TeaModel):
     def __init__(
         self,
+        error_msg: str = None,
         request_id: str = None,
         result: Any = None,
-        success: bool = None,
     ):
+        self.error_msg = error_msg
         # Id of the request
         self.request_id = request_id
         self.result = result
-        self.success = success
 
     def validate(self):
         pass
@@ -3501,22 +6722,22 @@ class IndustryManufactureCommonEventResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
         if self.request_id is not None:
             result['requestId'] = self.request_id
         if self.result is not None:
             result['result'] = self.result
-        if self.success is not None:
-            result['success'] = self.success
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
         if m.get('requestId') is not None:
             self.request_id = m.get('requestId')
         if m.get('result') is not None:
             self.result = m.get('result')
-        if m.get('success') is not None:
-            self.success = m.get('success')
         return self
 
 
@@ -5216,6 +8437,8 @@ class IndustryManufactureMesTeamMgmtRequest(TeaModel):
         members: List[IndustryManufactureMesTeamMgmtRequestMembers] = None,
         name: str = None,
         process_ids: List[str] = None,
+        tag_key: str = None,
+        tag_values: List[str] = None,
     ):
         # 本次操作的行为，取值： ● add：增加   -- 创建群 ● update：更新 -- 群成员变更
         self.action = action
@@ -5243,6 +8466,10 @@ class IndustryManufactureMesTeamMgmtRequest(TeaModel):
         self.name = name
         # 关联的工序
         self.process_ids = process_ids
+        # 业务tagKey
+        self.tag_key = tag_key
+        # 业务tagValues
+        self.tag_values = tag_values
 
     def validate(self):
         if self.extend_data:
@@ -5302,6 +8529,10 @@ class IndustryManufactureMesTeamMgmtRequest(TeaModel):
             result['name'] = self.name
         if self.process_ids is not None:
             result['processIds'] = self.process_ids
+        if self.tag_key is not None:
+            result['tagKey'] = self.tag_key
+        if self.tag_values is not None:
+            result['tagValues'] = self.tag_values
         return result
 
     def from_map(self, m: dict = None):
@@ -5344,6 +8575,10 @@ class IndustryManufactureMesTeamMgmtRequest(TeaModel):
             self.name = m.get('name')
         if m.get('processIds') is not None:
             self.process_ids = m.get('processIds')
+        if m.get('tagKey') is not None:
+            self.tag_key = m.get('tagKey')
+        if m.get('tagValues') is not None:
+            self.tag_values = m.get('tagValues')
         return self
 
 

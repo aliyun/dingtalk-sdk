@@ -786,6 +786,622 @@ class FormCreateResponse(TeaModel):
         return self
 
 
+class GetCrmProcCodesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetCrmProcCodesResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[str] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class GetCrmProcCodesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetCrmProcCodesResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetCrmProcCodesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetProcessConfigHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetProcessConfigRequest(TeaModel):
+    def __init__(
+        self,
+        proc_code: str = None,
+    ):
+        # 模板code
+        self.proc_code = proc_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.proc_code is not None:
+            result['procCode'] = self.proc_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('procCode') is not None:
+            self.proc_code = m.get('procCode')
+        return self
+
+
+class GetProcessConfigResponseBodyResultCommentConf(TeaModel):
+    def __init__(
+        self,
+        comment_description: str = None,
+        comment_hidden_for_proposer: bool = None,
+        comment_required: bool = None,
+    ):
+        # 提示内容
+        self.comment_description = comment_description
+        # 评论对发起人不可见
+        self.comment_hidden_for_proposer = comment_hidden_for_proposer
+        # 评论必填
+        self.comment_required = comment_required
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.comment_description is not None:
+            result['commentDescription'] = self.comment_description
+        if self.comment_hidden_for_proposer is not None:
+            result['commentHiddenForProposer'] = self.comment_hidden_for_proposer
+        if self.comment_required is not None:
+            result['commentRequired'] = self.comment_required
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commentDescription') is not None:
+            self.comment_description = m.get('commentDescription')
+        if m.get('commentHiddenForProposer') is not None:
+            self.comment_hidden_for_proposer = m.get('commentHiddenForProposer')
+        if m.get('commentRequired') is not None:
+            self.comment_required = m.get('commentRequired')
+        return self
+
+
+class GetProcessConfigResponseBodyResultHandSignConf(TeaModel):
+    def __init__(
+        self,
+        hand_sign_enable: bool = None,
+        resign_enable: bool = None,
+    ):
+        # 开启手写签名
+        self.hand_sign_enable = hand_sign_enable
+        # 是否使用上次签名
+        self.resign_enable = resign_enable
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.hand_sign_enable is not None:
+            result['handSignEnable'] = self.hand_sign_enable
+        if self.resign_enable is not None:
+            result['resignEnable'] = self.resign_enable
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('handSignEnable') is not None:
+            self.hand_sign_enable = m.get('handSignEnable')
+        if m.get('resignEnable') is not None:
+            self.resign_enable = m.get('resignEnable')
+        return self
+
+
+class GetProcessConfigResponseBodyResultSubstituteSubmitConfSubmitterList(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        type: str = None,
+        value: str = None,
+    ):
+        # 名称
+        self.name = name
+        # 类型
+        self.type = type
+        # 员工staffId/部门id
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.type is not None:
+            result['type'] = self.type
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class GetProcessConfigResponseBodyResultSubstituteSubmitConf(TeaModel):
+    def __init__(
+        self,
+        enable: bool = None,
+        submitter_list: List[GetProcessConfigResponseBodyResultSubstituteSubmitConfSubmitterList] = None,
+    ):
+        # 是否允许代提交
+        self.enable = enable
+        # 代提交人
+        self.submitter_list = submitter_list
+
+    def validate(self):
+        if self.submitter_list:
+            for k in self.submitter_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.enable is not None:
+            result['enable'] = self.enable
+        result['submitterList'] = []
+        if self.submitter_list is not None:
+            for k in self.submitter_list:
+                result['submitterList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enable') is not None:
+            self.enable = m.get('enable')
+        self.submitter_list = []
+        if m.get('submitterList') is not None:
+            for k in m.get('submitterList'):
+                temp_model = GetProcessConfigResponseBodyResultSubstituteSubmitConfSubmitterList()
+                self.submitter_list.append(temp_model.from_map(k))
+        return self
+
+
+class GetProcessConfigResponseBodyResultTitleGenRule(TeaModel):
+    def __init__(
+        self,
+        express: str = None,
+        type: int = None,
+    ):
+        # 规则表达式
+        self.express = express
+        # 规则类型
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.express is not None:
+            result['express'] = self.express
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('express') is not None:
+            self.express = m.get('express')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class GetProcessConfigResponseBodyResultVisibility(TeaModel):
+    def __init__(
+        self,
+        type: int = None,
+        value: str = None,
+    ):
+        # 类型
+        self.type = type
+        # 员工staffId/部门id
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class GetProcessConfigResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        abstract_gen_rule: List[str] = None,
+        allow_revoke: bool = None,
+        append_enable: bool = None,
+        auto_execute_originator_tasks: bool = None,
+        biz_category_id: str = None,
+        biz_type: str = None,
+        comment_conf: GetProcessConfigResponseBodyResultCommentConf = None,
+        duplicate_removal: str = None,
+        hand_sign_conf: GetProcessConfigResponseBodyResultHandSignConf = None,
+        managers: List[str] = None,
+        name: str = None,
+        process_app_type: bool = None,
+        process_config: str = None,
+        static_proc: bool = None,
+        substitute_submit_conf: GetProcessConfigResponseBodyResultSubstituteSubmitConf = None,
+        title_gen_rule: GetProcessConfigResponseBodyResultTitleGenRule = None,
+        visibility: List[GetProcessConfigResponseBodyResultVisibility] = None,
+    ):
+        # 自定义摘要信息
+        self.abstract_gen_rule = abstract_gen_rule
+        # 是否允许撤销
+        self.allow_revoke = allow_revoke
+        # 是否允许加签
+        self.append_enable = append_enable
+        # 如果审批人和发起人是同一个人，则去重
+        self.auto_execute_originator_tasks = auto_execute_originator_tasks
+        # 流程表单业务标识
+        self.biz_category_id = biz_category_id
+        # 纯表单业务标识
+        self.biz_type = biz_type
+        # 评论配置
+        self.comment_conf = comment_conf
+        # 审批人自动去重
+        self.duplicate_removal = duplicate_removal
+        # 手写签名配置
+        self.hand_sign_conf = hand_sign_conf
+        # 表单管理员
+        self.managers = managers
+        # 表单名称
+        self.name = name
+        # 是否流程表单
+        self.process_app_type = process_app_type
+        # 流程配置
+        self.process_config = process_config
+        # 是否静态流程
+        self.static_proc = static_proc
+        # 代提交配置
+        self.substitute_submit_conf = substitute_submit_conf
+        # 自定义标题规则
+        self.title_gen_rule = title_gen_rule
+        # 模板可见性
+        self.visibility = visibility
+
+    def validate(self):
+        if self.comment_conf:
+            self.comment_conf.validate()
+        if self.hand_sign_conf:
+            self.hand_sign_conf.validate()
+        if self.substitute_submit_conf:
+            self.substitute_submit_conf.validate()
+        if self.title_gen_rule:
+            self.title_gen_rule.validate()
+        if self.visibility:
+            for k in self.visibility:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.abstract_gen_rule is not None:
+            result['abstractGenRule'] = self.abstract_gen_rule
+        if self.allow_revoke is not None:
+            result['allowRevoke'] = self.allow_revoke
+        if self.append_enable is not None:
+            result['appendEnable'] = self.append_enable
+        if self.auto_execute_originator_tasks is not None:
+            result['autoExecuteOriginatorTasks'] = self.auto_execute_originator_tasks
+        if self.biz_category_id is not None:
+            result['bizCategoryId'] = self.biz_category_id
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.comment_conf is not None:
+            result['commentConf'] = self.comment_conf.to_map()
+        if self.duplicate_removal is not None:
+            result['duplicateRemoval'] = self.duplicate_removal
+        if self.hand_sign_conf is not None:
+            result['handSignConf'] = self.hand_sign_conf.to_map()
+        if self.managers is not None:
+            result['managers'] = self.managers
+        if self.name is not None:
+            result['name'] = self.name
+        if self.process_app_type is not None:
+            result['processAppType'] = self.process_app_type
+        if self.process_config is not None:
+            result['processConfig'] = self.process_config
+        if self.static_proc is not None:
+            result['staticProc'] = self.static_proc
+        if self.substitute_submit_conf is not None:
+            result['substituteSubmitConf'] = self.substitute_submit_conf.to_map()
+        if self.title_gen_rule is not None:
+            result['titleGenRule'] = self.title_gen_rule.to_map()
+        result['visibility'] = []
+        if self.visibility is not None:
+            for k in self.visibility:
+                result['visibility'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('abstractGenRule') is not None:
+            self.abstract_gen_rule = m.get('abstractGenRule')
+        if m.get('allowRevoke') is not None:
+            self.allow_revoke = m.get('allowRevoke')
+        if m.get('appendEnable') is not None:
+            self.append_enable = m.get('appendEnable')
+        if m.get('autoExecuteOriginatorTasks') is not None:
+            self.auto_execute_originator_tasks = m.get('autoExecuteOriginatorTasks')
+        if m.get('bizCategoryId') is not None:
+            self.biz_category_id = m.get('bizCategoryId')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('commentConf') is not None:
+            temp_model = GetProcessConfigResponseBodyResultCommentConf()
+            self.comment_conf = temp_model.from_map(m['commentConf'])
+        if m.get('duplicateRemoval') is not None:
+            self.duplicate_removal = m.get('duplicateRemoval')
+        if m.get('handSignConf') is not None:
+            temp_model = GetProcessConfigResponseBodyResultHandSignConf()
+            self.hand_sign_conf = temp_model.from_map(m['handSignConf'])
+        if m.get('managers') is not None:
+            self.managers = m.get('managers')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('processAppType') is not None:
+            self.process_app_type = m.get('processAppType')
+        if m.get('processConfig') is not None:
+            self.process_config = m.get('processConfig')
+        if m.get('staticProc') is not None:
+            self.static_proc = m.get('staticProc')
+        if m.get('substituteSubmitConf') is not None:
+            temp_model = GetProcessConfigResponseBodyResultSubstituteSubmitConf()
+            self.substitute_submit_conf = temp_model.from_map(m['substituteSubmitConf'])
+        if m.get('titleGenRule') is not None:
+            temp_model = GetProcessConfigResponseBodyResultTitleGenRule()
+            self.title_gen_rule = temp_model.from_map(m['titleGenRule'])
+        self.visibility = []
+        if m.get('visibility') is not None:
+            for k in m.get('visibility'):
+                temp_model = GetProcessConfigResponseBodyResultVisibility()
+                self.visibility.append(temp_model.from_map(k))
+        return self
+
+
+class GetProcessConfigResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetProcessConfigResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetProcessConfigResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class GetProcessConfigResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetProcessConfigResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetProcessConfigResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GrantCspaceAuthorizationHeaders(TeaModel):
     def __init__(
         self,

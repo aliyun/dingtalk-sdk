@@ -103,6 +103,116 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('FormCreate', 'workflow_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/workflow/forms', 'json', req, runtime)
         )
 
+    def get_crm_proc_codes(self) -> dingtalkworkflow__1__0_models.GetCrmProcCodesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.GetCrmProcCodesHeaders()
+        return self.get_crm_proc_codes_with_options(headers, runtime)
+
+    async def get_crm_proc_codes_async(self) -> dingtalkworkflow__1__0_models.GetCrmProcCodesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.GetCrmProcCodesHeaders()
+        return await self.get_crm_proc_codes_with_options_async(headers, runtime)
+
+    def get_crm_proc_codes_with_options(
+        self,
+        headers: dingtalkworkflow__1__0_models.GetCrmProcCodesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.GetCrmProcCodesResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.GetCrmProcCodesResponse(),
+            self.do_roarequest('GetCrmProcCodes', 'workflow_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workflow/crm/processes', 'json', req, runtime)
+        )
+
+    async def get_crm_proc_codes_with_options_async(
+        self,
+        headers: dingtalkworkflow__1__0_models.GetCrmProcCodesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.GetCrmProcCodesResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.GetCrmProcCodesResponse(),
+            await self.do_roarequest_async('GetCrmProcCodes', 'workflow_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workflow/crm/processes', 'json', req, runtime)
+        )
+
+    def get_process_config(
+        self,
+        request: dingtalkworkflow__1__0_models.GetProcessConfigRequest,
+    ) -> dingtalkworkflow__1__0_models.GetProcessConfigResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.GetProcessConfigHeaders()
+        return self.get_process_config_with_options(request, headers, runtime)
+
+    async def get_process_config_async(
+        self,
+        request: dingtalkworkflow__1__0_models.GetProcessConfigRequest,
+    ) -> dingtalkworkflow__1__0_models.GetProcessConfigResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.GetProcessConfigHeaders()
+        return await self.get_process_config_with_options_async(request, headers, runtime)
+
+    def get_process_config_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.GetProcessConfigRequest,
+        headers: dingtalkworkflow__1__0_models.GetProcessConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.GetProcessConfigResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.proc_code):
+            query['procCode'] = request.proc_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.GetProcessConfigResponse(),
+            self.do_roarequest('GetProcessConfig', 'workflow_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workflow/crm/processes/configurations', 'json', req, runtime)
+        )
+
+    async def get_process_config_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.GetProcessConfigRequest,
+        headers: dingtalkworkflow__1__0_models.GetProcessConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.GetProcessConfigResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.proc_code):
+            query['procCode'] = request.proc_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.GetProcessConfigResponse(),
+            await self.do_roarequest_async('GetProcessConfig', 'workflow_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workflow/crm/processes/configurations', 'json', req, runtime)
+        )
+
     def grant_cspace_authorization(
         self,
         request: dingtalkworkflow__1__0_models.GrantCspaceAuthorizationRequest,

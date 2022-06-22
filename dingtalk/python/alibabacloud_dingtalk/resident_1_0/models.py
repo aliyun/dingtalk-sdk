@@ -403,9 +403,15 @@ class AddResidentMemberRequest(TeaModel):
 class AddResidentMemberResponseBody(TeaModel):
     def __init__(
         self,
+        status: int = None,
+        union_id: str = None,
         user_id: str = None,
     ):
-        # userId
+        # 用户状态
+        self.status = status
+        # 用户ID
+        self.union_id = union_id
+        # 用户员工ID
         self.user_id = user_id
 
     def validate(self):
@@ -417,12 +423,20 @@ class AddResidentMemberResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.status is not None:
+            result['status'] = self.status
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
         if self.user_id is not None:
             result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
         return self
@@ -3919,10 +3933,13 @@ class RemoveResidentMemberRequest(TeaModel):
     def __init__(
         self,
         dept_id: int = None,
+        union_id: str = None,
         user_id: str = None,
     ):
         # 空位标识
         self.dept_id = dept_id
+        # unionId
+        self.union_id = union_id
         # 人员标识
         self.user_id = user_id
 
@@ -3937,6 +3954,8 @@ class RemoveResidentMemberRequest(TeaModel):
         result = dict()
         if self.dept_id is not None:
             result['deptId'] = self.dept_id
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
         if self.user_id is not None:
             result['userId'] = self.user_id
         return result
@@ -3945,6 +3964,8 @@ class RemoveResidentMemberRequest(TeaModel):
         m = m or dict()
         if m.get('deptId') is not None:
             self.dept_id = m.get('deptId')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
         return self
@@ -5018,7 +5039,6 @@ class UpdateResidentMemberRequestResidentUpdateInfo(TeaModel):
         self,
         dept_id: int = None,
         is_property_owner: bool = None,
-        is_retain_old_dept: bool = None,
         member_dept_extension: Dict[str, str] = None,
         name: str = None,
         old_dept_id: int = None,
@@ -5029,8 +5049,6 @@ class UpdateResidentMemberRequestResidentUpdateInfo(TeaModel):
         self.dept_id = dept_id
         # 是否是产权人
         self.is_property_owner = is_property_owner
-        # 是否保留旧部门，默认不保存
-        self.is_retain_old_dept = is_retain_old_dept
         # 人员扩展信息，目前只有租客的起止时间
         self.member_dept_extension = member_dept_extension
         # 姓名
@@ -5055,8 +5073,6 @@ class UpdateResidentMemberRequestResidentUpdateInfo(TeaModel):
             result['deptId'] = self.dept_id
         if self.is_property_owner is not None:
             result['isPropertyOwner'] = self.is_property_owner
-        if self.is_retain_old_dept is not None:
-            result['isRetainOldDept'] = self.is_retain_old_dept
         if self.member_dept_extension is not None:
             result['memberDeptExtension'] = self.member_dept_extension
         if self.name is not None:
@@ -5075,8 +5091,6 @@ class UpdateResidentMemberRequestResidentUpdateInfo(TeaModel):
             self.dept_id = m.get('deptId')
         if m.get('isPropertyOwner') is not None:
             self.is_property_owner = m.get('isPropertyOwner')
-        if m.get('isRetainOldDept') is not None:
-            self.is_retain_old_dept = m.get('isRetainOldDept')
         if m.get('memberDeptExtension') is not None:
             self.member_dept_extension = m.get('memberDeptExtension')
         if m.get('name') is not None:
@@ -5094,9 +5108,12 @@ class UpdateResidentMemberRequest(TeaModel):
     def __init__(
         self,
         resident_update_info: UpdateResidentMemberRequestResidentUpdateInfo = None,
+        union_id: str = None,
     ):
         # 人员更新信息
         self.resident_update_info = resident_update_info
+        # unionId
+        self.union_id = union_id
 
     def validate(self):
         if self.resident_update_info:
@@ -5110,6 +5127,8 @@ class UpdateResidentMemberRequest(TeaModel):
         result = dict()
         if self.resident_update_info is not None:
             result['residentUpdateInfo'] = self.resident_update_info.to_map()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
         return result
 
     def from_map(self, m: dict = None):
@@ -5117,6 +5136,8 @@ class UpdateResidentMemberRequest(TeaModel):
         if m.get('residentUpdateInfo') is not None:
             temp_model = UpdateResidentMemberRequestResidentUpdateInfo()
             self.resident_update_info = temp_model.from_map(m['residentUpdateInfo'])
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
         return self
 
 

@@ -1116,6 +1116,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.solution_type):
             query['solutionType'] = request.solution_type
         body = {}
+        if not UtilClient.is_unset(request.delete):
+            body['delete'] = request.delete
         if not UtilClient.is_unset(request.des):
             body['des'] = request.des
         if not UtilClient.is_unset(request.ext):
@@ -1156,6 +1158,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.solution_type):
             query['solutionType'] = request.solution_type
         body = {}
+        if not UtilClient.is_unset(request.delete):
+            body['delete'] = request.delete
         if not UtilClient.is_unset(request.des):
             body['des'] = request.des
         if not UtilClient.is_unset(request.ext):
