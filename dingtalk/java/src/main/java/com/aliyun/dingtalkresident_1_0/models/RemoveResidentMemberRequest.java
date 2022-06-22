@@ -8,6 +8,10 @@ public class RemoveResidentMemberRequest extends TeaModel {
     @NameInMap("deptId")
     public Long deptId;
 
+    // unionId
+    @NameInMap("unionId")
+    public String unionId;
+
     // 人员标识
     @NameInMap("userId")
     public String userId;
@@ -23,6 +27,14 @@ public class RemoveResidentMemberRequest extends TeaModel {
     }
     public Long getDeptId() {
         return this.deptId;
+    }
+
+    public RemoveResidentMemberRequest setUnionId(String unionId) {
+        this.unionId = unionId;
+        return this;
+    }
+    public String getUnionId() {
+        return this.unionId;
     }
 
     public RemoveResidentMemberRequest setUserId(String userId) {

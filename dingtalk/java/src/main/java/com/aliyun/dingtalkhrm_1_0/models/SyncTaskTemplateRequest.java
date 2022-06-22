@@ -4,6 +4,10 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class SyncTaskTemplateRequest extends TeaModel {
+    // 是否删除任务模版，true删除，false不删除
+    @NameInMap("delete")
+    public Boolean delete;
+
     // 任务模板描述
     @NameInMap("des")
     public String des;
@@ -38,6 +42,14 @@ public class SyncTaskTemplateRequest extends TeaModel {
     public static SyncTaskTemplateRequest build(java.util.Map<String, ?> map) throws Exception {
         SyncTaskTemplateRequest self = new SyncTaskTemplateRequest();
         return TeaModel.build(map, self);
+    }
+
+    public SyncTaskTemplateRequest setDelete(Boolean delete) {
+        this.delete = delete;
+        return this;
+    }
+    public Boolean getDelete() {
+        return this.delete;
     }
 
     public SyncTaskTemplateRequest setDes(String des) {

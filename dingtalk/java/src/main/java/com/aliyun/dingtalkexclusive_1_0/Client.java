@@ -590,6 +590,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetAllLabelableDepts", "exclusive_1.0", "HTTP", "GET", "AK", "/v1.0/exclusive/partnerDepartments", "json", req, runtime), new GetAllLabelableDeptsResponse());
     }
 
+    public GetAppDispatchInfoResponse getAppDispatchInfo(GetAppDispatchInfoRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetAppDispatchInfoHeaders headers = new GetAppDispatchInfoHeaders();
+        return this.getAppDispatchInfoWithOptions(request, headers, runtime);
+    }
+
+    public GetAppDispatchInfoResponse getAppDispatchInfoWithOptions(GetAppDispatchInfoRequest request, GetAppDispatchInfoHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
+            query.put("endTime", request.endTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startTime)) {
+            query.put("startTime", request.startTime);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetAppDispatchInfo", "exclusive_1.0", "HTTP", "GET", "AK", "/v1.0/exclusive/apps/distributionInfos", "json", req, runtime), new GetAppDispatchInfoResponse());
+    }
+
     public GetCalenderSummaryResponse getCalenderSummary(String dataId) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetCalenderSummaryHeaders headers = new GetCalenderSummaryHeaders();

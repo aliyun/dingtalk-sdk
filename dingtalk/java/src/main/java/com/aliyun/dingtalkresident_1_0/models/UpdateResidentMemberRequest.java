@@ -8,6 +8,10 @@ public class UpdateResidentMemberRequest extends TeaModel {
     @NameInMap("residentUpdateInfo")
     public UpdateResidentMemberRequestResidentUpdateInfo residentUpdateInfo;
 
+    // unionId
+    @NameInMap("unionId")
+    public String unionId;
+
     public static UpdateResidentMemberRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateResidentMemberRequest self = new UpdateResidentMemberRequest();
         return TeaModel.build(map, self);
@@ -21,6 +25,14 @@ public class UpdateResidentMemberRequest extends TeaModel {
         return this.residentUpdateInfo;
     }
 
+    public UpdateResidentMemberRequest setUnionId(String unionId) {
+        this.unionId = unionId;
+        return this;
+    }
+    public String getUnionId() {
+        return this.unionId;
+    }
+
     public static class UpdateResidentMemberRequestResidentUpdateInfo extends TeaModel {
         // 部门id
         @NameInMap("deptId")
@@ -29,10 +41,6 @@ public class UpdateResidentMemberRequest extends TeaModel {
         // 是否是产权人
         @NameInMap("isPropertyOwner")
         public Boolean isPropertyOwner;
-
-        // 是否保留旧部门，默认不保存
-        @NameInMap("isRetainOldDept")
-        public Boolean isRetainOldDept;
 
         // 人员扩展信息，目前只有租客的起止时间
         @NameInMap("memberDeptExtension")
@@ -73,14 +81,6 @@ public class UpdateResidentMemberRequest extends TeaModel {
         }
         public Boolean getIsPropertyOwner() {
             return this.isPropertyOwner;
-        }
-
-        public UpdateResidentMemberRequestResidentUpdateInfo setIsRetainOldDept(Boolean isRetainOldDept) {
-            this.isRetainOldDept = isRetainOldDept;
-            return this;
-        }
-        public Boolean getIsRetainOldDept() {
-            return this.isRetainOldDept;
         }
 
         public UpdateResidentMemberRequestResidentUpdateInfo setMemberDeptExtension(java.util.Map<String, String> memberDeptExtension) {

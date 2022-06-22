@@ -4,6 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustryManufactureCommonEventResponseBody extends TeaModel {
+    @NameInMap("errorMsg")
+    public String errorMsg;
+
     // Id of the request
     @NameInMap("requestId")
     public String requestId;
@@ -11,12 +14,17 @@ public class IndustryManufactureCommonEventResponseBody extends TeaModel {
     @NameInMap("result")
     public Object result;
 
-    @NameInMap("success")
-    public Boolean success;
-
     public static IndustryManufactureCommonEventResponseBody build(java.util.Map<String, ?> map) throws Exception {
         IndustryManufactureCommonEventResponseBody self = new IndustryManufactureCommonEventResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public IndustryManufactureCommonEventResponseBody setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+        return this;
+    }
+    public String getErrorMsg() {
+        return this.errorMsg;
     }
 
     public IndustryManufactureCommonEventResponseBody setRequestId(String requestId) {
@@ -33,14 +41,6 @@ public class IndustryManufactureCommonEventResponseBody extends TeaModel {
     }
     public Object getResult() {
         return this.result;
-    }
-
-    public IndustryManufactureCommonEventResponseBody setSuccess(Boolean success) {
-        this.success = success;
-        return this;
-    }
-    public Boolean getSuccess() {
-        return this.success;
     }
 
 }

@@ -637,6 +637,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.delete)) {
+            body.put("delete", request.delete);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.des)) {
             body.put("des", request.des);
         }

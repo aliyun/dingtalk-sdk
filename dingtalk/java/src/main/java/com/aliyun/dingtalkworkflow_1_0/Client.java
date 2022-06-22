@@ -66,6 +66,57 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("FormCreate", "workflow_1.0", "HTTP", "POST", "AK", "/v1.0/workflow/forms", "json", req, runtime), new FormCreateResponse());
     }
 
+    public GetCrmProcCodesResponse getCrmProcCodes() throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetCrmProcCodesHeaders headers = new GetCrmProcCodesHeaders();
+        return this.getCrmProcCodesWithOptions(headers, runtime);
+    }
+
+    public GetCrmProcCodesResponse getCrmProcCodesWithOptions(GetCrmProcCodesHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("GetCrmProcCodes", "workflow_1.0", "HTTP", "GET", "AK", "/v1.0/workflow/crm/processes", "json", req, runtime), new GetCrmProcCodesResponse());
+    }
+
+    public GetProcessConfigResponse getProcessConfig(GetProcessConfigRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetProcessConfigHeaders headers = new GetProcessConfigHeaders();
+        return this.getProcessConfigWithOptions(request, headers, runtime);
+    }
+
+    public GetProcessConfigResponse getProcessConfigWithOptions(GetProcessConfigRequest request, GetProcessConfigHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.procCode)) {
+            query.put("procCode", request.procCode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetProcessConfig", "workflow_1.0", "HTTP", "GET", "AK", "/v1.0/workflow/crm/processes/configurations", "json", req, runtime), new GetProcessConfigResponse());
+    }
+
     public GrantCspaceAuthorizationResponse grantCspaceAuthorization(GrantCspaceAuthorizationRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GrantCspaceAuthorizationHeaders headers = new GrantCspaceAuthorizationHeaders();

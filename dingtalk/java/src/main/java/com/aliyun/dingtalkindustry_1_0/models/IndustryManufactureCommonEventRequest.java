@@ -12,7 +12,6 @@ public class IndustryManufactureCommonEventRequest extends TeaModel {
     @NameInMap("appKey")
     public String appKey;
 
-    // 业务参数，作为事件业务body
     @NameInMap("bizData")
     public java.util.Map<String, ?> bizData;
 

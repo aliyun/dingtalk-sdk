@@ -56,6 +56,14 @@ public class IndustryManufactureMesTeamMgmtRequest extends TeaModel {
     @NameInMap("processIds")
     public java.util.List<String> processIds;
 
+    // 业务tagKey
+    @NameInMap("tagKey")
+    public String tagKey;
+
+    // 业务tagValues
+    @NameInMap("tagValues")
+    public java.util.List<String> tagValues;
+
     public static IndustryManufactureMesTeamMgmtRequest build(java.util.Map<String, ?> map) throws Exception {
         IndustryManufactureMesTeamMgmtRequest self = new IndustryManufactureMesTeamMgmtRequest();
         return TeaModel.build(map, self);
@@ -163,6 +171,22 @@ public class IndustryManufactureMesTeamMgmtRequest extends TeaModel {
     }
     public java.util.List<String> getProcessIds() {
         return this.processIds;
+    }
+
+    public IndustryManufactureMesTeamMgmtRequest setTagKey(String tagKey) {
+        this.tagKey = tagKey;
+        return this;
+    }
+    public String getTagKey() {
+        return this.tagKey;
+    }
+
+    public IndustryManufactureMesTeamMgmtRequest setTagValues(java.util.List<String> tagValues) {
+        this.tagValues = tagValues;
+        return this;
+    }
+    public java.util.List<String> getTagValues() {
+        return this.tagValues;
     }
 
     public static class IndustryManufactureMesTeamMgmtRequestExtendData extends TeaModel {
