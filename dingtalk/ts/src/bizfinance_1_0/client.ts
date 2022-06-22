@@ -1168,6 +1168,88 @@ export class QueryPermissionByUserIdResponse extends $tea.Model {
   }
 }
 
+export class QueryPermissionRoleMemberHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPermissionRoleMemberRequest extends $tea.Model {
+  roleCodeList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      roleCodeList: 'roleCodeList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      roleCodeList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPermissionRoleMemberResponseBody extends $tea.Model {
+  roleMemberMap?: { [key: string]: RoleMemberMapValue };
+  static names(): { [key: string]: string } {
+    return {
+      roleMemberMap: 'roleMemberMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      roleMemberMap: { 'type': 'map', 'keyType': 'string', 'valueType': RoleMemberMapValue },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPermissionRoleMemberResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryPermissionRoleMemberResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryPermissionRoleMemberResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryProjectByPageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1518,6 +1600,28 @@ export class UpdateReceiptResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: UpdateReceiptResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RoleMemberMapValue extends $tea.Model {
+  roleCode?: string;
+  memberList?: RoleMemberMapValueMemberList[];
+  static names(): { [key: string]: string } {
+    return {
+      roleCode: 'roleCode',
+      memberList: 'memberList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      roleCode: 'string',
+      memberList: { 'type': 'array', 'itemType': RoleMemberMapValueMemberList },
     };
   }
 
@@ -1974,6 +2078,31 @@ export class UpdateReceiptResponseBodyResults extends $tea.Model {
   }
 }
 
+export class RoleMemberMapValueMemberList extends $tea.Model {
+  userId?: string;
+  nick?: string;
+  avatarUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+      nick: 'nick',
+      avatarUrl: 'avatarUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+      nick: 'string',
+      avatarUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -2375,6 +2504,35 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryPermissionByUserIdResponse>(await this.doROARequest("QueryPermissionByUserId", "bizfinance_1.0", "HTTP", "GET", "AK", `/v1.0/bizfinance/permissions`, "json", req, runtime), new QueryPermissionByUserIdResponse({}));
+  }
+
+  async queryPermissionRoleMember(request: QueryPermissionRoleMemberRequest): Promise<QueryPermissionRoleMemberResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryPermissionRoleMemberHeaders({ });
+    return await this.queryPermissionRoleMemberWithOptions(request, headers, runtime);
+  }
+
+  async queryPermissionRoleMemberWithOptions(request: QueryPermissionRoleMemberRequest, headers: QueryPermissionRoleMemberHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPermissionRoleMemberResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.roleCodeList)) {
+      body["roleCodeList"] = request.roleCodeList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QueryPermissionRoleMemberResponse>(await this.doROARequest("QueryPermissionRoleMember", "bizfinance_1.0", "HTTP", "POST", "AK", `/v1.0/bizfinance/roles/members/query`, "json", req, runtime), new QueryPermissionRoleMemberResponse({}));
   }
 
   async queryProjectByPage(request: QueryProjectByPageRequest): Promise<QueryProjectByPageResponse> {

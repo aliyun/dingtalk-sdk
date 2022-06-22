@@ -1417,6 +1417,100 @@ export class GetAllLabelableDeptsResponse extends $tea.Model {
   }
 }
 
+export class GetAppDispatchInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAppDispatchInfoRequest extends $tea.Model {
+  endTime?: number;
+  startTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      startTime: 'startTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'number',
+      startTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAppDispatchInfoResponseBody extends $tea.Model {
+  android?: GetAppDispatchInfoResponseBodyAndroid[];
+  iOS?: GetAppDispatchInfoResponseBodyIOS[];
+  mac?: GetAppDispatchInfoResponseBodyMac[];
+  windows?: GetAppDispatchInfoResponseBodyWindows[];
+  static names(): { [key: string]: string } {
+    return {
+      android: 'android',
+      iOS: 'iOS',
+      mac: 'mac',
+      windows: 'windows',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      android: { 'type': 'array', 'itemType': GetAppDispatchInfoResponseBodyAndroid },
+      iOS: { 'type': 'array', 'itemType': GetAppDispatchInfoResponseBodyIOS },
+      mac: { 'type': 'array', 'itemType': GetAppDispatchInfoResponseBodyMac },
+      windows: { 'type': 'array', 'itemType': GetAppDispatchInfoResponseBodyWindows },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAppDispatchInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetAppDispatchInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetAppDispatchInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetCalenderSummaryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5170,6 +5264,164 @@ export class GetAllLabelableDeptsResponseBodyData extends $tea.Model {
   }
 }
 
+export class GetAppDispatchInfoResponseBodyAndroid extends $tea.Model {
+  baseLineVersion?: string;
+  downloadUrl?: string;
+  inGray?: boolean;
+  packTime?: number;
+  platform?: string;
+  version?: string;
+  static names(): { [key: string]: string } {
+    return {
+      baseLineVersion: 'baseLineVersion',
+      downloadUrl: 'downloadUrl',
+      inGray: 'inGray',
+      packTime: 'packTime',
+      platform: 'platform',
+      version: 'version',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      baseLineVersion: 'string',
+      downloadUrl: 'string',
+      inGray: 'boolean',
+      packTime: 'number',
+      platform: 'string',
+      version: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAppDispatchInfoResponseBodyIOSExt extends $tea.Model {
+  plist?: string;
+  static names(): { [key: string]: string } {
+    return {
+      plist: 'plist',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      plist: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAppDispatchInfoResponseBodyIOS extends $tea.Model {
+  baseLineVersion?: string;
+  downloadUrl?: string;
+  ext?: GetAppDispatchInfoResponseBodyIOSExt;
+  inGray?: boolean;
+  packTime?: number;
+  platform?: string;
+  version?: string;
+  static names(): { [key: string]: string } {
+    return {
+      baseLineVersion: 'baseLineVersion',
+      downloadUrl: 'downloadUrl',
+      ext: 'ext',
+      inGray: 'inGray',
+      packTime: 'packTime',
+      platform: 'platform',
+      version: 'version',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      baseLineVersion: 'string',
+      downloadUrl: 'string',
+      ext: GetAppDispatchInfoResponseBodyIOSExt,
+      inGray: 'boolean',
+      packTime: 'number',
+      platform: 'string',
+      version: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAppDispatchInfoResponseBodyMac extends $tea.Model {
+  baseLineVersion?: string;
+  downloadUrl?: string;
+  inGray?: boolean;
+  packTime?: number;
+  platform?: string;
+  version?: string;
+  static names(): { [key: string]: string } {
+    return {
+      baseLineVersion: 'baseLineVersion',
+      downloadUrl: 'downloadUrl',
+      inGray: 'inGray',
+      packTime: 'packTime',
+      platform: 'platform',
+      version: 'version',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      baseLineVersion: 'string',
+      downloadUrl: 'string',
+      inGray: 'boolean',
+      packTime: 'number',
+      platform: 'string',
+      version: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAppDispatchInfoResponseBodyWindows extends $tea.Model {
+  baseLineVersion?: string;
+  downloadUrl?: string;
+  inGray?: boolean;
+  packTime?: number;
+  platform?: string;
+  version?: string;
+  static names(): { [key: string]: string } {
+    return {
+      baseLineVersion: 'baseLineVersion',
+      downloadUrl: 'downloadUrl',
+      inGray: 'inGray',
+      packTime: 'packTime',
+      platform: 'platform',
+      version: 'version',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      baseLineVersion: 'string',
+      downloadUrl: 'string',
+      inGray: 'boolean',
+      packTime: 'number',
+      platform: 'string',
+      version: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetCommentListResponseBodyData extends $tea.Model {
   commentId?: string;
   commentTime?: number;
@@ -6670,6 +6922,39 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<GetAllLabelableDeptsResponse>(await this.doROARequest("GetAllLabelableDepts", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/partnerDepartments`, "json", req, runtime), new GetAllLabelableDeptsResponse({}));
+  }
+
+  async getAppDispatchInfo(request: GetAppDispatchInfoRequest): Promise<GetAppDispatchInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetAppDispatchInfoHeaders({ });
+    return await this.getAppDispatchInfoWithOptions(request, headers, runtime);
+  }
+
+  async getAppDispatchInfoWithOptions(request: GetAppDispatchInfoRequest, headers: GetAppDispatchInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetAppDispatchInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.endTime)) {
+      query["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      query["startTime"] = request.startTime;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetAppDispatchInfoResponse>(await this.doROARequest("GetAppDispatchInfo", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/apps/distributionInfos`, "json", req, runtime), new GetAppDispatchInfoResponse({}));
   }
 
   async getCalenderSummary(dataId: string): Promise<GetCalenderSummaryResponse> {

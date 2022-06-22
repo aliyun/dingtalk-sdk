@@ -1358,6 +1358,7 @@ export class SyncTaskTemplateHeaders extends $tea.Model {
 }
 
 export class SyncTaskTemplateRequest extends $tea.Model {
+  delete?: boolean;
   des?: string;
   ext?: string;
   name?: string;
@@ -1368,6 +1369,7 @@ export class SyncTaskTemplateRequest extends $tea.Model {
   solutionType?: string;
   static names(): { [key: string]: string } {
     return {
+      delete: 'delete',
       des: 'des',
       ext: 'ext',
       name: 'name',
@@ -1381,6 +1383,7 @@ export class SyncTaskTemplateRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      delete: 'boolean',
       des: 'string',
       ext: 'string',
       name: 'string',
@@ -2627,6 +2630,10 @@ export default class Client extends OpenApi {
     }
 
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.delete)) {
+      body["delete"] = request.delete;
+    }
+
     if (!Util.isUnset(request.des)) {
       body["des"] = request.des;
     }

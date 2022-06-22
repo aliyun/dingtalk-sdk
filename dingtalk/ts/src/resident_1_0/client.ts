@@ -215,15 +215,21 @@ export class AddResidentMemberRequest extends $tea.Model {
 }
 
 export class AddResidentMemberResponseBody extends $tea.Model {
+  status?: number;
+  unionId?: string;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
+      status: 'status',
+      unionId: 'unionId',
       userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      status: 'number',
+      unionId: 'string',
       userId: 'string',
     };
   }
@@ -1989,10 +1995,12 @@ export class RemoveResidentMemberHeaders extends $tea.Model {
 
 export class RemoveResidentMemberRequest extends $tea.Model {
   deptId?: number;
+  unionId?: string;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
       deptId: 'deptId',
+      unionId: 'unionId',
       userId: 'userId',
     };
   }
@@ -2000,6 +2008,7 @@ export class RemoveResidentMemberRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       deptId: 'number',
+      unionId: 'string',
       userId: 'string',
     };
   }
@@ -2632,15 +2641,18 @@ export class UpdateResidentMemberHeaders extends $tea.Model {
 
 export class UpdateResidentMemberRequest extends $tea.Model {
   residentUpdateInfo?: UpdateResidentMemberRequestResidentUpdateInfo;
+  unionId?: string;
   static names(): { [key: string]: string } {
     return {
       residentUpdateInfo: 'residentUpdateInfo',
+      unionId: 'unionId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       residentUpdateInfo: UpdateResidentMemberRequestResidentUpdateInfo,
+      unionId: 'string',
     };
   }
 
@@ -3280,7 +3292,6 @@ export class SearchResidentResponseBodyResidenceList extends $tea.Model {
 export class UpdateResidentMemberRequestResidentUpdateInfo extends $tea.Model {
   deptId?: number;
   isPropertyOwner?: boolean;
-  isRetainOldDept?: boolean;
   memberDeptExtension?: { [key: string]: string };
   name?: string;
   oldDeptId?: number;
@@ -3290,7 +3301,6 @@ export class UpdateResidentMemberRequestResidentUpdateInfo extends $tea.Model {
     return {
       deptId: 'deptId',
       isPropertyOwner: 'isPropertyOwner',
-      isRetainOldDept: 'isRetainOldDept',
       memberDeptExtension: 'memberDeptExtension',
       name: 'name',
       oldDeptId: 'oldDeptId',
@@ -3303,7 +3313,6 @@ export class UpdateResidentMemberRequestResidentUpdateInfo extends $tea.Model {
     return {
       deptId: 'number',
       isPropertyOwner: 'boolean',
-      isRetainOldDept: 'boolean',
       memberDeptExtension: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       name: 'string',
       oldDeptId: 'number',
@@ -4182,6 +4191,10 @@ export default class Client extends OpenApi {
       body["deptId"] = request.deptId;
     }
 
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
     if (!Util.isUnset(request.userId)) {
       body["userId"] = request.userId;
     }
@@ -4475,6 +4488,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset($tea.toMap(request.residentUpdateInfo))) {
       body["residentUpdateInfo"] = request.residentUpdateInfo;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
