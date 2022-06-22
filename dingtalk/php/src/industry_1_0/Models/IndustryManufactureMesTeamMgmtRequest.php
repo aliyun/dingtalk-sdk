@@ -102,6 +102,20 @@ class IndustryManufactureMesTeamMgmtRequest extends Model
      * @var string[]
      */
     public $processIds;
+
+    /**
+     * @description 业务tagKey
+     *
+     * @var string
+     */
+    public $tagKey;
+
+    /**
+     * @description 业务tagValues
+     *
+     * @var string[]
+     */
+    public $tagValues;
     protected $_name = [
         'action'       => 'action',
         'appKey'       => 'appKey',
@@ -116,6 +130,8 @@ class IndustryManufactureMesTeamMgmtRequest extends Model
         'members'      => 'members',
         'name'         => 'name',
         'processIds'   => 'processIds',
+        'tagKey'       => 'tagKey',
+        'tagValues'    => 'tagValues',
     ];
 
     public function validate()
@@ -187,6 +203,12 @@ class IndustryManufactureMesTeamMgmtRequest extends Model
         }
         if (null !== $this->processIds) {
             $res['processIds'] = $this->processIds;
+        }
+        if (null !== $this->tagKey) {
+            $res['tagKey'] = $this->tagKey;
+        }
+        if (null !== $this->tagValues) {
+            $res['tagValues'] = $this->tagValues;
         }
 
         return $res;
@@ -265,6 +287,14 @@ class IndustryManufactureMesTeamMgmtRequest extends Model
         if (isset($map['processIds'])) {
             if (!empty($map['processIds'])) {
                 $model->processIds = $map['processIds'];
+            }
+        }
+        if (isset($map['tagKey'])) {
+            $model->tagKey = $map['tagKey'];
+        }
+        if (isset($map['tagValues'])) {
+            if (!empty($map['tagValues'])) {
+                $model->tagValues = $map['tagValues'];
             }
         }
 

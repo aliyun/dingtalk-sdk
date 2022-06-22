@@ -8,6 +8,11 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\FormCreateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\FormCreateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\FormCreateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetCrmProcCodesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetCrmProcCodesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetProcessConfigHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetProcessConfigRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetProcessConfigResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GrantCspaceAuthorizationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GrantCspaceAuthorizationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GrantCspaceAuthorizationResponse;
@@ -100,6 +105,81 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return FormCreateResponse::fromMap($this->doROARequest('FormCreate', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/forms', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return GetCrmProcCodesResponse
+     */
+    public function getCrmProcCodes()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCrmProcCodesHeaders([]);
+
+        return $this->getCrmProcCodesWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param GetCrmProcCodesHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return GetCrmProcCodesResponse
+     */
+    public function getCrmProcCodesWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetCrmProcCodesResponse::fromMap($this->doROARequest('GetCrmProcCodes', 'workflow_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workflow/crm/processes', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetProcessConfigRequest $request
+     *
+     * @return GetProcessConfigResponse
+     */
+    public function getProcessConfig($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetProcessConfigHeaders([]);
+
+        return $this->getProcessConfigWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetProcessConfigRequest $request
+     * @param GetProcessConfigHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return GetProcessConfigResponse
+     */
+    public function getProcessConfigWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->procCode)) {
+            @$query['procCode'] = $request->procCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetProcessConfigResponse::fromMap($this->doROARequest('GetProcessConfig', 'workflow_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workflow/crm/processes/configurations', 'json', $req, $runtime));
     }
 
     /**

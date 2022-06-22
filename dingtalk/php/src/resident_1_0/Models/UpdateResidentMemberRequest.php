@@ -15,8 +15,16 @@ class UpdateResidentMemberRequest extends Model
      * @var residentUpdateInfo
      */
     public $residentUpdateInfo;
+
+    /**
+     * @description unionId
+     *
+     * @var string
+     */
+    public $unionId;
     protected $_name = [
         'residentUpdateInfo' => 'residentUpdateInfo',
+        'unionId'            => 'unionId',
     ];
 
     public function validate()
@@ -28,6 +36,9 @@ class UpdateResidentMemberRequest extends Model
         $res = [];
         if (null !== $this->residentUpdateInfo) {
             $res['residentUpdateInfo'] = null !== $this->residentUpdateInfo ? $this->residentUpdateInfo->toMap() : null;
+        }
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
 
         return $res;
@@ -43,6 +54,9 @@ class UpdateResidentMemberRequest extends Model
         $model = new self();
         if (isset($map['residentUpdateInfo'])) {
             $model->residentUpdateInfo = residentUpdateInfo::fromMap($map['residentUpdateInfo']);
+        }
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
 
         return $model;

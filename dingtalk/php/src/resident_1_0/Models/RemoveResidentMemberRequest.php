@@ -16,14 +16,22 @@ class RemoveResidentMemberRequest extends Model
     public $deptId;
 
     /**
+     * @description unionId
+     *
+     * @var string
+     */
+    public $unionId;
+
+    /**
      * @description 人员标识
      *
      * @var string
      */
     public $userId;
     protected $_name = [
-        'deptId' => 'deptId',
-        'userId' => 'userId',
+        'deptId'  => 'deptId',
+        'unionId' => 'unionId',
+        'userId'  => 'userId',
     ];
 
     public function validate()
@@ -35,6 +43,9 @@ class RemoveResidentMemberRequest extends Model
         $res = [];
         if (null !== $this->deptId) {
             $res['deptId'] = $this->deptId;
+        }
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -53,6 +64,9 @@ class RemoveResidentMemberRequest extends Model
         $model = new self();
         if (isset($map['deptId'])) {
             $model->deptId = $map['deptId'];
+        }
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];

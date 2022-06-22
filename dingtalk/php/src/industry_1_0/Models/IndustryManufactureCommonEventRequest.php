@@ -23,8 +23,6 @@ class IndustryManufactureCommonEventRequest extends Model
     public $appKey;
 
     /**
-     * @description 业务参数，作为事件业务body
-     *
      * @var mixed[]
      */
     public $bizData;

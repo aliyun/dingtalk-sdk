@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class IndustryManufactureCommonEventResponseBody extends Model
 {
     /**
+     * @var string
+     */
+    public $errorMsg;
+
+    /**
      * @description Id of the request
      *
      * @var string
@@ -19,15 +24,10 @@ class IndustryManufactureCommonEventResponseBody extends Model
      * @var mixed
      */
     public $result;
-
-    /**
-     * @var bool
-     */
-    public $success;
     protected $_name = [
+        'errorMsg'  => 'errorMsg',
         'requestId' => 'requestId',
         'result'    => 'result',
-        'success'   => 'success',
     ];
 
     public function validate()
@@ -37,14 +37,14 @@ class IndustryManufactureCommonEventResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->errorMsg) {
+            $res['errorMsg'] = $this->errorMsg;
+        }
         if (null !== $this->requestId) {
             $res['requestId'] = $this->requestId;
         }
         if (null !== $this->result) {
             $res['result'] = $this->result;
-        }
-        if (null !== $this->success) {
-            $res['success'] = $this->success;
         }
 
         return $res;
@@ -58,14 +58,14 @@ class IndustryManufactureCommonEventResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['errorMsg'])) {
+            $model->errorMsg = $map['errorMsg'];
+        }
         if (isset($map['requestId'])) {
             $model->requestId = $map['requestId'];
         }
         if (isset($map['result'])) {
             $model->result = $map['result'];
-        }
-        if (isset($map['success'])) {
-            $model->success = $map['success'];
         }
 
         return $model;

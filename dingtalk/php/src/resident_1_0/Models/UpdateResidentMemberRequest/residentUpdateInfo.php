@@ -23,13 +23,6 @@ class residentUpdateInfo extends Model
     public $isPropertyOwner;
 
     /**
-     * @description 是否保留旧部门，默认不保存
-     *
-     * @var bool
-     */
-    public $isRetainOldDept;
-
-    /**
      * @description 人员扩展信息，目前只有租客的起止时间
      *
      * @var string[]
@@ -66,7 +59,6 @@ class residentUpdateInfo extends Model
     protected $_name = [
         'deptId'              => 'deptId',
         'isPropertyOwner'     => 'isPropertyOwner',
-        'isRetainOldDept'     => 'isRetainOldDept',
         'memberDeptExtension' => 'memberDeptExtension',
         'name'                => 'name',
         'oldDeptId'           => 'oldDeptId',
@@ -86,9 +78,6 @@ class residentUpdateInfo extends Model
         }
         if (null !== $this->isPropertyOwner) {
             $res['isPropertyOwner'] = $this->isPropertyOwner;
-        }
-        if (null !== $this->isRetainOldDept) {
-            $res['isRetainOldDept'] = $this->isRetainOldDept;
         }
         if (null !== $this->memberDeptExtension) {
             $res['memberDeptExtension'] = $this->memberDeptExtension;
@@ -122,9 +111,6 @@ class residentUpdateInfo extends Model
         }
         if (isset($map['isPropertyOwner'])) {
             $model->isPropertyOwner = $map['isPropertyOwner'];
-        }
-        if (isset($map['isRetainOldDept'])) {
-            $model->isRetainOldDept = $map['isRetainOldDept'];
         }
         if (isset($map['memberDeptExtension'])) {
             $model->memberDeptExtension = $map['memberDeptExtension'];

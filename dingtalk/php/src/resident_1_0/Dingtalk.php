@@ -1163,6 +1163,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->deptId)) {
             @$body['deptId'] = $request->deptId;
         }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
         if (!Utils::isUnset($request->userId)) {
             @$body['userId'] = $request->userId;
         }
@@ -1525,6 +1528,9 @@ class Dingtalk extends OpenApiClient
         $body = [];
         if (!Utils::isUnset($request->residentUpdateInfo)) {
             @$body['residentUpdateInfo'] = $request->residentUpdateInfo;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

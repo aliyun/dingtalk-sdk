@@ -809,6 +809,9 @@ class Dingtalk extends OpenApiClient
             @$query['solutionType'] = $request->solutionType;
         }
         $body = [];
+        if (!Utils::isUnset($request->delete)) {
+            @$body['delete'] = $request->delete;
+        }
         if (!Utils::isUnset($request->des)) {
             @$body['des'] = $request->des;
         }

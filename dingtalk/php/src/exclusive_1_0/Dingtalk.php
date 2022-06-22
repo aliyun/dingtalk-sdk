@@ -52,6 +52,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAgentIdByRelatedAppIdRequ
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAgentIdByRelatedAppIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAllLabelableDeptsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAllLabelableDeptsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAppDispatchInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAppDispatchInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAppDispatchInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCalenderSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCalenderSummaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCommentListHeaders;
@@ -950,6 +953,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetAllLabelableDeptsResponse::fromMap($this->doROARequest('GetAllLabelableDepts', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/partnerDepartments', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetAppDispatchInfoRequest $request
+     *
+     * @return GetAppDispatchInfoResponse
+     */
+    public function getAppDispatchInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAppDispatchInfoHeaders([]);
+
+        return $this->getAppDispatchInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetAppDispatchInfoRequest $request
+     * @param GetAppDispatchInfoHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return GetAppDispatchInfoResponse
+     */
+    public function getAppDispatchInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->endTime)) {
+            @$query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$query['startTime'] = $request->startTime;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetAppDispatchInfoResponse::fromMap($this->doROARequest('GetAppDispatchInfo', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/apps/distributionInfos', 'json', $req, $runtime));
     }
 
     /**

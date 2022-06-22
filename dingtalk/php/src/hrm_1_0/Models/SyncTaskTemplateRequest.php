@@ -10,6 +10,13 @@ use AlibabaCloud\Tea\Model;
 class SyncTaskTemplateRequest extends Model
 {
     /**
+     * @description 是否删除任务模版，true删除，false不删除
+     *
+     * @var bool
+     */
+    public $delete;
+
+    /**
      * @description 任务模板描述
      *
      * @var string
@@ -63,6 +70,7 @@ class SyncTaskTemplateRequest extends Model
      */
     public $solutionType;
     protected $_name = [
+        'delete'       => 'delete',
         'des'          => 'des',
         'ext'          => 'ext',
         'name'         => 'name',
@@ -80,6 +88,9 @@ class SyncTaskTemplateRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->delete) {
+            $res['delete'] = $this->delete;
+        }
         if (null !== $this->des) {
             $res['des'] = $this->des;
         }
@@ -116,6 +127,9 @@ class SyncTaskTemplateRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['delete'])) {
+            $model->delete = $map['delete'];
+        }
         if (isset($map['des'])) {
             $model->des = $map['des'];
         }

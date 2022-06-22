@@ -5,6 +5,60 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vindustry_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusAddRenterMemberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusAddRenterMemberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusAddRenterMemberResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusCreateCampusGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusCreateCampusGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusCreateCampusGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusCreateCampusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusCreateCampusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusCreateCampusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusCreateRenterHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusCreateRenterRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusCreateRenterResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusDeleteCampusGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusDeleteCampusGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusDeleteCampusGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusDeleteRenterHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusDeleteRenterRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusDeleteRenterResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusDelRenterMemberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusDelRenterMemberResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusGetCampusGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusGetCampusGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusGetCampusGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusGetCampusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusGetCampusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusGetCampusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusGetRenterHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusGetRenterMemberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusGetRenterMemberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusGetRenterMemberResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusGetRenterRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusGetRenterResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusListCampusGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusListCampusGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusListCampusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusListCampusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusListCampusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusListRenterHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusListRenterMembersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusListRenterMembersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusListRenterMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusListRenterResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateCampusGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateCampusGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateCampusGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateCampusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateCampusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateCampusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateRenterHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateRenterMemberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateRenterMemberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateRenterMemberResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateRenterRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateRenterResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactCreateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactCreateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactCreateResponse;
@@ -161,6 +215,938 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param CampusAddRenterMemberRequest $request
+     *
+     * @return CampusAddRenterMemberResponse
+     */
+    public function campusAddRenterMember($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CampusAddRenterMemberHeaders([]);
+
+        return $this->campusAddRenterMemberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CampusAddRenterMemberRequest $request
+     * @param CampusAddRenterMemberHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return CampusAddRenterMemberResponse
+     */
+    public function campusAddRenterMemberWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->extend)) {
+            @$body['extend'] = $request->extend;
+        }
+        if (!Utils::isUnset($request->mobile)) {
+            @$body['mobile'] = $request->mobile;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->renterId)) {
+            @$body['renterId'] = $request->renterId;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$body['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CampusAddRenterMemberResponse::fromMap($this->doROARequest('CampusAddRenterMember', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/campuses/renters/members', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CampusCreateCampusRequest $request
+     *
+     * @return CampusCreateCampusResponse
+     */
+    public function campusCreateCampus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CampusCreateCampusHeaders([]);
+
+        return $this->campusCreateCampusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CampusCreateCampusRequest $request
+     * @param CampusCreateCampusHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return CampusCreateCampusResponse
+     */
+    public function campusCreateCampusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->address)) {
+            @$body['address'] = $request->address;
+        }
+        if (!Utils::isUnset($request->area)) {
+            @$body['area'] = $request->area;
+        }
+        if (!Utils::isUnset($request->belongProjectGroupId)) {
+            @$body['belongProjectGroupId'] = $request->belongProjectGroupId;
+        }
+        if (!Utils::isUnset($request->campusName)) {
+            @$body['campusName'] = $request->campusName;
+        }
+        if (!Utils::isUnset($request->capacity)) {
+            @$body['capacity'] = $request->capacity;
+        }
+        if (!Utils::isUnset($request->cityId)) {
+            @$body['cityId'] = $request->cityId;
+        }
+        if (!Utils::isUnset($request->country)) {
+            @$body['country'] = $request->country;
+        }
+        if (!Utils::isUnset($request->countyId)) {
+            @$body['countyId'] = $request->countyId;
+        }
+        if (!Utils::isUnset($request->creatorUnionId)) {
+            @$body['creatorUnionId'] = $request->creatorUnionId;
+        }
+        if (!Utils::isUnset($request->description)) {
+            @$body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->extend)) {
+            @$body['extend'] = $request->extend;
+        }
+        if (!Utils::isUnset($request->orderInfo)) {
+            @$body['orderInfo'] = $request->orderInfo;
+        }
+        if (!Utils::isUnset($request->orderStartTime)) {
+            @$body['orderStartTime'] = $request->orderStartTime;
+        }
+        if (!Utils::isUnset($request->provId)) {
+            @$body['provId'] = $request->provId;
+        }
+        if (!Utils::isUnset($request->telephone)) {
+            @$body['telephone'] = $request->telephone;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CampusCreateCampusResponse::fromMap($this->doROARequest('CampusCreateCampus', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/campuses/projects', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CampusCreateCampusGroupRequest $request
+     *
+     * @return CampusCreateCampusGroupResponse
+     */
+    public function campusCreateCampusGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CampusCreateCampusGroupHeaders([]);
+
+        return $this->campusCreateCampusGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CampusCreateCampusGroupRequest $request
+     * @param CampusCreateCampusGroupHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return CampusCreateCampusGroupResponse
+     */
+    public function campusCreateCampusGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->extend)) {
+            @$body['extend'] = $request->extend;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CampusCreateCampusGroupResponse::fromMap($this->doROARequest('CampusCreateCampusGroup', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/campuses/projects/groups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CampusCreateRenterRequest $request
+     *
+     * @return CampusCreateRenterResponse
+     */
+    public function campusCreateRenter($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CampusCreateRenterHeaders([]);
+
+        return $this->campusCreateRenterWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CampusCreateRenterRequest $request
+     * @param CampusCreateRenterHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return CampusCreateRenterResponse
+     */
+    public function campusCreateRenterWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->creditCode)) {
+            @$body['creditCode'] = $request->creditCode;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->extend)) {
+            @$body['extend'] = $request->extend;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->state)) {
+            @$body['state'] = $request->state;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CampusCreateRenterResponse::fromMap($this->doROARequest('CampusCreateRenter', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/campuses/renters', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CampusDelRenterMemberRequest $request
+     *
+     * @return CampusDelRenterMemberResponse
+     */
+    public function campusDelRenterMember($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->campusDelRenterMemberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CampusDelRenterMemberRequest $request
+     * @param string[]                     $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return CampusDelRenterMemberResponse
+     */
+    public function campusDelRenterMemberWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->renterId)) {
+            @$query['renterId'] = $request->renterId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CampusDelRenterMemberResponse::fromMap($this->doROARequest('CampusDelRenterMember', 'industry_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/industry/campuses/renters/members', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CampusDeleteCampusGroupRequest $request
+     *
+     * @return CampusDeleteCampusGroupResponse
+     */
+    public function campusDeleteCampusGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CampusDeleteCampusGroupHeaders([]);
+
+        return $this->campusDeleteCampusGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CampusDeleteCampusGroupRequest $request
+     * @param CampusDeleteCampusGroupHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return CampusDeleteCampusGroupResponse
+     */
+    public function campusDeleteCampusGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->campusProjectGroupId)) {
+            @$query['campusProjectGroupId'] = $request->campusProjectGroupId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CampusDeleteCampusGroupResponse::fromMap($this->doROARequest('CampusDeleteCampusGroup', 'industry_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/industry/campuses/projects/groups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CampusDeleteRenterRequest $request
+     *
+     * @return CampusDeleteRenterResponse
+     */
+    public function campusDeleteRenter($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CampusDeleteRenterHeaders([]);
+
+        return $this->campusDeleteRenterWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CampusDeleteRenterRequest $request
+     * @param CampusDeleteRenterHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return CampusDeleteRenterResponse
+     */
+    public function campusDeleteRenterWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->renterId)) {
+            @$query['renterId'] = $request->renterId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CampusDeleteRenterResponse::fromMap($this->doROARequest('CampusDeleteRenter', 'industry_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/industry/campuses/renters', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param CampusGetCampusRequest $request
+     *
+     * @return CampusGetCampusResponse
+     */
+    public function campusGetCampus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CampusGetCampusHeaders([]);
+
+        return $this->campusGetCampusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CampusGetCampusRequest $request
+     * @param CampusGetCampusHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return CampusGetCampusResponse
+     */
+    public function campusGetCampusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->campusDeptId)) {
+            @$query['campusDeptId'] = $request->campusDeptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CampusGetCampusResponse::fromMap($this->doROARequest('CampusGetCampus', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/campuses/projectInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CampusGetCampusGroupRequest $request
+     *
+     * @return CampusGetCampusGroupResponse
+     */
+    public function campusGetCampusGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CampusGetCampusGroupHeaders([]);
+
+        return $this->campusGetCampusGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CampusGetCampusGroupRequest $request
+     * @param CampusGetCampusGroupHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return CampusGetCampusGroupResponse
+     */
+    public function campusGetCampusGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->groupId)) {
+            @$query['groupId'] = $request->groupId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CampusGetCampusGroupResponse::fromMap($this->doROARequest('CampusGetCampusGroup', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/campuses/projects/groupInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CampusGetRenterRequest $request
+     *
+     * @return CampusGetRenterResponse
+     */
+    public function campusGetRenter($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CampusGetRenterHeaders([]);
+
+        return $this->campusGetRenterWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CampusGetRenterRequest $request
+     * @param CampusGetRenterHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return CampusGetRenterResponse
+     */
+    public function campusGetRenterWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->renterId)) {
+            @$query['renterId'] = $request->renterId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CampusGetRenterResponse::fromMap($this->doROARequest('CampusGetRenter', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/campuses/renterInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CampusGetRenterMemberRequest $request
+     *
+     * @return CampusGetRenterMemberResponse
+     */
+    public function campusGetRenterMember($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CampusGetRenterMemberHeaders([]);
+
+        return $this->campusGetRenterMemberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CampusGetRenterMemberRequest $request
+     * @param CampusGetRenterMemberHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return CampusGetRenterMemberResponse
+     */
+    public function campusGetRenterMemberWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->renterId)) {
+            @$query['renterId'] = $request->renterId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CampusGetRenterMemberResponse::fromMap($this->doROARequest('CampusGetRenterMember', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/campuses/renters/memberInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CampusListCampusRequest $request
+     *
+     * @return CampusListCampusResponse
+     */
+    public function campusListCampus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CampusListCampusHeaders([]);
+
+        return $this->campusListCampusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CampusListCampusRequest $request
+     * @param CampusListCampusHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return CampusListCampusResponse
+     */
+    public function campusListCampusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->groupDeptId)) {
+            @$query['groupDeptId'] = $request->groupDeptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CampusListCampusResponse::fromMap($this->doROARequest('CampusListCampus', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/campuses/projects', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return CampusListCampusGroupResponse
+     */
+    public function campusListCampusGroup()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CampusListCampusGroupHeaders([]);
+
+        return $this->campusListCampusGroupWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param CampusListCampusGroupHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return CampusListCampusGroupResponse
+     */
+    public function campusListCampusGroupWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return CampusListCampusGroupResponse::fromMap($this->doROARequest('CampusListCampusGroup', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/campuses/projects/groups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return CampusListRenterResponse
+     */
+    public function campusListRenter()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CampusListRenterHeaders([]);
+
+        return $this->campusListRenterWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param CampusListRenterHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return CampusListRenterResponse
+     */
+    public function campusListRenterWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return CampusListRenterResponse::fromMap($this->doROARequest('CampusListRenter', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/campuses/renters', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CampusListRenterMembersRequest $request
+     *
+     * @return CampusListRenterMembersResponse
+     */
+    public function campusListRenterMembers($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CampusListRenterMembersHeaders([]);
+
+        return $this->campusListRenterMembersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CampusListRenterMembersRequest $request
+     * @param CampusListRenterMembersHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return CampusListRenterMembersResponse
+     */
+    public function campusListRenterMembersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->renterId)) {
+            @$query['renterId'] = $request->renterId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CampusListRenterMembersResponse::fromMap($this->doROARequest('CampusListRenterMembers', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/campuses/renters/members', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CampusUpdateCampusRequest $request
+     *
+     * @return CampusUpdateCampusResponse
+     */
+    public function campusUpdateCampus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CampusUpdateCampusHeaders([]);
+
+        return $this->campusUpdateCampusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CampusUpdateCampusRequest $request
+     * @param CampusUpdateCampusHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return CampusUpdateCampusResponse
+     */
+    public function campusUpdateCampusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->address)) {
+            @$body['address'] = $request->address;
+        }
+        if (!Utils::isUnset($request->area)) {
+            @$body['area'] = $request->area;
+        }
+        if (!Utils::isUnset($request->belongProjectGroupId)) {
+            @$body['belongProjectGroupId'] = $request->belongProjectGroupId;
+        }
+        if (!Utils::isUnset($request->campusDeptId)) {
+            @$body['campusDeptId'] = $request->campusDeptId;
+        }
+        if (!Utils::isUnset($request->campusName)) {
+            @$body['campusName'] = $request->campusName;
+        }
+        if (!Utils::isUnset($request->capacity)) {
+            @$body['capacity'] = $request->capacity;
+        }
+        if (!Utils::isUnset($request->cityId)) {
+            @$body['cityId'] = $request->cityId;
+        }
+        if (!Utils::isUnset($request->country)) {
+            @$body['country'] = $request->country;
+        }
+        if (!Utils::isUnset($request->countyId)) {
+            @$body['countyId'] = $request->countyId;
+        }
+        if (!Utils::isUnset($request->description)) {
+            @$body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->extend)) {
+            @$body['extend'] = $request->extend;
+        }
+        if (!Utils::isUnset($request->orderEndTime)) {
+            @$body['orderEndTime'] = $request->orderEndTime;
+        }
+        if (!Utils::isUnset($request->orderInfo)) {
+            @$body['orderInfo'] = $request->orderInfo;
+        }
+        if (!Utils::isUnset($request->orderStartTime)) {
+            @$body['orderStartTime'] = $request->orderStartTime;
+        }
+        if (!Utils::isUnset($request->provId)) {
+            @$body['provId'] = $request->provId;
+        }
+        if (!Utils::isUnset($request->telephone)) {
+            @$body['telephone'] = $request->telephone;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CampusUpdateCampusResponse::fromMap($this->doROARequest('CampusUpdateCampus', 'industry_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/industry/campuses/projects', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CampusUpdateCampusGroupRequest $request
+     *
+     * @return CampusUpdateCampusGroupResponse
+     */
+    public function campusUpdateCampusGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CampusUpdateCampusGroupHeaders([]);
+
+        return $this->campusUpdateCampusGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CampusUpdateCampusGroupRequest $request
+     * @param CampusUpdateCampusGroupHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return CampusUpdateCampusGroupResponse
+     */
+    public function campusUpdateCampusGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->campusProjectGroupId)) {
+            @$body['campusProjectGroupId'] = $request->campusProjectGroupId;
+        }
+        if (!Utils::isUnset($request->extend)) {
+            @$body['extend'] = $request->extend;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CampusUpdateCampusGroupResponse::fromMap($this->doROARequest('CampusUpdateCampusGroup', 'industry_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/industry/campuses/projects/groups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CampusUpdateRenterRequest $request
+     *
+     * @return CampusUpdateRenterResponse
+     */
+    public function campusUpdateRenter($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CampusUpdateRenterHeaders([]);
+
+        return $this->campusUpdateRenterWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CampusUpdateRenterRequest $request
+     * @param CampusUpdateRenterHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return CampusUpdateRenterResponse
+     */
+    public function campusUpdateRenterWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->creditCode)) {
+            @$body['creditCode'] = $request->creditCode;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->extend)) {
+            @$body['extend'] = $request->extend;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->renterId)) {
+            @$body['renterId'] = $request->renterId;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->state)) {
+            @$body['state'] = $request->state;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CampusUpdateRenterResponse::fromMap($this->doROARequest('CampusUpdateRenter', 'industry_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/industry/campuses/renters', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CampusUpdateRenterMemberRequest $request
+     *
+     * @return CampusUpdateRenterMemberResponse
+     */
+    public function campusUpdateRenterMember($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CampusUpdateRenterMemberHeaders([]);
+
+        return $this->campusUpdateRenterMemberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CampusUpdateRenterMemberRequest $request
+     * @param CampusUpdateRenterMemberHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return CampusUpdateRenterMemberResponse
+     */
+    public function campusUpdateRenterMemberWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->extend)) {
+            @$body['extend'] = $request->extend;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->renterId)) {
+            @$body['renterId'] = $request->renterId;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$body['type'] = $request->type;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CampusUpdateRenterMemberResponse::fromMap($this->doROARequest('CampusUpdateRenterMember', 'industry_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/industry/campuses/renters/members', 'json', $req, $runtime));
     }
 
     /**
@@ -1563,6 +2549,12 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->processIds)) {
             @$body['processIds'] = $request->processIds;
+        }
+        if (!Utils::isUnset($request->tagKey)) {
+            @$body['tagKey'] = $request->tagKey;
+        }
+        if (!Utils::isUnset($request->tagValues)) {
+            @$body['tagValues'] = $request->tagValues;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
