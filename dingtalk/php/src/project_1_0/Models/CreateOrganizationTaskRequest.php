@@ -58,20 +58,6 @@ class CreateOrganizationTaskRequest extends Model
     public $involveMembers;
 
     /**
-     * @description 任务是否完成
-     *
-     * @var bool
-     */
-    public $isDone;
-
-    /**
-     * @description 任务自定义标记
-     *
-     * @var string
-     */
-    public $label;
-
-    /**
      * @description 任务备注
      *
      * @var string
@@ -99,8 +85,6 @@ class CreateOrganizationTaskRequest extends Model
         'dueDate'             => 'dueDate',
         'executorId'          => 'executorId',
         'involveMembers'      => 'involveMembers',
-        'isDone'              => 'isDone',
-        'label'               => 'label',
         'note'                => 'note',
         'priority'            => 'priority',
         'visible'             => 'visible',
@@ -133,12 +117,6 @@ class CreateOrganizationTaskRequest extends Model
         }
         if (null !== $this->involveMembers) {
             $res['involveMembers'] = $this->involveMembers;
-        }
-        if (null !== $this->isDone) {
-            $res['isDone'] = $this->isDone;
-        }
-        if (null !== $this->label) {
-            $res['label'] = $this->label;
         }
         if (null !== $this->note) {
             $res['note'] = $this->note;
@@ -183,12 +161,6 @@ class CreateOrganizationTaskRequest extends Model
             if (!empty($map['involveMembers'])) {
                 $model->involveMembers = $map['involveMembers'];
             }
-        }
-        if (isset($map['isDone'])) {
-            $model->isDone = $map['isDone'];
-        }
-        if (isset($map['label'])) {
-            $model->label = $map['label'];
         }
         if (isset($map['note'])) {
             $model->note = $map['note'];

@@ -2,20 +2,27 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetOrganizationPriorityListResponseBody\result\payload;
+namespace AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryPartnerInfoResponseBody;
 
-use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetOrganizationPriorityListResponseBody\result\payload\locales\name;
 use AlibabaCloud\Tea\Model;
 
-class locales extends Model
+class partnerLabelList extends Model
 {
     /**
-     * @description 名称
+     * @description label id
      *
-     * @var name
+     * @var int
+     */
+    public $id;
+
+    /**
+     * @description label value
+     *
+     * @var string
      */
     public $name;
     protected $_name = [
+        'id'   => 'id',
         'name' => 'name',
     ];
 
@@ -26,8 +33,11 @@ class locales extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->id) {
+            $res['id'] = $this->id;
+        }
         if (null !== $this->name) {
-            $res['name'] = null !== $this->name ? $this->name->toMap() : null;
+            $res['name'] = $this->name;
         }
 
         return $res;
@@ -36,13 +46,16 @@ class locales extends Model
     /**
      * @param array $map
      *
-     * @return locales
+     * @return partnerLabelList
      */
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['id'])) {
+            $model->id = $map['id'];
+        }
         if (isset($map['name'])) {
-            $model->name = name::fromMap($map['name']);
+            $model->name = $map['name'];
         }
 
         return $model;

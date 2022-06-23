@@ -135,6 +135,8 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PushBadgeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryAcrossCloudStroageConfigsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryAcrossCloudStroageConfigsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryAcrossCloudStroageConfigsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryPartnerInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryPartnerInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\RollbackMiniAppVersionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\RollbackMiniAppVersionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\RollbackMiniAppVersionResponse;
@@ -2322,6 +2324,43 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryAcrossCloudStroageConfigsResponse::fromMap($this->doROARequest('QueryAcrossCloudStroageConfigs', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/fileStorages/acrossClouds/configurations', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $userId
+     *
+     * @return QueryPartnerInfoResponse
+     */
+    public function queryPartnerInfo($userId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryPartnerInfoHeaders([]);
+
+        return $this->queryPartnerInfoWithOptions($userId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                  $userId
+     * @param QueryPartnerInfoHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return QueryPartnerInfoResponse
+     */
+    public function queryPartnerInfoWithOptions($userId, $headers, $runtime)
+    {
+        $userId      = OpenApiUtilClient::getEncodeParam($userId);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return QueryPartnerInfoResponse::fromMap($this->doROARequest('QueryPartnerInfo', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/partners/users/' . $userId . '', 'json', $req, $runtime));
     }
 
     /**

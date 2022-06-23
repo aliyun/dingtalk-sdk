@@ -117,13 +117,6 @@ class result extends Model
     public $isDone;
 
     /**
-     * @description 任务自定义标记
-     *
-     * @var string[]
-     */
-    public $labels;
-
-    /**
      * @description 任务备注
      *
      * @var string
@@ -136,13 +129,6 @@ class result extends Model
      * @var int
      */
     public $priority;
-
-    /**
-     * @description 标签
-     *
-     * @var string[]
-     */
-    public $tagIds;
 
     /**
      * @description 更新时间
@@ -173,10 +159,8 @@ class result extends Model
         'involvers'        => 'involvers',
         'isDeleted'        => 'isDeleted',
         'isDone'           => 'isDone',
-        'labels'           => 'labels',
         'note'             => 'note',
         'priority'         => 'priority',
-        'tagIds'           => 'tagIds',
         'updated'          => 'updated',
         'visible'          => 'visible',
     ];
@@ -239,17 +223,11 @@ class result extends Model
         if (null !== $this->isDone) {
             $res['isDone'] = $this->isDone;
         }
-        if (null !== $this->labels) {
-            $res['labels'] = $this->labels;
-        }
         if (null !== $this->note) {
             $res['note'] = $this->note;
         }
         if (null !== $this->priority) {
             $res['priority'] = $this->priority;
-        }
-        if (null !== $this->tagIds) {
-            $res['tagIds'] = $this->tagIds;
         }
         if (null !== $this->updated) {
             $res['updated'] = $this->updated;
@@ -324,21 +302,11 @@ class result extends Model
         if (isset($map['isDone'])) {
             $model->isDone = $map['isDone'];
         }
-        if (isset($map['labels'])) {
-            if (!empty($map['labels'])) {
-                $model->labels = $map['labels'];
-            }
-        }
         if (isset($map['note'])) {
             $model->note = $map['note'];
         }
         if (isset($map['priority'])) {
             $model->priority = $map['priority'];
-        }
-        if (isset($map['tagIds'])) {
-            if (!empty($map['tagIds'])) {
-                $model->tagIds = $map['tagIds'];
-            }
         }
         if (isset($map['updated'])) {
             $model->updated = $map['updated'];

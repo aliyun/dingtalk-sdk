@@ -111,12 +111,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->involveMembers)) {
             @$body['involveMembers'] = $request->involveMembers;
         }
-        if (!Utils::isUnset($request->isDone)) {
-            @$body['isDone'] = $request->isDone;
-        }
-        if (!Utils::isUnset($request->label)) {
-            @$body['label'] = $request->label;
-        }
         if (!Utils::isUnset($request->note)) {
             @$body['note'] = $request->note;
         }

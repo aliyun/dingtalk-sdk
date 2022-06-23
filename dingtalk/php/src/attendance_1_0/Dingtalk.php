@@ -26,12 +26,18 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CheckWritePermissionRespons
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CreateApproveHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CreateApproveRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CreateApproveResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\DeleteWaterMarkTemplateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\DeleteWaterMarkTemplateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\DeleteWaterMarkTemplateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\DingTalkSecurityCheckHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\DingTalkSecurityCheckRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\DingTalkSecurityCheckResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetAdjustmentsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetAdjustmentsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetAdjustmentsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetCheckInSchemaTemplateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetCheckInSchemaTemplateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetCheckInSchemaTemplateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetClosingAccountsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetClosingAccountsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetClosingAccountsResponse;
@@ -55,9 +61,15 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\InitAndGetLeaveALlocationQuotasHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\InitAndGetLeaveALlocationQuotasRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\InitAndGetLeaveALlocationQuotasResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ModifyWaterMarkTemplateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ModifyWaterMarkTemplateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ModifyWaterMarkTemplateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ProcessApproveCreateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ProcessApproveCreateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ProcessApproveCreateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SaveCustomWaterMarkTemplateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SaveCustomWaterMarkTemplateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SaveCustomWaterMarkTemplateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SyncScheduleInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SyncScheduleInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SyncScheduleInfoResponse;
@@ -446,6 +458,60 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param DeleteWaterMarkTemplateRequest $request
+     *
+     * @return DeleteWaterMarkTemplateResponse
+     */
+    public function deleteWaterMarkTemplate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteWaterMarkTemplateHeaders([]);
+
+        return $this->deleteWaterMarkTemplateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DeleteWaterMarkTemplateRequest $request
+     * @param DeleteWaterMarkTemplateHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return DeleteWaterMarkTemplateResponse
+     */
+    public function deleteWaterMarkTemplateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->formCode)) {
+            @$query['formCode'] = $request->formCode;
+        }
+        if (!Utils::isUnset($request->formContent)) {
+            @$query['formContent'] = $request->formContent;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$query['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->systemTemplate)) {
+            @$query['systemTemplate'] = $request->systemTemplate;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return DeleteWaterMarkTemplateResponse::fromMap($this->doROARequest('DeleteWaterMarkTemplate', 'attendance_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/attendance/watermarks/templates', 'json', $req, $runtime));
+    }
+
+    /**
      * @param DingTalkSecurityCheckRequest $request
      *
      * @return DingTalkSecurityCheckResponse
@@ -542,6 +608,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetAdjustmentsResponse::fromMap($this->doROARequest('GetAdjustments', 'attendance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/attendance/adjustments', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetCheckInSchemaTemplateRequest $request
+     *
+     * @return GetCheckInSchemaTemplateResponse
+     */
+    public function getCheckInSchemaTemplate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCheckInSchemaTemplateHeaders([]);
+
+        return $this->getCheckInSchemaTemplateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetCheckInSchemaTemplateRequest $request
+     * @param GetCheckInSchemaTemplateHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return GetCheckInSchemaTemplateResponse
+     */
+    public function getCheckInSchemaTemplateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            @$query['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$query['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->sceneCode)) {
+            @$query['sceneCode'] = $request->sceneCode;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetCheckInSchemaTemplateResponse::fromMap($this->doROARequest('GetCheckInSchemaTemplate', 'attendance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/attendance/watermarks/templates', 'json', $req, $runtime));
     }
 
     /**
@@ -900,6 +1017,71 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param ModifyWaterMarkTemplateRequest $request
+     *
+     * @return ModifyWaterMarkTemplateResponse
+     */
+    public function modifyWaterMarkTemplate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ModifyWaterMarkTemplateHeaders([]);
+
+        return $this->modifyWaterMarkTemplateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ModifyWaterMarkTemplateRequest $request
+     * @param ModifyWaterMarkTemplateHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return ModifyWaterMarkTemplateResponse
+     */
+    public function modifyWaterMarkTemplateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$query['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->formCode)) {
+            @$body['formCode'] = $request->formCode;
+        }
+        if (!Utils::isUnset($request->icon)) {
+            @$body['icon'] = $request->icon;
+        }
+        if (!Utils::isUnset($request->layoutDesignId)) {
+            @$body['layoutDesignId'] = $request->layoutDesignId;
+        }
+        if (!Utils::isUnset($request->schemaContent)) {
+            @$body['schemaContent'] = $request->schemaContent;
+        }
+        if (!Utils::isUnset($request->title)) {
+            @$body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->waterMarkId)) {
+            @$body['waterMarkId'] = $request->waterMarkId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ModifyWaterMarkTemplateResponse::fromMap($this->doROARequest('ModifyWaterMarkTemplate', 'attendance_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/attendance/watermarks/templates', 'json', $req, $runtime));
+    }
+
+    /**
      * @param ProcessApproveCreateRequest $request
      *
      * @return ProcessApproveCreateResponse
@@ -954,6 +1136,71 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ProcessApproveCreateResponse::fromMap($this->doROARequest('ProcessApproveCreate', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/workflows/checkInForms', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SaveCustomWaterMarkTemplateRequest $request
+     *
+     * @return SaveCustomWaterMarkTemplateResponse
+     */
+    public function saveCustomWaterMarkTemplate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SaveCustomWaterMarkTemplateHeaders([]);
+
+        return $this->saveCustomWaterMarkTemplateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SaveCustomWaterMarkTemplateRequest $request
+     * @param SaveCustomWaterMarkTemplateHeaders $headers
+     * @param RuntimeOptions                     $runtime
+     *
+     * @return SaveCustomWaterMarkTemplateResponse
+     */
+    public function saveCustomWaterMarkTemplateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$query['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            @$body['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->icon)) {
+            @$body['icon'] = $request->icon;
+        }
+        if (!Utils::isUnset($request->layoutDesignId)) {
+            @$body['layoutDesignId'] = $request->layoutDesignId;
+        }
+        if (!Utils::isUnset($request->sceneCode)) {
+            @$body['sceneCode'] = $request->sceneCode;
+        }
+        if (!Utils::isUnset($request->schemaContent)) {
+            @$body['schemaContent'] = $request->schemaContent;
+        }
+        if (!Utils::isUnset($request->title)) {
+            @$body['title'] = $request->title;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SaveCustomWaterMarkTemplateResponse::fromMap($this->doROARequest('SaveCustomWaterMarkTemplate', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/watermarks/templates', 'json', $req, $runtime));
     }
 
     /**

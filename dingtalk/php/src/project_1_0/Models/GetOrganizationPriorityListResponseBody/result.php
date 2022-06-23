@@ -4,7 +4,6 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetOrganizationPriorityListResponseBody;
 
-use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetOrganizationPriorityListResponseBody\result\payload;
 use AlibabaCloud\Tea\Model;
 
 class result extends Model
@@ -24,13 +23,6 @@ class result extends Model
     public $name;
 
     /**
-     * @description 额外信息
-     *
-     * @var payload
-     */
-    public $payload;
-
-    /**
      * @description 优先级值
      *
      * @var string
@@ -46,7 +38,6 @@ class result extends Model
     protected $_name = [
         'color'      => 'color',
         'name'       => 'name',
-        'payload'    => 'payload',
         'priority'   => 'priority',
         'priorityId' => 'priorityId',
     ];
@@ -63,9 +54,6 @@ class result extends Model
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
-        }
-        if (null !== $this->payload) {
-            $res['payload'] = null !== $this->payload ? $this->payload->toMap() : null;
         }
         if (null !== $this->priority) {
             $res['priority'] = $this->priority;
@@ -90,9 +78,6 @@ class result extends Model
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
-        }
-        if (isset($map['payload'])) {
-            $model->payload = payload::fromMap($map['payload']);
         }
         if (isset($map['priority'])) {
             $model->priority = $map['priority'];

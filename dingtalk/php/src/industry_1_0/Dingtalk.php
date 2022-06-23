@@ -23,6 +23,7 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusDeleteCampusGroupRespon
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusDeleteRenterHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusDeleteRenterRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusDeleteRenterResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusDelRenterMemberHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusDelRenterMemberRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusDelRenterMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusGetCampusGroupHeaders;
@@ -465,14 +466,14 @@ class Dingtalk extends OpenApiClient
     public function campusDelRenterMember($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = [];
+        $headers = new CampusDelRenterMemberHeaders([]);
 
         return $this->campusDelRenterMemberWithOptions($request, $headers, $runtime);
     }
 
     /**
      * @param CampusDelRenterMemberRequest $request
-     * @param string[]                     $headers
+     * @param CampusDelRenterMemberHeaders $headers
      * @param RuntimeOptions               $runtime
      *
      * @return CampusDelRenterMemberResponse
@@ -487,8 +488,15 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->unionId)) {
             @$query['unionId'] = $request->unionId;
         }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
         $req = new OpenApiRequest([
-            'headers' => $headers,
+            'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
 

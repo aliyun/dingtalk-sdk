@@ -1282,6 +1282,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->backgroundColors)) {
             @$body['backgroundColors'] = $request->backgroundColors;
         }
+        if (!Utils::isUnset($request->hyperlinks)) {
+            @$body['hyperlinks'] = $request->hyperlinks;
+        }
         if (!Utils::isUnset($request->values)) {
             @$body['values'] = $request->values;
         }

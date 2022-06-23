@@ -65,6 +65,7 @@
       "AlibabaCloud\\SDK\\Dingtalk\\Vorg_culture_1_0\\": "src/org_culture_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vproject_integration_1_0\\": "src/project_integration_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vproject_1_0\\": "src/project_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vrcs_call_1_0\\": "src/rcs_call_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vresident_1_0\\": "src/resident_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vrobot_1_0\\": "src/robot_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vsearch_1_0\\": "src/search_1_0/",

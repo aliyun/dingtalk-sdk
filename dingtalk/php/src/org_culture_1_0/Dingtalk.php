@@ -5,23 +5,48 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\AssignOrgHoldingToEmpHoldingBatchHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\AssignOrgHoldingToEmpHoldingBatchRequest;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\AssignOrgHoldingToEmpHoldingBatchResponse;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\ConsumeUserPointsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\ConsumeUserPointsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\ConsumeUserPointsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\DeductionPointBatchHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\DeductionPointBatchRequest;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\DeductionPointBatchResponse;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\ExportPointOpenHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\ExportPointOpenRequest;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\ExportPointOpenResponse;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\GrantHonorHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\GrantHonorRequest;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\GrantHonorResponse;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryCorpPointsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryCorpPointsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryCorpPointsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryEmpPointDetailsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryEmpPointDetailsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryEmpPointDetailsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryOrgHonorsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryOrgHonorsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryOrgHonorsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryOrgPointDetailsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryOrgPointDetailsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryOrgPointDetailsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryPointActionAutoAssignRuleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryPointActionAutoAssignRuleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryPointAutoIssueSettingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryPointAutoIssueSettingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryUserHonorsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryUserHonorsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryUserHonorsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryUserPointsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryUserPointsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\UpdateAutoIssuePointHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\UpdateAutoIssuePointRequest;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\UpdateAutoIssuePointResponse;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\UpdatePointActionAutoAssignRuleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\UpdatePointActionAutoAssignRuleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\UpdatePointActionAutoAssignRuleResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -36,6 +61,63 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param AssignOrgHoldingToEmpHoldingBatchRequest $request
+     *
+     * @return AssignOrgHoldingToEmpHoldingBatchResponse
+     */
+    public function assignOrgHoldingToEmpHoldingBatch($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AssignOrgHoldingToEmpHoldingBatchHeaders([]);
+
+        return $this->assignOrgHoldingToEmpHoldingBatchWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AssignOrgHoldingToEmpHoldingBatchRequest $request
+     * @param AssignOrgHoldingToEmpHoldingBatchHeaders $headers
+     * @param RuntimeOptions                           $runtime
+     *
+     * @return AssignOrgHoldingToEmpHoldingBatchResponse
+     */
+    public function assignOrgHoldingToEmpHoldingBatchWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->remark)) {
+            @$body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->sendOrgCultureInform)) {
+            @$body['sendOrgCultureInform'] = $request->sendOrgCultureInform;
+        }
+        if (!Utils::isUnset($request->singleAmount)) {
+            @$body['singleAmount'] = $request->singleAmount;
+        }
+        if (!Utils::isUnset($request->sourceUsage)) {
+            @$body['sourceUsage'] = $request->sourceUsage;
+        }
+        if (!Utils::isUnset($request->targetUsage)) {
+            @$body['targetUsage'] = $request->targetUsage;
+        }
+        if (!Utils::isUnset($request->targetUserList)) {
+            @$body['targetUserList'] = $request->targetUserList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AssignOrgHoldingToEmpHoldingBatchResponse::fromMap($this->doROARequest('AssignOrgHoldingToEmpHoldingBatch', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', '/v1.0/orgCulture/organizations/points/assign', 'json', $req, $runtime));
     }
 
     /**
@@ -90,6 +172,108 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ConsumeUserPointsResponse::fromMap($this->doROARequest('ConsumeUserPoints', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', '/v1.0/orgCulture/users/' . $userId . '/points/deduct', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DeductionPointBatchRequest $request
+     *
+     * @return DeductionPointBatchResponse
+     */
+    public function deductionPointBatch($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeductionPointBatchHeaders([]);
+
+        return $this->deductionPointBatchWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DeductionPointBatchRequest $request
+     * @param DeductionPointBatchHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return DeductionPointBatchResponse
+     */
+    public function deductionPointBatchWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deductionAmount)) {
+            @$body['deductionAmount'] = $request->deductionAmount;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            @$body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->sendOrgCultureInform)) {
+            @$body['sendOrgCultureInform'] = $request->sendOrgCultureInform;
+        }
+        if (!Utils::isUnset($request->targetUserList)) {
+            @$body['targetUserList'] = $request->targetUserList;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DeductionPointBatchResponse::fromMap($this->doROARequest('DeductionPointBatch', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', '/v1.0/orgCulture/users/points/deduct', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ExportPointOpenRequest $request
+     *
+     * @return ExportPointOpenResponse
+     */
+    public function exportPointOpen($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ExportPointOpenHeaders([]);
+
+        return $this->exportPointOpenWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ExportPointOpenRequest $request
+     * @param ExportPointOpenHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return ExportPointOpenResponse
+     */
+    public function exportPointOpenWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->exportDate)) {
+            @$body['exportDate'] = $request->exportDate;
+        }
+        if (!Utils::isUnset($request->exportType)) {
+            @$body['exportType'] = $request->exportType;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ExportPointOpenResponse::fromMap($this->doROARequest('ExportPointOpen', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', '/v1.0/orgCulture/users/points/export', 'json', $req, $runtime));
     }
 
     /**
@@ -198,6 +382,54 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param QueryEmpPointDetailsRequest $request
+     *
+     * @return QueryEmpPointDetailsResponse
+     */
+    public function queryEmpPointDetails($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryEmpPointDetailsHeaders([]);
+
+        return $this->queryEmpPointDetailsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryEmpPointDetailsRequest $request
+     * @param QueryEmpPointDetailsHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return QueryEmpPointDetailsResponse
+     */
+    public function queryEmpPointDetailsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryEmpPointDetailsResponse::fromMap($this->doROARequest('QueryEmpPointDetails', 'orgCulture_1.0', 'HTTP', 'GET', 'AK', '/v1.0/orgCulture/points/empDetails', 'json', $req, $runtime));
+    }
+
+    /**
      * @param QueryOrgHonorsRequest $request
      *
      * @return QueryOrgHonorsResponse
@@ -240,6 +472,123 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryOrgHonorsResponse::fromMap($this->doROARequest('QueryOrgHonors', 'orgCulture_1.0', 'HTTP', 'GET', 'AK', '/v1.0/orgCulture/organizations/honors', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryOrgPointDetailsRequest $request
+     *
+     * @return QueryOrgPointDetailsResponse
+     */
+    public function queryOrgPointDetails($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryOrgPointDetailsHeaders([]);
+
+        return $this->queryOrgPointDetailsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryOrgPointDetailsRequest $request
+     * @param QueryOrgPointDetailsHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return QueryOrgPointDetailsResponse
+     */
+    public function queryOrgPointDetailsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->accountType)) {
+            @$query['accountType'] = $request->accountType;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryOrgPointDetailsResponse::fromMap($this->doROARequest('QueryOrgPointDetails', 'orgCulture_1.0', 'HTTP', 'GET', 'AK', '/v1.0/orgCulture/points/orgDetails', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return QueryPointActionAutoAssignRuleResponse
+     */
+    public function queryPointActionAutoAssignRule()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryPointActionAutoAssignRuleHeaders([]);
+
+        return $this->queryPointActionAutoAssignRuleWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param QueryPointActionAutoAssignRuleHeaders $headers
+     * @param RuntimeOptions                        $runtime
+     *
+     * @return QueryPointActionAutoAssignRuleResponse
+     */
+    public function queryPointActionAutoAssignRuleWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return QueryPointActionAutoAssignRuleResponse::fromMap($this->doROARequest('QueryPointActionAutoAssignRule', 'orgCulture_1.0', 'HTTP', 'GET', 'AK', '/v1.0/orgCulture/users/points/actionRules', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return QueryPointAutoIssueSettingResponse
+     */
+    public function queryPointAutoIssueSetting()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryPointAutoIssueSettingHeaders([]);
+
+        return $this->queryPointAutoIssueSettingWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param QueryPointAutoIssueSettingHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return QueryPointAutoIssueSettingResponse
+     */
+    public function queryPointAutoIssueSettingWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return QueryPointAutoIssueSettingResponse::fromMap($this->doROARequest('QueryPointAutoIssueSetting', 'orgCulture_1.0', 'HTTP', 'GET', 'AK', '/v1.0/orgCulture/users/points', 'json', $req, $runtime));
     }
 
     /**
@@ -325,5 +674,101 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryUserPointsResponse::fromMap($this->doROARequest('QueryUserPoints', 'orgCulture_1.0', 'HTTP', 'GET', 'AK', '/v1.0/orgCulture/users/' . $userId . '/points', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateAutoIssuePointRequest $request
+     *
+     * @return UpdateAutoIssuePointResponse
+     */
+    public function updateAutoIssuePoint($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateAutoIssuePointHeaders([]);
+
+        return $this->updateAutoIssuePointWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateAutoIssuePointRequest $request
+     * @param UpdateAutoIssuePointHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return UpdateAutoIssuePointResponse
+     */
+    public function updateAutoIssuePointWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->pointAutoNum)) {
+            @$body['pointAutoNum'] = $request->pointAutoNum;
+        }
+        if (!Utils::isUnset($request->pointAutoState)) {
+            @$body['pointAutoState'] = $request->pointAutoState;
+        }
+        if (!Utils::isUnset($request->pointAutoTime)) {
+            @$body['pointAutoTime'] = $request->pointAutoTime;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateAutoIssuePointResponse::fromMap($this->doROARequest('UpdateAutoIssuePoint', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', '/v1.0/orgCulture/users/points/set', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdatePointActionAutoAssignRuleRequest $request
+     *
+     * @return UpdatePointActionAutoAssignRuleResponse
+     */
+    public function updatePointActionAutoAssignRule($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdatePointActionAutoAssignRuleHeaders([]);
+
+        return $this->updatePointActionAutoAssignRuleWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdatePointActionAutoAssignRuleRequest $request
+     * @param UpdatePointActionAutoAssignRuleHeaders $headers
+     * @param RuntimeOptions                         $runtime
+     *
+     * @return UpdatePointActionAutoAssignRuleResponse
+     */
+    public function updatePointActionAutoAssignRuleWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->updatePointRuleRequestDTOList)) {
+            @$body['updatePointRuleRequestDTOList'] = $request->updatePointRuleRequestDTOList;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdatePointActionAutoAssignRuleResponse::fromMap($this->doROARequest('UpdatePointActionAutoAssignRule', 'orgCulture_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/orgCulture/users/points/actionRules', 'json', $req, $runtime));
     }
 }
