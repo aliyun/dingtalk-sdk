@@ -32,14 +32,6 @@ public class CreateOrganizationTaskRequest extends TeaModel {
     @NameInMap("involveMembers")
     public java.util.List<String> involveMembers;
 
-    // 任务是否完成
-    @NameInMap("isDone")
-    public Boolean isDone;
-
-    // 任务自定义标记
-    @NameInMap("label")
-    public String label;
-
     // 任务备注
     @NameInMap("note")
     public String note;
@@ -111,22 +103,6 @@ public class CreateOrganizationTaskRequest extends TeaModel {
     }
     public java.util.List<String> getInvolveMembers() {
         return this.involveMembers;
-    }
-
-    public CreateOrganizationTaskRequest setIsDone(Boolean isDone) {
-        this.isDone = isDone;
-        return this;
-    }
-    public Boolean getIsDone() {
-        return this.isDone;
-    }
-
-    public CreateOrganizationTaskRequest setLabel(String label) {
-        this.label = label;
-        return this;
-    }
-    public String getLabel() {
-        return this.label;
     }
 
     public CreateOrganizationTaskRequest setNote(String note) {

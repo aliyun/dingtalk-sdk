@@ -1592,6 +1592,29 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("QueryAcrossCloudStroageConfigs", "exclusive_1.0", "HTTP", "GET", "AK", "/v1.0/exclusive/fileStorages/acrossClouds/configurations", "json", req, runtime), new QueryAcrossCloudStroageConfigsResponse());
     }
 
+    public QueryPartnerInfoResponse queryPartnerInfo(String userId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryPartnerInfoHeaders headers = new QueryPartnerInfoHeaders();
+        return this.queryPartnerInfoWithOptions(userId, headers, runtime);
+    }
+
+    public QueryPartnerInfoResponse queryPartnerInfoWithOptions(String userId, QueryPartnerInfoHeaders headers, RuntimeOptions runtime) throws Exception {
+        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryPartnerInfo", "exclusive_1.0", "HTTP", "GET", "AK", "/v1.0/exclusive/partners/users/" + userId + "", "json", req, runtime), new QueryPartnerInfoResponse());
+    }
+
     public RollbackMiniAppVersionResponse rollbackMiniAppVersion(RollbackMiniAppVersionRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         RollbackMiniAppVersionHeaders headers = new RollbackMiniAppVersionHeaders();

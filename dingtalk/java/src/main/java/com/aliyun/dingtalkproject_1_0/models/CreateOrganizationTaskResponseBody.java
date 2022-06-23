@@ -214,10 +214,6 @@ public class CreateOrganizationTaskResponseBody extends TeaModel {
         @NameInMap("isDone")
         public String isDone;
 
-        // 任务自定义标记
-        @NameInMap("labels")
-        public java.util.List<String> labels;
-
         // 任务备注
         @NameInMap("note")
         public String note;
@@ -225,10 +221,6 @@ public class CreateOrganizationTaskResponseBody extends TeaModel {
         // 优先级【-10,0,1,2】中选一个
         @NameInMap("priority")
         public Integer priority;
-
-        // 标签
-        @NameInMap("tagIds")
-        public java.util.List<String> tagIds;
 
         // 更新时间
         @NameInMap("updated")
@@ -363,14 +355,6 @@ public class CreateOrganizationTaskResponseBody extends TeaModel {
             return this.isDone;
         }
 
-        public CreateOrganizationTaskResponseBodyResult setLabels(java.util.List<String> labels) {
-            this.labels = labels;
-            return this;
-        }
-        public java.util.List<String> getLabels() {
-            return this.labels;
-        }
-
         public CreateOrganizationTaskResponseBodyResult setNote(String note) {
             this.note = note;
             return this;
@@ -385,14 +369,6 @@ public class CreateOrganizationTaskResponseBody extends TeaModel {
         }
         public Integer getPriority() {
             return this.priority;
-        }
-
-        public CreateOrganizationTaskResponseBodyResult setTagIds(java.util.List<String> tagIds) {
-            this.tagIds = tagIds;
-            return this;
-        }
-        public java.util.List<String> getTagIds() {
-            return this.tagIds;
         }
 
         public CreateOrganizationTaskResponseBodyResult setUpdated(String updated) {

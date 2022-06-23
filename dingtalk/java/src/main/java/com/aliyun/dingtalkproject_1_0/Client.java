@@ -59,14 +59,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("involveMembers", request.involveMembers);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.isDone)) {
-            body.put("isDone", request.isDone);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.label)) {
-            body.put("label", request.label);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.note)) {
             body.put("note", request.note);
         }

@@ -866,6 +866,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("backgroundColors", request.backgroundColors);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.hyperlinks)) {
+            body.put("hyperlinks", request.hyperlinks);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.values)) {
             body.put("values", request.values);
         }
