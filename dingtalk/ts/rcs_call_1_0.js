@@ -1,0 +1,1 @@
+module.exports = require('./dist').rcs_call_1_0;

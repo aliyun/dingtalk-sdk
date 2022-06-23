@@ -416,6 +416,28 @@ export class CampusCreateRenterResponse extends $tea.Model {
   }
 }
 
+export class CampusDelRenterMemberHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CampusDelRenterMemberRequest extends $tea.Model {
   renterId?: number;
   unionId?: string;
@@ -8786,11 +8808,11 @@ export default class Client extends OpenApi {
 
   async campusDelRenterMember(request: CampusDelRenterMemberRequest): Promise<CampusDelRenterMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers : {[key: string ]: string} = { };
+    let headers = new CampusDelRenterMemberHeaders({ });
     return await this.campusDelRenterMemberWithOptions(request, headers, runtime);
   }
 
-  async campusDelRenterMemberWithOptions(request: CampusDelRenterMemberRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<CampusDelRenterMemberResponse> {
+  async campusDelRenterMemberWithOptions(request: CampusDelRenterMemberRequest, headers: CampusDelRenterMemberHeaders, runtime: $Util.RuntimeOptions): Promise<CampusDelRenterMemberResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.renterId)) {
@@ -8801,8 +8823,17 @@ export default class Client extends OpenApi {
       query["unionId"] = request.unionId;
     }
 
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
     let req = new $OpenApi.OpenApiRequest({
-      headers: headers,
+      headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<CampusDelRenterMemberResponse>(await this.doROARequest("CampusDelRenterMember", "industry_1.0", "HTTP", "DELETE", "AK", `/v1.0/industry/campuses/renters/members`, "json", req, runtime), new CampusDelRenterMemberResponse({}));

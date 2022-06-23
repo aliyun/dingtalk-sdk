@@ -662,6 +662,100 @@ export class CreateApproveResponse extends $tea.Model {
   }
 }
 
+export class DeleteWaterMarkTemplateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteWaterMarkTemplateRequest extends $tea.Model {
+  formCode?: string;
+  formContent?: string;
+  openConversationId?: string;
+  systemTemplate?: boolean;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      formCode: 'formCode',
+      formContent: 'formContent',
+      openConversationId: 'openConversationId',
+      systemTemplate: 'systemTemplate',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      formCode: 'string',
+      formContent: 'string',
+      openConversationId: 'string',
+      systemTemplate: 'boolean',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteWaterMarkTemplateResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteWaterMarkTemplateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DeleteWaterMarkTemplateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DeleteWaterMarkTemplateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DingTalkSecurityCheckHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -833,6 +927,97 @@ export class GetAdjustmentsResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetAdjustmentsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCheckInSchemaTemplateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCheckInSchemaTemplateRequest extends $tea.Model {
+  bizCode?: string;
+  openConversationId?: string;
+  sceneCode?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizCode: 'bizCode',
+      openConversationId: 'openConversationId',
+      sceneCode: 'sceneCode',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizCode: 'string',
+      openConversationId: 'string',
+      sceneCode: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCheckInSchemaTemplateResponseBody extends $tea.Model {
+  result?: GetCheckInSchemaTemplateResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetCheckInSchemaTemplateResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCheckInSchemaTemplateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetCheckInSchemaTemplateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetCheckInSchemaTemplateResponseBody,
     };
   }
 
@@ -1499,6 +1684,109 @@ export class InitAndGetLeaveALlocationQuotasResponse extends $tea.Model {
   }
 }
 
+export class ModifyWaterMarkTemplateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifyWaterMarkTemplateRequest extends $tea.Model {
+  formCode?: string;
+  icon?: string;
+  layoutDesignId?: string;
+  schemaContent?: string;
+  title?: string;
+  waterMarkId?: string;
+  openConversationId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      formCode: 'formCode',
+      icon: 'icon',
+      layoutDesignId: 'layoutDesignId',
+      schemaContent: 'schemaContent',
+      title: 'title',
+      waterMarkId: 'waterMarkId',
+      openConversationId: 'openConversationId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      formCode: 'string',
+      icon: 'string',
+      layoutDesignId: 'string',
+      schemaContent: 'string',
+      title: 'string',
+      waterMarkId: 'string',
+      openConversationId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifyWaterMarkTemplateResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifyWaterMarkTemplateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ModifyWaterMarkTemplateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ModifyWaterMarkTemplateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ProcessApproveCreateHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1588,6 +1876,109 @@ export class ProcessApproveCreateResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: ProcessApproveCreateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveCustomWaterMarkTemplateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveCustomWaterMarkTemplateRequest extends $tea.Model {
+  bizCode?: string;
+  icon?: string;
+  layoutDesignId?: string;
+  sceneCode?: string;
+  schemaContent?: string;
+  title?: string;
+  openConversationId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizCode: 'bizCode',
+      icon: 'icon',
+      layoutDesignId: 'layoutDesignId',
+      sceneCode: 'sceneCode',
+      schemaContent: 'schemaContent',
+      title: 'title',
+      openConversationId: 'openConversationId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizCode: 'string',
+      icon: 'string',
+      layoutDesignId: 'string',
+      sceneCode: 'string',
+      schemaContent: 'string',
+      title: 'string',
+      openConversationId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveCustomWaterMarkTemplateResponseBody extends $tea.Model {
+  result?: SaveCustomWaterMarkTemplateResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: SaveCustomWaterMarkTemplateResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveCustomWaterMarkTemplateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SaveCustomWaterMarkTemplateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SaveCustomWaterMarkTemplateResponseBody,
     };
   }
 
@@ -2216,6 +2607,92 @@ export class GetAdjustmentsResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetCheckInSchemaTemplateResponseBodyResultWaterMarkTemplateModels extends $tea.Model {
+  canModify?: boolean;
+  formCode?: string;
+  icon?: string;
+  layoutDesign?: string;
+  sceneCode?: string;
+  schemaContent?: string;
+  suiteKey?: string;
+  systemTemplate?: boolean;
+  title?: string;
+  waterMarkId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      canModify: 'canModify',
+      formCode: 'formCode',
+      icon: 'icon',
+      layoutDesign: 'layoutDesign',
+      sceneCode: 'sceneCode',
+      schemaContent: 'schemaContent',
+      suiteKey: 'suiteKey',
+      systemTemplate: 'systemTemplate',
+      title: 'title',
+      waterMarkId: 'waterMarkId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      canModify: 'boolean',
+      formCode: 'string',
+      icon: 'string',
+      layoutDesign: 'string',
+      sceneCode: 'string',
+      schemaContent: 'string',
+      suiteKey: 'string',
+      systemTemplate: 'boolean',
+      title: 'string',
+      waterMarkId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCheckInSchemaTemplateResponseBodyResult extends $tea.Model {
+  bizCode?: string;
+  canModifyAndAddTemplate?: boolean;
+  conversationAdmin?: boolean;
+  customTemplateMaxSize?: number;
+  openConversationId?: string;
+  showStat?: boolean;
+  templateDegrade?: boolean;
+  waterMarkTemplateModels?: GetCheckInSchemaTemplateResponseBodyResultWaterMarkTemplateModels[];
+  static names(): { [key: string]: string } {
+    return {
+      bizCode: 'bizCode',
+      canModifyAndAddTemplate: 'canModifyAndAddTemplate',
+      conversationAdmin: 'conversationAdmin',
+      customTemplateMaxSize: 'customTemplateMaxSize',
+      openConversationId: 'openConversationId',
+      showStat: 'showStat',
+      templateDegrade: 'templateDegrade',
+      waterMarkTemplateModels: 'waterMarkTemplateModels',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizCode: 'string',
+      canModifyAndAddTemplate: 'boolean',
+      conversationAdmin: 'boolean',
+      customTemplateMaxSize: 'number',
+      openConversationId: 'string',
+      showStat: 'boolean',
+      templateDegrade: 'boolean',
+      waterMarkTemplateModels: { 'type': 'array', 'itemType': GetCheckInSchemaTemplateResponseBodyResultWaterMarkTemplateModels },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetClosingAccountsResponseBodyResultClosingAccountModel extends $tea.Model {
   closingDay?: number;
   closingHourMinutes?: number;
@@ -2833,6 +3310,28 @@ export class ProcessApproveCreateResponseBodyResult extends $tea.Model {
   }
 }
 
+export class SaveCustomWaterMarkTemplateResponseBodyResult extends $tea.Model {
+  formCode?: string;
+  waterMarkId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      formCode: 'formCode',
+      waterMarkId: 'waterMarkId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      formCode: 'string',
+      waterMarkId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SyncScheduleInfoRequestScheduleInfos extends $tea.Model {
   planId?: number;
   positionKeys?: string[];
@@ -3370,6 +3869,51 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateApproveResponse>(await this.doROARequest("CreateApprove", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/approves`, "json", req, runtime), new CreateApproveResponse({}));
   }
 
+  async deleteWaterMarkTemplate(request: DeleteWaterMarkTemplateRequest): Promise<DeleteWaterMarkTemplateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteWaterMarkTemplateHeaders({ });
+    return await this.deleteWaterMarkTemplateWithOptions(request, headers, runtime);
+  }
+
+  async deleteWaterMarkTemplateWithOptions(request: DeleteWaterMarkTemplateRequest, headers: DeleteWaterMarkTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteWaterMarkTemplateResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.formCode)) {
+      query["formCode"] = request.formCode;
+    }
+
+    if (!Util.isUnset(request.formContent)) {
+      query["formContent"] = request.formContent;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      query["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.systemTemplate)) {
+      query["systemTemplate"] = request.systemTemplate;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<DeleteWaterMarkTemplateResponse>(await this.doROARequest("DeleteWaterMarkTemplate", "attendance_1.0", "HTTP", "DELETE", "AK", `/v1.0/attendance/watermarks/templates`, "json", req, runtime), new DeleteWaterMarkTemplateResponse({}));
+  }
+
   async dingTalkSecurityCheck(request: DingTalkSecurityCheckRequest): Promise<DingTalkSecurityCheckResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DingTalkSecurityCheckHeaders({ });
@@ -3446,6 +3990,47 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetAdjustmentsResponse>(await this.doROARequest("GetAdjustments", "attendance_1.0", "HTTP", "GET", "AK", `/v1.0/attendance/adjustments`, "json", req, runtime), new GetAdjustmentsResponse({}));
+  }
+
+  async getCheckInSchemaTemplate(request: GetCheckInSchemaTemplateRequest): Promise<GetCheckInSchemaTemplateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetCheckInSchemaTemplateHeaders({ });
+    return await this.getCheckInSchemaTemplateWithOptions(request, headers, runtime);
+  }
+
+  async getCheckInSchemaTemplateWithOptions(request: GetCheckInSchemaTemplateRequest, headers: GetCheckInSchemaTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<GetCheckInSchemaTemplateResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizCode)) {
+      query["bizCode"] = request.bizCode;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      query["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.sceneCode)) {
+      query["sceneCode"] = request.sceneCode;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetCheckInSchemaTemplateResponse>(await this.doROARequest("GetCheckInSchemaTemplate", "attendance_1.0", "HTTP", "GET", "AK", `/v1.0/attendance/watermarks/templates`, "json", req, runtime), new GetCheckInSchemaTemplateResponse({}));
   }
 
   async getClosingAccounts(request: GetClosingAccountsRequest): Promise<GetClosingAccountsResponse> {
@@ -3703,6 +4288,65 @@ export default class Client extends OpenApi {
     return $tea.cast<InitAndGetLeaveALlocationQuotasResponse>(await this.doROARequest("InitAndGetLeaveALlocationQuotas", "attendance_1.0", "HTTP", "GET", "AK", `/v1.0/attendance/leaves/initializations/balances`, "json", req, runtime), new InitAndGetLeaveALlocationQuotasResponse({}));
   }
 
+  async modifyWaterMarkTemplate(request: ModifyWaterMarkTemplateRequest): Promise<ModifyWaterMarkTemplateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ModifyWaterMarkTemplateHeaders({ });
+    return await this.modifyWaterMarkTemplateWithOptions(request, headers, runtime);
+  }
+
+  async modifyWaterMarkTemplateWithOptions(request: ModifyWaterMarkTemplateRequest, headers: ModifyWaterMarkTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<ModifyWaterMarkTemplateResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      query["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.formCode)) {
+      body["formCode"] = request.formCode;
+    }
+
+    if (!Util.isUnset(request.icon)) {
+      body["icon"] = request.icon;
+    }
+
+    if (!Util.isUnset(request.layoutDesignId)) {
+      body["layoutDesignId"] = request.layoutDesignId;
+    }
+
+    if (!Util.isUnset(request.schemaContent)) {
+      body["schemaContent"] = request.schemaContent;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.waterMarkId)) {
+      body["waterMarkId"] = request.waterMarkId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ModifyWaterMarkTemplateResponse>(await this.doROARequest("ModifyWaterMarkTemplate", "attendance_1.0", "HTTP", "PUT", "AK", `/v1.0/attendance/watermarks/templates`, "json", req, runtime), new ModifyWaterMarkTemplateResponse({}));
+  }
+
   async processApproveCreate(request: ProcessApproveCreateRequest): Promise<ProcessApproveCreateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ProcessApproveCreateHeaders({ });
@@ -3750,6 +4394,65 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<ProcessApproveCreateResponse>(await this.doROARequest("ProcessApproveCreate", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/workflows/checkInForms`, "json", req, runtime), new ProcessApproveCreateResponse({}));
+  }
+
+  async saveCustomWaterMarkTemplate(request: SaveCustomWaterMarkTemplateRequest): Promise<SaveCustomWaterMarkTemplateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SaveCustomWaterMarkTemplateHeaders({ });
+    return await this.saveCustomWaterMarkTemplateWithOptions(request, headers, runtime);
+  }
+
+  async saveCustomWaterMarkTemplateWithOptions(request: SaveCustomWaterMarkTemplateRequest, headers: SaveCustomWaterMarkTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<SaveCustomWaterMarkTemplateResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      query["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizCode)) {
+      body["bizCode"] = request.bizCode;
+    }
+
+    if (!Util.isUnset(request.icon)) {
+      body["icon"] = request.icon;
+    }
+
+    if (!Util.isUnset(request.layoutDesignId)) {
+      body["layoutDesignId"] = request.layoutDesignId;
+    }
+
+    if (!Util.isUnset(request.sceneCode)) {
+      body["sceneCode"] = request.sceneCode;
+    }
+
+    if (!Util.isUnset(request.schemaContent)) {
+      body["schemaContent"] = request.schemaContent;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SaveCustomWaterMarkTemplateResponse>(await this.doROARequest("SaveCustomWaterMarkTemplate", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/watermarks/templates`, "json", req, runtime), new SaveCustomWaterMarkTemplateResponse({}));
   }
 
   async syncScheduleInfo(request: SyncScheduleInfoRequest): Promise<SyncScheduleInfoResponse> {

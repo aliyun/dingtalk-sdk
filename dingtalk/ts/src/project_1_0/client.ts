@@ -37,8 +37,6 @@ export class CreateOrganizationTaskRequest extends $tea.Model {
   dueDate?: string;
   executorId?: string;
   involveMembers?: string[];
-  isDone?: boolean;
-  label?: string;
   note?: string;
   priority?: number;
   visible?: string;
@@ -51,8 +49,6 @@ export class CreateOrganizationTaskRequest extends $tea.Model {
       dueDate: 'dueDate',
       executorId: 'executorId',
       involveMembers: 'involveMembers',
-      isDone: 'isDone',
-      label: 'label',
       note: 'note',
       priority: 'priority',
       visible: 'visible',
@@ -68,8 +64,6 @@ export class CreateOrganizationTaskRequest extends $tea.Model {
       dueDate: 'string',
       executorId: 'string',
       involveMembers: { 'type': 'array', 'itemType': 'string' },
-      isDone: 'boolean',
-      label: 'string',
       note: 'string',
       priority: 'number',
       visible: 'string',
@@ -1421,10 +1415,8 @@ export class CreateOrganizationTaskResponseBodyResult extends $tea.Model {
   involvers?: CreateOrganizationTaskResponseBodyResultInvolvers[];
   isDeleted?: boolean;
   isDone?: string;
-  labels?: string[];
   note?: string;
   priority?: number;
-  tagIds?: string[];
   updated?: string;
   visible?: string;
   static names(): { [key: string]: string } {
@@ -1444,10 +1436,8 @@ export class CreateOrganizationTaskResponseBodyResult extends $tea.Model {
       involvers: 'involvers',
       isDeleted: 'isDeleted',
       isDone: 'isDone',
-      labels: 'labels',
       note: 'note',
       priority: 'priority',
-      tagIds: 'tagIds',
       updated: 'updated',
       visible: 'visible',
     };
@@ -1470,10 +1460,8 @@ export class CreateOrganizationTaskResponseBodyResult extends $tea.Model {
       involvers: { 'type': 'array', 'itemType': CreateOrganizationTaskResponseBodyResultInvolvers },
       isDeleted: 'boolean',
       isDone: 'string',
-      labels: { 'type': 'array', 'itemType': 'string' },
       note: 'string',
       priority: 'number',
-      tagIds: { 'type': 'array', 'itemType': 'string' },
       updated: 'string',
       visible: 'string',
     };
@@ -1616,77 +1604,15 @@ export class GetOrganizatioTaskByIdsResponseBodyResult extends $tea.Model {
   }
 }
 
-export class GetOrganizationPriorityListResponseBodyResultPayloadLocalesName extends $tea.Model {
-  en?: string;
-  zh?: string;
-  static names(): { [key: string]: string } {
-    return {
-      en: 'en',
-      zh: 'zh',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      en: 'string',
-      zh: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetOrganizationPriorityListResponseBodyResultPayloadLocales extends $tea.Model {
-  name?: GetOrganizationPriorityListResponseBodyResultPayloadLocalesName;
-  static names(): { [key: string]: string } {
-    return {
-      name: 'name',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      name: GetOrganizationPriorityListResponseBodyResultPayloadLocalesName,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetOrganizationPriorityListResponseBodyResultPayload extends $tea.Model {
-  locales?: GetOrganizationPriorityListResponseBodyResultPayloadLocales;
-  static names(): { [key: string]: string } {
-    return {
-      locales: 'locales',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      locales: GetOrganizationPriorityListResponseBodyResultPayloadLocales,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class GetOrganizationPriorityListResponseBodyResult extends $tea.Model {
   color?: string;
   name?: string;
-  payload?: GetOrganizationPriorityListResponseBodyResultPayload;
   priority?: string;
   priorityId?: string;
   static names(): { [key: string]: string } {
     return {
       color: 'color',
       name: 'name',
-      payload: 'payload',
       priority: 'priority',
       priorityId: 'priorityId',
     };
@@ -1696,7 +1622,6 @@ export class GetOrganizationPriorityListResponseBodyResult extends $tea.Model {
     return {
       color: 'string',
       name: 'string',
-      payload: GetOrganizationPriorityListResponseBodyResultPayload,
       priority: 'string',
       priorityId: 'string',
     };
@@ -2055,14 +1980,6 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.involveMembers)) {
       body["involveMembers"] = request.involveMembers;
-    }
-
-    if (!Util.isUnset(request.isDone)) {
-      body["isDone"] = request.isDone;
-    }
-
-    if (!Util.isUnset(request.label)) {
-      body["label"] = request.label;
     }
 
     if (!Util.isUnset(request.note)) {

@@ -45,6 +45,7 @@ import * as okr_1_0 from './okr_1_0/client';
 import * as org_culture_1_0 from './org_culture_1_0/client';
 import * as project_1_0 from './project_1_0/client';
 import * as project_integration_1_0 from './project_integration_1_0/client';
+import * as rcs_call_1_0 from './rcs_call_1_0/client';
 import * as resident_1_0 from './resident_1_0/client';
 import * as robot_1_0 from './robot_1_0/client';
 import * as search_1_0 from './search_1_0/client';
@@ -110,6 +111,7 @@ export = {
   org_culture_1_0,
   project_1_0,
   project_integration_1_0,
+  rcs_call_1_0,
   resident_1_0,
   robot_1_0,
   search_1_0,

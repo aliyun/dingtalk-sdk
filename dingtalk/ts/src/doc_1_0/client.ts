@@ -1906,11 +1906,13 @@ export class UpdateRangeHeaders extends $tea.Model {
 
 export class UpdateRangeRequest extends $tea.Model {
   backgroundColors?: string[][];
+  hyperlinks?: UpdateRangeRequestHyperlinks[][];
   values?: string[][];
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
       backgroundColors: 'backgroundColors',
+      hyperlinks: 'hyperlinks',
       values: 'values',
       operatorId: 'operatorId',
     };
@@ -1919,6 +1921,7 @@ export class UpdateRangeRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       backgroundColors: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': 'string' } },
+      hyperlinks: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': UpdateRangeRequestHyperlinks } },
       values: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': 'string' } },
       operatorId: 'string',
     };
@@ -2994,6 +2997,31 @@ export class SearchWorkspaceDocsResponseBodyDocs extends $tea.Model {
   }
 }
 
+export class UpdateRangeRequestHyperlinks extends $tea.Model {
+  type?: string;
+  link?: string;
+  text?: string;
+  static names(): { [key: string]: string } {
+    return {
+      type: 'type',
+      link: 'link',
+      text: 'text',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      type: 'string',
+      link: 'string',
+      text: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateWorkspaceDocMembersRequestMembers extends $tea.Model {
   memberId?: string;
   memberType?: string;
@@ -3900,6 +3928,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.backgroundColors)) {
       body["backgroundColors"] = request.backgroundColors;
+    }
+
+    if (!Util.isUnset(request.hyperlinks)) {
+      body["hyperlinks"] = request.hyperlinks;
     }
 
     if (!Util.isUnset(request.values)) {

@@ -3998,6 +3998,75 @@ export class QueryAcrossCloudStroageConfigsResponse extends $tea.Model {
   }
 }
 
+export class QueryPartnerInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPartnerInfoResponseBody extends $tea.Model {
+  partnerDeptList?: QueryPartnerInfoResponseBodyPartnerDeptList[];
+  partnerLabelList?: QueryPartnerInfoResponseBodyPartnerLabelList[];
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      partnerDeptList: 'partnerDeptList',
+      partnerLabelList: 'partnerLabelList',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      partnerDeptList: { 'type': 'array', 'itemType': QueryPartnerInfoResponseBodyPartnerDeptList },
+      partnerLabelList: { 'type': 'array', 'itemType': QueryPartnerInfoResponseBodyPartnerLabelList },
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPartnerInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryPartnerInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryPartnerInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RollbackMiniAppVersionHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6284,6 +6353,81 @@ export class PushBadgeRequestBadgeItems extends $tea.Model {
   }
 }
 
+export class QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1 extends $tea.Model {
+  labelId?: number;
+  labelname?: string;
+  static names(): { [key: string]: string } {
+    return {
+      labelId: 'labelId',
+      labelname: 'labelname',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      labelId: 'number',
+      labelname: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPartnerInfoResponseBodyPartnerDeptList extends $tea.Model {
+  memberCount?: number;
+  partnerLabelModelLevel1?: QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1[];
+  partnerNum?: string;
+  title?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      memberCount: 'memberCount',
+      partnerLabelModelLevel1: 'partnerLabelModelLevel1',
+      partnerNum: 'partnerNum',
+      title: 'title',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memberCount: 'number',
+      partnerLabelModelLevel1: { 'type': 'array', 'itemType': QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1 },
+      partnerNum: 'string',
+      title: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPartnerInfoResponseBodyPartnerLabelList extends $tea.Model {
+  id?: number;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchOrgInnerGroupInfoResponseBodyItems extends $tea.Model {
   groupAdminsCount?: number;
   groupCreateTime?: number;
@@ -7924,6 +8068,29 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryAcrossCloudStroageConfigsResponse>(await this.doROARequest("QueryAcrossCloudStroageConfigs", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/fileStorages/acrossClouds/configurations`, "json", req, runtime), new QueryAcrossCloudStroageConfigsResponse({}));
+  }
+
+  async queryPartnerInfo(userId: string): Promise<QueryPartnerInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryPartnerInfoHeaders({ });
+    return await this.queryPartnerInfoWithOptions(userId, headers, runtime);
+  }
+
+  async queryPartnerInfoWithOptions(userId: string, headers: QueryPartnerInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPartnerInfoResponse> {
+    userId = OpenApiUtil.getEncodeParam(userId);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<QueryPartnerInfoResponse>(await this.doROARequest("QueryPartnerInfo", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/partners/users/${userId}`, "json", req, runtime), new QueryPartnerInfoResponse({}));
   }
 
   async rollbackMiniAppVersion(request: RollbackMiniAppVersionRequest): Promise<RollbackMiniAppVersionResponse> {
