@@ -59,20 +59,6 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         public List<string> InvolveMembers { get; set; }
 
         /// <summary>
-        /// 任务是否完成
-        /// </summary>
-        [NameInMap("isDone")]
-        [Validation(Required=false)]
-        public bool? IsDone { get; set; }
-
-        /// <summary>
-        /// 任务自定义标记
-        /// </summary>
-        [NameInMap("label")]
-        [Validation(Required=false)]
-        public string Label { get; set; }
-
-        /// <summary>
         /// 任务备注
         /// </summary>
         [NameInMap("note")]

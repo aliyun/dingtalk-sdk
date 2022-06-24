@@ -112,18 +112,12 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             [NameInMap("isDone")]
             [Validation(Required=false)]
             public string IsDone { get; set; }
-            [NameInMap("labels")]
-            [Validation(Required=false)]
-            public List<string> Labels { get; set; }
             [NameInMap("note")]
             [Validation(Required=false)]
             public string Note { get; set; }
             [NameInMap("priority")]
             [Validation(Required=false)]
             public int? Priority { get; set; }
-            [NameInMap("tagIds")]
-            [Validation(Required=false)]
-            public List<string> TagIds { get; set; }
             [NameInMap("updated")]
             [Validation(Required=false)]
             public string Updated { get; set; }

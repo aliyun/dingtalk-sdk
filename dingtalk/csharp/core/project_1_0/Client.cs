@@ -73,14 +73,6 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             {
                 body["involveMembers"] = request.InvolveMembers;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsDone))
-            {
-                body["isDone"] = request.IsDone;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Label))
-            {
-                body["label"] = request.Label;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Note))
             {
                 body["note"] = request.Note;
@@ -142,14 +134,6 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvolveMembers))
             {
                 body["involveMembers"] = request.InvolveMembers;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsDone))
-            {
-                body["isDone"] = request.IsDone;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Label))
-            {
-                body["label"] = request.Label;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Note))
             {

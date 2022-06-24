@@ -188,6 +188,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Did))
+            {
+                body["did"] = request.Did;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MacAddress))
             {
                 body["macAddress"] = request.MacAddress;
@@ -225,6 +229,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Did))
+            {
+                body["did"] = request.Did;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MacAddress))
             {
                 body["macAddress"] = request.MacAddress;
@@ -3448,6 +3456,58 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             return TeaModel.ToObject<QueryAcrossCloudStroageConfigsResponse>(await DoROARequestAsync("QueryAcrossCloudStroageConfigs", "exclusive_1.0", "HTTP", "GET", "AK", "/v1.0/exclusive/fileStorages/acrossClouds/configurations", "json", req, runtime));
+        }
+
+        public QueryPartnerInfoResponse QueryPartnerInfo(string userId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryPartnerInfoHeaders headers = new QueryPartnerInfoHeaders();
+            return QueryPartnerInfoWithOptions(userId, headers, runtime);
+        }
+
+        public async Task<QueryPartnerInfoResponse> QueryPartnerInfoAsync(string userId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryPartnerInfoHeaders headers = new QueryPartnerInfoHeaders();
+            return await QueryPartnerInfoWithOptionsAsync(userId, headers, runtime);
+        }
+
+        public QueryPartnerInfoResponse QueryPartnerInfoWithOptions(string userId, QueryPartnerInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<QueryPartnerInfoResponse>(DoROARequest("QueryPartnerInfo", "exclusive_1.0", "HTTP", "GET", "AK", "/v1.0/exclusive/partners/users/" + userId, "json", req, runtime));
+        }
+
+        public async Task<QueryPartnerInfoResponse> QueryPartnerInfoWithOptionsAsync(string userId, QueryPartnerInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<QueryPartnerInfoResponse>(await DoROARequestAsync("QueryPartnerInfo", "exclusive_1.0", "HTTP", "GET", "AK", "/v1.0/exclusive/partners/users/" + userId, "json", req, runtime));
         }
 
         public RollbackMiniAppVersionResponse RollbackMiniAppVersion(RollbackMiniAppVersionRequest request)

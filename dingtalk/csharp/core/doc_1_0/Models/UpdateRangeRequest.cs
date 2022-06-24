@@ -16,6 +16,33 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=false)]
         public List<List<string>> BackgroundColors { get; set; }
 
+        [NameInMap("hyperlinks")]
+        [Validation(Required=false)]
+        public List<List<UpdateRangeRequestHyperlinks>> Hyperlinks { get; set; }
+        public class UpdateRangeRequestHyperlinks : TeaModel {
+            /// <summary>
+            /// 超链接类型，可选 "path", "sheet", "range"
+            /// </summary>
+            [NameInMap("type")]
+            [Validation(Required=false)]
+            public string Type { get; set; }
+
+            /// <summary>
+            /// 链接地址
+            /// </summary>
+            [NameInMap("link")]
+            [Validation(Required=false)]
+            public string Link { get; set; }
+
+            /// <summary>
+            /// 链接文本
+            /// </summary>
+            [NameInMap("text")]
+            [Validation(Required=false)]
+            public string Text { get; set; }
+
+        }
+
         /// <summary>
         /// 值
         /// </summary>

@@ -28,6 +28,13 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             public string MacAddress { get; set; }
 
             /// <summary>
+            /// 版本信息：Android端: Android,10，IOS端：iOS,12.0.1
+            /// </summary>
+            [NameInMap("model")]
+            [Validation(Required=false)]
+            public string Model { get; set; }
+
+            /// <summary>
             /// 平台类型
             /// </summary>
             [NameInMap("platform")]
@@ -41,6 +48,9 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public int? Status { get; set; }
 
+            /// <summary>
+            /// 设备名称
+            /// </summary>
             [NameInMap("title")]
             [Validation(Required=false)]
             public string Title { get; set; }

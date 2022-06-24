@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class CreateTrustedDeviceRequest : TeaModel {
         /// <summary>
+        /// 支持SDK集成的设备唯一标识。
+        /// </summary>
+        [NameInMap("did")]
+        [Validation(Required=false)]
+        public string Did { get; set; }
+
+        /// <summary>
         /// mac地址
         /// </summary>
         [NameInMap("macAddress")]

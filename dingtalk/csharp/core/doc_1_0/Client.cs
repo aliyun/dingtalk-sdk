@@ -1842,6 +1842,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 body["backgroundColors"] = request.BackgroundColors;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Hyperlinks))
+            {
+                body["hyperlinks"] = request.Hyperlinks;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Values))
             {
                 body["values"] = request.Values;
@@ -1879,6 +1883,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BackgroundColors))
             {
                 body["backgroundColors"] = request.BackgroundColors;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Hyperlinks))
+            {
+                body["hyperlinks"] = request.Hyperlinks;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Values))
             {
