@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class CreateTrustedDeviceRequest extends Model
 {
     /**
+     * @description 支持SDK集成的设备唯一标识。
+     *
+     * @var string
+     */
+    public $did;
+
+    /**
      * @description mac地址
      *
      * @var string
@@ -36,6 +43,7 @@ class CreateTrustedDeviceRequest extends Model
      */
     public $userId;
     protected $_name = [
+        'did'        => 'did',
         'macAddress' => 'macAddress',
         'platform'   => 'platform',
         'status'     => 'status',
@@ -49,6 +57,9 @@ class CreateTrustedDeviceRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->did) {
+            $res['did'] = $this->did;
+        }
         if (null !== $this->macAddress) {
             $res['macAddress'] = $this->macAddress;
         }
@@ -73,6 +84,9 @@ class CreateTrustedDeviceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['did'])) {
+            $model->did = $map['did'];
+        }
         if (isset($map['macAddress'])) {
             $model->macAddress = $map['macAddress'];
         }

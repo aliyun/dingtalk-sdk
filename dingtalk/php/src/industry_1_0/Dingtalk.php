@@ -140,6 +140,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesTeamMgm
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryMmanufactureMaterialCostGetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryMmanufactureMaterialCostGetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryMmanufactureMaterialCostGetResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\PushDingMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\PushDingMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\PushDingMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryAllDepartmentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryAllDepartmentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryAllDepartmentResponse;
@@ -2664,6 +2667,72 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return IndustryMmanufactureMaterialCostGetResponse::fromMap($this->doROARequest('IndustryMmanufactureMaterialCostGet', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufactures/base/materialCosts/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param PushDingMessageRequest $request
+     *
+     * @return PushDingMessageResponse
+     */
+    public function pushDingMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PushDingMessageHeaders([]);
+
+        return $this->pushDingMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param PushDingMessageRequest $request
+     * @param PushDingMessageHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return PushDingMessageResponse
+     */
+    public function pushDingMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appId)) {
+            @$body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->content)) {
+            @$body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->messageType)) {
+            @$body['messageType'] = $request->messageType;
+        }
+        if (!Utils::isUnset($request->messageUrl)) {
+            @$body['messageUrl'] = $request->messageUrl;
+        }
+        if (!Utils::isUnset($request->pictureUrl)) {
+            @$body['pictureUrl'] = $request->pictureUrl;
+        }
+        if (!Utils::isUnset($request->singleTitle)) {
+            @$body['singleTitle'] = $request->singleTitle;
+        }
+        if (!Utils::isUnset($request->singleUrl)) {
+            @$body['singleUrl'] = $request->singleUrl;
+        }
+        if (!Utils::isUnset($request->title)) {
+            @$body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->userIdList)) {
+            @$body['userIdList'] = $request->userIdList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return PushDingMessageResponse::fromMap($this->doROARequest('PushDingMessage', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/works/notice', 'json', $req, $runtime));
     }
 
     /**

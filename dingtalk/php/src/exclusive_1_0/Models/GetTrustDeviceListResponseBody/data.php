@@ -23,6 +23,13 @@ class data extends Model
     public $macAddress;
 
     /**
+     * @description 版本信息：Android端: Android,10，IOS端：iOS,12.0.1
+     *
+     * @var string
+     */
+    public $model;
+
+    /**
      * @description 平台类型
      *
      * @var string
@@ -37,6 +44,8 @@ class data extends Model
     public $status;
 
     /**
+     * @description 设备名称
+     *
      * @var string
      */
     public $title;
@@ -50,6 +59,7 @@ class data extends Model
     protected $_name = [
         'createTime' => 'createTime',
         'macAddress' => 'macAddress',
+        'model'      => 'model',
         'platform'   => 'platform',
         'status'     => 'status',
         'title'      => 'title',
@@ -68,6 +78,9 @@ class data extends Model
         }
         if (null !== $this->macAddress) {
             $res['macAddress'] = $this->macAddress;
+        }
+        if (null !== $this->model) {
+            $res['model'] = $this->model;
         }
         if (null !== $this->platform) {
             $res['platform'] = $this->platform;
@@ -98,6 +111,9 @@ class data extends Model
         }
         if (isset($map['macAddress'])) {
             $model->macAddress = $map['macAddress'];
+        }
+        if (isset($map['model'])) {
+            $model->model = $map['model'];
         }
         if (isset($map['platform'])) {
             $model->platform = $map['platform'];

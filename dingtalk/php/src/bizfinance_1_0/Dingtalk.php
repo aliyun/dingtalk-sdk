@@ -22,6 +22,8 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetCustomerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetFinanceAccountHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetFinanceAccountRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetFinanceAccountResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetIsNewVersionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetIsNewVersionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetProjectHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetProjectRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetProjectResponse;
@@ -315,6 +317,39 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetFinanceAccountResponse::fromMap($this->doROARequest('GetFinanceAccount', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/bizfinance/financeAccounts/get', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return GetIsNewVersionResponse
+     */
+    public function getIsNewVersion()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetIsNewVersionHeaders([]);
+
+        return $this->getIsNewVersionWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param GetIsNewVersionHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return GetIsNewVersionResponse
+     */
+    public function getIsNewVersionWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetIsNewVersionResponse::fromMap($this->doROARequest('GetIsNewVersion', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/bizfinance/accounts/uses', 'json', $req, $runtime));
     }
 
     /**
