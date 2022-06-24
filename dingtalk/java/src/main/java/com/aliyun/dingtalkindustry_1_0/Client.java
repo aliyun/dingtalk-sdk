@@ -2046,6 +2046,67 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("IndustryMmanufactureMaterialCostGet", "industry_1.0", "HTTP", "POST", "AK", "/v1.0/industry/manufactures/base/materialCosts/query", "json", req, runtime), new IndustryMmanufactureMaterialCostGetResponse());
     }
 
+    public PushDingMessageResponse pushDingMessage(PushDingMessageRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        PushDingMessageHeaders headers = new PushDingMessageHeaders();
+        return this.pushDingMessageWithOptions(request, headers, runtime);
+    }
+
+    public PushDingMessageResponse pushDingMessageWithOptions(PushDingMessageRequest request, PushDingMessageHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
+            body.put("appId", request.appId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.content)) {
+            body.put("content", request.content);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.messageType)) {
+            body.put("messageType", request.messageType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.messageUrl)) {
+            body.put("messageUrl", request.messageUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pictureUrl)) {
+            body.put("pictureUrl", request.pictureUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.singleTitle)) {
+            body.put("singleTitle", request.singleTitle);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.singleUrl)) {
+            body.put("singleUrl", request.singleUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.title)) {
+            body.put("title", request.title);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userIdList)) {
+            body.put("userIdList", request.userIdList);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("PushDingMessage", "industry_1.0", "HTTP", "POST", "AK", "/v1.0/industry/works/notice", "json", req, runtime), new PushDingMessageResponse());
+    }
+
     public QueryAllDepartmentResponse queryAllDepartment(QueryAllDepartmentRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         QueryAllDepartmentHeaders headers = new QueryAllDepartmentHeaders();

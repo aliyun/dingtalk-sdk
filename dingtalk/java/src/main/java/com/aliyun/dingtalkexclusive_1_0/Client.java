@@ -96,6 +96,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public CreateTrustedDeviceResponse createTrustedDeviceWithOptions(CreateTrustedDeviceRequest request, CreateTrustedDeviceHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.did)) {
+            body.put("did", request.did);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.macAddress)) {
             body.put("macAddress", request.macAddress);
         }

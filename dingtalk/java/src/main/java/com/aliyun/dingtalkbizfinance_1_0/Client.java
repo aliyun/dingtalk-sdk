@@ -188,6 +188,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetFinanceAccount", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/financeAccounts/get", "json", req, runtime), new GetFinanceAccountResponse());
     }
 
+    public GetIsNewVersionResponse getIsNewVersion() throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetIsNewVersionHeaders headers = new GetIsNewVersionHeaders();
+        return this.getIsNewVersionWithOptions(headers, runtime);
+    }
+
+    public GetIsNewVersionResponse getIsNewVersionWithOptions(GetIsNewVersionHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("GetIsNewVersion", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/accounts/uses", "json", req, runtime), new GetIsNewVersionResponse());
+    }
+
     public GetProjectResponse getProject(GetProjectRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetProjectHeaders headers = new GetProjectHeaders();

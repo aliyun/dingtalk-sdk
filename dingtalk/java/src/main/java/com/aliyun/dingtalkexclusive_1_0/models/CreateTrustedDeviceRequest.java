@@ -4,6 +4,10 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTrustedDeviceRequest extends TeaModel {
+    // 支持SDK集成的设备唯一标识。
+    @NameInMap("did")
+    public String did;
+
     // mac地址
     @NameInMap("macAddress")
     public String macAddress;
@@ -23,6 +27,14 @@ public class CreateTrustedDeviceRequest extends TeaModel {
     public static CreateTrustedDeviceRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateTrustedDeviceRequest self = new CreateTrustedDeviceRequest();
         return TeaModel.build(map, self);
+    }
+
+    public CreateTrustedDeviceRequest setDid(String did) {
+        this.did = did;
+        return this;
+    }
+    public String getDid() {
+        return this.did;
     }
 
     public CreateTrustedDeviceRequest setMacAddress(String macAddress) {

@@ -29,6 +29,10 @@ public class GetTrustDeviceListResponseBody extends TeaModel {
         @NameInMap("macAddress")
         public String macAddress;
 
+        // 版本信息：Android端: Android,10，IOS端：iOS,12.0.1
+        @NameInMap("model")
+        public String model;
+
         // 平台类型
         @NameInMap("platform")
         public String platform;
@@ -37,6 +41,7 @@ public class GetTrustDeviceListResponseBody extends TeaModel {
         @NameInMap("status")
         public Integer status;
 
+        // 设备名称
         @NameInMap("title")
         public String title;
 
@@ -63,6 +68,14 @@ public class GetTrustDeviceListResponseBody extends TeaModel {
         }
         public String getMacAddress() {
             return this.macAddress;
+        }
+
+        public GetTrustDeviceListResponseBodyData setModel(String model) {
+            this.model = model;
+            return this;
+        }
+        public String getModel() {
+            return this.model;
         }
 
         public GetTrustDeviceListResponseBodyData setPlatform(String platform) {
