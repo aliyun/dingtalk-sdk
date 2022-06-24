@@ -4478,6 +4478,115 @@ export class IndustryMmanufactureMaterialCostGetResponse extends $tea.Model {
   }
 }
 
+export class PushDingMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushDingMessageRequest extends $tea.Model {
+  appId?: number;
+  content?: string;
+  messageType?: string;
+  messageUrl?: string;
+  pictureUrl?: string;
+  singleTitle?: string;
+  singleUrl?: string;
+  title?: string;
+  userIdList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      appId: 'appId',
+      content: 'content',
+      messageType: 'messageType',
+      messageUrl: 'messageUrl',
+      pictureUrl: 'pictureUrl',
+      singleTitle: 'singleTitle',
+      singleUrl: 'singleUrl',
+      title: 'title',
+      userIdList: 'userIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appId: 'number',
+      content: 'string',
+      messageType: 'string',
+      messageUrl: 'string',
+      pictureUrl: 'string',
+      singleTitle: 'string',
+      singleUrl: 'string',
+      title: 'string',
+      userIdList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushDingMessageResponseBody extends $tea.Model {
+  content?: number;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'number',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushDingMessageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: PushDingMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: PushDingMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryAllDepartmentHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -10617,6 +10726,67 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<IndustryMmanufactureMaterialCostGetResponse>(await this.doROARequest("IndustryMmanufactureMaterialCostGet", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufactures/base/materialCosts/query`, "json", req, runtime), new IndustryMmanufactureMaterialCostGetResponse({}));
+  }
+
+  async pushDingMessage(request: PushDingMessageRequest): Promise<PushDingMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PushDingMessageHeaders({ });
+    return await this.pushDingMessageWithOptions(request, headers, runtime);
+  }
+
+  async pushDingMessageWithOptions(request: PushDingMessageRequest, headers: PushDingMessageHeaders, runtime: $Util.RuntimeOptions): Promise<PushDingMessageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appId)) {
+      body["appId"] = request.appId;
+    }
+
+    if (!Util.isUnset(request.content)) {
+      body["content"] = request.content;
+    }
+
+    if (!Util.isUnset(request.messageType)) {
+      body["messageType"] = request.messageType;
+    }
+
+    if (!Util.isUnset(request.messageUrl)) {
+      body["messageUrl"] = request.messageUrl;
+    }
+
+    if (!Util.isUnset(request.pictureUrl)) {
+      body["pictureUrl"] = request.pictureUrl;
+    }
+
+    if (!Util.isUnset(request.singleTitle)) {
+      body["singleTitle"] = request.singleTitle;
+    }
+
+    if (!Util.isUnset(request.singleUrl)) {
+      body["singleUrl"] = request.singleUrl;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.userIdList)) {
+      body["userIdList"] = request.userIdList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<PushDingMessageResponse>(await this.doROARequest("PushDingMessage", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/works/notice`, "json", req, runtime), new PushDingMessageResponse({}));
   }
 
   async queryAllDepartment(request: QueryAllDepartmentRequest): Promise<QueryAllDepartmentResponse> {

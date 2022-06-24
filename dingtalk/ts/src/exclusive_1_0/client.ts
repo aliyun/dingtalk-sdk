@@ -203,12 +203,14 @@ export class CreateTrustedDeviceHeaders extends $tea.Model {
 }
 
 export class CreateTrustedDeviceRequest extends $tea.Model {
+  did?: string;
   macAddress?: string;
   platform?: string;
   status?: number;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
+      did: 'did',
       macAddress: 'macAddress',
       platform: 'platform',
       status: 'status',
@@ -218,6 +220,7 @@ export class CreateTrustedDeviceRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      did: 'string',
       macAddress: 'string',
       platform: 'string',
       status: 'number',
@@ -5857,6 +5860,7 @@ export class GetSignedDetailByPageResponseBodyAuditSignedDetailDTOList extends $
 export class GetTrustDeviceListResponseBodyData extends $tea.Model {
   createTime?: number;
   macAddress?: string;
+  model?: string;
   platform?: string;
   status?: number;
   title?: string;
@@ -5865,6 +5869,7 @@ export class GetTrustDeviceListResponseBodyData extends $tea.Model {
     return {
       createTime: 'createTime',
       macAddress: 'macAddress',
+      model: 'model',
       platform: 'platform',
       status: 'status',
       title: 'title',
@@ -5876,6 +5881,7 @@ export class GetTrustDeviceListResponseBodyData extends $tea.Model {
     return {
       createTime: 'number',
       macAddress: 'string',
+      model: 'string',
       platform: 'string',
       status: 'number',
       title: 'string',
@@ -6574,6 +6580,10 @@ export default class Client extends OpenApi {
   async createTrustedDeviceWithOptions(request: CreateTrustedDeviceRequest, headers: CreateTrustedDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTrustedDeviceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.did)) {
+      body["did"] = request.did;
+    }
+
     if (!Util.isUnset(request.macAddress)) {
       body["macAddress"] = request.macAddress;
     }
