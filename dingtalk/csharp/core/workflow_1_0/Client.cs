@@ -774,6 +774,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppUuid))
+            {
+                query["appUuid"] = request.AppUuid;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessCode))
             {
                 query["processCode"] = request.ProcessCode;
@@ -799,6 +803,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppUuid))
+            {
+                query["appUuid"] = request.AppUuid;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessCode))
             {
                 query["processCode"] = request.ProcessCode;

@@ -321,6 +321,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                         [NameInMap("mode")]
                         [Validation(Required=false)]
                         public string Mode { get; set; }
+                        [NameInMap("multiple")]
+                        [Validation(Required=false)]
+                        public bool? Multiple { get; set; }
                         [NameInMap("notPrint")]
                         [Validation(Required=false)]
                         public string NotPrint { get; set; }
@@ -987,6 +990,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                     [NameInMap("multi")]
                     [Validation(Required=false)]
                     public long? Multi { get; set; }
+                    [NameInMap("multiple")]
+                    [Validation(Required=false)]
+                    public bool? Multiple { get; set; }
                     [NameInMap("needDetail")]
                     [Validation(Required=false)]
                     public string NeedDetail { get; set; }
