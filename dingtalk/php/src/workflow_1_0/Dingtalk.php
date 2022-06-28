@@ -509,6 +509,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
+        if (!Utils::isUnset($request->appUuid)) {
+            @$query['appUuid'] = $request->appUuid;
+        }
         if (!Utils::isUnset($request->processCode)) {
             @$query['processCode'] = $request->processCode;
         }

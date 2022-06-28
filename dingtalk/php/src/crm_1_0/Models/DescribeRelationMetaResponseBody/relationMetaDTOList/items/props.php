@@ -155,6 +155,13 @@ class props extends Model
     public $multi;
 
     /**
+     * @description 支持选择多个部门
+     *
+     * @var bool
+     */
+    public $multiple;
+
+    /**
      * @var string
      */
     public $needDetail;
@@ -302,6 +309,7 @@ class props extends Model
         'link'                   => 'link',
         'mode'                   => 'mode',
         'multi'                  => 'multi',
+        'multiple'               => 'multiple',
         'needDetail'             => 'needDetail',
         'notPrint'               => 'notPrint',
         'notUpper'               => 'notUpper',
@@ -404,6 +412,9 @@ class props extends Model
         }
         if (null !== $this->multi) {
             $res['multi'] = $this->multi;
+        }
+        if (null !== $this->multiple) {
+            $res['multiple'] = $this->multiple;
         }
         if (null !== $this->needDetail) {
             $res['needDetail'] = $this->needDetail;
@@ -572,6 +583,9 @@ class props extends Model
         }
         if (isset($map['multi'])) {
             $model->multi = $map['multi'];
+        }
+        if (isset($map['multiple'])) {
+            $model->multiple = $map['multiple'];
         }
         if (isset($map['needDetail'])) {
             $model->needDetail = $map['needDetail'];

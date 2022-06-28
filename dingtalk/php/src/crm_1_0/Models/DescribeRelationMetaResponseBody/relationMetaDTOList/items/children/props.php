@@ -116,6 +116,13 @@ class props extends Model
     public $mode;
 
     /**
+     * @description 支持选择多个部门
+     *
+     * @var bool
+     */
+    public $multiple;
+
+    /**
      * @var string
      */
     public $notPrint;
@@ -225,6 +232,7 @@ class props extends Model
         'limit'                  => 'limit',
         'link'                   => 'link',
         'mode'                   => 'mode',
+        'multiple'               => 'multiple',
         'notPrint'               => 'notPrint',
         'notUpper'               => 'notUpper',
         'options'                => 'options',
@@ -323,6 +331,9 @@ class props extends Model
         }
         if (null !== $this->mode) {
             $res['mode'] = $this->mode;
+        }
+        if (null !== $this->multiple) {
+            $res['multiple'] = $this->multiple;
         }
         if (null !== $this->notPrint) {
             $res['notPrint'] = $this->notPrint;
@@ -485,6 +496,9 @@ class props extends Model
         }
         if (isset($map['mode'])) {
             $model->mode = $map['mode'];
+        }
+        if (isset($map['multiple'])) {
+            $model->multiple = $map['multiple'];
         }
         if (isset($map['notPrint'])) {
             $model->notPrint = $map['notPrint'];

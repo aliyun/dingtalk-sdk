@@ -19,7 +19,7 @@ class partnerDeptList extends Model
     /**
      * @description 一级伙伴类型
      *
-     * @var partnerLabelModelLevel1[]
+     * @var partnerLabelModelLevel1
      */
     public $partnerLabelModelLevel1;
 
@@ -62,13 +62,7 @@ class partnerDeptList extends Model
             $res['memberCount'] = $this->memberCount;
         }
         if (null !== $this->partnerLabelModelLevel1) {
-            $res['partnerLabelModelLevel1'] = [];
-            if (null !== $this->partnerLabelModelLevel1 && \is_array($this->partnerLabelModelLevel1)) {
-                $n = 0;
-                foreach ($this->partnerLabelModelLevel1 as $item) {
-                    $res['partnerLabelModelLevel1'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
+            $res['partnerLabelModelLevel1'] = null !== $this->partnerLabelModelLevel1 ? $this->partnerLabelModelLevel1->toMap() : null;
         }
         if (null !== $this->partnerNum) {
             $res['partnerNum'] = $this->partnerNum;
@@ -95,13 +89,7 @@ class partnerDeptList extends Model
             $model->memberCount = $map['memberCount'];
         }
         if (isset($map['partnerLabelModelLevel1'])) {
-            if (!empty($map['partnerLabelModelLevel1'])) {
-                $model->partnerLabelModelLevel1 = [];
-                $n                              = 0;
-                foreach ($map['partnerLabelModelLevel1'] as $item) {
-                    $model->partnerLabelModelLevel1[$n++] = null !== $item ? partnerLabelModelLevel1::fromMap($item) : $item;
-                }
-            }
+            $model->partnerLabelModelLevel1 = partnerLabelModelLevel1::fromMap($map['partnerLabelModelLevel1']);
         }
         if (isset($map['partnerNum'])) {
             $model->partnerNum = $map['partnerNum'];
