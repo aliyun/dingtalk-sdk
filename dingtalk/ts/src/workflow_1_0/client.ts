@@ -1020,15 +1020,18 @@ export class QuerySchemaByProcessCodeHeaders extends $tea.Model {
 }
 
 export class QuerySchemaByProcessCodeRequest extends $tea.Model {
+  appUuid?: string;
   processCode?: string;
   static names(): { [key: string]: string } {
     return {
+      appUuid: 'appUuid',
       processCode: 'processCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      appUuid: 'string',
       processCode: 'string',
     };
   }
@@ -3022,6 +3025,10 @@ export default class Client extends OpenApi {
   async querySchemaByProcessCodeWithOptions(request: QuerySchemaByProcessCodeRequest, headers: QuerySchemaByProcessCodeHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySchemaByProcessCodeResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appUuid)) {
+      query["appUuid"] = request.appUuid;
+    }
+
     if (!Util.isUnset(request.processCode)) {
       query["processCode"] = request.processCode;
     }

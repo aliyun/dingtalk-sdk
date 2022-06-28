@@ -6383,7 +6383,7 @@ export class QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1 
 
 export class QueryPartnerInfoResponseBodyPartnerDeptList extends $tea.Model {
   memberCount?: number;
-  partnerLabelModelLevel1?: QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1[];
+  partnerLabelModelLevel1?: QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1;
   partnerNum?: string;
   title?: string;
   value?: string;
@@ -6400,7 +6400,7 @@ export class QueryPartnerInfoResponseBodyPartnerDeptList extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       memberCount: 'number',
-      partnerLabelModelLevel1: { 'type': 'array', 'itemType': QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1 },
+      partnerLabelModelLevel1: QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1,
       partnerNum: 'string',
       title: 'string',
       value: 'string',

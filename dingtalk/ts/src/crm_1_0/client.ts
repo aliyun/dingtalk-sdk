@@ -5982,6 +5982,7 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPro
   limit?: number;
   link?: string;
   mode?: string;
+  multiple?: boolean;
   notPrint?: string;
   notUpper?: string;
   options?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptions[];
@@ -6022,6 +6023,7 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPro
       limit: 'limit',
       link: 'link',
       mode: 'mode',
+      multiple: 'multiple',
       notPrint: 'notPrint',
       notUpper: 'notUpper',
       options: 'options',
@@ -6065,6 +6067,7 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPro
       limit: 'number',
       link: 'string',
       mode: 'string',
+      multiple: 'boolean',
       notPrint: 'string',
       notUpper: 'string',
       options: { 'type': 'array', 'itemType': DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptions },
@@ -6855,6 +6858,7 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps exten
   link?: string;
   mode?: string;
   multi?: number;
+  multiple?: boolean;
   needDetail?: string;
   notPrint?: string;
   notUpper?: string;
@@ -6897,6 +6901,7 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps exten
       link: 'link',
       mode: 'mode',
       multi: 'multi',
+      multiple: 'multiple',
       needDetail: 'needDetail',
       notPrint: 'notPrint',
       notUpper: 'notUpper',
@@ -6942,6 +6947,7 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps exten
       link: 'string',
       mode: 'string',
       multi: 'number',
+      multiple: 'boolean',
       needDetail: 'string',
       notPrint: 'string',
       notUpper: 'string',
