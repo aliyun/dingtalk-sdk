@@ -84,7 +84,7 @@ public class QueryPartnerInfoResponseBody extends TeaModel {
 
         // 一级伙伴类型
         @NameInMap("partnerLabelModelLevel1")
-        public java.util.List<QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1> partnerLabelModelLevel1;
+        public QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1 partnerLabelModelLevel1;
 
         // 伙伴编码
         @NameInMap("partnerNum")
@@ -111,11 +111,11 @@ public class QueryPartnerInfoResponseBody extends TeaModel {
             return this.memberCount;
         }
 
-        public QueryPartnerInfoResponseBodyPartnerDeptList setPartnerLabelModelLevel1(java.util.List<QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1> partnerLabelModelLevel1) {
+        public QueryPartnerInfoResponseBodyPartnerDeptList setPartnerLabelModelLevel1(QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1 partnerLabelModelLevel1) {
             this.partnerLabelModelLevel1 = partnerLabelModelLevel1;
             return this;
         }
-        public java.util.List<QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1> getPartnerLabelModelLevel1() {
+        public QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1 getPartnerLabelModelLevel1() {
             return this.partnerLabelModelLevel1;
         }
 

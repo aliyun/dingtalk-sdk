@@ -368,6 +368,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public QuerySchemaByProcessCodeResponse querySchemaByProcessCodeWithOptions(QuerySchemaByProcessCodeRequest request, QuerySchemaByProcessCodeHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.appUuid)) {
+            query.put("appUuid", request.appUuid);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.processCode)) {
             query.put("processCode", request.processCode);
         }

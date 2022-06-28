@@ -1491,6 +1491,10 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         @NameInMap("mode")
         public String mode;
 
+        // 支持选择多个部门
+        @NameInMap("multiple")
+        public Boolean multiple;
+
         @NameInMap("notPrint")
         public String notPrint;
 
@@ -1708,6 +1712,14 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         }
         public String getMode() {
             return this.mode;
+        }
+
+        public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps setMultiple(Boolean multiple) {
+            this.multiple = multiple;
+            return this;
+        }
+        public Boolean getMultiple() {
+            return this.multiple;
         }
 
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps setNotPrint(String notPrint) {
@@ -3452,6 +3464,10 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         @NameInMap("multi")
         public Long multi;
 
+        // 支持选择多个部门
+        @NameInMap("multiple")
+        public Boolean multiple;
+
         @NameInMap("needDetail")
         public String needDetail;
 
@@ -3696,6 +3712,14 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         }
         public Long getMulti() {
             return this.multi;
+        }
+
+        public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps setMultiple(Boolean multiple) {
+            this.multiple = multiple;
+            return this;
+        }
+        public Boolean getMultiple() {
+            return this.multiple;
         }
 
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps setNeedDetail(String needDetail) {
