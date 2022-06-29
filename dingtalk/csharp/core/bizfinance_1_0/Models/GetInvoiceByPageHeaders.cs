@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
-    public class CreateReceiptHeaders : TeaModel {
+    public class GetInvoiceByPageHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }
