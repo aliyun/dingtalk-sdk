@@ -318,6 +318,94 @@ export class ChatIdToOpenConversationIdResponse extends $tea.Model {
   }
 }
 
+export class ChatSubAdminUpdateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatSubAdminUpdateRequest extends $tea.Model {
+  openConversationId?: string;
+  role?: number;
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      role: 'role',
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      role: 'number',
+      userIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatSubAdminUpdateResponseBody extends $tea.Model {
+  success?: string;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatSubAdminUpdateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ChatSubAdminUpdateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ChatSubAdminUpdateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateGroupConversationHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4081,6 +4169,43 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<ChatIdToOpenConversationIdResponse>(await this.doROARequest("ChatIdToOpenConversationId", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/chat/${chatId}/convertToOpenConversationId`, "json", req, runtime), new ChatIdToOpenConversationIdResponse({}));
+  }
+
+  async chatSubAdminUpdate(request: ChatSubAdminUpdateRequest): Promise<ChatSubAdminUpdateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ChatSubAdminUpdateHeaders({ });
+    return await this.chatSubAdminUpdateWithOptions(request, headers, runtime);
+  }
+
+  async chatSubAdminUpdateWithOptions(request: ChatSubAdminUpdateRequest, headers: ChatSubAdminUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<ChatSubAdminUpdateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.role)) {
+      body["role"] = request.role;
+    }
+
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ChatSubAdminUpdateResponse>(await this.doROARequest("ChatSubAdminUpdate", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/subAdministrators`, "json", req, runtime), new ChatSubAdminUpdateResponse({}));
   }
 
   async createGroupConversation(request: CreateGroupConversationRequest): Promise<CreateGroupConversationResponse> {
