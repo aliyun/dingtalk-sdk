@@ -18,10 +18,12 @@ export class DentryOpenVO extends $tea.Model {
   hasChildren?: boolean;
   linkSourceInfo?: LinkSourceInfo;
   name?: string;
+  path?: string;
   space?: SpaceOpenVO;
   spaceId?: string;
   updatedTime?: number;
   updater?: DentryOpenVOUpdater;
+  url?: string;
   visitorInfo?: DentryOpenVOVisitorInfo;
   static names(): { [key: string]: string } {
     return {
@@ -35,10 +37,12 @@ export class DentryOpenVO extends $tea.Model {
       hasChildren: 'hasChildren',
       linkSourceInfo: 'linkSourceInfo',
       name: 'name',
+      path: 'path',
       space: 'space',
       spaceId: 'spaceId',
       updatedTime: 'updatedTime',
       updater: 'updater',
+      url: 'url',
       visitorInfo: 'visitorInfo',
     };
   }
@@ -55,10 +59,12 @@ export class DentryOpenVO extends $tea.Model {
       hasChildren: 'boolean',
       linkSourceInfo: LinkSourceInfo,
       name: 'string',
+      path: 'string',
       space: SpaceOpenVO,
       spaceId: 'string',
       updatedTime: 'number',
       updater: DentryOpenVOUpdater,
+      url: 'string',
       visitorInfo: DentryOpenVOVisitorInfo,
     };
   }
@@ -79,10 +85,12 @@ export class DentryOpenVOResult extends $tea.Model {
   hasChildren?: boolean;
   linkSourceInfo?: LinkSourceInfo;
   name?: string;
+  path?: string;
   space?: SpaceOpenVO;
   spaceId?: string;
   updatedTime?: number;
   updater?: DentryOpenVOResultUpdater;
+  url?: string;
   visitorInfo?: DentryOpenVOResultVisitorInfo;
   static names(): { [key: string]: string } {
     return {
@@ -96,10 +104,12 @@ export class DentryOpenVOResult extends $tea.Model {
       hasChildren: 'hasChildren',
       linkSourceInfo: 'linkSourceInfo',
       name: 'name',
+      path: 'path',
       space: 'space',
       spaceId: 'spaceId',
       updatedTime: 'updatedTime',
       updater: 'updater',
+      url: 'url',
       visitorInfo: 'visitorInfo',
     };
   }
@@ -116,10 +126,12 @@ export class DentryOpenVOResult extends $tea.Model {
       hasChildren: 'boolean',
       linkSourceInfo: LinkSourceInfo,
       name: 'string',
+      path: 'string',
       space: SpaceOpenVO,
       spaceId: 'string',
       updatedTime: 'number',
       updater: DentryOpenVOResultUpdater,
+      url: 'string',
       visitorInfo: DentryOpenVOResultVisitorInfo,
     };
   }
@@ -160,16 +172,40 @@ export class LinkSourceInfo extends $tea.Model {
   }
 }
 
+export class OpenActionModel extends $tea.Model {
+  name?: string;
+  timestamp?: number;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      timestamp: 'timestamp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      timestamp: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SpaceOpenVO extends $tea.Model {
   id?: string;
   name?: string;
   owner?: SpaceOpenVOOwner;
+  url?: string;
   visitorInfo?: SpaceOpenVOVisitorInfo;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
       name: 'name',
       owner: 'owner',
+      url: 'url',
       visitorInfo: 'visitorInfo',
     };
   }
@@ -179,6 +215,7 @@ export class SpaceOpenVO extends $tea.Model {
       id: 'string',
       name: 'string',
       owner: SpaceOpenVOOwner,
+      url: 'string',
       visitorInfo: SpaceOpenVOVisitorInfo,
     };
   }
@@ -192,12 +229,14 @@ export class SpaceOpenVOResult extends $tea.Model {
   id?: string;
   name?: string;
   owner?: SpaceOpenVOResultOwner;
+  url?: string;
   visitorInfo?: SpaceOpenVOResultVisitorInfo;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
       name: 'name',
       owner: 'owner',
+      url: 'url',
       visitorInfo: 'visitorInfo',
     };
   }
@@ -207,6 +246,7 @@ export class SpaceOpenVOResult extends $tea.Model {
       id: 'string',
       name: 'string',
       owner: SpaceOpenVOResultOwner,
+      url: 'string',
       visitorInfo: SpaceOpenVOResultVisitorInfo,
     };
   }

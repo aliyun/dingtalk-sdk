@@ -3068,7 +3068,6 @@ export class GetSpacesInfoResponseBodySpaceList extends $tea.Model {
 }
 
 export class ListPointRulesResponseBodyPointRuleList extends $tea.Model {
-  corpId?: string;
   dayLimitTimes?: number;
   extension?: string;
   groupId?: number;
@@ -3079,7 +3078,6 @@ export class ListPointRulesResponseBodyPointRuleList extends $tea.Model {
   status?: number;
   static names(): { [key: string]: string } {
     return {
-      corpId: 'corpId',
       dayLimitTimes: 'dayLimitTimes',
       extension: 'extension',
       groupId: 'groupId',
@@ -3093,7 +3091,6 @@ export class ListPointRulesResponseBodyPointRuleList extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      corpId: 'string',
       dayLimitTimes: 'number',
       extension: 'string',
       groupId: 'number',
@@ -3222,7 +3219,6 @@ export class ListUserIndustryRolesResponseBodyRoleList extends $tea.Model {
 }
 
 export class PagePointHistoryResponseBodyPointRecordList extends $tea.Model {
-  corpId?: string;
   createAt?: number;
   ruleCode?: string;
   ruleName?: string;
@@ -3231,7 +3227,6 @@ export class PagePointHistoryResponseBodyPointRecordList extends $tea.Model {
   uuid?: string;
   static names(): { [key: string]: string } {
     return {
-      corpId: 'corpId',
       createAt: 'createAt',
       ruleCode: 'ruleCode',
       ruleName: 'ruleName',
@@ -3243,7 +3238,6 @@ export class PagePointHistoryResponseBodyPointRecordList extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      corpId: 'string',
       createAt: 'number',
       ruleCode: 'string',
       ruleName: 'string',

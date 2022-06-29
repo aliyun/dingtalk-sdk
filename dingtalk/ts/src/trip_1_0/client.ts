@@ -7,6 +7,106 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class SyncSecretKeyHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncSecretKeyRequest extends $tea.Model {
+  actionType?: string;
+  secretString?: string;
+  targetCorpId?: string;
+  tripAppKey?: string;
+  tripAppSecurity?: string;
+  tripCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      actionType: 'actionType',
+      secretString: 'secretString',
+      targetCorpId: 'targetCorpId',
+      tripAppKey: 'tripAppKey',
+      tripAppSecurity: 'tripAppSecurity',
+      tripCorpId: 'tripCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actionType: 'string',
+      secretString: 'string',
+      targetCorpId: 'string',
+      tripAppKey: 'string',
+      tripAppSecurity: 'string',
+      tripCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncSecretKeyResponseBody extends $tea.Model {
+  result?: SyncSecretKeyResponseBodyResult;
+  success?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: SyncSecretKeyResponseBodyResult,
+      success: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncSecretKeyResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SyncSecretKeyResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SyncSecretKeyResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SyncTripOrderHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -138,6 +238,37 @@ export class SyncTripOrderResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: SyncTripOrderResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncSecretKeyResponseBodyResult extends $tea.Model {
+  secretString?: string;
+  targetCorpId?: string;
+  tripAppKey?: string;
+  tripAppSecurity?: string;
+  tripCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      secretString: 'secretString',
+      targetCorpId: 'targetCorpId',
+      tripAppKey: 'tripAppKey',
+      tripAppSecurity: 'tripAppSecurity',
+      tripCorpId: 'tripCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      secretString: 'string',
+      targetCorpId: 'string',
+      tripAppKey: 'string',
+      tripAppSecurity: 'string',
+      tripCorpId: 'string',
     };
   }
 
@@ -287,6 +418,55 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async syncSecretKey(request: SyncSecretKeyRequest): Promise<SyncSecretKeyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SyncSecretKeyHeaders({ });
+    return await this.syncSecretKeyWithOptions(request, headers, runtime);
+  }
+
+  async syncSecretKeyWithOptions(request: SyncSecretKeyRequest, headers: SyncSecretKeyHeaders, runtime: $Util.RuntimeOptions): Promise<SyncSecretKeyResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.actionType)) {
+      body["actionType"] = request.actionType;
+    }
+
+    if (!Util.isUnset(request.secretString)) {
+      body["secretString"] = request.secretString;
+    }
+
+    if (!Util.isUnset(request.targetCorpId)) {
+      body["targetCorpId"] = request.targetCorpId;
+    }
+
+    if (!Util.isUnset(request.tripAppKey)) {
+      body["tripAppKey"] = request.tripAppKey;
+    }
+
+    if (!Util.isUnset(request.tripAppSecurity)) {
+      body["tripAppSecurity"] = request.tripAppSecurity;
+    }
+
+    if (!Util.isUnset(request.tripCorpId)) {
+      body["tripCorpId"] = request.tripCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SyncSecretKeyResponse>(await this.doROARequest("SyncSecretKey", "trip_1.0", "HTTP", "POST", "AK", `/v1.0/trip/secretKeys/sync`, "json", req, runtime), new SyncSecretKeyResponse({}));
+  }
 
   async syncTripOrder(request: SyncTripOrderRequest): Promise<SyncTripOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
