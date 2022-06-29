@@ -32,6 +32,13 @@ class SpaceOpenVOResult extends Model
     public $owner;
 
     /**
+     * @description 知识库访问url。
+     *
+     * @var string
+     */
+    public $url;
+
+    /**
      * @description 访问者对当前知识库的权限等信息。
      *
      * @var visitorInfo
@@ -41,6 +48,7 @@ class SpaceOpenVOResult extends Model
         'id'          => 'id',
         'name'        => 'name',
         'owner'       => 'owner',
+        'url'         => 'url',
         'visitorInfo' => 'visitorInfo',
     ];
 
@@ -59,6 +67,9 @@ class SpaceOpenVOResult extends Model
         }
         if (null !== $this->owner) {
             $res['owner'] = null !== $this->owner ? $this->owner->toMap() : null;
+        }
+        if (null !== $this->url) {
+            $res['url'] = $this->url;
         }
         if (null !== $this->visitorInfo) {
             $res['visitorInfo'] = null !== $this->visitorInfo ? $this->visitorInfo->toMap() : null;
@@ -83,6 +94,9 @@ class SpaceOpenVOResult extends Model
         }
         if (isset($map['owner'])) {
             $model->owner = owner::fromMap($map['owner']);
+        }
+        if (isset($map['url'])) {
+            $model->url = $map['url'];
         }
         if (isset($map['visitorInfo'])) {
             $model->visitorInfo = visitorInfo::fromMap($map['visitorInfo']);

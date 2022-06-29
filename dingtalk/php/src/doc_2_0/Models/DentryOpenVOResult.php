@@ -82,6 +82,13 @@ class DentryOpenVOResult extends Model
     public $name;
 
     /**
+     * @description 节点的路径。
+     *
+     * @var string
+     */
+    public $path;
+
+    /**
      * @description 知识库信息。
      *
      * @var SpaceOpenVO
@@ -110,6 +117,13 @@ class DentryOpenVOResult extends Model
     public $updater;
 
     /**
+     * @description 节点访问url。
+     *
+     * @var string
+     */
+    public $url;
+
+    /**
      * @description 访问者对当前节点的权限等信息。
      *
      * @var visitorInfo
@@ -126,10 +140,12 @@ class DentryOpenVOResult extends Model
         'hasChildren'    => 'hasChildren',
         'linkSourceInfo' => 'linkSourceInfo',
         'name'           => 'name',
+        'path'           => 'path',
         'space'          => 'space',
         'spaceId'        => 'spaceId',
         'updatedTime'    => 'updatedTime',
         'updater'        => 'updater',
+        'url'            => 'url',
         'visitorInfo'    => 'visitorInfo',
     ];
 
@@ -170,6 +186,9 @@ class DentryOpenVOResult extends Model
         if (null !== $this->name) {
             $res['name'] = $this->name;
         }
+        if (null !== $this->path) {
+            $res['path'] = $this->path;
+        }
         if (null !== $this->space) {
             $res['space'] = null !== $this->space ? $this->space->toMap() : null;
         }
@@ -181,6 +200,9 @@ class DentryOpenVOResult extends Model
         }
         if (null !== $this->updater) {
             $res['updater'] = null !== $this->updater ? $this->updater->toMap() : null;
+        }
+        if (null !== $this->url) {
+            $res['url'] = $this->url;
         }
         if (null !== $this->visitorInfo) {
             $res['visitorInfo'] = null !== $this->visitorInfo ? $this->visitorInfo->toMap() : null;
@@ -227,6 +249,9 @@ class DentryOpenVOResult extends Model
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }
+        if (isset($map['path'])) {
+            $model->path = $map['path'];
+        }
         if (isset($map['space'])) {
             $model->space = SpaceOpenVO::fromMap($map['space']);
         }
@@ -238,6 +263,9 @@ class DentryOpenVOResult extends Model
         }
         if (isset($map['updater'])) {
             $model->updater = updater::fromMap($map['updater']);
+        }
+        if (isset($map['url'])) {
+            $model->url = $map['url'];
         }
         if (isset($map['visitorInfo'])) {
             $model->visitorInfo = visitorInfo::fromMap($map['visitorInfo']);

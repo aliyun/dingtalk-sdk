@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class pointRuleList extends Model
 {
     /**
-     * @description 组织id
-     *
-     * @var string
-     */
-    public $corpId;
-
-    /**
      * @description 单日计次上限，0表示无上限
      *
      * @var int
@@ -71,7 +64,6 @@ class pointRuleList extends Model
      */
     public $status;
     protected $_name = [
-        'corpId'        => 'corpId',
         'dayLimitTimes' => 'dayLimitTimes',
         'extension'     => 'extension',
         'groupId'       => 'groupId',
@@ -89,9 +81,6 @@ class pointRuleList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
-        }
         if (null !== $this->dayLimitTimes) {
             $res['dayLimitTimes'] = $this->dayLimitTimes;
         }
@@ -128,9 +117,6 @@ class pointRuleList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
-        }
         if (isset($map['dayLimitTimes'])) {
             $model->dayLimitTimes = $map['dayLimitTimes'];
         }

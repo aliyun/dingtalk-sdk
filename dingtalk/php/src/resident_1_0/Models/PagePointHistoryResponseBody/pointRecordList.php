@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class pointRecordList extends Model
 {
     /**
-     * @description 组织id
-     *
-     * @var string
-     */
-    public $corpId;
-
-    /**
      * @description 创建时间（精确到毫秒数）
      *
      * @var int
@@ -57,7 +50,6 @@ class pointRecordList extends Model
      */
     public $uuid;
     protected $_name = [
-        'corpId'   => 'corpId',
         'createAt' => 'createAt',
         'ruleCode' => 'ruleCode',
         'ruleName' => 'ruleName',
@@ -73,9 +65,6 @@ class pointRecordList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
-        }
         if (null !== $this->createAt) {
             $res['createAt'] = $this->createAt;
         }
@@ -106,9 +95,6 @@ class pointRecordList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
-        }
         if (isset($map['createAt'])) {
             $model->createAt = $map['createAt'];
         }

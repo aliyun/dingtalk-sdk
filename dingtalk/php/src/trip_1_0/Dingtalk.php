@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vtrip_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncSecretKeyHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncSecretKeyRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncSecretKeyResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncTripOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncTripOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncTripOrderResponse;
@@ -22,6 +25,63 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param SyncSecretKeyRequest $request
+     *
+     * @return SyncSecretKeyResponse
+     */
+    public function syncSecretKey($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SyncSecretKeyHeaders([]);
+
+        return $this->syncSecretKeyWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SyncSecretKeyRequest $request
+     * @param SyncSecretKeyHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return SyncSecretKeyResponse
+     */
+    public function syncSecretKeyWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->actionType)) {
+            @$body['actionType'] = $request->actionType;
+        }
+        if (!Utils::isUnset($request->secretString)) {
+            @$body['secretString'] = $request->secretString;
+        }
+        if (!Utils::isUnset($request->targetCorpId)) {
+            @$body['targetCorpId'] = $request->targetCorpId;
+        }
+        if (!Utils::isUnset($request->tripAppKey)) {
+            @$body['tripAppKey'] = $request->tripAppKey;
+        }
+        if (!Utils::isUnset($request->tripAppSecurity)) {
+            @$body['tripAppSecurity'] = $request->tripAppSecurity;
+        }
+        if (!Utils::isUnset($request->tripCorpId)) {
+            @$body['tripCorpId'] = $request->tripCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SyncSecretKeyResponse::fromMap($this->doROARequest('SyncSecretKey', 'trip_1.0', 'HTTP', 'POST', 'AK', '/v1.0/trip/secretKeys/sync', 'json', $req, $runtime));
     }
 
     /**
