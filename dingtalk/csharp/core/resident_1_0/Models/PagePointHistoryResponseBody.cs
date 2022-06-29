@@ -31,13 +31,6 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         public List<PagePointHistoryResponseBodyPointRecordList> PointRecordList { get; set; }
         public class PagePointHistoryResponseBodyPointRecordList : TeaModel {
             /// <summary>
-            /// 组织id
-            /// </summary>
-            [NameInMap("corpId")]
-            [Validation(Required=false)]
-            public string CorpId { get; set; }
-
-            /// <summary>
             /// 创建时间（精确到毫秒数）
             /// </summary>
             [NameInMap("createAt")]

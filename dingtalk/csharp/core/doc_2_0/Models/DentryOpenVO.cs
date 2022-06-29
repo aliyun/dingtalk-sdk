@@ -91,6 +91,13 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         public string Name { get; set; }
 
         /// <summary>
+        /// 节点的路径。
+        /// </summary>
+        [NameInMap("path")]
+        [Validation(Required=false)]
+        public string Path { get; set; }
+
+        /// <summary>
         /// 知识库信息。
         /// </summary>
         [NameInMap("space")]
@@ -125,6 +132,13 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
             [Validation(Required=false)]
             public string UnionId { get; set; }
         };
+
+        /// <summary>
+        /// 节点访问url。
+        /// </summary>
+        [NameInMap("url")]
+        [Validation(Required=false)]
+        public string Url { get; set; }
 
         /// <summary>
         /// 访问者对当前节点的权限等信息。

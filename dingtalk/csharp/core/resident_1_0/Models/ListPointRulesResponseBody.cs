@@ -17,13 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         public List<ListPointRulesResponseBodyPointRuleList> PointRuleList { get; set; }
         public class ListPointRulesResponseBodyPointRuleList : TeaModel {
             /// <summary>
-            /// 组织id
-            /// </summary>
-            [NameInMap("corpId")]
-            [Validation(Required=false)]
-            public string CorpId { get; set; }
-
-            /// <summary>
             /// 单日计次上限，0表示无上限
             /// </summary>
             [NameInMap("dayLimitTimes")]

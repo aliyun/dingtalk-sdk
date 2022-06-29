@@ -39,6 +39,13 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         };
 
         /// <summary>
+        /// 知识库访问url。
+        /// </summary>
+        [NameInMap("url")]
+        [Validation(Required=false)]
+        public string Url { get; set; }
+
+        /// <summary>
         /// 访问者对当前知识库的权限等信息。
         /// </summary>
         [NameInMap("visitorInfo")]
