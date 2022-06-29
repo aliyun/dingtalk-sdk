@@ -58,10 +58,6 @@ public class PagePointHistoryResponseBody extends TeaModel {
     }
 
     public static class PagePointHistoryResponseBodyPointRecordList extends TeaModel {
-        // 组织id
-        @NameInMap("corpId")
-        public String corpId;
-
         // 创建时间（精确到毫秒数）
         @NameInMap("createAt")
         public Long createAt;
@@ -89,14 +85,6 @@ public class PagePointHistoryResponseBody extends TeaModel {
         public static PagePointHistoryResponseBodyPointRecordList build(java.util.Map<String, ?> map) throws Exception {
             PagePointHistoryResponseBodyPointRecordList self = new PagePointHistoryResponseBodyPointRecordList();
             return TeaModel.build(map, self);
-        }
-
-        public PagePointHistoryResponseBodyPointRecordList setCorpId(String corpId) {
-            this.corpId = corpId;
-            return this;
-        }
-        public String getCorpId() {
-            return this.corpId;
         }
 
         public PagePointHistoryResponseBodyPointRecordList setCreateAt(Long createAt) {

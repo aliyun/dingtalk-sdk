@@ -22,10 +22,6 @@ public class ListPointRulesResponseBody extends TeaModel {
     }
 
     public static class ListPointRulesResponseBodyPointRuleList extends TeaModel {
-        // 组织id
-        @NameInMap("corpId")
-        public String corpId;
-
         // 单日计次上限，0表示无上限
         @NameInMap("dayLimitTimes")
         public Integer dayLimitTimes;
@@ -61,14 +57,6 @@ public class ListPointRulesResponseBody extends TeaModel {
         public static ListPointRulesResponseBodyPointRuleList build(java.util.Map<String, ?> map) throws Exception {
             ListPointRulesResponseBodyPointRuleList self = new ListPointRulesResponseBodyPointRuleList();
             return TeaModel.build(map, self);
-        }
-
-        public ListPointRulesResponseBodyPointRuleList setCorpId(String corpId) {
-            this.corpId = corpId;
-            return this;
-        }
-        public String getCorpId() {
-            return this.corpId;
         }
 
         public ListPointRulesResponseBodyPointRuleList setDayLimitTimes(Integer dayLimitTimes) {

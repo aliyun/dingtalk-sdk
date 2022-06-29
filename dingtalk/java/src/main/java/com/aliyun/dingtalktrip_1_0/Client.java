@@ -21,6 +21,55 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public SyncSecretKeyResponse syncSecretKey(SyncSecretKeyRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        SyncSecretKeyHeaders headers = new SyncSecretKeyHeaders();
+        return this.syncSecretKeyWithOptions(request, headers, runtime);
+    }
+
+    public SyncSecretKeyResponse syncSecretKeyWithOptions(SyncSecretKeyRequest request, SyncSecretKeyHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.actionType)) {
+            body.put("actionType", request.actionType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.secretString)) {
+            body.put("secretString", request.secretString);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetCorpId)) {
+            body.put("targetCorpId", request.targetCorpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tripAppKey)) {
+            body.put("tripAppKey", request.tripAppKey);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tripAppSecurity)) {
+            body.put("tripAppSecurity", request.tripAppSecurity);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tripCorpId)) {
+            body.put("tripCorpId", request.tripCorpId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("SyncSecretKey", "trip_1.0", "HTTP", "POST", "AK", "/v1.0/trip/secretKeys/sync", "json", req, runtime), new SyncSecretKeyResponse());
+    }
+
     public SyncTripOrderResponse syncTripOrder(SyncTripOrderRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         SyncTripOrderHeaders headers = new SyncTripOrderHeaders();

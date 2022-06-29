@@ -44,6 +44,10 @@ public class DentryOpenVOResult extends TeaModel {
     @NameInMap("name")
     public String name;
 
+    // 节点的路径。
+    @NameInMap("path")
+    public String path;
+
     // 知识库信息。
     @NameInMap("space")
     public SpaceOpenVO space;
@@ -59,6 +63,10 @@ public class DentryOpenVOResult extends TeaModel {
     // 更新人。
     @NameInMap("updater")
     public DentryOpenVOResultUpdater updater;
+
+    // 节点访问url。
+    @NameInMap("url")
+    public String url;
 
     // 访问者对当前节点的权限等信息。
     @NameInMap("visitorInfo")
@@ -149,6 +157,14 @@ public class DentryOpenVOResult extends TeaModel {
         return this.name;
     }
 
+    public DentryOpenVOResult setPath(String path) {
+        this.path = path;
+        return this;
+    }
+    public String getPath() {
+        return this.path;
+    }
+
     public DentryOpenVOResult setSpace(SpaceOpenVO space) {
         this.space = space;
         return this;
@@ -179,6 +195,14 @@ public class DentryOpenVOResult extends TeaModel {
     }
     public DentryOpenVOResultUpdater getUpdater() {
         return this.updater;
+    }
+
+    public DentryOpenVOResult setUrl(String url) {
+        this.url = url;
+        return this;
+    }
+    public String getUrl() {
+        return this.url;
     }
 
     public DentryOpenVOResult setVisitorInfo(DentryOpenVOResultVisitorInfo visitorInfo) {

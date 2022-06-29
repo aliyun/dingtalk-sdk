@@ -16,6 +16,10 @@ public class SpaceOpenVOResult extends TeaModel {
     @NameInMap("owner")
     public SpaceOpenVOResultOwner owner;
 
+    // 知识库访问url。
+    @NameInMap("url")
+    public String url;
+
     // 访问者对当前知识库的权限等信息。
     @NameInMap("visitorInfo")
     public SpaceOpenVOResultVisitorInfo visitorInfo;
@@ -47,6 +51,14 @@ public class SpaceOpenVOResult extends TeaModel {
     }
     public SpaceOpenVOResultOwner getOwner() {
         return this.owner;
+    }
+
+    public SpaceOpenVOResult setUrl(String url) {
+        this.url = url;
+        return this;
+    }
+    public String getUrl() {
+        return this.url;
     }
 
     public SpaceOpenVOResult setVisitorInfo(SpaceOpenVOResultVisitorInfo visitorInfo) {
