@@ -21,7 +21,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
         return this.generalInvoiceVOList;
     }
 
-    public static class BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVO extends TeaModel {
+    public static class BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList extends TeaModel {
         // 金额
         @NameInMap("amount")
         public String amount;
@@ -66,12 +66,12 @@ public class BatchAddInvoiceRequest extends TeaModel {
         @NameInMap("unitPrice")
         public String unitPrice;
 
-        public static BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVO build(java.util.Map<String, ?> map) throws Exception {
-            BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVO self = new BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVO();
+        public static BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList build(java.util.Map<String, ?> map) throws Exception {
+            BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList self = new BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList();
             return TeaModel.build(map, self);
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVO setAmount(String amount) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList setAmount(String amount) {
             this.amount = amount;
             return this;
         }
@@ -79,7 +79,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.amount;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVO setGoodName(String goodName) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList setGoodName(String goodName) {
             this.goodName = goodName;
             return this;
         }
@@ -87,7 +87,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.goodName;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVO setQuantity(String quantity) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList setQuantity(String quantity) {
             this.quantity = quantity;
             return this;
         }
@@ -95,7 +95,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.quantity;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVO setRevenueCode(String revenueCode) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList setRevenueCode(String revenueCode) {
             this.revenueCode = revenueCode;
             return this;
         }
@@ -103,7 +103,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.revenueCode;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVO setRowNo(String rowNo) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList setRowNo(String rowNo) {
             this.rowNo = rowNo;
             return this;
         }
@@ -111,7 +111,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.rowNo;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVO setSpecification(String specification) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList setSpecification(String specification) {
             this.specification = specification;
             return this;
         }
@@ -119,7 +119,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.specification;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVO setTaxAmount(String taxAmount) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList setTaxAmount(String taxAmount) {
             this.taxAmount = taxAmount;
             return this;
         }
@@ -127,7 +127,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.taxAmount;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVO setTaxPre(String taxPre) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList setTaxPre(String taxPre) {
             this.taxPre = taxPre;
             return this;
         }
@@ -135,7 +135,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.taxPre;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVO setTaxRate(String taxRate) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList setTaxRate(String taxRate) {
             this.taxRate = taxRate;
             return this;
         }
@@ -143,7 +143,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.taxRate;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVO setUnit(String unit) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList setUnit(String unit) {
             this.unit = unit;
             return this;
         }
@@ -151,7 +151,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.unit;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVO setUnitPrice(String unitPrice) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList setUnitPrice(String unitPrice) {
             this.unitPrice = unitPrice;
             return this;
         }
@@ -161,12 +161,12 @@ public class BatchAddInvoiceRequest extends TeaModel {
 
     }
 
-    public static class BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetail extends TeaModel {
+    public static class BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList extends TeaModel {
         // 金额
         @NameInMap("amount")
         public String amount;
 
-        // cardNo
+        // 车牌号
         @NameInMap("cardNo")
         public String cardNo;
 
@@ -202,12 +202,12 @@ public class BatchAddInvoiceRequest extends TeaModel {
         @NameInMap("vehicleType")
         public String vehicleType;
 
-        public static BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetail build(java.util.Map<String, ?> map) throws Exception {
-            BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetail self = new BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetail();
+        public static BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList build(java.util.Map<String, ?> map) throws Exception {
+            BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList self = new BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList();
             return TeaModel.build(map, self);
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetail setAmount(String amount) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList setAmount(String amount) {
             this.amount = amount;
             return this;
         }
@@ -215,7 +215,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.amount;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetail setCardNo(String cardNo) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList setCardNo(String cardNo) {
             this.cardNo = cardNo;
             return this;
         }
@@ -223,7 +223,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.cardNo;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetail setEndDate(String endDate) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList setEndDate(String endDate) {
             this.endDate = endDate;
             return this;
         }
@@ -231,7 +231,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.endDate;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetail setGoodsName(String goodsName) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList setGoodsName(String goodsName) {
             this.goodsName = goodsName;
             return this;
         }
@@ -239,7 +239,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.goodsName;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetail setRevenueCode(String revenueCode) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList setRevenueCode(String revenueCode) {
             this.revenueCode = revenueCode;
             return this;
         }
@@ -247,7 +247,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.revenueCode;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetail setRowNo(String rowNo) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList setRowNo(String rowNo) {
             this.rowNo = rowNo;
             return this;
         }
@@ -255,7 +255,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.rowNo;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetail setStartDate(String startDate) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList setStartDate(String startDate) {
             this.startDate = startDate;
             return this;
         }
@@ -263,7 +263,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.startDate;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetail setTaxAmount(String taxAmount) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList setTaxAmount(String taxAmount) {
             this.taxAmount = taxAmount;
             return this;
         }
@@ -271,7 +271,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.taxAmount;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetail setTaxRate(String taxRate) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList setTaxRate(String taxRate) {
             this.taxRate = taxRate;
             return this;
         }
@@ -279,7 +279,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.taxRate;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetail setVehicleType(String vehicleType) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList setVehicleType(String vehicleType) {
             this.vehicleType = vehicleType;
             return this;
         }
@@ -289,7 +289,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
 
     }
 
-    public static class BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO extends TeaModel {
+    public static class BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList extends TeaModel {
         // 经营、拍卖单位
         @NameInMap("auctionUnit")
         public String auctionUnit;
@@ -354,12 +354,12 @@ public class BatchAddInvoiceRequest extends TeaModel {
         @NameInMap("vehicleType")
         public String vehicleType;
 
-        public static BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO build(java.util.Map<String, ?> map) throws Exception {
-            BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO self = new BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO();
+        public static BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList build(java.util.Map<String, ?> map) throws Exception {
+            BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList self = new BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList();
             return TeaModel.build(map, self);
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO setAuctionUnit(String auctionUnit) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList setAuctionUnit(String auctionUnit) {
             this.auctionUnit = auctionUnit;
             return this;
         }
@@ -367,7 +367,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.auctionUnit;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO setAuctionUnitAddress(String auctionUnitAddress) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList setAuctionUnitAddress(String auctionUnitAddress) {
             this.auctionUnitAddress = auctionUnitAddress;
             return this;
         }
@@ -375,7 +375,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.auctionUnitAddress;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO setAuctionUnitBank(String auctionUnitBank) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList setAuctionUnitBank(String auctionUnitBank) {
             this.auctionUnitBank = auctionUnitBank;
             return this;
         }
@@ -383,7 +383,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.auctionUnitBank;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO setAuctionUnitTaxNo(String auctionUnitTaxNo) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList setAuctionUnitTaxNo(String auctionUnitTaxNo) {
             this.auctionUnitTaxNo = auctionUnitTaxNo;
             return this;
         }
@@ -391,7 +391,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.auctionUnitTaxNo;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO setAuctionUtilTel(String auctionUtilTel) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList setAuctionUtilTel(String auctionUtilTel) {
             this.auctionUtilTel = auctionUtilTel;
             return this;
         }
@@ -399,7 +399,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.auctionUtilTel;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO setCarModel(String carModel) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList setCarModel(String carModel) {
             this.carModel = carModel;
             return this;
         }
@@ -407,7 +407,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.carModel;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO setCardNo(String cardNo) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList setCardNo(String cardNo) {
             this.cardNo = cardNo;
             return this;
         }
@@ -415,7 +415,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.cardNo;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO setRegistration(String registration) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList setRegistration(String registration) {
             this.registration = registration;
             return this;
         }
@@ -423,7 +423,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.registration;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO setTransferVehicle(String transferVehicle) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList setTransferVehicle(String transferVehicle) {
             this.transferVehicle = transferVehicle;
             return this;
         }
@@ -431,7 +431,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.transferVehicle;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO setUsedCarAddress(String usedCarAddress) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList setUsedCarAddress(String usedCarAddress) {
             this.usedCarAddress = usedCarAddress;
             return this;
         }
@@ -439,7 +439,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.usedCarAddress;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO setUsedCarMarket(String usedCarMarket) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList setUsedCarMarket(String usedCarMarket) {
             this.usedCarMarket = usedCarMarket;
             return this;
         }
@@ -447,7 +447,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.usedCarMarket;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO setUsedCarMarketBank(String usedCarMarketBank) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList setUsedCarMarketBank(String usedCarMarketBank) {
             this.usedCarMarketBank = usedCarMarketBank;
             return this;
         }
@@ -455,7 +455,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.usedCarMarketBank;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO setUsedCarMarketPhone(String usedCarMarketPhone) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList setUsedCarMarketPhone(String usedCarMarketPhone) {
             this.usedCarMarketPhone = usedCarMarketPhone;
             return this;
         }
@@ -463,7 +463,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.usedCarMarketPhone;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO setUsedCarMarketTaxNo(String usedCarMarketTaxNo) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList setUsedCarMarketTaxNo(String usedCarMarketTaxNo) {
             this.usedCarMarketTaxNo = usedCarMarketTaxNo;
             return this;
         }
@@ -471,7 +471,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.usedCarMarketTaxNo;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO setVehicleNo(String vehicleNo) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList setVehicleNo(String vehicleNo) {
             this.vehicleNo = vehicleNo;
             return this;
         }
@@ -479,7 +479,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.vehicleNo;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO setVehicleType(String vehicleType) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList setVehicleType(String vehicleType) {
             this.vehicleType = vehicleType;
             return this;
         }
@@ -489,7 +489,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
 
     }
 
-    public static class BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO extends TeaModel {
+    public static class BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList extends TeaModel {
         // 品牌
         @NameInMap("brand")
         public String brand;
@@ -509,10 +509,6 @@ public class BatchAddInvoiceRequest extends TeaModel {
         // 进口证书号
         @NameInMap("importCertificateNo")
         public String importCertificateNo;
-
-        // 商检单号
-        @NameInMap("inspectionListNo")
-        public String inspectionListNo;
 
         // 限乘人数
         @NameInMap("maxPassengers")
@@ -550,12 +546,12 @@ public class BatchAddInvoiceRequest extends TeaModel {
         @NameInMap("vehicleType")
         public String vehicleType;
 
-        public static BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO build(java.util.Map<String, ?> map) throws Exception {
-            BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO self = new BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO();
+        public static BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList build(java.util.Map<String, ?> map) throws Exception {
+            BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList self = new BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList();
             return TeaModel.build(map, self);
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO setBrand(String brand) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList setBrand(String brand) {
             this.brand = brand;
             return this;
         }
@@ -563,7 +559,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.brand;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO setCertificateNo(String certificateNo) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList setCertificateNo(String certificateNo) {
             this.certificateNo = certificateNo;
             return this;
         }
@@ -571,7 +567,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.certificateNo;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO setEngineNo(String engineNo) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList setEngineNo(String engineNo) {
             this.engineNo = engineNo;
             return this;
         }
@@ -579,7 +575,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.engineNo;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO setIdCardNo(String idCardNo) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList setIdCardNo(String idCardNo) {
             this.idCardNo = idCardNo;
             return this;
         }
@@ -587,7 +583,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.idCardNo;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO setImportCertificateNo(String importCertificateNo) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList setImportCertificateNo(String importCertificateNo) {
             this.importCertificateNo = importCertificateNo;
             return this;
         }
@@ -595,15 +591,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.importCertificateNo;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO setInspectionListNo(String inspectionListNo) {
-            this.inspectionListNo = inspectionListNo;
-            return this;
-        }
-        public String getInspectionListNo() {
-            return this.inspectionListNo;
-        }
-
-        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO setMaxPassengers(String maxPassengers) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList setMaxPassengers(String maxPassengers) {
             this.maxPassengers = maxPassengers;
             return this;
         }
@@ -611,7 +599,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.maxPassengers;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO setOriginPlace(String originPlace) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList setOriginPlace(String originPlace) {
             this.originPlace = originPlace;
             return this;
         }
@@ -619,7 +607,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.originPlace;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO setPaymentVoucherNo(String paymentVoucherNo) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList setPaymentVoucherNo(String paymentVoucherNo) {
             this.paymentVoucherNo = paymentVoucherNo;
             return this;
         }
@@ -627,7 +615,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.paymentVoucherNo;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO setTaxAuthorityName(String taxAuthorityName) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList setTaxAuthorityName(String taxAuthorityName) {
             this.taxAuthorityName = taxAuthorityName;
             return this;
         }
@@ -635,7 +623,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.taxAuthorityName;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO setTaxAuthorityNo(String taxAuthorityNo) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList setTaxAuthorityNo(String taxAuthorityNo) {
             this.taxAuthorityNo = taxAuthorityNo;
             return this;
         }
@@ -643,7 +631,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.taxAuthorityNo;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO setTaxRate(String taxRate) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList setTaxRate(String taxRate) {
             this.taxRate = taxRate;
             return this;
         }
@@ -651,7 +639,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.taxRate;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO setTonnage(String tonnage) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList setTonnage(String tonnage) {
             this.tonnage = tonnage;
             return this;
         }
@@ -659,7 +647,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.tonnage;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO setVehicleNo(String vehicleNo) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList setVehicleNo(String vehicleNo) {
             this.vehicleNo = vehicleNo;
             return this;
         }
@@ -667,7 +655,7 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.vehicleNo;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO setVehicleType(String vehicleType) {
+        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList setVehicleType(String vehicleType) {
             this.vehicleType = vehicleType;
             return this;
         }
@@ -715,8 +703,8 @@ public class BatchAddInvoiceRequest extends TeaModel {
         public String fundType;
 
         // 常规发票明细
-        @NameInMap("generalInvoiceDetailVO")
-        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVO generalInvoiceDetailVO;
+        @NameInMap("generalInvoiceDetailVOList")
+        public java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList> generalInvoiceDetailVOList;
 
         // 发票代码
         @NameInMap("invoiceCode")
@@ -774,9 +762,8 @@ public class BatchAddInvoiceRequest extends TeaModel {
         @NameInMap("remark")
         public String remark;
 
-        // 二手车费用明细
-        @NameInMap("secondHandCarInvoiceDetail")
-        public BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetail secondHandCarInvoiceDetail;
+        @NameInMap("secondHandCarInvoiceDetailList")
+        public java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList> secondHandCarInvoiceDetailList;
 
         // 销方地址
         @NameInMap("sellerAddress")
@@ -810,13 +797,11 @@ public class BatchAddInvoiceRequest extends TeaModel {
         @NameInMap("taxAmount")
         public String taxAmount;
 
-        // 二手车发票详情
-        @NameInMap("usedVehicleSaleDetailVO")
-        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO usedVehicleSaleDetailVO;
+        @NameInMap("usedVehicleSaleDetailVOList")
+        public java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList> usedVehicleSaleDetailVOList;
 
-        // 车辆售卖发票明细
-        @NameInMap("vehicleSaleDetailVO")
-        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO vehicleSaleDetailVO;
+        @NameInMap("vehicleSaleDetailVOList")
+        public java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList> vehicleSaleDetailVOList;
 
         // 发票查验状态
         @NameInMap("verifyStatus")
@@ -907,12 +892,12 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.fundType;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOList setGeneralInvoiceDetailVO(BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVO generalInvoiceDetailVO) {
-            this.generalInvoiceDetailVO = generalInvoiceDetailVO;
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setGeneralInvoiceDetailVOList(java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList> generalInvoiceDetailVOList) {
+            this.generalInvoiceDetailVOList = generalInvoiceDetailVOList;
             return this;
         }
-        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVO getGeneralInvoiceDetailVO() {
-            return this.generalInvoiceDetailVO;
+        public java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList> getGeneralInvoiceDetailVOList() {
+            return this.generalInvoiceDetailVOList;
         }
 
         public BatchAddInvoiceRequestGeneralInvoiceVOList setInvoiceCode(String invoiceCode) {
@@ -1027,12 +1012,12 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.remark;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOList setSecondHandCarInvoiceDetail(BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetail secondHandCarInvoiceDetail) {
-            this.secondHandCarInvoiceDetail = secondHandCarInvoiceDetail;
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setSecondHandCarInvoiceDetailList(java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList> secondHandCarInvoiceDetailList) {
+            this.secondHandCarInvoiceDetailList = secondHandCarInvoiceDetailList;
             return this;
         }
-        public BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetail getSecondHandCarInvoiceDetail() {
-            return this.secondHandCarInvoiceDetail;
+        public java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList> getSecondHandCarInvoiceDetailList() {
+            return this.secondHandCarInvoiceDetailList;
         }
 
         public BatchAddInvoiceRequestGeneralInvoiceVOList setSellerAddress(String sellerAddress) {
@@ -1099,20 +1084,20 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.taxAmount;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOList setUsedVehicleSaleDetailVO(BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO usedVehicleSaleDetailVO) {
-            this.usedVehicleSaleDetailVO = usedVehicleSaleDetailVO;
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setUsedVehicleSaleDetailVOList(java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList> usedVehicleSaleDetailVOList) {
+            this.usedVehicleSaleDetailVOList = usedVehicleSaleDetailVOList;
             return this;
         }
-        public BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO getUsedVehicleSaleDetailVO() {
-            return this.usedVehicleSaleDetailVO;
+        public java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList> getUsedVehicleSaleDetailVOList() {
+            return this.usedVehicleSaleDetailVOList;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOList setVehicleSaleDetailVO(BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO vehicleSaleDetailVO) {
-            this.vehicleSaleDetailVO = vehicleSaleDetailVO;
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setVehicleSaleDetailVOList(java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList> vehicleSaleDetailVOList) {
+            this.vehicleSaleDetailVOList = vehicleSaleDetailVOList;
             return this;
         }
-        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO getVehicleSaleDetailVO() {
-            return this.vehicleSaleDetailVO;
+        public java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList> getVehicleSaleDetailVOList() {
+            return this.vehicleSaleDetailVOList;
         }
 
         public BatchAddInvoiceRequestGeneralInvoiceVOList setVerifyStatus(String verifyStatus) {

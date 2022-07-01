@@ -197,7 +197,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
 
     }
 
-    public static class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetail extends TeaModel {
+    public static class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList extends TeaModel {
         // 金额
         @NameInMap("amount")
         public String amount;
@@ -238,12 +238,12 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
         @NameInMap("vehicleType")
         public String vehicleType;
 
-        public static UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetail build(java.util.Map<String, ?> map) throws Exception {
-            UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetail self = new UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetail();
+        public static UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList build(java.util.Map<String, ?> map) throws Exception {
+            UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList self = new UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList();
             return TeaModel.build(map, self);
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetail setAmount(String amount) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList setAmount(String amount) {
             this.amount = amount;
             return this;
         }
@@ -251,7 +251,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.amount;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetail setCardNo(String cardNo) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList setCardNo(String cardNo) {
             this.cardNo = cardNo;
             return this;
         }
@@ -259,7 +259,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.cardNo;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetail setEndDate(String endDate) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList setEndDate(String endDate) {
             this.endDate = endDate;
             return this;
         }
@@ -267,7 +267,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.endDate;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetail setGoodsName(String goodsName) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList setGoodsName(String goodsName) {
             this.goodsName = goodsName;
             return this;
         }
@@ -275,7 +275,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.goodsName;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetail setRevenueCode(String revenueCode) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList setRevenueCode(String revenueCode) {
             this.revenueCode = revenueCode;
             return this;
         }
@@ -283,7 +283,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.revenueCode;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetail setRowNo(String rowNo) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList setRowNo(String rowNo) {
             this.rowNo = rowNo;
             return this;
         }
@@ -291,7 +291,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.rowNo;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetail setStartDate(String startDate) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList setStartDate(String startDate) {
             this.startDate = startDate;
             return this;
         }
@@ -299,7 +299,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.startDate;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetail setTaxAmount(String taxAmount) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList setTaxAmount(String taxAmount) {
             this.taxAmount = taxAmount;
             return this;
         }
@@ -307,7 +307,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.taxAmount;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetail setTaxRate(String taxRate) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList setTaxRate(String taxRate) {
             this.taxRate = taxRate;
             return this;
         }
@@ -315,7 +315,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.taxRate;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetail setVehicleType(String vehicleType) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList setVehicleType(String vehicleType) {
             this.vehicleType = vehicleType;
             return this;
         }
@@ -325,7 +325,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
 
     }
 
-    public static class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO extends TeaModel {
+    public static class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList extends TeaModel {
         // 经营、拍卖单位
         @NameInMap("auctionUnit")
         public String auctionUnit;
@@ -390,12 +390,12 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
         @NameInMap("vehicleType")
         public String vehicleType;
 
-        public static UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO build(java.util.Map<String, ?> map) throws Exception {
-            UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO self = new UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO();
+        public static UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList build(java.util.Map<String, ?> map) throws Exception {
+            UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList self = new UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList();
             return TeaModel.build(map, self);
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO setAuctionUnit(String auctionUnit) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList setAuctionUnit(String auctionUnit) {
             this.auctionUnit = auctionUnit;
             return this;
         }
@@ -403,7 +403,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.auctionUnit;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO setAuctionUnitAddress(String auctionUnitAddress) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList setAuctionUnitAddress(String auctionUnitAddress) {
             this.auctionUnitAddress = auctionUnitAddress;
             return this;
         }
@@ -411,7 +411,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.auctionUnitAddress;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO setAuctionUnitBank(String auctionUnitBank) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList setAuctionUnitBank(String auctionUnitBank) {
             this.auctionUnitBank = auctionUnitBank;
             return this;
         }
@@ -419,7 +419,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.auctionUnitBank;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO setAuctionUnitTaxNo(String auctionUnitTaxNo) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList setAuctionUnitTaxNo(String auctionUnitTaxNo) {
             this.auctionUnitTaxNo = auctionUnitTaxNo;
             return this;
         }
@@ -427,7 +427,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.auctionUnitTaxNo;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO setAuctionUtilTel(String auctionUtilTel) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList setAuctionUtilTel(String auctionUtilTel) {
             this.auctionUtilTel = auctionUtilTel;
             return this;
         }
@@ -435,7 +435,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.auctionUtilTel;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO setCarModel(String carModel) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList setCarModel(String carModel) {
             this.carModel = carModel;
             return this;
         }
@@ -443,7 +443,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.carModel;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO setCardNo(String cardNo) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList setCardNo(String cardNo) {
             this.cardNo = cardNo;
             return this;
         }
@@ -451,7 +451,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.cardNo;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO setRegistration(String registration) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList setRegistration(String registration) {
             this.registration = registration;
             return this;
         }
@@ -459,7 +459,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.registration;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO setTransferVehicle(String transferVehicle) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList setTransferVehicle(String transferVehicle) {
             this.transferVehicle = transferVehicle;
             return this;
         }
@@ -467,7 +467,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.transferVehicle;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO setUsedCarAddress(String usedCarAddress) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList setUsedCarAddress(String usedCarAddress) {
             this.usedCarAddress = usedCarAddress;
             return this;
         }
@@ -475,7 +475,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.usedCarAddress;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO setUsedCarMarket(String usedCarMarket) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList setUsedCarMarket(String usedCarMarket) {
             this.usedCarMarket = usedCarMarket;
             return this;
         }
@@ -483,7 +483,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.usedCarMarket;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO setUsedCarMarketBank(String usedCarMarketBank) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList setUsedCarMarketBank(String usedCarMarketBank) {
             this.usedCarMarketBank = usedCarMarketBank;
             return this;
         }
@@ -491,7 +491,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.usedCarMarketBank;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO setUsedCarMarketPhone(String usedCarMarketPhone) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList setUsedCarMarketPhone(String usedCarMarketPhone) {
             this.usedCarMarketPhone = usedCarMarketPhone;
             return this;
         }
@@ -499,7 +499,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.usedCarMarketPhone;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO setUsedCarMarketTaxNo(String usedCarMarketTaxNo) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList setUsedCarMarketTaxNo(String usedCarMarketTaxNo) {
             this.usedCarMarketTaxNo = usedCarMarketTaxNo;
             return this;
         }
@@ -507,7 +507,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.usedCarMarketTaxNo;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO setVehicleNo(String vehicleNo) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList setVehicleNo(String vehicleNo) {
             this.vehicleNo = vehicleNo;
             return this;
         }
@@ -515,7 +515,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.vehicleNo;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO setVehicleType(String vehicleType) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList setVehicleType(String vehicleType) {
             this.vehicleType = vehicleType;
             return this;
         }
@@ -525,7 +525,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
 
     }
 
-    public static class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO extends TeaModel {
+    public static class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList extends TeaModel {
         // 品牌
         @NameInMap("brand")
         public String brand;
@@ -582,12 +582,12 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
         @NameInMap("vehicleType")
         public String vehicleType;
 
-        public static UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO build(java.util.Map<String, ?> map) throws Exception {
-            UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO self = new UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO();
+        public static UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList build(java.util.Map<String, ?> map) throws Exception {
+            UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList self = new UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList();
             return TeaModel.build(map, self);
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO setBrand(String brand) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList setBrand(String brand) {
             this.brand = brand;
             return this;
         }
@@ -595,7 +595,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.brand;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO setCertificateNo(String certificateNo) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList setCertificateNo(String certificateNo) {
             this.certificateNo = certificateNo;
             return this;
         }
@@ -603,7 +603,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.certificateNo;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO setEngineNo(String engineNo) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList setEngineNo(String engineNo) {
             this.engineNo = engineNo;
             return this;
         }
@@ -611,7 +611,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.engineNo;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO setIdCardNo(String idCardNo) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList setIdCardNo(String idCardNo) {
             this.idCardNo = idCardNo;
             return this;
         }
@@ -619,7 +619,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.idCardNo;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO setImportCertificateNo(String importCertificateNo) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList setImportCertificateNo(String importCertificateNo) {
             this.importCertificateNo = importCertificateNo;
             return this;
         }
@@ -627,7 +627,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.importCertificateNo;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO setMaxPassengers(String maxPassengers) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList setMaxPassengers(String maxPassengers) {
             this.maxPassengers = maxPassengers;
             return this;
         }
@@ -635,7 +635,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.maxPassengers;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO setOriginPlace(String originPlace) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList setOriginPlace(String originPlace) {
             this.originPlace = originPlace;
             return this;
         }
@@ -643,7 +643,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.originPlace;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO setPaymentVoucherNo(String paymentVoucherNo) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList setPaymentVoucherNo(String paymentVoucherNo) {
             this.paymentVoucherNo = paymentVoucherNo;
             return this;
         }
@@ -651,7 +651,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.paymentVoucherNo;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO setTaxAuthorityName(String taxAuthorityName) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList setTaxAuthorityName(String taxAuthorityName) {
             this.taxAuthorityName = taxAuthorityName;
             return this;
         }
@@ -659,7 +659,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.taxAuthorityName;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO setTaxAuthorityNo(String taxAuthorityNo) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList setTaxAuthorityNo(String taxAuthorityNo) {
             this.taxAuthorityNo = taxAuthorityNo;
             return this;
         }
@@ -667,7 +667,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.taxAuthorityNo;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO setTaxRate(String taxRate) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList setTaxRate(String taxRate) {
             this.taxRate = taxRate;
             return this;
         }
@@ -675,7 +675,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.taxRate;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO setTonnage(String tonnage) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList setTonnage(String tonnage) {
             this.tonnage = tonnage;
             return this;
         }
@@ -683,7 +683,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.tonnage;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO setVehicleNo(String vehicleNo) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList setVehicleNo(String vehicleNo) {
             this.vehicleNo = vehicleNo;
             return this;
         }
@@ -691,7 +691,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.vehicleNo;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO setVehicleType(String vehicleType) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList setVehicleType(String vehicleType) {
             this.vehicleType = vehicleType;
             return this;
         }
@@ -740,7 +740,7 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
 
         // 常规发票明细
         @NameInMap("generalInvoiceDetailVOList")
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOGeneralInvoiceDetailVOList generalInvoiceDetailVOList;
+        public java.util.List<UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOGeneralInvoiceDetailVOList> generalInvoiceDetailVOList;
 
         // 发票代码
         @NameInMap("invoiceCode")
@@ -798,8 +798,8 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
         @NameInMap("remark")
         public String remark;
 
-        @NameInMap("secondHandCarInvoiceDetail")
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetail secondHandCarInvoiceDetail;
+        @NameInMap("secondHandCarInvoiceDetailList")
+        public java.util.List<UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList> secondHandCarInvoiceDetailList;
 
         // 销方地址
         @NameInMap("sellerAddress")
@@ -833,11 +833,11 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
         @NameInMap("taxAmount")
         public String taxAmount;
 
-        @NameInMap("usedVehicleSaleDetailVO")
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO usedVehicleSaleDetailVO;
+        @NameInMap("usedVehicleSaleDetailVOList")
+        public java.util.List<UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList> usedVehicleSaleDetailVOList;
 
-        @NameInMap("vehicleSaleDetailVO")
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO vehicleSaleDetailVO;
+        @NameInMap("vehicleSaleDetailVOList")
+        public java.util.List<UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList> vehicleSaleDetailVOList;
 
         // 发票查验状态
         @NameInMap("verifyStatus")
@@ -928,11 +928,11 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.fundType;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO setGeneralInvoiceDetailVOList(UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOGeneralInvoiceDetailVOList generalInvoiceDetailVOList) {
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO setGeneralInvoiceDetailVOList(java.util.List<UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOGeneralInvoiceDetailVOList> generalInvoiceDetailVOList) {
             this.generalInvoiceDetailVOList = generalInvoiceDetailVOList;
             return this;
         }
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOGeneralInvoiceDetailVOList getGeneralInvoiceDetailVOList() {
+        public java.util.List<UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOGeneralInvoiceDetailVOList> getGeneralInvoiceDetailVOList() {
             return this.generalInvoiceDetailVOList;
         }
 
@@ -1048,12 +1048,12 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.remark;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO setSecondHandCarInvoiceDetail(UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetail secondHandCarInvoiceDetail) {
-            this.secondHandCarInvoiceDetail = secondHandCarInvoiceDetail;
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO setSecondHandCarInvoiceDetailList(java.util.List<UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList> secondHandCarInvoiceDetailList) {
+            this.secondHandCarInvoiceDetailList = secondHandCarInvoiceDetailList;
             return this;
         }
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetail getSecondHandCarInvoiceDetail() {
-            return this.secondHandCarInvoiceDetail;
+        public java.util.List<UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList> getSecondHandCarInvoiceDetailList() {
+            return this.secondHandCarInvoiceDetailList;
         }
 
         public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO setSellerAddress(String sellerAddress) {
@@ -1120,20 +1120,20 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
             return this.taxAmount;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO setUsedVehicleSaleDetailVO(UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO usedVehicleSaleDetailVO) {
-            this.usedVehicleSaleDetailVO = usedVehicleSaleDetailVO;
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO setUsedVehicleSaleDetailVOList(java.util.List<UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList> usedVehicleSaleDetailVOList) {
+            this.usedVehicleSaleDetailVOList = usedVehicleSaleDetailVOList;
             return this;
         }
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO getUsedVehicleSaleDetailVO() {
-            return this.usedVehicleSaleDetailVO;
+        public java.util.List<UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList> getUsedVehicleSaleDetailVOList() {
+            return this.usedVehicleSaleDetailVOList;
         }
 
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO setVehicleSaleDetailVO(UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO vehicleSaleDetailVO) {
-            this.vehicleSaleDetailVO = vehicleSaleDetailVO;
+        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO setVehicleSaleDetailVOList(java.util.List<UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList> vehicleSaleDetailVOList) {
+            this.vehicleSaleDetailVOList = vehicleSaleDetailVOList;
             return this;
         }
-        public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO getVehicleSaleDetailVO() {
-            return this.vehicleSaleDetailVO;
+        public java.util.List<UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList> getVehicleSaleDetailVOList() {
+            return this.vehicleSaleDetailVOList;
         }
 
         public UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO setVerifyStatus(String verifyStatus) {

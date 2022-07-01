@@ -4,7 +4,7 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class DentryOpenVO extends TeaModel {
-    // 内容类型。alidoc-钉钉文档；link-快捷方式；archive-压缩包。
+    // 内容类型。alidoc-钉钉文档；link-快捷方式；archive-压缩包；document-文件。
     @NameInMap("contentType")
     public String contentType;
 
@@ -27,6 +27,10 @@ public class DentryOpenVO extends TeaModel {
     // 节点全局唯一标识id。
     @NameInMap("dentryUuid")
     public String dentryUuid;
+
+    // 文档docKey，用于标识一篇钉钉文档的key。只有内容类型为alidoc的才会有值。
+    @NameInMap("docKey")
+    public String docKey;
 
     // 文件后缀名。
     @NameInMap("extension")
@@ -123,6 +127,14 @@ public class DentryOpenVO extends TeaModel {
     }
     public String getDentryUuid() {
         return this.dentryUuid;
+    }
+
+    public DentryOpenVO setDocKey(String docKey) {
+        this.docKey = docKey;
+        return this;
+    }
+    public String getDocKey() {
+        return this.docKey;
     }
 
     public DentryOpenVO setExtension(String extension) {

@@ -24,6 +24,10 @@ public class GetSupplierResponseBody extends TeaModel {
     @NameInMap("status")
     public String status;
 
+    // 用户自定义code
+    @NameInMap("userDefineCode")
+    public String userDefineCode;
+
     public static GetSupplierResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetSupplierResponseBody self = new GetSupplierResponseBody();
         return TeaModel.build(map, self);
@@ -67,6 +71,14 @@ public class GetSupplierResponseBody extends TeaModel {
     }
     public String getStatus() {
         return this.status;
+    }
+
+    public GetSupplierResponseBody setUserDefineCode(String userDefineCode) {
+        this.userDefineCode = userDefineCode;
+        return this;
+    }
+    public String getUserDefineCode() {
+        return this.userDefineCode;
     }
 
 }

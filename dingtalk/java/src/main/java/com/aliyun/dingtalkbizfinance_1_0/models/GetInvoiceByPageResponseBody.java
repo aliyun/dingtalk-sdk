@@ -4,23 +4,56 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetInvoiceByPageResponseBody extends TeaModel {
-    @NameInMap("list")
-    public java.util.List<GetInvoiceByPageResponseBodyList> list;
+    @NameInMap("errorCode")
+    public String errorCode;
+
+    @NameInMap("errorMsg")
+    public String errorMsg;
+
+    @NameInMap("result")
+    public GetInvoiceByPageResponseBodyResult result;
+
+    @NameInMap("success")
+    public Boolean success;
 
     public static GetInvoiceByPageResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetInvoiceByPageResponseBody self = new GetInvoiceByPageResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public GetInvoiceByPageResponseBody setList(java.util.List<GetInvoiceByPageResponseBodyList> list) {
-        this.list = list;
+    public GetInvoiceByPageResponseBody setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
         return this;
     }
-    public java.util.List<GetInvoiceByPageResponseBodyList> getList() {
-        return this.list;
+    public String getErrorCode() {
+        return this.errorCode;
     }
 
-    public static class GetInvoiceByPageResponseBodyListGeneralInvoiceDetailVOList extends TeaModel {
+    public GetInvoiceByPageResponseBody setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+        return this;
+    }
+    public String getErrorMsg() {
+        return this.errorMsg;
+    }
+
+    public GetInvoiceByPageResponseBody setResult(GetInvoiceByPageResponseBodyResult result) {
+        this.result = result;
+        return this;
+    }
+    public GetInvoiceByPageResponseBodyResult getResult() {
+        return this.result;
+    }
+
+    public GetInvoiceByPageResponseBody setSuccess(Boolean success) {
+        this.success = success;
+        return this;
+    }
+    public Boolean getSuccess() {
+        return this.success;
+    }
+
+    public static class GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList extends TeaModel {
         // 金额
         @NameInMap("amount")
         public String amount;
@@ -65,12 +98,12 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         @NameInMap("unitPrice")
         public String unitPrice;
 
-        public static GetInvoiceByPageResponseBodyListGeneralInvoiceDetailVOList build(java.util.Map<String, ?> map) throws Exception {
-            GetInvoiceByPageResponseBodyListGeneralInvoiceDetailVOList self = new GetInvoiceByPageResponseBodyListGeneralInvoiceDetailVOList();
+        public static GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList build(java.util.Map<String, ?> map) throws Exception {
+            GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList self = new GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList();
             return TeaModel.build(map, self);
         }
 
-        public GetInvoiceByPageResponseBodyListGeneralInvoiceDetailVOList setAmount(String amount) {
+        public GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList setAmount(String amount) {
             this.amount = amount;
             return this;
         }
@@ -78,7 +111,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.amount;
         }
 
-        public GetInvoiceByPageResponseBodyListGeneralInvoiceDetailVOList setGoodName(String goodName) {
+        public GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList setGoodName(String goodName) {
             this.goodName = goodName;
             return this;
         }
@@ -86,7 +119,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.goodName;
         }
 
-        public GetInvoiceByPageResponseBodyListGeneralInvoiceDetailVOList setQuantity(String quantity) {
+        public GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList setQuantity(String quantity) {
             this.quantity = quantity;
             return this;
         }
@@ -94,7 +127,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.quantity;
         }
 
-        public GetInvoiceByPageResponseBodyListGeneralInvoiceDetailVOList setRevenueCode(String revenueCode) {
+        public GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList setRevenueCode(String revenueCode) {
             this.revenueCode = revenueCode;
             return this;
         }
@@ -102,7 +135,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.revenueCode;
         }
 
-        public GetInvoiceByPageResponseBodyListGeneralInvoiceDetailVOList setRowNo(String rowNo) {
+        public GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList setRowNo(String rowNo) {
             this.rowNo = rowNo;
             return this;
         }
@@ -110,7 +143,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.rowNo;
         }
 
-        public GetInvoiceByPageResponseBodyListGeneralInvoiceDetailVOList setSpecification(String specification) {
+        public GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList setSpecification(String specification) {
             this.specification = specification;
             return this;
         }
@@ -118,7 +151,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.specification;
         }
 
-        public GetInvoiceByPageResponseBodyListGeneralInvoiceDetailVOList setTaxAmount(String taxAmount) {
+        public GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList setTaxAmount(String taxAmount) {
             this.taxAmount = taxAmount;
             return this;
         }
@@ -126,7 +159,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.taxAmount;
         }
 
-        public GetInvoiceByPageResponseBodyListGeneralInvoiceDetailVOList setTaxPre(String taxPre) {
+        public GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList setTaxPre(String taxPre) {
             this.taxPre = taxPre;
             return this;
         }
@@ -134,7 +167,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.taxPre;
         }
 
-        public GetInvoiceByPageResponseBodyListGeneralInvoiceDetailVOList setTaxRate(String taxRate) {
+        public GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList setTaxRate(String taxRate) {
             this.taxRate = taxRate;
             return this;
         }
@@ -142,7 +175,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.taxRate;
         }
 
-        public GetInvoiceByPageResponseBodyListGeneralInvoiceDetailVOList setUnit(String unit) {
+        public GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList setUnit(String unit) {
             this.unit = unit;
             return this;
         }
@@ -150,7 +183,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.unit;
         }
 
-        public GetInvoiceByPageResponseBodyListGeneralInvoiceDetailVOList setUnitPrice(String unitPrice) {
+        public GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList setUnitPrice(String unitPrice) {
             this.unitPrice = unitPrice;
             return this;
         }
@@ -160,7 +193,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
 
     }
 
-    public static class GetInvoiceByPageResponseBodyListSecondHandCarInvoiceDetail extends TeaModel {
+    public static class GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList extends TeaModel {
         // 金额
         @NameInMap("amount")
         public String amount;
@@ -201,12 +234,12 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         @NameInMap("vehicleType")
         public String vehicleType;
 
-        public static GetInvoiceByPageResponseBodyListSecondHandCarInvoiceDetail build(java.util.Map<String, ?> map) throws Exception {
-            GetInvoiceByPageResponseBodyListSecondHandCarInvoiceDetail self = new GetInvoiceByPageResponseBodyListSecondHandCarInvoiceDetail();
+        public static GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList build(java.util.Map<String, ?> map) throws Exception {
+            GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList self = new GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList();
             return TeaModel.build(map, self);
         }
 
-        public GetInvoiceByPageResponseBodyListSecondHandCarInvoiceDetail setAmount(String amount) {
+        public GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList setAmount(String amount) {
             this.amount = amount;
             return this;
         }
@@ -214,7 +247,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.amount;
         }
 
-        public GetInvoiceByPageResponseBodyListSecondHandCarInvoiceDetail setCardNo(String cardNo) {
+        public GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList setCardNo(String cardNo) {
             this.cardNo = cardNo;
             return this;
         }
@@ -222,7 +255,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.cardNo;
         }
 
-        public GetInvoiceByPageResponseBodyListSecondHandCarInvoiceDetail setEndDate(String endDate) {
+        public GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList setEndDate(String endDate) {
             this.endDate = endDate;
             return this;
         }
@@ -230,7 +263,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.endDate;
         }
 
-        public GetInvoiceByPageResponseBodyListSecondHandCarInvoiceDetail setGoodsName(String goodsName) {
+        public GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList setGoodsName(String goodsName) {
             this.goodsName = goodsName;
             return this;
         }
@@ -238,7 +271,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.goodsName;
         }
 
-        public GetInvoiceByPageResponseBodyListSecondHandCarInvoiceDetail setRevenueCode(String revenueCode) {
+        public GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList setRevenueCode(String revenueCode) {
             this.revenueCode = revenueCode;
             return this;
         }
@@ -246,7 +279,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.revenueCode;
         }
 
-        public GetInvoiceByPageResponseBodyListSecondHandCarInvoiceDetail setRowNo(String rowNo) {
+        public GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList setRowNo(String rowNo) {
             this.rowNo = rowNo;
             return this;
         }
@@ -254,7 +287,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.rowNo;
         }
 
-        public GetInvoiceByPageResponseBodyListSecondHandCarInvoiceDetail setStartDate(String startDate) {
+        public GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList setStartDate(String startDate) {
             this.startDate = startDate;
             return this;
         }
@@ -262,7 +295,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.startDate;
         }
 
-        public GetInvoiceByPageResponseBodyListSecondHandCarInvoiceDetail setTaxAmount(String taxAmount) {
+        public GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList setTaxAmount(String taxAmount) {
             this.taxAmount = taxAmount;
             return this;
         }
@@ -270,7 +303,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.taxAmount;
         }
 
-        public GetInvoiceByPageResponseBodyListSecondHandCarInvoiceDetail setTaxRate(String taxRate) {
+        public GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList setTaxRate(String taxRate) {
             this.taxRate = taxRate;
             return this;
         }
@@ -278,7 +311,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.taxRate;
         }
 
-        public GetInvoiceByPageResponseBodyListSecondHandCarInvoiceDetail setVehicleType(String vehicleType) {
+        public GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList setVehicleType(String vehicleType) {
             this.vehicleType = vehicleType;
             return this;
         }
@@ -288,7 +321,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
 
     }
 
-    public static class GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO extends TeaModel {
+    public static class GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList extends TeaModel {
         // 经营、拍卖单位
         @NameInMap("auctionUnit")
         public String auctionUnit;
@@ -353,12 +386,12 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         @NameInMap("vehicleType")
         public String vehicleType;
 
-        public static GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO build(java.util.Map<String, ?> map) throws Exception {
-            GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO self = new GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO();
+        public static GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList build(java.util.Map<String, ?> map) throws Exception {
+            GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList self = new GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList();
             return TeaModel.build(map, self);
         }
 
-        public GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO setAuctionUnit(String auctionUnit) {
+        public GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList setAuctionUnit(String auctionUnit) {
             this.auctionUnit = auctionUnit;
             return this;
         }
@@ -366,7 +399,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.auctionUnit;
         }
 
-        public GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO setAuctionUnitAddress(String auctionUnitAddress) {
+        public GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList setAuctionUnitAddress(String auctionUnitAddress) {
             this.auctionUnitAddress = auctionUnitAddress;
             return this;
         }
@@ -374,7 +407,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.auctionUnitAddress;
         }
 
-        public GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO setAuctionUnitBank(String auctionUnitBank) {
+        public GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList setAuctionUnitBank(String auctionUnitBank) {
             this.auctionUnitBank = auctionUnitBank;
             return this;
         }
@@ -382,7 +415,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.auctionUnitBank;
         }
 
-        public GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO setAuctionUnitTaxNo(String auctionUnitTaxNo) {
+        public GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList setAuctionUnitTaxNo(String auctionUnitTaxNo) {
             this.auctionUnitTaxNo = auctionUnitTaxNo;
             return this;
         }
@@ -390,7 +423,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.auctionUnitTaxNo;
         }
 
-        public GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO setAuctionUtilTel(String auctionUtilTel) {
+        public GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList setAuctionUtilTel(String auctionUtilTel) {
             this.auctionUtilTel = auctionUtilTel;
             return this;
         }
@@ -398,7 +431,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.auctionUtilTel;
         }
 
-        public GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO setCarModel(String carModel) {
+        public GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList setCarModel(String carModel) {
             this.carModel = carModel;
             return this;
         }
@@ -406,7 +439,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.carModel;
         }
 
-        public GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO setCardNo(String cardNo) {
+        public GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList setCardNo(String cardNo) {
             this.cardNo = cardNo;
             return this;
         }
@@ -414,7 +447,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.cardNo;
         }
 
-        public GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO setRegistration(String registration) {
+        public GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList setRegistration(String registration) {
             this.registration = registration;
             return this;
         }
@@ -422,7 +455,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.registration;
         }
 
-        public GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO setTransferVehicle(String transferVehicle) {
+        public GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList setTransferVehicle(String transferVehicle) {
             this.transferVehicle = transferVehicle;
             return this;
         }
@@ -430,7 +463,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.transferVehicle;
         }
 
-        public GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO setUsedCarAddress(String usedCarAddress) {
+        public GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList setUsedCarAddress(String usedCarAddress) {
             this.usedCarAddress = usedCarAddress;
             return this;
         }
@@ -438,7 +471,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.usedCarAddress;
         }
 
-        public GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO setUsedCarMarket(String usedCarMarket) {
+        public GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList setUsedCarMarket(String usedCarMarket) {
             this.usedCarMarket = usedCarMarket;
             return this;
         }
@@ -446,7 +479,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.usedCarMarket;
         }
 
-        public GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO setUsedCarMarketBank(String usedCarMarketBank) {
+        public GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList setUsedCarMarketBank(String usedCarMarketBank) {
             this.usedCarMarketBank = usedCarMarketBank;
             return this;
         }
@@ -454,7 +487,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.usedCarMarketBank;
         }
 
-        public GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO setUsedCarMarketPhone(String usedCarMarketPhone) {
+        public GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList setUsedCarMarketPhone(String usedCarMarketPhone) {
             this.usedCarMarketPhone = usedCarMarketPhone;
             return this;
         }
@@ -462,7 +495,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.usedCarMarketPhone;
         }
 
-        public GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO setUsedCarMarketTaxNo(String usedCarMarketTaxNo) {
+        public GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList setUsedCarMarketTaxNo(String usedCarMarketTaxNo) {
             this.usedCarMarketTaxNo = usedCarMarketTaxNo;
             return this;
         }
@@ -470,7 +503,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.usedCarMarketTaxNo;
         }
 
-        public GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO setVehicleNo(String vehicleNo) {
+        public GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList setVehicleNo(String vehicleNo) {
             this.vehicleNo = vehicleNo;
             return this;
         }
@@ -478,7 +511,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.vehicleNo;
         }
 
-        public GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO setVehicleType(String vehicleType) {
+        public GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList setVehicleType(String vehicleType) {
             this.vehicleType = vehicleType;
             return this;
         }
@@ -488,7 +521,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
 
     }
 
-    public static class GetInvoiceByPageResponseBodyListVehicleSaleDetailVO extends TeaModel {
+    public static class GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList extends TeaModel {
         // 品牌
         @NameInMap("brand")
         public String brand;
@@ -545,12 +578,12 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         @NameInMap("vehicleType")
         public String vehicleType;
 
-        public static GetInvoiceByPageResponseBodyListVehicleSaleDetailVO build(java.util.Map<String, ?> map) throws Exception {
-            GetInvoiceByPageResponseBodyListVehicleSaleDetailVO self = new GetInvoiceByPageResponseBodyListVehicleSaleDetailVO();
+        public static GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList build(java.util.Map<String, ?> map) throws Exception {
+            GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList self = new GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList();
             return TeaModel.build(map, self);
         }
 
-        public GetInvoiceByPageResponseBodyListVehicleSaleDetailVO setBrand(String brand) {
+        public GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList setBrand(String brand) {
             this.brand = brand;
             return this;
         }
@@ -558,7 +591,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.brand;
         }
 
-        public GetInvoiceByPageResponseBodyListVehicleSaleDetailVO setCertificateNo(String certificateNo) {
+        public GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList setCertificateNo(String certificateNo) {
             this.certificateNo = certificateNo;
             return this;
         }
@@ -566,7 +599,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.certificateNo;
         }
 
-        public GetInvoiceByPageResponseBodyListVehicleSaleDetailVO setEngineNo(String engineNo) {
+        public GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList setEngineNo(String engineNo) {
             this.engineNo = engineNo;
             return this;
         }
@@ -574,7 +607,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.engineNo;
         }
 
-        public GetInvoiceByPageResponseBodyListVehicleSaleDetailVO setIdCardNo(String idCardNo) {
+        public GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList setIdCardNo(String idCardNo) {
             this.idCardNo = idCardNo;
             return this;
         }
@@ -582,7 +615,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.idCardNo;
         }
 
-        public GetInvoiceByPageResponseBodyListVehicleSaleDetailVO setImportCertificateNo(String importCertificateNo) {
+        public GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList setImportCertificateNo(String importCertificateNo) {
             this.importCertificateNo = importCertificateNo;
             return this;
         }
@@ -590,7 +623,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.importCertificateNo;
         }
 
-        public GetInvoiceByPageResponseBodyListVehicleSaleDetailVO setMaxPassengers(String maxPassengers) {
+        public GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList setMaxPassengers(String maxPassengers) {
             this.maxPassengers = maxPassengers;
             return this;
         }
@@ -598,7 +631,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.maxPassengers;
         }
 
-        public GetInvoiceByPageResponseBodyListVehicleSaleDetailVO setOriginPlace(String originPlace) {
+        public GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList setOriginPlace(String originPlace) {
             this.originPlace = originPlace;
             return this;
         }
@@ -606,7 +639,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.originPlace;
         }
 
-        public GetInvoiceByPageResponseBodyListVehicleSaleDetailVO setPaymentVoucherNo(String paymentVoucherNo) {
+        public GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList setPaymentVoucherNo(String paymentVoucherNo) {
             this.paymentVoucherNo = paymentVoucherNo;
             return this;
         }
@@ -614,7 +647,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.paymentVoucherNo;
         }
 
-        public GetInvoiceByPageResponseBodyListVehicleSaleDetailVO setTaxAuthorityName(String taxAuthorityName) {
+        public GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList setTaxAuthorityName(String taxAuthorityName) {
             this.taxAuthorityName = taxAuthorityName;
             return this;
         }
@@ -622,7 +655,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.taxAuthorityName;
         }
 
-        public GetInvoiceByPageResponseBodyListVehicleSaleDetailVO setTaxAuthorityNo(String taxAuthorityNo) {
+        public GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList setTaxAuthorityNo(String taxAuthorityNo) {
             this.taxAuthorityNo = taxAuthorityNo;
             return this;
         }
@@ -630,7 +663,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.taxAuthorityNo;
         }
 
-        public GetInvoiceByPageResponseBodyListVehicleSaleDetailVO setTaxRate(String taxRate) {
+        public GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList setTaxRate(String taxRate) {
             this.taxRate = taxRate;
             return this;
         }
@@ -638,7 +671,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.taxRate;
         }
 
-        public GetInvoiceByPageResponseBodyListVehicleSaleDetailVO setTonnage(String tonnage) {
+        public GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList setTonnage(String tonnage) {
             this.tonnage = tonnage;
             return this;
         }
@@ -646,7 +679,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.tonnage;
         }
 
-        public GetInvoiceByPageResponseBodyListVehicleSaleDetailVO setVehicleNo(String vehicleNo) {
+        public GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList setVehicleNo(String vehicleNo) {
             this.vehicleNo = vehicleNo;
             return this;
         }
@@ -654,7 +687,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.vehicleNo;
         }
 
-        public GetInvoiceByPageResponseBodyListVehicleSaleDetailVO setVehicleType(String vehicleType) {
+        public GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList setVehicleType(String vehicleType) {
             this.vehicleType = vehicleType;
             return this;
         }
@@ -664,7 +697,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
 
     }
 
-    public static class GetInvoiceByPageResponseBodyList extends TeaModel {
+    public static class GetInvoiceByPageResponseBodyResultList extends TeaModel {
         // 账期时间
         @NameInMap("accountPeriod")
         public String accountPeriod;
@@ -703,7 +736,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
 
         // 常规发票明细
         @NameInMap("generalInvoiceDetailVOList")
-        public java.util.List<GetInvoiceByPageResponseBodyListGeneralInvoiceDetailVOList> generalInvoiceDetailVOList;
+        public java.util.List<GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList> generalInvoiceDetailVOList;
 
         // 发票代码
         @NameInMap("invoiceCode")
@@ -761,8 +794,8 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         @NameInMap("remark")
         public String remark;
 
-        @NameInMap("secondHandCarInvoiceDetail")
-        public java.util.List<GetInvoiceByPageResponseBodyListSecondHandCarInvoiceDetail> secondHandCarInvoiceDetail;
+        @NameInMap("secondHandCarInvoiceDetailList")
+        public java.util.List<GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList> secondHandCarInvoiceDetailList;
 
         // 销方地址
         @NameInMap("sellerAddress")
@@ -796,11 +829,11 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         @NameInMap("taxAmount")
         public String taxAmount;
 
-        @NameInMap("usedVehicleSaleDetailVO")
-        public GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO usedVehicleSaleDetailVO;
+        @NameInMap("usedVehicleSaleDetailVOList")
+        public java.util.List<GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList> usedVehicleSaleDetailVOList;
 
-        @NameInMap("vehicleSaleDetailVO")
-        public GetInvoiceByPageResponseBodyListVehicleSaleDetailVO vehicleSaleDetailVO;
+        @NameInMap("vehicleSaleDetailVOList")
+        public java.util.List<GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList> vehicleSaleDetailVOList;
 
         // 发票查验状态
         @NameInMap("verifyStatus")
@@ -814,12 +847,12 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         @NameInMap("voucherStatus")
         public String voucherStatus;
 
-        public static GetInvoiceByPageResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
-            GetInvoiceByPageResponseBodyList self = new GetInvoiceByPageResponseBodyList();
+        public static GetInvoiceByPageResponseBodyResultList build(java.util.Map<String, ?> map) throws Exception {
+            GetInvoiceByPageResponseBodyResultList self = new GetInvoiceByPageResponseBodyResultList();
             return TeaModel.build(map, self);
         }
 
-        public GetInvoiceByPageResponseBodyList setAccountPeriod(String accountPeriod) {
+        public GetInvoiceByPageResponseBodyResultList setAccountPeriod(String accountPeriod) {
             this.accountPeriod = accountPeriod;
             return this;
         }
@@ -827,7 +860,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.accountPeriod;
         }
 
-        public GetInvoiceByPageResponseBodyList setAmount(String amount) {
+        public GetInvoiceByPageResponseBodyResultList setAmount(String amount) {
             this.amount = amount;
             return this;
         }
@@ -835,7 +868,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.amount;
         }
 
-        public GetInvoiceByPageResponseBodyList setAmountWithTax(String amountWithTax) {
+        public GetInvoiceByPageResponseBodyResultList setAmountWithTax(String amountWithTax) {
             this.amountWithTax = amountWithTax;
             return this;
         }
@@ -843,7 +876,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.amountWithTax;
         }
 
-        public GetInvoiceByPageResponseBodyList setCheckCode(String checkCode) {
+        public GetInvoiceByPageResponseBodyResultList setCheckCode(String checkCode) {
             this.checkCode = checkCode;
             return this;
         }
@@ -851,7 +884,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.checkCode;
         }
 
-        public GetInvoiceByPageResponseBodyList setCheckTime(String checkTime) {
+        public GetInvoiceByPageResponseBodyResultList setCheckTime(String checkTime) {
             this.checkTime = checkTime;
             return this;
         }
@@ -859,7 +892,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.checkTime;
         }
 
-        public GetInvoiceByPageResponseBodyList setDrewDate(String drewDate) {
+        public GetInvoiceByPageResponseBodyResultList setDrewDate(String drewDate) {
             this.drewDate = drewDate;
             return this;
         }
@@ -867,7 +900,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.drewDate;
         }
 
-        public GetInvoiceByPageResponseBodyList setElectronicUrl(String electronicUrl) {
+        public GetInvoiceByPageResponseBodyResultList setElectronicUrl(String electronicUrl) {
             this.electronicUrl = electronicUrl;
             return this;
         }
@@ -875,7 +908,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.electronicUrl;
         }
 
-        public GetInvoiceByPageResponseBodyList setFinanceType(String financeType) {
+        public GetInvoiceByPageResponseBodyResultList setFinanceType(String financeType) {
             this.financeType = financeType;
             return this;
         }
@@ -883,7 +916,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.financeType;
         }
 
-        public GetInvoiceByPageResponseBodyList setFundType(String fundType) {
+        public GetInvoiceByPageResponseBodyResultList setFundType(String fundType) {
             this.fundType = fundType;
             return this;
         }
@@ -891,15 +924,15 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.fundType;
         }
 
-        public GetInvoiceByPageResponseBodyList setGeneralInvoiceDetailVOList(java.util.List<GetInvoiceByPageResponseBodyListGeneralInvoiceDetailVOList> generalInvoiceDetailVOList) {
+        public GetInvoiceByPageResponseBodyResultList setGeneralInvoiceDetailVOList(java.util.List<GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList> generalInvoiceDetailVOList) {
             this.generalInvoiceDetailVOList = generalInvoiceDetailVOList;
             return this;
         }
-        public java.util.List<GetInvoiceByPageResponseBodyListGeneralInvoiceDetailVOList> getGeneralInvoiceDetailVOList() {
+        public java.util.List<GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList> getGeneralInvoiceDetailVOList() {
             return this.generalInvoiceDetailVOList;
         }
 
-        public GetInvoiceByPageResponseBodyList setInvoiceCode(String invoiceCode) {
+        public GetInvoiceByPageResponseBodyResultList setInvoiceCode(String invoiceCode) {
             this.invoiceCode = invoiceCode;
             return this;
         }
@@ -907,7 +940,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.invoiceCode;
         }
 
-        public GetInvoiceByPageResponseBodyList setInvoiceNo(String invoiceNo) {
+        public GetInvoiceByPageResponseBodyResultList setInvoiceNo(String invoiceNo) {
             this.invoiceNo = invoiceNo;
             return this;
         }
@@ -915,7 +948,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.invoiceNo;
         }
 
-        public GetInvoiceByPageResponseBodyList setInvoiceType(String invoiceType) {
+        public GetInvoiceByPageResponseBodyResultList setInvoiceType(String invoiceType) {
             this.invoiceType = invoiceType;
             return this;
         }
@@ -923,7 +956,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.invoiceType;
         }
 
-        public GetInvoiceByPageResponseBodyList setMachineCode(String machineCode) {
+        public GetInvoiceByPageResponseBodyResultList setMachineCode(String machineCode) {
             this.machineCode = machineCode;
             return this;
         }
@@ -931,7 +964,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.machineCode;
         }
 
-        public GetInvoiceByPageResponseBodyList setOilFlag(String oilFlag) {
+        public GetInvoiceByPageResponseBodyResultList setOilFlag(String oilFlag) {
             this.oilFlag = oilFlag;
             return this;
         }
@@ -939,7 +972,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.oilFlag;
         }
 
-        public GetInvoiceByPageResponseBodyList setPayee(String payee) {
+        public GetInvoiceByPageResponseBodyResultList setPayee(String payee) {
             this.payee = payee;
             return this;
         }
@@ -947,7 +980,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.payee;
         }
 
-        public GetInvoiceByPageResponseBodyList setProcessInstCode(String processInstCode) {
+        public GetInvoiceByPageResponseBodyResultList setProcessInstCode(String processInstCode) {
             this.processInstCode = processInstCode;
             return this;
         }
@@ -955,7 +988,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.processInstCode;
         }
 
-        public GetInvoiceByPageResponseBodyList setProcessInstType(String processInstType) {
+        public GetInvoiceByPageResponseBodyResultList setProcessInstType(String processInstType) {
             this.processInstType = processInstType;
             return this;
         }
@@ -963,7 +996,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.processInstType;
         }
 
-        public GetInvoiceByPageResponseBodyList setPurchaserAddress(String purchaserAddress) {
+        public GetInvoiceByPageResponseBodyResultList setPurchaserAddress(String purchaserAddress) {
             this.purchaserAddress = purchaserAddress;
             return this;
         }
@@ -971,7 +1004,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.purchaserAddress;
         }
 
-        public GetInvoiceByPageResponseBodyList setPurchaserBankNameAccount(String purchaserBankNameAccount) {
+        public GetInvoiceByPageResponseBodyResultList setPurchaserBankNameAccount(String purchaserBankNameAccount) {
             this.purchaserBankNameAccount = purchaserBankNameAccount;
             return this;
         }
@@ -979,7 +1012,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.purchaserBankNameAccount;
         }
 
-        public GetInvoiceByPageResponseBodyList setPurchaserName(String purchaserName) {
+        public GetInvoiceByPageResponseBodyResultList setPurchaserName(String purchaserName) {
             this.purchaserName = purchaserName;
             return this;
         }
@@ -987,7 +1020,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.purchaserName;
         }
 
-        public GetInvoiceByPageResponseBodyList setPurchaserTaxNo(String purchaserTaxNo) {
+        public GetInvoiceByPageResponseBodyResultList setPurchaserTaxNo(String purchaserTaxNo) {
             this.purchaserTaxNo = purchaserTaxNo;
             return this;
         }
@@ -995,7 +1028,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.purchaserTaxNo;
         }
 
-        public GetInvoiceByPageResponseBodyList setPurchaserTel(String purchaserTel) {
+        public GetInvoiceByPageResponseBodyResultList setPurchaserTel(String purchaserTel) {
             this.purchaserTel = purchaserTel;
             return this;
         }
@@ -1003,7 +1036,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.purchaserTel;
         }
 
-        public GetInvoiceByPageResponseBodyList setRemark(String remark) {
+        public GetInvoiceByPageResponseBodyResultList setRemark(String remark) {
             this.remark = remark;
             return this;
         }
@@ -1011,15 +1044,15 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.remark;
         }
 
-        public GetInvoiceByPageResponseBodyList setSecondHandCarInvoiceDetail(java.util.List<GetInvoiceByPageResponseBodyListSecondHandCarInvoiceDetail> secondHandCarInvoiceDetail) {
-            this.secondHandCarInvoiceDetail = secondHandCarInvoiceDetail;
+        public GetInvoiceByPageResponseBodyResultList setSecondHandCarInvoiceDetailList(java.util.List<GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList> secondHandCarInvoiceDetailList) {
+            this.secondHandCarInvoiceDetailList = secondHandCarInvoiceDetailList;
             return this;
         }
-        public java.util.List<GetInvoiceByPageResponseBodyListSecondHandCarInvoiceDetail> getSecondHandCarInvoiceDetail() {
-            return this.secondHandCarInvoiceDetail;
+        public java.util.List<GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList> getSecondHandCarInvoiceDetailList() {
+            return this.secondHandCarInvoiceDetailList;
         }
 
-        public GetInvoiceByPageResponseBodyList setSellerAddress(String sellerAddress) {
+        public GetInvoiceByPageResponseBodyResultList setSellerAddress(String sellerAddress) {
             this.sellerAddress = sellerAddress;
             return this;
         }
@@ -1027,7 +1060,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.sellerAddress;
         }
 
-        public GetInvoiceByPageResponseBodyList setSellerBankNameAccount(String sellerBankNameAccount) {
+        public GetInvoiceByPageResponseBodyResultList setSellerBankNameAccount(String sellerBankNameAccount) {
             this.sellerBankNameAccount = sellerBankNameAccount;
             return this;
         }
@@ -1035,7 +1068,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.sellerBankNameAccount;
         }
 
-        public GetInvoiceByPageResponseBodyList setSellerName(String sellerName) {
+        public GetInvoiceByPageResponseBodyResultList setSellerName(String sellerName) {
             this.sellerName = sellerName;
             return this;
         }
@@ -1043,7 +1076,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.sellerName;
         }
 
-        public GetInvoiceByPageResponseBodyList setSellerTaxNo(String sellerTaxNo) {
+        public GetInvoiceByPageResponseBodyResultList setSellerTaxNo(String sellerTaxNo) {
             this.sellerTaxNo = sellerTaxNo;
             return this;
         }
@@ -1051,7 +1084,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.sellerTaxNo;
         }
 
-        public GetInvoiceByPageResponseBodyList setSellerTel(String sellerTel) {
+        public GetInvoiceByPageResponseBodyResultList setSellerTel(String sellerTel) {
             this.sellerTel = sellerTel;
             return this;
         }
@@ -1059,7 +1092,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.sellerTel;
         }
 
-        public GetInvoiceByPageResponseBodyList setStatus(String status) {
+        public GetInvoiceByPageResponseBodyResultList setStatus(String status) {
             this.status = status;
             return this;
         }
@@ -1067,7 +1100,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.status;
         }
 
-        public GetInvoiceByPageResponseBodyList setSupplySign(String supplySign) {
+        public GetInvoiceByPageResponseBodyResultList setSupplySign(String supplySign) {
             this.supplySign = supplySign;
             return this;
         }
@@ -1075,7 +1108,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.supplySign;
         }
 
-        public GetInvoiceByPageResponseBodyList setTaxAmount(String taxAmount) {
+        public GetInvoiceByPageResponseBodyResultList setTaxAmount(String taxAmount) {
             this.taxAmount = taxAmount;
             return this;
         }
@@ -1083,23 +1116,23 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.taxAmount;
         }
 
-        public GetInvoiceByPageResponseBodyList setUsedVehicleSaleDetailVO(GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO usedVehicleSaleDetailVO) {
-            this.usedVehicleSaleDetailVO = usedVehicleSaleDetailVO;
+        public GetInvoiceByPageResponseBodyResultList setUsedVehicleSaleDetailVOList(java.util.List<GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList> usedVehicleSaleDetailVOList) {
+            this.usedVehicleSaleDetailVOList = usedVehicleSaleDetailVOList;
             return this;
         }
-        public GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO getUsedVehicleSaleDetailVO() {
-            return this.usedVehicleSaleDetailVO;
+        public java.util.List<GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList> getUsedVehicleSaleDetailVOList() {
+            return this.usedVehicleSaleDetailVOList;
         }
 
-        public GetInvoiceByPageResponseBodyList setVehicleSaleDetailVO(GetInvoiceByPageResponseBodyListVehicleSaleDetailVO vehicleSaleDetailVO) {
-            this.vehicleSaleDetailVO = vehicleSaleDetailVO;
+        public GetInvoiceByPageResponseBodyResultList setVehicleSaleDetailVOList(java.util.List<GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList> vehicleSaleDetailVOList) {
+            this.vehicleSaleDetailVOList = vehicleSaleDetailVOList;
             return this;
         }
-        public GetInvoiceByPageResponseBodyListVehicleSaleDetailVO getVehicleSaleDetailVO() {
-            return this.vehicleSaleDetailVO;
+        public java.util.List<GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList> getVehicleSaleDetailVOList() {
+            return this.vehicleSaleDetailVOList;
         }
 
-        public GetInvoiceByPageResponseBodyList setVerifyStatus(String verifyStatus) {
+        public GetInvoiceByPageResponseBodyResultList setVerifyStatus(String verifyStatus) {
             this.verifyStatus = verifyStatus;
             return this;
         }
@@ -1107,7 +1140,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.verifyStatus;
         }
 
-        public GetInvoiceByPageResponseBodyList setVoucherCode(String voucherCode) {
+        public GetInvoiceByPageResponseBodyResultList setVoucherCode(String voucherCode) {
             this.voucherCode = voucherCode;
             return this;
         }
@@ -1115,12 +1148,64 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.voucherCode;
         }
 
-        public GetInvoiceByPageResponseBodyList setVoucherStatus(String voucherStatus) {
+        public GetInvoiceByPageResponseBodyResultList setVoucherStatus(String voucherStatus) {
             this.voucherStatus = voucherStatus;
             return this;
         }
         public String getVoucherStatus() {
             return this.voucherStatus;
+        }
+
+    }
+
+    public static class GetInvoiceByPageResponseBodyResult extends TeaModel {
+        @NameInMap("hasMore")
+        public String hasMore;
+
+        @NameInMap("list")
+        public java.util.List<GetInvoiceByPageResponseBodyResultList> list;
+
+        @NameInMap("nextCursor")
+        public Long nextCursor;
+
+        @NameInMap("totalCount")
+        public Long totalCount;
+
+        public static GetInvoiceByPageResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
+            GetInvoiceByPageResponseBodyResult self = new GetInvoiceByPageResponseBodyResult();
+            return TeaModel.build(map, self);
+        }
+
+        public GetInvoiceByPageResponseBodyResult setHasMore(String hasMore) {
+            this.hasMore = hasMore;
+            return this;
+        }
+        public String getHasMore() {
+            return this.hasMore;
+        }
+
+        public GetInvoiceByPageResponseBodyResult setList(java.util.List<GetInvoiceByPageResponseBodyResultList> list) {
+            this.list = list;
+            return this;
+        }
+        public java.util.List<GetInvoiceByPageResponseBodyResultList> getList() {
+            return this.list;
+        }
+
+        public GetInvoiceByPageResponseBodyResult setNextCursor(Long nextCursor) {
+            this.nextCursor = nextCursor;
+            return this;
+        }
+        public Long getNextCursor() {
+            return this.nextCursor;
+        }
+
+        public GetInvoiceByPageResponseBodyResult setTotalCount(Long totalCount) {
+            this.totalCount = totalCount;
+            return this;
+        }
+        public Long getTotalCount() {
+            return this.totalCount;
         }
 
     }

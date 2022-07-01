@@ -24,7 +24,7 @@ public class QueryUserCredentialsResponseBody extends TeaModel {
     public static class QueryUserCredentialsResponseBodyContentCredentialList extends TeaModel {
         // 证书名称
         @NameInMap("credentialName")
-        public Integer credentialName;
+        public String credentialName;
 
         // 证书类型
         @NameInMap("credentialType")
@@ -39,11 +39,11 @@ public class QueryUserCredentialsResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public QueryUserCredentialsResponseBodyContentCredentialList setCredentialName(Integer credentialName) {
+        public QueryUserCredentialsResponseBodyContentCredentialList setCredentialName(String credentialName) {
             this.credentialName = credentialName;
             return this;
         }
-        public Integer getCredentialName() {
+        public String getCredentialName() {
             return this.credentialName;
         }
 
@@ -66,7 +66,7 @@ public class QueryUserCredentialsResponseBody extends TeaModel {
     }
 
     public static class QueryUserCredentialsResponseBodyContent extends TeaModel {
-        // 证书
+        // 证书列表
         @NameInMap("credentialList")
         public java.util.List<QueryUserCredentialsResponseBodyContentCredentialList> credentialList;
 

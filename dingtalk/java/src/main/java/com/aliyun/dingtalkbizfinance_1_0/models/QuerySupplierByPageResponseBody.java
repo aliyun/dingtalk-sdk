@@ -54,6 +54,10 @@ public class QuerySupplierByPageResponseBody extends TeaModel {
         @NameInMap("status")
         public String status;
 
+        // 用户自定义code
+        @NameInMap("userDefineCode")
+        public String userDefineCode;
+
         public static QuerySupplierByPageResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
             QuerySupplierByPageResponseBodyList self = new QuerySupplierByPageResponseBodyList();
             return TeaModel.build(map, self);
@@ -97,6 +101,14 @@ public class QuerySupplierByPageResponseBody extends TeaModel {
         }
         public String getStatus() {
             return this.status;
+        }
+
+        public QuerySupplierByPageResponseBodyList setUserDefineCode(String userDefineCode) {
+            this.userDefineCode = userDefineCode;
+            return this;
+        }
+        public String getUserDefineCode() {
+            return this.userDefineCode;
         }
 
     }

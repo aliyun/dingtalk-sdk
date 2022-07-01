@@ -241,6 +241,10 @@ public class GetProcessConfigResponseBody extends TeaModel {
         @NameInMap("abstractGenRule")
         public java.util.List<String> abstractGenRule;
 
+        // 表单节点权限
+        @NameInMap("activityAuth")
+        public String activityAuth;
+
         // 是否允许撤销
         @NameInMap("allowRevoke")
         public Boolean allowRevoke;
@@ -316,6 +320,14 @@ public class GetProcessConfigResponseBody extends TeaModel {
         }
         public java.util.List<String> getAbstractGenRule() {
             return this.abstractGenRule;
+        }
+
+        public GetProcessConfigResponseBodyResult setActivityAuth(String activityAuth) {
+            this.activityAuth = activityAuth;
+            return this;
+        }
+        public String getActivityAuth() {
+            return this.activityAuth;
         }
 
         public GetProcessConfigResponseBodyResult setAllowRevoke(Boolean allowRevoke) {

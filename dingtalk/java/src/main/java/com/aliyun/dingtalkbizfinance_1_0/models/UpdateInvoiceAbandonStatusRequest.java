@@ -69,7 +69,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         return this.status;
     }
 
-    public static class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVO extends TeaModel {
+    public static class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList extends TeaModel {
         // 金额
         @NameInMap("amount")
         public String amount;
@@ -114,12 +114,12 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("unitPrice")
         public String unitPrice;
 
-        public static UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVO build(java.util.Map<String, ?> map) throws Exception {
-            UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVO self = new UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVO();
+        public static UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList build(java.util.Map<String, ?> map) throws Exception {
+            UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList self = new UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList();
             return TeaModel.build(map, self);
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVO setAmount(String amount) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList setAmount(String amount) {
             this.amount = amount;
             return this;
         }
@@ -127,7 +127,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.amount;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVO setGoodName(String goodName) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList setGoodName(String goodName) {
             this.goodName = goodName;
             return this;
         }
@@ -135,7 +135,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.goodName;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVO setQuantity(String quantity) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList setQuantity(String quantity) {
             this.quantity = quantity;
             return this;
         }
@@ -143,7 +143,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.quantity;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVO setRevenueCode(String revenueCode) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList setRevenueCode(String revenueCode) {
             this.revenueCode = revenueCode;
             return this;
         }
@@ -151,7 +151,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.revenueCode;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVO setRowNo(String rowNo) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList setRowNo(String rowNo) {
             this.rowNo = rowNo;
             return this;
         }
@@ -159,7 +159,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.rowNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVO setSpecification(String specification) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList setSpecification(String specification) {
             this.specification = specification;
             return this;
         }
@@ -167,7 +167,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.specification;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVO setTaxAmount(String taxAmount) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList setTaxAmount(String taxAmount) {
             this.taxAmount = taxAmount;
             return this;
         }
@@ -175,7 +175,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.taxAmount;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVO setTaxPre(String taxPre) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList setTaxPre(String taxPre) {
             this.taxPre = taxPre;
             return this;
         }
@@ -183,7 +183,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.taxPre;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVO setTaxRate(String taxRate) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList setTaxRate(String taxRate) {
             this.taxRate = taxRate;
             return this;
         }
@@ -191,7 +191,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.taxRate;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVO setUnit(String unit) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList setUnit(String unit) {
             this.unit = unit;
             return this;
         }
@@ -199,7 +199,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.unit;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVO setUnitPrice(String unitPrice) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList setUnitPrice(String unitPrice) {
             this.unitPrice = unitPrice;
             return this;
         }
@@ -209,7 +209,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
 
     }
 
-    public static class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetail extends TeaModel {
+    public static class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList extends TeaModel {
         // 金额
         @NameInMap("amount")
         public String amount;
@@ -250,12 +250,12 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("vehicleType")
         public String vehicleType;
 
-        public static UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetail build(java.util.Map<String, ?> map) throws Exception {
-            UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetail self = new UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetail();
+        public static UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList build(java.util.Map<String, ?> map) throws Exception {
+            UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList self = new UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList();
             return TeaModel.build(map, self);
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetail setAmount(String amount) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList setAmount(String amount) {
             this.amount = amount;
             return this;
         }
@@ -263,7 +263,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.amount;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetail setCardNo(String cardNo) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList setCardNo(String cardNo) {
             this.cardNo = cardNo;
             return this;
         }
@@ -271,7 +271,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.cardNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetail setEndDate(String endDate) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList setEndDate(String endDate) {
             this.endDate = endDate;
             return this;
         }
@@ -279,7 +279,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.endDate;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetail setGoodsName(String goodsName) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList setGoodsName(String goodsName) {
             this.goodsName = goodsName;
             return this;
         }
@@ -287,7 +287,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.goodsName;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetail setRevenueCode(String revenueCode) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList setRevenueCode(String revenueCode) {
             this.revenueCode = revenueCode;
             return this;
         }
@@ -295,7 +295,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.revenueCode;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetail setRowNo(String rowNo) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList setRowNo(String rowNo) {
             this.rowNo = rowNo;
             return this;
         }
@@ -303,7 +303,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.rowNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetail setStartDate(String startDate) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList setStartDate(String startDate) {
             this.startDate = startDate;
             return this;
         }
@@ -311,7 +311,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.startDate;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetail setTaxAmount(String taxAmount) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList setTaxAmount(String taxAmount) {
             this.taxAmount = taxAmount;
             return this;
         }
@@ -319,7 +319,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.taxAmount;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetail setTaxRate(String taxRate) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList setTaxRate(String taxRate) {
             this.taxRate = taxRate;
             return this;
         }
@@ -327,7 +327,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.taxRate;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetail setVehicleType(String vehicleType) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList setVehicleType(String vehicleType) {
             this.vehicleType = vehicleType;
             return this;
         }
@@ -337,7 +337,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
 
     }
 
-    public static class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO extends TeaModel {
+    public static class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList extends TeaModel {
         // 经营、拍卖单位
         @NameInMap("auctionUnit")
         public String auctionUnit;
@@ -402,12 +402,12 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("vehicleType")
         public String vehicleType;
 
-        public static UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO build(java.util.Map<String, ?> map) throws Exception {
-            UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO self = new UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO();
+        public static UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList build(java.util.Map<String, ?> map) throws Exception {
+            UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList self = new UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList();
             return TeaModel.build(map, self);
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO setAuctionUnit(String auctionUnit) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList setAuctionUnit(String auctionUnit) {
             this.auctionUnit = auctionUnit;
             return this;
         }
@@ -415,7 +415,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.auctionUnit;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO setAuctionUnitAddress(String auctionUnitAddress) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList setAuctionUnitAddress(String auctionUnitAddress) {
             this.auctionUnitAddress = auctionUnitAddress;
             return this;
         }
@@ -423,7 +423,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.auctionUnitAddress;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO setAuctionUnitBank(String auctionUnitBank) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList setAuctionUnitBank(String auctionUnitBank) {
             this.auctionUnitBank = auctionUnitBank;
             return this;
         }
@@ -431,7 +431,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.auctionUnitBank;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO setAuctionUnitTaxNo(String auctionUnitTaxNo) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList setAuctionUnitTaxNo(String auctionUnitTaxNo) {
             this.auctionUnitTaxNo = auctionUnitTaxNo;
             return this;
         }
@@ -439,7 +439,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.auctionUnitTaxNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO setAuctionUtilTel(String auctionUtilTel) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList setAuctionUtilTel(String auctionUtilTel) {
             this.auctionUtilTel = auctionUtilTel;
             return this;
         }
@@ -447,7 +447,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.auctionUtilTel;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO setCarModel(String carModel) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList setCarModel(String carModel) {
             this.carModel = carModel;
             return this;
         }
@@ -455,7 +455,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.carModel;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO setCardNo(String cardNo) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList setCardNo(String cardNo) {
             this.cardNo = cardNo;
             return this;
         }
@@ -463,7 +463,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.cardNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO setRegistration(String registration) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList setRegistration(String registration) {
             this.registration = registration;
             return this;
         }
@@ -471,7 +471,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.registration;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO setTransferVehicle(String transferVehicle) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList setTransferVehicle(String transferVehicle) {
             this.transferVehicle = transferVehicle;
             return this;
         }
@@ -479,7 +479,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.transferVehicle;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO setUsedCarAddress(String usedCarAddress) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList setUsedCarAddress(String usedCarAddress) {
             this.usedCarAddress = usedCarAddress;
             return this;
         }
@@ -487,7 +487,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.usedCarAddress;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO setUsedCarMarket(String usedCarMarket) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList setUsedCarMarket(String usedCarMarket) {
             this.usedCarMarket = usedCarMarket;
             return this;
         }
@@ -495,7 +495,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.usedCarMarket;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO setUsedCarMarketBank(String usedCarMarketBank) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList setUsedCarMarketBank(String usedCarMarketBank) {
             this.usedCarMarketBank = usedCarMarketBank;
             return this;
         }
@@ -503,7 +503,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.usedCarMarketBank;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO setUsedCarMarketPhone(String usedCarMarketPhone) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList setUsedCarMarketPhone(String usedCarMarketPhone) {
             this.usedCarMarketPhone = usedCarMarketPhone;
             return this;
         }
@@ -511,7 +511,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.usedCarMarketPhone;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO setUsedCarMarketTaxNo(String usedCarMarketTaxNo) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList setUsedCarMarketTaxNo(String usedCarMarketTaxNo) {
             this.usedCarMarketTaxNo = usedCarMarketTaxNo;
             return this;
         }
@@ -519,7 +519,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.usedCarMarketTaxNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO setVehicleNo(String vehicleNo) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList setVehicleNo(String vehicleNo) {
             this.vehicleNo = vehicleNo;
             return this;
         }
@@ -527,7 +527,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.vehicleNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO setVehicleType(String vehicleType) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList setVehicleType(String vehicleType) {
             this.vehicleType = vehicleType;
             return this;
         }
@@ -537,7 +537,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
 
     }
 
-    public static class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO extends TeaModel {
+    public static class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList extends TeaModel {
         // 品牌
         @NameInMap("brand")
         public String brand;
@@ -594,12 +594,12 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("vehicleType")
         public String vehicleType;
 
-        public static UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO build(java.util.Map<String, ?> map) throws Exception {
-            UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO self = new UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO();
+        public static UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList build(java.util.Map<String, ?> map) throws Exception {
+            UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList self = new UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList();
             return TeaModel.build(map, self);
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO setBrand(String brand) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList setBrand(String brand) {
             this.brand = brand;
             return this;
         }
@@ -607,7 +607,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.brand;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO setCertificateNo(String certificateNo) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList setCertificateNo(String certificateNo) {
             this.certificateNo = certificateNo;
             return this;
         }
@@ -615,7 +615,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.certificateNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO setEngineNo(String engineNo) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList setEngineNo(String engineNo) {
             this.engineNo = engineNo;
             return this;
         }
@@ -623,7 +623,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.engineNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO setIdCardNo(String idCardNo) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList setIdCardNo(String idCardNo) {
             this.idCardNo = idCardNo;
             return this;
         }
@@ -631,7 +631,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.idCardNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO setImportCertificateNo(String importCertificateNo) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList setImportCertificateNo(String importCertificateNo) {
             this.importCertificateNo = importCertificateNo;
             return this;
         }
@@ -639,7 +639,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.importCertificateNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO setMaxPassengers(String maxPassengers) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList setMaxPassengers(String maxPassengers) {
             this.maxPassengers = maxPassengers;
             return this;
         }
@@ -647,7 +647,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.maxPassengers;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO setOriginPlace(String originPlace) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList setOriginPlace(String originPlace) {
             this.originPlace = originPlace;
             return this;
         }
@@ -655,7 +655,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.originPlace;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO setPaymentVoucherNo(String paymentVoucherNo) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList setPaymentVoucherNo(String paymentVoucherNo) {
             this.paymentVoucherNo = paymentVoucherNo;
             return this;
         }
@@ -663,7 +663,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.paymentVoucherNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO setTaxAuthorityName(String taxAuthorityName) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList setTaxAuthorityName(String taxAuthorityName) {
             this.taxAuthorityName = taxAuthorityName;
             return this;
         }
@@ -671,7 +671,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.taxAuthorityName;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO setTaxAuthorityNo(String taxAuthorityNo) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList setTaxAuthorityNo(String taxAuthorityNo) {
             this.taxAuthorityNo = taxAuthorityNo;
             return this;
         }
@@ -679,7 +679,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.taxAuthorityNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO setTaxRate(String taxRate) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList setTaxRate(String taxRate) {
             this.taxRate = taxRate;
             return this;
         }
@@ -687,7 +687,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.taxRate;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO setTonnage(String tonnage) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList setTonnage(String tonnage) {
             this.tonnage = tonnage;
             return this;
         }
@@ -695,7 +695,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.tonnage;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO setVehicleNo(String vehicleNo) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList setVehicleNo(String vehicleNo) {
             this.vehicleNo = vehicleNo;
             return this;
         }
@@ -703,7 +703,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.vehicleNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO setVehicleType(String vehicleType) {
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList setVehicleType(String vehicleType) {
             this.vehicleType = vehicleType;
             return this;
         }
@@ -751,8 +751,8 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         public String fundType;
 
         // 常规发票明细
-        @NameInMap("generalInvoiceDetailVO")
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVO generalInvoiceDetailVO;
+        @NameInMap("generalInvoiceDetailVOList")
+        public java.util.List<UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList> generalInvoiceDetailVOList;
 
         // 发票代码
         @NameInMap("invoiceCode")
@@ -810,8 +810,8 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("remark")
         public String remark;
 
-        @NameInMap("secondHandCarInvoiceDetail")
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetail secondHandCarInvoiceDetail;
+        @NameInMap("secondHandCarInvoiceDetailList")
+        public java.util.List<UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList> secondHandCarInvoiceDetailList;
 
         // 销方地址
         @NameInMap("sellerAddress")
@@ -845,11 +845,11 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("taxAmount")
         public String taxAmount;
 
-        @NameInMap("usedVehicleSaleDetailVO")
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO usedVehicleSaleDetailVO;
+        @NameInMap("usedVehicleSaleDetailVOList")
+        public java.util.List<UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList> usedVehicleSaleDetailVOList;
 
-        @NameInMap("vehicleSaleDetailVO")
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO vehicleSaleDetailVO;
+        @NameInMap("vehicleSaleDetailVOList")
+        public java.util.List<UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList> vehicleSaleDetailVOList;
 
         // 发票查验状态
         @NameInMap("verifyStatus")
@@ -940,12 +940,12 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.fundType;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO setGeneralInvoiceDetailVO(UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVO generalInvoiceDetailVO) {
-            this.generalInvoiceDetailVO = generalInvoiceDetailVO;
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO setGeneralInvoiceDetailVOList(java.util.List<UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList> generalInvoiceDetailVOList) {
+            this.generalInvoiceDetailVOList = generalInvoiceDetailVOList;
             return this;
         }
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVO getGeneralInvoiceDetailVO() {
-            return this.generalInvoiceDetailVO;
+        public java.util.List<UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList> getGeneralInvoiceDetailVOList() {
+            return this.generalInvoiceDetailVOList;
         }
 
         public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO setInvoiceCode(String invoiceCode) {
@@ -1060,12 +1060,12 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.remark;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO setSecondHandCarInvoiceDetail(UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetail secondHandCarInvoiceDetail) {
-            this.secondHandCarInvoiceDetail = secondHandCarInvoiceDetail;
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO setSecondHandCarInvoiceDetailList(java.util.List<UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList> secondHandCarInvoiceDetailList) {
+            this.secondHandCarInvoiceDetailList = secondHandCarInvoiceDetailList;
             return this;
         }
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetail getSecondHandCarInvoiceDetail() {
-            return this.secondHandCarInvoiceDetail;
+        public java.util.List<UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList> getSecondHandCarInvoiceDetailList() {
+            return this.secondHandCarInvoiceDetailList;
         }
 
         public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO setSellerAddress(String sellerAddress) {
@@ -1132,20 +1132,20 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.taxAmount;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO setUsedVehicleSaleDetailVO(UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO usedVehicleSaleDetailVO) {
-            this.usedVehicleSaleDetailVO = usedVehicleSaleDetailVO;
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO setUsedVehicleSaleDetailVOList(java.util.List<UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList> usedVehicleSaleDetailVOList) {
+            this.usedVehicleSaleDetailVOList = usedVehicleSaleDetailVOList;
             return this;
         }
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO getUsedVehicleSaleDetailVO() {
-            return this.usedVehicleSaleDetailVO;
+        public java.util.List<UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList> getUsedVehicleSaleDetailVOList() {
+            return this.usedVehicleSaleDetailVOList;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO setVehicleSaleDetailVO(UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO vehicleSaleDetailVO) {
-            this.vehicleSaleDetailVO = vehicleSaleDetailVO;
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO setVehicleSaleDetailVOList(java.util.List<UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList> vehicleSaleDetailVOList) {
+            this.vehicleSaleDetailVOList = vehicleSaleDetailVOList;
             return this;
         }
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO getVehicleSaleDetailVO() {
-            return this.vehicleSaleDetailVO;
+        public java.util.List<UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList> getVehicleSaleDetailVOList() {
+            return this.vehicleSaleDetailVOList;
         }
 
         public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO setVerifyStatus(String verifyStatus) {
@@ -1314,7 +1314,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
 
     }
 
-    public static class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetail extends TeaModel {
+    public static class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList extends TeaModel {
         // 金额
         @NameInMap("amount")
         public String amount;
@@ -1355,12 +1355,12 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("vehicleType")
         public String vehicleType;
 
-        public static UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetail build(java.util.Map<String, ?> map) throws Exception {
-            UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetail self = new UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetail();
+        public static UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList build(java.util.Map<String, ?> map) throws Exception {
+            UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList self = new UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList();
             return TeaModel.build(map, self);
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetail setAmount(String amount) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList setAmount(String amount) {
             this.amount = amount;
             return this;
         }
@@ -1368,7 +1368,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.amount;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetail setCardNo(String cardNo) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList setCardNo(String cardNo) {
             this.cardNo = cardNo;
             return this;
         }
@@ -1376,7 +1376,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.cardNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetail setEndDate(String endDate) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList setEndDate(String endDate) {
             this.endDate = endDate;
             return this;
         }
@@ -1384,7 +1384,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.endDate;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetail setGoodsName(String goodsName) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList setGoodsName(String goodsName) {
             this.goodsName = goodsName;
             return this;
         }
@@ -1392,7 +1392,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.goodsName;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetail setRevenueCode(String revenueCode) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList setRevenueCode(String revenueCode) {
             this.revenueCode = revenueCode;
             return this;
         }
@@ -1400,7 +1400,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.revenueCode;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetail setRowNo(String rowNo) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList setRowNo(String rowNo) {
             this.rowNo = rowNo;
             return this;
         }
@@ -1408,7 +1408,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.rowNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetail setStartDate(String startDate) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList setStartDate(String startDate) {
             this.startDate = startDate;
             return this;
         }
@@ -1416,7 +1416,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.startDate;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetail setTaxAmount(String taxAmount) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList setTaxAmount(String taxAmount) {
             this.taxAmount = taxAmount;
             return this;
         }
@@ -1424,7 +1424,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.taxAmount;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetail setTaxRate(String taxRate) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList setTaxRate(String taxRate) {
             this.taxRate = taxRate;
             return this;
         }
@@ -1432,7 +1432,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.taxRate;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetail setVehicleType(String vehicleType) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList setVehicleType(String vehicleType) {
             this.vehicleType = vehicleType;
             return this;
         }
@@ -1442,7 +1442,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
 
     }
 
-    public static class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO extends TeaModel {
+    public static class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList extends TeaModel {
         // 经营、拍卖单位
         @NameInMap("auctionUnit")
         public String auctionUnit;
@@ -1507,12 +1507,12 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("vehicleType")
         public String vehicleType;
 
-        public static UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO build(java.util.Map<String, ?> map) throws Exception {
-            UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO self = new UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO();
+        public static UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList build(java.util.Map<String, ?> map) throws Exception {
+            UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList self = new UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList();
             return TeaModel.build(map, self);
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO setAuctionUnit(String auctionUnit) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList setAuctionUnit(String auctionUnit) {
             this.auctionUnit = auctionUnit;
             return this;
         }
@@ -1520,7 +1520,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.auctionUnit;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO setAuctionUnitAddress(String auctionUnitAddress) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList setAuctionUnitAddress(String auctionUnitAddress) {
             this.auctionUnitAddress = auctionUnitAddress;
             return this;
         }
@@ -1528,7 +1528,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.auctionUnitAddress;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO setAuctionUnitBank(String auctionUnitBank) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList setAuctionUnitBank(String auctionUnitBank) {
             this.auctionUnitBank = auctionUnitBank;
             return this;
         }
@@ -1536,7 +1536,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.auctionUnitBank;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO setAuctionUnitTaxNo(String auctionUnitTaxNo) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList setAuctionUnitTaxNo(String auctionUnitTaxNo) {
             this.auctionUnitTaxNo = auctionUnitTaxNo;
             return this;
         }
@@ -1544,7 +1544,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.auctionUnitTaxNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO setAuctionUtilTel(String auctionUtilTel) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList setAuctionUtilTel(String auctionUtilTel) {
             this.auctionUtilTel = auctionUtilTel;
             return this;
         }
@@ -1552,7 +1552,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.auctionUtilTel;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO setCarModel(String carModel) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList setCarModel(String carModel) {
             this.carModel = carModel;
             return this;
         }
@@ -1560,7 +1560,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.carModel;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO setCardNo(String cardNo) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList setCardNo(String cardNo) {
             this.cardNo = cardNo;
             return this;
         }
@@ -1568,7 +1568,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.cardNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO setRegistration(String registration) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList setRegistration(String registration) {
             this.registration = registration;
             return this;
         }
@@ -1576,7 +1576,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.registration;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO setTransferVehicle(String transferVehicle) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList setTransferVehicle(String transferVehicle) {
             this.transferVehicle = transferVehicle;
             return this;
         }
@@ -1584,7 +1584,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.transferVehicle;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO setUsedCarAddress(String usedCarAddress) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList setUsedCarAddress(String usedCarAddress) {
             this.usedCarAddress = usedCarAddress;
             return this;
         }
@@ -1592,7 +1592,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.usedCarAddress;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO setUsedCarMarket(String usedCarMarket) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList setUsedCarMarket(String usedCarMarket) {
             this.usedCarMarket = usedCarMarket;
             return this;
         }
@@ -1600,7 +1600,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.usedCarMarket;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO setUsedCarMarketBank(String usedCarMarketBank) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList setUsedCarMarketBank(String usedCarMarketBank) {
             this.usedCarMarketBank = usedCarMarketBank;
             return this;
         }
@@ -1608,7 +1608,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.usedCarMarketBank;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO setUsedCarMarketPhone(String usedCarMarketPhone) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList setUsedCarMarketPhone(String usedCarMarketPhone) {
             this.usedCarMarketPhone = usedCarMarketPhone;
             return this;
         }
@@ -1616,7 +1616,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.usedCarMarketPhone;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO setUsedCarMarketTaxNo(String usedCarMarketTaxNo) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList setUsedCarMarketTaxNo(String usedCarMarketTaxNo) {
             this.usedCarMarketTaxNo = usedCarMarketTaxNo;
             return this;
         }
@@ -1624,7 +1624,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.usedCarMarketTaxNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO setVehicleNo(String vehicleNo) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList setVehicleNo(String vehicleNo) {
             this.vehicleNo = vehicleNo;
             return this;
         }
@@ -1632,7 +1632,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.vehicleNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO setVehicleType(String vehicleType) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList setVehicleType(String vehicleType) {
             this.vehicleType = vehicleType;
             return this;
         }
@@ -1642,7 +1642,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
 
     }
 
-    public static class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO extends TeaModel {
+    public static class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList extends TeaModel {
         // 品牌
         @NameInMap("brand")
         public String brand;
@@ -1699,12 +1699,12 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("vehicleType")
         public String vehicleType;
 
-        public static UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO build(java.util.Map<String, ?> map) throws Exception {
-            UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO self = new UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO();
+        public static UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList build(java.util.Map<String, ?> map) throws Exception {
+            UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList self = new UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList();
             return TeaModel.build(map, self);
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO setBrand(String brand) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList setBrand(String brand) {
             this.brand = brand;
             return this;
         }
@@ -1712,7 +1712,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.brand;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO setCertificateNo(String certificateNo) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList setCertificateNo(String certificateNo) {
             this.certificateNo = certificateNo;
             return this;
         }
@@ -1720,7 +1720,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.certificateNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO setEngineNo(String engineNo) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList setEngineNo(String engineNo) {
             this.engineNo = engineNo;
             return this;
         }
@@ -1728,7 +1728,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.engineNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO setIdCardNo(String idCardNo) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList setIdCardNo(String idCardNo) {
             this.idCardNo = idCardNo;
             return this;
         }
@@ -1736,7 +1736,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.idCardNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO setImportCertificateNo(String importCertificateNo) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList setImportCertificateNo(String importCertificateNo) {
             this.importCertificateNo = importCertificateNo;
             return this;
         }
@@ -1744,7 +1744,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.importCertificateNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO setMaxPassengers(String maxPassengers) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList setMaxPassengers(String maxPassengers) {
             this.maxPassengers = maxPassengers;
             return this;
         }
@@ -1752,7 +1752,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.maxPassengers;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO setOriginPlace(String originPlace) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList setOriginPlace(String originPlace) {
             this.originPlace = originPlace;
             return this;
         }
@@ -1760,7 +1760,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.originPlace;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO setPaymentVoucherNo(String paymentVoucherNo) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList setPaymentVoucherNo(String paymentVoucherNo) {
             this.paymentVoucherNo = paymentVoucherNo;
             return this;
         }
@@ -1768,7 +1768,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.paymentVoucherNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO setTaxAuthorityName(String taxAuthorityName) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList setTaxAuthorityName(String taxAuthorityName) {
             this.taxAuthorityName = taxAuthorityName;
             return this;
         }
@@ -1776,7 +1776,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.taxAuthorityName;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO setTaxAuthorityNo(String taxAuthorityNo) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList setTaxAuthorityNo(String taxAuthorityNo) {
             this.taxAuthorityNo = taxAuthorityNo;
             return this;
         }
@@ -1784,7 +1784,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.taxAuthorityNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO setTaxRate(String taxRate) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList setTaxRate(String taxRate) {
             this.taxRate = taxRate;
             return this;
         }
@@ -1792,7 +1792,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.taxRate;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO setTonnage(String tonnage) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList setTonnage(String tonnage) {
             this.tonnage = tonnage;
             return this;
         }
@@ -1800,7 +1800,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.tonnage;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO setVehicleNo(String vehicleNo) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList setVehicleNo(String vehicleNo) {
             this.vehicleNo = vehicleNo;
             return this;
         }
@@ -1808,7 +1808,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.vehicleNo;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO setVehicleType(String vehicleType) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList setVehicleType(String vehicleType) {
             this.vehicleType = vehicleType;
             return this;
         }
@@ -1857,7 +1857,7 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
 
         // 常规发票明细
         @NameInMap("generalInvoiceDetailVOList")
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList generalInvoiceDetailVOList;
+        public java.util.List<UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList> generalInvoiceDetailVOList;
 
         // 发票代码
         @NameInMap("invoiceCode")
@@ -1915,8 +1915,8 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("remark")
         public String remark;
 
-        @NameInMap("secondHandCarInvoiceDetail")
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetail secondHandCarInvoiceDetail;
+        @NameInMap("secondHandCarInvoiceDetailList")
+        public java.util.List<UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList> secondHandCarInvoiceDetailList;
 
         // 销方地址
         @NameInMap("sellerAddress")
@@ -1950,11 +1950,11 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("taxAmount")
         public String taxAmount;
 
-        @NameInMap("usedVehicleSaleDetailVO")
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO usedVehicleSaleDetailVO;
+        @NameInMap("usedVehicleSaleDetailVOList")
+        public java.util.List<UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList> usedVehicleSaleDetailVOList;
 
-        @NameInMap("vehicleSaleDetailVO")
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO vehicleSaleDetailVO;
+        @NameInMap("vehicleSaleDetailVOList")
+        public java.util.List<UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList> vehicleSaleDetailVOList;
 
         // 发票查验状态
         @NameInMap("verifyStatus")
@@ -2045,11 +2045,11 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.fundType;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO setGeneralInvoiceDetailVOList(UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList generalInvoiceDetailVOList) {
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO setGeneralInvoiceDetailVOList(java.util.List<UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList> generalInvoiceDetailVOList) {
             this.generalInvoiceDetailVOList = generalInvoiceDetailVOList;
             return this;
         }
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList getGeneralInvoiceDetailVOList() {
+        public java.util.List<UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList> getGeneralInvoiceDetailVOList() {
             return this.generalInvoiceDetailVOList;
         }
 
@@ -2165,12 +2165,12 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.remark;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO setSecondHandCarInvoiceDetail(UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetail secondHandCarInvoiceDetail) {
-            this.secondHandCarInvoiceDetail = secondHandCarInvoiceDetail;
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO setSecondHandCarInvoiceDetailList(java.util.List<UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList> secondHandCarInvoiceDetailList) {
+            this.secondHandCarInvoiceDetailList = secondHandCarInvoiceDetailList;
             return this;
         }
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetail getSecondHandCarInvoiceDetail() {
-            return this.secondHandCarInvoiceDetail;
+        public java.util.List<UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList> getSecondHandCarInvoiceDetailList() {
+            return this.secondHandCarInvoiceDetailList;
         }
 
         public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO setSellerAddress(String sellerAddress) {
@@ -2237,20 +2237,20 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.taxAmount;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO setUsedVehicleSaleDetailVO(UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO usedVehicleSaleDetailVO) {
-            this.usedVehicleSaleDetailVO = usedVehicleSaleDetailVO;
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO setUsedVehicleSaleDetailVOList(java.util.List<UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList> usedVehicleSaleDetailVOList) {
+            this.usedVehicleSaleDetailVOList = usedVehicleSaleDetailVOList;
             return this;
         }
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO getUsedVehicleSaleDetailVO() {
-            return this.usedVehicleSaleDetailVO;
+        public java.util.List<UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList> getUsedVehicleSaleDetailVOList() {
+            return this.usedVehicleSaleDetailVOList;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO setVehicleSaleDetailVO(UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO vehicleSaleDetailVO) {
-            this.vehicleSaleDetailVO = vehicleSaleDetailVO;
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO setVehicleSaleDetailVOList(java.util.List<UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList> vehicleSaleDetailVOList) {
+            this.vehicleSaleDetailVOList = vehicleSaleDetailVOList;
             return this;
         }
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO getVehicleSaleDetailVO() {
-            return this.vehicleSaleDetailVO;
+        public java.util.List<UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList> getVehicleSaleDetailVOList() {
+            return this.vehicleSaleDetailVOList;
         }
 
         public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO setVerifyStatus(String verifyStatus) {
