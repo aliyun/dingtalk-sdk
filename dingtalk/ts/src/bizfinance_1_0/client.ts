@@ -566,6 +566,7 @@ export class GetCustomerResponseBody extends $tea.Model {
   description?: string;
   name?: string;
   status?: string;
+  userDefineCode?: string;
   static names(): { [key: string]: string } {
     return {
       code: 'code',
@@ -573,6 +574,7 @@ export class GetCustomerResponseBody extends $tea.Model {
       description: 'description',
       name: 'name',
       status: 'status',
+      userDefineCode: 'userDefineCode',
     };
   }
 
@@ -583,6 +585,7 @@ export class GetCustomerResponseBody extends $tea.Model {
       description: 'string',
       name: 'string',
       status: 'string',
+      userDefineCode: 'string',
     };
   }
 
@@ -776,16 +779,25 @@ export class GetInvoiceByPageRequest extends $tea.Model {
 }
 
 export class GetInvoiceByPageResponseBody extends $tea.Model {
-  list?: GetInvoiceByPageResponseBodyList[];
+  errorCode?: string;
+  errorMsg?: string;
+  result?: GetInvoiceByPageResponseBodyResult;
+  success?: boolean;
   static names(): { [key: string]: string } {
     return {
-      list: 'list',
+      errorCode: 'errorCode',
+      errorMsg: 'errorMsg',
+      result: 'result',
+      success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      list: { 'type': 'array', 'itemType': GetInvoiceByPageResponseBodyList },
+      errorCode: 'string',
+      errorMsg: 'string',
+      result: GetInvoiceByPageResponseBodyResult,
+      success: 'boolean',
     };
   }
 
@@ -924,34 +936,43 @@ export class GetProjectRequest extends $tea.Model {
 }
 
 export class GetProjectResponseBody extends $tea.Model {
+  code?: string;
   corpId?: string;
   createTime?: number;
   creator?: string;
   description?: string;
+  name?: string;
   projectCode?: string;
   projectName?: string;
   status?: string;
+  userDefineCode?: string;
   static names(): { [key: string]: string } {
     return {
+      code: 'code',
       corpId: 'corpId',
       createTime: 'createTime',
       creator: 'creator',
       description: 'description',
+      name: 'name',
       projectCode: 'projectCode',
       projectName: 'projectName',
       status: 'status',
+      userDefineCode: 'userDefineCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      code: 'string',
       corpId: 'string',
       createTime: 'number',
       creator: 'string',
       description: 'string',
+      name: 'string',
       projectCode: 'string',
       projectName: 'string',
       status: 'string',
+      userDefineCode: 'string',
     };
   }
 
@@ -1123,6 +1144,7 @@ export class GetSupplierResponseBody extends $tea.Model {
   description?: string;
   name?: string;
   status?: string;
+  userDefineCode?: string;
   static names(): { [key: string]: string } {
     return {
       code: 'code',
@@ -1130,6 +1152,7 @@ export class GetSupplierResponseBody extends $tea.Model {
       description: 'description',
       name: 'name',
       status: 'status',
+      userDefineCode: 'userDefineCode',
     };
   }
 
@@ -1140,6 +1163,7 @@ export class GetSupplierResponseBody extends $tea.Model {
       description: 'string',
       name: 'string',
       status: 'string',
+      userDefineCode: 'string',
     };
   }
 
@@ -2614,7 +2638,7 @@ export class RoleMemberMapValue extends $tea.Model {
   }
 }
 
-export class BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVO extends $tea.Model {
+export class BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList extends $tea.Model {
   amount?: string;
   goodName?: string;
   quantity?: string;
@@ -2663,7 +2687,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVO ex
   }
 }
 
-export class BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetail extends $tea.Model {
+export class BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList extends $tea.Model {
   amount?: string;
   cardNo?: string;
   endDate?: string;
@@ -2709,7 +2733,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetai
   }
 }
 
-export class BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO extends $tea.Model {
+export class BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList extends $tea.Model {
   auctionUnit?: string;
   auctionUnitAddress?: string;
   auctionUnitBank?: string;
@@ -2773,13 +2797,12 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO e
   }
 }
 
-export class BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO extends $tea.Model {
+export class BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList extends $tea.Model {
   brand?: string;
   certificateNo?: string;
   engineNo?: string;
   idCardNo?: string;
   importCertificateNo?: string;
-  inspectionListNo?: string;
   maxPassengers?: string;
   originPlace?: string;
   paymentVoucherNo?: string;
@@ -2796,7 +2819,6 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO exten
       engineNo: 'engineNo',
       idCardNo: 'idCardNo',
       importCertificateNo: 'importCertificateNo',
-      inspectionListNo: 'inspectionListNo',
       maxPassengers: 'maxPassengers',
       originPlace: 'originPlace',
       paymentVoucherNo: 'paymentVoucherNo',
@@ -2816,7 +2838,6 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO exten
       engineNo: 'string',
       idCardNo: 'string',
       importCertificateNo: 'string',
-      inspectionListNo: 'string',
       maxPassengers: 'string',
       originPlace: 'string',
       paymentVoucherNo: 'string',
@@ -2844,7 +2865,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
   electronicUrl?: string;
   financeType?: string;
   fundType?: string;
-  generalInvoiceDetailVO?: BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVO;
+  generalInvoiceDetailVOList?: BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList[];
   invoiceCode?: string;
   invoiceNo?: string;
   invoiceType?: string;
@@ -2859,7 +2880,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
   purchaserTaxNo?: string;
   purchaserTel?: string;
   remark?: string;
-  secondHandCarInvoiceDetail?: BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetail;
+  secondHandCarInvoiceDetailList?: BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList[];
   sellerAddress?: string;
   sellerBankNameAccount?: string;
   sellerName?: string;
@@ -2868,8 +2889,8 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
   status?: string;
   supplySign?: string;
   taxAmount?: string;
-  usedVehicleSaleDetailVO?: BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO;
-  vehicleSaleDetailVO?: BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO;
+  usedVehicleSaleDetailVOList?: BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList[];
+  vehicleSaleDetailVOList?: BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList[];
   verifyStatus?: string;
   voucherCode?: string;
   voucherStatus?: string;
@@ -2884,7 +2905,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       electronicUrl: 'electronicUrl',
       financeType: 'financeType',
       fundType: 'fundType',
-      generalInvoiceDetailVO: 'generalInvoiceDetailVO',
+      generalInvoiceDetailVOList: 'generalInvoiceDetailVOList',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
       invoiceType: 'invoiceType',
@@ -2899,7 +2920,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       purchaserTaxNo: 'purchaserTaxNo',
       purchaserTel: 'purchaserTel',
       remark: 'remark',
-      secondHandCarInvoiceDetail: 'secondHandCarInvoiceDetail',
+      secondHandCarInvoiceDetailList: 'secondHandCarInvoiceDetailList',
       sellerAddress: 'sellerAddress',
       sellerBankNameAccount: 'sellerBankNameAccount',
       sellerName: 'sellerName',
@@ -2908,8 +2929,8 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       status: 'status',
       supplySign: 'supplySign',
       taxAmount: 'taxAmount',
-      usedVehicleSaleDetailVO: 'usedVehicleSaleDetailVO',
-      vehicleSaleDetailVO: 'vehicleSaleDetailVO',
+      usedVehicleSaleDetailVOList: 'usedVehicleSaleDetailVOList',
+      vehicleSaleDetailVOList: 'vehicleSaleDetailVOList',
       verifyStatus: 'verifyStatus',
       voucherCode: 'voucherCode',
       voucherStatus: 'voucherStatus',
@@ -2927,7 +2948,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       electronicUrl: 'string',
       financeType: 'string',
       fundType: 'string',
-      generalInvoiceDetailVO: BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVO,
+      generalInvoiceDetailVOList: { 'type': 'array', 'itemType': BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList },
       invoiceCode: 'string',
       invoiceNo: 'string',
       invoiceType: 'string',
@@ -2942,7 +2963,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       purchaserTaxNo: 'string',
       purchaserTel: 'string',
       remark: 'string',
-      secondHandCarInvoiceDetail: BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetail,
+      secondHandCarInvoiceDetailList: { 'type': 'array', 'itemType': BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList },
       sellerAddress: 'string',
       sellerBankNameAccount: 'string',
       sellerName: 'string',
@@ -2951,8 +2972,8 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       status: 'string',
       supplySign: 'string',
       taxAmount: 'string',
-      usedVehicleSaleDetailVO: BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVO,
-      vehicleSaleDetailVO: BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVO,
+      usedVehicleSaleDetailVOList: { 'type': 'array', 'itemType': BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList },
+      vehicleSaleDetailVOList: { 'type': 'array', 'itemType': BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList },
       verifyStatus: 'string',
       voucherCode: 'string',
       voucherStatus: 'string',
@@ -3125,7 +3146,7 @@ export class DeleteReceiptResponseBodyResults extends $tea.Model {
   }
 }
 
-export class GetInvoiceByPageResponseBodyListGeneralInvoiceDetailVOList extends $tea.Model {
+export class GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList extends $tea.Model {
   amount?: string;
   goodName?: string;
   quantity?: string;
@@ -3174,7 +3195,7 @@ export class GetInvoiceByPageResponseBodyListGeneralInvoiceDetailVOList extends 
   }
 }
 
-export class GetInvoiceByPageResponseBodyListSecondHandCarInvoiceDetail extends $tea.Model {
+export class GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList extends $tea.Model {
   amount?: string;
   cardNo?: string;
   endDate?: string;
@@ -3220,7 +3241,7 @@ export class GetInvoiceByPageResponseBodyListSecondHandCarInvoiceDetail extends 
   }
 }
 
-export class GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO extends $tea.Model {
+export class GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList extends $tea.Model {
   auctionUnit?: string;
   auctionUnitAddress?: string;
   auctionUnitBank?: string;
@@ -3284,7 +3305,7 @@ export class GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO extends $te
   }
 }
 
-export class GetInvoiceByPageResponseBodyListVehicleSaleDetailVO extends $tea.Model {
+export class GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList extends $tea.Model {
   brand?: string;
   certificateNo?: string;
   engineNo?: string;
@@ -3342,7 +3363,7 @@ export class GetInvoiceByPageResponseBodyListVehicleSaleDetailVO extends $tea.Mo
   }
 }
 
-export class GetInvoiceByPageResponseBodyList extends $tea.Model {
+export class GetInvoiceByPageResponseBodyResultList extends $tea.Model {
   accountPeriod?: string;
   amount?: string;
   amountWithTax?: string;
@@ -3352,7 +3373,7 @@ export class GetInvoiceByPageResponseBodyList extends $tea.Model {
   electronicUrl?: string;
   financeType?: string;
   fundType?: string;
-  generalInvoiceDetailVOList?: GetInvoiceByPageResponseBodyListGeneralInvoiceDetailVOList[];
+  generalInvoiceDetailVOList?: GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList[];
   invoiceCode?: string;
   invoiceNo?: string;
   invoiceType?: string;
@@ -3367,7 +3388,7 @@ export class GetInvoiceByPageResponseBodyList extends $tea.Model {
   purchaserTaxNo?: string;
   purchaserTel?: string;
   remark?: string;
-  secondHandCarInvoiceDetail?: GetInvoiceByPageResponseBodyListSecondHandCarInvoiceDetail[];
+  secondHandCarInvoiceDetailList?: GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList[];
   sellerAddress?: string;
   sellerBankNameAccount?: string;
   sellerName?: string;
@@ -3376,8 +3397,8 @@ export class GetInvoiceByPageResponseBodyList extends $tea.Model {
   status?: string;
   supplySign?: string;
   taxAmount?: string;
-  usedVehicleSaleDetailVO?: GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO;
-  vehicleSaleDetailVO?: GetInvoiceByPageResponseBodyListVehicleSaleDetailVO;
+  usedVehicleSaleDetailVOList?: GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList[];
+  vehicleSaleDetailVOList?: GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList[];
   verifyStatus?: string;
   voucherCode?: string;
   voucherStatus?: string;
@@ -3407,7 +3428,7 @@ export class GetInvoiceByPageResponseBodyList extends $tea.Model {
       purchaserTaxNo: 'purchaserTaxNo',
       purchaserTel: 'purchaserTel',
       remark: 'remark',
-      secondHandCarInvoiceDetail: 'secondHandCarInvoiceDetail',
+      secondHandCarInvoiceDetailList: 'secondHandCarInvoiceDetailList',
       sellerAddress: 'sellerAddress',
       sellerBankNameAccount: 'sellerBankNameAccount',
       sellerName: 'sellerName',
@@ -3416,8 +3437,8 @@ export class GetInvoiceByPageResponseBodyList extends $tea.Model {
       status: 'status',
       supplySign: 'supplySign',
       taxAmount: 'taxAmount',
-      usedVehicleSaleDetailVO: 'usedVehicleSaleDetailVO',
-      vehicleSaleDetailVO: 'vehicleSaleDetailVO',
+      usedVehicleSaleDetailVOList: 'usedVehicleSaleDetailVOList',
+      vehicleSaleDetailVOList: 'vehicleSaleDetailVOList',
       verifyStatus: 'verifyStatus',
       voucherCode: 'voucherCode',
       voucherStatus: 'voucherStatus',
@@ -3435,7 +3456,7 @@ export class GetInvoiceByPageResponseBodyList extends $tea.Model {
       electronicUrl: 'string',
       financeType: 'string',
       fundType: 'string',
-      generalInvoiceDetailVOList: { 'type': 'array', 'itemType': GetInvoiceByPageResponseBodyListGeneralInvoiceDetailVOList },
+      generalInvoiceDetailVOList: { 'type': 'array', 'itemType': GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList },
       invoiceCode: 'string',
       invoiceNo: 'string',
       invoiceType: 'string',
@@ -3450,7 +3471,7 @@ export class GetInvoiceByPageResponseBodyList extends $tea.Model {
       purchaserTaxNo: 'string',
       purchaserTel: 'string',
       remark: 'string',
-      secondHandCarInvoiceDetail: { 'type': 'array', 'itemType': GetInvoiceByPageResponseBodyListSecondHandCarInvoiceDetail },
+      secondHandCarInvoiceDetailList: { 'type': 'array', 'itemType': GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList },
       sellerAddress: 'string',
       sellerBankNameAccount: 'string',
       sellerName: 'string',
@@ -3459,11 +3480,39 @@ export class GetInvoiceByPageResponseBodyList extends $tea.Model {
       status: 'string',
       supplySign: 'string',
       taxAmount: 'string',
-      usedVehicleSaleDetailVO: GetInvoiceByPageResponseBodyListUsedVehicleSaleDetailVO,
-      vehicleSaleDetailVO: GetInvoiceByPageResponseBodyListVehicleSaleDetailVO,
+      usedVehicleSaleDetailVOList: { 'type': 'array', 'itemType': GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList },
+      vehicleSaleDetailVOList: { 'type': 'array', 'itemType': GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList },
       verifyStatus: 'string',
       voucherCode: 'string',
       voucherStatus: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetInvoiceByPageResponseBodyResult extends $tea.Model {
+  hasMore?: string;
+  list?: GetInvoiceByPageResponseBodyResultList[];
+  nextCursor?: number;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+      nextCursor: 'nextCursor',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'string',
+      list: { 'type': 'array', 'itemType': GetInvoiceByPageResponseBodyResultList },
+      nextCursor: 'number',
+      totalCount: 'number',
     };
   }
 
@@ -3512,6 +3561,7 @@ export class QueryCustomerByPageResponseBodyList extends $tea.Model {
   description?: string;
   name?: string;
   status?: string;
+  userDefineCode?: string;
   static names(): { [key: string]: string } {
     return {
       code: 'code',
@@ -3519,6 +3569,7 @@ export class QueryCustomerByPageResponseBodyList extends $tea.Model {
       description: 'description',
       name: 'name',
       status: 'status',
+      userDefineCode: 'userDefineCode',
     };
   }
 
@@ -3529,6 +3580,7 @@ export class QueryCustomerByPageResponseBodyList extends $tea.Model {
       description: 'string',
       name: 'string',
       status: 'string',
+      userDefineCode: 'string',
     };
   }
 
@@ -3649,34 +3701,43 @@ export class QueryPermissionByUserIdResponseBodyPermissionDTOList extends $tea.M
 }
 
 export class QueryProjectByPageResponseBodyList extends $tea.Model {
+  caode?: string;
   corpId?: string;
   createTime?: number;
   creator?: string;
   description?: string;
+  name?: string;
   projectCode?: string;
   projectName?: string;
   status?: string;
+  userDefineCode?: string;
   static names(): { [key: string]: string } {
     return {
+      caode: 'caode',
       corpId: 'corpId',
       createTime: 'createTime',
       creator: 'creator',
       description: 'description',
+      name: 'name',
       projectCode: 'projectCode',
       projectName: 'projectName',
       status: 'status',
+      userDefineCode: 'userDefineCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      caode: 'string',
       corpId: 'string',
       createTime: 'number',
       creator: 'string',
       description: 'string',
+      name: 'string',
       projectCode: 'string',
       projectName: 'string',
       status: 'string',
+      userDefineCode: 'string',
     };
   }
 
@@ -3769,6 +3830,7 @@ export class QuerySupplierByPageResponseBodyList extends $tea.Model {
   description?: string;
   name?: string;
   status?: string;
+  userDefineCode?: string;
   static names(): { [key: string]: string } {
     return {
       code: 'code',
@@ -3776,6 +3838,7 @@ export class QuerySupplierByPageResponseBodyList extends $tea.Model {
       description: 'description',
       name: 'name',
       status: 'status',
+      userDefineCode: 'userDefineCode',
     };
   }
 
@@ -3786,6 +3849,7 @@ export class QuerySupplierByPageResponseBodyList extends $tea.Model {
       description: 'string',
       name: 'string',
       status: 'string',
+      userDefineCode: 'string',
     };
   }
 
@@ -3794,7 +3858,7 @@ export class QuerySupplierByPageResponseBodyList extends $tea.Model {
   }
 }
 
-export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVO extends $tea.Model {
+export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList extends $tea.Model {
   amount?: string;
   goodName?: string;
   quantity?: string;
@@ -3843,7 +3907,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoice
   }
 }
 
-export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetail extends $tea.Model {
+export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList extends $tea.Model {
   amount?: string;
   cardNo?: string;
   endDate?: string;
@@ -3889,7 +3953,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarI
   }
 }
 
-export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO extends $tea.Model {
+export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList extends $tea.Model {
   auctionUnit?: string;
   auctionUnitAddress?: string;
   auctionUnitBank?: string;
@@ -3953,7 +4017,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSal
   }
 }
 
-export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO extends $tea.Model {
+export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList extends $tea.Model {
   brand?: string;
   certificateNo?: string;
   engineNo?: string;
@@ -4021,7 +4085,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
   electronicUrl?: string;
   financeType?: string;
   fundType?: string;
-  generalInvoiceDetailVO?: UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVO;
+  generalInvoiceDetailVOList?: UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList[];
   invoiceCode?: string;
   invoiceNo?: string;
   invoiceType?: string;
@@ -4036,7 +4100,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
   purchaserTaxNo?: string;
   purchaserTel?: string;
   remark?: string;
-  secondHandCarInvoiceDetail?: UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetail;
+  secondHandCarInvoiceDetailList?: UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList[];
   sellerAddress?: string;
   sellerBankNameAccount?: string;
   sellerName?: string;
@@ -4045,8 +4109,8 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
   status?: string;
   supplySign?: string;
   taxAmount?: string;
-  usedVehicleSaleDetailVO?: UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO;
-  vehicleSaleDetailVO?: UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO;
+  usedVehicleSaleDetailVOList?: UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList[];
+  vehicleSaleDetailVOList?: UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList[];
   verifyStatus?: string;
   voucherCode?: string;
   voucherStatus?: string;
@@ -4061,7 +4125,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
       electronicUrl: 'electronicUrl',
       financeType: 'financeType',
       fundType: 'fundType',
-      generalInvoiceDetailVO: 'generalInvoiceDetailVO',
+      generalInvoiceDetailVOList: 'generalInvoiceDetailVOList',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
       invoiceType: 'invoiceType',
@@ -4076,7 +4140,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
       purchaserTaxNo: 'purchaserTaxNo',
       purchaserTel: 'purchaserTel',
       remark: 'remark',
-      secondHandCarInvoiceDetail: 'secondHandCarInvoiceDetail',
+      secondHandCarInvoiceDetailList: 'secondHandCarInvoiceDetailList',
       sellerAddress: 'sellerAddress',
       sellerBankNameAccount: 'sellerBankNameAccount',
       sellerName: 'sellerName',
@@ -4085,8 +4149,8 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
       status: 'status',
       supplySign: 'supplySign',
       taxAmount: 'taxAmount',
-      usedVehicleSaleDetailVO: 'usedVehicleSaleDetailVO',
-      vehicleSaleDetailVO: 'vehicleSaleDetailVO',
+      usedVehicleSaleDetailVOList: 'usedVehicleSaleDetailVOList',
+      vehicleSaleDetailVOList: 'vehicleSaleDetailVOList',
       verifyStatus: 'verifyStatus',
       voucherCode: 'voucherCode',
       voucherStatus: 'voucherStatus',
@@ -4104,7 +4168,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
       electronicUrl: 'string',
       financeType: 'string',
       fundType: 'string',
-      generalInvoiceDetailVO: UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVO,
+      generalInvoiceDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList },
       invoiceCode: 'string',
       invoiceNo: 'string',
       invoiceType: 'string',
@@ -4119,7 +4183,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
       purchaserTaxNo: 'string',
       purchaserTel: 'string',
       remark: 'string',
-      secondHandCarInvoiceDetail: UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetail,
+      secondHandCarInvoiceDetailList: { 'type': 'array', 'itemType': UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList },
       sellerAddress: 'string',
       sellerBankNameAccount: 'string',
       sellerName: 'string',
@@ -4128,8 +4192,8 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
       status: 'string',
       supplySign: 'string',
       taxAmount: 'string',
-      usedVehicleSaleDetailVO: UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVO,
-      vehicleSaleDetailVO: UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVO,
+      usedVehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList },
+      vehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList },
       verifyStatus: 'string',
       voucherCode: 'string',
       voucherStatus: 'string',
@@ -4190,7 +4254,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceD
   }
 }
 
-export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetail extends $tea.Model {
+export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList extends $tea.Model {
   amount?: string;
   cardNo?: string;
   endDate?: string;
@@ -4236,7 +4300,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarIn
   }
 }
 
-export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO extends $tea.Model {
+export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList extends $tea.Model {
   auctionUnit?: string;
   auctionUnitAddress?: string;
   auctionUnitBank?: string;
@@ -4300,7 +4364,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSale
   }
 }
 
-export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO extends $tea.Model {
+export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList extends $tea.Model {
   brand?: string;
   certificateNo?: string;
   engineNo?: string;
@@ -4368,7 +4432,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
   electronicUrl?: string;
   financeType?: string;
   fundType?: string;
-  generalInvoiceDetailVOList?: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList;
+  generalInvoiceDetailVOList?: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList[];
   invoiceCode?: string;
   invoiceNo?: string;
   invoiceType?: string;
@@ -4383,7 +4447,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
   purchaserTaxNo?: string;
   purchaserTel?: string;
   remark?: string;
-  secondHandCarInvoiceDetail?: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetail;
+  secondHandCarInvoiceDetailList?: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList[];
   sellerAddress?: string;
   sellerBankNameAccount?: string;
   sellerName?: string;
@@ -4392,8 +4456,8 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
   status?: string;
   supplySign?: string;
   taxAmount?: string;
-  usedVehicleSaleDetailVO?: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO;
-  vehicleSaleDetailVO?: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO;
+  usedVehicleSaleDetailVOList?: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList[];
+  vehicleSaleDetailVOList?: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList[];
   verifyStatus?: string;
   voucherCode?: string;
   voucherStatus?: string;
@@ -4423,7 +4487,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
       purchaserTaxNo: 'purchaserTaxNo',
       purchaserTel: 'purchaserTel',
       remark: 'remark',
-      secondHandCarInvoiceDetail: 'secondHandCarInvoiceDetail',
+      secondHandCarInvoiceDetailList: 'secondHandCarInvoiceDetailList',
       sellerAddress: 'sellerAddress',
       sellerBankNameAccount: 'sellerBankNameAccount',
       sellerName: 'sellerName',
@@ -4432,8 +4496,8 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
       status: 'status',
       supplySign: 'supplySign',
       taxAmount: 'taxAmount',
-      usedVehicleSaleDetailVO: 'usedVehicleSaleDetailVO',
-      vehicleSaleDetailVO: 'vehicleSaleDetailVO',
+      usedVehicleSaleDetailVOList: 'usedVehicleSaleDetailVOList',
+      vehicleSaleDetailVOList: 'vehicleSaleDetailVOList',
       verifyStatus: 'verifyStatus',
       voucherCode: 'voucherCode',
       voucherStatus: 'voucherStatus',
@@ -4451,7 +4515,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
       electronicUrl: 'string',
       financeType: 'string',
       fundType: 'string',
-      generalInvoiceDetailVOList: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList,
+      generalInvoiceDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList },
       invoiceCode: 'string',
       invoiceNo: 'string',
       invoiceType: 'string',
@@ -4466,7 +4530,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
       purchaserTaxNo: 'string',
       purchaserTel: 'string',
       remark: 'string',
-      secondHandCarInvoiceDetail: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetail,
+      secondHandCarInvoiceDetailList: { 'type': 'array', 'itemType': UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList },
       sellerAddress: 'string',
       sellerBankNameAccount: 'string',
       sellerName: 'string',
@@ -4475,8 +4539,8 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
       status: 'string',
       supplySign: 'string',
       taxAmount: 'string',
-      usedVehicleSaleDetailVO: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVO,
-      vehicleSaleDetailVO: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVO,
+      usedVehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList },
+      vehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList },
       verifyStatus: 'string',
       voucherCode: 'string',
       voucherStatus: 'string',
@@ -4488,7 +4552,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
   }
 }
 
-export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVO extends $tea.Model {
+export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList extends $tea.Model {
   amount?: string;
   goodName?: string;
   quantity?: string;
@@ -4537,7 +4601,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoice
   }
 }
 
-export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOSecondHandCarInvoiceDetail extends $tea.Model {
+export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList extends $tea.Model {
   amount?: string;
   cardNo?: string;
   endDate?: string;
@@ -4583,7 +4647,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOSecondHandCarI
   }
 }
 
-export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOUsedVehicleSaleDetailVO extends $tea.Model {
+export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList extends $tea.Model {
   auctionUnit?: string;
   auctionUnitAddress?: string;
   auctionUnitBank?: string;
@@ -4647,7 +4711,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOUsedVehicleSal
   }
 }
 
-export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOVehicleSaleDetailVO extends $tea.Model {
+export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOVehicleSaleDetailVOList extends $tea.Model {
   brand?: string;
   certificateNo?: string;
   engineNo?: string;
@@ -4715,7 +4779,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
   electronicUrl?: string;
   financeType?: string;
   fundType?: string;
-  generalInvoiceDetailVO?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVO;
+  generalInvoiceDetailVOList?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList[];
   invoiceCode?: string;
   invoiceNo?: string;
   invoiceType?: string;
@@ -4730,7 +4794,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
   purchaserTaxNo?: string;
   purchaserTel?: string;
   remark?: string;
-  secondHandCarInvoiceDetail?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOSecondHandCarInvoiceDetail;
+  secondHandCarInvoiceDetailList?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList[];
   sellerAddress?: string;
   sellerBankNameAccount?: string;
   sellerName?: string;
@@ -4739,8 +4803,8 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
   status?: string;
   supplySign?: string;
   taxAmount?: string;
-  usedVehicleSaleDetailVO?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOUsedVehicleSaleDetailVO;
-  vehicleSaleDetailVO?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOVehicleSaleDetailVO;
+  usedVehicleSaleDetailVOList?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList[];
+  vehicleSaleDetailVOList?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOVehicleSaleDetailVOList[];
   verifyStatus?: string;
   voucherCode?: string;
   voucherStatus?: string;
@@ -4755,7 +4819,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
       electronicUrl: 'electronicUrl',
       financeType: 'financeType',
       fundType: 'fundType',
-      generalInvoiceDetailVO: 'generalInvoiceDetailVO',
+      generalInvoiceDetailVOList: 'generalInvoiceDetailVOList',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
       invoiceType: 'invoiceType',
@@ -4770,7 +4834,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
       purchaserTaxNo: 'purchaserTaxNo',
       purchaserTel: 'purchaserTel',
       remark: 'remark',
-      secondHandCarInvoiceDetail: 'secondHandCarInvoiceDetail',
+      secondHandCarInvoiceDetailList: 'secondHandCarInvoiceDetailList',
       sellerAddress: 'sellerAddress',
       sellerBankNameAccount: 'sellerBankNameAccount',
       sellerName: 'sellerName',
@@ -4779,8 +4843,8 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
       status: 'status',
       supplySign: 'supplySign',
       taxAmount: 'taxAmount',
-      usedVehicleSaleDetailVO: 'usedVehicleSaleDetailVO',
-      vehicleSaleDetailVO: 'vehicleSaleDetailVO',
+      usedVehicleSaleDetailVOList: 'usedVehicleSaleDetailVOList',
+      vehicleSaleDetailVOList: 'vehicleSaleDetailVOList',
       verifyStatus: 'verifyStatus',
       voucherCode: 'voucherCode',
       voucherStatus: 'voucherStatus',
@@ -4798,7 +4862,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
       electronicUrl: 'string',
       financeType: 'string',
       fundType: 'string',
-      generalInvoiceDetailVO: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVO,
+      generalInvoiceDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList },
       invoiceCode: 'string',
       invoiceNo: 'string',
       invoiceType: 'string',
@@ -4813,7 +4877,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
       purchaserTaxNo: 'string',
       purchaserTel: 'string',
       remark: 'string',
-      secondHandCarInvoiceDetail: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOSecondHandCarInvoiceDetail,
+      secondHandCarInvoiceDetailList: { 'type': 'array', 'itemType': UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList },
       sellerAddress: 'string',
       sellerBankNameAccount: 'string',
       sellerName: 'string',
@@ -4822,8 +4886,8 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
       status: 'string',
       supplySign: 'string',
       taxAmount: 'string',
-      usedVehicleSaleDetailVO: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOUsedVehicleSaleDetailVO,
-      vehicleSaleDetailVO: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOVehicleSaleDetailVO,
+      usedVehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList },
+      vehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOVehicleSaleDetailVOList },
       verifyStatus: 'string',
       voucherCode: 'string',
       voucherStatus: 'string',
@@ -4884,7 +4948,7 @@ export class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOGeneralInvoiceDetai
   }
 }
 
-export class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetail extends $tea.Model {
+export class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList extends $tea.Model {
   amount?: string;
   cardNo?: string;
   endDate?: string;
@@ -4930,7 +4994,7 @@ export class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoic
   }
 }
 
-export class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO extends $tea.Model {
+export class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList extends $tea.Model {
   auctionUnit?: string;
   auctionUnitAddress?: string;
   auctionUnitBank?: string;
@@ -4994,7 +5058,7 @@ export class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDeta
   }
 }
 
-export class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO extends $tea.Model {
+export class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList extends $tea.Model {
   brand?: string;
   certificateNo?: string;
   engineNo?: string;
@@ -5062,7 +5126,7 @@ export class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO extends $tea.Model
   electronicUrl?: string;
   financeType?: string;
   fundType?: string;
-  generalInvoiceDetailVOList?: UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOGeneralInvoiceDetailVOList;
+  generalInvoiceDetailVOList?: UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOGeneralInvoiceDetailVOList[];
   invoiceCode?: string;
   invoiceNo?: string;
   invoiceType?: string;
@@ -5077,7 +5141,7 @@ export class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO extends $tea.Model
   purchaserTaxNo?: string;
   purchaserTel?: string;
   remark?: string;
-  secondHandCarInvoiceDetail?: UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetail;
+  secondHandCarInvoiceDetailList?: UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList[];
   sellerAddress?: string;
   sellerBankNameAccount?: string;
   sellerName?: string;
@@ -5086,8 +5150,8 @@ export class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO extends $tea.Model
   status?: string;
   supplySign?: string;
   taxAmount?: string;
-  usedVehicleSaleDetailVO?: UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO;
-  vehicleSaleDetailVO?: UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO;
+  usedVehicleSaleDetailVOList?: UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList[];
+  vehicleSaleDetailVOList?: UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList[];
   verifyStatus?: string;
   voucherCode?: string;
   voucherStatus?: string;
@@ -5117,7 +5181,7 @@ export class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO extends $tea.Model
       purchaserTaxNo: 'purchaserTaxNo',
       purchaserTel: 'purchaserTel',
       remark: 'remark',
-      secondHandCarInvoiceDetail: 'secondHandCarInvoiceDetail',
+      secondHandCarInvoiceDetailList: 'secondHandCarInvoiceDetailList',
       sellerAddress: 'sellerAddress',
       sellerBankNameAccount: 'sellerBankNameAccount',
       sellerName: 'sellerName',
@@ -5126,8 +5190,8 @@ export class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO extends $tea.Model
       status: 'status',
       supplySign: 'supplySign',
       taxAmount: 'taxAmount',
-      usedVehicleSaleDetailVO: 'usedVehicleSaleDetailVO',
-      vehicleSaleDetailVO: 'vehicleSaleDetailVO',
+      usedVehicleSaleDetailVOList: 'usedVehicleSaleDetailVOList',
+      vehicleSaleDetailVOList: 'vehicleSaleDetailVOList',
       verifyStatus: 'verifyStatus',
       voucherCode: 'voucherCode',
       voucherStatus: 'voucherStatus',
@@ -5145,7 +5209,7 @@ export class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO extends $tea.Model
       electronicUrl: 'string',
       financeType: 'string',
       fundType: 'string',
-      generalInvoiceDetailVOList: UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOGeneralInvoiceDetailVOList,
+      generalInvoiceDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOGeneralInvoiceDetailVOList },
       invoiceCode: 'string',
       invoiceNo: 'string',
       invoiceType: 'string',
@@ -5160,7 +5224,7 @@ export class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO extends $tea.Model
       purchaserTaxNo: 'string',
       purchaserTel: 'string',
       remark: 'string',
-      secondHandCarInvoiceDetail: UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetail,
+      secondHandCarInvoiceDetailList: { 'type': 'array', 'itemType': UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList },
       sellerAddress: 'string',
       sellerBankNameAccount: 'string',
       sellerName: 'string',
@@ -5169,8 +5233,8 @@ export class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO extends $tea.Model
       status: 'string',
       supplySign: 'string',
       taxAmount: 'string',
-      usedVehicleSaleDetailVO: UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVO,
-      vehicleSaleDetailVO: UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVO,
+      usedVehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList },
+      vehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList },
       verifyStatus: 'string',
       voucherCode: 'string',
       voucherStatus: 'string',

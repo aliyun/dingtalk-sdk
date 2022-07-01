@@ -8324,7 +8324,7 @@ export class QueryMedicalEventsResponseBodyContent extends $tea.Model {
 }
 
 export class QueryUserCredentialsResponseBodyContentCredentialList extends $tea.Model {
-  credentialName?: number;
+  credentialName?: string;
   credentialType?: number;
   termOfValidity?: string;
   static names(): { [key: string]: string } {
@@ -8337,7 +8337,7 @@ export class QueryUserCredentialsResponseBodyContentCredentialList extends $tea.
 
   static types(): { [key: string]: any } {
     return {
-      credentialName: 'number',
+      credentialName: 'string',
       credentialType: 'number',
       termOfValidity: 'string',
     };

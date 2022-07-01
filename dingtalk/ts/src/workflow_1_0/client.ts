@@ -1440,6 +1440,7 @@ export class GetProcessConfigResponseBodyResultVisibility extends $tea.Model {
 
 export class GetProcessConfigResponseBodyResult extends $tea.Model {
   abstractGenRule?: string[];
+  activityAuth?: string;
   allowRevoke?: boolean;
   appendEnable?: boolean;
   autoExecuteOriginatorTasks?: boolean;
@@ -1459,6 +1460,7 @@ export class GetProcessConfigResponseBodyResult extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       abstractGenRule: 'abstractGenRule',
+      activityAuth: 'activityAuth',
       allowRevoke: 'allowRevoke',
       appendEnable: 'appendEnable',
       autoExecuteOriginatorTasks: 'autoExecuteOriginatorTasks',
@@ -1481,6 +1483,7 @@ export class GetProcessConfigResponseBodyResult extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       abstractGenRule: { 'type': 'array', 'itemType': 'string' },
+      activityAuth: 'string',
       allowRevoke: 'boolean',
       appendEnable: 'boolean',
       autoExecuteOriginatorTasks: 'boolean',

@@ -14,6 +14,7 @@ export class DentryOpenVO extends $tea.Model {
   dentryId?: string;
   dentryType?: string;
   dentryUuid?: string;
+  docKey?: string;
   extension?: string;
   hasChildren?: boolean;
   linkSourceInfo?: LinkSourceInfo;
@@ -33,6 +34,7 @@ export class DentryOpenVO extends $tea.Model {
       dentryId: 'dentryId',
       dentryType: 'dentryType',
       dentryUuid: 'dentryUuid',
+      docKey: 'docKey',
       extension: 'extension',
       hasChildren: 'hasChildren',
       linkSourceInfo: 'linkSourceInfo',
@@ -55,6 +57,7 @@ export class DentryOpenVO extends $tea.Model {
       dentryId: 'string',
       dentryType: 'string',
       dentryUuid: 'string',
+      docKey: 'string',
       extension: 'string',
       hasChildren: 'boolean',
       linkSourceInfo: LinkSourceInfo,
@@ -81,6 +84,7 @@ export class DentryOpenVOResult extends $tea.Model {
   dentryId?: string;
   dentryType?: string;
   dentryUuid?: string;
+  docKey?: string;
   extension?: string;
   hasChildren?: boolean;
   linkSourceInfo?: LinkSourceInfo;
@@ -100,6 +104,7 @@ export class DentryOpenVOResult extends $tea.Model {
       dentryId: 'dentryId',
       dentryType: 'dentryType',
       dentryUuid: 'dentryUuid',
+      docKey: 'docKey',
       extension: 'extension',
       hasChildren: 'hasChildren',
       linkSourceInfo: 'linkSourceInfo',
@@ -122,6 +127,7 @@ export class DentryOpenVOResult extends $tea.Model {
       dentryId: 'string',
       dentryType: 'string',
       dentryUuid: 'string',
+      docKey: 'string',
       extension: 'string',
       hasChildren: 'boolean',
       linkSourceInfo: LinkSourceInfo,
@@ -248,6 +254,84 @@ export class SpaceOpenVOResult extends $tea.Model {
       owner: SpaceOpenVOResultOwner,
       url: 'string',
       visitorInfo: SpaceOpenVOResultVisitorInfo,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CopyDentryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CopyDentryRequest extends $tea.Model {
+  name?: string;
+  operatorId?: string;
+  targetSpaceId?: string;
+  toNextDentryId?: string;
+  toParentDentryId?: string;
+  toPrevDentryId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      operatorId: 'operatorId',
+      targetSpaceId: 'targetSpaceId',
+      toNextDentryId: 'toNextDentryId',
+      toParentDentryId: 'toParentDentryId',
+      toPrevDentryId: 'toPrevDentryId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      operatorId: 'string',
+      targetSpaceId: 'string',
+      toNextDentryId: 'string',
+      toParentDentryId: 'string',
+      toPrevDentryId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CopyDentryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DentryOpenVOResult;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DentryOpenVOResult,
     };
   }
 
@@ -657,6 +741,153 @@ export class QueryDentryResponse extends $tea.Model {
   }
 }
 
+export class QueryMineSpaceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMineSpaceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SpaceOpenVOResult;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SpaceOpenVOResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRecentListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRecentListRequest extends $tea.Model {
+  creatorType?: number;
+  fileType?: number;
+  maxResults?: number;
+  nextToken?: string;
+  operatorId?: string;
+  recentType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      creatorType: 'creatorType',
+      fileType: 'fileType',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      operatorId: 'operatorId',
+      recentType: 'recentType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      creatorType: 'number',
+      fileType: 'number',
+      maxResults: 'number',
+      nextToken: 'string',
+      operatorId: 'string',
+      recentType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRecentListResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  nextToken?: string;
+  recentList?: QueryRecentListResponseBodyRecentList[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      nextToken: 'nextToken',
+      recentList: 'recentList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      nextToken: 'string',
+      recentList: { 'type': 'array', 'itemType': QueryRecentListResponseBodyRecentList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRecentListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryRecentListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryRecentListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QuerySpaceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -712,6 +943,166 @@ export class QuerySpaceResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: SpaceOpenVOResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RenameDentryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RenameDentryRequest extends $tea.Model {
+  name?: string;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RenameDentryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DentryOpenVOResult;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DentryOpenVOResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchRequest extends $tea.Model {
+  dentryRequest?: SearchRequestDentryRequest;
+  keyword?: string;
+  operatorId?: string;
+  spaceRequest?: SearchRequestSpaceRequest;
+  static names(): { [key: string]: string } {
+    return {
+      dentryRequest: 'dentryRequest',
+      keyword: 'keyword',
+      operatorId: 'operatorId',
+      spaceRequest: 'spaceRequest',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dentryRequest: SearchRequestDentryRequest,
+      keyword: 'string',
+      operatorId: 'string',
+      spaceRequest: SearchRequestSpaceRequest,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchResponseBody extends $tea.Model {
+  dentryResult?: SearchResponseBodyDentryResult;
+  spaceResult?: SearchResponseBodySpaceResult;
+  static names(): { [key: string]: string } {
+    return {
+      dentryResult: 'dentryResult',
+      spaceResult: 'spaceResult',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dentryResult: SearchResponseBodyDentryResult,
+      spaceResult: SearchResponseBodySpaceResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SearchResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SearchResponseBody,
     };
   }
 
@@ -962,6 +1353,214 @@ export class SpaceOpenVOResultVisitorInfo extends $tea.Model {
   }
 }
 
+export class QueryRecentListResponseBodyRecentList extends $tea.Model {
+  deleted?: boolean;
+  dentry?: DentryOpenVO;
+  recentTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deleted: 'deleted',
+      dentry: 'dentry',
+      recentTime: 'recentTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deleted: 'boolean',
+      dentry: DentryOpenVO,
+      recentTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchRequestDentryRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: string;
+  searchFileType?: number;
+  spaceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      searchFileType: 'searchFileType',
+      spaceId: 'spaceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'string',
+      searchFileType: 'number',
+      spaceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchRequestSpaceRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchResponseBodyDentryResultItems extends $tea.Model {
+  content?: string;
+  creation?: OpenActionModel;
+  dentryId?: string;
+  dentryUuid?: string;
+  extension?: string;
+  fileType?: number;
+  iconUrl?: string;
+  lastEdition?: OpenActionModel;
+  name?: string;
+  originName?: string;
+  path?: string;
+  spaceId?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      creation: 'creation',
+      dentryId: 'dentryId',
+      dentryUuid: 'dentryUuid',
+      extension: 'extension',
+      fileType: 'fileType',
+      iconUrl: 'iconUrl',
+      lastEdition: 'lastEdition',
+      name: 'name',
+      originName: 'originName',
+      path: 'path',
+      spaceId: 'spaceId',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+      creation: OpenActionModel,
+      dentryId: 'string',
+      dentryUuid: 'string',
+      extension: 'string',
+      fileType: 'number',
+      iconUrl: 'string',
+      lastEdition: OpenActionModel,
+      name: 'string',
+      originName: 'string',
+      path: 'string',
+      spaceId: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchResponseBodyDentryResult extends $tea.Model {
+  hasMore?: boolean;
+  items?: SearchResponseBodyDentryResultItems[];
+  nextToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      items: 'items',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      items: { 'type': 'array', 'itemType': SearchResponseBodyDentryResultItems },
+      nextToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchResponseBodySpaceResultItems extends $tea.Model {
+  name?: string;
+  originName?: string;
+  spaceId?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      originName: 'originName',
+      spaceId: 'spaceId',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      originName: 'string',
+      spaceId: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchResponseBodySpaceResult extends $tea.Model {
+  hasMore?: boolean;
+  items?: SearchResponseBodySpaceResultItems[];
+  nextToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      items: 'items',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      items: { 'type': 'array', 'itemType': SearchResponseBodySpaceResultItems },
+      nextToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -974,6 +1573,57 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async copyDentry(spaceId: string, dentryId: string, request: CopyDentryRequest): Promise<CopyDentryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CopyDentryHeaders({ });
+    return await this.copyDentryWithOptions(spaceId, dentryId, request, headers, runtime);
+  }
+
+  async copyDentryWithOptions(spaceId: string, dentryId: string, request: CopyDentryRequest, headers: CopyDentryHeaders, runtime: $Util.RuntimeOptions): Promise<CopyDentryResponse> {
+    Util.validateModel(request);
+    spaceId = OpenApiUtil.getEncodeParam(spaceId);
+    dentryId = OpenApiUtil.getEncodeParam(dentryId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.operatorId)) {
+      body["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.targetSpaceId)) {
+      body["targetSpaceId"] = request.targetSpaceId;
+    }
+
+    if (!Util.isUnset(request.toNextDentryId)) {
+      body["toNextDentryId"] = request.toNextDentryId;
+    }
+
+    if (!Util.isUnset(request.toParentDentryId)) {
+      body["toParentDentryId"] = request.toParentDentryId;
+    }
+
+    if (!Util.isUnset(request.toPrevDentryId)) {
+      body["toPrevDentryId"] = request.toPrevDentryId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CopyDentryResponse>(await this.doROARequest("CopyDentry", "doc_2.0", "HTTP", "POST", "AK", `/v2.0/doc/spaces/${spaceId}/dentries/${dentryId}/copy`, "json", req, runtime), new CopyDentryResponse({}));
+  }
 
   async createDentry(spaceId: string, request: CreateDentryRequest): Promise<CreateDentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1178,6 +1828,78 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryDentryResponse>(await this.doROARequest("QueryDentry", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/spaces/${spaceId}/dentries/${dentryId}`, "json", req, runtime), new QueryDentryResponse({}));
   }
 
+  async queryMineSpace(unionId: string): Promise<QueryMineSpaceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryMineSpaceHeaders({ });
+    return await this.queryMineSpaceWithOptions(unionId, headers, runtime);
+  }
+
+  async queryMineSpaceWithOptions(unionId: string, headers: QueryMineSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMineSpaceResponse> {
+    unionId = OpenApiUtil.getEncodeParam(unionId);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<QueryMineSpaceResponse>(await this.doROARequest("QueryMineSpace", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/spaces/users/${unionId}/mine`, "json", req, runtime), new QueryMineSpaceResponse({}));
+  }
+
+  async queryRecentList(request: QueryRecentListRequest): Promise<QueryRecentListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryRecentListHeaders({ });
+    return await this.queryRecentListWithOptions(request, headers, runtime);
+  }
+
+  async queryRecentListWithOptions(request: QueryRecentListRequest, headers: QueryRecentListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRecentListResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.creatorType)) {
+      query["creatorType"] = request.creatorType;
+    }
+
+    if (!Util.isUnset(request.fileType)) {
+      query["fileType"] = request.fileType;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.recentType)) {
+      query["recentType"] = request.recentType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryRecentListResponse>(await this.doROARequest("QueryRecentList", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/spaces/docs/recent`, "json", req, runtime), new QueryRecentListResponse({}));
+  }
+
   async querySpace(spaceId: string, request: QuerySpaceRequest): Promise<QuerySpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QuerySpaceHeaders({ });
@@ -1206,6 +1928,82 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QuerySpaceResponse>(await this.doROARequest("QuerySpace", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/spaces/${spaceId}`, "json", req, runtime), new QuerySpaceResponse({}));
+  }
+
+  async renameDentry(spaceId: string, dentryId: string, request: RenameDentryRequest): Promise<RenameDentryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RenameDentryHeaders({ });
+    return await this.renameDentryWithOptions(spaceId, dentryId, request, headers, runtime);
+  }
+
+  async renameDentryWithOptions(spaceId: string, dentryId: string, request: RenameDentryRequest, headers: RenameDentryHeaders, runtime: $Util.RuntimeOptions): Promise<RenameDentryResponse> {
+    Util.validateModel(request);
+    spaceId = OpenApiUtil.getEncodeParam(spaceId);
+    dentryId = OpenApiUtil.getEncodeParam(dentryId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.name)) {
+      query["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<RenameDentryResponse>(await this.doROARequest("RenameDentry", "doc_2.0", "HTTP", "POST", "AK", `/v2.0/doc/spaces/${spaceId}/dentries/${dentryId}/rename`, "json", req, runtime), new RenameDentryResponse({}));
+  }
+
+  async search(request: SearchRequest): Promise<SearchResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SearchHeaders({ });
+    return await this.searchWithOptions(request, headers, runtime);
+  }
+
+  async searchWithOptions(request: SearchRequest, headers: SearchHeaders, runtime: $Util.RuntimeOptions): Promise<SearchResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.dentryRequest))) {
+      body["dentryRequest"] = request.dentryRequest;
+    }
+
+    if (!Util.isUnset(request.keyword)) {
+      body["keyword"] = request.keyword;
+    }
+
+    if (!Util.isUnset(request.operatorId)) {
+      body["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.spaceRequest))) {
+      body["spaceRequest"] = request.spaceRequest;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SearchResponse>(await this.doROARequest("Search", "doc_2.0", "HTTP", "POST", "AK", `/v2.0/doc/search`, "json", req, runtime), new SearchResponse({}));
   }
 
 }
