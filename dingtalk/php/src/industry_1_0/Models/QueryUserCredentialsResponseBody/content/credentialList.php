@@ -11,7 +11,7 @@ class credentialList extends Model
     /**
      * @description 证书名称
      *
-     * @var int
+     * @var string
      */
     public $credentialName;
 

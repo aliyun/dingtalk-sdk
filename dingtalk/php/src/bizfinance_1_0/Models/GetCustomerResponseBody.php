@@ -42,12 +42,20 @@ class GetCustomerResponseBody extends Model
      * @var string
      */
     public $status;
+
+    /**
+     * @description 用户自定义code
+     *
+     * @var string
+     */
+    public $userDefineCode;
     protected $_name = [
-        'code'        => 'code',
-        'createTime'  => 'createTime',
-        'description' => 'description',
-        'name'        => 'name',
-        'status'      => 'status',
+        'code'           => 'code',
+        'createTime'     => 'createTime',
+        'description'    => 'description',
+        'name'           => 'name',
+        'status'         => 'status',
+        'userDefineCode' => 'userDefineCode',
     ];
 
     public function validate()
@@ -71,6 +79,9 @@ class GetCustomerResponseBody extends Model
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
+        }
+        if (null !== $this->userDefineCode) {
+            $res['userDefineCode'] = $this->userDefineCode;
         }
 
         return $res;
@@ -98,6 +109,9 @@ class GetCustomerResponseBody extends Model
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
+        }
+        if (isset($map['userDefineCode'])) {
+            $model->userDefineCode = $map['userDefineCode'];
         }
 
         return $model;

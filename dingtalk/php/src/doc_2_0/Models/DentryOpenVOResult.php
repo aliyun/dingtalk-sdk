@@ -12,7 +12,7 @@ use AlibabaCloud\Tea\Model;
 class DentryOpenVOResult extends Model
 {
     /**
-     * @description 内容类型。alidoc-钉钉文档；link-快捷方式；archive-压缩包。
+     * @description 内容类型。alidoc-钉钉文档；link-快捷方式；archive-压缩包；document-文件。
      *
      * @var string
      */
@@ -52,6 +52,13 @@ class DentryOpenVOResult extends Model
      * @var string
      */
     public $dentryUuid;
+
+    /**
+     * @description 文档docKey，用于标识一篇钉钉文档的key。只有内容类型为alidoc的才会有值。
+     *
+     * @var string
+     */
+    public $docKey;
 
     /**
      * @description 文件后缀名。
@@ -136,6 +143,7 @@ class DentryOpenVOResult extends Model
         'dentryId'       => 'dentryId',
         'dentryType'     => 'dentryType',
         'dentryUuid'     => 'dentryUuid',
+        'docKey'         => 'docKey',
         'extension'      => 'extension',
         'hasChildren'    => 'hasChildren',
         'linkSourceInfo' => 'linkSourceInfo',
@@ -173,6 +181,9 @@ class DentryOpenVOResult extends Model
         }
         if (null !== $this->dentryUuid) {
             $res['dentryUuid'] = $this->dentryUuid;
+        }
+        if (null !== $this->docKey) {
+            $res['docKey'] = $this->docKey;
         }
         if (null !== $this->extension) {
             $res['extension'] = $this->extension;
@@ -236,6 +247,9 @@ class DentryOpenVOResult extends Model
         }
         if (isset($map['dentryUuid'])) {
             $model->dentryUuid = $map['dentryUuid'];
+        }
+        if (isset($map['docKey'])) {
+            $model->docKey = $map['docKey'];
         }
         if (isset($map['extension'])) {
             $model->extension = $map['extension'];

@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
+     * @description 项目code
+     *
+     * @var string
+     */
+    public $caode;
+
+    /**
      * @description 企业id
      *
      * @var string
@@ -37,14 +44,21 @@ class list_ extends Model
     public $description;
 
     /**
-     * @description 项目code
+     * @description 项目名字
+     *
+     * @var string
+     */
+    public $name;
+
+    /**
+     * @description 项目code，废弃，请使用code
      *
      * @var string
      */
     public $projectCode;
 
     /**
-     * @description 项目名称
+     * @description 项目名称，废弃，请使用name
      *
      * @var string
      */
@@ -56,14 +70,24 @@ class list_ extends Model
      * @var string
      */
     public $status;
+
+    /**
+     * @description 用户自定义code
+     *
+     * @var string
+     */
+    public $userDefineCode;
     protected $_name = [
-        'corpId'      => 'corpId',
-        'createTime'  => 'createTime',
-        'creator'     => 'creator',
-        'description' => 'description',
-        'projectCode' => 'projectCode',
-        'projectName' => 'projectName',
-        'status'      => 'status',
+        'caode'          => 'caode',
+        'corpId'         => 'corpId',
+        'createTime'     => 'createTime',
+        'creator'        => 'creator',
+        'description'    => 'description',
+        'name'           => 'name',
+        'projectCode'    => 'projectCode',
+        'projectName'    => 'projectName',
+        'status'         => 'status',
+        'userDefineCode' => 'userDefineCode',
     ];
 
     public function validate()
@@ -73,6 +97,9 @@ class list_ extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->caode) {
+            $res['caode'] = $this->caode;
+        }
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
         }
@@ -85,6 +112,9 @@ class list_ extends Model
         if (null !== $this->description) {
             $res['description'] = $this->description;
         }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
+        }
         if (null !== $this->projectCode) {
             $res['projectCode'] = $this->projectCode;
         }
@@ -93,6 +123,9 @@ class list_ extends Model
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
+        }
+        if (null !== $this->userDefineCode) {
+            $res['userDefineCode'] = $this->userDefineCode;
         }
 
         return $res;
@@ -106,6 +139,9 @@ class list_ extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['caode'])) {
+            $model->caode = $map['caode'];
+        }
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
         }
@@ -118,6 +154,9 @@ class list_ extends Model
         if (isset($map['description'])) {
             $model->description = $map['description'];
         }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
+        }
         if (isset($map['projectCode'])) {
             $model->projectCode = $map['projectCode'];
         }
@@ -126,6 +165,9 @@ class list_ extends Model
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
+        }
+        if (isset($map['userDefineCode'])) {
+            $model->userDefineCode = $map['userDefineCode'];
         }
 
         return $model;

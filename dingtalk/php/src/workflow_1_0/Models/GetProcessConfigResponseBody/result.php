@@ -21,6 +21,13 @@ class result extends Model
     public $abstractGenRule;
 
     /**
+     * @description 表单节点权限
+     *
+     * @var string
+     */
+    public $activityAuth;
+
+    /**
      * @description 是否允许撤销
      *
      * @var bool
@@ -133,6 +140,7 @@ class result extends Model
     public $visibility;
     protected $_name = [
         'abstractGenRule'            => 'abstractGenRule',
+        'activityAuth'               => 'activityAuth',
         'allowRevoke'                => 'allowRevoke',
         'appendEnable'               => 'appendEnable',
         'autoExecuteOriginatorTasks' => 'autoExecuteOriginatorTasks',
@@ -160,6 +168,9 @@ class result extends Model
         $res = [];
         if (null !== $this->abstractGenRule) {
             $res['abstractGenRule'] = $this->abstractGenRule;
+        }
+        if (null !== $this->activityAuth) {
+            $res['activityAuth'] = $this->activityAuth;
         }
         if (null !== $this->allowRevoke) {
             $res['allowRevoke'] = $this->allowRevoke;
@@ -231,6 +242,9 @@ class result extends Model
             if (!empty($map['abstractGenRule'])) {
                 $model->abstractGenRule = $map['abstractGenRule'];
             }
+        }
+        if (isset($map['activityAuth'])) {
+            $model->activityAuth = $map['activityAuth'];
         }
         if (isset($map['allowRevoke'])) {
             $model->allowRevoke = $map['allowRevoke'];

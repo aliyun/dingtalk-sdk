@@ -10,7 +10,7 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 证书
+     * @description 证书列表
      *
      * @var credentialList[]
      */

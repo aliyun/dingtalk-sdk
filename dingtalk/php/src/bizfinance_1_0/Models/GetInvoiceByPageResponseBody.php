@@ -4,17 +4,35 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetInvoiceByPageResponseBody\list_;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetInvoiceByPageResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
 class GetInvoiceByPageResponseBody extends Model
 {
     /**
-     * @var list_[]
+     * @var string
      */
-    public $list;
+    public $errorCode;
+
+    /**
+     * @var string
+     */
+    public $errorMsg;
+
+    /**
+     * @var result
+     */
+    public $result;
+
+    /**
+     * @var bool
+     */
+    public $success;
     protected $_name = [
-        'list' => 'list',
+        'errorCode' => 'errorCode',
+        'errorMsg'  => 'errorMsg',
+        'result'    => 'result',
+        'success'   => 'success',
     ];
 
     public function validate()
@@ -24,14 +42,17 @@ class GetInvoiceByPageResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->list) {
-            $res['list'] = [];
-            if (null !== $this->list && \is_array($this->list)) {
-                $n = 0;
-                foreach ($this->list as $item) {
-                    $res['list'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
+        if (null !== $this->errorCode) {
+            $res['errorCode'] = $this->errorCode;
+        }
+        if (null !== $this->errorMsg) {
+            $res['errorMsg'] = $this->errorMsg;
+        }
+        if (null !== $this->result) {
+            $res['result'] = null !== $this->result ? $this->result->toMap() : null;
+        }
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
         }
 
         return $res;
@@ -45,14 +66,17 @@ class GetInvoiceByPageResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['list'])) {
-            if (!empty($map['list'])) {
-                $model->list = [];
-                $n           = 0;
-                foreach ($map['list'] as $item) {
-                    $model->list[$n++] = null !== $item ? list_::fromMap($item) : $item;
-                }
-            }
+        if (isset($map['errorCode'])) {
+            $model->errorCode = $map['errorCode'];
+        }
+        if (isset($map['errorMsg'])) {
+            $model->errorMsg = $map['errorMsg'];
+        }
+        if (isset($map['result'])) {
+            $model->result = result::fromMap($map['result']);
+        }
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
         }
 
         return $model;
