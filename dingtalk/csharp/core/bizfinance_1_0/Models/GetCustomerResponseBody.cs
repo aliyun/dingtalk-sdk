@@ -44,6 +44,13 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public string Status { get; set; }
 
+        /// <summary>
+        /// 用户自定义code
+        /// </summary>
+        [NameInMap("userDefineCode")]
+        [Validation(Required=false)]
+        public string UserDefineCode { get; set; }
+
     }
 
 }

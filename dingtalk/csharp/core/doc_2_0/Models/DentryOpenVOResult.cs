@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 {
     public class DentryOpenVOResult : TeaModel {
         /// <summary>
-        /// 内容类型。alidoc-钉钉文档；link-快捷方式；archive-压缩包。
+        /// 内容类型。alidoc-钉钉文档；link-快捷方式；archive-压缩包；document-文件。
         /// </summary>
         [NameInMap("contentType")]
         [Validation(Required=false)]
@@ -58,6 +58,13 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         [NameInMap("dentryUuid")]
         [Validation(Required=false)]
         public string DentryUuid { get; set; }
+
+        /// <summary>
+        /// 文档docKey，用于标识一篇钉钉文档的key。只有内容类型为alidoc的才会有值。
+        /// </summary>
+        [NameInMap("docKey")]
+        [Validation(Required=false)]
+        public string DocKey { get; set; }
 
         /// <summary>
         /// 文件后缀名。

@@ -16,6 +16,9 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [NameInMap("abstractGenRule")]
             [Validation(Required=false)]
             public List<string> AbstractGenRule { get; set; }
+            [NameInMap("activityAuth")]
+            [Validation(Required=false)]
+            public string ActivityAuth { get; set; }
             [NameInMap("allowRevoke")]
             [Validation(Required=false)]
             public bool? AllowRevoke { get; set; }

@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class GetProjectResponseBody : TeaModel {
         /// <summary>
+        /// 项目code
+        /// </summary>
+        [NameInMap("code")]
+        [Validation(Required=false)]
+        public string Code { get; set; }
+
+        /// <summary>
         /// 企业id
         /// </summary>
         [NameInMap("corpId")]
@@ -38,14 +45,21 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         public string Description { get; set; }
 
         /// <summary>
-        /// 项目code
+        /// 项目名字
+        /// </summary>
+        [NameInMap("name")]
+        [Validation(Required=false)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// 项目code，废弃，请使用code
         /// </summary>
         [NameInMap("projectCode")]
         [Validation(Required=false)]
         public string ProjectCode { get; set; }
 
         /// <summary>
-        /// 项目名称
+        /// 项目名称，废弃，请使用name
         /// </summary>
         [NameInMap("projectName")]
         [Validation(Required=false)]
@@ -57,6 +71,13 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [NameInMap("status")]
         [Validation(Required=false)]
         public string Status { get; set; }
+
+        /// <summary>
+        /// 用户自定义code
+        /// </summary>
+        [NameInMap("userDefineCode")]
+        [Validation(Required=false)]
+        public string UserDefineCode { get; set; }
 
     }
 

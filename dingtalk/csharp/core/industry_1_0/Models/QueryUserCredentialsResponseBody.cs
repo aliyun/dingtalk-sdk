@@ -17,7 +17,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<QueryUserCredentialsResponseBodyContent> Content { get; set; }
         public class QueryUserCredentialsResponseBodyContent : TeaModel {
             /// <summary>
-            /// 证书
+            /// 证书列表
             /// </summary>
             [NameInMap("credentialList")]
             [Validation(Required=false)]
@@ -28,7 +28,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 /// </summary>
                 [NameInMap("credentialName")]
                 [Validation(Required=false)]
-                public int? CredentialName { get; set; }
+                public string CredentialName { get; set; }
 
                 /// <summary>
                 /// 证书类型
