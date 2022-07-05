@@ -3,7 +3,7 @@ package com.aliyun.dingtalkdoc_2_0.models;
 
 import com.aliyun.tea.*;
 
-public class DentryOpenVO extends TeaModel {
+public class DentryVO extends TeaModel {
     // 内容类型。alidoc-钉钉文档；link-快捷方式；archive-压缩包；document-文件。
     @NameInMap("contentType")
     public String contentType;
@@ -14,7 +14,7 @@ public class DentryOpenVO extends TeaModel {
 
     // 创建者。
     @NameInMap("creator")
-    public DentryOpenVOCreator creator;
+    public DentryVOCreator creator;
 
     // 节点id。
     @NameInMap("dentryId")
@@ -54,7 +54,7 @@ public class DentryOpenVO extends TeaModel {
 
     // 知识库信息。
     @NameInMap("space")
-    public SpaceOpenVO space;
+    public SpaceModel space;
 
     // 知识库id。
     @NameInMap("spaceId")
@@ -66,7 +66,7 @@ public class DentryOpenVO extends TeaModel {
 
     // 更新人。
     @NameInMap("updater")
-    public DentryOpenVOUpdater updater;
+    public DentryVOUpdater updater;
 
     // 节点访问url。
     @NameInMap("url")
@@ -74,14 +74,14 @@ public class DentryOpenVO extends TeaModel {
 
     // 访问者对当前节点的权限等信息。
     @NameInMap("visitorInfo")
-    public DentryOpenVOVisitorInfo visitorInfo;
+    public DentryVOVisitorInfo visitorInfo;
 
-    public static DentryOpenVO build(java.util.Map<String, ?> map) throws Exception {
-        DentryOpenVO self = new DentryOpenVO();
+    public static DentryVO build(java.util.Map<String, ?> map) throws Exception {
+        DentryVO self = new DentryVO();
         return TeaModel.build(map, self);
     }
 
-    public DentryOpenVO setContentType(String contentType) {
+    public DentryVO setContentType(String contentType) {
         this.contentType = contentType;
         return this;
     }
@@ -89,7 +89,7 @@ public class DentryOpenVO extends TeaModel {
         return this.contentType;
     }
 
-    public DentryOpenVO setCreatedTime(Long createdTime) {
+    public DentryVO setCreatedTime(Long createdTime) {
         this.createdTime = createdTime;
         return this;
     }
@@ -97,15 +97,15 @@ public class DentryOpenVO extends TeaModel {
         return this.createdTime;
     }
 
-    public DentryOpenVO setCreator(DentryOpenVOCreator creator) {
+    public DentryVO setCreator(DentryVOCreator creator) {
         this.creator = creator;
         return this;
     }
-    public DentryOpenVOCreator getCreator() {
+    public DentryVOCreator getCreator() {
         return this.creator;
     }
 
-    public DentryOpenVO setDentryId(String dentryId) {
+    public DentryVO setDentryId(String dentryId) {
         this.dentryId = dentryId;
         return this;
     }
@@ -113,7 +113,7 @@ public class DentryOpenVO extends TeaModel {
         return this.dentryId;
     }
 
-    public DentryOpenVO setDentryType(String dentryType) {
+    public DentryVO setDentryType(String dentryType) {
         this.dentryType = dentryType;
         return this;
     }
@@ -121,7 +121,7 @@ public class DentryOpenVO extends TeaModel {
         return this.dentryType;
     }
 
-    public DentryOpenVO setDentryUuid(String dentryUuid) {
+    public DentryVO setDentryUuid(String dentryUuid) {
         this.dentryUuid = dentryUuid;
         return this;
     }
@@ -129,7 +129,7 @@ public class DentryOpenVO extends TeaModel {
         return this.dentryUuid;
     }
 
-    public DentryOpenVO setDocKey(String docKey) {
+    public DentryVO setDocKey(String docKey) {
         this.docKey = docKey;
         return this;
     }
@@ -137,7 +137,7 @@ public class DentryOpenVO extends TeaModel {
         return this.docKey;
     }
 
-    public DentryOpenVO setExtension(String extension) {
+    public DentryVO setExtension(String extension) {
         this.extension = extension;
         return this;
     }
@@ -145,7 +145,7 @@ public class DentryOpenVO extends TeaModel {
         return this.extension;
     }
 
-    public DentryOpenVO setHasChildren(Boolean hasChildren) {
+    public DentryVO setHasChildren(Boolean hasChildren) {
         this.hasChildren = hasChildren;
         return this;
     }
@@ -153,7 +153,7 @@ public class DentryOpenVO extends TeaModel {
         return this.hasChildren;
     }
 
-    public DentryOpenVO setLinkSourceInfo(LinkSourceInfo linkSourceInfo) {
+    public DentryVO setLinkSourceInfo(LinkSourceInfo linkSourceInfo) {
         this.linkSourceInfo = linkSourceInfo;
         return this;
     }
@@ -161,7 +161,7 @@ public class DentryOpenVO extends TeaModel {
         return this.linkSourceInfo;
     }
 
-    public DentryOpenVO setName(String name) {
+    public DentryVO setName(String name) {
         this.name = name;
         return this;
     }
@@ -169,7 +169,7 @@ public class DentryOpenVO extends TeaModel {
         return this.name;
     }
 
-    public DentryOpenVO setPath(String path) {
+    public DentryVO setPath(String path) {
         this.path = path;
         return this;
     }
@@ -177,15 +177,15 @@ public class DentryOpenVO extends TeaModel {
         return this.path;
     }
 
-    public DentryOpenVO setSpace(SpaceOpenVO space) {
+    public DentryVO setSpace(SpaceModel space) {
         this.space = space;
         return this;
     }
-    public SpaceOpenVO getSpace() {
+    public SpaceModel getSpace() {
         return this.space;
     }
 
-    public DentryOpenVO setSpaceId(String spaceId) {
+    public DentryVO setSpaceId(String spaceId) {
         this.spaceId = spaceId;
         return this;
     }
@@ -193,7 +193,7 @@ public class DentryOpenVO extends TeaModel {
         return this.spaceId;
     }
 
-    public DentryOpenVO setUpdatedTime(Long updatedTime) {
+    public DentryVO setUpdatedTime(Long updatedTime) {
         this.updatedTime = updatedTime;
         return this;
     }
@@ -201,15 +201,15 @@ public class DentryOpenVO extends TeaModel {
         return this.updatedTime;
     }
 
-    public DentryOpenVO setUpdater(DentryOpenVOUpdater updater) {
+    public DentryVO setUpdater(DentryVOUpdater updater) {
         this.updater = updater;
         return this;
     }
-    public DentryOpenVOUpdater getUpdater() {
+    public DentryVOUpdater getUpdater() {
         return this.updater;
     }
 
-    public DentryOpenVO setUrl(String url) {
+    public DentryVO setUrl(String url) {
         this.url = url;
         return this;
     }
@@ -217,15 +217,15 @@ public class DentryOpenVO extends TeaModel {
         return this.url;
     }
 
-    public DentryOpenVO setVisitorInfo(DentryOpenVOVisitorInfo visitorInfo) {
+    public DentryVO setVisitorInfo(DentryVOVisitorInfo visitorInfo) {
         this.visitorInfo = visitorInfo;
         return this;
     }
-    public DentryOpenVOVisitorInfo getVisitorInfo() {
+    public DentryVOVisitorInfo getVisitorInfo() {
         return this.visitorInfo;
     }
 
-    public static class DentryOpenVOCreator extends TeaModel {
+    public static class DentryVOCreator extends TeaModel {
         // 用户名称。
         @NameInMap("name")
         public String name;
@@ -234,12 +234,12 @@ public class DentryOpenVO extends TeaModel {
         @NameInMap("unionId")
         public String unionId;
 
-        public static DentryOpenVOCreator build(java.util.Map<String, ?> map) throws Exception {
-            DentryOpenVOCreator self = new DentryOpenVOCreator();
+        public static DentryVOCreator build(java.util.Map<String, ?> map) throws Exception {
+            DentryVOCreator self = new DentryVOCreator();
             return TeaModel.build(map, self);
         }
 
-        public DentryOpenVOCreator setName(String name) {
+        public DentryVOCreator setName(String name) {
             this.name = name;
             return this;
         }
@@ -247,7 +247,7 @@ public class DentryOpenVO extends TeaModel {
             return this.name;
         }
 
-        public DentryOpenVOCreator setUnionId(String unionId) {
+        public DentryVOCreator setUnionId(String unionId) {
             this.unionId = unionId;
             return this;
         }
@@ -257,7 +257,7 @@ public class DentryOpenVO extends TeaModel {
 
     }
 
-    public static class DentryOpenVOUpdater extends TeaModel {
+    public static class DentryVOUpdater extends TeaModel {
         // 用户名称。
         @NameInMap("name")
         public String name;
@@ -266,12 +266,12 @@ public class DentryOpenVO extends TeaModel {
         @NameInMap("unionId")
         public String unionId;
 
-        public static DentryOpenVOUpdater build(java.util.Map<String, ?> map) throws Exception {
-            DentryOpenVOUpdater self = new DentryOpenVOUpdater();
+        public static DentryVOUpdater build(java.util.Map<String, ?> map) throws Exception {
+            DentryVOUpdater self = new DentryVOUpdater();
             return TeaModel.build(map, self);
         }
 
-        public DentryOpenVOUpdater setName(String name) {
+        public DentryVOUpdater setName(String name) {
             this.name = name;
             return this;
         }
@@ -279,7 +279,7 @@ public class DentryOpenVO extends TeaModel {
             return this.name;
         }
 
-        public DentryOpenVOUpdater setUnionId(String unionId) {
+        public DentryVOUpdater setUnionId(String unionId) {
             this.unionId = unionId;
             return this;
         }
@@ -289,7 +289,7 @@ public class DentryOpenVO extends TeaModel {
 
     }
 
-    public static class DentryOpenVOVisitorInfo extends TeaModel {
+    public static class DentryVOVisitorInfo extends TeaModel {
         // 节点的操作列表。
         @NameInMap("dentryActions")
         public java.util.List<String> dentryActions;
@@ -298,12 +298,12 @@ public class DentryOpenVO extends TeaModel {
         @NameInMap("spaceActions")
         public java.util.List<String> spaceActions;
 
-        public static DentryOpenVOVisitorInfo build(java.util.Map<String, ?> map) throws Exception {
-            DentryOpenVOVisitorInfo self = new DentryOpenVOVisitorInfo();
+        public static DentryVOVisitorInfo build(java.util.Map<String, ?> map) throws Exception {
+            DentryVOVisitorInfo self = new DentryVOVisitorInfo();
             return TeaModel.build(map, self);
         }
 
-        public DentryOpenVOVisitorInfo setDentryActions(java.util.List<String> dentryActions) {
+        public DentryVOVisitorInfo setDentryActions(java.util.List<String> dentryActions) {
             this.dentryActions = dentryActions;
             return this;
         }
@@ -311,7 +311,7 @@ public class DentryOpenVO extends TeaModel {
             return this.dentryActions;
         }
 
-        public DentryOpenVOVisitorInfo setSpaceActions(java.util.List<String> spaceActions) {
+        public DentryVOVisitorInfo setSpaceActions(java.util.List<String> spaceActions) {
             this.spaceActions = spaceActions;
             return this;
         }

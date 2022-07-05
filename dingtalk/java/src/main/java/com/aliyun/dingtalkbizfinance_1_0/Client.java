@@ -50,6 +50,67 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("BatchAddInvoice", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/invoices/batch", "json", req, runtime), new BatchAddInvoiceResponse());
     }
 
+    public CheckVoucherStatusResponse checkVoucherStatus(CheckVoucherStatusRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CheckVoucherStatusHeaders headers = new CheckVoucherStatusHeaders();
+        return this.checkVoucherStatusWithOptions(request, headers, runtime);
+    }
+
+    public CheckVoucherStatusResponse checkVoucherStatusWithOptions(CheckVoucherStatusRequest request, CheckVoucherStatusHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
+            body.put("endTime", request.endTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.financeType)) {
+            body.put("financeType", request.financeType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.invoiceCode)) {
+            body.put("invoiceCode", request.invoiceCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.invoiceNo)) {
+            body.put("invoiceNo", request.invoiceNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            body.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            body.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startTime)) {
+            body.put("startTime", request.startTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taxNo)) {
+            body.put("taxNo", request.taxNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.verifyStatus)) {
+            body.put("verifyStatus", request.verifyStatus);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CheckVoucherStatus", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/invoices/checkVoucherStatus/query", "json", req, runtime), new CheckVoucherStatusResponse());
+    }
+
     public CreateCustomerResponse createCustomer(CreateCustomerRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         CreateCustomerHeaders headers = new CreateCustomerHeaders();

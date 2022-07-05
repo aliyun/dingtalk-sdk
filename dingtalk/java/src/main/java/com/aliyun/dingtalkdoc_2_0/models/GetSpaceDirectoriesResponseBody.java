@@ -6,7 +6,7 @@ import com.aliyun.tea.*;
 public class GetSpaceDirectoriesResponseBody extends TeaModel {
     // 子节点列表。
     @NameInMap("children")
-    public java.util.List<DentryOpenVO> children;
+    public java.util.List<DentryModel> children;
 
     // 是否还有后续可查询子节点。
     @NameInMap("hasMore")
@@ -21,11 +21,11 @@ public class GetSpaceDirectoriesResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public GetSpaceDirectoriesResponseBody setChildren(java.util.List<DentryOpenVO> children) {
+    public GetSpaceDirectoriesResponseBody setChildren(java.util.List<DentryModel> children) {
         this.children = children;
         return this;
     }
-    public java.util.List<DentryOpenVO> getChildren() {
+    public java.util.List<DentryModel> getChildren() {
         return this.children;
     }
 

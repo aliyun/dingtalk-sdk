@@ -10,7 +10,7 @@ public class CreateDentryResponse extends TeaModel {
 
     @NameInMap("body")
     @Validation(required = true)
-    public DentryOpenVOResult body;
+    public DentryVO body;
 
     public static CreateDentryResponse build(java.util.Map<String, ?> map) throws Exception {
         CreateDentryResponse self = new CreateDentryResponse();
@@ -25,11 +25,11 @@ public class CreateDentryResponse extends TeaModel {
         return this.headers;
     }
 
-    public CreateDentryResponse setBody(DentryOpenVOResult body) {
+    public CreateDentryResponse setBody(DentryVO body) {
         this.body = body;
         return this;
     }
-    public DentryOpenVOResult getBody() {
+    public DentryVO getBody() {
         return this.body;
     }
 

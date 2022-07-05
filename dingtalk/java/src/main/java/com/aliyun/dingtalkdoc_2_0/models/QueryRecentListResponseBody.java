@@ -52,7 +52,7 @@ public class QueryRecentListResponseBody extends TeaModel {
 
         // 节点信息。
         @NameInMap("dentry")
-        public DentryOpenVO dentry;
+        public DentryModel dentry;
 
         // 如果查询的是访问，那么这里是访问时间；否则就是编辑时间。
         @NameInMap("recentTime")
@@ -71,11 +71,11 @@ public class QueryRecentListResponseBody extends TeaModel {
             return this.deleted;
         }
 
-        public QueryRecentListResponseBodyRecentList setDentry(DentryOpenVO dentry) {
+        public QueryRecentListResponseBodyRecentList setDentry(DentryModel dentry) {
             this.dentry = dentry;
             return this;
         }
-        public DentryOpenVO getDentry() {
+        public DentryModel getDentry() {
             return this.dentry;
         }
 

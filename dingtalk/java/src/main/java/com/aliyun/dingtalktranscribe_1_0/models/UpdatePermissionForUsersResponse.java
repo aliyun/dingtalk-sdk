@@ -8,6 +8,10 @@ public class UpdatePermissionForUsersResponse extends TeaModel {
     @Validation(required = true)
     public java.util.Map<String, String> headers;
 
+    @NameInMap("body")
+    @Validation(required = true)
+    public UpdatePermissionForUsersResponseBody body;
+
     public static UpdatePermissionForUsersResponse build(java.util.Map<String, ?> map) throws Exception {
         UpdatePermissionForUsersResponse self = new UpdatePermissionForUsersResponse();
         return TeaModel.build(map, self);
@@ -19,6 +23,14 @@ public class UpdatePermissionForUsersResponse extends TeaModel {
     }
     public java.util.Map<String, String> getHeaders() {
         return this.headers;
+    }
+
+    public UpdatePermissionForUsersResponse setBody(UpdatePermissionForUsersResponseBody body) {
+        this.body = body;
+        return this;
+    }
+    public UpdatePermissionForUsersResponseBody getBody() {
+        return this.body;
     }
 
 }

@@ -10,7 +10,7 @@ public class RenameDentryResponse extends TeaModel {
 
     @NameInMap("body")
     @Validation(required = true)
-    public DentryOpenVOResult body;
+    public DentryVO body;
 
     public static RenameDentryResponse build(java.util.Map<String, ?> map) throws Exception {
         RenameDentryResponse self = new RenameDentryResponse();
@@ -25,11 +25,11 @@ public class RenameDentryResponse extends TeaModel {
         return this.headers;
     }
 
-    public RenameDentryResponse setBody(DentryOpenVOResult body) {
+    public RenameDentryResponse setBody(DentryVO body) {
         this.body = body;
         return this;
     }
-    public DentryOpenVOResult getBody() {
+    public DentryVO getBody() {
         return this.body;
     }
 

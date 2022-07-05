@@ -30,6 +30,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public UpdatePermissionForUsersResponse updatePermissionForUsersWithOptions(String taskId, UpdatePermissionForUsersRequest request, UpdatePermissionForUsersHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorUid)) {
+            query.put("operatorUid", request.operatorUid);
+        }
+
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.bizType)) {
             body.put("bizType", request.bizType);
@@ -58,8 +63,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdatePermissionForUsers", "transcribe_1.0", "HTTP", "PUT", "AK", "/v1.0/transcribe/tasks/" + taskId + "/permissions", "none", req, runtime), new UpdatePermissionForUsersResponse());
+        return TeaModel.toModel(this.doROARequest("UpdatePermissionForUsers", "transcribe_1.0", "HTTP", "PUT", "AK", "/v1.0/transcribe/tasks/" + taskId + "/permissions", "json", req, runtime), new UpdatePermissionForUsersResponse());
     }
 }

@@ -54,6 +54,43 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("CreateAppGoodsServiceConversation", "appMarket_1.0", "HTTP", "POST", "AK", "/v1.0/appMarket/orders/serviceGroups", "json", req, runtime), new CreateAppGoodsServiceConversationResponse());
     }
 
+    public GetCoolAppAccessStatusResponse getCoolAppAccessStatus(GetCoolAppAccessStatusRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetCoolAppAccessStatusHeaders headers = new GetCoolAppAccessStatusHeaders();
+        return this.getCoolAppAccessStatusWithOptions(request, headers, runtime);
+    }
+
+    public GetCoolAppAccessStatusResponse getCoolAppAccessStatusWithOptions(GetCoolAppAccessStatusRequest request, GetCoolAppAccessStatusHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.authCode)) {
+            body.put("authCode", request.authCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.coolAppCode)) {
+            body.put("coolAppCode", request.coolAppCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.encFieldBizCode)) {
+            body.put("encFieldBizCode", request.encFieldBizCode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetCoolAppAccessStatus", "appMarket_1.0", "HTTP", "POST", "AK", "/v1.0/appMarket/coolApps/accessions/statuses/query", "json", req, runtime), new GetCoolAppAccessStatusResponse());
+    }
+
     public GetPersonalExperienceInfoResponse getPersonalExperienceInfo(GetPersonalExperienceInfoRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetPersonalExperienceInfoHeaders headers = new GetPersonalExperienceInfoHeaders();

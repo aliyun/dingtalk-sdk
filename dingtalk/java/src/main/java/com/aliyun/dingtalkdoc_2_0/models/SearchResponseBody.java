@@ -54,10 +54,6 @@ public class SearchResponseBody extends TeaModel {
         @NameInMap("extension")
         public String extension;
 
-        // 文件类型。1-文档；2-表格；3-脑图；4-演示；5-白板；6-office文字；7-office表格；8-office ppt；10-多维表格；11-文本；12-图片；13-视频；14-音频；15-压缩文件；16-其他。
-        @NameInMap("fileType")
-        public Integer fileType;
-
         // 节点图标url。
         @NameInMap("iconUrl")
         public String iconUrl;
@@ -77,6 +73,10 @@ public class SearchResponseBody extends TeaModel {
         // 节点的路径。
         @NameInMap("path")
         public String path;
+
+        // 文件类型。1-文档；2-表格；3-脑图；4-演示；5-白板；6-office文字；7-office表格；8-office ppt；10-多维表格；11-文本；12-图片；13-视频；14-音频；15-压缩文件；16-其他。
+        @NameInMap("searchFileType")
+        public Integer searchFileType;
 
         // 节点所属的知识库id。
         @NameInMap("spaceId")
@@ -131,14 +131,6 @@ public class SearchResponseBody extends TeaModel {
             return this.extension;
         }
 
-        public SearchResponseBodyDentryResultItems setFileType(Integer fileType) {
-            this.fileType = fileType;
-            return this;
-        }
-        public Integer getFileType() {
-            return this.fileType;
-        }
-
         public SearchResponseBodyDentryResultItems setIconUrl(String iconUrl) {
             this.iconUrl = iconUrl;
             return this;
@@ -177,6 +169,14 @@ public class SearchResponseBody extends TeaModel {
         }
         public String getPath() {
             return this.path;
+        }
+
+        public SearchResponseBodyDentryResultItems setSearchFileType(Integer searchFileType) {
+            this.searchFileType = searchFileType;
+            return this;
+        }
+        public Integer getSearchFileType() {
+            return this.searchFileType;
         }
 
         public SearchResponseBodyDentryResultItems setSpaceId(String spaceId) {

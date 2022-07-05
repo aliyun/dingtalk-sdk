@@ -3,7 +3,7 @@ package com.aliyun.dingtalkdoc_2_0.models;
 
 import com.aliyun.tea.*;
 
-public class SpaceOpenVOResult extends TeaModel {
+public class SpaceModel extends TeaModel {
     // 知识库id。
     @NameInMap("id")
     public String id;
@@ -14,7 +14,7 @@ public class SpaceOpenVOResult extends TeaModel {
 
     // 知识库所有者。
     @NameInMap("owner")
-    public SpaceOpenVOResultOwner owner;
+    public SpaceModelOwner owner;
 
     // 知识库访问url。
     @NameInMap("url")
@@ -22,14 +22,14 @@ public class SpaceOpenVOResult extends TeaModel {
 
     // 访问者对当前知识库的权限等信息。
     @NameInMap("visitorInfo")
-    public SpaceOpenVOResultVisitorInfo visitorInfo;
+    public SpaceModelVisitorInfo visitorInfo;
 
-    public static SpaceOpenVOResult build(java.util.Map<String, ?> map) throws Exception {
-        SpaceOpenVOResult self = new SpaceOpenVOResult();
+    public static SpaceModel build(java.util.Map<String, ?> map) throws Exception {
+        SpaceModel self = new SpaceModel();
         return TeaModel.build(map, self);
     }
 
-    public SpaceOpenVOResult setId(String id) {
+    public SpaceModel setId(String id) {
         this.id = id;
         return this;
     }
@@ -37,7 +37,7 @@ public class SpaceOpenVOResult extends TeaModel {
         return this.id;
     }
 
-    public SpaceOpenVOResult setName(String name) {
+    public SpaceModel setName(String name) {
         this.name = name;
         return this;
     }
@@ -45,15 +45,15 @@ public class SpaceOpenVOResult extends TeaModel {
         return this.name;
     }
 
-    public SpaceOpenVOResult setOwner(SpaceOpenVOResultOwner owner) {
+    public SpaceModel setOwner(SpaceModelOwner owner) {
         this.owner = owner;
         return this;
     }
-    public SpaceOpenVOResultOwner getOwner() {
+    public SpaceModelOwner getOwner() {
         return this.owner;
     }
 
-    public SpaceOpenVOResult setUrl(String url) {
+    public SpaceModel setUrl(String url) {
         this.url = url;
         return this;
     }
@@ -61,15 +61,15 @@ public class SpaceOpenVOResult extends TeaModel {
         return this.url;
     }
 
-    public SpaceOpenVOResult setVisitorInfo(SpaceOpenVOResultVisitorInfo visitorInfo) {
+    public SpaceModel setVisitorInfo(SpaceModelVisitorInfo visitorInfo) {
         this.visitorInfo = visitorInfo;
         return this;
     }
-    public SpaceOpenVOResultVisitorInfo getVisitorInfo() {
+    public SpaceModelVisitorInfo getVisitorInfo() {
         return this.visitorInfo;
     }
 
-    public static class SpaceOpenVOResultOwner extends TeaModel {
+    public static class SpaceModelOwner extends TeaModel {
         // 用户名称。
         @NameInMap("name")
         public String name;
@@ -78,12 +78,12 @@ public class SpaceOpenVOResult extends TeaModel {
         @NameInMap("unionId")
         public String unionId;
 
-        public static SpaceOpenVOResultOwner build(java.util.Map<String, ?> map) throws Exception {
-            SpaceOpenVOResultOwner self = new SpaceOpenVOResultOwner();
+        public static SpaceModelOwner build(java.util.Map<String, ?> map) throws Exception {
+            SpaceModelOwner self = new SpaceModelOwner();
             return TeaModel.build(map, self);
         }
 
-        public SpaceOpenVOResultOwner setName(String name) {
+        public SpaceModelOwner setName(String name) {
             this.name = name;
             return this;
         }
@@ -91,7 +91,7 @@ public class SpaceOpenVOResult extends TeaModel {
             return this.name;
         }
 
-        public SpaceOpenVOResultOwner setUnionId(String unionId) {
+        public SpaceModelOwner setUnionId(String unionId) {
             this.unionId = unionId;
             return this;
         }
@@ -101,7 +101,7 @@ public class SpaceOpenVOResult extends TeaModel {
 
     }
 
-    public static class SpaceOpenVOResultVisitorInfo extends TeaModel {
+    public static class SpaceModelVisitorInfo extends TeaModel {
         // 节点的操作列表。
         @NameInMap("dentryActions")
         public java.util.List<String> dentryActions;
@@ -110,12 +110,12 @@ public class SpaceOpenVOResult extends TeaModel {
         @NameInMap("spaceActions")
         public java.util.List<String> spaceActions;
 
-        public static SpaceOpenVOResultVisitorInfo build(java.util.Map<String, ?> map) throws Exception {
-            SpaceOpenVOResultVisitorInfo self = new SpaceOpenVOResultVisitorInfo();
+        public static SpaceModelVisitorInfo build(java.util.Map<String, ?> map) throws Exception {
+            SpaceModelVisitorInfo self = new SpaceModelVisitorInfo();
             return TeaModel.build(map, self);
         }
 
-        public SpaceOpenVOResultVisitorInfo setDentryActions(java.util.List<String> dentryActions) {
+        public SpaceModelVisitorInfo setDentryActions(java.util.List<String> dentryActions) {
             this.dentryActions = dentryActions;
             return this;
         }
@@ -123,7 +123,7 @@ public class SpaceOpenVOResult extends TeaModel {
             return this.dentryActions;
         }
 
-        public SpaceOpenVOResultVisitorInfo setSpaceActions(java.util.List<String> spaceActions) {
+        public SpaceModelVisitorInfo setSpaceActions(java.util.List<String> spaceActions) {
             this.spaceActions = spaceActions;
             return this;
         }

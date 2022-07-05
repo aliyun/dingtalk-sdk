@@ -8,10 +8,6 @@ public class GetProjectResponseBody extends TeaModel {
     @NameInMap("code")
     public String code;
 
-    // 企业id
-    @NameInMap("corpId")
-    public String corpId;
-
     // 创建时间
     @NameInMap("createTime")
     public Long createTime;
@@ -55,14 +51,6 @@ public class GetProjectResponseBody extends TeaModel {
     }
     public String getCode() {
         return this.code;
-    }
-
-    public GetProjectResponseBody setCorpId(String corpId) {
-        this.corpId = corpId;
-        return this;
-    }
-    public String getCorpId() {
-        return this.corpId;
     }
 
     public GetProjectResponseBody setCreateTime(Long createTime) {

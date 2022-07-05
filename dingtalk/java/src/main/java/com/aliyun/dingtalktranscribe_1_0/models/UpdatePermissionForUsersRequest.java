@@ -20,6 +20,9 @@ public class UpdatePermissionForUsersRequest extends TeaModel {
     @NameInMap("uuid")
     public String uuid;
 
+    @NameInMap("operatorUid")
+    public Long operatorUid;
+
     public static UpdatePermissionForUsersRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdatePermissionForUsersRequest self = new UpdatePermissionForUsersRequest();
         return TeaModel.build(map, self);
@@ -55,6 +58,14 @@ public class UpdatePermissionForUsersRequest extends TeaModel {
     }
     public String getUuid() {
         return this.uuid;
+    }
+
+    public UpdatePermissionForUsersRequest setOperatorUid(Long operatorUid) {
+        this.operatorUid = operatorUid;
+        return this;
+    }
+    public Long getOperatorUid() {
+        return this.operatorUid;
     }
 
     public static class UpdatePermissionForUsersRequestMembers extends TeaModel {

@@ -10,7 +10,7 @@ public class MoveDentryResponse extends TeaModel {
 
     @NameInMap("body")
     @Validation(required = true)
-    public DentryOpenVOResult body;
+    public DentryVO body;
 
     public static MoveDentryResponse build(java.util.Map<String, ?> map) throws Exception {
         MoveDentryResponse self = new MoveDentryResponse();
@@ -25,11 +25,11 @@ public class MoveDentryResponse extends TeaModel {
         return this.headers;
     }
 
-    public MoveDentryResponse setBody(DentryOpenVOResult body) {
+    public MoveDentryResponse setBody(DentryVO body) {
         this.body = body;
         return this;
     }
-    public DentryOpenVOResult getBody() {
+    public DentryVO getBody() {
         return this.body;
     }
 

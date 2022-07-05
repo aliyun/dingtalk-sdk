@@ -38,10 +38,6 @@ public class QueryProjectByPageResponseBody extends TeaModel {
         @NameInMap("caode")
         public String caode;
 
-        // 企业id
-        @NameInMap("corpId")
-        public String corpId;
-
         // 创建时间
         @NameInMap("createTime")
         public Long createTime;
@@ -85,14 +81,6 @@ public class QueryProjectByPageResponseBody extends TeaModel {
         }
         public String getCaode() {
             return this.caode;
-        }
-
-        public QueryProjectByPageResponseBodyList setCorpId(String corpId) {
-            this.corpId = corpId;
-            return this;
-        }
-        public String getCorpId() {
-            return this.corpId;
         }
 
         public QueryProjectByPageResponseBodyList setCreateTime(Long createTime) {

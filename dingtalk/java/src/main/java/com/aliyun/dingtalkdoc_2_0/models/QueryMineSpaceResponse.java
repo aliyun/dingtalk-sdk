@@ -10,7 +10,7 @@ public class QueryMineSpaceResponse extends TeaModel {
 
     @NameInMap("body")
     @Validation(required = true)
-    public SpaceOpenVOResult body;
+    public SpaceVO body;
 
     public static QueryMineSpaceResponse build(java.util.Map<String, ?> map) throws Exception {
         QueryMineSpaceResponse self = new QueryMineSpaceResponse();
@@ -25,11 +25,11 @@ public class QueryMineSpaceResponse extends TeaModel {
         return this.headers;
     }
 
-    public QueryMineSpaceResponse setBody(SpaceOpenVOResult body) {
+    public QueryMineSpaceResponse setBody(SpaceVO body) {
         this.body = body;
         return this;
     }
-    public SpaceOpenVOResult getBody() {
+    public SpaceVO getBody() {
         return this.body;
     }
 

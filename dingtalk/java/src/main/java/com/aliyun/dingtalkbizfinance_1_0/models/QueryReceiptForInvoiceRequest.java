@@ -98,9 +98,9 @@ public class QueryReceiptForInvoiceRequest extends TeaModel {
         @NameInMap("financeType")
         public String financeType;
 
-        // 发票状态  待开票 已开票
+        // 发票状态列表
         @NameInMap("relationStatus")
-        public String relationStatus;
+        public java.util.List<String> relationStatus;
 
         public static QueryReceiptForInvoiceRequestInvoiceFilter build(java.util.Map<String, ?> map) throws Exception {
             QueryReceiptForInvoiceRequestInvoiceFilter self = new QueryReceiptForInvoiceRequestInvoiceFilter();
@@ -115,11 +115,11 @@ public class QueryReceiptForInvoiceRequest extends TeaModel {
             return this.financeType;
         }
 
-        public QueryReceiptForInvoiceRequestInvoiceFilter setRelationStatus(String relationStatus) {
+        public QueryReceiptForInvoiceRequestInvoiceFilter setRelationStatus(java.util.List<String> relationStatus) {
             this.relationStatus = relationStatus;
             return this;
         }
-        public String getRelationStatus() {
+        public java.util.List<String> getRelationStatus() {
             return this.relationStatus;
         }
 
