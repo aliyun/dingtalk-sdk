@@ -2,7 +2,7 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DentryOpenVO;
+namespace AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DentryVO;
 
 use AlibabaCloud\Tea\Model;
 

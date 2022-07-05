@@ -16,13 +16,6 @@ class GetProjectResponseBody extends Model
     public $code;
 
     /**
-     * @description 企业id
-     *
-     * @var string
-     */
-    public $corpId;
-
-    /**
      * @description 创建时间
      *
      * @var int
@@ -79,7 +72,6 @@ class GetProjectResponseBody extends Model
     public $userDefineCode;
     protected $_name = [
         'code'           => 'code',
-        'corpId'         => 'corpId',
         'createTime'     => 'createTime',
         'creator'        => 'creator',
         'description'    => 'description',
@@ -99,9 +91,6 @@ class GetProjectResponseBody extends Model
         $res = [];
         if (null !== $this->code) {
             $res['code'] = $this->code;
-        }
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
         }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
@@ -141,9 +130,6 @@ class GetProjectResponseBody extends Model
         $model = new self();
         if (isset($map['code'])) {
             $model->code = $map['code'];
-        }
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
         }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];

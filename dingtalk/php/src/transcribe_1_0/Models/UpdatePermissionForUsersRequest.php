@@ -36,11 +36,17 @@ class UpdatePermissionForUsersRequest extends Model
      * @var string
      */
     public $uuid;
+
+    /**
+     * @var int
+     */
+    public $operatorUid;
     protected $_name = [
         'bizType'     => 'bizType',
         'members'     => 'members',
         'taskCreator' => 'taskCreator',
         'uuid'        => 'uuid',
+        'operatorUid' => 'operatorUid',
     ];
 
     public function validate()
@@ -67,6 +73,9 @@ class UpdatePermissionForUsersRequest extends Model
         }
         if (null !== $this->uuid) {
             $res['uuid'] = $this->uuid;
+        }
+        if (null !== $this->operatorUid) {
+            $res['operatorUid'] = $this->operatorUid;
         }
 
         return $res;
@@ -97,6 +106,9 @@ class UpdatePermissionForUsersRequest extends Model
         }
         if (isset($map['uuid'])) {
             $model->uuid = $map['uuid'];
+        }
+        if (isset($map['operatorUid'])) {
+            $model->operatorUid = $map['operatorUid'];
         }
 
         return $model;

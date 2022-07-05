@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DentryOpenVO;
+namespace AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DentryVO;
 
 use AlibabaCloud\Tea\Model;
 
-class updater extends Model
+class creator extends Model
 {
     /**
      * @description 用户名称。
@@ -46,7 +46,7 @@ class updater extends Model
     /**
      * @param array $map
      *
-     * @return updater
+     * @return creator
      */
     public static function fromMap($map = [])
     {

@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class RenameDentryResponse extends Model
+class CheckVoucherStatusResponse extends Model
 {
     /**
      * @var string[]
@@ -14,11 +14,12 @@ class RenameDentryResponse extends Model
     public $headers;
 
     /**
-     * @var DentryVO
+     * @var CheckVoucherStatusResponseBody
      */
     public $body;
     protected $_name = [
         'headers' => 'headers',
+        'body'    => 'body',
     ];
 
     public function validate()
@@ -43,7 +44,7 @@ class RenameDentryResponse extends Model
     /**
      * @param array $map
      *
-     * @return RenameDentryResponse
+     * @return CheckVoucherStatusResponse
      */
     public static function fromMap($map = [])
     {
@@ -52,7 +53,7 @@ class RenameDentryResponse extends Model
             $model->headers = $map['headers'];
         }
         if (isset($map['body'])) {
-            $model->body = DentryVO::fromMap($map['body']);
+            $model->body = CheckVoucherStatusResponseBody::fromMap($map['body']);
         }
 
         return $model;

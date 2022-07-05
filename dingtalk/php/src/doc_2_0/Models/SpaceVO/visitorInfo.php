@@ -2,7 +2,7 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SpaceOpenVO;
+namespace AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SpaceVO;
 
 use AlibabaCloud\Tea\Model;
 

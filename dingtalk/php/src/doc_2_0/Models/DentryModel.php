@@ -4,12 +4,12 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DentryOpenVOResult\creator;
-use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DentryOpenVOResult\updater;
-use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DentryOpenVOResult\visitorInfo;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DentryModel\creator;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DentryModel\updater;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DentryModel\visitorInfo;
 use AlibabaCloud\Tea\Model;
 
-class DentryOpenVOResult extends Model
+class DentryModel extends Model
 {
     /**
      * @description 内容类型。alidoc-钉钉文档；link-快捷方式；archive-压缩包；document-文件。
@@ -98,7 +98,7 @@ class DentryOpenVOResult extends Model
     /**
      * @description 知识库信息。
      *
-     * @var SpaceOpenVO
+     * @var SpaceModel
      */
     public $space;
 
@@ -225,7 +225,7 @@ class DentryOpenVOResult extends Model
     /**
      * @param array $map
      *
-     * @return DentryOpenVOResult
+     * @return DentryModel
      */
     public static function fromMap($map = [])
     {
@@ -267,7 +267,7 @@ class DentryOpenVOResult extends Model
             $model->path = $map['path'];
         }
         if (isset($map['space'])) {
-            $model->space = SpaceOpenVO::fromMap($map['space']);
+            $model->space = SpaceModel::fromMap($map['space']);
         }
         if (isset($map['spaceId'])) {
             $model->spaceId = $map['spaceId'];

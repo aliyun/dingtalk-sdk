@@ -50,7 +50,11 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $taskId = OpenApiUtilClient::getEncodeParam($taskId);
-        $body   = [];
+        $query  = [];
+        if (!Utils::isUnset($request->operatorUid)) {
+            @$query['operatorUid'] = $request->operatorUid;
+        }
+        $body = [];
         if (!Utils::isUnset($request->bizType)) {
             @$body['bizType'] = $request->bizType;
         }
@@ -72,9 +76,10 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return UpdatePermissionForUsersResponse::fromMap($this->doROARequest('UpdatePermissionForUsers', 'transcribe_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/transcribe/tasks/' . $taskId . '/permissions', 'none', $req, $runtime));
+        return UpdatePermissionForUsersResponse::fromMap($this->doROARequest('UpdatePermissionForUsers', 'transcribe_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/transcribe/tasks/' . $taskId . '/permissions', 'json', $req, $runtime));
     }
 }

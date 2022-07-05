@@ -45,13 +45,6 @@ class items extends Model
     public $extension;
 
     /**
-     * @description 文件类型。1-文档；2-表格；3-脑图；4-演示；5-白板；6-office文字；7-office表格；8-office ppt；10-多维表格；11-文本；12-图片；13-视频；14-音频；15-压缩文件；16-其他。
-     *
-     * @var int
-     */
-    public $fileType;
-
-    /**
      * @description 节点图标url。
      *
      * @var string
@@ -87,6 +80,13 @@ class items extends Model
     public $path;
 
     /**
+     * @description 文件类型。1-文档；2-表格；3-脑图；4-演示；5-白板；6-office文字；7-office表格；8-office ppt；10-多维表格；11-文本；12-图片；13-视频；14-音频；15-压缩文件；16-其他。
+     *
+     * @var int
+     */
+    public $searchFileType;
+
+    /**
      * @description 节点所属的知识库id。
      *
      * @var string
@@ -100,19 +100,19 @@ class items extends Model
      */
     public $url;
     protected $_name = [
-        'content'     => 'content',
-        'creation'    => 'creation',
-        'dentryId'    => 'dentryId',
-        'dentryUuid'  => 'dentryUuid',
-        'extension'   => 'extension',
-        'fileType'    => 'fileType',
-        'iconUrl'     => 'iconUrl',
-        'lastEdition' => 'lastEdition',
-        'name'        => 'name',
-        'originName'  => 'originName',
-        'path'        => 'path',
-        'spaceId'     => 'spaceId',
-        'url'         => 'url',
+        'content'        => 'content',
+        'creation'       => 'creation',
+        'dentryId'       => 'dentryId',
+        'dentryUuid'     => 'dentryUuid',
+        'extension'      => 'extension',
+        'iconUrl'        => 'iconUrl',
+        'lastEdition'    => 'lastEdition',
+        'name'           => 'name',
+        'originName'     => 'originName',
+        'path'           => 'path',
+        'searchFileType' => 'searchFileType',
+        'spaceId'        => 'spaceId',
+        'url'            => 'url',
     ];
 
     public function validate()
@@ -137,9 +137,6 @@ class items extends Model
         if (null !== $this->extension) {
             $res['extension'] = $this->extension;
         }
-        if (null !== $this->fileType) {
-            $res['fileType'] = $this->fileType;
-        }
         if (null !== $this->iconUrl) {
             $res['iconUrl'] = $this->iconUrl;
         }
@@ -154,6 +151,9 @@ class items extends Model
         }
         if (null !== $this->path) {
             $res['path'] = $this->path;
+        }
+        if (null !== $this->searchFileType) {
+            $res['searchFileType'] = $this->searchFileType;
         }
         if (null !== $this->spaceId) {
             $res['spaceId'] = $this->spaceId;
@@ -188,9 +188,6 @@ class items extends Model
         if (isset($map['extension'])) {
             $model->extension = $map['extension'];
         }
-        if (isset($map['fileType'])) {
-            $model->fileType = $map['fileType'];
-        }
         if (isset($map['iconUrl'])) {
             $model->iconUrl = $map['iconUrl'];
         }
@@ -205,6 +202,9 @@ class items extends Model
         }
         if (isset($map['path'])) {
             $model->path = $map['path'];
+        }
+        if (isset($map['searchFileType'])) {
+            $model->searchFileType = $map['searchFileType'];
         }
         if (isset($map['spaceId'])) {
             $model->spaceId = $map['spaceId'];

@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\CreateAppGoodsServiceConversationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\CreateAppGoodsServiceConversationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\CreateAppGoodsServiceConversationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetCoolAppAccessStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetCoolAppAccessStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetCoolAppAccessStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetPersonalExperienceInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetPersonalExperienceInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetPersonalExperienceInfoResponse;
@@ -75,6 +78,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateAppGoodsServiceConversationResponse::fromMap($this->doROARequest('CreateAppGoodsServiceConversation', 'appMarket_1.0', 'HTTP', 'POST', 'AK', '/v1.0/appMarket/orders/serviceGroups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetCoolAppAccessStatusRequest $request
+     *
+     * @return GetCoolAppAccessStatusResponse
+     */
+    public function getCoolAppAccessStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCoolAppAccessStatusHeaders([]);
+
+        return $this->getCoolAppAccessStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetCoolAppAccessStatusRequest $request
+     * @param GetCoolAppAccessStatusHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return GetCoolAppAccessStatusResponse
+     */
+    public function getCoolAppAccessStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->authCode)) {
+            @$body['authCode'] = $request->authCode;
+        }
+        if (!Utils::isUnset($request->coolAppCode)) {
+            @$body['coolAppCode'] = $request->coolAppCode;
+        }
+        if (!Utils::isUnset($request->encFieldBizCode)) {
+            @$body['encFieldBizCode'] = $request->encFieldBizCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetCoolAppAccessStatusResponse::fromMap($this->doROARequest('GetCoolAppAccessStatus', 'appMarket_1.0', 'HTTP', 'POST', 'AK', '/v1.0/appMarket/coolApps/accessions/statuses/query', 'json', $req, $runtime));
     }
 
     /**

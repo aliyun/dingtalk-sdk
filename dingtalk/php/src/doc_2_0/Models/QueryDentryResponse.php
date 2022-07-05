@@ -14,7 +14,7 @@ class QueryDentryResponse extends Model
     public $headers;
 
     /**
-     * @var DentryOpenVOResult
+     * @var DentryVO
      */
     public $body;
     protected $_name = [
@@ -52,7 +52,7 @@ class QueryDentryResponse extends Model
             $model->headers = $map['headers'];
         }
         if (isset($map['body'])) {
-            $model->body = DentryOpenVOResult::fromMap($map['body']);
+            $model->body = DentryVO::fromMap($map['body']);
         }
 
         return $model;

@@ -14,7 +14,7 @@ class QueryMineSpaceResponse extends Model
     public $headers;
 
     /**
-     * @var SpaceOpenVOResult
+     * @var SpaceVO
      */
     public $body;
     protected $_name = [
@@ -52,7 +52,7 @@ class QueryMineSpaceResponse extends Model
             $model->headers = $map['headers'];
         }
         if (isset($map['body'])) {
-            $model->body = SpaceOpenVOResult::fromMap($map['body']);
+            $model->body = SpaceVO::fromMap($map['body']);
         }
 
         return $model;

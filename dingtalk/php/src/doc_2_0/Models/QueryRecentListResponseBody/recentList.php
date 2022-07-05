@@ -4,7 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryRecentListResponseBody;
 
-use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DentryOpenVO;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DentryModel;
 use AlibabaCloud\Tea\Model;
 
 class recentList extends Model
@@ -19,7 +19,7 @@ class recentList extends Model
     /**
      * @description 节点信息。
      *
-     * @var DentryOpenVO
+     * @var DentryModel
      */
     public $dentry;
 
@@ -67,7 +67,7 @@ class recentList extends Model
             $model->deleted = $map['deleted'];
         }
         if (isset($map['dentry'])) {
-            $model->dentry = DentryOpenVO::fromMap($map['dentry']);
+            $model->dentry = DentryModel::fromMap($map['dentry']);
         }
         if (isset($map['recentTime'])) {
             $model->recentTime = $map['recentTime'];

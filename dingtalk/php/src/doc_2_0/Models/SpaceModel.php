@@ -4,11 +4,11 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SpaceOpenVO\owner;
-use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SpaceOpenVO\visitorInfo;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SpaceModel\owner;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SpaceModel\visitorInfo;
 use AlibabaCloud\Tea\Model;
 
-class SpaceOpenVO extends Model
+class SpaceModel extends Model
 {
     /**
      * @description 知识库id。
@@ -81,7 +81,7 @@ class SpaceOpenVO extends Model
     /**
      * @param array $map
      *
-     * @return SpaceOpenVO
+     * @return SpaceModel
      */
     public static function fromMap($map = [])
     {

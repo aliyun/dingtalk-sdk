@@ -11,7 +11,7 @@ class GetSpaceDirectoriesResponseBody extends Model
     /**
      * @description 子节点列表。
      *
-     * @var DentryOpenVO[]
+     * @var DentryModel[]
      */
     public $children;
 
@@ -73,7 +73,7 @@ class GetSpaceDirectoriesResponseBody extends Model
                 $model->children = [];
                 $n               = 0;
                 foreach ($map['children'] as $item) {
-                    $model->children[$n++] = null !== $item ? DentryOpenVO::fromMap($item) : $item;
+                    $model->children[$n++] = null !== $item ? DentryModel::fromMap($item) : $item;
                 }
             }
         }

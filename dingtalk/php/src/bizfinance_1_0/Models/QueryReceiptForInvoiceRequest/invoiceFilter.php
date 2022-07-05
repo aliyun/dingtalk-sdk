@@ -16,9 +16,9 @@ class invoiceFilter extends Model
     public $financeType;
 
     /**
-     * @description 发票状态  待开票 已开票
+     * @description 发票状态列表
      *
-     * @var string
+     * @var string[]
      */
     public $relationStatus;
     protected $_name = [
@@ -55,7 +55,9 @@ class invoiceFilter extends Model
             $model->financeType = $map['financeType'];
         }
         if (isset($map['relationStatus'])) {
-            $model->relationStatus = $map['relationStatus'];
+            if (!empty($map['relationStatus'])) {
+                $model->relationStatus = $map['relationStatus'];
+            }
         }
 
         return $model;
