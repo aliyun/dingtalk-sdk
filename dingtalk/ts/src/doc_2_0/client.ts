@@ -7,10 +7,10 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
-export class DentryOpenVO extends $tea.Model {
+export class DentryModel extends $tea.Model {
   contentType?: string;
   createdTime?: number;
-  creator?: DentryOpenVOCreator;
+  creator?: DentryModelCreator;
   dentryId?: string;
   dentryType?: string;
   dentryUuid?: string;
@@ -20,12 +20,12 @@ export class DentryOpenVO extends $tea.Model {
   linkSourceInfo?: LinkSourceInfo;
   name?: string;
   path?: string;
-  space?: SpaceOpenVO;
+  space?: SpaceModel;
   spaceId?: string;
   updatedTime?: number;
-  updater?: DentryOpenVOUpdater;
+  updater?: DentryModelUpdater;
   url?: string;
-  visitorInfo?: DentryOpenVOVisitorInfo;
+  visitorInfo?: DentryModelVisitorInfo;
   static names(): { [key: string]: string } {
     return {
       contentType: 'contentType',
@@ -53,7 +53,7 @@ export class DentryOpenVO extends $tea.Model {
     return {
       contentType: 'string',
       createdTime: 'number',
-      creator: DentryOpenVOCreator,
+      creator: DentryModelCreator,
       dentryId: 'string',
       dentryType: 'string',
       dentryUuid: 'string',
@@ -63,12 +63,12 @@ export class DentryOpenVO extends $tea.Model {
       linkSourceInfo: LinkSourceInfo,
       name: 'string',
       path: 'string',
-      space: SpaceOpenVO,
+      space: SpaceModel,
       spaceId: 'string',
       updatedTime: 'number',
-      updater: DentryOpenVOUpdater,
+      updater: DentryModelUpdater,
       url: 'string',
-      visitorInfo: DentryOpenVOVisitorInfo,
+      visitorInfo: DentryModelVisitorInfo,
     };
   }
 
@@ -77,10 +77,10 @@ export class DentryOpenVO extends $tea.Model {
   }
 }
 
-export class DentryOpenVOResult extends $tea.Model {
+export class DentryVO extends $tea.Model {
   contentType?: string;
   createdTime?: number;
-  creator?: DentryOpenVOResultCreator;
+  creator?: DentryVOCreator;
   dentryId?: string;
   dentryType?: string;
   dentryUuid?: string;
@@ -90,12 +90,12 @@ export class DentryOpenVOResult extends $tea.Model {
   linkSourceInfo?: LinkSourceInfo;
   name?: string;
   path?: string;
-  space?: SpaceOpenVO;
+  space?: SpaceModel;
   spaceId?: string;
   updatedTime?: number;
-  updater?: DentryOpenVOResultUpdater;
+  updater?: DentryVOUpdater;
   url?: string;
-  visitorInfo?: DentryOpenVOResultVisitorInfo;
+  visitorInfo?: DentryVOVisitorInfo;
   static names(): { [key: string]: string } {
     return {
       contentType: 'contentType',
@@ -123,7 +123,7 @@ export class DentryOpenVOResult extends $tea.Model {
     return {
       contentType: 'string',
       createdTime: 'number',
-      creator: DentryOpenVOResultCreator,
+      creator: DentryVOCreator,
       dentryId: 'string',
       dentryType: 'string',
       dentryUuid: 'string',
@@ -133,12 +133,12 @@ export class DentryOpenVOResult extends $tea.Model {
       linkSourceInfo: LinkSourceInfo,
       name: 'string',
       path: 'string',
-      space: SpaceOpenVO,
+      space: SpaceModel,
       spaceId: 'string',
       updatedTime: 'number',
-      updater: DentryOpenVOResultUpdater,
+      updater: DentryVOUpdater,
       url: 'string',
-      visitorInfo: DentryOpenVOResultVisitorInfo,
+      visitorInfo: DentryVOVisitorInfo,
     };
   }
 
@@ -200,12 +200,12 @@ export class OpenActionModel extends $tea.Model {
   }
 }
 
-export class SpaceOpenVO extends $tea.Model {
+export class SpaceModel extends $tea.Model {
   id?: string;
   name?: string;
-  owner?: SpaceOpenVOOwner;
+  owner?: SpaceModelOwner;
   url?: string;
-  visitorInfo?: SpaceOpenVOVisitorInfo;
+  visitorInfo?: SpaceModelVisitorInfo;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
@@ -220,9 +220,9 @@ export class SpaceOpenVO extends $tea.Model {
     return {
       id: 'string',
       name: 'string',
-      owner: SpaceOpenVOOwner,
+      owner: SpaceModelOwner,
       url: 'string',
-      visitorInfo: SpaceOpenVOVisitorInfo,
+      visitorInfo: SpaceModelVisitorInfo,
     };
   }
 
@@ -231,12 +231,12 @@ export class SpaceOpenVO extends $tea.Model {
   }
 }
 
-export class SpaceOpenVOResult extends $tea.Model {
+export class SpaceVO extends $tea.Model {
   id?: string;
   name?: string;
-  owner?: SpaceOpenVOResultOwner;
+  owner?: SpaceVOOwner;
   url?: string;
-  visitorInfo?: SpaceOpenVOResultVisitorInfo;
+  visitorInfo?: SpaceVOVisitorInfo;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
@@ -251,9 +251,9 @@ export class SpaceOpenVOResult extends $tea.Model {
     return {
       id: 'string',
       name: 'string',
-      owner: SpaceOpenVOResultOwner,
+      owner: SpaceVOOwner,
       url: 'string',
-      visitorInfo: SpaceOpenVOResultVisitorInfo,
+      visitorInfo: SpaceVOVisitorInfo,
     };
   }
 
@@ -320,7 +320,7 @@ export class CopyDentryRequest extends $tea.Model {
 
 export class CopyDentryResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: DentryOpenVOResult;
+  body: DentryVO;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -331,7 +331,7 @@ export class CopyDentryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: DentryOpenVOResult,
+      body: DentryVO,
     };
   }
 
@@ -395,7 +395,7 @@ export class CreateDentryRequest extends $tea.Model {
 
 export class CreateDentryResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: DentryOpenVOResult;
+  body: DentryVO;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -406,7 +406,7 @@ export class CreateDentryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: DentryOpenVOResult,
+      body: DentryVO,
     };
   }
 
@@ -466,7 +466,7 @@ export class GetSpaceDirectoriesRequest extends $tea.Model {
 }
 
 export class GetSpaceDirectoriesResponseBody extends $tea.Model {
-  children?: DentryOpenVO[];
+  children?: DentryModel[];
   hasMore?: boolean;
   nextToken?: string;
   static names(): { [key: string]: string } {
@@ -479,7 +479,7 @@ export class GetSpaceDirectoriesResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      children: { 'type': 'array', 'itemType': DentryOpenVO },
+      children: { 'type': 'array', 'itemType': DentryModel },
       hasMore: 'boolean',
       nextToken: 'string',
     };
@@ -655,7 +655,7 @@ export class MoveDentryRequest extends $tea.Model {
 
 export class MoveDentryResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: DentryOpenVOResult;
+  body: DentryVO;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -666,7 +666,7 @@ export class MoveDentryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: DentryOpenVOResult,
+      body: DentryVO,
     };
   }
 
@@ -721,7 +721,7 @@ export class QueryDentryRequest extends $tea.Model {
 
 export class QueryDentryResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: DentryOpenVOResult;
+  body: DentryVO;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -732,7 +732,7 @@ export class QueryDentryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: DentryOpenVOResult,
+      body: DentryVO,
     };
   }
 
@@ -765,7 +765,7 @@ export class QueryMineSpaceHeaders extends $tea.Model {
 
 export class QueryMineSpaceResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: SpaceOpenVOResult;
+  body: SpaceVO;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -776,7 +776,7 @@ export class QueryMineSpaceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: SpaceOpenVOResult,
+      body: SpaceVO,
     };
   }
 
@@ -931,7 +931,7 @@ export class QuerySpaceRequest extends $tea.Model {
 
 export class QuerySpaceResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: SpaceOpenVOResult;
+  body: SpaceVO;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -942,7 +942,7 @@ export class QuerySpaceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: SpaceOpenVOResult,
+      body: SpaceVO,
     };
   }
 
@@ -997,7 +997,7 @@ export class RenameDentryRequest extends $tea.Model {
 
 export class RenameDentryResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: DentryOpenVOResult;
+  body: DentryVO;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1008,7 +1008,7 @@ export class RenameDentryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: DentryOpenVOResult,
+      body: DentryVO,
     };
   }
 
@@ -1111,7 +1111,7 @@ export class SearchResponse extends $tea.Model {
   }
 }
 
-export class DentryOpenVOCreator extends $tea.Model {
+export class DentryModelCreator extends $tea.Model {
   name?: string;
   unionId?: string;
   static names(): { [key: string]: string } {
@@ -1133,7 +1133,7 @@ export class DentryOpenVOCreator extends $tea.Model {
   }
 }
 
-export class DentryOpenVOUpdater extends $tea.Model {
+export class DentryModelUpdater extends $tea.Model {
   name?: string;
   unionId?: string;
   static names(): { [key: string]: string } {
@@ -1155,7 +1155,7 @@ export class DentryOpenVOUpdater extends $tea.Model {
   }
 }
 
-export class DentryOpenVOVisitorInfo extends $tea.Model {
+export class DentryModelVisitorInfo extends $tea.Model {
   dentryActions?: string[];
   spaceActions?: string[];
   static names(): { [key: string]: string } {
@@ -1177,7 +1177,7 @@ export class DentryOpenVOVisitorInfo extends $tea.Model {
   }
 }
 
-export class DentryOpenVOResultCreator extends $tea.Model {
+export class DentryVOCreator extends $tea.Model {
   name?: string;
   unionId?: string;
   static names(): { [key: string]: string } {
@@ -1199,7 +1199,7 @@ export class DentryOpenVOResultCreator extends $tea.Model {
   }
 }
 
-export class DentryOpenVOResultUpdater extends $tea.Model {
+export class DentryVOUpdater extends $tea.Model {
   name?: string;
   unionId?: string;
   static names(): { [key: string]: string } {
@@ -1221,7 +1221,7 @@ export class DentryOpenVOResultUpdater extends $tea.Model {
   }
 }
 
-export class DentryOpenVOResultVisitorInfo extends $tea.Model {
+export class DentryVOVisitorInfo extends $tea.Model {
   dentryActions?: string[];
   spaceActions?: string[];
   static names(): { [key: string]: string } {
@@ -1265,7 +1265,7 @@ export class LinkSourceInfoIconUrl extends $tea.Model {
   }
 }
 
-export class SpaceOpenVOOwner extends $tea.Model {
+export class SpaceModelOwner extends $tea.Model {
   name?: string;
   unionId?: string;
   static names(): { [key: string]: string } {
@@ -1287,7 +1287,7 @@ export class SpaceOpenVOOwner extends $tea.Model {
   }
 }
 
-export class SpaceOpenVOVisitorInfo extends $tea.Model {
+export class SpaceModelVisitorInfo extends $tea.Model {
   dentryActions?: string[];
   spaceActions?: string[];
   static names(): { [key: string]: string } {
@@ -1309,7 +1309,7 @@ export class SpaceOpenVOVisitorInfo extends $tea.Model {
   }
 }
 
-export class SpaceOpenVOResultOwner extends $tea.Model {
+export class SpaceVOOwner extends $tea.Model {
   name?: string;
   unionId?: string;
   static names(): { [key: string]: string } {
@@ -1331,7 +1331,7 @@ export class SpaceOpenVOResultOwner extends $tea.Model {
   }
 }
 
-export class SpaceOpenVOResultVisitorInfo extends $tea.Model {
+export class SpaceVOVisitorInfo extends $tea.Model {
   dentryActions?: string[];
   spaceActions?: string[];
   static names(): { [key: string]: string } {
@@ -1355,7 +1355,7 @@ export class SpaceOpenVOResultVisitorInfo extends $tea.Model {
 
 export class QueryRecentListResponseBodyRecentList extends $tea.Model {
   deleted?: boolean;
-  dentry?: DentryOpenVO;
+  dentry?: DentryModel;
   recentTime?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1368,7 +1368,7 @@ export class QueryRecentListResponseBodyRecentList extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       deleted: 'boolean',
-      dentry: DentryOpenVO,
+      dentry: DentryModel,
       recentTime: 'number',
     };
   }
@@ -1434,12 +1434,12 @@ export class SearchResponseBodyDentryResultItems extends $tea.Model {
   dentryId?: string;
   dentryUuid?: string;
   extension?: string;
-  fileType?: number;
   iconUrl?: string;
   lastEdition?: OpenActionModel;
   name?: string;
   originName?: string;
   path?: string;
+  searchFileType?: number;
   spaceId?: string;
   url?: string;
   static names(): { [key: string]: string } {
@@ -1449,12 +1449,12 @@ export class SearchResponseBodyDentryResultItems extends $tea.Model {
       dentryId: 'dentryId',
       dentryUuid: 'dentryUuid',
       extension: 'extension',
-      fileType: 'fileType',
       iconUrl: 'iconUrl',
       lastEdition: 'lastEdition',
       name: 'name',
       originName: 'originName',
       path: 'path',
+      searchFileType: 'searchFileType',
       spaceId: 'spaceId',
       url: 'url',
     };
@@ -1467,12 +1467,12 @@ export class SearchResponseBodyDentryResultItems extends $tea.Model {
       dentryId: 'string',
       dentryUuid: 'string',
       extension: 'string',
-      fileType: 'number',
       iconUrl: 'string',
       lastEdition: OpenActionModel,
       name: 'string',
       originName: 'string',
       path: 'string',
+      searchFileType: 'number',
       spaceId: 'string',
       url: 'string',
     };

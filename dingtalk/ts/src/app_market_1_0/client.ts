@@ -95,6 +95,94 @@ export class CreateAppGoodsServiceConversationResponse extends $tea.Model {
   }
 }
 
+export class GetCoolAppAccessStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCoolAppAccessStatusRequest extends $tea.Model {
+  authCode?: string;
+  coolAppCode?: string;
+  encFieldBizCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      authCode: 'authCode',
+      coolAppCode: 'coolAppCode',
+      encFieldBizCode: 'encFieldBizCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      authCode: 'string',
+      coolAppCode: 'string',
+      encFieldBizCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCoolAppAccessStatusResponseBody extends $tea.Model {
+  status?: string;
+  static names(): { [key: string]: string } {
+    return {
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      status: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCoolAppAccessStatusResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetCoolAppAccessStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetCoolAppAccessStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetPersonalExperienceInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -414,6 +502,43 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateAppGoodsServiceConversationResponse>(await this.doROARequest("CreateAppGoodsServiceConversation", "appMarket_1.0", "HTTP", "POST", "AK", `/v1.0/appMarket/orders/serviceGroups`, "json", req, runtime), new CreateAppGoodsServiceConversationResponse({}));
+  }
+
+  async getCoolAppAccessStatus(request: GetCoolAppAccessStatusRequest): Promise<GetCoolAppAccessStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetCoolAppAccessStatusHeaders({ });
+    return await this.getCoolAppAccessStatusWithOptions(request, headers, runtime);
+  }
+
+  async getCoolAppAccessStatusWithOptions(request: GetCoolAppAccessStatusRequest, headers: GetCoolAppAccessStatusHeaders, runtime: $Util.RuntimeOptions): Promise<GetCoolAppAccessStatusResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.authCode)) {
+      body["authCode"] = request.authCode;
+    }
+
+    if (!Util.isUnset(request.coolAppCode)) {
+      body["coolAppCode"] = request.coolAppCode;
+    }
+
+    if (!Util.isUnset(request.encFieldBizCode)) {
+      body["encFieldBizCode"] = request.encFieldBizCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetCoolAppAccessStatusResponse>(await this.doROARequest("GetCoolAppAccessStatus", "appMarket_1.0", "HTTP", "POST", "AK", `/v1.0/appMarket/coolApps/accessions/statuses/query`, "json", req, runtime), new GetCoolAppAccessStatusResponse({}));
   }
 
   async getPersonalExperienceInfo(request: GetPersonalExperienceInfoRequest): Promise<GetPersonalExperienceInfoResponse> {

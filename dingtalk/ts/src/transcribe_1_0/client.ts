@@ -34,12 +34,14 @@ export class UpdatePermissionForUsersRequest extends $tea.Model {
   members?: UpdatePermissionForUsersRequestMembers[];
   taskCreator?: number;
   uuid?: string;
+  operatorUid?: number;
   static names(): { [key: string]: string } {
     return {
       bizType: 'bizType',
       members: 'members',
       taskCreator: 'taskCreator',
       uuid: 'uuid',
+      operatorUid: 'operatorUid',
     };
   }
 
@@ -49,6 +51,26 @@ export class UpdatePermissionForUsersRequest extends $tea.Model {
       members: { 'type': 'array', 'itemType': UpdatePermissionForUsersRequestMembers },
       taskCreator: 'number',
       uuid: 'string',
+      operatorUid: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdatePermissionForUsersResponseBody extends $tea.Model {
+  isSuccess?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      isSuccess: 'isSuccess',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isSuccess: 'boolean',
     };
   }
 
@@ -59,15 +81,18 @@ export class UpdatePermissionForUsersRequest extends $tea.Model {
 
 export class UpdatePermissionForUsersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  body: UpdatePermissionForUsersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      body: 'body',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdatePermissionForUsersResponseBody,
     };
   }
 
@@ -123,6 +148,11 @@ export default class Client extends OpenApi {
   async updatePermissionForUsersWithOptions(taskId: string, request: UpdatePermissionForUsersRequest, headers: UpdatePermissionForUsersHeaders, runtime: $Util.RuntimeOptions): Promise<UpdatePermissionForUsersResponse> {
     Util.validateModel(request);
     taskId = OpenApiUtil.getEncodeParam(taskId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorUid)) {
+      query["operatorUid"] = request.operatorUid;
+    }
+
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.bizType)) {
       body["bizType"] = request.bizType;
@@ -151,9 +181,10 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
+      query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdatePermissionForUsersResponse>(await this.doROARequest("UpdatePermissionForUsers", "transcribe_1.0", "HTTP", "PUT", "AK", `/v1.0/transcribe/tasks/${taskId}/permissions`, "none", req, runtime), new UpdatePermissionForUsersResponse({}));
+    return $tea.cast<UpdatePermissionForUsersResponse>(await this.doROARequest("UpdatePermissionForUsers", "transcribe_1.0", "HTTP", "PUT", "AK", `/v1.0/transcribe/tasks/${taskId}/permissions`, "json", req, runtime), new UpdatePermissionForUsersResponse({}));
   }
 
 }

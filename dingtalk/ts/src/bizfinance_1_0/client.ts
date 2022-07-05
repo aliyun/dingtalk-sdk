@@ -89,6 +89,115 @@ export class BatchAddInvoiceResponse extends $tea.Model {
   }
 }
 
+export class CheckVoucherStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckVoucherStatusRequest extends $tea.Model {
+  endTime?: number;
+  financeType?: string;
+  invoiceCode?: string;
+  invoiceNo?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  startTime?: number;
+  taxNo?: string;
+  verifyStatus?: string;
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      financeType: 'financeType',
+      invoiceCode: 'invoiceCode',
+      invoiceNo: 'invoiceNo',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      startTime: 'startTime',
+      taxNo: 'taxNo',
+      verifyStatus: 'verifyStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'number',
+      financeType: 'string',
+      invoiceCode: 'string',
+      invoiceNo: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      startTime: 'number',
+      taxNo: 'string',
+      verifyStatus: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckVoucherStatusResponseBody extends $tea.Model {
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckVoucherStatusResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CheckVoucherStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CheckVoucherStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateCustomerHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -937,7 +1046,6 @@ export class GetProjectRequest extends $tea.Model {
 
 export class GetProjectResponseBody extends $tea.Model {
   code?: string;
-  corpId?: string;
   createTime?: number;
   creator?: string;
   description?: string;
@@ -949,7 +1057,6 @@ export class GetProjectResponseBody extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       code: 'code',
-      corpId: 'corpId',
       createTime: 'createTime',
       creator: 'creator',
       description: 'description',
@@ -964,7 +1071,6 @@ export class GetProjectResponseBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       code: 'string',
-      corpId: 'string',
       createTime: 'number',
       creator: 'string',
       description: 'string',
@@ -3702,7 +3808,6 @@ export class QueryPermissionByUserIdResponseBodyPermissionDTOList extends $tea.M
 
 export class QueryProjectByPageResponseBodyList extends $tea.Model {
   caode?: string;
-  corpId?: string;
   createTime?: number;
   creator?: string;
   description?: string;
@@ -3714,7 +3819,6 @@ export class QueryProjectByPageResponseBodyList extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       caode: 'caode',
-      corpId: 'corpId',
       createTime: 'createTime',
       creator: 'creator',
       description: 'description',
@@ -3729,7 +3833,6 @@ export class QueryProjectByPageResponseBodyList extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       caode: 'string',
-      corpId: 'string',
       createTime: 'number',
       creator: 'string',
       description: 'string',
@@ -3748,7 +3851,7 @@ export class QueryProjectByPageResponseBodyList extends $tea.Model {
 
 export class QueryReceiptForInvoiceRequestInvoiceFilter extends $tea.Model {
   financeType?: string;
-  relationStatus?: string;
+  relationStatus?: string[];
   static names(): { [key: string]: string } {
     return {
       financeType: 'financeType',
@@ -3759,7 +3862,7 @@ export class QueryReceiptForInvoiceRequestInvoiceFilter extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       financeType: 'string',
-      relationStatus: 'string',
+      relationStatus: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
@@ -5419,6 +5522,67 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<BatchAddInvoiceResponse>(await this.doROARequest("BatchAddInvoice", "bizfinance_1.0", "HTTP", "POST", "AK", `/v1.0/bizfinance/invoices/batch`, "json", req, runtime), new BatchAddInvoiceResponse({}));
+  }
+
+  async checkVoucherStatus(request: CheckVoucherStatusRequest): Promise<CheckVoucherStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CheckVoucherStatusHeaders({ });
+    return await this.checkVoucherStatusWithOptions(request, headers, runtime);
+  }
+
+  async checkVoucherStatusWithOptions(request: CheckVoucherStatusRequest, headers: CheckVoucherStatusHeaders, runtime: $Util.RuntimeOptions): Promise<CheckVoucherStatusResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.endTime)) {
+      body["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.financeType)) {
+      body["financeType"] = request.financeType;
+    }
+
+    if (!Util.isUnset(request.invoiceCode)) {
+      body["invoiceCode"] = request.invoiceCode;
+    }
+
+    if (!Util.isUnset(request.invoiceNo)) {
+      body["invoiceNo"] = request.invoiceNo;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      body["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      body["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.taxNo)) {
+      body["taxNo"] = request.taxNo;
+    }
+
+    if (!Util.isUnset(request.verifyStatus)) {
+      body["verifyStatus"] = request.verifyStatus;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CheckVoucherStatusResponse>(await this.doROARequest("CheckVoucherStatus", "bizfinance_1.0", "HTTP", "POST", "AK", `/v1.0/bizfinance/invoices/checkVoucherStatus/query`, "json", req, runtime), new CheckVoucherStatusResponse({}));
   }
 
   async createCustomer(request: CreateCustomerRequest): Promise<CreateCustomerResponse> {
