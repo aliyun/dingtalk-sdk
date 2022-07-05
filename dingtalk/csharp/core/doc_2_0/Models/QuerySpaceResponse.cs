@@ -15,7 +15,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 
         [NameInMap("body")]
         [Validation(Required=true)]
-        public SpaceOpenVOResult Body { get; set; }
+        public SpaceVO Body { get; set; }
 
     }
 

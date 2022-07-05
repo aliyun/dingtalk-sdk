@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         /// </summary>
         [NameInMap("children")]
         [Validation(Required=false)]
-        public List<DentryOpenVO> Children { get; set; }
+        public List<DentryModel> Children { get; set; }
 
         /// <summary>
         /// 是否还有后续可查询子节点。

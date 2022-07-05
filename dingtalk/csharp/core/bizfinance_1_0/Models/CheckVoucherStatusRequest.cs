@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
-    public class QueryReceiptForInvoiceRequest : TeaModel {
+    public class CheckVoucherStatusRequest : TeaModel {
         /// <summary>
         /// 结束时间
         /// </summary>
@@ -17,40 +17,39 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         public long? EndTime { get; set; }
 
         /// <summary>
-        /// 发票筛选条件
+        /// 进项发票/销项发票
         /// </summary>
-        [NameInMap("invoiceFilter")]
+        [NameInMap("financeType")]
         [Validation(Required=false)]
-        public QueryReceiptForInvoiceRequestInvoiceFilter InvoiceFilter { get; set; }
-        public class QueryReceiptForInvoiceRequestInvoiceFilter : TeaModel {
-            [NameInMap("financeType")]
-            [Validation(Required=false)]
-            public string FinanceType { get; set; }
-            [NameInMap("relationStatus")]
-            [Validation(Required=false)]
-            public List<string> RelationStatus { get; set; }
-        };
+        public string FinanceType { get; set; }
 
         /// <summary>
-        /// 分页参数，从1 开始
+        /// 发票编码
+        /// </summary>
+        [NameInMap("invoiceCode")]
+        [Validation(Required=false)]
+        public string InvoiceCode { get; set; }
+
+        /// <summary>
+        /// 发票号码
+        /// </summary>
+        [NameInMap("invoiceNo")]
+        [Validation(Required=false)]
+        public string InvoiceNo { get; set; }
+
+        /// <summary>
+        /// 页号
         /// </summary>
         [NameInMap("pageNumber")]
         [Validation(Required=false)]
         public long? PageNumber { get; set; }
 
         /// <summary>
-        /// 分页参数，每页查询个数
+        /// 当前页大小
         /// </summary>
         [NameInMap("pageSize")]
         [Validation(Required=false)]
         public long? PageSize { get; set; }
-
-        /// <summary>
-        /// 单据状态，审批中 RUNNING，已完成 COMPLETED
-        /// </summary>
-        [NameInMap("receiptStatus")]
-        [Validation(Required=false)]
-        public string ReceiptStatus { get; set; }
 
         /// <summary>
         /// 开始时间
@@ -60,11 +59,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         public long? StartTime { get; set; }
 
         /// <summary>
-        /// 单据标题
+        /// 税号
         /// </summary>
-        [NameInMap("title")]
+        [NameInMap("taxNo")]
         [Validation(Required=false)]
-        public string Title { get; set; }
+        public string TaxNo { get; set; }
+
+        /// <summary>
+        /// 发票认证状态
+        /// </summary>
+        [NameInMap("verifyStatus")]
+        [Validation(Required=false)]
+        public string VerifyStatus { get; set; }
 
     }
 

@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 {
-    public class SpaceOpenVO : TeaModel {
+    public class SpaceModel : TeaModel {
         /// <summary>
         /// 知识库id。
         /// </summary>
@@ -28,8 +28,8 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         /// </summary>
         [NameInMap("owner")]
         [Validation(Required=false)]
-        public SpaceOpenVOOwner Owner { get; set; }
-        public class SpaceOpenVOOwner : TeaModel {
+        public SpaceModelOwner Owner { get; set; }
+        public class SpaceModelOwner : TeaModel {
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
@@ -50,8 +50,8 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         /// </summary>
         [NameInMap("visitorInfo")]
         [Validation(Required=false)]
-        public SpaceOpenVOVisitorInfo VisitorInfo { get; set; }
-        public class SpaceOpenVOVisitorInfo : TeaModel {
+        public SpaceModelVisitorInfo VisitorInfo { get; set; }
+        public class SpaceModelVisitorInfo : TeaModel {
             [NameInMap("dentryActions")]
             [Validation(Required=false)]
             public List<string> DentryActions { get; set; }

@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0.Models
         [Validation(Required=true)]
         public Dictionary<string, string> Headers { get; set; }
 
+        [NameInMap("body")]
+        [Validation(Required=true)]
+        public UpdatePermissionForUsersResponseBody Body { get; set; }
+
     }
 
 }

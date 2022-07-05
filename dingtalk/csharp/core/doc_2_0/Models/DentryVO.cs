@@ -1,6 +1,3 @@
-/**
- *
- */
 // This file is auto-generated, don't edit it. Thanks.
 
 using System;
@@ -11,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 {
-    public class DentryOpenVO : TeaModel {
+    public class DentryVO : TeaModel {
         /// <summary>
         /// 内容类型。alidoc-钉钉文档；link-快捷方式；archive-压缩包；document-文件。
         /// </summary>
@@ -31,8 +28,8 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         /// </summary>
         [NameInMap("creator")]
         [Validation(Required=false)]
-        public DentryOpenVOCreator Creator { get; set; }
-        public class DentryOpenVOCreator : TeaModel {
+        public DentryVOCreator Creator { get; set; }
+        public class DentryVOCreator : TeaModel {
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
@@ -109,7 +106,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         /// </summary>
         [NameInMap("space")]
         [Validation(Required=false)]
-        public SpaceOpenVO Space { get; set; }
+        public SpaceModel Space { get; set; }
 
         /// <summary>
         /// 知识库id。
@@ -130,8 +127,8 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         /// </summary>
         [NameInMap("updater")]
         [Validation(Required=false)]
-        public DentryOpenVOUpdater Updater { get; set; }
-        public class DentryOpenVOUpdater : TeaModel {
+        public DentryVOUpdater Updater { get; set; }
+        public class DentryVOUpdater : TeaModel {
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
@@ -152,8 +149,8 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         /// </summary>
         [NameInMap("visitorInfo")]
         [Validation(Required=false)]
-        public DentryOpenVOVisitorInfo VisitorInfo { get; set; }
-        public class DentryOpenVOVisitorInfo : TeaModel {
+        public DentryVOVisitorInfo VisitorInfo { get; set; }
+        public class DentryVOVisitorInfo : TeaModel {
             [NameInMap("dentryActions")]
             [Validation(Required=false)]
             public List<string> DentryActions { get; set; }

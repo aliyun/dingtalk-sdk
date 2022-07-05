@@ -15,7 +15,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 
         [NameInMap("body")]
         [Validation(Required=true)]
-        public DentryOpenVOResult Body { get; set; }
+        public DentryVO Body { get; set; }
 
     }
 

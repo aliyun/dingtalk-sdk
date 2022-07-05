@@ -44,6 +44,11 @@ namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUid))
+            {
+                query["operatorUid"] = request.OperatorUid;
+            }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
             {
@@ -73,15 +78,21 @@ namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdatePermissionForUsersResponse>(DoROARequest("UpdatePermissionForUsers", "transcribe_1.0", "HTTP", "PUT", "AK", "/v1.0/transcribe/tasks/" + taskId + "/permissions", "none", req, runtime));
+            return TeaModel.ToObject<UpdatePermissionForUsersResponse>(DoROARequest("UpdatePermissionForUsers", "transcribe_1.0", "HTTP", "PUT", "AK", "/v1.0/transcribe/tasks/" + taskId + "/permissions", "json", req, runtime));
         }
 
         public async Task<UpdatePermissionForUsersResponse> UpdatePermissionForUsersWithOptionsAsync(string taskId, UpdatePermissionForUsersRequest request, UpdatePermissionForUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUid))
+            {
+                query["operatorUid"] = request.OperatorUid;
+            }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
             {
@@ -111,9 +122,10 @@ namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdatePermissionForUsersResponse>(await DoROARequestAsync("UpdatePermissionForUsers", "transcribe_1.0", "HTTP", "PUT", "AK", "/v1.0/transcribe/tasks/" + taskId + "/permissions", "none", req, runtime));
+            return TeaModel.ToObject<UpdatePermissionForUsersResponse>(await DoROARequestAsync("UpdatePermissionForUsers", "transcribe_1.0", "HTTP", "PUT", "AK", "/v1.0/transcribe/tasks/" + taskId + "/permissions", "json", req, runtime));
         }
 
     }

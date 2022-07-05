@@ -42,7 +42,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
             /// </summary>
             [NameInMap("dentry")]
             [Validation(Required=false)]
-            public DentryOpenVO Dentry { get; set; }
+            public DentryModel Dentry { get; set; }
 
             /// <summary>
             /// 如果查询的是访问，那么这里是访问时间；否则就是编辑时间。

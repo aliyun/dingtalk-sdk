@@ -60,6 +60,10 @@ namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0.Models
         [Validation(Required=false)]
         public string Uuid { get; set; }
 
+        [NameInMap("operatorUid")]
+        [Validation(Required=false)]
+        public long? OperatorUid { get; set; }
+
     }
 
 }

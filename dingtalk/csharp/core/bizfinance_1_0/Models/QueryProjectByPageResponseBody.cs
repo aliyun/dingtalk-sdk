@@ -31,13 +31,6 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             public string Caode { get; set; }
 
             /// <summary>
-            /// 企业id
-            /// </summary>
-            [NameInMap("corpId")]
-            [Validation(Required=false)]
-            public string CorpId { get; set; }
-
-            /// <summary>
             /// 创建时间
             /// </summary>
             [NameInMap("createTime")]

@@ -6,16 +6,16 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
+namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
-    public class QueryMineSpaceResponse : TeaModel {
+    public class CheckVoucherStatusResponse : TeaModel {
         [NameInMap("headers")]
         [Validation(Required=true)]
         public Dictionary<string, string> Headers { get; set; }
 
         [NameInMap("body")]
         [Validation(Required=true)]
-        public SpaceVO Body { get; set; }
+        public CheckVoucherStatusResponseBody Body { get; set; }
 
     }
 

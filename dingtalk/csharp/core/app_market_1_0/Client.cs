@@ -98,6 +98,86 @@ namespace AlibabaCloud.SDK.Dingtalkapp_market_1_0
             return TeaModel.ToObject<CreateAppGoodsServiceConversationResponse>(await DoROARequestAsync("CreateAppGoodsServiceConversation", "appMarket_1.0", "HTTP", "POST", "AK", "/v1.0/appMarket/orders/serviceGroups", "json", req, runtime));
         }
 
+        public GetCoolAppAccessStatusResponse GetCoolAppAccessStatus(GetCoolAppAccessStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetCoolAppAccessStatusHeaders headers = new GetCoolAppAccessStatusHeaders();
+            return GetCoolAppAccessStatusWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetCoolAppAccessStatusResponse> GetCoolAppAccessStatusAsync(GetCoolAppAccessStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetCoolAppAccessStatusHeaders headers = new GetCoolAppAccessStatusHeaders();
+            return await GetCoolAppAccessStatusWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetCoolAppAccessStatusResponse GetCoolAppAccessStatusWithOptions(GetCoolAppAccessStatusRequest request, GetCoolAppAccessStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthCode))
+            {
+                body["authCode"] = request.AuthCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoolAppCode))
+            {
+                body["coolAppCode"] = request.CoolAppCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EncFieldBizCode))
+            {
+                body["encFieldBizCode"] = request.EncFieldBizCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<GetCoolAppAccessStatusResponse>(DoROARequest("GetCoolAppAccessStatus", "appMarket_1.0", "HTTP", "POST", "AK", "/v1.0/appMarket/coolApps/accessions/statuses/query", "json", req, runtime));
+        }
+
+        public async Task<GetCoolAppAccessStatusResponse> GetCoolAppAccessStatusWithOptionsAsync(GetCoolAppAccessStatusRequest request, GetCoolAppAccessStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthCode))
+            {
+                body["authCode"] = request.AuthCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoolAppCode))
+            {
+                body["coolAppCode"] = request.CoolAppCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EncFieldBizCode))
+            {
+                body["encFieldBizCode"] = request.EncFieldBizCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<GetCoolAppAccessStatusResponse>(await DoROARequestAsync("GetCoolAppAccessStatus", "appMarket_1.0", "HTTP", "POST", "AK", "/v1.0/appMarket/coolApps/accessions/statuses/query", "json", req, runtime));
+        }
+
         public GetPersonalExperienceInfoResponse GetPersonalExperienceInfo(GetPersonalExperienceInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

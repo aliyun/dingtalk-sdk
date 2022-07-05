@@ -28,12 +28,12 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
                 public string DentryId { get; set; }
                 public string DentryUuid { get; set; }
                 public string Extension { get; set; }
-                public int? FileType { get; set; }
                 public string IconUrl { get; set; }
                 public OpenActionModel LastEdition { get; set; }
                 public string Name { get; set; }
                 public string OriginName { get; set; }
                 public string Path { get; set; }
+                public int? SearchFileType { get; set; }
                 public string SpaceId { get; set; }
                 public string Url { get; set; }
             }
