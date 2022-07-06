@@ -60,6 +60,12 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupManageReduceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupInfoByMemberAuthHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupInfoByMemberAuthRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupInfoByMemberAuthResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupMemberByMemberAuthHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupMemberByMemberAuthRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupMemberByMemberAuthResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupMemberHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupMemberRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupMemberResponse;
@@ -1086,6 +1092,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param QueryGroupInfoByMemberAuthRequest $request
+     *
+     * @return QueryGroupInfoByMemberAuthResponse
+     */
+    public function queryGroupInfoByMemberAuth($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryGroupInfoByMemberAuthHeaders([]);
+
+        return $this->queryGroupInfoByMemberAuthWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryGroupInfoByMemberAuthRequest $request
+     * @param QueryGroupInfoByMemberAuthHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return QueryGroupInfoByMemberAuthResponse
+     */
+    public function queryGroupInfoByMemberAuthWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->coolAppCode)) {
+            @$body['coolAppCode'] = $request->coolAppCode;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return QueryGroupInfoByMemberAuthResponse::fromMap($this->doROARequest('QueryGroupInfoByMemberAuth', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/memberAuthorizations/groups/query', 'json', $req, $runtime));
+    }
+
+    /**
      * @param QueryGroupMemberRequest $request
      *
      * @return QueryGroupMemberResponse
@@ -1125,6 +1176,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryGroupMemberResponse::fromMap($this->doROARequest('QueryGroupMember', 'im_1.0', 'HTTP', 'GET', 'AK', '/v1.0/im/interconnections/conversations/members', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryGroupMemberByMemberAuthRequest $request
+     *
+     * @return QueryGroupMemberByMemberAuthResponse
+     */
+    public function queryGroupMemberByMemberAuth($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryGroupMemberByMemberAuthHeaders([]);
+
+        return $this->queryGroupMemberByMemberAuthWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryGroupMemberByMemberAuthRequest $request
+     * @param QueryGroupMemberByMemberAuthHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return QueryGroupMemberByMemberAuthResponse
+     */
+    public function queryGroupMemberByMemberAuthWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->coolAppCode)) {
+            @$body['coolAppCode'] = $request->coolAppCode;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return QueryGroupMemberByMemberAuthResponse::fromMap($this->doROARequest('QueryGroupMemberByMemberAuth', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/memberAuthorizations/groups/members/query', 'json', $req, $runtime));
     }
 
     /**
