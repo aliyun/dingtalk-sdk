@@ -1709,6 +1709,91 @@ export class InteractiveCardCreateInstanceResponse extends $tea.Model {
   }
 }
 
+export class QueryGroupInfoByMemberAuthHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGroupInfoByMemberAuthRequest extends $tea.Model {
+  coolAppCode?: string;
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      coolAppCode: 'coolAppCode',
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      coolAppCode: 'string',
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGroupInfoByMemberAuthResponseBody extends $tea.Model {
+  memberCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      memberCount: 'memberCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memberCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGroupInfoByMemberAuthResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryGroupInfoByMemberAuthResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryGroupInfoByMemberAuthResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryGroupMemberHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1786,6 +1871,91 @@ export class QueryGroupMemberResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryGroupMemberResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGroupMemberByMemberAuthHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGroupMemberByMemberAuthRequest extends $tea.Model {
+  coolAppCode?: string;
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      coolAppCode: 'coolAppCode',
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      coolAppCode: 'string',
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGroupMemberByMemberAuthResponseBody extends $tea.Model {
+  groupMemberList?: QueryGroupMemberByMemberAuthResponseBodyGroupMemberList[];
+  static names(): { [key: string]: string } {
+    return {
+      groupMemberList: 'groupMemberList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupMemberList: { 'type': 'array', 'itemType': QueryGroupMemberByMemberAuthResponseBodyGroupMemberList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGroupMemberByMemberAuthResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryGroupMemberByMemberAuthResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryGroupMemberByMemberAuthResponseBody,
     };
   }
 
@@ -3763,6 +3933,34 @@ export class QueryGroupMemberResponseBodyGroupMembers extends $tea.Model {
   }
 }
 
+export class QueryGroupMemberByMemberAuthResponseBodyGroupMemberList extends $tea.Model {
+  groupNickName?: string;
+  orgName?: string;
+  profilePhotoUrl?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      groupNickName: 'groupNickName',
+      orgName: 'orgName',
+      profilePhotoUrl: 'profilePhotoUrl',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupNickName: 'string',
+      orgName: 'string',
+      profilePhotoUrl: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryGroupMuteStatusResponseBodyUserMuteResult extends $tea.Model {
   muteEndTime?: number;
   muteStartTime?: number;
@@ -4837,6 +5035,39 @@ export default class Client extends OpenApi {
     return $tea.cast<InteractiveCardCreateInstanceResponse>(await this.doROARequest("InteractiveCardCreateInstance", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interactiveCards/instances`, "json", req, runtime), new InteractiveCardCreateInstanceResponse({}));
   }
 
+  async queryGroupInfoByMemberAuth(request: QueryGroupInfoByMemberAuthRequest): Promise<QueryGroupInfoByMemberAuthResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryGroupInfoByMemberAuthHeaders({ });
+    return await this.queryGroupInfoByMemberAuthWithOptions(request, headers, runtime);
+  }
+
+  async queryGroupInfoByMemberAuthWithOptions(request: QueryGroupInfoByMemberAuthRequest, headers: QueryGroupInfoByMemberAuthHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGroupInfoByMemberAuthResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.coolAppCode)) {
+      body["coolAppCode"] = request.coolAppCode;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QueryGroupInfoByMemberAuthResponse>(await this.doROARequest("QueryGroupInfoByMemberAuth", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/memberAuthorizations/groups/query`, "json", req, runtime), new QueryGroupInfoByMemberAuthResponse({}));
+  }
+
   async queryGroupMember(request: QueryGroupMemberRequest): Promise<QueryGroupMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryGroupMemberHeaders({ });
@@ -4864,6 +5095,39 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryGroupMemberResponse>(await this.doROARequest("QueryGroupMember", "im_1.0", "HTTP", "GET", "AK", `/v1.0/im/interconnections/conversations/members`, "json", req, runtime), new QueryGroupMemberResponse({}));
+  }
+
+  async queryGroupMemberByMemberAuth(request: QueryGroupMemberByMemberAuthRequest): Promise<QueryGroupMemberByMemberAuthResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryGroupMemberByMemberAuthHeaders({ });
+    return await this.queryGroupMemberByMemberAuthWithOptions(request, headers, runtime);
+  }
+
+  async queryGroupMemberByMemberAuthWithOptions(request: QueryGroupMemberByMemberAuthRequest, headers: QueryGroupMemberByMemberAuthHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGroupMemberByMemberAuthResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.coolAppCode)) {
+      body["coolAppCode"] = request.coolAppCode;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QueryGroupMemberByMemberAuthResponse>(await this.doROARequest("QueryGroupMemberByMemberAuth", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/memberAuthorizations/groups/members/query`, "json", req, runtime), new QueryGroupMemberByMemberAuthResponse({}));
   }
 
   async queryGroupMuteStatus(request: QueryGroupMuteStatusRequest): Promise<QueryGroupMuteStatusResponse> {
