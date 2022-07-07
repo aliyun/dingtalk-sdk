@@ -22,7 +22,15 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 
         [NameInMap("result")]
         [Validation(Required=false)]
-        public object Result { get; set; }
+        public IndustryManufactureCommonEventResponseBodyResult Result { get; set; }
+        public class IndustryManufactureCommonEventResponseBodyResult : TeaModel {
+            [NameInMap("content")]
+            [Validation(Required=false)]
+            public string Content { get; set; }
+            [NameInMap("httpCode")]
+            [Validation(Required=false)]
+            public string HttpCode { get; set; }
+        };
 
     }
 

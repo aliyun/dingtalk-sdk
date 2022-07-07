@@ -25,6 +25,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
             [NameInMap("matchFormulaText")]
             [Validation(Required=false)]
             public bool? MatchFormulaText { get; set; }
+            [NameInMap("scope")]
+            [Validation(Required=false)]
+            public string Scope { get; set; }
             [NameInMap("useRegExp")]
             [Validation(Required=false)]
             public bool? UseRegExp { get; set; }
