@@ -1667,6 +1667,75 @@ export class QueryEnterpriseAccountByPageResponse extends $tea.Model {
   }
 }
 
+export class QueryFinanceCompanyInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryFinanceCompanyInfoResponseBody extends $tea.Model {
+  companyName?: string;
+  taxNature?: string;
+  taxNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      companyName: 'companyName',
+      taxNature: 'taxNature',
+      taxNo: 'taxNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      companyName: 'string',
+      taxNature: 'string',
+      taxNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryFinanceCompanyInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryFinanceCompanyInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryFinanceCompanyInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryInvoiceRelationCountHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2008,20 +2077,20 @@ export class QueryReceiptForInvoiceHeaders extends $tea.Model {
 }
 
 export class QueryReceiptForInvoiceRequest extends $tea.Model {
+  applyStatusList?: string[];
   endTime?: number;
-  invoiceFilter?: QueryReceiptForInvoiceRequestInvoiceFilter;
   pageNumber?: number;
   pageSize?: number;
-  receiptStatus?: string;
+  receiptStatusList?: string[];
   startTime?: number;
   title?: string;
   static names(): { [key: string]: string } {
     return {
+      applyStatusList: 'applyStatusList',
       endTime: 'endTime',
-      invoiceFilter: 'invoiceFilter',
       pageNumber: 'pageNumber',
       pageSize: 'pageSize',
-      receiptStatus: 'receiptStatus',
+      receiptStatusList: 'receiptStatusList',
       startTime: 'startTime',
       title: 'title',
     };
@@ -2029,11 +2098,11 @@ export class QueryReceiptForInvoiceRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      applyStatusList: { 'type': 'array', 'itemType': 'string' },
       endTime: 'number',
-      invoiceFilter: QueryReceiptForInvoiceRequestInvoiceFilter,
       pageNumber: 'number',
       pageSize: 'number',
-      receiptStatus: 'string',
+      receiptStatusList: { 'type': 'array', 'itemType': 'string' },
       startTime: 'number',
       title: 'string',
     };
@@ -2083,6 +2152,106 @@ export class QueryReceiptForInvoiceResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryReceiptForInvoiceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReceiptsBaseInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReceiptsBaseInfoRequest extends $tea.Model {
+  endTime?: number;
+  pageNumber?: number;
+  pageSize?: number;
+  startTime?: number;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      startTime: 'startTime',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'number',
+      pageNumber: 'number',
+      pageSize: 'number',
+      startTime: 'number',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReceiptsBaseInfoResponseBody extends $tea.Model {
+  hasMore?: string;
+  list?: QueryReceiptsBaseInfoResponseBodyList[];
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'string',
+      list: { 'type': 'array', 'itemType': QueryReceiptsBaseInfoResponseBodyList },
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReceiptsBaseInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryReceiptsBaseInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryReceiptsBaseInfoResponseBody,
     };
   }
 
@@ -2271,6 +2440,94 @@ export class QuerySupplierByPageResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QuerySupplierByPageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateFinanceCompanyInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateFinanceCompanyInfoRequest extends $tea.Model {
+  companyName?: string;
+  taxNature?: string;
+  taxNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      companyName: 'companyName',
+      taxNature: 'taxNature',
+      taxNo: 'taxNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      companyName: 'string',
+      taxNature: 'string',
+      taxNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateFinanceCompanyInfoResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateFinanceCompanyInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateFinanceCompanyInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateFinanceCompanyInfoResponseBody,
     };
   }
 
@@ -3849,20 +4106,26 @@ export class QueryProjectByPageResponseBodyList extends $tea.Model {
   }
 }
 
-export class QueryReceiptForInvoiceRequestInvoiceFilter extends $tea.Model {
-  financeType?: string;
-  relationStatus?: string[];
+export class QueryReceiptForInvoiceResponseBodyList extends $tea.Model {
+  appId?: string;
+  data?: string;
+  modelId?: string;
+  source?: string;
   static names(): { [key: string]: string } {
     return {
-      financeType: 'financeType',
-      relationStatus: 'relationStatus',
+      appId: 'appId',
+      data: 'data',
+      modelId: 'modelId',
+      source: 'source',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      financeType: 'string',
-      relationStatus: { 'type': 'array', 'itemType': 'string' },
+      appId: 'string',
+      data: 'string',
+      modelId: 'string',
+      source: 'string',
     };
   }
 
@@ -3871,7 +4134,7 @@ export class QueryReceiptForInvoiceRequestInvoiceFilter extends $tea.Model {
   }
 }
 
-export class QueryReceiptForInvoiceResponseBodyList extends $tea.Model {
+export class QueryReceiptsBaseInfoResponseBodyList extends $tea.Model {
   appId?: string;
   data?: string;
   modelId?: string;
@@ -6127,6 +6390,28 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryEnterpriseAccountByPageResponse>(await this.doROARequest("QueryEnterpriseAccountByPage", "bizfinance_1.0", "HTTP", "GET", "AK", `/v1.0/bizfinance/financeAccounts/list`, "json", req, runtime), new QueryEnterpriseAccountByPageResponse({}));
   }
 
+  async queryFinanceCompanyInfo(): Promise<QueryFinanceCompanyInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryFinanceCompanyInfoHeaders({ });
+    return await this.queryFinanceCompanyInfoWithOptions(headers, runtime);
+  }
+
+  async queryFinanceCompanyInfoWithOptions(headers: QueryFinanceCompanyInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryFinanceCompanyInfoResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<QueryFinanceCompanyInfoResponse>(await this.doROARequest("QueryFinanceCompanyInfo", "bizfinance_1.0", "HTTP", "GET", "AK", `/v1.0/bizfinance/companies`, "json", req, runtime), new QueryFinanceCompanyInfoResponse({}));
+  }
+
   async queryInvoiceRelationCount(): Promise<QueryInvoiceRelationCountResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryInvoiceRelationCountHeaders({ });
@@ -6249,12 +6534,12 @@ export default class Client extends OpenApi {
   async queryReceiptForInvoiceWithOptions(request: QueryReceiptForInvoiceRequest, headers: QueryReceiptForInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryReceiptForInvoiceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.endTime)) {
-      body["endTime"] = request.endTime;
+    if (!Util.isUnset(request.applyStatusList)) {
+      body["applyStatusList"] = request.applyStatusList;
     }
 
-    if (!Util.isUnset($tea.toMap(request.invoiceFilter))) {
-      body["invoiceFilter"] = request.invoiceFilter;
+    if (!Util.isUnset(request.endTime)) {
+      body["endTime"] = request.endTime;
     }
 
     if (!Util.isUnset(request.pageNumber)) {
@@ -6265,8 +6550,8 @@ export default class Client extends OpenApi {
       body["pageSize"] = request.pageSize;
     }
 
-    if (!Util.isUnset(request.receiptStatus)) {
-      body["receiptStatus"] = request.receiptStatus;
+    if (!Util.isUnset(request.receiptStatusList)) {
+      body["receiptStatusList"] = request.receiptStatusList;
     }
 
     if (!Util.isUnset(request.startTime)) {
@@ -6291,6 +6576,51 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<QueryReceiptForInvoiceResponse>(await this.doROARequest("QueryReceiptForInvoice", "bizfinance_1.0", "HTTP", "POST", "AK", `/v1.0/bizfinance/invoices/receipts/query`, "json", req, runtime), new QueryReceiptForInvoiceResponse({}));
+  }
+
+  async queryReceiptsBaseInfo(request: QueryReceiptsBaseInfoRequest): Promise<QueryReceiptsBaseInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryReceiptsBaseInfoHeaders({ });
+    return await this.queryReceiptsBaseInfoWithOptions(request, headers, runtime);
+  }
+
+  async queryReceiptsBaseInfoWithOptions(request: QueryReceiptsBaseInfoRequest, headers: QueryReceiptsBaseInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryReceiptsBaseInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.endTime)) {
+      query["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      query["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      query["title"] = request.title;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryReceiptsBaseInfoResponse>(await this.doROARequest("QueryReceiptsBaseInfo", "bizfinance_1.0", "HTTP", "GET", "AK", `/v1.0/bizfinance/receipts/dataInfos`, "json", req, runtime), new QueryReceiptsBaseInfoResponse({}));
   }
 
   async queryReceiptsByPage(request: QueryReceiptsByPageRequest): Promise<QueryReceiptsByPageResponse> {
@@ -6373,6 +6703,43 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QuerySupplierByPageResponse>(await this.doROARequest("QuerySupplierByPage", "bizfinance_1.0", "HTTP", "GET", "AK", `/v1.0/bizfinance/suppliers`, "json", req, runtime), new QuerySupplierByPageResponse({}));
+  }
+
+  async updateFinanceCompanyInfo(request: UpdateFinanceCompanyInfoRequest): Promise<UpdateFinanceCompanyInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateFinanceCompanyInfoHeaders({ });
+    return await this.updateFinanceCompanyInfoWithOptions(request, headers, runtime);
+  }
+
+  async updateFinanceCompanyInfoWithOptions(request: UpdateFinanceCompanyInfoRequest, headers: UpdateFinanceCompanyInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateFinanceCompanyInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.companyName)) {
+      query["companyName"] = request.companyName;
+    }
+
+    if (!Util.isUnset(request.taxNature)) {
+      query["taxNature"] = request.taxNature;
+    }
+
+    if (!Util.isUnset(request.taxNo)) {
+      query["taxNo"] = request.taxNo;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<UpdateFinanceCompanyInfoResponse>(await this.doROARequest("UpdateFinanceCompanyInfo", "bizfinance_1.0", "HTTP", "PUT", "AK", `/v1.0/bizfinance/companies`, "json", req, runtime), new UpdateFinanceCompanyInfoResponse({}));
   }
 
   async updateInvoiceAbandonStatus(request: UpdateInvoiceAbandonStatusRequest): Promise<UpdateInvoiceAbandonStatusResponse> {

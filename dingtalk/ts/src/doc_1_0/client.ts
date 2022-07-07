@@ -970,15 +970,21 @@ export class GetRangeRequest extends $tea.Model {
 }
 
 export class GetRangeResponseBody extends $tea.Model {
+  displayValues?: string[];
+  formulas?: string[];
   values?: string[];
   static names(): { [key: string]: string } {
     return {
+      displayValues: 'displayValues',
+      formulas: 'formulas',
       values: 'values',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      displayValues: { 'type': 'array', 'itemType': 'string' },
+      formulas: { 'type': 'array', 'itemType': 'string' },
       values: { 'type': 'array', 'itemType': 'string' },
     };
   }
@@ -2895,12 +2901,14 @@ export class RangeFindNextRequestFindOptions extends $tea.Model {
   matchCase?: boolean;
   matchEntireCell?: boolean;
   matchFormulaText?: boolean;
+  scope?: string;
   useRegExp?: boolean;
   static names(): { [key: string]: string } {
     return {
       matchCase: 'matchCase',
       matchEntireCell: 'matchEntireCell',
       matchFormulaText: 'matchFormulaText',
+      scope: 'scope',
       useRegExp: 'useRegExp',
     };
   }
@@ -2910,6 +2918,7 @@ export class RangeFindNextRequestFindOptions extends $tea.Model {
       matchCase: 'boolean',
       matchEntireCell: 'boolean',
       matchFormulaText: 'boolean',
+      scope: 'string',
       useRegExp: 'boolean',
     };
   }

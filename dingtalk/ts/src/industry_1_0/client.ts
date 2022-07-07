@@ -3615,7 +3615,7 @@ export class IndustryManufactureCommonEventRequest extends $tea.Model {
 export class IndustryManufactureCommonEventResponseBody extends $tea.Model {
   errorMsg?: string;
   requestId?: string;
-  result?: any;
+  result?: IndustryManufactureCommonEventResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
       errorMsg: 'errorMsg',
@@ -3628,7 +3628,7 @@ export class IndustryManufactureCommonEventResponseBody extends $tea.Model {
     return {
       errorMsg: 'string',
       requestId: 'string',
-      result: 'any',
+      result: IndustryManufactureCommonEventResponseBodyResult,
     };
   }
 
@@ -6909,6 +6909,28 @@ export class DigitalStoreUsersResponseBodyContent extends $tea.Model {
     return {
       name: 'string',
       userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureCommonEventResponseBodyResult extends $tea.Model {
+  content?: string;
+  httpCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      httpCode: 'httpCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+      httpCode: 'string',
     };
   }
 
