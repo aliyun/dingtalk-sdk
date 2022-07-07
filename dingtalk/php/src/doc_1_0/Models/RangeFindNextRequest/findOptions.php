@@ -30,6 +30,11 @@ class findOptions extends Model
     public $matchFormulaText;
 
     /**
+     * @var string
+     */
+    public $scope;
+
+    /**
      * @description text是正则表达式
      *
      * @var bool
@@ -39,6 +44,7 @@ class findOptions extends Model
         'matchCase'        => 'matchCase',
         'matchEntireCell'  => 'matchEntireCell',
         'matchFormulaText' => 'matchFormulaText',
+        'scope'            => 'scope',
         'useRegExp'        => 'useRegExp',
     ];
 
@@ -57,6 +63,9 @@ class findOptions extends Model
         }
         if (null !== $this->matchFormulaText) {
             $res['matchFormulaText'] = $this->matchFormulaText;
+        }
+        if (null !== $this->scope) {
+            $res['scope'] = $this->scope;
         }
         if (null !== $this->useRegExp) {
             $res['useRegExp'] = $this->useRegExp;
@@ -81,6 +90,9 @@ class findOptions extends Model
         }
         if (isset($map['matchFormulaText'])) {
             $model->matchFormulaText = $map['matchFormulaText'];
+        }
+        if (isset($map['scope'])) {
+            $model->scope = $map['scope'];
         }
         if (isset($map['useRegExp'])) {
             $model->useRegExp = $map['useRegExp'];

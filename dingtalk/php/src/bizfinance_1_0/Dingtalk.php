@@ -57,6 +57,8 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryCustomerInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryEnterpriseAccountByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryEnterpriseAccountByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryEnterpriseAccountByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryFinanceCompanyInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryFinanceCompanyInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryInvoiceRelationCountHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryInvoiceRelationCountResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryPermissionByUserIdHeaders;
@@ -71,12 +73,18 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryProjectByPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptForInvoiceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptForInvoiceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptForInvoiceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptsBaseInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptsBaseInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptsBaseInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptsByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptsByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptsByPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QuerySupplierByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QuerySupplierByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QuerySupplierByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateFinanceCompanyInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateFinanceCompanyInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateFinanceCompanyInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAbandonStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAbandonStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAbandonStatusResponse;
@@ -940,6 +948,39 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @return QueryFinanceCompanyInfoResponse
+     */
+    public function queryFinanceCompanyInfo()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryFinanceCompanyInfoHeaders([]);
+
+        return $this->queryFinanceCompanyInfoWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param QueryFinanceCompanyInfoHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return QueryFinanceCompanyInfoResponse
+     */
+    public function queryFinanceCompanyInfoWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return QueryFinanceCompanyInfoResponse::fromMap($this->doROARequest('QueryFinanceCompanyInfo', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/bizfinance/companies', 'json', $req, $runtime));
+    }
+
+    /**
      * @return QueryInvoiceRelationCountResponse
      */
     public function queryInvoiceRelationCount()
@@ -1125,11 +1166,11 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->applyStatusList)) {
+            @$body['applyStatusList'] = $request->applyStatusList;
+        }
         if (!Utils::isUnset($request->endTime)) {
             @$body['endTime'] = $request->endTime;
-        }
-        if (!Utils::isUnset($request->invoiceFilter)) {
-            @$body['invoiceFilter'] = $request->invoiceFilter;
         }
         if (!Utils::isUnset($request->pageNumber)) {
             @$body['pageNumber'] = $request->pageNumber;
@@ -1137,8 +1178,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->pageSize)) {
             @$body['pageSize'] = $request->pageSize;
         }
-        if (!Utils::isUnset($request->receiptStatus)) {
-            @$body['receiptStatus'] = $request->receiptStatus;
+        if (!Utils::isUnset($request->receiptStatusList)) {
+            @$body['receiptStatusList'] = $request->receiptStatusList;
         }
         if (!Utils::isUnset($request->startTime)) {
             @$body['startTime'] = $request->startTime;
@@ -1159,6 +1200,60 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryReceiptForInvoiceResponse::fromMap($this->doROARequest('QueryReceiptForInvoice', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/bizfinance/invoices/receipts/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryReceiptsBaseInfoRequest $request
+     *
+     * @return QueryReceiptsBaseInfoResponse
+     */
+    public function queryReceiptsBaseInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryReceiptsBaseInfoHeaders([]);
+
+        return $this->queryReceiptsBaseInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryReceiptsBaseInfoRequest $request
+     * @param QueryReceiptsBaseInfoHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return QueryReceiptsBaseInfoResponse
+     */
+    public function queryReceiptsBaseInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->endTime)) {
+            @$query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$query['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->title)) {
+            @$query['title'] = $request->title;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryReceiptsBaseInfoResponse::fromMap($this->doROARequest('QueryReceiptsBaseInfo', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/bizfinance/receipts/dataInfos', 'json', $req, $runtime));
     }
 
     /**
@@ -1261,6 +1356,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QuerySupplierByPageResponse::fromMap($this->doROARequest('QuerySupplierByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/bizfinance/suppliers', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateFinanceCompanyInfoRequest $request
+     *
+     * @return UpdateFinanceCompanyInfoResponse
+     */
+    public function updateFinanceCompanyInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateFinanceCompanyInfoHeaders([]);
+
+        return $this->updateFinanceCompanyInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateFinanceCompanyInfoRequest $request
+     * @param UpdateFinanceCompanyInfoHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return UpdateFinanceCompanyInfoResponse
+     */
+    public function updateFinanceCompanyInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->companyName)) {
+            @$query['companyName'] = $request->companyName;
+        }
+        if (!Utils::isUnset($request->taxNature)) {
+            @$query['taxNature'] = $request->taxNature;
+        }
+        if (!Utils::isUnset($request->taxNo)) {
+            @$query['taxNo'] = $request->taxNo;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return UpdateFinanceCompanyInfoResponse::fromMap($this->doROARequest('UpdateFinanceCompanyInfo', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/bizfinance/companies', 'json', $req, $runtime));
     }
 
     /**

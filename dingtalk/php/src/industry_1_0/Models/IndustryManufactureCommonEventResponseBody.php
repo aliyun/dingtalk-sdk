@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureCommonEventResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
 class IndustryManufactureCommonEventResponseBody extends Model
@@ -21,7 +22,7 @@ class IndustryManufactureCommonEventResponseBody extends Model
     public $requestId;
 
     /**
-     * @var mixed
+     * @var result
      */
     public $result;
     protected $_name = [
@@ -44,7 +45,7 @@ class IndustryManufactureCommonEventResponseBody extends Model
             $res['requestId'] = $this->requestId;
         }
         if (null !== $this->result) {
-            $res['result'] = $this->result;
+            $res['result'] = null !== $this->result ? $this->result->toMap() : null;
         }
 
         return $res;
@@ -65,7 +66,7 @@ class IndustryManufactureCommonEventResponseBody extends Model
             $model->requestId = $map['requestId'];
         }
         if (isset($map['result'])) {
-            $model->result = $map['result'];
+            $model->result = result::fromMap($map['result']);
         }
 
         return $model;
