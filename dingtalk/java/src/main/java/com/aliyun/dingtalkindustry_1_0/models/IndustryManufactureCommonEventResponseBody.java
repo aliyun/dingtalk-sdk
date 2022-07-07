@@ -12,7 +12,7 @@ public class IndustryManufactureCommonEventResponseBody extends TeaModel {
     public String requestId;
 
     @NameInMap("result")
-    public Object result;
+    public IndustryManufactureCommonEventResponseBodyResult result;
 
     public static IndustryManufactureCommonEventResponseBody build(java.util.Map<String, ?> map) throws Exception {
         IndustryManufactureCommonEventResponseBody self = new IndustryManufactureCommonEventResponseBody();
@@ -35,12 +35,44 @@ public class IndustryManufactureCommonEventResponseBody extends TeaModel {
         return this.requestId;
     }
 
-    public IndustryManufactureCommonEventResponseBody setResult(Object result) {
+    public IndustryManufactureCommonEventResponseBody setResult(IndustryManufactureCommonEventResponseBodyResult result) {
         this.result = result;
         return this;
     }
-    public Object getResult() {
+    public IndustryManufactureCommonEventResponseBodyResult getResult() {
         return this.result;
+    }
+
+    public static class IndustryManufactureCommonEventResponseBodyResult extends TeaModel {
+        // 返回内容
+        @NameInMap("content")
+        public String content;
+
+        // 状态码
+        @NameInMap("httpCode")
+        public String httpCode;
+
+        public static IndustryManufactureCommonEventResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
+            IndustryManufactureCommonEventResponseBodyResult self = new IndustryManufactureCommonEventResponseBodyResult();
+            return TeaModel.build(map, self);
+        }
+
+        public IndustryManufactureCommonEventResponseBodyResult setContent(String content) {
+            this.content = content;
+            return this;
+        }
+        public String getContent() {
+            return this.content;
+        }
+
+        public IndustryManufactureCommonEventResponseBodyResult setHttpCode(String httpCode) {
+            this.httpCode = httpCode;
+            return this;
+        }
+        public String getHttpCode() {
+            return this.httpCode;
+        }
+
     }
 
 }

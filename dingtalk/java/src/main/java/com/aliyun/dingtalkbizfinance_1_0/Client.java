@@ -653,6 +653,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("QueryEnterpriseAccountByPage", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/financeAccounts/list", "json", req, runtime), new QueryEnterpriseAccountByPageResponse());
     }
 
+    public QueryFinanceCompanyInfoResponse queryFinanceCompanyInfo() throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryFinanceCompanyInfoHeaders headers = new QueryFinanceCompanyInfoHeaders();
+        return this.queryFinanceCompanyInfoWithOptions(headers, runtime);
+    }
+
+    public QueryFinanceCompanyInfoResponse queryFinanceCompanyInfoWithOptions(QueryFinanceCompanyInfoHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryFinanceCompanyInfo", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/companies", "json", req, runtime), new QueryFinanceCompanyInfoResponse());
+    }
+
     public QueryInvoiceRelationCountResponse queryInvoiceRelationCount() throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         QueryInvoiceRelationCountHeaders headers = new QueryInvoiceRelationCountHeaders();
@@ -775,12 +797,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public QueryReceiptForInvoiceResponse queryReceiptForInvoiceWithOptions(QueryReceiptForInvoiceRequest request, QueryReceiptForInvoiceHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
-            body.put("endTime", request.endTime);
+        if (!com.aliyun.teautil.Common.isUnset(request.applyStatusList)) {
+            body.put("applyStatusList", request.applyStatusList);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.invoiceFilter))) {
-            body.put("invoiceFilter", request.invoiceFilter);
+        if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
+            body.put("endTime", request.endTime);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
@@ -791,8 +813,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("pageSize", request.pageSize);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.receiptStatus)) {
-            body.put("receiptStatus", request.receiptStatus);
+        if (!com.aliyun.teautil.Common.isUnset(request.receiptStatusList)) {
+            body.put("receiptStatusList", request.receiptStatusList);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.startTime)) {
@@ -817,6 +839,51 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("QueryReceiptForInvoice", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/invoices/receipts/query", "json", req, runtime), new QueryReceiptForInvoiceResponse());
+    }
+
+    public QueryReceiptsBaseInfoResponse queryReceiptsBaseInfo(QueryReceiptsBaseInfoRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryReceiptsBaseInfoHeaders headers = new QueryReceiptsBaseInfoHeaders();
+        return this.queryReceiptsBaseInfoWithOptions(request, headers, runtime);
+    }
+
+    public QueryReceiptsBaseInfoResponse queryReceiptsBaseInfoWithOptions(QueryReceiptsBaseInfoRequest request, QueryReceiptsBaseInfoHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
+            query.put("endTime", request.endTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            query.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startTime)) {
+            query.put("startTime", request.startTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.title)) {
+            query.put("title", request.title);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryReceiptsBaseInfo", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/receipts/dataInfos", "json", req, runtime), new QueryReceiptsBaseInfoResponse());
     }
 
     public QueryReceiptsByPageResponse queryReceiptsByPage(QueryReceiptsByPageRequest request) throws Exception {
@@ -899,6 +966,43 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("QuerySupplierByPage", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/suppliers", "json", req, runtime), new QuerySupplierByPageResponse());
+    }
+
+    public UpdateFinanceCompanyInfoResponse updateFinanceCompanyInfo(UpdateFinanceCompanyInfoRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        UpdateFinanceCompanyInfoHeaders headers = new UpdateFinanceCompanyInfoHeaders();
+        return this.updateFinanceCompanyInfoWithOptions(request, headers, runtime);
+    }
+
+    public UpdateFinanceCompanyInfoResponse updateFinanceCompanyInfoWithOptions(UpdateFinanceCompanyInfoRequest request, UpdateFinanceCompanyInfoHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.companyName)) {
+            query.put("companyName", request.companyName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taxNature)) {
+            query.put("taxNature", request.taxNature);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taxNo)) {
+            query.put("taxNo", request.taxNo);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("UpdateFinanceCompanyInfo", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/companies", "json", req, runtime), new UpdateFinanceCompanyInfoResponse());
     }
 
     public UpdateInvoiceAbandonStatusResponse updateInvoiceAbandonStatus(UpdateInvoiceAbandonStatusRequest request) throws Exception {

@@ -58,6 +58,9 @@ public class RangeFindNextRequest extends TeaModel {
         @NameInMap("matchFormulaText")
         public Boolean matchFormulaText;
 
+        @NameInMap("scope")
+        public String scope;
+
         // text是正则表达式
         @NameInMap("useRegExp")
         public Boolean useRegExp;
@@ -89,6 +92,14 @@ public class RangeFindNextRequest extends TeaModel {
         }
         public Boolean getMatchFormulaText() {
             return this.matchFormulaText;
+        }
+
+        public RangeFindNextRequestFindOptions setScope(String scope) {
+            this.scope = scope;
+            return this;
+        }
+        public String getScope() {
+            return this.scope;
         }
 
         public RangeFindNextRequestFindOptions setUseRegExp(Boolean useRegExp) {
