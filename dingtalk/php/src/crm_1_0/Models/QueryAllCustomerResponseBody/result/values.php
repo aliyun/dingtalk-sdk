@@ -66,13 +66,6 @@ class values extends Model
     public $objectType;
 
     /**
-     * @description 系统自动生成
-     *
-     * @var int
-     */
-    public $orgId;
-
-    /**
      * @description 数据权限信息
      *
      * @var permission
@@ -101,7 +94,6 @@ class values extends Model
         'instanceId'            => 'instanceId',
         'modifyTime'            => 'modifyTime',
         'objectType'            => 'objectType',
-        'orgId'                 => 'orgId',
         'permission'            => 'permission',
         'processInstanceStatus' => 'processInstanceStatus',
         'processOutResult'      => 'processOutResult',
@@ -137,9 +129,6 @@ class values extends Model
         }
         if (null !== $this->objectType) {
             $res['objectType'] = $this->objectType;
-        }
-        if (null !== $this->orgId) {
-            $res['orgId'] = $this->orgId;
         }
         if (null !== $this->permission) {
             $res['permission'] = null !== $this->permission ? $this->permission->toMap() : null;
@@ -185,9 +174,6 @@ class values extends Model
         }
         if (isset($map['objectType'])) {
             $model->objectType = $map['objectType'];
-        }
-        if (isset($map['orgId'])) {
-            $model->orgId = $map['orgId'];
         }
         if (isset($map['permission'])) {
             $model->permission = permission::fromMap($map['permission']);

@@ -69,6 +69,13 @@ class AddKnowledgeRequest extends Model
     public $openTeamId;
 
     /**
+     * @description 关联问题id
+     *
+     * @var int[]
+     */
+    public $questionIds;
+
+    /**
      * @description 知识点来源
      *
      * @var string
@@ -112,6 +119,7 @@ class AddKnowledgeRequest extends Model
         'libraryKey'       => 'libraryKey',
         'linkUrl'          => 'linkUrl',
         'openTeamId'       => 'openTeamId',
+        'questionIds'      => 'questionIds',
         'source'           => 'source',
         'sourcePrimaryKey' => 'sourcePrimaryKey',
         'title'            => 'title',
@@ -158,6 +166,9 @@ class AddKnowledgeRequest extends Model
         }
         if (null !== $this->openTeamId) {
             $res['openTeamId'] = $this->openTeamId;
+        }
+        if (null !== $this->questionIds) {
+            $res['questionIds'] = $this->questionIds;
         }
         if (null !== $this->source) {
             $res['source'] = $this->source;
@@ -218,6 +229,11 @@ class AddKnowledgeRequest extends Model
         }
         if (isset($map['openTeamId'])) {
             $model->openTeamId = $map['openTeamId'];
+        }
+        if (isset($map['questionIds'])) {
+            if (!empty($map['questionIds'])) {
+                $model->questionIds = $map['questionIds'];
+            }
         }
         if (isset($map['source'])) {
             $model->source = $map['source'];

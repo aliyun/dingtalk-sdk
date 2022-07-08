@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\BatchSendResponse;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\CreateGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\CreateGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\CreateGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\CreateTrustGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\CreateTrustGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\CreateTrustGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\DismissGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\DismissGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\DismissGroupResponse;
@@ -277,6 +280,63 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateGroupResponse::fromMap($this->doROARequest('CreateGroup', 'impaas_1.0', 'HTTP', 'POST', 'AK', '/v1.0/impaas/interconnections/groups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateTrustGroupRequest $request
+     *
+     * @return CreateTrustGroupResponse
+     */
+    public function createTrustGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateTrustGroupHeaders([]);
+
+        return $this->createTrustGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateTrustGroupRequest $request
+     * @param CreateTrustGroupHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return CreateTrustGroupResponse
+     */
+    public function createTrustGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->channel)) {
+            @$body['channel'] = $request->channel;
+        }
+        if (!Utils::isUnset($request->iconMediaId)) {
+            @$body['iconMediaId'] = $request->iconMediaId;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->properties)) {
+            @$body['properties'] = $request->properties;
+        }
+        if (!Utils::isUnset($request->uuid)) {
+            @$body['uuid'] = $request->uuid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->operationSource)) {
+            @$realHeaders['operationSource'] = Utils::toJSONString($headers->operationSource);
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateTrustGroupResponse::fromMap($this->doROARequest('CreateTrustGroup', 'impaas_1.0', 'HTTP', 'POST', 'AK', '/v1.0/impaas/interconnections/groups/trusts', 'json', $req, $runtime));
     }
 
     /**

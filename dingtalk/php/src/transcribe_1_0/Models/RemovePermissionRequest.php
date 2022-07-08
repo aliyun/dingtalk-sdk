@@ -4,41 +4,39 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vtranscribe_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vtranscribe_1_0\Models\UpdatePermissionForUsersRequest\members;
+use AlibabaCloud\SDK\Dingtalk\Vtranscribe_1_0\Models\RemovePermissionRequest\members;
 use AlibabaCloud\Tea\Model;
 
-class UpdatePermissionForUsersRequest extends Model
+class RemovePermissionRequest extends Model
 {
     /**
-     * @description 闪记任务的类型。枚举值，从任务详情中获取。
-     *
      * @var int
      */
     public $bizType;
 
     /**
-     * @description 被授权的用户信息列表
-     *
      * @var members[]
      */
     public $members;
 
     /**
-     * @description 要操作的闪记任务的创建者userId。
+     * @description 任务的创建者uid
      *
      * @var int
      */
     public $taskCreator;
 
     /**
+     * @description 闪记任务的闪记ID
+     *
      * @var int
      */
-    public $operatorUid;
+    public $taskId;
     protected $_name = [
         'bizType'     => 'bizType',
         'members'     => 'members',
         'taskCreator' => 'taskCreator',
-        'operatorUid' => 'operatorUid',
+        'taskId'      => 'taskId',
     ];
 
     public function validate()
@@ -63,8 +61,8 @@ class UpdatePermissionForUsersRequest extends Model
         if (null !== $this->taskCreator) {
             $res['taskCreator'] = $this->taskCreator;
         }
-        if (null !== $this->operatorUid) {
-            $res['operatorUid'] = $this->operatorUid;
+        if (null !== $this->taskId) {
+            $res['taskId'] = $this->taskId;
         }
 
         return $res;
@@ -73,7 +71,7 @@ class UpdatePermissionForUsersRequest extends Model
     /**
      * @param array $map
      *
-     * @return UpdatePermissionForUsersRequest
+     * @return RemovePermissionRequest
      */
     public static function fromMap($map = [])
     {
@@ -93,8 +91,8 @@ class UpdatePermissionForUsersRequest extends Model
         if (isset($map['taskCreator'])) {
             $model->taskCreator = $map['taskCreator'];
         }
-        if (isset($map['operatorUid'])) {
-            $model->operatorUid = $map['operatorUid'];
+        if (isset($map['taskId'])) {
+            $model->taskId = $map['taskId'];
         }
 
         return $model;

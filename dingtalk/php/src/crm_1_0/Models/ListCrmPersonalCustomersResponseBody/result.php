@@ -60,11 +60,6 @@ class result extends Model
     public $objectType;
 
     /**
-     * @var int
-     */
-    public $orgId;
-
-    /**
      * @var permission
      */
     public $permission;
@@ -89,7 +84,6 @@ class result extends Model
         'gmtModified'    => 'gmtModified',
         'instanceId'     => 'instanceId',
         'objectType'     => 'objectType',
-        'orgId'          => 'orgId',
         'permission'     => 'permission',
         'procInstStatus' => 'procInstStatus',
         'procOutResult'  => 'procOutResult',
@@ -131,9 +125,6 @@ class result extends Model
         }
         if (null !== $this->objectType) {
             $res['objectType'] = $this->objectType;
-        }
-        if (null !== $this->orgId) {
-            $res['orgId'] = $this->orgId;
         }
         if (null !== $this->permission) {
             $res['permission'] = null !== $this->permission ? $this->permission->toMap() : null;
@@ -185,9 +176,6 @@ class result extends Model
         }
         if (isset($map['objectType'])) {
             $model->objectType = $map['objectType'];
-        }
-        if (isset($map['orgId'])) {
-            $model->orgId = $map['orgId'];
         }
         if (isset($map['permission'])) {
             $model->permission = permission::fromMap($map['permission']);

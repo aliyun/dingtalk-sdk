@@ -272,6 +272,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->openTeamId)) {
             @$body['openTeamId'] = $request->openTeamId;
         }
+        if (!Utils::isUnset($request->questionIds)) {
+            @$body['questionIds'] = $request->questionIds;
+        }
         if (!Utils::isUnset($request->source)) {
             @$body['source'] = $request->source;
         }

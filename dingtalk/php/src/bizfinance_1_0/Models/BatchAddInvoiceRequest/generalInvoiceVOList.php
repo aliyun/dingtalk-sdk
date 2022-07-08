@@ -146,7 +146,14 @@ class generalInvoiceVOList extends Model
     public $purchaserAddress;
 
     /**
-     * @description 购方银行
+     * @description 购方银行账户
+     *
+     * @var string
+     */
+    public $purchaserBankAccount;
+
+    /**
+     * @description 购方银行名称
      *
      * @var string
      */
@@ -193,7 +200,14 @@ class generalInvoiceVOList extends Model
     public $sellerAddress;
 
     /**
-     * @description 销方银行
+     * @description 销方银行账户
+     *
+     * @var string
+     */
+    public $sellerBankAccount;
+
+    /**
+     * @description 销方银行名称
      *
      * @var string
      */
@@ -291,6 +305,7 @@ class generalInvoiceVOList extends Model
         'processInstCode'                => 'processInstCode',
         'processInstType'                => 'processInstType',
         'purchaserAddress'               => 'purchaserAddress',
+        'purchaserBankAccount'           => 'purchaserBankAccount',
         'purchaserBankNameAccount'       => 'purchaserBankNameAccount',
         'purchaserName'                  => 'purchaserName',
         'purchaserTaxNo'                 => 'purchaserTaxNo',
@@ -298,6 +313,7 @@ class generalInvoiceVOList extends Model
         'remark'                         => 'remark',
         'secondHandCarInvoiceDetailList' => 'secondHandCarInvoiceDetailList',
         'sellerAddress'                  => 'sellerAddress',
+        'sellerBankAccount'              => 'sellerBankAccount',
         'sellerBankNameAccount'          => 'sellerBankNameAccount',
         'sellerName'                     => 'sellerName',
         'sellerTaxNo'                    => 'sellerTaxNo',
@@ -382,6 +398,9 @@ class generalInvoiceVOList extends Model
         if (null !== $this->purchaserAddress) {
             $res['purchaserAddress'] = $this->purchaserAddress;
         }
+        if (null !== $this->purchaserBankAccount) {
+            $res['purchaserBankAccount'] = $this->purchaserBankAccount;
+        }
         if (null !== $this->purchaserBankNameAccount) {
             $res['purchaserBankNameAccount'] = $this->purchaserBankNameAccount;
         }
@@ -408,6 +427,9 @@ class generalInvoiceVOList extends Model
         }
         if (null !== $this->sellerAddress) {
             $res['sellerAddress'] = $this->sellerAddress;
+        }
+        if (null !== $this->sellerBankAccount) {
+            $res['sellerBankAccount'] = $this->sellerBankAccount;
         }
         if (null !== $this->sellerBankNameAccount) {
             $res['sellerBankNameAccount'] = $this->sellerBankNameAccount;
@@ -532,6 +554,9 @@ class generalInvoiceVOList extends Model
         if (isset($map['purchaserAddress'])) {
             $model->purchaserAddress = $map['purchaserAddress'];
         }
+        if (isset($map['purchaserBankAccount'])) {
+            $model->purchaserBankAccount = $map['purchaserBankAccount'];
+        }
         if (isset($map['purchaserBankNameAccount'])) {
             $model->purchaserBankNameAccount = $map['purchaserBankNameAccount'];
         }
@@ -558,6 +583,9 @@ class generalInvoiceVOList extends Model
         }
         if (isset($map['sellerAddress'])) {
             $model->sellerAddress = $map['sellerAddress'];
+        }
+        if (isset($map['sellerBankAccount'])) {
+            $model->sellerBankAccount = $map['sellerBankAccount'];
         }
         if (isset($map['sellerBankNameAccount'])) {
             $model->sellerBankNameAccount = $map['sellerBankNameAccount'];

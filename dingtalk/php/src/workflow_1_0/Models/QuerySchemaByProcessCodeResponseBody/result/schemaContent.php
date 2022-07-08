@@ -17,7 +17,7 @@ class schemaContent extends Model
     public $icon;
 
     /**
-     * @description 控件列表。
+     * @description 控件列表
      *
      * @var items[]
      */

@@ -8,6 +8,12 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateOrganizationTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateOrganizationTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateOrganizationTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateTaskObjectLinkHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateTaskObjectLinkRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateTaskObjectLinkResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetDeptsByOrgIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetDeptsByOrgIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetDeptsByOrgIdResponse;
@@ -133,6 +139,114 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateOrganizationTaskResponse::fromMap($this->doROARequest('CreateOrganizationTask', 'project_1.0', 'HTTP', 'POST', 'AK', '/v1.0/project/organizations/users/' . $userId . '/tasks', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string            $userId
+     * @param CreateTaskRequest $request
+     *
+     * @return CreateTaskResponse
+     */
+    public function createTask($userId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateTaskHeaders([]);
+
+        return $this->createTaskWithOptions($userId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string            $userId
+     * @param CreateTaskRequest $request
+     * @param CreateTaskHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return CreateTaskResponse
+     */
+    public function createTaskWithOptions($userId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $body   = [];
+        if (!Utils::isUnset($request->content)) {
+            @$body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->dueDate)) {
+            @$body['dueDate'] = $request->dueDate;
+        }
+        if (!Utils::isUnset($request->executorId)) {
+            @$body['executorId'] = $request->executorId;
+        }
+        if (!Utils::isUnset($request->note)) {
+            @$body['note'] = $request->note;
+        }
+        if (!Utils::isUnset($request->priority)) {
+            @$body['priority'] = $request->priority;
+        }
+        if (!Utils::isUnset($request->projectId)) {
+            @$body['projectId'] = $request->projectId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateTaskResponse::fromMap($this->doROARequest('CreateTask', 'project_1.0', 'HTTP', 'POST', 'AK', '/v1.0/project/users/' . $userId . '/tasks', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                      $userId
+     * @param string                      $taskId
+     * @param CreateTaskObjectLinkRequest $request
+     *
+     * @return CreateTaskObjectLinkResponse
+     */
+    public function createTaskObjectLink($userId, $taskId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateTaskObjectLinkHeaders([]);
+
+        return $this->createTaskObjectLinkWithOptions($userId, $taskId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                      $userId
+     * @param string                      $taskId
+     * @param CreateTaskObjectLinkRequest $request
+     * @param CreateTaskObjectLinkHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return CreateTaskObjectLinkResponse
+     */
+    public function createTaskObjectLinkWithOptions($userId, $taskId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $taskId = OpenApiUtilClient::getEncodeParam($taskId);
+        $body   = [];
+        if (!Utils::isUnset($request->linkedData)) {
+            @$body['linkedData'] = $request->linkedData;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateTaskObjectLinkResponse::fromMap($this->doROARequest('CreateTaskObjectLink', 'project_1.0', 'HTTP', 'POST', 'AK', '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/objectLinks', 'json', $req, $runtime));
     }
 
     /**
