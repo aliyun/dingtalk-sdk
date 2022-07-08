@@ -364,6 +364,109 @@ export class CreateGroupResponse extends $tea.Model {
   }
 }
 
+export class CreateTrustGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  operationSource?: string;
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      operationSource: 'operationSource',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      operationSource: 'string',
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTrustGroupRequest extends $tea.Model {
+  channel?: string;
+  iconMediaId?: string;
+  name?: string;
+  properties?: { [key: string]: string };
+  uuid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      channel: 'channel',
+      iconMediaId: 'iconMediaId',
+      name: 'name',
+      properties: 'properties',
+      uuid: 'uuid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      channel: 'string',
+      iconMediaId: 'string',
+      name: 'string',
+      properties: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      uuid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTrustGroupResponseBody extends $tea.Model {
+  chatId?: string;
+  createTime?: number;
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      chatId: 'chatId',
+      createTime: 'createTime',
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      chatId: 'string',
+      createTime: 'number',
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTrustGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateTrustGroupResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateTrustGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DismissGroupHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   operationSource?: string;
@@ -1480,6 +1583,55 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateGroupResponse>(await this.doROARequest("CreateGroup", "impaas_1.0", "HTTP", "POST", "AK", `/v1.0/impaas/interconnections/groups`, "json", req, runtime), new CreateGroupResponse({}));
+  }
+
+  async createTrustGroup(request: CreateTrustGroupRequest): Promise<CreateTrustGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateTrustGroupHeaders({ });
+    return await this.createTrustGroupWithOptions(request, headers, runtime);
+  }
+
+  async createTrustGroupWithOptions(request: CreateTrustGroupRequest, headers: CreateTrustGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTrustGroupResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.channel)) {
+      body["channel"] = request.channel;
+    }
+
+    if (!Util.isUnset(request.iconMediaId)) {
+      body["iconMediaId"] = request.iconMediaId;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.properties)) {
+      body["properties"] = request.properties;
+    }
+
+    if (!Util.isUnset(request.uuid)) {
+      body["uuid"] = request.uuid;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.operationSource)) {
+      realHeaders["operationSource"] = Util.toJSONString(headers.operationSource);
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateTrustGroupResponse>(await this.doROARequest("CreateTrustGroup", "impaas_1.0", "HTTP", "POST", "AK", `/v1.0/impaas/interconnections/groups/trusts`, "json", req, runtime), new CreateTrustGroupResponse({}));
   }
 
   async dismissGroup(request: DismissGroupRequest): Promise<DismissGroupResponse> {

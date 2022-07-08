@@ -116,6 +116,185 @@ export class CreateOrganizationTaskResponse extends $tea.Model {
   }
 }
 
+export class CreateTaskHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTaskRequest extends $tea.Model {
+  content?: string;
+  dueDate?: string;
+  executorId?: string;
+  note?: string;
+  priority?: number;
+  projectId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      dueDate: 'dueDate',
+      executorId: 'executorId',
+      note: 'note',
+      priority: 'priority',
+      projectId: 'projectId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+      dueDate: 'string',
+      executorId: 'string',
+      note: 'string',
+      priority: 'number',
+      projectId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTaskResponseBody extends $tea.Model {
+  result?: CreateTaskResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: CreateTaskResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTaskResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateTaskResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateTaskResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTaskObjectLinkHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTaskObjectLinkRequest extends $tea.Model {
+  linkedData?: CreateTaskObjectLinkRequestLinkedData;
+  static names(): { [key: string]: string } {
+    return {
+      linkedData: 'linkedData',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      linkedData: CreateTaskObjectLinkRequestLinkedData,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTaskObjectLinkResponseBody extends $tea.Model {
+  result?: CreateTaskObjectLinkResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: CreateTaskObjectLinkResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTaskObjectLinkResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateTaskObjectLinkResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateTaskObjectLinkResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetDeptsByOrgIdHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   dingAccessTokenType?: string;
@@ -1472,6 +1651,105 @@ export class CreateOrganizationTaskResponseBodyResult extends $tea.Model {
   }
 }
 
+export class CreateTaskResponseBodyResult extends $tea.Model {
+  content?: string;
+  created?: string;
+  creatorId?: string;
+  dueDate?: string;
+  executorId?: string;
+  involveMembers?: string[];
+  note?: string;
+  priority?: number;
+  projectId?: string;
+  taskId?: string;
+  updated?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      created: 'created',
+      creatorId: 'creatorId',
+      dueDate: 'dueDate',
+      executorId: 'executorId',
+      involveMembers: 'involveMembers',
+      note: 'note',
+      priority: 'priority',
+      projectId: 'projectId',
+      taskId: 'taskId',
+      updated: 'updated',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+      created: 'string',
+      creatorId: 'string',
+      dueDate: 'string',
+      executorId: 'string',
+      involveMembers: { 'type': 'array', 'itemType': 'string' },
+      note: 'string',
+      priority: 'number',
+      projectId: 'string',
+      taskId: 'string',
+      updated: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTaskObjectLinkRequestLinkedData extends $tea.Model {
+  content?: string;
+  thumbnailUrl?: string;
+  title?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      thumbnailUrl: 'thumbnailUrl',
+      title: 'title',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+      thumbnailUrl: 'string',
+      title: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTaskObjectLinkResponseBodyResult extends $tea.Model {
+  created?: string;
+  objectLinkId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      created: 'created',
+      objectLinkId: 'objectLinkId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      created: 'string',
+      objectLinkId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetDeptsByOrgIdResponseBodyDeptList extends $tea.Model {
   deptId?: number;
   name?: string;
@@ -2008,6 +2286,87 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateOrganizationTaskResponse>(await this.doROARequest("CreateOrganizationTask", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/organizations/users/${userId}/tasks`, "json", req, runtime), new CreateOrganizationTaskResponse({}));
+  }
+
+  async createTask(userId: string, request: CreateTaskRequest): Promise<CreateTaskResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateTaskHeaders({ });
+    return await this.createTaskWithOptions(userId, request, headers, runtime);
+  }
+
+  async createTaskWithOptions(userId: string, request: CreateTaskRequest, headers: CreateTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTaskResponse> {
+    Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.content)) {
+      body["content"] = request.content;
+    }
+
+    if (!Util.isUnset(request.dueDate)) {
+      body["dueDate"] = request.dueDate;
+    }
+
+    if (!Util.isUnset(request.executorId)) {
+      body["executorId"] = request.executorId;
+    }
+
+    if (!Util.isUnset(request.note)) {
+      body["note"] = request.note;
+    }
+
+    if (!Util.isUnset(request.priority)) {
+      body["priority"] = request.priority;
+    }
+
+    if (!Util.isUnset(request.projectId)) {
+      body["projectId"] = request.projectId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateTaskResponse>(await this.doROARequest("CreateTask", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/tasks`, "json", req, runtime), new CreateTaskResponse({}));
+  }
+
+  async createTaskObjectLink(userId: string, taskId: string, request: CreateTaskObjectLinkRequest): Promise<CreateTaskObjectLinkResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateTaskObjectLinkHeaders({ });
+    return await this.createTaskObjectLinkWithOptions(userId, taskId, request, headers, runtime);
+  }
+
+  async createTaskObjectLinkWithOptions(userId: string, taskId: string, request: CreateTaskObjectLinkRequest, headers: CreateTaskObjectLinkHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTaskObjectLinkResponse> {
+    Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    taskId = OpenApiUtil.getEncodeParam(taskId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.linkedData))) {
+      body["linkedData"] = request.linkedData;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateTaskObjectLinkResponse>(await this.doROARequest("CreateTaskObjectLink", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/tasks/${taskId}/objectLinks`, "json", req, runtime), new CreateTaskObjectLinkResponse({}));
   }
 
   async getDeptsByOrgId(request: GetDeptsByOrgIdRequest): Promise<GetDeptsByOrgIdResponse> {

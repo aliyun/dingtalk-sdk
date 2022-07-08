@@ -39,6 +39,7 @@ export class AddKnowledgeRequest extends $tea.Model {
   libraryKey?: string;
   linkUrl?: string;
   openTeamId?: string;
+  questionIds?: number[];
   source?: string;
   sourcePrimaryKey?: string;
   title?: string;
@@ -55,6 +56,7 @@ export class AddKnowledgeRequest extends $tea.Model {
       libraryKey: 'libraryKey',
       linkUrl: 'linkUrl',
       openTeamId: 'openTeamId',
+      questionIds: 'questionIds',
       source: 'source',
       sourcePrimaryKey: 'sourcePrimaryKey',
       title: 'title',
@@ -74,6 +76,7 @@ export class AddKnowledgeRequest extends $tea.Model {
       libraryKey: 'string',
       linkUrl: 'string',
       openTeamId: 'string',
+      questionIds: { 'type': 'array', 'itemType': 'number' },
       source: 'string',
       sourcePrimaryKey: 'string',
       title: 'string',
@@ -8469,6 +8472,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.openTeamId)) {
       body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.questionIds)) {
+      body["questionIds"] = request.questionIds;
     }
 
     if (!Util.isUnset(request.source)) {

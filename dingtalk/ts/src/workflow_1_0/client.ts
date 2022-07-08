@@ -2126,6 +2126,56 @@ export class QueryFormInstanceResponseBodyFormInstDataList extends $tea.Model {
   }
 }
 
+export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps extends $tea.Model {
+  bizAlias?: string;
+  id?: string;
+  label?: string;
+  required?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      bizAlias: 'bizAlias',
+      id: 'id',
+      label: 'label',
+      required: 'required',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizAlias: 'string',
+      id: 'string',
+      label: 'string',
+      required: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren extends $tea.Model {
+  componentName?: string;
+  props?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps;
+  static names(): { [key: string]: string } {
+    return {
+      componentName: 'componentName',
+      props: 'props',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      componentName: 'string',
+      props: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkageTargets extends $tea.Model {
   behavior?: string;
   fieldId?: string;
@@ -2394,10 +2444,12 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps e
 }
 
 export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems extends $tea.Model {
+  children?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren[];
   componentName?: string;
   props?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps;
   static names(): { [key: string]: string } {
     return {
+      children: 'children',
       componentName: 'componentName',
       props: 'props',
     };
@@ -2405,6 +2457,7 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems extend
 
   static types(): { [key: string]: any } {
     return {
+      children: { 'type': 'array', 'itemType': QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren },
       componentName: 'string',
       props: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps,
     };

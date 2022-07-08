@@ -7537,7 +7537,6 @@ export class ListCrmPersonalCustomersResponseBodyResult extends $tea.Model {
   gmtModified?: string;
   instanceId?: string;
   objectType?: string;
-  orgId?: number;
   permission?: ListCrmPersonalCustomersResponseBodyResultPermission;
   procInstStatus?: string;
   procOutResult?: string;
@@ -7553,7 +7552,6 @@ export class ListCrmPersonalCustomersResponseBodyResult extends $tea.Model {
       gmtModified: 'gmtModified',
       instanceId: 'instanceId',
       objectType: 'objectType',
-      orgId: 'orgId',
       permission: 'permission',
       procInstStatus: 'procInstStatus',
       procOutResult: 'procOutResult',
@@ -7572,7 +7570,6 @@ export class ListCrmPersonalCustomersResponseBodyResult extends $tea.Model {
       gmtModified: 'string',
       instanceId: 'string',
       objectType: 'string',
-      orgId: 'number',
       permission: ListCrmPersonalCustomersResponseBodyResultPermission,
       procInstStatus: 'string',
       procOutResult: 'string',
@@ -7723,7 +7720,6 @@ export class QueryAllCustomerResponseBodyResultValues extends $tea.Model {
   instanceId?: string;
   modifyTime?: string;
   objectType?: string;
-  orgId?: number;
   permission?: QueryAllCustomerResponseBodyResultValuesPermission;
   processInstanceStatus?: string;
   processOutResult?: string;
@@ -7737,7 +7733,6 @@ export class QueryAllCustomerResponseBodyResultValues extends $tea.Model {
       instanceId: 'instanceId',
       modifyTime: 'modifyTime',
       objectType: 'objectType',
-      orgId: 'orgId',
       permission: 'permission',
       processInstanceStatus: 'processInstanceStatus',
       processOutResult: 'processOutResult',
@@ -7754,7 +7749,6 @@ export class QueryAllCustomerResponseBodyResultValues extends $tea.Model {
       instanceId: 'string',
       modifyTime: 'string',
       objectType: 'string',
-      orgId: 'number',
       permission: QueryAllCustomerResponseBodyResultValuesPermission,
       processInstanceStatus: 'string',
       processOutResult: 'string',

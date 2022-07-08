@@ -3010,6 +3010,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOLis
   specification?: string;
   taxAmount?: string;
   taxPre?: string;
+  taxPreType?: string;
   taxRate?: string;
   unit?: string;
   unitPrice?: string;
@@ -3023,6 +3024,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOLis
       specification: 'specification',
       taxAmount: 'taxAmount',
       taxPre: 'taxPre',
+      taxPreType: 'taxPreType',
       taxRate: 'taxRate',
       unit: 'unit',
       unitPrice: 'unitPrice',
@@ -3039,6 +3041,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOLis
       specification: 'string',
       taxAmount: 'string',
       taxPre: 'string',
+      taxPreType: 'string',
       taxRate: 'string',
       unit: 'string',
       unitPrice: 'string',
@@ -3166,6 +3169,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList e
   engineNo?: string;
   idCardNo?: string;
   importCertificateNo?: string;
+  inspectionListNo?: string;
   maxPassengers?: string;
   originPlace?: string;
   paymentVoucherNo?: string;
@@ -3182,6 +3186,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList e
       engineNo: 'engineNo',
       idCardNo: 'idCardNo',
       importCertificateNo: 'importCertificateNo',
+      inspectionListNo: 'inspectionListNo',
       maxPassengers: 'maxPassengers',
       originPlace: 'originPlace',
       paymentVoucherNo: 'paymentVoucherNo',
@@ -3201,6 +3206,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList e
       engineNo: 'string',
       idCardNo: 'string',
       importCertificateNo: 'string',
+      inspectionListNo: 'string',
       maxPassengers: 'string',
       originPlace: 'string',
       paymentVoucherNo: 'string',
@@ -3238,6 +3244,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
   processInstCode?: string;
   processInstType?: string;
   purchaserAddress?: string;
+  purchaserBankAccount?: string;
   purchaserBankNameAccount?: string;
   purchaserName?: string;
   purchaserTaxNo?: string;
@@ -3245,6 +3252,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
   remark?: string;
   secondHandCarInvoiceDetailList?: BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList[];
   sellerAddress?: string;
+  sellerBankAccount?: string;
   sellerBankNameAccount?: string;
   sellerName?: string;
   sellerTaxNo?: string;
@@ -3278,6 +3286,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       processInstCode: 'processInstCode',
       processInstType: 'processInstType',
       purchaserAddress: 'purchaserAddress',
+      purchaserBankAccount: 'purchaserBankAccount',
       purchaserBankNameAccount: 'purchaserBankNameAccount',
       purchaserName: 'purchaserName',
       purchaserTaxNo: 'purchaserTaxNo',
@@ -3285,6 +3294,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       remark: 'remark',
       secondHandCarInvoiceDetailList: 'secondHandCarInvoiceDetailList',
       sellerAddress: 'sellerAddress',
+      sellerBankAccount: 'sellerBankAccount',
       sellerBankNameAccount: 'sellerBankNameAccount',
       sellerName: 'sellerName',
       sellerTaxNo: 'sellerTaxNo',
@@ -3321,6 +3331,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       processInstCode: 'string',
       processInstType: 'string',
       purchaserAddress: 'string',
+      purchaserBankAccount: 'string',
       purchaserBankNameAccount: 'string',
       purchaserName: 'string',
       purchaserTaxNo: 'string',
@@ -3328,6 +3339,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       remark: 'string',
       secondHandCarInvoiceDetailList: { 'type': 'array', 'itemType': BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList },
       sellerAddress: 'string',
+      sellerBankAccount: 'string',
       sellerBankNameAccount: 'string',
       sellerName: 'string',
       sellerTaxNo: 'string',
