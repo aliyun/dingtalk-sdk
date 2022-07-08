@@ -81,9 +81,6 @@ public class ListCrmPersonalCustomersResponseBody extends TeaModel {
         @NameInMap("objectType")
         public String objectType;
 
-        @NameInMap("orgId")
-        public Long orgId;
-
         @NameInMap("permission")
         public ListCrmPersonalCustomersResponseBodyResultPermission permission;
 
@@ -176,14 +173,6 @@ public class ListCrmPersonalCustomersResponseBody extends TeaModel {
         }
         public String getObjectType() {
             return this.objectType;
-        }
-
-        public ListCrmPersonalCustomersResponseBodyResult setOrgId(Long orgId) {
-            this.orgId = orgId;
-            return this;
-        }
-        public Long getOrgId() {
-            return this.orgId;
         }
 
         public ListCrmPersonalCustomersResponseBodyResult setPermission(ListCrmPersonalCustomersResponseBodyResultPermission permission) {

@@ -38,6 +38,10 @@ public class AddKnowledgeRequest extends TeaModel {
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    // 关联问题id
+    @NameInMap("questionIds")
+    public java.util.List<Long> questionIds;
+
     // 知识点来源
     @NameInMap("source")
     public String source;
@@ -133,6 +137,14 @@ public class AddKnowledgeRequest extends TeaModel {
     }
     public String getOpenTeamId() {
         return this.openTeamId;
+    }
+
+    public AddKnowledgeRequest setQuestionIds(java.util.List<Long> questionIds) {
+        this.questionIds = questionIds;
+        return this;
+    }
+    public java.util.List<Long> getQuestionIds() {
+        return this.questionIds;
     }
 
     public AddKnowledgeRequest setSource(String source) {

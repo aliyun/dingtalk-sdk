@@ -54,6 +54,10 @@ public class BatchAddInvoiceRequest extends TeaModel {
         @NameInMap("taxPre")
         public String taxPre;
 
+        // 优惠政策类型
+        @NameInMap("taxPreType")
+        public String taxPreType;
+
         // 税率
         @NameInMap("taxRate")
         public String taxRate;
@@ -133,6 +137,14 @@ public class BatchAddInvoiceRequest extends TeaModel {
         }
         public String getTaxPre() {
             return this.taxPre;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList setTaxPreType(String taxPreType) {
+            this.taxPreType = taxPreType;
+            return this;
+        }
+        public String getTaxPreType() {
+            return this.taxPreType;
         }
 
         public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList setTaxRate(String taxRate) {
@@ -510,6 +522,10 @@ public class BatchAddInvoiceRequest extends TeaModel {
         @NameInMap("importCertificateNo")
         public String importCertificateNo;
 
+        // 商检单号
+        @NameInMap("inspectionListNo")
+        public String inspectionListNo;
+
         // 限乘人数
         @NameInMap("maxPassengers")
         public String maxPassengers;
@@ -589,6 +605,14 @@ public class BatchAddInvoiceRequest extends TeaModel {
         }
         public String getImportCertificateNo() {
             return this.importCertificateNo;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList setInspectionListNo(String inspectionListNo) {
+            this.inspectionListNo = inspectionListNo;
+            return this;
+        }
+        public String getInspectionListNo() {
+            return this.inspectionListNo;
         }
 
         public BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList setMaxPassengers(String maxPassengers) {
@@ -742,7 +766,11 @@ public class BatchAddInvoiceRequest extends TeaModel {
         @NameInMap("purchaserAddress")
         public String purchaserAddress;
 
-        // 购方银行
+        // 购方银行账户
+        @NameInMap("purchaserBankAccount")
+        public String purchaserBankAccount;
+
+        // 购方银行名称
         @NameInMap("purchaserBankNameAccount")
         public String purchaserBankNameAccount;
 
@@ -769,7 +797,11 @@ public class BatchAddInvoiceRequest extends TeaModel {
         @NameInMap("sellerAddress")
         public String sellerAddress;
 
-        // 销方银行
+        // 销方银行账户
+        @NameInMap("sellerBankAccount")
+        public String sellerBankAccount;
+
+        // 销方银行名称
         @NameInMap("sellerBankNameAccount")
         public String sellerBankNameAccount;
 
@@ -972,6 +1004,14 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.purchaserAddress;
         }
 
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setPurchaserBankAccount(String purchaserBankAccount) {
+            this.purchaserBankAccount = purchaserBankAccount;
+            return this;
+        }
+        public String getPurchaserBankAccount() {
+            return this.purchaserBankAccount;
+        }
+
         public BatchAddInvoiceRequestGeneralInvoiceVOList setPurchaserBankNameAccount(String purchaserBankNameAccount) {
             this.purchaserBankNameAccount = purchaserBankNameAccount;
             return this;
@@ -1026,6 +1066,14 @@ public class BatchAddInvoiceRequest extends TeaModel {
         }
         public String getSellerAddress() {
             return this.sellerAddress;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setSellerBankAccount(String sellerBankAccount) {
+            this.sellerBankAccount = sellerBankAccount;
+            return this;
+        }
+        public String getSellerBankAccount() {
+            return this.sellerBankAccount;
         }
 
         public BatchAddInvoiceRequestGeneralInvoiceVOList setSellerBankNameAccount(String sellerBankNameAccount) {

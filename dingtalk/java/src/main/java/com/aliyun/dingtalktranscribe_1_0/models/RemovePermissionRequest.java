@@ -3,28 +3,27 @@ package com.aliyun.dingtalktranscribe_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class UpdatePermissionForUsersRequest extends TeaModel {
-    // 闪记任务的类型。枚举值，从任务详情中获取。
+public class RemovePermissionRequest extends TeaModel {
     @NameInMap("bizType")
     public Integer bizType;
 
-    // 被授权的用户信息列表
     @NameInMap("members")
-    public java.util.List<UpdatePermissionForUsersRequestMembers> members;
+    public java.util.List<RemovePermissionRequestMembers> members;
 
-    // 要操作的闪记任务的创建者userId。
+    // 任务的创建者uid
     @NameInMap("taskCreator")
     public Long taskCreator;
 
-    @NameInMap("operatorUid")
-    public Long operatorUid;
+    // 闪记任务的闪记ID
+    @NameInMap("taskId")
+    public Long taskId;
 
-    public static UpdatePermissionForUsersRequest build(java.util.Map<String, ?> map) throws Exception {
-        UpdatePermissionForUsersRequest self = new UpdatePermissionForUsersRequest();
+    public static RemovePermissionRequest build(java.util.Map<String, ?> map) throws Exception {
+        RemovePermissionRequest self = new RemovePermissionRequest();
         return TeaModel.build(map, self);
     }
 
-    public UpdatePermissionForUsersRequest setBizType(Integer bizType) {
+    public RemovePermissionRequest setBizType(Integer bizType) {
         this.bizType = bizType;
         return this;
     }
@@ -32,15 +31,15 @@ public class UpdatePermissionForUsersRequest extends TeaModel {
         return this.bizType;
     }
 
-    public UpdatePermissionForUsersRequest setMembers(java.util.List<UpdatePermissionForUsersRequestMembers> members) {
+    public RemovePermissionRequest setMembers(java.util.List<RemovePermissionRequestMembers> members) {
         this.members = members;
         return this;
     }
-    public java.util.List<UpdatePermissionForUsersRequestMembers> getMembers() {
+    public java.util.List<RemovePermissionRequestMembers> getMembers() {
         return this.members;
     }
 
-    public UpdatePermissionForUsersRequest setTaskCreator(Long taskCreator) {
+    public RemovePermissionRequest setTaskCreator(Long taskCreator) {
         this.taskCreator = taskCreator;
         return this;
     }
@@ -48,15 +47,16 @@ public class UpdatePermissionForUsersRequest extends TeaModel {
         return this.taskCreator;
     }
 
-    public UpdatePermissionForUsersRequest setOperatorUid(Long operatorUid) {
-        this.operatorUid = operatorUid;
+    public RemovePermissionRequest setTaskId(Long taskId) {
+        this.taskId = taskId;
         return this;
     }
-    public Long getOperatorUid() {
-        return this.operatorUid;
+    public Long getTaskId() {
+        return this.taskId;
     }
 
-    public static class UpdatePermissionForUsersRequestMembers extends TeaModel {
+    public static class RemovePermissionRequestMembers extends TeaModel {
+        // 执行授权操作的闪记任务的任务Id
         @NameInMap("memberId")
         public Long memberId;
 
@@ -70,15 +70,20 @@ public class UpdatePermissionForUsersRequest extends TeaModel {
         @NameInMap("memberType")
         public String memberType;
 
+        // 要被移除的权限，枚举值类型。
+        // "EDITOR", //可编辑权限
+        //     "READ_DOWNLOAD", //仅可查看、下载的权限
+        //     "READ"//只读权限
+        // 
         @NameInMap("policyType")
         public String policyType;
 
-        public static UpdatePermissionForUsersRequestMembers build(java.util.Map<String, ?> map) throws Exception {
-            UpdatePermissionForUsersRequestMembers self = new UpdatePermissionForUsersRequestMembers();
+        public static RemovePermissionRequestMembers build(java.util.Map<String, ?> map) throws Exception {
+            RemovePermissionRequestMembers self = new RemovePermissionRequestMembers();
             return TeaModel.build(map, self);
         }
 
-        public UpdatePermissionForUsersRequestMembers setMemberId(Long memberId) {
+        public RemovePermissionRequestMembers setMemberId(Long memberId) {
             this.memberId = memberId;
             return this;
         }
@@ -86,7 +91,7 @@ public class UpdatePermissionForUsersRequest extends TeaModel {
             return this.memberId;
         }
 
-        public UpdatePermissionForUsersRequestMembers setMemberType(String memberType) {
+        public RemovePermissionRequestMembers setMemberType(String memberType) {
             this.memberType = memberType;
             return this;
         }
@@ -94,7 +99,7 @@ public class UpdatePermissionForUsersRequest extends TeaModel {
             return this.memberType;
         }
 
-        public UpdatePermissionForUsersRequestMembers setPolicyType(String policyType) {
+        public RemovePermissionRequestMembers setPolicyType(String policyType) {
             this.policyType = policyType;
             return this;
         }

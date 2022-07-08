@@ -86,10 +86,6 @@ public class QueryAllCustomerResponseBody extends TeaModel {
         @NameInMap("objectType")
         public String objectType;
 
-        // 系统自动生成
-        @NameInMap("orgId")
-        public Long orgId;
-
         // 数据权限信息
         @NameInMap("permission")
         public QueryAllCustomerResponseBodyResultValuesPermission permission;
@@ -169,14 +165,6 @@ public class QueryAllCustomerResponseBody extends TeaModel {
         }
         public String getObjectType() {
             return this.objectType;
-        }
-
-        public QueryAllCustomerResponseBodyResultValues setOrgId(Long orgId) {
-            this.orgId = orgId;
-            return this;
-        }
-        public Long getOrgId() {
-            return this.orgId;
         }
 
         public QueryAllCustomerResponseBodyResultValues setPermission(QueryAllCustomerResponseBodyResultValuesPermission permission) {

@@ -21,6 +21,94 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
         return this.result;
     }
 
+    public static class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps extends TeaModel {
+        // 控件业务别名
+        @NameInMap("bizAlias")
+        public String bizAlias;
+
+        // 控件id
+        @NameInMap("id")
+        public String id;
+
+        // 控件名称
+        @NameInMap("label")
+        public String label;
+
+        // 是否必填
+        @NameInMap("required")
+        public Boolean required;
+
+        public static QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps build(java.util.Map<String, ?> map) throws Exception {
+            QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps self = new QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps();
+            return TeaModel.build(map, self);
+        }
+
+        public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps setBizAlias(String bizAlias) {
+            this.bizAlias = bizAlias;
+            return this;
+        }
+        public String getBizAlias() {
+            return this.bizAlias;
+        }
+
+        public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps setId(String id) {
+            this.id = id;
+            return this;
+        }
+        public String getId() {
+            return this.id;
+        }
+
+        public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps setLabel(String label) {
+            this.label = label;
+            return this;
+        }
+        public String getLabel() {
+            return this.label;
+        }
+
+        public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps setRequired(Boolean required) {
+            this.required = required;
+            return this;
+        }
+        public Boolean getRequired() {
+            return this.required;
+        }
+
+    }
+
+    public static class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren extends TeaModel {
+        // 控件类型
+        @NameInMap("componentName")
+        public String componentName;
+
+        // 子控件属性
+        @NameInMap("props")
+        public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps props;
+
+        public static QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren build(java.util.Map<String, ?> map) throws Exception {
+            QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren self = new QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren();
+            return TeaModel.build(map, self);
+        }
+
+        public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren setComponentName(String componentName) {
+            this.componentName = componentName;
+            return this;
+        }
+        public String getComponentName() {
+            return this.componentName;
+        }
+
+        public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren setProps(QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps props) {
+            this.props = props;
+            return this;
+        }
+        public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps getProps() {
+            return this.props;
+        }
+
+    }
+
     public static class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkageTargets extends TeaModel {
         // 行为。
         @NameInMap("behavior")
@@ -753,6 +841,10 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
     }
 
     public static class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems extends TeaModel {
+        // 子控件列表
+        @NameInMap("children")
+        public java.util.List<QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren> children;
+
         // 控件类型，取值：
         @NameInMap("componentName")
         public String componentName;
@@ -764,6 +856,14 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
         public static QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems build(java.util.Map<String, ?> map) throws Exception {
             QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems self = new QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems();
             return TeaModel.build(map, self);
+        }
+
+        public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems setChildren(java.util.List<QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren> children) {
+            this.children = children;
+            return this;
+        }
+        public java.util.List<QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren> getChildren() {
+            return this.children;
         }
 
         public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems setComponentName(String componentName) {
@@ -789,7 +889,7 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
         @NameInMap("icon")
         public String icon;
 
-        // 控件列表。
+        // 控件列表
         @NameInMap("items")
         public java.util.List<QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems> items;
 

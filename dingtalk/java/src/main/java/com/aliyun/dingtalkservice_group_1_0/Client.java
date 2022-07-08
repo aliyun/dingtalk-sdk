@@ -66,6 +66,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("openTeamId", request.openTeamId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.questionIds)) {
+            body.put("questionIds", request.questionIds);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.source)) {
             body.put("source", request.source);
         }
