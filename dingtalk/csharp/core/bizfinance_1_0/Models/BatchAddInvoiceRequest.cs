@@ -143,6 +143,13 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 public string TaxPre { get; set; }
 
                 /// <summary>
+                /// 优惠政策类型
+                /// </summary>
+                [NameInMap("taxPreType")]
+                [Validation(Required=false)]
+                public string TaxPreType { get; set; }
+
+                /// <summary>
                 /// 税率
                 /// </summary>
                 [NameInMap("taxRate")]
@@ -229,7 +236,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             public string PurchaserAddress { get; set; }
 
             /// <summary>
-            /// 购方银行
+            /// 购方银行账户
+            /// </summary>
+            [NameInMap("purchaserBankAccount")]
+            [Validation(Required=false)]
+            public string PurchaserBankAccount { get; set; }
+
+            /// <summary>
+            /// 购方银行名称
             /// </summary>
             [NameInMap("purchaserBankNameAccount")]
             [Validation(Required=false)]
@@ -347,7 +361,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             public string SellerAddress { get; set; }
 
             /// <summary>
-            /// 销方银行
+            /// 销方银行账户
+            /// </summary>
+            [NameInMap("sellerBankAccount")]
+            [Validation(Required=false)]
+            public string SellerBankAccount { get; set; }
+
+            /// <summary>
+            /// 销方银行名称
             /// </summary>
             [NameInMap("sellerBankNameAccount")]
             [Validation(Required=false)]
@@ -551,6 +572,13 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 [NameInMap("importCertificateNo")]
                 [Validation(Required=false)]
                 public string ImportCertificateNo { get; set; }
+
+                /// <summary>
+                /// 商检单号
+                /// </summary>
+                [NameInMap("inspectionListNo")]
+                [Validation(Required=false)]
+                public string InspectionListNo { get; set; }
 
                 /// <summary>
                 /// 限乘人数

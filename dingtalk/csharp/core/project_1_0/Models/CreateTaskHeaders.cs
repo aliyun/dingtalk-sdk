@@ -6,9 +6,9 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
-    public class UpdatePermissionForUsersHeaders : TeaModel {
+    public class CreateTaskHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }

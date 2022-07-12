@@ -82,12 +82,49 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                 public string Icon { get; set; }
 
                 /// <summary>
-                /// 控件列表。
+                /// 控件列表
                 /// </summary>
                 [NameInMap("items")]
                 [Validation(Required=false)]
                 public List<QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems> Items { get; set; }
                 public class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems : TeaModel {
+                    /// <summary>
+                    /// 子控件列表
+                    /// </summary>
+                    [NameInMap("children")]
+                    [Validation(Required=false)]
+                    public List<QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren> Children { get; set; }
+                    public class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren : TeaModel {
+                        /// <summary>
+                        /// 控件类型
+                        /// </summary>
+                        [NameInMap("componentName")]
+                        [Validation(Required=false)]
+                        public string ComponentName { get; set; }
+
+                        /// <summary>
+                        /// 子控件属性
+                        /// </summary>
+                        [NameInMap("props")]
+                        [Validation(Required=false)]
+                        public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps Props { get; set; }
+                        public class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps : TeaModel {
+                            [NameInMap("bizAlias")]
+                            [Validation(Required=false)]
+                            public string BizAlias { get; set; }
+                            [NameInMap("id")]
+                            [Validation(Required=false)]
+                            public string Id { get; set; }
+                            [NameInMap("label")]
+                            [Validation(Required=false)]
+                            public string Label { get; set; }
+                            [NameInMap("required")]
+                            [Validation(Required=false)]
+                            public bool? Required { get; set; }
+                        };
+
+                    }
+
                     /// <summary>
                     /// 控件类型，取值：
                     /// </summary>

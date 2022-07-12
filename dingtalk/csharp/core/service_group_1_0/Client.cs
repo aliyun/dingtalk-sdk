@@ -80,6 +80,10 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0
             {
                 body["openTeamId"] = request.OpenTeamId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QuestionIds))
+            {
+                body["questionIds"] = request.QuestionIds;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Source))
             {
                 body["source"] = request.Source;
@@ -156,6 +160,10 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenTeamId))
             {
                 body["openTeamId"] = request.OpenTeamId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QuestionIds))
+            {
+                body["questionIds"] = request.QuestionIds;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Source))
             {

@@ -8,21 +8,18 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0.Models
 {
-    public class UpdatePermissionForUsersRequest : TeaModel {
-        /// <summary>
-        /// 闪记任务的类型。枚举值，从任务详情中获取。
-        /// </summary>
+    public class RemovePermissionRequest : TeaModel {
         [NameInMap("bizType")]
         [Validation(Required=false)]
         public int? BizType { get; set; }
 
-        /// <summary>
-        /// 被授权的用户信息列表
-        /// </summary>
         [NameInMap("members")]
         [Validation(Required=false)]
-        public List<UpdatePermissionForUsersRequestMembers> Members { get; set; }
-        public class UpdatePermissionForUsersRequestMembers : TeaModel {
+        public List<RemovePermissionRequestMembers> Members { get; set; }
+        public class RemovePermissionRequestMembers : TeaModel {
+            /// <summary>
+            /// 执行授权操作的闪记任务的任务Id
+            /// </summary>
             [NameInMap("memberId")]
             [Validation(Required=false)]
             public long? MemberId { get; set; }
@@ -40,6 +37,13 @@ namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0.Models
             [Validation(Required=false)]
             public string MemberType { get; set; }
 
+            /// <summary>
+            /// 要被移除的权限，枚举值类型。
+            /// "EDITOR", //可编辑权限
+            ///     "READ_DOWNLOAD", //仅可查看、下载的权限
+            ///     "READ"//只读权限
+            /// 
+            /// </summary>
             [NameInMap("policyType")]
             [Validation(Required=false)]
             public string PolicyType { get; set; }
@@ -47,15 +51,18 @@ namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0.Models
         }
 
         /// <summary>
-        /// 要操作的闪记任务的创建者userId。
+        /// 任务的创建者uid
         /// </summary>
         [NameInMap("taskCreator")]
         [Validation(Required=false)]
         public long? TaskCreator { get; set; }
 
-        [NameInMap("operatorUid")]
+        /// <summary>
+        /// 闪记任务的闪记ID
+        /// </summary>
+        [NameInMap("taskId")]
         [Validation(Required=false)]
-        public long? OperatorUid { get; set; }
+        public long? TaskId { get; set; }
 
     }
 

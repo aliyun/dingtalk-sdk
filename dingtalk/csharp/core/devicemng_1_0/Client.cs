@@ -782,6 +782,10 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceCategory))
+            {
+                query["deviceCategory"] = request.DeviceCategory;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceCode))
             {
                 query["deviceCode"] = request.DeviceCode;
@@ -823,6 +827,10 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceCategory))
+            {
+                query["deviceCategory"] = request.DeviceCategory;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceCode))
             {
                 query["deviceCode"] = request.DeviceCode;
@@ -1042,6 +1050,10 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0
             {
                 body["deviceCallbackUrl"] = request.DeviceCallbackUrl;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceCategory))
+            {
+                body["deviceCategory"] = request.DeviceCategory;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceCode))
             {
                 body["deviceCode"] = request.DeviceCode;
@@ -1094,6 +1106,10 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceCallbackUrl))
             {
                 body["deviceCallbackUrl"] = request.DeviceCallbackUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceCategory))
+            {
+                body["deviceCategory"] = request.DeviceCategory;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceCode))
             {

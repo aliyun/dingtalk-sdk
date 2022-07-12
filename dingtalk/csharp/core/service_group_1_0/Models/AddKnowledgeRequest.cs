@@ -104,6 +104,13 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public string OpenTeamId { get; set; }
 
         /// <summary>
+        /// 关联问题id
+        /// </summary>
+        [NameInMap("questionIds")]
+        [Validation(Required=false)]
+        public List<long?> QuestionIds { get; set; }
+
+        /// <summary>
         /// 知识点来源
         /// </summary>
         [NameInMap("source")]

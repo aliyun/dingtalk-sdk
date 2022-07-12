@@ -34,7 +34,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 public string InstanceId { get; set; }
                 public string ModifyTime { get; set; }
                 public string ObjectType { get; set; }
-                public long? OrgId { get; set; }
                 public QueryAllCustomerResponseBodyResultValuesPermission Permission { get; set; }
                 public class QueryAllCustomerResponseBodyResultValuesPermission : TeaModel {
                     /// <summary>

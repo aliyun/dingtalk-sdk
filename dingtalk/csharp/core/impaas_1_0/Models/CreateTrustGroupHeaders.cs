@@ -6,12 +6,16 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
-    public class UpdatePermissionForUsersHeaders : TeaModel {
+    public class CreateTrustGroupHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }
+
+        [NameInMap("operationSource")]
+        [Validation(Required=false)]
+        public string OperationSource { get; set; }
 
         [NameInMap("x-acs-dingtalk-access-token")]
         [Validation(Required=false)]

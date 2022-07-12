@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
 {
     public class ListActivateDevicesRequest : TeaModel {
         /// <summary>
+        /// 设备分类（0：设备，1 : 助手）
+        /// </summary>
+        [NameInMap("deviceCategory")]
+        [Validation(Required=false)]
+        public int? DeviceCategory { get; set; }
+
+        /// <summary>
         /// deviceCode
         /// </summary>
         [NameInMap("deviceCode")]

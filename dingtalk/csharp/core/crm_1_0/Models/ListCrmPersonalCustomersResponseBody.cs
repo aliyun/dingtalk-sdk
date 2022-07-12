@@ -53,10 +53,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public string ObjectType { get; set; }
 
-            [NameInMap("orgId")]
-            [Validation(Required=false)]
-            public long? OrgId { get; set; }
-
             [NameInMap("permission")]
             [Validation(Required=false)]
             public ListCrmPersonalCustomersResponseBodyResultPermission Permission { get; set; }
