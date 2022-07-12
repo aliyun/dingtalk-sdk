@@ -102,6 +102,10 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("taxPre")
         public String taxPre;
 
+        // 优惠政策类型
+        @NameInMap("taxPreType")
+        public String taxPreType;
+
         // 税率
         @NameInMap("taxRate")
         public String taxRate;
@@ -181,6 +185,14 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         }
         public String getTaxPre() {
             return this.taxPre;
+        }
+
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList setTaxPreType(String taxPreType) {
+            this.taxPreType = taxPreType;
+            return this;
+        }
+        public String getTaxPreType() {
+            return this.taxPreType;
         }
 
         public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList setTaxRate(String taxRate) {
@@ -558,6 +570,9 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("importCertificateNo")
         public String importCertificateNo;
 
+        @NameInMap("inspectionListNo")
+        public String inspectionListNo;
+
         // 限乘人数
         @NameInMap("maxPassengers")
         public String maxPassengers;
@@ -637,6 +652,14 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         }
         public String getImportCertificateNo() {
             return this.importCertificateNo;
+        }
+
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList setInspectionListNo(String inspectionListNo) {
+            this.inspectionListNo = inspectionListNo;
+            return this;
+        }
+        public String getInspectionListNo() {
+            return this.inspectionListNo;
         }
 
         public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList setMaxPassengers(String maxPassengers) {
@@ -790,7 +813,11 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("purchaserAddress")
         public String purchaserAddress;
 
-        // 购方银行
+        // 购方银行账户
+        @NameInMap("purchaserBankAccount")
+        public String purchaserBankAccount;
+
+        // 购方银行名称
         @NameInMap("purchaserBankNameAccount")
         public String purchaserBankNameAccount;
 
@@ -816,6 +843,10 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         // 销方地址
         @NameInMap("sellerAddress")
         public String sellerAddress;
+
+        // 销方银行账户
+        @NameInMap("sellerBankAccount")
+        public String sellerBankAccount;
 
         // 销方银行
         @NameInMap("sellerBankNameAccount")
@@ -1020,6 +1051,14 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.purchaserAddress;
         }
 
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO setPurchaserBankAccount(String purchaserBankAccount) {
+            this.purchaserBankAccount = purchaserBankAccount;
+            return this;
+        }
+        public String getPurchaserBankAccount() {
+            return this.purchaserBankAccount;
+        }
+
         public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO setPurchaserBankNameAccount(String purchaserBankNameAccount) {
             this.purchaserBankNameAccount = purchaserBankNameAccount;
             return this;
@@ -1074,6 +1113,14 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         }
         public String getSellerAddress() {
             return this.sellerAddress;
+        }
+
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO setSellerBankAccount(String sellerBankAccount) {
+            this.sellerBankAccount = sellerBankAccount;
+            return this;
+        }
+        public String getSellerBankAccount() {
+            return this.sellerBankAccount;
         }
 
         public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO setSellerBankNameAccount(String sellerBankNameAccount) {
@@ -1207,6 +1254,10 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("taxPre")
         public String taxPre;
 
+        // 优惠政策类型
+        @NameInMap("taxPreType")
+        public String taxPreType;
+
         // 税率
         @NameInMap("taxRate")
         public String taxRate;
@@ -1286,6 +1337,14 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         }
         public String getTaxPre() {
             return this.taxPre;
+        }
+
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList setTaxPreType(String taxPreType) {
+            this.taxPreType = taxPreType;
+            return this;
+        }
+        public String getTaxPreType() {
+            return this.taxPreType;
         }
 
         public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList setTaxRate(String taxRate) {
@@ -1663,6 +1722,10 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("importCertificateNo")
         public String importCertificateNo;
 
+        // 商检单号
+        @NameInMap("inspectionListNo")
+        public String inspectionListNo;
+
         // 限乘人数
         @NameInMap("maxPassengers")
         public String maxPassengers;
@@ -1742,6 +1805,14 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         }
         public String getImportCertificateNo() {
             return this.importCertificateNo;
+        }
+
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList setInspectionListNo(String inspectionListNo) {
+            this.inspectionListNo = inspectionListNo;
+            return this;
+        }
+        public String getInspectionListNo() {
+            return this.inspectionListNo;
         }
 
         public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList setMaxPassengers(String maxPassengers) {
@@ -1895,6 +1966,10 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("purchaserAddress")
         public String purchaserAddress;
 
+        // 购方银行账户
+        @NameInMap("purchaserBankAccount")
+        public String purchaserBankAccount;
+
         // 购方银行
         @NameInMap("purchaserBankNameAccount")
         public String purchaserBankNameAccount;
@@ -1921,6 +1996,10 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         // 销方地址
         @NameInMap("sellerAddress")
         public String sellerAddress;
+
+        // 购方银行账户
+        @NameInMap("sellerBankAccount")
+        public String sellerBankAccount;
 
         // 销方银行
         @NameInMap("sellerBankNameAccount")
@@ -2125,6 +2204,14 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.purchaserAddress;
         }
 
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO setPurchaserBankAccount(String purchaserBankAccount) {
+            this.purchaserBankAccount = purchaserBankAccount;
+            return this;
+        }
+        public String getPurchaserBankAccount() {
+            return this.purchaserBankAccount;
+        }
+
         public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO setPurchaserBankNameAccount(String purchaserBankNameAccount) {
             this.purchaserBankNameAccount = purchaserBankNameAccount;
             return this;
@@ -2179,6 +2266,14 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         }
         public String getSellerAddress() {
             return this.sellerAddress;
+        }
+
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO setSellerBankAccount(String sellerBankAccount) {
+            this.sellerBankAccount = sellerBankAccount;
+            return this;
+        }
+        public String getSellerBankAccount() {
+            return this.sellerBankAccount;
         }
 
         public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO setSellerBankNameAccount(String sellerBankNameAccount) {

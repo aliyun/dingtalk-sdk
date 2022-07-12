@@ -16,6 +16,10 @@ public class UpdateFinanceCompanyInfoRequest extends TeaModel {
     @NameInMap("taxNo")
     public String taxNo;
 
+    // 用户ID
+    @NameInMap("userId")
+    public String userId;
+
     public static UpdateFinanceCompanyInfoRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateFinanceCompanyInfoRequest self = new UpdateFinanceCompanyInfoRequest();
         return TeaModel.build(map, self);
@@ -43,6 +47,14 @@ public class UpdateFinanceCompanyInfoRequest extends TeaModel {
     }
     public String getTaxNo() {
         return this.taxNo;
+    }
+
+    public UpdateFinanceCompanyInfoRequest setUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+    public String getUserId() {
+        return this.userId;
     }
 
 }
