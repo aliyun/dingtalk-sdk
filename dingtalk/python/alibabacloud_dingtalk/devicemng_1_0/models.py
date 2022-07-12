@@ -1546,12 +1546,15 @@ class ListActivateDevicesHeaders(TeaModel):
 class ListActivateDevicesRequest(TeaModel):
     def __init__(
         self,
+        device_category: int = None,
         device_code: str = None,
         device_type_id: str = None,
         group_id: str = None,
         page_number: int = None,
         page_size: int = None,
     ):
+        # 设备分类（0：设备，1 : 助手）
+        self.device_category = device_category
         # deviceCode
         self.device_code = device_code
         # deviceTypeId
@@ -1572,6 +1575,8 @@ class ListActivateDevicesRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.device_category is not None:
+            result['deviceCategory'] = self.device_category
         if self.device_code is not None:
             result['deviceCode'] = self.device_code
         if self.device_type_id is not None:
@@ -1586,6 +1591,8 @@ class ListActivateDevicesRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('deviceCategory') is not None:
+            self.device_category = m.get('deviceCategory')
         if m.get('deviceCode') is not None:
             self.device_code = m.get('deviceCode')
         if m.get('deviceTypeId') is not None:
@@ -1604,6 +1611,7 @@ class ListActivateDevicesResponseBodyResult(TeaModel):
         self,
         biz_ext: str = None,
         device_callback_url: str = None,
+        device_category: int = None,
         device_code: str = None,
         device_detail_url: str = None,
         device_name: str = None,
@@ -1615,6 +1623,7 @@ class ListActivateDevicesResponseBodyResult(TeaModel):
     ):
         self.biz_ext = biz_ext
         self.device_callback_url = device_callback_url
+        self.device_category = device_category
         self.device_code = device_code
         self.device_detail_url = device_detail_url
         self.device_name = device_name
@@ -1637,6 +1646,8 @@ class ListActivateDevicesResponseBodyResult(TeaModel):
             result['bizExt'] = self.biz_ext
         if self.device_callback_url is not None:
             result['deviceCallbackUrl'] = self.device_callback_url
+        if self.device_category is not None:
+            result['deviceCategory'] = self.device_category
         if self.device_code is not None:
             result['deviceCode'] = self.device_code
         if self.device_detail_url is not None:
@@ -1661,6 +1672,8 @@ class ListActivateDevicesResponseBodyResult(TeaModel):
             self.biz_ext = m.get('bizExt')
         if m.get('deviceCallbackUrl') is not None:
             self.device_callback_url = m.get('deviceCallbackUrl')
+        if m.get('deviceCategory') is not None:
+            self.device_category = m.get('deviceCategory')
         if m.get('deviceCode') is not None:
             self.device_code = m.get('deviceCode')
         if m.get('deviceDetailUrl') is not None:
@@ -2091,6 +2104,7 @@ class RegisterAndActivateDeviceRequest(TeaModel):
     def __init__(
         self,
         device_callback_url: str = None,
+        device_category: int = None,
         device_code: str = None,
         device_detail_url: str = None,
         device_name: str = None,
@@ -2100,6 +2114,8 @@ class RegisterAndActivateDeviceRequest(TeaModel):
         user_ids: List[str] = None,
     ):
         self.device_callback_url = device_callback_url
+        # 设备分类（0：设备，1 : 助手）
+        self.device_category = device_category
         self.device_code = device_code
         self.device_detail_url = device_detail_url
         self.device_name = device_name
@@ -2119,6 +2135,8 @@ class RegisterAndActivateDeviceRequest(TeaModel):
         result = dict()
         if self.device_callback_url is not None:
             result['deviceCallbackUrl'] = self.device_callback_url
+        if self.device_category is not None:
+            result['deviceCategory'] = self.device_category
         if self.device_code is not None:
             result['deviceCode'] = self.device_code
         if self.device_detail_url is not None:
@@ -2139,6 +2157,8 @@ class RegisterAndActivateDeviceRequest(TeaModel):
         m = m or dict()
         if m.get('deviceCallbackUrl') is not None:
             self.device_callback_url = m.get('deviceCallbackUrl')
+        if m.get('deviceCategory') is not None:
+            self.device_category = m.get('deviceCategory')
         if m.get('deviceCode') is not None:
             self.device_code = m.get('deviceCode')
         if m.get('deviceDetailUrl') is not None:
@@ -2159,6 +2179,7 @@ class RegisterAndActivateDeviceRequest(TeaModel):
 class RegisterAndActivateDeviceResponseBodyResult(TeaModel):
     def __init__(
         self,
+        device_category: int = None,
         device_code: str = None,
         device_detail_url: str = None,
         device_name: str = None,
@@ -2168,6 +2189,7 @@ class RegisterAndActivateDeviceResponseBodyResult(TeaModel):
         type_uuid: str = None,
         user_ids: List[str] = None,
     ):
+        self.device_category = device_category
         self.device_code = device_code
         self.device_detail_url = device_detail_url
         self.device_name = device_name
@@ -2186,6 +2208,8 @@ class RegisterAndActivateDeviceResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
+        if self.device_category is not None:
+            result['deviceCategory'] = self.device_category
         if self.device_code is not None:
             result['deviceCode'] = self.device_code
         if self.device_detail_url is not None:
@@ -2206,6 +2230,8 @@ class RegisterAndActivateDeviceResponseBodyResult(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('deviceCategory') is not None:
+            self.device_category = m.get('deviceCategory')
         if m.get('deviceCode') is not None:
             self.device_code = m.get('deviceCode')
         if m.get('deviceDetailUrl') is not None:
@@ -2335,6 +2361,7 @@ class RegisterAndActivateDeviceBatchRequestRegisterAndActivateVOS(TeaModel):
     def __init__(
         self,
         device_callback_url: str = None,
+        device_category: int = None,
         device_code: str = None,
         device_detail_url: str = None,
         device_name: str = None,
@@ -2345,6 +2372,8 @@ class RegisterAndActivateDeviceBatchRequestRegisterAndActivateVOS(TeaModel):
         user_ids: List[str] = None,
     ):
         self.device_callback_url = device_callback_url
+        # 设备分类（0：设备，1 : 助手）
+        self.device_category = device_category
         self.device_code = device_code
         self.device_detail_url = device_detail_url
         self.device_name = device_name
@@ -2365,6 +2394,8 @@ class RegisterAndActivateDeviceBatchRequestRegisterAndActivateVOS(TeaModel):
         result = dict()
         if self.device_callback_url is not None:
             result['deviceCallbackUrl'] = self.device_callback_url
+        if self.device_category is not None:
+            result['deviceCategory'] = self.device_category
         if self.device_code is not None:
             result['deviceCode'] = self.device_code
         if self.device_detail_url is not None:
@@ -2387,6 +2418,8 @@ class RegisterAndActivateDeviceBatchRequestRegisterAndActivateVOS(TeaModel):
         m = m or dict()
         if m.get('deviceCallbackUrl') is not None:
             self.device_callback_url = m.get('deviceCallbackUrl')
+        if m.get('deviceCategory') is not None:
+            self.device_category = m.get('deviceCategory')
         if m.get('deviceCode') is not None:
             self.device_code = m.get('deviceCode')
         if m.get('deviceDetailUrl') is not None:
@@ -2445,6 +2478,7 @@ class RegisterAndActivateDeviceBatchResponseBodyFailItemsResult(TeaModel):
     def __init__(
         self,
         device_callback_url: str = None,
+        device_category: int = None,
         device_code: str = None,
         device_detail_url: str = None,
         device_name: str = None,
@@ -2458,6 +2492,7 @@ class RegisterAndActivateDeviceBatchResponseBodyFailItemsResult(TeaModel):
         uuid: str = None,
     ):
         self.device_callback_url = device_callback_url
+        self.device_category = device_category
         self.device_code = device_code
         self.device_detail_url = device_detail_url
         self.device_name = device_name
@@ -2481,6 +2516,8 @@ class RegisterAndActivateDeviceBatchResponseBodyFailItemsResult(TeaModel):
         result = dict()
         if self.device_callback_url is not None:
             result['deviceCallbackUrl'] = self.device_callback_url
+        if self.device_category is not None:
+            result['deviceCategory'] = self.device_category
         if self.device_code is not None:
             result['deviceCode'] = self.device_code
         if self.device_detail_url is not None:
@@ -2509,6 +2546,8 @@ class RegisterAndActivateDeviceBatchResponseBodyFailItemsResult(TeaModel):
         m = m or dict()
         if m.get('deviceCallbackUrl') is not None:
             self.device_callback_url = m.get('deviceCallbackUrl')
+        if m.get('deviceCategory') is not None:
+            self.device_category = m.get('deviceCategory')
         if m.get('deviceCode') is not None:
             self.device_code = m.get('deviceCode')
         if m.get('deviceDetailUrl') is not None:
@@ -2585,6 +2624,7 @@ class RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult(TeaModel):
     def __init__(
         self,
         device_callback_url: str = None,
+        device_category: int = None,
         device_code: str = None,
         device_detail_url: str = None,
         device_name: str = None,
@@ -2598,6 +2638,7 @@ class RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult(TeaModel):
         uuid: str = None,
     ):
         self.device_callback_url = device_callback_url
+        self.device_category = device_category
         self.device_code = device_code
         self.device_detail_url = device_detail_url
         self.device_name = device_name
@@ -2621,6 +2662,8 @@ class RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult(TeaModel):
         result = dict()
         if self.device_callback_url is not None:
             result['deviceCallbackUrl'] = self.device_callback_url
+        if self.device_category is not None:
+            result['deviceCategory'] = self.device_category
         if self.device_code is not None:
             result['deviceCode'] = self.device_code
         if self.device_detail_url is not None:
@@ -2649,6 +2692,8 @@ class RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult(TeaModel):
         m = m or dict()
         if m.get('deviceCallbackUrl') is not None:
             self.device_callback_url = m.get('deviceCallbackUrl')
+        if m.get('deviceCategory') is not None:
+            self.device_category = m.get('deviceCategory')
         if m.get('deviceCode') is not None:
             self.device_code = m.get('deviceCode')
         if m.get('deviceDetailUrl') is not None:

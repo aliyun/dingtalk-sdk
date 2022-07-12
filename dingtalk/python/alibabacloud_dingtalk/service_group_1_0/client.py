@@ -65,6 +65,8 @@ class Client(OpenApiClient):
             body['linkUrl'] = request.link_url
         if not UtilClient.is_unset(request.open_team_id):
             body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.question_ids):
+            body['questionIds'] = request.question_ids
         if not UtilClient.is_unset(request.source):
             body['source'] = request.source
         if not UtilClient.is_unset(request.source_primary_key):
@@ -115,6 +117,8 @@ class Client(OpenApiClient):
             body['linkUrl'] = request.link_url
         if not UtilClient.is_unset(request.open_team_id):
             body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.question_ids):
+            body['questionIds'] = request.question_ids
         if not UtilClient.is_unset(request.source):
             body['source'] = request.source
         if not UtilClient.is_unset(request.source_primary_key):

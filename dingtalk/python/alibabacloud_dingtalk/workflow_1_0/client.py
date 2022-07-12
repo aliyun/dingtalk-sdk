@@ -689,6 +689,8 @@ class Client(OpenApiClient):
     ) -> dingtalkworkflow__1__0_models.QuerySchemaByProcessCodeResponse:
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.app_uuid):
+            query['appUuid'] = request.app_uuid
         if not UtilClient.is_unset(request.process_code):
             query['processCode'] = request.process_code
         real_headers = {}
@@ -713,6 +715,8 @@ class Client(OpenApiClient):
     ) -> dingtalkworkflow__1__0_models.QuerySchemaByProcessCodeResponse:
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.app_uuid):
+            query['appUuid'] = request.app_uuid
         if not UtilClient.is_unset(request.process_code):
             query['processCode'] = request.process_code
         real_headers = {}

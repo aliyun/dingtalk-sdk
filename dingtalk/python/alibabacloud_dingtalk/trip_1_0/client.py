@@ -23,6 +23,90 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def sync_secret_key(
+        self,
+        request: dingtalktrip__1__0_models.SyncSecretKeyRequest,
+    ) -> dingtalktrip__1__0_models.SyncSecretKeyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.SyncSecretKeyHeaders()
+        return self.sync_secret_key_with_options(request, headers, runtime)
+
+    async def sync_secret_key_async(
+        self,
+        request: dingtalktrip__1__0_models.SyncSecretKeyRequest,
+    ) -> dingtalktrip__1__0_models.SyncSecretKeyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.SyncSecretKeyHeaders()
+        return await self.sync_secret_key_with_options_async(request, headers, runtime)
+
+    def sync_secret_key_with_options(
+        self,
+        request: dingtalktrip__1__0_models.SyncSecretKeyRequest,
+        headers: dingtalktrip__1__0_models.SyncSecretKeyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.SyncSecretKeyResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_type):
+            body['actionType'] = request.action_type
+        if not UtilClient.is_unset(request.secret_string):
+            body['secretString'] = request.secret_string
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        if not UtilClient.is_unset(request.trip_app_key):
+            body['tripAppKey'] = request.trip_app_key
+        if not UtilClient.is_unset(request.trip_app_security):
+            body['tripAppSecurity'] = request.trip_app_security
+        if not UtilClient.is_unset(request.trip_corp_id):
+            body['tripCorpId'] = request.trip_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.SyncSecretKeyResponse(),
+            self.do_roarequest('SyncSecretKey', 'trip_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/trip/secretKeys/sync', 'json', req, runtime)
+        )
+
+    async def sync_secret_key_with_options_async(
+        self,
+        request: dingtalktrip__1__0_models.SyncSecretKeyRequest,
+        headers: dingtalktrip__1__0_models.SyncSecretKeyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.SyncSecretKeyResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_type):
+            body['actionType'] = request.action_type
+        if not UtilClient.is_unset(request.secret_string):
+            body['secretString'] = request.secret_string
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        if not UtilClient.is_unset(request.trip_app_key):
+            body['tripAppKey'] = request.trip_app_key
+        if not UtilClient.is_unset(request.trip_app_security):
+            body['tripAppSecurity'] = request.trip_app_security
+        if not UtilClient.is_unset(request.trip_corp_id):
+            body['tripCorpId'] = request.trip_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.SyncSecretKeyResponse(),
+            await self.do_roarequest_async('SyncSecretKey', 'trip_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/trip/secretKeys/sync', 'json', req, runtime)
+        )
+
     def sync_trip_order(
         self,
         request: dingtalktrip__1__0_models.SyncTripOrderRequest,

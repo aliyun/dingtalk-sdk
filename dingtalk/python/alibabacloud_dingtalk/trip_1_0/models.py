@@ -4,6 +4,232 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class SyncSecretKeyHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SyncSecretKeyRequest(TeaModel):
+    def __init__(
+        self,
+        action_type: str = None,
+        secret_string: str = None,
+        target_corp_id: str = None,
+        trip_app_key: str = None,
+        trip_app_security: str = None,
+        trip_corp_id: str = None,
+    ):
+        # 操作类型，ADD/QUERY/MODIFY/DEL
+        self.action_type = action_type
+        # 验签加密串
+        self.secret_string = secret_string
+        # 钉钉侧对应的组织ID
+        self.target_corp_id = target_corp_id
+        # 商旅侧appkey
+        self.trip_app_key = trip_app_key
+        # 商旅对接密钥
+        self.trip_app_security = trip_app_security
+        # 商旅侧组织ID
+        self.trip_corp_id = trip_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_type is not None:
+            result['actionType'] = self.action_type
+        if self.secret_string is not None:
+            result['secretString'] = self.secret_string
+        if self.target_corp_id is not None:
+            result['targetCorpId'] = self.target_corp_id
+        if self.trip_app_key is not None:
+            result['tripAppKey'] = self.trip_app_key
+        if self.trip_app_security is not None:
+            result['tripAppSecurity'] = self.trip_app_security
+        if self.trip_corp_id is not None:
+            result['tripCorpId'] = self.trip_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionType') is not None:
+            self.action_type = m.get('actionType')
+        if m.get('secretString') is not None:
+            self.secret_string = m.get('secretString')
+        if m.get('targetCorpId') is not None:
+            self.target_corp_id = m.get('targetCorpId')
+        if m.get('tripAppKey') is not None:
+            self.trip_app_key = m.get('tripAppKey')
+        if m.get('tripAppSecurity') is not None:
+            self.trip_app_security = m.get('tripAppSecurity')
+        if m.get('tripCorpId') is not None:
+            self.trip_corp_id = m.get('tripCorpId')
+        return self
+
+
+class SyncSecretKeyResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        secret_string: str = None,
+        target_corp_id: str = None,
+        trip_app_key: str = None,
+        trip_app_security: str = None,
+        trip_corp_id: str = None,
+    ):
+        # 验签加密串
+        self.secret_string = secret_string
+        # 钉钉侧对应的组织ID
+        self.target_corp_id = target_corp_id
+        # 商旅侧对接key
+        self.trip_app_key = trip_app_key
+        # 商旅侧对接密钥
+        self.trip_app_security = trip_app_security
+        # 商旅侧对应的组织ID
+        self.trip_corp_id = trip_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.secret_string is not None:
+            result['secretString'] = self.secret_string
+        if self.target_corp_id is not None:
+            result['targetCorpId'] = self.target_corp_id
+        if self.trip_app_key is not None:
+            result['tripAppKey'] = self.trip_app_key
+        if self.trip_app_security is not None:
+            result['tripAppSecurity'] = self.trip_app_security
+        if self.trip_corp_id is not None:
+            result['tripCorpId'] = self.trip_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('secretString') is not None:
+            self.secret_string = m.get('secretString')
+        if m.get('targetCorpId') is not None:
+            self.target_corp_id = m.get('targetCorpId')
+        if m.get('tripAppKey') is not None:
+            self.trip_app_key = m.get('tripAppKey')
+        if m.get('tripAppSecurity') is not None:
+            self.trip_app_security = m.get('tripAppSecurity')
+        if m.get('tripCorpId') is not None:
+            self.trip_corp_id = m.get('tripCorpId')
+        return self
+
+
+class SyncSecretKeyResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: SyncSecretKeyResponseBodyResult = None,
+        success: str = None,
+    ):
+        self.result = result
+        # 是否成功
+        # 
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = SyncSecretKeyResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SyncSecretKeyResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SyncSecretKeyResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SyncSecretKeyResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SyncTripOrderHeaders(TeaModel):
     def __init__(
         self,

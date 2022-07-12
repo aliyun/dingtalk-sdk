@@ -4,7 +4,7 @@ from Tea.model import TeaModel
 from typing import List, Dict
 
 
-class DentryOpenVOCreator(TeaModel):
+class DentryModelCreator(TeaModel):
     def __init__(
         self,
         name: str = None,
@@ -39,7 +39,7 @@ class DentryOpenVOCreator(TeaModel):
         return self
 
 
-class DentryOpenVOUpdater(TeaModel):
+class DentryModelUpdater(TeaModel):
     def __init__(
         self,
         name: str = None,
@@ -74,7 +74,7 @@ class DentryOpenVOUpdater(TeaModel):
         return self
 
 
-class DentryOpenVOVisitorInfo(TeaModel):
+class DentryModelVisitorInfo(TeaModel):
     def __init__(
         self,
         dentry_actions: List[str] = None,
@@ -202,7 +202,7 @@ class LinkSourceInfo(TeaModel):
         return self
 
 
-class SpaceOpenVOOwner(TeaModel):
+class SpaceModelOwner(TeaModel):
     def __init__(
         self,
         name: str = None,
@@ -237,7 +237,7 @@ class SpaceOpenVOOwner(TeaModel):
         return self
 
 
-class SpaceOpenVOVisitorInfo(TeaModel):
+class SpaceModelVisitorInfo(TeaModel):
     def __init__(
         self,
         dentry_actions: List[str] = None,
@@ -272,13 +272,14 @@ class SpaceOpenVOVisitorInfo(TeaModel):
         return self
 
 
-class SpaceOpenVO(TeaModel):
+class SpaceModel(TeaModel):
     def __init__(
         self,
         id: str = None,
         name: str = None,
-        owner: SpaceOpenVOOwner = None,
-        visitor_info: SpaceOpenVOVisitorInfo = None,
+        owner: SpaceModelOwner = None,
+        url: str = None,
+        visitor_info: SpaceModelVisitorInfo = None,
     ):
         # 知识库id。
         self.id = id
@@ -286,6 +287,8 @@ class SpaceOpenVO(TeaModel):
         self.name = name
         # 知识库所有者。
         self.owner = owner
+        # 知识库访问url。
+        self.url = url
         # 访问者对当前知识库的权限等信息。
         self.visitor_info = visitor_info
 
@@ -307,6 +310,8 @@ class SpaceOpenVO(TeaModel):
             result['name'] = self.name
         if self.owner is not None:
             result['owner'] = self.owner.to_map()
+        if self.url is not None:
+            result['url'] = self.url
         if self.visitor_info is not None:
             result['visitorInfo'] = self.visitor_info.to_map()
         return result
@@ -318,34 +323,39 @@ class SpaceOpenVO(TeaModel):
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('owner') is not None:
-            temp_model = SpaceOpenVOOwner()
+            temp_model = SpaceModelOwner()
             self.owner = temp_model.from_map(m['owner'])
+        if m.get('url') is not None:
+            self.url = m.get('url')
         if m.get('visitorInfo') is not None:
-            temp_model = SpaceOpenVOVisitorInfo()
+            temp_model = SpaceModelVisitorInfo()
             self.visitor_info = temp_model.from_map(m['visitorInfo'])
         return self
 
 
-class DentryOpenVO(TeaModel):
+class DentryModel(TeaModel):
     def __init__(
         self,
         content_type: str = None,
         created_time: int = None,
-        creator: DentryOpenVOCreator = None,
+        creator: DentryModelCreator = None,
         dentry_id: str = None,
         dentry_type: str = None,
         dentry_uuid: str = None,
+        doc_key: str = None,
         extension: str = None,
         has_children: bool = None,
         link_source_info: LinkSourceInfo = None,
         name: str = None,
-        space: SpaceOpenVO = None,
+        path: str = None,
+        space: SpaceModel = None,
         space_id: str = None,
         updated_time: int = None,
-        updater: DentryOpenVOUpdater = None,
-        visitor_info: DentryOpenVOVisitorInfo = None,
+        updater: DentryModelUpdater = None,
+        url: str = None,
+        visitor_info: DentryModelVisitorInfo = None,
     ):
-        # 内容类型。alidoc-钉钉文档；link-快捷方式；archive-压缩包。
+        # 内容类型。alidoc-钉钉文档；link-快捷方式；archive-压缩包；document-文件。
         self.content_type = content_type
         # 创建时间。
         self.created_time = created_time
@@ -357,6 +367,8 @@ class DentryOpenVO(TeaModel):
         self.dentry_type = dentry_type
         # 节点全局唯一标识id。
         self.dentry_uuid = dentry_uuid
+        # 文档docKey，用于标识一篇钉钉文档的key。只有内容类型为alidoc的才会有值。
+        self.doc_key = doc_key
         # 文件后缀名。
         self.extension = extension
         # 是否有子节点。
@@ -365,6 +377,8 @@ class DentryOpenVO(TeaModel):
         self.link_source_info = link_source_info
         # 节点名称。
         self.name = name
+        # 节点的路径。
+        self.path = path
         # 知识库信息。
         self.space = space
         # 知识库id。
@@ -373,6 +387,8 @@ class DentryOpenVO(TeaModel):
         self.updated_time = updated_time
         # 更新人。
         self.updater = updater
+        # 节点访问url。
+        self.url = url
         # 访问者对当前节点的权限等信息。
         self.visitor_info = visitor_info
 
@@ -406,6 +422,8 @@ class DentryOpenVO(TeaModel):
             result['dentryType'] = self.dentry_type
         if self.dentry_uuid is not None:
             result['dentryUuid'] = self.dentry_uuid
+        if self.doc_key is not None:
+            result['docKey'] = self.doc_key
         if self.extension is not None:
             result['extension'] = self.extension
         if self.has_children is not None:
@@ -414,6 +432,8 @@ class DentryOpenVO(TeaModel):
             result['linkSourceInfo'] = self.link_source_info.to_map()
         if self.name is not None:
             result['name'] = self.name
+        if self.path is not None:
+            result['path'] = self.path
         if self.space is not None:
             result['space'] = self.space.to_map()
         if self.space_id is not None:
@@ -422,6 +442,8 @@ class DentryOpenVO(TeaModel):
             result['updatedTime'] = self.updated_time
         if self.updater is not None:
             result['updater'] = self.updater.to_map()
+        if self.url is not None:
+            result['url'] = self.url
         if self.visitor_info is not None:
             result['visitorInfo'] = self.visitor_info.to_map()
         return result
@@ -433,7 +455,7 @@ class DentryOpenVO(TeaModel):
         if m.get('createdTime') is not None:
             self.created_time = m.get('createdTime')
         if m.get('creator') is not None:
-            temp_model = DentryOpenVOCreator()
+            temp_model = DentryModelCreator()
             self.creator = temp_model.from_map(m['creator'])
         if m.get('dentryId') is not None:
             self.dentry_id = m.get('dentryId')
@@ -441,6 +463,8 @@ class DentryOpenVO(TeaModel):
             self.dentry_type = m.get('dentryType')
         if m.get('dentryUuid') is not None:
             self.dentry_uuid = m.get('dentryUuid')
+        if m.get('docKey') is not None:
+            self.doc_key = m.get('docKey')
         if m.get('extension') is not None:
             self.extension = m.get('extension')
         if m.get('hasChildren') is not None:
@@ -450,23 +474,27 @@ class DentryOpenVO(TeaModel):
             self.link_source_info = temp_model.from_map(m['linkSourceInfo'])
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('path') is not None:
+            self.path = m.get('path')
         if m.get('space') is not None:
-            temp_model = SpaceOpenVO()
+            temp_model = SpaceModel()
             self.space = temp_model.from_map(m['space'])
         if m.get('spaceId') is not None:
             self.space_id = m.get('spaceId')
         if m.get('updatedTime') is not None:
             self.updated_time = m.get('updatedTime')
         if m.get('updater') is not None:
-            temp_model = DentryOpenVOUpdater()
+            temp_model = DentryModelUpdater()
             self.updater = temp_model.from_map(m['updater'])
+        if m.get('url') is not None:
+            self.url = m.get('url')
         if m.get('visitorInfo') is not None:
-            temp_model = DentryOpenVOVisitorInfo()
+            temp_model = DentryModelVisitorInfo()
             self.visitor_info = temp_model.from_map(m['visitorInfo'])
         return self
 
 
-class DentryOpenVOResultCreator(TeaModel):
+class DentryVOCreator(TeaModel):
     def __init__(
         self,
         name: str = None,
@@ -501,7 +529,7 @@ class DentryOpenVOResultCreator(TeaModel):
         return self
 
 
-class DentryOpenVOResultUpdater(TeaModel):
+class DentryVOUpdater(TeaModel):
     def __init__(
         self,
         name: str = None,
@@ -536,7 +564,7 @@ class DentryOpenVOResultUpdater(TeaModel):
         return self
 
 
-class DentryOpenVOResultVisitorInfo(TeaModel):
+class DentryVOVisitorInfo(TeaModel):
     def __init__(
         self,
         dentry_actions: List[str] = None,
@@ -571,26 +599,29 @@ class DentryOpenVOResultVisitorInfo(TeaModel):
         return self
 
 
-class DentryOpenVOResult(TeaModel):
+class DentryVO(TeaModel):
     def __init__(
         self,
         content_type: str = None,
         created_time: int = None,
-        creator: DentryOpenVOResultCreator = None,
+        creator: DentryVOCreator = None,
         dentry_id: str = None,
         dentry_type: str = None,
         dentry_uuid: str = None,
+        doc_key: str = None,
         extension: str = None,
         has_children: bool = None,
         link_source_info: LinkSourceInfo = None,
         name: str = None,
-        space: SpaceOpenVO = None,
+        path: str = None,
+        space: SpaceModel = None,
         space_id: str = None,
         updated_time: int = None,
-        updater: DentryOpenVOResultUpdater = None,
-        visitor_info: DentryOpenVOResultVisitorInfo = None,
+        updater: DentryVOUpdater = None,
+        url: str = None,
+        visitor_info: DentryVOVisitorInfo = None,
     ):
-        # 内容类型。alidoc-钉钉文档；link-快捷方式；archive-压缩包。
+        # 内容类型。alidoc-钉钉文档；link-快捷方式；archive-压缩包；document-文件。
         self.content_type = content_type
         # 创建时间。
         self.created_time = created_time
@@ -602,6 +633,8 @@ class DentryOpenVOResult(TeaModel):
         self.dentry_type = dentry_type
         # 节点全局唯一标识id。
         self.dentry_uuid = dentry_uuid
+        # 文档docKey，用于标识一篇钉钉文档的key。只有内容类型为alidoc的才会有值。
+        self.doc_key = doc_key
         # 文件后缀名。
         self.extension = extension
         # 是否有子节点。
@@ -610,6 +643,8 @@ class DentryOpenVOResult(TeaModel):
         self.link_source_info = link_source_info
         # 节点名称。
         self.name = name
+        # 节点的路径。
+        self.path = path
         # 知识库信息。
         self.space = space
         # 知识库id。
@@ -618,6 +653,8 @@ class DentryOpenVOResult(TeaModel):
         self.updated_time = updated_time
         # 更新人。
         self.updater = updater
+        # 节点访问url。
+        self.url = url
         # 访问者对当前节点的权限等信息。
         self.visitor_info = visitor_info
 
@@ -651,6 +688,8 @@ class DentryOpenVOResult(TeaModel):
             result['dentryType'] = self.dentry_type
         if self.dentry_uuid is not None:
             result['dentryUuid'] = self.dentry_uuid
+        if self.doc_key is not None:
+            result['docKey'] = self.doc_key
         if self.extension is not None:
             result['extension'] = self.extension
         if self.has_children is not None:
@@ -659,6 +698,8 @@ class DentryOpenVOResult(TeaModel):
             result['linkSourceInfo'] = self.link_source_info.to_map()
         if self.name is not None:
             result['name'] = self.name
+        if self.path is not None:
+            result['path'] = self.path
         if self.space is not None:
             result['space'] = self.space.to_map()
         if self.space_id is not None:
@@ -667,6 +708,8 @@ class DentryOpenVOResult(TeaModel):
             result['updatedTime'] = self.updated_time
         if self.updater is not None:
             result['updater'] = self.updater.to_map()
+        if self.url is not None:
+            result['url'] = self.url
         if self.visitor_info is not None:
             result['visitorInfo'] = self.visitor_info.to_map()
         return result
@@ -678,7 +721,7 @@ class DentryOpenVOResult(TeaModel):
         if m.get('createdTime') is not None:
             self.created_time = m.get('createdTime')
         if m.get('creator') is not None:
-            temp_model = DentryOpenVOResultCreator()
+            temp_model = DentryVOCreator()
             self.creator = temp_model.from_map(m['creator'])
         if m.get('dentryId') is not None:
             self.dentry_id = m.get('dentryId')
@@ -686,6 +729,8 @@ class DentryOpenVOResult(TeaModel):
             self.dentry_type = m.get('dentryType')
         if m.get('dentryUuid') is not None:
             self.dentry_uuid = m.get('dentryUuid')
+        if m.get('docKey') is not None:
+            self.doc_key = m.get('docKey')
         if m.get('extension') is not None:
             self.extension = m.get('extension')
         if m.get('hasChildren') is not None:
@@ -695,23 +740,62 @@ class DentryOpenVOResult(TeaModel):
             self.link_source_info = temp_model.from_map(m['linkSourceInfo'])
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('path') is not None:
+            self.path = m.get('path')
         if m.get('space') is not None:
-            temp_model = SpaceOpenVO()
+            temp_model = SpaceModel()
             self.space = temp_model.from_map(m['space'])
         if m.get('spaceId') is not None:
             self.space_id = m.get('spaceId')
         if m.get('updatedTime') is not None:
             self.updated_time = m.get('updatedTime')
         if m.get('updater') is not None:
-            temp_model = DentryOpenVOResultUpdater()
+            temp_model = DentryVOUpdater()
             self.updater = temp_model.from_map(m['updater'])
+        if m.get('url') is not None:
+            self.url = m.get('url')
         if m.get('visitorInfo') is not None:
-            temp_model = DentryOpenVOResultVisitorInfo()
+            temp_model = DentryVOVisitorInfo()
             self.visitor_info = temp_model.from_map(m['visitorInfo'])
         return self
 
 
-class SpaceOpenVOResultOwner(TeaModel):
+class OpenActionModel(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        timestamp: int = None,
+    ):
+        # 操作人名称。
+        self.name = name
+        # 操作时间戳。
+        self.timestamp = timestamp
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.timestamp is not None:
+            result['timestamp'] = self.timestamp
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('timestamp') is not None:
+            self.timestamp = m.get('timestamp')
+        return self
+
+
+class SpaceVOOwner(TeaModel):
     def __init__(
         self,
         name: str = None,
@@ -746,7 +830,7 @@ class SpaceOpenVOResultOwner(TeaModel):
         return self
 
 
-class SpaceOpenVOResultVisitorInfo(TeaModel):
+class SpaceVOVisitorInfo(TeaModel):
     def __init__(
         self,
         dentry_actions: List[str] = None,
@@ -781,13 +865,14 @@ class SpaceOpenVOResultVisitorInfo(TeaModel):
         return self
 
 
-class SpaceOpenVOResult(TeaModel):
+class SpaceVO(TeaModel):
     def __init__(
         self,
         id: str = None,
         name: str = None,
-        owner: SpaceOpenVOResultOwner = None,
-        visitor_info: SpaceOpenVOResultVisitorInfo = None,
+        owner: SpaceVOOwner = None,
+        url: str = None,
+        visitor_info: SpaceVOVisitorInfo = None,
     ):
         # 知识库id。
         self.id = id
@@ -795,6 +880,8 @@ class SpaceOpenVOResult(TeaModel):
         self.name = name
         # 知识库所有者。
         self.owner = owner
+        # 知识库访问url。
+        self.url = url
         # 访问者对当前知识库的权限等信息。
         self.visitor_info = visitor_info
 
@@ -816,6 +903,8 @@ class SpaceOpenVOResult(TeaModel):
             result['name'] = self.name
         if self.owner is not None:
             result['owner'] = self.owner.to_map()
+        if self.url is not None:
+            result['url'] = self.url
         if self.visitor_info is not None:
             result['visitorInfo'] = self.visitor_info.to_map()
         return result
@@ -827,11 +916,146 @@ class SpaceOpenVOResult(TeaModel):
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('owner') is not None:
-            temp_model = SpaceOpenVOResultOwner()
+            temp_model = SpaceVOOwner()
             self.owner = temp_model.from_map(m['owner'])
+        if m.get('url') is not None:
+            self.url = m.get('url')
         if m.get('visitorInfo') is not None:
-            temp_model = SpaceOpenVOResultVisitorInfo()
+            temp_model = SpaceVOVisitorInfo()
             self.visitor_info = temp_model.from_map(m['visitorInfo'])
+        return self
+
+
+class CopyDentryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CopyDentryRequest(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        operator_id: str = None,
+        target_space_id: str = None,
+        to_next_dentry_id: str = None,
+        to_parent_dentry_id: str = None,
+        to_prev_dentry_id: str = None,
+    ):
+        # 拷贝后的文档名称，长度不能超过50。
+        self.name = name
+        # 操作人unionId。
+        self.operator_id = operator_id
+        # 需要移动到的知识库id。
+        self.target_space_id = target_space_id
+        # 移动到目标位置的后置节点id。不为空时，需要是归属于 toParentDentryId 的子节点。
+        self.to_next_dentry_id = to_next_dentry_id
+        # 需要移动到目标位置的父节点id。如果为根目录，则不传；如果为非根目录，则需要传对应的id。
+        self.to_parent_dentry_id = to_parent_dentry_id
+        # 移动到目标位置的前置节点id。不为空时，需要是归属于 toParentDentryId 的子节点。
+        self.to_prev_dentry_id = to_prev_dentry_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.target_space_id is not None:
+            result['targetSpaceId'] = self.target_space_id
+        if self.to_next_dentry_id is not None:
+            result['toNextDentryId'] = self.to_next_dentry_id
+        if self.to_parent_dentry_id is not None:
+            result['toParentDentryId'] = self.to_parent_dentry_id
+        if self.to_prev_dentry_id is not None:
+            result['toPrevDentryId'] = self.to_prev_dentry_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('targetSpaceId') is not None:
+            self.target_space_id = m.get('targetSpaceId')
+        if m.get('toNextDentryId') is not None:
+            self.to_next_dentry_id = m.get('toNextDentryId')
+        if m.get('toParentDentryId') is not None:
+            self.to_parent_dentry_id = m.get('toParentDentryId')
+        if m.get('toPrevDentryId') is not None:
+            self.to_prev_dentry_id = m.get('toPrevDentryId')
+        return self
+
+
+class CopyDentryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DentryVO = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DentryVO()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 
@@ -928,7 +1152,7 @@ class CreateDentryResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
-        body: DentryOpenVOResult = None,
+        body: DentryVO = None,
     ):
         self.headers = headers
         self.body = body
@@ -956,7 +1180,7 @@ class CreateDentryResponse(TeaModel):
         if m.get('headers') is not None:
             self.headers = m.get('headers')
         if m.get('body') is not None:
-            temp_model = DentryOpenVOResult()
+            temp_model = DentryVO()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -1046,7 +1270,7 @@ class GetSpaceDirectoriesRequest(TeaModel):
 class GetSpaceDirectoriesResponseBody(TeaModel):
     def __init__(
         self,
-        children: List[DentryOpenVO] = None,
+        children: List[DentryModel] = None,
         has_more: bool = None,
         next_token: str = None,
     ):
@@ -1084,7 +1308,7 @@ class GetSpaceDirectoriesResponseBody(TeaModel):
         self.children = []
         if m.get('children') is not None:
             for k in m.get('children'):
-                temp_model = DentryOpenVO()
+                temp_model = DentryModel()
                 self.children.append(temp_model.from_map(k))
         if m.get('hasMore') is not None:
             self.has_more = m.get('hasMore')
@@ -1363,7 +1587,7 @@ class MoveDentryResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
-        body: DentryOpenVOResult = None,
+        body: DentryVO = None,
     ):
         self.headers = headers
         self.body = body
@@ -1391,7 +1615,7 @@ class MoveDentryResponse(TeaModel):
         if m.get('headers') is not None:
             self.headers = m.get('headers')
         if m.get('body') is not None:
-            temp_model = DentryOpenVOResult()
+            temp_model = DentryVO()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -1468,7 +1692,7 @@ class QueryDentryResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
-        body: DentryOpenVOResult = None,
+        body: DentryVO = None,
     ):
         self.headers = headers
         self.body = body
@@ -1496,7 +1720,304 @@ class QueryDentryResponse(TeaModel):
         if m.get('headers') is not None:
             self.headers = m.get('headers')
         if m.get('body') is not None:
-            temp_model = DentryOpenVOResult()
+            temp_model = DentryVO()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryMineSpaceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryMineSpaceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SpaceVO = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SpaceVO()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryRecentListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryRecentListRequest(TeaModel):
+    def __init__(
+        self,
+        creator_type: int = None,
+        file_type: int = None,
+        max_results: int = None,
+        next_token: str = None,
+        operator_id: str = None,
+        recent_type: int = None,
+    ):
+        # 创建人类型。0-全部；1-我创建的；2-他人创建；不填也是查全部。
+        self.creator_type = creator_type
+        # 访问文档类型：0-文字；1-表格；2-PPT；3-白板；6-脑图；7-多维表；不填的话，则默认是所有。
+        self.file_type = file_type
+        # 每页最大条目数，最大值50。
+        self.max_results = max_results
+        # 分页游标，第一页可不传。
+        self.next_token = next_token
+        # 操作用户unionId。
+        self.operator_id = operator_id
+        # 最近列表的类型：0-最近访问；1-最近编辑。
+        self.recent_type = recent_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.creator_type is not None:
+            result['creatorType'] = self.creator_type
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.recent_type is not None:
+            result['recentType'] = self.recent_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('creatorType') is not None:
+            self.creator_type = m.get('creatorType')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('recentType') is not None:
+            self.recent_type = m.get('recentType')
+        return self
+
+
+class QueryRecentListResponseBodyRecentList(TeaModel):
+    def __init__(
+        self,
+        deleted: bool = None,
+        dentry: DentryModel = None,
+        recent_time: int = None,
+    ):
+        # 是否被删除。
+        self.deleted = deleted
+        # 节点信息。
+        self.dentry = dentry
+        # 如果查询的是访问，那么这里是访问时间；否则就是编辑时间。
+        self.recent_time = recent_time
+
+    def validate(self):
+        if self.dentry:
+            self.dentry.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.deleted is not None:
+            result['deleted'] = self.deleted
+        if self.dentry is not None:
+            result['dentry'] = self.dentry.to_map()
+        if self.recent_time is not None:
+            result['recentTime'] = self.recent_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deleted') is not None:
+            self.deleted = m.get('deleted')
+        if m.get('dentry') is not None:
+            temp_model = DentryModel()
+            self.dentry = temp_model.from_map(m['dentry'])
+        if m.get('recentTime') is not None:
+            self.recent_time = m.get('recentTime')
+        return self
+
+
+class QueryRecentListResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        next_token: str = None,
+        recent_list: List[QueryRecentListResponseBodyRecentList] = None,
+    ):
+        # 是否还有更多数据。
+        self.has_more = has_more
+        # 分页游标。
+        self.next_token = next_token
+        # 子节点列表。
+        self.recent_list = recent_list
+
+    def validate(self):
+        if self.recent_list:
+            for k in self.recent_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['recentList'] = []
+        if self.recent_list is not None:
+            for k in self.recent_list:
+                result['recentList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.recent_list = []
+        if m.get('recentList') is not None:
+            for k in m.get('recentList'):
+                temp_model = QueryRecentListResponseBodyRecentList()
+                self.recent_list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryRecentListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryRecentListResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryRecentListResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -1566,7 +2087,7 @@ class QuerySpaceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
-        body: SpaceOpenVOResult = None,
+        body: SpaceVO = None,
     ):
         self.headers = headers
         self.body = body
@@ -1594,7 +2115,626 @@ class QuerySpaceResponse(TeaModel):
         if m.get('headers') is not None:
             self.headers = m.get('headers')
         if m.get('body') is not None:
-            temp_model = SpaceOpenVOResult()
+            temp_model = SpaceVO()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class RenameDentryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RenameDentryRequest(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        operator_id: str = None,
+    ):
+        # 重命名之后的节点名称，长度不能超过50。
+        self.name = name
+        # 操作人unionId。
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class RenameDentryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DentryVO = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DentryVO()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SearchHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SearchRequestDentryRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        search_file_type: int = None,
+        space_id: str = None,
+    ):
+        # 每页最大条目数，最大值50。
+        self.max_results = max_results
+        # 分页游标。如果是首次调用，可不传；如果非首次调用，该参数传上次调用时返回的nextToken。
+        self.next_token = next_token
+        # 搜索指定的文件类型。支持的类型有：1-文档；2-表格；3-脑图；4-演示；5-白板。
+        self.search_file_type = search_file_type
+        # 知识库id，在指定的知识库中搜索。
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.search_file_type is not None:
+            result['searchFileType'] = self.search_file_type
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('searchFileType') is not None:
+            self.search_file_type = m.get('searchFileType')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class SearchRequestSpaceRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+    ):
+        # 每页最大条目数，最大值50。
+        self.max_results = max_results
+        # 分页游标。如果是首次调用，可不传；如果非首次调用，该参数传上次调用时返回的nextToken。
+        self.next_token = next_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class SearchRequest(TeaModel):
+    def __init__(
+        self,
+        dentry_request: SearchRequestDentryRequest = None,
+        keyword: str = None,
+        operator_id: str = None,
+        space_request: SearchRequestSpaceRequest = None,
+    ):
+        # 节点搜索请求，和空间搜索请求二选一必填。
+        self.dentry_request = dentry_request
+        #  搜索关键词。
+        self.keyword = keyword
+        # 操作人unionId。
+        self.operator_id = operator_id
+        # 空间搜索请求，和节点搜索请求二选一必填。
+        self.space_request = space_request
+
+    def validate(self):
+        if self.dentry_request:
+            self.dentry_request.validate()
+        if self.space_request:
+            self.space_request.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dentry_request is not None:
+            result['dentryRequest'] = self.dentry_request.to_map()
+        if self.keyword is not None:
+            result['keyword'] = self.keyword
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.space_request is not None:
+            result['spaceRequest'] = self.space_request.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dentryRequest') is not None:
+            temp_model = SearchRequestDentryRequest()
+            self.dentry_request = temp_model.from_map(m['dentryRequest'])
+        if m.get('keyword') is not None:
+            self.keyword = m.get('keyword')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('spaceRequest') is not None:
+            temp_model = SearchRequestSpaceRequest()
+            self.space_request = temp_model.from_map(m['spaceRequest'])
+        return self
+
+
+class SearchResponseBodyDentryResultItems(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        creation: OpenActionModel = None,
+        dentry_id: str = None,
+        dentry_uuid: str = None,
+        extension: str = None,
+        icon_url: str = None,
+        last_edition: OpenActionModel = None,
+        name: str = None,
+        origin_name: str = None,
+        path: str = None,
+        search_file_type: int = None,
+        space_id: str = None,
+        url: str = None,
+    ):
+        # 如果内容命中了关键词，会返回该部分内容，带高亮。
+        self.content = content
+        # 创建信息。
+        self.creation = creation
+        # 节点id。
+        self.dentry_id = dentry_id
+        # 节点唯一标识。
+        self.dentry_uuid = dentry_uuid
+        # 文件名扩展。
+        self.extension = extension
+        # 节点图标url。
+        self.icon_url = icon_url
+        # 最后修改信息。
+        self.last_edition = last_edition
+        # 节点名称，如果命中了关键词，会带有高亮。
+        self.name = name
+        # 节点原始名称，不带高亮。
+        self.origin_name = origin_name
+        # 节点的路径。
+        self.path = path
+        # 文件类型。1-文档；2-表格；3-脑图；4-演示；5-白板；6-office文字；7-office表格；8-office ppt；10-多维表格；11-文本；12-图片；13-视频；14-音频；15-压缩文件；16-其他。
+        self.search_file_type = search_file_type
+        # 节点所属的知识库id。
+        self.space_id = space_id
+        # 节点访问url。
+        self.url = url
+
+    def validate(self):
+        if self.creation:
+            self.creation.validate()
+        if self.last_edition:
+            self.last_edition.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.creation is not None:
+            result['creation'] = self.creation.to_map()
+        if self.dentry_id is not None:
+            result['dentryId'] = self.dentry_id
+        if self.dentry_uuid is not None:
+            result['dentryUuid'] = self.dentry_uuid
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.icon_url is not None:
+            result['iconUrl'] = self.icon_url
+        if self.last_edition is not None:
+            result['lastEdition'] = self.last_edition.to_map()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.origin_name is not None:
+            result['originName'] = self.origin_name
+        if self.path is not None:
+            result['path'] = self.path
+        if self.search_file_type is not None:
+            result['searchFileType'] = self.search_file_type
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('creation') is not None:
+            temp_model = OpenActionModel()
+            self.creation = temp_model.from_map(m['creation'])
+        if m.get('dentryId') is not None:
+            self.dentry_id = m.get('dentryId')
+        if m.get('dentryUuid') is not None:
+            self.dentry_uuid = m.get('dentryUuid')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('iconUrl') is not None:
+            self.icon_url = m.get('iconUrl')
+        if m.get('lastEdition') is not None:
+            temp_model = OpenActionModel()
+            self.last_edition = temp_model.from_map(m['lastEdition'])
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('originName') is not None:
+            self.origin_name = m.get('originName')
+        if m.get('path') is not None:
+            self.path = m.get('path')
+        if m.get('searchFileType') is not None:
+            self.search_file_type = m.get('searchFileType')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class SearchResponseBodyDentryResult(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        items: List[SearchResponseBodyDentryResultItems] = None,
+        next_token: str = None,
+    ):
+        # 是否还有更多数据。
+        self.has_more = has_more
+        # 搜索命中的节点列表。
+        self.items = items
+        # 分页游标。
+        self.next_token = next_token
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = SearchResponseBodyDentryResultItems()
+                self.items.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class SearchResponseBodySpaceResultItems(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        origin_name: str = None,
+        space_id: str = None,
+        url: str = None,
+    ):
+        # 知识库名称，如果命中了关键词，会带有高亮。
+        self.name = name
+        # 知识库原始名称，不带高亮。
+        self.origin_name = origin_name
+        # 知识库id。
+        self.space_id = space_id
+        # 知识库访问url。
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.origin_name is not None:
+            result['originName'] = self.origin_name
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('originName') is not None:
+            self.origin_name = m.get('originName')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class SearchResponseBodySpaceResult(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        items: List[SearchResponseBodySpaceResultItems] = None,
+        next_token: str = None,
+    ):
+        # 是否还有更多数据。
+        self.has_more = has_more
+        # 搜索命中的知识库列表。
+        self.items = items
+        # 分页游标。
+        self.next_token = next_token
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = SearchResponseBodySpaceResultItems()
+                self.items.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class SearchResponseBody(TeaModel):
+    def __init__(
+        self,
+        dentry_result: SearchResponseBodyDentryResult = None,
+        space_result: SearchResponseBodySpaceResult = None,
+    ):
+        # 节点搜索结果。
+        self.dentry_result = dentry_result
+        # 知识库搜索结果。
+        self.space_result = space_result
+
+    def validate(self):
+        if self.dentry_result:
+            self.dentry_result.validate()
+        if self.space_result:
+            self.space_result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dentry_result is not None:
+            result['dentryResult'] = self.dentry_result.to_map()
+        if self.space_result is not None:
+            result['spaceResult'] = self.space_result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dentryResult') is not None:
+            temp_model = SearchResponseBodyDentryResult()
+            self.dentry_result = temp_model.from_map(m['dentryResult'])
+        if m.get('spaceResult') is not None:
+            temp_model = SearchResponseBodySpaceResult()
+            self.space_result = temp_model.from_map(m['spaceResult'])
+        return self
+
+
+class SearchResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SearchResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SearchResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

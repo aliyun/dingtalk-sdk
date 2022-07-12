@@ -2005,8 +2005,12 @@ class GetRangeRequest(TeaModel):
 class GetRangeResponseBody(TeaModel):
     def __init__(
         self,
+        display_values: List[str] = None,
+        formulas: List[str] = None,
         values: List[str] = None,
     ):
+        self.display_values = display_values
+        self.formulas = formulas
         # 值
         self.values = values
 
@@ -2019,12 +2023,20 @@ class GetRangeResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.display_values is not None:
+            result['displayValues'] = self.display_values
+        if self.formulas is not None:
+            result['formulas'] = self.formulas
         if self.values is not None:
             result['values'] = self.values
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('displayValues') is not None:
+            self.display_values = m.get('displayValues')
+        if m.get('formulas') is not None:
+            self.formulas = m.get('formulas')
         if m.get('values') is not None:
             self.values = m.get('values')
         return self
@@ -4131,6 +4143,7 @@ class RangeFindNextRequestFindOptions(TeaModel):
         match_case: bool = None,
         match_entire_cell: bool = None,
         match_formula_text: bool = None,
+        scope: str = None,
         use_reg_exp: bool = None,
     ):
         # 匹配大小写
@@ -4139,6 +4152,7 @@ class RangeFindNextRequestFindOptions(TeaModel):
         self.match_entire_cell = match_entire_cell
         # 在公式内搜索
         self.match_formula_text = match_formula_text
+        self.scope = scope
         # text是正则表达式
         self.use_reg_exp = use_reg_exp
 
@@ -4157,6 +4171,8 @@ class RangeFindNextRequestFindOptions(TeaModel):
             result['matchEntireCell'] = self.match_entire_cell
         if self.match_formula_text is not None:
             result['matchFormulaText'] = self.match_formula_text
+        if self.scope is not None:
+            result['scope'] = self.scope
         if self.use_reg_exp is not None:
             result['useRegExp'] = self.use_reg_exp
         return result
@@ -4169,6 +4185,8 @@ class RangeFindNextRequestFindOptions(TeaModel):
             self.match_entire_cell = m.get('matchEntireCell')
         if m.get('matchFormulaText') is not None:
             self.match_formula_text = m.get('matchFormulaText')
+        if m.get('scope') is not None:
+            self.scope = m.get('scope')
         if m.get('useRegExp') is not None:
             self.use_reg_exp = m.get('useRegExp')
         return self
@@ -4626,19 +4644,19 @@ class UpdateRangeHeaders(TeaModel):
         return self
 
 
-class UpdateRangeRequest(TeaModel):
+class UpdateRangeRequestHyperlinks(TeaModel):
     def __init__(
         self,
-        background_colors: List[List[str]] = None,
-        values: List[List[str]] = None,
-        operator_id: str = None,
+        type: str = None,
+        link: str = None,
+        text: str = None,
     ):
-        # 背景色
-        self.background_colors = background_colors
-        # 值
-        self.values = values
-        # 操作人unionId
-        self.operator_id = operator_id
+        # 超链接类型，可选 "path", "sheet", "range"
+        self.type = type
+        # 链接地址
+        self.link = link
+        # 链接文本
+        self.text = text
 
     def validate(self):
         pass
@@ -4649,8 +4667,63 @@ class UpdateRangeRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.link is not None:
+            result['link'] = self.link
+        if self.text is not None:
+            result['text'] = self.text
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('link') is not None:
+            self.link = m.get('link')
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        return self
+
+
+class UpdateRangeRequest(TeaModel):
+    def __init__(
+        self,
+        background_colors: List[List[str]] = None,
+        hyperlinks: List[List[UpdateRangeRequestHyperlinks]] = None,
+        values: List[List[str]] = None,
+        operator_id: str = None,
+    ):
+        # 背景色
+        self.background_colors = background_colors
+        self.hyperlinks = hyperlinks
+        # 值
+        self.values = values
+        # 操作人unionId
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.hyperlinks:
+            for k in self.hyperlinks:
+                for k1 in k:
+                    if k1:
+                        k1.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
         if self.background_colors is not None:
             result['backgroundColors'] = self.background_colors
+        result['hyperlinks'] = []
+        if self.hyperlinks is not None:
+            for k in self.hyperlinks:
+                l1 = []
+                for k1 in k:
+                    l1.append(k1.to_map() if k1 else None)
+                result['hyperlinks'].append(l1)
         if self.values is not None:
             result['values'] = self.values
         if self.operator_id is not None:
@@ -4661,6 +4734,14 @@ class UpdateRangeRequest(TeaModel):
         m = m or dict()
         if m.get('backgroundColors') is not None:
             self.background_colors = m.get('backgroundColors')
+        self.hyperlinks = []
+        if m.get('hyperlinks') is not None:
+            for k in m.get('hyperlinks'):
+                l1 = []
+                for k1 in k:
+                    temp_model = UpdateRangeRequestHyperlinks()
+                    l1.append(temp_model.from_map(k1))
+                self.hyperlinks.append(l1)
         if m.get('values') is not None:
             self.values = m.get('values')
         if m.get('operatorId') is not None:

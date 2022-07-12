@@ -1180,6 +1180,7 @@ class GetProcessConfigResponseBodyResult(TeaModel):
     def __init__(
         self,
         abstract_gen_rule: List[str] = None,
+        activity_auth: str = None,
         allow_revoke: bool = None,
         append_enable: bool = None,
         auto_execute_originator_tasks: bool = None,
@@ -1199,6 +1200,8 @@ class GetProcessConfigResponseBodyResult(TeaModel):
     ):
         # 自定义摘要信息
         self.abstract_gen_rule = abstract_gen_rule
+        # 表单节点权限
+        self.activity_auth = activity_auth
         # 是否允许撤销
         self.allow_revoke = allow_revoke
         # 是否允许加签
@@ -1254,6 +1257,8 @@ class GetProcessConfigResponseBodyResult(TeaModel):
         result = dict()
         if self.abstract_gen_rule is not None:
             result['abstractGenRule'] = self.abstract_gen_rule
+        if self.activity_auth is not None:
+            result['activityAuth'] = self.activity_auth
         if self.allow_revoke is not None:
             result['allowRevoke'] = self.allow_revoke
         if self.append_enable is not None:
@@ -1294,6 +1299,8 @@ class GetProcessConfigResponseBodyResult(TeaModel):
         m = m or dict()
         if m.get('abstractGenRule') is not None:
             self.abstract_gen_rule = m.get('abstractGenRule')
+        if m.get('activityAuth') is not None:
+            self.activity_auth = m.get('activityAuth')
         if m.get('allowRevoke') is not None:
             self.allow_revoke = m.get('allowRevoke')
         if m.get('appendEnable') is not None:
@@ -3603,8 +3610,11 @@ class QuerySchemaByProcessCodeHeaders(TeaModel):
 class QuerySchemaByProcessCodeRequest(TeaModel):
     def __init__(
         self,
+        app_uuid: str = None,
         process_code: str = None,
     ):
+        # 应用搭建隔离信息
+        self.app_uuid = app_uuid
         # 表单的唯一码
         self.process_code = process_code
 
@@ -3617,14 +3627,104 @@ class QuerySchemaByProcessCodeRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.app_uuid is not None:
+            result['appUuid'] = self.app_uuid
         if self.process_code is not None:
             result['processCode'] = self.process_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('appUuid') is not None:
+            self.app_uuid = m.get('appUuid')
         if m.get('processCode') is not None:
             self.process_code = m.get('processCode')
+        return self
+
+
+class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps(TeaModel):
+    def __init__(
+        self,
+        biz_alias: str = None,
+        id: str = None,
+        label: str = None,
+        required: bool = None,
+    ):
+        # 控件业务别名
+        self.biz_alias = biz_alias
+        # 控件id
+        self.id = id
+        # 控件名称
+        self.label = label
+        # 是否必填
+        self.required = required
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.id is not None:
+            result['id'] = self.id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.required is not None:
+            result['required'] = self.required
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        return self
+
+
+class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren(TeaModel):
+    def __init__(
+        self,
+        component_name: str = None,
+        props: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps = None,
+    ):
+        # 控件类型
+        self.component_name = component_name
+        # 子控件属性
+        self.props = props
+
+    def validate(self):
+        if self.props:
+            self.props.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_name is not None:
+            result['componentName'] = self.component_name
+        if self.props is not None:
+            result['props'] = self.props.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentName') is not None:
+            self.component_name = m.get('componentName')
+        if m.get('props') is not None:
+            temp_model = QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps()
+            self.props = temp_model.from_map(m['props'])
         return self
 
 
@@ -4192,15 +4292,22 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps(TeaModel
 class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems(TeaModel):
     def __init__(
         self,
+        children: List[QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren] = None,
         component_name: str = None,
         props: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps = None,
     ):
+        # 子控件列表
+        self.children = children
         # 控件类型，取值：
         self.component_name = component_name
         # 控件属性。
         self.props = props
 
     def validate(self):
+        if self.children:
+            for k in self.children:
+                if k:
+                    k.validate()
         if self.props:
             self.props.validate()
 
@@ -4210,6 +4317,10 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems(TeaModel):
             return _map
 
         result = dict()
+        result['children'] = []
+        if self.children is not None:
+            for k in self.children:
+                result['children'].append(k.to_map() if k else None)
         if self.component_name is not None:
             result['componentName'] = self.component_name
         if self.props is not None:
@@ -4218,6 +4329,11 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.children = []
+        if m.get('children') is not None:
+            for k in m.get('children'):
+                temp_model = QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren()
+                self.children.append(temp_model.from_map(k))
         if m.get('componentName') is not None:
             self.component_name = m.get('componentName')
         if m.get('props') is not None:
@@ -4235,7 +4351,7 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContent(TeaModel):
     ):
         # 图标
         self.icon = icon
-        # 控件列表。
+        # 控件列表
         self.items = items
         # 表单名称。
         self.title = title

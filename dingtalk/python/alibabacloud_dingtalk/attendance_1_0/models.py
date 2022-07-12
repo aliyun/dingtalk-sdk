@@ -1700,6 +1700,164 @@ class CreateApproveResponse(TeaModel):
         return self
 
 
+class DeleteWaterMarkTemplateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteWaterMarkTemplateRequest(TeaModel):
+    def __init__(
+        self,
+        form_code: str = None,
+        form_content: str = None,
+        open_conversation_id: str = None,
+        system_template: bool = None,
+        user_id: str = None,
+    ):
+        # 模板的表单Code。
+        self.form_code = form_code
+        # 模板的内容。
+        self.form_content = form_content
+        # 群会话ID。
+        self.open_conversation_id = open_conversation_id
+        # 是否是系统模板。
+        # - true：是
+        # - false：否
+        # 
+        # 
+        self.system_template = system_template
+        # 用户的userid。
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        if self.form_content is not None:
+            result['formContent'] = self.form_content
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.system_template is not None:
+            result['systemTemplate'] = self.system_template
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        if m.get('formContent') is not None:
+            self.form_content = m.get('formContent')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('systemTemplate') is not None:
+            self.system_template = m.get('systemTemplate')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class DeleteWaterMarkTemplateResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+    ):
+        # 模板的表单Code。
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class DeleteWaterMarkTemplateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DeleteWaterMarkTemplateResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DeleteWaterMarkTemplateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DingTalkSecurityCheckHeaders(TeaModel):
     def __init__(
         self,
@@ -2111,6 +2269,337 @@ class GetAdjustmentsResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetAdjustmentsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetCheckInSchemaTemplateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetCheckInSchemaTemplateRequest(TeaModel):
+    def __init__(
+        self,
+        biz_code: str = None,
+        open_conversation_id: str = None,
+        scene_code: str = None,
+        user_id: str = None,
+    ):
+        # 业务码：
+        # - water_mark_checkin 水印签到
+        # 
+        # 
+        self.biz_code = biz_code
+        # 群会话ID。
+        self.open_conversation_id = open_conversation_id
+        # 场景码：
+        # - water_mark_checkin_h3yun 开放场景码
+        # 
+        # 
+        self.scene_code = scene_code
+        # 用户的userid。
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.scene_code is not None:
+            result['sceneCode'] = self.scene_code
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('sceneCode') is not None:
+            self.scene_code = m.get('sceneCode')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetCheckInSchemaTemplateResponseBodyResultWaterMarkTemplateModels(TeaModel):
+    def __init__(
+        self,
+        can_modify: bool = None,
+        form_code: str = None,
+        icon: str = None,
+        layout_design: str = None,
+        scene_code: str = None,
+        schema_content: str = None,
+        suite_key: str = None,
+        system_template: bool = None,
+        title: str = None,
+        water_mark_id: str = None,
+    ):
+        # 是否可以修改。
+        self.can_modify = can_modify
+        # 模板的表单Code。
+        self.form_code = form_code
+        # 模板的预览图片。
+        self.icon = icon
+        # 模板的布局信息。
+        self.layout_design = layout_design
+        # 模板的场景码。
+        self.scene_code = scene_code
+        # 模板的内容。
+        self.schema_content = schema_content
+        # suiteKey。
+        self.suite_key = suite_key
+        # 是否系统模板。
+        self.system_template = system_template
+        # 模板的标题。
+        self.title = title
+        # 模板的水印ID。
+        self.water_mark_id = water_mark_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.can_modify is not None:
+            result['canModify'] = self.can_modify
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.layout_design is not None:
+            result['layoutDesign'] = self.layout_design
+        if self.scene_code is not None:
+            result['sceneCode'] = self.scene_code
+        if self.schema_content is not None:
+            result['schemaContent'] = self.schema_content
+        if self.suite_key is not None:
+            result['suiteKey'] = self.suite_key
+        if self.system_template is not None:
+            result['systemTemplate'] = self.system_template
+        if self.title is not None:
+            result['title'] = self.title
+        if self.water_mark_id is not None:
+            result['waterMarkId'] = self.water_mark_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('canModify') is not None:
+            self.can_modify = m.get('canModify')
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('layoutDesign') is not None:
+            self.layout_design = m.get('layoutDesign')
+        if m.get('sceneCode') is not None:
+            self.scene_code = m.get('sceneCode')
+        if m.get('schemaContent') is not None:
+            self.schema_content = m.get('schemaContent')
+        if m.get('suiteKey') is not None:
+            self.suite_key = m.get('suiteKey')
+        if m.get('systemTemplate') is not None:
+            self.system_template = m.get('systemTemplate')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('waterMarkId') is not None:
+            self.water_mark_id = m.get('waterMarkId')
+        return self
+
+
+class GetCheckInSchemaTemplateResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        biz_code: str = None,
+        can_modify_and_add_template: bool = None,
+        conversation_admin: bool = None,
+        custom_template_max_size: int = None,
+        open_conversation_id: str = None,
+        show_stat: bool = None,
+        template_degrade: bool = None,
+        water_mark_template_models: List[GetCheckInSchemaTemplateResponseBodyResultWaterMarkTemplateModels] = None,
+    ):
+        # 业务码。
+        self.biz_code = biz_code
+        # 是否可以操作模板。
+        self.can_modify_and_add_template = can_modify_and_add_template
+        # 是否群管理员。
+        self.conversation_admin = conversation_admin
+        # 自定义模板的最大数量。
+        self.custom_template_max_size = custom_template_max_size
+        # 群会话ID。
+        self.open_conversation_id = open_conversation_id
+        # 是否展示统计入口。
+        self.show_stat = show_stat
+        # 是否开启水印模板降级。
+        self.template_degrade = template_degrade
+        # 模板列表。
+        self.water_mark_template_models = water_mark_template_models
+
+    def validate(self):
+        if self.water_mark_template_models:
+            for k in self.water_mark_template_models:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
+        if self.can_modify_and_add_template is not None:
+            result['canModifyAndAddTemplate'] = self.can_modify_and_add_template
+        if self.conversation_admin is not None:
+            result['conversationAdmin'] = self.conversation_admin
+        if self.custom_template_max_size is not None:
+            result['customTemplateMaxSize'] = self.custom_template_max_size
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.show_stat is not None:
+            result['showStat'] = self.show_stat
+        if self.template_degrade is not None:
+            result['templateDegrade'] = self.template_degrade
+        result['waterMarkTemplateModels'] = []
+        if self.water_mark_template_models is not None:
+            for k in self.water_mark_template_models:
+                result['waterMarkTemplateModels'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
+        if m.get('canModifyAndAddTemplate') is not None:
+            self.can_modify_and_add_template = m.get('canModifyAndAddTemplate')
+        if m.get('conversationAdmin') is not None:
+            self.conversation_admin = m.get('conversationAdmin')
+        if m.get('customTemplateMaxSize') is not None:
+            self.custom_template_max_size = m.get('customTemplateMaxSize')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('showStat') is not None:
+            self.show_stat = m.get('showStat')
+        if m.get('templateDegrade') is not None:
+            self.template_degrade = m.get('templateDegrade')
+        self.water_mark_template_models = []
+        if m.get('waterMarkTemplateModels') is not None:
+            for k in m.get('waterMarkTemplateModels'):
+                temp_model = GetCheckInSchemaTemplateResponseBodyResultWaterMarkTemplateModels()
+                self.water_mark_template_models.append(temp_model.from_map(k))
+        return self
+
+
+class GetCheckInSchemaTemplateResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetCheckInSchemaTemplateResponseBodyResult = None,
+    ):
+        # 返回对象。
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetCheckInSchemaTemplateResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class GetCheckInSchemaTemplateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetCheckInSchemaTemplateResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetCheckInSchemaTemplateResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -4476,6 +4965,181 @@ class InitAndGetLeaveALlocationQuotasResponse(TeaModel):
         return self
 
 
+class ModifyWaterMarkTemplateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ModifyWaterMarkTemplateRequest(TeaModel):
+    def __init__(
+        self,
+        form_code: str = None,
+        icon: str = None,
+        layout_design_id: str = None,
+        schema_content: str = None,
+        title: str = None,
+        water_mark_id: str = None,
+        open_conversation_id: str = None,
+        user_id: str = None,
+    ):
+        # 模板的表单Code。
+        self.form_code = form_code
+        # 模板的预览图片。
+        self.icon = icon
+        # 模板的布局ID。
+        self.layout_design_id = layout_design_id
+        # 模板的内容。
+        self.schema_content = schema_content
+        # 模板的标题。
+        self.title = title
+        # 模板的水印ID。
+        self.water_mark_id = water_mark_id
+        # 群会话ID。
+        self.open_conversation_id = open_conversation_id
+        # 用户的userid。
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.layout_design_id is not None:
+            result['layoutDesignId'] = self.layout_design_id
+        if self.schema_content is not None:
+            result['schemaContent'] = self.schema_content
+        if self.title is not None:
+            result['title'] = self.title
+        if self.water_mark_id is not None:
+            result['waterMarkId'] = self.water_mark_id
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('layoutDesignId') is not None:
+            self.layout_design_id = m.get('layoutDesignId')
+        if m.get('schemaContent') is not None:
+            self.schema_content = m.get('schemaContent')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('waterMarkId') is not None:
+            self.water_mark_id = m.get('waterMarkId')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ModifyWaterMarkTemplateResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+    ):
+        # Id of the request
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class ModifyWaterMarkTemplateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ModifyWaterMarkTemplateResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ModifyWaterMarkTemplateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ProcessApproveCreateHeaders(TeaModel):
     def __init__(
         self,
@@ -4714,6 +5378,224 @@ class ProcessApproveCreateResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = ProcessApproveCreateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SaveCustomWaterMarkTemplateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SaveCustomWaterMarkTemplateRequest(TeaModel):
+    def __init__(
+        self,
+        biz_code: str = None,
+        icon: str = None,
+        layout_design_id: str = None,
+        scene_code: str = None,
+        schema_content: str = None,
+        title: str = None,
+        open_conversation_id: str = None,
+        user_id: str = None,
+    ):
+        # 模板的业务码：
+        # - water_mark_checkin
+        # 
+        # 
+        self.biz_code = biz_code
+        # 模板的预览图片。
+        self.icon = icon
+        # 模板的布局ID。
+        self.layout_design_id = layout_design_id
+        # 模板的场景码：
+        # - water_mark_checkin_h3yun 开放场景码
+        # 
+        # 
+        self.scene_code = scene_code
+        # 模板的内容。
+        self.schema_content = schema_content
+        # 模板的标题。
+        self.title = title
+        # 群会话ID。
+        self.open_conversation_id = open_conversation_id
+        # 用户的userid。
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.layout_design_id is not None:
+            result['layoutDesignId'] = self.layout_design_id
+        if self.scene_code is not None:
+            result['sceneCode'] = self.scene_code
+        if self.schema_content is not None:
+            result['schemaContent'] = self.schema_content
+        if self.title is not None:
+            result['title'] = self.title
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('layoutDesignId') is not None:
+            self.layout_design_id = m.get('layoutDesignId')
+        if m.get('sceneCode') is not None:
+            self.scene_code = m.get('sceneCode')
+        if m.get('schemaContent') is not None:
+            self.schema_content = m.get('schemaContent')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SaveCustomWaterMarkTemplateResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        form_code: str = None,
+        water_mark_id: str = None,
+    ):
+        # 模板的表单Code。
+        self.form_code = form_code
+        # 模板的水印ID。
+        self.water_mark_id = water_mark_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        if self.water_mark_id is not None:
+            result['waterMarkId'] = self.water_mark_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        if m.get('waterMarkId') is not None:
+            self.water_mark_id = m.get('waterMarkId')
+        return self
+
+
+class SaveCustomWaterMarkTemplateResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: SaveCustomWaterMarkTemplateResponseBodyResult = None,
+    ):
+        # 返回对象。
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = SaveCustomWaterMarkTemplateResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class SaveCustomWaterMarkTemplateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SaveCustomWaterMarkTemplateResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SaveCustomWaterMarkTemplateResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

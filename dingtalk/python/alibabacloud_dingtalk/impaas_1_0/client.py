@@ -339,6 +339,90 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateGroup', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/groups', 'json', req, runtime)
         )
 
+    def create_trust_group(
+        self,
+        request: dingtalkimpaas__1__0_models.CreateTrustGroupRequest,
+    ) -> dingtalkimpaas__1__0_models.CreateTrustGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkimpaas__1__0_models.CreateTrustGroupHeaders()
+        return self.create_trust_group_with_options(request, headers, runtime)
+
+    async def create_trust_group_async(
+        self,
+        request: dingtalkimpaas__1__0_models.CreateTrustGroupRequest,
+    ) -> dingtalkimpaas__1__0_models.CreateTrustGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkimpaas__1__0_models.CreateTrustGroupHeaders()
+        return await self.create_trust_group_with_options_async(request, headers, runtime)
+
+    def create_trust_group_with_options(
+        self,
+        request: dingtalkimpaas__1__0_models.CreateTrustGroupRequest,
+        headers: dingtalkimpaas__1__0_models.CreateTrustGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkimpaas__1__0_models.CreateTrustGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel):
+            body['channel'] = request.channel
+        if not UtilClient.is_unset(request.icon_media_id):
+            body['iconMediaId'] = request.icon_media_id
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.properties):
+            body['properties'] = request.properties
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.operation_source):
+            real_headers['operationSource'] = UtilClient.to_jsonstring(headers.operation_source)
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkimpaas__1__0_models.CreateTrustGroupResponse(),
+            self.do_roarequest('CreateTrustGroup', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/groups/trusts', 'json', req, runtime)
+        )
+
+    async def create_trust_group_with_options_async(
+        self,
+        request: dingtalkimpaas__1__0_models.CreateTrustGroupRequest,
+        headers: dingtalkimpaas__1__0_models.CreateTrustGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkimpaas__1__0_models.CreateTrustGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel):
+            body['channel'] = request.channel
+        if not UtilClient.is_unset(request.icon_media_id):
+            body['iconMediaId'] = request.icon_media_id
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.properties):
+            body['properties'] = request.properties
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.operation_source):
+            real_headers['operationSource'] = UtilClient.to_jsonstring(headers.operation_source)
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkimpaas__1__0_models.CreateTrustGroupResponse(),
+            await self.do_roarequest_async('CreateTrustGroup', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/groups/trusts', 'json', req, runtime)
+        )
+
     def dismiss_group(
         self,
         request: dingtalkimpaas__1__0_models.DismissGroupRequest,

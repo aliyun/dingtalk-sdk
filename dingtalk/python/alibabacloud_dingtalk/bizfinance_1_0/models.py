@@ -4,6 +4,1340 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class BatchAddInvoiceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList(TeaModel):
+    def __init__(
+        self,
+        amount: str = None,
+        good_name: str = None,
+        quantity: str = None,
+        revenue_code: str = None,
+        row_no: str = None,
+        specification: str = None,
+        tax_amount: str = None,
+        tax_pre: str = None,
+        tax_pre_type: str = None,
+        tax_rate: str = None,
+        unit: str = None,
+        unit_price: str = None,
+    ):
+        # 金额
+        self.amount = amount
+        # 商品名称
+        self.good_name = good_name
+        # 数量
+        self.quantity = quantity
+        # 税收分类编码
+        self.revenue_code = revenue_code
+        # 行号
+        self.row_no = row_no
+        # 规格型号
+        self.specification = specification
+        # 税额
+        self.tax_amount = tax_amount
+        # 是否享受税收优惠：0-不享受，1-享受
+        self.tax_pre = tax_pre
+        # 优惠政策类型
+        self.tax_pre_type = tax_pre_type
+        # 税率
+        self.tax_rate = tax_rate
+        # 单位
+        self.unit = unit
+        # 单价
+        self.unit_price = unit_price
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.good_name is not None:
+            result['goodName'] = self.good_name
+        if self.quantity is not None:
+            result['quantity'] = self.quantity
+        if self.revenue_code is not None:
+            result['revenueCode'] = self.revenue_code
+        if self.row_no is not None:
+            result['rowNo'] = self.row_no
+        if self.specification is not None:
+            result['specification'] = self.specification
+        if self.tax_amount is not None:
+            result['taxAmount'] = self.tax_amount
+        if self.tax_pre is not None:
+            result['taxPre'] = self.tax_pre
+        if self.tax_pre_type is not None:
+            result['taxPreType'] = self.tax_pre_type
+        if self.tax_rate is not None:
+            result['taxRate'] = self.tax_rate
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.unit_price is not None:
+            result['unitPrice'] = self.unit_price
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('goodName') is not None:
+            self.good_name = m.get('goodName')
+        if m.get('quantity') is not None:
+            self.quantity = m.get('quantity')
+        if m.get('revenueCode') is not None:
+            self.revenue_code = m.get('revenueCode')
+        if m.get('rowNo') is not None:
+            self.row_no = m.get('rowNo')
+        if m.get('specification') is not None:
+            self.specification = m.get('specification')
+        if m.get('taxAmount') is not None:
+            self.tax_amount = m.get('taxAmount')
+        if m.get('taxPre') is not None:
+            self.tax_pre = m.get('taxPre')
+        if m.get('taxPreType') is not None:
+            self.tax_pre_type = m.get('taxPreType')
+        if m.get('taxRate') is not None:
+            self.tax_rate = m.get('taxRate')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('unitPrice') is not None:
+            self.unit_price = m.get('unitPrice')
+        return self
+
+
+class BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList(TeaModel):
+    def __init__(
+        self,
+        amount: str = None,
+        card_no: str = None,
+        end_date: str = None,
+        goods_name: str = None,
+        revenue_code: str = None,
+        row_no: str = None,
+        start_date: str = None,
+        tax_amount: str = None,
+        tax_rate: str = None,
+        vehicle_type: str = None,
+    ):
+        # 金额
+        self.amount = amount
+        # 车牌号
+        self.card_no = card_no
+        # 通行日期止
+        self.end_date = end_date
+        # 商品名称
+        self.goods_name = goods_name
+        # 税收分类编码
+        self.revenue_code = revenue_code
+        # 行号
+        self.row_no = row_no
+        # 通行日期起
+        self.start_date = start_date
+        # 税额
+        self.tax_amount = tax_amount
+        # 税率
+        self.tax_rate = tax_rate
+        # 类型
+        self.vehicle_type = vehicle_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.card_no is not None:
+            result['cardNo'] = self.card_no
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.goods_name is not None:
+            result['goodsName'] = self.goods_name
+        if self.revenue_code is not None:
+            result['revenueCode'] = self.revenue_code
+        if self.row_no is not None:
+            result['rowNo'] = self.row_no
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.tax_amount is not None:
+            result['taxAmount'] = self.tax_amount
+        if self.tax_rate is not None:
+            result['taxRate'] = self.tax_rate
+        if self.vehicle_type is not None:
+            result['vehicleType'] = self.vehicle_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('cardNo') is not None:
+            self.card_no = m.get('cardNo')
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('goodsName') is not None:
+            self.goods_name = m.get('goodsName')
+        if m.get('revenueCode') is not None:
+            self.revenue_code = m.get('revenueCode')
+        if m.get('rowNo') is not None:
+            self.row_no = m.get('rowNo')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('taxAmount') is not None:
+            self.tax_amount = m.get('taxAmount')
+        if m.get('taxRate') is not None:
+            self.tax_rate = m.get('taxRate')
+        if m.get('vehicleType') is not None:
+            self.vehicle_type = m.get('vehicleType')
+        return self
+
+
+class BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList(TeaModel):
+    def __init__(
+        self,
+        auction_unit: str = None,
+        auction_unit_address: str = None,
+        auction_unit_bank: str = None,
+        auction_unit_tax_no: str = None,
+        auction_util_tel: str = None,
+        car_model: str = None,
+        card_no: str = None,
+        registration: str = None,
+        transfer_vehicle: str = None,
+        used_car_address: str = None,
+        used_car_market: str = None,
+        used_car_market_bank: str = None,
+        used_car_market_phone: str = None,
+        used_car_market_tax_no: str = None,
+        vehicle_no: str = None,
+        vehicle_type: str = None,
+    ):
+        # 经营、拍卖单位
+        self.auction_unit = auction_unit
+        # 经营、拍卖单位地址
+        self.auction_unit_address = auction_unit_address
+        # 经营、拍卖单位银行
+        self.auction_unit_bank = auction_unit_bank
+        # 经营、拍卖单位税号
+        self.auction_unit_tax_no = auction_unit_tax_no
+        # 经营、拍卖单位电话
+        self.auction_util_tel = auction_util_tel
+        # 厂牌型号
+        self.car_model = car_model
+        # 车牌照号
+        self.card_no = card_no
+        # 登记证号
+        self.registration = registration
+        # 转入地车辆管理所名称
+        self.transfer_vehicle = transfer_vehicle
+        # 二手车市场地址
+        self.used_car_address = used_car_address
+        # 二手车市场
+        self.used_car_market = used_car_market
+        # 二手车市场开户银行、账号
+        self.used_car_market_bank = used_car_market_bank
+        # 二手车市场电话
+        self.used_car_market_phone = used_car_market_phone
+        # 二手车市场纳税人识别号
+        self.used_car_market_tax_no = used_car_market_tax_no
+        # 车架号/车辆识别号
+        self.vehicle_no = vehicle_no
+        # 车辆类型
+        self.vehicle_type = vehicle_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auction_unit is not None:
+            result['auctionUnit'] = self.auction_unit
+        if self.auction_unit_address is not None:
+            result['auctionUnitAddress'] = self.auction_unit_address
+        if self.auction_unit_bank is not None:
+            result['auctionUnitBank'] = self.auction_unit_bank
+        if self.auction_unit_tax_no is not None:
+            result['auctionUnitTaxNo'] = self.auction_unit_tax_no
+        if self.auction_util_tel is not None:
+            result['auctionUtilTel'] = self.auction_util_tel
+        if self.car_model is not None:
+            result['carModel'] = self.car_model
+        if self.card_no is not None:
+            result['cardNo'] = self.card_no
+        if self.registration is not None:
+            result['registration'] = self.registration
+        if self.transfer_vehicle is not None:
+            result['transferVehicle'] = self.transfer_vehicle
+        if self.used_car_address is not None:
+            result['usedCarAddress'] = self.used_car_address
+        if self.used_car_market is not None:
+            result['usedCarMarket'] = self.used_car_market
+        if self.used_car_market_bank is not None:
+            result['usedCarMarketBank'] = self.used_car_market_bank
+        if self.used_car_market_phone is not None:
+            result['usedCarMarketPhone'] = self.used_car_market_phone
+        if self.used_car_market_tax_no is not None:
+            result['usedCarMarketTaxNo'] = self.used_car_market_tax_no
+        if self.vehicle_no is not None:
+            result['vehicleNo'] = self.vehicle_no
+        if self.vehicle_type is not None:
+            result['vehicleType'] = self.vehicle_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('auctionUnit') is not None:
+            self.auction_unit = m.get('auctionUnit')
+        if m.get('auctionUnitAddress') is not None:
+            self.auction_unit_address = m.get('auctionUnitAddress')
+        if m.get('auctionUnitBank') is not None:
+            self.auction_unit_bank = m.get('auctionUnitBank')
+        if m.get('auctionUnitTaxNo') is not None:
+            self.auction_unit_tax_no = m.get('auctionUnitTaxNo')
+        if m.get('auctionUtilTel') is not None:
+            self.auction_util_tel = m.get('auctionUtilTel')
+        if m.get('carModel') is not None:
+            self.car_model = m.get('carModel')
+        if m.get('cardNo') is not None:
+            self.card_no = m.get('cardNo')
+        if m.get('registration') is not None:
+            self.registration = m.get('registration')
+        if m.get('transferVehicle') is not None:
+            self.transfer_vehicle = m.get('transferVehicle')
+        if m.get('usedCarAddress') is not None:
+            self.used_car_address = m.get('usedCarAddress')
+        if m.get('usedCarMarket') is not None:
+            self.used_car_market = m.get('usedCarMarket')
+        if m.get('usedCarMarketBank') is not None:
+            self.used_car_market_bank = m.get('usedCarMarketBank')
+        if m.get('usedCarMarketPhone') is not None:
+            self.used_car_market_phone = m.get('usedCarMarketPhone')
+        if m.get('usedCarMarketTaxNo') is not None:
+            self.used_car_market_tax_no = m.get('usedCarMarketTaxNo')
+        if m.get('vehicleNo') is not None:
+            self.vehicle_no = m.get('vehicleNo')
+        if m.get('vehicleType') is not None:
+            self.vehicle_type = m.get('vehicleType')
+        return self
+
+
+class BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList(TeaModel):
+    def __init__(
+        self,
+        brand: str = None,
+        certificate_no: str = None,
+        engine_no: str = None,
+        id_card_no: str = None,
+        import_certificate_no: str = None,
+        inspection_list_no: str = None,
+        max_passengers: str = None,
+        origin_place: str = None,
+        payment_voucher_no: str = None,
+        tax_authority_name: str = None,
+        tax_authority_no: str = None,
+        tax_rate: str = None,
+        tonnage: str = None,
+        vehicle_no: str = None,
+        vehicle_type: str = None,
+    ):
+        # 品牌
+        self.brand = brand
+        # 合格证号
+        self.certificate_no = certificate_no
+        # 发动机号
+        self.engine_no = engine_no
+        # 身份证号/组织机构代码
+        self.id_card_no = id_card_no
+        # 进口证书号
+        self.import_certificate_no = import_certificate_no
+        # 商检单号
+        self.inspection_list_no = inspection_list_no
+        # 限乘人数
+        self.max_passengers = max_passengers
+        # 产地
+        self.origin_place = origin_place
+        # 完税凭证号码
+        self.payment_voucher_no = payment_voucher_no
+        # 主管税务机关名称
+        self.tax_authority_name = tax_authority_name
+        # 主管税务机关代码
+        self.tax_authority_no = tax_authority_no
+        # 税率
+        self.tax_rate = tax_rate
+        # 吨位
+        self.tonnage = tonnage
+        # 车架号码
+        self.vehicle_no = vehicle_no
+        # 车辆类型
+        self.vehicle_type = vehicle_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.brand is not None:
+            result['brand'] = self.brand
+        if self.certificate_no is not None:
+            result['certificateNo'] = self.certificate_no
+        if self.engine_no is not None:
+            result['engineNo'] = self.engine_no
+        if self.id_card_no is not None:
+            result['idCardNo'] = self.id_card_no
+        if self.import_certificate_no is not None:
+            result['importCertificateNo'] = self.import_certificate_no
+        if self.inspection_list_no is not None:
+            result['inspectionListNo'] = self.inspection_list_no
+        if self.max_passengers is not None:
+            result['maxPassengers'] = self.max_passengers
+        if self.origin_place is not None:
+            result['originPlace'] = self.origin_place
+        if self.payment_voucher_no is not None:
+            result['paymentVoucherNo'] = self.payment_voucher_no
+        if self.tax_authority_name is not None:
+            result['taxAuthorityName'] = self.tax_authority_name
+        if self.tax_authority_no is not None:
+            result['taxAuthorityNo'] = self.tax_authority_no
+        if self.tax_rate is not None:
+            result['taxRate'] = self.tax_rate
+        if self.tonnage is not None:
+            result['tonnage'] = self.tonnage
+        if self.vehicle_no is not None:
+            result['vehicleNo'] = self.vehicle_no
+        if self.vehicle_type is not None:
+            result['vehicleType'] = self.vehicle_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('brand') is not None:
+            self.brand = m.get('brand')
+        if m.get('certificateNo') is not None:
+            self.certificate_no = m.get('certificateNo')
+        if m.get('engineNo') is not None:
+            self.engine_no = m.get('engineNo')
+        if m.get('idCardNo') is not None:
+            self.id_card_no = m.get('idCardNo')
+        if m.get('importCertificateNo') is not None:
+            self.import_certificate_no = m.get('importCertificateNo')
+        if m.get('inspectionListNo') is not None:
+            self.inspection_list_no = m.get('inspectionListNo')
+        if m.get('maxPassengers') is not None:
+            self.max_passengers = m.get('maxPassengers')
+        if m.get('originPlace') is not None:
+            self.origin_place = m.get('originPlace')
+        if m.get('paymentVoucherNo') is not None:
+            self.payment_voucher_no = m.get('paymentVoucherNo')
+        if m.get('taxAuthorityName') is not None:
+            self.tax_authority_name = m.get('taxAuthorityName')
+        if m.get('taxAuthorityNo') is not None:
+            self.tax_authority_no = m.get('taxAuthorityNo')
+        if m.get('taxRate') is not None:
+            self.tax_rate = m.get('taxRate')
+        if m.get('tonnage') is not None:
+            self.tonnage = m.get('tonnage')
+        if m.get('vehicleNo') is not None:
+            self.vehicle_no = m.get('vehicleNo')
+        if m.get('vehicleType') is not None:
+            self.vehicle_type = m.get('vehicleType')
+        return self
+
+
+class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
+    def __init__(
+        self,
+        account_period: str = None,
+        amount: str = None,
+        amount_with_tax: str = None,
+        check_code: str = None,
+        check_time: str = None,
+        drew_date: str = None,
+        electronic_url: str = None,
+        finance_type: str = None,
+        fund_type: str = None,
+        general_invoice_detail_volist: List[BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList] = None,
+        invoice_code: str = None,
+        invoice_no: str = None,
+        invoice_type: str = None,
+        machine_code: str = None,
+        oil_flag: str = None,
+        payee: str = None,
+        process_inst_code: str = None,
+        process_inst_type: str = None,
+        purchaser_address: str = None,
+        purchaser_bank_account: str = None,
+        purchaser_bank_name_account: str = None,
+        purchaser_name: str = None,
+        purchaser_tax_no: str = None,
+        purchaser_tel: str = None,
+        remark: str = None,
+        second_hand_car_invoice_detail_list: List[BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList] = None,
+        seller_address: str = None,
+        seller_bank_account: str = None,
+        seller_bank_name_account: str = None,
+        seller_name: str = None,
+        seller_tax_no: str = None,
+        seller_tel: str = None,
+        status: str = None,
+        supply_sign: str = None,
+        tax_amount: str = None,
+        used_vehicle_sale_detail_volist: List[BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList] = None,
+        vehicle_sale_detail_volist: List[BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList] = None,
+        verify_status: str = None,
+        voucher_code: str = None,
+        voucher_status: str = None,
+    ):
+        # 账期时间
+        self.account_period = account_period
+        # 不含税金额
+        self.amount = amount
+        # 含税金额
+        self.amount_with_tax = amount_with_tax
+        # 校验码
+        self.check_code = check_code
+        # 查验时间
+        self.check_time = check_time
+        # 开票日期
+        self.drew_date = drew_date
+        # 电票版式文件下载地址
+        self.electronic_url = electronic_url
+        # 财务类型，INPUT-VAT(进项),OUTPUT_VAT(销项)
+        self.finance_type = finance_type
+        # 资金类型 ，RED（红票），（BLUE）蓝票
+        self.fund_type = fund_type
+        # 常规发票明细
+        self.general_invoice_detail_volist = general_invoice_detail_volist
+        # 发票代码
+        self.invoice_code = invoice_code
+        # 发票号码
+        self.invoice_no = invoice_no
+        # 发票类型
+        self.invoice_type = invoice_type
+        # 机器码
+        self.machine_code = machine_code
+        # 成品油标识
+        self.oil_flag = oil_flag
+        # 收款人
+        self.payee = payee
+        # 审批单实例
+        self.process_inst_code = process_inst_code
+        # 审批单类型
+        self.process_inst_type = process_inst_type
+        # 购方地址
+        self.purchaser_address = purchaser_address
+        # 购方银行账户
+        self.purchaser_bank_account = purchaser_bank_account
+        # 购方银行名称
+        self.purchaser_bank_name_account = purchaser_bank_name_account
+        # 购方名称
+        self.purchaser_name = purchaser_name
+        # 购方税号
+        self.purchaser_tax_no = purchaser_tax_no
+        # 购方电话
+        self.purchaser_tel = purchaser_tel
+        # 备注
+        self.remark = remark
+        self.second_hand_car_invoice_detail_list = second_hand_car_invoice_detail_list
+        # 销方地址
+        self.seller_address = seller_address
+        # 销方银行账户
+        self.seller_bank_account = seller_bank_account
+        # 销方银行名称
+        self.seller_bank_name_account = seller_bank_name_account
+        # 销方名称
+        self.seller_name = seller_name
+        # 销方税号
+        self.seller_tax_no = seller_tax_no
+        # 销方电话
+        self.seller_tel = seller_tel
+        # 发票状态
+        self.status = status
+        # 代开发票标识 1-自开，2-代开
+        self.supply_sign = supply_sign
+        # 税额
+        self.tax_amount = tax_amount
+        self.used_vehicle_sale_detail_volist = used_vehicle_sale_detail_volist
+        self.vehicle_sale_detail_volist = vehicle_sale_detail_volist
+        # 发票查验状态
+        self.verify_status = verify_status
+        # 凭证code
+        self.voucher_code = voucher_code
+        # 生成凭证状态
+        self.voucher_status = voucher_status
+
+    def validate(self):
+        if self.general_invoice_detail_volist:
+            for k in self.general_invoice_detail_volist:
+                if k:
+                    k.validate()
+        if self.second_hand_car_invoice_detail_list:
+            for k in self.second_hand_car_invoice_detail_list:
+                if k:
+                    k.validate()
+        if self.used_vehicle_sale_detail_volist:
+            for k in self.used_vehicle_sale_detail_volist:
+                if k:
+                    k.validate()
+        if self.vehicle_sale_detail_volist:
+            for k in self.vehicle_sale_detail_volist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.account_period is not None:
+            result['accountPeriod'] = self.account_period
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.amount_with_tax is not None:
+            result['amountWithTax'] = self.amount_with_tax
+        if self.check_code is not None:
+            result['checkCode'] = self.check_code
+        if self.check_time is not None:
+            result['checkTime'] = self.check_time
+        if self.drew_date is not None:
+            result['drewDate'] = self.drew_date
+        if self.electronic_url is not None:
+            result['electronicUrl'] = self.electronic_url
+        if self.finance_type is not None:
+            result['financeType'] = self.finance_type
+        if self.fund_type is not None:
+            result['fundType'] = self.fund_type
+        result['generalInvoiceDetailVOList'] = []
+        if self.general_invoice_detail_volist is not None:
+            for k in self.general_invoice_detail_volist:
+                result['generalInvoiceDetailVOList'].append(k.to_map() if k else None)
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        if self.invoice_type is not None:
+            result['invoiceType'] = self.invoice_type
+        if self.machine_code is not None:
+            result['machineCode'] = self.machine_code
+        if self.oil_flag is not None:
+            result['oilFlag'] = self.oil_flag
+        if self.payee is not None:
+            result['payee'] = self.payee
+        if self.process_inst_code is not None:
+            result['processInstCode'] = self.process_inst_code
+        if self.process_inst_type is not None:
+            result['processInstType'] = self.process_inst_type
+        if self.purchaser_address is not None:
+            result['purchaserAddress'] = self.purchaser_address
+        if self.purchaser_bank_account is not None:
+            result['purchaserBankAccount'] = self.purchaser_bank_account
+        if self.purchaser_bank_name_account is not None:
+            result['purchaserBankNameAccount'] = self.purchaser_bank_name_account
+        if self.purchaser_name is not None:
+            result['purchaserName'] = self.purchaser_name
+        if self.purchaser_tax_no is not None:
+            result['purchaserTaxNo'] = self.purchaser_tax_no
+        if self.purchaser_tel is not None:
+            result['purchaserTel'] = self.purchaser_tel
+        if self.remark is not None:
+            result['remark'] = self.remark
+        result['secondHandCarInvoiceDetailList'] = []
+        if self.second_hand_car_invoice_detail_list is not None:
+            for k in self.second_hand_car_invoice_detail_list:
+                result['secondHandCarInvoiceDetailList'].append(k.to_map() if k else None)
+        if self.seller_address is not None:
+            result['sellerAddress'] = self.seller_address
+        if self.seller_bank_account is not None:
+            result['sellerBankAccount'] = self.seller_bank_account
+        if self.seller_bank_name_account is not None:
+            result['sellerBankNameAccount'] = self.seller_bank_name_account
+        if self.seller_name is not None:
+            result['sellerName'] = self.seller_name
+        if self.seller_tax_no is not None:
+            result['sellerTaxNo'] = self.seller_tax_no
+        if self.seller_tel is not None:
+            result['sellerTel'] = self.seller_tel
+        if self.status is not None:
+            result['status'] = self.status
+        if self.supply_sign is not None:
+            result['supplySign'] = self.supply_sign
+        if self.tax_amount is not None:
+            result['taxAmount'] = self.tax_amount
+        result['usedVehicleSaleDetailVOList'] = []
+        if self.used_vehicle_sale_detail_volist is not None:
+            for k in self.used_vehicle_sale_detail_volist:
+                result['usedVehicleSaleDetailVOList'].append(k.to_map() if k else None)
+        result['vehicleSaleDetailVOList'] = []
+        if self.vehicle_sale_detail_volist is not None:
+            for k in self.vehicle_sale_detail_volist:
+                result['vehicleSaleDetailVOList'].append(k.to_map() if k else None)
+        if self.verify_status is not None:
+            result['verifyStatus'] = self.verify_status
+        if self.voucher_code is not None:
+            result['voucherCode'] = self.voucher_code
+        if self.voucher_status is not None:
+            result['voucherStatus'] = self.voucher_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountPeriod') is not None:
+            self.account_period = m.get('accountPeriod')
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('amountWithTax') is not None:
+            self.amount_with_tax = m.get('amountWithTax')
+        if m.get('checkCode') is not None:
+            self.check_code = m.get('checkCode')
+        if m.get('checkTime') is not None:
+            self.check_time = m.get('checkTime')
+        if m.get('drewDate') is not None:
+            self.drew_date = m.get('drewDate')
+        if m.get('electronicUrl') is not None:
+            self.electronic_url = m.get('electronicUrl')
+        if m.get('financeType') is not None:
+            self.finance_type = m.get('financeType')
+        if m.get('fundType') is not None:
+            self.fund_type = m.get('fundType')
+        self.general_invoice_detail_volist = []
+        if m.get('generalInvoiceDetailVOList') is not None:
+            for k in m.get('generalInvoiceDetailVOList'):
+                temp_model = BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList()
+                self.general_invoice_detail_volist.append(temp_model.from_map(k))
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        if m.get('invoiceType') is not None:
+            self.invoice_type = m.get('invoiceType')
+        if m.get('machineCode') is not None:
+            self.machine_code = m.get('machineCode')
+        if m.get('oilFlag') is not None:
+            self.oil_flag = m.get('oilFlag')
+        if m.get('payee') is not None:
+            self.payee = m.get('payee')
+        if m.get('processInstCode') is not None:
+            self.process_inst_code = m.get('processInstCode')
+        if m.get('processInstType') is not None:
+            self.process_inst_type = m.get('processInstType')
+        if m.get('purchaserAddress') is not None:
+            self.purchaser_address = m.get('purchaserAddress')
+        if m.get('purchaserBankAccount') is not None:
+            self.purchaser_bank_account = m.get('purchaserBankAccount')
+        if m.get('purchaserBankNameAccount') is not None:
+            self.purchaser_bank_name_account = m.get('purchaserBankNameAccount')
+        if m.get('purchaserName') is not None:
+            self.purchaser_name = m.get('purchaserName')
+        if m.get('purchaserTaxNo') is not None:
+            self.purchaser_tax_no = m.get('purchaserTaxNo')
+        if m.get('purchaserTel') is not None:
+            self.purchaser_tel = m.get('purchaserTel')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        self.second_hand_car_invoice_detail_list = []
+        if m.get('secondHandCarInvoiceDetailList') is not None:
+            for k in m.get('secondHandCarInvoiceDetailList'):
+                temp_model = BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList()
+                self.second_hand_car_invoice_detail_list.append(temp_model.from_map(k))
+        if m.get('sellerAddress') is not None:
+            self.seller_address = m.get('sellerAddress')
+        if m.get('sellerBankAccount') is not None:
+            self.seller_bank_account = m.get('sellerBankAccount')
+        if m.get('sellerBankNameAccount') is not None:
+            self.seller_bank_name_account = m.get('sellerBankNameAccount')
+        if m.get('sellerName') is not None:
+            self.seller_name = m.get('sellerName')
+        if m.get('sellerTaxNo') is not None:
+            self.seller_tax_no = m.get('sellerTaxNo')
+        if m.get('sellerTel') is not None:
+            self.seller_tel = m.get('sellerTel')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('supplySign') is not None:
+            self.supply_sign = m.get('supplySign')
+        if m.get('taxAmount') is not None:
+            self.tax_amount = m.get('taxAmount')
+        self.used_vehicle_sale_detail_volist = []
+        if m.get('usedVehicleSaleDetailVOList') is not None:
+            for k in m.get('usedVehicleSaleDetailVOList'):
+                temp_model = BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList()
+                self.used_vehicle_sale_detail_volist.append(temp_model.from_map(k))
+        self.vehicle_sale_detail_volist = []
+        if m.get('vehicleSaleDetailVOList') is not None:
+            for k in m.get('vehicleSaleDetailVOList'):
+                temp_model = BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList()
+                self.vehicle_sale_detail_volist.append(temp_model.from_map(k))
+        if m.get('verifyStatus') is not None:
+            self.verify_status = m.get('verifyStatus')
+        if m.get('voucherCode') is not None:
+            self.voucher_code = m.get('voucherCode')
+        if m.get('voucherStatus') is not None:
+            self.voucher_status = m.get('voucherStatus')
+        return self
+
+
+class BatchAddInvoiceRequest(TeaModel):
+    def __init__(
+        self,
+        general_invoice_volist: List[BatchAddInvoiceRequestGeneralInvoiceVOList] = None,
+    ):
+        # 发票模型
+        self.general_invoice_volist = general_invoice_volist
+
+    def validate(self):
+        if self.general_invoice_volist:
+            for k in self.general_invoice_volist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['generalInvoiceVOList'] = []
+        if self.general_invoice_volist is not None:
+            for k in self.general_invoice_volist:
+                result['generalInvoiceVOList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.general_invoice_volist = []
+        if m.get('generalInvoiceVOList') is not None:
+            for k in m.get('generalInvoiceVOList'):
+                temp_model = BatchAddInvoiceRequestGeneralInvoiceVOList()
+                self.general_invoice_volist.append(temp_model.from_map(k))
+        return self
+
+
+class BatchAddInvoiceResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        error_key: str = None,
+        error_msg: str = None,
+    ):
+        # 错误数据的key
+        self.error_key = error_key
+        # 错误信息
+        self.error_msg = error_msg
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_key is not None:
+            result['errorKey'] = self.error_key
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorKey') is not None:
+            self.error_key = m.get('errorKey')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        return self
+
+
+class BatchAddInvoiceResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[BatchAddInvoiceResponseBodyResult] = None,
+    ):
+        # 错误信息
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = BatchAddInvoiceResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class BatchAddInvoiceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BatchAddInvoiceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BatchAddInvoiceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CheckVoucherStatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CheckVoucherStatusRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: int = None,
+        finance_type: str = None,
+        invoice_code: str = None,
+        invoice_no: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        start_time: int = None,
+        tax_no: str = None,
+        verify_status: str = None,
+    ):
+        # 结束时间
+        self.end_time = end_time
+        # 进项发票/销项发票
+        self.finance_type = finance_type
+        # 发票编码
+        self.invoice_code = invoice_code
+        # 发票号码
+        self.invoice_no = invoice_no
+        # 页号
+        self.page_number = page_number
+        # 当前页大小
+        self.page_size = page_size
+        # 开始时间
+        self.start_time = start_time
+        # 税号
+        self.tax_no = tax_no
+        # 发票认证状态
+        self.verify_status = verify_status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.finance_type is not None:
+            result['financeType'] = self.finance_type
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.tax_no is not None:
+            result['taxNo'] = self.tax_no
+        if self.verify_status is not None:
+            result['verifyStatus'] = self.verify_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('financeType') is not None:
+            self.finance_type = m.get('financeType')
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('taxNo') is not None:
+            self.tax_no = m.get('taxNo')
+        if m.get('verifyStatus') is not None:
+            self.verify_status = m.get('verifyStatus')
+        return self
+
+
+class CheckVoucherStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CheckVoucherStatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CheckVoucherStatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CheckVoucherStatusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateCustomerHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateCustomerRequest(TeaModel):
+    def __init__(
+        self,
+        creator: str = None,
+        description: str = None,
+        name: str = None,
+        purchaser_account: str = None,
+        purchaser_address: str = None,
+        purchaser_bank_name: str = None,
+        purchaser_name: str = None,
+        purchaser_tax_no: str = None,
+        purchaser_tel: str = None,
+    ):
+        # 创建人userId
+        self.creator = creator
+        # 客户描述
+        self.description = description
+        # 客户名字
+        self.name = name
+        # 购方账户
+        self.purchaser_account = purchaser_account
+        # 购房地址
+        self.purchaser_address = purchaser_address
+        # 购方银行
+        self.purchaser_bank_name = purchaser_bank_name
+        # 购方名字
+        self.purchaser_name = purchaser_name
+        # 购方税号
+        self.purchaser_tax_no = purchaser_tax_no
+        # 购方电话
+        self.purchaser_tel = purchaser_tel
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.creator is not None:
+            result['creator'] = self.creator
+        if self.description is not None:
+            result['description'] = self.description
+        if self.name is not None:
+            result['name'] = self.name
+        if self.purchaser_account is not None:
+            result['purchaserAccount'] = self.purchaser_account
+        if self.purchaser_address is not None:
+            result['purchaserAddress'] = self.purchaser_address
+        if self.purchaser_bank_name is not None:
+            result['purchaserBankName'] = self.purchaser_bank_name
+        if self.purchaser_name is not None:
+            result['purchaserName'] = self.purchaser_name
+        if self.purchaser_tax_no is not None:
+            result['purchaserTaxNo'] = self.purchaser_tax_no
+        if self.purchaser_tel is not None:
+            result['purchaserTel'] = self.purchaser_tel
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('creator') is not None:
+            self.creator = m.get('creator')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('purchaserAccount') is not None:
+            self.purchaser_account = m.get('purchaserAccount')
+        if m.get('purchaserAddress') is not None:
+            self.purchaser_address = m.get('purchaserAddress')
+        if m.get('purchaserBankName') is not None:
+            self.purchaser_bank_name = m.get('purchaserBankName')
+        if m.get('purchaserName') is not None:
+            self.purchaser_name = m.get('purchaserName')
+        if m.get('purchaserTaxNo') is not None:
+            self.purchaser_tax_no = m.get('purchaserTaxNo')
+        if m.get('purchaserTel') is not None:
+            self.purchaser_tel = m.get('purchaserTel')
+        return self
+
+
+class CreateCustomerResponseBody(TeaModel):
+    def __init__(
+        self,
+        customer_code: str = None,
+    ):
+        # 客户CODE
+        self.customer_code = customer_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.customer_code is not None:
+            result['customerCode'] = self.customer_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customerCode') is not None:
+            self.customer_code = m.get('customerCode')
+        return self
+
+
+class CreateCustomerResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateCustomerResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateCustomerResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateReceiptHeaders(TeaModel):
     def __init__(
         self,
@@ -875,6 +2209,7 @@ class GetCustomerResponseBody(TeaModel):
         description: str = None,
         name: str = None,
         status: str = None,
+        user_define_code: str = None,
     ):
         # 客户Code
         self.code = code
@@ -886,6 +2221,8 @@ class GetCustomerResponseBody(TeaModel):
         self.name = name
         # 状态：启用(valid), 停用(invalid), 删除(deleted)
         self.status = status
+        # 用户自定义code
+        self.user_define_code = user_define_code
 
     def validate(self):
         pass
@@ -906,6 +2243,8 @@ class GetCustomerResponseBody(TeaModel):
             result['name'] = self.name
         if self.status is not None:
             result['status'] = self.status
+        if self.user_define_code is not None:
+            result['userDefineCode'] = self.user_define_code
         return result
 
     def from_map(self, m: dict = None):
@@ -920,6 +2259,8 @@ class GetCustomerResponseBody(TeaModel):
             self.name = m.get('name')
         if m.get('status') is not None:
             self.status = m.get('status')
+        if m.get('userDefineCode') is not None:
+            self.user_define_code = m.get('userDefineCode')
         return self
 
 
@@ -1135,6 +2476,1107 @@ class GetFinanceAccountResponse(TeaModel):
         return self
 
 
+class GetInvoiceByPageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetInvoiceByPageRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: int = None,
+        finance_type: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        start_time: int = None,
+        tax_no: str = None,
+        verify_status: str = None,
+    ):
+        # 查询结束时间
+        self.end_time = end_time
+        # 发票类型
+        self.finance_type = finance_type
+        self.page_number = page_number
+        self.page_size = page_size
+        # 查询开始时间
+        self.start_time = start_time
+        # 税号
+        self.tax_no = tax_no
+        # 发票状态
+        self.verify_status = verify_status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.finance_type is not None:
+            result['financeType'] = self.finance_type
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.tax_no is not None:
+            result['taxNo'] = self.tax_no
+        if self.verify_status is not None:
+            result['verifyStatus'] = self.verify_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('financeType') is not None:
+            self.finance_type = m.get('financeType')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('taxNo') is not None:
+            self.tax_no = m.get('taxNo')
+        if m.get('verifyStatus') is not None:
+            self.verify_status = m.get('verifyStatus')
+        return self
+
+
+class GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList(TeaModel):
+    def __init__(
+        self,
+        amount: str = None,
+        good_name: str = None,
+        quantity: str = None,
+        revenue_code: str = None,
+        row_no: str = None,
+        specification: str = None,
+        tax_amount: str = None,
+        tax_pre: str = None,
+        tax_rate: str = None,
+        unit: str = None,
+        unit_price: str = None,
+    ):
+        # 金额
+        self.amount = amount
+        # 商品名称
+        self.good_name = good_name
+        # 数量
+        self.quantity = quantity
+        # 税收分类编码
+        self.revenue_code = revenue_code
+        # 行号
+        self.row_no = row_no
+        # 规格型号
+        self.specification = specification
+        # 税额
+        self.tax_amount = tax_amount
+        # 是否享受税收优惠：0-不享受，1-享受
+        self.tax_pre = tax_pre
+        # 税率
+        self.tax_rate = tax_rate
+        # 单位
+        self.unit = unit
+        # 单价
+        self.unit_price = unit_price
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.good_name is not None:
+            result['goodName'] = self.good_name
+        if self.quantity is not None:
+            result['quantity'] = self.quantity
+        if self.revenue_code is not None:
+            result['revenueCode'] = self.revenue_code
+        if self.row_no is not None:
+            result['rowNo'] = self.row_no
+        if self.specification is not None:
+            result['specification'] = self.specification
+        if self.tax_amount is not None:
+            result['taxAmount'] = self.tax_amount
+        if self.tax_pre is not None:
+            result['taxPre'] = self.tax_pre
+        if self.tax_rate is not None:
+            result['taxRate'] = self.tax_rate
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.unit_price is not None:
+            result['unitPrice'] = self.unit_price
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('goodName') is not None:
+            self.good_name = m.get('goodName')
+        if m.get('quantity') is not None:
+            self.quantity = m.get('quantity')
+        if m.get('revenueCode') is not None:
+            self.revenue_code = m.get('revenueCode')
+        if m.get('rowNo') is not None:
+            self.row_no = m.get('rowNo')
+        if m.get('specification') is not None:
+            self.specification = m.get('specification')
+        if m.get('taxAmount') is not None:
+            self.tax_amount = m.get('taxAmount')
+        if m.get('taxPre') is not None:
+            self.tax_pre = m.get('taxPre')
+        if m.get('taxRate') is not None:
+            self.tax_rate = m.get('taxRate')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('unitPrice') is not None:
+            self.unit_price = m.get('unitPrice')
+        return self
+
+
+class GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList(TeaModel):
+    def __init__(
+        self,
+        amount: str = None,
+        card_no: str = None,
+        end_date: str = None,
+        goods_name: str = None,
+        revenue_code: str = None,
+        row_no: str = None,
+        start_date: str = None,
+        tax_amount: str = None,
+        tax_rate: str = None,
+        vehicle_type: str = None,
+    ):
+        # 金额
+        self.amount = amount
+        # 车牌号
+        self.card_no = card_no
+        # 通行日期止
+        self.end_date = end_date
+        # 商品名称
+        self.goods_name = goods_name
+        # 税收分类编码
+        self.revenue_code = revenue_code
+        # 行号
+        self.row_no = row_no
+        # 通行日期起
+        self.start_date = start_date
+        # 税额
+        self.tax_amount = tax_amount
+        # 税率
+        self.tax_rate = tax_rate
+        # 类型
+        self.vehicle_type = vehicle_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.card_no is not None:
+            result['cardNo'] = self.card_no
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.goods_name is not None:
+            result['goodsName'] = self.goods_name
+        if self.revenue_code is not None:
+            result['revenueCode'] = self.revenue_code
+        if self.row_no is not None:
+            result['rowNo'] = self.row_no
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.tax_amount is not None:
+            result['taxAmount'] = self.tax_amount
+        if self.tax_rate is not None:
+            result['taxRate'] = self.tax_rate
+        if self.vehicle_type is not None:
+            result['vehicleType'] = self.vehicle_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('cardNo') is not None:
+            self.card_no = m.get('cardNo')
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('goodsName') is not None:
+            self.goods_name = m.get('goodsName')
+        if m.get('revenueCode') is not None:
+            self.revenue_code = m.get('revenueCode')
+        if m.get('rowNo') is not None:
+            self.row_no = m.get('rowNo')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('taxAmount') is not None:
+            self.tax_amount = m.get('taxAmount')
+        if m.get('taxRate') is not None:
+            self.tax_rate = m.get('taxRate')
+        if m.get('vehicleType') is not None:
+            self.vehicle_type = m.get('vehicleType')
+        return self
+
+
+class GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList(TeaModel):
+    def __init__(
+        self,
+        auction_unit: str = None,
+        auction_unit_address: str = None,
+        auction_unit_bank: str = None,
+        auction_unit_tax_no: str = None,
+        auction_util_tel: str = None,
+        car_model: str = None,
+        card_no: str = None,
+        registration: str = None,
+        transfer_vehicle: str = None,
+        used_car_address: str = None,
+        used_car_market: str = None,
+        used_car_market_bank: str = None,
+        used_car_market_phone: str = None,
+        used_car_market_tax_no: str = None,
+        vehicle_no: str = None,
+        vehicle_type: str = None,
+    ):
+        # 经营、拍卖单位
+        self.auction_unit = auction_unit
+        # 经营、拍卖单位地址
+        self.auction_unit_address = auction_unit_address
+        # 经营、拍卖单位银行
+        self.auction_unit_bank = auction_unit_bank
+        # 经营、拍卖单位税号
+        self.auction_unit_tax_no = auction_unit_tax_no
+        # 经营、拍卖单位电话
+        self.auction_util_tel = auction_util_tel
+        # 厂牌型号
+        self.car_model = car_model
+        # 车牌照号
+        self.card_no = card_no
+        # 登记证号
+        self.registration = registration
+        # 转入地车辆管理所名称
+        self.transfer_vehicle = transfer_vehicle
+        # 二手车市场地址
+        self.used_car_address = used_car_address
+        # 二手车市场
+        self.used_car_market = used_car_market
+        # 二手车市场开户银行、账号
+        self.used_car_market_bank = used_car_market_bank
+        # 二手车市场电话
+        self.used_car_market_phone = used_car_market_phone
+        # 二手车市场纳税人识别号
+        self.used_car_market_tax_no = used_car_market_tax_no
+        # 车架号/车辆识别号
+        self.vehicle_no = vehicle_no
+        # 车辆类型
+        self.vehicle_type = vehicle_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auction_unit is not None:
+            result['auctionUnit'] = self.auction_unit
+        if self.auction_unit_address is not None:
+            result['auctionUnitAddress'] = self.auction_unit_address
+        if self.auction_unit_bank is not None:
+            result['auctionUnitBank'] = self.auction_unit_bank
+        if self.auction_unit_tax_no is not None:
+            result['auctionUnitTaxNo'] = self.auction_unit_tax_no
+        if self.auction_util_tel is not None:
+            result['auctionUtilTel'] = self.auction_util_tel
+        if self.car_model is not None:
+            result['carModel'] = self.car_model
+        if self.card_no is not None:
+            result['cardNo'] = self.card_no
+        if self.registration is not None:
+            result['registration'] = self.registration
+        if self.transfer_vehicle is not None:
+            result['transferVehicle'] = self.transfer_vehicle
+        if self.used_car_address is not None:
+            result['usedCarAddress'] = self.used_car_address
+        if self.used_car_market is not None:
+            result['usedCarMarket'] = self.used_car_market
+        if self.used_car_market_bank is not None:
+            result['usedCarMarketBank'] = self.used_car_market_bank
+        if self.used_car_market_phone is not None:
+            result['usedCarMarketPhone'] = self.used_car_market_phone
+        if self.used_car_market_tax_no is not None:
+            result['usedCarMarketTaxNo'] = self.used_car_market_tax_no
+        if self.vehicle_no is not None:
+            result['vehicleNo'] = self.vehicle_no
+        if self.vehicle_type is not None:
+            result['vehicleType'] = self.vehicle_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('auctionUnit') is not None:
+            self.auction_unit = m.get('auctionUnit')
+        if m.get('auctionUnitAddress') is not None:
+            self.auction_unit_address = m.get('auctionUnitAddress')
+        if m.get('auctionUnitBank') is not None:
+            self.auction_unit_bank = m.get('auctionUnitBank')
+        if m.get('auctionUnitTaxNo') is not None:
+            self.auction_unit_tax_no = m.get('auctionUnitTaxNo')
+        if m.get('auctionUtilTel') is not None:
+            self.auction_util_tel = m.get('auctionUtilTel')
+        if m.get('carModel') is not None:
+            self.car_model = m.get('carModel')
+        if m.get('cardNo') is not None:
+            self.card_no = m.get('cardNo')
+        if m.get('registration') is not None:
+            self.registration = m.get('registration')
+        if m.get('transferVehicle') is not None:
+            self.transfer_vehicle = m.get('transferVehicle')
+        if m.get('usedCarAddress') is not None:
+            self.used_car_address = m.get('usedCarAddress')
+        if m.get('usedCarMarket') is not None:
+            self.used_car_market = m.get('usedCarMarket')
+        if m.get('usedCarMarketBank') is not None:
+            self.used_car_market_bank = m.get('usedCarMarketBank')
+        if m.get('usedCarMarketPhone') is not None:
+            self.used_car_market_phone = m.get('usedCarMarketPhone')
+        if m.get('usedCarMarketTaxNo') is not None:
+            self.used_car_market_tax_no = m.get('usedCarMarketTaxNo')
+        if m.get('vehicleNo') is not None:
+            self.vehicle_no = m.get('vehicleNo')
+        if m.get('vehicleType') is not None:
+            self.vehicle_type = m.get('vehicleType')
+        return self
+
+
+class GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList(TeaModel):
+    def __init__(
+        self,
+        brand: str = None,
+        certificate_no: str = None,
+        engine_no: str = None,
+        id_card_no: str = None,
+        import_certificate_no: str = None,
+        max_passengers: str = None,
+        origin_place: str = None,
+        payment_voucher_no: str = None,
+        tax_authority_name: str = None,
+        tax_authority_no: str = None,
+        tax_rate: str = None,
+        tonnage: str = None,
+        vehicle_no: str = None,
+        vehicle_type: str = None,
+    ):
+        # 品牌
+        self.brand = brand
+        # 合格证号
+        self.certificate_no = certificate_no
+        # 发动机号
+        self.engine_no = engine_no
+        # 身份证号/组织机构代码
+        self.id_card_no = id_card_no
+        # 进口证书号
+        self.import_certificate_no = import_certificate_no
+        # 限乘人数
+        self.max_passengers = max_passengers
+        # 产地
+        self.origin_place = origin_place
+        # 完税凭证号码
+        self.payment_voucher_no = payment_voucher_no
+        # 主管税务机关名称
+        self.tax_authority_name = tax_authority_name
+        # 主管税务机关代码
+        self.tax_authority_no = tax_authority_no
+        # 税率
+        self.tax_rate = tax_rate
+        # 吨位
+        self.tonnage = tonnage
+        # 车架号码
+        self.vehicle_no = vehicle_no
+        # 车辆类型
+        self.vehicle_type = vehicle_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.brand is not None:
+            result['brand'] = self.brand
+        if self.certificate_no is not None:
+            result['certificateNo'] = self.certificate_no
+        if self.engine_no is not None:
+            result['engineNo'] = self.engine_no
+        if self.id_card_no is not None:
+            result['idCardNo'] = self.id_card_no
+        if self.import_certificate_no is not None:
+            result['importCertificateNo'] = self.import_certificate_no
+        if self.max_passengers is not None:
+            result['maxPassengers'] = self.max_passengers
+        if self.origin_place is not None:
+            result['originPlace'] = self.origin_place
+        if self.payment_voucher_no is not None:
+            result['paymentVoucherNo'] = self.payment_voucher_no
+        if self.tax_authority_name is not None:
+            result['taxAuthorityName'] = self.tax_authority_name
+        if self.tax_authority_no is not None:
+            result['taxAuthorityNo'] = self.tax_authority_no
+        if self.tax_rate is not None:
+            result['taxRate'] = self.tax_rate
+        if self.tonnage is not None:
+            result['tonnage'] = self.tonnage
+        if self.vehicle_no is not None:
+            result['vehicleNo'] = self.vehicle_no
+        if self.vehicle_type is not None:
+            result['vehicleType'] = self.vehicle_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('brand') is not None:
+            self.brand = m.get('brand')
+        if m.get('certificateNo') is not None:
+            self.certificate_no = m.get('certificateNo')
+        if m.get('engineNo') is not None:
+            self.engine_no = m.get('engineNo')
+        if m.get('idCardNo') is not None:
+            self.id_card_no = m.get('idCardNo')
+        if m.get('importCertificateNo') is not None:
+            self.import_certificate_no = m.get('importCertificateNo')
+        if m.get('maxPassengers') is not None:
+            self.max_passengers = m.get('maxPassengers')
+        if m.get('originPlace') is not None:
+            self.origin_place = m.get('originPlace')
+        if m.get('paymentVoucherNo') is not None:
+            self.payment_voucher_no = m.get('paymentVoucherNo')
+        if m.get('taxAuthorityName') is not None:
+            self.tax_authority_name = m.get('taxAuthorityName')
+        if m.get('taxAuthorityNo') is not None:
+            self.tax_authority_no = m.get('taxAuthorityNo')
+        if m.get('taxRate') is not None:
+            self.tax_rate = m.get('taxRate')
+        if m.get('tonnage') is not None:
+            self.tonnage = m.get('tonnage')
+        if m.get('vehicleNo') is not None:
+            self.vehicle_no = m.get('vehicleNo')
+        if m.get('vehicleType') is not None:
+            self.vehicle_type = m.get('vehicleType')
+        return self
+
+
+class GetInvoiceByPageResponseBodyResultList(TeaModel):
+    def __init__(
+        self,
+        account_period: str = None,
+        amount: str = None,
+        amount_with_tax: str = None,
+        check_code: str = None,
+        check_time: str = None,
+        drew_date: str = None,
+        electronic_url: str = None,
+        finance_type: str = None,
+        fund_type: str = None,
+        general_invoice_detail_volist: List[GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList] = None,
+        invoice_code: str = None,
+        invoice_no: str = None,
+        invoice_type: str = None,
+        machine_code: str = None,
+        oil_flag: str = None,
+        payee: str = None,
+        process_inst_code: str = None,
+        process_inst_type: str = None,
+        purchaser_address: str = None,
+        purchaser_bank_name_account: str = None,
+        purchaser_name: str = None,
+        purchaser_tax_no: str = None,
+        purchaser_tel: str = None,
+        remark: str = None,
+        second_hand_car_invoice_detail_list: List[GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList] = None,
+        seller_address: str = None,
+        seller_bank_name_account: str = None,
+        seller_name: str = None,
+        seller_tax_no: str = None,
+        seller_tel: str = None,
+        status: str = None,
+        supply_sign: str = None,
+        tax_amount: str = None,
+        used_vehicle_sale_detail_volist: List[GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList] = None,
+        vehicle_sale_detail_volist: List[GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList] = None,
+        verify_status: str = None,
+        voucher_code: str = None,
+        voucher_status: str = None,
+    ):
+        # 账期时间
+        self.account_period = account_period
+        # 不含税金额
+        self.amount = amount
+        # 含税金额
+        self.amount_with_tax = amount_with_tax
+        # 校验码
+        self.check_code = check_code
+        # 查验时间
+        self.check_time = check_time
+        # 开票日期
+        self.drew_date = drew_date
+        # 电票版式文件下载地址
+        self.electronic_url = electronic_url
+        # 财务类型，INPUT-VAT(进项),OUTPUT_VAT(销项)
+        self.finance_type = finance_type
+        # 资金类型 ，RED（红票），（BLUE）蓝票
+        self.fund_type = fund_type
+        # 常规发票明细
+        self.general_invoice_detail_volist = general_invoice_detail_volist
+        # 发票代码
+        self.invoice_code = invoice_code
+        # 发票号码
+        self.invoice_no = invoice_no
+        # 发票类型
+        self.invoice_type = invoice_type
+        # 机器码
+        self.machine_code = machine_code
+        # 成品油标识
+        self.oil_flag = oil_flag
+        # 收款人
+        self.payee = payee
+        # 审批单实例
+        self.process_inst_code = process_inst_code
+        # 审批单类型
+        self.process_inst_type = process_inst_type
+        # 购方地址
+        self.purchaser_address = purchaser_address
+        # 购方银行
+        self.purchaser_bank_name_account = purchaser_bank_name_account
+        # 购方名称
+        self.purchaser_name = purchaser_name
+        # 购方税号
+        self.purchaser_tax_no = purchaser_tax_no
+        # 购方电话
+        self.purchaser_tel = purchaser_tel
+        # 备注
+        self.remark = remark
+        self.second_hand_car_invoice_detail_list = second_hand_car_invoice_detail_list
+        # 销方地址
+        self.seller_address = seller_address
+        # 销方银行
+        self.seller_bank_name_account = seller_bank_name_account
+        # 销方名称
+        self.seller_name = seller_name
+        # 销方税号
+        self.seller_tax_no = seller_tax_no
+        # 销方电话
+        self.seller_tel = seller_tel
+        # 发票状态
+        self.status = status
+        # 代开发票标识 1-自开，2-代开
+        self.supply_sign = supply_sign
+        # 税额
+        self.tax_amount = tax_amount
+        self.used_vehicle_sale_detail_volist = used_vehicle_sale_detail_volist
+        self.vehicle_sale_detail_volist = vehicle_sale_detail_volist
+        # 发票查验状态
+        self.verify_status = verify_status
+        # 凭证code
+        self.voucher_code = voucher_code
+        # 生成凭证状态
+        self.voucher_status = voucher_status
+
+    def validate(self):
+        if self.general_invoice_detail_volist:
+            for k in self.general_invoice_detail_volist:
+                if k:
+                    k.validate()
+        if self.second_hand_car_invoice_detail_list:
+            for k in self.second_hand_car_invoice_detail_list:
+                if k:
+                    k.validate()
+        if self.used_vehicle_sale_detail_volist:
+            for k in self.used_vehicle_sale_detail_volist:
+                if k:
+                    k.validate()
+        if self.vehicle_sale_detail_volist:
+            for k in self.vehicle_sale_detail_volist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.account_period is not None:
+            result['accountPeriod'] = self.account_period
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.amount_with_tax is not None:
+            result['amountWithTax'] = self.amount_with_tax
+        if self.check_code is not None:
+            result['checkCode'] = self.check_code
+        if self.check_time is not None:
+            result['checkTime'] = self.check_time
+        if self.drew_date is not None:
+            result['drewDate'] = self.drew_date
+        if self.electronic_url is not None:
+            result['electronicUrl'] = self.electronic_url
+        if self.finance_type is not None:
+            result['financeType'] = self.finance_type
+        if self.fund_type is not None:
+            result['fundType'] = self.fund_type
+        result['generalInvoiceDetailVOList'] = []
+        if self.general_invoice_detail_volist is not None:
+            for k in self.general_invoice_detail_volist:
+                result['generalInvoiceDetailVOList'].append(k.to_map() if k else None)
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        if self.invoice_type is not None:
+            result['invoiceType'] = self.invoice_type
+        if self.machine_code is not None:
+            result['machineCode'] = self.machine_code
+        if self.oil_flag is not None:
+            result['oilFlag'] = self.oil_flag
+        if self.payee is not None:
+            result['payee'] = self.payee
+        if self.process_inst_code is not None:
+            result['processInstCode'] = self.process_inst_code
+        if self.process_inst_type is not None:
+            result['processInstType'] = self.process_inst_type
+        if self.purchaser_address is not None:
+            result['purchaserAddress'] = self.purchaser_address
+        if self.purchaser_bank_name_account is not None:
+            result['purchaserBankNameAccount'] = self.purchaser_bank_name_account
+        if self.purchaser_name is not None:
+            result['purchaserName'] = self.purchaser_name
+        if self.purchaser_tax_no is not None:
+            result['purchaserTaxNo'] = self.purchaser_tax_no
+        if self.purchaser_tel is not None:
+            result['purchaserTel'] = self.purchaser_tel
+        if self.remark is not None:
+            result['remark'] = self.remark
+        result['secondHandCarInvoiceDetailList'] = []
+        if self.second_hand_car_invoice_detail_list is not None:
+            for k in self.second_hand_car_invoice_detail_list:
+                result['secondHandCarInvoiceDetailList'].append(k.to_map() if k else None)
+        if self.seller_address is not None:
+            result['sellerAddress'] = self.seller_address
+        if self.seller_bank_name_account is not None:
+            result['sellerBankNameAccount'] = self.seller_bank_name_account
+        if self.seller_name is not None:
+            result['sellerName'] = self.seller_name
+        if self.seller_tax_no is not None:
+            result['sellerTaxNo'] = self.seller_tax_no
+        if self.seller_tel is not None:
+            result['sellerTel'] = self.seller_tel
+        if self.status is not None:
+            result['status'] = self.status
+        if self.supply_sign is not None:
+            result['supplySign'] = self.supply_sign
+        if self.tax_amount is not None:
+            result['taxAmount'] = self.tax_amount
+        result['usedVehicleSaleDetailVOList'] = []
+        if self.used_vehicle_sale_detail_volist is not None:
+            for k in self.used_vehicle_sale_detail_volist:
+                result['usedVehicleSaleDetailVOList'].append(k.to_map() if k else None)
+        result['vehicleSaleDetailVOList'] = []
+        if self.vehicle_sale_detail_volist is not None:
+            for k in self.vehicle_sale_detail_volist:
+                result['vehicleSaleDetailVOList'].append(k.to_map() if k else None)
+        if self.verify_status is not None:
+            result['verifyStatus'] = self.verify_status
+        if self.voucher_code is not None:
+            result['voucherCode'] = self.voucher_code
+        if self.voucher_status is not None:
+            result['voucherStatus'] = self.voucher_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountPeriod') is not None:
+            self.account_period = m.get('accountPeriod')
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('amountWithTax') is not None:
+            self.amount_with_tax = m.get('amountWithTax')
+        if m.get('checkCode') is not None:
+            self.check_code = m.get('checkCode')
+        if m.get('checkTime') is not None:
+            self.check_time = m.get('checkTime')
+        if m.get('drewDate') is not None:
+            self.drew_date = m.get('drewDate')
+        if m.get('electronicUrl') is not None:
+            self.electronic_url = m.get('electronicUrl')
+        if m.get('financeType') is not None:
+            self.finance_type = m.get('financeType')
+        if m.get('fundType') is not None:
+            self.fund_type = m.get('fundType')
+        self.general_invoice_detail_volist = []
+        if m.get('generalInvoiceDetailVOList') is not None:
+            for k in m.get('generalInvoiceDetailVOList'):
+                temp_model = GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList()
+                self.general_invoice_detail_volist.append(temp_model.from_map(k))
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        if m.get('invoiceType') is not None:
+            self.invoice_type = m.get('invoiceType')
+        if m.get('machineCode') is not None:
+            self.machine_code = m.get('machineCode')
+        if m.get('oilFlag') is not None:
+            self.oil_flag = m.get('oilFlag')
+        if m.get('payee') is not None:
+            self.payee = m.get('payee')
+        if m.get('processInstCode') is not None:
+            self.process_inst_code = m.get('processInstCode')
+        if m.get('processInstType') is not None:
+            self.process_inst_type = m.get('processInstType')
+        if m.get('purchaserAddress') is not None:
+            self.purchaser_address = m.get('purchaserAddress')
+        if m.get('purchaserBankNameAccount') is not None:
+            self.purchaser_bank_name_account = m.get('purchaserBankNameAccount')
+        if m.get('purchaserName') is not None:
+            self.purchaser_name = m.get('purchaserName')
+        if m.get('purchaserTaxNo') is not None:
+            self.purchaser_tax_no = m.get('purchaserTaxNo')
+        if m.get('purchaserTel') is not None:
+            self.purchaser_tel = m.get('purchaserTel')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        self.second_hand_car_invoice_detail_list = []
+        if m.get('secondHandCarInvoiceDetailList') is not None:
+            for k in m.get('secondHandCarInvoiceDetailList'):
+                temp_model = GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList()
+                self.second_hand_car_invoice_detail_list.append(temp_model.from_map(k))
+        if m.get('sellerAddress') is not None:
+            self.seller_address = m.get('sellerAddress')
+        if m.get('sellerBankNameAccount') is not None:
+            self.seller_bank_name_account = m.get('sellerBankNameAccount')
+        if m.get('sellerName') is not None:
+            self.seller_name = m.get('sellerName')
+        if m.get('sellerTaxNo') is not None:
+            self.seller_tax_no = m.get('sellerTaxNo')
+        if m.get('sellerTel') is not None:
+            self.seller_tel = m.get('sellerTel')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('supplySign') is not None:
+            self.supply_sign = m.get('supplySign')
+        if m.get('taxAmount') is not None:
+            self.tax_amount = m.get('taxAmount')
+        self.used_vehicle_sale_detail_volist = []
+        if m.get('usedVehicleSaleDetailVOList') is not None:
+            for k in m.get('usedVehicleSaleDetailVOList'):
+                temp_model = GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList()
+                self.used_vehicle_sale_detail_volist.append(temp_model.from_map(k))
+        self.vehicle_sale_detail_volist = []
+        if m.get('vehicleSaleDetailVOList') is not None:
+            for k in m.get('vehicleSaleDetailVOList'):
+                temp_model = GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList()
+                self.vehicle_sale_detail_volist.append(temp_model.from_map(k))
+        if m.get('verifyStatus') is not None:
+            self.verify_status = m.get('verifyStatus')
+        if m.get('voucherCode') is not None:
+            self.voucher_code = m.get('voucherCode')
+        if m.get('voucherStatus') is not None:
+            self.voucher_status = m.get('voucherStatus')
+        return self
+
+
+class GetInvoiceByPageResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        has_more: str = None,
+        list: List[GetInvoiceByPageResponseBodyResultList] = None,
+        next_cursor: int = None,
+        total_count: int = None,
+    ):
+        self.has_more = has_more
+        self.list = list
+        self.next_cursor = next_cursor
+        self.total_count = total_count
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.next_cursor is not None:
+            result['nextCursor'] = self.next_cursor
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = GetInvoiceByPageResponseBodyResultList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('nextCursor') is not None:
+            self.next_cursor = m.get('nextCursor')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class GetInvoiceByPageResponseBody(TeaModel):
+    def __init__(
+        self,
+        error_code: str = None,
+        error_msg: str = None,
+        result: GetInvoiceByPageResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.error_code = error_code
+        self.error_msg = error_msg
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            temp_model = GetInvoiceByPageResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetInvoiceByPageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetInvoiceByPageResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetInvoiceByPageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetIsNewVersionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetIsNewVersionResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetIsNewVersionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetIsNewVersionResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetIsNewVersionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetProjectHeaders(TeaModel):
     def __init__(
         self,
@@ -1199,28 +3641,34 @@ class GetProjectRequest(TeaModel):
 class GetProjectResponseBody(TeaModel):
     def __init__(
         self,
-        corp_id: str = None,
+        code: str = None,
         create_time: int = None,
         creator: str = None,
         description: str = None,
+        name: str = None,
         project_code: str = None,
         project_name: str = None,
         status: str = None,
+        user_define_code: str = None,
     ):
-        # 企业id
-        self.corp_id = corp_id
+        # 项目code
+        self.code = code
         # 创建时间
         self.create_time = create_time
         # 创建人工号
         self.creator = creator
         # 项目描述
         self.description = description
-        # 项目code
+        # 项目名字
+        self.name = name
+        # 项目code，废弃，请使用code
         self.project_code = project_code
-        # 项目名称
+        # 项目名称，废弃，请使用name
         self.project_name = project_name
         # 状态:valid, invalid, deleted
         self.status = status
+        # 用户自定义code
+        self.user_define_code = user_define_code
 
     def validate(self):
         pass
@@ -1231,38 +3679,46 @@ class GetProjectResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
+        if self.code is not None:
+            result['code'] = self.code
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator is not None:
             result['creator'] = self.creator
         if self.description is not None:
             result['description'] = self.description
+        if self.name is not None:
+            result['name'] = self.name
         if self.project_code is not None:
             result['projectCode'] = self.project_code
         if self.project_name is not None:
             result['projectName'] = self.project_name
         if self.status is not None:
             result['status'] = self.status
+        if self.user_define_code is not None:
+            result['userDefineCode'] = self.user_define_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
+        if m.get('code') is not None:
+            self.code = m.get('code')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creator') is not None:
             self.creator = m.get('creator')
         if m.get('description') is not None:
             self.description = m.get('description')
+        if m.get('name') is not None:
+            self.name = m.get('name')
         if m.get('projectCode') is not None:
             self.project_code = m.get('projectCode')
         if m.get('projectName') is not None:
             self.project_name = m.get('projectName')
         if m.get('status') is not None:
             self.status = m.get('status')
+        if m.get('userDefineCode') is not None:
+            self.user_define_code = m.get('userDefineCode')
         return self
 
 
@@ -1526,6 +3982,7 @@ class GetSupplierResponseBody(TeaModel):
         description: str = None,
         name: str = None,
         status: str = None,
+        user_define_code: str = None,
     ):
         # 供应商Code
         self.code = code
@@ -1537,6 +3994,8 @@ class GetSupplierResponseBody(TeaModel):
         self.name = name
         # 状态：启用(valid), 停用(invalid), 删除(deleted)
         self.status = status
+        # 用户自定义code
+        self.user_define_code = user_define_code
 
     def validate(self):
         pass
@@ -1557,6 +4016,8 @@ class GetSupplierResponseBody(TeaModel):
             result['name'] = self.name
         if self.status is not None:
             result['status'] = self.status
+        if self.user_define_code is not None:
+            result['userDefineCode'] = self.user_define_code
         return result
 
     def from_map(self, m: dict = None):
@@ -1571,6 +4032,8 @@ class GetSupplierResponseBody(TeaModel):
             self.name = m.get('name')
         if m.get('status') is not None:
             self.status = m.get('status')
+        if m.get('userDefineCode') is not None:
+            self.user_define_code = m.get('userDefineCode')
         return self
 
 
@@ -1905,6 +4368,7 @@ class QueryCustomerByPageResponseBodyList(TeaModel):
         description: str = None,
         name: str = None,
         status: str = None,
+        user_define_code: str = None,
     ):
         # 客户Code
         self.code = code
@@ -1916,6 +4380,8 @@ class QueryCustomerByPageResponseBodyList(TeaModel):
         self.name = name
         # 状态：启用(valid), 停用(invalid), 删除(deleted)
         self.status = status
+        # 用户自定义code
+        self.user_define_code = user_define_code
 
     def validate(self):
         pass
@@ -1936,6 +4402,8 @@ class QueryCustomerByPageResponseBodyList(TeaModel):
             result['name'] = self.name
         if self.status is not None:
             result['status'] = self.status
+        if self.user_define_code is not None:
+            result['userDefineCode'] = self.user_define_code
         return result
 
     def from_map(self, m: dict = None):
@@ -1950,6 +4418,8 @@ class QueryCustomerByPageResponseBodyList(TeaModel):
             self.name = m.get('name')
         if m.get('status') is not None:
             self.status = m.get('status')
+        if m.get('userDefineCode') is not None:
+            self.user_define_code = m.get('userDefineCode')
         return self
 
 
@@ -2029,6 +4499,280 @@ class QueryCustomerByPageResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryCustomerByPageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryCustomerInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryCustomerInfoRequest(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        purchaser_tax_no: str = None,
+        purchaser_tel: str = None,
+    ):
+        # 客户名字
+        self.name = name
+        # 查询页码，从1开始
+        self.page_number = page_number
+        # 每页查询数量
+        self.page_size = page_size
+        # 购方税号
+        self.purchaser_tax_no = purchaser_tax_no
+        # 购方电话
+        self.purchaser_tel = purchaser_tel
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.purchaser_tax_no is not None:
+            result['purchaserTaxNo'] = self.purchaser_tax_no
+        if self.purchaser_tel is not None:
+            result['purchaserTel'] = self.purchaser_tel
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('purchaserTaxNo') is not None:
+            self.purchaser_tax_no = m.get('purchaserTaxNo')
+        if m.get('purchaserTel') is not None:
+            self.purchaser_tel = m.get('purchaserTel')
+        return self
+
+
+class QueryCustomerInfoResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        description: str = None,
+        name: str = None,
+        purchaser_account: str = None,
+        purchaser_address: str = None,
+        purchaser_name: str = None,
+        purchaser_tax_no: str = None,
+        purchaser_tel: str = None,
+        purchaserr_bank_name: str = None,
+        status: str = None,
+        user_define_code: str = None,
+    ):
+        # 客户code
+        self.code = code
+        # 客户描述
+        self.description = description
+        # 客户名字
+        self.name = name
+        # 购方账户
+        self.purchaser_account = purchaser_account
+        # 购方地址
+        self.purchaser_address = purchaser_address
+        # 购方姓名
+        self.purchaser_name = purchaser_name
+        # 购方税号
+        self.purchaser_tax_no = purchaser_tax_no
+        # 购方电话
+        self.purchaser_tel = purchaser_tel
+        # 购方银行
+        self.purchaserr_bank_name = purchaserr_bank_name
+        # 状态
+        self.status = status
+        # 用户自定义code
+        self.user_define_code = user_define_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.description is not None:
+            result['description'] = self.description
+        if self.name is not None:
+            result['name'] = self.name
+        if self.purchaser_account is not None:
+            result['purchaserAccount'] = self.purchaser_account
+        if self.purchaser_address is not None:
+            result['purchaserAddress'] = self.purchaser_address
+        if self.purchaser_name is not None:
+            result['purchaserName'] = self.purchaser_name
+        if self.purchaser_tax_no is not None:
+            result['purchaserTaxNo'] = self.purchaser_tax_no
+        if self.purchaser_tel is not None:
+            result['purchaserTel'] = self.purchaser_tel
+        if self.purchaserr_bank_name is not None:
+            result['purchaserrBankName'] = self.purchaserr_bank_name
+        if self.status is not None:
+            result['status'] = self.status
+        if self.user_define_code is not None:
+            result['userDefineCode'] = self.user_define_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('purchaserAccount') is not None:
+            self.purchaser_account = m.get('purchaserAccount')
+        if m.get('purchaserAddress') is not None:
+            self.purchaser_address = m.get('purchaserAddress')
+        if m.get('purchaserName') is not None:
+            self.purchaser_name = m.get('purchaserName')
+        if m.get('purchaserTaxNo') is not None:
+            self.purchaser_tax_no = m.get('purchaserTaxNo')
+        if m.get('purchaserTel') is not None:
+            self.purchaser_tel = m.get('purchaserTel')
+        if m.get('purchaserrBankName') is not None:
+            self.purchaserr_bank_name = m.get('purchaserrBankName')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('userDefineCode') is not None:
+            self.user_define_code = m.get('userDefineCode')
+        return self
+
+
+class QueryCustomerInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        list: List[QueryCustomerInfoResponseBodyList] = None,
+        total_count: int = None,
+    ):
+        # 是否还有数据
+        self.has_more = has_more
+        # 客户分页数据
+        self.list = list
+        # 总数
+        self.total_count = total_count
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = QueryCustomerInfoResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QueryCustomerInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryCustomerInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryCustomerInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -2254,6 +4998,212 @@ class QueryEnterpriseAccountByPageResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryEnterpriseAccountByPageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryFinanceCompanyInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryFinanceCompanyInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        company_name: str = None,
+        tax_nature: str = None,
+        tax_no: str = None,
+    ):
+        self.company_name = company_name
+        self.tax_nature = tax_nature
+        self.tax_no = tax_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.company_name is not None:
+            result['companyName'] = self.company_name
+        if self.tax_nature is not None:
+            result['taxNature'] = self.tax_nature
+        if self.tax_no is not None:
+            result['taxNo'] = self.tax_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('companyName') is not None:
+            self.company_name = m.get('companyName')
+        if m.get('taxNature') is not None:
+            self.tax_nature = m.get('taxNature')
+        if m.get('taxNo') is not None:
+            self.tax_no = m.get('taxNo')
+        return self
+
+
+class QueryFinanceCompanyInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryFinanceCompanyInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryFinanceCompanyInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryInvoiceRelationCountHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryInvoiceRelationCountResponseBody(TeaModel):
+    def __init__(
+        self,
+        relation_count_map: Dict[str, int] = None,
+    ):
+        self.relation_count_map = relation_count_map
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.relation_count_map is not None:
+            result['relationCountMap'] = self.relation_count_map
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('relationCountMap') is not None:
+            self.relation_count_map = m.get('relationCountMap')
+        return self
+
+
+class QueryInvoiceRelationCountResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryInvoiceRelationCountResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryInvoiceRelationCountResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -2722,28 +5672,34 @@ class QueryProjectByPageRequest(TeaModel):
 class QueryProjectByPageResponseBodyList(TeaModel):
     def __init__(
         self,
-        corp_id: str = None,
+        caode: str = None,
         create_time: int = None,
         creator: str = None,
         description: str = None,
+        name: str = None,
         project_code: str = None,
         project_name: str = None,
         status: str = None,
+        user_define_code: str = None,
     ):
-        # 企业id
-        self.corp_id = corp_id
+        # 项目code
+        self.caode = caode
         # 创建时间
         self.create_time = create_time
         # 创建人工号
         self.creator = creator
         # 描述
         self.description = description
-        # 项目code
+        # 项目名字
+        self.name = name
+        # 项目code，废弃，请使用code
         self.project_code = project_code
-        # 项目名称
+        # 项目名称，废弃，请使用name
         self.project_name = project_name
         # 状态: valid, invalid, deleted
         self.status = status
+        # 用户自定义code
+        self.user_define_code = user_define_code
 
     def validate(self):
         pass
@@ -2754,38 +5710,46 @@ class QueryProjectByPageResponseBodyList(TeaModel):
             return _map
 
         result = dict()
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
+        if self.caode is not None:
+            result['caode'] = self.caode
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator is not None:
             result['creator'] = self.creator
         if self.description is not None:
             result['description'] = self.description
+        if self.name is not None:
+            result['name'] = self.name
         if self.project_code is not None:
             result['projectCode'] = self.project_code
         if self.project_name is not None:
             result['projectName'] = self.project_name
         if self.status is not None:
             result['status'] = self.status
+        if self.user_define_code is not None:
+            result['userDefineCode'] = self.user_define_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
+        if m.get('caode') is not None:
+            self.caode = m.get('caode')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creator') is not None:
             self.creator = m.get('creator')
         if m.get('description') is not None:
             self.description = m.get('description')
+        if m.get('name') is not None:
+            self.name = m.get('name')
         if m.get('projectCode') is not None:
             self.project_code = m.get('projectCode')
         if m.get('projectName') is not None:
             self.project_name = m.get('projectName')
         if m.get('status') is not None:
             self.status = m.get('status')
+        if m.get('userDefineCode') is not None:
+            self.user_define_code = m.get('userDefineCode')
         return self
 
 
@@ -2865,6 +5829,469 @@ class QueryProjectByPageResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryProjectByPageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryReceiptForInvoiceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryReceiptForInvoiceRequest(TeaModel):
+    def __init__(
+        self,
+        apply_status_list: List[str] = None,
+        end_time: int = None,
+        page_number: int = None,
+        page_size: int = None,
+        receipt_status_list: List[str] = None,
+        start_time: int = None,
+        title: str = None,
+    ):
+        # 发票状态筛选列表 applied 已生成、unapplied 未生成 、 ignore 已忽略
+        self.apply_status_list = apply_status_list
+        self.end_time = end_time
+        # 分页参数，从1 开始
+        self.page_number = page_number
+        # 分页参数，每页查询个数
+        self.page_size = page_size
+        # 单据状态筛选条件列表，审批中、已通过 RUNNGIN、COMPLETED
+        self.receipt_status_list = receipt_status_list
+        # 开始时间
+        self.start_time = start_time
+        # 单据标题
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.apply_status_list is not None:
+            result['applyStatusList'] = self.apply_status_list
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.receipt_status_list is not None:
+            result['receiptStatusList'] = self.receipt_status_list
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('applyStatusList') is not None:
+            self.apply_status_list = m.get('applyStatusList')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('receiptStatusList') is not None:
+            self.receipt_status_list = m.get('receiptStatusList')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class QueryReceiptForInvoiceResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        app_id: str = None,
+        data: str = None,
+        model_id: str = None,
+        source: str = None,
+    ):
+        # 应用id
+        self.app_id = app_id
+        # 主数据
+        self.data = data
+        # 主数据modelID
+        self.model_id = model_id
+        # 来源
+        self.source = source
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_id is not None:
+            result['appId'] = self.app_id
+        if self.data is not None:
+            result['data'] = self.data
+        if self.model_id is not None:
+            result['modelId'] = self.model_id
+        if self.source is not None:
+            result['source'] = self.source
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('modelId') is not None:
+            self.model_id = m.get('modelId')
+        if m.get('source') is not None:
+            self.source = m.get('source')
+        return self
+
+
+class QueryReceiptForInvoiceResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: str = None,
+        list: List[QueryReceiptForInvoiceResponseBodyList] = None,
+        total_count: int = None,
+    ):
+        # 是否还有数据
+        self.has_more = has_more
+        # 分页数据
+        self.list = list
+        # 总数
+        self.total_count = total_count
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = QueryReceiptForInvoiceResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QueryReceiptForInvoiceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryReceiptForInvoiceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryReceiptForInvoiceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryReceiptsBaseInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryReceiptsBaseInfoRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: int = None,
+        page_number: int = None,
+        page_size: int = None,
+        start_time: int = None,
+        title: str = None,
+    ):
+        # 结束时间
+        self.end_time = end_time
+        # 分页参数，从1 开始
+        self.page_number = page_number
+        # 分页参数，每页查询个数
+        self.page_size = page_size
+        # 开始时间
+        self.start_time = start_time
+        # 单据标题
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        app_id: str = None,
+        data: str = None,
+        model_id: str = None,
+        source: str = None,
+    ):
+        # 应用id
+        self.app_id = app_id
+        # 主数据
+        self.data = data
+        # 主数据modelID
+        self.model_id = model_id
+        # 来源
+        self.source = source
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_id is not None:
+            result['appId'] = self.app_id
+        if self.data is not None:
+            result['data'] = self.data
+        if self.model_id is not None:
+            result['modelId'] = self.model_id
+        if self.source is not None:
+            result['source'] = self.source
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('modelId') is not None:
+            self.model_id = m.get('modelId')
+        if m.get('source') is not None:
+            self.source = m.get('source')
+        return self
+
+
+class QueryReceiptsBaseInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: str = None,
+        list: List[QueryReceiptsBaseInfoResponseBodyList] = None,
+        total_count: int = None,
+    ):
+        # 是否还有数据
+        self.has_more = has_more
+        # 分页数据
+        self.list = list
+        # 总数
+        self.total_count = total_count
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = QueryReceiptsBaseInfoResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QueryReceiptsBaseInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryReceiptsBaseInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryReceiptsBaseInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -3170,6 +6597,7 @@ class QuerySupplierByPageResponseBodyList(TeaModel):
         description: str = None,
         name: str = None,
         status: str = None,
+        user_define_code: str = None,
     ):
         # 供应商Code
         self.code = code
@@ -3181,6 +6609,8 @@ class QuerySupplierByPageResponseBodyList(TeaModel):
         self.name = name
         # 状态：启用(valid), 停用(invalid), 删除(deleted)
         self.status = status
+        # 用户自定义code
+        self.user_define_code = user_define_code
 
     def validate(self):
         pass
@@ -3201,6 +6631,8 @@ class QuerySupplierByPageResponseBodyList(TeaModel):
             result['name'] = self.name
         if self.status is not None:
             result['status'] = self.status
+        if self.user_define_code is not None:
+            result['userDefineCode'] = self.user_define_code
         return result
 
     def from_map(self, m: dict = None):
@@ -3215,6 +6647,8 @@ class QuerySupplierByPageResponseBodyList(TeaModel):
             self.name = m.get('name')
         if m.get('status') is not None:
             self.status = m.get('status')
+        if m.get('userDefineCode') is not None:
+            self.user_define_code = m.get('userDefineCode')
         return self
 
 
@@ -3294,6 +6728,3814 @@ class QuerySupplierByPageResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QuerySupplierByPageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateFinanceCompanyInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateFinanceCompanyInfoRequest(TeaModel):
+    def __init__(
+        self,
+        company_name: str = None,
+        tax_nature: str = None,
+        tax_no: str = None,
+    ):
+        # 公司名字
+        self.company_name = company_name
+        # 纳税性质 小规模纳税人 一般纳税人
+        self.tax_nature = tax_nature
+        # 税号
+        self.tax_no = tax_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.company_name is not None:
+            result['companyName'] = self.company_name
+        if self.tax_nature is not None:
+            result['taxNature'] = self.tax_nature
+        if self.tax_no is not None:
+            result['taxNo'] = self.tax_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('companyName') is not None:
+            self.company_name = m.get('companyName')
+        if m.get('taxNature') is not None:
+            self.tax_nature = m.get('taxNature')
+        if m.get('taxNo') is not None:
+            self.tax_no = m.get('taxNo')
+        return self
+
+
+class UpdateFinanceCompanyInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class UpdateFinanceCompanyInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateFinanceCompanyInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateFinanceCompanyInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateInvoiceAbandonStatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList(TeaModel):
+    def __init__(
+        self,
+        amount: str = None,
+        good_name: str = None,
+        quantity: str = None,
+        revenue_code: str = None,
+        row_no: str = None,
+        specification: str = None,
+        tax_amount: str = None,
+        tax_pre: str = None,
+        tax_rate: str = None,
+        unit: str = None,
+        unit_price: str = None,
+    ):
+        # 金额
+        self.amount = amount
+        # 商品名称
+        self.good_name = good_name
+        # 数量
+        self.quantity = quantity
+        # 税收分类编码
+        self.revenue_code = revenue_code
+        # 行号
+        self.row_no = row_no
+        # 规格型号
+        self.specification = specification
+        # 税额
+        self.tax_amount = tax_amount
+        # 是否享受税收优惠：0-不享受，1-享受
+        self.tax_pre = tax_pre
+        # 税率
+        self.tax_rate = tax_rate
+        # 单位
+        self.unit = unit
+        # 单价
+        self.unit_price = unit_price
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.good_name is not None:
+            result['goodName'] = self.good_name
+        if self.quantity is not None:
+            result['quantity'] = self.quantity
+        if self.revenue_code is not None:
+            result['revenueCode'] = self.revenue_code
+        if self.row_no is not None:
+            result['rowNo'] = self.row_no
+        if self.specification is not None:
+            result['specification'] = self.specification
+        if self.tax_amount is not None:
+            result['taxAmount'] = self.tax_amount
+        if self.tax_pre is not None:
+            result['taxPre'] = self.tax_pre
+        if self.tax_rate is not None:
+            result['taxRate'] = self.tax_rate
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.unit_price is not None:
+            result['unitPrice'] = self.unit_price
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('goodName') is not None:
+            self.good_name = m.get('goodName')
+        if m.get('quantity') is not None:
+            self.quantity = m.get('quantity')
+        if m.get('revenueCode') is not None:
+            self.revenue_code = m.get('revenueCode')
+        if m.get('rowNo') is not None:
+            self.row_no = m.get('rowNo')
+        if m.get('specification') is not None:
+            self.specification = m.get('specification')
+        if m.get('taxAmount') is not None:
+            self.tax_amount = m.get('taxAmount')
+        if m.get('taxPre') is not None:
+            self.tax_pre = m.get('taxPre')
+        if m.get('taxRate') is not None:
+            self.tax_rate = m.get('taxRate')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('unitPrice') is not None:
+            self.unit_price = m.get('unitPrice')
+        return self
+
+
+class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList(TeaModel):
+    def __init__(
+        self,
+        amount: str = None,
+        card_no: str = None,
+        end_date: str = None,
+        goods_name: str = None,
+        revenue_code: str = None,
+        row_no: str = None,
+        start_date: str = None,
+        tax_amount: str = None,
+        tax_rate: str = None,
+        vehicle_type: str = None,
+    ):
+        # 金额
+        self.amount = amount
+        # 车牌号
+        self.card_no = card_no
+        # 通行日期止
+        self.end_date = end_date
+        # 商品名称
+        self.goods_name = goods_name
+        # 税收分类编码
+        self.revenue_code = revenue_code
+        # 行号
+        self.row_no = row_no
+        # 通行日期起
+        self.start_date = start_date
+        # 税额
+        self.tax_amount = tax_amount
+        # 税率
+        self.tax_rate = tax_rate
+        # 类型
+        self.vehicle_type = vehicle_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.card_no is not None:
+            result['cardNo'] = self.card_no
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.goods_name is not None:
+            result['goodsName'] = self.goods_name
+        if self.revenue_code is not None:
+            result['revenueCode'] = self.revenue_code
+        if self.row_no is not None:
+            result['rowNo'] = self.row_no
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.tax_amount is not None:
+            result['taxAmount'] = self.tax_amount
+        if self.tax_rate is not None:
+            result['taxRate'] = self.tax_rate
+        if self.vehicle_type is not None:
+            result['vehicleType'] = self.vehicle_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('cardNo') is not None:
+            self.card_no = m.get('cardNo')
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('goodsName') is not None:
+            self.goods_name = m.get('goodsName')
+        if m.get('revenueCode') is not None:
+            self.revenue_code = m.get('revenueCode')
+        if m.get('rowNo') is not None:
+            self.row_no = m.get('rowNo')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('taxAmount') is not None:
+            self.tax_amount = m.get('taxAmount')
+        if m.get('taxRate') is not None:
+            self.tax_rate = m.get('taxRate')
+        if m.get('vehicleType') is not None:
+            self.vehicle_type = m.get('vehicleType')
+        return self
+
+
+class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList(TeaModel):
+    def __init__(
+        self,
+        auction_unit: str = None,
+        auction_unit_address: str = None,
+        auction_unit_bank: str = None,
+        auction_unit_tax_no: str = None,
+        auction_util_tel: str = None,
+        car_model: str = None,
+        card_no: str = None,
+        registration: str = None,
+        transfer_vehicle: str = None,
+        used_car_address: str = None,
+        used_car_market: str = None,
+        used_car_market_bank: str = None,
+        used_car_market_phone: str = None,
+        used_car_market_tax_no: str = None,
+        vehicle_no: str = None,
+        vehicle_type: str = None,
+    ):
+        # 经营、拍卖单位
+        self.auction_unit = auction_unit
+        # 经营、拍卖单位地址
+        self.auction_unit_address = auction_unit_address
+        # 经营、拍卖单位银行
+        self.auction_unit_bank = auction_unit_bank
+        # 经营、拍卖单位税号
+        self.auction_unit_tax_no = auction_unit_tax_no
+        # 经营、拍卖单位电话
+        self.auction_util_tel = auction_util_tel
+        # 厂牌型号
+        self.car_model = car_model
+        # 车牌照号
+        self.card_no = card_no
+        # 登记证号
+        self.registration = registration
+        # 转入地车辆管理所名称
+        self.transfer_vehicle = transfer_vehicle
+        # 二手车市场地址
+        self.used_car_address = used_car_address
+        # 二手车市场
+        self.used_car_market = used_car_market
+        # 二手车市场开户银行、账号
+        self.used_car_market_bank = used_car_market_bank
+        # 二手车市场电话
+        self.used_car_market_phone = used_car_market_phone
+        # 二手车市场纳税人识别号
+        self.used_car_market_tax_no = used_car_market_tax_no
+        # 车架号/车辆识别号
+        self.vehicle_no = vehicle_no
+        # 车辆类型
+        self.vehicle_type = vehicle_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auction_unit is not None:
+            result['auctionUnit'] = self.auction_unit
+        if self.auction_unit_address is not None:
+            result['auctionUnitAddress'] = self.auction_unit_address
+        if self.auction_unit_bank is not None:
+            result['auctionUnitBank'] = self.auction_unit_bank
+        if self.auction_unit_tax_no is not None:
+            result['auctionUnitTaxNo'] = self.auction_unit_tax_no
+        if self.auction_util_tel is not None:
+            result['auctionUtilTel'] = self.auction_util_tel
+        if self.car_model is not None:
+            result['carModel'] = self.car_model
+        if self.card_no is not None:
+            result['cardNo'] = self.card_no
+        if self.registration is not None:
+            result['registration'] = self.registration
+        if self.transfer_vehicle is not None:
+            result['transferVehicle'] = self.transfer_vehicle
+        if self.used_car_address is not None:
+            result['usedCarAddress'] = self.used_car_address
+        if self.used_car_market is not None:
+            result['usedCarMarket'] = self.used_car_market
+        if self.used_car_market_bank is not None:
+            result['usedCarMarketBank'] = self.used_car_market_bank
+        if self.used_car_market_phone is not None:
+            result['usedCarMarketPhone'] = self.used_car_market_phone
+        if self.used_car_market_tax_no is not None:
+            result['usedCarMarketTaxNo'] = self.used_car_market_tax_no
+        if self.vehicle_no is not None:
+            result['vehicleNo'] = self.vehicle_no
+        if self.vehicle_type is not None:
+            result['vehicleType'] = self.vehicle_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('auctionUnit') is not None:
+            self.auction_unit = m.get('auctionUnit')
+        if m.get('auctionUnitAddress') is not None:
+            self.auction_unit_address = m.get('auctionUnitAddress')
+        if m.get('auctionUnitBank') is not None:
+            self.auction_unit_bank = m.get('auctionUnitBank')
+        if m.get('auctionUnitTaxNo') is not None:
+            self.auction_unit_tax_no = m.get('auctionUnitTaxNo')
+        if m.get('auctionUtilTel') is not None:
+            self.auction_util_tel = m.get('auctionUtilTel')
+        if m.get('carModel') is not None:
+            self.car_model = m.get('carModel')
+        if m.get('cardNo') is not None:
+            self.card_no = m.get('cardNo')
+        if m.get('registration') is not None:
+            self.registration = m.get('registration')
+        if m.get('transferVehicle') is not None:
+            self.transfer_vehicle = m.get('transferVehicle')
+        if m.get('usedCarAddress') is not None:
+            self.used_car_address = m.get('usedCarAddress')
+        if m.get('usedCarMarket') is not None:
+            self.used_car_market = m.get('usedCarMarket')
+        if m.get('usedCarMarketBank') is not None:
+            self.used_car_market_bank = m.get('usedCarMarketBank')
+        if m.get('usedCarMarketPhone') is not None:
+            self.used_car_market_phone = m.get('usedCarMarketPhone')
+        if m.get('usedCarMarketTaxNo') is not None:
+            self.used_car_market_tax_no = m.get('usedCarMarketTaxNo')
+        if m.get('vehicleNo') is not None:
+            self.vehicle_no = m.get('vehicleNo')
+        if m.get('vehicleType') is not None:
+            self.vehicle_type = m.get('vehicleType')
+        return self
+
+
+class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList(TeaModel):
+    def __init__(
+        self,
+        brand: str = None,
+        certificate_no: str = None,
+        engine_no: str = None,
+        id_card_no: str = None,
+        import_certificate_no: str = None,
+        max_passengers: str = None,
+        origin_place: str = None,
+        payment_voucher_no: str = None,
+        tax_authority_name: str = None,
+        tax_authority_no: str = None,
+        tax_rate: str = None,
+        tonnage: str = None,
+        vehicle_no: str = None,
+        vehicle_type: str = None,
+    ):
+        # 品牌
+        self.brand = brand
+        # 合格证号
+        self.certificate_no = certificate_no
+        # 发动机号
+        self.engine_no = engine_no
+        # 身份证号/组织机构代码
+        self.id_card_no = id_card_no
+        # 进口证书号
+        self.import_certificate_no = import_certificate_no
+        # 限乘人数
+        self.max_passengers = max_passengers
+        # 产地
+        self.origin_place = origin_place
+        # 完税凭证号码
+        self.payment_voucher_no = payment_voucher_no
+        # 主管税务机关名称
+        self.tax_authority_name = tax_authority_name
+        # 主管税务机关代码
+        self.tax_authority_no = tax_authority_no
+        # 税率
+        self.tax_rate = tax_rate
+        # 吨位
+        self.tonnage = tonnage
+        # 车架号码
+        self.vehicle_no = vehicle_no
+        # 车辆类型
+        self.vehicle_type = vehicle_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.brand is not None:
+            result['brand'] = self.brand
+        if self.certificate_no is not None:
+            result['certificateNo'] = self.certificate_no
+        if self.engine_no is not None:
+            result['engineNo'] = self.engine_no
+        if self.id_card_no is not None:
+            result['idCardNo'] = self.id_card_no
+        if self.import_certificate_no is not None:
+            result['importCertificateNo'] = self.import_certificate_no
+        if self.max_passengers is not None:
+            result['maxPassengers'] = self.max_passengers
+        if self.origin_place is not None:
+            result['originPlace'] = self.origin_place
+        if self.payment_voucher_no is not None:
+            result['paymentVoucherNo'] = self.payment_voucher_no
+        if self.tax_authority_name is not None:
+            result['taxAuthorityName'] = self.tax_authority_name
+        if self.tax_authority_no is not None:
+            result['taxAuthorityNo'] = self.tax_authority_no
+        if self.tax_rate is not None:
+            result['taxRate'] = self.tax_rate
+        if self.tonnage is not None:
+            result['tonnage'] = self.tonnage
+        if self.vehicle_no is not None:
+            result['vehicleNo'] = self.vehicle_no
+        if self.vehicle_type is not None:
+            result['vehicleType'] = self.vehicle_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('brand') is not None:
+            self.brand = m.get('brand')
+        if m.get('certificateNo') is not None:
+            self.certificate_no = m.get('certificateNo')
+        if m.get('engineNo') is not None:
+            self.engine_no = m.get('engineNo')
+        if m.get('idCardNo') is not None:
+            self.id_card_no = m.get('idCardNo')
+        if m.get('importCertificateNo') is not None:
+            self.import_certificate_no = m.get('importCertificateNo')
+        if m.get('maxPassengers') is not None:
+            self.max_passengers = m.get('maxPassengers')
+        if m.get('originPlace') is not None:
+            self.origin_place = m.get('originPlace')
+        if m.get('paymentVoucherNo') is not None:
+            self.payment_voucher_no = m.get('paymentVoucherNo')
+        if m.get('taxAuthorityName') is not None:
+            self.tax_authority_name = m.get('taxAuthorityName')
+        if m.get('taxAuthorityNo') is not None:
+            self.tax_authority_no = m.get('taxAuthorityNo')
+        if m.get('taxRate') is not None:
+            self.tax_rate = m.get('taxRate')
+        if m.get('tonnage') is not None:
+            self.tonnage = m.get('tonnage')
+        if m.get('vehicleNo') is not None:
+            self.vehicle_no = m.get('vehicleNo')
+        if m.get('vehicleType') is not None:
+            self.vehicle_type = m.get('vehicleType')
+        return self
+
+
+class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO(TeaModel):
+    def __init__(
+        self,
+        account_period: str = None,
+        amount: str = None,
+        amount_with_tax: str = None,
+        check_code: str = None,
+        check_time: str = None,
+        drew_date: str = None,
+        electronic_url: str = None,
+        finance_type: str = None,
+        fund_type: str = None,
+        general_invoice_detail_volist: List[UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList] = None,
+        invoice_code: str = None,
+        invoice_no: str = None,
+        invoice_type: str = None,
+        machine_code: str = None,
+        oil_flag: str = None,
+        payee: str = None,
+        process_inst_code: str = None,
+        process_inst_type: str = None,
+        purchaser_address: str = None,
+        purchaser_bank_name_account: str = None,
+        purchaser_name: str = None,
+        purchaser_tax_no: str = None,
+        purchaser_tel: str = None,
+        remark: str = None,
+        second_hand_car_invoice_detail_list: List[UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList] = None,
+        seller_address: str = None,
+        seller_bank_name_account: str = None,
+        seller_name: str = None,
+        seller_tax_no: str = None,
+        seller_tel: str = None,
+        status: str = None,
+        supply_sign: str = None,
+        tax_amount: str = None,
+        used_vehicle_sale_detail_volist: List[UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList] = None,
+        vehicle_sale_detail_volist: List[UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList] = None,
+        verify_status: str = None,
+        voucher_code: str = None,
+        voucher_status: str = None,
+    ):
+        # 账期时间
+        self.account_period = account_period
+        # 不含税金额
+        self.amount = amount
+        # 含税金额
+        self.amount_with_tax = amount_with_tax
+        # 校验码
+        self.check_code = check_code
+        # 查验时间
+        self.check_time = check_time
+        # 开票日期
+        self.drew_date = drew_date
+        # 电票版式文件下载地址
+        self.electronic_url = electronic_url
+        # 财务类型，INPUT-VAT(进项),OUTPUT_VAT(销项)
+        self.finance_type = finance_type
+        # 资金类型 ，RED（红票），（BLUE）蓝票
+        self.fund_type = fund_type
+        # 常规发票明细
+        self.general_invoice_detail_volist = general_invoice_detail_volist
+        # 发票代码
+        self.invoice_code = invoice_code
+        # 发票号码
+        self.invoice_no = invoice_no
+        # 发票类型
+        self.invoice_type = invoice_type
+        # 机器码
+        self.machine_code = machine_code
+        # 成品油标识
+        self.oil_flag = oil_flag
+        # 收款人
+        self.payee = payee
+        # 审批单实例
+        self.process_inst_code = process_inst_code
+        # 审批单类型
+        self.process_inst_type = process_inst_type
+        # 购方地址
+        self.purchaser_address = purchaser_address
+        # 购方银行
+        self.purchaser_bank_name_account = purchaser_bank_name_account
+        # 购方名称
+        self.purchaser_name = purchaser_name
+        # 购方税号
+        self.purchaser_tax_no = purchaser_tax_no
+        # 购方电话
+        self.purchaser_tel = purchaser_tel
+        # 备注
+        self.remark = remark
+        self.second_hand_car_invoice_detail_list = second_hand_car_invoice_detail_list
+        # 销方地址
+        self.seller_address = seller_address
+        # 销方银行
+        self.seller_bank_name_account = seller_bank_name_account
+        # 销方名称
+        self.seller_name = seller_name
+        # 销方税号
+        self.seller_tax_no = seller_tax_no
+        # 销方电话
+        self.seller_tel = seller_tel
+        # 发票状态
+        self.status = status
+        # 代开发票标识 1-自开，2-代开
+        self.supply_sign = supply_sign
+        # 税额
+        self.tax_amount = tax_amount
+        self.used_vehicle_sale_detail_volist = used_vehicle_sale_detail_volist
+        self.vehicle_sale_detail_volist = vehicle_sale_detail_volist
+        # 发票查验状态
+        self.verify_status = verify_status
+        # 凭证code
+        self.voucher_code = voucher_code
+        # 生成凭证状态
+        self.voucher_status = voucher_status
+
+    def validate(self):
+        if self.general_invoice_detail_volist:
+            for k in self.general_invoice_detail_volist:
+                if k:
+                    k.validate()
+        if self.second_hand_car_invoice_detail_list:
+            for k in self.second_hand_car_invoice_detail_list:
+                if k:
+                    k.validate()
+        if self.used_vehicle_sale_detail_volist:
+            for k in self.used_vehicle_sale_detail_volist:
+                if k:
+                    k.validate()
+        if self.vehicle_sale_detail_volist:
+            for k in self.vehicle_sale_detail_volist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.account_period is not None:
+            result['accountPeriod'] = self.account_period
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.amount_with_tax is not None:
+            result['amountWithTax'] = self.amount_with_tax
+        if self.check_code is not None:
+            result['checkCode'] = self.check_code
+        if self.check_time is not None:
+            result['checkTime'] = self.check_time
+        if self.drew_date is not None:
+            result['drewDate'] = self.drew_date
+        if self.electronic_url is not None:
+            result['electronicUrl'] = self.electronic_url
+        if self.finance_type is not None:
+            result['financeType'] = self.finance_type
+        if self.fund_type is not None:
+            result['fundType'] = self.fund_type
+        result['generalInvoiceDetailVOList'] = []
+        if self.general_invoice_detail_volist is not None:
+            for k in self.general_invoice_detail_volist:
+                result['generalInvoiceDetailVOList'].append(k.to_map() if k else None)
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        if self.invoice_type is not None:
+            result['invoiceType'] = self.invoice_type
+        if self.machine_code is not None:
+            result['machineCode'] = self.machine_code
+        if self.oil_flag is not None:
+            result['oilFlag'] = self.oil_flag
+        if self.payee is not None:
+            result['payee'] = self.payee
+        if self.process_inst_code is not None:
+            result['processInstCode'] = self.process_inst_code
+        if self.process_inst_type is not None:
+            result['processInstType'] = self.process_inst_type
+        if self.purchaser_address is not None:
+            result['purchaserAddress'] = self.purchaser_address
+        if self.purchaser_bank_name_account is not None:
+            result['purchaserBankNameAccount'] = self.purchaser_bank_name_account
+        if self.purchaser_name is not None:
+            result['purchaserName'] = self.purchaser_name
+        if self.purchaser_tax_no is not None:
+            result['purchaserTaxNo'] = self.purchaser_tax_no
+        if self.purchaser_tel is not None:
+            result['purchaserTel'] = self.purchaser_tel
+        if self.remark is not None:
+            result['remark'] = self.remark
+        result['secondHandCarInvoiceDetailList'] = []
+        if self.second_hand_car_invoice_detail_list is not None:
+            for k in self.second_hand_car_invoice_detail_list:
+                result['secondHandCarInvoiceDetailList'].append(k.to_map() if k else None)
+        if self.seller_address is not None:
+            result['sellerAddress'] = self.seller_address
+        if self.seller_bank_name_account is not None:
+            result['sellerBankNameAccount'] = self.seller_bank_name_account
+        if self.seller_name is not None:
+            result['sellerName'] = self.seller_name
+        if self.seller_tax_no is not None:
+            result['sellerTaxNo'] = self.seller_tax_no
+        if self.seller_tel is not None:
+            result['sellerTel'] = self.seller_tel
+        if self.status is not None:
+            result['status'] = self.status
+        if self.supply_sign is not None:
+            result['supplySign'] = self.supply_sign
+        if self.tax_amount is not None:
+            result['taxAmount'] = self.tax_amount
+        result['usedVehicleSaleDetailVOList'] = []
+        if self.used_vehicle_sale_detail_volist is not None:
+            for k in self.used_vehicle_sale_detail_volist:
+                result['usedVehicleSaleDetailVOList'].append(k.to_map() if k else None)
+        result['vehicleSaleDetailVOList'] = []
+        if self.vehicle_sale_detail_volist is not None:
+            for k in self.vehicle_sale_detail_volist:
+                result['vehicleSaleDetailVOList'].append(k.to_map() if k else None)
+        if self.verify_status is not None:
+            result['verifyStatus'] = self.verify_status
+        if self.voucher_code is not None:
+            result['voucherCode'] = self.voucher_code
+        if self.voucher_status is not None:
+            result['voucherStatus'] = self.voucher_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountPeriod') is not None:
+            self.account_period = m.get('accountPeriod')
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('amountWithTax') is not None:
+            self.amount_with_tax = m.get('amountWithTax')
+        if m.get('checkCode') is not None:
+            self.check_code = m.get('checkCode')
+        if m.get('checkTime') is not None:
+            self.check_time = m.get('checkTime')
+        if m.get('drewDate') is not None:
+            self.drew_date = m.get('drewDate')
+        if m.get('electronicUrl') is not None:
+            self.electronic_url = m.get('electronicUrl')
+        if m.get('financeType') is not None:
+            self.finance_type = m.get('financeType')
+        if m.get('fundType') is not None:
+            self.fund_type = m.get('fundType')
+        self.general_invoice_detail_volist = []
+        if m.get('generalInvoiceDetailVOList') is not None:
+            for k in m.get('generalInvoiceDetailVOList'):
+                temp_model = UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList()
+                self.general_invoice_detail_volist.append(temp_model.from_map(k))
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        if m.get('invoiceType') is not None:
+            self.invoice_type = m.get('invoiceType')
+        if m.get('machineCode') is not None:
+            self.machine_code = m.get('machineCode')
+        if m.get('oilFlag') is not None:
+            self.oil_flag = m.get('oilFlag')
+        if m.get('payee') is not None:
+            self.payee = m.get('payee')
+        if m.get('processInstCode') is not None:
+            self.process_inst_code = m.get('processInstCode')
+        if m.get('processInstType') is not None:
+            self.process_inst_type = m.get('processInstType')
+        if m.get('purchaserAddress') is not None:
+            self.purchaser_address = m.get('purchaserAddress')
+        if m.get('purchaserBankNameAccount') is not None:
+            self.purchaser_bank_name_account = m.get('purchaserBankNameAccount')
+        if m.get('purchaserName') is not None:
+            self.purchaser_name = m.get('purchaserName')
+        if m.get('purchaserTaxNo') is not None:
+            self.purchaser_tax_no = m.get('purchaserTaxNo')
+        if m.get('purchaserTel') is not None:
+            self.purchaser_tel = m.get('purchaserTel')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        self.second_hand_car_invoice_detail_list = []
+        if m.get('secondHandCarInvoiceDetailList') is not None:
+            for k in m.get('secondHandCarInvoiceDetailList'):
+                temp_model = UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList()
+                self.second_hand_car_invoice_detail_list.append(temp_model.from_map(k))
+        if m.get('sellerAddress') is not None:
+            self.seller_address = m.get('sellerAddress')
+        if m.get('sellerBankNameAccount') is not None:
+            self.seller_bank_name_account = m.get('sellerBankNameAccount')
+        if m.get('sellerName') is not None:
+            self.seller_name = m.get('sellerName')
+        if m.get('sellerTaxNo') is not None:
+            self.seller_tax_no = m.get('sellerTaxNo')
+        if m.get('sellerTel') is not None:
+            self.seller_tel = m.get('sellerTel')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('supplySign') is not None:
+            self.supply_sign = m.get('supplySign')
+        if m.get('taxAmount') is not None:
+            self.tax_amount = m.get('taxAmount')
+        self.used_vehicle_sale_detail_volist = []
+        if m.get('usedVehicleSaleDetailVOList') is not None:
+            for k in m.get('usedVehicleSaleDetailVOList'):
+                temp_model = UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList()
+                self.used_vehicle_sale_detail_volist.append(temp_model.from_map(k))
+        self.vehicle_sale_detail_volist = []
+        if m.get('vehicleSaleDetailVOList') is not None:
+            for k in m.get('vehicleSaleDetailVOList'):
+                temp_model = UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOList()
+                self.vehicle_sale_detail_volist.append(temp_model.from_map(k))
+        if m.get('verifyStatus') is not None:
+            self.verify_status = m.get('verifyStatus')
+        if m.get('voucherCode') is not None:
+            self.voucher_code = m.get('voucherCode')
+        if m.get('voucherStatus') is not None:
+            self.voucher_status = m.get('voucherStatus')
+        return self
+
+
+class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList(TeaModel):
+    def __init__(
+        self,
+        amount: str = None,
+        good_name: str = None,
+        quantity: str = None,
+        revenue_code: str = None,
+        row_no: str = None,
+        specification: str = None,
+        tax_amount: str = None,
+        tax_pre: str = None,
+        tax_rate: str = None,
+        unit: str = None,
+        unit_price: str = None,
+    ):
+        # 金额
+        self.amount = amount
+        # 商品名称
+        self.good_name = good_name
+        # 数量
+        self.quantity = quantity
+        # 税收分类编码
+        self.revenue_code = revenue_code
+        # 行号
+        self.row_no = row_no
+        # 规格型号
+        self.specification = specification
+        # 税额
+        self.tax_amount = tax_amount
+        # 是否享受税收优惠：0-不享受，1-享受
+        self.tax_pre = tax_pre
+        # 税率
+        self.tax_rate = tax_rate
+        # 单位
+        self.unit = unit
+        # 单价
+        self.unit_price = unit_price
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.good_name is not None:
+            result['goodName'] = self.good_name
+        if self.quantity is not None:
+            result['quantity'] = self.quantity
+        if self.revenue_code is not None:
+            result['revenueCode'] = self.revenue_code
+        if self.row_no is not None:
+            result['rowNo'] = self.row_no
+        if self.specification is not None:
+            result['specification'] = self.specification
+        if self.tax_amount is not None:
+            result['taxAmount'] = self.tax_amount
+        if self.tax_pre is not None:
+            result['taxPre'] = self.tax_pre
+        if self.tax_rate is not None:
+            result['taxRate'] = self.tax_rate
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.unit_price is not None:
+            result['unitPrice'] = self.unit_price
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('goodName') is not None:
+            self.good_name = m.get('goodName')
+        if m.get('quantity') is not None:
+            self.quantity = m.get('quantity')
+        if m.get('revenueCode') is not None:
+            self.revenue_code = m.get('revenueCode')
+        if m.get('rowNo') is not None:
+            self.row_no = m.get('rowNo')
+        if m.get('specification') is not None:
+            self.specification = m.get('specification')
+        if m.get('taxAmount') is not None:
+            self.tax_amount = m.get('taxAmount')
+        if m.get('taxPre') is not None:
+            self.tax_pre = m.get('taxPre')
+        if m.get('taxRate') is not None:
+            self.tax_rate = m.get('taxRate')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('unitPrice') is not None:
+            self.unit_price = m.get('unitPrice')
+        return self
+
+
+class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList(TeaModel):
+    def __init__(
+        self,
+        amount: str = None,
+        card_no: str = None,
+        end_date: str = None,
+        goods_name: str = None,
+        revenue_code: str = None,
+        row_no: str = None,
+        start_date: str = None,
+        tax_amount: str = None,
+        tax_rate: str = None,
+        vehicle_type: str = None,
+    ):
+        # 金额
+        self.amount = amount
+        # 车牌号
+        self.card_no = card_no
+        # 通行日期止
+        self.end_date = end_date
+        # 商品名称
+        self.goods_name = goods_name
+        # 税收分类编码
+        self.revenue_code = revenue_code
+        # 行号
+        self.row_no = row_no
+        # 通行日期起
+        self.start_date = start_date
+        # 税额
+        self.tax_amount = tax_amount
+        # 税率
+        self.tax_rate = tax_rate
+        # 类型
+        self.vehicle_type = vehicle_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.card_no is not None:
+            result['cardNo'] = self.card_no
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.goods_name is not None:
+            result['goodsName'] = self.goods_name
+        if self.revenue_code is not None:
+            result['revenueCode'] = self.revenue_code
+        if self.row_no is not None:
+            result['rowNo'] = self.row_no
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.tax_amount is not None:
+            result['taxAmount'] = self.tax_amount
+        if self.tax_rate is not None:
+            result['taxRate'] = self.tax_rate
+        if self.vehicle_type is not None:
+            result['vehicleType'] = self.vehicle_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('cardNo') is not None:
+            self.card_no = m.get('cardNo')
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('goodsName') is not None:
+            self.goods_name = m.get('goodsName')
+        if m.get('revenueCode') is not None:
+            self.revenue_code = m.get('revenueCode')
+        if m.get('rowNo') is not None:
+            self.row_no = m.get('rowNo')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('taxAmount') is not None:
+            self.tax_amount = m.get('taxAmount')
+        if m.get('taxRate') is not None:
+            self.tax_rate = m.get('taxRate')
+        if m.get('vehicleType') is not None:
+            self.vehicle_type = m.get('vehicleType')
+        return self
+
+
+class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList(TeaModel):
+    def __init__(
+        self,
+        auction_unit: str = None,
+        auction_unit_address: str = None,
+        auction_unit_bank: str = None,
+        auction_unit_tax_no: str = None,
+        auction_util_tel: str = None,
+        car_model: str = None,
+        card_no: str = None,
+        registration: str = None,
+        transfer_vehicle: str = None,
+        used_car_address: str = None,
+        used_car_market: str = None,
+        used_car_market_bank: str = None,
+        used_car_market_phone: str = None,
+        used_car_market_tax_no: str = None,
+        vehicle_no: str = None,
+        vehicle_type: str = None,
+    ):
+        # 经营、拍卖单位
+        self.auction_unit = auction_unit
+        # 经营、拍卖单位地址
+        self.auction_unit_address = auction_unit_address
+        # 经营、拍卖单位银行
+        self.auction_unit_bank = auction_unit_bank
+        # 经营、拍卖单位税号
+        self.auction_unit_tax_no = auction_unit_tax_no
+        # 经营、拍卖单位电话
+        self.auction_util_tel = auction_util_tel
+        # 厂牌型号
+        self.car_model = car_model
+        # 车牌照号
+        self.card_no = card_no
+        # 登记证号
+        self.registration = registration
+        # 转入地车辆管理所名称
+        self.transfer_vehicle = transfer_vehicle
+        # 二手车市场地址
+        self.used_car_address = used_car_address
+        # 二手车市场
+        self.used_car_market = used_car_market
+        # 二手车市场开户银行、账号
+        self.used_car_market_bank = used_car_market_bank
+        # 二手车市场电话
+        self.used_car_market_phone = used_car_market_phone
+        # 二手车市场纳税人识别号
+        self.used_car_market_tax_no = used_car_market_tax_no
+        # 车架号/车辆识别号
+        self.vehicle_no = vehicle_no
+        # 车辆类型
+        self.vehicle_type = vehicle_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auction_unit is not None:
+            result['auctionUnit'] = self.auction_unit
+        if self.auction_unit_address is not None:
+            result['auctionUnitAddress'] = self.auction_unit_address
+        if self.auction_unit_bank is not None:
+            result['auctionUnitBank'] = self.auction_unit_bank
+        if self.auction_unit_tax_no is not None:
+            result['auctionUnitTaxNo'] = self.auction_unit_tax_no
+        if self.auction_util_tel is not None:
+            result['auctionUtilTel'] = self.auction_util_tel
+        if self.car_model is not None:
+            result['carModel'] = self.car_model
+        if self.card_no is not None:
+            result['cardNo'] = self.card_no
+        if self.registration is not None:
+            result['registration'] = self.registration
+        if self.transfer_vehicle is not None:
+            result['transferVehicle'] = self.transfer_vehicle
+        if self.used_car_address is not None:
+            result['usedCarAddress'] = self.used_car_address
+        if self.used_car_market is not None:
+            result['usedCarMarket'] = self.used_car_market
+        if self.used_car_market_bank is not None:
+            result['usedCarMarketBank'] = self.used_car_market_bank
+        if self.used_car_market_phone is not None:
+            result['usedCarMarketPhone'] = self.used_car_market_phone
+        if self.used_car_market_tax_no is not None:
+            result['usedCarMarketTaxNo'] = self.used_car_market_tax_no
+        if self.vehicle_no is not None:
+            result['vehicleNo'] = self.vehicle_no
+        if self.vehicle_type is not None:
+            result['vehicleType'] = self.vehicle_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('auctionUnit') is not None:
+            self.auction_unit = m.get('auctionUnit')
+        if m.get('auctionUnitAddress') is not None:
+            self.auction_unit_address = m.get('auctionUnitAddress')
+        if m.get('auctionUnitBank') is not None:
+            self.auction_unit_bank = m.get('auctionUnitBank')
+        if m.get('auctionUnitTaxNo') is not None:
+            self.auction_unit_tax_no = m.get('auctionUnitTaxNo')
+        if m.get('auctionUtilTel') is not None:
+            self.auction_util_tel = m.get('auctionUtilTel')
+        if m.get('carModel') is not None:
+            self.car_model = m.get('carModel')
+        if m.get('cardNo') is not None:
+            self.card_no = m.get('cardNo')
+        if m.get('registration') is not None:
+            self.registration = m.get('registration')
+        if m.get('transferVehicle') is not None:
+            self.transfer_vehicle = m.get('transferVehicle')
+        if m.get('usedCarAddress') is not None:
+            self.used_car_address = m.get('usedCarAddress')
+        if m.get('usedCarMarket') is not None:
+            self.used_car_market = m.get('usedCarMarket')
+        if m.get('usedCarMarketBank') is not None:
+            self.used_car_market_bank = m.get('usedCarMarketBank')
+        if m.get('usedCarMarketPhone') is not None:
+            self.used_car_market_phone = m.get('usedCarMarketPhone')
+        if m.get('usedCarMarketTaxNo') is not None:
+            self.used_car_market_tax_no = m.get('usedCarMarketTaxNo')
+        if m.get('vehicleNo') is not None:
+            self.vehicle_no = m.get('vehicleNo')
+        if m.get('vehicleType') is not None:
+            self.vehicle_type = m.get('vehicleType')
+        return self
+
+
+class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList(TeaModel):
+    def __init__(
+        self,
+        brand: str = None,
+        certificate_no: str = None,
+        engine_no: str = None,
+        id_card_no: str = None,
+        import_certificate_no: str = None,
+        max_passengers: str = None,
+        origin_place: str = None,
+        payment_voucher_no: str = None,
+        tax_authority_name: str = None,
+        tax_authority_no: str = None,
+        tax_rate: str = None,
+        tonnage: str = None,
+        vehicle_no: str = None,
+        vehicle_type: str = None,
+    ):
+        # 品牌
+        self.brand = brand
+        # 合格证号
+        self.certificate_no = certificate_no
+        # 发动机号
+        self.engine_no = engine_no
+        # 身份证号/组织机构代码
+        self.id_card_no = id_card_no
+        # 进口证书号
+        self.import_certificate_no = import_certificate_no
+        # 限乘人数
+        self.max_passengers = max_passengers
+        # 产地
+        self.origin_place = origin_place
+        # 完税凭证号码
+        self.payment_voucher_no = payment_voucher_no
+        # 主管税务机关名称
+        self.tax_authority_name = tax_authority_name
+        # 主管税务机关代码
+        self.tax_authority_no = tax_authority_no
+        # 税率
+        self.tax_rate = tax_rate
+        # 吨位
+        self.tonnage = tonnage
+        # 车架号码
+        self.vehicle_no = vehicle_no
+        # 车辆类型
+        self.vehicle_type = vehicle_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.brand is not None:
+            result['brand'] = self.brand
+        if self.certificate_no is not None:
+            result['certificateNo'] = self.certificate_no
+        if self.engine_no is not None:
+            result['engineNo'] = self.engine_no
+        if self.id_card_no is not None:
+            result['idCardNo'] = self.id_card_no
+        if self.import_certificate_no is not None:
+            result['importCertificateNo'] = self.import_certificate_no
+        if self.max_passengers is not None:
+            result['maxPassengers'] = self.max_passengers
+        if self.origin_place is not None:
+            result['originPlace'] = self.origin_place
+        if self.payment_voucher_no is not None:
+            result['paymentVoucherNo'] = self.payment_voucher_no
+        if self.tax_authority_name is not None:
+            result['taxAuthorityName'] = self.tax_authority_name
+        if self.tax_authority_no is not None:
+            result['taxAuthorityNo'] = self.tax_authority_no
+        if self.tax_rate is not None:
+            result['taxRate'] = self.tax_rate
+        if self.tonnage is not None:
+            result['tonnage'] = self.tonnage
+        if self.vehicle_no is not None:
+            result['vehicleNo'] = self.vehicle_no
+        if self.vehicle_type is not None:
+            result['vehicleType'] = self.vehicle_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('brand') is not None:
+            self.brand = m.get('brand')
+        if m.get('certificateNo') is not None:
+            self.certificate_no = m.get('certificateNo')
+        if m.get('engineNo') is not None:
+            self.engine_no = m.get('engineNo')
+        if m.get('idCardNo') is not None:
+            self.id_card_no = m.get('idCardNo')
+        if m.get('importCertificateNo') is not None:
+            self.import_certificate_no = m.get('importCertificateNo')
+        if m.get('maxPassengers') is not None:
+            self.max_passengers = m.get('maxPassengers')
+        if m.get('originPlace') is not None:
+            self.origin_place = m.get('originPlace')
+        if m.get('paymentVoucherNo') is not None:
+            self.payment_voucher_no = m.get('paymentVoucherNo')
+        if m.get('taxAuthorityName') is not None:
+            self.tax_authority_name = m.get('taxAuthorityName')
+        if m.get('taxAuthorityNo') is not None:
+            self.tax_authority_no = m.get('taxAuthorityNo')
+        if m.get('taxRate') is not None:
+            self.tax_rate = m.get('taxRate')
+        if m.get('tonnage') is not None:
+            self.tonnage = m.get('tonnage')
+        if m.get('vehicleNo') is not None:
+            self.vehicle_no = m.get('vehicleNo')
+        if m.get('vehicleType') is not None:
+            self.vehicle_type = m.get('vehicleType')
+        return self
+
+
+class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO(TeaModel):
+    def __init__(
+        self,
+        account_period: str = None,
+        amount: str = None,
+        amount_with_tax: str = None,
+        check_code: str = None,
+        check_time: str = None,
+        drew_date: str = None,
+        electronic_url: str = None,
+        finance_type: str = None,
+        fund_type: str = None,
+        general_invoice_detail_volist: List[UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList] = None,
+        invoice_code: str = None,
+        invoice_no: str = None,
+        invoice_type: str = None,
+        machine_code: str = None,
+        oil_flag: str = None,
+        payee: str = None,
+        process_inst_code: str = None,
+        process_inst_type: str = None,
+        purchaser_address: str = None,
+        purchaser_bank_name_account: str = None,
+        purchaser_name: str = None,
+        purchaser_tax_no: str = None,
+        purchaser_tel: str = None,
+        remark: str = None,
+        second_hand_car_invoice_detail_list: List[UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList] = None,
+        seller_address: str = None,
+        seller_bank_name_account: str = None,
+        seller_name: str = None,
+        seller_tax_no: str = None,
+        seller_tel: str = None,
+        status: str = None,
+        supply_sign: str = None,
+        tax_amount: str = None,
+        used_vehicle_sale_detail_volist: List[UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList] = None,
+        vehicle_sale_detail_volist: List[UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList] = None,
+        verify_status: str = None,
+        voucher_code: str = None,
+        voucher_status: str = None,
+    ):
+        # 账期时间
+        self.account_period = account_period
+        # 不含税金额
+        self.amount = amount
+        # 含税金额
+        self.amount_with_tax = amount_with_tax
+        # 校验码
+        self.check_code = check_code
+        # 查验时间
+        self.check_time = check_time
+        # 开票日期
+        self.drew_date = drew_date
+        # 电票版式文件下载地址
+        self.electronic_url = electronic_url
+        # 财务类型，INPUT-VAT(进项),OUTPUT_VAT(销项)
+        self.finance_type = finance_type
+        # 资金类型 ，RED（红票），（BLUE）蓝票
+        self.fund_type = fund_type
+        # 常规发票明细
+        self.general_invoice_detail_volist = general_invoice_detail_volist
+        # 发票代码
+        self.invoice_code = invoice_code
+        # 发票号码
+        self.invoice_no = invoice_no
+        # 发票类型
+        self.invoice_type = invoice_type
+        # 机器码
+        self.machine_code = machine_code
+        # 成品油标识
+        self.oil_flag = oil_flag
+        # 收款人
+        self.payee = payee
+        # 审批单实例
+        self.process_inst_code = process_inst_code
+        # 审批单类型
+        self.process_inst_type = process_inst_type
+        # 购方地址
+        self.purchaser_address = purchaser_address
+        # 购方银行
+        self.purchaser_bank_name_account = purchaser_bank_name_account
+        # 购方名称
+        self.purchaser_name = purchaser_name
+        # 购方税号
+        self.purchaser_tax_no = purchaser_tax_no
+        # 购方电话
+        self.purchaser_tel = purchaser_tel
+        # 备注
+        self.remark = remark
+        self.second_hand_car_invoice_detail_list = second_hand_car_invoice_detail_list
+        # 销方地址
+        self.seller_address = seller_address
+        # 销方银行
+        self.seller_bank_name_account = seller_bank_name_account
+        # 销方名称
+        self.seller_name = seller_name
+        # 销方税号
+        self.seller_tax_no = seller_tax_no
+        # 销方电话
+        self.seller_tel = seller_tel
+        # 发票状态
+        self.status = status
+        # 代开发票标识 1-自开，2-代开
+        self.supply_sign = supply_sign
+        # 税额
+        self.tax_amount = tax_amount
+        self.used_vehicle_sale_detail_volist = used_vehicle_sale_detail_volist
+        self.vehicle_sale_detail_volist = vehicle_sale_detail_volist
+        # 发票查验状态
+        self.verify_status = verify_status
+        # 凭证code
+        self.voucher_code = voucher_code
+        # 生成凭证状态
+        self.voucher_status = voucher_status
+
+    def validate(self):
+        if self.general_invoice_detail_volist:
+            for k in self.general_invoice_detail_volist:
+                if k:
+                    k.validate()
+        if self.second_hand_car_invoice_detail_list:
+            for k in self.second_hand_car_invoice_detail_list:
+                if k:
+                    k.validate()
+        if self.used_vehicle_sale_detail_volist:
+            for k in self.used_vehicle_sale_detail_volist:
+                if k:
+                    k.validate()
+        if self.vehicle_sale_detail_volist:
+            for k in self.vehicle_sale_detail_volist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.account_period is not None:
+            result['accountPeriod'] = self.account_period
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.amount_with_tax is not None:
+            result['amountWithTax'] = self.amount_with_tax
+        if self.check_code is not None:
+            result['checkCode'] = self.check_code
+        if self.check_time is not None:
+            result['checkTime'] = self.check_time
+        if self.drew_date is not None:
+            result['drewDate'] = self.drew_date
+        if self.electronic_url is not None:
+            result['electronicUrl'] = self.electronic_url
+        if self.finance_type is not None:
+            result['financeType'] = self.finance_type
+        if self.fund_type is not None:
+            result['fundType'] = self.fund_type
+        result['generalInvoiceDetailVOList'] = []
+        if self.general_invoice_detail_volist is not None:
+            for k in self.general_invoice_detail_volist:
+                result['generalInvoiceDetailVOList'].append(k.to_map() if k else None)
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        if self.invoice_type is not None:
+            result['invoiceType'] = self.invoice_type
+        if self.machine_code is not None:
+            result['machineCode'] = self.machine_code
+        if self.oil_flag is not None:
+            result['oilFlag'] = self.oil_flag
+        if self.payee is not None:
+            result['payee'] = self.payee
+        if self.process_inst_code is not None:
+            result['processInstCode'] = self.process_inst_code
+        if self.process_inst_type is not None:
+            result['processInstType'] = self.process_inst_type
+        if self.purchaser_address is not None:
+            result['purchaserAddress'] = self.purchaser_address
+        if self.purchaser_bank_name_account is not None:
+            result['purchaserBankNameAccount'] = self.purchaser_bank_name_account
+        if self.purchaser_name is not None:
+            result['purchaserName'] = self.purchaser_name
+        if self.purchaser_tax_no is not None:
+            result['purchaserTaxNo'] = self.purchaser_tax_no
+        if self.purchaser_tel is not None:
+            result['purchaserTel'] = self.purchaser_tel
+        if self.remark is not None:
+            result['remark'] = self.remark
+        result['secondHandCarInvoiceDetailList'] = []
+        if self.second_hand_car_invoice_detail_list is not None:
+            for k in self.second_hand_car_invoice_detail_list:
+                result['secondHandCarInvoiceDetailList'].append(k.to_map() if k else None)
+        if self.seller_address is not None:
+            result['sellerAddress'] = self.seller_address
+        if self.seller_bank_name_account is not None:
+            result['sellerBankNameAccount'] = self.seller_bank_name_account
+        if self.seller_name is not None:
+            result['sellerName'] = self.seller_name
+        if self.seller_tax_no is not None:
+            result['sellerTaxNo'] = self.seller_tax_no
+        if self.seller_tel is not None:
+            result['sellerTel'] = self.seller_tel
+        if self.status is not None:
+            result['status'] = self.status
+        if self.supply_sign is not None:
+            result['supplySign'] = self.supply_sign
+        if self.tax_amount is not None:
+            result['taxAmount'] = self.tax_amount
+        result['usedVehicleSaleDetailVOList'] = []
+        if self.used_vehicle_sale_detail_volist is not None:
+            for k in self.used_vehicle_sale_detail_volist:
+                result['usedVehicleSaleDetailVOList'].append(k.to_map() if k else None)
+        result['vehicleSaleDetailVOList'] = []
+        if self.vehicle_sale_detail_volist is not None:
+            for k in self.vehicle_sale_detail_volist:
+                result['vehicleSaleDetailVOList'].append(k.to_map() if k else None)
+        if self.verify_status is not None:
+            result['verifyStatus'] = self.verify_status
+        if self.voucher_code is not None:
+            result['voucherCode'] = self.voucher_code
+        if self.voucher_status is not None:
+            result['voucherStatus'] = self.voucher_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountPeriod') is not None:
+            self.account_period = m.get('accountPeriod')
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('amountWithTax') is not None:
+            self.amount_with_tax = m.get('amountWithTax')
+        if m.get('checkCode') is not None:
+            self.check_code = m.get('checkCode')
+        if m.get('checkTime') is not None:
+            self.check_time = m.get('checkTime')
+        if m.get('drewDate') is not None:
+            self.drew_date = m.get('drewDate')
+        if m.get('electronicUrl') is not None:
+            self.electronic_url = m.get('electronicUrl')
+        if m.get('financeType') is not None:
+            self.finance_type = m.get('financeType')
+        if m.get('fundType') is not None:
+            self.fund_type = m.get('fundType')
+        self.general_invoice_detail_volist = []
+        if m.get('generalInvoiceDetailVOList') is not None:
+            for k in m.get('generalInvoiceDetailVOList'):
+                temp_model = UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList()
+                self.general_invoice_detail_volist.append(temp_model.from_map(k))
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        if m.get('invoiceType') is not None:
+            self.invoice_type = m.get('invoiceType')
+        if m.get('machineCode') is not None:
+            self.machine_code = m.get('machineCode')
+        if m.get('oilFlag') is not None:
+            self.oil_flag = m.get('oilFlag')
+        if m.get('payee') is not None:
+            self.payee = m.get('payee')
+        if m.get('processInstCode') is not None:
+            self.process_inst_code = m.get('processInstCode')
+        if m.get('processInstType') is not None:
+            self.process_inst_type = m.get('processInstType')
+        if m.get('purchaserAddress') is not None:
+            self.purchaser_address = m.get('purchaserAddress')
+        if m.get('purchaserBankNameAccount') is not None:
+            self.purchaser_bank_name_account = m.get('purchaserBankNameAccount')
+        if m.get('purchaserName') is not None:
+            self.purchaser_name = m.get('purchaserName')
+        if m.get('purchaserTaxNo') is not None:
+            self.purchaser_tax_no = m.get('purchaserTaxNo')
+        if m.get('purchaserTel') is not None:
+            self.purchaser_tel = m.get('purchaserTel')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        self.second_hand_car_invoice_detail_list = []
+        if m.get('secondHandCarInvoiceDetailList') is not None:
+            for k in m.get('secondHandCarInvoiceDetailList'):
+                temp_model = UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList()
+                self.second_hand_car_invoice_detail_list.append(temp_model.from_map(k))
+        if m.get('sellerAddress') is not None:
+            self.seller_address = m.get('sellerAddress')
+        if m.get('sellerBankNameAccount') is not None:
+            self.seller_bank_name_account = m.get('sellerBankNameAccount')
+        if m.get('sellerName') is not None:
+            self.seller_name = m.get('sellerName')
+        if m.get('sellerTaxNo') is not None:
+            self.seller_tax_no = m.get('sellerTaxNo')
+        if m.get('sellerTel') is not None:
+            self.seller_tel = m.get('sellerTel')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('supplySign') is not None:
+            self.supply_sign = m.get('supplySign')
+        if m.get('taxAmount') is not None:
+            self.tax_amount = m.get('taxAmount')
+        self.used_vehicle_sale_detail_volist = []
+        if m.get('usedVehicleSaleDetailVOList') is not None:
+            for k in m.get('usedVehicleSaleDetailVOList'):
+                temp_model = UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList()
+                self.used_vehicle_sale_detail_volist.append(temp_model.from_map(k))
+        self.vehicle_sale_detail_volist = []
+        if m.get('vehicleSaleDetailVOList') is not None:
+            for k in m.get('vehicleSaleDetailVOList'):
+                temp_model = UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOList()
+                self.vehicle_sale_detail_volist.append(temp_model.from_map(k))
+        if m.get('verifyStatus') is not None:
+            self.verify_status = m.get('verifyStatus')
+        if m.get('voucherCode') is not None:
+            self.voucher_code = m.get('voucherCode')
+        if m.get('voucherStatus') is not None:
+            self.voucher_status = m.get('voucherStatus')
+        return self
+
+
+class UpdateInvoiceAbandonStatusRequest(TeaModel):
+    def __init__(
+        self,
+        blue_general_invoice_vo: UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO = None,
+        invoice_code: str = None,
+        invoice_no: str = None,
+        red_general_invoice_vo: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO = None,
+        status: str = None,
+    ):
+        # 发票全票面信息（蓝票）
+        self.blue_general_invoice_vo = blue_general_invoice_vo
+        # 发票编码（蓝票）
+        self.invoice_code = invoice_code
+        # 发票号码（蓝票）
+        self.invoice_no = invoice_no
+        # 发票全票面信息（红票）
+        self.red_general_invoice_vo = red_general_invoice_vo
+        # 状态-红冲、废弃
+        self.status = status
+
+    def validate(self):
+        if self.blue_general_invoice_vo:
+            self.blue_general_invoice_vo.validate()
+        if self.red_general_invoice_vo:
+            self.red_general_invoice_vo.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.blue_general_invoice_vo is not None:
+            result['blueGeneralInvoiceVO'] = self.blue_general_invoice_vo.to_map()
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        if self.red_general_invoice_vo is not None:
+            result['redGeneralInvoiceVO'] = self.red_general_invoice_vo.to_map()
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('blueGeneralInvoiceVO') is not None:
+            temp_model = UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO()
+            self.blue_general_invoice_vo = temp_model.from_map(m['blueGeneralInvoiceVO'])
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        if m.get('redGeneralInvoiceVO') is not None:
+            temp_model = UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO()
+            self.red_general_invoice_vo = temp_model.from_map(m['redGeneralInvoiceVO'])
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class UpdateInvoiceAbandonStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class UpdateInvoiceAbandonStatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateInvoiceAbandonStatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateInvoiceAbandonStatusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateInvoiceAndReceiptRelatedHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList(TeaModel):
+    def __init__(
+        self,
+        amount: str = None,
+        good_name: str = None,
+        quantity: str = None,
+        revenue_code: str = None,
+        row_no: str = None,
+        specification: str = None,
+        tax_amount: str = None,
+        tax_pre: str = None,
+        tax_rate: str = None,
+        unit: str = None,
+        unit_price: str = None,
+    ):
+        # 金额
+        self.amount = amount
+        # 商品名称
+        self.good_name = good_name
+        # 数量
+        self.quantity = quantity
+        # 税收分类编码
+        self.revenue_code = revenue_code
+        # 行号
+        self.row_no = row_no
+        # 规格型号
+        self.specification = specification
+        # 税额
+        self.tax_amount = tax_amount
+        # 是否享受税收优惠：0-不享受，1-享受
+        self.tax_pre = tax_pre
+        # 税率
+        self.tax_rate = tax_rate
+        # 单位
+        self.unit = unit
+        # 单价
+        self.unit_price = unit_price
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.good_name is not None:
+            result['goodName'] = self.good_name
+        if self.quantity is not None:
+            result['quantity'] = self.quantity
+        if self.revenue_code is not None:
+            result['revenueCode'] = self.revenue_code
+        if self.row_no is not None:
+            result['rowNo'] = self.row_no
+        if self.specification is not None:
+            result['specification'] = self.specification
+        if self.tax_amount is not None:
+            result['taxAmount'] = self.tax_amount
+        if self.tax_pre is not None:
+            result['taxPre'] = self.tax_pre
+        if self.tax_rate is not None:
+            result['taxRate'] = self.tax_rate
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.unit_price is not None:
+            result['unitPrice'] = self.unit_price
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('goodName') is not None:
+            self.good_name = m.get('goodName')
+        if m.get('quantity') is not None:
+            self.quantity = m.get('quantity')
+        if m.get('revenueCode') is not None:
+            self.revenue_code = m.get('revenueCode')
+        if m.get('rowNo') is not None:
+            self.row_no = m.get('rowNo')
+        if m.get('specification') is not None:
+            self.specification = m.get('specification')
+        if m.get('taxAmount') is not None:
+            self.tax_amount = m.get('taxAmount')
+        if m.get('taxPre') is not None:
+            self.tax_pre = m.get('taxPre')
+        if m.get('taxRate') is not None:
+            self.tax_rate = m.get('taxRate')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('unitPrice') is not None:
+            self.unit_price = m.get('unitPrice')
+        return self
+
+
+class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList(TeaModel):
+    def __init__(
+        self,
+        amount: str = None,
+        card_no: str = None,
+        end_date: str = None,
+        goods_name: str = None,
+        revenue_code: str = None,
+        row_no: str = None,
+        start_date: str = None,
+        tax_amount: str = None,
+        tax_rate: str = None,
+        vehicle_type: str = None,
+    ):
+        # 金额
+        self.amount = amount
+        # 车牌号
+        self.card_no = card_no
+        # 通行日期止
+        self.end_date = end_date
+        # 商品名称
+        self.goods_name = goods_name
+        # 税收分类编码
+        self.revenue_code = revenue_code
+        # 行号
+        self.row_no = row_no
+        # 通行日期起
+        self.start_date = start_date
+        # 税额
+        self.tax_amount = tax_amount
+        # 税率
+        self.tax_rate = tax_rate
+        # 类型
+        self.vehicle_type = vehicle_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.card_no is not None:
+            result['cardNo'] = self.card_no
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.goods_name is not None:
+            result['goodsName'] = self.goods_name
+        if self.revenue_code is not None:
+            result['revenueCode'] = self.revenue_code
+        if self.row_no is not None:
+            result['rowNo'] = self.row_no
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.tax_amount is not None:
+            result['taxAmount'] = self.tax_amount
+        if self.tax_rate is not None:
+            result['taxRate'] = self.tax_rate
+        if self.vehicle_type is not None:
+            result['vehicleType'] = self.vehicle_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('cardNo') is not None:
+            self.card_no = m.get('cardNo')
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('goodsName') is not None:
+            self.goods_name = m.get('goodsName')
+        if m.get('revenueCode') is not None:
+            self.revenue_code = m.get('revenueCode')
+        if m.get('rowNo') is not None:
+            self.row_no = m.get('rowNo')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('taxAmount') is not None:
+            self.tax_amount = m.get('taxAmount')
+        if m.get('taxRate') is not None:
+            self.tax_rate = m.get('taxRate')
+        if m.get('vehicleType') is not None:
+            self.vehicle_type = m.get('vehicleType')
+        return self
+
+
+class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList(TeaModel):
+    def __init__(
+        self,
+        auction_unit: str = None,
+        auction_unit_address: str = None,
+        auction_unit_bank: str = None,
+        auction_unit_tax_no: str = None,
+        auction_util_tel: str = None,
+        car_model: str = None,
+        card_no: str = None,
+        registration: str = None,
+        transfer_vehicle: str = None,
+        used_car_address: str = None,
+        used_car_market: str = None,
+        used_car_market_bank: str = None,
+        used_car_market_phone: str = None,
+        used_car_market_tax_no: str = None,
+        vehicle_no: str = None,
+        vehicle_type: str = None,
+    ):
+        # 经营、拍卖单位
+        self.auction_unit = auction_unit
+        # 经营、拍卖单位地址
+        self.auction_unit_address = auction_unit_address
+        # 经营、拍卖单位银行
+        self.auction_unit_bank = auction_unit_bank
+        # 经营、拍卖单位税号
+        self.auction_unit_tax_no = auction_unit_tax_no
+        # 经营、拍卖单位电话
+        self.auction_util_tel = auction_util_tel
+        # 厂牌型号
+        self.car_model = car_model
+        # 车牌照号
+        self.card_no = card_no
+        # 登记证号
+        self.registration = registration
+        # 转入地车辆管理所名称
+        self.transfer_vehicle = transfer_vehicle
+        # 二手车市场地址
+        self.used_car_address = used_car_address
+        # 二手车市场
+        self.used_car_market = used_car_market
+        # 二手车市场开户银行、账号
+        self.used_car_market_bank = used_car_market_bank
+        # 二手车市场电话
+        self.used_car_market_phone = used_car_market_phone
+        # 二手车市场纳税人识别号
+        self.used_car_market_tax_no = used_car_market_tax_no
+        # 车架号/车辆识别号
+        self.vehicle_no = vehicle_no
+        # 车辆类型
+        self.vehicle_type = vehicle_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auction_unit is not None:
+            result['auctionUnit'] = self.auction_unit
+        if self.auction_unit_address is not None:
+            result['auctionUnitAddress'] = self.auction_unit_address
+        if self.auction_unit_bank is not None:
+            result['auctionUnitBank'] = self.auction_unit_bank
+        if self.auction_unit_tax_no is not None:
+            result['auctionUnitTaxNo'] = self.auction_unit_tax_no
+        if self.auction_util_tel is not None:
+            result['auctionUtilTel'] = self.auction_util_tel
+        if self.car_model is not None:
+            result['carModel'] = self.car_model
+        if self.card_no is not None:
+            result['cardNo'] = self.card_no
+        if self.registration is not None:
+            result['registration'] = self.registration
+        if self.transfer_vehicle is not None:
+            result['transferVehicle'] = self.transfer_vehicle
+        if self.used_car_address is not None:
+            result['usedCarAddress'] = self.used_car_address
+        if self.used_car_market is not None:
+            result['usedCarMarket'] = self.used_car_market
+        if self.used_car_market_bank is not None:
+            result['usedCarMarketBank'] = self.used_car_market_bank
+        if self.used_car_market_phone is not None:
+            result['usedCarMarketPhone'] = self.used_car_market_phone
+        if self.used_car_market_tax_no is not None:
+            result['usedCarMarketTaxNo'] = self.used_car_market_tax_no
+        if self.vehicle_no is not None:
+            result['vehicleNo'] = self.vehicle_no
+        if self.vehicle_type is not None:
+            result['vehicleType'] = self.vehicle_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('auctionUnit') is not None:
+            self.auction_unit = m.get('auctionUnit')
+        if m.get('auctionUnitAddress') is not None:
+            self.auction_unit_address = m.get('auctionUnitAddress')
+        if m.get('auctionUnitBank') is not None:
+            self.auction_unit_bank = m.get('auctionUnitBank')
+        if m.get('auctionUnitTaxNo') is not None:
+            self.auction_unit_tax_no = m.get('auctionUnitTaxNo')
+        if m.get('auctionUtilTel') is not None:
+            self.auction_util_tel = m.get('auctionUtilTel')
+        if m.get('carModel') is not None:
+            self.car_model = m.get('carModel')
+        if m.get('cardNo') is not None:
+            self.card_no = m.get('cardNo')
+        if m.get('registration') is not None:
+            self.registration = m.get('registration')
+        if m.get('transferVehicle') is not None:
+            self.transfer_vehicle = m.get('transferVehicle')
+        if m.get('usedCarAddress') is not None:
+            self.used_car_address = m.get('usedCarAddress')
+        if m.get('usedCarMarket') is not None:
+            self.used_car_market = m.get('usedCarMarket')
+        if m.get('usedCarMarketBank') is not None:
+            self.used_car_market_bank = m.get('usedCarMarketBank')
+        if m.get('usedCarMarketPhone') is not None:
+            self.used_car_market_phone = m.get('usedCarMarketPhone')
+        if m.get('usedCarMarketTaxNo') is not None:
+            self.used_car_market_tax_no = m.get('usedCarMarketTaxNo')
+        if m.get('vehicleNo') is not None:
+            self.vehicle_no = m.get('vehicleNo')
+        if m.get('vehicleType') is not None:
+            self.vehicle_type = m.get('vehicleType')
+        return self
+
+
+class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOVehicleSaleDetailVOList(TeaModel):
+    def __init__(
+        self,
+        brand: str = None,
+        certificate_no: str = None,
+        engine_no: str = None,
+        id_card_no: str = None,
+        import_certificate_no: str = None,
+        max_passengers: str = None,
+        origin_place: str = None,
+        payment_voucher_no: str = None,
+        tax_authority_name: str = None,
+        tax_authority_no: str = None,
+        tax_rate: str = None,
+        tonnage: str = None,
+        vehicle_no: str = None,
+        vehicle_type: str = None,
+    ):
+        # 品牌
+        self.brand = brand
+        # 合格证号
+        self.certificate_no = certificate_no
+        # 发动机号
+        self.engine_no = engine_no
+        # 身份证号/组织机构代码
+        self.id_card_no = id_card_no
+        # 进口证书号
+        self.import_certificate_no = import_certificate_no
+        # 限乘人数
+        self.max_passengers = max_passengers
+        # 产地
+        self.origin_place = origin_place
+        # 完税凭证号码
+        self.payment_voucher_no = payment_voucher_no
+        # 主管税务机关名称
+        self.tax_authority_name = tax_authority_name
+        # 主管税务机关代码
+        self.tax_authority_no = tax_authority_no
+        # 税率
+        self.tax_rate = tax_rate
+        # 吨位
+        self.tonnage = tonnage
+        # 车架号码
+        self.vehicle_no = vehicle_no
+        # 车辆类型
+        self.vehicle_type = vehicle_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.brand is not None:
+            result['brand'] = self.brand
+        if self.certificate_no is not None:
+            result['certificateNo'] = self.certificate_no
+        if self.engine_no is not None:
+            result['engineNo'] = self.engine_no
+        if self.id_card_no is not None:
+            result['idCardNo'] = self.id_card_no
+        if self.import_certificate_no is not None:
+            result['importCertificateNo'] = self.import_certificate_no
+        if self.max_passengers is not None:
+            result['maxPassengers'] = self.max_passengers
+        if self.origin_place is not None:
+            result['originPlace'] = self.origin_place
+        if self.payment_voucher_no is not None:
+            result['paymentVoucherNo'] = self.payment_voucher_no
+        if self.tax_authority_name is not None:
+            result['taxAuthorityName'] = self.tax_authority_name
+        if self.tax_authority_no is not None:
+            result['taxAuthorityNo'] = self.tax_authority_no
+        if self.tax_rate is not None:
+            result['taxRate'] = self.tax_rate
+        if self.tonnage is not None:
+            result['tonnage'] = self.tonnage
+        if self.vehicle_no is not None:
+            result['vehicleNo'] = self.vehicle_no
+        if self.vehicle_type is not None:
+            result['vehicleType'] = self.vehicle_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('brand') is not None:
+            self.brand = m.get('brand')
+        if m.get('certificateNo') is not None:
+            self.certificate_no = m.get('certificateNo')
+        if m.get('engineNo') is not None:
+            self.engine_no = m.get('engineNo')
+        if m.get('idCardNo') is not None:
+            self.id_card_no = m.get('idCardNo')
+        if m.get('importCertificateNo') is not None:
+            self.import_certificate_no = m.get('importCertificateNo')
+        if m.get('maxPassengers') is not None:
+            self.max_passengers = m.get('maxPassengers')
+        if m.get('originPlace') is not None:
+            self.origin_place = m.get('originPlace')
+        if m.get('paymentVoucherNo') is not None:
+            self.payment_voucher_no = m.get('paymentVoucherNo')
+        if m.get('taxAuthorityName') is not None:
+            self.tax_authority_name = m.get('taxAuthorityName')
+        if m.get('taxAuthorityNo') is not None:
+            self.tax_authority_no = m.get('taxAuthorityNo')
+        if m.get('taxRate') is not None:
+            self.tax_rate = m.get('taxRate')
+        if m.get('tonnage') is not None:
+            self.tonnage = m.get('tonnage')
+        if m.get('vehicleNo') is not None:
+            self.vehicle_no = m.get('vehicleNo')
+        if m.get('vehicleType') is not None:
+            self.vehicle_type = m.get('vehicleType')
+        return self
+
+
+class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO(TeaModel):
+    def __init__(
+        self,
+        account_period: str = None,
+        amount: str = None,
+        amount_with_tax: str = None,
+        check_code: str = None,
+        check_time: str = None,
+        drew_date: str = None,
+        electronic_url: str = None,
+        finance_type: str = None,
+        fund_type: str = None,
+        general_invoice_detail_volist: List[UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList] = None,
+        invoice_code: str = None,
+        invoice_no: str = None,
+        invoice_type: str = None,
+        machine_code: str = None,
+        oil_flag: str = None,
+        payee: str = None,
+        process_inst_code: str = None,
+        process_inst_type: str = None,
+        purchaser_address: str = None,
+        purchaser_bank_name_account: str = None,
+        purchaser_name: str = None,
+        purchaser_tax_no: str = None,
+        purchaser_tel: str = None,
+        remark: str = None,
+        second_hand_car_invoice_detail_list: List[UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList] = None,
+        seller_address: str = None,
+        seller_bank_name_account: str = None,
+        seller_name: str = None,
+        seller_tax_no: str = None,
+        seller_tel: str = None,
+        status: str = None,
+        supply_sign: str = None,
+        tax_amount: str = None,
+        used_vehicle_sale_detail_volist: List[UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList] = None,
+        vehicle_sale_detail_volist: List[UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOVehicleSaleDetailVOList] = None,
+        verify_status: str = None,
+        voucher_code: str = None,
+        voucher_status: str = None,
+    ):
+        # 账期时间
+        self.account_period = account_period
+        # 不含税金额
+        self.amount = amount
+        # 含税金额
+        self.amount_with_tax = amount_with_tax
+        # 校验码
+        self.check_code = check_code
+        # 查验时间
+        self.check_time = check_time
+        # 开票日期
+        self.drew_date = drew_date
+        # 电票版式文件下载地址
+        self.electronic_url = electronic_url
+        # 财务类型，INPUT-VAT(进项),OUTPUT_VAT(销项)
+        self.finance_type = finance_type
+        # 资金类型 ，RED（红票），（BLUE）蓝票
+        self.fund_type = fund_type
+        # 常规发票明细
+        self.general_invoice_detail_volist = general_invoice_detail_volist
+        # 发票代码
+        self.invoice_code = invoice_code
+        # 发票号码
+        self.invoice_no = invoice_no
+        # 发票类型
+        self.invoice_type = invoice_type
+        # 机器码
+        self.machine_code = machine_code
+        # 成品油标识
+        self.oil_flag = oil_flag
+        # 收款人
+        self.payee = payee
+        # 审批单实例
+        self.process_inst_code = process_inst_code
+        # 审批单类型
+        self.process_inst_type = process_inst_type
+        # 购方地址
+        self.purchaser_address = purchaser_address
+        # 购方银行
+        self.purchaser_bank_name_account = purchaser_bank_name_account
+        # 购方名称
+        self.purchaser_name = purchaser_name
+        # 购方税号
+        self.purchaser_tax_no = purchaser_tax_no
+        # 购方电话
+        self.purchaser_tel = purchaser_tel
+        # 备注
+        self.remark = remark
+        self.second_hand_car_invoice_detail_list = second_hand_car_invoice_detail_list
+        # 销方地址
+        self.seller_address = seller_address
+        # 销方银行
+        self.seller_bank_name_account = seller_bank_name_account
+        # 销方名称
+        self.seller_name = seller_name
+        # 销方税号
+        self.seller_tax_no = seller_tax_no
+        # 销方电话
+        self.seller_tel = seller_tel
+        # 发票状态
+        self.status = status
+        # 代开发票标识 1-自开，2-代开
+        self.supply_sign = supply_sign
+        # 税额
+        self.tax_amount = tax_amount
+        self.used_vehicle_sale_detail_volist = used_vehicle_sale_detail_volist
+        self.vehicle_sale_detail_volist = vehicle_sale_detail_volist
+        # 发票查验状态
+        self.verify_status = verify_status
+        # 凭证code
+        self.voucher_code = voucher_code
+        # 生成凭证状态
+        self.voucher_status = voucher_status
+
+    def validate(self):
+        if self.general_invoice_detail_volist:
+            for k in self.general_invoice_detail_volist:
+                if k:
+                    k.validate()
+        if self.second_hand_car_invoice_detail_list:
+            for k in self.second_hand_car_invoice_detail_list:
+                if k:
+                    k.validate()
+        if self.used_vehicle_sale_detail_volist:
+            for k in self.used_vehicle_sale_detail_volist:
+                if k:
+                    k.validate()
+        if self.vehicle_sale_detail_volist:
+            for k in self.vehicle_sale_detail_volist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.account_period is not None:
+            result['accountPeriod'] = self.account_period
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.amount_with_tax is not None:
+            result['amountWithTax'] = self.amount_with_tax
+        if self.check_code is not None:
+            result['checkCode'] = self.check_code
+        if self.check_time is not None:
+            result['checkTime'] = self.check_time
+        if self.drew_date is not None:
+            result['drewDate'] = self.drew_date
+        if self.electronic_url is not None:
+            result['electronicUrl'] = self.electronic_url
+        if self.finance_type is not None:
+            result['financeType'] = self.finance_type
+        if self.fund_type is not None:
+            result['fundType'] = self.fund_type
+        result['generalInvoiceDetailVOList'] = []
+        if self.general_invoice_detail_volist is not None:
+            for k in self.general_invoice_detail_volist:
+                result['generalInvoiceDetailVOList'].append(k.to_map() if k else None)
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        if self.invoice_type is not None:
+            result['invoiceType'] = self.invoice_type
+        if self.machine_code is not None:
+            result['machineCode'] = self.machine_code
+        if self.oil_flag is not None:
+            result['oilFlag'] = self.oil_flag
+        if self.payee is not None:
+            result['payee'] = self.payee
+        if self.process_inst_code is not None:
+            result['processInstCode'] = self.process_inst_code
+        if self.process_inst_type is not None:
+            result['processInstType'] = self.process_inst_type
+        if self.purchaser_address is not None:
+            result['purchaserAddress'] = self.purchaser_address
+        if self.purchaser_bank_name_account is not None:
+            result['purchaserBankNameAccount'] = self.purchaser_bank_name_account
+        if self.purchaser_name is not None:
+            result['purchaserName'] = self.purchaser_name
+        if self.purchaser_tax_no is not None:
+            result['purchaserTaxNo'] = self.purchaser_tax_no
+        if self.purchaser_tel is not None:
+            result['purchaserTel'] = self.purchaser_tel
+        if self.remark is not None:
+            result['remark'] = self.remark
+        result['secondHandCarInvoiceDetailList'] = []
+        if self.second_hand_car_invoice_detail_list is not None:
+            for k in self.second_hand_car_invoice_detail_list:
+                result['secondHandCarInvoiceDetailList'].append(k.to_map() if k else None)
+        if self.seller_address is not None:
+            result['sellerAddress'] = self.seller_address
+        if self.seller_bank_name_account is not None:
+            result['sellerBankNameAccount'] = self.seller_bank_name_account
+        if self.seller_name is not None:
+            result['sellerName'] = self.seller_name
+        if self.seller_tax_no is not None:
+            result['sellerTaxNo'] = self.seller_tax_no
+        if self.seller_tel is not None:
+            result['sellerTel'] = self.seller_tel
+        if self.status is not None:
+            result['status'] = self.status
+        if self.supply_sign is not None:
+            result['supplySign'] = self.supply_sign
+        if self.tax_amount is not None:
+            result['taxAmount'] = self.tax_amount
+        result['usedVehicleSaleDetailVOList'] = []
+        if self.used_vehicle_sale_detail_volist is not None:
+            for k in self.used_vehicle_sale_detail_volist:
+                result['usedVehicleSaleDetailVOList'].append(k.to_map() if k else None)
+        result['vehicleSaleDetailVOList'] = []
+        if self.vehicle_sale_detail_volist is not None:
+            for k in self.vehicle_sale_detail_volist:
+                result['vehicleSaleDetailVOList'].append(k.to_map() if k else None)
+        if self.verify_status is not None:
+            result['verifyStatus'] = self.verify_status
+        if self.voucher_code is not None:
+            result['voucherCode'] = self.voucher_code
+        if self.voucher_status is not None:
+            result['voucherStatus'] = self.voucher_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountPeriod') is not None:
+            self.account_period = m.get('accountPeriod')
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('amountWithTax') is not None:
+            self.amount_with_tax = m.get('amountWithTax')
+        if m.get('checkCode') is not None:
+            self.check_code = m.get('checkCode')
+        if m.get('checkTime') is not None:
+            self.check_time = m.get('checkTime')
+        if m.get('drewDate') is not None:
+            self.drew_date = m.get('drewDate')
+        if m.get('electronicUrl') is not None:
+            self.electronic_url = m.get('electronicUrl')
+        if m.get('financeType') is not None:
+            self.finance_type = m.get('financeType')
+        if m.get('fundType') is not None:
+            self.fund_type = m.get('fundType')
+        self.general_invoice_detail_volist = []
+        if m.get('generalInvoiceDetailVOList') is not None:
+            for k in m.get('generalInvoiceDetailVOList'):
+                temp_model = UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList()
+                self.general_invoice_detail_volist.append(temp_model.from_map(k))
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        if m.get('invoiceType') is not None:
+            self.invoice_type = m.get('invoiceType')
+        if m.get('machineCode') is not None:
+            self.machine_code = m.get('machineCode')
+        if m.get('oilFlag') is not None:
+            self.oil_flag = m.get('oilFlag')
+        if m.get('payee') is not None:
+            self.payee = m.get('payee')
+        if m.get('processInstCode') is not None:
+            self.process_inst_code = m.get('processInstCode')
+        if m.get('processInstType') is not None:
+            self.process_inst_type = m.get('processInstType')
+        if m.get('purchaserAddress') is not None:
+            self.purchaser_address = m.get('purchaserAddress')
+        if m.get('purchaserBankNameAccount') is not None:
+            self.purchaser_bank_name_account = m.get('purchaserBankNameAccount')
+        if m.get('purchaserName') is not None:
+            self.purchaser_name = m.get('purchaserName')
+        if m.get('purchaserTaxNo') is not None:
+            self.purchaser_tax_no = m.get('purchaserTaxNo')
+        if m.get('purchaserTel') is not None:
+            self.purchaser_tel = m.get('purchaserTel')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        self.second_hand_car_invoice_detail_list = []
+        if m.get('secondHandCarInvoiceDetailList') is not None:
+            for k in m.get('secondHandCarInvoiceDetailList'):
+                temp_model = UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList()
+                self.second_hand_car_invoice_detail_list.append(temp_model.from_map(k))
+        if m.get('sellerAddress') is not None:
+            self.seller_address = m.get('sellerAddress')
+        if m.get('sellerBankNameAccount') is not None:
+            self.seller_bank_name_account = m.get('sellerBankNameAccount')
+        if m.get('sellerName') is not None:
+            self.seller_name = m.get('sellerName')
+        if m.get('sellerTaxNo') is not None:
+            self.seller_tax_no = m.get('sellerTaxNo')
+        if m.get('sellerTel') is not None:
+            self.seller_tel = m.get('sellerTel')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('supplySign') is not None:
+            self.supply_sign = m.get('supplySign')
+        if m.get('taxAmount') is not None:
+            self.tax_amount = m.get('taxAmount')
+        self.used_vehicle_sale_detail_volist = []
+        if m.get('usedVehicleSaleDetailVOList') is not None:
+            for k in m.get('usedVehicleSaleDetailVOList'):
+                temp_model = UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList()
+                self.used_vehicle_sale_detail_volist.append(temp_model.from_map(k))
+        self.vehicle_sale_detail_volist = []
+        if m.get('vehicleSaleDetailVOList') is not None:
+            for k in m.get('vehicleSaleDetailVOList'):
+                temp_model = UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOVehicleSaleDetailVOList()
+                self.vehicle_sale_detail_volist.append(temp_model.from_map(k))
+        if m.get('verifyStatus') is not None:
+            self.verify_status = m.get('verifyStatus')
+        if m.get('voucherCode') is not None:
+            self.voucher_code = m.get('voucherCode')
+        if m.get('voucherStatus') is not None:
+            self.voucher_status = m.get('voucherStatus')
+        return self
+
+
+class UpdateInvoiceAndReceiptRelatedRequest(TeaModel):
+    def __init__(
+        self,
+        general_invoice_vo: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO = None,
+        invoice_code: str = None,
+        invoice_no: str = None,
+        receipt_code: str = None,
+    ):
+        # 发票全票面信息
+        self.general_invoice_vo = general_invoice_vo
+        # 发票代码
+        self.invoice_code = invoice_code
+        # 发票号码
+        self.invoice_no = invoice_no
+        # 钉钉审批单号
+        self.receipt_code = receipt_code
+
+    def validate(self):
+        if self.general_invoice_vo:
+            self.general_invoice_vo.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.general_invoice_vo is not None:
+            result['generalInvoiceVO'] = self.general_invoice_vo.to_map()
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        if self.receipt_code is not None:
+            result['receiptCode'] = self.receipt_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('generalInvoiceVO') is not None:
+            temp_model = UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO()
+            self.general_invoice_vo = temp_model.from_map(m['generalInvoiceVO'])
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        if m.get('receiptCode') is not None:
+            self.receipt_code = m.get('receiptCode')
+        return self
+
+
+class UpdateInvoiceAndReceiptRelatedResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class UpdateInvoiceAndReceiptRelatedResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateInvoiceAndReceiptRelatedResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateInvoiceAndReceiptRelatedResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateInvoiceIgnoreStatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOGeneralInvoiceDetailVOList(TeaModel):
+    def __init__(
+        self,
+        amount: str = None,
+        good_name: str = None,
+        quantity: str = None,
+        revenue_code: str = None,
+        row_no: str = None,
+        specification: str = None,
+        tax_amount: str = None,
+        tax_pre: str = None,
+        tax_rate: str = None,
+        unit: str = None,
+        unit_price: str = None,
+    ):
+        # 金额
+        self.amount = amount
+        # 商品名称
+        self.good_name = good_name
+        # 数量
+        self.quantity = quantity
+        # 税收分类编码
+        self.revenue_code = revenue_code
+        # 行号
+        self.row_no = row_no
+        # 规格型号
+        self.specification = specification
+        # 税额
+        self.tax_amount = tax_amount
+        # 是否享受税收优惠：0-不享受，1-享受
+        self.tax_pre = tax_pre
+        # 税率
+        self.tax_rate = tax_rate
+        # 单位
+        self.unit = unit
+        # 单价
+        self.unit_price = unit_price
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.good_name is not None:
+            result['goodName'] = self.good_name
+        if self.quantity is not None:
+            result['quantity'] = self.quantity
+        if self.revenue_code is not None:
+            result['revenueCode'] = self.revenue_code
+        if self.row_no is not None:
+            result['rowNo'] = self.row_no
+        if self.specification is not None:
+            result['specification'] = self.specification
+        if self.tax_amount is not None:
+            result['taxAmount'] = self.tax_amount
+        if self.tax_pre is not None:
+            result['taxPre'] = self.tax_pre
+        if self.tax_rate is not None:
+            result['taxRate'] = self.tax_rate
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.unit_price is not None:
+            result['unitPrice'] = self.unit_price
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('goodName') is not None:
+            self.good_name = m.get('goodName')
+        if m.get('quantity') is not None:
+            self.quantity = m.get('quantity')
+        if m.get('revenueCode') is not None:
+            self.revenue_code = m.get('revenueCode')
+        if m.get('rowNo') is not None:
+            self.row_no = m.get('rowNo')
+        if m.get('specification') is not None:
+            self.specification = m.get('specification')
+        if m.get('taxAmount') is not None:
+            self.tax_amount = m.get('taxAmount')
+        if m.get('taxPre') is not None:
+            self.tax_pre = m.get('taxPre')
+        if m.get('taxRate') is not None:
+            self.tax_rate = m.get('taxRate')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('unitPrice') is not None:
+            self.unit_price = m.get('unitPrice')
+        return self
+
+
+class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList(TeaModel):
+    def __init__(
+        self,
+        amount: str = None,
+        card_no: str = None,
+        end_date: str = None,
+        goods_name: str = None,
+        revenue_code: str = None,
+        row_no: str = None,
+        start_date: str = None,
+        tax_amount: str = None,
+        tax_rate: str = None,
+        vehicle_type: str = None,
+    ):
+        # 金额
+        self.amount = amount
+        # 车牌号
+        self.card_no = card_no
+        # 通行日期止
+        self.end_date = end_date
+        # 商品名称
+        self.goods_name = goods_name
+        # 税收分类编码
+        self.revenue_code = revenue_code
+        # 行号
+        self.row_no = row_no
+        # 通行日期起
+        self.start_date = start_date
+        # 税额
+        self.tax_amount = tax_amount
+        # 税率
+        self.tax_rate = tax_rate
+        # 类型
+        self.vehicle_type = vehicle_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.card_no is not None:
+            result['cardNo'] = self.card_no
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.goods_name is not None:
+            result['goodsName'] = self.goods_name
+        if self.revenue_code is not None:
+            result['revenueCode'] = self.revenue_code
+        if self.row_no is not None:
+            result['rowNo'] = self.row_no
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.tax_amount is not None:
+            result['taxAmount'] = self.tax_amount
+        if self.tax_rate is not None:
+            result['taxRate'] = self.tax_rate
+        if self.vehicle_type is not None:
+            result['vehicleType'] = self.vehicle_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('cardNo') is not None:
+            self.card_no = m.get('cardNo')
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('goodsName') is not None:
+            self.goods_name = m.get('goodsName')
+        if m.get('revenueCode') is not None:
+            self.revenue_code = m.get('revenueCode')
+        if m.get('rowNo') is not None:
+            self.row_no = m.get('rowNo')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('taxAmount') is not None:
+            self.tax_amount = m.get('taxAmount')
+        if m.get('taxRate') is not None:
+            self.tax_rate = m.get('taxRate')
+        if m.get('vehicleType') is not None:
+            self.vehicle_type = m.get('vehicleType')
+        return self
+
+
+class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList(TeaModel):
+    def __init__(
+        self,
+        auction_unit: str = None,
+        auction_unit_address: str = None,
+        auction_unit_bank: str = None,
+        auction_unit_tax_no: str = None,
+        auction_util_tel: str = None,
+        car_model: str = None,
+        card_no: str = None,
+        registration: str = None,
+        transfer_vehicle: str = None,
+        used_car_address: str = None,
+        used_car_market: str = None,
+        used_car_market_bank: str = None,
+        used_car_market_phone: str = None,
+        used_car_market_tax_no: str = None,
+        vehicle_no: str = None,
+        vehicle_type: str = None,
+    ):
+        # 经营、拍卖单位
+        self.auction_unit = auction_unit
+        # 经营、拍卖单位地址
+        self.auction_unit_address = auction_unit_address
+        # 经营、拍卖单位银行
+        self.auction_unit_bank = auction_unit_bank
+        # 经营、拍卖单位税号
+        self.auction_unit_tax_no = auction_unit_tax_no
+        # 经营、拍卖单位电话
+        self.auction_util_tel = auction_util_tel
+        # 厂牌型号
+        self.car_model = car_model
+        # 车牌照号
+        self.card_no = card_no
+        # 登记证号
+        self.registration = registration
+        # 转入地车辆管理所名称
+        self.transfer_vehicle = transfer_vehicle
+        # 二手车市场地址
+        self.used_car_address = used_car_address
+        # 二手车市场
+        self.used_car_market = used_car_market
+        # 二手车市场开户银行、账号
+        self.used_car_market_bank = used_car_market_bank
+        # 二手车市场电话
+        self.used_car_market_phone = used_car_market_phone
+        # 二手车市场纳税人识别号
+        self.used_car_market_tax_no = used_car_market_tax_no
+        # 车架号/车辆识别号
+        self.vehicle_no = vehicle_no
+        # 车辆类型
+        self.vehicle_type = vehicle_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auction_unit is not None:
+            result['auctionUnit'] = self.auction_unit
+        if self.auction_unit_address is not None:
+            result['auctionUnitAddress'] = self.auction_unit_address
+        if self.auction_unit_bank is not None:
+            result['auctionUnitBank'] = self.auction_unit_bank
+        if self.auction_unit_tax_no is not None:
+            result['auctionUnitTaxNo'] = self.auction_unit_tax_no
+        if self.auction_util_tel is not None:
+            result['auctionUtilTel'] = self.auction_util_tel
+        if self.car_model is not None:
+            result['carModel'] = self.car_model
+        if self.card_no is not None:
+            result['cardNo'] = self.card_no
+        if self.registration is not None:
+            result['registration'] = self.registration
+        if self.transfer_vehicle is not None:
+            result['transferVehicle'] = self.transfer_vehicle
+        if self.used_car_address is not None:
+            result['usedCarAddress'] = self.used_car_address
+        if self.used_car_market is not None:
+            result['usedCarMarket'] = self.used_car_market
+        if self.used_car_market_bank is not None:
+            result['usedCarMarketBank'] = self.used_car_market_bank
+        if self.used_car_market_phone is not None:
+            result['usedCarMarketPhone'] = self.used_car_market_phone
+        if self.used_car_market_tax_no is not None:
+            result['usedCarMarketTaxNo'] = self.used_car_market_tax_no
+        if self.vehicle_no is not None:
+            result['vehicleNo'] = self.vehicle_no
+        if self.vehicle_type is not None:
+            result['vehicleType'] = self.vehicle_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('auctionUnit') is not None:
+            self.auction_unit = m.get('auctionUnit')
+        if m.get('auctionUnitAddress') is not None:
+            self.auction_unit_address = m.get('auctionUnitAddress')
+        if m.get('auctionUnitBank') is not None:
+            self.auction_unit_bank = m.get('auctionUnitBank')
+        if m.get('auctionUnitTaxNo') is not None:
+            self.auction_unit_tax_no = m.get('auctionUnitTaxNo')
+        if m.get('auctionUtilTel') is not None:
+            self.auction_util_tel = m.get('auctionUtilTel')
+        if m.get('carModel') is not None:
+            self.car_model = m.get('carModel')
+        if m.get('cardNo') is not None:
+            self.card_no = m.get('cardNo')
+        if m.get('registration') is not None:
+            self.registration = m.get('registration')
+        if m.get('transferVehicle') is not None:
+            self.transfer_vehicle = m.get('transferVehicle')
+        if m.get('usedCarAddress') is not None:
+            self.used_car_address = m.get('usedCarAddress')
+        if m.get('usedCarMarket') is not None:
+            self.used_car_market = m.get('usedCarMarket')
+        if m.get('usedCarMarketBank') is not None:
+            self.used_car_market_bank = m.get('usedCarMarketBank')
+        if m.get('usedCarMarketPhone') is not None:
+            self.used_car_market_phone = m.get('usedCarMarketPhone')
+        if m.get('usedCarMarketTaxNo') is not None:
+            self.used_car_market_tax_no = m.get('usedCarMarketTaxNo')
+        if m.get('vehicleNo') is not None:
+            self.vehicle_no = m.get('vehicleNo')
+        if m.get('vehicleType') is not None:
+            self.vehicle_type = m.get('vehicleType')
+        return self
+
+
+class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList(TeaModel):
+    def __init__(
+        self,
+        brand: str = None,
+        certificate_no: str = None,
+        engine_no: str = None,
+        id_card_no: str = None,
+        import_certificate_no: str = None,
+        max_passengers: str = None,
+        origin_place: str = None,
+        payment_voucher_no: str = None,
+        tax_authority_name: str = None,
+        tax_authority_no: str = None,
+        tax_rate: str = None,
+        tonnage: str = None,
+        vehicle_no: str = None,
+        vehicle_type: str = None,
+    ):
+        # 品牌
+        self.brand = brand
+        # 合格证号
+        self.certificate_no = certificate_no
+        # 发动机号
+        self.engine_no = engine_no
+        # 身份证号/组织机构代码
+        self.id_card_no = id_card_no
+        # 进口证书号
+        self.import_certificate_no = import_certificate_no
+        # 限乘人数
+        self.max_passengers = max_passengers
+        # 产地
+        self.origin_place = origin_place
+        # 完税凭证号码
+        self.payment_voucher_no = payment_voucher_no
+        # 主管税务机关名称
+        self.tax_authority_name = tax_authority_name
+        # 主管税务机关代码
+        self.tax_authority_no = tax_authority_no
+        # 税率
+        self.tax_rate = tax_rate
+        # 吨位
+        self.tonnage = tonnage
+        # 车架号码
+        self.vehicle_no = vehicle_no
+        # 车辆类型
+        self.vehicle_type = vehicle_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.brand is not None:
+            result['brand'] = self.brand
+        if self.certificate_no is not None:
+            result['certificateNo'] = self.certificate_no
+        if self.engine_no is not None:
+            result['engineNo'] = self.engine_no
+        if self.id_card_no is not None:
+            result['idCardNo'] = self.id_card_no
+        if self.import_certificate_no is not None:
+            result['importCertificateNo'] = self.import_certificate_no
+        if self.max_passengers is not None:
+            result['maxPassengers'] = self.max_passengers
+        if self.origin_place is not None:
+            result['originPlace'] = self.origin_place
+        if self.payment_voucher_no is not None:
+            result['paymentVoucherNo'] = self.payment_voucher_no
+        if self.tax_authority_name is not None:
+            result['taxAuthorityName'] = self.tax_authority_name
+        if self.tax_authority_no is not None:
+            result['taxAuthorityNo'] = self.tax_authority_no
+        if self.tax_rate is not None:
+            result['taxRate'] = self.tax_rate
+        if self.tonnage is not None:
+            result['tonnage'] = self.tonnage
+        if self.vehicle_no is not None:
+            result['vehicleNo'] = self.vehicle_no
+        if self.vehicle_type is not None:
+            result['vehicleType'] = self.vehicle_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('brand') is not None:
+            self.brand = m.get('brand')
+        if m.get('certificateNo') is not None:
+            self.certificate_no = m.get('certificateNo')
+        if m.get('engineNo') is not None:
+            self.engine_no = m.get('engineNo')
+        if m.get('idCardNo') is not None:
+            self.id_card_no = m.get('idCardNo')
+        if m.get('importCertificateNo') is not None:
+            self.import_certificate_no = m.get('importCertificateNo')
+        if m.get('maxPassengers') is not None:
+            self.max_passengers = m.get('maxPassengers')
+        if m.get('originPlace') is not None:
+            self.origin_place = m.get('originPlace')
+        if m.get('paymentVoucherNo') is not None:
+            self.payment_voucher_no = m.get('paymentVoucherNo')
+        if m.get('taxAuthorityName') is not None:
+            self.tax_authority_name = m.get('taxAuthorityName')
+        if m.get('taxAuthorityNo') is not None:
+            self.tax_authority_no = m.get('taxAuthorityNo')
+        if m.get('taxRate') is not None:
+            self.tax_rate = m.get('taxRate')
+        if m.get('tonnage') is not None:
+            self.tonnage = m.get('tonnage')
+        if m.get('vehicleNo') is not None:
+            self.vehicle_no = m.get('vehicleNo')
+        if m.get('vehicleType') is not None:
+            self.vehicle_type = m.get('vehicleType')
+        return self
+
+
+class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO(TeaModel):
+    def __init__(
+        self,
+        account_period: str = None,
+        amount: str = None,
+        amount_with_tax: str = None,
+        check_code: str = None,
+        check_time: str = None,
+        drew_date: str = None,
+        electronic_url: str = None,
+        finance_type: str = None,
+        fund_type: str = None,
+        general_invoice_detail_volist: List[UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOGeneralInvoiceDetailVOList] = None,
+        invoice_code: str = None,
+        invoice_no: str = None,
+        invoice_type: str = None,
+        machine_code: str = None,
+        oil_flag: str = None,
+        payee: str = None,
+        process_inst_code: str = None,
+        process_inst_type: str = None,
+        purchaser_address: str = None,
+        purchaser_bank_name_account: str = None,
+        purchaser_name: str = None,
+        purchaser_tax_no: str = None,
+        purchaser_tel: str = None,
+        remark: str = None,
+        second_hand_car_invoice_detail_list: List[UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList] = None,
+        seller_address: str = None,
+        seller_bank_name_account: str = None,
+        seller_name: str = None,
+        seller_tax_no: str = None,
+        seller_tel: str = None,
+        status: str = None,
+        supply_sign: str = None,
+        tax_amount: str = None,
+        used_vehicle_sale_detail_volist: List[UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList] = None,
+        vehicle_sale_detail_volist: List[UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList] = None,
+        verify_status: str = None,
+        voucher_code: str = None,
+        voucher_status: str = None,
+    ):
+        # 账期时间
+        self.account_period = account_period
+        # 不含税金额
+        self.amount = amount
+        # 含税金额
+        self.amount_with_tax = amount_with_tax
+        # 校验码
+        self.check_code = check_code
+        # 查验时间
+        self.check_time = check_time
+        # 开票日期
+        self.drew_date = drew_date
+        # 电票版式文件下载地址
+        self.electronic_url = electronic_url
+        # 财务类型，INPUT-VAT(进项),OUTPUT_VAT(销项)
+        self.finance_type = finance_type
+        # 资金类型 ，RED（红票），（BLUE）蓝票
+        self.fund_type = fund_type
+        # 常规发票明细
+        self.general_invoice_detail_volist = general_invoice_detail_volist
+        # 发票代码
+        self.invoice_code = invoice_code
+        # 发票号码
+        self.invoice_no = invoice_no
+        # 发票类型
+        self.invoice_type = invoice_type
+        # 机器码
+        self.machine_code = machine_code
+        # 成品油标识
+        self.oil_flag = oil_flag
+        # 收款人
+        self.payee = payee
+        # 审批单实例
+        self.process_inst_code = process_inst_code
+        # 审批单类型
+        self.process_inst_type = process_inst_type
+        # 购方地址
+        self.purchaser_address = purchaser_address
+        # 购方银行
+        self.purchaser_bank_name_account = purchaser_bank_name_account
+        # 购方名称
+        self.purchaser_name = purchaser_name
+        # 购方税号
+        self.purchaser_tax_no = purchaser_tax_no
+        # 购方电话
+        self.purchaser_tel = purchaser_tel
+        # 备注
+        self.remark = remark
+        self.second_hand_car_invoice_detail_list = second_hand_car_invoice_detail_list
+        # 销方地址
+        self.seller_address = seller_address
+        # 销方银行
+        self.seller_bank_name_account = seller_bank_name_account
+        # 销方名称
+        self.seller_name = seller_name
+        # 销方税号
+        self.seller_tax_no = seller_tax_no
+        # 销方电话
+        self.seller_tel = seller_tel
+        # 发票状态
+        self.status = status
+        # 代开发票标识 1-自开，2-代开
+        self.supply_sign = supply_sign
+        # 税额
+        self.tax_amount = tax_amount
+        self.used_vehicle_sale_detail_volist = used_vehicle_sale_detail_volist
+        self.vehicle_sale_detail_volist = vehicle_sale_detail_volist
+        # 发票查验状态
+        self.verify_status = verify_status
+        # 凭证code
+        self.voucher_code = voucher_code
+        # 生成凭证状态
+        self.voucher_status = voucher_status
+
+    def validate(self):
+        if self.general_invoice_detail_volist:
+            for k in self.general_invoice_detail_volist:
+                if k:
+                    k.validate()
+        if self.second_hand_car_invoice_detail_list:
+            for k in self.second_hand_car_invoice_detail_list:
+                if k:
+                    k.validate()
+        if self.used_vehicle_sale_detail_volist:
+            for k in self.used_vehicle_sale_detail_volist:
+                if k:
+                    k.validate()
+        if self.vehicle_sale_detail_volist:
+            for k in self.vehicle_sale_detail_volist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.account_period is not None:
+            result['accountPeriod'] = self.account_period
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.amount_with_tax is not None:
+            result['amountWithTax'] = self.amount_with_tax
+        if self.check_code is not None:
+            result['checkCode'] = self.check_code
+        if self.check_time is not None:
+            result['checkTime'] = self.check_time
+        if self.drew_date is not None:
+            result['drewDate'] = self.drew_date
+        if self.electronic_url is not None:
+            result['electronicUrl'] = self.electronic_url
+        if self.finance_type is not None:
+            result['financeType'] = self.finance_type
+        if self.fund_type is not None:
+            result['fundType'] = self.fund_type
+        result['generalInvoiceDetailVOList'] = []
+        if self.general_invoice_detail_volist is not None:
+            for k in self.general_invoice_detail_volist:
+                result['generalInvoiceDetailVOList'].append(k.to_map() if k else None)
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        if self.invoice_type is not None:
+            result['invoiceType'] = self.invoice_type
+        if self.machine_code is not None:
+            result['machineCode'] = self.machine_code
+        if self.oil_flag is not None:
+            result['oilFlag'] = self.oil_flag
+        if self.payee is not None:
+            result['payee'] = self.payee
+        if self.process_inst_code is not None:
+            result['processInstCode'] = self.process_inst_code
+        if self.process_inst_type is not None:
+            result['processInstType'] = self.process_inst_type
+        if self.purchaser_address is not None:
+            result['purchaserAddress'] = self.purchaser_address
+        if self.purchaser_bank_name_account is not None:
+            result['purchaserBankNameAccount'] = self.purchaser_bank_name_account
+        if self.purchaser_name is not None:
+            result['purchaserName'] = self.purchaser_name
+        if self.purchaser_tax_no is not None:
+            result['purchaserTaxNo'] = self.purchaser_tax_no
+        if self.purchaser_tel is not None:
+            result['purchaserTel'] = self.purchaser_tel
+        if self.remark is not None:
+            result['remark'] = self.remark
+        result['secondHandCarInvoiceDetailList'] = []
+        if self.second_hand_car_invoice_detail_list is not None:
+            for k in self.second_hand_car_invoice_detail_list:
+                result['secondHandCarInvoiceDetailList'].append(k.to_map() if k else None)
+        if self.seller_address is not None:
+            result['sellerAddress'] = self.seller_address
+        if self.seller_bank_name_account is not None:
+            result['sellerBankNameAccount'] = self.seller_bank_name_account
+        if self.seller_name is not None:
+            result['sellerName'] = self.seller_name
+        if self.seller_tax_no is not None:
+            result['sellerTaxNo'] = self.seller_tax_no
+        if self.seller_tel is not None:
+            result['sellerTel'] = self.seller_tel
+        if self.status is not None:
+            result['status'] = self.status
+        if self.supply_sign is not None:
+            result['supplySign'] = self.supply_sign
+        if self.tax_amount is not None:
+            result['taxAmount'] = self.tax_amount
+        result['usedVehicleSaleDetailVOList'] = []
+        if self.used_vehicle_sale_detail_volist is not None:
+            for k in self.used_vehicle_sale_detail_volist:
+                result['usedVehicleSaleDetailVOList'].append(k.to_map() if k else None)
+        result['vehicleSaleDetailVOList'] = []
+        if self.vehicle_sale_detail_volist is not None:
+            for k in self.vehicle_sale_detail_volist:
+                result['vehicleSaleDetailVOList'].append(k.to_map() if k else None)
+        if self.verify_status is not None:
+            result['verifyStatus'] = self.verify_status
+        if self.voucher_code is not None:
+            result['voucherCode'] = self.voucher_code
+        if self.voucher_status is not None:
+            result['voucherStatus'] = self.voucher_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountPeriod') is not None:
+            self.account_period = m.get('accountPeriod')
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('amountWithTax') is not None:
+            self.amount_with_tax = m.get('amountWithTax')
+        if m.get('checkCode') is not None:
+            self.check_code = m.get('checkCode')
+        if m.get('checkTime') is not None:
+            self.check_time = m.get('checkTime')
+        if m.get('drewDate') is not None:
+            self.drew_date = m.get('drewDate')
+        if m.get('electronicUrl') is not None:
+            self.electronic_url = m.get('electronicUrl')
+        if m.get('financeType') is not None:
+            self.finance_type = m.get('financeType')
+        if m.get('fundType') is not None:
+            self.fund_type = m.get('fundType')
+        self.general_invoice_detail_volist = []
+        if m.get('generalInvoiceDetailVOList') is not None:
+            for k in m.get('generalInvoiceDetailVOList'):
+                temp_model = UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOGeneralInvoiceDetailVOList()
+                self.general_invoice_detail_volist.append(temp_model.from_map(k))
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        if m.get('invoiceType') is not None:
+            self.invoice_type = m.get('invoiceType')
+        if m.get('machineCode') is not None:
+            self.machine_code = m.get('machineCode')
+        if m.get('oilFlag') is not None:
+            self.oil_flag = m.get('oilFlag')
+        if m.get('payee') is not None:
+            self.payee = m.get('payee')
+        if m.get('processInstCode') is not None:
+            self.process_inst_code = m.get('processInstCode')
+        if m.get('processInstType') is not None:
+            self.process_inst_type = m.get('processInstType')
+        if m.get('purchaserAddress') is not None:
+            self.purchaser_address = m.get('purchaserAddress')
+        if m.get('purchaserBankNameAccount') is not None:
+            self.purchaser_bank_name_account = m.get('purchaserBankNameAccount')
+        if m.get('purchaserName') is not None:
+            self.purchaser_name = m.get('purchaserName')
+        if m.get('purchaserTaxNo') is not None:
+            self.purchaser_tax_no = m.get('purchaserTaxNo')
+        if m.get('purchaserTel') is not None:
+            self.purchaser_tel = m.get('purchaserTel')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        self.second_hand_car_invoice_detail_list = []
+        if m.get('secondHandCarInvoiceDetailList') is not None:
+            for k in m.get('secondHandCarInvoiceDetailList'):
+                temp_model = UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList()
+                self.second_hand_car_invoice_detail_list.append(temp_model.from_map(k))
+        if m.get('sellerAddress') is not None:
+            self.seller_address = m.get('sellerAddress')
+        if m.get('sellerBankNameAccount') is not None:
+            self.seller_bank_name_account = m.get('sellerBankNameAccount')
+        if m.get('sellerName') is not None:
+            self.seller_name = m.get('sellerName')
+        if m.get('sellerTaxNo') is not None:
+            self.seller_tax_no = m.get('sellerTaxNo')
+        if m.get('sellerTel') is not None:
+            self.seller_tel = m.get('sellerTel')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('supplySign') is not None:
+            self.supply_sign = m.get('supplySign')
+        if m.get('taxAmount') is not None:
+            self.tax_amount = m.get('taxAmount')
+        self.used_vehicle_sale_detail_volist = []
+        if m.get('usedVehicleSaleDetailVOList') is not None:
+            for k in m.get('usedVehicleSaleDetailVOList'):
+                temp_model = UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList()
+                self.used_vehicle_sale_detail_volist.append(temp_model.from_map(k))
+        self.vehicle_sale_detail_volist = []
+        if m.get('vehicleSaleDetailVOList') is not None:
+            for k in m.get('vehicleSaleDetailVOList'):
+                temp_model = UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList()
+                self.vehicle_sale_detail_volist.append(temp_model.from_map(k))
+        if m.get('verifyStatus') is not None:
+            self.verify_status = m.get('verifyStatus')
+        if m.get('voucherCode') is not None:
+            self.voucher_code = m.get('voucherCode')
+        if m.get('voucherStatus') is not None:
+            self.voucher_status = m.get('voucherStatus')
+        return self
+
+
+class UpdateInvoiceIgnoreStatusRequest(TeaModel):
+    def __init__(
+        self,
+        general_invoice_vo: UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO = None,
+        invoice_code: str = None,
+        invoice_no: str = None,
+        status: str = None,
+    ):
+        # 发票全票面信息
+        self.general_invoice_vo = general_invoice_vo
+        # 发票编码
+        self.invoice_code = invoice_code
+        # 发票号码
+        self.invoice_no = invoice_no
+        # 发票状态
+        self.status = status
+
+    def validate(self):
+        if self.general_invoice_vo:
+            self.general_invoice_vo.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.general_invoice_vo is not None:
+            result['generalInvoiceVO'] = self.general_invoice_vo.to_map()
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('generalInvoiceVO') is not None:
+            temp_model = UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO()
+            self.general_invoice_vo = temp_model.from_map(m['generalInvoiceVO'])
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class UpdateInvoiceIgnoreStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class UpdateInvoiceIgnoreStatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateInvoiceIgnoreStatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateInvoiceIgnoreStatusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateInvoiceVerifyStatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateInvoiceVerifyStatusRequestInvoiceKeyVOList(TeaModel):
+    def __init__(
+        self,
+        invoice_code: str = None,
+        invoice_no: str = None,
+    ):
+        # 发票编码
+        self.invoice_code = invoice_code
+        # 发票号码
+        self.invoice_no = invoice_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        return self
+
+
+class UpdateInvoiceVerifyStatusRequest(TeaModel):
+    def __init__(
+        self,
+        invoice_key_volist: List[UpdateInvoiceVerifyStatusRequestInvoiceKeyVOList] = None,
+        verify_status: str = None,
+    ):
+        # 待更新
+        self.invoice_key_volist = invoice_key_volist
+        # 认证状态
+        self.verify_status = verify_status
+
+    def validate(self):
+        if self.invoice_key_volist:
+            for k in self.invoice_key_volist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['invoiceKeyVOList'] = []
+        if self.invoice_key_volist is not None:
+            for k in self.invoice_key_volist:
+                result['invoiceKeyVOList'].append(k.to_map() if k else None)
+        if self.verify_status is not None:
+            result['verifyStatus'] = self.verify_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.invoice_key_volist = []
+        if m.get('invoiceKeyVOList') is not None:
+            for k in m.get('invoiceKeyVOList'):
+                temp_model = UpdateInvoiceVerifyStatusRequestInvoiceKeyVOList()
+                self.invoice_key_volist.append(temp_model.from_map(k))
+        if m.get('verifyStatus') is not None:
+            self.verify_status = m.get('verifyStatus')
+        return self
+
+
+class UpdateInvoiceVerifyStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class UpdateInvoiceVerifyStatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateInvoiceVerifyStatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateInvoiceVerifyStatusResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

@@ -105,6 +105,7 @@ class AddKnowledgeRequest(TeaModel):
         library_key: str = None,
         link_url: str = None,
         open_team_id: str = None,
+        question_ids: List[int] = None,
         source: str = None,
         source_primary_key: str = None,
         title: str = None,
@@ -127,6 +128,8 @@ class AddKnowledgeRequest(TeaModel):
         self.link_url = link_url
         # 开放团队ID
         self.open_team_id = open_team_id
+        # 关联问题id
+        self.question_ids = question_ids
         # 知识点来源
         self.source = source
         # 知识点唯一标识
@@ -170,6 +173,8 @@ class AddKnowledgeRequest(TeaModel):
             result['linkUrl'] = self.link_url
         if self.open_team_id is not None:
             result['openTeamId'] = self.open_team_id
+        if self.question_ids is not None:
+            result['questionIds'] = self.question_ids
         if self.source is not None:
             result['source'] = self.source
         if self.source_primary_key is not None:
@@ -205,6 +210,8 @@ class AddKnowledgeRequest(TeaModel):
             self.link_url = m.get('linkUrl')
         if m.get('openTeamId') is not None:
             self.open_team_id = m.get('openTeamId')
+        if m.get('questionIds') is not None:
+            self.question_ids = m.get('questionIds')
         if m.get('source') is not None:
             self.source = m.get('source')
         if m.get('sourcePrimaryKey') is not None:

@@ -694,6 +694,39 @@ class CampusCreateRenterResponse(TeaModel):
         return self
 
 
+class CampusDelRenterMemberHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
 class CampusDelRenterMemberRequest(TeaModel):
     def __init__(
         self,
@@ -6701,12 +6734,47 @@ class IndustryManufactureCommonEventRequest(TeaModel):
         return self
 
 
+class IndustryManufactureCommonEventResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        http_code: str = None,
+    ):
+        # 返回内容
+        self.content = content
+        # 状态码
+        self.http_code = http_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.http_code is not None:
+            result['httpCode'] = self.http_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('httpCode') is not None:
+            self.http_code = m.get('httpCode')
+        return self
+
+
 class IndustryManufactureCommonEventResponseBody(TeaModel):
     def __init__(
         self,
         error_msg: str = None,
         request_id: str = None,
-        result: Any = None,
+        result: IndustryManufactureCommonEventResponseBodyResult = None,
     ):
         self.error_msg = error_msg
         # Id of the request
@@ -6714,7 +6782,8 @@ class IndustryManufactureCommonEventResponseBody(TeaModel):
         self.result = result
 
     def validate(self):
-        pass
+        if self.result:
+            self.result.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -6727,7 +6796,7 @@ class IndustryManufactureCommonEventResponseBody(TeaModel):
         if self.request_id is not None:
             result['requestId'] = self.request_id
         if self.result is not None:
-            result['result'] = self.result
+            result['result'] = self.result.to_map()
         return result
 
     def from_map(self, m: dict = None):
@@ -6737,7 +6806,8 @@ class IndustryManufactureCommonEventResponseBody(TeaModel):
         if m.get('requestId') is not None:
             self.request_id = m.get('requestId')
         if m.get('result') is not None:
-            self.result = m.get('result')
+            temp_model = IndustryManufactureCommonEventResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
         return self
 
 
@@ -9028,6 +9098,194 @@ class IndustryMmanufactureMaterialCostGetResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = IndustryMmanufactureMaterialCostGetResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PushDingMessageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PushDingMessageRequest(TeaModel):
+    def __init__(
+        self,
+        app_id: int = None,
+        content: str = None,
+        message_type: str = None,
+        message_url: str = None,
+        picture_url: str = None,
+        single_title: str = None,
+        single_url: str = None,
+        title: str = None,
+        user_id_list: List[str] = None,
+    ):
+        # 应用Id，默认是医疗的应用。
+        self.app_id = app_id
+        # 消息内容，长度不超过500。
+        self.content = content
+        # 消息类型：CARD:卡片消息；LINK:链接消息；TEXT：文本消息；
+        self.message_type = message_type
+        # 链接消息时，消息文案下的URL。
+        self.message_url = message_url
+        # 链接消息时，右侧图片URL。
+        self.picture_url = picture_url
+        # 卡片消息时，消息下面action的标题，长度不超过20。
+        self.single_title = single_title
+        # 卡片消息时，消息下面action转跳URL，长度不超过500。
+        self.single_url = single_url
+        # 消息展示标题，长度不超过100。
+        self.title = title
+        # 组织下的staffId列表
+        self.user_id_list = user_id_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_id is not None:
+            result['appId'] = self.app_id
+        if self.content is not None:
+            result['content'] = self.content
+        if self.message_type is not None:
+            result['messageType'] = self.message_type
+        if self.message_url is not None:
+            result['messageUrl'] = self.message_url
+        if self.picture_url is not None:
+            result['pictureUrl'] = self.picture_url
+        if self.single_title is not None:
+            result['singleTitle'] = self.single_title
+        if self.single_url is not None:
+            result['singleUrl'] = self.single_url
+        if self.title is not None:
+            result['title'] = self.title
+        if self.user_id_list is not None:
+            result['userIdList'] = self.user_id_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('messageType') is not None:
+            self.message_type = m.get('messageType')
+        if m.get('messageUrl') is not None:
+            self.message_url = m.get('messageUrl')
+        if m.get('pictureUrl') is not None:
+            self.picture_url = m.get('pictureUrl')
+        if m.get('singleTitle') is not None:
+            self.single_title = m.get('singleTitle')
+        if m.get('singleUrl') is not None:
+            self.single_url = m.get('singleUrl')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('userIdList') is not None:
+            self.user_id_list = m.get('userIdList')
+        return self
+
+
+class PushDingMessageResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: int = None,
+        success: bool = None,
+    ):
+        # 返回1表示当前批次成功
+        self.content = content
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class PushDingMessageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: PushDingMessageResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = PushDingMessageResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -13210,7 +13468,7 @@ class QueryUserCredentialsRequest(TeaModel):
 class QueryUserCredentialsResponseBodyContentCredentialList(TeaModel):
     def __init__(
         self,
-        credential_name: int = None,
+        credential_name: str = None,
         credential_type: int = None,
         term_of_validity: str = None,
     ):
@@ -13255,7 +13513,7 @@ class QueryUserCredentialsResponseBodyContent(TeaModel):
         credential_list: List[QueryUserCredentialsResponseBodyContentCredentialList] = None,
         user_id: str = None,
     ):
-        # 证书
+        # 证书列表
         self.credential_list = credential_list
         # 用户id
         self.user_id = user_id

@@ -47,8 +47,6 @@ class CreateOrganizationTaskRequest(TeaModel):
         due_date: str = None,
         executor_id: str = None,
         involve_members: List[str] = None,
-        is_done: bool = None,
-        label: str = None,
         note: str = None,
         priority: int = None,
         visible: str = None,
@@ -67,10 +65,6 @@ class CreateOrganizationTaskRequest(TeaModel):
         self.executor_id = executor_id
         # 参与者id
         self.involve_members = involve_members
-        # 任务是否完成
-        self.is_done = is_done
-        # 任务自定义标记
-        self.label = label
         # 任务备注
         self.note = note
         # 优先级【-10,0,1,2】中选一个
@@ -101,10 +95,6 @@ class CreateOrganizationTaskRequest(TeaModel):
             result['executorId'] = self.executor_id
         if self.involve_members is not None:
             result['involveMembers'] = self.involve_members
-        if self.is_done is not None:
-            result['isDone'] = self.is_done
-        if self.label is not None:
-            result['label'] = self.label
         if self.note is not None:
             result['note'] = self.note
         if self.priority is not None:
@@ -129,10 +119,6 @@ class CreateOrganizationTaskRequest(TeaModel):
             self.executor_id = m.get('executorId')
         if m.get('involveMembers') is not None:
             self.involve_members = m.get('involveMembers')
-        if m.get('isDone') is not None:
-            self.is_done = m.get('isDone')
-        if m.get('label') is not None:
-            self.label = m.get('label')
         if m.get('note') is not None:
             self.note = m.get('note')
         if m.get('priority') is not None:
@@ -286,10 +272,8 @@ class CreateOrganizationTaskResponseBodyResult(TeaModel):
         involvers: List[CreateOrganizationTaskResponseBodyResultInvolvers] = None,
         is_deleted: bool = None,
         is_done: str = None,
-        labels: List[str] = None,
         note: str = None,
         priority: int = None,
-        tag_ids: List[str] = None,
         updated: str = None,
         visible: str = None,
     ):
@@ -323,14 +307,10 @@ class CreateOrganizationTaskResponseBodyResult(TeaModel):
         self.is_deleted = is_deleted
         # 是否完成
         self.is_done = is_done
-        # 任务自定义标记
-        self.labels = labels
         # 任务备注
         self.note = note
         # 优先级【-10,0,1,2】中选一个
         self.priority = priority
-        # 标签
-        self.tag_ids = tag_ids
         # 更新时间
         self.updated = updated
         # 任务可见性。involves：仅参与者可见。members:所有人可见
@@ -384,14 +364,10 @@ class CreateOrganizationTaskResponseBodyResult(TeaModel):
             result['isDeleted'] = self.is_deleted
         if self.is_done is not None:
             result['isDone'] = self.is_done
-        if self.labels is not None:
-            result['labels'] = self.labels
         if self.note is not None:
             result['note'] = self.note
         if self.priority is not None:
             result['priority'] = self.priority
-        if self.tag_ids is not None:
-            result['tagIds'] = self.tag_ids
         if self.updated is not None:
             result['updated'] = self.updated
         if self.visible is not None:
@@ -435,14 +411,10 @@ class CreateOrganizationTaskResponseBodyResult(TeaModel):
             self.is_deleted = m.get('isDeleted')
         if m.get('isDone') is not None:
             self.is_done = m.get('isDone')
-        if m.get('labels') is not None:
-            self.labels = m.get('labels')
         if m.get('note') is not None:
             self.note = m.get('note')
         if m.get('priority') is not None:
             self.priority = m.get('priority')
-        if m.get('tagIds') is not None:
-            self.tag_ids = m.get('tagIds')
         if m.get('updated') is not None:
             self.updated = m.get('updated')
         if m.get('visible') is not None:
@@ -513,6 +485,481 @@ class CreateOrganizationTaskResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CreateOrganizationTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateTaskRequest(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        due_date: str = None,
+        executor_id: str = None,
+        note: str = None,
+        priority: int = None,
+        project_id: str = None,
+    ):
+        # 任务标题
+        self.content = content
+        # 任务截止时间
+        self.due_date = due_date
+        # 执行者userId
+        self.executor_id = executor_id
+        # 任务备注
+        self.note = note
+        # 任务优先级
+        self.priority = priority
+        # 项目id
+        self.project_id = project_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.due_date is not None:
+            result['dueDate'] = self.due_date
+        if self.executor_id is not None:
+            result['executorId'] = self.executor_id
+        if self.note is not None:
+            result['note'] = self.note
+        if self.priority is not None:
+            result['priority'] = self.priority
+        if self.project_id is not None:
+            result['projectId'] = self.project_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('dueDate') is not None:
+            self.due_date = m.get('dueDate')
+        if m.get('executorId') is not None:
+            self.executor_id = m.get('executorId')
+        if m.get('note') is not None:
+            self.note = m.get('note')
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
+        if m.get('projectId') is not None:
+            self.project_id = m.get('projectId')
+        return self
+
+
+class CreateTaskResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        created: str = None,
+        creator_id: str = None,
+        due_date: str = None,
+        executor_id: str = None,
+        involve_members: List[str] = None,
+        note: str = None,
+        priority: int = None,
+        project_id: str = None,
+        task_id: str = None,
+        updated: str = None,
+    ):
+        # 任务标题
+        self.content = content
+        # 创建时间
+        self.created = created
+        # 任务创建者userId
+        self.creator_id = creator_id
+        # 任务截止时间
+        self.due_date = due_date
+        # 任务执行者userId
+        self.executor_id = executor_id
+        # 任务参与者列表
+        self.involve_members = involve_members
+        # 任务备注
+        self.note = note
+        # 任务优先级
+        self.priority = priority
+        # 项目id
+        self.project_id = project_id
+        # 任务id
+        self.task_id = task_id
+        # 更新时间
+        self.updated = updated
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.created is not None:
+            result['created'] = self.created
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.due_date is not None:
+            result['dueDate'] = self.due_date
+        if self.executor_id is not None:
+            result['executorId'] = self.executor_id
+        if self.involve_members is not None:
+            result['involveMembers'] = self.involve_members
+        if self.note is not None:
+            result['note'] = self.note
+        if self.priority is not None:
+            result['priority'] = self.priority
+        if self.project_id is not None:
+            result['projectId'] = self.project_id
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.updated is not None:
+            result['updated'] = self.updated
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('created') is not None:
+            self.created = m.get('created')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('dueDate') is not None:
+            self.due_date = m.get('dueDate')
+        if m.get('executorId') is not None:
+            self.executor_id = m.get('executorId')
+        if m.get('involveMembers') is not None:
+            self.involve_members = m.get('involveMembers')
+        if m.get('note') is not None:
+            self.note = m.get('note')
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
+        if m.get('projectId') is not None:
+            self.project_id = m.get('projectId')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        return self
+
+
+class CreateTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CreateTaskResponseBodyResult = None,
+    ):
+        # 返回结果对象
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CreateTaskResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class CreateTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateTaskObjectLinkHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateTaskObjectLinkRequestLinkedData(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        thumbnail_url: str = None,
+        title: str = None,
+        url: str = None,
+    ):
+        # 关联对象描述
+        self.content = content
+        # 关联对象头像url
+        self.thumbnail_url = thumbnail_url
+        # 关联对象标题
+        self.title = title
+        # 关联对象链接url
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.thumbnail_url is not None:
+            result['thumbnailUrl'] = self.thumbnail_url
+        if self.title is not None:
+            result['title'] = self.title
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('thumbnailUrl') is not None:
+            self.thumbnail_url = m.get('thumbnailUrl')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class CreateTaskObjectLinkRequest(TeaModel):
+    def __init__(
+        self,
+        linked_data: CreateTaskObjectLinkRequestLinkedData = None,
+    ):
+        # 关联链接对象
+        self.linked_data = linked_data
+
+    def validate(self):
+        if self.linked_data:
+            self.linked_data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.linked_data is not None:
+            result['linkedData'] = self.linked_data.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('linkedData') is not None:
+            temp_model = CreateTaskObjectLinkRequestLinkedData()
+            self.linked_data = temp_model.from_map(m['linkedData'])
+        return self
+
+
+class CreateTaskObjectLinkResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        created: str = None,
+        object_link_id: str = None,
+    ):
+        # 创建时间
+        self.created = created
+        # 关联对象id
+        self.object_link_id = object_link_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.created is not None:
+            result['created'] = self.created
+        if self.object_link_id is not None:
+            result['objectLinkId'] = self.object_link_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('created') is not None:
+            self.created = m.get('created')
+        if m.get('objectLinkId') is not None:
+            self.object_link_id = m.get('objectLinkId')
+        return self
+
+
+class CreateTaskObjectLinkResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CreateTaskObjectLinkResponseBodyResult = None,
+    ):
+        # 返回结果对象
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CreateTaskObjectLinkResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class CreateTaskObjectLinkResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateTaskObjectLinkResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateTaskObjectLinkResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -1283,107 +1730,11 @@ class GetOrganizationPriorityListHeaders(TeaModel):
         return self
 
 
-class GetOrganizationPriorityListResponseBodyResultPayloadLocalesName(TeaModel):
-    def __init__(
-        self,
-        en: str = None,
-        zh: str = None,
-    ):
-        # 英文名
-        self.en = en
-        # 中文名
-        self.zh = zh
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.en is not None:
-            result['en'] = self.en
-        if self.zh is not None:
-            result['zh'] = self.zh
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('en') is not None:
-            self.en = m.get('en')
-        if m.get('zh') is not None:
-            self.zh = m.get('zh')
-        return self
-
-
-class GetOrganizationPriorityListResponseBodyResultPayloadLocales(TeaModel):
-    def __init__(
-        self,
-        name: GetOrganizationPriorityListResponseBodyResultPayloadLocalesName = None,
-    ):
-        # 名称
-        self.name = name
-
-    def validate(self):
-        if self.name:
-            self.name.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.name is not None:
-            result['name'] = self.name.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('name') is not None:
-            temp_model = GetOrganizationPriorityListResponseBodyResultPayloadLocalesName()
-            self.name = temp_model.from_map(m['name'])
-        return self
-
-
-class GetOrganizationPriorityListResponseBodyResultPayload(TeaModel):
-    def __init__(
-        self,
-        locales: GetOrganizationPriorityListResponseBodyResultPayloadLocales = None,
-    ):
-        # 优先级多语言
-        self.locales = locales
-
-    def validate(self):
-        if self.locales:
-            self.locales.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.locales is not None:
-            result['locales'] = self.locales.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('locales') is not None:
-            temp_model = GetOrganizationPriorityListResponseBodyResultPayloadLocales()
-            self.locales = temp_model.from_map(m['locales'])
-        return self
-
-
 class GetOrganizationPriorityListResponseBodyResult(TeaModel):
     def __init__(
         self,
         color: str = None,
         name: str = None,
-        payload: GetOrganizationPriorityListResponseBodyResultPayload = None,
         priority: str = None,
         priority_id: str = None,
     ):
@@ -1391,16 +1742,13 @@ class GetOrganizationPriorityListResponseBodyResult(TeaModel):
         self.color = color
         # 名称
         self.name = name
-        # 额外信息
-        self.payload = payload
         # 优先级值
         self.priority = priority
         # id
         self.priority_id = priority_id
 
     def validate(self):
-        if self.payload:
-            self.payload.validate()
+        pass
 
     def to_map(self):
         _map = super().to_map()
@@ -1412,8 +1760,6 @@ class GetOrganizationPriorityListResponseBodyResult(TeaModel):
             result['color'] = self.color
         if self.name is not None:
             result['name'] = self.name
-        if self.payload is not None:
-            result['payload'] = self.payload.to_map()
         if self.priority is not None:
             result['priority'] = self.priority
         if self.priority_id is not None:
@@ -1426,9 +1772,6 @@ class GetOrganizationPriorityListResponseBodyResult(TeaModel):
             self.color = m.get('color')
         if m.get('name') is not None:
             self.name = m.get('name')
-        if m.get('payload') is not None:
-            temp_model = GetOrganizationPriorityListResponseBodyResultPayload()
-            self.payload = temp_model.from_map(m['payload'])
         if m.get('priority') is not None:
             self.priority = m.get('priority')
         if m.get('priorityId') is not None:

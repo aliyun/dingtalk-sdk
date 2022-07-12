@@ -183,6 +183,8 @@ class Client(OpenApiClient):
     ) -> dingtalkexclusive__1__0_models.CreateTrustedDeviceResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.did):
+            body['did'] = request.did
         if not UtilClient.is_unset(request.mac_address):
             body['macAddress'] = request.mac_address
         if not UtilClient.is_unset(request.platform):
@@ -213,6 +215,8 @@ class Client(OpenApiClient):
     ) -> dingtalkexclusive__1__0_models.CreateTrustedDeviceResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.did):
+            body['did'] = request.did
         if not UtilClient.is_unset(request.mac_address):
             body['macAddress'] = request.mac_address
         if not UtilClient.is_unset(request.platform):
@@ -3241,6 +3245,62 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkexclusive__1__0_models.QueryAcrossCloudStroageConfigsResponse(),
             await self.do_roarequest_async('QueryAcrossCloudStroageConfigs', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/fileStorages/acrossClouds/configurations', 'json', req, runtime)
+        )
+
+    def query_partner_info(
+        self,
+        user_id: str,
+    ) -> dingtalkexclusive__1__0_models.QueryPartnerInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.QueryPartnerInfoHeaders()
+        return self.query_partner_info_with_options(user_id, headers, runtime)
+
+    async def query_partner_info_async(
+        self,
+        user_id: str,
+    ) -> dingtalkexclusive__1__0_models.QueryPartnerInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.QueryPartnerInfoHeaders()
+        return await self.query_partner_info_with_options_async(user_id, headers, runtime)
+
+    def query_partner_info_with_options(
+        self,
+        user_id: str,
+        headers: dingtalkexclusive__1__0_models.QueryPartnerInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.QueryPartnerInfoResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.QueryPartnerInfoResponse(),
+            self.do_roarequest('QueryPartnerInfo', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/partners/users/{user_id}', 'json', req, runtime)
+        )
+
+    async def query_partner_info_with_options_async(
+        self,
+        user_id: str,
+        headers: dingtalkexclusive__1__0_models.QueryPartnerInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.QueryPartnerInfoResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.QueryPartnerInfoResponse(),
+            await self.do_roarequest_async('QueryPartnerInfo', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/partners/users/{user_id}', 'json', req, runtime)
         )
 
     def rollback_mini_app_version(

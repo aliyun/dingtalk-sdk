@@ -615,6 +615,177 @@ class CreateGroupResponse(TeaModel):
         return self
 
 
+class CreateTrustGroupHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        operation_source: str = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.operation_source = operation_source
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.operation_source is not None:
+            result['operationSource'] = self.operation_source
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('operationSource') is not None:
+            self.operation_source = m.get('operationSource')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateTrustGroupRequest(TeaModel):
+    def __init__(
+        self,
+        channel: str = None,
+        icon_media_id: str = None,
+        name: str = None,
+        properties: Dict[str, str] = None,
+        uuid: str = None,
+    ):
+        # MPASS渠道编码
+        self.channel = channel
+        # 素材ID
+        self.icon_media_id = icon_media_id
+        # 群名称
+        self.name = name
+        # 其他扩展参数
+        self.properties = properties
+        # 外部系统映射唯一标识
+        self.uuid = uuid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.channel is not None:
+            result['channel'] = self.channel
+        if self.icon_media_id is not None:
+            result['iconMediaId'] = self.icon_media_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.properties is not None:
+            result['properties'] = self.properties
+        if self.uuid is not None:
+            result['uuid'] = self.uuid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('channel') is not None:
+            self.channel = m.get('channel')
+        if m.get('iconMediaId') is not None:
+            self.icon_media_id = m.get('iconMediaId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('properties') is not None:
+            self.properties = m.get('properties')
+        if m.get('uuid') is not None:
+            self.uuid = m.get('uuid')
+        return self
+
+
+class CreateTrustGroupResponseBody(TeaModel):
+    def __init__(
+        self,
+        chat_id: str = None,
+        create_time: int = None,
+        open_conversation_id: str = None,
+    ):
+        self.chat_id = chat_id
+        self.create_time = create_time
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.chat_id is not None:
+            result['chatId'] = self.chat_id
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('chatId') is not None:
+            self.chat_id = m.get('chatId')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class CreateTrustGroupResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateTrustGroupResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateTrustGroupResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DismissGroupHeaders(TeaModel):
     def __init__(
         self,

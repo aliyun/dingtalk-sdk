@@ -6136,6 +6136,7 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps(TeaM
         limit: int = None,
         link: str = None,
         mode: str = None,
+        multiple: bool = None,
         not_print: str = None,
         not_upper: str = None,
         options: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptions] = None,
@@ -6175,6 +6176,8 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps(TeaM
         self.limit = limit
         self.link = link
         self.mode = mode
+        # 支持选择多个部门
+        self.multiple = multiple
         self.not_print = not_print
         self.not_upper = not_upper
         self.options = options
@@ -6272,6 +6275,8 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps(TeaM
             result['link'] = self.link
         if self.mode is not None:
             result['mode'] = self.mode
+        if self.multiple is not None:
+            result['multiple'] = self.multiple
         if self.not_print is not None:
             result['notPrint'] = self.not_print
         if self.not_upper is not None:
@@ -6367,6 +6372,8 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps(TeaM
             self.link = m.get('link')
         if m.get('mode') is not None:
             self.mode = m.get('mode')
+        if m.get('multiple') is not None:
+            self.multiple = m.get('multiple')
         if m.get('notPrint') is not None:
             self.not_print = m.get('notPrint')
         if m.get('notUpper') is not None:
@@ -7795,6 +7802,7 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps(TeaModel):
         link: str = None,
         mode: str = None,
         multi: int = None,
+        multiple: bool = None,
         need_detail: str = None,
         not_print: str = None,
         not_upper: str = None,
@@ -7853,6 +7861,8 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps(TeaModel):
         # phone
         self.mode = mode
         self.multi = multi
+        # 支持选择多个部门
+        self.multiple = multiple
         self.need_detail = need_detail
         # 是否参与打印
         self.not_print = not_print
@@ -7969,6 +7979,8 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps(TeaModel):
             result['mode'] = self.mode
         if self.multi is not None:
             result['multi'] = self.multi
+        if self.multiple is not None:
+            result['multiple'] = self.multiple
         if self.need_detail is not None:
             result['needDetail'] = self.need_detail
         if self.not_print is not None:
@@ -8068,6 +8080,8 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps(TeaModel):
             self.mode = m.get('mode')
         if m.get('multi') is not None:
             self.multi = m.get('multi')
+        if m.get('multiple') is not None:
+            self.multiple = m.get('multiple')
         if m.get('needDetail') is not None:
             self.need_detail = m.get('needDetail')
         if m.get('notPrint') is not None:
@@ -11030,7 +11044,6 @@ class ListCrmPersonalCustomersResponseBodyResult(TeaModel):
         gmt_modified: str = None,
         instance_id: str = None,
         object_type: str = None,
-        org_id: int = None,
         permission: ListCrmPersonalCustomersResponseBodyResultPermission = None,
         proc_inst_status: str = None,
         proc_out_result: str = None,
@@ -11045,7 +11058,6 @@ class ListCrmPersonalCustomersResponseBodyResult(TeaModel):
         self.gmt_modified = gmt_modified
         self.instance_id = instance_id
         self.object_type = object_type
-        self.org_id = org_id
         self.permission = permission
         self.proc_inst_status = proc_inst_status
         self.proc_out_result = proc_out_result
@@ -11080,8 +11092,6 @@ class ListCrmPersonalCustomersResponseBodyResult(TeaModel):
             result['instanceId'] = self.instance_id
         if self.object_type is not None:
             result['objectType'] = self.object_type
-        if self.org_id is not None:
-            result['orgId'] = self.org_id
         if self.permission is not None:
             result['permission'] = self.permission.to_map()
         if self.proc_inst_status is not None:
@@ -11112,8 +11122,6 @@ class ListCrmPersonalCustomersResponseBodyResult(TeaModel):
             self.instance_id = m.get('instanceId')
         if m.get('objectType') is not None:
             self.object_type = m.get('objectType')
-        if m.get('orgId') is not None:
-            self.org_id = m.get('orgId')
         if m.get('permission') is not None:
             temp_model = ListCrmPersonalCustomersResponseBodyResultPermission()
             self.permission = temp_model.from_map(m['permission'])
@@ -11714,7 +11722,6 @@ class QueryAllCustomerResponseBodyResultValues(TeaModel):
         instance_id: str = None,
         modify_time: str = None,
         object_type: str = None,
-        org_id: int = None,
         permission: QueryAllCustomerResponseBodyResultValuesPermission = None,
         process_instance_status: str = None,
         process_out_result: str = None,
@@ -11735,8 +11742,6 @@ class QueryAllCustomerResponseBodyResultValues(TeaModel):
         self.modify_time = modify_time
         # 数据类型
         self.object_type = object_type
-        # 系统自动生成
-        self.org_id = org_id
         # 数据权限信息
         self.permission = permission
         # 审批状态
@@ -11770,8 +11775,6 @@ class QueryAllCustomerResponseBodyResultValues(TeaModel):
             result['modifyTime'] = self.modify_time
         if self.object_type is not None:
             result['objectType'] = self.object_type
-        if self.org_id is not None:
-            result['orgId'] = self.org_id
         if self.permission is not None:
             result['permission'] = self.permission.to_map()
         if self.process_instance_status is not None:
@@ -11798,8 +11801,6 @@ class QueryAllCustomerResponseBodyResultValues(TeaModel):
             self.modify_time = m.get('modifyTime')
         if m.get('objectType') is not None:
             self.object_type = m.get('objectType')
-        if m.get('orgId') is not None:
-            self.org_id = m.get('orgId')
         if m.get('permission') is not None:
             temp_model = QueryAllCustomerResponseBodyResultValuesPermission()
             self.permission = temp_model.from_map(m['permission'])

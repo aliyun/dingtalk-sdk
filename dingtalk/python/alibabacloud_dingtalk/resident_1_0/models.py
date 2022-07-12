@@ -2837,7 +2837,6 @@ class ListPointRulesRequest(TeaModel):
 class ListPointRulesResponseBodyPointRuleList(TeaModel):
     def __init__(
         self,
-        corp_id: str = None,
         day_limit_times: int = None,
         extension: str = None,
         group_id: int = None,
@@ -2847,8 +2846,6 @@ class ListPointRulesResponseBodyPointRuleList(TeaModel):
         score: int = None,
         status: int = None,
     ):
-        # 组织id
-        self.corp_id = corp_id
         # 单日计次上限，0表示无上限
         self.day_limit_times = day_limit_times
         # 扩展字段
@@ -2875,8 +2872,6 @@ class ListPointRulesResponseBodyPointRuleList(TeaModel):
             return _map
 
         result = dict()
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
         if self.day_limit_times is not None:
             result['dayLimitTimes'] = self.day_limit_times
         if self.extension is not None:
@@ -2897,8 +2892,6 @@ class ListPointRulesResponseBodyPointRuleList(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
         if m.get('dayLimitTimes') is not None:
             self.day_limit_times = m.get('dayLimitTimes')
         if m.get('extension') is not None:
@@ -3735,7 +3728,6 @@ class PagePointHistoryRequest(TeaModel):
 class PagePointHistoryResponseBodyPointRecordList(TeaModel):
     def __init__(
         self,
-        corp_id: str = None,
         create_at: int = None,
         rule_code: str = None,
         rule_name: str = None,
@@ -3743,8 +3735,6 @@ class PagePointHistoryResponseBodyPointRecordList(TeaModel):
         user_id: str = None,
         uuid: str = None,
     ):
-        # 组织id
-        self.corp_id = corp_id
         # 创建时间（精确到毫秒数）
         self.create_at = create_at
         # 对应的行为代码（可空）
@@ -3767,8 +3757,6 @@ class PagePointHistoryResponseBodyPointRecordList(TeaModel):
             return _map
 
         result = dict()
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
         if self.create_at is not None:
             result['createAt'] = self.create_at
         if self.rule_code is not None:
@@ -3785,8 +3773,6 @@ class PagePointHistoryResponseBodyPointRecordList(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
         if m.get('createAt') is not None:
             self.create_at = m.get('createAt')
         if m.get('ruleCode') is not None:

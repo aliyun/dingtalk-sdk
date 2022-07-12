@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
-from typing import Dict
 
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
@@ -381,7 +380,7 @@ class Client(OpenApiClient):
         request: dingtalkindustry__1__0_models.CampusDelRenterMemberRequest,
     ) -> dingtalkindustry__1__0_models.CampusDelRenterMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = {}
+        headers = dingtalkindustry__1__0_models.CampusDelRenterMemberHeaders()
         return self.campus_del_renter_member_with_options(request, headers, runtime)
 
     async def campus_del_renter_member_async(
@@ -389,13 +388,13 @@ class Client(OpenApiClient):
         request: dingtalkindustry__1__0_models.CampusDelRenterMemberRequest,
     ) -> dingtalkindustry__1__0_models.CampusDelRenterMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = {}
+        headers = dingtalkindustry__1__0_models.CampusDelRenterMemberHeaders()
         return await self.campus_del_renter_member_with_options_async(request, headers, runtime)
 
     def campus_del_renter_member_with_options(
         self,
         request: dingtalkindustry__1__0_models.CampusDelRenterMemberRequest,
-        headers: Dict[str, str],
+        headers: dingtalkindustry__1__0_models.CampusDelRenterMemberHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.CampusDelRenterMemberResponse:
         UtilClient.validate_model(request)
@@ -404,8 +403,13 @@ class Client(OpenApiClient):
             query['renterId'] = request.renter_id
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=headers,
+            headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
         return TeaCore.from_map(
@@ -416,7 +420,7 @@ class Client(OpenApiClient):
     async def campus_del_renter_member_with_options_async(
         self,
         request: dingtalkindustry__1__0_models.CampusDelRenterMemberRequest,
-        headers: Dict[str, str],
+        headers: dingtalkindustry__1__0_models.CampusDelRenterMemberHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.CampusDelRenterMemberResponse:
         UtilClient.validate_model(request)
@@ -425,8 +429,13 @@ class Client(OpenApiClient):
             query['renterId'] = request.renter_id
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=headers,
+            headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
         return TeaCore.from_map(
@@ -3616,6 +3625,102 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetResponse(),
             await self.do_roarequest_async('IndustryMmanufactureMaterialCostGet', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufactures/base/materialCosts/query', 'json', req, runtime)
+        )
+
+    def push_ding_message(
+        self,
+        request: dingtalkindustry__1__0_models.PushDingMessageRequest,
+    ) -> dingtalkindustry__1__0_models.PushDingMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.PushDingMessageHeaders()
+        return self.push_ding_message_with_options(request, headers, runtime)
+
+    async def push_ding_message_async(
+        self,
+        request: dingtalkindustry__1__0_models.PushDingMessageRequest,
+    ) -> dingtalkindustry__1__0_models.PushDingMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.PushDingMessageHeaders()
+        return await self.push_ding_message_with_options_async(request, headers, runtime)
+
+    def push_ding_message_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.PushDingMessageRequest,
+        headers: dingtalkindustry__1__0_models.PushDingMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.PushDingMessageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.message_type):
+            body['messageType'] = request.message_type
+        if not UtilClient.is_unset(request.message_url):
+            body['messageUrl'] = request.message_url
+        if not UtilClient.is_unset(request.picture_url):
+            body['pictureUrl'] = request.picture_url
+        if not UtilClient.is_unset(request.single_title):
+            body['singleTitle'] = request.single_title
+        if not UtilClient.is_unset(request.single_url):
+            body['singleUrl'] = request.single_url
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.PushDingMessageResponse(),
+            self.do_roarequest('PushDingMessage', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/works/notice', 'json', req, runtime)
+        )
+
+    async def push_ding_message_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.PushDingMessageRequest,
+        headers: dingtalkindustry__1__0_models.PushDingMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.PushDingMessageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.message_type):
+            body['messageType'] = request.message_type
+        if not UtilClient.is_unset(request.message_url):
+            body['messageUrl'] = request.message_url
+        if not UtilClient.is_unset(request.picture_url):
+            body['pictureUrl'] = request.picture_url
+        if not UtilClient.is_unset(request.single_title):
+            body['singleTitle'] = request.single_title
+        if not UtilClient.is_unset(request.single_url):
+            body['singleUrl'] = request.single_url
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.PushDingMessageResponse(),
+            await self.do_roarequest_async('PushDingMessage', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/works/notice', 'json', req, runtime)
         )
 
     def query_all_department(

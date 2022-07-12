@@ -626,3 +626,87 @@ class Client(OpenApiClient):
             dingtalkrobot__1__0_models.SendRobotDingMessageResponse(),
             await self.do_roarequest_async('SendRobotDingMessage', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/dingMessages/send', 'json', req, runtime)
         )
+
+    def update_installed_robot(
+        self,
+        request: dingtalkrobot__1__0_models.UpdateInstalledRobotRequest,
+    ) -> dingtalkrobot__1__0_models.UpdateInstalledRobotResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.UpdateInstalledRobotHeaders()
+        return self.update_installed_robot_with_options(request, headers, runtime)
+
+    async def update_installed_robot_async(
+        self,
+        request: dingtalkrobot__1__0_models.UpdateInstalledRobotRequest,
+    ) -> dingtalkrobot__1__0_models.UpdateInstalledRobotResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.UpdateInstalledRobotHeaders()
+        return await self.update_installed_robot_with_options_async(request, headers, runtime)
+
+    def update_installed_robot_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.UpdateInstalledRobotRequest,
+        headers: dingtalkrobot__1__0_models.UpdateInstalledRobotHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.UpdateInstalledRobotResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.brief):
+            body['brief'] = request.brief
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.update_type):
+            body['updateType'] = request.update_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.UpdateInstalledRobotResponse(),
+            self.do_roarequest('UpdateInstalledRobot', 'robot_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/robot/managements/infos', 'json', req, runtime)
+        )
+
+    async def update_installed_robot_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.UpdateInstalledRobotRequest,
+        headers: dingtalkrobot__1__0_models.UpdateInstalledRobotHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.UpdateInstalledRobotResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.brief):
+            body['brief'] = request.brief
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.update_type):
+            body['updateType'] = request.update_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.UpdateInstalledRobotResponse(),
+            await self.do_roarequest_async('UpdateInstalledRobot', 'robot_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/robot/managements/infos', 'json', req, runtime)
+        )

@@ -313,11 +313,14 @@ class CreateTrustedDeviceHeaders(TeaModel):
 class CreateTrustedDeviceRequest(TeaModel):
     def __init__(
         self,
+        did: str = None,
         mac_address: str = None,
         platform: str = None,
         status: int = None,
         user_id: str = None,
     ):
+        # 支持SDK集成的设备唯一标识。
+        self.did = did
         # mac地址
         self.mac_address = mac_address
         # 平台类型
@@ -336,6 +339,8 @@ class CreateTrustedDeviceRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.did is not None:
+            result['did'] = self.did
         if self.mac_address is not None:
             result['macAddress'] = self.mac_address
         if self.platform is not None:
@@ -348,6 +353,8 @@ class CreateTrustedDeviceRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('did') is not None:
+            self.did = m.get('did')
         if m.get('macAddress') is not None:
             self.mac_address = m.get('macAddress')
         if m.get('platform') is not None:
@@ -6315,6 +6322,7 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
         self,
         create_time: int = None,
         mac_address: str = None,
+        model: str = None,
         platform: str = None,
         status: int = None,
         title: str = None,
@@ -6324,10 +6332,13 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
         self.create_time = create_time
         # mac地址
         self.mac_address = mac_address
+        # 版本信息：Android端: Android,10，IOS端：iOS,12.0.1
+        self.model = model
         # 平台类型
         self.platform = platform
         # 设备状态
         self.status = status
+        # 设备名称
         self.title = title
         # 员工Id
         self.user_id = user_id
@@ -6345,6 +6356,8 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
             result['createTime'] = self.create_time
         if self.mac_address is not None:
             result['macAddress'] = self.mac_address
+        if self.model is not None:
+            result['model'] = self.model
         if self.platform is not None:
             result['platform'] = self.platform
         if self.status is not None:
@@ -6361,6 +6374,8 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
             self.create_time = m.get('createTime')
         if m.get('macAddress') is not None:
             self.mac_address = m.get('macAddress')
+        if m.get('model') is not None:
+            self.model = m.get('model')
         if m.get('platform') is not None:
             self.platform = m.get('platform')
         if m.get('status') is not None:
@@ -8947,6 +8962,263 @@ class QueryAcrossCloudStroageConfigsResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryAcrossCloudStroageConfigsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryPartnerInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1(TeaModel):
+    def __init__(
+        self,
+        label_id: int = None,
+        labelname: str = None,
+    ):
+        # 标签id
+        self.label_id = label_id
+        # 标签名称
+        self.labelname = labelname
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.label_id is not None:
+            result['labelId'] = self.label_id
+        if self.labelname is not None:
+            result['labelname'] = self.labelname
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('labelId') is not None:
+            self.label_id = m.get('labelId')
+        if m.get('labelname') is not None:
+            self.labelname = m.get('labelname')
+        return self
+
+
+class QueryPartnerInfoResponseBodyPartnerDeptList(TeaModel):
+    def __init__(
+        self,
+        member_count: int = None,
+        partner_label_model_level_1: QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1 = None,
+        partner_num: str = None,
+        title: str = None,
+        value: str = None,
+    ):
+        # 部门人数
+        self.member_count = member_count
+        # 一级伙伴类型
+        self.partner_label_model_level_1 = partner_label_model_level_1
+        # 伙伴编码
+        self.partner_num = partner_num
+        # 部门名称
+        self.title = title
+        # 部门id
+        self.value = value
+
+    def validate(self):
+        if self.partner_label_model_level_1:
+            self.partner_label_model_level_1.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.member_count is not None:
+            result['memberCount'] = self.member_count
+        if self.partner_label_model_level_1 is not None:
+            result['partnerLabelModelLevel1'] = self.partner_label_model_level_1.to_map()
+        if self.partner_num is not None:
+            result['partnerNum'] = self.partner_num
+        if self.title is not None:
+            result['title'] = self.title
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('memberCount') is not None:
+            self.member_count = m.get('memberCount')
+        if m.get('partnerLabelModelLevel1') is not None:
+            temp_model = QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1()
+            self.partner_label_model_level_1 = temp_model.from_map(m['partnerLabelModelLevel1'])
+        if m.get('partnerNum') is not None:
+            self.partner_num = m.get('partnerNum')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class QueryPartnerInfoResponseBodyPartnerLabelList(TeaModel):
+    def __init__(
+        self,
+        id: int = None,
+        name: str = None,
+    ):
+        # label id
+        self.id = id
+        # label value
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class QueryPartnerInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        partner_dept_list: List[QueryPartnerInfoResponseBodyPartnerDeptList] = None,
+        partner_label_list: List[QueryPartnerInfoResponseBodyPartnerLabelList] = None,
+        user_id: str = None,
+    ):
+        # 部门列表
+        self.partner_dept_list = partner_dept_list
+        # 伙伴标签
+        self.partner_label_list = partner_label_list
+        # 员工id
+        self.user_id = user_id
+
+    def validate(self):
+        if self.partner_dept_list:
+            for k in self.partner_dept_list:
+                if k:
+                    k.validate()
+        if self.partner_label_list:
+            for k in self.partner_label_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['partnerDeptList'] = []
+        if self.partner_dept_list is not None:
+            for k in self.partner_dept_list:
+                result['partnerDeptList'].append(k.to_map() if k else None)
+        result['partnerLabelList'] = []
+        if self.partner_label_list is not None:
+            for k in self.partner_label_list:
+                result['partnerLabelList'].append(k.to_map() if k else None)
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.partner_dept_list = []
+        if m.get('partnerDeptList') is not None:
+            for k in m.get('partnerDeptList'):
+                temp_model = QueryPartnerInfoResponseBodyPartnerDeptList()
+                self.partner_dept_list.append(temp_model.from_map(k))
+        self.partner_label_list = []
+        if m.get('partnerLabelList') is not None:
+            for k in m.get('partnerLabelList'):
+                temp_model = QueryPartnerInfoResponseBodyPartnerLabelList()
+                self.partner_label_list.append(temp_model.from_map(k))
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryPartnerInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryPartnerInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryPartnerInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

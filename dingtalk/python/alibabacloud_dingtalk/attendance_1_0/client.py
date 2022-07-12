@@ -567,6 +567,86 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateApprove', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/approves', 'json', req, runtime)
         )
 
+    def delete_water_mark_template(
+        self,
+        request: dingtalkattendance__1__0_models.DeleteWaterMarkTemplateRequest,
+    ) -> dingtalkattendance__1__0_models.DeleteWaterMarkTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.DeleteWaterMarkTemplateHeaders()
+        return self.delete_water_mark_template_with_options(request, headers, runtime)
+
+    async def delete_water_mark_template_async(
+        self,
+        request: dingtalkattendance__1__0_models.DeleteWaterMarkTemplateRequest,
+    ) -> dingtalkattendance__1__0_models.DeleteWaterMarkTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.DeleteWaterMarkTemplateHeaders()
+        return await self.delete_water_mark_template_with_options_async(request, headers, runtime)
+
+    def delete_water_mark_template_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.DeleteWaterMarkTemplateRequest,
+        headers: dingtalkattendance__1__0_models.DeleteWaterMarkTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.DeleteWaterMarkTemplateResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.form_code):
+            query['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.form_content):
+            query['formContent'] = request.form_content
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.system_template):
+            query['systemTemplate'] = request.system_template
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.DeleteWaterMarkTemplateResponse(),
+            self.do_roarequest('DeleteWaterMarkTemplate', 'attendance_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/attendance/watermarks/templates', 'json', req, runtime)
+        )
+
+    async def delete_water_mark_template_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.DeleteWaterMarkTemplateRequest,
+        headers: dingtalkattendance__1__0_models.DeleteWaterMarkTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.DeleteWaterMarkTemplateResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.form_code):
+            query['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.form_content):
+            query['formContent'] = request.form_content
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.system_template):
+            query['systemTemplate'] = request.system_template
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.DeleteWaterMarkTemplateResponse(),
+            await self.do_roarequest_async('DeleteWaterMarkTemplate', 'attendance_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/attendance/watermarks/templates', 'json', req, runtime)
+        )
+
     def ding_talk_security_check(
         self,
         request: dingtalkattendance__1__0_models.DingTalkSecurityCheckRequest,
@@ -713,6 +793,82 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GetAdjustmentsResponse(),
             await self.do_roarequest_async('GetAdjustments', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/adjustments', 'json', req, runtime)
+        )
+
+    def get_check_in_schema_template(
+        self,
+        request: dingtalkattendance__1__0_models.GetCheckInSchemaTemplateRequest,
+    ) -> dingtalkattendance__1__0_models.GetCheckInSchemaTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetCheckInSchemaTemplateHeaders()
+        return self.get_check_in_schema_template_with_options(request, headers, runtime)
+
+    async def get_check_in_schema_template_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetCheckInSchemaTemplateRequest,
+    ) -> dingtalkattendance__1__0_models.GetCheckInSchemaTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetCheckInSchemaTemplateHeaders()
+        return await self.get_check_in_schema_template_with_options_async(request, headers, runtime)
+
+    def get_check_in_schema_template_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.GetCheckInSchemaTemplateRequest,
+        headers: dingtalkattendance__1__0_models.GetCheckInSchemaTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetCheckInSchemaTemplateResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_code):
+            query['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.scene_code):
+            query['sceneCode'] = request.scene_code
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetCheckInSchemaTemplateResponse(),
+            self.do_roarequest('GetCheckInSchemaTemplate', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/watermarks/templates', 'json', req, runtime)
+        )
+
+    async def get_check_in_schema_template_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetCheckInSchemaTemplateRequest,
+        headers: dingtalkattendance__1__0_models.GetCheckInSchemaTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetCheckInSchemaTemplateResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_code):
+            query['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.scene_code):
+            query['sceneCode'] = request.scene_code
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetCheckInSchemaTemplateResponse(),
+            await self.do_roarequest_async('GetCheckInSchemaTemplate', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/watermarks/templates', 'json', req, runtime)
         )
 
     def get_closing_accounts(
@@ -1253,6 +1409,102 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('InitAndGetLeaveALlocationQuotas', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/leaves/initializations/balances', 'json', req, runtime)
         )
 
+    def modify_water_mark_template(
+        self,
+        request: dingtalkattendance__1__0_models.ModifyWaterMarkTemplateRequest,
+    ) -> dingtalkattendance__1__0_models.ModifyWaterMarkTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.ModifyWaterMarkTemplateHeaders()
+        return self.modify_water_mark_template_with_options(request, headers, runtime)
+
+    async def modify_water_mark_template_async(
+        self,
+        request: dingtalkattendance__1__0_models.ModifyWaterMarkTemplateRequest,
+    ) -> dingtalkattendance__1__0_models.ModifyWaterMarkTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.ModifyWaterMarkTemplateHeaders()
+        return await self.modify_water_mark_template_with_options_async(request, headers, runtime)
+
+    def modify_water_mark_template_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.ModifyWaterMarkTemplateRequest,
+        headers: dingtalkattendance__1__0_models.ModifyWaterMarkTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.ModifyWaterMarkTemplateResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        body = {}
+        if not UtilClient.is_unset(request.form_code):
+            body['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
+        if not UtilClient.is_unset(request.layout_design_id):
+            body['layoutDesignId'] = request.layout_design_id
+        if not UtilClient.is_unset(request.schema_content):
+            body['schemaContent'] = request.schema_content
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.water_mark_id):
+            body['waterMarkId'] = request.water_mark_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.ModifyWaterMarkTemplateResponse(),
+            self.do_roarequest('ModifyWaterMarkTemplate', 'attendance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/attendance/watermarks/templates', 'json', req, runtime)
+        )
+
+    async def modify_water_mark_template_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.ModifyWaterMarkTemplateRequest,
+        headers: dingtalkattendance__1__0_models.ModifyWaterMarkTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.ModifyWaterMarkTemplateResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        body = {}
+        if not UtilClient.is_unset(request.form_code):
+            body['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
+        if not UtilClient.is_unset(request.layout_design_id):
+            body['layoutDesignId'] = request.layout_design_id
+        if not UtilClient.is_unset(request.schema_content):
+            body['schemaContent'] = request.schema_content
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.water_mark_id):
+            body['waterMarkId'] = request.water_mark_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.ModifyWaterMarkTemplateResponse(),
+            await self.do_roarequest_async('ModifyWaterMarkTemplate', 'attendance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/attendance/watermarks/templates', 'json', req, runtime)
+        )
+
     def process_approve_create(
         self,
         request: dingtalkattendance__1__0_models.ProcessApproveCreateRequest,
@@ -1335,6 +1587,102 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.ProcessApproveCreateResponse(),
             await self.do_roarequest_async('ProcessApproveCreate', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/workflows/checkInForms', 'json', req, runtime)
+        )
+
+    def save_custom_water_mark_template(
+        self,
+        request: dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateRequest,
+    ) -> dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateHeaders()
+        return self.save_custom_water_mark_template_with_options(request, headers, runtime)
+
+    async def save_custom_water_mark_template_async(
+        self,
+        request: dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateRequest,
+    ) -> dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateHeaders()
+        return await self.save_custom_water_mark_template_with_options_async(request, headers, runtime)
+
+    def save_custom_water_mark_template_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateRequest,
+        headers: dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        body = {}
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
+        if not UtilClient.is_unset(request.layout_design_id):
+            body['layoutDesignId'] = request.layout_design_id
+        if not UtilClient.is_unset(request.scene_code):
+            body['sceneCode'] = request.scene_code
+        if not UtilClient.is_unset(request.schema_content):
+            body['schemaContent'] = request.schema_content
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateResponse(),
+            self.do_roarequest('SaveCustomWaterMarkTemplate', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/watermarks/templates', 'json', req, runtime)
+        )
+
+    async def save_custom_water_mark_template_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateRequest,
+        headers: dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        body = {}
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
+        if not UtilClient.is_unset(request.layout_design_id):
+            body['layoutDesignId'] = request.layout_design_id
+        if not UtilClient.is_unset(request.scene_code):
+            body['sceneCode'] = request.scene_code
+        if not UtilClient.is_unset(request.schema_content):
+            body['schemaContent'] = request.schema_content
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateResponse(),
+            await self.do_roarequest_async('SaveCustomWaterMarkTemplate', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/watermarks/templates', 'json', req, runtime)
         )
 
     def sync_schedule_info(

@@ -693,6 +693,8 @@ class Client(OpenApiClient):
     ) -> dingtalkdevicemng__1__0_models.ListActivateDevicesResponse:
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.device_category):
+            query['deviceCategory'] = request.device_category
         if not UtilClient.is_unset(request.device_code):
             query['deviceCode'] = request.device_code
         if not UtilClient.is_unset(request.device_type_id):
@@ -725,6 +727,8 @@ class Client(OpenApiClient):
     ) -> dingtalkdevicemng__1__0_models.ListActivateDevicesResponse:
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.device_category):
+            query['deviceCategory'] = request.device_category
         if not UtilClient.is_unset(request.device_code):
             query['deviceCode'] = request.device_code
         if not UtilClient.is_unset(request.device_type_id):
@@ -919,6 +923,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.device_callback_url):
             body['deviceCallbackUrl'] = request.device_callback_url
+        if not UtilClient.is_unset(request.device_category):
+            body['deviceCategory'] = request.device_category
         if not UtilClient.is_unset(request.device_code):
             body['deviceCode'] = request.device_code
         if not UtilClient.is_unset(request.device_detail_url):
@@ -957,6 +963,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.device_callback_url):
             body['deviceCallbackUrl'] = request.device_callback_url
+        if not UtilClient.is_unset(request.device_category):
+            body['deviceCategory'] = request.device_category
         if not UtilClient.is_unset(request.device_code):
             body['deviceCode'] = request.device_code
         if not UtilClient.is_unset(request.device_detail_url):

@@ -91,6 +91,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateAppGoodsServiceConversation', 'appMarket_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/appMarket/orders/serviceGroups', 'json', req, runtime)
         )
 
+    def get_cool_app_access_status(
+        self,
+        request: dingtalkapp_market__1__0_models.GetCoolAppAccessStatusRequest,
+    ) -> dingtalkapp_market__1__0_models.GetCoolAppAccessStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkapp_market__1__0_models.GetCoolAppAccessStatusHeaders()
+        return self.get_cool_app_access_status_with_options(request, headers, runtime)
+
+    async def get_cool_app_access_status_async(
+        self,
+        request: dingtalkapp_market__1__0_models.GetCoolAppAccessStatusRequest,
+    ) -> dingtalkapp_market__1__0_models.GetCoolAppAccessStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkapp_market__1__0_models.GetCoolAppAccessStatusHeaders()
+        return await self.get_cool_app_access_status_with_options_async(request, headers, runtime)
+
+    def get_cool_app_access_status_with_options(
+        self,
+        request: dingtalkapp_market__1__0_models.GetCoolAppAccessStatusRequest,
+        headers: dingtalkapp_market__1__0_models.GetCoolAppAccessStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkapp_market__1__0_models.GetCoolAppAccessStatusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.auth_code):
+            body['authCode'] = request.auth_code
+        if not UtilClient.is_unset(request.cool_app_code):
+            body['coolAppCode'] = request.cool_app_code
+        if not UtilClient.is_unset(request.enc_field_biz_code):
+            body['encFieldBizCode'] = request.enc_field_biz_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkapp_market__1__0_models.GetCoolAppAccessStatusResponse(),
+            self.do_roarequest('GetCoolAppAccessStatus', 'appMarket_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/appMarket/coolApps/accessions/statuses/query', 'json', req, runtime)
+        )
+
+    async def get_cool_app_access_status_with_options_async(
+        self,
+        request: dingtalkapp_market__1__0_models.GetCoolAppAccessStatusRequest,
+        headers: dingtalkapp_market__1__0_models.GetCoolAppAccessStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkapp_market__1__0_models.GetCoolAppAccessStatusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.auth_code):
+            body['authCode'] = request.auth_code
+        if not UtilClient.is_unset(request.cool_app_code):
+            body['coolAppCode'] = request.cool_app_code
+        if not UtilClient.is_unset(request.enc_field_biz_code):
+            body['encFieldBizCode'] = request.enc_field_biz_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkapp_market__1__0_models.GetCoolAppAccessStatusResponse(),
+            await self.do_roarequest_async('GetCoolAppAccessStatus', 'appMarket_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/appMarket/coolApps/accessions/statuses/query', 'json', req, runtime)
+        )
+
     def get_personal_experience_info(
         self,
         request: dingtalkapp_market__1__0_models.GetPersonalExperienceInfoRequest,

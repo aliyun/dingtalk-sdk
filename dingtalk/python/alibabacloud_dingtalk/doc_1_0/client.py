@@ -1822,6 +1822,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.background_colors):
             body['backgroundColors'] = request.background_colors
+        if not UtilClient.is_unset(request.hyperlinks):
+            body['hyperlinks'] = request.hyperlinks
         if not UtilClient.is_unset(request.values):
             body['values'] = request.values
         real_headers = {}
@@ -1858,6 +1860,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.background_colors):
             body['backgroundColors'] = request.background_colors
+        if not UtilClient.is_unset(request.hyperlinks):
+            body['hyperlinks'] = request.hyperlinks
         if not UtilClient.is_unset(request.values):
             body['values'] = request.values
         real_headers = {}

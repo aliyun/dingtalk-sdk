@@ -142,6 +142,145 @@ class CreateAppGoodsServiceConversationResponse(TeaModel):
         return self
 
 
+class GetCoolAppAccessStatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetCoolAppAccessStatusRequest(TeaModel):
+    def __init__(
+        self,
+        auth_code: str = None,
+        cool_app_code: str = None,
+        enc_field_biz_code: str = None,
+    ):
+        # 免登授权码
+        self.auth_code = auth_code
+        # 酷应用的code
+        self.cool_app_code = cool_app_code
+        # 加密的场域业务code
+        self.enc_field_biz_code = enc_field_biz_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auth_code is not None:
+            result['authCode'] = self.auth_code
+        if self.cool_app_code is not None:
+            result['coolAppCode'] = self.cool_app_code
+        if self.enc_field_biz_code is not None:
+            result['encFieldBizCode'] = self.enc_field_biz_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authCode') is not None:
+            self.auth_code = m.get('authCode')
+        if m.get('coolAppCode') is not None:
+            self.cool_app_code = m.get('coolAppCode')
+        if m.get('encFieldBizCode') is not None:
+            self.enc_field_biz_code = m.get('encFieldBizCode')
+        return self
+
+
+class GetCoolAppAccessStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        status: str = None,
+    ):
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class GetCoolAppAccessStatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetCoolAppAccessStatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetCoolAppAccessStatusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetPersonalExperienceInfoHeaders(TeaModel):
     def __init__(
         self,
