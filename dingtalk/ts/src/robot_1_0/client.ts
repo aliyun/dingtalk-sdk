@@ -759,6 +759,103 @@ export class SendRobotDingMessageResponse extends $tea.Model {
   }
 }
 
+export class UpdateInstalledRobotHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInstalledRobotRequest extends $tea.Model {
+  brief?: string;
+  description?: string;
+  icon?: string;
+  name?: string;
+  robotCode?: string;
+  updateType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      brief: 'brief',
+      description: 'description',
+      icon: 'icon',
+      name: 'name',
+      robotCode: 'robotCode',
+      updateType: 'updateType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      brief: 'string',
+      description: 'string',
+      icon: 'string',
+      name: 'string',
+      robotCode: 'string',
+      updateType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInstalledRobotResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInstalledRobotResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateInstalledRobotResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateInstalledRobotResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchOTOQueryResponseBodyMessageReadInfoList extends $tea.Model {
   name?: string;
   readStatus?: string;
@@ -1122,6 +1219,55 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<SendRobotDingMessageResponse>(await this.doROARequest("SendRobotDingMessage", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/dingMessages/send`, "json", req, runtime), new SendRobotDingMessageResponse({}));
+  }
+
+  async updateInstalledRobot(request: UpdateInstalledRobotRequest): Promise<UpdateInstalledRobotResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateInstalledRobotHeaders({ });
+    return await this.updateInstalledRobotWithOptions(request, headers, runtime);
+  }
+
+  async updateInstalledRobotWithOptions(request: UpdateInstalledRobotRequest, headers: UpdateInstalledRobotHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInstalledRobotResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.brief)) {
+      body["brief"] = request.brief;
+    }
+
+    if (!Util.isUnset(request.description)) {
+      body["description"] = request.description;
+    }
+
+    if (!Util.isUnset(request.icon)) {
+      body["icon"] = request.icon;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
+    }
+
+    if (!Util.isUnset(request.updateType)) {
+      body["updateType"] = request.updateType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateInstalledRobotResponse>(await this.doROARequest("UpdateInstalledRobot", "robot_1.0", "HTTP", "PUT", "AK", `/v1.0/robot/managements/infos`, "json", req, runtime), new UpdateInstalledRobotResponse({}));
   }
 
 }

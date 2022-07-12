@@ -833,6 +833,7 @@ export class ListActivateDevicesHeaders extends $tea.Model {
 }
 
 export class ListActivateDevicesRequest extends $tea.Model {
+  deviceCategory?: number;
   deviceCode?: string;
   deviceTypeId?: string;
   groupId?: string;
@@ -840,6 +841,7 @@ export class ListActivateDevicesRequest extends $tea.Model {
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
+      deviceCategory: 'deviceCategory',
       deviceCode: 'deviceCode',
       deviceTypeId: 'deviceTypeId',
       groupId: 'groupId',
@@ -850,6 +852,7 @@ export class ListActivateDevicesRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      deviceCategory: 'number',
       deviceCode: 'string',
       deviceTypeId: 'string',
       groupId: 'string',
@@ -1116,6 +1119,7 @@ export class RegisterAndActivateDeviceHeaders extends $tea.Model {
 
 export class RegisterAndActivateDeviceRequest extends $tea.Model {
   deviceCallbackUrl?: string;
+  deviceCategory?: number;
   deviceCode?: string;
   deviceDetailUrl?: string;
   deviceName?: string;
@@ -1126,6 +1130,7 @@ export class RegisterAndActivateDeviceRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       deviceCallbackUrl: 'deviceCallbackUrl',
+      deviceCategory: 'deviceCategory',
       deviceCode: 'deviceCode',
       deviceDetailUrl: 'deviceDetailUrl',
       deviceName: 'deviceName',
@@ -1139,6 +1144,7 @@ export class RegisterAndActivateDeviceRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       deviceCallbackUrl: 'string',
+      deviceCategory: 'number',
       deviceCode: 'string',
       deviceDetailUrl: 'string',
       deviceName: 'string',
@@ -2171,6 +2177,7 @@ export class GetDeviceGroupInfoResponseBodyResult extends $tea.Model {
 export class ListActivateDevicesResponseBodyResult extends $tea.Model {
   bizExt?: string;
   deviceCallbackUrl?: string;
+  deviceCategory?: number;
   deviceCode?: string;
   deviceDetailUrl?: string;
   deviceName?: string;
@@ -2183,6 +2190,7 @@ export class ListActivateDevicesResponseBodyResult extends $tea.Model {
     return {
       bizExt: 'bizExt',
       deviceCallbackUrl: 'deviceCallbackUrl',
+      deviceCategory: 'deviceCategory',
       deviceCode: 'deviceCode',
       deviceDetailUrl: 'deviceDetailUrl',
       deviceName: 'deviceName',
@@ -2198,6 +2206,7 @@ export class ListActivateDevicesResponseBodyResult extends $tea.Model {
     return {
       bizExt: 'string',
       deviceCallbackUrl: 'string',
+      deviceCategory: 'number',
       deviceCode: 'string',
       deviceDetailUrl: 'string',
       deviceName: 'string',
@@ -2215,6 +2224,7 @@ export class ListActivateDevicesResponseBodyResult extends $tea.Model {
 }
 
 export class RegisterAndActivateDeviceResponseBodyResult extends $tea.Model {
+  deviceCategory?: number;
   deviceCode?: string;
   deviceDetailUrl?: string;
   deviceName?: string;
@@ -2225,6 +2235,7 @@ export class RegisterAndActivateDeviceResponseBodyResult extends $tea.Model {
   userIds?: string[];
   static names(): { [key: string]: string } {
     return {
+      deviceCategory: 'deviceCategory',
       deviceCode: 'deviceCode',
       deviceDetailUrl: 'deviceDetailUrl',
       deviceName: 'deviceName',
@@ -2238,6 +2249,7 @@ export class RegisterAndActivateDeviceResponseBodyResult extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      deviceCategory: 'number',
       deviceCode: 'string',
       deviceDetailUrl: 'string',
       deviceName: 'string',
@@ -2256,6 +2268,7 @@ export class RegisterAndActivateDeviceResponseBodyResult extends $tea.Model {
 
 export class RegisterAndActivateDeviceBatchRequestRegisterAndActivateVOS extends $tea.Model {
   deviceCallbackUrl?: string;
+  deviceCategory?: number;
   deviceCode?: string;
   deviceDetailUrl?: string;
   deviceName?: string;
@@ -2267,6 +2280,7 @@ export class RegisterAndActivateDeviceBatchRequestRegisterAndActivateVOS extends
   static names(): { [key: string]: string } {
     return {
       deviceCallbackUrl: 'deviceCallbackUrl',
+      deviceCategory: 'deviceCategory',
       deviceCode: 'deviceCode',
       deviceDetailUrl: 'deviceDetailUrl',
       deviceName: 'deviceName',
@@ -2281,6 +2295,7 @@ export class RegisterAndActivateDeviceBatchRequestRegisterAndActivateVOS extends
   static types(): { [key: string]: any } {
     return {
       deviceCallbackUrl: 'string',
+      deviceCategory: 'number',
       deviceCode: 'string',
       deviceDetailUrl: 'string',
       deviceName: 'string',
@@ -2299,6 +2314,7 @@ export class RegisterAndActivateDeviceBatchRequestRegisterAndActivateVOS extends
 
 export class RegisterAndActivateDeviceBatchResponseBodyFailItemsResult extends $tea.Model {
   deviceCallbackUrl?: string;
+  deviceCategory?: number;
   deviceCode?: string;
   deviceDetailUrl?: string;
   deviceName?: string;
@@ -2313,6 +2329,7 @@ export class RegisterAndActivateDeviceBatchResponseBodyFailItemsResult extends $
   static names(): { [key: string]: string } {
     return {
       deviceCallbackUrl: 'deviceCallbackUrl',
+      deviceCategory: 'deviceCategory',
       deviceCode: 'deviceCode',
       deviceDetailUrl: 'deviceDetailUrl',
       deviceName: 'deviceName',
@@ -2330,6 +2347,7 @@ export class RegisterAndActivateDeviceBatchResponseBodyFailItemsResult extends $
   static types(): { [key: string]: any } {
     return {
       deviceCallbackUrl: 'string',
+      deviceCategory: 'number',
       deviceCode: 'string',
       deviceDetailUrl: 'string',
       deviceName: 'string',
@@ -2379,6 +2397,7 @@ export class RegisterAndActivateDeviceBatchResponseBodyFailItems extends $tea.Mo
 
 export class RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult extends $tea.Model {
   deviceCallbackUrl?: string;
+  deviceCategory?: number;
   deviceCode?: string;
   deviceDetailUrl?: string;
   deviceName?: string;
@@ -2393,6 +2412,7 @@ export class RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult extend
   static names(): { [key: string]: string } {
     return {
       deviceCallbackUrl: 'deviceCallbackUrl',
+      deviceCategory: 'deviceCategory',
       deviceCode: 'deviceCode',
       deviceDetailUrl: 'deviceDetailUrl',
       deviceName: 'deviceName',
@@ -2410,6 +2430,7 @@ export class RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult extend
   static types(): { [key: string]: any } {
     return {
       deviceCallbackUrl: 'string',
+      deviceCategory: 'number',
       deviceCode: 'string',
       deviceDetailUrl: 'string',
       deviceName: 'string',
@@ -2821,6 +2842,10 @@ export default class Client extends OpenApi {
   async listActivateDevicesWithOptions(request: ListActivateDevicesRequest, headers: ListActivateDevicesHeaders, runtime: $Util.RuntimeOptions): Promise<ListActivateDevicesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deviceCategory)) {
+      query["deviceCategory"] = request.deviceCategory;
+    }
+
     if (!Util.isUnset(request.deviceCode)) {
       query["deviceCode"] = request.deviceCode;
     }
@@ -2942,6 +2967,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.deviceCallbackUrl)) {
       body["deviceCallbackUrl"] = request.deviceCallbackUrl;
+    }
+
+    if (!Util.isUnset(request.deviceCategory)) {
+      body["deviceCategory"] = request.deviceCategory;
     }
 
     if (!Util.isUnset(request.deviceCode)) {
