@@ -29,6 +29,9 @@ use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupSendResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\SendRobotDingMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\SendRobotDingMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\SendRobotDingMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\UpdateInstalledRobotHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\UpdateInstalledRobotRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\UpdateInstalledRobotResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -448,5 +451,62 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SendRobotDingMessageResponse::fromMap($this->doROARequest('SendRobotDingMessage', 'robot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/robot/dingMessages/send', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateInstalledRobotRequest $request
+     *
+     * @return UpdateInstalledRobotResponse
+     */
+    public function updateInstalledRobot($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateInstalledRobotHeaders([]);
+
+        return $this->updateInstalledRobotWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateInstalledRobotRequest $request
+     * @param UpdateInstalledRobotHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return UpdateInstalledRobotResponse
+     */
+    public function updateInstalledRobotWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->brief)) {
+            @$body['brief'] = $request->brief;
+        }
+        if (!Utils::isUnset($request->description)) {
+            @$body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->icon)) {
+            @$body['icon'] = $request->icon;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            @$body['robotCode'] = $request->robotCode;
+        }
+        if (!Utils::isUnset($request->updateType)) {
+            @$body['updateType'] = $request->updateType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateInstalledRobotResponse::fromMap($this->doROARequest('UpdateInstalledRobot', 'robot_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/robot/managements/infos', 'json', $req, $runtime));
     }
 }

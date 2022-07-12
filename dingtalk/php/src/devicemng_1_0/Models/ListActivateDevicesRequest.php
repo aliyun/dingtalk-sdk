@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class ListActivateDevicesRequest extends Model
 {
     /**
+     * @description 设备分类（0：设备，1 : 助手）
+     *
+     * @var int
+     */
+    public $deviceCategory;
+
+    /**
      * @description deviceCode
      *
      * @var string
@@ -43,11 +50,12 @@ class ListActivateDevicesRequest extends Model
      */
     public $pageSize;
     protected $_name = [
-        'deviceCode'   => 'deviceCode',
-        'deviceTypeId' => 'deviceTypeId',
-        'groupId'      => 'groupId',
-        'pageNumber'   => 'pageNumber',
-        'pageSize'     => 'pageSize',
+        'deviceCategory' => 'deviceCategory',
+        'deviceCode'     => 'deviceCode',
+        'deviceTypeId'   => 'deviceTypeId',
+        'groupId'        => 'groupId',
+        'pageNumber'     => 'pageNumber',
+        'pageSize'       => 'pageSize',
     ];
 
     public function validate()
@@ -57,6 +65,9 @@ class ListActivateDevicesRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->deviceCategory) {
+            $res['deviceCategory'] = $this->deviceCategory;
+        }
         if (null !== $this->deviceCode) {
             $res['deviceCode'] = $this->deviceCode;
         }
@@ -84,6 +95,9 @@ class ListActivateDevicesRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['deviceCategory'])) {
+            $model->deviceCategory = $map['deviceCategory'];
+        }
         if (isset($map['deviceCode'])) {
             $model->deviceCode = $map['deviceCode'];
         }

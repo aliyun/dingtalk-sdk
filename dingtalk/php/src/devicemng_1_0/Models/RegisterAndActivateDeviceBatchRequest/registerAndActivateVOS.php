@@ -14,6 +14,13 @@ class registerAndActivateVOS extends Model
     public $deviceCallbackUrl;
 
     /**
+     * @description 设备分类（0：设备，1 : 助手）
+     *
+     * @var int
+     */
+    public $deviceCategory;
+
+    /**
      * @var string
      */
     public $deviceCode;
@@ -54,6 +61,7 @@ class registerAndActivateVOS extends Model
     public $userIds;
     protected $_name = [
         'deviceCallbackUrl' => 'deviceCallbackUrl',
+        'deviceCategory'    => 'deviceCategory',
         'deviceCode'        => 'deviceCode',
         'deviceDetailUrl'   => 'deviceDetailUrl',
         'deviceName'        => 'deviceName',
@@ -73,6 +81,9 @@ class registerAndActivateVOS extends Model
         $res = [];
         if (null !== $this->deviceCallbackUrl) {
             $res['deviceCallbackUrl'] = $this->deviceCallbackUrl;
+        }
+        if (null !== $this->deviceCategory) {
+            $res['deviceCategory'] = $this->deviceCategory;
         }
         if (null !== $this->deviceCode) {
             $res['deviceCode'] = $this->deviceCode;
@@ -112,6 +123,9 @@ class registerAndActivateVOS extends Model
         $model = new self();
         if (isset($map['deviceCallbackUrl'])) {
             $model->deviceCallbackUrl = $map['deviceCallbackUrl'];
+        }
+        if (isset($map['deviceCategory'])) {
+            $model->deviceCategory = $map['deviceCategory'];
         }
         if (isset($map['deviceCode'])) {
             $model->deviceCode = $map['deviceCode'];

@@ -545,6 +545,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
+        if (!Utils::isUnset($request->deviceCategory)) {
+            @$query['deviceCategory'] = $request->deviceCategory;
+        }
         if (!Utils::isUnset($request->deviceCode)) {
             @$query['deviceCode'] = $request->deviceCode;
         }
@@ -697,6 +700,9 @@ class Dingtalk extends OpenApiClient
         $body = [];
         if (!Utils::isUnset($request->deviceCallbackUrl)) {
             @$body['deviceCallbackUrl'] = $request->deviceCallbackUrl;
+        }
+        if (!Utils::isUnset($request->deviceCategory)) {
+            @$body['deviceCategory'] = $request->deviceCategory;
         }
         if (!Utils::isUnset($request->deviceCode)) {
             @$body['deviceCode'] = $request->deviceCode;

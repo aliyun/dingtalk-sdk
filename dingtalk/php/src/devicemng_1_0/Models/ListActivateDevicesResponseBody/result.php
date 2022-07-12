@@ -19,6 +19,11 @@ class result extends Model
     public $deviceCallbackUrl;
 
     /**
+     * @var int
+     */
+    public $deviceCategory;
+
+    /**
      * @var string
      */
     public $deviceCode;
@@ -60,6 +65,7 @@ class result extends Model
     protected $_name = [
         'bizExt'            => 'bizExt',
         'deviceCallbackUrl' => 'deviceCallbackUrl',
+        'deviceCategory'    => 'deviceCategory',
         'deviceCode'        => 'deviceCode',
         'deviceDetailUrl'   => 'deviceDetailUrl',
         'deviceName'        => 'deviceName',
@@ -82,6 +88,9 @@ class result extends Model
         }
         if (null !== $this->deviceCallbackUrl) {
             $res['deviceCallbackUrl'] = $this->deviceCallbackUrl;
+        }
+        if (null !== $this->deviceCategory) {
+            $res['deviceCategory'] = $this->deviceCategory;
         }
         if (null !== $this->deviceCode) {
             $res['deviceCode'] = $this->deviceCode;
@@ -124,6 +133,9 @@ class result extends Model
         }
         if (isset($map['deviceCallbackUrl'])) {
             $model->deviceCallbackUrl = $map['deviceCallbackUrl'];
+        }
+        if (isset($map['deviceCategory'])) {
+            $model->deviceCategory = $map['deviceCategory'];
         }
         if (isset($map['deviceCode'])) {
             $model->deviceCode = $map['deviceCode'];
