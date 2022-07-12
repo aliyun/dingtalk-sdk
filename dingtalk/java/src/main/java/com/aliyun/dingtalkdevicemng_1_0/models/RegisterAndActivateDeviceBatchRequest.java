@@ -24,6 +24,10 @@ public class RegisterAndActivateDeviceBatchRequest extends TeaModel {
         @NameInMap("deviceCallbackUrl")
         public String deviceCallbackUrl;
 
+        // 设备分类（0：设备，1 : 助手）
+        @NameInMap("deviceCategory")
+        public Integer deviceCategory;
+
         @NameInMap("deviceCode")
         public String deviceCode;
 
@@ -59,6 +63,14 @@ public class RegisterAndActivateDeviceBatchRequest extends TeaModel {
         }
         public String getDeviceCallbackUrl() {
             return this.deviceCallbackUrl;
+        }
+
+        public RegisterAndActivateDeviceBatchRequestRegisterAndActivateVOS setDeviceCategory(Integer deviceCategory) {
+            this.deviceCategory = deviceCategory;
+            return this;
+        }
+        public Integer getDeviceCategory() {
+            return this.deviceCategory;
         }
 
         public RegisterAndActivateDeviceBatchRequestRegisterAndActivateVOS setDeviceCode(String deviceCode) {

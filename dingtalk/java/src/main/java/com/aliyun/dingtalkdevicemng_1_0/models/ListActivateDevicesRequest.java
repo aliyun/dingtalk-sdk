@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListActivateDevicesRequest extends TeaModel {
+    // 设备分类（0：设备，1 : 助手）
+    @NameInMap("deviceCategory")
+    public Integer deviceCategory;
+
     // deviceCode
     @NameInMap("deviceCode")
     public String deviceCode;
@@ -27,6 +31,14 @@ public class ListActivateDevicesRequest extends TeaModel {
     public static ListActivateDevicesRequest build(java.util.Map<String, ?> map) throws Exception {
         ListActivateDevicesRequest self = new ListActivateDevicesRequest();
         return TeaModel.build(map, self);
+    }
+
+    public ListActivateDevicesRequest setDeviceCategory(Integer deviceCategory) {
+        this.deviceCategory = deviceCategory;
+        return this;
+    }
+    public Integer getDeviceCategory() {
+        return this.deviceCategory;
     }
 
     public ListActivateDevicesRequest setDeviceCode(String deviceCode) {

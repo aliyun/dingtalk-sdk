@@ -372,6 +372,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public ListActivateDevicesResponse listActivateDevicesWithOptions(ListActivateDevicesRequest request, ListActivateDevicesHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceCategory)) {
+            query.put("deviceCategory", request.deviceCategory);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.deviceCode)) {
             query.put("deviceCode", request.deviceCode);
         }
@@ -493,6 +497,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.deviceCallbackUrl)) {
             body.put("deviceCallbackUrl", request.deviceCallbackUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceCategory)) {
+            body.put("deviceCategory", request.deviceCategory);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.deviceCode)) {

@@ -33,6 +33,9 @@ public class RegisterAndActivateDeviceResponseBody extends TeaModel {
     }
 
     public static class RegisterAndActivateDeviceResponseBodyResult extends TeaModel {
+        @NameInMap("deviceCategory")
+        public Integer deviceCategory;
+
         @NameInMap("deviceCode")
         public String deviceCode;
 
@@ -60,6 +63,14 @@ public class RegisterAndActivateDeviceResponseBody extends TeaModel {
         public static RegisterAndActivateDeviceResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             RegisterAndActivateDeviceResponseBodyResult self = new RegisterAndActivateDeviceResponseBodyResult();
             return TeaModel.build(map, self);
+        }
+
+        public RegisterAndActivateDeviceResponseBodyResult setDeviceCategory(Integer deviceCategory) {
+            this.deviceCategory = deviceCategory;
+            return this;
+        }
+        public Integer getDeviceCategory() {
+            return this.deviceCategory;
         }
 
         public RegisterAndActivateDeviceResponseBodyResult setDeviceCode(String deviceCode) {

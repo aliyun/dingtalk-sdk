@@ -46,6 +46,9 @@ public class RegisterAndActivateDeviceBatchResponseBody extends TeaModel {
         @NameInMap("deviceCallbackUrl")
         public String deviceCallbackUrl;
 
+        @NameInMap("deviceCategory")
+        public Integer deviceCategory;
+
         @NameInMap("deviceCode")
         public String deviceCode;
 
@@ -90,6 +93,14 @@ public class RegisterAndActivateDeviceBatchResponseBody extends TeaModel {
         }
         public String getDeviceCallbackUrl() {
             return this.deviceCallbackUrl;
+        }
+
+        public RegisterAndActivateDeviceBatchResponseBodyFailItemsResult setDeviceCategory(Integer deviceCategory) {
+            this.deviceCategory = deviceCategory;
+            return this;
+        }
+        public Integer getDeviceCategory() {
+            return this.deviceCategory;
         }
 
         public RegisterAndActivateDeviceBatchResponseBodyFailItemsResult setDeviceCode(String deviceCode) {
@@ -238,6 +249,9 @@ public class RegisterAndActivateDeviceBatchResponseBody extends TeaModel {
         @NameInMap("deviceCallbackUrl")
         public String deviceCallbackUrl;
 
+        @NameInMap("deviceCategory")
+        public Integer deviceCategory;
+
         @NameInMap("deviceCode")
         public String deviceCode;
 
@@ -282,6 +296,14 @@ public class RegisterAndActivateDeviceBatchResponseBody extends TeaModel {
         }
         public String getDeviceCallbackUrl() {
             return this.deviceCallbackUrl;
+        }
+
+        public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setDeviceCategory(Integer deviceCategory) {
+            this.deviceCategory = deviceCategory;
+            return this;
+        }
+        public Integer getDeviceCategory() {
+            return this.deviceCategory;
         }
 
         public RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult setDeviceCode(String deviceCode) {

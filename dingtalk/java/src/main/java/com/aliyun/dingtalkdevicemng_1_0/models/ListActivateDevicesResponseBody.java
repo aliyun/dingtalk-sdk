@@ -49,6 +49,9 @@ public class ListActivateDevicesResponseBody extends TeaModel {
         @NameInMap("deviceCallbackUrl")
         public String deviceCallbackUrl;
 
+        @NameInMap("deviceCategory")
+        public Integer deviceCategory;
+
         @NameInMap("deviceCode")
         public String deviceCode;
 
@@ -92,6 +95,14 @@ public class ListActivateDevicesResponseBody extends TeaModel {
         }
         public String getDeviceCallbackUrl() {
             return this.deviceCallbackUrl;
+        }
+
+        public ListActivateDevicesResponseBodyResult setDeviceCategory(Integer deviceCategory) {
+            this.deviceCategory = deviceCategory;
+            return this;
+        }
+        public Integer getDeviceCategory() {
+            return this.deviceCategory;
         }
 
         public ListActivateDevicesResponseBodyResult setDeviceCode(String deviceCode) {
