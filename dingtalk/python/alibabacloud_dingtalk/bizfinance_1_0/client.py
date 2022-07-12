@@ -1901,6 +1901,8 @@ class Client(OpenApiClient):
             query['taxNature'] = request.tax_nature
         if not UtilClient.is_unset(request.tax_no):
             query['taxNo'] = request.tax_no
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1929,6 +1931,8 @@ class Client(OpenApiClient):
             query['taxNature'] = request.tax_nature
         if not UtilClient.is_unset(request.tax_no):
             query['taxNo'] = request.tax_no
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

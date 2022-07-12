@@ -2361,6 +2361,142 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('TopboxOpen', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/topBoxes/open', 'none', req, runtime)
         )
 
+    def update_group_avatar(
+        self,
+        request: dingtalkim__1__0_models.UpdateGroupAvatarRequest,
+    ) -> dingtalkim__1__0_models.UpdateGroupAvatarResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateGroupAvatarHeaders()
+        return self.update_group_avatar_with_options(request, headers, runtime)
+
+    async def update_group_avatar_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateGroupAvatarRequest,
+    ) -> dingtalkim__1__0_models.UpdateGroupAvatarResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateGroupAvatarHeaders()
+        return await self.update_group_avatar_with_options_async(request, headers, runtime)
+
+    def update_group_avatar_with_options(
+        self,
+        request: dingtalkim__1__0_models.UpdateGroupAvatarRequest,
+        headers: dingtalkim__1__0_models.UpdateGroupAvatarHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateGroupAvatarResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.group_avatar):
+            body['groupAvatar'] = request.group_avatar
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateGroupAvatarResponse(),
+            self.do_roarequest('UpdateGroupAvatar', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/interconnections/groups/avatars', 'json', req, runtime)
+        )
+
+    async def update_group_avatar_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateGroupAvatarRequest,
+        headers: dingtalkim__1__0_models.UpdateGroupAvatarHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateGroupAvatarResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.group_avatar):
+            body['groupAvatar'] = request.group_avatar
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateGroupAvatarResponse(),
+            await self.do_roarequest_async('UpdateGroupAvatar', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/interconnections/groups/avatars', 'json', req, runtime)
+        )
+
+    def update_group_name(
+        self,
+        request: dingtalkim__1__0_models.UpdateGroupNameRequest,
+    ) -> dingtalkim__1__0_models.UpdateGroupNameResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateGroupNameHeaders()
+        return self.update_group_name_with_options(request, headers, runtime)
+
+    async def update_group_name_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateGroupNameRequest,
+    ) -> dingtalkim__1__0_models.UpdateGroupNameResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateGroupNameHeaders()
+        return await self.update_group_name_with_options_async(request, headers, runtime)
+
+    def update_group_name_with_options(
+        self,
+        request: dingtalkim__1__0_models.UpdateGroupNameRequest,
+        headers: dingtalkim__1__0_models.UpdateGroupNameHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateGroupNameResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.group_name):
+            body['groupName'] = request.group_name
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateGroupNameResponse(),
+            self.do_roarequest('UpdateGroupName', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/interconnections/groups/names', 'json', req, runtime)
+        )
+
+    async def update_group_name_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateGroupNameRequest,
+        headers: dingtalkim__1__0_models.UpdateGroupNameHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateGroupNameResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.group_name):
+            body['groupName'] = request.group_name
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateGroupNameResponse(),
+            await self.do_roarequest_async('UpdateGroupName', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/interconnections/groups/names', 'json', req, runtime)
+        )
+
     def update_group_permission(
         self,
         request: dingtalkim__1__0_models.UpdateGroupPermissionRequest,

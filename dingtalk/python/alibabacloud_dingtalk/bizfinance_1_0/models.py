@@ -6771,6 +6771,7 @@ class UpdateFinanceCompanyInfoRequest(TeaModel):
         company_name: str = None,
         tax_nature: str = None,
         tax_no: str = None,
+        user_id: str = None,
     ):
         # 公司名字
         self.company_name = company_name
@@ -6778,6 +6779,8 @@ class UpdateFinanceCompanyInfoRequest(TeaModel):
         self.tax_nature = tax_nature
         # 税号
         self.tax_no = tax_no
+        # 用户ID
+        self.user_id = user_id
 
     def validate(self):
         pass
@@ -6794,6 +6797,8 @@ class UpdateFinanceCompanyInfoRequest(TeaModel):
             result['taxNature'] = self.tax_nature
         if self.tax_no is not None:
             result['taxNo'] = self.tax_no
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -6804,6 +6809,8 @@ class UpdateFinanceCompanyInfoRequest(TeaModel):
             self.tax_nature = m.get('taxNature')
         if m.get('taxNo') is not None:
             self.tax_no = m.get('taxNo')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         return self
 
 
@@ -6915,6 +6922,7 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailV
         specification: str = None,
         tax_amount: str = None,
         tax_pre: str = None,
+        tax_pre_type: str = None,
         tax_rate: str = None,
         unit: str = None,
         unit_price: str = None,
@@ -6935,6 +6943,8 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailV
         self.tax_amount = tax_amount
         # 是否享受税收优惠：0-不享受，1-享受
         self.tax_pre = tax_pre
+        # 优惠政策类型
+        self.tax_pre_type = tax_pre_type
         # 税率
         self.tax_rate = tax_rate
         # 单位
@@ -6967,6 +6977,8 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailV
             result['taxAmount'] = self.tax_amount
         if self.tax_pre is not None:
             result['taxPre'] = self.tax_pre
+        if self.tax_pre_type is not None:
+            result['taxPreType'] = self.tax_pre_type
         if self.tax_rate is not None:
             result['taxRate'] = self.tax_rate
         if self.unit is not None:
@@ -6993,6 +7005,8 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailV
             self.tax_amount = m.get('taxAmount')
         if m.get('taxPre') is not None:
             self.tax_pre = m.get('taxPre')
+        if m.get('taxPreType') is not None:
+            self.tax_pre_type = m.get('taxPreType')
         if m.get('taxRate') is not None:
             self.tax_rate = m.get('taxRate')
         if m.get('unit') is not None:
@@ -7234,6 +7248,7 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOLi
         engine_no: str = None,
         id_card_no: str = None,
         import_certificate_no: str = None,
+        inspection_list_no: str = None,
         max_passengers: str = None,
         origin_place: str = None,
         payment_voucher_no: str = None,
@@ -7254,6 +7269,7 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOLi
         self.id_card_no = id_card_no
         # 进口证书号
         self.import_certificate_no = import_certificate_no
+        self.inspection_list_no = inspection_list_no
         # 限乘人数
         self.max_passengers = max_passengers
         # 产地
@@ -7292,6 +7308,8 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOLi
             result['idCardNo'] = self.id_card_no
         if self.import_certificate_no is not None:
             result['importCertificateNo'] = self.import_certificate_no
+        if self.inspection_list_no is not None:
+            result['inspectionListNo'] = self.inspection_list_no
         if self.max_passengers is not None:
             result['maxPassengers'] = self.max_passengers
         if self.origin_place is not None:
@@ -7324,6 +7342,8 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDetailVOLi
             self.id_card_no = m.get('idCardNo')
         if m.get('importCertificateNo') is not None:
             self.import_certificate_no = m.get('importCertificateNo')
+        if m.get('inspectionListNo') is not None:
+            self.inspection_list_no = m.get('inspectionListNo')
         if m.get('maxPassengers') is not None:
             self.max_passengers = m.get('maxPassengers')
         if m.get('originPlace') is not None:
@@ -7367,6 +7387,7 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO(TeaModel):
         process_inst_code: str = None,
         process_inst_type: str = None,
         purchaser_address: str = None,
+        purchaser_bank_account: str = None,
         purchaser_bank_name_account: str = None,
         purchaser_name: str = None,
         purchaser_tax_no: str = None,
@@ -7374,6 +7395,7 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO(TeaModel):
         remark: str = None,
         second_hand_car_invoice_detail_list: List[UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList] = None,
         seller_address: str = None,
+        seller_bank_account: str = None,
         seller_bank_name_account: str = None,
         seller_name: str = None,
         seller_tax_no: str = None,
@@ -7425,7 +7447,9 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO(TeaModel):
         self.process_inst_type = process_inst_type
         # 购方地址
         self.purchaser_address = purchaser_address
-        # 购方银行
+        # 购方银行账户
+        self.purchaser_bank_account = purchaser_bank_account
+        # 购方银行名称
         self.purchaser_bank_name_account = purchaser_bank_name_account
         # 购方名称
         self.purchaser_name = purchaser_name
@@ -7438,6 +7462,8 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO(TeaModel):
         self.second_hand_car_invoice_detail_list = second_hand_car_invoice_detail_list
         # 销方地址
         self.seller_address = seller_address
+        # 销方银行账户
+        self.seller_bank_account = seller_bank_account
         # 销方银行
         self.seller_bank_name_account = seller_bank_name_account
         # 销方名称
@@ -7525,6 +7551,8 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO(TeaModel):
             result['processInstType'] = self.process_inst_type
         if self.purchaser_address is not None:
             result['purchaserAddress'] = self.purchaser_address
+        if self.purchaser_bank_account is not None:
+            result['purchaserBankAccount'] = self.purchaser_bank_account
         if self.purchaser_bank_name_account is not None:
             result['purchaserBankNameAccount'] = self.purchaser_bank_name_account
         if self.purchaser_name is not None:
@@ -7541,6 +7569,8 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO(TeaModel):
                 result['secondHandCarInvoiceDetailList'].append(k.to_map() if k else None)
         if self.seller_address is not None:
             result['sellerAddress'] = self.seller_address
+        if self.seller_bank_account is not None:
+            result['sellerBankAccount'] = self.seller_bank_account
         if self.seller_bank_name_account is not None:
             result['sellerBankNameAccount'] = self.seller_bank_name_account
         if self.seller_name is not None:
@@ -7614,6 +7644,8 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO(TeaModel):
             self.process_inst_type = m.get('processInstType')
         if m.get('purchaserAddress') is not None:
             self.purchaser_address = m.get('purchaserAddress')
+        if m.get('purchaserBankAccount') is not None:
+            self.purchaser_bank_account = m.get('purchaserBankAccount')
         if m.get('purchaserBankNameAccount') is not None:
             self.purchaser_bank_name_account = m.get('purchaserBankNameAccount')
         if m.get('purchaserName') is not None:
@@ -7631,6 +7663,8 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO(TeaModel):
                 self.second_hand_car_invoice_detail_list.append(temp_model.from_map(k))
         if m.get('sellerAddress') is not None:
             self.seller_address = m.get('sellerAddress')
+        if m.get('sellerBankAccount') is not None:
+            self.seller_bank_account = m.get('sellerBankAccount')
         if m.get('sellerBankNameAccount') is not None:
             self.seller_bank_name_account = m.get('sellerBankNameAccount')
         if m.get('sellerName') is not None:
@@ -7675,6 +7709,7 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVO
         specification: str = None,
         tax_amount: str = None,
         tax_pre: str = None,
+        tax_pre_type: str = None,
         tax_rate: str = None,
         unit: str = None,
         unit_price: str = None,
@@ -7695,6 +7730,8 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVO
         self.tax_amount = tax_amount
         # 是否享受税收优惠：0-不享受，1-享受
         self.tax_pre = tax_pre
+        # 优惠政策类型
+        self.tax_pre_type = tax_pre_type
         # 税率
         self.tax_rate = tax_rate
         # 单位
@@ -7727,6 +7764,8 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVO
             result['taxAmount'] = self.tax_amount
         if self.tax_pre is not None:
             result['taxPre'] = self.tax_pre
+        if self.tax_pre_type is not None:
+            result['taxPreType'] = self.tax_pre_type
         if self.tax_rate is not None:
             result['taxRate'] = self.tax_rate
         if self.unit is not None:
@@ -7753,6 +7792,8 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVO
             self.tax_amount = m.get('taxAmount')
         if m.get('taxPre') is not None:
             self.tax_pre = m.get('taxPre')
+        if m.get('taxPreType') is not None:
+            self.tax_pre_type = m.get('taxPreType')
         if m.get('taxRate') is not None:
             self.tax_rate = m.get('taxRate')
         if m.get('unit') is not None:
@@ -7994,6 +8035,7 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOLis
         engine_no: str = None,
         id_card_no: str = None,
         import_certificate_no: str = None,
+        inspection_list_no: str = None,
         max_passengers: str = None,
         origin_place: str = None,
         payment_voucher_no: str = None,
@@ -8014,6 +8056,8 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOLis
         self.id_card_no = id_card_no
         # 进口证书号
         self.import_certificate_no = import_certificate_no
+        # 商检单号
+        self.inspection_list_no = inspection_list_no
         # 限乘人数
         self.max_passengers = max_passengers
         # 产地
@@ -8052,6 +8096,8 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOLis
             result['idCardNo'] = self.id_card_no
         if self.import_certificate_no is not None:
             result['importCertificateNo'] = self.import_certificate_no
+        if self.inspection_list_no is not None:
+            result['inspectionListNo'] = self.inspection_list_no
         if self.max_passengers is not None:
             result['maxPassengers'] = self.max_passengers
         if self.origin_place is not None:
@@ -8084,6 +8130,8 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDetailVOLis
             self.id_card_no = m.get('idCardNo')
         if m.get('importCertificateNo') is not None:
             self.import_certificate_no = m.get('importCertificateNo')
+        if m.get('inspectionListNo') is not None:
+            self.inspection_list_no = m.get('inspectionListNo')
         if m.get('maxPassengers') is not None:
             self.max_passengers = m.get('maxPassengers')
         if m.get('originPlace') is not None:
@@ -8127,6 +8175,7 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO(TeaModel):
         process_inst_code: str = None,
         process_inst_type: str = None,
         purchaser_address: str = None,
+        purchaser_bank_account: str = None,
         purchaser_bank_name_account: str = None,
         purchaser_name: str = None,
         purchaser_tax_no: str = None,
@@ -8134,6 +8183,7 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO(TeaModel):
         remark: str = None,
         second_hand_car_invoice_detail_list: List[UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList] = None,
         seller_address: str = None,
+        seller_bank_account: str = None,
         seller_bank_name_account: str = None,
         seller_name: str = None,
         seller_tax_no: str = None,
@@ -8185,6 +8235,8 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO(TeaModel):
         self.process_inst_type = process_inst_type
         # 购方地址
         self.purchaser_address = purchaser_address
+        # 购方银行账户
+        self.purchaser_bank_account = purchaser_bank_account
         # 购方银行
         self.purchaser_bank_name_account = purchaser_bank_name_account
         # 购方名称
@@ -8198,6 +8250,8 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO(TeaModel):
         self.second_hand_car_invoice_detail_list = second_hand_car_invoice_detail_list
         # 销方地址
         self.seller_address = seller_address
+        # 购方银行账户
+        self.seller_bank_account = seller_bank_account
         # 销方银行
         self.seller_bank_name_account = seller_bank_name_account
         # 销方名称
@@ -8285,6 +8339,8 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO(TeaModel):
             result['processInstType'] = self.process_inst_type
         if self.purchaser_address is not None:
             result['purchaserAddress'] = self.purchaser_address
+        if self.purchaser_bank_account is not None:
+            result['purchaserBankAccount'] = self.purchaser_bank_account
         if self.purchaser_bank_name_account is not None:
             result['purchaserBankNameAccount'] = self.purchaser_bank_name_account
         if self.purchaser_name is not None:
@@ -8301,6 +8357,8 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO(TeaModel):
                 result['secondHandCarInvoiceDetailList'].append(k.to_map() if k else None)
         if self.seller_address is not None:
             result['sellerAddress'] = self.seller_address
+        if self.seller_bank_account is not None:
+            result['sellerBankAccount'] = self.seller_bank_account
         if self.seller_bank_name_account is not None:
             result['sellerBankNameAccount'] = self.seller_bank_name_account
         if self.seller_name is not None:
@@ -8374,6 +8432,8 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO(TeaModel):
             self.process_inst_type = m.get('processInstType')
         if m.get('purchaserAddress') is not None:
             self.purchaser_address = m.get('purchaserAddress')
+        if m.get('purchaserBankAccount') is not None:
+            self.purchaser_bank_account = m.get('purchaserBankAccount')
         if m.get('purchaserBankNameAccount') is not None:
             self.purchaser_bank_name_account = m.get('purchaserBankNameAccount')
         if m.get('purchaserName') is not None:
@@ -8391,6 +8451,8 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO(TeaModel):
                 self.second_hand_car_invoice_detail_list.append(temp_model.from_map(k))
         if m.get('sellerAddress') is not None:
             self.seller_address = m.get('sellerAddress')
+        if m.get('sellerBankAccount') is not None:
+            self.seller_bank_account = m.get('sellerBankAccount')
         if m.get('sellerBankNameAccount') is not None:
             self.seller_bank_name_account = m.get('sellerBankNameAccount')
         if m.get('sellerName') is not None:
