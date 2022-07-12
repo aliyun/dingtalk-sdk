@@ -30,6 +30,13 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public string TaxNo { get; set; }
 
+        /// <summary>
+        /// 用户ID
+        /// </summary>
+        [NameInMap("userId")]
+        [Validation(Required=false)]
+        public string UserId { get; set; }
+
     }
 
 }

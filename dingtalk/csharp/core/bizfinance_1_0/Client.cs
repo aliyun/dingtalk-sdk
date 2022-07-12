@@ -2112,6 +2112,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 query["taxNo"] = request.TaxNo;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -2144,6 +2148,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaxNo))
             {
                 query["taxNo"] = request.TaxNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
