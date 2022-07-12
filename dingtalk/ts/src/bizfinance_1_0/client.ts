@@ -2474,11 +2474,13 @@ export class UpdateFinanceCompanyInfoRequest extends $tea.Model {
   companyName?: string;
   taxNature?: string;
   taxNo?: string;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
       companyName: 'companyName',
       taxNature: 'taxNature',
       taxNo: 'taxNo',
+      userId: 'userId',
     };
   }
 
@@ -2487,6 +2489,7 @@ export class UpdateFinanceCompanyInfoRequest extends $tea.Model {
       companyName: 'string',
       taxNature: 'string',
       taxNo: 'string',
+      userId: 'string',
     };
   }
 
@@ -4245,6 +4248,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoice
   specification?: string;
   taxAmount?: string;
   taxPre?: string;
+  taxPreType?: string;
   taxRate?: string;
   unit?: string;
   unitPrice?: string;
@@ -4258,6 +4262,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoice
       specification: 'specification',
       taxAmount: 'taxAmount',
       taxPre: 'taxPre',
+      taxPreType: 'taxPreType',
       taxRate: 'taxRate',
       unit: 'unit',
       unitPrice: 'unitPrice',
@@ -4274,6 +4279,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoice
       specification: 'string',
       taxAmount: 'string',
       taxPre: 'string',
+      taxPreType: 'string',
       taxRate: 'string',
       unit: 'string',
       unitPrice: 'string',
@@ -4401,6 +4407,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDet
   engineNo?: string;
   idCardNo?: string;
   importCertificateNo?: string;
+  inspectionListNo?: string;
   maxPassengers?: string;
   originPlace?: string;
   paymentVoucherNo?: string;
@@ -4417,6 +4424,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDet
       engineNo: 'engineNo',
       idCardNo: 'idCardNo',
       importCertificateNo: 'importCertificateNo',
+      inspectionListNo: 'inspectionListNo',
       maxPassengers: 'maxPassengers',
       originPlace: 'originPlace',
       paymentVoucherNo: 'paymentVoucherNo',
@@ -4436,6 +4444,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDet
       engineNo: 'string',
       idCardNo: 'string',
       importCertificateNo: 'string',
+      inspectionListNo: 'string',
       maxPassengers: 'string',
       originPlace: 'string',
       paymentVoucherNo: 'string',
@@ -4473,6 +4482,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
   processInstCode?: string;
   processInstType?: string;
   purchaserAddress?: string;
+  purchaserBankAccount?: string;
   purchaserBankNameAccount?: string;
   purchaserName?: string;
   purchaserTaxNo?: string;
@@ -4480,6 +4490,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
   remark?: string;
   secondHandCarInvoiceDetailList?: UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList[];
   sellerAddress?: string;
+  sellerBankAccount?: string;
   sellerBankNameAccount?: string;
   sellerName?: string;
   sellerTaxNo?: string;
@@ -4513,6 +4524,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
       processInstCode: 'processInstCode',
       processInstType: 'processInstType',
       purchaserAddress: 'purchaserAddress',
+      purchaserBankAccount: 'purchaserBankAccount',
       purchaserBankNameAccount: 'purchaserBankNameAccount',
       purchaserName: 'purchaserName',
       purchaserTaxNo: 'purchaserTaxNo',
@@ -4520,6 +4532,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
       remark: 'remark',
       secondHandCarInvoiceDetailList: 'secondHandCarInvoiceDetailList',
       sellerAddress: 'sellerAddress',
+      sellerBankAccount: 'sellerBankAccount',
       sellerBankNameAccount: 'sellerBankNameAccount',
       sellerName: 'sellerName',
       sellerTaxNo: 'sellerTaxNo',
@@ -4556,6 +4569,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
       processInstCode: 'string',
       processInstType: 'string',
       purchaserAddress: 'string',
+      purchaserBankAccount: 'string',
       purchaserBankNameAccount: 'string',
       purchaserName: 'string',
       purchaserTaxNo: 'string',
@@ -4563,6 +4577,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
       remark: 'string',
       secondHandCarInvoiceDetailList: { 'type': 'array', 'itemType': UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList },
       sellerAddress: 'string',
+      sellerBankAccount: 'string',
       sellerBankNameAccount: 'string',
       sellerName: 'string',
       sellerTaxNo: 'string',
@@ -4592,6 +4607,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceD
   specification?: string;
   taxAmount?: string;
   taxPre?: string;
+  taxPreType?: string;
   taxRate?: string;
   unit?: string;
   unitPrice?: string;
@@ -4605,6 +4621,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceD
       specification: 'specification',
       taxAmount: 'taxAmount',
       taxPre: 'taxPre',
+      taxPreType: 'taxPreType',
       taxRate: 'taxRate',
       unit: 'unit',
       unitPrice: 'unitPrice',
@@ -4621,6 +4638,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceD
       specification: 'string',
       taxAmount: 'string',
       taxPre: 'string',
+      taxPreType: 'string',
       taxRate: 'string',
       unit: 'string',
       unitPrice: 'string',
@@ -4748,6 +4766,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDeta
   engineNo?: string;
   idCardNo?: string;
   importCertificateNo?: string;
+  inspectionListNo?: string;
   maxPassengers?: string;
   originPlace?: string;
   paymentVoucherNo?: string;
@@ -4764,6 +4783,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDeta
       engineNo: 'engineNo',
       idCardNo: 'idCardNo',
       importCertificateNo: 'importCertificateNo',
+      inspectionListNo: 'inspectionListNo',
       maxPassengers: 'maxPassengers',
       originPlace: 'originPlace',
       paymentVoucherNo: 'paymentVoucherNo',
@@ -4783,6 +4803,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDeta
       engineNo: 'string',
       idCardNo: 'string',
       importCertificateNo: 'string',
+      inspectionListNo: 'string',
       maxPassengers: 'string',
       originPlace: 'string',
       paymentVoucherNo: 'string',
@@ -4820,6 +4841,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
   processInstCode?: string;
   processInstType?: string;
   purchaserAddress?: string;
+  purchaserBankAccount?: string;
   purchaserBankNameAccount?: string;
   purchaserName?: string;
   purchaserTaxNo?: string;
@@ -4827,6 +4849,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
   remark?: string;
   secondHandCarInvoiceDetailList?: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList[];
   sellerAddress?: string;
+  sellerBankAccount?: string;
   sellerBankNameAccount?: string;
   sellerName?: string;
   sellerTaxNo?: string;
@@ -4860,6 +4883,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
       processInstCode: 'processInstCode',
       processInstType: 'processInstType',
       purchaserAddress: 'purchaserAddress',
+      purchaserBankAccount: 'purchaserBankAccount',
       purchaserBankNameAccount: 'purchaserBankNameAccount',
       purchaserName: 'purchaserName',
       purchaserTaxNo: 'purchaserTaxNo',
@@ -4867,6 +4891,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
       remark: 'remark',
       secondHandCarInvoiceDetailList: 'secondHandCarInvoiceDetailList',
       sellerAddress: 'sellerAddress',
+      sellerBankAccount: 'sellerBankAccount',
       sellerBankNameAccount: 'sellerBankNameAccount',
       sellerName: 'sellerName',
       sellerTaxNo: 'sellerTaxNo',
@@ -4903,6 +4928,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
       processInstCode: 'string',
       processInstType: 'string',
       purchaserAddress: 'string',
+      purchaserBankAccount: 'string',
       purchaserBankNameAccount: 'string',
       purchaserName: 'string',
       purchaserTaxNo: 'string',
@@ -4910,6 +4936,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
       remark: 'string',
       secondHandCarInvoiceDetailList: { 'type': 'array', 'itemType': UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList },
       sellerAddress: 'string',
+      sellerBankAccount: 'string',
       sellerBankNameAccount: 'string',
       sellerName: 'string',
       sellerTaxNo: 'string',
@@ -6736,6 +6763,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.taxNo)) {
       query["taxNo"] = request.taxNo;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
