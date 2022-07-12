@@ -105,6 +105,12 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\TopboxCloseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\TopboxOpenHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\TopboxOpenRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\TopboxOpenResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupAvatarHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupAvatarRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupAvatarResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupNameHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupNameRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupNameResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupPermissionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupPermissionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupPermissionResponse;
@@ -1719,6 +1725,96 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return TopboxOpenResponse::fromMap($this->doROARequest('TopboxOpen', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/topBoxes/open', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateGroupAvatarRequest $request
+     *
+     * @return UpdateGroupAvatarResponse
+     */
+    public function updateGroupAvatar($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateGroupAvatarHeaders([]);
+
+        return $this->updateGroupAvatarWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateGroupAvatarRequest $request
+     * @param UpdateGroupAvatarHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return UpdateGroupAvatarResponse
+     */
+    public function updateGroupAvatarWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->groupAvatar)) {
+            @$body['groupAvatar'] = $request->groupAvatar;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateGroupAvatarResponse::fromMap($this->doROARequest('UpdateGroupAvatar', 'im_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/im/interconnections/groups/avatars', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateGroupNameRequest $request
+     *
+     * @return UpdateGroupNameResponse
+     */
+    public function updateGroupName($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateGroupNameHeaders([]);
+
+        return $this->updateGroupNameWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateGroupNameRequest $request
+     * @param UpdateGroupNameHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return UpdateGroupNameResponse
+     */
+    public function updateGroupNameWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->groupName)) {
+            @$body['groupName'] = $request->groupName;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateGroupNameResponse::fromMap($this->doROARequest('UpdateGroupName', 'im_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/im/interconnections/groups/names', 'json', $req, $runtime));
     }
 
     /**

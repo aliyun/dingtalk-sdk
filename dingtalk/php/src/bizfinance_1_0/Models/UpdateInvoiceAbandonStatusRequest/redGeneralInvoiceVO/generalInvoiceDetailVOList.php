@@ -65,6 +65,13 @@ class generalInvoiceDetailVOList extends Model
     public $taxPre;
 
     /**
+     * @description 优惠政策类型
+     *
+     * @var string
+     */
+    public $taxPreType;
+
+    /**
      * @description 税率
      *
      * @var string
@@ -93,6 +100,7 @@ class generalInvoiceDetailVOList extends Model
         'specification' => 'specification',
         'taxAmount'     => 'taxAmount',
         'taxPre'        => 'taxPre',
+        'taxPreType'    => 'taxPreType',
         'taxRate'       => 'taxRate',
         'unit'          => 'unit',
         'unitPrice'     => 'unitPrice',
@@ -128,6 +136,9 @@ class generalInvoiceDetailVOList extends Model
         }
         if (null !== $this->taxPre) {
             $res['taxPre'] = $this->taxPre;
+        }
+        if (null !== $this->taxPreType) {
+            $res['taxPreType'] = $this->taxPreType;
         }
         if (null !== $this->taxRate) {
             $res['taxRate'] = $this->taxRate;
@@ -173,6 +184,9 @@ class generalInvoiceDetailVOList extends Model
         }
         if (isset($map['taxPre'])) {
             $model->taxPre = $map['taxPre'];
+        }
+        if (isset($map['taxPreType'])) {
+            $model->taxPreType = $map['taxPreType'];
         }
         if (isset($map['taxRate'])) {
             $model->taxRate = $map['taxRate'];

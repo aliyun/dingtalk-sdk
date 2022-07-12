@@ -28,10 +28,18 @@ class UpdateFinanceCompanyInfoRequest extends Model
      * @var string
      */
     public $taxNo;
+
+    /**
+     * @description 用户ID
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
         'companyName' => 'companyName',
         'taxNature'   => 'taxNature',
         'taxNo'       => 'taxNo',
+        'userId'      => 'userId',
     ];
 
     public function validate()
@@ -49,6 +57,9 @@ class UpdateFinanceCompanyInfoRequest extends Model
         }
         if (null !== $this->taxNo) {
             $res['taxNo'] = $this->taxNo;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -70,6 +81,9 @@ class UpdateFinanceCompanyInfoRequest extends Model
         }
         if (isset($map['taxNo'])) {
             $model->taxNo = $map['taxNo'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

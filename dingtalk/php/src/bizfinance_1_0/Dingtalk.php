@@ -1391,6 +1391,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->taxNo)) {
             @$query['taxNo'] = $request->taxNo;
         }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
