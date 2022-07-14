@@ -741,6 +741,121 @@ export class QueryDeviceResponse extends $tea.Model {
   }
 }
 
+export class QueryEventHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryEventRequest extends $tea.Model {
+  corpId?: string;
+  deviceIdList?: string[];
+  endTime?: number;
+  eventId?: string;
+  eventStatusList?: number[];
+  eventTypeList?: string[];
+  pageNumber?: number;
+  pageSize?: number;
+  startTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      deviceIdList: 'deviceIdList',
+      endTime: 'endTime',
+      eventId: 'eventId',
+      eventStatusList: 'eventStatusList',
+      eventTypeList: 'eventTypeList',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      startTime: 'startTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      deviceIdList: { 'type': 'array', 'itemType': 'string' },
+      endTime: 'number',
+      eventId: 'string',
+      eventStatusList: { 'type': 'array', 'itemType': 'number' },
+      eventTypeList: { 'type': 'array', 'itemType': 'string' },
+      pageNumber: 'number',
+      pageSize: 'number',
+      startTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryEventResponseBody extends $tea.Model {
+  data?: QueryEventResponseBodyData[];
+  pageNumber?: number;
+  pageSize?: number;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': QueryEventResponseBodyData },
+      pageNumber: 'number',
+      pageSize: 'number',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryEventResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryEventResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryEventResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RegisterDeviceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1065,6 +1180,43 @@ export class QueryDeviceResponseBodyData extends $tea.Model {
       location: 'string',
       parentId: 'string',
       productType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryEventResponseBodyData extends $tea.Model {
+  eventId?: string;
+  eventName?: string;
+  eventStatus?: number;
+  eventType?: string;
+  msg?: string;
+  occurrenceTime?: number;
+  picUrls?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      eventId: 'eventId',
+      eventName: 'eventName',
+      eventStatus: 'eventStatus',
+      eventType: 'eventType',
+      msg: 'msg',
+      occurrenceTime: 'occurrenceTime',
+      picUrls: 'picUrls',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      eventId: 'string',
+      eventName: 'string',
+      eventStatus: 'number',
+      eventType: 'string',
+      msg: 'string',
+      occurrenceTime: 'number',
+      picUrls: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
@@ -1429,6 +1581,67 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryDeviceResponse>(await this.doROARequest("QueryDevice", "diot_1.0", "HTTP", "GET", "AK", `/v1.0/diot/devices`, "json", req, runtime), new QueryDeviceResponse({}));
+  }
+
+  async queryEvent(request: QueryEventRequest): Promise<QueryEventResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryEventHeaders({ });
+    return await this.queryEventWithOptions(request, headers, runtime);
+  }
+
+  async queryEventWithOptions(request: QueryEventRequest, headers: QueryEventHeaders, runtime: $Util.RuntimeOptions): Promise<QueryEventResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.deviceIdList)) {
+      body["deviceIdList"] = request.deviceIdList;
+    }
+
+    if (!Util.isUnset(request.endTime)) {
+      body["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.eventId)) {
+      body["eventId"] = request.eventId;
+    }
+
+    if (!Util.isUnset(request.eventStatusList)) {
+      body["eventStatusList"] = request.eventStatusList;
+    }
+
+    if (!Util.isUnset(request.eventTypeList)) {
+      body["eventTypeList"] = request.eventTypeList;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      body["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      body["startTime"] = request.startTime;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QueryEventResponse>(await this.doROARequest("QueryEvent", "diot_1.0", "HTTP", "POST", "AK", `/v1.0/diot/events/query`, "json", req, runtime), new QueryEventResponse({}));
   }
 
   async registerDevice(request: RegisterDeviceRequest): Promise<RegisterDeviceResponse> {

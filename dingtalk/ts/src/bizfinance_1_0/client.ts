@@ -2835,25 +2835,16 @@ export class UpdateInvoiceIgnoreStatusHeaders extends $tea.Model {
 }
 
 export class UpdateInvoiceIgnoreStatusRequest extends $tea.Model {
-  generalInvoiceVO?: UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO;
-  invoiceCode?: string;
-  invoiceNo?: string;
-  status?: string;
+  instanceId?: string;
   static names(): { [key: string]: string } {
     return {
-      generalInvoiceVO: 'generalInvoiceVO',
-      invoiceCode: 'invoiceCode',
-      invoiceNo: 'invoiceNo',
-      status: 'status',
+      instanceId: 'instanceId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      generalInvoiceVO: UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO,
-      invoiceCode: 'string',
-      invoiceNo: 'string',
-      status: 'string',
+      instanceId: 'string',
     };
   }
 
@@ -2926,10 +2917,12 @@ export class UpdateInvoiceVerifyStatusHeaders extends $tea.Model {
 }
 
 export class UpdateInvoiceVerifyStatusRequest extends $tea.Model {
+  deductStatus?: string;
   invoiceKeyVOList?: UpdateInvoiceVerifyStatusRequestInvoiceKeyVOList[];
   verifyStatus?: string;
   static names(): { [key: string]: string } {
     return {
+      deductStatus: 'deductStatus',
       invoiceKeyVOList: 'invoiceKeyVOList',
       verifyStatus: 'verifyStatus',
     };
@@ -2937,6 +2930,7 @@ export class UpdateInvoiceVerifyStatusRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      deductStatus: 'string',
       invoiceKeyVOList: { 'type': 'array', 'itemType': UpdateInvoiceVerifyStatusRequestInvoiceKeyVOList },
       verifyStatus: 'string',
     };
@@ -5435,6 +5429,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoice
   specification?: string;
   taxAmount?: string;
   taxPre?: string;
+  taxPreType?: string;
   taxRate?: string;
   unit?: string;
   unitPrice?: string;
@@ -5448,6 +5443,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoice
       specification: 'specification',
       taxAmount: 'taxAmount',
       taxPre: 'taxPre',
+      taxPreType: 'taxPreType',
       taxRate: 'taxRate',
       unit: 'unit',
       unitPrice: 'unitPrice',
@@ -5464,6 +5460,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoice
       specification: 'string',
       taxAmount: 'string',
       taxPre: 'string',
+      taxPreType: 'string',
       taxRate: 'string',
       unit: 'string',
       unitPrice: 'string',
@@ -5591,6 +5588,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOVehicleSaleDet
   engineNo?: string;
   idCardNo?: string;
   importCertificateNo?: string;
+  inspectionListNo?: string;
   maxPassengers?: string;
   originPlace?: string;
   paymentVoucherNo?: string;
@@ -5607,6 +5605,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOVehicleSaleDet
       engineNo: 'engineNo',
       idCardNo: 'idCardNo',
       importCertificateNo: 'importCertificateNo',
+      inspectionListNo: 'inspectionListNo',
       maxPassengers: 'maxPassengers',
       originPlace: 'originPlace',
       paymentVoucherNo: 'paymentVoucherNo',
@@ -5626,6 +5625,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOVehicleSaleDet
       engineNo: 'string',
       idCardNo: 'string',
       importCertificateNo: 'string',
+      inspectionListNo: 'string',
       maxPassengers: 'string',
       originPlace: 'string',
       paymentVoucherNo: 'string',
@@ -5663,6 +5663,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
   processInstCode?: string;
   processInstType?: string;
   purchaserAddress?: string;
+  purchaserBankAccount?: string;
   purchaserBankNameAccount?: string;
   purchaserName?: string;
   purchaserTaxNo?: string;
@@ -5670,6 +5671,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
   remark?: string;
   secondHandCarInvoiceDetailList?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList[];
   sellerAddress?: string;
+  sellerBankAccount?: string;
   sellerBankNameAccount?: string;
   sellerName?: string;
   sellerTaxNo?: string;
@@ -5703,6 +5705,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
       processInstCode: 'processInstCode',
       processInstType: 'processInstType',
       purchaserAddress: 'purchaserAddress',
+      purchaserBankAccount: 'purchaserBankAccount',
       purchaserBankNameAccount: 'purchaserBankNameAccount',
       purchaserName: 'purchaserName',
       purchaserTaxNo: 'purchaserTaxNo',
@@ -5710,6 +5713,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
       remark: 'remark',
       secondHandCarInvoiceDetailList: 'secondHandCarInvoiceDetailList',
       sellerAddress: 'sellerAddress',
+      sellerBankAccount: 'sellerBankAccount',
       sellerBankNameAccount: 'sellerBankNameAccount',
       sellerName: 'sellerName',
       sellerTaxNo: 'sellerTaxNo',
@@ -5746,6 +5750,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
       processInstCode: 'string',
       processInstType: 'string',
       purchaserAddress: 'string',
+      purchaserBankAccount: 'string',
       purchaserBankNameAccount: 'string',
       purchaserName: 'string',
       purchaserTaxNo: 'string',
@@ -5753,6 +5758,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
       remark: 'string',
       secondHandCarInvoiceDetailList: { 'type': 'array', 'itemType': UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList },
       sellerAddress: 'string',
+      sellerBankAccount: 'string',
       sellerBankNameAccount: 'string',
       sellerName: 'string',
       sellerTaxNo: 'string',
@@ -5762,353 +5768,6 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
       taxAmount: 'string',
       usedVehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList },
       vehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOVehicleSaleDetailVOList },
-      verifyStatus: 'string',
-      voucherCode: 'string',
-      voucherStatus: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOGeneralInvoiceDetailVOList extends $tea.Model {
-  amount?: string;
-  goodName?: string;
-  quantity?: string;
-  revenueCode?: string;
-  rowNo?: string;
-  specification?: string;
-  taxAmount?: string;
-  taxPre?: string;
-  taxRate?: string;
-  unit?: string;
-  unitPrice?: string;
-  static names(): { [key: string]: string } {
-    return {
-      amount: 'amount',
-      goodName: 'goodName',
-      quantity: 'quantity',
-      revenueCode: 'revenueCode',
-      rowNo: 'rowNo',
-      specification: 'specification',
-      taxAmount: 'taxAmount',
-      taxPre: 'taxPre',
-      taxRate: 'taxRate',
-      unit: 'unit',
-      unitPrice: 'unitPrice',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      amount: 'string',
-      goodName: 'string',
-      quantity: 'string',
-      revenueCode: 'string',
-      rowNo: 'string',
-      specification: 'string',
-      taxAmount: 'string',
-      taxPre: 'string',
-      taxRate: 'string',
-      unit: 'string',
-      unitPrice: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList extends $tea.Model {
-  amount?: string;
-  cardNo?: string;
-  endDate?: string;
-  goodsName?: string;
-  revenueCode?: string;
-  rowNo?: string;
-  startDate?: string;
-  taxAmount?: string;
-  taxRate?: string;
-  vehicleType?: string;
-  static names(): { [key: string]: string } {
-    return {
-      amount: 'amount',
-      cardNo: 'cardNo',
-      endDate: 'endDate',
-      goodsName: 'goodsName',
-      revenueCode: 'revenueCode',
-      rowNo: 'rowNo',
-      startDate: 'startDate',
-      taxAmount: 'taxAmount',
-      taxRate: 'taxRate',
-      vehicleType: 'vehicleType',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      amount: 'string',
-      cardNo: 'string',
-      endDate: 'string',
-      goodsName: 'string',
-      revenueCode: 'string',
-      rowNo: 'string',
-      startDate: 'string',
-      taxAmount: 'string',
-      taxRate: 'string',
-      vehicleType: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList extends $tea.Model {
-  auctionUnit?: string;
-  auctionUnitAddress?: string;
-  auctionUnitBank?: string;
-  auctionUnitTaxNo?: string;
-  auctionUtilTel?: string;
-  carModel?: string;
-  cardNo?: string;
-  registration?: string;
-  transferVehicle?: string;
-  usedCarAddress?: string;
-  usedCarMarket?: string;
-  usedCarMarketBank?: string;
-  usedCarMarketPhone?: string;
-  usedCarMarketTaxNo?: string;
-  vehicleNo?: string;
-  vehicleType?: string;
-  static names(): { [key: string]: string } {
-    return {
-      auctionUnit: 'auctionUnit',
-      auctionUnitAddress: 'auctionUnitAddress',
-      auctionUnitBank: 'auctionUnitBank',
-      auctionUnitTaxNo: 'auctionUnitTaxNo',
-      auctionUtilTel: 'auctionUtilTel',
-      carModel: 'carModel',
-      cardNo: 'cardNo',
-      registration: 'registration',
-      transferVehicle: 'transferVehicle',
-      usedCarAddress: 'usedCarAddress',
-      usedCarMarket: 'usedCarMarket',
-      usedCarMarketBank: 'usedCarMarketBank',
-      usedCarMarketPhone: 'usedCarMarketPhone',
-      usedCarMarketTaxNo: 'usedCarMarketTaxNo',
-      vehicleNo: 'vehicleNo',
-      vehicleType: 'vehicleType',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      auctionUnit: 'string',
-      auctionUnitAddress: 'string',
-      auctionUnitBank: 'string',
-      auctionUnitTaxNo: 'string',
-      auctionUtilTel: 'string',
-      carModel: 'string',
-      cardNo: 'string',
-      registration: 'string',
-      transferVehicle: 'string',
-      usedCarAddress: 'string',
-      usedCarMarket: 'string',
-      usedCarMarketBank: 'string',
-      usedCarMarketPhone: 'string',
-      usedCarMarketTaxNo: 'string',
-      vehicleNo: 'string',
-      vehicleType: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList extends $tea.Model {
-  brand?: string;
-  certificateNo?: string;
-  engineNo?: string;
-  idCardNo?: string;
-  importCertificateNo?: string;
-  maxPassengers?: string;
-  originPlace?: string;
-  paymentVoucherNo?: string;
-  taxAuthorityName?: string;
-  taxAuthorityNo?: string;
-  taxRate?: string;
-  tonnage?: string;
-  vehicleNo?: string;
-  vehicleType?: string;
-  static names(): { [key: string]: string } {
-    return {
-      brand: 'brand',
-      certificateNo: 'certificateNo',
-      engineNo: 'engineNo',
-      idCardNo: 'idCardNo',
-      importCertificateNo: 'importCertificateNo',
-      maxPassengers: 'maxPassengers',
-      originPlace: 'originPlace',
-      paymentVoucherNo: 'paymentVoucherNo',
-      taxAuthorityName: 'taxAuthorityName',
-      taxAuthorityNo: 'taxAuthorityNo',
-      taxRate: 'taxRate',
-      tonnage: 'tonnage',
-      vehicleNo: 'vehicleNo',
-      vehicleType: 'vehicleType',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      brand: 'string',
-      certificateNo: 'string',
-      engineNo: 'string',
-      idCardNo: 'string',
-      importCertificateNo: 'string',
-      maxPassengers: 'string',
-      originPlace: 'string',
-      paymentVoucherNo: 'string',
-      taxAuthorityName: 'string',
-      taxAuthorityNo: 'string',
-      taxRate: 'string',
-      tonnage: 'string',
-      vehicleNo: 'string',
-      vehicleType: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVO extends $tea.Model {
-  accountPeriod?: string;
-  amount?: string;
-  amountWithTax?: string;
-  checkCode?: string;
-  checkTime?: string;
-  drewDate?: string;
-  electronicUrl?: string;
-  financeType?: string;
-  fundType?: string;
-  generalInvoiceDetailVOList?: UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOGeneralInvoiceDetailVOList[];
-  invoiceCode?: string;
-  invoiceNo?: string;
-  invoiceType?: string;
-  machineCode?: string;
-  oilFlag?: string;
-  payee?: string;
-  processInstCode?: string;
-  processInstType?: string;
-  purchaserAddress?: string;
-  purchaserBankNameAccount?: string;
-  purchaserName?: string;
-  purchaserTaxNo?: string;
-  purchaserTel?: string;
-  remark?: string;
-  secondHandCarInvoiceDetailList?: UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList[];
-  sellerAddress?: string;
-  sellerBankNameAccount?: string;
-  sellerName?: string;
-  sellerTaxNo?: string;
-  sellerTel?: string;
-  status?: string;
-  supplySign?: string;
-  taxAmount?: string;
-  usedVehicleSaleDetailVOList?: UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList[];
-  vehicleSaleDetailVOList?: UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList[];
-  verifyStatus?: string;
-  voucherCode?: string;
-  voucherStatus?: string;
-  static names(): { [key: string]: string } {
-    return {
-      accountPeriod: 'accountPeriod',
-      amount: 'amount',
-      amountWithTax: 'amountWithTax',
-      checkCode: 'checkCode',
-      checkTime: 'checkTime',
-      drewDate: 'drewDate',
-      electronicUrl: 'electronicUrl',
-      financeType: 'financeType',
-      fundType: 'fundType',
-      generalInvoiceDetailVOList: 'generalInvoiceDetailVOList',
-      invoiceCode: 'invoiceCode',
-      invoiceNo: 'invoiceNo',
-      invoiceType: 'invoiceType',
-      machineCode: 'machineCode',
-      oilFlag: 'oilFlag',
-      payee: 'payee',
-      processInstCode: 'processInstCode',
-      processInstType: 'processInstType',
-      purchaserAddress: 'purchaserAddress',
-      purchaserBankNameAccount: 'purchaserBankNameAccount',
-      purchaserName: 'purchaserName',
-      purchaserTaxNo: 'purchaserTaxNo',
-      purchaserTel: 'purchaserTel',
-      remark: 'remark',
-      secondHandCarInvoiceDetailList: 'secondHandCarInvoiceDetailList',
-      sellerAddress: 'sellerAddress',
-      sellerBankNameAccount: 'sellerBankNameAccount',
-      sellerName: 'sellerName',
-      sellerTaxNo: 'sellerTaxNo',
-      sellerTel: 'sellerTel',
-      status: 'status',
-      supplySign: 'supplySign',
-      taxAmount: 'taxAmount',
-      usedVehicleSaleDetailVOList: 'usedVehicleSaleDetailVOList',
-      vehicleSaleDetailVOList: 'vehicleSaleDetailVOList',
-      verifyStatus: 'verifyStatus',
-      voucherCode: 'voucherCode',
-      voucherStatus: 'voucherStatus',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      accountPeriod: 'string',
-      amount: 'string',
-      amountWithTax: 'string',
-      checkCode: 'string',
-      checkTime: 'string',
-      drewDate: 'string',
-      electronicUrl: 'string',
-      financeType: 'string',
-      fundType: 'string',
-      generalInvoiceDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOGeneralInvoiceDetailVOList },
-      invoiceCode: 'string',
-      invoiceNo: 'string',
-      invoiceType: 'string',
-      machineCode: 'string',
-      oilFlag: 'string',
-      payee: 'string',
-      processInstCode: 'string',
-      processInstType: 'string',
-      purchaserAddress: 'string',
-      purchaserBankNameAccount: 'string',
-      purchaserName: 'string',
-      purchaserTaxNo: 'string',
-      purchaserTel: 'string',
-      remark: 'string',
-      secondHandCarInvoiceDetailList: { 'type': 'array', 'itemType': UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList },
-      sellerAddress: 'string',
-      sellerBankNameAccount: 'string',
-      sellerName: 'string',
-      sellerTaxNo: 'string',
-      sellerTel: 'string',
-      status: 'string',
-      supplySign: 'string',
-      taxAmount: 'string',
-      usedVehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList },
-      vehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceIgnoreStatusRequestGeneralInvoiceVOVehicleSaleDetailVOList },
       verifyStatus: 'string',
       voucherCode: 'string',
       voucherStatus: 'string',
@@ -7385,21 +7044,9 @@ export default class Client extends OpenApi {
 
   async updateInvoiceIgnoreStatusWithOptions(request: UpdateInvoiceIgnoreStatusRequest, headers: UpdateInvoiceIgnoreStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceIgnoreStatusResponse> {
     Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.generalInvoiceVO))) {
-      body["generalInvoiceVO"] = request.generalInvoiceVO;
-    }
-
-    if (!Util.isUnset(request.invoiceCode)) {
-      body["invoiceCode"] = request.invoiceCode;
-    }
-
-    if (!Util.isUnset(request.invoiceNo)) {
-      body["invoiceNo"] = request.invoiceNo;
-    }
-
-    if (!Util.isUnset(request.status)) {
-      body["status"] = request.status;
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.instanceId)) {
+      query["instanceId"] = request.instanceId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -7413,7 +7060,7 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
+      query: OpenApiUtil.query(query),
     });
     return $tea.cast<UpdateInvoiceIgnoreStatusResponse>(await this.doROARequest("UpdateInvoiceIgnoreStatus", "bizfinance_1.0", "HTTP", "PUT", "AK", `/v1.0/bizfinance/invoices/ignoreStatus`, "json", req, runtime), new UpdateInvoiceIgnoreStatusResponse({}));
   }
@@ -7427,6 +7074,10 @@ export default class Client extends OpenApi {
   async updateInvoiceVerifyStatusWithOptions(request: UpdateInvoiceVerifyStatusRequest, headers: UpdateInvoiceVerifyStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceVerifyStatusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deductStatus)) {
+      body["deductStatus"] = request.deductStatus;
+    }
+
     if (!Util.isUnset(request.invoiceKeyVOList)) {
       body["invoiceKeyVOList"] = request.invoiceKeyVOList;
     }
