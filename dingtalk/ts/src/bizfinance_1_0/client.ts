@@ -2633,6 +2633,94 @@ export class UpdateInvoiceAbandonStatusResponse extends $tea.Model {
   }
 }
 
+export class UpdateInvoiceAccountPeriodHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceAccountPeriodRequest extends $tea.Model {
+  accountPeriod?: string;
+  generalInvoiceVOList?: UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList[];
+  invoiceKeyVOList?: UpdateInvoiceAccountPeriodRequestInvoiceKeyVOList[];
+  static names(): { [key: string]: string } {
+    return {
+      accountPeriod: 'accountPeriod',
+      generalInvoiceVOList: 'generalInvoiceVOList',
+      invoiceKeyVOList: 'invoiceKeyVOList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accountPeriod: 'string',
+      generalInvoiceVOList: { 'type': 'array', 'itemType': UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList },
+      invoiceKeyVOList: { 'type': 'array', 'itemType': UpdateInvoiceAccountPeriodRequestInvoiceKeyVOList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceAccountPeriodResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceAccountPeriodResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateInvoiceAccountPeriodResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateInvoiceAccountPeriodResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateInvoiceAndReceiptRelatedHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4957,6 +5045,387 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
   }
 }
 
+export class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList extends $tea.Model {
+  amount?: string;
+  goodName?: string;
+  quantity?: string;
+  revenueCode?: string;
+  rowNo?: string;
+  specification?: string;
+  taxAmount?: string;
+  taxPre?: string;
+  taxPreType?: string;
+  taxRate?: string;
+  unit?: string;
+  unitPrice?: string;
+  static names(): { [key: string]: string } {
+    return {
+      amount: 'amount',
+      goodName: 'goodName',
+      quantity: 'quantity',
+      revenueCode: 'revenueCode',
+      rowNo: 'rowNo',
+      specification: 'specification',
+      taxAmount: 'taxAmount',
+      taxPre: 'taxPre',
+      taxPreType: 'taxPreType',
+      taxRate: 'taxRate',
+      unit: 'unit',
+      unitPrice: 'unitPrice',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      amount: 'string',
+      goodName: 'string',
+      quantity: 'string',
+      revenueCode: 'string',
+      rowNo: 'string',
+      specification: 'string',
+      taxAmount: 'string',
+      taxPre: 'string',
+      taxPreType: 'string',
+      taxRate: 'string',
+      unit: 'string',
+      unitPrice: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList extends $tea.Model {
+  amount?: string;
+  cardNo?: string;
+  endDate?: string;
+  goodsName?: string;
+  revenueCode?: string;
+  rowNo?: string;
+  startDate?: string;
+  taxAmount?: string;
+  taxRate?: string;
+  vehicleType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      amount: 'amount',
+      cardNo: 'cardNo',
+      endDate: 'endDate',
+      goodsName: 'goodsName',
+      revenueCode: 'revenueCode',
+      rowNo: 'rowNo',
+      startDate: 'startDate',
+      taxAmount: 'taxAmount',
+      taxRate: 'taxRate',
+      vehicleType: 'vehicleType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      amount: 'string',
+      cardNo: 'string',
+      endDate: 'string',
+      goodsName: 'string',
+      revenueCode: 'string',
+      rowNo: 'string',
+      startDate: 'string',
+      taxAmount: 'string',
+      taxRate: 'string',
+      vehicleType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList extends $tea.Model {
+  auctionUnit?: string;
+  auctionUnitAddress?: string;
+  auctionUnitBank?: string;
+  auctionUnitTaxNo?: string;
+  auctionUtilTel?: string;
+  carModel?: string;
+  cardNo?: string;
+  registration?: string;
+  transferVehicle?: string;
+  usedCarAddress?: string;
+  usedCarMarket?: string;
+  usedCarMarketBank?: string;
+  usedCarMarketPhone?: string;
+  usedCarMarketTaxNo?: string;
+  vehicleNo?: string;
+  vehicleType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      auctionUnit: 'auctionUnit',
+      auctionUnitAddress: 'auctionUnitAddress',
+      auctionUnitBank: 'auctionUnitBank',
+      auctionUnitTaxNo: 'auctionUnitTaxNo',
+      auctionUtilTel: 'auctionUtilTel',
+      carModel: 'carModel',
+      cardNo: 'cardNo',
+      registration: 'registration',
+      transferVehicle: 'transferVehicle',
+      usedCarAddress: 'usedCarAddress',
+      usedCarMarket: 'usedCarMarket',
+      usedCarMarketBank: 'usedCarMarketBank',
+      usedCarMarketPhone: 'usedCarMarketPhone',
+      usedCarMarketTaxNo: 'usedCarMarketTaxNo',
+      vehicleNo: 'vehicleNo',
+      vehicleType: 'vehicleType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      auctionUnit: 'string',
+      auctionUnitAddress: 'string',
+      auctionUnitBank: 'string',
+      auctionUnitTaxNo: 'string',
+      auctionUtilTel: 'string',
+      carModel: 'string',
+      cardNo: 'string',
+      registration: 'string',
+      transferVehicle: 'string',
+      usedCarAddress: 'string',
+      usedCarMarket: 'string',
+      usedCarMarketBank: 'string',
+      usedCarMarketPhone: 'string',
+      usedCarMarketTaxNo: 'string',
+      vehicleNo: 'string',
+      vehicleType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListVehicleSaleDetailVOList extends $tea.Model {
+  brand?: string;
+  certificateNo?: string;
+  engineNo?: string;
+  idCardNo?: string;
+  importCertificateNo?: string;
+  inspectionListNo?: string;
+  maxPassengers?: string;
+  originPlace?: string;
+  paymentVoucherNo?: string;
+  taxAuthorityName?: string;
+  taxAuthorityNo?: string;
+  taxRate?: string;
+  tonnage?: string;
+  vehicleNo?: string;
+  vehicleType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      brand: 'brand',
+      certificateNo: 'certificateNo',
+      engineNo: 'engineNo',
+      idCardNo: 'idCardNo',
+      importCertificateNo: 'importCertificateNo',
+      inspectionListNo: 'inspectionListNo',
+      maxPassengers: 'maxPassengers',
+      originPlace: 'originPlace',
+      paymentVoucherNo: 'paymentVoucherNo',
+      taxAuthorityName: 'taxAuthorityName',
+      taxAuthorityNo: 'taxAuthorityNo',
+      taxRate: 'taxRate',
+      tonnage: 'tonnage',
+      vehicleNo: 'vehicleNo',
+      vehicleType: 'vehicleType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      brand: 'string',
+      certificateNo: 'string',
+      engineNo: 'string',
+      idCardNo: 'string',
+      importCertificateNo: 'string',
+      inspectionListNo: 'string',
+      maxPassengers: 'string',
+      originPlace: 'string',
+      paymentVoucherNo: 'string',
+      taxAuthorityName: 'string',
+      taxAuthorityNo: 'string',
+      taxRate: 'string',
+      tonnage: 'string',
+      vehicleNo: 'string',
+      vehicleType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList extends $tea.Model {
+  accountPeriod?: string;
+  amount?: string;
+  amountWithTax?: string;
+  checkCode?: string;
+  checkTime?: string;
+  drewDate?: string;
+  electronicUrl?: string;
+  financeType?: string;
+  fundType?: string;
+  generalInvoiceDetailVOList?: UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList[];
+  invoiceCode?: string;
+  invoiceNo?: string;
+  invoiceType?: string;
+  machineCode?: string;
+  oilFlag?: string;
+  payee?: string;
+  processInstCode?: string;
+  processInstType?: string;
+  purchaserAddress?: string;
+  purchaserBankAccount?: string;
+  purchaserBankNameAccount?: string;
+  purchaserName?: string;
+  purchaserTaxNo?: string;
+  purchaserTel?: string;
+  remark?: string;
+  secondHandCarInvoiceDetailList?: UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList[];
+  sellerAddress?: string;
+  sellerBankAccount?: string;
+  sellerBankNameAccount?: string;
+  sellerName?: string;
+  sellerTaxNo?: string;
+  sellerTel?: string;
+  status?: string;
+  supplySign?: string;
+  taxAmount?: string;
+  usedVehicleSaleDetailVOList?: UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList[];
+  vehicleSaleDetailVOList?: UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListVehicleSaleDetailVOList[];
+  verifyStatus?: string;
+  voucherCode?: string;
+  voucherStatus?: string;
+  static names(): { [key: string]: string } {
+    return {
+      accountPeriod: 'accountPeriod',
+      amount: 'amount',
+      amountWithTax: 'amountWithTax',
+      checkCode: 'checkCode',
+      checkTime: 'checkTime',
+      drewDate: 'drewDate',
+      electronicUrl: 'electronicUrl',
+      financeType: 'financeType',
+      fundType: 'fundType',
+      generalInvoiceDetailVOList: 'generalInvoiceDetailVOList',
+      invoiceCode: 'invoiceCode',
+      invoiceNo: 'invoiceNo',
+      invoiceType: 'invoiceType',
+      machineCode: 'machineCode',
+      oilFlag: 'oilFlag',
+      payee: 'payee',
+      processInstCode: 'processInstCode',
+      processInstType: 'processInstType',
+      purchaserAddress: 'purchaserAddress',
+      purchaserBankAccount: 'purchaserBankAccount',
+      purchaserBankNameAccount: 'purchaserBankNameAccount',
+      purchaserName: 'purchaserName',
+      purchaserTaxNo: 'purchaserTaxNo',
+      purchaserTel: 'purchaserTel',
+      remark: 'remark',
+      secondHandCarInvoiceDetailList: 'secondHandCarInvoiceDetailList',
+      sellerAddress: 'sellerAddress',
+      sellerBankAccount: 'sellerBankAccount',
+      sellerBankNameAccount: 'sellerBankNameAccount',
+      sellerName: 'sellerName',
+      sellerTaxNo: 'sellerTaxNo',
+      sellerTel: 'sellerTel',
+      status: 'status',
+      supplySign: 'supplySign',
+      taxAmount: 'taxAmount',
+      usedVehicleSaleDetailVOList: 'usedVehicleSaleDetailVOList',
+      vehicleSaleDetailVOList: 'vehicleSaleDetailVOList',
+      verifyStatus: 'verifyStatus',
+      voucherCode: 'voucherCode',
+      voucherStatus: 'voucherStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accountPeriod: 'string',
+      amount: 'string',
+      amountWithTax: 'string',
+      checkCode: 'string',
+      checkTime: 'string',
+      drewDate: 'string',
+      electronicUrl: 'string',
+      financeType: 'string',
+      fundType: 'string',
+      generalInvoiceDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList },
+      invoiceCode: 'string',
+      invoiceNo: 'string',
+      invoiceType: 'string',
+      machineCode: 'string',
+      oilFlag: 'string',
+      payee: 'string',
+      processInstCode: 'string',
+      processInstType: 'string',
+      purchaserAddress: 'string',
+      purchaserBankAccount: 'string',
+      purchaserBankNameAccount: 'string',
+      purchaserName: 'string',
+      purchaserTaxNo: 'string',
+      purchaserTel: 'string',
+      remark: 'string',
+      secondHandCarInvoiceDetailList: { 'type': 'array', 'itemType': UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList },
+      sellerAddress: 'string',
+      sellerBankAccount: 'string',
+      sellerBankNameAccount: 'string',
+      sellerName: 'string',
+      sellerTaxNo: 'string',
+      sellerTel: 'string',
+      status: 'string',
+      supplySign: 'string',
+      taxAmount: 'string',
+      usedVehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList },
+      vehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListVehicleSaleDetailVOList },
+      verifyStatus: 'string',
+      voucherCode: 'string',
+      voucherStatus: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceAccountPeriodRequestInvoiceKeyVOList extends $tea.Model {
+  invoiceCode?: string;
+  invoiceNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      invoiceCode: 'invoiceCode',
+      invoiceNo: 'invoiceNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      invoiceCode: 'string',
+      invoiceNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList extends $tea.Model {
   amount?: string;
   goodName?: string;
@@ -6828,6 +7297,43 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateInvoiceAbandonStatusResponse>(await this.doROARequest("UpdateInvoiceAbandonStatus", "bizfinance_1.0", "HTTP", "PUT", "AK", `/v1.0/bizfinance/invoices/abandonStatus`, "json", req, runtime), new UpdateInvoiceAbandonStatusResponse({}));
+  }
+
+  async updateInvoiceAccountPeriod(request: UpdateInvoiceAccountPeriodRequest): Promise<UpdateInvoiceAccountPeriodResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateInvoiceAccountPeriodHeaders({ });
+    return await this.updateInvoiceAccountPeriodWithOptions(request, headers, runtime);
+  }
+
+  async updateInvoiceAccountPeriodWithOptions(request: UpdateInvoiceAccountPeriodRequest, headers: UpdateInvoiceAccountPeriodHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceAccountPeriodResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.accountPeriod)) {
+      body["accountPeriod"] = request.accountPeriod;
+    }
+
+    if (!Util.isUnset(request.generalInvoiceVOList)) {
+      body["generalInvoiceVOList"] = request.generalInvoiceVOList;
+    }
+
+    if (!Util.isUnset(request.invoiceKeyVOList)) {
+      body["invoiceKeyVOList"] = request.invoiceKeyVOList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateInvoiceAccountPeriodResponse>(await this.doROARequest("UpdateInvoiceAccountPeriod", "bizfinance_1.0", "HTTP", "PUT", "AK", `/v1.0/bizfinance/invoices/accountPeriods`, "json", req, runtime), new UpdateInvoiceAccountPeriodResponse({}));
   }
 
   async updateInvoiceAndReceiptRelated(request: UpdateInvoiceAndReceiptRelatedRequest): Promise<UpdateInvoiceAndReceiptRelatedResponse> {

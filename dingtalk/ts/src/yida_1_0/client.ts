@@ -5483,6 +5483,109 @@ export class NotifyAuthorizationResultResponse extends $tea.Model {
   }
 }
 
+export class PageFormBaseInfosHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageFormBaseInfosRequest extends $tea.Model {
+  appKey?: string;
+  formTypeList?: string[];
+  language?: string;
+  pageIndex?: number;
+  pageSize?: number;
+  systemToken?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appKey: 'appKey',
+      formTypeList: 'formTypeList',
+      language: 'language',
+      pageIndex: 'pageIndex',
+      pageSize: 'pageSize',
+      systemToken: 'systemToken',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appKey: 'string',
+      formTypeList: { 'type': 'array', 'itemType': 'string' },
+      language: 'string',
+      pageIndex: 'number',
+      pageSize: 'number',
+      systemToken: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageFormBaseInfosResponseBody extends $tea.Model {
+  result?: PageFormBaseInfosResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: PageFormBaseInfosResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageFormBaseInfosResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: PageFormBaseInfosResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: PageFormBaseInfosResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryServiceRecordHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -10762,6 +10865,84 @@ export class ListNavigationByFormTypeResponseBodyResult extends $tea.Model {
   }
 }
 
+export class PageFormBaseInfosResponseBodyResultDataTitle extends $tea.Model {
+  enUS?: string;
+  zhCN?: string;
+  static names(): { [key: string]: string } {
+    return {
+      enUS: 'enUS',
+      zhCN: 'zhCN',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      enUS: 'string',
+      zhCN: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageFormBaseInfosResponseBodyResultData extends $tea.Model {
+  creator?: string;
+  formType?: string;
+  formUuid?: string;
+  gmtCreate?: string;
+  title?: PageFormBaseInfosResponseBodyResultDataTitle;
+  static names(): { [key: string]: string } {
+    return {
+      creator: 'creator',
+      formType: 'formType',
+      formUuid: 'formUuid',
+      gmtCreate: 'gmtCreate',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      creator: 'string',
+      formType: 'string',
+      formUuid: 'string',
+      gmtCreate: 'string',
+      title: PageFormBaseInfosResponseBodyResultDataTitle,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageFormBaseInfosResponseBodyResult extends $tea.Model {
+  currentPage?: number;
+  data?: PageFormBaseInfosResponseBodyResultData[];
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      currentPage: 'currentPage',
+      data: 'data',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      currentPage: 'number',
+      data: { 'type': 'array', 'itemType': PageFormBaseInfosResponseBodyResultData },
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryServiceRecordResponseBodyValues extends $tea.Model {
   formInstanceId?: string;
   formUuid?: string;
@@ -14228,6 +14409,59 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<NotifyAuthorizationResultResponse>(await this.doROARequest("NotifyAuthorizationResult", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/apps/authorizationResults/notify`, "json", req, runtime), new NotifyAuthorizationResultResponse({}));
+  }
+
+  async pageFormBaseInfos(request: PageFormBaseInfosRequest): Promise<PageFormBaseInfosResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PageFormBaseInfosHeaders({ });
+    return await this.pageFormBaseInfosWithOptions(request, headers, runtime);
+  }
+
+  async pageFormBaseInfosWithOptions(request: PageFormBaseInfosRequest, headers: PageFormBaseInfosHeaders, runtime: $Util.RuntimeOptions): Promise<PageFormBaseInfosResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appKey)) {
+      body["appKey"] = request.appKey;
+    }
+
+    if (!Util.isUnset(request.formTypeList)) {
+      body["formTypeList"] = request.formTypeList;
+    }
+
+    if (!Util.isUnset(request.language)) {
+      body["language"] = request.language;
+    }
+
+    if (!Util.isUnset(request.pageIndex)) {
+      body["pageIndex"] = request.pageIndex;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      body["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<PageFormBaseInfosResponse>(await this.doROARequest("PageFormBaseInfos", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/apps/forms/query`, "json", req, runtime), new PageFormBaseInfosResponse({}));
   }
 
   async queryServiceRecord(request: QueryServiceRecordRequest): Promise<QueryServiceRecordResponse> {
