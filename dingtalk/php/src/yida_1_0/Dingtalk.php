@@ -170,6 +170,9 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\LoginCodeGenResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\NotifyAuthorizationResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\NotifyAuthorizationResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\NotifyAuthorizationResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\PageFormBaseInfosHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\PageFormBaseInfosRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\PageFormBaseInfosResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\QueryServiceRecordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\QueryServiceRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\QueryServiceRecordResponse;
@@ -3521,6 +3524,66 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return NotifyAuthorizationResultResponse::fromMap($this->doROARequest('NotifyAuthorizationResult', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/apps/authorizationResults/notify', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param PageFormBaseInfosRequest $request
+     *
+     * @return PageFormBaseInfosResponse
+     */
+    public function pageFormBaseInfos($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PageFormBaseInfosHeaders([]);
+
+        return $this->pageFormBaseInfosWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param PageFormBaseInfosRequest $request
+     * @param PageFormBaseInfosHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return PageFormBaseInfosResponse
+     */
+    public function pageFormBaseInfosWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appKey)) {
+            @$body['appKey'] = $request->appKey;
+        }
+        if (!Utils::isUnset($request->formTypeList)) {
+            @$body['formTypeList'] = $request->formTypeList;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$body['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->pageIndex)) {
+            @$body['pageIndex'] = $request->pageIndex;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return PageFormBaseInfosResponse::fromMap($this->doROARequest('PageFormBaseInfos', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/apps/forms/query', 'json', $req, $runtime));
     }
 
     /**

@@ -88,6 +88,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateFinanceCompanyInfoRes
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAbandonStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAbandonStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAbandonStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAccountPeriodHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAccountPeriodRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAccountPeriodResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAndReceiptRelatedHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAndReceiptRelatedRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAndReceiptRelatedResponse;
@@ -1461,6 +1464,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateInvoiceAbandonStatusResponse::fromMap($this->doROARequest('UpdateInvoiceAbandonStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/bizfinance/invoices/abandonStatus', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateInvoiceAccountPeriodRequest $request
+     *
+     * @return UpdateInvoiceAccountPeriodResponse
+     */
+    public function updateInvoiceAccountPeriod($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateInvoiceAccountPeriodHeaders([]);
+
+        return $this->updateInvoiceAccountPeriodWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateInvoiceAccountPeriodRequest $request
+     * @param UpdateInvoiceAccountPeriodHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return UpdateInvoiceAccountPeriodResponse
+     */
+    public function updateInvoiceAccountPeriodWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->accountPeriod)) {
+            @$body['accountPeriod'] = $request->accountPeriod;
+        }
+        if (!Utils::isUnset($request->generalInvoiceVOList)) {
+            @$body['generalInvoiceVOList'] = $request->generalInvoiceVOList;
+        }
+        if (!Utils::isUnset($request->invoiceKeyVOList)) {
+            @$body['invoiceKeyVOList'] = $request->invoiceKeyVOList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateInvoiceAccountPeriodResponse::fromMap($this->doROARequest('UpdateInvoiceAccountPeriod', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/bizfinance/invoices/accountPeriods', 'json', $req, $runtime));
     }
 
     /**
