@@ -623,6 +623,102 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryDevice', 'diot_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/diot/devices', 'json', req, runtime)
         )
 
+    def query_event(
+        self,
+        request: dingtalkdiot__1__0_models.QueryEventRequest,
+    ) -> dingtalkdiot__1__0_models.QueryEventResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdiot__1__0_models.QueryEventHeaders()
+        return self.query_event_with_options(request, headers, runtime)
+
+    async def query_event_async(
+        self,
+        request: dingtalkdiot__1__0_models.QueryEventRequest,
+    ) -> dingtalkdiot__1__0_models.QueryEventResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdiot__1__0_models.QueryEventHeaders()
+        return await self.query_event_with_options_async(request, headers, runtime)
+
+    def query_event_with_options(
+        self,
+        request: dingtalkdiot__1__0_models.QueryEventRequest,
+        headers: dingtalkdiot__1__0_models.QueryEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdiot__1__0_models.QueryEventResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.device_id_list):
+            body['deviceIdList'] = request.device_id_list
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.event_id):
+            body['eventId'] = request.event_id
+        if not UtilClient.is_unset(request.event_status_list):
+            body['eventStatusList'] = request.event_status_list
+        if not UtilClient.is_unset(request.event_type_list):
+            body['eventTypeList'] = request.event_type_list
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdiot__1__0_models.QueryEventResponse(),
+            self.do_roarequest('QueryEvent', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/events/query', 'json', req, runtime)
+        )
+
+    async def query_event_with_options_async(
+        self,
+        request: dingtalkdiot__1__0_models.QueryEventRequest,
+        headers: dingtalkdiot__1__0_models.QueryEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdiot__1__0_models.QueryEventResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.device_id_list):
+            body['deviceIdList'] = request.device_id_list
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.event_id):
+            body['eventId'] = request.event_id
+        if not UtilClient.is_unset(request.event_status_list):
+            body['eventStatusList'] = request.event_status_list
+        if not UtilClient.is_unset(request.event_type_list):
+            body['eventTypeList'] = request.event_type_list
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdiot__1__0_models.QueryEventResponse(),
+            await self.do_roarequest_async('QueryEvent', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/events/query', 'json', req, runtime)
+        )
+
     def register_device(
         self,
         request: dingtalkdiot__1__0_models.RegisterDeviceRequest,

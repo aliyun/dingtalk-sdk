@@ -2198,15 +2198,9 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceIgnoreStatusResponse:
         UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.general_invoice_vo):
-            body['generalInvoiceVO'] = request.general_invoice_vo
-        if not UtilClient.is_unset(request.invoice_code):
-            body['invoiceCode'] = request.invoice_code
-        if not UtilClient.is_unset(request.invoice_no):
-            body['invoiceNo'] = request.invoice_no
-        if not UtilClient.is_unset(request.status):
-            body['status'] = request.status
+        query = {}
+        if not UtilClient.is_unset(request.instance_id):
+            query['instanceId'] = request.instance_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2214,7 +2208,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
+            query=OpenApiUtilClient.query(query)
         )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateInvoiceIgnoreStatusResponse(),
@@ -2228,15 +2222,9 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceIgnoreStatusResponse:
         UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.general_invoice_vo):
-            body['generalInvoiceVO'] = request.general_invoice_vo
-        if not UtilClient.is_unset(request.invoice_code):
-            body['invoiceCode'] = request.invoice_code
-        if not UtilClient.is_unset(request.invoice_no):
-            body['invoiceNo'] = request.invoice_no
-        if not UtilClient.is_unset(request.status):
-            body['status'] = request.status
+        query = {}
+        if not UtilClient.is_unset(request.instance_id):
+            query['instanceId'] = request.instance_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2244,7 +2232,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
+            query=OpenApiUtilClient.query(query)
         )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateInvoiceIgnoreStatusResponse(),
@@ -2275,6 +2263,8 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceVerifyStatusResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.deduct_status):
+            body['deductStatus'] = request.deduct_status
         if not UtilClient.is_unset(request.invoice_key_volist):
             body['invoiceKeyVOList'] = request.invoice_key_volist
         if not UtilClient.is_unset(request.verify_status):
@@ -2301,6 +2291,8 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceVerifyStatusResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.deduct_status):
+            body['deductStatus'] = request.deduct_status
         if not UtilClient.is_unset(request.invoice_key_volist):
             body['invoiceKeyVOList'] = request.invoice_key_volist
         if not UtilClient.is_unset(request.verify_status):

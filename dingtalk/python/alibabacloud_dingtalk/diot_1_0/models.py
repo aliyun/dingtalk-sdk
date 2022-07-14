@@ -1631,6 +1631,267 @@ class QueryDeviceResponse(TeaModel):
         return self
 
 
+class QueryEventHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryEventRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        device_id_list: List[str] = None,
+        end_time: int = None,
+        event_id: str = None,
+        event_status_list: List[int] = None,
+        event_type_list: List[str] = None,
+        page_number: int = None,
+        page_size: int = None,
+        start_time: int = None,
+    ):
+        self.corp_id = corp_id
+        self.device_id_list = device_id_list
+        self.end_time = end_time
+        self.event_id = event_id
+        self.event_status_list = event_status_list
+        self.event_type_list = event_type_list
+        self.page_number = page_number
+        self.page_size = page_size
+        self.start_time = start_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.device_id_list is not None:
+            result['deviceIdList'] = self.device_id_list
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.event_id is not None:
+            result['eventId'] = self.event_id
+        if self.event_status_list is not None:
+            result['eventStatusList'] = self.event_status_list
+        if self.event_type_list is not None:
+            result['eventTypeList'] = self.event_type_list
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('deviceIdList') is not None:
+            self.device_id_list = m.get('deviceIdList')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('eventId') is not None:
+            self.event_id = m.get('eventId')
+        if m.get('eventStatusList') is not None:
+            self.event_status_list = m.get('eventStatusList')
+        if m.get('eventTypeList') is not None:
+            self.event_type_list = m.get('eventTypeList')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        return self
+
+
+class QueryEventResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        event_id: str = None,
+        event_name: str = None,
+        event_status: int = None,
+        event_type: str = None,
+        msg: str = None,
+        occurrence_time: int = None,
+        pic_urls: List[str] = None,
+    ):
+        self.event_id = event_id
+        self.event_name = event_name
+        self.event_status = event_status
+        self.event_type = event_type
+        self.msg = msg
+        self.occurrence_time = occurrence_time
+        self.pic_urls = pic_urls
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.event_id is not None:
+            result['eventId'] = self.event_id
+        if self.event_name is not None:
+            result['eventName'] = self.event_name
+        if self.event_status is not None:
+            result['eventStatus'] = self.event_status
+        if self.event_type is not None:
+            result['eventType'] = self.event_type
+        if self.msg is not None:
+            result['msg'] = self.msg
+        if self.occurrence_time is not None:
+            result['occurrenceTime'] = self.occurrence_time
+        if self.pic_urls is not None:
+            result['picUrls'] = self.pic_urls
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('eventId') is not None:
+            self.event_id = m.get('eventId')
+        if m.get('eventName') is not None:
+            self.event_name = m.get('eventName')
+        if m.get('eventStatus') is not None:
+            self.event_status = m.get('eventStatus')
+        if m.get('eventType') is not None:
+            self.event_type = m.get('eventType')
+        if m.get('msg') is not None:
+            self.msg = m.get('msg')
+        if m.get('occurrenceTime') is not None:
+            self.occurrence_time = m.get('occurrenceTime')
+        if m.get('picUrls') is not None:
+            self.pic_urls = m.get('picUrls')
+        return self
+
+
+class QueryEventResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[QueryEventResponseBodyData] = None,
+        page_number: int = None,
+        page_size: int = None,
+        total_count: int = None,
+    ):
+        self.data = data
+        self.page_number = page_number
+        self.page_size = page_size
+        self.total_count = total_count
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = QueryEventResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QueryEventResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryEventResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryEventResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class RegisterDeviceHeaders(TeaModel):
     def __init__(
         self,
