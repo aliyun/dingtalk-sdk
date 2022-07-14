@@ -44,6 +44,13 @@ class vehicleSaleDetailVOList extends Model
     public $importCertificateNo;
 
     /**
+     * @description 商检单号
+     *
+     * @var string
+     */
+    public $inspectionListNo;
+
+    /**
      * @description 限乘人数
      *
      * @var string
@@ -111,6 +118,7 @@ class vehicleSaleDetailVOList extends Model
         'engineNo'            => 'engineNo',
         'idCardNo'            => 'idCardNo',
         'importCertificateNo' => 'importCertificateNo',
+        'inspectionListNo'    => 'inspectionListNo',
         'maxPassengers'       => 'maxPassengers',
         'originPlace'         => 'originPlace',
         'paymentVoucherNo'    => 'paymentVoucherNo',
@@ -143,6 +151,9 @@ class vehicleSaleDetailVOList extends Model
         }
         if (null !== $this->importCertificateNo) {
             $res['importCertificateNo'] = $this->importCertificateNo;
+        }
+        if (null !== $this->inspectionListNo) {
+            $res['inspectionListNo'] = $this->inspectionListNo;
         }
         if (null !== $this->maxPassengers) {
             $res['maxPassengers'] = $this->maxPassengers;
@@ -197,6 +208,9 @@ class vehicleSaleDetailVOList extends Model
         }
         if (isset($map['importCertificateNo'])) {
             $model->importCertificateNo = $map['importCertificateNo'];
+        }
+        if (isset($map['inspectionListNo'])) {
+            $model->inspectionListNo = $map['inspectionListNo'];
         }
         if (isset($map['maxPassengers'])) {
             $model->maxPassengers = $map['maxPassengers'];

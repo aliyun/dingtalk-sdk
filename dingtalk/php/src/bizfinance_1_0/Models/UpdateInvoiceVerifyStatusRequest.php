@@ -10,6 +10,14 @@ use AlibabaCloud\Tea\Model;
 class UpdateInvoiceVerifyStatusRequest extends Model
 {
     /**
+     * @description 抵扣状态
+     *
+     *
+     * @var string
+     */
+    public $deductStatus;
+
+    /**
      * @description 待更新
      *
      * @var invoiceKeyVOList[]
@@ -23,6 +31,7 @@ class UpdateInvoiceVerifyStatusRequest extends Model
      */
     public $verifyStatus;
     protected $_name = [
+        'deductStatus'     => 'deductStatus',
         'invoiceKeyVOList' => 'invoiceKeyVOList',
         'verifyStatus'     => 'verifyStatus',
     ];
@@ -34,6 +43,9 @@ class UpdateInvoiceVerifyStatusRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->deductStatus) {
+            $res['deductStatus'] = $this->deductStatus;
+        }
         if (null !== $this->invoiceKeyVOList) {
             $res['invoiceKeyVOList'] = [];
             if (null !== $this->invoiceKeyVOList && \is_array($this->invoiceKeyVOList)) {
@@ -58,6 +70,9 @@ class UpdateInvoiceVerifyStatusRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['deductStatus'])) {
+            $model->deductStatus = $map['deductStatus'];
+        }
         if (isset($map['invoiceKeyVOList'])) {
             if (!empty($map['invoiceKeyVOList'])) {
                 $model->invoiceKeyVOList = [];

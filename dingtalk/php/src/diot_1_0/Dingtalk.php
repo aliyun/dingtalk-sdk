@@ -29,6 +29,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\PushEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\QueryDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\QueryDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\QueryDeviceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\QueryEventHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\QueryEventRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\QueryEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\RegisterDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\RegisterDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\RegisterDeviceResponse;
@@ -448,6 +451,72 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryDeviceResponse::fromMap($this->doROARequest('QueryDevice', 'diot_1.0', 'HTTP', 'GET', 'AK', '/v1.0/diot/devices', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryEventRequest $request
+     *
+     * @return QueryEventResponse
+     */
+    public function queryEvent($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryEventHeaders([]);
+
+        return $this->queryEventWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryEventRequest $request
+     * @param QueryEventHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return QueryEventResponse
+     */
+    public function queryEventWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->deviceIdList)) {
+            @$body['deviceIdList'] = $request->deviceIdList;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->eventId)) {
+            @$body['eventId'] = $request->eventId;
+        }
+        if (!Utils::isUnset($request->eventStatusList)) {
+            @$body['eventStatusList'] = $request->eventStatusList;
+        }
+        if (!Utils::isUnset($request->eventTypeList)) {
+            @$body['eventTypeList'] = $request->eventTypeList;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return QueryEventResponse::fromMap($this->doROARequest('QueryEvent', 'diot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/diot/events/query', 'json', $req, $runtime));
     }
 
     /**

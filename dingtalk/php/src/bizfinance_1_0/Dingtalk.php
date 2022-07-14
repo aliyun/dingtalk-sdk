@@ -1588,18 +1588,9 @@ class Dingtalk extends OpenApiClient
     public function updateInvoiceIgnoreStatusWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->generalInvoiceVO)) {
-            @$body['generalInvoiceVO'] = $request->generalInvoiceVO;
-        }
-        if (!Utils::isUnset($request->invoiceCode)) {
-            @$body['invoiceCode'] = $request->invoiceCode;
-        }
-        if (!Utils::isUnset($request->invoiceNo)) {
-            @$body['invoiceNo'] = $request->invoiceNo;
-        }
-        if (!Utils::isUnset($request->status)) {
-            @$body['status'] = $request->status;
+        $query = [];
+        if (!Utils::isUnset($request->instanceId)) {
+            @$query['instanceId'] = $request->instanceId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -1610,7 +1601,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
         ]);
 
         return UpdateInvoiceIgnoreStatusResponse::fromMap($this->doROARequest('UpdateInvoiceIgnoreStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/bizfinance/invoices/ignoreStatus', 'json', $req, $runtime));
@@ -1640,6 +1631,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->deductStatus)) {
+            @$body['deductStatus'] = $request->deductStatus;
+        }
         if (!Utils::isUnset($request->invoiceKeyVOList)) {
             @$body['invoiceKeyVOList'] = $request->invoiceKeyVOList;
         }
