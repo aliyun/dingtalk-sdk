@@ -55,6 +55,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 public string Specification { get; set; }
                 public string TaxAmount { get; set; }
                 public string TaxPre { get; set; }
+                public string TaxPreType { get; set; }
                 public string TaxRate { get; set; }
                 public string Unit { get; set; }
                 public string UnitPrice { get; set; }
@@ -86,6 +87,9 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [NameInMap("purchaserAddress")]
             [Validation(Required=false)]
             public string PurchaserAddress { get; set; }
+            [NameInMap("purchaserBankAccount")]
+            [Validation(Required=false)]
+            public string PurchaserBankAccount { get; set; }
             [NameInMap("purchaserBankNameAccount")]
             [Validation(Required=false)]
             public string PurchaserBankNameAccount { get; set; }
@@ -119,6 +123,9 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [NameInMap("sellerAddress")]
             [Validation(Required=false)]
             public string SellerAddress { get; set; }
+            [NameInMap("sellerBankAccount")]
+            [Validation(Required=false)]
+            public string SellerBankAccount { get; set; }
             [NameInMap("sellerBankNameAccount")]
             [Validation(Required=false)]
             public string SellerBankNameAccount { get; set; }
@@ -170,6 +177,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 public string EngineNo { get; set; }
                 public string IdCardNo { get; set; }
                 public string ImportCertificateNo { get; set; }
+                public string InspectionListNo { get; set; }
                 public string MaxPassengers { get; set; }
                 public string OriginPlace { get; set; }
                 public string PaymentVoucherNo { get; set; }

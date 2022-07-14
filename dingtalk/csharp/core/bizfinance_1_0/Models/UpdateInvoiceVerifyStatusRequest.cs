@@ -10,6 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class UpdateInvoiceVerifyStatusRequest : TeaModel {
         /// <summary>
+        /// 抵扣状态
+        /// 
+        /// </summary>
+        [NameInMap("deductStatus")]
+        [Validation(Required=false)]
+        public string DeductStatus { get; set; }
+
+        /// <summary>
         /// 待更新
         /// </summary>
         [NameInMap("invoiceKeyVOList")]

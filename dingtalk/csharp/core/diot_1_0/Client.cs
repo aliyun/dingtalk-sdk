@@ -714,6 +714,134 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
             return TeaModel.ToObject<QueryDeviceResponse>(await DoROARequestAsync("QueryDevice", "diot_1.0", "HTTP", "GET", "AK", "/v1.0/diot/devices", "json", req, runtime));
         }
 
+        public QueryEventResponse QueryEvent(QueryEventRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryEventHeaders headers = new QueryEventHeaders();
+            return QueryEventWithOptions(request, headers, runtime);
+        }
+
+        public async Task<QueryEventResponse> QueryEventAsync(QueryEventRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryEventHeaders headers = new QueryEventHeaders();
+            return await QueryEventWithOptionsAsync(request, headers, runtime);
+        }
+
+        public QueryEventResponse QueryEventWithOptions(QueryEventRequest request, QueryEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceIdList))
+            {
+                body["deviceIdList"] = request.DeviceIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                body["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventId))
+            {
+                body["eventId"] = request.EventId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventStatusList))
+            {
+                body["eventStatusList"] = request.EventStatusList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventTypeList))
+            {
+                body["eventTypeList"] = request.EventTypeList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                body["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                body["startTime"] = request.StartTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<QueryEventResponse>(DoROARequest("QueryEvent", "diot_1.0", "HTTP", "POST", "AK", "/v1.0/diot/events/query", "json", req, runtime));
+        }
+
+        public async Task<QueryEventResponse> QueryEventWithOptionsAsync(QueryEventRequest request, QueryEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceIdList))
+            {
+                body["deviceIdList"] = request.DeviceIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                body["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventId))
+            {
+                body["eventId"] = request.EventId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventStatusList))
+            {
+                body["eventStatusList"] = request.EventStatusList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventTypeList))
+            {
+                body["eventTypeList"] = request.EventTypeList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                body["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                body["startTime"] = request.StartTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<QueryEventResponse>(await DoROARequestAsync("QueryEvent", "diot_1.0", "HTTP", "POST", "AK", "/v1.0/diot/events/query", "json", req, runtime));
+        }
+
         public RegisterDeviceResponse RegisterDevice(RegisterDeviceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

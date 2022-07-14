@@ -2451,22 +2451,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         public UpdateInvoiceIgnoreStatusResponse UpdateInvoiceIgnoreStatusWithOptions(UpdateInvoiceIgnoreStatusRequest request, UpdateInvoiceIgnoreStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GeneralInvoiceVO.ToMap()))
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InstanceId))
             {
-                body["generalInvoiceVO"] = request.GeneralInvoiceVO;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceCode))
-            {
-                body["invoiceCode"] = request.InvoiceCode;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceNo))
-            {
-                body["invoiceNo"] = request.InvoiceNo;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
-            {
-                body["status"] = request.Status;
+                query["instanceId"] = request.InstanceId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -2480,7 +2468,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             return TeaModel.ToObject<UpdateInvoiceIgnoreStatusResponse>(DoROARequest("UpdateInvoiceIgnoreStatus", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/invoices/ignoreStatus", "json", req, runtime));
         }
@@ -2488,22 +2476,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         public async Task<UpdateInvoiceIgnoreStatusResponse> UpdateInvoiceIgnoreStatusWithOptionsAsync(UpdateInvoiceIgnoreStatusRequest request, UpdateInvoiceIgnoreStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GeneralInvoiceVO.ToMap()))
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InstanceId))
             {
-                body["generalInvoiceVO"] = request.GeneralInvoiceVO;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceCode))
-            {
-                body["invoiceCode"] = request.InvoiceCode;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceNo))
-            {
-                body["invoiceNo"] = request.InvoiceNo;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
-            {
-                body["status"] = request.Status;
+                query["instanceId"] = request.InstanceId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -2517,7 +2493,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             return TeaModel.ToObject<UpdateInvoiceIgnoreStatusResponse>(await DoROARequestAsync("UpdateInvoiceIgnoreStatus", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/invoices/ignoreStatus", "json", req, runtime));
         }
@@ -2540,6 +2516,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeductStatus))
+            {
+                body["deductStatus"] = request.DeductStatus;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceKeyVOList))
             {
                 body["invoiceKeyVOList"] = request.InvoiceKeyVOList;
@@ -2569,6 +2549,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeductStatus))
+            {
+                body["deductStatus"] = request.DeductStatus;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceKeyVOList))
             {
                 body["invoiceKeyVOList"] = request.InvoiceKeyVOList;
