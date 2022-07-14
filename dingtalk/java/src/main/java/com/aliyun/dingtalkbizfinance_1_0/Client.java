@@ -1140,21 +1140,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public UpdateInvoiceIgnoreStatusResponse updateInvoiceIgnoreStatusWithOptions(UpdateInvoiceIgnoreStatusRequest request, UpdateInvoiceIgnoreStatusHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.generalInvoiceVO))) {
-            body.put("generalInvoiceVO", request.generalInvoiceVO);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.invoiceCode)) {
-            body.put("invoiceCode", request.invoiceCode);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.invoiceNo)) {
-            body.put("invoiceNo", request.invoiceNo);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.status)) {
-            body.put("status", request.status);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.instanceId)) {
+            query.put("instanceId", request.instanceId);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -1168,7 +1156,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("UpdateInvoiceIgnoreStatus", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/invoices/ignoreStatus", "json", req, runtime), new UpdateInvoiceIgnoreStatusResponse());
     }
@@ -1182,6 +1170,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public UpdateInvoiceVerifyStatusResponse updateInvoiceVerifyStatusWithOptions(UpdateInvoiceVerifyStatusRequest request, UpdateInvoiceVerifyStatusHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deductStatus)) {
+            body.put("deductStatus", request.deductStatus);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.invoiceKeyVOList)) {
             body.put("invoiceKeyVOList", request.invoiceKeyVOList);
         }

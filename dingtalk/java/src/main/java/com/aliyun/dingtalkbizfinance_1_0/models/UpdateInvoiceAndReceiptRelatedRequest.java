@@ -90,6 +90,10 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("taxPre")
         public String taxPre;
 
+        // 优惠政策类型
+        @NameInMap("taxPreType")
+        public String taxPreType;
+
         // 税率
         @NameInMap("taxRate")
         public String taxRate;
@@ -169,6 +173,14 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         }
         public String getTaxPre() {
             return this.taxPre;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList setTaxPreType(String taxPreType) {
+            this.taxPreType = taxPreType;
+            return this;
+        }
+        public String getTaxPreType() {
+            return this.taxPreType;
         }
 
         public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList setTaxRate(String taxRate) {
@@ -546,6 +558,10 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("importCertificateNo")
         public String importCertificateNo;
 
+        // 商检单号
+        @NameInMap("inspectionListNo")
+        public String inspectionListNo;
+
         // 限乘人数
         @NameInMap("maxPassengers")
         public String maxPassengers;
@@ -625,6 +641,14 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         }
         public String getImportCertificateNo() {
             return this.importCertificateNo;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOVehicleSaleDetailVOList setInspectionListNo(String inspectionListNo) {
+            this.inspectionListNo = inspectionListNo;
+            return this;
+        }
+        public String getInspectionListNo() {
+            return this.inspectionListNo;
         }
 
         public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOVehicleSaleDetailVOList setMaxPassengers(String maxPassengers) {
@@ -778,7 +802,11 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("purchaserAddress")
         public String purchaserAddress;
 
-        // 购方银行
+        // 购方银行账户
+        // 
+        @NameInMap("purchaserBankAccount")
+        public String purchaserBankAccount;
+
         @NameInMap("purchaserBankNameAccount")
         public String purchaserBankNameAccount;
 
@@ -805,7 +833,10 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("sellerAddress")
         public String sellerAddress;
 
-        // 销方银行
+        // 销方银行账户
+        @NameInMap("sellerBankAccount")
+        public String sellerBankAccount;
+
         @NameInMap("sellerBankNameAccount")
         public String sellerBankNameAccount;
 
@@ -1008,6 +1039,14 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
             return this.purchaserAddress;
         }
 
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setPurchaserBankAccount(String purchaserBankAccount) {
+            this.purchaserBankAccount = purchaserBankAccount;
+            return this;
+        }
+        public String getPurchaserBankAccount() {
+            return this.purchaserBankAccount;
+        }
+
         public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setPurchaserBankNameAccount(String purchaserBankNameAccount) {
             this.purchaserBankNameAccount = purchaserBankNameAccount;
             return this;
@@ -1062,6 +1101,14 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         }
         public String getSellerAddress() {
             return this.sellerAddress;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setSellerBankAccount(String sellerBankAccount) {
+            this.sellerBankAccount = sellerBankAccount;
+            return this;
+        }
+        public String getSellerBankAccount() {
+            return this.sellerBankAccount;
         }
 
         public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setSellerBankNameAccount(String sellerBankNameAccount) {

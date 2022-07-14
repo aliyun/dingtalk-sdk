@@ -341,6 +341,67 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("QueryDevice", "diot_1.0", "HTTP", "GET", "AK", "/v1.0/diot/devices", "json", req, runtime), new QueryDeviceResponse());
     }
 
+    public QueryEventResponse queryEvent(QueryEventRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryEventHeaders headers = new QueryEventHeaders();
+        return this.queryEventWithOptions(request, headers, runtime);
+    }
+
+    public QueryEventResponse queryEventWithOptions(QueryEventRequest request, QueryEventHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            body.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceIdList)) {
+            body.put("deviceIdList", request.deviceIdList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
+            body.put("endTime", request.endTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.eventId)) {
+            body.put("eventId", request.eventId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.eventStatusList)) {
+            body.put("eventStatusList", request.eventStatusList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.eventTypeList)) {
+            body.put("eventTypeList", request.eventTypeList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            body.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            body.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startTime)) {
+            body.put("startTime", request.startTime);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryEvent", "diot_1.0", "HTTP", "POST", "AK", "/v1.0/diot/events/query", "json", req, runtime), new QueryEventResponse());
+    }
+
     public RegisterDeviceResponse registerDevice(RegisterDeviceRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         RegisterDeviceHeaders headers = new RegisterDeviceHeaders();

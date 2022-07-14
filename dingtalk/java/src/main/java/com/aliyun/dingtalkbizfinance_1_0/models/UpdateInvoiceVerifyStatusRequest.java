@@ -4,6 +4,11 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInvoiceVerifyStatusRequest extends TeaModel {
+    // 抵扣状态
+    // 
+    @NameInMap("deductStatus")
+    public String deductStatus;
+
     // 待更新
     @NameInMap("invoiceKeyVOList")
     public java.util.List<UpdateInvoiceVerifyStatusRequestInvoiceKeyVOList> invoiceKeyVOList;
@@ -15,6 +20,14 @@ public class UpdateInvoiceVerifyStatusRequest extends TeaModel {
     public static UpdateInvoiceVerifyStatusRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateInvoiceVerifyStatusRequest self = new UpdateInvoiceVerifyStatusRequest();
         return TeaModel.build(map, self);
+    }
+
+    public UpdateInvoiceVerifyStatusRequest setDeductStatus(String deductStatus) {
+        this.deductStatus = deductStatus;
+        return this;
+    }
+    public String getDeductStatus() {
+        return this.deductStatus;
     }
 
     public UpdateInvoiceVerifyStatusRequest setInvoiceKeyVOList(java.util.List<UpdateInvoiceVerifyStatusRequestInvoiceKeyVOList> invoiceKeyVOList) {
