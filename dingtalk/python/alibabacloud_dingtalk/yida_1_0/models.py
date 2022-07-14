@@ -13519,6 +13519,318 @@ class NotifyAuthorizationResultResponse(TeaModel):
         return self
 
 
+class PageFormBaseInfosHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PageFormBaseInfosRequest(TeaModel):
+    def __init__(
+        self,
+        app_key: str = None,
+        form_type_list: List[str] = None,
+        language: str = None,
+        page_index: int = None,
+        page_size: int = None,
+        system_token: str = None,
+        user_id: str = None,
+    ):
+        # 应用编码
+        self.app_key = app_key
+        # 表单类型列表，可传"process", "receipt"
+        self.form_type_list = form_type_list
+        # 语言。可选值：zh_CN/en_US 默认：zh_CN
+        self.language = language
+        # 当前页码
+        self.page_index = page_index
+        # 每页数量，最大100
+        self.page_size = page_size
+        # 应用秘钥。在应用数据中获取。
+        self.system_token = system_token
+        # 钉钉userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_key is not None:
+            result['appKey'] = self.app_key
+        if self.form_type_list is not None:
+            result['formTypeList'] = self.form_type_list
+        if self.language is not None:
+            result['language'] = self.language
+        if self.page_index is not None:
+            result['pageIndex'] = self.page_index
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appKey') is not None:
+            self.app_key = m.get('appKey')
+        if m.get('formTypeList') is not None:
+            self.form_type_list = m.get('formTypeList')
+        if m.get('language') is not None:
+            self.language = m.get('language')
+        if m.get('pageIndex') is not None:
+            self.page_index = m.get('pageIndex')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class PageFormBaseInfosResponseBodyResultDataTitle(TeaModel):
+    def __init__(
+        self,
+        en_us: str = None,
+        zh_cn: str = None,
+    ):
+        self.en_us = en_us
+        self.zh_cn = zh_cn
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.en_us is not None:
+            result['enUS'] = self.en_us
+        if self.zh_cn is not None:
+            result['zhCN'] = self.zh_cn
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enUS') is not None:
+            self.en_us = m.get('enUS')
+        if m.get('zhCN') is not None:
+            self.zh_cn = m.get('zhCN')
+        return self
+
+
+class PageFormBaseInfosResponseBodyResultData(TeaModel):
+    def __init__(
+        self,
+        creator: str = None,
+        form_type: str = None,
+        form_uuid: str = None,
+        gmt_create: str = None,
+        title: PageFormBaseInfosResponseBodyResultDataTitle = None,
+    ):
+        self.creator = creator
+        self.form_type = form_type
+        self.form_uuid = form_uuid
+        self.gmt_create = gmt_create
+        self.title = title
+
+    def validate(self):
+        if self.title:
+            self.title.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.creator is not None:
+            result['creator'] = self.creator
+        if self.form_type is not None:
+            result['formType'] = self.form_type
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.title is not None:
+            result['title'] = self.title.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('creator') is not None:
+            self.creator = m.get('creator')
+        if m.get('formType') is not None:
+            self.form_type = m.get('formType')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('title') is not None:
+            temp_model = PageFormBaseInfosResponseBodyResultDataTitle()
+            self.title = temp_model.from_map(m['title'])
+        return self
+
+
+class PageFormBaseInfosResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        current_page: int = None,
+        data: List[PageFormBaseInfosResponseBodyResultData] = None,
+        total_count: int = None,
+    ):
+        # 当前页
+        self.current_page = current_page
+        self.data = data
+        # 总行数
+        self.total_count = total_count
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.current_page is not None:
+            result['currentPage'] = self.current_page
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('currentPage') is not None:
+            self.current_page = m.get('currentPage')
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = PageFormBaseInfosResponseBodyResultData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class PageFormBaseInfosResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: PageFormBaseInfosResponseBodyResult = None,
+        success: bool = None,
+    ):
+        # 结果集
+        self.result = result
+        # 是否成功
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = PageFormBaseInfosResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class PageFormBaseInfosResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: PageFormBaseInfosResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = PageFormBaseInfosResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryServiceRecordHeaders(TeaModel):
     def __init__(
         self,

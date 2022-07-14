@@ -4823,6 +4823,94 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('NotifyAuthorizationResult', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/apps/authorizationResults/notify', 'json', req, runtime)
         )
 
+    def page_form_base_infos(
+        self,
+        request: dingtalkyida__1__0_models.PageFormBaseInfosRequest,
+    ) -> dingtalkyida__1__0_models.PageFormBaseInfosResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.PageFormBaseInfosHeaders()
+        return self.page_form_base_infos_with_options(request, headers, runtime)
+
+    async def page_form_base_infos_async(
+        self,
+        request: dingtalkyida__1__0_models.PageFormBaseInfosRequest,
+    ) -> dingtalkyida__1__0_models.PageFormBaseInfosResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.PageFormBaseInfosHeaders()
+        return await self.page_form_base_infos_with_options_async(request, headers, runtime)
+
+    def page_form_base_infos_with_options(
+        self,
+        request: dingtalkyida__1__0_models.PageFormBaseInfosRequest,
+        headers: dingtalkyida__1__0_models.PageFormBaseInfosHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.PageFormBaseInfosResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_key):
+            body['appKey'] = request.app_key
+        if not UtilClient.is_unset(request.form_type_list):
+            body['formTypeList'] = request.form_type_list
+        if not UtilClient.is_unset(request.language):
+            body['language'] = request.language
+        if not UtilClient.is_unset(request.page_index):
+            body['pageIndex'] = request.page_index
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.PageFormBaseInfosResponse(),
+            self.do_roarequest('PageFormBaseInfos', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/apps/forms/query', 'json', req, runtime)
+        )
+
+    async def page_form_base_infos_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.PageFormBaseInfosRequest,
+        headers: dingtalkyida__1__0_models.PageFormBaseInfosHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.PageFormBaseInfosResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_key):
+            body['appKey'] = request.app_key
+        if not UtilClient.is_unset(request.form_type_list):
+            body['formTypeList'] = request.form_type_list
+        if not UtilClient.is_unset(request.language):
+            body['language'] = request.language
+        if not UtilClient.is_unset(request.page_index):
+            body['pageIndex'] = request.page_index
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.PageFormBaseInfosResponse(),
+            await self.do_roarequest_async('PageFormBaseInfos', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/apps/forms/query', 'json', req, runtime)
+        )
+
     def query_service_record(
         self,
         request: dingtalkyida__1__0_models.QueryServiceRecordRequest,

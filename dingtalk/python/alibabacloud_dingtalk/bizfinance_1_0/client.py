@@ -2027,6 +2027,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('UpdateInvoiceAbandonStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/abandonStatus', 'json', req, runtime)
         )
 
+    def update_invoice_account_period(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodHeaders()
+        return self.update_invoice_account_period_with_options(request, headers, runtime)
+
+    async def update_invoice_account_period_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodHeaders()
+        return await self.update_invoice_account_period_with_options_async(request, headers, runtime)
+
+    def update_invoice_account_period_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodRequest,
+        headers: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.account_period):
+            body['accountPeriod'] = request.account_period
+        if not UtilClient.is_unset(request.general_invoice_volist):
+            body['generalInvoiceVOList'] = request.general_invoice_volist
+        if not UtilClient.is_unset(request.invoice_key_volist):
+            body['invoiceKeyVOList'] = request.invoice_key_volist
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodResponse(),
+            self.do_roarequest('UpdateInvoiceAccountPeriod', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/accountPeriods', 'json', req, runtime)
+        )
+
+    async def update_invoice_account_period_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodRequest,
+        headers: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.account_period):
+            body['accountPeriod'] = request.account_period
+        if not UtilClient.is_unset(request.general_invoice_volist):
+            body['generalInvoiceVOList'] = request.general_invoice_volist
+        if not UtilClient.is_unset(request.invoice_key_volist):
+            body['invoiceKeyVOList'] = request.invoice_key_volist
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodResponse(),
+            await self.do_roarequest_async('UpdateInvoiceAccountPeriod', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/accountPeriods', 'json', req, runtime)
+        )
+
     def update_invoice_and_receipt_related(
         self,
         request: dingtalkbizfinance__1__0_models.UpdateInvoiceAndReceiptRelatedRequest,
