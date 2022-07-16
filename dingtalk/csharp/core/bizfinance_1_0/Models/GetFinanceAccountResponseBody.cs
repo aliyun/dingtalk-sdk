@@ -52,6 +52,20 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         public string Amount { get; set; }
 
         /// <summary>
+        /// 银行代号，如果是银行卡类型，有值，其他类型时，为空
+        /// </summary>
+        [NameInMap("bankCode")]
+        [Validation(Required=false)]
+        public string BankCode { get; set; }
+
+        /// <summary>
+        /// 银行名称，如果是银行卡类型，有值，其他类型时，为空
+        /// </summary>
+        [NameInMap("bankName")]
+        [Validation(Required=false)]
+        public string BankName { get; set; }
+
+        /// <summary>
         /// 创建时间
         /// </summary>
         [NameInMap("createTime")]
