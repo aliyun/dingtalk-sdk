@@ -3114,6 +3114,81 @@ export class DigitalStoreNodeInfoResponse extends $tea.Model {
   }
 }
 
+export class DigitalStoreRightsInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreRightsInfoResponseBody extends $tea.Model {
+  endTime?: number;
+  quantity?: number;
+  rightsCode?: string;
+  rightsName?: string;
+  startTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      quantity: 'quantity',
+      rightsCode: 'rightsCode',
+      rightsName: 'rightsName',
+      startTime: 'startTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'number',
+      quantity: 'number',
+      rightsCode: 'string',
+      rightsName: 'string',
+      startTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreRightsInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DigitalStoreRightsInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DigitalStoreRightsInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DigitalStoreRolesHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -10011,6 +10086,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<DigitalStoreNodeInfoResponse>(await this.doROARequest("DigitalStoreNodeInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/nodeInfos`, "json", req, runtime), new DigitalStoreNodeInfoResponse({}));
+  }
+
+  async digitalStoreRightsInfo(): Promise<DigitalStoreRightsInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DigitalStoreRightsInfoHeaders({ });
+    return await this.digitalStoreRightsInfoWithOptions(headers, runtime);
+  }
+
+  async digitalStoreRightsInfoWithOptions(headers: DigitalStoreRightsInfoHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreRightsInfoResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<DigitalStoreRightsInfoResponse>(await this.doROARequest("DigitalStoreRightsInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/rightsInfos`, "json", req, runtime), new DigitalStoreRightsInfoResponse({}));
   }
 
   async digitalStoreRoles(): Promise<DigitalStoreRolesResponse> {

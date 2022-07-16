@@ -773,6 +773,8 @@ export class GetFinanceAccountResponseBody extends $tea.Model {
   accountRemark?: string;
   accountType?: string;
   amount?: string;
+  bankCode?: string;
+  bankName?: string;
   createTime?: number;
   creator?: string;
   static names(): { [key: string]: string } {
@@ -783,6 +785,8 @@ export class GetFinanceAccountResponseBody extends $tea.Model {
       accountRemark: 'accountRemark',
       accountType: 'accountType',
       amount: 'amount',
+      bankCode: 'bankCode',
+      bankName: 'bankName',
       createTime: 'createTime',
       creator: 'creator',
     };
@@ -796,6 +800,8 @@ export class GetFinanceAccountResponseBody extends $tea.Model {
       accountRemark: 'string',
       accountType: 'string',
       amount: 'string',
+      bankCode: 'string',
+      bankName: 'string',
       createTime: 'number',
       creator: 'string',
     };
@@ -2448,6 +2454,91 @@ export class QuerySupplierByPageResponse extends $tea.Model {
   }
 }
 
+export class UpdateApplyReceiptAndInvoiceRelatedHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateApplyReceiptAndInvoiceRelatedRequest extends $tea.Model {
+  generalInvoiceVOList?: UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList[];
+  instanceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      generalInvoiceVOList: 'generalInvoiceVOList',
+      instanceId: 'instanceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      generalInvoiceVOList: { 'type': 'array', 'itemType': UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList },
+      instanceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateApplyReceiptAndInvoiceRelatedResponseBody extends $tea.Model {
+  invoiceKeyVOList?: UpdateApplyReceiptAndInvoiceRelatedResponseBodyInvoiceKeyVOList[];
+  static names(): { [key: string]: string } {
+    return {
+      invoiceKeyVOList: 'invoiceKeyVOList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      invoiceKeyVOList: { 'type': 'array', 'itemType': UpdateApplyReceiptAndInvoiceRelatedResponseBodyInvoiceKeyVOList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateApplyReceiptAndInvoiceRelatedResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateApplyReceiptAndInvoiceRelatedResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateApplyReceiptAndInvoiceRelatedResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateFinanceCompanyInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2836,15 +2927,18 @@ export class UpdateInvoiceIgnoreStatusHeaders extends $tea.Model {
 
 export class UpdateInvoiceIgnoreStatusRequest extends $tea.Model {
   instanceId?: string;
+  status?: string;
   static names(): { [key: string]: string } {
     return {
       instanceId: 'instanceId',
+      status: 'status',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       instanceId: 'string',
+      status: 'string',
     };
   }
 
@@ -3056,6 +3150,103 @@ export class UpdateReceiptResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: UpdateReceiptResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateReceiptVoucherStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateReceiptVoucherStatusRequest extends $tea.Model {
+  accountPeriod?: string;
+  actionType?: string;
+  operatorId?: string;
+  receiptId?: string;
+  voucherCode?: string;
+  voucherId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      accountPeriod: 'accountPeriod',
+      actionType: 'actionType',
+      operatorId: 'operatorId',
+      receiptId: 'receiptId',
+      voucherCode: 'voucherCode',
+      voucherId: 'voucherId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accountPeriod: 'string',
+      actionType: 'string',
+      operatorId: 'string',
+      receiptId: 'string',
+      voucherCode: 'string',
+      voucherId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateReceiptVoucherStatusResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateReceiptVoucherStatusResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateReceiptVoucherStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateReceiptVoucherStatusResponseBody,
     };
   }
 
@@ -4105,6 +4296,8 @@ export class QueryEnterpriseAccountByPageResponseBodyList extends $tea.Model {
   accountRemark?: string;
   accountType?: string;
   amount?: string;
+  bankCode?: string;
+  bankName?: string;
   createTime?: number;
   creator?: string;
   static names(): { [key: string]: string } {
@@ -4115,6 +4308,8 @@ export class QueryEnterpriseAccountByPageResponseBodyList extends $tea.Model {
       accountRemark: 'accountRemark',
       accountType: 'accountType',
       amount: 'amount',
+      bankCode: 'bankCode',
+      bankName: 'bankName',
       createTime: 'createTime',
       creator: 'creator',
     };
@@ -4128,6 +4323,8 @@ export class QueryEnterpriseAccountByPageResponseBodyList extends $tea.Model {
       accountRemark: 'string',
       accountType: 'string',
       amount: 'string',
+      bankCode: 'string',
+      bankName: 'string',
       createTime: 'number',
       creator: 'string',
     };
@@ -4313,6 +4510,387 @@ export class QuerySupplierByPageResponseBodyList extends $tea.Model {
       name: 'string',
       status: 'string',
       userDefineCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList extends $tea.Model {
+  amount?: string;
+  goodName?: string;
+  quantity?: string;
+  revenueCode?: string;
+  rowNo?: string;
+  specification?: string;
+  taxAmount?: string;
+  taxPre?: string;
+  taxPreType?: string;
+  taxRate?: string;
+  unit?: string;
+  unitPrice?: string;
+  static names(): { [key: string]: string } {
+    return {
+      amount: 'amount',
+      goodName: 'goodName',
+      quantity: 'quantity',
+      revenueCode: 'revenueCode',
+      rowNo: 'rowNo',
+      specification: 'specification',
+      taxAmount: 'taxAmount',
+      taxPre: 'taxPre',
+      taxPreType: 'taxPreType',
+      taxRate: 'taxRate',
+      unit: 'unit',
+      unitPrice: 'unitPrice',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      amount: 'string',
+      goodName: 'string',
+      quantity: 'string',
+      revenueCode: 'string',
+      rowNo: 'string',
+      specification: 'string',
+      taxAmount: 'string',
+      taxPre: 'string',
+      taxPreType: 'string',
+      taxRate: 'string',
+      unit: 'string',
+      unitPrice: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList extends $tea.Model {
+  amount?: string;
+  cardNo?: string;
+  endDate?: string;
+  goodsName?: string;
+  revenueCode?: string;
+  rowNo?: string;
+  startDate?: string;
+  taxAmount?: string;
+  taxRate?: string;
+  vehicleType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      amount: 'amount',
+      cardNo: 'cardNo',
+      endDate: 'endDate',
+      goodsName: 'goodsName',
+      revenueCode: 'revenueCode',
+      rowNo: 'rowNo',
+      startDate: 'startDate',
+      taxAmount: 'taxAmount',
+      taxRate: 'taxRate',
+      vehicleType: 'vehicleType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      amount: 'string',
+      cardNo: 'string',
+      endDate: 'string',
+      goodsName: 'string',
+      revenueCode: 'string',
+      rowNo: 'string',
+      startDate: 'string',
+      taxAmount: 'string',
+      taxRate: 'string',
+      vehicleType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList extends $tea.Model {
+  auctionUnit?: string;
+  auctionUnitAddress?: string;
+  auctionUnitBank?: string;
+  auctionUnitTaxNo?: string;
+  auctionUtilTel?: string;
+  carModel?: string;
+  cardNo?: string;
+  registration?: string;
+  transferVehicle?: string;
+  usedCarAddress?: string;
+  usedCarMarket?: string;
+  usedCarMarketBank?: string;
+  usedCarMarketPhone?: string;
+  usedCarMarketTaxNo?: string;
+  vehicleNo?: string;
+  vehicleType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      auctionUnit: 'auctionUnit',
+      auctionUnitAddress: 'auctionUnitAddress',
+      auctionUnitBank: 'auctionUnitBank',
+      auctionUnitTaxNo: 'auctionUnitTaxNo',
+      auctionUtilTel: 'auctionUtilTel',
+      carModel: 'carModel',
+      cardNo: 'cardNo',
+      registration: 'registration',
+      transferVehicle: 'transferVehicle',
+      usedCarAddress: 'usedCarAddress',
+      usedCarMarket: 'usedCarMarket',
+      usedCarMarketBank: 'usedCarMarketBank',
+      usedCarMarketPhone: 'usedCarMarketPhone',
+      usedCarMarketTaxNo: 'usedCarMarketTaxNo',
+      vehicleNo: 'vehicleNo',
+      vehicleType: 'vehicleType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      auctionUnit: 'string',
+      auctionUnitAddress: 'string',
+      auctionUnitBank: 'string',
+      auctionUnitTaxNo: 'string',
+      auctionUtilTel: 'string',
+      carModel: 'string',
+      cardNo: 'string',
+      registration: 'string',
+      transferVehicle: 'string',
+      usedCarAddress: 'string',
+      usedCarMarket: 'string',
+      usedCarMarketBank: 'string',
+      usedCarMarketPhone: 'string',
+      usedCarMarketTaxNo: 'string',
+      vehicleNo: 'string',
+      vehicleType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListVehicleSaleDetailVOList extends $tea.Model {
+  brand?: string;
+  certificateNo?: string;
+  engineNo?: string;
+  idCardNo?: string;
+  importCertificateNo?: string;
+  inspectionListNo?: string;
+  maxPassengers?: string;
+  originPlace?: string;
+  paymentVoucherNo?: string;
+  taxAuthorityName?: string;
+  taxAuthorityNo?: string;
+  taxRate?: string;
+  tonnage?: string;
+  vehicleNo?: string;
+  vehicleType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      brand: 'brand',
+      certificateNo: 'certificateNo',
+      engineNo: 'engineNo',
+      idCardNo: 'idCardNo',
+      importCertificateNo: 'importCertificateNo',
+      inspectionListNo: 'inspectionListNo',
+      maxPassengers: 'maxPassengers',
+      originPlace: 'originPlace',
+      paymentVoucherNo: 'paymentVoucherNo',
+      taxAuthorityName: 'taxAuthorityName',
+      taxAuthorityNo: 'taxAuthorityNo',
+      taxRate: 'taxRate',
+      tonnage: 'tonnage',
+      vehicleNo: 'vehicleNo',
+      vehicleType: 'vehicleType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      brand: 'string',
+      certificateNo: 'string',
+      engineNo: 'string',
+      idCardNo: 'string',
+      importCertificateNo: 'string',
+      inspectionListNo: 'string',
+      maxPassengers: 'string',
+      originPlace: 'string',
+      paymentVoucherNo: 'string',
+      taxAuthorityName: 'string',
+      taxAuthorityNo: 'string',
+      taxRate: 'string',
+      tonnage: 'string',
+      vehicleNo: 'string',
+      vehicleType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList extends $tea.Model {
+  accountPeriod?: string;
+  amount?: string;
+  amountWithTax?: string;
+  checkCode?: string;
+  checkTime?: string;
+  drewDate?: string;
+  electronicUrl?: string;
+  financeType?: string;
+  fundType?: string;
+  generalInvoiceDetailVOList?: UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList[];
+  invoiceCode?: string;
+  invoiceNo?: string;
+  invoiceType?: string;
+  machineCode?: string;
+  oilFlag?: string;
+  payee?: string;
+  processInstCode?: string;
+  processInstType?: string;
+  purchaserAddress?: string;
+  purchaserBankAccount?: string;
+  purchaserBankNameAccount?: string;
+  purchaserName?: string;
+  purchaserTaxNo?: string;
+  purchaserTel?: string;
+  remark?: string;
+  secondHandCarInvoiceDetailList?: UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList[];
+  sellerAddress?: string;
+  sellerBankAccount?: string;
+  sellerBankNameAccount?: string;
+  sellerName?: string;
+  sellerTaxNo?: string;
+  sellerTel?: string;
+  status?: string;
+  supplySign?: string;
+  taxAmount?: string;
+  usedVehicleSaleDetailVOList?: UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList[];
+  vehicleSaleDetailVOList?: UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListVehicleSaleDetailVOList[];
+  verifyStatus?: string;
+  voucherCode?: string;
+  voucherStatus?: string;
+  static names(): { [key: string]: string } {
+    return {
+      accountPeriod: 'accountPeriod',
+      amount: 'amount',
+      amountWithTax: 'amountWithTax',
+      checkCode: 'checkCode',
+      checkTime: 'checkTime',
+      drewDate: 'drewDate',
+      electronicUrl: 'electronicUrl',
+      financeType: 'financeType',
+      fundType: 'fundType',
+      generalInvoiceDetailVOList: 'generalInvoiceDetailVOList',
+      invoiceCode: 'invoiceCode',
+      invoiceNo: 'invoiceNo',
+      invoiceType: 'invoiceType',
+      machineCode: 'machineCode',
+      oilFlag: 'oilFlag',
+      payee: 'payee',
+      processInstCode: 'processInstCode',
+      processInstType: 'processInstType',
+      purchaserAddress: 'purchaserAddress',
+      purchaserBankAccount: 'purchaserBankAccount',
+      purchaserBankNameAccount: 'purchaserBankNameAccount',
+      purchaserName: 'purchaserName',
+      purchaserTaxNo: 'purchaserTaxNo',
+      purchaserTel: 'purchaserTel',
+      remark: 'remark',
+      secondHandCarInvoiceDetailList: 'secondHandCarInvoiceDetailList',
+      sellerAddress: 'sellerAddress',
+      sellerBankAccount: 'sellerBankAccount',
+      sellerBankNameAccount: 'sellerBankNameAccount',
+      sellerName: 'sellerName',
+      sellerTaxNo: 'sellerTaxNo',
+      sellerTel: 'sellerTel',
+      status: 'status',
+      supplySign: 'supplySign',
+      taxAmount: 'taxAmount',
+      usedVehicleSaleDetailVOList: 'usedVehicleSaleDetailVOList',
+      vehicleSaleDetailVOList: 'vehicleSaleDetailVOList',
+      verifyStatus: 'verifyStatus',
+      voucherCode: 'voucherCode',
+      voucherStatus: 'voucherStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accountPeriod: 'string',
+      amount: 'string',
+      amountWithTax: 'string',
+      checkCode: 'string',
+      checkTime: 'string',
+      drewDate: 'string',
+      electronicUrl: 'string',
+      financeType: 'string',
+      fundType: 'string',
+      generalInvoiceDetailVOList: { 'type': 'array', 'itemType': UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList },
+      invoiceCode: 'string',
+      invoiceNo: 'string',
+      invoiceType: 'string',
+      machineCode: 'string',
+      oilFlag: 'string',
+      payee: 'string',
+      processInstCode: 'string',
+      processInstType: 'string',
+      purchaserAddress: 'string',
+      purchaserBankAccount: 'string',
+      purchaserBankNameAccount: 'string',
+      purchaserName: 'string',
+      purchaserTaxNo: 'string',
+      purchaserTel: 'string',
+      remark: 'string',
+      secondHandCarInvoiceDetailList: { 'type': 'array', 'itemType': UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList },
+      sellerAddress: 'string',
+      sellerBankAccount: 'string',
+      sellerBankNameAccount: 'string',
+      sellerName: 'string',
+      sellerTaxNo: 'string',
+      sellerTel: 'string',
+      status: 'string',
+      supplySign: 'string',
+      taxAmount: 'string',
+      usedVehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList },
+      vehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListVehicleSaleDetailVOList },
+      verifyStatus: 'string',
+      voucherCode: 'string',
+      voucherStatus: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateApplyReceiptAndInvoiceRelatedResponseBodyInvoiceKeyVOList extends $tea.Model {
+  invoiceCode?: string;
+  invoiceNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      invoiceCode: 'invoiceCode',
+      invoiceNo: 'invoiceNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      invoiceCode: 'string',
+      invoiceNo: 'string',
     };
   }
 
@@ -6872,6 +7450,39 @@ export default class Client extends OpenApi {
     return $tea.cast<QuerySupplierByPageResponse>(await this.doROARequest("QuerySupplierByPage", "bizfinance_1.0", "HTTP", "GET", "AK", `/v1.0/bizfinance/suppliers`, "json", req, runtime), new QuerySupplierByPageResponse({}));
   }
 
+  async updateApplyReceiptAndInvoiceRelated(request: UpdateApplyReceiptAndInvoiceRelatedRequest): Promise<UpdateApplyReceiptAndInvoiceRelatedResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateApplyReceiptAndInvoiceRelatedHeaders({ });
+    return await this.updateApplyReceiptAndInvoiceRelatedWithOptions(request, headers, runtime);
+  }
+
+  async updateApplyReceiptAndInvoiceRelatedWithOptions(request: UpdateApplyReceiptAndInvoiceRelatedRequest, headers: UpdateApplyReceiptAndInvoiceRelatedHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateApplyReceiptAndInvoiceRelatedResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.generalInvoiceVOList)) {
+      body["generalInvoiceVOList"] = request.generalInvoiceVOList;
+    }
+
+    if (!Util.isUnset(request.instanceId)) {
+      body["instanceId"] = request.instanceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateApplyReceiptAndInvoiceRelatedResponse>(await this.doROARequest("UpdateApplyReceiptAndInvoiceRelated", "bizfinance_1.0", "HTTP", "POST", "AK", `/v1.0/bizfinance/invoices/applyReceipts/relate`, "json", req, runtime), new UpdateApplyReceiptAndInvoiceRelatedResponse({}));
+  }
+
   async updateFinanceCompanyInfo(request: UpdateFinanceCompanyInfoRequest): Promise<UpdateFinanceCompanyInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateFinanceCompanyInfoHeaders({ });
@@ -7049,6 +7660,10 @@ export default class Client extends OpenApi {
       query["instanceId"] = request.instanceId;
     }
 
+    if (!Util.isUnset(request.status)) {
+      query["status"] = request.status;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -7129,6 +7744,55 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateReceiptResponse>(await this.doROARequest("UpdateReceipt", "bizfinance_1.0", "HTTP", "PUT", "AK", `/v1.0/bizfinance/receipts`, "json", req, runtime), new UpdateReceiptResponse({}));
+  }
+
+  async updateReceiptVoucherStatus(request: UpdateReceiptVoucherStatusRequest): Promise<UpdateReceiptVoucherStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateReceiptVoucherStatusHeaders({ });
+    return await this.updateReceiptVoucherStatusWithOptions(request, headers, runtime);
+  }
+
+  async updateReceiptVoucherStatusWithOptions(request: UpdateReceiptVoucherStatusRequest, headers: UpdateReceiptVoucherStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateReceiptVoucherStatusResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.accountPeriod)) {
+      body["accountPeriod"] = request.accountPeriod;
+    }
+
+    if (!Util.isUnset(request.actionType)) {
+      body["actionType"] = request.actionType;
+    }
+
+    if (!Util.isUnset(request.operatorId)) {
+      body["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.receiptId)) {
+      body["receiptId"] = request.receiptId;
+    }
+
+    if (!Util.isUnset(request.voucherCode)) {
+      body["voucherCode"] = request.voucherCode;
+    }
+
+    if (!Util.isUnset(request.voucherId)) {
+      body["voucherId"] = request.voucherId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateReceiptVoucherStatusResponse>(await this.doROARequest("UpdateReceiptVoucherStatus", "bizfinance_1.0", "HTTP", "PUT", "AK", `/v1.0/bizfinance/vouchers/recepits`, "json", req, runtime), new UpdateReceiptVoucherStatusResponse({}));
   }
 
 }
