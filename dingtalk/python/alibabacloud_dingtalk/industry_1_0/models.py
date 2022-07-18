@@ -5763,6 +5763,132 @@ class DigitalStoreNodeInfoResponse(TeaModel):
         return self
 
 
+class DigitalStoreRightsInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DigitalStoreRightsInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        end_time: int = None,
+        quantity: int = None,
+        rights_code: str = None,
+        rights_name: str = None,
+        start_time: int = None,
+    ):
+        # 权益过期时间
+        self.end_time = end_time
+        # 门店通通讯录根节点Id
+        self.quantity = quantity
+        # 门店通通讯录名称
+        self.rights_code = rights_code
+        # 门店通通讯录Code
+        self.rights_name = rights_name
+        # 权益开始时间
+        self.start_time = start_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.quantity is not None:
+            result['quantity'] = self.quantity
+        if self.rights_code is not None:
+            result['rightsCode'] = self.rights_code
+        if self.rights_name is not None:
+            result['rightsName'] = self.rights_name
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('quantity') is not None:
+            self.quantity = m.get('quantity')
+        if m.get('rightsCode') is not None:
+            self.rights_code = m.get('rightsCode')
+        if m.get('rightsName') is not None:
+            self.rights_name = m.get('rightsName')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        return self
+
+
+class DigitalStoreRightsInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DigitalStoreRightsInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DigitalStoreRightsInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DigitalStoreRolesHeaders(TeaModel):
     def __init__(
         self,

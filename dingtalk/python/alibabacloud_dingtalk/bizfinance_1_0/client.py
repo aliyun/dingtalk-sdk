@@ -1871,6 +1871,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QuerySupplierByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/suppliers', 'json', req, runtime)
         )
 
+    def update_apply_receipt_and_invoice_related(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedHeaders()
+        return self.update_apply_receipt_and_invoice_related_with_options(request, headers, runtime)
+
+    async def update_apply_receipt_and_invoice_related_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedHeaders()
+        return await self.update_apply_receipt_and_invoice_related_with_options_async(request, headers, runtime)
+
+    def update_apply_receipt_and_invoice_related_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedRequest,
+        headers: dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.general_invoice_volist):
+            body['generalInvoiceVOList'] = request.general_invoice_volist
+        if not UtilClient.is_unset(request.instance_id):
+            body['instanceId'] = request.instance_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedResponse(),
+            self.do_roarequest('UpdateApplyReceiptAndInvoiceRelated', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/invoices/applyReceipts/relate', 'json', req, runtime)
+        )
+
+    async def update_apply_receipt_and_invoice_related_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedRequest,
+        headers: dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.general_invoice_volist):
+            body['generalInvoiceVOList'] = request.general_invoice_volist
+        if not UtilClient.is_unset(request.instance_id):
+            body['instanceId'] = request.instance_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedResponse(),
+            await self.do_roarequest_async('UpdateApplyReceiptAndInvoiceRelated', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/invoices/applyReceipts/relate', 'json', req, runtime)
+        )
+
     def update_finance_company_info(
         self,
         request: dingtalkbizfinance__1__0_models.UpdateFinanceCompanyInfoRequest,
@@ -2201,6 +2269,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.instance_id):
             query['instanceId'] = request.instance_id
+        if not UtilClient.is_unset(request.status):
+            query['status'] = request.status
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2225,6 +2295,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.instance_id):
             query['instanceId'] = request.instance_id
+        if not UtilClient.is_unset(request.status):
+            query['status'] = request.status
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2373,4 +2445,88 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateReceiptResponse(),
             await self.do_roarequest_async('UpdateReceipt', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/receipts', 'json', req, runtime)
+        )
+
+    def update_receipt_voucher_status(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusHeaders()
+        return self.update_receipt_voucher_status_with_options(request, headers, runtime)
+
+    async def update_receipt_voucher_status_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusHeaders()
+        return await self.update_receipt_voucher_status_with_options_async(request, headers, runtime)
+
+    def update_receipt_voucher_status_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusRequest,
+        headers: dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.account_period):
+            body['accountPeriod'] = request.account_period
+        if not UtilClient.is_unset(request.action_type):
+            body['actionType'] = request.action_type
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.receipt_id):
+            body['receiptId'] = request.receipt_id
+        if not UtilClient.is_unset(request.voucher_code):
+            body['voucherCode'] = request.voucher_code
+        if not UtilClient.is_unset(request.voucher_id):
+            body['voucherId'] = request.voucher_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusResponse(),
+            self.do_roarequest('UpdateReceiptVoucherStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/vouchers/recepits', 'json', req, runtime)
+        )
+
+    async def update_receipt_voucher_status_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusRequest,
+        headers: dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.account_period):
+            body['accountPeriod'] = request.account_period
+        if not UtilClient.is_unset(request.action_type):
+            body['actionType'] = request.action_type
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.receipt_id):
+            body['receiptId'] = request.receipt_id
+        if not UtilClient.is_unset(request.voucher_code):
+            body['voucherCode'] = request.voucher_code
+        if not UtilClient.is_unset(request.voucher_id):
+            body['voucherId'] = request.voucher_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusResponse(),
+            await self.do_roarequest_async('UpdateReceiptVoucherStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/vouchers/recepits', 'json', req, runtime)
         )
