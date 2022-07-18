@@ -14,8 +14,14 @@ class UpdateInvoiceIgnoreStatusRequest extends Model
      * @var string
      */
     public $instanceId;
+
+    /**
+     * @var string
+     */
+    public $status;
     protected $_name = [
         'instanceId' => 'instanceId',
+        'status'     => 'status',
     ];
 
     public function validate()
@@ -27,6 +33,9 @@ class UpdateInvoiceIgnoreStatusRequest extends Model
         $res = [];
         if (null !== $this->instanceId) {
             $res['instanceId'] = $this->instanceId;
+        }
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
         }
 
         return $res;
@@ -42,6 +51,9 @@ class UpdateInvoiceIgnoreStatusRequest extends Model
         $model = new self();
         if (isset($map['instanceId'])) {
             $model->instanceId = $map['instanceId'];
+        }
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
         }
 
         return $model;

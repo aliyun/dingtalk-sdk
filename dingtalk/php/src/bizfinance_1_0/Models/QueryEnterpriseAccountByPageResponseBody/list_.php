@@ -51,6 +51,20 @@ class list_ extends Model
     public $amount;
 
     /**
+     * @description 银行代号，如果是银行卡类型，有值，其他类型时，为空
+     *
+     * @var string
+     */
+    public $bankCode;
+
+    /**
+     * @description 银行名字，如果是银行卡类型，有值，其他类型时，为空
+     *
+     * @var string
+     */
+    public $bankName;
+
+    /**
      * @description 创建时间
      *
      * @var int
@@ -70,6 +84,8 @@ class list_ extends Model
         'accountRemark' => 'accountRemark',
         'accountType'   => 'accountType',
         'amount'        => 'amount',
+        'bankCode'      => 'bankCode',
+        'bankName'      => 'bankName',
         'createTime'    => 'createTime',
         'creator'       => 'creator',
     ];
@@ -98,6 +114,12 @@ class list_ extends Model
         }
         if (null !== $this->amount) {
             $res['amount'] = $this->amount;
+        }
+        if (null !== $this->bankCode) {
+            $res['bankCode'] = $this->bankCode;
+        }
+        if (null !== $this->bankName) {
+            $res['bankName'] = $this->bankName;
         }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
@@ -134,6 +156,12 @@ class list_ extends Model
         }
         if (isset($map['amount'])) {
             $model->amount = $map['amount'];
+        }
+        if (isset($map['bankCode'])) {
+            $model->bankCode = $map['bankCode'];
+        }
+        if (isset($map['bankName'])) {
+            $model->bankName = $map['bankName'];
         }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];

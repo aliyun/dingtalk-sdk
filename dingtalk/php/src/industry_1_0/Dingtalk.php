@@ -105,6 +105,8 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreGroupsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreNodeInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreNodeInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreNodeInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreRightsInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreRightsInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreRolesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreRolesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreStoreInfoHeaders;
@@ -1875,6 +1877,39 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DigitalStoreNodeInfoResponse::fromMap($this->doROARequest('DigitalStoreNodeInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/digitalStores/nodeInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return DigitalStoreRightsInfoResponse
+     */
+    public function digitalStoreRightsInfo()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DigitalStoreRightsInfoHeaders([]);
+
+        return $this->digitalStoreRightsInfoWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param DigitalStoreRightsInfoHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return DigitalStoreRightsInfoResponse
+     */
+    public function digitalStoreRightsInfoWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return DigitalStoreRightsInfoResponse::fromMap($this->doROARequest('DigitalStoreRightsInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/digitalStores/rightsInfos', 'json', $req, $runtime));
     }
 
     /**

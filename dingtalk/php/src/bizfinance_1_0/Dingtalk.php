@@ -82,6 +82,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptsByPageResponse
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QuerySupplierByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QuerySupplierByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QuerySupplierByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateApplyReceiptAndInvoiceRelatedHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateApplyReceiptAndInvoiceRelatedRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateApplyReceiptAndInvoiceRelatedResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateFinanceCompanyInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateFinanceCompanyInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateFinanceCompanyInfoResponse;
@@ -103,6 +106,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceVerifyStatusRe
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateReceiptHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateReceiptRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateReceiptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateReceiptVoucherStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateReceiptVoucherStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateReceiptVoucherStatusResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -1362,6 +1368,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param UpdateApplyReceiptAndInvoiceRelatedRequest $request
+     *
+     * @return UpdateApplyReceiptAndInvoiceRelatedResponse
+     */
+    public function updateApplyReceiptAndInvoiceRelated($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateApplyReceiptAndInvoiceRelatedHeaders([]);
+
+        return $this->updateApplyReceiptAndInvoiceRelatedWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateApplyReceiptAndInvoiceRelatedRequest $request
+     * @param UpdateApplyReceiptAndInvoiceRelatedHeaders $headers
+     * @param RuntimeOptions                             $runtime
+     *
+     * @return UpdateApplyReceiptAndInvoiceRelatedResponse
+     */
+    public function updateApplyReceiptAndInvoiceRelatedWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->generalInvoiceVOList)) {
+            @$body['generalInvoiceVOList'] = $request->generalInvoiceVOList;
+        }
+        if (!Utils::isUnset($request->instanceId)) {
+            @$body['instanceId'] = $request->instanceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateApplyReceiptAndInvoiceRelatedResponse::fromMap($this->doROARequest('UpdateApplyReceiptAndInvoiceRelated', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/bizfinance/invoices/applyReceipts/relate', 'json', $req, $runtime));
+    }
+
+    /**
      * @param UpdateFinanceCompanyInfoRequest $request
      *
      * @return UpdateFinanceCompanyInfoResponse
@@ -1592,6 +1643,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->instanceId)) {
             @$query['instanceId'] = $request->instanceId;
         }
+        if (!Utils::isUnset($request->status)) {
+            @$query['status'] = $request->status;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -1695,5 +1749,62 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateReceiptResponse::fromMap($this->doROARequest('UpdateReceipt', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/bizfinance/receipts', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateReceiptVoucherStatusRequest $request
+     *
+     * @return UpdateReceiptVoucherStatusResponse
+     */
+    public function updateReceiptVoucherStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateReceiptVoucherStatusHeaders([]);
+
+        return $this->updateReceiptVoucherStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateReceiptVoucherStatusRequest $request
+     * @param UpdateReceiptVoucherStatusHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return UpdateReceiptVoucherStatusResponse
+     */
+    public function updateReceiptVoucherStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->accountPeriod)) {
+            @$body['accountPeriod'] = $request->accountPeriod;
+        }
+        if (!Utils::isUnset($request->actionType)) {
+            @$body['actionType'] = $request->actionType;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            @$body['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->receiptId)) {
+            @$body['receiptId'] = $request->receiptId;
+        }
+        if (!Utils::isUnset($request->voucherCode)) {
+            @$body['voucherCode'] = $request->voucherCode;
+        }
+        if (!Utils::isUnset($request->voucherId)) {
+            @$body['voucherId'] = $request->voucherId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateReceiptVoucherStatusResponse::fromMap($this->doROARequest('UpdateReceiptVoucherStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/bizfinance/vouchers/recepits', 'json', $req, $runtime));
     }
 }
