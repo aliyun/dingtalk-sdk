@@ -28,6 +28,14 @@ public class GetFinanceAccountResponseBody extends TeaModel {
     @NameInMap("amount")
     public String amount;
 
+    // 银行代号，如果是银行卡类型，有值，其他类型时，为空
+    @NameInMap("bankCode")
+    public String bankCode;
+
+    // 银行名称，如果是银行卡类型，有值，其他类型时，为空
+    @NameInMap("bankName")
+    public String bankName;
+
     // 创建时间
     @NameInMap("createTime")
     public Long createTime;
@@ -87,6 +95,22 @@ public class GetFinanceAccountResponseBody extends TeaModel {
     }
     public String getAmount() {
         return this.amount;
+    }
+
+    public GetFinanceAccountResponseBody setBankCode(String bankCode) {
+        this.bankCode = bankCode;
+        return this;
+    }
+    public String getBankCode() {
+        return this.bankCode;
+    }
+
+    public GetFinanceAccountResponseBody setBankName(String bankName) {
+        this.bankName = bankName;
+        return this;
+    }
+    public String getBankName() {
+        return this.bankName;
     }
 
     public GetFinanceAccountResponseBody setCreateTime(Long createTime) {

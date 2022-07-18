@@ -1309,6 +1309,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("DigitalStoreNodeInfo", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/digitalStores/nodeInfos", "json", req, runtime), new DigitalStoreNodeInfoResponse());
     }
 
+    public DigitalStoreRightsInfoResponse digitalStoreRightsInfo() throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        DigitalStoreRightsInfoHeaders headers = new DigitalStoreRightsInfoHeaders();
+        return this.digitalStoreRightsInfoWithOptions(headers, runtime);
+    }
+
+    public DigitalStoreRightsInfoResponse digitalStoreRightsInfoWithOptions(DigitalStoreRightsInfoHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("DigitalStoreRightsInfo", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/digitalStores/rightsInfos", "json", req, runtime), new DigitalStoreRightsInfoResponse());
+    }
+
     public DigitalStoreRolesResponse digitalStoreRoles() throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         DigitalStoreRolesHeaders headers = new DigitalStoreRolesHeaders();

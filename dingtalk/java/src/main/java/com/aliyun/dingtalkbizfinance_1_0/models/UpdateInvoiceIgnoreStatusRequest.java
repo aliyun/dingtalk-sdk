@@ -8,6 +8,9 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
     @NameInMap("instanceId")
     public String instanceId;
 
+    @NameInMap("status")
+    public String status;
+
     public static UpdateInvoiceIgnoreStatusRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateInvoiceIgnoreStatusRequest self = new UpdateInvoiceIgnoreStatusRequest();
         return TeaModel.build(map, self);
@@ -19,6 +22,14 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
     }
     public String getInstanceId() {
         return this.instanceId;
+    }
+
+    public UpdateInvoiceIgnoreStatusRequest setStatus(String status) {
+        this.status = status;
+        return this;
+    }
+    public String getStatus() {
+        return this.status;
     }
 
 }
