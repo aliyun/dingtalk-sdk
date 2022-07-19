@@ -497,6 +497,94 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateInterconnection', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections', 'json', req, runtime)
         )
 
+    def create_store_group_conversation(
+        self,
+        request: dingtalkim__1__0_models.CreateStoreGroupConversationRequest,
+    ) -> dingtalkim__1__0_models.CreateStoreGroupConversationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.CreateStoreGroupConversationHeaders()
+        return self.create_store_group_conversation_with_options(request, headers, runtime)
+
+    async def create_store_group_conversation_async(
+        self,
+        request: dingtalkim__1__0_models.CreateStoreGroupConversationRequest,
+    ) -> dingtalkim__1__0_models.CreateStoreGroupConversationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.CreateStoreGroupConversationHeaders()
+        return await self.create_store_group_conversation_with_options_async(request, headers, runtime)
+
+    def create_store_group_conversation_with_options(
+        self,
+        request: dingtalkim__1__0_models.CreateStoreGroupConversationRequest,
+        headers: dingtalkim__1__0_models.CreateStoreGroupConversationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.CreateStoreGroupConversationResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_user_id):
+            body['appUserId'] = request.app_user_id
+        if not UtilClient.is_unset(request.business_unique_key):
+            body['businessUniqueKey'] = request.business_unique_key
+        if not UtilClient.is_unset(request.group_avatar):
+            body['groupAvatar'] = request.group_avatar
+        if not UtilClient.is_unset(request.group_name):
+            body['groupName'] = request.group_name
+        if not UtilClient.is_unset(request.group_template_id):
+            body['groupTemplateId'] = request.group_template_id
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.CreateStoreGroupConversationResponse(),
+            self.do_roarequest('CreateStoreGroupConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/storeGroups', 'json', req, runtime)
+        )
+
+    async def create_store_group_conversation_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.CreateStoreGroupConversationRequest,
+        headers: dingtalkim__1__0_models.CreateStoreGroupConversationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.CreateStoreGroupConversationResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_user_id):
+            body['appUserId'] = request.app_user_id
+        if not UtilClient.is_unset(request.business_unique_key):
+            body['businessUniqueKey'] = request.business_unique_key
+        if not UtilClient.is_unset(request.group_avatar):
+            body['groupAvatar'] = request.group_avatar
+        if not UtilClient.is_unset(request.group_name):
+            body['groupName'] = request.group_name
+        if not UtilClient.is_unset(request.group_template_id):
+            body['groupTemplateId'] = request.group_template_id
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.CreateStoreGroupConversationResponse(),
+            await self.do_roarequest_async('CreateStoreGroupConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/storeGroups', 'json', req, runtime)
+        )
+
     def get_conversation_url(
         self,
         request: dingtalkim__1__0_models.GetConversationUrlRequest,

@@ -1084,6 +1084,173 @@ class CreateInterconnectionResponse(TeaModel):
         return self
 
 
+class CreateStoreGroupConversationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateStoreGroupConversationRequest(TeaModel):
+    def __init__(
+        self,
+        app_user_id: str = None,
+        business_unique_key: str = None,
+        group_avatar: str = None,
+        group_name: str = None,
+        group_template_id: str = None,
+        operator_id: str = None,
+        user_ids: List[str] = None,
+    ):
+        # 钉外用户在业务系统内的唯一标识
+        self.app_user_id = app_user_id
+        # 外部业务唯一标识（店铺唯一标识）
+        self.business_unique_key = business_unique_key
+        # 群头像
+        self.group_avatar = group_avatar
+        # 群名称
+        self.group_name = group_name
+        # 群模板
+        self.group_template_id = group_template_id
+        # 操作者在业务系统内的唯一标识
+        self.operator_id = operator_id
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_user_id is not None:
+            result['appUserId'] = self.app_user_id
+        if self.business_unique_key is not None:
+            result['businessUniqueKey'] = self.business_unique_key
+        if self.group_avatar is not None:
+            result['groupAvatar'] = self.group_avatar
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.group_template_id is not None:
+            result['groupTemplateId'] = self.group_template_id
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appUserId') is not None:
+            self.app_user_id = m.get('appUserId')
+        if m.get('businessUniqueKey') is not None:
+            self.business_unique_key = m.get('businessUniqueKey')
+        if m.get('groupAvatar') is not None:
+            self.group_avatar = m.get('groupAvatar')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('groupTemplateId') is not None:
+            self.group_template_id = m.get('groupTemplateId')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class CreateStoreGroupConversationResponseBody(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+    ):
+        # 群会话Id
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class CreateStoreGroupConversationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateStoreGroupConversationResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateStoreGroupConversationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetConversationUrlHeaders(TeaModel):
     def __init__(
         self,

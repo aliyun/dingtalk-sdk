@@ -667,26 +667,18 @@ class Client(OpenApiClient):
 
     def get_invoice_by_page_with_options(
         self,
-        request: dingtalkbizfinance__1__0_models.GetInvoiceByPageRequest,
+        tmp_req: dingtalkbizfinance__1__0_models.GetInvoiceByPageRequest,
         headers: dingtalkbizfinance__1__0_models.GetInvoiceByPageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbizfinance__1__0_models.GetInvoiceByPageResponse:
-        UtilClient.validate_model(request)
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkbizfinance__1__0_models.GetInvoiceByPageShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.request):
+            request.request_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.request), 'request', 'json')
         query = {}
-        if not UtilClient.is_unset(request.end_time):
-            query['endTime'] = request.end_time
-        if not UtilClient.is_unset(request.finance_type):
-            query['financeType'] = request.finance_type
-        if not UtilClient.is_unset(request.page_number):
-            query['pageNumber'] = request.page_number
-        if not UtilClient.is_unset(request.page_size):
-            query['pageSize'] = request.page_size
-        if not UtilClient.is_unset(request.start_time):
-            query['startTime'] = request.start_time
-        if not UtilClient.is_unset(request.tax_no):
-            query['taxNo'] = request.tax_no
-        if not UtilClient.is_unset(request.verify_status):
-            query['verifyStatus'] = request.verify_status
+        if not UtilClient.is_unset(request.request_shrink):
+            query['request'] = request.request_shrink
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -703,26 +695,18 @@ class Client(OpenApiClient):
 
     async def get_invoice_by_page_with_options_async(
         self,
-        request: dingtalkbizfinance__1__0_models.GetInvoiceByPageRequest,
+        tmp_req: dingtalkbizfinance__1__0_models.GetInvoiceByPageRequest,
         headers: dingtalkbizfinance__1__0_models.GetInvoiceByPageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbizfinance__1__0_models.GetInvoiceByPageResponse:
-        UtilClient.validate_model(request)
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkbizfinance__1__0_models.GetInvoiceByPageShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.request):
+            request.request_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.request), 'request', 'json')
         query = {}
-        if not UtilClient.is_unset(request.end_time):
-            query['endTime'] = request.end_time
-        if not UtilClient.is_unset(request.finance_type):
-            query['financeType'] = request.finance_type
-        if not UtilClient.is_unset(request.page_number):
-            query['pageNumber'] = request.page_number
-        if not UtilClient.is_unset(request.page_size):
-            query['pageSize'] = request.page_size
-        if not UtilClient.is_unset(request.start_time):
-            query['startTime'] = request.start_time
-        if not UtilClient.is_unset(request.tax_no):
-            query['taxNo'] = request.tax_no
-        if not UtilClient.is_unset(request.verify_status):
-            query['verifyStatus'] = request.verify_status
+        if not UtilClient.is_unset(request.request_shrink):
+            query['request'] = request.request_shrink
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1677,6 +1661,8 @@ class Client(OpenApiClient):
             query['startTime'] = request.start_time
         if not UtilClient.is_unset(request.title):
             query['title'] = request.title
+        if not UtilClient.is_unset(request.voucher_status):
+            query['voucherStatus'] = request.voucher_status
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1709,6 +1695,8 @@ class Client(OpenApiClient):
             query['startTime'] = request.start_time
         if not UtilClient.is_unset(request.title):
             query['title'] = request.title
+        if not UtilClient.is_unset(request.voucher_status):
+            query['voucherStatus'] = request.voucher_status
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

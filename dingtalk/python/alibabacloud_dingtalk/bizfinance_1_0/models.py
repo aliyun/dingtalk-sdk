@@ -2530,7 +2530,7 @@ class GetInvoiceByPageHeaders(TeaModel):
         return self
 
 
-class GetInvoiceByPageRequest(TeaModel):
+class GetInvoiceByPageRequestRequest(TeaModel):
     def __init__(
         self,
         end_time: int = None,
@@ -2541,17 +2541,20 @@ class GetInvoiceByPageRequest(TeaModel):
         tax_no: str = None,
         verify_status: str = None,
     ):
-        # 查询结束时间
+        # 结束时间
+        # 
         self.end_time = end_time
-        # 发票类型
+        # 进项票/销项票
         self.finance_type = finance_type
+        # 分页参数
         self.page_number = page_number
+        # 分页参数
         self.page_size = page_size
-        # 查询开始时间
+        # 开始时间
         self.start_time = start_time
         # 税号
         self.tax_no = tax_no
-        # 发票状态
+        # 认证状态
         self.verify_status = verify_status
 
     def validate(self):
@@ -2595,6 +2598,62 @@ class GetInvoiceByPageRequest(TeaModel):
             self.tax_no = m.get('taxNo')
         if m.get('verifyStatus') is not None:
             self.verify_status = m.get('verifyStatus')
+        return self
+
+
+class GetInvoiceByPageRequest(TeaModel):
+    def __init__(
+        self,
+        request: GetInvoiceByPageRequestRequest = None,
+    ):
+        self.request = request
+
+    def validate(self):
+        if self.request:
+            self.request.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request is not None:
+            result['request'] = self.request.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('request') is not None:
+            temp_model = GetInvoiceByPageRequestRequest()
+            self.request = temp_model.from_map(m['request'])
+        return self
+
+
+class GetInvoiceByPageShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        request_shrink: str = None,
+    ):
+        self.request_shrink = request_shrink
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_shrink is not None:
+            result['request'] = self.request_shrink
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('request') is not None:
+            self.request_shrink = m.get('request')
         return self
 
 
@@ -5970,22 +6029,19 @@ class QueryReceiptForInvoiceRequest(TeaModel):
         return self
 
 
-class QueryReceiptForInvoiceResponseBodyList(TeaModel):
+class QueryReceiptForInvoiceResponseBodyListCreator(TeaModel):
     def __init__(
         self,
-        app_id: str = None,
-        data: str = None,
-        model_id: str = None,
-        source: str = None,
+        avatar_url: str = None,
+        nick: str = None,
+        user_id: str = None,
     ):
-        # 应用id
-        self.app_id = app_id
-        # 主数据
-        self.data = data
-        # 主数据modelID
-        self.model_id = model_id
-        # 来源
-        self.source = source
+        # 创建人头像
+        self.avatar_url = avatar_url
+        # 创建人昵称
+        self.nick = nick
+        # 创建人工号
+        self.user_id = user_id
 
     def validate(self):
         pass
@@ -5996,26 +6052,209 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
             return _map
 
         result = dict()
-        if self.app_id is not None:
-            result['appId'] = self.app_id
-        if self.data is not None:
-            result['data'] = self.data
-        if self.model_id is not None:
-            result['modelId'] = self.model_id
-        if self.source is not None:
-            result['source'] = self.source
+        if self.avatar_url is not None:
+            result['avatarUrl'] = self.avatar_url
+        if self.nick is not None:
+            result['nick'] = self.nick
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('appId') is not None:
-            self.app_id = m.get('appId')
-        if m.get('data') is not None:
-            self.data = m.get('data')
+        if m.get('avatarUrl') is not None:
+            self.avatar_url = m.get('avatarUrl')
+        if m.get('nick') is not None:
+            self.nick = m.get('nick')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryReceiptForInvoiceResponseBodyListCustomer(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+    ):
+        # 客户code
+        self.code = code
+        # 客户名字
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class QueryReceiptForInvoiceResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        amount: str = None,
+        apply_status: str = None,
+        creator: QueryReceiptForInvoiceResponseBodyListCreator = None,
+        customer: QueryReceiptForInvoiceResponseBodyListCustomer = None,
+        invoice_type: str = None,
+        model_id: str = None,
+        purchaser_account: str = None,
+        purchaser_address: str = None,
+        purchaser_bank_name: str = None,
+        purchaser_name: str = None,
+        purchaser_tax_no: str = None,
+        purchaser_tel: str = None,
+        receipt_id: str = None,
+        record_time: str = None,
+        remark: str = None,
+        source: str = None,
+        status: str = None,
+        title: str = None,
+    ):
+        # 金额
+        self.amount = amount
+        # 开票状态
+        self.apply_status = apply_status
+        # 创建人
+        self.creator = creator
+        # 客户
+        self.customer = customer
+        # 发票种类
+        self.invoice_type = invoice_type
+        # 主数据modelId
+        self.model_id = model_id
+        # 购方账户
+        self.purchaser_account = purchaser_account
+        # 购方地址
+        self.purchaser_address = purchaser_address
+        # 购方银行
+        self.purchaser_bank_name = purchaser_bank_name
+        # 购方抬头
+        self.purchaser_name = purchaser_name
+        # 购方税号
+        self.purchaser_tax_no = purchaser_tax_no
+        # 购方电话
+        self.purchaser_tel = purchaser_tel
+        # 单据ID
+        self.receipt_id = receipt_id
+        # 记录时间，默认为审批通过时间
+        self.record_time = record_time
+        # 备注
+        self.remark = remark
+        # 来源
+        self.source = source
+        # 状态 agree running
+        self.status = status
+        # 单据标题
+        self.title = title
+
+    def validate(self):
+        if self.creator:
+            self.creator.validate()
+        if self.customer:
+            self.customer.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.apply_status is not None:
+            result['applyStatus'] = self.apply_status
+        if self.creator is not None:
+            result['creator'] = self.creator.to_map()
+        if self.customer is not None:
+            result['customer'] = self.customer.to_map()
+        if self.invoice_type is not None:
+            result['invoiceType'] = self.invoice_type
+        if self.model_id is not None:
+            result['modelId'] = self.model_id
+        if self.purchaser_account is not None:
+            result['purchaserAccount'] = self.purchaser_account
+        if self.purchaser_address is not None:
+            result['purchaserAddress'] = self.purchaser_address
+        if self.purchaser_bank_name is not None:
+            result['purchaserBankName'] = self.purchaser_bank_name
+        if self.purchaser_name is not None:
+            result['purchaserName'] = self.purchaser_name
+        if self.purchaser_tax_no is not None:
+            result['purchaserTaxNo'] = self.purchaser_tax_no
+        if self.purchaser_tel is not None:
+            result['purchaserTel'] = self.purchaser_tel
+        if self.receipt_id is not None:
+            result['receiptId'] = self.receipt_id
+        if self.record_time is not None:
+            result['recordTime'] = self.record_time
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.source is not None:
+            result['source'] = self.source
+        if self.status is not None:
+            result['status'] = self.status
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('applyStatus') is not None:
+            self.apply_status = m.get('applyStatus')
+        if m.get('creator') is not None:
+            temp_model = QueryReceiptForInvoiceResponseBodyListCreator()
+            self.creator = temp_model.from_map(m['creator'])
+        if m.get('customer') is not None:
+            temp_model = QueryReceiptForInvoiceResponseBodyListCustomer()
+            self.customer = temp_model.from_map(m['customer'])
+        if m.get('invoiceType') is not None:
+            self.invoice_type = m.get('invoiceType')
         if m.get('modelId') is not None:
             self.model_id = m.get('modelId')
+        if m.get('purchaserAccount') is not None:
+            self.purchaser_account = m.get('purchaserAccount')
+        if m.get('purchaserAddress') is not None:
+            self.purchaser_address = m.get('purchaserAddress')
+        if m.get('purchaserBankName') is not None:
+            self.purchaser_bank_name = m.get('purchaserBankName')
+        if m.get('purchaserName') is not None:
+            self.purchaser_name = m.get('purchaserName')
+        if m.get('purchaserTaxNo') is not None:
+            self.purchaser_tax_no = m.get('purchaserTaxNo')
+        if m.get('purchaserTel') is not None:
+            self.purchaser_tel = m.get('purchaserTel')
+        if m.get('receiptId') is not None:
+            self.receipt_id = m.get('receiptId')
+        if m.get('recordTime') is not None:
+            self.record_time = m.get('recordTime')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
         if m.get('source') is not None:
             self.source = m.get('source')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('title') is not None:
+            self.title = m.get('title')
         return self
 
 
@@ -6147,6 +6386,7 @@ class QueryReceiptsBaseInfoRequest(TeaModel):
         page_size: int = None,
         start_time: int = None,
         title: str = None,
+        voucher_status: str = None,
     ):
         # 结束时间
         self.end_time = end_time
@@ -6158,6 +6398,8 @@ class QueryReceiptsBaseInfoRequest(TeaModel):
         self.start_time = start_time
         # 单据标题
         self.title = title
+        # 凭证状态
+        self.voucher_status = voucher_status
 
     def validate(self):
         pass
@@ -6178,6 +6420,8 @@ class QueryReceiptsBaseInfoRequest(TeaModel):
             result['startTime'] = self.start_time
         if self.title is not None:
             result['title'] = self.title
+        if self.voucher_status is not None:
+            result['voucherStatus'] = self.voucher_status
         return result
 
     def from_map(self, m: dict = None):
@@ -6192,6 +6436,8 @@ class QueryReceiptsBaseInfoRequest(TeaModel):
             self.start_time = m.get('startTime')
         if m.get('title') is not None:
             self.title = m.get('title')
+        if m.get('voucherStatus') is not None:
+            self.voucher_status = m.get('voucherStatus')
         return self
 
 
