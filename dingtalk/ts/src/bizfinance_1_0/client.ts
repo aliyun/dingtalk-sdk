@@ -860,34 +860,35 @@ export class GetInvoiceByPageHeaders extends $tea.Model {
 }
 
 export class GetInvoiceByPageRequest extends $tea.Model {
-  endTime?: number;
-  financeType?: string;
-  pageNumber?: number;
-  pageSize?: number;
-  startTime?: number;
-  taxNo?: string;
-  verifyStatus?: string;
+  request?: GetInvoiceByPageRequestRequest;
   static names(): { [key: string]: string } {
     return {
-      endTime: 'endTime',
-      financeType: 'financeType',
-      pageNumber: 'pageNumber',
-      pageSize: 'pageSize',
-      startTime: 'startTime',
-      taxNo: 'taxNo',
-      verifyStatus: 'verifyStatus',
+      request: 'request',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      endTime: 'number',
-      financeType: 'string',
-      pageNumber: 'number',
-      pageSize: 'number',
-      startTime: 'number',
-      taxNo: 'string',
-      verifyStatus: 'string',
+      request: GetInvoiceByPageRequestRequest,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetInvoiceByPageShrinkRequest extends $tea.Model {
+  requestShrink?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestShrink: 'request',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestShrink: 'string',
     };
   }
 
@@ -2197,6 +2198,7 @@ export class QueryReceiptsBaseInfoRequest extends $tea.Model {
   pageSize?: number;
   startTime?: number;
   title?: string;
+  voucherStatus?: string;
   static names(): { [key: string]: string } {
     return {
       endTime: 'endTime',
@@ -2204,6 +2206,7 @@ export class QueryReceiptsBaseInfoRequest extends $tea.Model {
       pageSize: 'pageSize',
       startTime: 'startTime',
       title: 'title',
+      voucherStatus: 'voucherStatus',
     };
   }
 
@@ -2214,6 +2217,7 @@ export class QueryReceiptsBaseInfoRequest extends $tea.Model {
       pageSize: 'number',
       startTime: 'number',
       title: 'string',
+      voucherStatus: 'string',
     };
   }
 
@@ -3827,6 +3831,43 @@ export class DeleteReceiptResponseBodyResults extends $tea.Model {
   }
 }
 
+export class GetInvoiceByPageRequestRequest extends $tea.Model {
+  endTime?: number;
+  financeType?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  startTime?: number;
+  taxNo?: string;
+  verifyStatus?: string;
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      financeType: 'financeType',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      startTime: 'startTime',
+      taxNo: 'taxNo',
+      verifyStatus: 'verifyStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'number',
+      financeType: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      startTime: 'number',
+      taxNo: 'string',
+      verifyStatus: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList extends $tea.Model {
   amount?: string;
   goodName?: string;
@@ -4430,26 +4471,115 @@ export class QueryProjectByPageResponseBodyList extends $tea.Model {
   }
 }
 
-export class QueryReceiptForInvoiceResponseBodyList extends $tea.Model {
-  appId?: string;
-  data?: string;
-  modelId?: string;
-  source?: string;
+export class QueryReceiptForInvoiceResponseBodyListCreator extends $tea.Model {
+  avatarUrl?: string;
+  nick?: string;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
-      appId: 'appId',
-      data: 'data',
-      modelId: 'modelId',
-      source: 'source',
+      avatarUrl: 'avatarUrl',
+      nick: 'nick',
+      userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      appId: 'string',
-      data: 'string',
+      avatarUrl: 'string',
+      nick: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReceiptForInvoiceResponseBodyListCustomer extends $tea.Model {
+  code?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReceiptForInvoiceResponseBodyList extends $tea.Model {
+  amount?: string;
+  applyStatus?: string;
+  creator?: QueryReceiptForInvoiceResponseBodyListCreator;
+  customer?: QueryReceiptForInvoiceResponseBodyListCustomer;
+  invoiceType?: string;
+  modelId?: string;
+  purchaserAccount?: string;
+  purchaserAddress?: string;
+  purchaserBankName?: string;
+  purchaserName?: string;
+  purchaserTaxNo?: string;
+  purchaserTel?: string;
+  receiptId?: string;
+  recordTime?: string;
+  remark?: string;
+  source?: string;
+  status?: string;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      amount: 'amount',
+      applyStatus: 'applyStatus',
+      creator: 'creator',
+      customer: 'customer',
+      invoiceType: 'invoiceType',
+      modelId: 'modelId',
+      purchaserAccount: 'purchaserAccount',
+      purchaserAddress: 'purchaserAddress',
+      purchaserBankName: 'purchaserBankName',
+      purchaserName: 'purchaserName',
+      purchaserTaxNo: 'purchaserTaxNo',
+      purchaserTel: 'purchaserTel',
+      receiptId: 'receiptId',
+      recordTime: 'recordTime',
+      remark: 'remark',
+      source: 'source',
+      status: 'status',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      amount: 'string',
+      applyStatus: 'string',
+      creator: QueryReceiptForInvoiceResponseBodyListCreator,
+      customer: QueryReceiptForInvoiceResponseBodyListCustomer,
+      invoiceType: 'string',
       modelId: 'string',
+      purchaserAccount: 'string',
+      purchaserAddress: 'string',
+      purchaserBankName: 'string',
+      purchaserName: 'string',
+      purchaserTaxNo: 'string',
+      purchaserTel: 'string',
+      receiptId: 'string',
+      recordTime: 'string',
+      remark: 'string',
       source: 'string',
+      status: 'string',
+      title: 'string',
     };
   }
 
@@ -6861,35 +6991,17 @@ export default class Client extends OpenApi {
     return await this.getInvoiceByPageWithOptions(request, headers, runtime);
   }
 
-  async getInvoiceByPageWithOptions(request: GetInvoiceByPageRequest, headers: GetInvoiceByPageHeaders, runtime: $Util.RuntimeOptions): Promise<GetInvoiceByPageResponse> {
-    Util.validateModel(request);
+  async getInvoiceByPageWithOptions(tmpReq: GetInvoiceByPageRequest, headers: GetInvoiceByPageHeaders, runtime: $Util.RuntimeOptions): Promise<GetInvoiceByPageResponse> {
+    Util.validateModel(tmpReq);
+    let request = new GetInvoiceByPageShrinkRequest({ });
+    OpenApiUtil.convert(tmpReq, request);
+    if (!Util.isUnset($tea.toMap(tmpReq.request))) {
+      request.requestShrink = OpenApiUtil.arrayToStringWithSpecifiedStyle($tea.toMap(tmpReq.request), "request", "json");
+    }
+
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.endTime)) {
-      query["endTime"] = request.endTime;
-    }
-
-    if (!Util.isUnset(request.financeType)) {
-      query["financeType"] = request.financeType;
-    }
-
-    if (!Util.isUnset(request.pageNumber)) {
-      query["pageNumber"] = request.pageNumber;
-    }
-
-    if (!Util.isUnset(request.pageSize)) {
-      query["pageSize"] = request.pageSize;
-    }
-
-    if (!Util.isUnset(request.startTime)) {
-      query["startTime"] = request.startTime;
-    }
-
-    if (!Util.isUnset(request.taxNo)) {
-      query["taxNo"] = request.taxNo;
-    }
-
-    if (!Util.isUnset(request.verifyStatus)) {
-      query["verifyStatus"] = request.verifyStatus;
+    if (!Util.isUnset(request.requestShrink)) {
+      query["request"] = request.requestShrink;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -7384,6 +7496,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.title)) {
       query["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.voucherStatus)) {
+      query["voucherStatus"] = request.voucherStatus;
     }
 
     let realHeaders : {[key: string ]: string} = { };

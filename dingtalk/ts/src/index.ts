@@ -51,6 +51,7 @@ import * as robot_1_0 from './robot_1_0/client';
 import * as search_1_0 from './search_1_0/client';
 import * as service_group_1_0 from './service_group_1_0/client';
 import * as smart_device_1_0 from './smart_device_1_0/client';
+import * as storage_1_0 from './storage_1_0/client';
 import * as todo_1_0 from './todo_1_0/client';
 import * as trade_1_0 from './trade_1_0/client';
 import * as trajectory_1_0 from './trajectory_1_0/client';
@@ -118,6 +119,7 @@ export = {
   search_1_0,
   service_group_1_0,
   smart_device_1_0,
+  storage_1_0,
   todo_1_0,
   trade_1_0,
   trajectory_1_0,

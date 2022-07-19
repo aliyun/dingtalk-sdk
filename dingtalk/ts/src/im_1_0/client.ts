@@ -597,6 +597,106 @@ export class CreateInterconnectionResponse extends $tea.Model {
   }
 }
 
+export class CreateStoreGroupConversationHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateStoreGroupConversationRequest extends $tea.Model {
+  appUserId?: string;
+  businessUniqueKey?: string;
+  groupAvatar?: string;
+  groupName?: string;
+  groupTemplateId?: string;
+  operatorId?: string;
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      appUserId: 'appUserId',
+      businessUniqueKey: 'businessUniqueKey',
+      groupAvatar: 'groupAvatar',
+      groupName: 'groupName',
+      groupTemplateId: 'groupTemplateId',
+      operatorId: 'operatorId',
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appUserId: 'string',
+      businessUniqueKey: 'string',
+      groupAvatar: 'string',
+      groupName: 'string',
+      groupTemplateId: 'string',
+      operatorId: 'string',
+      userIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateStoreGroupConversationResponseBody extends $tea.Model {
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateStoreGroupConversationResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateStoreGroupConversationResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateStoreGroupConversationResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetConversationUrlHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4678,6 +4778,59 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateInterconnectionResponse>(await this.doROARequest("CreateInterconnection", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections`, "json", req, runtime), new CreateInterconnectionResponse({}));
+  }
+
+  async createStoreGroupConversation(request: CreateStoreGroupConversationRequest): Promise<CreateStoreGroupConversationResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateStoreGroupConversationHeaders({ });
+    return await this.createStoreGroupConversationWithOptions(request, headers, runtime);
+  }
+
+  async createStoreGroupConversationWithOptions(request: CreateStoreGroupConversationRequest, headers: CreateStoreGroupConversationHeaders, runtime: $Util.RuntimeOptions): Promise<CreateStoreGroupConversationResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appUserId)) {
+      body["appUserId"] = request.appUserId;
+    }
+
+    if (!Util.isUnset(request.businessUniqueKey)) {
+      body["businessUniqueKey"] = request.businessUniqueKey;
+    }
+
+    if (!Util.isUnset(request.groupAvatar)) {
+      body["groupAvatar"] = request.groupAvatar;
+    }
+
+    if (!Util.isUnset(request.groupName)) {
+      body["groupName"] = request.groupName;
+    }
+
+    if (!Util.isUnset(request.groupTemplateId)) {
+      body["groupTemplateId"] = request.groupTemplateId;
+    }
+
+    if (!Util.isUnset(request.operatorId)) {
+      body["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateStoreGroupConversationResponse>(await this.doROARequest("CreateStoreGroupConversation", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/storeGroups`, "json", req, runtime), new CreateStoreGroupConversationResponse({}));
   }
 
   async getConversationUrl(request: GetConversationUrlRequest): Promise<GetConversationUrlResponse> {
