@@ -349,35 +349,17 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.getInvoiceByPageWithOptions(request, headers, runtime);
     }
 
-    public GetInvoiceByPageResponse getInvoiceByPageWithOptions(GetInvoiceByPageRequest request, GetInvoiceByPageHeaders headers, RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(request);
+    public GetInvoiceByPageResponse getInvoiceByPageWithOptions(GetInvoiceByPageRequest tmpReq, GetInvoiceByPageHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        GetInvoiceByPageShrinkRequest request = new GetInvoiceByPageShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(tmpReq.request))) {
+            request.requestShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(TeaModel.buildMap(tmpReq.request), "request", "json");
+        }
+
         java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
-            query.put("endTime", request.endTime);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.financeType)) {
-            query.put("financeType", request.financeType);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
-            query.put("pageNumber", request.pageNumber);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
-            query.put("pageSize", request.pageSize);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.startTime)) {
-            query.put("startTime", request.startTime);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.taxNo)) {
-            query.put("taxNo", request.taxNo);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.verifyStatus)) {
-            query.put("verifyStatus", request.verifyStatus);
+        if (!com.aliyun.teautil.Common.isUnset(request.requestShrink)) {
+            query.put("request", request.requestShrink);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -872,6 +854,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.title)) {
             query.put("title", request.title);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.voucherStatus)) {
+            query.put("voucherStatus", request.voucherStatus);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();

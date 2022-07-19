@@ -24,6 +24,10 @@ public class QueryReceiptsBaseInfoRequest extends TeaModel {
     @NameInMap("title")
     public String title;
 
+    // 凭证状态
+    @NameInMap("voucherStatus")
+    public String voucherStatus;
+
     public static QueryReceiptsBaseInfoRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryReceiptsBaseInfoRequest self = new QueryReceiptsBaseInfoRequest();
         return TeaModel.build(map, self);
@@ -67,6 +71,14 @@ public class QueryReceiptsBaseInfoRequest extends TeaModel {
     }
     public String getTitle() {
         return this.title;
+    }
+
+    public QueryReceiptsBaseInfoRequest setVoucherStatus(String voucherStatus) {
+        this.voucherStatus = voucherStatus;
+        return this;
+    }
+    public String getVoucherStatus() {
+        return this.voucherStatus;
     }
 
 }
