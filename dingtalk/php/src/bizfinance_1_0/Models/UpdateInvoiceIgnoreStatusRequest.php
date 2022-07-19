@@ -16,11 +16,21 @@ class UpdateInvoiceIgnoreStatusRequest extends Model
     public $instanceId;
 
     /**
+     * @description 操作员
+     *
+     * @var string
+     */
+    public $operator;
+
+    /**
+     * @description 状态
+     *
      * @var string
      */
     public $status;
     protected $_name = [
         'instanceId' => 'instanceId',
+        'operator'   => 'operator',
         'status'     => 'status',
     ];
 
@@ -33,6 +43,9 @@ class UpdateInvoiceIgnoreStatusRequest extends Model
         $res = [];
         if (null !== $this->instanceId) {
             $res['instanceId'] = $this->instanceId;
+        }
+        if (null !== $this->operator) {
+            $res['operator'] = $this->operator;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
@@ -51,6 +64,9 @@ class UpdateInvoiceIgnoreStatusRequest extends Model
         $model = new self();
         if (isset($map['instanceId'])) {
             $model->instanceId = $map['instanceId'];
+        }
+        if (isset($map['operator'])) {
+            $model->operator = $map['operator'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];

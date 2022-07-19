@@ -15,8 +15,16 @@ class BatchAddInvoiceRequest extends Model
      * @var generalInvoiceVOList[]
      */
     public $generalInvoiceVOList;
+
+    /**
+     * @description 操作员
+     *
+     * @var string
+     */
+    public $operator;
     protected $_name = [
         'generalInvoiceVOList' => 'generalInvoiceVOList',
+        'operator'             => 'operator',
     ];
 
     public function validate()
@@ -34,6 +42,9 @@ class BatchAddInvoiceRequest extends Model
                     $res['generalInvoiceVOList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->operator) {
+            $res['operator'] = $this->operator;
         }
 
         return $res;
@@ -55,6 +66,9 @@ class BatchAddInvoiceRequest extends Model
                     $model->generalInvoiceVOList[$n++] = null !== $item ? generalInvoiceVOList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['operator'])) {
+            $model->operator = $map['operator'];
         }
 
         return $model;

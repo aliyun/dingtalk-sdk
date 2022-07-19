@@ -22,14 +22,28 @@ class UpdateInvoiceAbandonStatusRequest extends Model
      *
      * @var string
      */
-    public $invoiceCode;
+    public $blueInvoiceCode;
 
     /**
      * @description 发票号码（蓝票）
      *
      * @var string
      */
-    public $invoiceNo;
+    public $blueInvoiceNo;
+
+    /**
+     * @description 状态-红冲、废弃
+     *
+     * @var string
+     */
+    public $blueInvoiceStatus;
+
+    /**
+     * @description 操作员
+     *
+     * @var string
+     */
+    public $operator;
 
     /**
      * @description 发票全票面信息（红票）
@@ -39,17 +53,43 @@ class UpdateInvoiceAbandonStatusRequest extends Model
     public $redGeneralInvoiceVO;
 
     /**
-     * @description 状态-红冲、废弃
+     * @description 红字发票code
      *
      * @var string
      */
-    public $status;
+    public $redInvoiceCode;
+
+    /**
+     * @description 红字发票编码
+     *
+     * @var string
+     */
+    public $redInvoiceNo;
+
+    /**
+     * @description 红字发票状态
+     *
+     * @var string
+     */
+    public $redInvoiceStatus;
+
+    /**
+     * @description 目标发票
+     *
+     * @var string
+     */
+    public $targetInvoice;
     protected $_name = [
         'blueGeneralInvoiceVO' => 'blueGeneralInvoiceVO',
-        'invoiceCode'          => 'invoiceCode',
-        'invoiceNo'            => 'invoiceNo',
+        'blueInvoiceCode'      => 'blueInvoiceCode',
+        'blueInvoiceNo'        => 'blueInvoiceNo',
+        'blueInvoiceStatus'    => 'blueInvoiceStatus',
+        'operator'             => 'operator',
         'redGeneralInvoiceVO'  => 'redGeneralInvoiceVO',
-        'status'               => 'status',
+        'redInvoiceCode'       => 'redInvoiceCode',
+        'redInvoiceNo'         => 'redInvoiceNo',
+        'redInvoiceStatus'     => 'redInvoiceStatus',
+        'targetInvoice'        => 'targetInvoice',
     ];
 
     public function validate()
@@ -62,17 +102,32 @@ class UpdateInvoiceAbandonStatusRequest extends Model
         if (null !== $this->blueGeneralInvoiceVO) {
             $res['blueGeneralInvoiceVO'] = null !== $this->blueGeneralInvoiceVO ? $this->blueGeneralInvoiceVO->toMap() : null;
         }
-        if (null !== $this->invoiceCode) {
-            $res['invoiceCode'] = $this->invoiceCode;
+        if (null !== $this->blueInvoiceCode) {
+            $res['blueInvoiceCode'] = $this->blueInvoiceCode;
         }
-        if (null !== $this->invoiceNo) {
-            $res['invoiceNo'] = $this->invoiceNo;
+        if (null !== $this->blueInvoiceNo) {
+            $res['blueInvoiceNo'] = $this->blueInvoiceNo;
+        }
+        if (null !== $this->blueInvoiceStatus) {
+            $res['blueInvoiceStatus'] = $this->blueInvoiceStatus;
+        }
+        if (null !== $this->operator) {
+            $res['operator'] = $this->operator;
         }
         if (null !== $this->redGeneralInvoiceVO) {
             $res['redGeneralInvoiceVO'] = null !== $this->redGeneralInvoiceVO ? $this->redGeneralInvoiceVO->toMap() : null;
         }
-        if (null !== $this->status) {
-            $res['status'] = $this->status;
+        if (null !== $this->redInvoiceCode) {
+            $res['redInvoiceCode'] = $this->redInvoiceCode;
+        }
+        if (null !== $this->redInvoiceNo) {
+            $res['redInvoiceNo'] = $this->redInvoiceNo;
+        }
+        if (null !== $this->redInvoiceStatus) {
+            $res['redInvoiceStatus'] = $this->redInvoiceStatus;
+        }
+        if (null !== $this->targetInvoice) {
+            $res['targetInvoice'] = $this->targetInvoice;
         }
 
         return $res;
@@ -89,17 +144,32 @@ class UpdateInvoiceAbandonStatusRequest extends Model
         if (isset($map['blueGeneralInvoiceVO'])) {
             $model->blueGeneralInvoiceVO = blueGeneralInvoiceVO::fromMap($map['blueGeneralInvoiceVO']);
         }
-        if (isset($map['invoiceCode'])) {
-            $model->invoiceCode = $map['invoiceCode'];
+        if (isset($map['blueInvoiceCode'])) {
+            $model->blueInvoiceCode = $map['blueInvoiceCode'];
         }
-        if (isset($map['invoiceNo'])) {
-            $model->invoiceNo = $map['invoiceNo'];
+        if (isset($map['blueInvoiceNo'])) {
+            $model->blueInvoiceNo = $map['blueInvoiceNo'];
+        }
+        if (isset($map['blueInvoiceStatus'])) {
+            $model->blueInvoiceStatus = $map['blueInvoiceStatus'];
+        }
+        if (isset($map['operator'])) {
+            $model->operator = $map['operator'];
         }
         if (isset($map['redGeneralInvoiceVO'])) {
             $model->redGeneralInvoiceVO = redGeneralInvoiceVO::fromMap($map['redGeneralInvoiceVO']);
         }
-        if (isset($map['status'])) {
-            $model->status = $map['status'];
+        if (isset($map['redInvoiceCode'])) {
+            $model->redInvoiceCode = $map['redInvoiceCode'];
+        }
+        if (isset($map['redInvoiceNo'])) {
+            $model->redInvoiceNo = $map['redInvoiceNo'];
+        }
+        if (isset($map['redInvoiceStatus'])) {
+            $model->redInvoiceStatus = $map['redInvoiceStatus'];
+        }
+        if (isset($map['targetInvoice'])) {
+            $model->targetInvoice = $map['targetInvoice'];
         }
 
         return $model;

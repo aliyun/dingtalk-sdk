@@ -25,6 +25,13 @@ class UpdateInvoiceVerifyStatusRequest extends Model
     public $invoiceKeyVOList;
 
     /**
+     * @description 操作员
+     *
+     * @var string
+     */
+    public $operator;
+
+    /**
      * @description 认证状态
      *
      * @var string
@@ -33,6 +40,7 @@ class UpdateInvoiceVerifyStatusRequest extends Model
     protected $_name = [
         'deductStatus'     => 'deductStatus',
         'invoiceKeyVOList' => 'invoiceKeyVOList',
+        'operator'         => 'operator',
         'verifyStatus'     => 'verifyStatus',
     ];
 
@@ -54,6 +62,9 @@ class UpdateInvoiceVerifyStatusRequest extends Model
                     $res['invoiceKeyVOList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->operator) {
+            $res['operator'] = $this->operator;
         }
         if (null !== $this->verifyStatus) {
             $res['verifyStatus'] = $this->verifyStatus;
@@ -81,6 +92,9 @@ class UpdateInvoiceVerifyStatusRequest extends Model
                     $model->invoiceKeyVOList[$n++] = null !== $item ? invoiceKeyVOList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['operator'])) {
+            $model->operator = $map['operator'];
         }
         if (isset($map['verifyStatus'])) {
             $model->verifyStatus = $map['verifyStatus'];

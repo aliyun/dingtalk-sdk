@@ -1073,6 +1073,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->privateData)) {
             @$body['privateData'] = $request->privateData;
         }
+        if (!Utils::isUnset($request->pullStrategy)) {
+            @$body['pullStrategy'] = $request->pullStrategy;
+        }
         if (!Utils::isUnset($request->receiverUserIdList)) {
             @$body['receiverUserIdList'] = $request->receiverUserIdList;
         }
@@ -1646,6 +1649,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->conversationType)) {
+            @$body['conversationType'] = $request->conversationType;
+        }
         if (!Utils::isUnset($request->coolAppCode)) {
             @$body['coolAppCode'] = $request->coolAppCode;
         }
@@ -1654,6 +1660,12 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->outTrackId)) {
             @$body['outTrackId'] = $request->outTrackId;
+        }
+        if (!Utils::isUnset($request->receiverUserIdList)) {
+            @$body['receiverUserIdList'] = $request->receiverUserIdList;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            @$body['robotCode'] = $request->robotCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -1694,6 +1706,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->conversationType)) {
+            @$body['conversationType'] = $request->conversationType;
+        }
         if (!Utils::isUnset($request->coolAppCode)) {
             @$body['coolAppCode'] = $request->coolAppCode;
         }
@@ -1711,6 +1726,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->receiverUserIdList)) {
             @$body['receiverUserIdList'] = $request->receiverUserIdList;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            @$body['robotCode'] = $request->robotCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

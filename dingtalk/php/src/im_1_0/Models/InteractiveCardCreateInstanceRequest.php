@@ -64,6 +64,13 @@ class InteractiveCardCreateInstanceRequest extends Model
     public $privateData;
 
     /**
+     * @description 是否开启卡片纯拉模式
+     *
+     * @var bool
+     */
+    public $pullStrategy;
+
+    /**
      * @description 接收人userId列表
      *
      * @var string[]
@@ -92,6 +99,7 @@ class InteractiveCardCreateInstanceRequest extends Model
         'openConversationId' => 'openConversationId',
         'outTrackId'         => 'outTrackId',
         'privateData'        => 'privateData',
+        'pullStrategy'       => 'pullStrategy',
         'receiverUserIdList' => 'receiverUserIdList',
         'robotCode'          => 'robotCode',
         'userIdType'         => 'userIdType',
@@ -132,6 +140,9 @@ class InteractiveCardCreateInstanceRequest extends Model
                     $res['privateData'][$key] = null !== $val ? $val->toMap() : $val;
                 }
             }
+        }
+        if (null !== $this->pullStrategy) {
+            $res['pullStrategy'] = $this->pullStrategy;
         }
         if (null !== $this->receiverUserIdList) {
             $res['receiverUserIdList'] = $this->receiverUserIdList;
@@ -177,6 +188,9 @@ class InteractiveCardCreateInstanceRequest extends Model
         }
         if (isset($map['privateData'])) {
             $model->privateData = $map['privateData'];
+        }
+        if (isset($map['pullStrategy'])) {
+            $model->pullStrategy = $map['pullStrategy'];
         }
         if (isset($map['receiverUserIdList'])) {
             if (!empty($map['receiverUserIdList'])) {

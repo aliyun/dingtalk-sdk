@@ -31,6 +31,13 @@ class UpdateInvoiceAndReceiptRelatedRequest extends Model
     public $invoiceNo;
 
     /**
+     * @description 操作员
+     *
+     * @var string
+     */
+    public $operator;
+
+    /**
      * @description 钉钉审批单号
      *
      * @var string
@@ -40,6 +47,7 @@ class UpdateInvoiceAndReceiptRelatedRequest extends Model
         'generalInvoiceVO' => 'generalInvoiceVO',
         'invoiceCode'      => 'invoiceCode',
         'invoiceNo'        => 'invoiceNo',
+        'operator'         => 'operator',
         'receiptCode'      => 'receiptCode',
     ];
 
@@ -58,6 +66,9 @@ class UpdateInvoiceAndReceiptRelatedRequest extends Model
         }
         if (null !== $this->invoiceNo) {
             $res['invoiceNo'] = $this->invoiceNo;
+        }
+        if (null !== $this->operator) {
+            $res['operator'] = $this->operator;
         }
         if (null !== $this->receiptCode) {
             $res['receiptCode'] = $this->receiptCode;
@@ -82,6 +93,9 @@ class UpdateInvoiceAndReceiptRelatedRequest extends Model
         }
         if (isset($map['invoiceNo'])) {
             $model->invoiceNo = $map['invoiceNo'];
+        }
+        if (isset($map['operator'])) {
+            $model->operator = $map['operator'];
         }
         if (isset($map['receiptCode'])) {
             $model->receiptCode = $map['receiptCode'];

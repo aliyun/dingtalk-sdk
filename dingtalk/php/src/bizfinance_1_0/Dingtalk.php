@@ -152,6 +152,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->generalInvoiceVOList)) {
             @$body['generalInvoiceVOList'] = $request->generalInvoiceVOList;
         }
+        if (!Utils::isUnset($request->operator)) {
+            @$body['operator'] = $request->operator;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -1490,17 +1493,32 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->blueGeneralInvoiceVO)) {
             @$body['blueGeneralInvoiceVO'] = $request->blueGeneralInvoiceVO;
         }
-        if (!Utils::isUnset($request->invoiceCode)) {
-            @$body['invoiceCode'] = $request->invoiceCode;
+        if (!Utils::isUnset($request->blueInvoiceCode)) {
+            @$body['blueInvoiceCode'] = $request->blueInvoiceCode;
         }
-        if (!Utils::isUnset($request->invoiceNo)) {
-            @$body['invoiceNo'] = $request->invoiceNo;
+        if (!Utils::isUnset($request->blueInvoiceNo)) {
+            @$body['blueInvoiceNo'] = $request->blueInvoiceNo;
+        }
+        if (!Utils::isUnset($request->blueInvoiceStatus)) {
+            @$body['blueInvoiceStatus'] = $request->blueInvoiceStatus;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            @$body['operator'] = $request->operator;
         }
         if (!Utils::isUnset($request->redGeneralInvoiceVO)) {
             @$body['redGeneralInvoiceVO'] = $request->redGeneralInvoiceVO;
         }
-        if (!Utils::isUnset($request->status)) {
-            @$body['status'] = $request->status;
+        if (!Utils::isUnset($request->redInvoiceCode)) {
+            @$body['redInvoiceCode'] = $request->redInvoiceCode;
+        }
+        if (!Utils::isUnset($request->redInvoiceNo)) {
+            @$body['redInvoiceNo'] = $request->redInvoiceNo;
+        }
+        if (!Utils::isUnset($request->redInvoiceStatus)) {
+            @$body['redInvoiceStatus'] = $request->redInvoiceStatus;
+        }
+        if (!Utils::isUnset($request->targetInvoice)) {
+            @$body['targetInvoice'] = $request->targetInvoice;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -1550,6 +1568,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->invoiceKeyVOList)) {
             @$body['invoiceKeyVOList'] = $request->invoiceKeyVOList;
         }
+        if (!Utils::isUnset($request->operator)) {
+            @$body['operator'] = $request->operator;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -1598,6 +1619,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->invoiceNo)) {
             @$body['invoiceNo'] = $request->invoiceNo;
         }
+        if (!Utils::isUnset($request->operator)) {
+            @$body['operator'] = $request->operator;
+        }
         if (!Utils::isUnset($request->receiptCode)) {
             @$body['receiptCode'] = $request->receiptCode;
         }
@@ -1642,6 +1666,9 @@ class Dingtalk extends OpenApiClient
         $query = [];
         if (!Utils::isUnset($request->instanceId)) {
             @$query['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            @$query['operator'] = $request->operator;
         }
         if (!Utils::isUnset($request->status)) {
             @$query['status'] = $request->status;
@@ -1690,6 +1717,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->invoiceKeyVOList)) {
             @$body['invoiceKeyVOList'] = $request->invoiceKeyVOList;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            @$body['operator'] = $request->operator;
         }
         if (!Utils::isUnset($request->verifyStatus)) {
             @$body['verifyStatus'] = $request->verifyStatus;

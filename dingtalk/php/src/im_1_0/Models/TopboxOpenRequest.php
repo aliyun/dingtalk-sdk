@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class TopboxOpenRequest extends Model
 {
     /**
+     * @description 发送的会话类型：单聊-0, 群聊-1
+     *
+     * @var int
+     */
+    public $conversationType;
+
+    /**
      * @description 酷应用编码
      *
      * @var string
@@ -49,13 +56,22 @@ class TopboxOpenRequest extends Model
      * @var string[]
      */
     public $receiverUserIdList;
+
+    /**
+     * @description 机器人编码
+     *
+     * @var string
+     */
+    public $robotCode;
     protected $_name = [
+        'conversationType'   => 'conversationType',
         'coolAppCode'        => 'coolAppCode',
         'expiredTime'        => 'expiredTime',
         'openConversationId' => 'openConversationId',
         'outTrackId'         => 'outTrackId',
         'platforms'          => 'platforms',
         'receiverUserIdList' => 'receiverUserIdList',
+        'robotCode'          => 'robotCode',
     ];
 
     public function validate()
@@ -65,6 +81,9 @@ class TopboxOpenRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->conversationType) {
+            $res['conversationType'] = $this->conversationType;
+        }
         if (null !== $this->coolAppCode) {
             $res['coolAppCode'] = $this->coolAppCode;
         }
@@ -83,6 +102,9 @@ class TopboxOpenRequest extends Model
         if (null !== $this->receiverUserIdList) {
             $res['receiverUserIdList'] = $this->receiverUserIdList;
         }
+        if (null !== $this->robotCode) {
+            $res['robotCode'] = $this->robotCode;
+        }
 
         return $res;
     }
@@ -95,6 +117,9 @@ class TopboxOpenRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['conversationType'])) {
+            $model->conversationType = $map['conversationType'];
+        }
         if (isset($map['coolAppCode'])) {
             $model->coolAppCode = $map['coolAppCode'];
         }
@@ -114,6 +139,9 @@ class TopboxOpenRequest extends Model
             if (!empty($map['receiverUserIdList'])) {
                 $model->receiverUserIdList = $map['receiverUserIdList'];
             }
+        }
+        if (isset($map['robotCode'])) {
+            $model->robotCode = $map['robotCode'];
         }
 
         return $model;

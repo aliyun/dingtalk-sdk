@@ -4,7 +4,9 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\UpdateActionRequest;
 
+use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\UpdateActionRequest\actionInfo\inputMappingConfig;
 use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\UpdateActionRequest\actionInfo\outputDataRules;
+use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\UpdateActionRequest\actionInfo\outputMappingConfig;
 use AlibabaCloud\Tea\Model;
 
 class actionInfo extends Model
@@ -36,6 +38,11 @@ class actionInfo extends Model
      * @var string
      */
     public $dingConnectorId;
+
+    /**
+     * @var inputMappingConfig
+     */
+    public $inputMappingConfig;
 
     /**
      * @description 入参schema
@@ -73,6 +80,11 @@ class actionInfo extends Model
     public $outputDataRules;
 
     /**
+     * @var outputMappingConfig
+     */
+    public $outputMappingConfig;
+
+    /**
      * @description 出参schema
      *
      * @var string
@@ -83,11 +95,13 @@ class actionInfo extends Model
         'description'           => 'description',
         'dingActionId'          => 'dingActionId',
         'dingConnectorId'       => 'dingConnectorId',
+        'inputMappingConfig'    => 'inputMappingConfig',
         'inputSchema'           => 'inputSchema',
         'integratorActionId'    => 'integratorActionId',
         'integratorConnectorId' => 'integratorConnectorId',
         'name'                  => 'name',
         'outputDataRules'       => 'outputDataRules',
+        'outputMappingConfig'   => 'outputMappingConfig',
         'outputSchema'          => 'outputSchema',
     ];
 
@@ -110,6 +124,9 @@ class actionInfo extends Model
         if (null !== $this->dingConnectorId) {
             $res['dingConnectorId'] = $this->dingConnectorId;
         }
+        if (null !== $this->inputMappingConfig) {
+            $res['inputMappingConfig'] = null !== $this->inputMappingConfig ? $this->inputMappingConfig->toMap() : null;
+        }
         if (null !== $this->inputSchema) {
             $res['inputSchema'] = $this->inputSchema;
         }
@@ -130,6 +147,9 @@ class actionInfo extends Model
                     $res['outputDataRules'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->outputMappingConfig) {
+            $res['outputMappingConfig'] = null !== $this->outputMappingConfig ? $this->outputMappingConfig->toMap() : null;
         }
         if (null !== $this->outputSchema) {
             $res['outputSchema'] = $this->outputSchema;
@@ -158,6 +178,9 @@ class actionInfo extends Model
         if (isset($map['dingConnectorId'])) {
             $model->dingConnectorId = $map['dingConnectorId'];
         }
+        if (isset($map['inputMappingConfig'])) {
+            $model->inputMappingConfig = inputMappingConfig::fromMap($map['inputMappingConfig']);
+        }
         if (isset($map['inputSchema'])) {
             $model->inputSchema = $map['inputSchema'];
         }
@@ -178,6 +201,9 @@ class actionInfo extends Model
                     $model->outputDataRules[$n++] = null !== $item ? outputDataRules::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['outputMappingConfig'])) {
+            $model->outputMappingConfig = outputMappingConfig::fromMap($map['outputMappingConfig']);
         }
         if (isset($map['outputSchema'])) {
             $model->outputSchema = $map['outputSchema'];

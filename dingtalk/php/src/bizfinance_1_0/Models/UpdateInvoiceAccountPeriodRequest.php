@@ -30,10 +30,18 @@ class UpdateInvoiceAccountPeriodRequest extends Model
      * @var invoiceKeyVOList[]
      */
     public $invoiceKeyVOList;
+
+    /**
+     * @description 操作员
+     *
+     * @var string
+     */
+    public $operator;
     protected $_name = [
         'accountPeriod'        => 'accountPeriod',
         'generalInvoiceVOList' => 'generalInvoiceVOList',
         'invoiceKeyVOList'     => 'invoiceKeyVOList',
+        'operator'             => 'operator',
     ];
 
     public function validate()
@@ -63,6 +71,9 @@ class UpdateInvoiceAccountPeriodRequest extends Model
                     $res['invoiceKeyVOList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->operator) {
+            $res['operator'] = $this->operator;
         }
 
         return $res;
@@ -96,6 +107,9 @@ class UpdateInvoiceAccountPeriodRequest extends Model
                     $model->invoiceKeyVOList[$n++] = null !== $item ? invoiceKeyVOList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['operator'])) {
+            $model->operator = $map['operator'];
         }
 
         return $model;
