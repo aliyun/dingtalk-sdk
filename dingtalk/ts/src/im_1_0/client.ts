@@ -1628,6 +1628,7 @@ export class InteractiveCardCreateInstanceRequest extends $tea.Model {
   openConversationId?: string;
   outTrackId?: string;
   privateData?: { [key: string]: PrivateDataValue };
+  pullStrategy?: boolean;
   receiverUserIdList?: string[];
   robotCode?: string;
   userIdType?: number;
@@ -1641,6 +1642,7 @@ export class InteractiveCardCreateInstanceRequest extends $tea.Model {
       openConversationId: 'openConversationId',
       outTrackId: 'outTrackId',
       privateData: 'privateData',
+      pullStrategy: 'pullStrategy',
       receiverUserIdList: 'receiverUserIdList',
       robotCode: 'robotCode',
       userIdType: 'userIdType',
@@ -1657,6 +1659,7 @@ export class InteractiveCardCreateInstanceRequest extends $tea.Model {
       openConversationId: 'string',
       outTrackId: 'string',
       privateData: { 'type': 'map', 'keyType': 'string', 'valueType': PrivateDataValue },
+      pullStrategy: 'boolean',
       receiverUserIdList: { 'type': 'array', 'itemType': 'string' },
       robotCode: 'string',
       userIdType: 'number',
@@ -2669,22 +2672,31 @@ export class TopboxCloseHeaders extends $tea.Model {
 }
 
 export class TopboxCloseRequest extends $tea.Model {
+  conversationType?: number;
   coolAppCode?: string;
   openConversationId?: string;
   outTrackId?: string;
+  receiverUserIdList?: string[];
+  robotCode?: string;
   static names(): { [key: string]: string } {
     return {
+      conversationType: 'conversationType',
       coolAppCode: 'coolAppCode',
       openConversationId: 'openConversationId',
       outTrackId: 'outTrackId',
+      receiverUserIdList: 'receiverUserIdList',
+      robotCode: 'robotCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      conversationType: 'number',
       coolAppCode: 'string',
       openConversationId: 'string',
       outTrackId: 'string',
+      receiverUserIdList: { 'type': 'array', 'itemType': 'string' },
+      robotCode: 'string',
     };
   }
 
@@ -2735,31 +2747,37 @@ export class TopboxOpenHeaders extends $tea.Model {
 }
 
 export class TopboxOpenRequest extends $tea.Model {
+  conversationType?: number;
   coolAppCode?: string;
   expiredTime?: number;
   openConversationId?: string;
   outTrackId?: string;
   platforms?: string;
   receiverUserIdList?: string[];
+  robotCode?: string;
   static names(): { [key: string]: string } {
     return {
+      conversationType: 'conversationType',
       coolAppCode: 'coolAppCode',
       expiredTime: 'expiredTime',
       openConversationId: 'openConversationId',
       outTrackId: 'outTrackId',
       platforms: 'platforms',
       receiverUserIdList: 'receiverUserIdList',
+      robotCode: 'robotCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      conversationType: 'number',
       coolAppCode: 'string',
       expiredTime: 'number',
       openConversationId: 'string',
       outTrackId: 'string',
       platforms: 'string',
       receiverUserIdList: { 'type': 'array', 'itemType': 'string' },
+      robotCode: 'string',
     };
   }
 
@@ -5177,6 +5195,10 @@ export default class Client extends OpenApi {
       body["privateData"] = request.privateData;
     }
 
+    if (!Util.isUnset(request.pullStrategy)) {
+      body["pullStrategy"] = request.pullStrategy;
+    }
+
     if (!Util.isUnset(request.receiverUserIdList)) {
       body["receiverUserIdList"] = request.receiverUserIdList;
     }
@@ -5644,6 +5666,10 @@ export default class Client extends OpenApi {
   async topboxCloseWithOptions(request: TopboxCloseRequest, headers: TopboxCloseHeaders, runtime: $Util.RuntimeOptions): Promise<TopboxCloseResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.conversationType)) {
+      body["conversationType"] = request.conversationType;
+    }
+
     if (!Util.isUnset(request.coolAppCode)) {
       body["coolAppCode"] = request.coolAppCode;
     }
@@ -5654,6 +5680,14 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.outTrackId)) {
       body["outTrackId"] = request.outTrackId;
+    }
+
+    if (!Util.isUnset(request.receiverUserIdList)) {
+      body["receiverUserIdList"] = request.receiverUserIdList;
+    }
+
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -5681,6 +5715,10 @@ export default class Client extends OpenApi {
   async topboxOpenWithOptions(request: TopboxOpenRequest, headers: TopboxOpenHeaders, runtime: $Util.RuntimeOptions): Promise<TopboxOpenResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.conversationType)) {
+      body["conversationType"] = request.conversationType;
+    }
+
     if (!Util.isUnset(request.coolAppCode)) {
       body["coolAppCode"] = request.coolAppCode;
     }
@@ -5703,6 +5741,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.receiverUserIdList)) {
       body["receiverUserIdList"] = request.receiverUserIdList;
+    }
+
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
     }
 
     let realHeaders : {[key: string ]: string} = { };

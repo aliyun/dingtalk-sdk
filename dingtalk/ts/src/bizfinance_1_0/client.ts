@@ -31,15 +31,18 @@ export class BatchAddInvoiceHeaders extends $tea.Model {
 
 export class BatchAddInvoiceRequest extends $tea.Model {
   generalInvoiceVOList?: BatchAddInvoiceRequestGeneralInvoiceVOList[];
+  operator?: string;
   static names(): { [key: string]: string } {
     return {
       generalInvoiceVOList: 'generalInvoiceVOList',
+      operator: 'operator',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       generalInvoiceVOList: { 'type': 'array', 'itemType': BatchAddInvoiceRequestGeneralInvoiceVOList },
+      operator: 'string',
     };
   }
 
@@ -2654,27 +2657,42 @@ export class UpdateInvoiceAbandonStatusHeaders extends $tea.Model {
 
 export class UpdateInvoiceAbandonStatusRequest extends $tea.Model {
   blueGeneralInvoiceVO?: UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO;
-  invoiceCode?: string;
-  invoiceNo?: string;
+  blueInvoiceCode?: string;
+  blueInvoiceNo?: string;
+  blueInvoiceStatus?: string;
+  operator?: string;
   redGeneralInvoiceVO?: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO;
-  status?: string;
+  redInvoiceCode?: string;
+  redInvoiceNo?: string;
+  redInvoiceStatus?: string;
+  targetInvoice?: string;
   static names(): { [key: string]: string } {
     return {
       blueGeneralInvoiceVO: 'blueGeneralInvoiceVO',
-      invoiceCode: 'invoiceCode',
-      invoiceNo: 'invoiceNo',
+      blueInvoiceCode: 'blueInvoiceCode',
+      blueInvoiceNo: 'blueInvoiceNo',
+      blueInvoiceStatus: 'blueInvoiceStatus',
+      operator: 'operator',
       redGeneralInvoiceVO: 'redGeneralInvoiceVO',
-      status: 'status',
+      redInvoiceCode: 'redInvoiceCode',
+      redInvoiceNo: 'redInvoiceNo',
+      redInvoiceStatus: 'redInvoiceStatus',
+      targetInvoice: 'targetInvoice',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       blueGeneralInvoiceVO: UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO,
-      invoiceCode: 'string',
-      invoiceNo: 'string',
+      blueInvoiceCode: 'string',
+      blueInvoiceNo: 'string',
+      blueInvoiceStatus: 'string',
+      operator: 'string',
       redGeneralInvoiceVO: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO,
-      status: 'string',
+      redInvoiceCode: 'string',
+      redInvoiceNo: 'string',
+      redInvoiceStatus: 'string',
+      targetInvoice: 'string',
     };
   }
 
@@ -2750,11 +2768,13 @@ export class UpdateInvoiceAccountPeriodRequest extends $tea.Model {
   accountPeriod?: string;
   generalInvoiceVOList?: UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList[];
   invoiceKeyVOList?: UpdateInvoiceAccountPeriodRequestInvoiceKeyVOList[];
+  operator?: string;
   static names(): { [key: string]: string } {
     return {
       accountPeriod: 'accountPeriod',
       generalInvoiceVOList: 'generalInvoiceVOList',
       invoiceKeyVOList: 'invoiceKeyVOList',
+      operator: 'operator',
     };
   }
 
@@ -2763,6 +2783,7 @@ export class UpdateInvoiceAccountPeriodRequest extends $tea.Model {
       accountPeriod: 'string',
       generalInvoiceVOList: { 'type': 'array', 'itemType': UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList },
       invoiceKeyVOList: { 'type': 'array', 'itemType': UpdateInvoiceAccountPeriodRequestInvoiceKeyVOList },
+      operator: 'string',
     };
   }
 
@@ -2838,12 +2859,14 @@ export class UpdateInvoiceAndReceiptRelatedRequest extends $tea.Model {
   generalInvoiceVO?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO;
   invoiceCode?: string;
   invoiceNo?: string;
+  operator?: string;
   receiptCode?: string;
   static names(): { [key: string]: string } {
     return {
       generalInvoiceVO: 'generalInvoiceVO',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
+      operator: 'operator',
       receiptCode: 'receiptCode',
     };
   }
@@ -2853,6 +2876,7 @@ export class UpdateInvoiceAndReceiptRelatedRequest extends $tea.Model {
       generalInvoiceVO: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO,
       invoiceCode: 'string',
       invoiceNo: 'string',
+      operator: 'string',
       receiptCode: 'string',
     };
   }
@@ -2927,10 +2951,12 @@ export class UpdateInvoiceIgnoreStatusHeaders extends $tea.Model {
 
 export class UpdateInvoiceIgnoreStatusRequest extends $tea.Model {
   instanceId?: string;
+  operator?: string;
   status?: string;
   static names(): { [key: string]: string } {
     return {
       instanceId: 'instanceId',
+      operator: 'operator',
       status: 'status',
     };
   }
@@ -2938,6 +2964,7 @@ export class UpdateInvoiceIgnoreStatusRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       instanceId: 'string',
+      operator: 'string',
       status: 'string',
     };
   }
@@ -3013,11 +3040,13 @@ export class UpdateInvoiceVerifyStatusHeaders extends $tea.Model {
 export class UpdateInvoiceVerifyStatusRequest extends $tea.Model {
   deductStatus?: string;
   invoiceKeyVOList?: UpdateInvoiceVerifyStatusRequestInvoiceKeyVOList[];
+  operator?: string;
   verifyStatus?: string;
   static names(): { [key: string]: string } {
     return {
       deductStatus: 'deductStatus',
       invoiceKeyVOList: 'invoiceKeyVOList',
+      operator: 'operator',
       verifyStatus: 'verifyStatus',
     };
   }
@@ -3026,6 +3055,7 @@ export class UpdateInvoiceVerifyStatusRequest extends $tea.Model {
     return {
       deductStatus: 'string',
       invoiceKeyVOList: { 'type': 'array', 'itemType': UpdateInvoiceVerifyStatusRequestInvoiceKeyVOList },
+      operator: 'string',
       verifyStatus: 'string',
     };
   }
@@ -6516,6 +6546,10 @@ export default class Client extends OpenApi {
       body["generalInvoiceVOList"] = request.generalInvoiceVOList;
     }
 
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -7537,20 +7571,40 @@ export default class Client extends OpenApi {
       body["blueGeneralInvoiceVO"] = request.blueGeneralInvoiceVO;
     }
 
-    if (!Util.isUnset(request.invoiceCode)) {
-      body["invoiceCode"] = request.invoiceCode;
+    if (!Util.isUnset(request.blueInvoiceCode)) {
+      body["blueInvoiceCode"] = request.blueInvoiceCode;
     }
 
-    if (!Util.isUnset(request.invoiceNo)) {
-      body["invoiceNo"] = request.invoiceNo;
+    if (!Util.isUnset(request.blueInvoiceNo)) {
+      body["blueInvoiceNo"] = request.blueInvoiceNo;
+    }
+
+    if (!Util.isUnset(request.blueInvoiceStatus)) {
+      body["blueInvoiceStatus"] = request.blueInvoiceStatus;
+    }
+
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
     }
 
     if (!Util.isUnset($tea.toMap(request.redGeneralInvoiceVO))) {
       body["redGeneralInvoiceVO"] = request.redGeneralInvoiceVO;
     }
 
-    if (!Util.isUnset(request.status)) {
-      body["status"] = request.status;
+    if (!Util.isUnset(request.redInvoiceCode)) {
+      body["redInvoiceCode"] = request.redInvoiceCode;
+    }
+
+    if (!Util.isUnset(request.redInvoiceNo)) {
+      body["redInvoiceNo"] = request.redInvoiceNo;
+    }
+
+    if (!Util.isUnset(request.redInvoiceStatus)) {
+      body["redInvoiceStatus"] = request.redInvoiceStatus;
+    }
+
+    if (!Util.isUnset(request.targetInvoice)) {
+      body["targetInvoice"] = request.targetInvoice;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -7590,6 +7644,10 @@ export default class Client extends OpenApi {
       body["invoiceKeyVOList"] = request.invoiceKeyVOList;
     }
 
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -7627,6 +7685,10 @@ export default class Client extends OpenApi {
       body["invoiceNo"] = request.invoiceNo;
     }
 
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
+    }
+
     if (!Util.isUnset(request.receiptCode)) {
       body["receiptCode"] = request.receiptCode;
     }
@@ -7658,6 +7720,10 @@ export default class Client extends OpenApi {
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.instanceId)) {
       query["instanceId"] = request.instanceId;
+    }
+
+    if (!Util.isUnset(request.operator)) {
+      query["operator"] = request.operator;
     }
 
     if (!Util.isUnset(request.status)) {
@@ -7695,6 +7761,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.invoiceKeyVOList)) {
       body["invoiceKeyVOList"] = request.invoiceKeyVOList;
+    }
+
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
     }
 
     if (!Util.isUnset(request.verifyStatus)) {

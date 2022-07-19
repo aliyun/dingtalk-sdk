@@ -811,6 +811,28 @@ export class UpdateTriggerResponse extends $tea.Model {
   }
 }
 
+export class CreateActionRequestActionInfoInputMappingConfig extends $tea.Model {
+  customSchemaMapping?: string;
+  rules?: string;
+  static names(): { [key: string]: string } {
+    return {
+      customSchemaMapping: 'customSchemaMapping',
+      rules: 'rules',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customSchemaMapping: 'string',
+      rules: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateActionRequestActionInfoOutputDataRules extends $tea.Model {
   expectValue?: string;
   operate?: string;
@@ -836,26 +858,52 @@ export class CreateActionRequestActionInfoOutputDataRules extends $tea.Model {
   }
 }
 
+export class CreateActionRequestActionInfoOutputMappingConfig extends $tea.Model {
+  customSchemaMapping?: string;
+  rules?: string;
+  static names(): { [key: string]: string } {
+    return {
+      customSchemaMapping: 'customSchemaMapping',
+      rules: 'rules',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customSchemaMapping: 'string',
+      rules: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateActionRequestActionInfo extends $tea.Model {
   apiPath?: string;
   description?: string;
   dingConnectorId?: string;
+  inputMappingConfig?: CreateActionRequestActionInfoInputMappingConfig;
   inputSchema?: string;
   integratorActionId?: string;
   integratorConnectorId?: string;
   name?: string;
   outputDataRules?: CreateActionRequestActionInfoOutputDataRules[];
+  outputMappingConfig?: CreateActionRequestActionInfoOutputMappingConfig;
   outputSchema?: string;
   static names(): { [key: string]: string } {
     return {
       apiPath: 'apiPath',
       description: 'description',
       dingConnectorId: 'dingConnectorId',
+      inputMappingConfig: 'inputMappingConfig',
       inputSchema: 'inputSchema',
       integratorActionId: 'integratorActionId',
       integratorConnectorId: 'integratorConnectorId',
       name: 'name',
       outputDataRules: 'outputDataRules',
+      outputMappingConfig: 'outputMappingConfig',
       outputSchema: 'outputSchema',
     };
   }
@@ -865,11 +913,13 @@ export class CreateActionRequestActionInfo extends $tea.Model {
       apiPath: 'string',
       description: 'string',
       dingConnectorId: 'string',
+      inputMappingConfig: CreateActionRequestActionInfoInputMappingConfig,
       inputSchema: 'string',
       integratorActionId: 'string',
       integratorConnectorId: 'string',
       name: 'string',
       outputDataRules: { 'type': 'array', 'itemType': CreateActionRequestActionInfoOutputDataRules },
+      outputMappingConfig: CreateActionRequestActionInfoOutputMappingConfig,
       outputSchema: 'string',
     };
   }
@@ -1163,6 +1213,28 @@ export class SyncDataResponseBodyList extends $tea.Model {
   }
 }
 
+export class UpdateActionRequestActionInfoInputMappingConfig extends $tea.Model {
+  customSchemaMapping?: string;
+  rules?: string;
+  static names(): { [key: string]: string } {
+    return {
+      customSchemaMapping: 'customSchemaMapping',
+      rules: 'rules',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customSchemaMapping: 'string',
+      rules: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateActionRequestActionInfoOutputDataRules extends $tea.Model {
   expectValue?: string;
   operate?: string;
@@ -1188,16 +1260,40 @@ export class UpdateActionRequestActionInfoOutputDataRules extends $tea.Model {
   }
 }
 
+export class UpdateActionRequestActionInfoOutputMappingConfig extends $tea.Model {
+  customSchemaMapping?: string;
+  rules?: string;
+  static names(): { [key: string]: string } {
+    return {
+      customSchemaMapping: 'customSchemaMapping',
+      rules: 'rules',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customSchemaMapping: 'string',
+      rules: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateActionRequestActionInfo extends $tea.Model {
   apiPath?: string;
   description?: string;
   dingActionId?: string;
   dingConnectorId?: string;
+  inputMappingConfig?: UpdateActionRequestActionInfoInputMappingConfig;
   inputSchema?: string;
   integratorActionId?: string;
   integratorConnectorId?: string;
   name?: string;
   outputDataRules?: UpdateActionRequestActionInfoOutputDataRules[];
+  outputMappingConfig?: UpdateActionRequestActionInfoOutputMappingConfig;
   outputSchema?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1205,11 +1301,13 @@ export class UpdateActionRequestActionInfo extends $tea.Model {
       description: 'description',
       dingActionId: 'dingActionId',
       dingConnectorId: 'dingConnectorId',
+      inputMappingConfig: 'inputMappingConfig',
       inputSchema: 'inputSchema',
       integratorActionId: 'integratorActionId',
       integratorConnectorId: 'integratorConnectorId',
       name: 'name',
       outputDataRules: 'outputDataRules',
+      outputMappingConfig: 'outputMappingConfig',
       outputSchema: 'outputSchema',
     };
   }
@@ -1220,11 +1318,13 @@ export class UpdateActionRequestActionInfo extends $tea.Model {
       description: 'string',
       dingActionId: 'string',
       dingConnectorId: 'string',
+      inputMappingConfig: UpdateActionRequestActionInfoInputMappingConfig,
       inputSchema: 'string',
       integratorActionId: 'string',
       integratorConnectorId: 'string',
       name: 'string',
       outputDataRules: { 'type': 'array', 'itemType': UpdateActionRequestActionInfoOutputDataRules },
+      outputMappingConfig: UpdateActionRequestActionInfoOutputMappingConfig,
       outputSchema: 'string',
     };
   }
