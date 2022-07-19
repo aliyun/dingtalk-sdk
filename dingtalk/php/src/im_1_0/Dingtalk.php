@@ -27,6 +27,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateGroupConversationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateInterconnectionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateInterconnectionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateInterconnectionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateStoreGroupConversationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateStoreGroupConversationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateStoreGroupConversationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetConversationUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetConversationUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetConversationUrlResponse;
@@ -465,6 +468,66 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateInterconnectionResponse::fromMap($this->doROARequest('CreateInterconnection', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interconnections', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateStoreGroupConversationRequest $request
+     *
+     * @return CreateStoreGroupConversationResponse
+     */
+    public function createStoreGroupConversation($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateStoreGroupConversationHeaders([]);
+
+        return $this->createStoreGroupConversationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateStoreGroupConversationRequest $request
+     * @param CreateStoreGroupConversationHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return CreateStoreGroupConversationResponse
+     */
+    public function createStoreGroupConversationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appUserId)) {
+            @$body['appUserId'] = $request->appUserId;
+        }
+        if (!Utils::isUnset($request->businessUniqueKey)) {
+            @$body['businessUniqueKey'] = $request->businessUniqueKey;
+        }
+        if (!Utils::isUnset($request->groupAvatar)) {
+            @$body['groupAvatar'] = $request->groupAvatar;
+        }
+        if (!Utils::isUnset($request->groupName)) {
+            @$body['groupName'] = $request->groupName;
+        }
+        if (!Utils::isUnset($request->groupTemplateId)) {
+            @$body['groupTemplateId'] = $request->groupTemplateId;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            @$body['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            @$body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateStoreGroupConversationResponse::fromMap($this->doROARequest('CreateStoreGroupConversation', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interconnections/storeGroups', 'json', $req, $runtime));
     }
 
     /**

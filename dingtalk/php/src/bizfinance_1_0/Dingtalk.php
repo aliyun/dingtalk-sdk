@@ -34,6 +34,7 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetFinanceAccountResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetInvoiceByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetInvoiceByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetInvoiceByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetInvoiceByPageShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetIsNewVersionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetIsNewVersionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetProjectHeaders;
@@ -109,6 +110,7 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateReceiptResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateReceiptVoucherStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateReceiptVoucherStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateReceiptVoucherStatusResponse;
+use AlibabaCloud\Tea\Tea;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -559,36 +561,23 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetInvoiceByPageRequest $request
+     * @param GetInvoiceByPageRequest $tmpReq
      * @param GetInvoiceByPageHeaders $headers
      * @param RuntimeOptions          $runtime
      *
      * @return GetInvoiceByPageResponse
      */
-    public function getInvoiceByPageWithOptions($request, $headers, $runtime)
+    public function getInvoiceByPageWithOptions($tmpReq, $headers, $runtime)
     {
-        Utils::validateModel($request);
+        Utils::validateModel($tmpReq);
+        $request = new GetInvoiceByPageShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->request)) {
+            $request->requestShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle(Tea::merge($tmpReq->request), 'request', 'json');
+        }
         $query = [];
-        if (!Utils::isUnset($request->endTime)) {
-            @$query['endTime'] = $request->endTime;
-        }
-        if (!Utils::isUnset($request->financeType)) {
-            @$query['financeType'] = $request->financeType;
-        }
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$query['pageNumber'] = $request->pageNumber;
-        }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
-        }
-        if (!Utils::isUnset($request->startTime)) {
-            @$query['startTime'] = $request->startTime;
-        }
-        if (!Utils::isUnset($request->taxNo)) {
-            @$query['taxNo'] = $request->taxNo;
-        }
-        if (!Utils::isUnset($request->verifyStatus)) {
-            @$query['verifyStatus'] = $request->verifyStatus;
+        if (!Utils::isUnset($request->requestShrink)) {
+            @$query['request'] = $request->requestShrink;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -1252,6 +1241,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->title)) {
             @$query['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->voucherStatus)) {
+            @$query['voucherStatus'] = $request->voucherStatus;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

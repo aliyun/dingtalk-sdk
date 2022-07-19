@@ -42,12 +42,20 @@ class QueryReceiptsBaseInfoRequest extends Model
      * @var string
      */
     public $title;
+
+    /**
+     * @description 凭证状态
+     *
+     * @var string
+     */
+    public $voucherStatus;
     protected $_name = [
-        'endTime'    => 'endTime',
-        'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'startTime'  => 'startTime',
-        'title'      => 'title',
+        'endTime'       => 'endTime',
+        'pageNumber'    => 'pageNumber',
+        'pageSize'      => 'pageSize',
+        'startTime'     => 'startTime',
+        'title'         => 'title',
+        'voucherStatus' => 'voucherStatus',
     ];
 
     public function validate()
@@ -71,6 +79,9 @@ class QueryReceiptsBaseInfoRequest extends Model
         }
         if (null !== $this->title) {
             $res['title'] = $this->title;
+        }
+        if (null !== $this->voucherStatus) {
+            $res['voucherStatus'] = $this->voucherStatus;
         }
 
         return $res;
@@ -98,6 +109,9 @@ class QueryReceiptsBaseInfoRequest extends Model
         }
         if (isset($map['title'])) {
             $model->title = $map['title'];
+        }
+        if (isset($map['voucherStatus'])) {
+            $model->voucherStatus = $map['voucherStatus'];
         }
 
         return $model;
