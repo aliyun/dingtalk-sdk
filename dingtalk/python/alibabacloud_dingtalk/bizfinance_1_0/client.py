@@ -49,6 +49,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.general_invoice_volist):
             body['generalInvoiceVOList'] = request.general_invoice_volist
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -73,6 +75,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.general_invoice_volist):
             body['generalInvoiceVOList'] = request.general_invoice_volist
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2041,14 +2045,24 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.blue_general_invoice_vo):
             body['blueGeneralInvoiceVO'] = request.blue_general_invoice_vo
-        if not UtilClient.is_unset(request.invoice_code):
-            body['invoiceCode'] = request.invoice_code
-        if not UtilClient.is_unset(request.invoice_no):
-            body['invoiceNo'] = request.invoice_no
+        if not UtilClient.is_unset(request.blue_invoice_code):
+            body['blueInvoiceCode'] = request.blue_invoice_code
+        if not UtilClient.is_unset(request.blue_invoice_no):
+            body['blueInvoiceNo'] = request.blue_invoice_no
+        if not UtilClient.is_unset(request.blue_invoice_status):
+            body['blueInvoiceStatus'] = request.blue_invoice_status
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
         if not UtilClient.is_unset(request.red_general_invoice_vo):
             body['redGeneralInvoiceVO'] = request.red_general_invoice_vo
-        if not UtilClient.is_unset(request.status):
-            body['status'] = request.status
+        if not UtilClient.is_unset(request.red_invoice_code):
+            body['redInvoiceCode'] = request.red_invoice_code
+        if not UtilClient.is_unset(request.red_invoice_no):
+            body['redInvoiceNo'] = request.red_invoice_no
+        if not UtilClient.is_unset(request.red_invoice_status):
+            body['redInvoiceStatus'] = request.red_invoice_status
+        if not UtilClient.is_unset(request.target_invoice):
+            body['targetInvoice'] = request.target_invoice
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2073,14 +2087,24 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.blue_general_invoice_vo):
             body['blueGeneralInvoiceVO'] = request.blue_general_invoice_vo
-        if not UtilClient.is_unset(request.invoice_code):
-            body['invoiceCode'] = request.invoice_code
-        if not UtilClient.is_unset(request.invoice_no):
-            body['invoiceNo'] = request.invoice_no
+        if not UtilClient.is_unset(request.blue_invoice_code):
+            body['blueInvoiceCode'] = request.blue_invoice_code
+        if not UtilClient.is_unset(request.blue_invoice_no):
+            body['blueInvoiceNo'] = request.blue_invoice_no
+        if not UtilClient.is_unset(request.blue_invoice_status):
+            body['blueInvoiceStatus'] = request.blue_invoice_status
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
         if not UtilClient.is_unset(request.red_general_invoice_vo):
             body['redGeneralInvoiceVO'] = request.red_general_invoice_vo
-        if not UtilClient.is_unset(request.status):
-            body['status'] = request.status
+        if not UtilClient.is_unset(request.red_invoice_code):
+            body['redInvoiceCode'] = request.red_invoice_code
+        if not UtilClient.is_unset(request.red_invoice_no):
+            body['redInvoiceNo'] = request.red_invoice_no
+        if not UtilClient.is_unset(request.red_invoice_status):
+            body['redInvoiceStatus'] = request.red_invoice_status
+        if not UtilClient.is_unset(request.target_invoice):
+            body['targetInvoice'] = request.target_invoice
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2125,6 +2149,8 @@ class Client(OpenApiClient):
             body['generalInvoiceVOList'] = request.general_invoice_volist
         if not UtilClient.is_unset(request.invoice_key_volist):
             body['invoiceKeyVOList'] = request.invoice_key_volist
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2153,6 +2179,8 @@ class Client(OpenApiClient):
             body['generalInvoiceVOList'] = request.general_invoice_volist
         if not UtilClient.is_unset(request.invoice_key_volist):
             body['invoiceKeyVOList'] = request.invoice_key_volist
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2197,6 +2225,8 @@ class Client(OpenApiClient):
             body['invoiceCode'] = request.invoice_code
         if not UtilClient.is_unset(request.invoice_no):
             body['invoiceNo'] = request.invoice_no
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
         if not UtilClient.is_unset(request.receipt_code):
             body['receiptCode'] = request.receipt_code
         real_headers = {}
@@ -2227,6 +2257,8 @@ class Client(OpenApiClient):
             body['invoiceCode'] = request.invoice_code
         if not UtilClient.is_unset(request.invoice_no):
             body['invoiceNo'] = request.invoice_no
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
         if not UtilClient.is_unset(request.receipt_code):
             body['receiptCode'] = request.receipt_code
         real_headers = {}
@@ -2269,6 +2301,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.instance_id):
             query['instanceId'] = request.instance_id
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
         if not UtilClient.is_unset(request.status):
             query['status'] = request.status
         real_headers = {}
@@ -2295,6 +2329,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.instance_id):
             query['instanceId'] = request.instance_id
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
         if not UtilClient.is_unset(request.status):
             query['status'] = request.status
         real_headers = {}
@@ -2339,6 +2375,8 @@ class Client(OpenApiClient):
             body['deductStatus'] = request.deduct_status
         if not UtilClient.is_unset(request.invoice_key_volist):
             body['invoiceKeyVOList'] = request.invoice_key_volist
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
         if not UtilClient.is_unset(request.verify_status):
             body['verifyStatus'] = request.verify_status
         real_headers = {}
@@ -2367,6 +2405,8 @@ class Client(OpenApiClient):
             body['deductStatus'] = request.deduct_status
         if not UtilClient.is_unset(request.invoice_key_volist):
             body['invoiceKeyVOList'] = request.invoice_key_volist
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
         if not UtilClient.is_unset(request.verify_status):
             body['verifyStatus'] = request.verify_status
         real_headers = {}

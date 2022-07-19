@@ -829,9 +829,12 @@ class BatchAddInvoiceRequest(TeaModel):
     def __init__(
         self,
         general_invoice_volist: List[BatchAddInvoiceRequestGeneralInvoiceVOList] = None,
+        operator: str = None,
     ):
         # 发票模型
         self.general_invoice_volist = general_invoice_volist
+        # 操作员
+        self.operator = operator
 
     def validate(self):
         if self.general_invoice_volist:
@@ -849,6 +852,8 @@ class BatchAddInvoiceRequest(TeaModel):
         if self.general_invoice_volist is not None:
             for k in self.general_invoice_volist:
                 result['generalInvoiceVOList'].append(k.to_map() if k else None)
+        if self.operator is not None:
+            result['operator'] = self.operator
         return result
 
     def from_map(self, m: dict = None):
@@ -858,6 +863,8 @@ class BatchAddInvoiceRequest(TeaModel):
             for k in m.get('generalInvoiceVOList'):
                 temp_model = BatchAddInvoiceRequestGeneralInvoiceVOList()
                 self.general_invoice_volist.append(temp_model.from_map(k))
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
         return self
 
 
@@ -9490,21 +9497,36 @@ class UpdateInvoiceAbandonStatusRequest(TeaModel):
     def __init__(
         self,
         blue_general_invoice_vo: UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO = None,
-        invoice_code: str = None,
-        invoice_no: str = None,
+        blue_invoice_code: str = None,
+        blue_invoice_no: str = None,
+        blue_invoice_status: str = None,
+        operator: str = None,
         red_general_invoice_vo: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO = None,
-        status: str = None,
+        red_invoice_code: str = None,
+        red_invoice_no: str = None,
+        red_invoice_status: str = None,
+        target_invoice: str = None,
     ):
         # 发票全票面信息（蓝票）
         self.blue_general_invoice_vo = blue_general_invoice_vo
         # 发票编码（蓝票）
-        self.invoice_code = invoice_code
+        self.blue_invoice_code = blue_invoice_code
         # 发票号码（蓝票）
-        self.invoice_no = invoice_no
+        self.blue_invoice_no = blue_invoice_no
+        # 状态-红冲、废弃
+        self.blue_invoice_status = blue_invoice_status
+        # 操作员
+        self.operator = operator
         # 发票全票面信息（红票）
         self.red_general_invoice_vo = red_general_invoice_vo
-        # 状态-红冲、废弃
-        self.status = status
+        # 红字发票code
+        self.red_invoice_code = red_invoice_code
+        # 红字发票编码
+        self.red_invoice_no = red_invoice_no
+        # 红字发票状态
+        self.red_invoice_status = red_invoice_status
+        # 目标发票
+        self.target_invoice = target_invoice
 
     def validate(self):
         if self.blue_general_invoice_vo:
@@ -9520,14 +9542,24 @@ class UpdateInvoiceAbandonStatusRequest(TeaModel):
         result = dict()
         if self.blue_general_invoice_vo is not None:
             result['blueGeneralInvoiceVO'] = self.blue_general_invoice_vo.to_map()
-        if self.invoice_code is not None:
-            result['invoiceCode'] = self.invoice_code
-        if self.invoice_no is not None:
-            result['invoiceNo'] = self.invoice_no
+        if self.blue_invoice_code is not None:
+            result['blueInvoiceCode'] = self.blue_invoice_code
+        if self.blue_invoice_no is not None:
+            result['blueInvoiceNo'] = self.blue_invoice_no
+        if self.blue_invoice_status is not None:
+            result['blueInvoiceStatus'] = self.blue_invoice_status
+        if self.operator is not None:
+            result['operator'] = self.operator
         if self.red_general_invoice_vo is not None:
             result['redGeneralInvoiceVO'] = self.red_general_invoice_vo.to_map()
-        if self.status is not None:
-            result['status'] = self.status
+        if self.red_invoice_code is not None:
+            result['redInvoiceCode'] = self.red_invoice_code
+        if self.red_invoice_no is not None:
+            result['redInvoiceNo'] = self.red_invoice_no
+        if self.red_invoice_status is not None:
+            result['redInvoiceStatus'] = self.red_invoice_status
+        if self.target_invoice is not None:
+            result['targetInvoice'] = self.target_invoice
         return result
 
     def from_map(self, m: dict = None):
@@ -9535,15 +9567,25 @@ class UpdateInvoiceAbandonStatusRequest(TeaModel):
         if m.get('blueGeneralInvoiceVO') is not None:
             temp_model = UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO()
             self.blue_general_invoice_vo = temp_model.from_map(m['blueGeneralInvoiceVO'])
-        if m.get('invoiceCode') is not None:
-            self.invoice_code = m.get('invoiceCode')
-        if m.get('invoiceNo') is not None:
-            self.invoice_no = m.get('invoiceNo')
+        if m.get('blueInvoiceCode') is not None:
+            self.blue_invoice_code = m.get('blueInvoiceCode')
+        if m.get('blueInvoiceNo') is not None:
+            self.blue_invoice_no = m.get('blueInvoiceNo')
+        if m.get('blueInvoiceStatus') is not None:
+            self.blue_invoice_status = m.get('blueInvoiceStatus')
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
         if m.get('redGeneralInvoiceVO') is not None:
             temp_model = UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO()
             self.red_general_invoice_vo = temp_model.from_map(m['redGeneralInvoiceVO'])
-        if m.get('status') is not None:
-            self.status = m.get('status')
+        if m.get('redInvoiceCode') is not None:
+            self.red_invoice_code = m.get('redInvoiceCode')
+        if m.get('redInvoiceNo') is not None:
+            self.red_invoice_no = m.get('redInvoiceNo')
+        if m.get('redInvoiceStatus') is not None:
+            self.red_invoice_status = m.get('redInvoiceStatus')
+        if m.get('targetInvoice') is not None:
+            self.target_invoice = m.get('targetInvoice')
         return self
 
 
@@ -10473,6 +10515,7 @@ class UpdateInvoiceAccountPeriodRequest(TeaModel):
         account_period: str = None,
         general_invoice_volist: List[UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList] = None,
         invoice_key_volist: List[UpdateInvoiceAccountPeriodRequestInvoiceKeyVOList] = None,
+        operator: str = None,
     ):
         # 认证状态
         self.account_period = account_period
@@ -10480,6 +10523,8 @@ class UpdateInvoiceAccountPeriodRequest(TeaModel):
         self.general_invoice_volist = general_invoice_volist
         # 发票主键列表
         self.invoice_key_volist = invoice_key_volist
+        # 操作员
+        self.operator = operator
 
     def validate(self):
         if self.general_invoice_volist:
@@ -10507,6 +10552,8 @@ class UpdateInvoiceAccountPeriodRequest(TeaModel):
         if self.invoice_key_volist is not None:
             for k in self.invoice_key_volist:
                 result['invoiceKeyVOList'].append(k.to_map() if k else None)
+        if self.operator is not None:
+            result['operator'] = self.operator
         return result
 
     def from_map(self, m: dict = None):
@@ -10523,6 +10570,8 @@ class UpdateInvoiceAccountPeriodRequest(TeaModel):
             for k in m.get('invoiceKeyVOList'):
                 temp_model = UpdateInvoiceAccountPeriodRequestInvoiceKeyVOList()
                 self.invoice_key_volist.append(temp_model.from_map(k))
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
         return self
 
 
@@ -11416,6 +11465,7 @@ class UpdateInvoiceAndReceiptRelatedRequest(TeaModel):
         general_invoice_vo: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO = None,
         invoice_code: str = None,
         invoice_no: str = None,
+        operator: str = None,
         receipt_code: str = None,
     ):
         # 发票全票面信息
@@ -11424,6 +11474,8 @@ class UpdateInvoiceAndReceiptRelatedRequest(TeaModel):
         self.invoice_code = invoice_code
         # 发票号码
         self.invoice_no = invoice_no
+        # 操作员
+        self.operator = operator
         # 钉钉审批单号
         self.receipt_code = receipt_code
 
@@ -11443,6 +11495,8 @@ class UpdateInvoiceAndReceiptRelatedRequest(TeaModel):
             result['invoiceCode'] = self.invoice_code
         if self.invoice_no is not None:
             result['invoiceNo'] = self.invoice_no
+        if self.operator is not None:
+            result['operator'] = self.operator
         if self.receipt_code is not None:
             result['receiptCode'] = self.receipt_code
         return result
@@ -11456,6 +11510,8 @@ class UpdateInvoiceAndReceiptRelatedRequest(TeaModel):
             self.invoice_code = m.get('invoiceCode')
         if m.get('invoiceNo') is not None:
             self.invoice_no = m.get('invoiceNo')
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
         if m.get('receiptCode') is not None:
             self.receipt_code = m.get('receiptCode')
         return self
@@ -11562,10 +11618,14 @@ class UpdateInvoiceIgnoreStatusRequest(TeaModel):
     def __init__(
         self,
         instance_id: str = None,
+        operator: str = None,
         status: str = None,
     ):
         # 审批单id
         self.instance_id = instance_id
+        # 操作员
+        self.operator = operator
+        # 状态
         self.status = status
 
     def validate(self):
@@ -11579,6 +11639,8 @@ class UpdateInvoiceIgnoreStatusRequest(TeaModel):
         result = dict()
         if self.instance_id is not None:
             result['instanceId'] = self.instance_id
+        if self.operator is not None:
+            result['operator'] = self.operator
         if self.status is not None:
             result['status'] = self.status
         return result
@@ -11587,6 +11649,8 @@ class UpdateInvoiceIgnoreStatusRequest(TeaModel):
         m = m or dict()
         if m.get('instanceId') is not None:
             self.instance_id = m.get('instanceId')
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
         if m.get('status') is not None:
             self.status = m.get('status')
         return self
@@ -11729,6 +11793,7 @@ class UpdateInvoiceVerifyStatusRequest(TeaModel):
         self,
         deduct_status: str = None,
         invoice_key_volist: List[UpdateInvoiceVerifyStatusRequestInvoiceKeyVOList] = None,
+        operator: str = None,
         verify_status: str = None,
     ):
         # 抵扣状态
@@ -11736,6 +11801,8 @@ class UpdateInvoiceVerifyStatusRequest(TeaModel):
         self.deduct_status = deduct_status
         # 待更新
         self.invoice_key_volist = invoice_key_volist
+        # 操作员
+        self.operator = operator
         # 认证状态
         self.verify_status = verify_status
 
@@ -11757,6 +11824,8 @@ class UpdateInvoiceVerifyStatusRequest(TeaModel):
         if self.invoice_key_volist is not None:
             for k in self.invoice_key_volist:
                 result['invoiceKeyVOList'].append(k.to_map() if k else None)
+        if self.operator is not None:
+            result['operator'] = self.operator
         if self.verify_status is not None:
             result['verifyStatus'] = self.verify_status
         return result
@@ -11770,6 +11839,8 @@ class UpdateInvoiceVerifyStatusRequest(TeaModel):
             for k in m.get('invoiceKeyVOList'):
                 temp_model = UpdateInvoiceVerifyStatusRequestInvoiceKeyVOList()
                 self.invoice_key_volist.append(temp_model.from_map(k))
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
         if m.get('verifyStatus') is not None:
             self.verify_status = m.get('verifyStatus')
         return self

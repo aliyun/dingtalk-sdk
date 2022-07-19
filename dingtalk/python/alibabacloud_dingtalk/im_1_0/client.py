@@ -1361,6 +1361,8 @@ class Client(OpenApiClient):
             body['outTrackId'] = request.out_track_id
         if not UtilClient.is_unset(request.private_data):
             body['privateData'] = request.private_data
+        if not UtilClient.is_unset(request.pull_strategy):
+            body['pullStrategy'] = request.pull_strategy
         if not UtilClient.is_unset(request.receiver_user_id_list):
             body['receiverUserIdList'] = request.receiver_user_id_list
         if not UtilClient.is_unset(request.robot_code):
@@ -1405,6 +1407,8 @@ class Client(OpenApiClient):
             body['outTrackId'] = request.out_track_id
         if not UtilClient.is_unset(request.private_data):
             body['privateData'] = request.private_data
+        if not UtilClient.is_unset(request.pull_strategy):
+            body['pullStrategy'] = request.pull_strategy
         if not UtilClient.is_unset(request.receiver_user_id_list):
             body['receiverUserIdList'] = request.receiver_user_id_list
         if not UtilClient.is_unset(request.robot_code):
@@ -2229,12 +2233,18 @@ class Client(OpenApiClient):
     ) -> dingtalkim__1__0_models.TopboxCloseResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.conversation_type):
+            body['conversationType'] = request.conversation_type
         if not UtilClient.is_unset(request.cool_app_code):
             body['coolAppCode'] = request.cool_app_code
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
         if not UtilClient.is_unset(request.out_track_id):
             body['outTrackId'] = request.out_track_id
+        if not UtilClient.is_unset(request.receiver_user_id_list):
+            body['receiverUserIdList'] = request.receiver_user_id_list
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2257,12 +2267,18 @@ class Client(OpenApiClient):
     ) -> dingtalkim__1__0_models.TopboxCloseResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.conversation_type):
+            body['conversationType'] = request.conversation_type
         if not UtilClient.is_unset(request.cool_app_code):
             body['coolAppCode'] = request.cool_app_code
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
         if not UtilClient.is_unset(request.out_track_id):
             body['outTrackId'] = request.out_track_id
+        if not UtilClient.is_unset(request.receiver_user_id_list):
+            body['receiverUserIdList'] = request.receiver_user_id_list
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2301,6 +2317,8 @@ class Client(OpenApiClient):
     ) -> dingtalkim__1__0_models.TopboxOpenResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.conversation_type):
+            body['conversationType'] = request.conversation_type
         if not UtilClient.is_unset(request.cool_app_code):
             body['coolAppCode'] = request.cool_app_code
         if not UtilClient.is_unset(request.expired_time):
@@ -2313,6 +2331,8 @@ class Client(OpenApiClient):
             body['platforms'] = request.platforms
         if not UtilClient.is_unset(request.receiver_user_id_list):
             body['receiverUserIdList'] = request.receiver_user_id_list
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2335,6 +2355,8 @@ class Client(OpenApiClient):
     ) -> dingtalkim__1__0_models.TopboxOpenResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.conversation_type):
+            body['conversationType'] = request.conversation_type
         if not UtilClient.is_unset(request.cool_app_code):
             body['coolAppCode'] = request.cool_app_code
         if not UtilClient.is_unset(request.expired_time):
@@ -2347,6 +2369,8 @@ class Client(OpenApiClient):
             body['platforms'] = request.platforms
         if not UtilClient.is_unset(request.receiver_user_id_list):
             body['receiverUserIdList'] = request.receiver_user_id_list
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

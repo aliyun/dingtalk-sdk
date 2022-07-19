@@ -37,6 +37,39 @@ class CreateActionHeaders(TeaModel):
         return self
 
 
+class CreateActionRequestActionInfoInputMappingConfig(TeaModel):
+    def __init__(
+        self,
+        custom_schema_mapping: str = None,
+        rules: str = None,
+    ):
+        self.custom_schema_mapping = custom_schema_mapping
+        self.rules = rules
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.custom_schema_mapping is not None:
+            result['customSchemaMapping'] = self.custom_schema_mapping
+        if self.rules is not None:
+            result['rules'] = self.rules
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customSchemaMapping') is not None:
+            self.custom_schema_mapping = m.get('customSchemaMapping')
+        if m.get('rules') is not None:
+            self.rules = m.get('rules')
+        return self
+
+
 class CreateActionRequestActionInfoOutputDataRules(TeaModel):
     def __init__(
         self,
@@ -79,17 +112,52 @@ class CreateActionRequestActionInfoOutputDataRules(TeaModel):
         return self
 
 
+class CreateActionRequestActionInfoOutputMappingConfig(TeaModel):
+    def __init__(
+        self,
+        custom_schema_mapping: str = None,
+        rules: str = None,
+    ):
+        self.custom_schema_mapping = custom_schema_mapping
+        self.rules = rules
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.custom_schema_mapping is not None:
+            result['customSchemaMapping'] = self.custom_schema_mapping
+        if self.rules is not None:
+            result['rules'] = self.rules
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customSchemaMapping') is not None:
+            self.custom_schema_mapping = m.get('customSchemaMapping')
+        if m.get('rules') is not None:
+            self.rules = m.get('rules')
+        return self
+
+
 class CreateActionRequestActionInfo(TeaModel):
     def __init__(
         self,
         api_path: str = None,
         description: str = None,
         ding_connector_id: str = None,
+        input_mapping_config: CreateActionRequestActionInfoInputMappingConfig = None,
         input_schema: str = None,
         integrator_action_id: str = None,
         integrator_connector_id: str = None,
         name: str = None,
         output_data_rules: List[CreateActionRequestActionInfoOutputDataRules] = None,
+        output_mapping_config: CreateActionRequestActionInfoOutputMappingConfig = None,
         output_schema: str = None,
     ):
         # api请求url path，结合Connector上的apiDomain使用
@@ -98,6 +166,7 @@ class CreateActionRequestActionInfo(TeaModel):
         self.description = description
         # 连接平台连接器id
         self.ding_connector_id = ding_connector_id
+        self.input_mapping_config = input_mapping_config
         # 入参schema
         self.input_schema = input_schema
         # 服务商的执行事件Id
@@ -108,14 +177,19 @@ class CreateActionRequestActionInfo(TeaModel):
         self.name = name
         # 执行动作接口成功调用规则。
         self.output_data_rules = output_data_rules
+        self.output_mapping_config = output_mapping_config
         # 出参schema
         self.output_schema = output_schema
 
     def validate(self):
+        if self.input_mapping_config:
+            self.input_mapping_config.validate()
         if self.output_data_rules:
             for k in self.output_data_rules:
                 if k:
                     k.validate()
+        if self.output_mapping_config:
+            self.output_mapping_config.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -129,6 +203,8 @@ class CreateActionRequestActionInfo(TeaModel):
             result['description'] = self.description
         if self.ding_connector_id is not None:
             result['dingConnectorId'] = self.ding_connector_id
+        if self.input_mapping_config is not None:
+            result['inputMappingConfig'] = self.input_mapping_config.to_map()
         if self.input_schema is not None:
             result['inputSchema'] = self.input_schema
         if self.integrator_action_id is not None:
@@ -141,6 +217,8 @@ class CreateActionRequestActionInfo(TeaModel):
         if self.output_data_rules is not None:
             for k in self.output_data_rules:
                 result['outputDataRules'].append(k.to_map() if k else None)
+        if self.output_mapping_config is not None:
+            result['outputMappingConfig'] = self.output_mapping_config.to_map()
         if self.output_schema is not None:
             result['outputSchema'] = self.output_schema
         return result
@@ -153,6 +231,9 @@ class CreateActionRequestActionInfo(TeaModel):
             self.description = m.get('description')
         if m.get('dingConnectorId') is not None:
             self.ding_connector_id = m.get('dingConnectorId')
+        if m.get('inputMappingConfig') is not None:
+            temp_model = CreateActionRequestActionInfoInputMappingConfig()
+            self.input_mapping_config = temp_model.from_map(m['inputMappingConfig'])
         if m.get('inputSchema') is not None:
             self.input_schema = m.get('inputSchema')
         if m.get('integratorActionId') is not None:
@@ -166,6 +247,9 @@ class CreateActionRequestActionInfo(TeaModel):
             for k in m.get('outputDataRules'):
                 temp_model = CreateActionRequestActionInfoOutputDataRules()
                 self.output_data_rules.append(temp_model.from_map(k))
+        if m.get('outputMappingConfig') is not None:
+            temp_model = CreateActionRequestActionInfoOutputMappingConfig()
+            self.output_mapping_config = temp_model.from_map(m['outputMappingConfig'])
         if m.get('outputSchema') is not None:
             self.output_schema = m.get('outputSchema')
         return self
@@ -1641,6 +1725,39 @@ class UpdateActionHeaders(TeaModel):
         return self
 
 
+class UpdateActionRequestActionInfoInputMappingConfig(TeaModel):
+    def __init__(
+        self,
+        custom_schema_mapping: str = None,
+        rules: str = None,
+    ):
+        self.custom_schema_mapping = custom_schema_mapping
+        self.rules = rules
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.custom_schema_mapping is not None:
+            result['customSchemaMapping'] = self.custom_schema_mapping
+        if self.rules is not None:
+            result['rules'] = self.rules
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customSchemaMapping') is not None:
+            self.custom_schema_mapping = m.get('customSchemaMapping')
+        if m.get('rules') is not None:
+            self.rules = m.get('rules')
+        return self
+
+
 class UpdateActionRequestActionInfoOutputDataRules(TeaModel):
     def __init__(
         self,
@@ -1683,6 +1800,39 @@ class UpdateActionRequestActionInfoOutputDataRules(TeaModel):
         return self
 
 
+class UpdateActionRequestActionInfoOutputMappingConfig(TeaModel):
+    def __init__(
+        self,
+        custom_schema_mapping: str = None,
+        rules: str = None,
+    ):
+        self.custom_schema_mapping = custom_schema_mapping
+        self.rules = rules
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.custom_schema_mapping is not None:
+            result['customSchemaMapping'] = self.custom_schema_mapping
+        if self.rules is not None:
+            result['rules'] = self.rules
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customSchemaMapping') is not None:
+            self.custom_schema_mapping = m.get('customSchemaMapping')
+        if m.get('rules') is not None:
+            self.rules = m.get('rules')
+        return self
+
+
 class UpdateActionRequestActionInfo(TeaModel):
     def __init__(
         self,
@@ -1690,11 +1840,13 @@ class UpdateActionRequestActionInfo(TeaModel):
         description: str = None,
         ding_action_id: str = None,
         ding_connector_id: str = None,
+        input_mapping_config: UpdateActionRequestActionInfoInputMappingConfig = None,
         input_schema: str = None,
         integrator_action_id: str = None,
         integrator_connector_id: str = None,
         name: str = None,
         output_data_rules: List[UpdateActionRequestActionInfoOutputDataRules] = None,
+        output_mapping_config: UpdateActionRequestActionInfoOutputMappingConfig = None,
         output_schema: str = None,
     ):
         # api请求url path，结合Connector上的apiDomain使用
@@ -1705,6 +1857,7 @@ class UpdateActionRequestActionInfo(TeaModel):
         self.ding_action_id = ding_action_id
         # 连接平台连接器id
         self.ding_connector_id = ding_connector_id
+        self.input_mapping_config = input_mapping_config
         # 入参schema
         self.input_schema = input_schema
         # 服务商的执行事件Id
@@ -1715,14 +1868,19 @@ class UpdateActionRequestActionInfo(TeaModel):
         self.name = name
         # 执行动作接口成功调用规则。
         self.output_data_rules = output_data_rules
+        self.output_mapping_config = output_mapping_config
         # 出参schema
         self.output_schema = output_schema
 
     def validate(self):
+        if self.input_mapping_config:
+            self.input_mapping_config.validate()
         if self.output_data_rules:
             for k in self.output_data_rules:
                 if k:
                     k.validate()
+        if self.output_mapping_config:
+            self.output_mapping_config.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1738,6 +1896,8 @@ class UpdateActionRequestActionInfo(TeaModel):
             result['dingActionId'] = self.ding_action_id
         if self.ding_connector_id is not None:
             result['dingConnectorId'] = self.ding_connector_id
+        if self.input_mapping_config is not None:
+            result['inputMappingConfig'] = self.input_mapping_config.to_map()
         if self.input_schema is not None:
             result['inputSchema'] = self.input_schema
         if self.integrator_action_id is not None:
@@ -1750,6 +1910,8 @@ class UpdateActionRequestActionInfo(TeaModel):
         if self.output_data_rules is not None:
             for k in self.output_data_rules:
                 result['outputDataRules'].append(k.to_map() if k else None)
+        if self.output_mapping_config is not None:
+            result['outputMappingConfig'] = self.output_mapping_config.to_map()
         if self.output_schema is not None:
             result['outputSchema'] = self.output_schema
         return result
@@ -1764,6 +1926,9 @@ class UpdateActionRequestActionInfo(TeaModel):
             self.ding_action_id = m.get('dingActionId')
         if m.get('dingConnectorId') is not None:
             self.ding_connector_id = m.get('dingConnectorId')
+        if m.get('inputMappingConfig') is not None:
+            temp_model = UpdateActionRequestActionInfoInputMappingConfig()
+            self.input_mapping_config = temp_model.from_map(m['inputMappingConfig'])
         if m.get('inputSchema') is not None:
             self.input_schema = m.get('inputSchema')
         if m.get('integratorActionId') is not None:
@@ -1777,6 +1942,9 @@ class UpdateActionRequestActionInfo(TeaModel):
             for k in m.get('outputDataRules'):
                 temp_model = UpdateActionRequestActionInfoOutputDataRules()
                 self.output_data_rules.append(temp_model.from_map(k))
+        if m.get('outputMappingConfig') is not None:
+            temp_model = UpdateActionRequestActionInfoOutputMappingConfig()
+            self.output_mapping_config = temp_model.from_map(m['outputMappingConfig'])
         if m.get('outputSchema') is not None:
             self.output_schema = m.get('outputSchema')
         return self

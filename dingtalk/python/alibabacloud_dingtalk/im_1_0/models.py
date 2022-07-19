@@ -3016,6 +3016,7 @@ class InteractiveCardCreateInstanceRequest(TeaModel):
         open_conversation_id: str = None,
         out_track_id: str = None,
         private_data: Dict[str, PrivateDataValue] = None,
+        pull_strategy: bool = None,
         receiver_user_id_list: List[str] = None,
         robot_code: str = None,
         user_id_type: int = None,
@@ -3035,6 +3036,8 @@ class InteractiveCardCreateInstanceRequest(TeaModel):
         self.out_track_id = out_track_id
         # 指定用户可见的按钮列表（key：用户userId；value：用户数据）
         self.private_data = private_data
+        # 是否开启卡片纯拉模式
+        self.pull_strategy = pull_strategy
         # 接收人userId列表
         self.receiver_user_id_list = receiver_user_id_list
         # 【robotCode & chatBotId二选一必填】机器人编码（群模板机器人）
@@ -3074,6 +3077,8 @@ class InteractiveCardCreateInstanceRequest(TeaModel):
         if self.private_data is not None:
             for k, v in self.private_data.items():
                 result['privateData'][k] = v.to_map()
+        if self.pull_strategy is not None:
+            result['pullStrategy'] = self.pull_strategy
         if self.receiver_user_id_list is not None:
             result['receiverUserIdList'] = self.receiver_user_id_list
         if self.robot_code is not None:
@@ -3104,6 +3109,8 @@ class InteractiveCardCreateInstanceRequest(TeaModel):
             for k, v in m.get('privateData').items():
                 temp_model = PrivateDataValue()
                 self.private_data[k] = temp_model.from_map(v)
+        if m.get('pullStrategy') is not None:
+            self.pull_strategy = m.get('pullStrategy')
         if m.get('receiverUserIdList') is not None:
             self.receiver_user_id_list = m.get('receiverUserIdList')
         if m.get('robotCode') is not None:
@@ -5257,16 +5264,25 @@ class TopboxCloseHeaders(TeaModel):
 class TopboxCloseRequest(TeaModel):
     def __init__(
         self,
+        conversation_type: int = None,
         cool_app_code: str = None,
         open_conversation_id: str = None,
         out_track_id: str = None,
+        receiver_user_id_list: List[str] = None,
+        robot_code: str = None,
     ):
+        # 发送的会话类型：单聊-0, 群聊-1
+        self.conversation_type = conversation_type
         # 酷应用编码
         self.cool_app_code = cool_app_code
         # 接收卡片的群的openConversationId
         self.open_conversation_id = open_conversation_id
         # 唯一标识一张卡片的外部ID（卡片幂等ID，可用于更新或重复发送同一卡片到多个群会话）
         self.out_track_id = out_track_id
+        # 接收人的员工号列表
+        self.receiver_user_id_list = receiver_user_id_list
+        # 机器人编码
+        self.robot_code = robot_code
 
     def validate(self):
         pass
@@ -5277,22 +5293,34 @@ class TopboxCloseRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.conversation_type is not None:
+            result['conversationType'] = self.conversation_type
         if self.cool_app_code is not None:
             result['coolAppCode'] = self.cool_app_code
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
         if self.out_track_id is not None:
             result['outTrackId'] = self.out_track_id
+        if self.receiver_user_id_list is not None:
+            result['receiverUserIdList'] = self.receiver_user_id_list
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('conversationType') is not None:
+            self.conversation_type = m.get('conversationType')
         if m.get('coolAppCode') is not None:
             self.cool_app_code = m.get('coolAppCode')
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
         if m.get('outTrackId') is not None:
             self.out_track_id = m.get('outTrackId')
+        if m.get('receiverUserIdList') is not None:
+            self.receiver_user_id_list = m.get('receiverUserIdList')
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
         return self
 
 
@@ -5359,13 +5387,17 @@ class TopboxOpenHeaders(TeaModel):
 class TopboxOpenRequest(TeaModel):
     def __init__(
         self,
+        conversation_type: int = None,
         cool_app_code: str = None,
         expired_time: int = None,
         open_conversation_id: str = None,
         out_track_id: str = None,
         platforms: str = None,
         receiver_user_id_list: List[str] = None,
+        robot_code: str = None,
     ):
+        # 发送的会话类型：单聊-0, 群聊-1
+        self.conversation_type = conversation_type
         # 酷应用编码
         self.cool_app_code = cool_app_code
         # 吊顶的过期时间（绝对时间）
@@ -5378,6 +5410,8 @@ class TopboxOpenRequest(TeaModel):
         self.platforms = platforms
         # 接收人的员工号列表
         self.receiver_user_id_list = receiver_user_id_list
+        # 机器人编码
+        self.robot_code = robot_code
 
     def validate(self):
         pass
@@ -5388,6 +5422,8 @@ class TopboxOpenRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.conversation_type is not None:
+            result['conversationType'] = self.conversation_type
         if self.cool_app_code is not None:
             result['coolAppCode'] = self.cool_app_code
         if self.expired_time is not None:
@@ -5400,10 +5436,14 @@ class TopboxOpenRequest(TeaModel):
             result['platforms'] = self.platforms
         if self.receiver_user_id_list is not None:
             result['receiverUserIdList'] = self.receiver_user_id_list
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('conversationType') is not None:
+            self.conversation_type = m.get('conversationType')
         if m.get('coolAppCode') is not None:
             self.cool_app_code = m.get('coolAppCode')
         if m.get('expiredTime') is not None:
@@ -5416,6 +5456,8 @@ class TopboxOpenRequest(TeaModel):
             self.platforms = m.get('platforms')
         if m.get('receiverUserIdList') is not None:
             self.receiver_user_id_list = m.get('receiverUserIdList')
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
         return self
 
 
