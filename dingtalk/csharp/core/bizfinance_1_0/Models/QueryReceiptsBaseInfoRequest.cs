@@ -44,6 +44,13 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public string Title { get; set; }
 
+        /// <summary>
+        /// 凭证状态
+        /// </summary>
+        [NameInMap("voucherStatus")]
+        [Validation(Required=false)]
+        public string VoucherStatus { get; set; }
+
     }
 
 }
