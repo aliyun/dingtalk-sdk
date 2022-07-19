@@ -1610,6 +1610,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["privateData"] = request.PrivateData;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PullStrategy))
+            {
+                body["pullStrategy"] = request.PullStrategy;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUserIdList))
             {
                 body["receiverUserIdList"] = request.ReceiverUserIdList;
@@ -1674,6 +1678,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PrivateData))
             {
                 body["privateData"] = request.PrivateData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PullStrategy))
+            {
+                body["pullStrategy"] = request.PullStrategy;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUserIdList))
             {
@@ -2642,6 +2650,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ConversationType))
+            {
+                body["conversationType"] = request.ConversationType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoolAppCode))
             {
                 body["coolAppCode"] = request.CoolAppCode;
@@ -2653,6 +2665,14 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutTrackId))
             {
                 body["outTrackId"] = request.OutTrackId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUserIdList))
+            {
+                body["receiverUserIdList"] = request.ReceiverUserIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                body["robotCode"] = request.RobotCode;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -2675,6 +2695,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ConversationType))
+            {
+                body["conversationType"] = request.ConversationType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoolAppCode))
             {
                 body["coolAppCode"] = request.CoolAppCode;
@@ -2686,6 +2710,14 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutTrackId))
             {
                 body["outTrackId"] = request.OutTrackId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUserIdList))
+            {
+                body["receiverUserIdList"] = request.ReceiverUserIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                body["robotCode"] = request.RobotCode;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -2722,6 +2754,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ConversationType))
+            {
+                body["conversationType"] = request.ConversationType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoolAppCode))
             {
                 body["coolAppCode"] = request.CoolAppCode;
@@ -2745,6 +2781,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUserIdList))
             {
                 body["receiverUserIdList"] = request.ReceiverUserIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                body["robotCode"] = request.RobotCode;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -2767,6 +2807,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ConversationType))
+            {
+                body["conversationType"] = request.ConversationType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoolAppCode))
             {
                 body["coolAppCode"] = request.CoolAppCode;
@@ -2790,6 +2834,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUserIdList))
             {
                 body["receiverUserIdList"] = request.ReceiverUserIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                body["robotCode"] = request.RobotCode;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

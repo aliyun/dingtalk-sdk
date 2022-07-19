@@ -202,16 +202,30 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         /// <summary>
         /// 发票编码（蓝票）
         /// </summary>
-        [NameInMap("invoiceCode")]
+        [NameInMap("blueInvoiceCode")]
         [Validation(Required=false)]
-        public string InvoiceCode { get; set; }
+        public string BlueInvoiceCode { get; set; }
 
         /// <summary>
         /// 发票号码（蓝票）
         /// </summary>
-        [NameInMap("invoiceNo")]
+        [NameInMap("blueInvoiceNo")]
         [Validation(Required=false)]
-        public string InvoiceNo { get; set; }
+        public string BlueInvoiceNo { get; set; }
+
+        /// <summary>
+        /// 状态-红冲、废弃
+        /// </summary>
+        [NameInMap("blueInvoiceStatus")]
+        [Validation(Required=false)]
+        public string BlueInvoiceStatus { get; set; }
+
+        /// <summary>
+        /// 操作员
+        /// </summary>
+        [NameInMap("operator")]
+        [Validation(Required=false)]
+        public string Operator { get; set; }
 
         /// <summary>
         /// 发票全票面信息（红票）
@@ -404,11 +418,32 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         };
 
         /// <summary>
-        /// 状态-红冲、废弃
+        /// 红字发票code
         /// </summary>
-        [NameInMap("status")]
+        [NameInMap("redInvoiceCode")]
         [Validation(Required=false)]
-        public string Status { get; set; }
+        public string RedInvoiceCode { get; set; }
+
+        /// <summary>
+        /// 红字发票编码
+        /// </summary>
+        [NameInMap("redInvoiceNo")]
+        [Validation(Required=false)]
+        public string RedInvoiceNo { get; set; }
+
+        /// <summary>
+        /// 红字发票状态
+        /// </summary>
+        [NameInMap("redInvoiceStatus")]
+        [Validation(Required=false)]
+        public string RedInvoiceStatus { get; set; }
+
+        /// <summary>
+        /// 目标发票
+        /// </summary>
+        [NameInMap("targetInvoice")]
+        [Validation(Required=false)]
+        public string TargetInvoice { get; set; }
 
     }
 

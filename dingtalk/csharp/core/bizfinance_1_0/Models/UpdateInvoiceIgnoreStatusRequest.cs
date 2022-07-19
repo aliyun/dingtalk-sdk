@@ -16,6 +16,16 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public string InstanceId { get; set; }
 
+        /// <summary>
+        /// 操作员
+        /// </summary>
+        [NameInMap("operator")]
+        [Validation(Required=false)]
+        public string Operator { get; set; }
+
+        /// <summary>
+        /// 状态
+        /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]
         public string Status { get; set; }

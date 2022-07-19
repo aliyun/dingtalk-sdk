@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class TopboxCloseRequest : TeaModel {
         /// <summary>
+        /// 发送的会话类型：单聊-0, 群聊-1
+        /// </summary>
+        [NameInMap("conversationType")]
+        [Validation(Required=false)]
+        public int? ConversationType { get; set; }
+
+        /// <summary>
         /// 酷应用编码
         /// </summary>
         [NameInMap("coolAppCode")]
@@ -29,6 +36,20 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [NameInMap("outTrackId")]
         [Validation(Required=false)]
         public string OutTrackId { get; set; }
+
+        /// <summary>
+        /// 接收人的员工号列表
+        /// </summary>
+        [NameInMap("receiverUserIdList")]
+        [Validation(Required=false)]
+        public List<string> ReceiverUserIdList { get; set; }
+
+        /// <summary>
+        /// 机器人编码
+        /// </summary>
+        [NameInMap("robotCode")]
+        [Validation(Required=false)]
+        public string RobotCode { get; set; }
 
     }
 

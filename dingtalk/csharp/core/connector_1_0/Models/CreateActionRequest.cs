@@ -34,6 +34,18 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             [Validation(Required=false)]
             public string DingConnectorId { get; set; }
 
+            [NameInMap("inputMappingConfig")]
+            [Validation(Required=false)]
+            public CreateActionRequestActionInfoInputMappingConfig InputMappingConfig { get; set; }
+            public class CreateActionRequestActionInfoInputMappingConfig : TeaModel {
+                [NameInMap("customSchemaMapping")]
+                [Validation(Required=false)]
+                public string CustomSchemaMapping { get; set; }
+                [NameInMap("rules")]
+                [Validation(Required=false)]
+                public string Rules { get; set; }
+            };
+
             /// <summary>
             /// 入参schema
             /// </summary>
@@ -91,6 +103,18 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
                 public string PropertyPath { get; set; }
 
             }
+
+            [NameInMap("outputMappingConfig")]
+            [Validation(Required=false)]
+            public CreateActionRequestActionInfoOutputMappingConfig OutputMappingConfig { get; set; }
+            public class CreateActionRequestActionInfoOutputMappingConfig : TeaModel {
+                [NameInMap("customSchemaMapping")]
+                [Validation(Required=false)]
+                public string CustomSchemaMapping { get; set; }
+                [NameInMap("rules")]
+                [Validation(Required=false)]
+                public string Rules { get; set; }
+            };
 
             /// <summary>
             /// 出参schema

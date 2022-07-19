@@ -71,6 +71,13 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public Dictionary<string, PrivateDataValue> PrivateData { get; set; }
 
         /// <summary>
+        /// 是否开启卡片纯拉模式
+        /// </summary>
+        [NameInMap("pullStrategy")]
+        [Validation(Required=false)]
+        public bool? PullStrategy { get; set; }
+
+        /// <summary>
         /// 接收人userId列表
         /// </summary>
         [NameInMap("receiverUserIdList")]

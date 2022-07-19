@@ -41,6 +41,13 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         }
 
         /// <summary>
+        /// 操作员
+        /// </summary>
+        [NameInMap("operator")]
+        [Validation(Required=false)]
+        public string Operator { get; set; }
+
+        /// <summary>
         /// 认证状态
         /// </summary>
         [NameInMap("verifyStatus")]

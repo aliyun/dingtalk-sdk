@@ -48,6 +48,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 body["generalInvoiceVOList"] = request.GeneralInvoiceVOList;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -72,6 +76,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GeneralInvoiceVOList))
             {
                 body["generalInvoiceVOList"] = request.GeneralInvoiceVOList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -2264,21 +2272,41 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 body["blueGeneralInvoiceVO"] = request.BlueGeneralInvoiceVO;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceCode))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BlueInvoiceCode))
             {
-                body["invoiceCode"] = request.InvoiceCode;
+                body["blueInvoiceCode"] = request.BlueInvoiceCode;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceNo))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BlueInvoiceNo))
             {
-                body["invoiceNo"] = request.InvoiceNo;
+                body["blueInvoiceNo"] = request.BlueInvoiceNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BlueInvoiceStatus))
+            {
+                body["blueInvoiceStatus"] = request.BlueInvoiceStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedGeneralInvoiceVO.ToMap()))
             {
                 body["redGeneralInvoiceVO"] = request.RedGeneralInvoiceVO;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedInvoiceCode))
             {
-                body["status"] = request.Status;
+                body["redInvoiceCode"] = request.RedInvoiceCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedInvoiceNo))
+            {
+                body["redInvoiceNo"] = request.RedInvoiceNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedInvoiceStatus))
+            {
+                body["redInvoiceStatus"] = request.RedInvoiceStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetInvoice))
+            {
+                body["targetInvoice"] = request.TargetInvoice;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -2305,21 +2333,41 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 body["blueGeneralInvoiceVO"] = request.BlueGeneralInvoiceVO;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceCode))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BlueInvoiceCode))
             {
-                body["invoiceCode"] = request.InvoiceCode;
+                body["blueInvoiceCode"] = request.BlueInvoiceCode;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceNo))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BlueInvoiceNo))
             {
-                body["invoiceNo"] = request.InvoiceNo;
+                body["blueInvoiceNo"] = request.BlueInvoiceNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BlueInvoiceStatus))
+            {
+                body["blueInvoiceStatus"] = request.BlueInvoiceStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedGeneralInvoiceVO.ToMap()))
             {
                 body["redGeneralInvoiceVO"] = request.RedGeneralInvoiceVO;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedInvoiceCode))
             {
-                body["status"] = request.Status;
+                body["redInvoiceCode"] = request.RedInvoiceCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedInvoiceNo))
+            {
+                body["redInvoiceNo"] = request.RedInvoiceNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedInvoiceStatus))
+            {
+                body["redInvoiceStatus"] = request.RedInvoiceStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetInvoice))
+            {
+                body["targetInvoice"] = request.TargetInvoice;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -2368,6 +2416,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 body["invoiceKeyVOList"] = request.InvoiceKeyVOList;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -2400,6 +2452,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceKeyVOList))
             {
                 body["invoiceKeyVOList"] = request.InvoiceKeyVOList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -2448,6 +2504,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 body["invoiceNo"] = request.InvoiceNo;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiptCode))
             {
                 body["receiptCode"] = request.ReceiptCode;
@@ -2484,6 +2544,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceNo))
             {
                 body["invoiceNo"] = request.InvoiceNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiptCode))
             {
@@ -2528,6 +2592,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 query["instanceId"] = request.InstanceId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                query["operator"] = request.Operator;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
             {
                 query["status"] = request.Status;
@@ -2556,6 +2624,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InstanceId))
             {
                 query["instanceId"] = request.InstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                query["operator"] = request.Operator;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
             {
@@ -2604,6 +2676,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 body["invoiceKeyVOList"] = request.InvoiceKeyVOList;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VerifyStatus))
             {
                 body["verifyStatus"] = request.VerifyStatus;
@@ -2636,6 +2712,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceKeyVOList))
             {
                 body["invoiceKeyVOList"] = request.InvoiceKeyVOList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VerifyStatus))
             {

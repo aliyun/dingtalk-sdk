@@ -214,6 +214,13 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         public string InvoiceNo { get; set; }
 
         /// <summary>
+        /// 操作员
+        /// </summary>
+        [NameInMap("operator")]
+        [Validation(Required=false)]
+        public string Operator { get; set; }
+
+        /// <summary>
         /// 钉钉审批单号
         /// </summary>
         [NameInMap("receiptCode")]
