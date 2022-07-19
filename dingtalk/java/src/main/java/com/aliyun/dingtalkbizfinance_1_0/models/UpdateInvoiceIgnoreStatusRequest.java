@@ -8,6 +8,11 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
     @NameInMap("instanceId")
     public String instanceId;
 
+    // 操作员
+    @NameInMap("operator")
+    public String operator;
+
+    // 状态
     @NameInMap("status")
     public String status;
 
@@ -22,6 +27,14 @@ public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
     }
     public String getInstanceId() {
         return this.instanceId;
+    }
+
+    public UpdateInvoiceIgnoreStatusRequest setOperator(String operator) {
+        this.operator = operator;
+        return this;
+    }
+    public String getOperator() {
+        return this.operator;
     }
 
     public UpdateInvoiceIgnoreStatusRequest setStatus(String status) {

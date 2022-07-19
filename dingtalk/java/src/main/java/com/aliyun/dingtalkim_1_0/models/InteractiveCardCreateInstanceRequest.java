@@ -35,6 +35,10 @@ public class InteractiveCardCreateInstanceRequest extends TeaModel {
     @NameInMap("privateData")
     public java.util.Map<String, PrivateDataValue> privateData;
 
+    // 是否开启卡片纯拉模式
+    @NameInMap("pullStrategy")
+    public Boolean pullStrategy;
+
     // 接收人userId列表
     @NameInMap("receiverUserIdList")
     public java.util.List<String> receiverUserIdList;
@@ -114,6 +118,14 @@ public class InteractiveCardCreateInstanceRequest extends TeaModel {
     }
     public java.util.Map<String, PrivateDataValue> getPrivateData() {
         return this.privateData;
+    }
+
+    public InteractiveCardCreateInstanceRequest setPullStrategy(Boolean pullStrategy) {
+        this.pullStrategy = pullStrategy;
+        return this;
+    }
+    public Boolean getPullStrategy() {
+        return this.pullStrategy;
     }
 
     public InteractiveCardCreateInstanceRequest setReceiverUserIdList(java.util.List<String> receiverUserIdList) {

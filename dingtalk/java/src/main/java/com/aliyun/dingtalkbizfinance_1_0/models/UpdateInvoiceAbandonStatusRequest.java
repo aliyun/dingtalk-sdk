@@ -9,20 +9,40 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
     public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO blueGeneralInvoiceVO;
 
     // 发票编码（蓝票）
-    @NameInMap("invoiceCode")
-    public String invoiceCode;
+    @NameInMap("blueInvoiceCode")
+    public String blueInvoiceCode;
 
     // 发票号码（蓝票）
-    @NameInMap("invoiceNo")
-    public String invoiceNo;
+    @NameInMap("blueInvoiceNo")
+    public String blueInvoiceNo;
+
+    // 状态-红冲、废弃
+    @NameInMap("blueInvoiceStatus")
+    public String blueInvoiceStatus;
+
+    // 操作员
+    @NameInMap("operator")
+    public String operator;
 
     // 发票全票面信息（红票）
     @NameInMap("redGeneralInvoiceVO")
     public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO redGeneralInvoiceVO;
 
-    // 状态-红冲、废弃
-    @NameInMap("status")
-    public String status;
+    // 红字发票code
+    @NameInMap("redInvoiceCode")
+    public String redInvoiceCode;
+
+    // 红字发票编码
+    @NameInMap("redInvoiceNo")
+    public String redInvoiceNo;
+
+    // 红字发票状态
+    @NameInMap("redInvoiceStatus")
+    public String redInvoiceStatus;
+
+    // 目标发票
+    @NameInMap("targetInvoice")
+    public String targetInvoice;
 
     public static UpdateInvoiceAbandonStatusRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateInvoiceAbandonStatusRequest self = new UpdateInvoiceAbandonStatusRequest();
@@ -37,20 +57,36 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         return this.blueGeneralInvoiceVO;
     }
 
-    public UpdateInvoiceAbandonStatusRequest setInvoiceCode(String invoiceCode) {
-        this.invoiceCode = invoiceCode;
+    public UpdateInvoiceAbandonStatusRequest setBlueInvoiceCode(String blueInvoiceCode) {
+        this.blueInvoiceCode = blueInvoiceCode;
         return this;
     }
-    public String getInvoiceCode() {
-        return this.invoiceCode;
+    public String getBlueInvoiceCode() {
+        return this.blueInvoiceCode;
     }
 
-    public UpdateInvoiceAbandonStatusRequest setInvoiceNo(String invoiceNo) {
-        this.invoiceNo = invoiceNo;
+    public UpdateInvoiceAbandonStatusRequest setBlueInvoiceNo(String blueInvoiceNo) {
+        this.blueInvoiceNo = blueInvoiceNo;
         return this;
     }
-    public String getInvoiceNo() {
-        return this.invoiceNo;
+    public String getBlueInvoiceNo() {
+        return this.blueInvoiceNo;
+    }
+
+    public UpdateInvoiceAbandonStatusRequest setBlueInvoiceStatus(String blueInvoiceStatus) {
+        this.blueInvoiceStatus = blueInvoiceStatus;
+        return this;
+    }
+    public String getBlueInvoiceStatus() {
+        return this.blueInvoiceStatus;
+    }
+
+    public UpdateInvoiceAbandonStatusRequest setOperator(String operator) {
+        this.operator = operator;
+        return this;
+    }
+    public String getOperator() {
+        return this.operator;
     }
 
     public UpdateInvoiceAbandonStatusRequest setRedGeneralInvoiceVO(UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO redGeneralInvoiceVO) {
@@ -61,12 +97,36 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         return this.redGeneralInvoiceVO;
     }
 
-    public UpdateInvoiceAbandonStatusRequest setStatus(String status) {
-        this.status = status;
+    public UpdateInvoiceAbandonStatusRequest setRedInvoiceCode(String redInvoiceCode) {
+        this.redInvoiceCode = redInvoiceCode;
         return this;
     }
-    public String getStatus() {
-        return this.status;
+    public String getRedInvoiceCode() {
+        return this.redInvoiceCode;
+    }
+
+    public UpdateInvoiceAbandonStatusRequest setRedInvoiceNo(String redInvoiceNo) {
+        this.redInvoiceNo = redInvoiceNo;
+        return this;
+    }
+    public String getRedInvoiceNo() {
+        return this.redInvoiceNo;
+    }
+
+    public UpdateInvoiceAbandonStatusRequest setRedInvoiceStatus(String redInvoiceStatus) {
+        this.redInvoiceStatus = redInvoiceStatus;
+        return this;
+    }
+    public String getRedInvoiceStatus() {
+        return this.redInvoiceStatus;
+    }
+
+    public UpdateInvoiceAbandonStatusRequest setTargetInvoice(String targetInvoice) {
+        this.targetInvoice = targetInvoice;
+        return this;
+    }
+    public String getTargetInvoice() {
+        return this.targetInvoice;
     }
 
     public static class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList extends TeaModel {

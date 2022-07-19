@@ -4,6 +4,10 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class TopboxOpenRequest extends TeaModel {
+    // 发送的会话类型：单聊-0, 群聊-1
+    @NameInMap("conversationType")
+    public Integer conversationType;
+
     // 酷应用编码
     @NameInMap("coolAppCode")
     public String coolAppCode;
@@ -28,9 +32,21 @@ public class TopboxOpenRequest extends TeaModel {
     @NameInMap("receiverUserIdList")
     public java.util.List<String> receiverUserIdList;
 
+    // 机器人编码
+    @NameInMap("robotCode")
+    public String robotCode;
+
     public static TopboxOpenRequest build(java.util.Map<String, ?> map) throws Exception {
         TopboxOpenRequest self = new TopboxOpenRequest();
         return TeaModel.build(map, self);
+    }
+
+    public TopboxOpenRequest setConversationType(Integer conversationType) {
+        this.conversationType = conversationType;
+        return this;
+    }
+    public Integer getConversationType() {
+        return this.conversationType;
     }
 
     public TopboxOpenRequest setCoolAppCode(String coolAppCode) {
@@ -79,6 +95,14 @@ public class TopboxOpenRequest extends TeaModel {
     }
     public java.util.List<String> getReceiverUserIdList() {
         return this.receiverUserIdList;
+    }
+
+    public TopboxOpenRequest setRobotCode(String robotCode) {
+        this.robotCode = robotCode;
+        return this;
+    }
+    public String getRobotCode() {
+        return this.robotCode;
     }
 
 }

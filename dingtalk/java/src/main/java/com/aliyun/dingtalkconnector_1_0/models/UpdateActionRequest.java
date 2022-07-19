@@ -31,6 +31,36 @@ public class UpdateActionRequest extends TeaModel {
         return this.integratorFlag;
     }
 
+    public static class UpdateActionRequestActionInfoInputMappingConfig extends TeaModel {
+        @NameInMap("customSchemaMapping")
+        public String customSchemaMapping;
+
+        @NameInMap("rules")
+        public String rules;
+
+        public static UpdateActionRequestActionInfoInputMappingConfig build(java.util.Map<String, ?> map) throws Exception {
+            UpdateActionRequestActionInfoInputMappingConfig self = new UpdateActionRequestActionInfoInputMappingConfig();
+            return TeaModel.build(map, self);
+        }
+
+        public UpdateActionRequestActionInfoInputMappingConfig setCustomSchemaMapping(String customSchemaMapping) {
+            this.customSchemaMapping = customSchemaMapping;
+            return this;
+        }
+        public String getCustomSchemaMapping() {
+            return this.customSchemaMapping;
+        }
+
+        public UpdateActionRequestActionInfoInputMappingConfig setRules(String rules) {
+            this.rules = rules;
+            return this;
+        }
+        public String getRules() {
+            return this.rules;
+        }
+
+    }
+
     public static class UpdateActionRequestActionInfoOutputDataRules extends TeaModel {
         // 规则的预期值。
         @NameInMap("expectValue")
@@ -75,6 +105,36 @@ public class UpdateActionRequest extends TeaModel {
 
     }
 
+    public static class UpdateActionRequestActionInfoOutputMappingConfig extends TeaModel {
+        @NameInMap("customSchemaMapping")
+        public String customSchemaMapping;
+
+        @NameInMap("rules")
+        public String rules;
+
+        public static UpdateActionRequestActionInfoOutputMappingConfig build(java.util.Map<String, ?> map) throws Exception {
+            UpdateActionRequestActionInfoOutputMappingConfig self = new UpdateActionRequestActionInfoOutputMappingConfig();
+            return TeaModel.build(map, self);
+        }
+
+        public UpdateActionRequestActionInfoOutputMappingConfig setCustomSchemaMapping(String customSchemaMapping) {
+            this.customSchemaMapping = customSchemaMapping;
+            return this;
+        }
+        public String getCustomSchemaMapping() {
+            return this.customSchemaMapping;
+        }
+
+        public UpdateActionRequestActionInfoOutputMappingConfig setRules(String rules) {
+            this.rules = rules;
+            return this;
+        }
+        public String getRules() {
+            return this.rules;
+        }
+
+    }
+
     public static class UpdateActionRequestActionInfo extends TeaModel {
         // api请求url path，结合Connector上的apiDomain使用
         @NameInMap("apiPath")
@@ -91,6 +151,9 @@ public class UpdateActionRequest extends TeaModel {
         // 连接平台连接器id
         @NameInMap("dingConnectorId")
         public String dingConnectorId;
+
+        @NameInMap("inputMappingConfig")
+        public UpdateActionRequestActionInfoInputMappingConfig inputMappingConfig;
 
         // 入参schema
         @NameInMap("inputSchema")
@@ -111,6 +174,9 @@ public class UpdateActionRequest extends TeaModel {
         // 执行动作接口成功调用规则。
         @NameInMap("outputDataRules")
         public java.util.List<UpdateActionRequestActionInfoOutputDataRules> outputDataRules;
+
+        @NameInMap("outputMappingConfig")
+        public UpdateActionRequestActionInfoOutputMappingConfig outputMappingConfig;
 
         // 出参schema
         @NameInMap("outputSchema")
@@ -153,6 +219,14 @@ public class UpdateActionRequest extends TeaModel {
             return this.dingConnectorId;
         }
 
+        public UpdateActionRequestActionInfo setInputMappingConfig(UpdateActionRequestActionInfoInputMappingConfig inputMappingConfig) {
+            this.inputMappingConfig = inputMappingConfig;
+            return this;
+        }
+        public UpdateActionRequestActionInfoInputMappingConfig getInputMappingConfig() {
+            return this.inputMappingConfig;
+        }
+
         public UpdateActionRequestActionInfo setInputSchema(String inputSchema) {
             this.inputSchema = inputSchema;
             return this;
@@ -191,6 +265,14 @@ public class UpdateActionRequest extends TeaModel {
         }
         public java.util.List<UpdateActionRequestActionInfoOutputDataRules> getOutputDataRules() {
             return this.outputDataRules;
+        }
+
+        public UpdateActionRequestActionInfo setOutputMappingConfig(UpdateActionRequestActionInfoOutputMappingConfig outputMappingConfig) {
+            this.outputMappingConfig = outputMappingConfig;
+            return this;
+        }
+        public UpdateActionRequestActionInfoOutputMappingConfig getOutputMappingConfig() {
+            return this.outputMappingConfig;
         }
 
         public UpdateActionRequestActionInfo setOutputSchema(String outputSchema) {

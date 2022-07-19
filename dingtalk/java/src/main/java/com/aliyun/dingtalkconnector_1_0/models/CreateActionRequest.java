@@ -31,6 +31,36 @@ public class CreateActionRequest extends TeaModel {
         return this.integratorFlag;
     }
 
+    public static class CreateActionRequestActionInfoInputMappingConfig extends TeaModel {
+        @NameInMap("customSchemaMapping")
+        public String customSchemaMapping;
+
+        @NameInMap("rules")
+        public String rules;
+
+        public static CreateActionRequestActionInfoInputMappingConfig build(java.util.Map<String, ?> map) throws Exception {
+            CreateActionRequestActionInfoInputMappingConfig self = new CreateActionRequestActionInfoInputMappingConfig();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateActionRequestActionInfoInputMappingConfig setCustomSchemaMapping(String customSchemaMapping) {
+            this.customSchemaMapping = customSchemaMapping;
+            return this;
+        }
+        public String getCustomSchemaMapping() {
+            return this.customSchemaMapping;
+        }
+
+        public CreateActionRequestActionInfoInputMappingConfig setRules(String rules) {
+            this.rules = rules;
+            return this;
+        }
+        public String getRules() {
+            return this.rules;
+        }
+
+    }
+
     public static class CreateActionRequestActionInfoOutputDataRules extends TeaModel {
         // 规则的预期值。
         @NameInMap("expectValue")
@@ -75,6 +105,36 @@ public class CreateActionRequest extends TeaModel {
 
     }
 
+    public static class CreateActionRequestActionInfoOutputMappingConfig extends TeaModel {
+        @NameInMap("customSchemaMapping")
+        public String customSchemaMapping;
+
+        @NameInMap("rules")
+        public String rules;
+
+        public static CreateActionRequestActionInfoOutputMappingConfig build(java.util.Map<String, ?> map) throws Exception {
+            CreateActionRequestActionInfoOutputMappingConfig self = new CreateActionRequestActionInfoOutputMappingConfig();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateActionRequestActionInfoOutputMappingConfig setCustomSchemaMapping(String customSchemaMapping) {
+            this.customSchemaMapping = customSchemaMapping;
+            return this;
+        }
+        public String getCustomSchemaMapping() {
+            return this.customSchemaMapping;
+        }
+
+        public CreateActionRequestActionInfoOutputMappingConfig setRules(String rules) {
+            this.rules = rules;
+            return this;
+        }
+        public String getRules() {
+            return this.rules;
+        }
+
+    }
+
     public static class CreateActionRequestActionInfo extends TeaModel {
         // api请求url path，结合Connector上的apiDomain使用
         @NameInMap("apiPath")
@@ -87,6 +147,9 @@ public class CreateActionRequest extends TeaModel {
         // 连接平台连接器id
         @NameInMap("dingConnectorId")
         public String dingConnectorId;
+
+        @NameInMap("inputMappingConfig")
+        public CreateActionRequestActionInfoInputMappingConfig inputMappingConfig;
 
         // 入参schema
         @NameInMap("inputSchema")
@@ -107,6 +170,9 @@ public class CreateActionRequest extends TeaModel {
         // 执行动作接口成功调用规则。
         @NameInMap("outputDataRules")
         public java.util.List<CreateActionRequestActionInfoOutputDataRules> outputDataRules;
+
+        @NameInMap("outputMappingConfig")
+        public CreateActionRequestActionInfoOutputMappingConfig outputMappingConfig;
 
         // 出参schema
         @NameInMap("outputSchema")
@@ -139,6 +205,14 @@ public class CreateActionRequest extends TeaModel {
         }
         public String getDingConnectorId() {
             return this.dingConnectorId;
+        }
+
+        public CreateActionRequestActionInfo setInputMappingConfig(CreateActionRequestActionInfoInputMappingConfig inputMappingConfig) {
+            this.inputMappingConfig = inputMappingConfig;
+            return this;
+        }
+        public CreateActionRequestActionInfoInputMappingConfig getInputMappingConfig() {
+            return this.inputMappingConfig;
         }
 
         public CreateActionRequestActionInfo setInputSchema(String inputSchema) {
@@ -179,6 +253,14 @@ public class CreateActionRequest extends TeaModel {
         }
         public java.util.List<CreateActionRequestActionInfoOutputDataRules> getOutputDataRules() {
             return this.outputDataRules;
+        }
+
+        public CreateActionRequestActionInfo setOutputMappingConfig(CreateActionRequestActionInfoOutputMappingConfig outputMappingConfig) {
+            this.outputMappingConfig = outputMappingConfig;
+            return this;
+        }
+        public CreateActionRequestActionInfoOutputMappingConfig getOutputMappingConfig() {
+            return this.outputMappingConfig;
         }
 
         public CreateActionRequestActionInfo setOutputSchema(String outputSchema) {

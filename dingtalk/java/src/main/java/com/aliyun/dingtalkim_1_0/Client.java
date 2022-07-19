@@ -778,6 +778,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("privateData", request.privateData);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.pullStrategy)) {
+            body.put("pullStrategy", request.pullStrategy);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.receiverUserIdList)) {
             body.put("receiverUserIdList", request.receiverUserIdList);
         }
@@ -1245,6 +1249,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public TopboxCloseResponse topboxCloseWithOptions(TopboxCloseRequest request, TopboxCloseHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.conversationType)) {
+            body.put("conversationType", request.conversationType);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.coolAppCode)) {
             body.put("coolAppCode", request.coolAppCode);
         }
@@ -1255,6 +1263,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.outTrackId)) {
             body.put("outTrackId", request.outTrackId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.receiverUserIdList)) {
+            body.put("receiverUserIdList", request.receiverUserIdList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.robotCode)) {
+            body.put("robotCode", request.robotCode);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -1282,6 +1298,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public TopboxOpenResponse topboxOpenWithOptions(TopboxOpenRequest request, TopboxOpenHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.conversationType)) {
+            body.put("conversationType", request.conversationType);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.coolAppCode)) {
             body.put("coolAppCode", request.coolAppCode);
         }
@@ -1304,6 +1324,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.receiverUserIdList)) {
             body.put("receiverUserIdList", request.receiverUserIdList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.robotCode)) {
+            body.put("robotCode", request.robotCode);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();

@@ -16,6 +16,10 @@ public class UpdateInvoiceAccountPeriodRequest extends TeaModel {
     @NameInMap("invoiceKeyVOList")
     public java.util.List<UpdateInvoiceAccountPeriodRequestInvoiceKeyVOList> invoiceKeyVOList;
 
+    // 操作员
+    @NameInMap("operator")
+    public String operator;
+
     public static UpdateInvoiceAccountPeriodRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateInvoiceAccountPeriodRequest self = new UpdateInvoiceAccountPeriodRequest();
         return TeaModel.build(map, self);
@@ -43,6 +47,14 @@ public class UpdateInvoiceAccountPeriodRequest extends TeaModel {
     }
     public java.util.List<UpdateInvoiceAccountPeriodRequestInvoiceKeyVOList> getInvoiceKeyVOList() {
         return this.invoiceKeyVOList;
+    }
+
+    public UpdateInvoiceAccountPeriodRequest setOperator(String operator) {
+        this.operator = operator;
+        return this;
+    }
+    public String getOperator() {
+        return this.operator;
     }
 
     public static class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList extends TeaModel {

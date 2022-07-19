@@ -34,6 +34,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("generalInvoiceVOList", request.generalInvoiceVOList);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.operator)) {
+            body.put("operator", request.operator);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -1055,20 +1059,40 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("blueGeneralInvoiceVO", request.blueGeneralInvoiceVO);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.invoiceCode)) {
-            body.put("invoiceCode", request.invoiceCode);
+        if (!com.aliyun.teautil.Common.isUnset(request.blueInvoiceCode)) {
+            body.put("blueInvoiceCode", request.blueInvoiceCode);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.invoiceNo)) {
-            body.put("invoiceNo", request.invoiceNo);
+        if (!com.aliyun.teautil.Common.isUnset(request.blueInvoiceNo)) {
+            body.put("blueInvoiceNo", request.blueInvoiceNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.blueInvoiceStatus)) {
+            body.put("blueInvoiceStatus", request.blueInvoiceStatus);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operator)) {
+            body.put("operator", request.operator);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.redGeneralInvoiceVO))) {
             body.put("redGeneralInvoiceVO", request.redGeneralInvoiceVO);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.status)) {
-            body.put("status", request.status);
+        if (!com.aliyun.teautil.Common.isUnset(request.redInvoiceCode)) {
+            body.put("redInvoiceCode", request.redInvoiceCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.redInvoiceNo)) {
+            body.put("redInvoiceNo", request.redInvoiceNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.redInvoiceStatus)) {
+            body.put("redInvoiceStatus", request.redInvoiceStatus);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetInvoice)) {
+            body.put("targetInvoice", request.targetInvoice);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -1108,6 +1132,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("invoiceKeyVOList", request.invoiceKeyVOList);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.operator)) {
+            body.put("operator", request.operator);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -1145,6 +1173,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("invoiceNo", request.invoiceNo);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.operator)) {
+            body.put("operator", request.operator);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.receiptCode)) {
             body.put("receiptCode", request.receiptCode);
         }
@@ -1176,6 +1208,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.instanceId)) {
             query.put("instanceId", request.instanceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operator)) {
+            query.put("operator", request.operator);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.status)) {
@@ -1213,6 +1249,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.invoiceKeyVOList)) {
             body.put("invoiceKeyVOList", request.invoiceKeyVOList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operator)) {
+            body.put("operator", request.operator);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.verifyStatus)) {

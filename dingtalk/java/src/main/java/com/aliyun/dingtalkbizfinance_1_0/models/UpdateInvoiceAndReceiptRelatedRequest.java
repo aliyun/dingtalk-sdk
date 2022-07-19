@@ -16,6 +16,10 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
     @NameInMap("invoiceNo")
     public String invoiceNo;
 
+    // 操作员
+    @NameInMap("operator")
+    public String operator;
+
     // 钉钉审批单号
     @NameInMap("receiptCode")
     public String receiptCode;
@@ -47,6 +51,14 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
     }
     public String getInvoiceNo() {
         return this.invoiceNo;
+    }
+
+    public UpdateInvoiceAndReceiptRelatedRequest setOperator(String operator) {
+        this.operator = operator;
+        return this;
+    }
+    public String getOperator() {
+        return this.operator;
     }
 
     public UpdateInvoiceAndReceiptRelatedRequest setReceiptCode(String receiptCode) {

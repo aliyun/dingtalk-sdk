@@ -4,6 +4,10 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class TopboxCloseRequest extends TeaModel {
+    // 发送的会话类型：单聊-0, 群聊-1
+    @NameInMap("conversationType")
+    public Integer conversationType;
+
     // 酷应用编码
     @NameInMap("coolAppCode")
     public String coolAppCode;
@@ -16,9 +20,25 @@ public class TopboxCloseRequest extends TeaModel {
     @NameInMap("outTrackId")
     public String outTrackId;
 
+    // 接收人的员工号列表
+    @NameInMap("receiverUserIdList")
+    public java.util.List<String> receiverUserIdList;
+
+    // 机器人编码
+    @NameInMap("robotCode")
+    public String robotCode;
+
     public static TopboxCloseRequest build(java.util.Map<String, ?> map) throws Exception {
         TopboxCloseRequest self = new TopboxCloseRequest();
         return TeaModel.build(map, self);
+    }
+
+    public TopboxCloseRequest setConversationType(Integer conversationType) {
+        this.conversationType = conversationType;
+        return this;
+    }
+    public Integer getConversationType() {
+        return this.conversationType;
     }
 
     public TopboxCloseRequest setCoolAppCode(String coolAppCode) {
@@ -43,6 +63,22 @@ public class TopboxCloseRequest extends TeaModel {
     }
     public String getOutTrackId() {
         return this.outTrackId;
+    }
+
+    public TopboxCloseRequest setReceiverUserIdList(java.util.List<String> receiverUserIdList) {
+        this.receiverUserIdList = receiverUserIdList;
+        return this;
+    }
+    public java.util.List<String> getReceiverUserIdList() {
+        return this.receiverUserIdList;
+    }
+
+    public TopboxCloseRequest setRobotCode(String robotCode) {
+        this.robotCode = robotCode;
+        return this;
+    }
+    public String getRobotCode() {
+        return this.robotCode;
     }
 
 }

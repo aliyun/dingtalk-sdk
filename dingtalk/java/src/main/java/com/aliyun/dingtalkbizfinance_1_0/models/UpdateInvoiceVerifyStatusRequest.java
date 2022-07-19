@@ -13,6 +13,10 @@ public class UpdateInvoiceVerifyStatusRequest extends TeaModel {
     @NameInMap("invoiceKeyVOList")
     public java.util.List<UpdateInvoiceVerifyStatusRequestInvoiceKeyVOList> invoiceKeyVOList;
 
+    // 操作员
+    @NameInMap("operator")
+    public String operator;
+
     // 认证状态
     @NameInMap("verifyStatus")
     public String verifyStatus;
@@ -36,6 +40,14 @@ public class UpdateInvoiceVerifyStatusRequest extends TeaModel {
     }
     public java.util.List<UpdateInvoiceVerifyStatusRequestInvoiceKeyVOList> getInvoiceKeyVOList() {
         return this.invoiceKeyVOList;
+    }
+
+    public UpdateInvoiceVerifyStatusRequest setOperator(String operator) {
+        this.operator = operator;
+        return this;
+    }
+    public String getOperator() {
+        return this.operator;
     }
 
     public UpdateInvoiceVerifyStatusRequest setVerifyStatus(String verifyStatus) {
