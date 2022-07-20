@@ -2486,10 +2486,12 @@ export class UpdateApplyReceiptAndInvoiceRelatedHeaders extends $tea.Model {
 export class UpdateApplyReceiptAndInvoiceRelatedRequest extends $tea.Model {
   generalInvoiceVOList?: UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList[];
   instanceId?: string;
+  operator?: string;
   static names(): { [key: string]: string } {
     return {
       generalInvoiceVOList: 'generalInvoiceVOList',
       instanceId: 'instanceId',
+      operator: 'operator',
     };
   }
 
@@ -2497,6 +2499,7 @@ export class UpdateApplyReceiptAndInvoiceRelatedRequest extends $tea.Model {
     return {
       generalInvoiceVOList: { 'type': 'array', 'itemType': UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList },
       instanceId: 'string',
+      operator: 'string',
     };
   }
 
@@ -2506,16 +2509,19 @@ export class UpdateApplyReceiptAndInvoiceRelatedRequest extends $tea.Model {
 }
 
 export class UpdateApplyReceiptAndInvoiceRelatedResponseBody extends $tea.Model {
-  invoiceKeyVOList?: UpdateApplyReceiptAndInvoiceRelatedResponseBodyInvoiceKeyVOList[];
+  batchUpdateInvoiceResponse?: UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse;
+  success?: boolean;
   static names(): { [key: string]: string } {
     return {
-      invoiceKeyVOList: 'invoiceKeyVOList',
+      batchUpdateInvoiceResponse: 'batchUpdateInvoiceResponse',
+      success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      invoiceKeyVOList: { 'type': 'array', 'itemType': UpdateApplyReceiptAndInvoiceRelatedResponseBodyInvoiceKeyVOList },
+      batchUpdateInvoiceResponse: UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse,
+      success: 'boolean',
     };
   }
 
@@ -4588,26 +4594,172 @@ export class QueryReceiptForInvoiceResponseBodyList extends $tea.Model {
   }
 }
 
-export class QueryReceiptsBaseInfoResponseBodyList extends $tea.Model {
-  appId?: string;
-  data?: string;
-  modelId?: string;
-  source?: string;
+export class QueryReceiptsBaseInfoResponseBodyListCreator extends $tea.Model {
+  avatarUrl?: string;
+  nick?: string;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
-      appId: 'appId',
-      data: 'data',
-      modelId: 'modelId',
-      source: 'source',
+      avatarUrl: 'avatarUrl',
+      nick: 'nick',
+      userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      appId: 'string',
-      data: 'string',
+      avatarUrl: 'string',
+      nick: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReceiptsBaseInfoResponseBodyListCustomer extends $tea.Model {
+  code?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReceiptsBaseInfoResponseBodyListPrincipal extends $tea.Model {
+  avatarUrl?: string;
+  nick?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      avatarUrl: 'avatarUrl',
+      nick: 'nick',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      avatarUrl: 'string',
+      nick: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReceiptsBaseInfoResponseBodyListProject extends $tea.Model {
+  code?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReceiptsBaseInfoResponseBodyListSupplier extends $tea.Model {
+  code?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReceiptsBaseInfoResponseBodyList extends $tea.Model {
+  amount?: string;
+  creator?: QueryReceiptsBaseInfoResponseBodyListCreator;
+  customer?: QueryReceiptsBaseInfoResponseBodyListCustomer;
+  modelId?: string;
+  principal?: QueryReceiptsBaseInfoResponseBodyListPrincipal;
+  project?: QueryReceiptsBaseInfoResponseBodyListProject;
+  receiptId?: string;
+  recordTime?: string;
+  remark?: string;
+  source?: string;
+  status?: string;
+  supplier?: QueryReceiptsBaseInfoResponseBodyListSupplier;
+  title?: string;
+  voucherStatus?: string;
+  static names(): { [key: string]: string } {
+    return {
+      amount: 'amount',
+      creator: 'creator',
+      customer: 'customer',
+      modelId: 'modelId',
+      principal: 'principal',
+      project: 'project',
+      receiptId: 'receiptId',
+      recordTime: 'recordTime',
+      remark: 'remark',
+      source: 'source',
+      status: 'status',
+      supplier: 'supplier',
+      title: 'title',
+      voucherStatus: 'voucherStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      amount: 'string',
+      creator: QueryReceiptsBaseInfoResponseBodyListCreator,
+      customer: QueryReceiptsBaseInfoResponseBodyListCustomer,
       modelId: 'string',
+      principal: QueryReceiptsBaseInfoResponseBodyListPrincipal,
+      project: QueryReceiptsBaseInfoResponseBodyListProject,
+      receiptId: 'string',
+      recordTime: 'string',
+      remark: 'string',
       source: 'string',
+      status: 'string',
+      supplier: QueryReceiptsBaseInfoResponseBodyListSupplier,
+      title: 'string',
+      voucherStatus: 'string',
     };
   }
 
@@ -5037,7 +5189,7 @@ export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList exte
   }
 }
 
-export class UpdateApplyReceiptAndInvoiceRelatedResponseBodyInvoiceKeyVOList extends $tea.Model {
+export class UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList extends $tea.Model {
   invoiceCode?: string;
   invoiceNo?: string;
   static names(): { [key: string]: string } {
@@ -5051,6 +5203,25 @@ export class UpdateApplyReceiptAndInvoiceRelatedResponseBodyInvoiceKeyVOList ext
     return {
       invoiceCode: 'string',
       invoiceNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse extends $tea.Model {
+  invoiceKeyVOList?: UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList[];
+  static names(): { [key: string]: string } {
+    return {
+      invoiceKeyVOList: 'invoiceKeyVOList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      invoiceKeyVOList: { 'type': 'array', 'itemType': UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList },
     };
   }
 
@@ -7615,6 +7786,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.instanceId)) {
       body["instanceId"] = request.instanceId;
+    }
+
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
     }
 
     let realHeaders : {[key: string ]: string} = { };
