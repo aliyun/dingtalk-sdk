@@ -4,19 +4,28 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateApplyReceiptAndInvoiceRelatedResponseBody\invoiceKeyVOList;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateApplyReceiptAndInvoiceRelatedResponseBody\batchUpdateInvoiceResponse;
 use AlibabaCloud\Tea\Model;
 
 class UpdateApplyReceiptAndInvoiceRelatedResponseBody extends Model
 {
     /**
-     * @description 失败发票列表list
+     * @description 批量更新发票返回结果
      *
-     * @var invoiceKeyVOList[]
+     *
+     * @var batchUpdateInvoiceResponse
      */
-    public $invoiceKeyVOList;
+    public $batchUpdateInvoiceResponse;
+
+    /**
+     * @description 是否成功
+     *
+     * @var bool
+     */
+    public $success;
     protected $_name = [
-        'invoiceKeyVOList' => 'invoiceKeyVOList',
+        'batchUpdateInvoiceResponse' => 'batchUpdateInvoiceResponse',
+        'success'                    => 'success',
     ];
 
     public function validate()
@@ -26,14 +35,11 @@ class UpdateApplyReceiptAndInvoiceRelatedResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->invoiceKeyVOList) {
-            $res['invoiceKeyVOList'] = [];
-            if (null !== $this->invoiceKeyVOList && \is_array($this->invoiceKeyVOList)) {
-                $n = 0;
-                foreach ($this->invoiceKeyVOList as $item) {
-                    $res['invoiceKeyVOList'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
+        if (null !== $this->batchUpdateInvoiceResponse) {
+            $res['batchUpdateInvoiceResponse'] = null !== $this->batchUpdateInvoiceResponse ? $this->batchUpdateInvoiceResponse->toMap() : null;
+        }
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
         }
 
         return $res;
@@ -47,14 +53,11 @@ class UpdateApplyReceiptAndInvoiceRelatedResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['invoiceKeyVOList'])) {
-            if (!empty($map['invoiceKeyVOList'])) {
-                $model->invoiceKeyVOList = [];
-                $n                       = 0;
-                foreach ($map['invoiceKeyVOList'] as $item) {
-                    $model->invoiceKeyVOList[$n++] = null !== $item ? invoiceKeyVOList::fromMap($item) : $item;
-                }
-            }
+        if (isset($map['batchUpdateInvoiceResponse'])) {
+            $model->batchUpdateInvoiceResponse = batchUpdateInvoiceResponse::fromMap($map['batchUpdateInvoiceResponse']);
+        }
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
         }
 
         return $model;

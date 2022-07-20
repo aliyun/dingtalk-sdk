@@ -2,21 +2,21 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateApplyReceiptAndInvoiceRelatedResponseBody;
+namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateApplyReceiptAndInvoiceRelatedResponseBody\batchUpdateInvoiceResponse;
 
 use AlibabaCloud\Tea\Model;
 
 class invoiceKeyVOList extends Model
 {
     /**
-     * @description 失败发票列表list
+     * @description 发票编码
      *
      * @var string
      */
     public $invoiceCode;
 
     /**
-     * @description 失败发票列表list
+     * @description 发票号码
      *
      * @var string
      */

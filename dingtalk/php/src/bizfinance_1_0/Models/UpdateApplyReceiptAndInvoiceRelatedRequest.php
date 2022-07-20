@@ -22,9 +22,17 @@ class UpdateApplyReceiptAndInvoiceRelatedRequest extends Model
      * @var string
      */
     public $instanceId;
+
+    /**
+     * @description 操作员
+     *
+     * @var string
+     */
+    public $operator;
     protected $_name = [
         'generalInvoiceVOList' => 'generalInvoiceVOList',
         'instanceId'           => 'instanceId',
+        'operator'             => 'operator',
     ];
 
     public function validate()
@@ -45,6 +53,9 @@ class UpdateApplyReceiptAndInvoiceRelatedRequest extends Model
         }
         if (null !== $this->instanceId) {
             $res['instanceId'] = $this->instanceId;
+        }
+        if (null !== $this->operator) {
+            $res['operator'] = $this->operator;
         }
 
         return $res;
@@ -69,6 +80,9 @@ class UpdateApplyReceiptAndInvoiceRelatedRequest extends Model
         }
         if (isset($map['instanceId'])) {
             $model->instanceId = $map['instanceId'];
+        }
+        if (isset($map['operator'])) {
+            $model->operator = $map['operator'];
         }
 
         return $model;
