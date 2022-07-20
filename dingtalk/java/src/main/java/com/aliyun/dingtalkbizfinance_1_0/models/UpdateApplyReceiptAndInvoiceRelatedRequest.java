@@ -12,6 +12,10 @@ public class UpdateApplyReceiptAndInvoiceRelatedRequest extends TeaModel {
     @NameInMap("instanceId")
     public String instanceId;
 
+    // 操作员
+    @NameInMap("operator")
+    public String operator;
+
     public static UpdateApplyReceiptAndInvoiceRelatedRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateApplyReceiptAndInvoiceRelatedRequest self = new UpdateApplyReceiptAndInvoiceRelatedRequest();
         return TeaModel.build(map, self);
@@ -31,6 +35,14 @@ public class UpdateApplyReceiptAndInvoiceRelatedRequest extends TeaModel {
     }
     public String getInstanceId() {
         return this.instanceId;
+    }
+
+    public UpdateApplyReceiptAndInvoiceRelatedRequest setOperator(String operator) {
+        this.operator = operator;
+        return this;
+    }
+    public String getOperator() {
+        return this.operator;
     }
 
     public static class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList extends TeaModel {

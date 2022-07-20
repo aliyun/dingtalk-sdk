@@ -45,42 +45,263 @@ public class QueryReceiptsBaseInfoResponseBody extends TeaModel {
         return this.totalCount;
     }
 
+    public static class QueryReceiptsBaseInfoResponseBodyListCreator extends TeaModel {
+        // 创建人头像
+        @NameInMap("avatarUrl")
+        public String avatarUrl;
+
+        // 创建人昵称
+        @NameInMap("nick")
+        public String nick;
+
+        // 创建人工号
+        @NameInMap("userId")
+        public String userId;
+
+        public static QueryReceiptsBaseInfoResponseBodyListCreator build(java.util.Map<String, ?> map) throws Exception {
+            QueryReceiptsBaseInfoResponseBodyListCreator self = new QueryReceiptsBaseInfoResponseBodyListCreator();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyListCreator setAvatarUrl(String avatarUrl) {
+            this.avatarUrl = avatarUrl;
+            return this;
+        }
+        public String getAvatarUrl() {
+            return this.avatarUrl;
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyListCreator setNick(String nick) {
+            this.nick = nick;
+            return this;
+        }
+        public String getNick() {
+            return this.nick;
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyListCreator setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
+        }
+
+    }
+
+    public static class QueryReceiptsBaseInfoResponseBodyListCustomer extends TeaModel {
+        // 客户code
+        @NameInMap("code")
+        public String code;
+
+        // 客户名字
+        @NameInMap("name")
+        public String name;
+
+        public static QueryReceiptsBaseInfoResponseBodyListCustomer build(java.util.Map<String, ?> map) throws Exception {
+            QueryReceiptsBaseInfoResponseBodyListCustomer self = new QueryReceiptsBaseInfoResponseBodyListCustomer();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyListCustomer setCode(String code) {
+            this.code = code;
+            return this;
+        }
+        public String getCode() {
+            return this.code;
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyListCustomer setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+    }
+
+    public static class QueryReceiptsBaseInfoResponseBodyListPrincipal extends TeaModel {
+        @NameInMap("avatarUrl")
+        public String avatarUrl;
+
+        @NameInMap("nick")
+        public String nick;
+
+        @NameInMap("userId")
+        public String userId;
+
+        public static QueryReceiptsBaseInfoResponseBodyListPrincipal build(java.util.Map<String, ?> map) throws Exception {
+            QueryReceiptsBaseInfoResponseBodyListPrincipal self = new QueryReceiptsBaseInfoResponseBodyListPrincipal();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyListPrincipal setAvatarUrl(String avatarUrl) {
+            this.avatarUrl = avatarUrl;
+            return this;
+        }
+        public String getAvatarUrl() {
+            return this.avatarUrl;
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyListPrincipal setNick(String nick) {
+            this.nick = nick;
+            return this;
+        }
+        public String getNick() {
+            return this.nick;
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyListPrincipal setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
+        }
+
+    }
+
+    public static class QueryReceiptsBaseInfoResponseBodyListProject extends TeaModel {
+        @NameInMap("code")
+        public String code;
+
+        @NameInMap("name")
+        public String name;
+
+        public static QueryReceiptsBaseInfoResponseBodyListProject build(java.util.Map<String, ?> map) throws Exception {
+            QueryReceiptsBaseInfoResponseBodyListProject self = new QueryReceiptsBaseInfoResponseBodyListProject();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyListProject setCode(String code) {
+            this.code = code;
+            return this;
+        }
+        public String getCode() {
+            return this.code;
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyListProject setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+    }
+
+    public static class QueryReceiptsBaseInfoResponseBodyListSupplier extends TeaModel {
+        @NameInMap("code")
+        public String code;
+
+        @NameInMap("name")
+        public String name;
+
+        public static QueryReceiptsBaseInfoResponseBodyListSupplier build(java.util.Map<String, ?> map) throws Exception {
+            QueryReceiptsBaseInfoResponseBodyListSupplier self = new QueryReceiptsBaseInfoResponseBodyListSupplier();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyListSupplier setCode(String code) {
+            this.code = code;
+            return this;
+        }
+        public String getCode() {
+            return this.code;
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyListSupplier setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+    }
+
     public static class QueryReceiptsBaseInfoResponseBodyList extends TeaModel {
-        // 应用id
-        @NameInMap("appId")
-        public String appId;
+        // 金额
+        @NameInMap("amount")
+        public String amount;
 
-        // 主数据
-        @NameInMap("data")
-        public String data;
+        // 创建人
+        @NameInMap("creator")
+        public QueryReceiptsBaseInfoResponseBodyListCreator creator;
 
-        // 主数据modelID
+        // 客户
+        @NameInMap("customer")
+        public QueryReceiptsBaseInfoResponseBodyListCustomer customer;
+
+        // 主数据modelId
         @NameInMap("modelId")
         public String modelId;
+
+        @NameInMap("principal")
+        public QueryReceiptsBaseInfoResponseBodyListPrincipal principal;
+
+        @NameInMap("project")
+        public QueryReceiptsBaseInfoResponseBodyListProject project;
+
+        // 单据ID
+        @NameInMap("receiptId")
+        public String receiptId;
+
+        // 记录时间，默认为审批通过时间
+        @NameInMap("recordTime")
+        public String recordTime;
+
+        // 备注
+        @NameInMap("remark")
+        public String remark;
 
         // 来源
         @NameInMap("source")
         public String source;
+
+        // 状态 agree running
+        @NameInMap("status")
+        public String status;
+
+        @NameInMap("supplier")
+        public QueryReceiptsBaseInfoResponseBodyListSupplier supplier;
+
+        // 单据标题
+        @NameInMap("title")
+        public String title;
+
+        @NameInMap("voucherStatus")
+        public String voucherStatus;
 
         public static QueryReceiptsBaseInfoResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
             QueryReceiptsBaseInfoResponseBodyList self = new QueryReceiptsBaseInfoResponseBodyList();
             return TeaModel.build(map, self);
         }
 
-        public QueryReceiptsBaseInfoResponseBodyList setAppId(String appId) {
-            this.appId = appId;
+        public QueryReceiptsBaseInfoResponseBodyList setAmount(String amount) {
+            this.amount = amount;
             return this;
         }
-        public String getAppId() {
-            return this.appId;
+        public String getAmount() {
+            return this.amount;
         }
 
-        public QueryReceiptsBaseInfoResponseBodyList setData(String data) {
-            this.data = data;
+        public QueryReceiptsBaseInfoResponseBodyList setCreator(QueryReceiptsBaseInfoResponseBodyListCreator creator) {
+            this.creator = creator;
             return this;
         }
-        public String getData() {
-            return this.data;
+        public QueryReceiptsBaseInfoResponseBodyListCreator getCreator() {
+            return this.creator;
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyList setCustomer(QueryReceiptsBaseInfoResponseBodyListCustomer customer) {
+            this.customer = customer;
+            return this;
+        }
+        public QueryReceiptsBaseInfoResponseBodyListCustomer getCustomer() {
+            return this.customer;
         }
 
         public QueryReceiptsBaseInfoResponseBodyList setModelId(String modelId) {
@@ -91,12 +312,84 @@ public class QueryReceiptsBaseInfoResponseBody extends TeaModel {
             return this.modelId;
         }
 
+        public QueryReceiptsBaseInfoResponseBodyList setPrincipal(QueryReceiptsBaseInfoResponseBodyListPrincipal principal) {
+            this.principal = principal;
+            return this;
+        }
+        public QueryReceiptsBaseInfoResponseBodyListPrincipal getPrincipal() {
+            return this.principal;
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyList setProject(QueryReceiptsBaseInfoResponseBodyListProject project) {
+            this.project = project;
+            return this;
+        }
+        public QueryReceiptsBaseInfoResponseBodyListProject getProject() {
+            return this.project;
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyList setReceiptId(String receiptId) {
+            this.receiptId = receiptId;
+            return this;
+        }
+        public String getReceiptId() {
+            return this.receiptId;
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyList setRecordTime(String recordTime) {
+            this.recordTime = recordTime;
+            return this;
+        }
+        public String getRecordTime() {
+            return this.recordTime;
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyList setRemark(String remark) {
+            this.remark = remark;
+            return this;
+        }
+        public String getRemark() {
+            return this.remark;
+        }
+
         public QueryReceiptsBaseInfoResponseBodyList setSource(String source) {
             this.source = source;
             return this;
         }
         public String getSource() {
             return this.source;
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyList setStatus(String status) {
+            this.status = status;
+            return this;
+        }
+        public String getStatus() {
+            return this.status;
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyList setSupplier(QueryReceiptsBaseInfoResponseBodyListSupplier supplier) {
+            this.supplier = supplier;
+            return this;
+        }
+        public QueryReceiptsBaseInfoResponseBodyListSupplier getSupplier() {
+            return this.supplier;
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyList setTitle(String title) {
+            this.title = title;
+            return this;
+        }
+        public String getTitle() {
+            return this.title;
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyList setVoucherStatus(String voucherStatus) {
+            this.voucherStatus = voucherStatus;
+            return this;
+        }
+        public String getVoucherStatus() {
+            return this.voucherStatus;
         }
 
     }

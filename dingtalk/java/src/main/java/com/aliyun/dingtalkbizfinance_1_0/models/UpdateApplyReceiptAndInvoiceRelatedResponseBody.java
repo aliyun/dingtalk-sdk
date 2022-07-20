@@ -4,38 +4,51 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateApplyReceiptAndInvoiceRelatedResponseBody extends TeaModel {
-    // 失败发票列表list
-    @NameInMap("invoiceKeyVOList")
-    public java.util.List<UpdateApplyReceiptAndInvoiceRelatedResponseBodyInvoiceKeyVOList> invoiceKeyVOList;
+    // 批量更新发票返回结果
+    // 
+    @NameInMap("batchUpdateInvoiceResponse")
+    public UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse batchUpdateInvoiceResponse;
+
+    // 是否成功
+    @NameInMap("success")
+    public Boolean success;
 
     public static UpdateApplyReceiptAndInvoiceRelatedResponseBody build(java.util.Map<String, ?> map) throws Exception {
         UpdateApplyReceiptAndInvoiceRelatedResponseBody self = new UpdateApplyReceiptAndInvoiceRelatedResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public UpdateApplyReceiptAndInvoiceRelatedResponseBody setInvoiceKeyVOList(java.util.List<UpdateApplyReceiptAndInvoiceRelatedResponseBodyInvoiceKeyVOList> invoiceKeyVOList) {
-        this.invoiceKeyVOList = invoiceKeyVOList;
+    public UpdateApplyReceiptAndInvoiceRelatedResponseBody setBatchUpdateInvoiceResponse(UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse batchUpdateInvoiceResponse) {
+        this.batchUpdateInvoiceResponse = batchUpdateInvoiceResponse;
         return this;
     }
-    public java.util.List<UpdateApplyReceiptAndInvoiceRelatedResponseBodyInvoiceKeyVOList> getInvoiceKeyVOList() {
-        return this.invoiceKeyVOList;
+    public UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse getBatchUpdateInvoiceResponse() {
+        return this.batchUpdateInvoiceResponse;
     }
 
-    public static class UpdateApplyReceiptAndInvoiceRelatedResponseBodyInvoiceKeyVOList extends TeaModel {
-        // 失败发票列表list
+    public UpdateApplyReceiptAndInvoiceRelatedResponseBody setSuccess(Boolean success) {
+        this.success = success;
+        return this;
+    }
+    public Boolean getSuccess() {
+        return this.success;
+    }
+
+    public static class UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList extends TeaModel {
+        // 发票编码
         @NameInMap("invoiceCode")
         public String invoiceCode;
 
-        // 失败发票列表list
+        // 发票号码
         @NameInMap("invoiceNo")
         public String invoiceNo;
 
-        public static UpdateApplyReceiptAndInvoiceRelatedResponseBodyInvoiceKeyVOList build(java.util.Map<String, ?> map) throws Exception {
-            UpdateApplyReceiptAndInvoiceRelatedResponseBodyInvoiceKeyVOList self = new UpdateApplyReceiptAndInvoiceRelatedResponseBodyInvoiceKeyVOList();
+        public static UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList build(java.util.Map<String, ?> map) throws Exception {
+            UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList self = new UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList();
             return TeaModel.build(map, self);
         }
 
-        public UpdateApplyReceiptAndInvoiceRelatedResponseBodyInvoiceKeyVOList setInvoiceCode(String invoiceCode) {
+        public UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList setInvoiceCode(String invoiceCode) {
             this.invoiceCode = invoiceCode;
             return this;
         }
@@ -43,12 +56,33 @@ public class UpdateApplyReceiptAndInvoiceRelatedResponseBody extends TeaModel {
             return this.invoiceCode;
         }
 
-        public UpdateApplyReceiptAndInvoiceRelatedResponseBodyInvoiceKeyVOList setInvoiceNo(String invoiceNo) {
+        public UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList setInvoiceNo(String invoiceNo) {
             this.invoiceNo = invoiceNo;
             return this;
         }
         public String getInvoiceNo() {
             return this.invoiceNo;
+        }
+
+    }
+
+    public static class UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse extends TeaModel {
+        // 错误结果列表
+        // 
+        @NameInMap("invoiceKeyVOList")
+        public java.util.List<UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList> invoiceKeyVOList;
+
+        public static UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse build(java.util.Map<String, ?> map) throws Exception {
+            UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse self = new UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse();
+            return TeaModel.build(map, self);
+        }
+
+        public UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse setInvoiceKeyVOList(java.util.List<UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList> invoiceKeyVOList) {
+            this.invoiceKeyVOList = invoiceKeyVOList;
+            return this;
+        }
+        public java.util.List<UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList> getInvoiceKeyVOList() {
+            return this.invoiceKeyVOList;
         }
 
     }
