@@ -10,27 +10,28 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class UpdateApplyReceiptAndInvoiceRelatedResponseBody : TeaModel {
         /// <summary>
-        /// 失败发票列表list
+        /// 批量更新发票返回结果
+        /// 
         /// </summary>
-        [NameInMap("invoiceKeyVOList")]
+        [NameInMap("batchUpdateInvoiceResponse")]
         [Validation(Required=false)]
-        public List<UpdateApplyReceiptAndInvoiceRelatedResponseBodyInvoiceKeyVOList> InvoiceKeyVOList { get; set; }
-        public class UpdateApplyReceiptAndInvoiceRelatedResponseBodyInvoiceKeyVOList : TeaModel {
-            /// <summary>
-            /// 失败发票列表list
-            /// </summary>
-            [NameInMap("invoiceCode")]
+        public UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse BatchUpdateInvoiceResponse { get; set; }
+        public class UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse : TeaModel {
+            [NameInMap("invoiceKeyVOList")]
             [Validation(Required=false)]
-            public string InvoiceCode { get; set; }
+            public List<UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList> InvoiceKeyVOList { get; set; }
+            public class UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList : TeaModel {
+                public string InvoiceCode { get; set; }
+                public string InvoiceNo { get; set; }
+            }
+        };
 
-            /// <summary>
-            /// 失败发票列表list
-            /// </summary>
-            [NameInMap("invoiceNo")]
-            [Validation(Required=false)]
-            public string InvoiceNo { get; set; }
-
-        }
+        /// <summary>
+        /// 是否成功
+        /// </summary>
+        [NameInMap("success")]
+        [Validation(Required=false)]
+        public bool? Success { get; set; }
 
     }
 
