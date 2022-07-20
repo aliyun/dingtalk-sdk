@@ -6441,22 +6441,19 @@ class QueryReceiptsBaseInfoRequest(TeaModel):
         return self
 
 
-class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
+class QueryReceiptsBaseInfoResponseBodyListCreator(TeaModel):
     def __init__(
         self,
-        app_id: str = None,
-        data: str = None,
-        model_id: str = None,
-        source: str = None,
+        avatar_url: str = None,
+        nick: str = None,
+        user_id: str = None,
     ):
-        # 应用id
-        self.app_id = app_id
-        # 主数据
-        self.data = data
-        # 主数据modelID
-        self.model_id = model_id
-        # 来源
-        self.source = source
+        # 创建人头像
+        self.avatar_url = avatar_url
+        # 创建人昵称
+        self.nick = nick
+        # 创建人工号
+        self.user_id = user_id
 
     def validate(self):
         pass
@@ -6467,26 +6464,291 @@ class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
             return _map
 
         result = dict()
-        if self.app_id is not None:
-            result['appId'] = self.app_id
-        if self.data is not None:
-            result['data'] = self.data
-        if self.model_id is not None:
-            result['modelId'] = self.model_id
-        if self.source is not None:
-            result['source'] = self.source
+        if self.avatar_url is not None:
+            result['avatarUrl'] = self.avatar_url
+        if self.nick is not None:
+            result['nick'] = self.nick
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('appId') is not None:
-            self.app_id = m.get('appId')
-        if m.get('data') is not None:
-            self.data = m.get('data')
+        if m.get('avatarUrl') is not None:
+            self.avatar_url = m.get('avatarUrl')
+        if m.get('nick') is not None:
+            self.nick = m.get('nick')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryReceiptsBaseInfoResponseBodyListCustomer(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+    ):
+        # 客户code
+        self.code = code
+        # 客户名字
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class QueryReceiptsBaseInfoResponseBodyListPrincipal(TeaModel):
+    def __init__(
+        self,
+        avatar_url: str = None,
+        nick: str = None,
+        user_id: str = None,
+    ):
+        self.avatar_url = avatar_url
+        self.nick = nick
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.avatar_url is not None:
+            result['avatarUrl'] = self.avatar_url
+        if self.nick is not None:
+            result['nick'] = self.nick
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('avatarUrl') is not None:
+            self.avatar_url = m.get('avatarUrl')
+        if m.get('nick') is not None:
+            self.nick = m.get('nick')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryReceiptsBaseInfoResponseBodyListProject(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+    ):
+        self.code = code
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class QueryReceiptsBaseInfoResponseBodyListSupplier(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+    ):
+        self.code = code
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        amount: str = None,
+        creator: QueryReceiptsBaseInfoResponseBodyListCreator = None,
+        customer: QueryReceiptsBaseInfoResponseBodyListCustomer = None,
+        model_id: str = None,
+        principal: QueryReceiptsBaseInfoResponseBodyListPrincipal = None,
+        project: QueryReceiptsBaseInfoResponseBodyListProject = None,
+        receipt_id: str = None,
+        record_time: str = None,
+        remark: str = None,
+        source: str = None,
+        status: str = None,
+        supplier: QueryReceiptsBaseInfoResponseBodyListSupplier = None,
+        title: str = None,
+        voucher_status: str = None,
+    ):
+        # 金额
+        self.amount = amount
+        # 创建人
+        self.creator = creator
+        # 客户
+        self.customer = customer
+        # 主数据modelId
+        self.model_id = model_id
+        self.principal = principal
+        self.project = project
+        # 单据ID
+        self.receipt_id = receipt_id
+        # 记录时间，默认为审批通过时间
+        self.record_time = record_time
+        # 备注
+        self.remark = remark
+        # 来源
+        self.source = source
+        # 状态 agree running
+        self.status = status
+        self.supplier = supplier
+        # 单据标题
+        self.title = title
+        self.voucher_status = voucher_status
+
+    def validate(self):
+        if self.creator:
+            self.creator.validate()
+        if self.customer:
+            self.customer.validate()
+        if self.principal:
+            self.principal.validate()
+        if self.project:
+            self.project.validate()
+        if self.supplier:
+            self.supplier.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.creator is not None:
+            result['creator'] = self.creator.to_map()
+        if self.customer is not None:
+            result['customer'] = self.customer.to_map()
+        if self.model_id is not None:
+            result['modelId'] = self.model_id
+        if self.principal is not None:
+            result['principal'] = self.principal.to_map()
+        if self.project is not None:
+            result['project'] = self.project.to_map()
+        if self.receipt_id is not None:
+            result['receiptId'] = self.receipt_id
+        if self.record_time is not None:
+            result['recordTime'] = self.record_time
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.source is not None:
+            result['source'] = self.source
+        if self.status is not None:
+            result['status'] = self.status
+        if self.supplier is not None:
+            result['supplier'] = self.supplier.to_map()
+        if self.title is not None:
+            result['title'] = self.title
+        if self.voucher_status is not None:
+            result['voucherStatus'] = self.voucher_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('creator') is not None:
+            temp_model = QueryReceiptsBaseInfoResponseBodyListCreator()
+            self.creator = temp_model.from_map(m['creator'])
+        if m.get('customer') is not None:
+            temp_model = QueryReceiptsBaseInfoResponseBodyListCustomer()
+            self.customer = temp_model.from_map(m['customer'])
         if m.get('modelId') is not None:
             self.model_id = m.get('modelId')
+        if m.get('principal') is not None:
+            temp_model = QueryReceiptsBaseInfoResponseBodyListPrincipal()
+            self.principal = temp_model.from_map(m['principal'])
+        if m.get('project') is not None:
+            temp_model = QueryReceiptsBaseInfoResponseBodyListProject()
+            self.project = temp_model.from_map(m['project'])
+        if m.get('receiptId') is not None:
+            self.receipt_id = m.get('receiptId')
+        if m.get('recordTime') is not None:
+            self.record_time = m.get('recordTime')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
         if m.get('source') is not None:
             self.source = m.get('source')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('supplier') is not None:
+            temp_model = QueryReceiptsBaseInfoResponseBodyListSupplier()
+            self.supplier = temp_model.from_map(m['supplier'])
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('voucherStatus') is not None:
+            self.voucher_status = m.get('voucherStatus')
         return self
 
 
@@ -7839,11 +8101,14 @@ class UpdateApplyReceiptAndInvoiceRelatedRequest(TeaModel):
         self,
         general_invoice_volist: List[UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList] = None,
         instance_id: str = None,
+        operator: str = None,
     ):
         # 发票模型
         self.general_invoice_volist = general_invoice_volist
         # 审批单id
         self.instance_id = instance_id
+        # 操作员
+        self.operator = operator
 
     def validate(self):
         if self.general_invoice_volist:
@@ -7863,6 +8128,8 @@ class UpdateApplyReceiptAndInvoiceRelatedRequest(TeaModel):
                 result['generalInvoiceVOList'].append(k.to_map() if k else None)
         if self.instance_id is not None:
             result['instanceId'] = self.instance_id
+        if self.operator is not None:
+            result['operator'] = self.operator
         return result
 
     def from_map(self, m: dict = None):
@@ -7874,18 +8141,20 @@ class UpdateApplyReceiptAndInvoiceRelatedRequest(TeaModel):
                 self.general_invoice_volist.append(temp_model.from_map(k))
         if m.get('instanceId') is not None:
             self.instance_id = m.get('instanceId')
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
         return self
 
 
-class UpdateApplyReceiptAndInvoiceRelatedResponseBodyInvoiceKeyVOList(TeaModel):
+class UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList(TeaModel):
     def __init__(
         self,
         invoice_code: str = None,
         invoice_no: str = None,
     ):
-        # 失败发票列表list
+        # 发票编码
         self.invoice_code = invoice_code
-        # 失败发票列表list
+        # 发票号码
         self.invoice_no = invoice_no
 
     def validate(self):
@@ -7912,12 +8181,13 @@ class UpdateApplyReceiptAndInvoiceRelatedResponseBodyInvoiceKeyVOList(TeaModel):
         return self
 
 
-class UpdateApplyReceiptAndInvoiceRelatedResponseBody(TeaModel):
+class UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse(TeaModel):
     def __init__(
         self,
-        invoice_key_volist: List[UpdateApplyReceiptAndInvoiceRelatedResponseBodyInvoiceKeyVOList] = None,
+        invoice_key_volist: List[UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList] = None,
     ):
-        # 失败发票列表list
+        # 错误结果列表
+        # 
         self.invoice_key_volist = invoice_key_volist
 
     def validate(self):
@@ -7943,8 +8213,46 @@ class UpdateApplyReceiptAndInvoiceRelatedResponseBody(TeaModel):
         self.invoice_key_volist = []
         if m.get('invoiceKeyVOList') is not None:
             for k in m.get('invoiceKeyVOList'):
-                temp_model = UpdateApplyReceiptAndInvoiceRelatedResponseBodyInvoiceKeyVOList()
+                temp_model = UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList()
                 self.invoice_key_volist.append(temp_model.from_map(k))
+        return self
+
+
+class UpdateApplyReceiptAndInvoiceRelatedResponseBody(TeaModel):
+    def __init__(
+        self,
+        batch_update_invoice_response: UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse = None,
+        success: bool = None,
+    ):
+        # 批量更新发票返回结果
+        # 
+        self.batch_update_invoice_response = batch_update_invoice_response
+        # 是否成功
+        self.success = success
+
+    def validate(self):
+        if self.batch_update_invoice_response:
+            self.batch_update_invoice_response.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.batch_update_invoice_response is not None:
+            result['batchUpdateInvoiceResponse'] = self.batch_update_invoice_response.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('batchUpdateInvoiceResponse') is not None:
+            temp_model = UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse()
+            self.batch_update_invoice_response = temp_model.from_map(m['batchUpdateInvoiceResponse'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
         return self
 
 
