@@ -4619,22 +4619,16 @@ class QueryCustomerInfoHeaders(TeaModel):
 class QueryCustomerInfoRequest(TeaModel):
     def __init__(
         self,
-        name: str = None,
+        keyword: str = None,
         page_number: int = None,
         page_size: int = None,
-        purchaser_tax_no: str = None,
-        purchaser_tel: str = None,
     ):
-        # 客户名字
-        self.name = name
+        # 查询条件，目前支持 名字、税号、购方电话
+        self.keyword = keyword
         # 查询页码，从1开始
         self.page_number = page_number
         # 每页查询数量
         self.page_size = page_size
-        # 购方税号
-        self.purchaser_tax_no = purchaser_tax_no
-        # 购方电话
-        self.purchaser_tel = purchaser_tel
 
     def validate(self):
         pass
@@ -4645,30 +4639,22 @@ class QueryCustomerInfoRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.name is not None:
-            result['name'] = self.name
+        if self.keyword is not None:
+            result['keyword'] = self.keyword
         if self.page_number is not None:
             result['pageNumber'] = self.page_number
         if self.page_size is not None:
             result['pageSize'] = self.page_size
-        if self.purchaser_tax_no is not None:
-            result['purchaserTaxNo'] = self.purchaser_tax_no
-        if self.purchaser_tel is not None:
-            result['purchaserTel'] = self.purchaser_tel
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('name') is not None:
-            self.name = m.get('name')
+        if m.get('keyword') is not None:
+            self.keyword = m.get('keyword')
         if m.get('pageNumber') is not None:
             self.page_number = m.get('pageNumber')
         if m.get('pageSize') is not None:
             self.page_size = m.get('pageSize')
-        if m.get('purchaserTaxNo') is not None:
-            self.purchaser_tax_no = m.get('purchaserTaxNo')
-        if m.get('purchaserTel') is not None:
-            self.purchaser_tel = m.get('purchaserTel')
         return self
 
 
@@ -4676,6 +4662,11 @@ class QueryCustomerInfoResponseBodyList(TeaModel):
     def __init__(
         self,
         code: str = None,
+        contact_address: str = None,
+        contact_company_telephone: str = None,
+        contact_email: str = None,
+        contact_name: str = None,
+        contact_telephone: str = None,
         description: str = None,
         name: str = None,
         purchaser_account: str = None,
@@ -4689,6 +4680,11 @@ class QueryCustomerInfoResponseBodyList(TeaModel):
     ):
         # 客户code
         self.code = code
+        self.contact_address = contact_address
+        self.contact_company_telephone = contact_company_telephone
+        self.contact_email = contact_email
+        self.contact_name = contact_name
+        self.contact_telephone = contact_telephone
         # 客户描述
         self.description = description
         # 客户名字
@@ -4721,6 +4717,16 @@ class QueryCustomerInfoResponseBodyList(TeaModel):
         result = dict()
         if self.code is not None:
             result['code'] = self.code
+        if self.contact_address is not None:
+            result['contactAddress'] = self.contact_address
+        if self.contact_company_telephone is not None:
+            result['contactCompanyTelephone'] = self.contact_company_telephone
+        if self.contact_email is not None:
+            result['contactEmail'] = self.contact_email
+        if self.contact_name is not None:
+            result['contactName'] = self.contact_name
+        if self.contact_telephone is not None:
+            result['contactTelephone'] = self.contact_telephone
         if self.description is not None:
             result['description'] = self.description
         if self.name is not None:
@@ -4747,6 +4753,16 @@ class QueryCustomerInfoResponseBodyList(TeaModel):
         m = m or dict()
         if m.get('code') is not None:
             self.code = m.get('code')
+        if m.get('contactAddress') is not None:
+            self.contact_address = m.get('contactAddress')
+        if m.get('contactCompanyTelephone') is not None:
+            self.contact_company_telephone = m.get('contactCompanyTelephone')
+        if m.get('contactEmail') is not None:
+            self.contact_email = m.get('contactEmail')
+        if m.get('contactName') is not None:
+            self.contact_name = m.get('contactName')
+        if m.get('contactTelephone') is not None:
+            self.contact_telephone = m.get('contactTelephone')
         if m.get('description') is not None:
             self.description = m.get('description')
         if m.get('name') is not None:

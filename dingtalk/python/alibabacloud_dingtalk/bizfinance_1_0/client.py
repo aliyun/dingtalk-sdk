@@ -1127,16 +1127,12 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.QueryCustomerInfoResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.name):
-            query['name'] = request.name
+        if not UtilClient.is_unset(request.keyword):
+            query['keyword'] = request.keyword
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
-        if not UtilClient.is_unset(request.purchaser_tax_no):
-            query['purchaserTaxNo'] = request.purchaser_tax_no
-        if not UtilClient.is_unset(request.purchaser_tel):
-            query['purchaserTel'] = request.purchaser_tel
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1159,16 +1155,12 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.QueryCustomerInfoResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.name):
-            query['name'] = request.name
+        if not UtilClient.is_unset(request.keyword):
+            query['keyword'] = request.keyword
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
-        if not UtilClient.is_unset(request.purchaser_tax_no):
-            query['purchaserTaxNo'] = request.purchaser_tax_no
-        if not UtilClient.is_unset(request.purchaser_tel):
-            query['purchaserTel'] = request.purchaser_tel
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

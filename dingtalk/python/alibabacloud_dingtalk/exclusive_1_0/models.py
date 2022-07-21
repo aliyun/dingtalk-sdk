@@ -4795,12 +4795,15 @@ class GetGroupActiveInfoRequest(TeaModel):
     def __init__(
         self,
         ding_group_id: str = None,
+        group_type: int = None,
         page_number: int = None,
         page_size: int = None,
         stat_date: str = None,
     ):
         # 钉钉群组id
         self.ding_group_id = ding_group_id
+        # 群类型：1-全员群，2-部门群，3-（其他）内部群，4-场景群
+        self.group_type = group_type
         # 分页起始页
         self.page_number = page_number
         # 分页大小
@@ -4819,6 +4822,8 @@ class GetGroupActiveInfoRequest(TeaModel):
         result = dict()
         if self.ding_group_id is not None:
             result['dingGroupId'] = self.ding_group_id
+        if self.group_type is not None:
+            result['groupType'] = self.group_type
         if self.page_number is not None:
             result['pageNumber'] = self.page_number
         if self.page_size is not None:
@@ -4831,6 +4836,8 @@ class GetGroupActiveInfoRequest(TeaModel):
         m = m or dict()
         if m.get('dingGroupId') is not None:
             self.ding_group_id = m.get('dingGroupId')
+        if m.get('groupType') is not None:
+            self.group_type = m.get('groupType')
         if m.get('pageNumber') is not None:
             self.page_number = m.get('pageNumber')
         if m.get('pageSize') is not None:

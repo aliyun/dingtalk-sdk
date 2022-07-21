@@ -341,6 +341,90 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ChatSubAdminUpdate', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/subAdministrators', 'json', req, runtime)
         )
 
+    def create_couple_group_conversation(
+        self,
+        request: dingtalkim__1__0_models.CreateCoupleGroupConversationRequest,
+    ) -> dingtalkim__1__0_models.CreateCoupleGroupConversationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.CreateCoupleGroupConversationHeaders()
+        return self.create_couple_group_conversation_with_options(request, headers, runtime)
+
+    async def create_couple_group_conversation_async(
+        self,
+        request: dingtalkim__1__0_models.CreateCoupleGroupConversationRequest,
+    ) -> dingtalkim__1__0_models.CreateCoupleGroupConversationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.CreateCoupleGroupConversationHeaders()
+        return await self.create_couple_group_conversation_with_options_async(request, headers, runtime)
+
+    def create_couple_group_conversation_with_options(
+        self,
+        request: dingtalkim__1__0_models.CreateCoupleGroupConversationRequest,
+        headers: dingtalkim__1__0_models.CreateCoupleGroupConversationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.CreateCoupleGroupConversationResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_user_id):
+            body['appUserId'] = request.app_user_id
+        if not UtilClient.is_unset(request.group_avatar):
+            body['groupAvatar'] = request.group_avatar
+        if not UtilClient.is_unset(request.group_name):
+            body['groupName'] = request.group_name
+        if not UtilClient.is_unset(request.group_owner_id):
+            body['groupOwnerId'] = request.group_owner_id
+        if not UtilClient.is_unset(request.group_template_id):
+            body['groupTemplateId'] = request.group_template_id
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.CreateCoupleGroupConversationResponse(),
+            self.do_roarequest('CreateCoupleGroupConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/coupleGroups', 'json', req, runtime)
+        )
+
+    async def create_couple_group_conversation_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.CreateCoupleGroupConversationRequest,
+        headers: dingtalkim__1__0_models.CreateCoupleGroupConversationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.CreateCoupleGroupConversationResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_user_id):
+            body['appUserId'] = request.app_user_id
+        if not UtilClient.is_unset(request.group_avatar):
+            body['groupAvatar'] = request.group_avatar
+        if not UtilClient.is_unset(request.group_name):
+            body['groupName'] = request.group_name
+        if not UtilClient.is_unset(request.group_owner_id):
+            body['groupOwnerId'] = request.group_owner_id
+        if not UtilClient.is_unset(request.group_template_id):
+            body['groupTemplateId'] = request.group_template_id
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.CreateCoupleGroupConversationResponse(),
+            await self.do_roarequest_async('CreateCoupleGroupConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/coupleGroups', 'json', req, runtime)
+        )
+
     def create_group_conversation(
         self,
         request: dingtalkim__1__0_models.CreateGroupConversationRequest,

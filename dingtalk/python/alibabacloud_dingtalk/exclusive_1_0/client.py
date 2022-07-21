@@ -1913,6 +1913,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.ding_group_id):
             query['dingGroupId'] = request.ding_group_id
+        if not UtilClient.is_unset(request.group_type):
+            query['groupType'] = request.group_type
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
@@ -1943,6 +1945,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.ding_group_id):
             query['dingGroupId'] = request.ding_group_id
+        if not UtilClient.is_unset(request.group_type):
+            query['groupType'] = request.group_type
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
