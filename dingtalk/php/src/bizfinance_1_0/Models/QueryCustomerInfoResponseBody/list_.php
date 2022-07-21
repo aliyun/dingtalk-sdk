@@ -16,6 +16,31 @@ class list_ extends Model
     public $code;
 
     /**
+     * @var string
+     */
+    public $contactAddress;
+
+    /**
+     * @var string
+     */
+    public $contactCompanyTelephone;
+
+    /**
+     * @var string
+     */
+    public $contactEmail;
+
+    /**
+     * @var string
+     */
+    public $contactName;
+
+    /**
+     * @var string
+     */
+    public $contactTelephone;
+
+    /**
      * @description 客户描述
      *
      * @var string
@@ -85,17 +110,22 @@ class list_ extends Model
      */
     public $userDefineCode;
     protected $_name = [
-        'code'               => 'code',
-        'description'        => 'description',
-        'name'               => 'name',
-        'purchaserAccount'   => 'purchaserAccount',
-        'purchaserAddress'   => 'purchaserAddress',
-        'purchaserName'      => 'purchaserName',
-        'purchaserTaxNo'     => 'purchaserTaxNo',
-        'purchaserTel'       => 'purchaserTel',
-        'purchaserrBankName' => 'purchaserrBankName',
-        'status'             => 'status',
-        'userDefineCode'     => 'userDefineCode',
+        'code'                    => 'code',
+        'contactAddress'          => 'contactAddress',
+        'contactCompanyTelephone' => 'contactCompanyTelephone',
+        'contactEmail'            => 'contactEmail',
+        'contactName'             => 'contactName',
+        'contactTelephone'        => 'contactTelephone',
+        'description'             => 'description',
+        'name'                    => 'name',
+        'purchaserAccount'        => 'purchaserAccount',
+        'purchaserAddress'        => 'purchaserAddress',
+        'purchaserName'           => 'purchaserName',
+        'purchaserTaxNo'          => 'purchaserTaxNo',
+        'purchaserTel'            => 'purchaserTel',
+        'purchaserrBankName'      => 'purchaserrBankName',
+        'status'                  => 'status',
+        'userDefineCode'          => 'userDefineCode',
     ];
 
     public function validate()
@@ -107,6 +137,21 @@ class list_ extends Model
         $res = [];
         if (null !== $this->code) {
             $res['code'] = $this->code;
+        }
+        if (null !== $this->contactAddress) {
+            $res['contactAddress'] = $this->contactAddress;
+        }
+        if (null !== $this->contactCompanyTelephone) {
+            $res['contactCompanyTelephone'] = $this->contactCompanyTelephone;
+        }
+        if (null !== $this->contactEmail) {
+            $res['contactEmail'] = $this->contactEmail;
+        }
+        if (null !== $this->contactName) {
+            $res['contactName'] = $this->contactName;
+        }
+        if (null !== $this->contactTelephone) {
+            $res['contactTelephone'] = $this->contactTelephone;
         }
         if (null !== $this->description) {
             $res['description'] = $this->description;
@@ -152,6 +197,21 @@ class list_ extends Model
         $model = new self();
         if (isset($map['code'])) {
             $model->code = $map['code'];
+        }
+        if (isset($map['contactAddress'])) {
+            $model->contactAddress = $map['contactAddress'];
+        }
+        if (isset($map['contactCompanyTelephone'])) {
+            $model->contactCompanyTelephone = $map['contactCompanyTelephone'];
+        }
+        if (isset($map['contactEmail'])) {
+            $model->contactEmail = $map['contactEmail'];
+        }
+        if (isset($map['contactName'])) {
+            $model->contactName = $map['contactName'];
+        }
+        if (isset($map['contactTelephone'])) {
+            $model->contactTelephone = $map['contactTelephone'];
         }
         if (isset($map['description'])) {
             $model->description = $map['description'];

@@ -1451,6 +1451,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->dingGroupId)) {
             @$query['dingGroupId'] = $request->dingGroupId;
         }
+        if (!Utils::isUnset($request->groupType)) {
+            @$query['groupType'] = $request->groupType;
+        }
         if (!Utils::isUnset($request->pageNumber)) {
             @$query['pageNumber'] = $request->pageNumber;
         }

@@ -873,20 +873,14 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->name)) {
-            @$query['name'] = $request->name;
+        if (!Utils::isUnset($request->keyword)) {
+            @$query['keyword'] = $request->keyword;
         }
         if (!Utils::isUnset($request->pageNumber)) {
             @$query['pageNumber'] = $request->pageNumber;
         }
         if (!Utils::isUnset($request->pageSize)) {
             @$query['pageSize'] = $request->pageSize;
-        }
-        if (!Utils::isUnset($request->purchaserTaxNo)) {
-            @$query['purchaserTaxNo'] = $request->purchaserTaxNo;
-        }
-        if (!Utils::isUnset($request->purchaserTel)) {
-            @$query['purchaserTel'] = $request->purchaserTel;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

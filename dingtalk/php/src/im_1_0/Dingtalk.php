@@ -21,6 +21,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ChatIdToOpenConversationIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ChatSubAdminUpdateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ChatSubAdminUpdateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ChatSubAdminUpdateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateCoupleGroupConversationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateCoupleGroupConversationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateCoupleGroupConversationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateGroupConversationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateGroupConversationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateGroupConversationResponse;
@@ -363,6 +366,63 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ChatSubAdminUpdateResponse::fromMap($this->doROARequest('ChatSubAdminUpdate', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/subAdministrators', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateCoupleGroupConversationRequest $request
+     *
+     * @return CreateCoupleGroupConversationResponse
+     */
+    public function createCoupleGroupConversation($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateCoupleGroupConversationHeaders([]);
+
+        return $this->createCoupleGroupConversationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateCoupleGroupConversationRequest $request
+     * @param CreateCoupleGroupConversationHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return CreateCoupleGroupConversationResponse
+     */
+    public function createCoupleGroupConversationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appUserId)) {
+            @$body['appUserId'] = $request->appUserId;
+        }
+        if (!Utils::isUnset($request->groupAvatar)) {
+            @$body['groupAvatar'] = $request->groupAvatar;
+        }
+        if (!Utils::isUnset($request->groupName)) {
+            @$body['groupName'] = $request->groupName;
+        }
+        if (!Utils::isUnset($request->groupOwnerId)) {
+            @$body['groupOwnerId'] = $request->groupOwnerId;
+        }
+        if (!Utils::isUnset($request->groupTemplateId)) {
+            @$body['groupTemplateId'] = $request->groupTemplateId;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            @$body['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateCoupleGroupConversationResponse::fromMap($this->doROARequest('CreateCoupleGroupConversation', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interconnections/coupleGroups', 'json', $req, $runtime));
     }
 
     /**

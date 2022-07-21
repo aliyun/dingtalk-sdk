@@ -16,6 +16,13 @@ class GetGroupActiveInfoRequest extends Model
     public $dingGroupId;
 
     /**
+     * @description 群类型：1-全员群，2-部门群，3-（其他）内部群，4-场景群
+     *
+     * @var int
+     */
+    public $groupType;
+
+    /**
      * @description 分页起始页
      *
      * @var int
@@ -37,6 +44,7 @@ class GetGroupActiveInfoRequest extends Model
     public $statDate;
     protected $_name = [
         'dingGroupId' => 'dingGroupId',
+        'groupType'   => 'groupType',
         'pageNumber'  => 'pageNumber',
         'pageSize'    => 'pageSize',
         'statDate'    => 'statDate',
@@ -51,6 +59,9 @@ class GetGroupActiveInfoRequest extends Model
         $res = [];
         if (null !== $this->dingGroupId) {
             $res['dingGroupId'] = $this->dingGroupId;
+        }
+        if (null !== $this->groupType) {
+            $res['groupType'] = $this->groupType;
         }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
@@ -75,6 +86,9 @@ class GetGroupActiveInfoRequest extends Model
         $model = new self();
         if (isset($map['dingGroupId'])) {
             $model->dingGroupId = $map['dingGroupId'];
+        }
+        if (isset($map['groupType'])) {
+            $model->groupType = $map['groupType'];
         }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];
