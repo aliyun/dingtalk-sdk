@@ -2350,12 +2350,14 @@ export class GetGroupActiveInfoHeaders extends $tea.Model {
 
 export class GetGroupActiveInfoRequest extends $tea.Model {
   dingGroupId?: string;
+  groupType?: number;
   pageNumber?: number;
   pageSize?: number;
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
       dingGroupId: 'dingGroupId',
+      groupType: 'groupType',
       pageNumber: 'pageNumber',
       pageSize: 'pageSize',
       statDate: 'statDate',
@@ -2365,6 +2367,7 @@ export class GetGroupActiveInfoRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       dingGroupId: 'string',
+      groupType: 'number',
       pageNumber: 'number',
       pageSize: 'number',
       statDate: 'string',
@@ -7402,6 +7405,10 @@ export default class Client extends OpenApi {
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.dingGroupId)) {
       query["dingGroupId"] = request.dingGroupId;
+    }
+
+    if (!Util.isUnset(request.groupType)) {
+      query["groupType"] = request.groupType;
     }
 
     if (!Util.isUnset(request.pageNumber)) {

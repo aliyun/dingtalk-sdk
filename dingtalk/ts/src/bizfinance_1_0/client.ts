@@ -1512,28 +1512,22 @@ export class QueryCustomerInfoHeaders extends $tea.Model {
 }
 
 export class QueryCustomerInfoRequest extends $tea.Model {
-  name?: string;
+  keyword?: string;
   pageNumber?: number;
   pageSize?: number;
-  purchaserTaxNo?: string;
-  purchaserTel?: string;
   static names(): { [key: string]: string } {
     return {
-      name: 'name',
+      keyword: 'keyword',
       pageNumber: 'pageNumber',
       pageSize: 'pageSize',
-      purchaserTaxNo: 'purchaserTaxNo',
-      purchaserTel: 'purchaserTel',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      name: 'string',
+      keyword: 'string',
       pageNumber: 'number',
       pageSize: 'number',
-      purchaserTaxNo: 'string',
-      purchaserTel: 'string',
     };
   }
 
@@ -4319,6 +4313,11 @@ export class QueryCustomerByPageResponseBodyList extends $tea.Model {
 
 export class QueryCustomerInfoResponseBodyList extends $tea.Model {
   code?: string;
+  contactAddress?: string;
+  contactCompanyTelephone?: string;
+  contactEmail?: string;
+  contactName?: string;
+  contactTelephone?: string;
   description?: string;
   name?: string;
   purchaserAccount?: string;
@@ -4332,6 +4331,11 @@ export class QueryCustomerInfoResponseBodyList extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       code: 'code',
+      contactAddress: 'contactAddress',
+      contactCompanyTelephone: 'contactCompanyTelephone',
+      contactEmail: 'contactEmail',
+      contactName: 'contactName',
+      contactTelephone: 'contactTelephone',
       description: 'description',
       name: 'name',
       purchaserAccount: 'purchaserAccount',
@@ -4348,6 +4352,11 @@ export class QueryCustomerInfoResponseBodyList extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       code: 'string',
+      contactAddress: 'string',
+      contactCompanyTelephone: 'string',
+      contactEmail: 'string',
+      contactName: 'string',
+      contactTelephone: 'string',
       description: 'string',
       name: 'string',
       purchaserAccount: 'string',
@@ -7383,8 +7392,8 @@ export default class Client extends OpenApi {
   async queryCustomerInfoWithOptions(request: QueryCustomerInfoRequest, headers: QueryCustomerInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCustomerInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.name)) {
-      query["name"] = request.name;
+    if (!Util.isUnset(request.keyword)) {
+      query["keyword"] = request.keyword;
     }
 
     if (!Util.isUnset(request.pageNumber)) {
@@ -7393,14 +7402,6 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.pageSize)) {
       query["pageSize"] = request.pageSize;
-    }
-
-    if (!Util.isUnset(request.purchaserTaxNo)) {
-      query["purchaserTaxNo"] = request.purchaserTaxNo;
-    }
-
-    if (!Util.isUnset(request.purchaserTel)) {
-      query["purchaserTel"] = request.purchaserTel;
     }
 
     let realHeaders : {[key: string ]: string} = { };
