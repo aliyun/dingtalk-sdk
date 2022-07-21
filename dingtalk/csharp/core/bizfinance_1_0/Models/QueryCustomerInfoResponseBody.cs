@@ -30,6 +30,26 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string Code { get; set; }
 
+            [NameInMap("contactAddress")]
+            [Validation(Required=false)]
+            public string ContactAddress { get; set; }
+
+            [NameInMap("contactCompanyTelephone")]
+            [Validation(Required=false)]
+            public string ContactCompanyTelephone { get; set; }
+
+            [NameInMap("contactEmail")]
+            [Validation(Required=false)]
+            public string ContactEmail { get; set; }
+
+            [NameInMap("contactName")]
+            [Validation(Required=false)]
+            public string ContactName { get; set; }
+
+            [NameInMap("contactTelephone")]
+            [Validation(Required=false)]
+            public string ContactTelephone { get; set; }
+
             /// <summary>
             /// 客户描述
             /// </summary>

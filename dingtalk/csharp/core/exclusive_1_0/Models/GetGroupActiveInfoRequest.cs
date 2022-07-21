@@ -17,6 +17,13 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public string DingGroupId { get; set; }
 
         /// <summary>
+        /// 群类型：1-全员群，2-部门群，3-（其他）内部群，4-场景群
+        /// </summary>
+        [NameInMap("groupType")]
+        [Validation(Required=false)]
+        public long? GroupType { get; set; }
+
+        /// <summary>
         /// 分页起始页
         /// </summary>
         [NameInMap("pageNumber")]

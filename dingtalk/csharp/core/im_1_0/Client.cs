@@ -368,6 +368,110 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             return TeaModel.ToObject<ChatSubAdminUpdateResponse>(await DoROARequestAsync("ChatSubAdminUpdate", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/subAdministrators", "json", req, runtime));
         }
 
+        public CreateCoupleGroupConversationResponse CreateCoupleGroupConversation(CreateCoupleGroupConversationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateCoupleGroupConversationHeaders headers = new CreateCoupleGroupConversationHeaders();
+            return CreateCoupleGroupConversationWithOptions(request, headers, runtime);
+        }
+
+        public async Task<CreateCoupleGroupConversationResponse> CreateCoupleGroupConversationAsync(CreateCoupleGroupConversationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateCoupleGroupConversationHeaders headers = new CreateCoupleGroupConversationHeaders();
+            return await CreateCoupleGroupConversationWithOptionsAsync(request, headers, runtime);
+        }
+
+        public CreateCoupleGroupConversationResponse CreateCoupleGroupConversationWithOptions(CreateCoupleGroupConversationRequest request, CreateCoupleGroupConversationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppUserId))
+            {
+                body["appUserId"] = request.AppUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupAvatar))
+            {
+                body["groupAvatar"] = request.GroupAvatar;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupName))
+            {
+                body["groupName"] = request.GroupName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupOwnerId))
+            {
+                body["groupOwnerId"] = request.GroupOwnerId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupTemplateId))
+            {
+                body["groupTemplateId"] = request.GroupTemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                body["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CreateCoupleGroupConversationResponse>(DoROARequest("CreateCoupleGroupConversation", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interconnections/coupleGroups", "json", req, runtime));
+        }
+
+        public async Task<CreateCoupleGroupConversationResponse> CreateCoupleGroupConversationWithOptionsAsync(CreateCoupleGroupConversationRequest request, CreateCoupleGroupConversationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppUserId))
+            {
+                body["appUserId"] = request.AppUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupAvatar))
+            {
+                body["groupAvatar"] = request.GroupAvatar;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupName))
+            {
+                body["groupName"] = request.GroupName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupOwnerId))
+            {
+                body["groupOwnerId"] = request.GroupOwnerId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupTemplateId))
+            {
+                body["groupTemplateId"] = request.GroupTemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                body["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CreateCoupleGroupConversationResponse>(await DoROARequestAsync("CreateCoupleGroupConversation", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interconnections/coupleGroups", "json", req, runtime));
+        }
+
         public CreateGroupConversationResponse CreateGroupConversation(CreateGroupConversationRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

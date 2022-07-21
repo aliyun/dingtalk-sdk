@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class QueryCustomerInfoRequest : TeaModel {
         /// <summary>
-        /// 客户名字
+        /// 查询条件，目前支持 名字、税号、购方电话
         /// </summary>
-        [NameInMap("name")]
+        [NameInMap("keyword")]
         [Validation(Required=false)]
-        public string Name { get; set; }
+        public string Keyword { get; set; }
 
         /// <summary>
         /// 查询页码，从1开始
@@ -29,20 +29,6 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [NameInMap("pageSize")]
         [Validation(Required=false)]
         public long? PageSize { get; set; }
-
-        /// <summary>
-        /// 购方税号
-        /// </summary>
-        [NameInMap("purchaserTaxNo")]
-        [Validation(Required=false)]
-        public string PurchaserTaxNo { get; set; }
-
-        /// <summary>
-        /// 购方电话
-        /// </summary>
-        [NameInMap("purchaserTel")]
-        [Validation(Required=false)]
-        public string PurchaserTel { get; set; }
 
     }
 

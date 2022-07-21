@@ -1220,9 +1220,9 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Keyword))
             {
-                query["name"] = request.Name;
+                query["keyword"] = request.Keyword;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {
@@ -1231,14 +1231,6 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
             {
                 query["pageSize"] = request.PageSize;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PurchaserTaxNo))
-            {
-                query["purchaserTaxNo"] = request.PurchaserTaxNo;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PurchaserTel))
-            {
-                query["purchaserTel"] = request.PurchaserTel;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1261,9 +1253,9 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Keyword))
             {
-                query["name"] = request.Name;
+                query["keyword"] = request.Keyword;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {
@@ -1272,14 +1264,6 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
             {
                 query["pageSize"] = request.PageSize;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PurchaserTaxNo))
-            {
-                query["purchaserTaxNo"] = request.PurchaserTaxNo;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PurchaserTel))
-            {
-                query["purchaserTel"] = request.PurchaserTel;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

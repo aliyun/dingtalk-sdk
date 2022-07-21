@@ -1988,6 +1988,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             {
                 query["dingGroupId"] = request.DingGroupId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupType))
+            {
+                query["groupType"] = request.GroupType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {
                 query["pageNumber"] = request.PageNumber;
@@ -2024,6 +2028,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingGroupId))
             {
                 query["dingGroupId"] = request.DingGroupId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupType))
+            {
+                query["groupType"] = request.GroupType;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {
