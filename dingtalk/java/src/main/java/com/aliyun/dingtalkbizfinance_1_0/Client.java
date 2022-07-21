@@ -570,8 +570,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public QueryCustomerInfoResponse queryCustomerInfoWithOptions(QueryCustomerInfoRequest request, QueryCustomerInfoHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
-            query.put("name", request.name);
+        if (!com.aliyun.teautil.Common.isUnset(request.keyword)) {
+            query.put("keyword", request.keyword);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
@@ -580,14 +580,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
             query.put("pageSize", request.pageSize);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.purchaserTaxNo)) {
-            query.put("purchaserTaxNo", request.purchaserTaxNo);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.purchaserTel)) {
-            query.put("purchaserTel", request.purchaserTel);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();

@@ -920,6 +920,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("dingGroupId", request.dingGroupId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.groupType)) {
+            query.put("groupType", request.groupType);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
             query.put("pageNumber", request.pageNumber);
         }

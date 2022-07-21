@@ -50,6 +50,21 @@ public class QueryCustomerInfoResponseBody extends TeaModel {
         @NameInMap("code")
         public String code;
 
+        @NameInMap("contactAddress")
+        public String contactAddress;
+
+        @NameInMap("contactCompanyTelephone")
+        public String contactCompanyTelephone;
+
+        @NameInMap("contactEmail")
+        public String contactEmail;
+
+        @NameInMap("contactName")
+        public String contactName;
+
+        @NameInMap("contactTelephone")
+        public String contactTelephone;
+
         // 客户描述
         @NameInMap("description")
         public String description;
@@ -101,6 +116,46 @@ public class QueryCustomerInfoResponseBody extends TeaModel {
         }
         public String getCode() {
             return this.code;
+        }
+
+        public QueryCustomerInfoResponseBodyList setContactAddress(String contactAddress) {
+            this.contactAddress = contactAddress;
+            return this;
+        }
+        public String getContactAddress() {
+            return this.contactAddress;
+        }
+
+        public QueryCustomerInfoResponseBodyList setContactCompanyTelephone(String contactCompanyTelephone) {
+            this.contactCompanyTelephone = contactCompanyTelephone;
+            return this;
+        }
+        public String getContactCompanyTelephone() {
+            return this.contactCompanyTelephone;
+        }
+
+        public QueryCustomerInfoResponseBodyList setContactEmail(String contactEmail) {
+            this.contactEmail = contactEmail;
+            return this;
+        }
+        public String getContactEmail() {
+            return this.contactEmail;
+        }
+
+        public QueryCustomerInfoResponseBodyList setContactName(String contactName) {
+            this.contactName = contactName;
+            return this;
+        }
+        public String getContactName() {
+            return this.contactName;
+        }
+
+        public QueryCustomerInfoResponseBodyList setContactTelephone(String contactTelephone) {
+            this.contactTelephone = contactTelephone;
+            return this;
+        }
+        public String getContactTelephone() {
+            return this.contactTelephone;
         }
 
         public QueryCustomerInfoResponseBodyList setDescription(String description) {

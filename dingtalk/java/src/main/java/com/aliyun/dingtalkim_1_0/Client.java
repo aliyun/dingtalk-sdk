@@ -177,6 +177,55 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("ChatSubAdminUpdate", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/subAdministrators", "json", req, runtime), new ChatSubAdminUpdateResponse());
     }
 
+    public CreateCoupleGroupConversationResponse createCoupleGroupConversation(CreateCoupleGroupConversationRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CreateCoupleGroupConversationHeaders headers = new CreateCoupleGroupConversationHeaders();
+        return this.createCoupleGroupConversationWithOptions(request, headers, runtime);
+    }
+
+    public CreateCoupleGroupConversationResponse createCoupleGroupConversationWithOptions(CreateCoupleGroupConversationRequest request, CreateCoupleGroupConversationHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.appUserId)) {
+            body.put("appUserId", request.appUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.groupAvatar)) {
+            body.put("groupAvatar", request.groupAvatar);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.groupName)) {
+            body.put("groupName", request.groupName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.groupOwnerId)) {
+            body.put("groupOwnerId", request.groupOwnerId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.groupTemplateId)) {
+            body.put("groupTemplateId", request.groupTemplateId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            body.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CreateCoupleGroupConversation", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interconnections/coupleGroups", "json", req, runtime), new CreateCoupleGroupConversationResponse());
+    }
+
     public CreateGroupConversationResponse createGroupConversation(CreateGroupConversationRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         CreateGroupConversationHeaders headers = new CreateGroupConversationHeaders();

@@ -8,6 +8,10 @@ public class GetGroupActiveInfoRequest extends TeaModel {
     @NameInMap("dingGroupId")
     public String dingGroupId;
 
+    // 群类型：1-全员群，2-部门群，3-（其他）内部群，4-场景群
+    @NameInMap("groupType")
+    public Long groupType;
+
     // 分页起始页
     @NameInMap("pageNumber")
     public Long pageNumber;
@@ -31,6 +35,14 @@ public class GetGroupActiveInfoRequest extends TeaModel {
     }
     public String getDingGroupId() {
         return this.dingGroupId;
+    }
+
+    public GetGroupActiveInfoRequest setGroupType(Long groupType) {
+        this.groupType = groupType;
+        return this;
+    }
+    public Long getGroupType() {
+        return this.groupType;
     }
 
     public GetGroupActiveInfoRequest setPageNumber(Long pageNumber) {
