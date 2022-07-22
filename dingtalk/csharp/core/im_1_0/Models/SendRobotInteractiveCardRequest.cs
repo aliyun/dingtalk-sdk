@@ -45,6 +45,13 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public string OpenConversationId { get; set; }
 
         /// <summary>
+        /// 是否开启卡片纯拉模式
+        /// </summary>
+        [NameInMap("pullStrategy")]
+        [Validation(Required=false)]
+        public bool? PullStrategy { get; set; }
+
+        /// <summary>
         /// 机器人代码，群模板机器人网页有机器人ID；企业内部机器人为机器人appKey，企业三方机器人有robotCode
         /// </summary>
         [NameInMap("robotCode")]

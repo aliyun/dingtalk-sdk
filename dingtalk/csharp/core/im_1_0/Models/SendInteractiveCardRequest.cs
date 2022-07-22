@@ -93,6 +93,13 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public Dictionary<string, PrivateDataValue> PrivateData { get; set; }
 
         /// <summary>
+        /// 是否开启卡片纯拉模式
+        /// </summary>
+        [NameInMap("pullStrategy")]
+        [Validation(Required=false)]
+        public bool? PullStrategy { get; set; }
+
+        /// <summary>
         /// 互动卡片消息需要群会话部分人可见时的接收人列表，不填写默认群会话所有人可见
         /// </summary>
         [NameInMap("receiverUserIdList")]

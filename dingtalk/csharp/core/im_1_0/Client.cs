@@ -2490,6 +2490,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["privateData"] = request.PrivateData;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PullStrategy))
+            {
+                body["pullStrategy"] = request.PullStrategy;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUserIdList))
             {
                 body["receiverUserIdList"] = request.ReceiverUserIdList;
@@ -2563,6 +2567,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["privateData"] = request.PrivateData;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PullStrategy))
+            {
+                body["pullStrategy"] = request.PullStrategy;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUserIdList))
             {
                 body["receiverUserIdList"] = request.ReceiverUserIdList;
@@ -2630,6 +2638,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["openConversationId"] = request.OpenConversationId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PullStrategy))
+            {
+                body["pullStrategy"] = request.PullStrategy;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
             {
                 body["robotCode"] = request.RobotCode;
@@ -2690,6 +2702,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
             {
                 body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PullStrategy))
+            {
+                body["pullStrategy"] = request.PullStrategy;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
             {

@@ -63,6 +63,9 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [NameInMap("duplicateRemoval")]
             [Validation(Required=false)]
             public string DuplicateRemoval { get; set; }
+            [NameInMap("formSchema")]
+            [Validation(Required=false)]
+            public string FormSchema { get; set; }
             [NameInMap("handSignConf")]
             [Validation(Required=false)]
             public GetProcessConfigResponseBodyResultHandSignConf HandSignConf { get; set; }

@@ -17,7 +17,7 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string AppType { get; set; }
 
         /// <summary>
-        /// 将评论内容通过钉钉发给指定用户
+        /// 将评论内容通过钉钉发给指定用户, 逗号分隔
         /// </summary>
         [NameInMap("atUserId")]
         [Validation(Required=false)]
