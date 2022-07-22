@@ -24,6 +24,10 @@ public class SendRobotInteractiveCardRequest extends TeaModel {
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    // 是否开启卡片纯拉模式
+    @NameInMap("pullStrategy")
+    public Boolean pullStrategy;
+
     // 机器人代码，群模板机器人网页有机器人ID；企业内部机器人为机器人appKey，企业三方机器人有robotCode
     @NameInMap("robotCode")
     public String robotCode;
@@ -87,6 +91,14 @@ public class SendRobotInteractiveCardRequest extends TeaModel {
     }
     public String getOpenConversationId() {
         return this.openConversationId;
+    }
+
+    public SendRobotInteractiveCardRequest setPullStrategy(Boolean pullStrategy) {
+        this.pullStrategy = pullStrategy;
+        return this;
+    }
+    public Boolean getPullStrategy() {
+        return this.pullStrategy;
     }
 
     public SendRobotInteractiveCardRequest setRobotCode(String robotCode) {

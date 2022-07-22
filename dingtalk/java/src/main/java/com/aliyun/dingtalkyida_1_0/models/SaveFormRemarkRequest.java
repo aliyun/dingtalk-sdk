@@ -8,7 +8,7 @@ public class SaveFormRemarkRequest extends TeaModel {
     @NameInMap("appType")
     public String appType;
 
-    // 将评论内容通过钉钉发给指定用户
+    // 将评论内容通过钉钉发给指定用户, 逗号分隔
     @NameInMap("atUserId")
     public String atUserId;
 

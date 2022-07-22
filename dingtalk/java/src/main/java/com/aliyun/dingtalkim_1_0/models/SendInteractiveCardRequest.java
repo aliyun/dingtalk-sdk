@@ -44,6 +44,10 @@ public class SendInteractiveCardRequest extends TeaModel {
     @NameInMap("privateData")
     public java.util.Map<String, PrivateDataValue> privateData;
 
+    // 是否开启卡片纯拉模式
+    @NameInMap("pullStrategy")
+    public Boolean pullStrategy;
+
     // 互动卡片消息需要群会话部分人可见时的接收人列表，不填写默认群会话所有人可见
     @NameInMap("receiverUserIdList")
     public java.util.List<String> receiverUserIdList;
@@ -139,6 +143,14 @@ public class SendInteractiveCardRequest extends TeaModel {
     }
     public java.util.Map<String, PrivateDataValue> getPrivateData() {
         return this.privateData;
+    }
+
+    public SendInteractiveCardRequest setPullStrategy(Boolean pullStrategy) {
+        this.pullStrategy = pullStrategy;
+        return this;
+    }
+    public Boolean getPullStrategy() {
+        return this.pullStrategy;
     }
 
     public SendInteractiveCardRequest setReceiverUserIdList(java.util.List<String> receiverUserIdList) {

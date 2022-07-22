@@ -273,6 +273,10 @@ public class GetProcessConfigResponseBody extends TeaModel {
         @NameInMap("duplicateRemoval")
         public String duplicateRemoval;
 
+        // 表单配置
+        @NameInMap("formSchema")
+        public String formSchema;
+
         // 手写签名配置
         @NameInMap("handSignConf")
         public GetProcessConfigResponseBodyResultHandSignConf handSignConf;
@@ -384,6 +388,14 @@ public class GetProcessConfigResponseBody extends TeaModel {
         }
         public String getDuplicateRemoval() {
             return this.duplicateRemoval;
+        }
+
+        public GetProcessConfigResponseBodyResult setFormSchema(String formSchema) {
+            this.formSchema = formSchema;
+            return this;
+        }
+        public String getFormSchema() {
+            return this.formSchema;
         }
 
         public GetProcessConfigResponseBodyResult setHandSignConf(GetProcessConfigResponseBodyResultHandSignConf handSignConf) {

@@ -1257,6 +1257,51 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("UpdateInvoiceVerifyStatus", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/invoices/verifyStatus", "json", req, runtime), new UpdateInvoiceVerifyStatusResponse());
     }
 
+    public UpdateInvoiceVoucherStatusResponse updateInvoiceVoucherStatus(UpdateInvoiceVoucherStatusRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        UpdateInvoiceVoucherStatusHeaders headers = new UpdateInvoiceVoucherStatusHeaders();
+        return this.updateInvoiceVoucherStatusWithOptions(request, headers, runtime);
+    }
+
+    public UpdateInvoiceVoucherStatusResponse updateInvoiceVoucherStatusWithOptions(UpdateInvoiceVoucherStatusRequest request, UpdateInvoiceVoucherStatusHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.actionType)) {
+            body.put("actionType", request.actionType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.invoiceCode)) {
+            body.put("invoiceCode", request.invoiceCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.invoiceNo)) {
+            body.put("invoiceNo", request.invoiceNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operator)) {
+            body.put("operator", request.operator);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.voucherId)) {
+            body.put("voucherId", request.voucherId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UpdateInvoiceVoucherStatus", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/invoices/vouchers/states", "json", req, runtime), new UpdateInvoiceVoucherStatusResponse());
+    }
+
     public UpdateReceiptResponse updateReceipt(UpdateReceiptRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         UpdateReceiptHeaders headers = new UpdateReceiptHeaders();

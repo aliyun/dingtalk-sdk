@@ -1192,6 +1192,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("privateData", request.privateData);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.pullStrategy)) {
+            body.put("pullStrategy", request.pullStrategy);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.receiverUserIdList)) {
             body.put("receiverUserIdList", request.receiverUserIdList);
         }
@@ -1247,6 +1251,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
             body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pullStrategy)) {
+            body.put("pullStrategy", request.pullStrategy);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.robotCode)) {
