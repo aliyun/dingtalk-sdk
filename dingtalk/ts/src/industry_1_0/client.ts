@@ -3637,6 +3637,255 @@ export class DigitalStoreUsersResponse extends $tea.Model {
   }
 }
 
+export class ExternalQueryExternalAppOrgsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExternalQueryExternalAppOrgsRequest extends $tea.Model {
+  externalType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      externalType: 'externalType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      externalType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExternalQueryExternalAppOrgsResponseBody extends $tea.Model {
+  result?: ExternalQueryExternalAppOrgsResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': ExternalQueryExternalAppOrgsResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExternalQueryExternalAppOrgsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ExternalQueryExternalAppOrgsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ExternalQueryExternalAppOrgsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExternalQueryExternalBelongMainOrgHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExternalQueryExternalBelongMainOrgRequest extends $tea.Model {
+  externalType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      externalType: 'externalType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      externalType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExternalQueryExternalBelongMainOrgResponseBody extends $tea.Model {
+  corpId?: string;
+  corpName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      corpName: 'corpName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      corpName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExternalQueryExternalBelongMainOrgResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ExternalQueryExternalBelongMainOrgResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ExternalQueryExternalBelongMainOrgResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExternalQueryExternalOrgsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExternalQueryExternalOrgsRequest extends $tea.Model {
+  externalType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      externalType: 'externalType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      externalType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExternalQueryExternalOrgsResponseBody extends $tea.Model {
+  result?: ExternalQueryExternalOrgsResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': ExternalQueryExternalOrgsResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExternalQueryExternalOrgsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ExternalQueryExternalOrgsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ExternalQueryExternalOrgsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class IndustryManufactureCommonEventHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6992,6 +7241,50 @@ export class DigitalStoreUsersResponseBodyContent extends $tea.Model {
   }
 }
 
+export class ExternalQueryExternalAppOrgsResponseBodyResult extends $tea.Model {
+  corpId?: string;
+  corpName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      corpName: 'corpName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      corpName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExternalQueryExternalOrgsResponseBodyResult extends $tea.Model {
+  corpId?: string;
+  corpName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      corpName: 'corpName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      corpName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class IndustryManufactureCommonEventResponseBodyResult extends $tea.Model {
   content?: string;
   httpCode?: string;
@@ -10262,6 +10555,93 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<DigitalStoreUsersResponse>(await this.doROARequest("DigitalStoreUsers", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/nodes/users`, "json", req, runtime), new DigitalStoreUsersResponse({}));
+  }
+
+  async externalQueryExternalAppOrgs(request: ExternalQueryExternalAppOrgsRequest): Promise<ExternalQueryExternalAppOrgsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ExternalQueryExternalAppOrgsHeaders({ });
+    return await this.externalQueryExternalAppOrgsWithOptions(request, headers, runtime);
+  }
+
+  async externalQueryExternalAppOrgsWithOptions(request: ExternalQueryExternalAppOrgsRequest, headers: ExternalQueryExternalAppOrgsHeaders, runtime: $Util.RuntimeOptions): Promise<ExternalQueryExternalAppOrgsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.externalType)) {
+      query["externalType"] = request.externalType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ExternalQueryExternalAppOrgsResponse>(await this.doROARequest("ExternalQueryExternalAppOrgs", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/externals/apps/organizations`, "json", req, runtime), new ExternalQueryExternalAppOrgsResponse({}));
+  }
+
+  async externalQueryExternalBelongMainOrg(request: ExternalQueryExternalBelongMainOrgRequest): Promise<ExternalQueryExternalBelongMainOrgResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ExternalQueryExternalBelongMainOrgHeaders({ });
+    return await this.externalQueryExternalBelongMainOrgWithOptions(request, headers, runtime);
+  }
+
+  async externalQueryExternalBelongMainOrgWithOptions(request: ExternalQueryExternalBelongMainOrgRequest, headers: ExternalQueryExternalBelongMainOrgHeaders, runtime: $Util.RuntimeOptions): Promise<ExternalQueryExternalBelongMainOrgResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.externalType)) {
+      query["externalType"] = request.externalType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ExternalQueryExternalBelongMainOrgResponse>(await this.doROARequest("ExternalQueryExternalBelongMainOrg", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/externals/attributions/masterOrganizations`, "json", req, runtime), new ExternalQueryExternalBelongMainOrgResponse({}));
+  }
+
+  async externalQueryExternalOrgs(request: ExternalQueryExternalOrgsRequest): Promise<ExternalQueryExternalOrgsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ExternalQueryExternalOrgsHeaders({ });
+    return await this.externalQueryExternalOrgsWithOptions(request, headers, runtime);
+  }
+
+  async externalQueryExternalOrgsWithOptions(request: ExternalQueryExternalOrgsRequest, headers: ExternalQueryExternalOrgsHeaders, runtime: $Util.RuntimeOptions): Promise<ExternalQueryExternalOrgsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.externalType)) {
+      query["externalType"] = request.externalType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ExternalQueryExternalOrgsResponse>(await this.doROARequest("ExternalQueryExternalOrgs", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/externals/organizations`, "json", req, runtime), new ExternalQueryExternalOrgsResponse({}));
   }
 
   async industryManufactureCommonEvent(request: IndustryManufactureCommonEventRequest): Promise<IndustryManufactureCommonEventResponse> {

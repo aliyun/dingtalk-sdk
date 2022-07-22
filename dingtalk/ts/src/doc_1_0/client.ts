@@ -1325,24 +1325,30 @@ export class GetSheetRequest extends $tea.Model {
 }
 
 export class GetSheetResponseBody extends $tea.Model {
+  columnCount?: number;
   lastNonEmptyColumn?: number;
   lastNonEmptyRow?: number;
   name?: string;
+  rowCount?: number;
   visibility?: string;
   static names(): { [key: string]: string } {
     return {
+      columnCount: 'columnCount',
       lastNonEmptyColumn: 'lastNonEmptyColumn',
       lastNonEmptyRow: 'lastNonEmptyRow',
       name: 'name',
+      rowCount: 'rowCount',
       visibility: 'visibility',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      columnCount: 'number',
       lastNonEmptyColumn: 'number',
       lastNonEmptyRow: 'number',
       name: 'string',
+      rowCount: 'number',
       visibility: 'string',
     };
   }

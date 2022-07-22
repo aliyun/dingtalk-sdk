@@ -4014,7 +4014,7 @@ export class GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList ex
   }
 }
 
-export class GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList extends $tea.Model {
+export class GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList extends $tea.Model {
   amount?: string;
   cardNo?: string;
   endDate?: string;
@@ -4207,7 +4207,6 @@ export class GetInvoiceByPageResponseBodyResultList extends $tea.Model {
   purchaserTaxNo?: string;
   purchaserTel?: string;
   remark?: string;
-  secondHandCarInvoiceDetailList?: GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList[];
   sellerAddress?: string;
   sellerBankNameAccount?: string;
   sellerName?: string;
@@ -4216,6 +4215,7 @@ export class GetInvoiceByPageResponseBodyResultList extends $tea.Model {
   status?: string;
   supplySign?: string;
   taxAmount?: string;
+  transportFeeDetailVOList?: GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList[];
   usedVehicleSaleDetailVOList?: GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList[];
   vehicleSaleDetailVOList?: GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList[];
   verifyStatus?: string;
@@ -4247,7 +4247,6 @@ export class GetInvoiceByPageResponseBodyResultList extends $tea.Model {
       purchaserTaxNo: 'purchaserTaxNo',
       purchaserTel: 'purchaserTel',
       remark: 'remark',
-      secondHandCarInvoiceDetailList: 'secondHandCarInvoiceDetailList',
       sellerAddress: 'sellerAddress',
       sellerBankNameAccount: 'sellerBankNameAccount',
       sellerName: 'sellerName',
@@ -4256,6 +4255,7 @@ export class GetInvoiceByPageResponseBodyResultList extends $tea.Model {
       status: 'status',
       supplySign: 'supplySign',
       taxAmount: 'taxAmount',
+      transportFeeDetailVOList: 'transportFeeDetailVOList',
       usedVehicleSaleDetailVOList: 'usedVehicleSaleDetailVOList',
       vehicleSaleDetailVOList: 'vehicleSaleDetailVOList',
       verifyStatus: 'verifyStatus',
@@ -4290,7 +4290,6 @@ export class GetInvoiceByPageResponseBodyResultList extends $tea.Model {
       purchaserTaxNo: 'string',
       purchaserTel: 'string',
       remark: 'string',
-      secondHandCarInvoiceDetailList: { 'type': 'array', 'itemType': GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList },
       sellerAddress: 'string',
       sellerBankNameAccount: 'string',
       sellerName: 'string',
@@ -4299,6 +4298,7 @@ export class GetInvoiceByPageResponseBodyResultList extends $tea.Model {
       status: 'string',
       supplySign: 'string',
       taxAmount: 'string',
+      transportFeeDetailVOList: { 'type': 'array', 'itemType': GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList },
       usedVehicleSaleDetailVOList: { 'type': 'array', 'itemType': GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList },
       vehicleSaleDetailVOList: { 'type': 'array', 'itemType': GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList },
       verifyStatus: 'string',

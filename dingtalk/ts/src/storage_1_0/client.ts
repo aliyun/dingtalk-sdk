@@ -119,12 +119,10 @@ export class AddSpaceHeaders extends $tea.Model {
 
 export class AddSpaceRequest extends $tea.Model {
   option?: AddSpaceRequestOption;
-  param?: AddSpaceRequestParam;
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
       option: 'option',
-      param: 'param',
       unionId: 'unionId',
     };
   }
@@ -132,7 +130,6 @@ export class AddSpaceRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       option: AddSpaceRequestOption,
-      param: AddSpaceRequestParam,
       unionId: 'string',
     };
   }
@@ -2373,25 +2370,6 @@ export class AddSpaceRequestOption extends $tea.Model {
   }
 }
 
-export class AddSpaceRequestParam extends $tea.Model {
-  corpId?: string;
-  static names(): { [key: string]: string } {
-    return {
-      corpId: 'corpId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      corpId: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class AddSpaceResponseBodySpaceCapabilities extends $tea.Model {
   canRecordRecentFile?: boolean;
   canRename?: boolean;
@@ -3767,10 +3745,6 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset($tea.toMap(request.option))) {
       body["option"] = request.option;
-    }
-
-    if (!Util.isUnset($tea.toMap(request.param))) {
-      body["param"] = request.param;
     }
 
     let realHeaders : {[key: string ]: string} = { };
