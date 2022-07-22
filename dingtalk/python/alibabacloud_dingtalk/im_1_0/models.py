@@ -4875,6 +4875,7 @@ class SendInteractiveCardRequest(TeaModel):
         open_conversation_id: str = None,
         out_track_id: str = None,
         private_data: Dict[str, PrivateDataValue] = None,
+        pull_strategy: bool = None,
         receiver_user_id_list: List[str] = None,
         robot_code: str = None,
         user_id_type: int = None,
@@ -4899,6 +4900,8 @@ class SendInteractiveCardRequest(TeaModel):
         self.out_track_id = out_track_id
         # 卡片用户私有差异部分数据（如卡片不同人显示不同按钮；key：用户userId；value：用户数据变量）
         self.private_data = private_data
+        # 是否开启卡片纯拉模式
+        self.pull_strategy = pull_strategy
         # 互动卡片消息需要群会话部分人可见时的接收人列表，不填写默认群会话所有人可见
         self.receiver_user_id_list = receiver_user_id_list
         # 【robotCode & chatBotId二选一必填】机器人编码（群模板机器人）
@@ -4944,6 +4947,8 @@ class SendInteractiveCardRequest(TeaModel):
         if self.private_data is not None:
             for k, v in self.private_data.items():
                 result['privateData'][k] = v.to_map()
+        if self.pull_strategy is not None:
+            result['pullStrategy'] = self.pull_strategy
         if self.receiver_user_id_list is not None:
             result['receiverUserIdList'] = self.receiver_user_id_list
         if self.robot_code is not None:
@@ -4979,6 +4984,8 @@ class SendInteractiveCardRequest(TeaModel):
             for k, v in m.get('privateData').items():
                 temp_model = PrivateDataValue()
                 self.private_data[k] = temp_model.from_map(v)
+        if m.get('pullStrategy') is not None:
+            self.pull_strategy = m.get('pullStrategy')
         if m.get('receiverUserIdList') is not None:
             self.receiver_user_id_list = m.get('receiverUserIdList')
         if m.get('robotCode') is not None:
@@ -5180,6 +5187,7 @@ class SendRobotInteractiveCardRequest(TeaModel):
         card_data: str = None,
         card_template_id: str = None,
         open_conversation_id: str = None,
+        pull_strategy: bool = None,
         robot_code: str = None,
         send_options: SendRobotInteractiveCardRequestSendOptions = None,
         single_chat_receiver: str = None,
@@ -5196,6 +5204,8 @@ class SendRobotInteractiveCardRequest(TeaModel):
         self.card_template_id = card_template_id
         # 【openConversationId & singleChatReceiver 二选一必填】接收卡片的加密群ID，特指多人群会话（非单聊）
         self.open_conversation_id = open_conversation_id
+        # 是否开启卡片纯拉模式
+        self.pull_strategy = pull_strategy
         # 机器人代码，群模板机器人网页有机器人ID；企业内部机器人为机器人appKey，企业三方机器人有robotCode
         self.robot_code = robot_code
         # 互动卡片发送选项
@@ -5227,6 +5237,8 @@ class SendRobotInteractiveCardRequest(TeaModel):
             result['cardTemplateId'] = self.card_template_id
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
+        if self.pull_strategy is not None:
+            result['pullStrategy'] = self.pull_strategy
         if self.robot_code is not None:
             result['robotCode'] = self.robot_code
         if self.send_options is not None:
@@ -5251,6 +5263,8 @@ class SendRobotInteractiveCardRequest(TeaModel):
             self.card_template_id = m.get('cardTemplateId')
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
+        if m.get('pullStrategy') is not None:
+            self.pull_strategy = m.get('pullStrategy')
         if m.get('robotCode') is not None:
             self.robot_code = m.get('robotCode')
         if m.get('sendOptions') is not None:

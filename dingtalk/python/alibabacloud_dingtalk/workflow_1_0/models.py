@@ -1188,6 +1188,7 @@ class GetProcessConfigResponseBodyResult(TeaModel):
         biz_type: str = None,
         comment_conf: GetProcessConfigResponseBodyResultCommentConf = None,
         duplicate_removal: str = None,
+        form_schema: str = None,
         hand_sign_conf: GetProcessConfigResponseBodyResultHandSignConf = None,
         managers: List[str] = None,
         name: str = None,
@@ -1216,6 +1217,8 @@ class GetProcessConfigResponseBodyResult(TeaModel):
         self.comment_conf = comment_conf
         # 审批人自动去重
         self.duplicate_removal = duplicate_removal
+        # 表单配置
+        self.form_schema = form_schema
         # 手写签名配置
         self.hand_sign_conf = hand_sign_conf
         # 表单管理员
@@ -1273,6 +1276,8 @@ class GetProcessConfigResponseBodyResult(TeaModel):
             result['commentConf'] = self.comment_conf.to_map()
         if self.duplicate_removal is not None:
             result['duplicateRemoval'] = self.duplicate_removal
+        if self.form_schema is not None:
+            result['formSchema'] = self.form_schema
         if self.hand_sign_conf is not None:
             result['handSignConf'] = self.hand_sign_conf.to_map()
         if self.managers is not None:
@@ -1316,6 +1321,8 @@ class GetProcessConfigResponseBodyResult(TeaModel):
             self.comment_conf = temp_model.from_map(m['commentConf'])
         if m.get('duplicateRemoval') is not None:
             self.duplicate_removal = m.get('duplicateRemoval')
+        if m.get('formSchema') is not None:
+            self.form_schema = m.get('formSchema')
         if m.get('handSignConf') is not None:
             temp_model = GetProcessConfigResponseBodyResultHandSignConf()
             self.hand_sign_conf = temp_model.from_map(m['handSignConf'])

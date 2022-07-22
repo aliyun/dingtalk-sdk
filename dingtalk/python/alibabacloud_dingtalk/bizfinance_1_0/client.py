@@ -2407,6 +2407,86 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('UpdateInvoiceVerifyStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/verifyStatus', 'json', req, runtime)
         )
 
+    def update_invoice_voucher_status(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusHeaders()
+        return self.update_invoice_voucher_status_with_options(request, headers, runtime)
+
+    async def update_invoice_voucher_status_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusHeaders()
+        return await self.update_invoice_voucher_status_with_options_async(request, headers, runtime)
+
+    def update_invoice_voucher_status_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusRequest,
+        headers: dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_type):
+            body['actionType'] = request.action_type
+        if not UtilClient.is_unset(request.invoice_code):
+            body['invoiceCode'] = request.invoice_code
+        if not UtilClient.is_unset(request.invoice_no):
+            body['invoiceNo'] = request.invoice_no
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.voucher_id):
+            body['voucherId'] = request.voucher_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusResponse(),
+            self.do_roarequest('UpdateInvoiceVoucherStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/vouchers/states', 'json', req, runtime)
+        )
+
+    async def update_invoice_voucher_status_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusRequest,
+        headers: dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_type):
+            body['actionType'] = request.action_type
+        if not UtilClient.is_unset(request.invoice_code):
+            body['invoiceCode'] = request.invoice_code
+        if not UtilClient.is_unset(request.invoice_no):
+            body['invoiceNo'] = request.invoice_no
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.voucher_id):
+            body['voucherId'] = request.voucher_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusResponse(),
+            await self.do_roarequest_async('UpdateInvoiceVoucherStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/vouchers/states', 'json', req, runtime)
+        )
+
     def update_receipt(
         self,
         request: dingtalkbizfinance__1__0_models.UpdateReceiptRequest,

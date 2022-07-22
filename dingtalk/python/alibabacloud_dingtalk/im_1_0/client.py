@@ -2121,6 +2121,8 @@ class Client(OpenApiClient):
             body['outTrackId'] = request.out_track_id
         if not UtilClient.is_unset(request.private_data):
             body['privateData'] = request.private_data
+        if not UtilClient.is_unset(request.pull_strategy):
+            body['pullStrategy'] = request.pull_strategy
         if not UtilClient.is_unset(request.receiver_user_id_list):
             body['receiverUserIdList'] = request.receiver_user_id_list
         if not UtilClient.is_unset(request.robot_code):
@@ -2169,6 +2171,8 @@ class Client(OpenApiClient):
             body['outTrackId'] = request.out_track_id
         if not UtilClient.is_unset(request.private_data):
             body['privateData'] = request.private_data
+        if not UtilClient.is_unset(request.pull_strategy):
+            body['pullStrategy'] = request.pull_strategy
         if not UtilClient.is_unset(request.receiver_user_id_list):
             body['receiverUserIdList'] = request.receiver_user_id_list
         if not UtilClient.is_unset(request.robot_code):
@@ -2223,6 +2227,8 @@ class Client(OpenApiClient):
             body['cardTemplateId'] = request.card_template_id
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.pull_strategy):
+            body['pullStrategy'] = request.pull_strategy
         if not UtilClient.is_unset(request.robot_code):
             body['robotCode'] = request.robot_code
         if not UtilClient.is_unset(request.send_options):
@@ -2265,6 +2271,8 @@ class Client(OpenApiClient):
             body['cardTemplateId'] = request.card_template_id
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.pull_strategy):
+            body['pullStrategy'] = request.pull_strategy
         if not UtilClient.is_unset(request.robot_code):
             body['robotCode'] = request.robot_code
         if not UtilClient.is_unset(request.send_options):

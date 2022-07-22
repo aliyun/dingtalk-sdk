@@ -15544,7 +15544,7 @@ class SaveFormRemarkRequest(TeaModel):
     ):
         # 应用ID
         self.app_type = app_type
-        # 将评论内容通过钉钉发给指定用户
+        # 将评论内容通过钉钉发给指定用户, 逗号分隔
         self.at_user_id = at_user_id
         # 评论内容
         self.content = content
