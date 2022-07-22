@@ -66,18 +66,6 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         };
 
         /// <summary>
-        /// 必选参数
-        /// </summary>
-        [NameInMap("param")]
-        [Validation(Required=false)]
-        public AddSpaceRequestParam Param { get; set; }
-        public class AddSpaceRequestParam : TeaModel {
-            [NameInMap("corpId")]
-            [Validation(Required=false)]
-            public string CorpId { get; set; }
-        };
-
-        /// <summary>
         /// 用户id
         /// </summary>
         [NameInMap("unionId")]

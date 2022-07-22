@@ -141,10 +141,6 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0
             {
                 body["option"] = request.Option;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Param.ToMap()))
-            {
-                body["param"] = request.Param;
-            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -175,10 +171,6 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Option.ToMap()))
             {
                 body["option"] = request.Option;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Param.ToMap()))
-            {
-                body["param"] = request.Param;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

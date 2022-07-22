@@ -65,8 +65,16 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 public string PurchaserTaxNo { get; set; }
                 public string PurchaserTel { get; set; }
                 public string Remark { get; set; }
-                public List<GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList> SecondHandCarInvoiceDetailList { get; set; }
-                public class GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList : TeaModel {
+                public string SellerAddress { get; set; }
+                public string SellerBankNameAccount { get; set; }
+                public string SellerName { get; set; }
+                public string SellerTaxNo { get; set; }
+                public string SellerTel { get; set; }
+                public string Status { get; set; }
+                public string SupplySign { get; set; }
+                public string TaxAmount { get; set; }
+                public List<GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList> TransportFeeDetailVOList { get; set; }
+                public class GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList : TeaModel {
                     public string Amount { get; set; }
                     public string CardNo { get; set; }
                     public string EndDate { get; set; }
@@ -78,14 +86,6 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                     public string TaxRate { get; set; }
                     public string VehicleType { get; set; }
                 }
-                public string SellerAddress { get; set; }
-                public string SellerBankNameAccount { get; set; }
-                public string SellerName { get; set; }
-                public string SellerTaxNo { get; set; }
-                public string SellerTel { get; set; }
-                public string Status { get; set; }
-                public string SupplySign { get; set; }
-                public string TaxAmount { get; set; }
                 public List<GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList> UsedVehicleSaleDetailVOList { get; set; }
                 public class GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList : TeaModel {
                     public string AuctionUnit { get; set; }
