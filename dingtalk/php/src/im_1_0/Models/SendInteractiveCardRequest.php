@@ -81,6 +81,13 @@ class SendInteractiveCardRequest extends Model
     public $privateData;
 
     /**
+     * @description 是否开启卡片纯拉模式
+     *
+     * @var bool
+     */
+    public $pullStrategy;
+
+    /**
      * @description 互动卡片消息需要群会话部分人可见时的接收人列表，不填写默认群会话所有人可见
      *
      * @var string[]
@@ -111,6 +118,7 @@ class SendInteractiveCardRequest extends Model
         'openConversationId' => 'openConversationId',
         'outTrackId'         => 'outTrackId',
         'privateData'        => 'privateData',
+        'pullStrategy'       => 'pullStrategy',
         'receiverUserIdList' => 'receiverUserIdList',
         'robotCode'          => 'robotCode',
         'userIdType'         => 'userIdType',
@@ -157,6 +165,9 @@ class SendInteractiveCardRequest extends Model
                     $res['privateData'][$key] = null !== $val ? $val->toMap() : $val;
                 }
             }
+        }
+        if (null !== $this->pullStrategy) {
+            $res['pullStrategy'] = $this->pullStrategy;
         }
         if (null !== $this->receiverUserIdList) {
             $res['receiverUserIdList'] = $this->receiverUserIdList;
@@ -208,6 +219,9 @@ class SendInteractiveCardRequest extends Model
         }
         if (isset($map['privateData'])) {
             $model->privateData = $map['privateData'];
+        }
+        if (isset($map['pullStrategy'])) {
+            $model->pullStrategy = $map['pullStrategy'];
         }
         if (isset($map['receiverUserIdList'])) {
             if (!empty($map['receiverUserIdList'])) {

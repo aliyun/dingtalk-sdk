@@ -77,6 +77,13 @@ class result extends Model
     public $duplicateRemoval;
 
     /**
+     * @description 表单配置
+     *
+     * @var string
+     */
+    public $formSchema;
+
+    /**
      * @description 手写签名配置
      *
      * @var handSignConf
@@ -148,6 +155,7 @@ class result extends Model
         'bizType'                    => 'bizType',
         'commentConf'                => 'commentConf',
         'duplicateRemoval'           => 'duplicateRemoval',
+        'formSchema'                 => 'formSchema',
         'handSignConf'               => 'handSignConf',
         'managers'                   => 'managers',
         'name'                       => 'name',
@@ -192,6 +200,9 @@ class result extends Model
         }
         if (null !== $this->duplicateRemoval) {
             $res['duplicateRemoval'] = $this->duplicateRemoval;
+        }
+        if (null !== $this->formSchema) {
+            $res['formSchema'] = $this->formSchema;
         }
         if (null !== $this->handSignConf) {
             $res['handSignConf'] = null !== $this->handSignConf ? $this->handSignConf->toMap() : null;
@@ -266,6 +277,9 @@ class result extends Model
         }
         if (isset($map['duplicateRemoval'])) {
             $model->duplicateRemoval = $map['duplicateRemoval'];
+        }
+        if (isset($map['formSchema'])) {
+            $model->formSchema = $map['formSchema'];
         }
         if (isset($map['handSignConf'])) {
             $model->handSignConf = handSignConf::fromMap($map['handSignConf']);

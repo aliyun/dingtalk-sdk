@@ -104,6 +104,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceIgnoreStatusRe
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceVerifyStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceVerifyStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceVerifyStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceVoucherStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceVoucherStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceVoucherStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateReceiptHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateReceiptRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateReceiptResponse;
@@ -1726,6 +1729,60 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateInvoiceVerifyStatusResponse::fromMap($this->doROARequest('UpdateInvoiceVerifyStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/bizfinance/invoices/verifyStatus', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateInvoiceVoucherStatusRequest $request
+     *
+     * @return UpdateInvoiceVoucherStatusResponse
+     */
+    public function updateInvoiceVoucherStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateInvoiceVoucherStatusHeaders([]);
+
+        return $this->updateInvoiceVoucherStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateInvoiceVoucherStatusRequest $request
+     * @param UpdateInvoiceVoucherStatusHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return UpdateInvoiceVoucherStatusResponse
+     */
+    public function updateInvoiceVoucherStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->actionType)) {
+            @$body['actionType'] = $request->actionType;
+        }
+        if (!Utils::isUnset($request->invoiceCode)) {
+            @$body['invoiceCode'] = $request->invoiceCode;
+        }
+        if (!Utils::isUnset($request->invoiceNo)) {
+            @$body['invoiceNo'] = $request->invoiceNo;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            @$body['operator'] = $request->operator;
+        }
+        if (!Utils::isUnset($request->voucherId)) {
+            @$body['voucherId'] = $request->voucherId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateInvoiceVoucherStatusResponse::fromMap($this->doROARequest('UpdateInvoiceVoucherStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/bizfinance/invoices/vouchers/states', 'json', $req, $runtime));
     }
 
     /**

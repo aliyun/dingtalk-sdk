@@ -1592,6 +1592,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->privateData)) {
             @$body['privateData'] = $request->privateData;
         }
+        if (!Utils::isUnset($request->pullStrategy)) {
+            @$body['pullStrategy'] = $request->pullStrategy;
+        }
         if (!Utils::isUnset($request->receiverUserIdList)) {
             @$body['receiverUserIdList'] = $request->receiverUserIdList;
         }
@@ -1654,6 +1657,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->openConversationId)) {
             @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->pullStrategy)) {
+            @$body['pullStrategy'] = $request->pullStrategy;
         }
         if (!Utils::isUnset($request->robotCode)) {
             @$body['robotCode'] = $request->robotCode;

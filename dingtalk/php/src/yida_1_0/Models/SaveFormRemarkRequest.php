@@ -16,7 +16,7 @@ class SaveFormRemarkRequest extends Model
     public $appType;
 
     /**
-     * @description 将评论内容通过钉钉发给指定用户
+     * @description 将评论内容通过钉钉发给指定用户, 逗号分隔
      *
      * @var string
      */

@@ -45,6 +45,13 @@ class SendRobotInteractiveCardRequest extends Model
     public $openConversationId;
 
     /**
+     * @description 是否开启卡片纯拉模式
+     *
+     * @var bool
+     */
+    public $pullStrategy;
+
+    /**
      * @description 机器人代码，群模板机器人网页有机器人ID；企业内部机器人为机器人appKey，企业三方机器人有robotCode
      *
      * @var string
@@ -84,6 +91,7 @@ class SendRobotInteractiveCardRequest extends Model
         'cardData'              => 'cardData',
         'cardTemplateId'        => 'cardTemplateId',
         'openConversationId'    => 'openConversationId',
+        'pullStrategy'          => 'pullStrategy',
         'robotCode'             => 'robotCode',
         'sendOptions'           => 'sendOptions',
         'singleChatReceiver'    => 'singleChatReceiver',
@@ -112,6 +120,9 @@ class SendRobotInteractiveCardRequest extends Model
         }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
+        }
+        if (null !== $this->pullStrategy) {
+            $res['pullStrategy'] = $this->pullStrategy;
         }
         if (null !== $this->robotCode) {
             $res['robotCode'] = $this->robotCode;
@@ -154,6 +165,9 @@ class SendRobotInteractiveCardRequest extends Model
         }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
+        }
+        if (isset($map['pullStrategy'])) {
+            $model->pullStrategy = $map['pullStrategy'];
         }
         if (isset($map['robotCode'])) {
             $model->robotCode = $map['robotCode'];
