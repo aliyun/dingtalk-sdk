@@ -2546,6 +2546,7 @@ export class SendInteractiveCardRequest extends $tea.Model {
   openConversationId?: string;
   outTrackId?: string;
   privateData?: { [key: string]: PrivateDataValue };
+  pullStrategy?: boolean;
   receiverUserIdList?: string[];
   robotCode?: string;
   userIdType?: number;
@@ -2561,6 +2562,7 @@ export class SendInteractiveCardRequest extends $tea.Model {
       openConversationId: 'openConversationId',
       outTrackId: 'outTrackId',
       privateData: 'privateData',
+      pullStrategy: 'pullStrategy',
       receiverUserIdList: 'receiverUserIdList',
       robotCode: 'robotCode',
       userIdType: 'userIdType',
@@ -2579,6 +2581,7 @@ export class SendInteractiveCardRequest extends $tea.Model {
       openConversationId: 'string',
       outTrackId: 'string',
       privateData: { 'type': 'map', 'keyType': 'string', 'valueType': PrivateDataValue },
+      pullStrategy: 'boolean',
       receiverUserIdList: { 'type': 'array', 'itemType': 'string' },
       robotCode: 'string',
       userIdType: 'number',
@@ -2662,6 +2665,7 @@ export class SendRobotInteractiveCardRequest extends $tea.Model {
   cardData?: string;
   cardTemplateId?: string;
   openConversationId?: string;
+  pullStrategy?: boolean;
   robotCode?: string;
   sendOptions?: SendRobotInteractiveCardRequestSendOptions;
   singleChatReceiver?: string;
@@ -2674,6 +2678,7 @@ export class SendRobotInteractiveCardRequest extends $tea.Model {
       cardData: 'cardData',
       cardTemplateId: 'cardTemplateId',
       openConversationId: 'openConversationId',
+      pullStrategy: 'pullStrategy',
       robotCode: 'robotCode',
       sendOptions: 'sendOptions',
       singleChatReceiver: 'singleChatReceiver',
@@ -2689,6 +2694,7 @@ export class SendRobotInteractiveCardRequest extends $tea.Model {
       cardData: 'string',
       cardTemplateId: 'string',
       openConversationId: 'string',
+      pullStrategy: 'boolean',
       robotCode: 'string',
       sendOptions: SendRobotInteractiveCardRequestSendOptions,
       singleChatReceiver: 'string',
@@ -5806,6 +5812,10 @@ export default class Client extends OpenApi {
       body["privateData"] = request.privateData;
     }
 
+    if (!Util.isUnset(request.pullStrategy)) {
+      body["pullStrategy"] = request.pullStrategy;
+    }
+
     if (!Util.isUnset(request.receiverUserIdList)) {
       body["receiverUserIdList"] = request.receiverUserIdList;
     }
@@ -5861,6 +5871,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.openConversationId)) {
       body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.pullStrategy)) {
+      body["pullStrategy"] = request.pullStrategy;
     }
 
     if (!Util.isUnset(request.robotCode)) {

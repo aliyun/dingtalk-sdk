@@ -1448,6 +1448,7 @@ export class GetProcessConfigResponseBodyResult extends $tea.Model {
   bizType?: string;
   commentConf?: GetProcessConfigResponseBodyResultCommentConf;
   duplicateRemoval?: string;
+  formSchema?: string;
   handSignConf?: GetProcessConfigResponseBodyResultHandSignConf;
   managers?: string[];
   name?: string;
@@ -1468,6 +1469,7 @@ export class GetProcessConfigResponseBodyResult extends $tea.Model {
       bizType: 'bizType',
       commentConf: 'commentConf',
       duplicateRemoval: 'duplicateRemoval',
+      formSchema: 'formSchema',
       handSignConf: 'handSignConf',
       managers: 'managers',
       name: 'name',
@@ -1491,6 +1493,7 @@ export class GetProcessConfigResponseBodyResult extends $tea.Model {
       bizType: 'string',
       commentConf: GetProcessConfigResponseBodyResultCommentConf,
       duplicateRemoval: 'string',
+      formSchema: 'string',
       handSignConf: GetProcessConfigResponseBodyResultHandSignConf,
       managers: { 'type': 'array', 'itemType': 'string' },
       name: 'string',
