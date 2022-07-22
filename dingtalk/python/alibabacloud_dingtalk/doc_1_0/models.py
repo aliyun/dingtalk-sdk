@@ -3041,17 +3041,23 @@ class GetSheetRequest(TeaModel):
 class GetSheetResponseBody(TeaModel):
     def __init__(
         self,
+        column_count: int = None,
         last_non_empty_column: int = None,
         last_non_empty_row: int = None,
         name: str = None,
+        row_count: int = None,
         visibility: str = None,
     ):
+        # 工作表列数
+        self.column_count = column_count
         # 最后一列非空列的位置，从0开始。表为空时返回-1。
         self.last_non_empty_column = last_non_empty_column
         # 最后一行非空行的位置，从0开始。表为空时返回-1。
         self.last_non_empty_row = last_non_empty_row
         # 工作表名称
         self.name = name
+        # 工作表行数
+        self.row_count = row_count
         # 工作表可见性
         self.visibility = visibility
 
@@ -3064,24 +3070,32 @@ class GetSheetResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.column_count is not None:
+            result['columnCount'] = self.column_count
         if self.last_non_empty_column is not None:
             result['lastNonEmptyColumn'] = self.last_non_empty_column
         if self.last_non_empty_row is not None:
             result['lastNonEmptyRow'] = self.last_non_empty_row
         if self.name is not None:
             result['name'] = self.name
+        if self.row_count is not None:
+            result['rowCount'] = self.row_count
         if self.visibility is not None:
             result['visibility'] = self.visibility
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('columnCount') is not None:
+            self.column_count = m.get('columnCount')
         if m.get('lastNonEmptyColumn') is not None:
             self.last_non_empty_column = m.get('lastNonEmptyColumn')
         if m.get('lastNonEmptyRow') is not None:
             self.last_non_empty_row = m.get('lastNonEmptyRow')
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('rowCount') is not None:
+            self.row_count = m.get('rowCount')
         if m.get('visibility') is not None:
             self.visibility = m.get('visibility')
         return self

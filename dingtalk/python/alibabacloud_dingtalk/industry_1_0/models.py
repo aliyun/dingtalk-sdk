@@ -6779,6 +6779,475 @@ class DigitalStoreUsersResponse(TeaModel):
         return self
 
 
+class ExternalQueryExternalAppOrgsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ExternalQueryExternalAppOrgsRequest(TeaModel):
+    def __init__(
+        self,
+        external_type: str = None,
+    ):
+        # 外部组织类型
+        self.external_type = external_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.external_type is not None:
+            result['externalType'] = self.external_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('externalType') is not None:
+            self.external_type = m.get('externalType')
+        return self
+
+
+class ExternalQueryExternalAppOrgsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        corp_name: str = None,
+    ):
+        # 外部合作组织ID
+        self.corp_id = corp_id
+        # 外部合作组织名称
+        self.corp_name = corp_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.corp_name is not None:
+            result['corpName'] = self.corp_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('corpName') is not None:
+            self.corp_name = m.get('corpName')
+        return self
+
+
+class ExternalQueryExternalAppOrgsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[ExternalQueryExternalAppOrgsResponseBodyResult] = None,
+    ):
+        # 返回项目组
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = ExternalQueryExternalAppOrgsResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class ExternalQueryExternalAppOrgsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ExternalQueryExternalAppOrgsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ExternalQueryExternalAppOrgsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ExternalQueryExternalBelongMainOrgHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ExternalQueryExternalBelongMainOrgRequest(TeaModel):
+    def __init__(
+        self,
+        external_type: str = None,
+    ):
+        # 外部组织类型
+        self.external_type = external_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.external_type is not None:
+            result['externalType'] = self.external_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('externalType') is not None:
+            self.external_type = m.get('externalType')
+        return self
+
+
+class ExternalQueryExternalBelongMainOrgResponseBody(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        corp_name: str = None,
+    ):
+        self.corp_id = corp_id
+        self.corp_name = corp_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.corp_name is not None:
+            result['corpName'] = self.corp_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('corpName') is not None:
+            self.corp_name = m.get('corpName')
+        return self
+
+
+class ExternalQueryExternalBelongMainOrgResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ExternalQueryExternalBelongMainOrgResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ExternalQueryExternalBelongMainOrgResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ExternalQueryExternalOrgsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ExternalQueryExternalOrgsRequest(TeaModel):
+    def __init__(
+        self,
+        external_type: str = None,
+    ):
+        # 外部组织类型,ecological:上下游
+        self.external_type = external_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.external_type is not None:
+            result['externalType'] = self.external_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('externalType') is not None:
+            self.external_type = m.get('externalType')
+        return self
+
+
+class ExternalQueryExternalOrgsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        corp_name: str = None,
+    ):
+        # 外部合作组织ID
+        self.corp_id = corp_id
+        # 外部合作组织名称
+        self.corp_name = corp_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.corp_name is not None:
+            result['corpName'] = self.corp_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('corpName') is not None:
+            self.corp_name = m.get('corpName')
+        return self
+
+
+class ExternalQueryExternalOrgsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[ExternalQueryExternalOrgsResponseBodyResult] = None,
+    ):
+        # 返回项目组
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = ExternalQueryExternalOrgsResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class ExternalQueryExternalOrgsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ExternalQueryExternalOrgsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ExternalQueryExternalOrgsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class IndustryManufactureCommonEventHeaders(TeaModel):
     def __init__(
         self,

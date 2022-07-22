@@ -140,8 +140,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.option):
             body['option'] = request.option
-        if not UtilClient.is_unset(request.param):
-            body['param'] = request.param
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -170,8 +168,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.option):
             body['option'] = request.option
-        if not UtilClient.is_unset(request.param):
-            body['param'] = request.param
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

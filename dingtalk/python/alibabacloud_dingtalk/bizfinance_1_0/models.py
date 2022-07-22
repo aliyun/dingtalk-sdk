@@ -2755,7 +2755,7 @@ class GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList(TeaModel)
         return self
 
 
-class GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList(TeaModel):
+class GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList(TeaModel):
     def __init__(
         self,
         amount: str = None,
@@ -3125,7 +3125,6 @@ class GetInvoiceByPageResponseBodyResultList(TeaModel):
         purchaser_tax_no: str = None,
         purchaser_tel: str = None,
         remark: str = None,
-        second_hand_car_invoice_detail_list: List[GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList] = None,
         seller_address: str = None,
         seller_bank_name_account: str = None,
         seller_name: str = None,
@@ -3134,6 +3133,7 @@ class GetInvoiceByPageResponseBodyResultList(TeaModel):
         status: str = None,
         supply_sign: str = None,
         tax_amount: str = None,
+        transport_fee_detail_volist: List[GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList] = None,
         used_vehicle_sale_detail_volist: List[GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList] = None,
         vehicle_sale_detail_volist: List[GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList] = None,
         verify_status: str = None,
@@ -3188,7 +3188,6 @@ class GetInvoiceByPageResponseBodyResultList(TeaModel):
         self.purchaser_tel = purchaser_tel
         # 备注
         self.remark = remark
-        self.second_hand_car_invoice_detail_list = second_hand_car_invoice_detail_list
         # 销方地址
         self.seller_address = seller_address
         # 销方银行
@@ -3205,6 +3204,7 @@ class GetInvoiceByPageResponseBodyResultList(TeaModel):
         self.supply_sign = supply_sign
         # 税额
         self.tax_amount = tax_amount
+        self.transport_fee_detail_volist = transport_fee_detail_volist
         self.used_vehicle_sale_detail_volist = used_vehicle_sale_detail_volist
         self.vehicle_sale_detail_volist = vehicle_sale_detail_volist
         # 发票查验状态
@@ -3219,8 +3219,8 @@ class GetInvoiceByPageResponseBodyResultList(TeaModel):
             for k in self.general_invoice_detail_volist:
                 if k:
                     k.validate()
-        if self.second_hand_car_invoice_detail_list:
-            for k in self.second_hand_car_invoice_detail_list:
+        if self.transport_fee_detail_volist:
+            for k in self.transport_fee_detail_volist:
                 if k:
                     k.validate()
         if self.used_vehicle_sale_detail_volist:
@@ -3288,10 +3288,6 @@ class GetInvoiceByPageResponseBodyResultList(TeaModel):
             result['purchaserTel'] = self.purchaser_tel
         if self.remark is not None:
             result['remark'] = self.remark
-        result['secondHandCarInvoiceDetailList'] = []
-        if self.second_hand_car_invoice_detail_list is not None:
-            for k in self.second_hand_car_invoice_detail_list:
-                result['secondHandCarInvoiceDetailList'].append(k.to_map() if k else None)
         if self.seller_address is not None:
             result['sellerAddress'] = self.seller_address
         if self.seller_bank_name_account is not None:
@@ -3308,6 +3304,10 @@ class GetInvoiceByPageResponseBodyResultList(TeaModel):
             result['supplySign'] = self.supply_sign
         if self.tax_amount is not None:
             result['taxAmount'] = self.tax_amount
+        result['transportFeeDetailVOList'] = []
+        if self.transport_fee_detail_volist is not None:
+            for k in self.transport_fee_detail_volist:
+                result['transportFeeDetailVOList'].append(k.to_map() if k else None)
         result['usedVehicleSaleDetailVOList'] = []
         if self.used_vehicle_sale_detail_volist is not None:
             for k in self.used_vehicle_sale_detail_volist:
@@ -3377,11 +3377,6 @@ class GetInvoiceByPageResponseBodyResultList(TeaModel):
             self.purchaser_tel = m.get('purchaserTel')
         if m.get('remark') is not None:
             self.remark = m.get('remark')
-        self.second_hand_car_invoice_detail_list = []
-        if m.get('secondHandCarInvoiceDetailList') is not None:
-            for k in m.get('secondHandCarInvoiceDetailList'):
-                temp_model = GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList()
-                self.second_hand_car_invoice_detail_list.append(temp_model.from_map(k))
         if m.get('sellerAddress') is not None:
             self.seller_address = m.get('sellerAddress')
         if m.get('sellerBankNameAccount') is not None:
@@ -3398,6 +3393,11 @@ class GetInvoiceByPageResponseBodyResultList(TeaModel):
             self.supply_sign = m.get('supplySign')
         if m.get('taxAmount') is not None:
             self.tax_amount = m.get('taxAmount')
+        self.transport_fee_detail_volist = []
+        if m.get('transportFeeDetailVOList') is not None:
+            for k in m.get('transportFeeDetailVOList'):
+                temp_model = GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList()
+                self.transport_fee_detail_volist.append(temp_model.from_map(k))
         self.used_vehicle_sale_detail_volist = []
         if m.get('usedVehicleSaleDetailVOList') is not None:
             for k in m.get('usedVehicleSaleDetailVOList'):

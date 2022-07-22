@@ -2845,6 +2845,198 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DigitalStoreUsers', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/nodes/users', 'json', req, runtime)
         )
 
+    def external_query_external_app_orgs(
+        self,
+        request: dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsRequest,
+    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsHeaders()
+        return self.external_query_external_app_orgs_with_options(request, headers, runtime)
+
+    async def external_query_external_app_orgs_async(
+        self,
+        request: dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsRequest,
+    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsHeaders()
+        return await self.external_query_external_app_orgs_with_options_async(request, headers, runtime)
+
+    def external_query_external_app_orgs_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsRequest,
+        headers: dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.external_type):
+            query['externalType'] = request.external_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsResponse(),
+            self.do_roarequest('ExternalQueryExternalAppOrgs', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/externals/apps/organizations', 'json', req, runtime)
+        )
+
+    async def external_query_external_app_orgs_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsRequest,
+        headers: dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.external_type):
+            query['externalType'] = request.external_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsResponse(),
+            await self.do_roarequest_async('ExternalQueryExternalAppOrgs', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/externals/apps/organizations', 'json', req, runtime)
+        )
+
+    def external_query_external_belong_main_org(
+        self,
+        request: dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgRequest,
+    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgHeaders()
+        return self.external_query_external_belong_main_org_with_options(request, headers, runtime)
+
+    async def external_query_external_belong_main_org_async(
+        self,
+        request: dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgRequest,
+    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgHeaders()
+        return await self.external_query_external_belong_main_org_with_options_async(request, headers, runtime)
+
+    def external_query_external_belong_main_org_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgRequest,
+        headers: dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.external_type):
+            query['externalType'] = request.external_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgResponse(),
+            self.do_roarequest('ExternalQueryExternalBelongMainOrg', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/externals/attributions/masterOrganizations', 'json', req, runtime)
+        )
+
+    async def external_query_external_belong_main_org_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgRequest,
+        headers: dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.external_type):
+            query['externalType'] = request.external_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgResponse(),
+            await self.do_roarequest_async('ExternalQueryExternalBelongMainOrg', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/externals/attributions/masterOrganizations', 'json', req, runtime)
+        )
+
+    def external_query_external_orgs(
+        self,
+        request: dingtalkindustry__1__0_models.ExternalQueryExternalOrgsRequest,
+    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalOrgsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ExternalQueryExternalOrgsHeaders()
+        return self.external_query_external_orgs_with_options(request, headers, runtime)
+
+    async def external_query_external_orgs_async(
+        self,
+        request: dingtalkindustry__1__0_models.ExternalQueryExternalOrgsRequest,
+    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalOrgsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ExternalQueryExternalOrgsHeaders()
+        return await self.external_query_external_orgs_with_options_async(request, headers, runtime)
+
+    def external_query_external_orgs_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ExternalQueryExternalOrgsRequest,
+        headers: dingtalkindustry__1__0_models.ExternalQueryExternalOrgsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalOrgsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.external_type):
+            query['externalType'] = request.external_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ExternalQueryExternalOrgsResponse(),
+            self.do_roarequest('ExternalQueryExternalOrgs', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/externals/organizations', 'json', req, runtime)
+        )
+
+    async def external_query_external_orgs_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ExternalQueryExternalOrgsRequest,
+        headers: dingtalkindustry__1__0_models.ExternalQueryExternalOrgsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalOrgsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.external_type):
+            query['externalType'] = request.external_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ExternalQueryExternalOrgsResponse(),
+            await self.do_roarequest_async('ExternalQueryExternalOrgs', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/externals/organizations', 'json', req, runtime)
+        )
+
     def industry_manufacture_common_event(
         self,
         request: dingtalkindustry__1__0_models.IndustryManufactureCommonEventRequest,

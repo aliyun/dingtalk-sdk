@@ -670,53 +670,20 @@ class AddSpaceRequestOption(TeaModel):
         return self
 
 
-class AddSpaceRequestParam(TeaModel):
-    def __init__(
-        self,
-        corp_id: str = None,
-    ):
-        # 空间归属企业的Id
-        self.corp_id = corp_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
-        return self
-
-
 class AddSpaceRequest(TeaModel):
     def __init__(
         self,
         option: AddSpaceRequestOption = None,
-        param: AddSpaceRequestParam = None,
         union_id: str = None,
     ):
         # 可选参数
         self.option = option
-        # 必选参数
-        self.param = param
         # 用户id
         self.union_id = union_id
 
     def validate(self):
         if self.option:
             self.option.validate()
-        if self.param:
-            self.param.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -726,8 +693,6 @@ class AddSpaceRequest(TeaModel):
         result = dict()
         if self.option is not None:
             result['option'] = self.option.to_map()
-        if self.param is not None:
-            result['param'] = self.param.to_map()
         if self.union_id is not None:
             result['unionId'] = self.union_id
         return result
@@ -737,9 +702,6 @@ class AddSpaceRequest(TeaModel):
         if m.get('option') is not None:
             temp_model = AddSpaceRequestOption()
             self.option = temp_model.from_map(m['option'])
-        if m.get('param') is not None:
-            temp_model = AddSpaceRequestParam()
-            self.param = temp_model.from_map(m['param'])
         if m.get('unionId') is not None:
             self.union_id = m.get('unionId')
         return self
