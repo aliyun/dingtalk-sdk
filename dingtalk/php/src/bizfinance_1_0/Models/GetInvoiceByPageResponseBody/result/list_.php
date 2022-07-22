@@ -5,7 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetInvoiceByPageResponseBody\result;
 
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetInvoiceByPageResponseBody\result\list_\generalInvoiceDetailVOList;
-use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetInvoiceByPageResponseBody\result\list_\secondHandCarInvoiceDetailList;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetInvoiceByPageResponseBody\result\list_\transportFeeDetailVOList;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetInvoiceByPageResponseBody\result\list_\usedVehicleSaleDetailVOList;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetInvoiceByPageResponseBody\result\list_\vehicleSaleDetailVOList;
 use AlibabaCloud\Tea\Model;
@@ -181,11 +181,6 @@ class list_ extends Model
     public $remark;
 
     /**
-     * @var secondHandCarInvoiceDetailList[]
-     */
-    public $secondHandCarInvoiceDetailList;
-
-    /**
      * @description 销方地址
      *
      * @var string
@@ -242,6 +237,11 @@ class list_ extends Model
     public $taxAmount;
 
     /**
+     * @var transportFeeDetailVOList[]
+     */
+    public $transportFeeDetailVOList;
+
+    /**
      * @var usedVehicleSaleDetailVOList[]
      */
     public $usedVehicleSaleDetailVOList;
@@ -272,44 +272,44 @@ class list_ extends Model
      */
     public $voucherStatus;
     protected $_name = [
-        'accountPeriod'                  => 'accountPeriod',
-        'amount'                         => 'amount',
-        'amountWithTax'                  => 'amountWithTax',
-        'checkCode'                      => 'checkCode',
-        'checkTime'                      => 'checkTime',
-        'drewDate'                       => 'drewDate',
-        'electronicUrl'                  => 'electronicUrl',
-        'financeType'                    => 'financeType',
-        'fundType'                       => 'fundType',
-        'generalInvoiceDetailVOList'     => 'generalInvoiceDetailVOList',
-        'invoiceCode'                    => 'invoiceCode',
-        'invoiceNo'                      => 'invoiceNo',
-        'invoiceType'                    => 'invoiceType',
-        'machineCode'                    => 'machineCode',
-        'oilFlag'                        => 'oilFlag',
-        'payee'                          => 'payee',
-        'processInstCode'                => 'processInstCode',
-        'processInstType'                => 'processInstType',
-        'purchaserAddress'               => 'purchaserAddress',
-        'purchaserBankNameAccount'       => 'purchaserBankNameAccount',
-        'purchaserName'                  => 'purchaserName',
-        'purchaserTaxNo'                 => 'purchaserTaxNo',
-        'purchaserTel'                   => 'purchaserTel',
-        'remark'                         => 'remark',
-        'secondHandCarInvoiceDetailList' => 'secondHandCarInvoiceDetailList',
-        'sellerAddress'                  => 'sellerAddress',
-        'sellerBankNameAccount'          => 'sellerBankNameAccount',
-        'sellerName'                     => 'sellerName',
-        'sellerTaxNo'                    => 'sellerTaxNo',
-        'sellerTel'                      => 'sellerTel',
-        'status'                         => 'status',
-        'supplySign'                     => 'supplySign',
-        'taxAmount'                      => 'taxAmount',
-        'usedVehicleSaleDetailVOList'    => 'usedVehicleSaleDetailVOList',
-        'vehicleSaleDetailVOList'        => 'vehicleSaleDetailVOList',
-        'verifyStatus'                   => 'verifyStatus',
-        'voucherCode'                    => 'voucherCode',
-        'voucherStatus'                  => 'voucherStatus',
+        'accountPeriod'               => 'accountPeriod',
+        'amount'                      => 'amount',
+        'amountWithTax'               => 'amountWithTax',
+        'checkCode'                   => 'checkCode',
+        'checkTime'                   => 'checkTime',
+        'drewDate'                    => 'drewDate',
+        'electronicUrl'               => 'electronicUrl',
+        'financeType'                 => 'financeType',
+        'fundType'                    => 'fundType',
+        'generalInvoiceDetailVOList'  => 'generalInvoiceDetailVOList',
+        'invoiceCode'                 => 'invoiceCode',
+        'invoiceNo'                   => 'invoiceNo',
+        'invoiceType'                 => 'invoiceType',
+        'machineCode'                 => 'machineCode',
+        'oilFlag'                     => 'oilFlag',
+        'payee'                       => 'payee',
+        'processInstCode'             => 'processInstCode',
+        'processInstType'             => 'processInstType',
+        'purchaserAddress'            => 'purchaserAddress',
+        'purchaserBankNameAccount'    => 'purchaserBankNameAccount',
+        'purchaserName'               => 'purchaserName',
+        'purchaserTaxNo'              => 'purchaserTaxNo',
+        'purchaserTel'                => 'purchaserTel',
+        'remark'                      => 'remark',
+        'sellerAddress'               => 'sellerAddress',
+        'sellerBankNameAccount'       => 'sellerBankNameAccount',
+        'sellerName'                  => 'sellerName',
+        'sellerTaxNo'                 => 'sellerTaxNo',
+        'sellerTel'                   => 'sellerTel',
+        'status'                      => 'status',
+        'supplySign'                  => 'supplySign',
+        'taxAmount'                   => 'taxAmount',
+        'transportFeeDetailVOList'    => 'transportFeeDetailVOList',
+        'usedVehicleSaleDetailVOList' => 'usedVehicleSaleDetailVOList',
+        'vehicleSaleDetailVOList'     => 'vehicleSaleDetailVOList',
+        'verifyStatus'                => 'verifyStatus',
+        'voucherCode'                 => 'voucherCode',
+        'voucherStatus'               => 'voucherStatus',
     ];
 
     public function validate()
@@ -397,15 +397,6 @@ class list_ extends Model
         if (null !== $this->remark) {
             $res['remark'] = $this->remark;
         }
-        if (null !== $this->secondHandCarInvoiceDetailList) {
-            $res['secondHandCarInvoiceDetailList'] = [];
-            if (null !== $this->secondHandCarInvoiceDetailList && \is_array($this->secondHandCarInvoiceDetailList)) {
-                $n = 0;
-                foreach ($this->secondHandCarInvoiceDetailList as $item) {
-                    $res['secondHandCarInvoiceDetailList'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
-        }
         if (null !== $this->sellerAddress) {
             $res['sellerAddress'] = $this->sellerAddress;
         }
@@ -429,6 +420,15 @@ class list_ extends Model
         }
         if (null !== $this->taxAmount) {
             $res['taxAmount'] = $this->taxAmount;
+        }
+        if (null !== $this->transportFeeDetailVOList) {
+            $res['transportFeeDetailVOList'] = [];
+            if (null !== $this->transportFeeDetailVOList && \is_array($this->transportFeeDetailVOList)) {
+                $n = 0;
+                foreach ($this->transportFeeDetailVOList as $item) {
+                    $res['transportFeeDetailVOList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->usedVehicleSaleDetailVOList) {
             $res['usedVehicleSaleDetailVOList'] = [];
@@ -547,15 +547,6 @@ class list_ extends Model
         if (isset($map['remark'])) {
             $model->remark = $map['remark'];
         }
-        if (isset($map['secondHandCarInvoiceDetailList'])) {
-            if (!empty($map['secondHandCarInvoiceDetailList'])) {
-                $model->secondHandCarInvoiceDetailList = [];
-                $n                                     = 0;
-                foreach ($map['secondHandCarInvoiceDetailList'] as $item) {
-                    $model->secondHandCarInvoiceDetailList[$n++] = null !== $item ? secondHandCarInvoiceDetailList::fromMap($item) : $item;
-                }
-            }
-        }
         if (isset($map['sellerAddress'])) {
             $model->sellerAddress = $map['sellerAddress'];
         }
@@ -579,6 +570,15 @@ class list_ extends Model
         }
         if (isset($map['taxAmount'])) {
             $model->taxAmount = $map['taxAmount'];
+        }
+        if (isset($map['transportFeeDetailVOList'])) {
+            if (!empty($map['transportFeeDetailVOList'])) {
+                $model->transportFeeDetailVOList = [];
+                $n                               = 0;
+                foreach ($map['transportFeeDetailVOList'] as $item) {
+                    $model->transportFeeDetailVOList[$n++] = null !== $item ? transportFeeDetailVOList::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['usedVehicleSaleDetailVOList'])) {
             if (!empty($map['usedVehicleSaleDetailVOList'])) {

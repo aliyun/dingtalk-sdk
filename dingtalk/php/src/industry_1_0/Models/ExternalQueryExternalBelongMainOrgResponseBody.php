@@ -2,20 +2,24 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\AddSpaceRequest;
+namespace AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class param extends Model
+class ExternalQueryExternalBelongMainOrgResponseBody extends Model
 {
     /**
-     * @description 空间归属企业的Id
-     *
      * @var string
      */
     public $corpId;
+
+    /**
+     * @var string
+     */
+    public $corpName;
     protected $_name = [
-        'corpId' => 'corpId',
+        'corpId'   => 'corpId',
+        'corpName' => 'corpName',
     ];
 
     public function validate()
@@ -28,6 +32,9 @@ class param extends Model
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
         }
+        if (null !== $this->corpName) {
+            $res['corpName'] = $this->corpName;
+        }
 
         return $res;
     }
@@ -35,13 +42,16 @@ class param extends Model
     /**
      * @param array $map
      *
-     * @return param
+     * @return ExternalQueryExternalBelongMainOrgResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
+        }
+        if (isset($map['corpName'])) {
+            $model->corpName = $map['corpName'];
         }
 
         return $model;

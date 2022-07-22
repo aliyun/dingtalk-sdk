@@ -121,6 +121,15 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreUserInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreUsersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreUsersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreUsersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ExternalQueryExternalAppOrgsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ExternalQueryExternalAppOrgsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ExternalQueryExternalAppOrgsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ExternalQueryExternalBelongMainOrgHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ExternalQueryExternalBelongMainOrgRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ExternalQueryExternalBelongMainOrgResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ExternalQueryExternalOrgsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ExternalQueryExternalOrgsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ExternalQueryExternalOrgsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureCommonEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureCommonEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureCommonEventResponse;
@@ -2123,6 +2132,132 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DigitalStoreUsersResponse::fromMap($this->doROARequest('DigitalStoreUsers', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/digitalStores/nodes/users', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ExternalQueryExternalAppOrgsRequest $request
+     *
+     * @return ExternalQueryExternalAppOrgsResponse
+     */
+    public function externalQueryExternalAppOrgs($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ExternalQueryExternalAppOrgsHeaders([]);
+
+        return $this->externalQueryExternalAppOrgsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ExternalQueryExternalAppOrgsRequest $request
+     * @param ExternalQueryExternalAppOrgsHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return ExternalQueryExternalAppOrgsResponse
+     */
+    public function externalQueryExternalAppOrgsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->externalType)) {
+            @$query['externalType'] = $request->externalType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ExternalQueryExternalAppOrgsResponse::fromMap($this->doROARequest('ExternalQueryExternalAppOrgs', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/externals/apps/organizations', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ExternalQueryExternalBelongMainOrgRequest $request
+     *
+     * @return ExternalQueryExternalBelongMainOrgResponse
+     */
+    public function externalQueryExternalBelongMainOrg($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ExternalQueryExternalBelongMainOrgHeaders([]);
+
+        return $this->externalQueryExternalBelongMainOrgWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ExternalQueryExternalBelongMainOrgRequest $request
+     * @param ExternalQueryExternalBelongMainOrgHeaders $headers
+     * @param RuntimeOptions                            $runtime
+     *
+     * @return ExternalQueryExternalBelongMainOrgResponse
+     */
+    public function externalQueryExternalBelongMainOrgWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->externalType)) {
+            @$query['externalType'] = $request->externalType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ExternalQueryExternalBelongMainOrgResponse::fromMap($this->doROARequest('ExternalQueryExternalBelongMainOrg', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/externals/attributions/masterOrganizations', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ExternalQueryExternalOrgsRequest $request
+     *
+     * @return ExternalQueryExternalOrgsResponse
+     */
+    public function externalQueryExternalOrgs($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ExternalQueryExternalOrgsHeaders([]);
+
+        return $this->externalQueryExternalOrgsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ExternalQueryExternalOrgsRequest $request
+     * @param ExternalQueryExternalOrgsHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return ExternalQueryExternalOrgsResponse
+     */
+    public function externalQueryExternalOrgsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->externalType)) {
+            @$query['externalType'] = $request->externalType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ExternalQueryExternalOrgsResponse::fromMap($this->doROARequest('ExternalQueryExternalOrgs', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/externals/organizations', 'json', $req, $runtime));
     }
 
     /**

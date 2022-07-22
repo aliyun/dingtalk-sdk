@@ -6,7 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetInvoiceByPageRespo
 
 use AlibabaCloud\Tea\Model;
 
-class secondHandCarInvoiceDetailList extends Model
+class transportFeeDetailVOList extends Model
 {
     /**
      * @description 金额
@@ -134,7 +134,7 @@ class secondHandCarInvoiceDetailList extends Model
     /**
      * @param array $map
      *
-     * @return secondHandCarInvoiceDetailList
+     * @return transportFeeDetailVOList
      */
     public static function fromMap($map = [])
     {
