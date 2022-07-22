@@ -8,10 +8,6 @@ public class AddSpaceRequest extends TeaModel {
     @NameInMap("option")
     public AddSpaceRequestOption option;
 
-    // 必选参数
-    @NameInMap("param")
-    public AddSpaceRequestParam param;
-
     // 用户id
     @NameInMap("unionId")
     public String unionId;
@@ -27,14 +23,6 @@ public class AddSpaceRequest extends TeaModel {
     }
     public AddSpaceRequestOption getOption() {
         return this.option;
-    }
-
-    public AddSpaceRequest setParam(AddSpaceRequestParam param) {
-        this.param = param;
-        return this;
-    }
-    public AddSpaceRequestParam getParam() {
-        return this.param;
     }
 
     public AddSpaceRequest setUnionId(String unionId) {
@@ -183,26 +171,6 @@ public class AddSpaceRequest extends TeaModel {
         }
         public String getSceneId() {
             return this.sceneId;
-        }
-
-    }
-
-    public static class AddSpaceRequestParam extends TeaModel {
-        // 空间归属企业的Id
-        @NameInMap("corpId")
-        public String corpId;
-
-        public static AddSpaceRequestParam build(java.util.Map<String, ?> map) throws Exception {
-            AddSpaceRequestParam self = new AddSpaceRequestParam();
-            return TeaModel.build(map, self);
-        }
-
-        public AddSpaceRequestParam setCorpId(String corpId) {
-            this.corpId = corpId;
-            return this;
-        }
-        public String getCorpId() {
-            return this.corpId;
         }
 
     }

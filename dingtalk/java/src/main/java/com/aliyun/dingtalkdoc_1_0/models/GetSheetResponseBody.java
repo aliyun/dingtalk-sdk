@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSheetResponseBody extends TeaModel {
+    // 工作表列数
+    @NameInMap("columnCount")
+    public Long columnCount;
+
     // 最后一列非空列的位置，从0开始。表为空时返回-1。
     @NameInMap("lastNonEmptyColumn")
     public Long lastNonEmptyColumn;
@@ -16,6 +20,10 @@ public class GetSheetResponseBody extends TeaModel {
     @NameInMap("name")
     public String name;
 
+    // 工作表行数
+    @NameInMap("rowCount")
+    public Long rowCount;
+
     // 工作表可见性
     @NameInMap("visibility")
     public String visibility;
@@ -23,6 +31,14 @@ public class GetSheetResponseBody extends TeaModel {
     public static GetSheetResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetSheetResponseBody self = new GetSheetResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public GetSheetResponseBody setColumnCount(Long columnCount) {
+        this.columnCount = columnCount;
+        return this;
+    }
+    public Long getColumnCount() {
+        return this.columnCount;
     }
 
     public GetSheetResponseBody setLastNonEmptyColumn(Long lastNonEmptyColumn) {
@@ -47,6 +63,14 @@ public class GetSheetResponseBody extends TeaModel {
     }
     public String getName() {
         return this.name;
+    }
+
+    public GetSheetResponseBody setRowCount(Long rowCount) {
+        this.rowCount = rowCount;
+        return this;
+    }
+    public Long getRowCount() {
+        return this.rowCount;
     }
 
     public GetSheetResponseBody setVisibility(String visibility) {

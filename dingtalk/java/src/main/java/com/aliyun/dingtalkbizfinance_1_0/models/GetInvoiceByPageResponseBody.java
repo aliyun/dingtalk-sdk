@@ -193,7 +193,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
 
     }
 
-    public static class GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList extends TeaModel {
+    public static class GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList extends TeaModel {
         // 金额
         @NameInMap("amount")
         public String amount;
@@ -234,12 +234,12 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         @NameInMap("vehicleType")
         public String vehicleType;
 
-        public static GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList build(java.util.Map<String, ?> map) throws Exception {
-            GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList self = new GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList();
+        public static GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList build(java.util.Map<String, ?> map) throws Exception {
+            GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList self = new GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList();
             return TeaModel.build(map, self);
         }
 
-        public GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList setAmount(String amount) {
+        public GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList setAmount(String amount) {
             this.amount = amount;
             return this;
         }
@@ -247,7 +247,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.amount;
         }
 
-        public GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList setCardNo(String cardNo) {
+        public GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList setCardNo(String cardNo) {
             this.cardNo = cardNo;
             return this;
         }
@@ -255,7 +255,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.cardNo;
         }
 
-        public GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList setEndDate(String endDate) {
+        public GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList setEndDate(String endDate) {
             this.endDate = endDate;
             return this;
         }
@@ -263,7 +263,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.endDate;
         }
 
-        public GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList setGoodsName(String goodsName) {
+        public GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList setGoodsName(String goodsName) {
             this.goodsName = goodsName;
             return this;
         }
@@ -271,7 +271,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.goodsName;
         }
 
-        public GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList setRevenueCode(String revenueCode) {
+        public GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList setRevenueCode(String revenueCode) {
             this.revenueCode = revenueCode;
             return this;
         }
@@ -279,7 +279,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.revenueCode;
         }
 
-        public GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList setRowNo(String rowNo) {
+        public GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList setRowNo(String rowNo) {
             this.rowNo = rowNo;
             return this;
         }
@@ -287,7 +287,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.rowNo;
         }
 
-        public GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList setStartDate(String startDate) {
+        public GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList setStartDate(String startDate) {
             this.startDate = startDate;
             return this;
         }
@@ -295,7 +295,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.startDate;
         }
 
-        public GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList setTaxAmount(String taxAmount) {
+        public GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList setTaxAmount(String taxAmount) {
             this.taxAmount = taxAmount;
             return this;
         }
@@ -303,7 +303,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.taxAmount;
         }
 
-        public GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList setTaxRate(String taxRate) {
+        public GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList setTaxRate(String taxRate) {
             this.taxRate = taxRate;
             return this;
         }
@@ -311,7 +311,7 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.taxRate;
         }
 
-        public GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList setVehicleType(String vehicleType) {
+        public GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList setVehicleType(String vehicleType) {
             this.vehicleType = vehicleType;
             return this;
         }
@@ -794,9 +794,6 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         @NameInMap("remark")
         public String remark;
 
-        @NameInMap("secondHandCarInvoiceDetailList")
-        public java.util.List<GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList> secondHandCarInvoiceDetailList;
-
         // 销方地址
         @NameInMap("sellerAddress")
         public String sellerAddress;
@@ -828,6 +825,9 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         // 税额
         @NameInMap("taxAmount")
         public String taxAmount;
+
+        @NameInMap("transportFeeDetailVOList")
+        public java.util.List<GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList> transportFeeDetailVOList;
 
         @NameInMap("usedVehicleSaleDetailVOList")
         public java.util.List<GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList> usedVehicleSaleDetailVOList;
@@ -1044,14 +1044,6 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.remark;
         }
 
-        public GetInvoiceByPageResponseBodyResultList setSecondHandCarInvoiceDetailList(java.util.List<GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList> secondHandCarInvoiceDetailList) {
-            this.secondHandCarInvoiceDetailList = secondHandCarInvoiceDetailList;
-            return this;
-        }
-        public java.util.List<GetInvoiceByPageResponseBodyResultListSecondHandCarInvoiceDetailList> getSecondHandCarInvoiceDetailList() {
-            return this.secondHandCarInvoiceDetailList;
-        }
-
         public GetInvoiceByPageResponseBodyResultList setSellerAddress(String sellerAddress) {
             this.sellerAddress = sellerAddress;
             return this;
@@ -1114,6 +1106,14 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         }
         public String getTaxAmount() {
             return this.taxAmount;
+        }
+
+        public GetInvoiceByPageResponseBodyResultList setTransportFeeDetailVOList(java.util.List<GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList> transportFeeDetailVOList) {
+            this.transportFeeDetailVOList = transportFeeDetailVOList;
+            return this;
+        }
+        public java.util.List<GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList> getTransportFeeDetailVOList() {
+            return this.transportFeeDetailVOList;
         }
 
         public GetInvoiceByPageResponseBodyResultList setUsedVehicleSaleDetailVOList(java.util.List<GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList> usedVehicleSaleDetailVOList) {
