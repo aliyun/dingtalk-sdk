@@ -3967,7 +3967,7 @@ export class GetInvoiceByPageRequestRequest extends $tea.Model {
 
 export class GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList extends $tea.Model {
   amount?: string;
-  goodName?: string;
+  goodsName?: string;
   quantity?: string;
   revenueCode?: string;
   rowNo?: string;
@@ -3980,7 +3980,7 @@ export class GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList ex
   static names(): { [key: string]: string } {
     return {
       amount: 'amount',
-      goodName: 'goodName',
+      goodsName: 'goodsName',
       quantity: 'quantity',
       revenueCode: 'revenueCode',
       rowNo: 'rowNo',
@@ -3996,7 +3996,7 @@ export class GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList ex
   static types(): { [key: string]: any } {
     return {
       amount: 'string',
-      goodName: 'string',
+      goodsName: 'string',
       quantity: 'string',
       revenueCode: 'string',
       rowNo: 'string',

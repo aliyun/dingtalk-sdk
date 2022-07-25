@@ -1960,6 +1960,105 @@ export class QueryAllProcessInstancesResponseBodyResultListFormComponentValues e
   }
 }
 
+export class QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments extends $tea.Model {
+  fileId?: string;
+  fileName?: string;
+  fileSize?: string;
+  fileType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fileId: 'fileId',
+      fileName: 'fileName',
+      fileSize: 'fileSize',
+      fileType: 'fileType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileId: 'string',
+      fileName: 'string',
+      fileSize: 'string',
+      fileType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllProcessInstancesResponseBodyResultListOperationRecords extends $tea.Model {
+  attachments?: QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments[];
+  operationType?: string;
+  remark?: string;
+  result?: string;
+  timestamp?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      attachments: 'attachments',
+      operationType: 'operationType',
+      remark: 'remark',
+      result: 'result',
+      timestamp: 'timestamp',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attachments: { 'type': 'array', 'itemType': QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments },
+      operationType: 'string',
+      remark: 'string',
+      result: 'string',
+      timestamp: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllProcessInstancesResponseBodyResultListTasks extends $tea.Model {
+  activityId?: string;
+  createTimestamp?: number;
+  finishTimestamp?: number;
+  result?: string;
+  status?: string;
+  taskId?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      activityId: 'activityId',
+      createTimestamp: 'createTimestamp',
+      finishTimestamp: 'finishTimestamp',
+      result: 'result',
+      status: 'status',
+      taskId: 'taskId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      activityId: 'string',
+      createTimestamp: 'number',
+      finishTimestamp: 'number',
+      result: 'string',
+      status: 'string',
+      taskId: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryAllProcessInstancesResponseBodyResultList extends $tea.Model {
   attachedProcessInstanceIds?: string;
   businessId?: string;
@@ -1967,11 +2066,13 @@ export class QueryAllProcessInstancesResponseBodyResultList extends $tea.Model {
   finishTime?: number;
   formComponentValues?: QueryAllProcessInstancesResponseBodyResultListFormComponentValues[];
   mainProcessInstanceId?: string;
+  operationRecords?: QueryAllProcessInstancesResponseBodyResultListOperationRecords[];
   originatorDeptId?: string;
   originatorUserid?: string;
   processInstanceId?: string;
   result?: string;
   status?: string;
+  tasks?: QueryAllProcessInstancesResponseBodyResultListTasks[];
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1981,11 +2082,13 @@ export class QueryAllProcessInstancesResponseBodyResultList extends $tea.Model {
       finishTime: 'finishTime',
       formComponentValues: 'formComponentValues',
       mainProcessInstanceId: 'mainProcessInstanceId',
+      operationRecords: 'operationRecords',
       originatorDeptId: 'originatorDeptId',
       originatorUserid: 'originatorUserid',
       processInstanceId: 'processInstanceId',
       result: 'result',
       status: 'status',
+      tasks: 'tasks',
       title: 'title',
     };
   }
@@ -1998,11 +2101,13 @@ export class QueryAllProcessInstancesResponseBodyResultList extends $tea.Model {
       finishTime: 'number',
       formComponentValues: { 'type': 'array', 'itemType': QueryAllProcessInstancesResponseBodyResultListFormComponentValues },
       mainProcessInstanceId: 'string',
+      operationRecords: { 'type': 'array', 'itemType': QueryAllProcessInstancesResponseBodyResultListOperationRecords },
       originatorDeptId: 'string',
       originatorUserid: 'string',
       processInstanceId: 'string',
       result: 'string',
       status: 'string',
+      tasks: { 'type': 'array', 'itemType': QueryAllProcessInstancesResponseBodyResultListTasks },
       title: 'string',
     };
   }
