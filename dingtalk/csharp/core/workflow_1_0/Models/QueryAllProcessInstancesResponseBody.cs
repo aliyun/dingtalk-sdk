@@ -35,11 +35,36 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                     public string Value { get; set; }
                 }
                 public string MainProcessInstanceId { get; set; }
+                public List<QueryAllProcessInstancesResponseBodyResultListOperationRecords> OperationRecords { get; set; }
+                public class QueryAllProcessInstancesResponseBodyResultListOperationRecords : TeaModel {
+                    public List<QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments> Attachments { get; set; }
+                    public class QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments : TeaModel {
+                        public string FileId { get; set; }
+                        public string FileName { get; set; }
+                        public string FileSize { get; set; }
+                        public string FileType { get; set; }
+                    }
+                    public string OperationType { get; set; }
+                    public string Remark { get; set; }
+                    public string Result { get; set; }
+                    public long? Timestamp { get; set; }
+                    public string UserId { get; set; }
+                }
                 public string OriginatorDeptId { get; set; }
                 public string OriginatorUserid { get; set; }
                 public string ProcessInstanceId { get; set; }
                 public string Result { get; set; }
                 public string Status { get; set; }
+                public List<QueryAllProcessInstancesResponseBodyResultListTasks> Tasks { get; set; }
+                public class QueryAllProcessInstancesResponseBodyResultListTasks : TeaModel {
+                    public string ActivityId { get; set; }
+                    public long? CreateTimestamp { get; set; }
+                    public long? FinishTimestamp { get; set; }
+                    public string Result { get; set; }
+                    public string Status { get; set; }
+                    public long? TaskId { get; set; }
+                    public string UserId { get; set; }
+                }
                 public string Title { get; set; }
             }
             [NameInMap("maxResults")]
