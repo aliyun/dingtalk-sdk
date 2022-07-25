@@ -59,8 +59,8 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         public String amount;
 
         // 商品名称
-        @NameInMap("goodName")
-        public String goodName;
+        @NameInMap("goodsName")
+        public String goodsName;
 
         // 数量
         @NameInMap("quantity")
@@ -111,12 +111,12 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.amount;
         }
 
-        public GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList setGoodName(String goodName) {
-            this.goodName = goodName;
+        public GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList setGoodsName(String goodsName) {
+            this.goodsName = goodsName;
             return this;
         }
-        public String getGoodName() {
-            return this.goodName;
+        public String getGoodsName() {
+            return this.goodsName;
         }
 
         public GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList setQuantity(String quantity) {

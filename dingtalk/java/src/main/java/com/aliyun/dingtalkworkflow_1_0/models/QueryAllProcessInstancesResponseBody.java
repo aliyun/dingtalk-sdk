@@ -77,6 +77,234 @@ public class QueryAllProcessInstancesResponseBody extends TeaModel {
 
     }
 
+    public static class QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments extends TeaModel {
+        // 附件钉盘id
+        @NameInMap("fileId")
+        public String fileId;
+
+        // 附件名称
+        @NameInMap("fileName")
+        public String fileName;
+
+        // 文件大小
+        @NameInMap("fileSize")
+        public String fileSize;
+
+        // 文件类型
+        @NameInMap("fileType")
+        public String fileType;
+
+        public static QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments build(java.util.Map<String, ?> map) throws Exception {
+            QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments self = new QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments setFileId(String fileId) {
+            this.fileId = fileId;
+            return this;
+        }
+        public String getFileId() {
+            return this.fileId;
+        }
+
+        public QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments setFileName(String fileName) {
+            this.fileName = fileName;
+            return this;
+        }
+        public String getFileName() {
+            return this.fileName;
+        }
+
+        public QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments setFileSize(String fileSize) {
+            this.fileSize = fileSize;
+            return this;
+        }
+        public String getFileSize() {
+            return this.fileSize;
+        }
+
+        public QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments setFileType(String fileType) {
+            this.fileType = fileType;
+            return this;
+        }
+        public String getFileType() {
+            return this.fileType;
+        }
+
+    }
+
+    public static class QueryAllProcessInstancesResponseBodyResultListOperationRecords extends TeaModel {
+        // 评论附件
+        @NameInMap("attachments")
+        public java.util.List<QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments> attachments;
+
+        // 操作类型
+        @NameInMap("operationType")
+        public String operationType;
+
+        // 评论
+        @NameInMap("remark")
+        public String remark;
+
+        // 操作结果
+        @NameInMap("result")
+        public String result;
+
+        // 操作时间戳
+        @NameInMap("timestamp")
+        public Long timestamp;
+
+        // 操作人staffId
+        @NameInMap("userId")
+        public String userId;
+
+        public static QueryAllProcessInstancesResponseBodyResultListOperationRecords build(java.util.Map<String, ?> map) throws Exception {
+            QueryAllProcessInstancesResponseBodyResultListOperationRecords self = new QueryAllProcessInstancesResponseBodyResultListOperationRecords();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryAllProcessInstancesResponseBodyResultListOperationRecords setAttachments(java.util.List<QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments> attachments) {
+            this.attachments = attachments;
+            return this;
+        }
+        public java.util.List<QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments> getAttachments() {
+            return this.attachments;
+        }
+
+        public QueryAllProcessInstancesResponseBodyResultListOperationRecords setOperationType(String operationType) {
+            this.operationType = operationType;
+            return this;
+        }
+        public String getOperationType() {
+            return this.operationType;
+        }
+
+        public QueryAllProcessInstancesResponseBodyResultListOperationRecords setRemark(String remark) {
+            this.remark = remark;
+            return this;
+        }
+        public String getRemark() {
+            return this.remark;
+        }
+
+        public QueryAllProcessInstancesResponseBodyResultListOperationRecords setResult(String result) {
+            this.result = result;
+            return this;
+        }
+        public String getResult() {
+            return this.result;
+        }
+
+        public QueryAllProcessInstancesResponseBodyResultListOperationRecords setTimestamp(Long timestamp) {
+            this.timestamp = timestamp;
+            return this;
+        }
+        public Long getTimestamp() {
+            return this.timestamp;
+        }
+
+        public QueryAllProcessInstancesResponseBodyResultListOperationRecords setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
+        }
+
+    }
+
+    public static class QueryAllProcessInstancesResponseBodyResultListTasks extends TeaModel {
+        // 节点id
+        @NameInMap("activityId")
+        public String activityId;
+
+        // 任务创建时间戳
+        @NameInMap("createTimestamp")
+        public Long createTimestamp;
+
+        // 任务结束时间戳
+        @NameInMap("finishTimestamp")
+        public Long finishTimestamp;
+
+        // 任务结果
+        @NameInMap("result")
+        public String result;
+
+        // 任务状态
+        @NameInMap("status")
+        public String status;
+
+        // 任务Id
+        @NameInMap("taskId")
+        public Long taskId;
+
+        // 任务处理人
+        @NameInMap("userId")
+        public String userId;
+
+        public static QueryAllProcessInstancesResponseBodyResultListTasks build(java.util.Map<String, ?> map) throws Exception {
+            QueryAllProcessInstancesResponseBodyResultListTasks self = new QueryAllProcessInstancesResponseBodyResultListTasks();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryAllProcessInstancesResponseBodyResultListTasks setActivityId(String activityId) {
+            this.activityId = activityId;
+            return this;
+        }
+        public String getActivityId() {
+            return this.activityId;
+        }
+
+        public QueryAllProcessInstancesResponseBodyResultListTasks setCreateTimestamp(Long createTimestamp) {
+            this.createTimestamp = createTimestamp;
+            return this;
+        }
+        public Long getCreateTimestamp() {
+            return this.createTimestamp;
+        }
+
+        public QueryAllProcessInstancesResponseBodyResultListTasks setFinishTimestamp(Long finishTimestamp) {
+            this.finishTimestamp = finishTimestamp;
+            return this;
+        }
+        public Long getFinishTimestamp() {
+            return this.finishTimestamp;
+        }
+
+        public QueryAllProcessInstancesResponseBodyResultListTasks setResult(String result) {
+            this.result = result;
+            return this;
+        }
+        public String getResult() {
+            return this.result;
+        }
+
+        public QueryAllProcessInstancesResponseBodyResultListTasks setStatus(String status) {
+            this.status = status;
+            return this;
+        }
+        public String getStatus() {
+            return this.status;
+        }
+
+        public QueryAllProcessInstancesResponseBodyResultListTasks setTaskId(Long taskId) {
+            this.taskId = taskId;
+            return this;
+        }
+        public Long getTaskId() {
+            return this.taskId;
+        }
+
+        public QueryAllProcessInstancesResponseBodyResultListTasks setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
+        }
+
+    }
+
     public static class QueryAllProcessInstancesResponseBodyResultList extends TeaModel {
         // 附属单信息
         @NameInMap("attachedProcessInstanceIds")
@@ -101,6 +329,10 @@ public class QueryAllProcessInstancesResponseBody extends TeaModel {
         @NameInMap("mainProcessInstanceId")
         public String mainProcessInstanceId;
 
+        // 审批单操作记录
+        @NameInMap("operationRecords")
+        public java.util.List<QueryAllProcessInstancesResponseBodyResultListOperationRecords> operationRecords;
+
         // 发起人部门id
         @NameInMap("originatorDeptId")
         public String originatorDeptId;
@@ -120,6 +352,10 @@ public class QueryAllProcessInstancesResponseBody extends TeaModel {
         // 审批单状态
         @NameInMap("status")
         public String status;
+
+        // 任务列表
+        @NameInMap("tasks")
+        public java.util.List<QueryAllProcessInstancesResponseBodyResultListTasks> tasks;
 
         // 审批单标题
         @NameInMap("title")
@@ -178,6 +414,14 @@ public class QueryAllProcessInstancesResponseBody extends TeaModel {
             return this.mainProcessInstanceId;
         }
 
+        public QueryAllProcessInstancesResponseBodyResultList setOperationRecords(java.util.List<QueryAllProcessInstancesResponseBodyResultListOperationRecords> operationRecords) {
+            this.operationRecords = operationRecords;
+            return this;
+        }
+        public java.util.List<QueryAllProcessInstancesResponseBodyResultListOperationRecords> getOperationRecords() {
+            return this.operationRecords;
+        }
+
         public QueryAllProcessInstancesResponseBodyResultList setOriginatorDeptId(String originatorDeptId) {
             this.originatorDeptId = originatorDeptId;
             return this;
@@ -216,6 +460,14 @@ public class QueryAllProcessInstancesResponseBody extends TeaModel {
         }
         public String getStatus() {
             return this.status;
+        }
+
+        public QueryAllProcessInstancesResponseBodyResultList setTasks(java.util.List<QueryAllProcessInstancesResponseBodyResultListTasks> tasks) {
+            this.tasks = tasks;
+            return this;
+        }
+        public java.util.List<QueryAllProcessInstancesResponseBodyResultListTasks> getTasks() {
+            return this.tasks;
         }
 
         public QueryAllProcessInstancesResponseBodyResultList setTitle(String title) {
