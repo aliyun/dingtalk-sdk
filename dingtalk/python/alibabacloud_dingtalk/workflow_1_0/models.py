@@ -2811,6 +2811,196 @@ class QueryAllProcessInstancesResponseBodyResultListFormComponentValues(TeaModel
         return self
 
 
+class QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        file_name: str = None,
+        file_size: str = None,
+        file_type: str = None,
+    ):
+        # 附件钉盘id
+        self.file_id = file_id
+        # 附件名称
+        self.file_name = file_name
+        # 文件大小
+        self.file_size = file_size
+        # 文件类型
+        self.file_type = file_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        return self
+
+
+class QueryAllProcessInstancesResponseBodyResultListOperationRecords(TeaModel):
+    def __init__(
+        self,
+        attachments: List[QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments] = None,
+        operation_type: str = None,
+        remark: str = None,
+        result: str = None,
+        timestamp: int = None,
+        user_id: str = None,
+    ):
+        # 评论附件
+        self.attachments = attachments
+        # 操作类型
+        self.operation_type = operation_type
+        # 评论
+        self.remark = remark
+        # 操作结果
+        self.result = result
+        # 操作时间戳
+        self.timestamp = timestamp
+        # 操作人staffId
+        self.user_id = user_id
+
+    def validate(self):
+        if self.attachments:
+            for k in self.attachments:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['attachments'] = []
+        if self.attachments is not None:
+            for k in self.attachments:
+                result['attachments'].append(k.to_map() if k else None)
+        if self.operation_type is not None:
+            result['operationType'] = self.operation_type
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.result is not None:
+            result['result'] = self.result
+        if self.timestamp is not None:
+            result['timestamp'] = self.timestamp
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.attachments = []
+        if m.get('attachments') is not None:
+            for k in m.get('attachments'):
+                temp_model = QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments()
+                self.attachments.append(temp_model.from_map(k))
+        if m.get('operationType') is not None:
+            self.operation_type = m.get('operationType')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('timestamp') is not None:
+            self.timestamp = m.get('timestamp')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryAllProcessInstancesResponseBodyResultListTasks(TeaModel):
+    def __init__(
+        self,
+        activity_id: str = None,
+        create_timestamp: int = None,
+        finish_timestamp: int = None,
+        result: str = None,
+        status: str = None,
+        task_id: int = None,
+        user_id: str = None,
+    ):
+        # 节点id
+        self.activity_id = activity_id
+        # 任务创建时间戳
+        self.create_timestamp = create_timestamp
+        # 任务结束时间戳
+        self.finish_timestamp = finish_timestamp
+        # 任务结果
+        self.result = result
+        # 任务状态
+        self.status = status
+        # 任务Id
+        self.task_id = task_id
+        # 任务处理人
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.activity_id is not None:
+            result['activityId'] = self.activity_id
+        if self.create_timestamp is not None:
+            result['createTimestamp'] = self.create_timestamp
+        if self.finish_timestamp is not None:
+            result['finishTimestamp'] = self.finish_timestamp
+        if self.result is not None:
+            result['result'] = self.result
+        if self.status is not None:
+            result['status'] = self.status
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('activityId') is not None:
+            self.activity_id = m.get('activityId')
+        if m.get('createTimestamp') is not None:
+            self.create_timestamp = m.get('createTimestamp')
+        if m.get('finishTimestamp') is not None:
+            self.finish_timestamp = m.get('finishTimestamp')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
 class QueryAllProcessInstancesResponseBodyResultList(TeaModel):
     def __init__(
         self,
@@ -2820,11 +3010,13 @@ class QueryAllProcessInstancesResponseBodyResultList(TeaModel):
         finish_time: int = None,
         form_component_values: List[QueryAllProcessInstancesResponseBodyResultListFormComponentValues] = None,
         main_process_instance_id: str = None,
+        operation_records: List[QueryAllProcessInstancesResponseBodyResultListOperationRecords] = None,
         originator_dept_id: str = None,
         originator_userid: str = None,
         process_instance_id: str = None,
         result: str = None,
         status: str = None,
+        tasks: List[QueryAllProcessInstancesResponseBodyResultListTasks] = None,
         title: str = None,
     ):
         # 附属单信息
@@ -2838,6 +3030,8 @@ class QueryAllProcessInstancesResponseBodyResultList(TeaModel):
         self.form_component_values = form_component_values
         # 主单实例Id
         self.main_process_instance_id = main_process_instance_id
+        # 审批单操作记录
+        self.operation_records = operation_records
         # 发起人部门id
         self.originator_dept_id = originator_dept_id
         # 发起者userId
@@ -2848,12 +3042,22 @@ class QueryAllProcessInstancesResponseBodyResultList(TeaModel):
         self.result = result
         # 审批单状态
         self.status = status
+        # 任务列表
+        self.tasks = tasks
         # 审批单标题
         self.title = title
 
     def validate(self):
         if self.form_component_values:
             for k in self.form_component_values:
+                if k:
+                    k.validate()
+        if self.operation_records:
+            for k in self.operation_records:
+                if k:
+                    k.validate()
+        if self.tasks:
+            for k in self.tasks:
                 if k:
                     k.validate()
 
@@ -2877,6 +3081,10 @@ class QueryAllProcessInstancesResponseBodyResultList(TeaModel):
                 result['formComponentValues'].append(k.to_map() if k else None)
         if self.main_process_instance_id is not None:
             result['mainProcessInstanceId'] = self.main_process_instance_id
+        result['operationRecords'] = []
+        if self.operation_records is not None:
+            for k in self.operation_records:
+                result['operationRecords'].append(k.to_map() if k else None)
         if self.originator_dept_id is not None:
             result['originatorDeptId'] = self.originator_dept_id
         if self.originator_userid is not None:
@@ -2887,6 +3095,10 @@ class QueryAllProcessInstancesResponseBodyResultList(TeaModel):
             result['result'] = self.result
         if self.status is not None:
             result['status'] = self.status
+        result['tasks'] = []
+        if self.tasks is not None:
+            for k in self.tasks:
+                result['tasks'].append(k.to_map() if k else None)
         if self.title is not None:
             result['title'] = self.title
         return result
@@ -2908,6 +3120,11 @@ class QueryAllProcessInstancesResponseBodyResultList(TeaModel):
                 self.form_component_values.append(temp_model.from_map(k))
         if m.get('mainProcessInstanceId') is not None:
             self.main_process_instance_id = m.get('mainProcessInstanceId')
+        self.operation_records = []
+        if m.get('operationRecords') is not None:
+            for k in m.get('operationRecords'):
+                temp_model = QueryAllProcessInstancesResponseBodyResultListOperationRecords()
+                self.operation_records.append(temp_model.from_map(k))
         if m.get('originatorDeptId') is not None:
             self.originator_dept_id = m.get('originatorDeptId')
         if m.get('originatorUserid') is not None:
@@ -2918,6 +3135,11 @@ class QueryAllProcessInstancesResponseBodyResultList(TeaModel):
             self.result = m.get('result')
         if m.get('status') is not None:
             self.status = m.get('status')
+        self.tasks = []
+        if m.get('tasks') is not None:
+            for k in m.get('tasks'):
+                temp_model = QueryAllProcessInstancesResponseBodyResultListTasks()
+                self.tasks.append(temp_model.from_map(k))
         if m.get('title') is not None:
             self.title = m.get('title')
         return self
