@@ -20,7 +20,7 @@ class generalInvoiceDetailVOList extends Model
      *
      * @var string
      */
-    public $goodName;
+    public $goodsName;
 
     /**
      * @description 数量
@@ -86,7 +86,7 @@ class generalInvoiceDetailVOList extends Model
     public $unitPrice;
     protected $_name = [
         'amount'        => 'amount',
-        'goodName'      => 'goodName',
+        'goodsName'     => 'goodsName',
         'quantity'      => 'quantity',
         'revenueCode'   => 'revenueCode',
         'rowNo'         => 'rowNo',
@@ -108,8 +108,8 @@ class generalInvoiceDetailVOList extends Model
         if (null !== $this->amount) {
             $res['amount'] = $this->amount;
         }
-        if (null !== $this->goodName) {
-            $res['goodName'] = $this->goodName;
+        if (null !== $this->goodsName) {
+            $res['goodsName'] = $this->goodsName;
         }
         if (null !== $this->quantity) {
             $res['quantity'] = $this->quantity;
@@ -153,8 +153,8 @@ class generalInvoiceDetailVOList extends Model
         if (isset($map['amount'])) {
             $model->amount = $map['amount'];
         }
-        if (isset($map['goodName'])) {
-            $model->goodName = $map['goodName'];
+        if (isset($map['goodsName'])) {
+            $model->goodsName = $map['goodsName'];
         }
         if (isset($map['quantity'])) {
             $model->quantity = $map['quantity'];

@@ -5,6 +5,8 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryAllProcessInstancesResponseBody\result;
 
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryAllProcessInstancesResponseBody\result\list_\formComponentValues;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryAllProcessInstancesResponseBody\result\list_\operationRecords;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryAllProcessInstancesResponseBody\result\list_\tasks;
 use AlibabaCloud\Tea\Model;
 
 class list_ extends Model
@@ -50,6 +52,13 @@ class list_ extends Model
     public $mainProcessInstanceId;
 
     /**
+     * @description 审批单操作记录
+     *
+     * @var operationRecords[]
+     */
+    public $operationRecords;
+
+    /**
      * @description 发起人部门id
      *
      * @var string
@@ -85,6 +94,13 @@ class list_ extends Model
     public $status;
 
     /**
+     * @description 任务列表
+     *
+     * @var tasks[]
+     */
+    public $tasks;
+
+    /**
      * @description 审批单标题
      *
      * @var string
@@ -97,11 +113,13 @@ class list_ extends Model
         'finishTime'                 => 'finishTime',
         'formComponentValues'        => 'formComponentValues',
         'mainProcessInstanceId'      => 'mainProcessInstanceId',
+        'operationRecords'           => 'operationRecords',
         'originatorDeptId'           => 'originatorDeptId',
         'originatorUserid'           => 'originatorUserid',
         'processInstanceId'          => 'processInstanceId',
         'result'                     => 'result',
         'status'                     => 'status',
+        'tasks'                      => 'tasks',
         'title'                      => 'title',
     ];
 
@@ -136,6 +154,15 @@ class list_ extends Model
         if (null !== $this->mainProcessInstanceId) {
             $res['mainProcessInstanceId'] = $this->mainProcessInstanceId;
         }
+        if (null !== $this->operationRecords) {
+            $res['operationRecords'] = [];
+            if (null !== $this->operationRecords && \is_array($this->operationRecords)) {
+                $n = 0;
+                foreach ($this->operationRecords as $item) {
+                    $res['operationRecords'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
         if (null !== $this->originatorDeptId) {
             $res['originatorDeptId'] = $this->originatorDeptId;
         }
@@ -150,6 +177,15 @@ class list_ extends Model
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
+        }
+        if (null !== $this->tasks) {
+            $res['tasks'] = [];
+            if (null !== $this->tasks && \is_array($this->tasks)) {
+                $n = 0;
+                foreach ($this->tasks as $item) {
+                    $res['tasks'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->title) {
             $res['title'] = $this->title;
@@ -190,6 +226,15 @@ class list_ extends Model
         if (isset($map['mainProcessInstanceId'])) {
             $model->mainProcessInstanceId = $map['mainProcessInstanceId'];
         }
+        if (isset($map['operationRecords'])) {
+            if (!empty($map['operationRecords'])) {
+                $model->operationRecords = [];
+                $n                       = 0;
+                foreach ($map['operationRecords'] as $item) {
+                    $model->operationRecords[$n++] = null !== $item ? operationRecords::fromMap($item) : $item;
+                }
+            }
+        }
         if (isset($map['originatorDeptId'])) {
             $model->originatorDeptId = $map['originatorDeptId'];
         }
@@ -204,6 +249,15 @@ class list_ extends Model
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
+        }
+        if (isset($map['tasks'])) {
+            if (!empty($map['tasks'])) {
+                $model->tasks = [];
+                $n            = 0;
+                foreach ($map['tasks'] as $item) {
+                    $model->tasks[$n++] = null !== $item ? tasks::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['title'])) {
             $model->title = $map['title'];
