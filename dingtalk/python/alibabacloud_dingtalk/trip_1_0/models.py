@@ -354,6 +354,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
     def __init__(
         self,
         arrival_time: str = None,
+        car_color: str = None,
+        car_model: str = None,
         car_number: str = None,
         catering_type: str = None,
         check_in_time: str = None,
@@ -368,6 +370,7 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
         origin_station: str = None,
         room_count: int = None,
         seat_info: str = None,
+        service_type: str = None,
         sub_supply_logo: str = None,
         sub_supply_name: str = None,
         taxi_type: str = None,
@@ -377,6 +380,10 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
     ):
         # 到达时间
         self.arrival_time = arrival_time
+        # 车辆颜色
+        self.car_color = car_color
+        # 车辆型号
+        self.car_model = car_model
         # 车牌号
         self.car_number = car_number
         # 餐食描述
@@ -405,6 +412,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
         self.room_count = room_count
         # 舱位
         self.seat_info = seat_info
+        # “服务类型”
+        self.service_type = service_type
         # 下游供应商logo
         self.sub_supply_logo = sub_supply_logo
         # 下游供应商名称
@@ -430,6 +439,10 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
         result = dict()
         if self.arrival_time is not None:
             result['arrivalTime'] = self.arrival_time
+        if self.car_color is not None:
+            result['carColor'] = self.car_color
+        if self.car_model is not None:
+            result['carModel'] = self.car_model
         if self.car_number is not None:
             result['carNumber'] = self.car_number
         if self.catering_type is not None:
@@ -458,6 +471,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
             result['roomCount'] = self.room_count
         if self.seat_info is not None:
             result['seatInfo'] = self.seat_info
+        if self.service_type is not None:
+            result['serviceType'] = self.service_type
         if self.sub_supply_logo is not None:
             result['subSupplyLogo'] = self.sub_supply_logo
         if self.sub_supply_name is not None:
@@ -476,6 +491,10 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
         m = m or dict()
         if m.get('arrivalTime') is not None:
             self.arrival_time = m.get('arrivalTime')
+        if m.get('carColor') is not None:
+            self.car_color = m.get('carColor')
+        if m.get('carModel') is not None:
+            self.car_model = m.get('carModel')
         if m.get('carNumber') is not None:
             self.car_number = m.get('carNumber')
         if m.get('cateringType') is not None:
@@ -505,6 +524,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
             self.room_count = m.get('roomCount')
         if m.get('seatInfo') is not None:
             self.seat_info = m.get('seatInfo')
+        if m.get('serviceType') is not None:
+            self.service_type = m.get('serviceType')
         if m.get('subSupplyLogo') is not None:
             self.sub_supply_logo = m.get('subSupplyLogo')
         if m.get('subSupplyName') is not None:
@@ -539,6 +560,7 @@ class SyncTripOrderRequest(TeaModel):
         real_amount: str = None,
         refund_amount: str = None,
         relative_order_no: str = None,
+        source: str = None,
         target_corp_id: str = None,
         total_amount: str = None,
         type: str = None,
@@ -574,6 +596,8 @@ class SyncTripOrderRequest(TeaModel):
         self.refund_amount = refund_amount
         # 供应商关联订单号
         self.relative_order_no = relative_order_no
+        # 来源埋点
+        self.source = source
         # 用户组织id
         self.target_corp_id = target_corp_id
         # 总金额
@@ -629,6 +653,8 @@ class SyncTripOrderRequest(TeaModel):
             result['refundAmount'] = self.refund_amount
         if self.relative_order_no is not None:
             result['relativeOrderNo'] = self.relative_order_no
+        if self.source is not None:
+            result['source'] = self.source
         if self.target_corp_id is not None:
             result['targetCorpId'] = self.target_corp_id
         if self.total_amount is not None:
@@ -675,6 +701,8 @@ class SyncTripOrderRequest(TeaModel):
             self.refund_amount = m.get('refundAmount')
         if m.get('relativeOrderNo') is not None:
             self.relative_order_no = m.get('relativeOrderNo')
+        if m.get('source') is not None:
+            self.source = m.get('source')
         if m.get('targetCorpId') is not None:
             self.target_corp_id = m.get('targetCorpId')
         if m.get('totalAmount') is not None:

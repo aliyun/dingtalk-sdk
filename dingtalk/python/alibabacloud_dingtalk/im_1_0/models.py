@@ -5344,6 +5344,167 @@ class SendRobotInteractiveCardResponse(TeaModel):
         return self
 
 
+class SendRobotMessageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SendRobotMessageRequest(TeaModel):
+    def __init__(
+        self,
+        at_all: bool = None,
+        at_app_user_id: str = None,
+        at_ding_user_id: str = None,
+        msg_content: str = None,
+        msg_type: str = None,
+        open_conversation_ids: List[str] = None,
+    ):
+        # @群所有人为true， 默认false。
+        self.at_all = at_all
+        # @钉外在业务系统内的唯一标识（openId）。
+        self.at_app_user_id = at_app_user_id
+        # @钉内用户在业务系统内的唯一标识（dingUserId）。
+        self.at_ding_user_id = at_ding_user_id
+        # 消息体内容，按照下面参考示例格式上传。
+        self.msg_content = msg_content
+        # 消息类型 文本：text，图片：photo，markdown：markdown，actionCard：actionCard。
+        self.msg_type = msg_type
+        # 群聊openConversationIds
+        self.open_conversation_ids = open_conversation_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.at_all is not None:
+            result['atAll'] = self.at_all
+        if self.at_app_user_id is not None:
+            result['atAppUserId'] = self.at_app_user_id
+        if self.at_ding_user_id is not None:
+            result['atDingUserId'] = self.at_ding_user_id
+        if self.msg_content is not None:
+            result['msgContent'] = self.msg_content
+        if self.msg_type is not None:
+            result['msgType'] = self.msg_type
+        if self.open_conversation_ids is not None:
+            result['openConversationIds'] = self.open_conversation_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('atAll') is not None:
+            self.at_all = m.get('atAll')
+        if m.get('atAppUserId') is not None:
+            self.at_app_user_id = m.get('atAppUserId')
+        if m.get('atDingUserId') is not None:
+            self.at_ding_user_id = m.get('atDingUserId')
+        if m.get('msgContent') is not None:
+            self.msg_content = m.get('msgContent')
+        if m.get('msgType') is not None:
+            self.msg_type = m.get('msgType')
+        if m.get('openConversationIds') is not None:
+            self.open_conversation_ids = m.get('openConversationIds')
+        return self
+
+
+class SendRobotMessageResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        # 本次操作是否成功
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SendRobotMessageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SendRobotMessageResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SendRobotMessageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SendTemplateInteractiveCardHeaders(TeaModel):
     def __init__(
         self,

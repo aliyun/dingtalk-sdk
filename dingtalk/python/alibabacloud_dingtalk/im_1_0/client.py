@@ -2297,6 +2297,90 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('SendRobotInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/v1.0/robot/interactiveCards/send', 'json', req, runtime)
         )
 
+    def send_robot_message(
+        self,
+        request: dingtalkim__1__0_models.SendRobotMessageRequest,
+    ) -> dingtalkim__1__0_models.SendRobotMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.SendRobotMessageHeaders()
+        return self.send_robot_message_with_options(request, headers, runtime)
+
+    async def send_robot_message_async(
+        self,
+        request: dingtalkim__1__0_models.SendRobotMessageRequest,
+    ) -> dingtalkim__1__0_models.SendRobotMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.SendRobotMessageHeaders()
+        return await self.send_robot_message_with_options_async(request, headers, runtime)
+
+    def send_robot_message_with_options(
+        self,
+        request: dingtalkim__1__0_models.SendRobotMessageRequest,
+        headers: dingtalkim__1__0_models.SendRobotMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.SendRobotMessageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.at_all):
+            body['atAll'] = request.at_all
+        if not UtilClient.is_unset(request.at_app_user_id):
+            body['atAppUserId'] = request.at_app_user_id
+        if not UtilClient.is_unset(request.at_ding_user_id):
+            body['atDingUserId'] = request.at_ding_user_id
+        if not UtilClient.is_unset(request.msg_content):
+            body['msgContent'] = request.msg_content
+        if not UtilClient.is_unset(request.msg_type):
+            body['msgType'] = request.msg_type
+        if not UtilClient.is_unset(request.open_conversation_ids):
+            body['openConversationIds'] = request.open_conversation_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.SendRobotMessageResponse(),
+            self.do_roarequest('SendRobotMessage', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/robotMessages/send', 'json', req, runtime)
+        )
+
+    async def send_robot_message_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.SendRobotMessageRequest,
+        headers: dingtalkim__1__0_models.SendRobotMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.SendRobotMessageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.at_all):
+            body['atAll'] = request.at_all
+        if not UtilClient.is_unset(request.at_app_user_id):
+            body['atAppUserId'] = request.at_app_user_id
+        if not UtilClient.is_unset(request.at_ding_user_id):
+            body['atDingUserId'] = request.at_ding_user_id
+        if not UtilClient.is_unset(request.msg_content):
+            body['msgContent'] = request.msg_content
+        if not UtilClient.is_unset(request.msg_type):
+            body['msgType'] = request.msg_type
+        if not UtilClient.is_unset(request.open_conversation_ids):
+            body['openConversationIds'] = request.open_conversation_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.SendRobotMessageResponse(),
+            await self.do_roarequest_async('SendRobotMessage', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/robotMessages/send', 'json', req, runtime)
+        )
+
     def send_template_interactive_card(
         self,
         request: dingtalkim__1__0_models.SendTemplateInteractiveCardRequest,

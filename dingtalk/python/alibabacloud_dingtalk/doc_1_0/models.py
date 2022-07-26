@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict, List
+from typing import Dict, List, Any
 
 
 class AddWorkspaceDocMembersHeaders(TeaModel):
@@ -2002,17 +2002,22 @@ class GetRangeRequest(TeaModel):
         return self
 
 
-class GetRangeResponseBody(TeaModel):
+class GetRangeResponseBodyBackgroundColors(TeaModel):
     def __init__(
         self,
-        display_values: List[str] = None,
-        formulas: List[str] = None,
-        values: List[str] = None,
+        red: int = None,
+        green: int = None,
+        blue: int = None,
+        hex_string: str = None,
     ):
-        self.display_values = display_values
-        self.formulas = formulas
-        # 值
-        self.values = values
+        # RGB值中的红色值
+        self.red = red
+        # RGB值中的绿色值
+        self.green = green
+        # RGB值中的蓝色值
+        self.blue = blue
+        # 16进制表示的颜色
+        self.hex_string = hex_string
 
     def validate(self):
         pass
@@ -2023,6 +2028,63 @@ class GetRangeResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.red is not None:
+            result['red'] = self.red
+        if self.green is not None:
+            result['green'] = self.green
+        if self.blue is not None:
+            result['blue'] = self.blue
+        if self.hex_string is not None:
+            result['hexString'] = self.hex_string
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('red') is not None:
+            self.red = m.get('red')
+        if m.get('green') is not None:
+            self.green = m.get('green')
+        if m.get('blue') is not None:
+            self.blue = m.get('blue')
+        if m.get('hexString') is not None:
+            self.hex_string = m.get('hexString')
+        return self
+
+
+class GetRangeResponseBody(TeaModel):
+    def __init__(
+        self,
+        background_colors: List[List[GetRangeResponseBodyBackgroundColors]] = None,
+        display_values: List[List[str]] = None,
+        formulas: List[List[str]] = None,
+        values: List[List[Any]] = None,
+    ):
+        self.background_colors = background_colors
+        self.display_values = display_values
+        self.formulas = formulas
+        # 值
+        self.values = values
+
+    def validate(self):
+        if self.background_colors:
+            for k in self.background_colors:
+                for k1 in k:
+                    if k1:
+                        k1.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['backgroundColors'] = []
+        if self.background_colors is not None:
+            for k in self.background_colors:
+                l1 = []
+                for k1 in k:
+                    l1.append(k1.to_map() if k1 else None)
+                result['backgroundColors'].append(l1)
         if self.display_values is not None:
             result['displayValues'] = self.display_values
         if self.formulas is not None:
@@ -2033,6 +2095,14 @@ class GetRangeResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.background_colors = []
+        if m.get('backgroundColors') is not None:
+            for k in m.get('backgroundColors'):
+                l1 = []
+                for k1 in k:
+                    temp_model = GetRangeResponseBodyBackgroundColors()
+                    l1.append(temp_model.from_map(k1))
+                self.background_colors.append(l1)
         if m.get('displayValues') is not None:
             self.display_values = m.get('displayValues')
         if m.get('formulas') is not None:

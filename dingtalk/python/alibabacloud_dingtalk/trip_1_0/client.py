@@ -163,6 +163,8 @@ class Client(OpenApiClient):
             body['refundAmount'] = request.refund_amount
         if not UtilClient.is_unset(request.relative_order_no):
             body['relativeOrderNo'] = request.relative_order_no
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
         if not UtilClient.is_unset(request.target_corp_id):
             body['targetCorpId'] = request.target_corp_id
         if not UtilClient.is_unset(request.total_amount):
@@ -223,6 +225,8 @@ class Client(OpenApiClient):
             body['refundAmount'] = request.refund_amount
         if not UtilClient.is_unset(request.relative_order_no):
             body['relativeOrderNo'] = request.relative_order_no
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
         if not UtilClient.is_unset(request.target_corp_id):
             body['targetCorpId'] = request.target_corp_id
         if not UtilClient.is_unset(request.total_amount):

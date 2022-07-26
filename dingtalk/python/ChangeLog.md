@@ -1,3 +1,6 @@
+2022-07-26 Version: 1.3.90
+- Update sync interface.
+
 2022-07-25 Version: 1.3.89
 - Update sync interface.
 

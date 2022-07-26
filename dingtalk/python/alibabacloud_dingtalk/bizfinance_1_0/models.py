@@ -6127,6 +6127,7 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
         self,
         amount: str = None,
         apply_status: str = None,
+        create_time: str = None,
         creator: QueryReceiptForInvoiceResponseBodyListCreator = None,
         customer: QueryReceiptForInvoiceResponseBodyListCustomer = None,
         invoice_type: str = None,
@@ -6148,6 +6149,8 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
         self.amount = amount
         # 开票状态
         self.apply_status = apply_status
+        # 创建时间
+        self.create_time = create_time
         # 创建人
         self.creator = creator
         # 客户
@@ -6197,6 +6200,8 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
             result['amount'] = self.amount
         if self.apply_status is not None:
             result['applyStatus'] = self.apply_status
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
         if self.creator is not None:
             result['creator'] = self.creator.to_map()
         if self.customer is not None:
@@ -6237,6 +6242,8 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
             self.amount = m.get('amount')
         if m.get('applyStatus') is not None:
             self.apply_status = m.get('applyStatus')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
         if m.get('creator') is not None:
             temp_model = QueryReceiptForInvoiceResponseBodyListCreator()
             self.creator = temp_model.from_map(m['creator'])
@@ -6643,6 +6650,7 @@ class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
     def __init__(
         self,
         amount: str = None,
+        create_time: str = None,
         creator: QueryReceiptsBaseInfoResponseBodyListCreator = None,
         customer: QueryReceiptsBaseInfoResponseBodyListCustomer = None,
         model_id: str = None,
@@ -6659,6 +6667,8 @@ class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
     ):
         # 金额
         self.amount = amount
+        # 创建时间
+        self.create_time = create_time
         # 创建人
         self.creator = creator
         # 客户
@@ -6702,6 +6712,8 @@ class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
         result = dict()
         if self.amount is not None:
             result['amount'] = self.amount
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
         if self.creator is not None:
             result['creator'] = self.creator.to_map()
         if self.customer is not None:
@@ -6734,6 +6746,8 @@ class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
         m = m or dict()
         if m.get('amount') is not None:
             self.amount = m.get('amount')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
         if m.get('creator') is not None:
             temp_model = QueryReceiptsBaseInfoResponseBodyListCreator()
             self.creator = temp_model.from_map(m['creator'])
