@@ -145,6 +145,15 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureLabourCost
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMaterialListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMaterialListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMaterialListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesMaterialHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesMaterialRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesMaterialResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesProcessHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesProcessRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesProcessResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesProductionPlanHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesProductionPlanRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesProductionPlanResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesTeamMgmtHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesTeamMgmtRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesTeamMgmtResponse;
@@ -2666,6 +2675,270 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return IndustryManufactureMaterialListResponse::fromMap($this->doROARequest('IndustryManufactureMaterialList', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufactures/materials/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param IndustryManufactureMesMaterialRequest $request
+     *
+     * @return IndustryManufactureMesMaterialResponse
+     */
+    public function industryManufactureMesMaterial($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IndustryManufactureMesMaterialHeaders([]);
+
+        return $this->industryManufactureMesMaterialWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IndustryManufactureMesMaterialRequest $request
+     * @param IndustryManufactureMesMaterialHeaders $headers
+     * @param RuntimeOptions                        $runtime
+     *
+     * @return IndustryManufactureMesMaterialResponse
+     */
+    public function industryManufactureMesMaterialWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->action)) {
+            @$body['action'] = $request->action;
+        }
+        if (!Utils::isUnset($request->appKey)) {
+            @$body['appKey'] = $request->appKey;
+        }
+        if (!Utils::isUnset($request->baseDataName)) {
+            @$body['baseDataName'] = $request->baseDataName;
+        }
+        if (!Utils::isUnset($request->category)) {
+            @$body['category'] = $request->category;
+        }
+        if (!Utils::isUnset($request->extendData)) {
+            @$body['extendData'] = $request->extendData;
+        }
+        if (!Utils::isUnset($request->productCode)) {
+            @$body['productCode'] = $request->productCode;
+        }
+        if (!Utils::isUnset($request->productName)) {
+            @$body['productName'] = $request->productName;
+        }
+        if (!Utils::isUnset($request->productSpecification)) {
+            @$body['productSpecification'] = $request->productSpecification;
+        }
+        if (!Utils::isUnset($request->prop)) {
+            @$body['prop'] = $request->prop;
+        }
+        if (!Utils::isUnset($request->unit)) {
+            @$body['unit'] = $request->unit;
+        }
+        if (!Utils::isUnset($request->uuid)) {
+            @$body['uuid'] = $request->uuid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return IndustryManufactureMesMaterialResponse::fromMap($this->doROARequest('IndustryManufactureMesMaterial', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufacturings/materials/manage', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param IndustryManufactureMesProcessRequest $request
+     *
+     * @return IndustryManufactureMesProcessResponse
+     */
+    public function industryManufactureMesProcess($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IndustryManufactureMesProcessHeaders([]);
+
+        return $this->industryManufactureMesProcessWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IndustryManufactureMesProcessRequest $request
+     * @param IndustryManufactureMesProcessHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return IndustryManufactureMesProcessResponse
+     */
+    public function industryManufactureMesProcessWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->action)) {
+            @$body['action'] = $request->action;
+        }
+        if (!Utils::isUnset($request->appKey)) {
+            @$body['appKey'] = $request->appKey;
+        }
+        if (!Utils::isUnset($request->baseDataName)) {
+            @$body['baseDataName'] = $request->baseDataName;
+        }
+        if (!Utils::isUnset($request->extendData)) {
+            @$body['extendData'] = $request->extendData;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->needDispatch)) {
+            @$body['needDispatch'] = $request->needDispatch;
+        }
+        if (!Utils::isUnset($request->needQualityTest)) {
+            @$body['needQualityTest'] = $request->needQualityTest;
+        }
+        if (!Utils::isUnset($request->no)) {
+            @$body['no'] = $request->no;
+        }
+        if (!Utils::isUnset($request->price)) {
+            @$body['price'] = $request->price;
+        }
+        if (!Utils::isUnset($request->prop)) {
+            @$body['prop'] = $request->prop;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            @$body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->sop)) {
+            @$body['sop'] = $request->sop;
+        }
+        if (!Utils::isUnset($request->uuid)) {
+            @$body['uuid'] = $request->uuid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return IndustryManufactureMesProcessResponse::fromMap($this->doROARequest('IndustryManufactureMesProcess', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufacturings/processes/manage', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param IndustryManufactureMesProductionPlanRequest $request
+     *
+     * @return IndustryManufactureMesProductionPlanResponse
+     */
+    public function industryManufactureMesProductionPlan($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IndustryManufactureMesProductionPlanHeaders([]);
+
+        return $this->industryManufactureMesProductionPlanWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IndustryManufactureMesProductionPlanRequest $request
+     * @param IndustryManufactureMesProductionPlanHeaders $headers
+     * @param RuntimeOptions                              $runtime
+     *
+     * @return IndustryManufactureMesProductionPlanResponse
+     */
+    public function industryManufactureMesProductionPlanWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->action)) {
+            @$body['action'] = $request->action;
+        }
+        if (!Utils::isUnset($request->actualEndTime)) {
+            @$body['actualEndTime'] = $request->actualEndTime;
+        }
+        if (!Utils::isUnset($request->actualStartTime)) {
+            @$body['actualStartTime'] = $request->actualStartTime;
+        }
+        if (!Utils::isUnset($request->appKey)) {
+            @$body['appKey'] = $request->appKey;
+        }
+        if (!Utils::isUnset($request->baseDataName)) {
+            @$body['baseDataName'] = $request->baseDataName;
+        }
+        if (!Utils::isUnset($request->bomUuid)) {
+            @$body['bomUuid'] = $request->bomUuid;
+        }
+        if (!Utils::isUnset($request->events)) {
+            @$body['events'] = $request->events;
+        }
+        if (!Utils::isUnset($request->extendData)) {
+            @$body['extendData'] = $request->extendData;
+        }
+        if (!Utils::isUnset($request->no)) {
+            @$body['no'] = $request->no;
+        }
+        if (!Utils::isUnset($request->overdue)) {
+            @$body['overdue'] = $request->overdue;
+        }
+        if (!Utils::isUnset($request->planEndTime)) {
+            @$body['planEndTime'] = $request->planEndTime;
+        }
+        if (!Utils::isUnset($request->planQuantity)) {
+            @$body['planQuantity'] = $request->planQuantity;
+        }
+        if (!Utils::isUnset($request->planStartTime)) {
+            @$body['planStartTime'] = $request->planStartTime;
+        }
+        if (!Utils::isUnset($request->processUuids)) {
+            @$body['processUuids'] = $request->processUuids;
+        }
+        if (!Utils::isUnset($request->productCode)) {
+            @$body['productCode'] = $request->productCode;
+        }
+        if (!Utils::isUnset($request->productName)) {
+            @$body['productName'] = $request->productName;
+        }
+        if (!Utils::isUnset($request->productSpecification)) {
+            @$body['productSpecification'] = $request->productSpecification;
+        }
+        if (!Utils::isUnset($request->qualifiedQuantity)) {
+            @$body['qualifiedQuantity'] = $request->qualifiedQuantity;
+        }
+        if (!Utils::isUnset($request->sellOrderNo)) {
+            @$body['sellOrderNo'] = $request->sellOrderNo;
+        }
+        if (!Utils::isUnset($request->status)) {
+            @$body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->teamList)) {
+            @$body['teamList'] = $request->teamList;
+        }
+        if (!Utils::isUnset($request->title)) {
+            @$body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$body['type'] = $request->type;
+        }
+        if (!Utils::isUnset($request->unit)) {
+            @$body['unit'] = $request->unit;
+        }
+        if (!Utils::isUnset($request->uuid)) {
+            @$body['uuid'] = $request->uuid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return IndustryManufactureMesProductionPlanResponse::fromMap($this->doROARequest('IndustryManufactureMesProductionPlan', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufacturings/productionPlans/manage', 'json', $req, $runtime));
     }
 
     /**

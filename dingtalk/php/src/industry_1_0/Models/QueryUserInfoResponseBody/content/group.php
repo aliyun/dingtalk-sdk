@@ -23,6 +23,16 @@ class group extends Model
     public $deptName;
 
     /**
+     * @var string
+     */
+    public $gmtCreateStr;
+
+    /**
+     * @var string
+     */
+    public $gmtModifiedStr;
+
+    /**
      * @description 医疗组Id
      *
      * @var int
@@ -35,11 +45,19 @@ class group extends Model
      * @var string
      */
     public $name;
+
+    /**
+     * @var int
+     */
+    public $relId;
     protected $_name = [
-        'deptId'   => 'deptId',
-        'deptName' => 'deptName',
-        'id'       => 'id',
-        'name'     => 'name',
+        'deptId'         => 'deptId',
+        'deptName'       => 'deptName',
+        'gmtCreateStr'   => 'gmtCreateStr',
+        'gmtModifiedStr' => 'gmtModifiedStr',
+        'id'             => 'id',
+        'name'           => 'name',
+        'relId'          => 'relId',
     ];
 
     public function validate()
@@ -55,11 +73,20 @@ class group extends Model
         if (null !== $this->deptName) {
             $res['deptName'] = $this->deptName;
         }
+        if (null !== $this->gmtCreateStr) {
+            $res['gmtCreateStr'] = $this->gmtCreateStr;
+        }
+        if (null !== $this->gmtModifiedStr) {
+            $res['gmtModifiedStr'] = $this->gmtModifiedStr;
+        }
         if (null !== $this->id) {
             $res['id'] = $this->id;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->relId) {
+            $res['relId'] = $this->relId;
         }
 
         return $res;
@@ -79,11 +106,20 @@ class group extends Model
         if (isset($map['deptName'])) {
             $model->deptName = $map['deptName'];
         }
+        if (isset($map['gmtCreateStr'])) {
+            $model->gmtCreateStr = $map['gmtCreateStr'];
+        }
+        if (isset($map['gmtModifiedStr'])) {
+            $model->gmtModifiedStr = $map['gmtModifiedStr'];
+        }
         if (isset($map['id'])) {
             $model->id = $map['id'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['relId'])) {
+            $model->relId = $map['relId'];
         }
 
         return $model;

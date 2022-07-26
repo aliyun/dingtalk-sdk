@@ -102,6 +102,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendRobotInteractiveCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendRobotInteractiveCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendRobotInteractiveCardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendRobotMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendRobotMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendRobotMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendTemplateInteractiveCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendTemplateInteractiveCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendTemplateInteractiveCardResponse;
@@ -1689,6 +1692,63 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SendRobotInteractiveCardResponse::fromMap($this->doROARequest('SendRobotInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/v1.0/robot/interactiveCards/send', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SendRobotMessageRequest $request
+     *
+     * @return SendRobotMessageResponse
+     */
+    public function sendRobotMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendRobotMessageHeaders([]);
+
+        return $this->sendRobotMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SendRobotMessageRequest $request
+     * @param SendRobotMessageHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return SendRobotMessageResponse
+     */
+    public function sendRobotMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->atAll)) {
+            @$body['atAll'] = $request->atAll;
+        }
+        if (!Utils::isUnset($request->atAppUserId)) {
+            @$body['atAppUserId'] = $request->atAppUserId;
+        }
+        if (!Utils::isUnset($request->atDingUserId)) {
+            @$body['atDingUserId'] = $request->atDingUserId;
+        }
+        if (!Utils::isUnset($request->msgContent)) {
+            @$body['msgContent'] = $request->msgContent;
+        }
+        if (!Utils::isUnset($request->msgType)) {
+            @$body['msgType'] = $request->msgType;
+        }
+        if (!Utils::isUnset($request->openConversationIds)) {
+            @$body['openConversationIds'] = $request->openConversationIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SendRobotMessageResponse::fromMap($this->doROARequest('SendRobotMessage', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interconnections/robotMessages/send', 'json', $req, $runtime));
     }
 
     /**

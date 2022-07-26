@@ -9,25 +9,31 @@ use AlibabaCloud\Tea\Model;
 class GetRangeResponseBody extends Model
 {
     /**
-     * @var string[]
+     * @var undefined[][]
+     */
+    public $backgroundColors;
+
+    /**
+     * @var string[][]
      */
     public $displayValues;
 
     /**
-     * @var string[]
+     * @var string[][]
      */
     public $formulas;
 
     /**
      * @description 值
      *
-     * @var string[]
+     * @var mixed[][]
      */
     public $values;
     protected $_name = [
-        'displayValues' => 'displayValues',
-        'formulas'      => 'formulas',
-        'values'        => 'values',
+        'backgroundColors' => 'backgroundColors',
+        'displayValues'    => 'displayValues',
+        'formulas'         => 'formulas',
+        'values'           => 'values',
     ];
 
     public function validate()
@@ -37,6 +43,9 @@ class GetRangeResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->backgroundColors) {
+            $res['backgroundColors'] = $this->backgroundColors;
+        }
         if (null !== $this->displayValues) {
             $res['displayValues'] = $this->displayValues;
         }
@@ -58,6 +67,11 @@ class GetRangeResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['backgroundColors'])) {
+            if (!empty($map['backgroundColors'])) {
+                $model->backgroundColors = $map['backgroundColors'];
+            }
+        }
         if (isset($map['displayValues'])) {
             if (!empty($map['displayValues'])) {
                 $model->displayValues = $map['displayValues'];

@@ -17,6 +17,20 @@ class orderDetails extends Model
     public $arrivalTime;
 
     /**
+     * @description 车辆颜色
+     *
+     * @var string
+     */
+    public $carColor;
+
+    /**
+     * @description 车辆型号
+     *
+     * @var string
+     */
+    public $carModel;
+
+    /**
      * @description 车牌号
      *
      * @var string
@@ -115,6 +129,13 @@ class orderDetails extends Model
     public $seatInfo;
 
     /**
+     * @description “服务类型”
+     *
+     * @var string
+     */
+    public $serviceType;
+
+    /**
      * @description 下游供应商logo
      *
      * @var string
@@ -157,6 +178,8 @@ class orderDetails extends Model
     public $typeDescription;
     protected $_name = [
         'arrivalTime'         => 'arrivalTime',
+        'carColor'            => 'carColor',
+        'carModel'            => 'carModel',
         'carNumber'           => 'carNumber',
         'cateringType'        => 'cateringType',
         'checkInTime'         => 'checkInTime',
@@ -171,6 +194,7 @@ class orderDetails extends Model
         'originStation'       => 'originStation',
         'roomCount'           => 'roomCount',
         'seatInfo'            => 'seatInfo',
+        'serviceType'         => 'serviceType',
         'subSupplyLogo'       => 'subSupplyLogo',
         'subSupplyName'       => 'subSupplyName',
         'taxiType'            => 'taxiType',
@@ -188,6 +212,12 @@ class orderDetails extends Model
         $res = [];
         if (null !== $this->arrivalTime) {
             $res['arrivalTime'] = $this->arrivalTime;
+        }
+        if (null !== $this->carColor) {
+            $res['carColor'] = $this->carColor;
+        }
+        if (null !== $this->carModel) {
+            $res['carModel'] = $this->carModel;
         }
         if (null !== $this->carNumber) {
             $res['carNumber'] = $this->carNumber;
@@ -231,6 +261,9 @@ class orderDetails extends Model
         if (null !== $this->seatInfo) {
             $res['seatInfo'] = $this->seatInfo;
         }
+        if (null !== $this->serviceType) {
+            $res['serviceType'] = $this->serviceType;
+        }
         if (null !== $this->subSupplyLogo) {
             $res['subSupplyLogo'] = $this->subSupplyLogo;
         }
@@ -263,6 +296,12 @@ class orderDetails extends Model
         $model = new self();
         if (isset($map['arrivalTime'])) {
             $model->arrivalTime = $map['arrivalTime'];
+        }
+        if (isset($map['carColor'])) {
+            $model->carColor = $map['carColor'];
+        }
+        if (isset($map['carModel'])) {
+            $model->carModel = $map['carModel'];
         }
         if (isset($map['carNumber'])) {
             $model->carNumber = $map['carNumber'];
@@ -305,6 +344,9 @@ class orderDetails extends Model
         }
         if (isset($map['seatInfo'])) {
             $model->seatInfo = $map['seatInfo'];
+        }
+        if (isset($map['serviceType'])) {
+            $model->serviceType = $map['serviceType'];
         }
         if (isset($map['subSupplyLogo'])) {
             $model->subSupplyLogo = $map['subSupplyLogo'];

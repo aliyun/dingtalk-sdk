@@ -121,6 +121,13 @@ class SyncTripOrderRequest extends Model
     public $relativeOrderNo;
 
     /**
+     * @description 来源埋点
+     *
+     * @var string
+     */
+    public $source;
+
+    /**
      * @description 用户组织id
      *
      * @var string
@@ -157,6 +164,7 @@ class SyncTripOrderRequest extends Model
         'realAmount'      => 'realAmount',
         'refundAmount'    => 'refundAmount',
         'relativeOrderNo' => 'relativeOrderNo',
+        'source'          => 'source',
         'targetCorpId'    => 'targetCorpId',
         'totalAmount'     => 'totalAmount',
         'type'            => 'type',
@@ -222,6 +230,9 @@ class SyncTripOrderRequest extends Model
         }
         if (null !== $this->relativeOrderNo) {
             $res['relativeOrderNo'] = $this->relativeOrderNo;
+        }
+        if (null !== $this->source) {
+            $res['source'] = $this->source;
         }
         if (null !== $this->targetCorpId) {
             $res['targetCorpId'] = $this->targetCorpId;
@@ -297,6 +308,9 @@ class SyncTripOrderRequest extends Model
         }
         if (isset($map['relativeOrderNo'])) {
             $model->relativeOrderNo = $map['relativeOrderNo'];
+        }
+        if (isset($map['source'])) {
+            $model->source = $map['source'];
         }
         if (isset($map['targetCorpId'])) {
             $model->targetCorpId = $map['targetCorpId'];

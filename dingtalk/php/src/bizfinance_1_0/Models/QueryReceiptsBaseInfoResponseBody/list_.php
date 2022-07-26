@@ -21,6 +21,13 @@ class list_ extends Model
     public $amount;
 
     /**
+     * @description 创建时间
+     *
+     * @var string
+     */
+    public $createTime;
+
+    /**
      * @description 创建人
      *
      * @var creator
@@ -104,6 +111,7 @@ class list_ extends Model
     public $voucherStatus;
     protected $_name = [
         'amount'        => 'amount',
+        'createTime'    => 'createTime',
         'creator'       => 'creator',
         'customer'      => 'customer',
         'modelId'       => 'modelId',
@@ -128,6 +136,9 @@ class list_ extends Model
         $res = [];
         if (null !== $this->amount) {
             $res['amount'] = $this->amount;
+        }
+        if (null !== $this->createTime) {
+            $res['createTime'] = $this->createTime;
         }
         if (null !== $this->creator) {
             $res['creator'] = null !== $this->creator ? $this->creator->toMap() : null;
@@ -182,6 +193,9 @@ class list_ extends Model
         $model = new self();
         if (isset($map['amount'])) {
             $model->amount = $map['amount'];
+        }
+        if (isset($map['createTime'])) {
+            $model->createTime = $map['createTime'];
         }
         if (isset($map['creator'])) {
             $model->creator = creator::fromMap($map['creator']);

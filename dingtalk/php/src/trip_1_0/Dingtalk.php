@@ -156,6 +156,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->relativeOrderNo)) {
             @$body['relativeOrderNo'] = $request->relativeOrderNo;
         }
+        if (!Utils::isUnset($request->source)) {
+            @$body['source'] = $request->source;
+        }
         if (!Utils::isUnset($request->targetCorpId)) {
             @$body['targetCorpId'] = $request->targetCorpId;
         }
