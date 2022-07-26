@@ -23,8 +23,11 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [Validation(Required=false)]
             public List<QueryUserInfoResponseBodyContentDept> Dept { get; set; }
             public class QueryUserInfoResponseBodyContentDept : TeaModel {
+                public string GmtCreateStr { get; set; }
+                public string GmtModifiedStr { get; set; }
                 public long? Id { get; set; }
                 public string Name { get; set; }
+                public long? RelId { get; set; }
             }
             [NameInMap("group")]
             [Validation(Required=false)]
@@ -32,8 +35,11 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             public class QueryUserInfoResponseBodyContentGroup : TeaModel {
                 public long? DeptId { get; set; }
                 public string DeptName { get; set; }
+                public string GmtCreateStr { get; set; }
+                public string GmtModifiedStr { get; set; }
                 public long? Id { get; set; }
                 public string Name { get; set; }
+                public long? RelId { get; set; }
             }
             [NameInMap("job")]
             [Validation(Required=false)]

@@ -4240,6 +4240,566 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureMaterialListResponse>(await DoROARequestAsync("IndustryManufactureMaterialList", "industry_1.0", "HTTP", "POST", "AK", "/v1.0/industry/manufactures/materials/query", "json", req, runtime));
         }
 
+        public IndustryManufactureMesMaterialResponse IndustryManufactureMesMaterial(IndustryManufactureMesMaterialRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            IndustryManufactureMesMaterialHeaders headers = new IndustryManufactureMesMaterialHeaders();
+            return IndustryManufactureMesMaterialWithOptions(request, headers, runtime);
+        }
+
+        public async Task<IndustryManufactureMesMaterialResponse> IndustryManufactureMesMaterialAsync(IndustryManufactureMesMaterialRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            IndustryManufactureMesMaterialHeaders headers = new IndustryManufactureMesMaterialHeaders();
+            return await IndustryManufactureMesMaterialWithOptionsAsync(request, headers, runtime);
+        }
+
+        public IndustryManufactureMesMaterialResponse IndustryManufactureMesMaterialWithOptions(IndustryManufactureMesMaterialRequest request, IndustryManufactureMesMaterialHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Action))
+            {
+                body["action"] = request.Action;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppKey))
+            {
+                body["appKey"] = request.AppKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BaseDataName))
+            {
+                body["baseDataName"] = request.BaseDataName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Category))
+            {
+                body["category"] = request.Category;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExtendData))
+            {
+                body["extendData"] = request.ExtendData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductCode))
+            {
+                body["productCode"] = request.ProductCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductName))
+            {
+                body["productName"] = request.ProductName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductSpecification))
+            {
+                body["productSpecification"] = request.ProductSpecification;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Prop))
+            {
+                body["prop"] = request.Prop;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Unit))
+            {
+                body["unit"] = request.Unit;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            {
+                body["uuid"] = request.Uuid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<IndustryManufactureMesMaterialResponse>(DoROARequest("IndustryManufactureMesMaterial", "industry_1.0", "HTTP", "POST", "AK", "/v1.0/industry/manufacturings/materials/manage", "json", req, runtime));
+        }
+
+        public async Task<IndustryManufactureMesMaterialResponse> IndustryManufactureMesMaterialWithOptionsAsync(IndustryManufactureMesMaterialRequest request, IndustryManufactureMesMaterialHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Action))
+            {
+                body["action"] = request.Action;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppKey))
+            {
+                body["appKey"] = request.AppKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BaseDataName))
+            {
+                body["baseDataName"] = request.BaseDataName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Category))
+            {
+                body["category"] = request.Category;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExtendData))
+            {
+                body["extendData"] = request.ExtendData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductCode))
+            {
+                body["productCode"] = request.ProductCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductName))
+            {
+                body["productName"] = request.ProductName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductSpecification))
+            {
+                body["productSpecification"] = request.ProductSpecification;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Prop))
+            {
+                body["prop"] = request.Prop;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Unit))
+            {
+                body["unit"] = request.Unit;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            {
+                body["uuid"] = request.Uuid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<IndustryManufactureMesMaterialResponse>(await DoROARequestAsync("IndustryManufactureMesMaterial", "industry_1.0", "HTTP", "POST", "AK", "/v1.0/industry/manufacturings/materials/manage", "json", req, runtime));
+        }
+
+        public IndustryManufactureMesProcessResponse IndustryManufactureMesProcess(IndustryManufactureMesProcessRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            IndustryManufactureMesProcessHeaders headers = new IndustryManufactureMesProcessHeaders();
+            return IndustryManufactureMesProcessWithOptions(request, headers, runtime);
+        }
+
+        public async Task<IndustryManufactureMesProcessResponse> IndustryManufactureMesProcessAsync(IndustryManufactureMesProcessRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            IndustryManufactureMesProcessHeaders headers = new IndustryManufactureMesProcessHeaders();
+            return await IndustryManufactureMesProcessWithOptionsAsync(request, headers, runtime);
+        }
+
+        public IndustryManufactureMesProcessResponse IndustryManufactureMesProcessWithOptions(IndustryManufactureMesProcessRequest request, IndustryManufactureMesProcessHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Action))
+            {
+                body["action"] = request.Action;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppKey))
+            {
+                body["appKey"] = request.AppKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BaseDataName))
+            {
+                body["baseDataName"] = request.BaseDataName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExtendData))
+            {
+                body["extendData"] = request.ExtendData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NeedDispatch))
+            {
+                body["needDispatch"] = request.NeedDispatch;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NeedQualityTest))
+            {
+                body["needQualityTest"] = request.NeedQualityTest;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.No))
+            {
+                body["no"] = request.No;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Price))
+            {
+                body["price"] = request.Price;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Prop))
+            {
+                body["prop"] = request.Prop;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
+            {
+                body["remark"] = request.Remark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Sop))
+            {
+                body["sop"] = request.Sop;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            {
+                body["uuid"] = request.Uuid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<IndustryManufactureMesProcessResponse>(DoROARequest("IndustryManufactureMesProcess", "industry_1.0", "HTTP", "POST", "AK", "/v1.0/industry/manufacturings/processes/manage", "json", req, runtime));
+        }
+
+        public async Task<IndustryManufactureMesProcessResponse> IndustryManufactureMesProcessWithOptionsAsync(IndustryManufactureMesProcessRequest request, IndustryManufactureMesProcessHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Action))
+            {
+                body["action"] = request.Action;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppKey))
+            {
+                body["appKey"] = request.AppKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BaseDataName))
+            {
+                body["baseDataName"] = request.BaseDataName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExtendData))
+            {
+                body["extendData"] = request.ExtendData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NeedDispatch))
+            {
+                body["needDispatch"] = request.NeedDispatch;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NeedQualityTest))
+            {
+                body["needQualityTest"] = request.NeedQualityTest;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.No))
+            {
+                body["no"] = request.No;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Price))
+            {
+                body["price"] = request.Price;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Prop))
+            {
+                body["prop"] = request.Prop;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
+            {
+                body["remark"] = request.Remark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Sop))
+            {
+                body["sop"] = request.Sop;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            {
+                body["uuid"] = request.Uuid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<IndustryManufactureMesProcessResponse>(await DoROARequestAsync("IndustryManufactureMesProcess", "industry_1.0", "HTTP", "POST", "AK", "/v1.0/industry/manufacturings/processes/manage", "json", req, runtime));
+        }
+
+        public IndustryManufactureMesProductionPlanResponse IndustryManufactureMesProductionPlan(IndustryManufactureMesProductionPlanRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            IndustryManufactureMesProductionPlanHeaders headers = new IndustryManufactureMesProductionPlanHeaders();
+            return IndustryManufactureMesProductionPlanWithOptions(request, headers, runtime);
+        }
+
+        public async Task<IndustryManufactureMesProductionPlanResponse> IndustryManufactureMesProductionPlanAsync(IndustryManufactureMesProductionPlanRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            IndustryManufactureMesProductionPlanHeaders headers = new IndustryManufactureMesProductionPlanHeaders();
+            return await IndustryManufactureMesProductionPlanWithOptionsAsync(request, headers, runtime);
+        }
+
+        public IndustryManufactureMesProductionPlanResponse IndustryManufactureMesProductionPlanWithOptions(IndustryManufactureMesProductionPlanRequest request, IndustryManufactureMesProductionPlanHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Action))
+            {
+                body["action"] = request.Action;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActualEndTime))
+            {
+                body["actualEndTime"] = request.ActualEndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActualStartTime))
+            {
+                body["actualStartTime"] = request.ActualStartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppKey))
+            {
+                body["appKey"] = request.AppKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BaseDataName))
+            {
+                body["baseDataName"] = request.BaseDataName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BomUuid))
+            {
+                body["bomUuid"] = request.BomUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Events))
+            {
+                body["events"] = request.Events;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExtendData))
+            {
+                body["extendData"] = request.ExtendData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.No))
+            {
+                body["no"] = request.No;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Overdue))
+            {
+                body["overdue"] = request.Overdue;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PlanEndTime))
+            {
+                body["planEndTime"] = request.PlanEndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PlanQuantity))
+            {
+                body["planQuantity"] = request.PlanQuantity;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PlanStartTime))
+            {
+                body["planStartTime"] = request.PlanStartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessUuids))
+            {
+                body["processUuids"] = request.ProcessUuids;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductCode))
+            {
+                body["productCode"] = request.ProductCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductName))
+            {
+                body["productName"] = request.ProductName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductSpecification))
+            {
+                body["productSpecification"] = request.ProductSpecification;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QualifiedQuantity))
+            {
+                body["qualifiedQuantity"] = request.QualifiedQuantity;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SellOrderNo))
+            {
+                body["sellOrderNo"] = request.SellOrderNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                body["status"] = request.Status;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TeamList))
+            {
+                body["teamList"] = request.TeamList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            {
+                body["title"] = request.Title;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Unit))
+            {
+                body["unit"] = request.Unit;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            {
+                body["uuid"] = request.Uuid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<IndustryManufactureMesProductionPlanResponse>(DoROARequest("IndustryManufactureMesProductionPlan", "industry_1.0", "HTTP", "POST", "AK", "/v1.0/industry/manufacturings/productionPlans/manage", "json", req, runtime));
+        }
+
+        public async Task<IndustryManufactureMesProductionPlanResponse> IndustryManufactureMesProductionPlanWithOptionsAsync(IndustryManufactureMesProductionPlanRequest request, IndustryManufactureMesProductionPlanHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Action))
+            {
+                body["action"] = request.Action;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActualEndTime))
+            {
+                body["actualEndTime"] = request.ActualEndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActualStartTime))
+            {
+                body["actualStartTime"] = request.ActualStartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppKey))
+            {
+                body["appKey"] = request.AppKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BaseDataName))
+            {
+                body["baseDataName"] = request.BaseDataName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BomUuid))
+            {
+                body["bomUuid"] = request.BomUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Events))
+            {
+                body["events"] = request.Events;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExtendData))
+            {
+                body["extendData"] = request.ExtendData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.No))
+            {
+                body["no"] = request.No;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Overdue))
+            {
+                body["overdue"] = request.Overdue;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PlanEndTime))
+            {
+                body["planEndTime"] = request.PlanEndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PlanQuantity))
+            {
+                body["planQuantity"] = request.PlanQuantity;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PlanStartTime))
+            {
+                body["planStartTime"] = request.PlanStartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessUuids))
+            {
+                body["processUuids"] = request.ProcessUuids;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductCode))
+            {
+                body["productCode"] = request.ProductCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductName))
+            {
+                body["productName"] = request.ProductName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductSpecification))
+            {
+                body["productSpecification"] = request.ProductSpecification;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QualifiedQuantity))
+            {
+                body["qualifiedQuantity"] = request.QualifiedQuantity;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SellOrderNo))
+            {
+                body["sellOrderNo"] = request.SellOrderNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                body["status"] = request.Status;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TeamList))
+            {
+                body["teamList"] = request.TeamList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            {
+                body["title"] = request.Title;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Unit))
+            {
+                body["unit"] = request.Unit;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            {
+                body["uuid"] = request.Uuid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<IndustryManufactureMesProductionPlanResponse>(await DoROARequestAsync("IndustryManufactureMesProductionPlan", "industry_1.0", "HTTP", "POST", "AK", "/v1.0/industry/manufacturings/productionPlans/manage", "json", req, runtime));
+        }
+
         public IndustryManufactureMesTeamMgmtResponse IndustryManufactureMesTeamMgmt(IndustryManufactureMesTeamMgmtRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

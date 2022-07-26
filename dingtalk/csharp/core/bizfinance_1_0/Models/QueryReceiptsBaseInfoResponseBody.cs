@@ -31,6 +31,13 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             public string Amount { get; set; }
 
             /// <summary>
+            /// 创建时间
+            /// </summary>
+            [NameInMap("createTime")]
+            [Validation(Required=false)]
+            public string CreateTime { get; set; }
+
+            /// <summary>
             /// 创建人
             /// </summary>
             [NameInMap("creator")]

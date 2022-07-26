@@ -99,6 +99,20 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
             public string ArrivalTime { get; set; }
 
             /// <summary>
+            /// 车辆颜色
+            /// </summary>
+            [NameInMap("carColor")]
+            [Validation(Required=false)]
+            public string CarColor { get; set; }
+
+            /// <summary>
+            /// 车辆型号
+            /// </summary>
+            [NameInMap("carModel")]
+            [Validation(Required=false)]
+            public string CarModel { get; set; }
+
+            /// <summary>
             /// 车牌号
             /// </summary>
             [NameInMap("carNumber")]
@@ -211,6 +225,13 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
             public string SeatInfo { get; set; }
 
             /// <summary>
+            /// “服务类型”
+            /// </summary>
+            [NameInMap("serviceType")]
+            [Validation(Required=false)]
+            public string ServiceType { get; set; }
+
+            /// <summary>
             /// 下游供应商logo
             /// </summary>
             [NameInMap("subSupplyLogo")]
@@ -288,6 +309,13 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         [NameInMap("relativeOrderNo")]
         [Validation(Required=false)]
         public string RelativeOrderNo { get; set; }
+
+        /// <summary>
+        /// 来源埋点
+        /// </summary>
+        [NameInMap("source")]
+        [Validation(Required=false)]
+        public string Source { get; set; }
 
         /// <summary>
         /// 用户组织id

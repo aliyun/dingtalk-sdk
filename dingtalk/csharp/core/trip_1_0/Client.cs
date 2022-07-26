@@ -212,6 +212,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
             {
                 body["relativeOrderNo"] = request.RelativeOrderNo;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Source))
+            {
+                body["source"] = request.Source;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetCorpId))
             {
                 body["targetCorpId"] = request.TargetCorpId;
@@ -308,6 +312,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RelativeOrderNo))
             {
                 body["relativeOrderNo"] = request.RelativeOrderNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Source))
+            {
+                body["source"] = request.Source;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetCorpId))
             {
