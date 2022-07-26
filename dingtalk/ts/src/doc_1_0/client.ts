@@ -970,11 +970,13 @@ export class GetRangeRequest extends $tea.Model {
 }
 
 export class GetRangeResponseBody extends $tea.Model {
-  displayValues?: string[];
-  formulas?: string[];
-  values?: string[];
+  backgroundColors?: GetRangeResponseBodyBackgroundColors[][];
+  displayValues?: string[][];
+  formulas?: string[][];
+  values?: any[][];
   static names(): { [key: string]: string } {
     return {
+      backgroundColors: 'backgroundColors',
       displayValues: 'displayValues',
       formulas: 'formulas',
       values: 'values',
@@ -983,9 +985,10 @@ export class GetRangeResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      displayValues: { 'type': 'array', 'itemType': 'string' },
-      formulas: { 'type': 'array', 'itemType': 'string' },
-      values: { 'type': 'array', 'itemType': 'string' },
+      backgroundColors: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': GetRangeResponseBodyBackgroundColors } },
+      displayValues: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': 'string' } },
+      formulas: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': 'string' } },
+      values: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': 'any' } },
     };
   }
 
@@ -2406,6 +2409,34 @@ export class DeleteWorkspaceMembersRequestMembers extends $tea.Model {
     return {
       memberId: 'string',
       memberType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRangeResponseBodyBackgroundColors extends $tea.Model {
+  red?: number;
+  green?: number;
+  blue?: number;
+  hexString?: string;
+  static names(): { [key: string]: string } {
+    return {
+      red: 'red',
+      green: 'green',
+      blue: 'blue',
+      hexString: 'hexString',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      red: 'number',
+      green: 'number',
+      blue: 'number',
+      hexString: 'string',
     };
   }
 

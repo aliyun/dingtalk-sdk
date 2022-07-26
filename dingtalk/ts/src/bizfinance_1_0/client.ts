@@ -4633,6 +4633,7 @@ export class QueryReceiptForInvoiceResponseBodyListCustomer extends $tea.Model {
 export class QueryReceiptForInvoiceResponseBodyList extends $tea.Model {
   amount?: string;
   applyStatus?: string;
+  createTime?: string;
   creator?: QueryReceiptForInvoiceResponseBodyListCreator;
   customer?: QueryReceiptForInvoiceResponseBodyListCustomer;
   invoiceType?: string;
@@ -4653,6 +4654,7 @@ export class QueryReceiptForInvoiceResponseBodyList extends $tea.Model {
     return {
       amount: 'amount',
       applyStatus: 'applyStatus',
+      createTime: 'createTime',
       creator: 'creator',
       customer: 'customer',
       invoiceType: 'invoiceType',
@@ -4676,6 +4678,7 @@ export class QueryReceiptForInvoiceResponseBodyList extends $tea.Model {
     return {
       amount: 'string',
       applyStatus: 'string',
+      createTime: 'string',
       creator: QueryReceiptForInvoiceResponseBodyListCreator,
       customer: QueryReceiptForInvoiceResponseBodyListCustomer,
       invoiceType: 'string',
@@ -4818,6 +4821,7 @@ export class QueryReceiptsBaseInfoResponseBodyListSupplier extends $tea.Model {
 
 export class QueryReceiptsBaseInfoResponseBodyList extends $tea.Model {
   amount?: string;
+  createTime?: string;
   creator?: QueryReceiptsBaseInfoResponseBodyListCreator;
   customer?: QueryReceiptsBaseInfoResponseBodyListCustomer;
   modelId?: string;
@@ -4834,6 +4838,7 @@ export class QueryReceiptsBaseInfoResponseBodyList extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       amount: 'amount',
+      createTime: 'createTime',
       creator: 'creator',
       customer: 'customer',
       modelId: 'modelId',
@@ -4853,6 +4858,7 @@ export class QueryReceiptsBaseInfoResponseBodyList extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       amount: 'string',
+      createTime: 'string',
       creator: QueryReceiptsBaseInfoResponseBodyListCreator,
       customer: QueryReceiptsBaseInfoResponseBodyListCustomer,
       modelId: 'string',

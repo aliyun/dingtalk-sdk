@@ -4536,6 +4536,390 @@ export class IndustryManufactureMaterialListResponse extends $tea.Model {
   }
 }
 
+export class IndustryManufactureMesMaterialHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesMaterialRequest extends $tea.Model {
+  action?: string;
+  appKey?: string;
+  baseDataName?: string;
+  category?: string;
+  extendData?: IndustryManufactureMesMaterialRequestExtendData[];
+  productCode?: string;
+  productName?: string;
+  productSpecification?: string;
+  prop?: string;
+  unit?: string;
+  uuid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      action: 'action',
+      appKey: 'appKey',
+      baseDataName: 'baseDataName',
+      category: 'category',
+      extendData: 'extendData',
+      productCode: 'productCode',
+      productName: 'productName',
+      productSpecification: 'productSpecification',
+      prop: 'prop',
+      unit: 'unit',
+      uuid: 'uuid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      action: 'string',
+      appKey: 'string',
+      baseDataName: 'string',
+      category: 'string',
+      extendData: { 'type': 'array', 'itemType': IndustryManufactureMesMaterialRequestExtendData },
+      productCode: 'string',
+      productName: 'string',
+      productSpecification: 'string',
+      prop: 'string',
+      unit: 'string',
+      uuid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesMaterialResponseBody extends $tea.Model {
+  result?: IndustryManufactureMesMaterialResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: IndustryManufactureMesMaterialResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesMaterialResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: IndustryManufactureMesMaterialResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: IndustryManufactureMesMaterialResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesProcessHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesProcessRequest extends $tea.Model {
+  action?: string;
+  appKey?: string;
+  baseDataName?: string;
+  extendData?: IndustryManufactureMesProcessRequestExtendData[];
+  name?: string;
+  needDispatch?: string;
+  needQualityTest?: string;
+  no?: string;
+  price?: string;
+  prop?: string;
+  remark?: string;
+  sop?: string;
+  uuid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      action: 'action',
+      appKey: 'appKey',
+      baseDataName: 'baseDataName',
+      extendData: 'extendData',
+      name: 'name',
+      needDispatch: 'needDispatch',
+      needQualityTest: 'needQualityTest',
+      no: 'no',
+      price: 'price',
+      prop: 'prop',
+      remark: 'remark',
+      sop: 'sop',
+      uuid: 'uuid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      action: 'string',
+      appKey: 'string',
+      baseDataName: 'string',
+      extendData: { 'type': 'array', 'itemType': IndustryManufactureMesProcessRequestExtendData },
+      name: 'string',
+      needDispatch: 'string',
+      needQualityTest: 'string',
+      no: 'string',
+      price: 'string',
+      prop: 'string',
+      remark: 'string',
+      sop: 'string',
+      uuid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesProcessResponseBody extends $tea.Model {
+  result?: IndustryManufactureMesProcessResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: IndustryManufactureMesProcessResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesProcessResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: IndustryManufactureMesProcessResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: IndustryManufactureMesProcessResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesProductionPlanHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesProductionPlanRequest extends $tea.Model {
+  action?: string;
+  actualEndTime?: string;
+  actualStartTime?: string;
+  appKey?: string;
+  baseDataName?: string;
+  bomUuid?: string;
+  events?: string[];
+  extendData?: IndustryManufactureMesProductionPlanRequestExtendData[];
+  no?: string;
+  overdue?: string;
+  planEndTime?: string;
+  planQuantity?: string;
+  planStartTime?: string;
+  processUuids?: string;
+  productCode?: string;
+  productName?: string;
+  productSpecification?: string;
+  qualifiedQuantity?: string;
+  sellOrderNo?: string;
+  status?: string;
+  teamList?: string;
+  title?: string;
+  type?: string;
+  unit?: string;
+  uuid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      action: 'action',
+      actualEndTime: 'actualEndTime',
+      actualStartTime: 'actualStartTime',
+      appKey: 'appKey',
+      baseDataName: 'baseDataName',
+      bomUuid: 'bomUuid',
+      events: 'events',
+      extendData: 'extendData',
+      no: 'no',
+      overdue: 'overdue',
+      planEndTime: 'planEndTime',
+      planQuantity: 'planQuantity',
+      planStartTime: 'planStartTime',
+      processUuids: 'processUuids',
+      productCode: 'productCode',
+      productName: 'productName',
+      productSpecification: 'productSpecification',
+      qualifiedQuantity: 'qualifiedQuantity',
+      sellOrderNo: 'sellOrderNo',
+      status: 'status',
+      teamList: 'teamList',
+      title: 'title',
+      type: 'type',
+      unit: 'unit',
+      uuid: 'uuid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      action: 'string',
+      actualEndTime: 'string',
+      actualStartTime: 'string',
+      appKey: 'string',
+      baseDataName: 'string',
+      bomUuid: 'string',
+      events: { 'type': 'array', 'itemType': 'string' },
+      extendData: { 'type': 'array', 'itemType': IndustryManufactureMesProductionPlanRequestExtendData },
+      no: 'string',
+      overdue: 'string',
+      planEndTime: 'string',
+      planQuantity: 'string',
+      planStartTime: 'string',
+      processUuids: 'string',
+      productCode: 'string',
+      productName: 'string',
+      productSpecification: 'string',
+      qualifiedQuantity: 'string',
+      sellOrderNo: 'string',
+      status: 'string',
+      teamList: 'string',
+      title: 'string',
+      type: 'string',
+      unit: 'string',
+      uuid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesProductionPlanResponseBody extends $tea.Model {
+  result?: IndustryManufactureMesProductionPlanResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: IndustryManufactureMesProductionPlanResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesProductionPlanResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: IndustryManufactureMesProductionPlanResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: IndustryManufactureMesProductionPlanResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class IndustryManufactureMesTeamMgmtHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -7569,6 +7953,147 @@ export class IndustryManufactureMaterialListResponseBodyList extends $tea.Model 
   }
 }
 
+export class IndustryManufactureMesMaterialRequestExtendData extends $tea.Model {
+  code?: string;
+  name?: string;
+  value?: string;
+  valueType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      name: 'name',
+      value: 'value',
+      valueType: 'valueType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      name: 'string',
+      value: 'string',
+      valueType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesMaterialResponseBodyResult extends $tea.Model {
+  content?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesProcessRequestExtendData extends $tea.Model {
+  code?: string;
+  name?: string;
+  value?: string;
+  valueType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      name: 'name',
+      value: 'value',
+      valueType: 'valueType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      name: 'string',
+      value: 'string',
+      valueType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesProcessResponseBodyResult extends $tea.Model {
+  content?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesProductionPlanRequestExtendData extends $tea.Model {
+  code?: string;
+  name?: string;
+  value?: string;
+  valueType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      name: 'name',
+      value: 'value',
+      valueType: 'valueType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      name: 'string',
+      value: 'string',
+      valueType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesProductionPlanResponseBodyResult extends $tea.Model {
+  content?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class IndustryManufactureMesTeamMgmtRequestExtendData extends $tea.Model {
   code?: string;
   name?: string;
@@ -8826,19 +9351,28 @@ export class QueryUserExtendValuesResponseBodyContent extends $tea.Model {
 }
 
 export class QueryUserInfoResponseBodyContentDept extends $tea.Model {
+  gmtCreateStr?: string;
+  gmtModifiedStr?: string;
   id?: number;
   name?: string;
+  relId?: number;
   static names(): { [key: string]: string } {
     return {
+      gmtCreateStr: 'gmtCreateStr',
+      gmtModifiedStr: 'gmtModifiedStr',
       id: 'id',
       name: 'name',
+      relId: 'relId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      gmtCreateStr: 'string',
+      gmtModifiedStr: 'string',
       id: 'number',
       name: 'string',
+      relId: 'number',
     };
   }
 
@@ -8850,14 +9384,20 @@ export class QueryUserInfoResponseBodyContentDept extends $tea.Model {
 export class QueryUserInfoResponseBodyContentGroup extends $tea.Model {
   deptId?: number;
   deptName?: string;
+  gmtCreateStr?: string;
+  gmtModifiedStr?: string;
   id?: number;
   name?: string;
+  relId?: number;
   static names(): { [key: string]: string } {
     return {
       deptId: 'deptId',
       deptName: 'deptName',
+      gmtCreateStr: 'gmtCreateStr',
+      gmtModifiedStr: 'gmtModifiedStr',
       id: 'id',
       name: 'name',
+      relId: 'relId',
     };
   }
 
@@ -8865,8 +9405,11 @@ export class QueryUserInfoResponseBodyContentGroup extends $tea.Model {
     return {
       deptId: 'number',
       deptName: 'string',
+      gmtCreateStr: 'string',
+      gmtModifiedStr: 'string',
       id: 'number',
       name: 'string',
+      relId: 'number',
     };
   }
 
@@ -11051,6 +11594,277 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<IndustryManufactureMaterialListResponse>(await this.doROARequest("IndustryManufactureMaterialList", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufactures/materials/query`, "json", req, runtime), new IndustryManufactureMaterialListResponse({}));
+  }
+
+  async industryManufactureMesMaterial(request: IndustryManufactureMesMaterialRequest): Promise<IndustryManufactureMesMaterialResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new IndustryManufactureMesMaterialHeaders({ });
+    return await this.industryManufactureMesMaterialWithOptions(request, headers, runtime);
+  }
+
+  async industryManufactureMesMaterialWithOptions(request: IndustryManufactureMesMaterialRequest, headers: IndustryManufactureMesMaterialHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureMesMaterialResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.action)) {
+      body["action"] = request.action;
+    }
+
+    if (!Util.isUnset(request.appKey)) {
+      body["appKey"] = request.appKey;
+    }
+
+    if (!Util.isUnset(request.baseDataName)) {
+      body["baseDataName"] = request.baseDataName;
+    }
+
+    if (!Util.isUnset(request.category)) {
+      body["category"] = request.category;
+    }
+
+    if (!Util.isUnset(request.extendData)) {
+      body["extendData"] = request.extendData;
+    }
+
+    if (!Util.isUnset(request.productCode)) {
+      body["productCode"] = request.productCode;
+    }
+
+    if (!Util.isUnset(request.productName)) {
+      body["productName"] = request.productName;
+    }
+
+    if (!Util.isUnset(request.productSpecification)) {
+      body["productSpecification"] = request.productSpecification;
+    }
+
+    if (!Util.isUnset(request.prop)) {
+      body["prop"] = request.prop;
+    }
+
+    if (!Util.isUnset(request.unit)) {
+      body["unit"] = request.unit;
+    }
+
+    if (!Util.isUnset(request.uuid)) {
+      body["uuid"] = request.uuid;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<IndustryManufactureMesMaterialResponse>(await this.doROARequest("IndustryManufactureMesMaterial", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufacturings/materials/manage`, "json", req, runtime), new IndustryManufactureMesMaterialResponse({}));
+  }
+
+  async industryManufactureMesProcess(request: IndustryManufactureMesProcessRequest): Promise<IndustryManufactureMesProcessResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new IndustryManufactureMesProcessHeaders({ });
+    return await this.industryManufactureMesProcessWithOptions(request, headers, runtime);
+  }
+
+  async industryManufactureMesProcessWithOptions(request: IndustryManufactureMesProcessRequest, headers: IndustryManufactureMesProcessHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureMesProcessResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.action)) {
+      body["action"] = request.action;
+    }
+
+    if (!Util.isUnset(request.appKey)) {
+      body["appKey"] = request.appKey;
+    }
+
+    if (!Util.isUnset(request.baseDataName)) {
+      body["baseDataName"] = request.baseDataName;
+    }
+
+    if (!Util.isUnset(request.extendData)) {
+      body["extendData"] = request.extendData;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.needDispatch)) {
+      body["needDispatch"] = request.needDispatch;
+    }
+
+    if (!Util.isUnset(request.needQualityTest)) {
+      body["needQualityTest"] = request.needQualityTest;
+    }
+
+    if (!Util.isUnset(request.no)) {
+      body["no"] = request.no;
+    }
+
+    if (!Util.isUnset(request.price)) {
+      body["price"] = request.price;
+    }
+
+    if (!Util.isUnset(request.prop)) {
+      body["prop"] = request.prop;
+    }
+
+    if (!Util.isUnset(request.remark)) {
+      body["remark"] = request.remark;
+    }
+
+    if (!Util.isUnset(request.sop)) {
+      body["sop"] = request.sop;
+    }
+
+    if (!Util.isUnset(request.uuid)) {
+      body["uuid"] = request.uuid;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<IndustryManufactureMesProcessResponse>(await this.doROARequest("IndustryManufactureMesProcess", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufacturings/processes/manage`, "json", req, runtime), new IndustryManufactureMesProcessResponse({}));
+  }
+
+  async industryManufactureMesProductionPlan(request: IndustryManufactureMesProductionPlanRequest): Promise<IndustryManufactureMesProductionPlanResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new IndustryManufactureMesProductionPlanHeaders({ });
+    return await this.industryManufactureMesProductionPlanWithOptions(request, headers, runtime);
+  }
+
+  async industryManufactureMesProductionPlanWithOptions(request: IndustryManufactureMesProductionPlanRequest, headers: IndustryManufactureMesProductionPlanHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureMesProductionPlanResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.action)) {
+      body["action"] = request.action;
+    }
+
+    if (!Util.isUnset(request.actualEndTime)) {
+      body["actualEndTime"] = request.actualEndTime;
+    }
+
+    if (!Util.isUnset(request.actualStartTime)) {
+      body["actualStartTime"] = request.actualStartTime;
+    }
+
+    if (!Util.isUnset(request.appKey)) {
+      body["appKey"] = request.appKey;
+    }
+
+    if (!Util.isUnset(request.baseDataName)) {
+      body["baseDataName"] = request.baseDataName;
+    }
+
+    if (!Util.isUnset(request.bomUuid)) {
+      body["bomUuid"] = request.bomUuid;
+    }
+
+    if (!Util.isUnset(request.events)) {
+      body["events"] = request.events;
+    }
+
+    if (!Util.isUnset(request.extendData)) {
+      body["extendData"] = request.extendData;
+    }
+
+    if (!Util.isUnset(request.no)) {
+      body["no"] = request.no;
+    }
+
+    if (!Util.isUnset(request.overdue)) {
+      body["overdue"] = request.overdue;
+    }
+
+    if (!Util.isUnset(request.planEndTime)) {
+      body["planEndTime"] = request.planEndTime;
+    }
+
+    if (!Util.isUnset(request.planQuantity)) {
+      body["planQuantity"] = request.planQuantity;
+    }
+
+    if (!Util.isUnset(request.planStartTime)) {
+      body["planStartTime"] = request.planStartTime;
+    }
+
+    if (!Util.isUnset(request.processUuids)) {
+      body["processUuids"] = request.processUuids;
+    }
+
+    if (!Util.isUnset(request.productCode)) {
+      body["productCode"] = request.productCode;
+    }
+
+    if (!Util.isUnset(request.productName)) {
+      body["productName"] = request.productName;
+    }
+
+    if (!Util.isUnset(request.productSpecification)) {
+      body["productSpecification"] = request.productSpecification;
+    }
+
+    if (!Util.isUnset(request.qualifiedQuantity)) {
+      body["qualifiedQuantity"] = request.qualifiedQuantity;
+    }
+
+    if (!Util.isUnset(request.sellOrderNo)) {
+      body["sellOrderNo"] = request.sellOrderNo;
+    }
+
+    if (!Util.isUnset(request.status)) {
+      body["status"] = request.status;
+    }
+
+    if (!Util.isUnset(request.teamList)) {
+      body["teamList"] = request.teamList;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.type)) {
+      body["type"] = request.type;
+    }
+
+    if (!Util.isUnset(request.unit)) {
+      body["unit"] = request.unit;
+    }
+
+    if (!Util.isUnset(request.uuid)) {
+      body["uuid"] = request.uuid;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<IndustryManufactureMesProductionPlanResponse>(await this.doROARequest("IndustryManufactureMesProductionPlan", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufacturings/productionPlans/manage`, "json", req, runtime), new IndustryManufactureMesProductionPlanResponse({}));
   }
 
   async industryManufactureMesTeamMgmt(request: IndustryManufactureMesTeamMgmtRequest): Promise<IndustryManufactureMesTeamMgmtResponse> {

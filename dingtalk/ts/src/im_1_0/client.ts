@@ -2749,6 +2749,103 @@ export class SendRobotInteractiveCardResponse extends $tea.Model {
   }
 }
 
+export class SendRobotMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendRobotMessageRequest extends $tea.Model {
+  atAll?: boolean;
+  atAppUserId?: string;
+  atDingUserId?: string;
+  msgContent?: string;
+  msgType?: string;
+  openConversationIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      atAll: 'atAll',
+      atAppUserId: 'atAppUserId',
+      atDingUserId: 'atDingUserId',
+      msgContent: 'msgContent',
+      msgType: 'msgType',
+      openConversationIds: 'openConversationIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      atAll: 'boolean',
+      atAppUserId: 'string',
+      atDingUserId: 'string',
+      msgContent: 'string',
+      msgType: 'string',
+      openConversationIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendRobotMessageResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendRobotMessageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SendRobotMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SendRobotMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SendTemplateInteractiveCardHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5911,6 +6008,55 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<SendRobotInteractiveCardResponse>(await this.doROARequest("SendRobotInteractiveCard", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/v1.0/robot/interactiveCards/send`, "json", req, runtime), new SendRobotInteractiveCardResponse({}));
+  }
+
+  async sendRobotMessage(request: SendRobotMessageRequest): Promise<SendRobotMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SendRobotMessageHeaders({ });
+    return await this.sendRobotMessageWithOptions(request, headers, runtime);
+  }
+
+  async sendRobotMessageWithOptions(request: SendRobotMessageRequest, headers: SendRobotMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendRobotMessageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.atAll)) {
+      body["atAll"] = request.atAll;
+    }
+
+    if (!Util.isUnset(request.atAppUserId)) {
+      body["atAppUserId"] = request.atAppUserId;
+    }
+
+    if (!Util.isUnset(request.atDingUserId)) {
+      body["atDingUserId"] = request.atDingUserId;
+    }
+
+    if (!Util.isUnset(request.msgContent)) {
+      body["msgContent"] = request.msgContent;
+    }
+
+    if (!Util.isUnset(request.msgType)) {
+      body["msgType"] = request.msgType;
+    }
+
+    if (!Util.isUnset(request.openConversationIds)) {
+      body["openConversationIds"] = request.openConversationIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SendRobotMessageResponse>(await this.doROARequest("SendRobotMessage", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/robotMessages/send`, "json", req, runtime), new SendRobotMessageResponse({}));
   }
 
   async sendTemplateInteractiveCard(request: SendTemplateInteractiveCardRequest): Promise<SendTemplateInteractiveCardResponse> {

@@ -146,6 +146,7 @@ export class SyncTripOrderRequest extends $tea.Model {
   realAmount?: string;
   refundAmount?: string;
   relativeOrderNo?: string;
+  source?: string;
   targetCorpId?: string;
   totalAmount?: string;
   type?: string;
@@ -167,6 +168,7 @@ export class SyncTripOrderRequest extends $tea.Model {
       realAmount: 'realAmount',
       refundAmount: 'refundAmount',
       relativeOrderNo: 'relativeOrderNo',
+      source: 'source',
       targetCorpId: 'targetCorpId',
       totalAmount: 'totalAmount',
       type: 'type',
@@ -191,6 +193,7 @@ export class SyncTripOrderRequest extends $tea.Model {
       realAmount: 'string',
       refundAmount: 'string',
       relativeOrderNo: 'string',
+      source: 'string',
       targetCorpId: 'string',
       totalAmount: 'string',
       type: 'string',
@@ -329,6 +332,8 @@ export class SyncTripOrderRequestOrderDetailsHotelLocation extends $tea.Model {
 
 export class SyncTripOrderRequestOrderDetails extends $tea.Model {
   arrivalTime?: string;
+  carColor?: string;
+  carModel?: string;
   carNumber?: string;
   cateringType?: string;
   checkInTime?: string;
@@ -343,6 +348,7 @@ export class SyncTripOrderRequestOrderDetails extends $tea.Model {
   originStation?: string;
   roomCount?: number;
   seatInfo?: string;
+  serviceType?: string;
   subSupplyLogo?: string;
   subSupplyName?: string;
   taxiType?: string;
@@ -352,6 +358,8 @@ export class SyncTripOrderRequestOrderDetails extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       arrivalTime: 'arrivalTime',
+      carColor: 'carColor',
+      carModel: 'carModel',
       carNumber: 'carNumber',
       cateringType: 'cateringType',
       checkInTime: 'checkInTime',
@@ -366,6 +374,7 @@ export class SyncTripOrderRequestOrderDetails extends $tea.Model {
       originStation: 'originStation',
       roomCount: 'roomCount',
       seatInfo: 'seatInfo',
+      serviceType: 'serviceType',
       subSupplyLogo: 'subSupplyLogo',
       subSupplyName: 'subSupplyName',
       taxiType: 'taxiType',
@@ -378,6 +387,8 @@ export class SyncTripOrderRequestOrderDetails extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       arrivalTime: 'string',
+      carColor: 'string',
+      carModel: 'string',
       carNumber: 'string',
       cateringType: 'string',
       checkInTime: 'string',
@@ -392,6 +403,7 @@ export class SyncTripOrderRequestOrderDetails extends $tea.Model {
       originStation: 'string',
       roomCount: 'number',
       seatInfo: 'string',
+      serviceType: 'string',
       subSupplyLogo: 'string',
       subSupplyName: 'string',
       taxiType: 'string',
@@ -539,6 +551,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.relativeOrderNo)) {
       body["relativeOrderNo"] = request.relativeOrderNo;
+    }
+
+    if (!Util.isUnset(request.source)) {
+      body["source"] = request.source;
     }
 
     if (!Util.isUnset(request.targetCorpId)) {
