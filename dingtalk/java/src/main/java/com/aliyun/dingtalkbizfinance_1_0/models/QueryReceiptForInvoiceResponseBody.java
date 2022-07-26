@@ -130,6 +130,10 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
         @NameInMap("applyStatus")
         public String applyStatus;
 
+        // 创建时间
+        @NameInMap("createTime")
+        public String createTime;
+
         // 创建人
         @NameInMap("creator")
         public QueryReceiptForInvoiceResponseBodyListCreator creator;
@@ -213,6 +217,14 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
         }
         public String getApplyStatus() {
             return this.applyStatus;
+        }
+
+        public QueryReceiptForInvoiceResponseBodyList setCreateTime(String createTime) {
+            this.createTime = createTime;
+            return this;
+        }
+        public String getCreateTime() {
+            return this.createTime;
         }
 
         public QueryReceiptForInvoiceResponseBodyList setCreator(QueryReceiptForInvoiceResponseBodyListCreator creator) {

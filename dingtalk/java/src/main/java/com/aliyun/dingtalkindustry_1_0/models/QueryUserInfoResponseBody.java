@@ -22,6 +22,14 @@ public class QueryUserInfoResponseBody extends TeaModel {
     }
 
     public static class QueryUserInfoResponseBodyContentDept extends TeaModel {
+        // 创建时间
+        @NameInMap("gmtCreateStr")
+        public String gmtCreateStr;
+
+        // 修改时间
+        @NameInMap("gmtModifiedStr")
+        public String gmtModifiedStr;
+
         // 科室Id
         @NameInMap("id")
         public Long id;
@@ -30,9 +38,29 @@ public class QueryUserInfoResponseBody extends TeaModel {
         @NameInMap("name")
         public String name;
 
+        // 人科关联id
+        @NameInMap("relId")
+        public Long relId;
+
         public static QueryUserInfoResponseBodyContentDept build(java.util.Map<String, ?> map) throws Exception {
             QueryUserInfoResponseBodyContentDept self = new QueryUserInfoResponseBodyContentDept();
             return TeaModel.build(map, self);
+        }
+
+        public QueryUserInfoResponseBodyContentDept setGmtCreateStr(String gmtCreateStr) {
+            this.gmtCreateStr = gmtCreateStr;
+            return this;
+        }
+        public String getGmtCreateStr() {
+            return this.gmtCreateStr;
+        }
+
+        public QueryUserInfoResponseBodyContentDept setGmtModifiedStr(String gmtModifiedStr) {
+            this.gmtModifiedStr = gmtModifiedStr;
+            return this;
+        }
+        public String getGmtModifiedStr() {
+            return this.gmtModifiedStr;
         }
 
         public QueryUserInfoResponseBodyContentDept setId(Long id) {
@@ -51,6 +79,14 @@ public class QueryUserInfoResponseBody extends TeaModel {
             return this.name;
         }
 
+        public QueryUserInfoResponseBodyContentDept setRelId(Long relId) {
+            this.relId = relId;
+            return this;
+        }
+        public Long getRelId() {
+            return this.relId;
+        }
+
     }
 
     public static class QueryUserInfoResponseBodyContentGroup extends TeaModel {
@@ -62,6 +98,12 @@ public class QueryUserInfoResponseBody extends TeaModel {
         @NameInMap("deptName")
         public String deptName;
 
+        @NameInMap("gmtCreateStr")
+        public String gmtCreateStr;
+
+        @NameInMap("gmtModifiedStr")
+        public String gmtModifiedStr;
+
         // 医疗组Id
         @NameInMap("id")
         public Long id;
@@ -69,6 +111,9 @@ public class QueryUserInfoResponseBody extends TeaModel {
         // 医疗组名称
         @NameInMap("name")
         public String name;
+
+        @NameInMap("relId")
+        public Long relId;
 
         public static QueryUserInfoResponseBodyContentGroup build(java.util.Map<String, ?> map) throws Exception {
             QueryUserInfoResponseBodyContentGroup self = new QueryUserInfoResponseBodyContentGroup();
@@ -91,6 +136,22 @@ public class QueryUserInfoResponseBody extends TeaModel {
             return this.deptName;
         }
 
+        public QueryUserInfoResponseBodyContentGroup setGmtCreateStr(String gmtCreateStr) {
+            this.gmtCreateStr = gmtCreateStr;
+            return this;
+        }
+        public String getGmtCreateStr() {
+            return this.gmtCreateStr;
+        }
+
+        public QueryUserInfoResponseBodyContentGroup setGmtModifiedStr(String gmtModifiedStr) {
+            this.gmtModifiedStr = gmtModifiedStr;
+            return this;
+        }
+        public String getGmtModifiedStr() {
+            return this.gmtModifiedStr;
+        }
+
         public QueryUserInfoResponseBodyContentGroup setId(Long id) {
             this.id = id;
             return this;
@@ -105,6 +166,14 @@ public class QueryUserInfoResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
+        }
+
+        public QueryUserInfoResponseBodyContentGroup setRelId(Long relId) {
+            this.relId = relId;
+            return this;
+        }
+        public Long getRelId() {
+            return this.relId;
         }
 
     }

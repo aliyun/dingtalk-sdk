@@ -67,6 +67,10 @@ public class SyncTripOrderRequest extends TeaModel {
     @NameInMap("relativeOrderNo")
     public String relativeOrderNo;
 
+    // 来源埋点
+    @NameInMap("source")
+    public String source;
+
     // 用户组织id
     @NameInMap("targetCorpId")
     public String targetCorpId;
@@ -212,6 +216,14 @@ public class SyncTripOrderRequest extends TeaModel {
         return this.relativeOrderNo;
     }
 
+    public SyncTripOrderRequest setSource(String source) {
+        this.source = source;
+        return this;
+    }
+    public String getSource() {
+        return this.source;
+    }
+
     public SyncTripOrderRequest setTargetCorpId(String targetCorpId) {
         this.targetCorpId = targetCorpId;
         return this;
@@ -332,6 +344,14 @@ public class SyncTripOrderRequest extends TeaModel {
         @NameInMap("arrivalTime")
         public String arrivalTime;
 
+        // 车辆颜色
+        @NameInMap("carColor")
+        public String carColor;
+
+        // 车辆型号
+        @NameInMap("carModel")
+        public String carModel;
+
         // 车牌号
         @NameInMap("carNumber")
         public String carNumber;
@@ -388,6 +408,10 @@ public class SyncTripOrderRequest extends TeaModel {
         @NameInMap("seatInfo")
         public String seatInfo;
 
+        // “服务类型”
+        @NameInMap("serviceType")
+        public String serviceType;
+
         // 下游供应商logo
         @NameInMap("subSupplyLogo")
         public String subSupplyLogo;
@@ -423,6 +447,22 @@ public class SyncTripOrderRequest extends TeaModel {
         }
         public String getArrivalTime() {
             return this.arrivalTime;
+        }
+
+        public SyncTripOrderRequestOrderDetails setCarColor(String carColor) {
+            this.carColor = carColor;
+            return this;
+        }
+        public String getCarColor() {
+            return this.carColor;
+        }
+
+        public SyncTripOrderRequestOrderDetails setCarModel(String carModel) {
+            this.carModel = carModel;
+            return this;
+        }
+        public String getCarModel() {
+            return this.carModel;
         }
 
         public SyncTripOrderRequestOrderDetails setCarNumber(String carNumber) {
@@ -535,6 +575,14 @@ public class SyncTripOrderRequest extends TeaModel {
         }
         public String getSeatInfo() {
             return this.seatInfo;
+        }
+
+        public SyncTripOrderRequestOrderDetails setServiceType(String serviceType) {
+            this.serviceType = serviceType;
+            return this;
+        }
+        public String getServiceType() {
+            return this.serviceType;
         }
 
         public SyncTripOrderRequestOrderDetails setSubSupplyLogo(String subSupplyLogo) {

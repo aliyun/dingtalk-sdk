@@ -1293,6 +1293,55 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("SendRobotInteractiveCard", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/v1.0/robot/interactiveCards/send", "json", req, runtime), new SendRobotInteractiveCardResponse());
     }
 
+    public SendRobotMessageResponse sendRobotMessage(SendRobotMessageRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        SendRobotMessageHeaders headers = new SendRobotMessageHeaders();
+        return this.sendRobotMessageWithOptions(request, headers, runtime);
+    }
+
+    public SendRobotMessageResponse sendRobotMessageWithOptions(SendRobotMessageRequest request, SendRobotMessageHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.atAll)) {
+            body.put("atAll", request.atAll);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.atAppUserId)) {
+            body.put("atAppUserId", request.atAppUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.atDingUserId)) {
+            body.put("atDingUserId", request.atDingUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.msgContent)) {
+            body.put("msgContent", request.msgContent);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.msgType)) {
+            body.put("msgType", request.msgType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationIds)) {
+            body.put("openConversationIds", request.openConversationIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("SendRobotMessage", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interconnections/robotMessages/send", "json", req, runtime), new SendRobotMessageResponse());
+    }
+
     public SendTemplateInteractiveCardResponse sendTemplateInteractiveCard(SendTemplateInteractiveCardRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         SendTemplateInteractiveCardHeaders headers = new SendTemplateInteractiveCardHeaders();

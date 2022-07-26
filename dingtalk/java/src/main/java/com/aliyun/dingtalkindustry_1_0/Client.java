@@ -1981,6 +1981,277 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("IndustryManufactureMaterialList", "industry_1.0", "HTTP", "POST", "AK", "/v1.0/industry/manufactures/materials/query", "json", req, runtime), new IndustryManufactureMaterialListResponse());
     }
 
+    public IndustryManufactureMesMaterialResponse industryManufactureMesMaterial(IndustryManufactureMesMaterialRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        IndustryManufactureMesMaterialHeaders headers = new IndustryManufactureMesMaterialHeaders();
+        return this.industryManufactureMesMaterialWithOptions(request, headers, runtime);
+    }
+
+    public IndustryManufactureMesMaterialResponse industryManufactureMesMaterialWithOptions(IndustryManufactureMesMaterialRequest request, IndustryManufactureMesMaterialHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.action)) {
+            body.put("action", request.action);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.appKey)) {
+            body.put("appKey", request.appKey);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.baseDataName)) {
+            body.put("baseDataName", request.baseDataName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.category)) {
+            body.put("category", request.category);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.extendData)) {
+            body.put("extendData", request.extendData);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.productCode)) {
+            body.put("productCode", request.productCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.productName)) {
+            body.put("productName", request.productName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.productSpecification)) {
+            body.put("productSpecification", request.productSpecification);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.prop)) {
+            body.put("prop", request.prop);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unit)) {
+            body.put("unit", request.unit);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.uuid)) {
+            body.put("uuid", request.uuid);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("IndustryManufactureMesMaterial", "industry_1.0", "HTTP", "POST", "AK", "/v1.0/industry/manufacturings/materials/manage", "json", req, runtime), new IndustryManufactureMesMaterialResponse());
+    }
+
+    public IndustryManufactureMesProcessResponse industryManufactureMesProcess(IndustryManufactureMesProcessRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        IndustryManufactureMesProcessHeaders headers = new IndustryManufactureMesProcessHeaders();
+        return this.industryManufactureMesProcessWithOptions(request, headers, runtime);
+    }
+
+    public IndustryManufactureMesProcessResponse industryManufactureMesProcessWithOptions(IndustryManufactureMesProcessRequest request, IndustryManufactureMesProcessHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.action)) {
+            body.put("action", request.action);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.appKey)) {
+            body.put("appKey", request.appKey);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.baseDataName)) {
+            body.put("baseDataName", request.baseDataName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.extendData)) {
+            body.put("extendData", request.extendData);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.needDispatch)) {
+            body.put("needDispatch", request.needDispatch);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.needQualityTest)) {
+            body.put("needQualityTest", request.needQualityTest);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.no)) {
+            body.put("no", request.no);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.price)) {
+            body.put("price", request.price);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.prop)) {
+            body.put("prop", request.prop);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.remark)) {
+            body.put("remark", request.remark);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sop)) {
+            body.put("sop", request.sop);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.uuid)) {
+            body.put("uuid", request.uuid);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("IndustryManufactureMesProcess", "industry_1.0", "HTTP", "POST", "AK", "/v1.0/industry/manufacturings/processes/manage", "json", req, runtime), new IndustryManufactureMesProcessResponse());
+    }
+
+    public IndustryManufactureMesProductionPlanResponse industryManufactureMesProductionPlan(IndustryManufactureMesProductionPlanRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        IndustryManufactureMesProductionPlanHeaders headers = new IndustryManufactureMesProductionPlanHeaders();
+        return this.industryManufactureMesProductionPlanWithOptions(request, headers, runtime);
+    }
+
+    public IndustryManufactureMesProductionPlanResponse industryManufactureMesProductionPlanWithOptions(IndustryManufactureMesProductionPlanRequest request, IndustryManufactureMesProductionPlanHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.action)) {
+            body.put("action", request.action);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.actualEndTime)) {
+            body.put("actualEndTime", request.actualEndTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.actualStartTime)) {
+            body.put("actualStartTime", request.actualStartTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.appKey)) {
+            body.put("appKey", request.appKey);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.baseDataName)) {
+            body.put("baseDataName", request.baseDataName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bomUuid)) {
+            body.put("bomUuid", request.bomUuid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.events)) {
+            body.put("events", request.events);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.extendData)) {
+            body.put("extendData", request.extendData);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.no)) {
+            body.put("no", request.no);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.overdue)) {
+            body.put("overdue", request.overdue);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.planEndTime)) {
+            body.put("planEndTime", request.planEndTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.planQuantity)) {
+            body.put("planQuantity", request.planQuantity);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.planStartTime)) {
+            body.put("planStartTime", request.planStartTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.processUuids)) {
+            body.put("processUuids", request.processUuids);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.productCode)) {
+            body.put("productCode", request.productCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.productName)) {
+            body.put("productName", request.productName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.productSpecification)) {
+            body.put("productSpecification", request.productSpecification);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.qualifiedQuantity)) {
+            body.put("qualifiedQuantity", request.qualifiedQuantity);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sellOrderNo)) {
+            body.put("sellOrderNo", request.sellOrderNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.status)) {
+            body.put("status", request.status);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.teamList)) {
+            body.put("teamList", request.teamList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.title)) {
+            body.put("title", request.title);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.type)) {
+            body.put("type", request.type);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unit)) {
+            body.put("unit", request.unit);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.uuid)) {
+            body.put("uuid", request.uuid);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("IndustryManufactureMesProductionPlan", "industry_1.0", "HTTP", "POST", "AK", "/v1.0/industry/manufacturings/productionPlans/manage", "json", req, runtime), new IndustryManufactureMesProductionPlanResponse());
+    }
+
     public IndustryManufactureMesTeamMgmtResponse industryManufactureMesTeamMgmt(IndustryManufactureMesTeamMgmtRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         IndustryManufactureMesTeamMgmtHeaders headers = new IndustryManufactureMesTeamMgmtHeaders();

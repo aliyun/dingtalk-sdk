@@ -143,6 +143,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("relativeOrderNo", request.relativeOrderNo);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.source)) {
+            body.put("source", request.source);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.targetCorpId)) {
             body.put("targetCorpId", request.targetCorpId);
         }

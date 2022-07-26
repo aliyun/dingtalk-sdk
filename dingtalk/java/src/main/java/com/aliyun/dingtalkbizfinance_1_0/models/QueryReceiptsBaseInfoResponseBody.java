@@ -227,6 +227,10 @@ public class QueryReceiptsBaseInfoResponseBody extends TeaModel {
         @NameInMap("amount")
         public String amount;
 
+        // 创建时间
+        @NameInMap("createTime")
+        public String createTime;
+
         // 创建人
         @NameInMap("creator")
         public QueryReceiptsBaseInfoResponseBodyListCreator creator;
@@ -286,6 +290,14 @@ public class QueryReceiptsBaseInfoResponseBody extends TeaModel {
         }
         public String getAmount() {
             return this.amount;
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyList setCreateTime(String createTime) {
+            this.createTime = createTime;
+            return this;
+        }
+        public String getCreateTime() {
+            return this.createTime;
         }
 
         public QueryReceiptsBaseInfoResponseBodyList setCreator(QueryReceiptsBaseInfoResponseBodyListCreator creator) {
