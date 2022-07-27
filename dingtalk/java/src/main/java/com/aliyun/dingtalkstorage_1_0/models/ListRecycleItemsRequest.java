@@ -10,7 +10,7 @@ public class ListRecycleItemsRequest extends TeaModel {
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 分页游标，首次拉取nextToken传null
+    // 分页游标，首次拉取nextToken传空
     @NameInMap("nextToken")
     public String nextToken;
 

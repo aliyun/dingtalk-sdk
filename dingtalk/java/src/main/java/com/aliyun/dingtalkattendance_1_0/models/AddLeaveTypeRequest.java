@@ -36,6 +36,10 @@ public class AddLeaveTypeRequest extends TeaModel {
     @NameInMap("submitTimeRule")
     public AddLeaveTypeRequestSubmitTimeRule submitTimeRule;
 
+    // 适用范围规则列表：哪些部门/员工可以使用该假期类型，不传默认为全公司
+    @NameInMap("visibilityRules")
+    public java.util.List<AddLeaveTypeRequestVisibilityRules> visibilityRules;
+
     // 操作者ID
     @NameInMap("opUserId")
     public String opUserId;
@@ -107,6 +111,14 @@ public class AddLeaveTypeRequest extends TeaModel {
     }
     public AddLeaveTypeRequestSubmitTimeRule getSubmitTimeRule() {
         return this.submitTimeRule;
+    }
+
+    public AddLeaveTypeRequest setVisibilityRules(java.util.List<AddLeaveTypeRequestVisibilityRules> visibilityRules) {
+        this.visibilityRules = visibilityRules;
+        return this;
+    }
+    public java.util.List<AddLeaveTypeRequestVisibilityRules> getVisibilityRules() {
+        return this.visibilityRules;
     }
 
     public AddLeaveTypeRequest setOpUserId(String opUserId) {
@@ -225,6 +237,38 @@ public class AddLeaveTypeRequest extends TeaModel {
         }
         public Long getTimeValue() {
             return this.timeValue;
+        }
+
+    }
+
+    public static class AddLeaveTypeRequestVisibilityRules extends TeaModel {
+        // 规则类型：dept-部门；staff-员工；label-角色
+        @NameInMap("type")
+        public String type;
+
+        // 规则数据：当type=staff时，传员工userId列表；当type=dept时，传部门id列表；当type=label时，传角色id列表
+        @NameInMap("visible")
+        public java.util.List<String> visible;
+
+        public static AddLeaveTypeRequestVisibilityRules build(java.util.Map<String, ?> map) throws Exception {
+            AddLeaveTypeRequestVisibilityRules self = new AddLeaveTypeRequestVisibilityRules();
+            return TeaModel.build(map, self);
+        }
+
+        public AddLeaveTypeRequestVisibilityRules setType(String type) {
+            this.type = type;
+            return this;
+        }
+        public String getType() {
+            return this.type;
+        }
+
+        public AddLeaveTypeRequestVisibilityRules setVisible(java.util.List<String> visible) {
+            this.visible = visible;
+            return this;
+        }
+        public java.util.List<String> getVisible() {
+            return this.visible;
         }
 
     }

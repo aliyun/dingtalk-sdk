@@ -76,7 +76,7 @@ public class AddSpaceResponseBody extends TeaModel {
         @NameInMap("appId")
         public String appId;
 
-        // 空间能力项. key详见 SpaceCapabilityEnum
+        // 空间能力项
         @NameInMap("capabilities")
         public AddSpaceResponseBodySpaceCapabilities capabilities;
 
@@ -112,7 +112,7 @@ public class AddSpaceResponseBody extends TeaModel {
         @NameInMap("ownerId")
         public String ownerId;
 
-        // owner类型, 详见SpaceOwnerTypeEnum
+        // owner类型
         // 枚举值:
         // 	USER: 用户类型
         // 	APP: App类型
@@ -125,7 +125,8 @@ public class AddSpaceResponseBody extends TeaModel {
         @NameInMap("quota")
         public Long quota;
 
-        // 业务场景，可以自定义，表示多个不同空间的聚合，可以提供对特定场景做能力设计、容量管理，如根据场景来做搜索或查询。创建空间时，不指定scene, 默认值是default
+        // 业务场景，可以自定义，表示多个不同空间的聚合，可以提供对特定场景做能力设计、容量管理，如根据场景来做搜索或查询。
+        // 创建空间时，不指定scene, 默认值是default
         // 默认值:
         // 	default
         @NameInMap("scene")

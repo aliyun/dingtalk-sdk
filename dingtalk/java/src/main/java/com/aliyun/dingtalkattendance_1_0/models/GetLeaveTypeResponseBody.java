@@ -133,6 +133,38 @@ public class GetLeaveTypeResponseBody extends TeaModel {
 
     }
 
+    public static class GetLeaveTypeResponseBodyResultVisibilityRules extends TeaModel {
+        // 规则类型：dept-部门；staff-员工；label-角色
+        @NameInMap("type")
+        public String type;
+
+        // 规则数据：当type=staff时，传员工userId列表；当type=dept时，传部门id列表；当type=label时，传角色id列表
+        @NameInMap("visible")
+        public java.util.List<String> visible;
+
+        public static GetLeaveTypeResponseBodyResultVisibilityRules build(java.util.Map<String, ?> map) throws Exception {
+            GetLeaveTypeResponseBodyResultVisibilityRules self = new GetLeaveTypeResponseBodyResultVisibilityRules();
+            return TeaModel.build(map, self);
+        }
+
+        public GetLeaveTypeResponseBodyResultVisibilityRules setType(String type) {
+            this.type = type;
+            return this;
+        }
+        public String getType() {
+            return this.type;
+        }
+
+        public GetLeaveTypeResponseBodyResultVisibilityRules setVisible(java.util.List<String> visible) {
+            this.visible = visible;
+            return this;
+        }
+        public java.util.List<String> getVisible() {
+            return this.visible;
+        }
+
+    }
+
     public static class GetLeaveTypeResponseBodyResult extends TeaModel {
         // 假期类型，普通假期或者加班转调休假期。(general_leave、lieu_leave其中一种)
         @NameInMap("bizType")
@@ -177,6 +209,10 @@ public class GetLeaveTypeResponseBody extends TeaModel {
         // 延长日期(当validity_type为absolute_time该值该值不为空且满足yy-mm格式 validity_type为relative_time该值为大于1的整数)
         @NameInMap("validityValue")
         public String validityValue;
+
+        // 适用范围规则列表：哪些部门/员工可以使用该假期类型，不传默认为全公司
+        @NameInMap("visibilityRules")
+        public java.util.List<GetLeaveTypeResponseBodyResultVisibilityRules> visibilityRules;
 
         public static GetLeaveTypeResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             GetLeaveTypeResponseBodyResult self = new GetLeaveTypeResponseBodyResult();
@@ -269,6 +305,14 @@ public class GetLeaveTypeResponseBody extends TeaModel {
         }
         public String getValidityValue() {
             return this.validityValue;
+        }
+
+        public GetLeaveTypeResponseBodyResult setVisibilityRules(java.util.List<GetLeaveTypeResponseBodyResultVisibilityRules> visibilityRules) {
+            this.visibilityRules = visibilityRules;
+            return this;
+        }
+        public java.util.List<GetLeaveTypeResponseBodyResultVisibilityRules> getVisibilityRules() {
+            return this.visibilityRules;
         }
 
     }

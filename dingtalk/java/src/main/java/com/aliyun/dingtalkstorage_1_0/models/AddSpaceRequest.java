@@ -92,7 +92,7 @@ public class AddSpaceRequest extends TeaModel {
         @NameInMap("name")
         public String name;
 
-        // owner类型, 空间Owner可以是用户或应用, 详见 SpaceOwnerTypeEnum
+        // owner类型, 空间Owner可以是用户或应用
         // 如果是应用类型，需要单独授权
         // 枚举值:
         // 	USER: 用户类型

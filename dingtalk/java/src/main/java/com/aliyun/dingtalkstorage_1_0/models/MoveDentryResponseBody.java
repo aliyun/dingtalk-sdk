@@ -13,7 +13,7 @@ public class MoveDentryResponseBody extends TeaModel {
     @NameInMap("dentry")
     public MoveDentryResponseBodyDentry dentry;
 
-    // 任务Id，用于查询任务执行状态; 查询接口开发中
+    // 任务id，用于查询任务执行状态; 查询接口开发中
     @NameInMap("taskId")
     public String taskId;
 

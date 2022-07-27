@@ -39,8 +39,8 @@ public class BatchAddInvoiceRequest extends TeaModel {
         public String amount;
 
         // 商品名称
-        @NameInMap("goodName")
-        public String goodName;
+        @NameInMap("goodsName")
+        public String goodsName;
 
         // 数量
         @NameInMap("quantity")
@@ -95,12 +95,12 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.amount;
         }
 
-        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList setGoodName(String goodName) {
-            this.goodName = goodName;
+        public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList setGoodsName(String goodsName) {
+            this.goodsName = goodsName;
             return this;
         }
-        public String getGoodName() {
-            return this.goodName;
+        public String getGoodsName() {
+            return this.goodsName;
         }
 
         public BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList setQuantity(String quantity) {

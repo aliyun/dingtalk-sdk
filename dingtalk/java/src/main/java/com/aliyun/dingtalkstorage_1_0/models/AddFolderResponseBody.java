@@ -5,7 +5,7 @@ import com.aliyun.tea.*;
 
 public class AddFolderResponseBody extends TeaModel {
     // 文件夹信息
-    // dentry.type等于DentryTypeEnum.FOLDER表示是文件夹
+    // dentry.type等于FOLDER表示是文件夹
     @NameInMap("dentry")
     public AddFolderResponseBodyDentry dentry;
 

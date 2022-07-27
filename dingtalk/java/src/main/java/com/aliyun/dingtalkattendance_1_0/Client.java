@@ -67,6 +67,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("submitTimeRule", request.submitTimeRule);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.visibilityRules)) {
+            body.put("visibilityRules", request.visibilityRules);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -985,6 +989,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.submitTimeRule))) {
             body.put("submitTimeRule", request.submitTimeRule);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.visibilityRules)) {
+            body.put("visibilityRules", request.visibilityRules);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
