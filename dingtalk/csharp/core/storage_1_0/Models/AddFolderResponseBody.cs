@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
     public class AddFolderResponseBody : TeaModel {
         /// <summary>
         /// 文件夹信息
-        /// dentry.type等于DentryTypeEnum.FOLDER表示是文件夹
+        /// dentry.type等于FOLDER表示是文件夹
         /// </summary>
         [NameInMap("dentry")]
         [Validation(Required=false)]

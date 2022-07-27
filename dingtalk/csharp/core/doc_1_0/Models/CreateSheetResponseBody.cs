@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class CreateSheetResponseBody : TeaModel {
+        [NameInMap("id")]
+        [Validation(Required=false)]
+        public string Id { get; set; }
+
         /// <summary>
         /// 创建的工作表的名称。当输入参数中的工作表名称在表格中已存在时，可能与输入参数指定的工作表名称不同。
         /// </summary>

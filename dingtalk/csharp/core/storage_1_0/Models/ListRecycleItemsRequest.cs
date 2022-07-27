@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         public int? MaxResults { get; set; }
 
         /// <summary>
-        /// 分页游标，首次拉取nextToken传null
+        /// 分页游标，首次拉取nextToken传空
         /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]

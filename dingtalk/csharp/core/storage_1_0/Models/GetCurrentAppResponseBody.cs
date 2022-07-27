@@ -49,6 +49,7 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 
                     /// <summary>
                     /// 容量类型
+                    /// 如果是企业维度容量，此值是PRIVATE, 表示企业独占
                     /// 枚举值:
                     /// 	SHARE: 共享容量
                     /// 此模式下，Quota.max为空，表示共享企业容量

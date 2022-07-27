@@ -93,7 +93,7 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         };
 
         /// <summary>
-        /// 任务Id，用于查询任务执行状态; 查询接口开发中
+        /// 任务id，用于查询任务执行状态; 查询接口开发中
         /// </summary>
         [NameInMap("taskId")]
         [Validation(Required=false)]

@@ -81,6 +81,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["submitTimeRule"] = request.SubmitTimeRule;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VisibilityRules))
+            {
+                body["visibilityRules"] = request.VisibilityRules;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -139,6 +143,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubmitTimeRule.ToMap()))
             {
                 body["submitTimeRule"] = request.SubmitTimeRule;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VisibilityRules))
+            {
+                body["visibilityRules"] = request.VisibilityRules;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -2055,6 +2063,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["submitTimeRule"] = request.SubmitTimeRule;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VisibilityRules))
+            {
+                body["visibilityRules"] = request.VisibilityRules;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -2117,6 +2129,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubmitTimeRule.ToMap()))
             {
                 body["submitTimeRule"] = request.SubmitTimeRule;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VisibilityRules))
+            {
+                body["visibilityRules"] = request.VisibilityRules;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

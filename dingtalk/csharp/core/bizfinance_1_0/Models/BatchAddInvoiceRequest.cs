@@ -96,9 +96,9 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 /// <summary>
                 /// 商品名称
                 /// </summary>
-                [NameInMap("goodName")]
+                [NameInMap("goodsName")]
                 [Validation(Required=false)]
-                public string GoodName { get; set; }
+                public string GoodsName { get; set; }
 
                 /// <summary>
                 /// 数量

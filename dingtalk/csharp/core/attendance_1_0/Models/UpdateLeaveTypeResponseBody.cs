@@ -100,6 +100,13 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
                 public long? TimeValue { get; set; }
 
             }
+            [NameInMap("visibilityRules")]
+            [Validation(Required=false)]
+            public List<UpdateLeaveTypeResponseBodyResultVisibilityRules> VisibilityRules { get; set; }
+            public class UpdateLeaveTypeResponseBodyResultVisibilityRules : TeaModel {
+                public string Type { get; set; }
+                public List<string> Visible { get; set; }
+            }
         };
 
     }

@@ -94,6 +94,29 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         };
 
         /// <summary>
+        /// 适用范围规则列表：哪些部门/员工可以使用该假期类型，不传默认为全公司
+        /// </summary>
+        [NameInMap("visibilityRules")]
+        [Validation(Required=false)]
+        public List<AddLeaveTypeRequestVisibilityRules> VisibilityRules { get; set; }
+        public class AddLeaveTypeRequestVisibilityRules : TeaModel {
+            /// <summary>
+            /// 规则类型：dept-部门；staff-员工；label-角色
+            /// </summary>
+            [NameInMap("type")]
+            [Validation(Required=false)]
+            public string Type { get; set; }
+
+            /// <summary>
+            /// 规则数据：当type=staff时，传员工userId列表；当type=dept时，传部门id列表；当type=label时，传角色id列表
+            /// </summary>
+            [NameInMap("visible")]
+            [Validation(Required=false)]
+            public List<string> Visible { get; set; }
+
+        }
+
+        /// <summary>
         /// 操作者ID
         /// </summary>
         [NameInMap("opUserId")]

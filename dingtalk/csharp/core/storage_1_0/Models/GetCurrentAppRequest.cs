@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 {
     public class GetCurrentAppRequest : TeaModel {
         /// <summary>
-        /// 应用归属企业的Id
-        /// </summary>
-        [NameInMap("corpId")]
-        [Validation(Required=false)]
-        public string CorpId { get; set; }
-
-        /// <summary>
         /// 用户id
         /// </summary>
         [NameInMap("unionId")]
