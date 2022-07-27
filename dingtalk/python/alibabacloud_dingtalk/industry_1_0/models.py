@@ -216,7 +216,8 @@ class CampusCreateCampusRequest(TeaModel):
         creator_union_id: str = None,
         description: str = None,
         extend: str = None,
-        order_info: int = None,
+        order_end_time: int = None,
+        order_info: str = None,
         order_start_time: int = None,
         prov_id: int = None,
         telephone: str = None,
@@ -243,7 +244,7 @@ class CampusCreateCampusRequest(TeaModel):
         self.description = description
         # 扩展字段
         self.extend = extend
-        # 项目订购结束时间
+        self.order_end_time = order_end_time
         self.order_info = order_info
         # 项目订购开始时间
         self.order_start_time = order_start_time
@@ -283,6 +284,8 @@ class CampusCreateCampusRequest(TeaModel):
             result['description'] = self.description
         if self.extend is not None:
             result['extend'] = self.extend
+        if self.order_end_time is not None:
+            result['orderEndTime'] = self.order_end_time
         if self.order_info is not None:
             result['orderInfo'] = self.order_info
         if self.order_start_time is not None:
@@ -317,6 +320,8 @@ class CampusCreateCampusRequest(TeaModel):
             self.description = m.get('description')
         if m.get('extend') is not None:
             self.extend = m.get('extend')
+        if m.get('orderEndTime') is not None:
+            self.order_end_time = m.get('orderEndTime')
         if m.get('orderInfo') is not None:
             self.order_info = m.get('orderInfo')
         if m.get('orderStartTime') is not None:
@@ -471,10 +476,9 @@ class CampusCreateCampusGroupRequest(TeaModel):
 class CampusCreateCampusGroupResponseBody(TeaModel):
     def __init__(
         self,
-        content: int = None,
+        group_id: int = None,
     ):
-        # 项目组ID
-        self.content = content
+        self.group_id = group_id
 
     def validate(self):
         pass
@@ -485,14 +489,14 @@ class CampusCreateCampusGroupResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.content is not None:
-            result['content'] = self.content
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('content') is not None:
-            self.content = m.get('content')
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
         return self
 
 
@@ -890,10 +894,9 @@ class CampusDeleteCampusGroupRequest(TeaModel):
 class CampusDeleteCampusGroupResponseBody(TeaModel):
     def __init__(
         self,
-        content: str = None,
+        success: bool = None,
     ):
-        # result
-        self.content = content
+        self.success = success
 
     def validate(self):
         pass
@@ -904,14 +907,14 @@ class CampusDeleteCampusGroupResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.content is not None:
-            result['content'] = self.content
+        if self.success is not None:
+            result['success'] = self.success
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('content') is not None:
-            self.content = m.get('content')
+        if m.get('success') is not None:
+            self.success = m.get('success')
         return self
 
 

@@ -144,8 +144,12 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
         body = {}
+        if not UtilClient.is_unset(request.action_list):
+            body['actionList'] = request.action_list
         if not UtilClient.is_unset(request.biz_category_id):
             body['bizCategoryId'] = request.biz_category_id
+        if not UtilClient.is_unset(request.content_field_list):
+            body['contentFieldList'] = request.content_field_list
         if not UtilClient.is_unset(request.creator_id):
             body['creatorId'] = request.creator_id
         if not UtilClient.is_unset(request.description):
@@ -196,8 +200,12 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
         body = {}
+        if not UtilClient.is_unset(request.action_list):
+            body['actionList'] = request.action_list
         if not UtilClient.is_unset(request.biz_category_id):
             body['bizCategoryId'] = request.biz_category_id
+        if not UtilClient.is_unset(request.content_field_list):
+            body['contentFieldList'] = request.content_field_list
         if not UtilClient.is_unset(request.creator_id):
             body['creatorId'] = request.creator_id
         if not UtilClient.is_unset(request.description):

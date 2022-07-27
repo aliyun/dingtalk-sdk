@@ -1317,6 +1317,80 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetSheet', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}', 'json', req, runtime)
         )
 
+    def get_template_by_id(
+        self,
+        template_id: str,
+        request: dingtalkdoc__1__0_models.GetTemplateByIdRequest,
+    ) -> dingtalkdoc__1__0_models.GetTemplateByIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetTemplateByIdHeaders()
+        return self.get_template_by_id_with_options(template_id, request, headers, runtime)
+
+    async def get_template_by_id_async(
+        self,
+        template_id: str,
+        request: dingtalkdoc__1__0_models.GetTemplateByIdRequest,
+    ) -> dingtalkdoc__1__0_models.GetTemplateByIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetTemplateByIdHeaders()
+        return await self.get_template_by_id_with_options_async(template_id, request, headers, runtime)
+
+    def get_template_by_id_with_options(
+        self,
+        template_id: str,
+        request: dingtalkdoc__1__0_models.GetTemplateByIdRequest,
+        headers: dingtalkdoc__1__0_models.GetTemplateByIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetTemplateByIdResponse:
+        UtilClient.validate_model(request)
+        template_id = OpenApiUtilClient.get_encode_param(template_id)
+        query = {}
+        if not UtilClient.is_unset(request.belong):
+            query['belong'] = request.belong
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetTemplateByIdResponse(),
+            self.do_roarequest('GetTemplateById', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/templates/{template_id}', 'json', req, runtime)
+        )
+
+    async def get_template_by_id_with_options_async(
+        self,
+        template_id: str,
+        request: dingtalkdoc__1__0_models.GetTemplateByIdRequest,
+        headers: dingtalkdoc__1__0_models.GetTemplateByIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetTemplateByIdResponse:
+        UtilClient.validate_model(request)
+        template_id = OpenApiUtilClient.get_encode_param(template_id)
+        query = {}
+        if not UtilClient.is_unset(request.belong):
+            query['belong'] = request.belong
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetTemplateByIdResponse(),
+            await self.do_roarequest_async('GetTemplateById', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/templates/{template_id}', 'json', req, runtime)
+        )
+
     def get_workspace(
         self,
         workspace_id: str,

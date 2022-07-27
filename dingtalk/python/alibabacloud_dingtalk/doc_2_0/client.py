@@ -737,6 +737,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QuerySpace', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/spaces/{space_id}', 'json', req, runtime)
         )
 
+    def related_spaces(
+        self,
+        request: dingtalkdoc__2__0_models.RelatedSpacesRequest,
+    ) -> dingtalkdoc__2__0_models.RelatedSpacesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.RelatedSpacesHeaders()
+        return self.related_spaces_with_options(request, headers, runtime)
+
+    async def related_spaces_async(
+        self,
+        request: dingtalkdoc__2__0_models.RelatedSpacesRequest,
+    ) -> dingtalkdoc__2__0_models.RelatedSpacesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.RelatedSpacesHeaders()
+        return await self.related_spaces_with_options_async(request, headers, runtime)
+
+    def related_spaces_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.RelatedSpacesRequest,
+        headers: dingtalkdoc__2__0_models.RelatedSpacesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.RelatedSpacesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.team_id):
+            query['teamId'] = request.team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.RelatedSpacesResponse(),
+            self.do_roarequest('RelatedSpaces', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/relations/spaces', 'json', req, runtime)
+        )
+
+    async def related_spaces_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.RelatedSpacesRequest,
+        headers: dingtalkdoc__2__0_models.RelatedSpacesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.RelatedSpacesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.team_id):
+            query['teamId'] = request.team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.RelatedSpacesResponse(),
+            await self.do_roarequest_async('RelatedSpaces', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/relations/spaces', 'json', req, runtime)
+        )
+
     def rename_dentry(
         self,
         space_id: str,

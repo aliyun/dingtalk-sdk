@@ -198,6 +198,139 @@ class CreateTodoTaskHeaders(TeaModel):
         return self
 
 
+class CreateTodoTaskRequestActionListParam(TeaModel):
+    def __init__(
+        self,
+        body: str = None,
+        header: Dict[str, Any] = None,
+    ):
+        self.body = body
+        self.header = header
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body is not None:
+            result['body'] = self.body
+        if self.header is not None:
+            result['header'] = self.header
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            self.body = m.get('body')
+        if m.get('header') is not None:
+            self.header = m.get('header')
+        return self
+
+
+class CreateTodoTaskRequestActionList(TeaModel):
+    def __init__(
+        self,
+        action_key: str = None,
+        action_type: int = None,
+        button_style_type: int = None,
+        param: CreateTodoTaskRequestActionListParam = None,
+        pc_url: str = None,
+        title: str = None,
+        url: str = None,
+    ):
+        self.action_key = action_key
+        self.action_type = action_type
+        self.button_style_type = button_style_type
+        self.param = param
+        self.pc_url = pc_url
+        self.title = title
+        self.url = url
+
+    def validate(self):
+        if self.param:
+            self.param.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_key is not None:
+            result['actionKey'] = self.action_key
+        if self.action_type is not None:
+            result['actionType'] = self.action_type
+        if self.button_style_type is not None:
+            result['buttonStyleType'] = self.button_style_type
+        if self.param is not None:
+            result['param'] = self.param.to_map()
+        if self.pc_url is not None:
+            result['pcUrl'] = self.pc_url
+        if self.title is not None:
+            result['title'] = self.title
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionKey') is not None:
+            self.action_key = m.get('actionKey')
+        if m.get('actionType') is not None:
+            self.action_type = m.get('actionType')
+        if m.get('buttonStyleType') is not None:
+            self.button_style_type = m.get('buttonStyleType')
+        if m.get('param') is not None:
+            temp_model = CreateTodoTaskRequestActionListParam()
+            self.param = temp_model.from_map(m['param'])
+        if m.get('pcUrl') is not None:
+            self.pc_url = m.get('pcUrl')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class CreateTodoTaskRequestContentFieldList(TeaModel):
+    def __init__(
+        self,
+        field_key: str = None,
+        field_value: str = None,
+    ):
+        # 字段唯一标识
+        self.field_key = field_key
+        # 字段值
+        self.field_value = field_value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_key is not None:
+            result['fieldKey'] = self.field_key
+        if self.field_value is not None:
+            result['fieldValue'] = self.field_value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldKey') is not None:
+            self.field_key = m.get('fieldKey')
+        if m.get('fieldValue') is not None:
+            self.field_value = m.get('fieldValue')
+        return self
+
+
 class CreateTodoTaskRequestDetailUrl(TeaModel):
     def __init__(
         self,
@@ -264,7 +397,9 @@ class CreateTodoTaskRequestNotifyConfigs(TeaModel):
 class CreateTodoTaskRequest(TeaModel):
     def __init__(
         self,
+        action_list: List[CreateTodoTaskRequestActionList] = None,
         biz_category_id: str = None,
+        content_field_list: List[CreateTodoTaskRequestContentFieldList] = None,
         creator_id: str = None,
         description: str = None,
         detail_url: CreateTodoTaskRequestDetailUrl = None,
@@ -278,8 +413,11 @@ class CreateTodoTaskRequest(TeaModel):
         subject: str = None,
         operator_id: str = None,
     ):
+        self.action_list = action_list
         # 二级分类
         self.biz_category_id = biz_category_id
+        # 待办卡片内容区表单自定义字段列表
+        self.content_field_list = content_field_list
         # 创建者id，需传用户的unionId
         self.creator_id = creator_id
         # 待办备注描述
@@ -306,6 +444,14 @@ class CreateTodoTaskRequest(TeaModel):
         self.operator_id = operator_id
 
     def validate(self):
+        if self.action_list:
+            for k in self.action_list:
+                if k:
+                    k.validate()
+        if self.content_field_list:
+            for k in self.content_field_list:
+                if k:
+                    k.validate()
         if self.detail_url:
             self.detail_url.validate()
         if self.notify_configs:
@@ -317,8 +463,16 @@ class CreateTodoTaskRequest(TeaModel):
             return _map
 
         result = dict()
+        result['actionList'] = []
+        if self.action_list is not None:
+            for k in self.action_list:
+                result['actionList'].append(k.to_map() if k else None)
         if self.biz_category_id is not None:
             result['bizCategoryId'] = self.biz_category_id
+        result['contentFieldList'] = []
+        if self.content_field_list is not None:
+            for k in self.content_field_list:
+                result['contentFieldList'].append(k.to_map() if k else None)
         if self.creator_id is not None:
             result['creatorId'] = self.creator_id
         if self.description is not None:
@@ -347,8 +501,18 @@ class CreateTodoTaskRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.action_list = []
+        if m.get('actionList') is not None:
+            for k in m.get('actionList'):
+                temp_model = CreateTodoTaskRequestActionList()
+                self.action_list.append(temp_model.from_map(k))
         if m.get('bizCategoryId') is not None:
             self.biz_category_id = m.get('bizCategoryId')
+        self.content_field_list = []
+        if m.get('contentFieldList') is not None:
+            for k in m.get('contentFieldList'):
+                temp_model = CreateTodoTaskRequestContentFieldList()
+                self.content_field_list.append(temp_model.from_map(k))
         if m.get('creatorId') is not None:
             self.creator_id = m.get('creatorId')
         if m.get('description') is not None:
@@ -375,6 +539,41 @@ class CreateTodoTaskRequest(TeaModel):
             self.subject = m.get('subject')
         if m.get('operatorId') is not None:
             self.operator_id = m.get('operatorId')
+        return self
+
+
+class CreateTodoTaskResponseBodyContentFieldList(TeaModel):
+    def __init__(
+        self,
+        field_key: str = None,
+        field_value: str = None,
+    ):
+        # 字段唯一标识
+        self.field_key = field_key
+        # 字段值
+        self.field_value = field_value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_key is not None:
+            result['fieldKey'] = self.field_key
+        if self.field_value is not None:
+            result['fieldValue'] = self.field_value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldKey') is not None:
+            self.field_key = m.get('fieldKey')
+        if m.get('fieldValue') is not None:
+            self.field_value = m.get('fieldValue')
         return self
 
 
@@ -445,6 +644,7 @@ class CreateTodoTaskResponseBody(TeaModel):
     def __init__(
         self,
         biz_tag: str = None,
+        content_field_list: List[CreateTodoTaskResponseBodyContentFieldList] = None,
         created_time: int = None,
         creator_id: str = None,
         description: str = None,
@@ -468,6 +668,8 @@ class CreateTodoTaskResponseBody(TeaModel):
     ):
         # 接入应用标识
         self.biz_tag = biz_tag
+        # 内容区表单字段配置
+        self.content_field_list = content_field_list
         # 创建时间
         self.created_time = created_time
         # 创建者（用户的unionId）
@@ -510,6 +712,10 @@ class CreateTodoTaskResponseBody(TeaModel):
         self.subject = subject
 
     def validate(self):
+        if self.content_field_list:
+            for k in self.content_field_list:
+                if k:
+                    k.validate()
         if self.detail_url:
             self.detail_url.validate()
         if self.notify_configs:
@@ -523,6 +729,10 @@ class CreateTodoTaskResponseBody(TeaModel):
         result = dict()
         if self.biz_tag is not None:
             result['bizTag'] = self.biz_tag
+        result['contentFieldList'] = []
+        if self.content_field_list is not None:
+            for k in self.content_field_list:
+                result['contentFieldList'].append(k.to_map() if k else None)
         if self.created_time is not None:
             result['createdTime'] = self.created_time
         if self.creator_id is not None:
@@ -569,6 +779,11 @@ class CreateTodoTaskResponseBody(TeaModel):
         m = m or dict()
         if m.get('bizTag') is not None:
             self.biz_tag = m.get('bizTag')
+        self.content_field_list = []
+        if m.get('contentFieldList') is not None:
+            for k in m.get('contentFieldList'):
+                temp_model = CreateTodoTaskResponseBodyContentFieldList()
+                self.content_field_list.append(temp_model.from_map(k))
         if m.get('createdTime') is not None:
             self.created_time = m.get('createdTime')
         if m.get('creatorId') is not None:

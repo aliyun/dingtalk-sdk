@@ -149,6 +149,8 @@ class Client(OpenApiClient):
             body['description'] = request.description
         if not UtilClient.is_unset(request.extend):
             body['extend'] = request.extend
+        if not UtilClient.is_unset(request.order_end_time):
+            body['orderEndTime'] = request.order_end_time
         if not UtilClient.is_unset(request.order_info):
             body['orderInfo'] = request.order_info
         if not UtilClient.is_unset(request.order_start_time):
@@ -201,6 +203,8 @@ class Client(OpenApiClient):
             body['description'] = request.description
         if not UtilClient.is_unset(request.extend):
             body['extend'] = request.extend
+        if not UtilClient.is_unset(request.order_end_time):
+            body['orderEndTime'] = request.order_end_time
         if not UtilClient.is_unset(request.order_info):
             body['orderInfo'] = request.order_info
         if not UtilClient.is_unset(request.order_start_time):

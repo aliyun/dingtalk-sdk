@@ -3214,6 +3214,191 @@ class GetSheetResponse(TeaModel):
         return self
 
 
+class GetTemplateByIdHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetTemplateByIdRequest(TeaModel):
+    def __init__(
+        self,
+        belong: str = None,
+        operator_id: str = None,
+    ):
+        # 模版归属
+        # public_template //公共模板
+        # team_template //团队模板
+        # user_template //个人模板
+        self.belong = belong
+        # 操作用户unionId
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.belong is not None:
+            result['belong'] = self.belong
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('belong') is not None:
+            self.belong = m.get('belong')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class GetTemplateByIdResponseBody(TeaModel):
+    def __init__(
+        self,
+        cover_url: str = None,
+        create_time: int = None,
+        doc_type: str = None,
+        id: str = None,
+        template_type: str = None,
+        title: str = None,
+        update_time: int = None,
+        workspace_id: str = None,
+    ):
+        # 模版预览url
+        self.cover_url = cover_url
+        # 模版创建时间
+        self.create_time = create_time
+        # 模版对应文档类型
+        self.doc_type = doc_type
+        # 模版id
+        self.id = id
+        # 模版类型
+        self.template_type = template_type
+        # 模版标题
+        self.title = title
+        # 模版修改时间
+        self.update_time = update_time
+        # 模版归属空间Id
+        self.workspace_id = workspace_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cover_url is not None:
+            result['coverUrl'] = self.cover_url
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.doc_type is not None:
+            result['docType'] = self.doc_type
+        if self.id is not None:
+            result['id'] = self.id
+        if self.template_type is not None:
+            result['templateType'] = self.template_type
+        if self.title is not None:
+            result['title'] = self.title
+        if self.update_time is not None:
+            result['updateTime'] = self.update_time
+        if self.workspace_id is not None:
+            result['workspaceId'] = self.workspace_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('coverUrl') is not None:
+            self.cover_url = m.get('coverUrl')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('docType') is not None:
+            self.doc_type = m.get('docType')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('templateType') is not None:
+            self.template_type = m.get('templateType')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('updateTime') is not None:
+            self.update_time = m.get('updateTime')
+        if m.get('workspaceId') is not None:
+            self.workspace_id = m.get('workspaceId')
+        return self
+
+
+class GetTemplateByIdResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetTemplateByIdResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetTemplateByIdResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetWorkspaceHeaders(TeaModel):
     def __init__(
         self,
