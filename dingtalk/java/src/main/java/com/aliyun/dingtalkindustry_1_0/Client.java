@@ -119,6 +119,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("extend", request.extend);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.orderEndTime)) {
+            body.put("orderEndTime", request.orderEndTime);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.orderInfo)) {
             body.put("orderInfo", request.orderInfo);
         }

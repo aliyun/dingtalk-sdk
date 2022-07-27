@@ -4,9 +4,16 @@ package com.aliyun.dingtalktodo_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTodoTaskRequest extends TeaModel {
+    @NameInMap("actionList")
+    public java.util.List<CreateTodoTaskRequestActionList> actionList;
+
     // 二级分类
     @NameInMap("bizCategoryId")
     public String bizCategoryId;
+
+    // 待办卡片内容区表单自定义字段列表
+    @NameInMap("contentFieldList")
+    public java.util.List<CreateTodoTaskRequestContentFieldList> contentFieldList;
 
     // 创建者id，需传用户的unionId
     @NameInMap("creatorId")
@@ -61,12 +68,28 @@ public class CreateTodoTaskRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
+    public CreateTodoTaskRequest setActionList(java.util.List<CreateTodoTaskRequestActionList> actionList) {
+        this.actionList = actionList;
+        return this;
+    }
+    public java.util.List<CreateTodoTaskRequestActionList> getActionList() {
+        return this.actionList;
+    }
+
     public CreateTodoTaskRequest setBizCategoryId(String bizCategoryId) {
         this.bizCategoryId = bizCategoryId;
         return this;
     }
     public String getBizCategoryId() {
         return this.bizCategoryId;
+    }
+
+    public CreateTodoTaskRequest setContentFieldList(java.util.List<CreateTodoTaskRequestContentFieldList> contentFieldList) {
+        this.contentFieldList = contentFieldList;
+        return this;
+    }
+    public java.util.List<CreateTodoTaskRequestContentFieldList> getContentFieldList() {
+        return this.contentFieldList;
     }
 
     public CreateTodoTaskRequest setCreatorId(String creatorId) {
@@ -163,6 +186,153 @@ public class CreateTodoTaskRequest extends TeaModel {
     }
     public String getOperatorId() {
         return this.operatorId;
+    }
+
+    public static class CreateTodoTaskRequestActionListParam extends TeaModel {
+        @NameInMap("body")
+        public String body;
+
+        @NameInMap("header")
+        public java.util.Map<String, ?> header;
+
+        public static CreateTodoTaskRequestActionListParam build(java.util.Map<String, ?> map) throws Exception {
+            CreateTodoTaskRequestActionListParam self = new CreateTodoTaskRequestActionListParam();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateTodoTaskRequestActionListParam setBody(String body) {
+            this.body = body;
+            return this;
+        }
+        public String getBody() {
+            return this.body;
+        }
+
+        public CreateTodoTaskRequestActionListParam setHeader(java.util.Map<String, ?> header) {
+            this.header = header;
+            return this;
+        }
+        public java.util.Map<String, ?> getHeader() {
+            return this.header;
+        }
+
+    }
+
+    public static class CreateTodoTaskRequestActionList extends TeaModel {
+        @NameInMap("actionKey")
+        public String actionKey;
+
+        @NameInMap("actionType")
+        public Integer actionType;
+
+        @NameInMap("buttonStyleType")
+        public Integer buttonStyleType;
+
+        @NameInMap("param")
+        public CreateTodoTaskRequestActionListParam param;
+
+        @NameInMap("pcUrl")
+        public String pcUrl;
+
+        @NameInMap("title")
+        public String title;
+
+        @NameInMap("url")
+        public String url;
+
+        public static CreateTodoTaskRequestActionList build(java.util.Map<String, ?> map) throws Exception {
+            CreateTodoTaskRequestActionList self = new CreateTodoTaskRequestActionList();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateTodoTaskRequestActionList setActionKey(String actionKey) {
+            this.actionKey = actionKey;
+            return this;
+        }
+        public String getActionKey() {
+            return this.actionKey;
+        }
+
+        public CreateTodoTaskRequestActionList setActionType(Integer actionType) {
+            this.actionType = actionType;
+            return this;
+        }
+        public Integer getActionType() {
+            return this.actionType;
+        }
+
+        public CreateTodoTaskRequestActionList setButtonStyleType(Integer buttonStyleType) {
+            this.buttonStyleType = buttonStyleType;
+            return this;
+        }
+        public Integer getButtonStyleType() {
+            return this.buttonStyleType;
+        }
+
+        public CreateTodoTaskRequestActionList setParam(CreateTodoTaskRequestActionListParam param) {
+            this.param = param;
+            return this;
+        }
+        public CreateTodoTaskRequestActionListParam getParam() {
+            return this.param;
+        }
+
+        public CreateTodoTaskRequestActionList setPcUrl(String pcUrl) {
+            this.pcUrl = pcUrl;
+            return this;
+        }
+        public String getPcUrl() {
+            return this.pcUrl;
+        }
+
+        public CreateTodoTaskRequestActionList setTitle(String title) {
+            this.title = title;
+            return this;
+        }
+        public String getTitle() {
+            return this.title;
+        }
+
+        public CreateTodoTaskRequestActionList setUrl(String url) {
+            this.url = url;
+            return this;
+        }
+        public String getUrl() {
+            return this.url;
+        }
+
+    }
+
+    public static class CreateTodoTaskRequestContentFieldList extends TeaModel {
+        // 字段唯一标识
+        @NameInMap("fieldKey")
+        public String fieldKey;
+
+        // 字段值
+        @NameInMap("fieldValue")
+        public String fieldValue;
+
+        public static CreateTodoTaskRequestContentFieldList build(java.util.Map<String, ?> map) throws Exception {
+            CreateTodoTaskRequestContentFieldList self = new CreateTodoTaskRequestContentFieldList();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateTodoTaskRequestContentFieldList setFieldKey(String fieldKey) {
+            this.fieldKey = fieldKey;
+            return this;
+        }
+        public String getFieldKey() {
+            return this.fieldKey;
+        }
+
+        public CreateTodoTaskRequestContentFieldList setFieldValue(String fieldValue) {
+            this.fieldValue = fieldValue;
+            return this;
+        }
+        public String getFieldValue() {
+            return this.fieldValue;
+        }
+
     }
 
     public static class CreateTodoTaskRequestDetailUrl extends TeaModel {

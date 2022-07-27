@@ -48,9 +48,11 @@ public class CampusCreateCampusRequest extends TeaModel {
     @NameInMap("extend")
     public String extend;
 
-    // 项目订购结束时间
+    @NameInMap("orderEndTime")
+    public Long orderEndTime;
+
     @NameInMap("orderInfo")
-    public Long orderInfo;
+    public String orderInfo;
 
     // 项目订购开始时间
     @NameInMap("orderStartTime")
@@ -157,11 +159,19 @@ public class CampusCreateCampusRequest extends TeaModel {
         return this.extend;
     }
 
-    public CampusCreateCampusRequest setOrderInfo(Long orderInfo) {
+    public CampusCreateCampusRequest setOrderEndTime(Long orderEndTime) {
+        this.orderEndTime = orderEndTime;
+        return this;
+    }
+    public Long getOrderEndTime() {
+        return this.orderEndTime;
+    }
+
+    public CampusCreateCampusRequest setOrderInfo(String orderInfo) {
         this.orderInfo = orderInfo;
         return this;
     }
-    public Long getOrderInfo() {
+    public String getOrderInfo() {
         return this.orderInfo;
     }
 

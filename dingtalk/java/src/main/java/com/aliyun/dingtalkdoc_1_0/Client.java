@@ -621,6 +621,40 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetSheet", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "", "json", req, runtime), new GetSheetResponse());
     }
 
+    public GetTemplateByIdResponse getTemplateById(String templateId, GetTemplateByIdRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetTemplateByIdHeaders headers = new GetTemplateByIdHeaders();
+        return this.getTemplateByIdWithOptions(templateId, request, headers, runtime);
+    }
+
+    public GetTemplateByIdResponse getTemplateByIdWithOptions(String templateId, GetTemplateByIdRequest request, GetTemplateByIdHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        templateId = com.aliyun.openapiutil.Client.getEncodeParam(templateId);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.belong)) {
+            query.put("belong", request.belong);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetTemplateById", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/templates/" + templateId + "", "json", req, runtime), new GetTemplateByIdResponse());
+    }
+
     public GetWorkspaceResponse getWorkspace(String workspaceId) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetWorkspaceHeaders headers = new GetWorkspaceHeaders();

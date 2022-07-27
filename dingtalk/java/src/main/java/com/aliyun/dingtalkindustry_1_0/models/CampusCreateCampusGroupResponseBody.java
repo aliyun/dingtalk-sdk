@@ -4,21 +4,20 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CampusCreateCampusGroupResponseBody extends TeaModel {
-    // 项目组ID
-    @NameInMap("content")
-    public Long content;
+    @NameInMap("groupId")
+    public Long groupId;
 
     public static CampusCreateCampusGroupResponseBody build(java.util.Map<String, ?> map) throws Exception {
         CampusCreateCampusGroupResponseBody self = new CampusCreateCampusGroupResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public CampusCreateCampusGroupResponseBody setContent(Long content) {
-        this.content = content;
+    public CampusCreateCampusGroupResponseBody setGroupId(Long groupId) {
+        this.groupId = groupId;
         return this;
     }
-    public Long getContent() {
-        return this.content;
+    public Long getGroupId() {
+        return this.groupId;
     }
 
 }

@@ -8,6 +8,10 @@ public class CreateTodoTaskResponseBody extends TeaModel {
     @NameInMap("bizTag")
     public String bizTag;
 
+    // 内容区表单字段配置
+    @NameInMap("contentFieldList")
+    public java.util.List<CreateTodoTaskResponseBodyContentFieldList> contentFieldList;
+
     // 创建时间
     @NameInMap("createdTime")
     public Long createdTime;
@@ -99,6 +103,14 @@ public class CreateTodoTaskResponseBody extends TeaModel {
     }
     public String getBizTag() {
         return this.bizTag;
+    }
+
+    public CreateTodoTaskResponseBody setContentFieldList(java.util.List<CreateTodoTaskResponseBodyContentFieldList> contentFieldList) {
+        this.contentFieldList = contentFieldList;
+        return this;
+    }
+    public java.util.List<CreateTodoTaskResponseBodyContentFieldList> getContentFieldList() {
+        return this.contentFieldList;
     }
 
     public CreateTodoTaskResponseBody setCreatedTime(Long createdTime) {
@@ -259,6 +271,38 @@ public class CreateTodoTaskResponseBody extends TeaModel {
     }
     public String getSubject() {
         return this.subject;
+    }
+
+    public static class CreateTodoTaskResponseBodyContentFieldList extends TeaModel {
+        // 字段唯一标识
+        @NameInMap("fieldKey")
+        public String fieldKey;
+
+        // 字段值
+        @NameInMap("fieldValue")
+        public String fieldValue;
+
+        public static CreateTodoTaskResponseBodyContentFieldList build(java.util.Map<String, ?> map) throws Exception {
+            CreateTodoTaskResponseBodyContentFieldList self = new CreateTodoTaskResponseBodyContentFieldList();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateTodoTaskResponseBodyContentFieldList setFieldKey(String fieldKey) {
+            this.fieldKey = fieldKey;
+            return this;
+        }
+        public String getFieldKey() {
+            return this.fieldKey;
+        }
+
+        public CreateTodoTaskResponseBodyContentFieldList setFieldValue(String fieldValue) {
+            this.fieldValue = fieldValue;
+            return this;
+        }
+        public String getFieldValue() {
+            return this.fieldValue;
+        }
+
     }
 
     public static class CreateTodoTaskResponseBodyDetailUrl extends TeaModel {
