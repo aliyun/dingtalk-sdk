@@ -3410,7 +3410,7 @@ export class RoleMemberMapValue extends $tea.Model {
 
 export class BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList extends $tea.Model {
   amount?: string;
-  goodName?: string;
+  goodsName?: string;
   quantity?: string;
   revenueCode?: string;
   rowNo?: string;
@@ -3424,7 +3424,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOLis
   static names(): { [key: string]: string } {
     return {
       amount: 'amount',
-      goodName: 'goodName',
+      goodsName: 'goodsName',
       quantity: 'quantity',
       revenueCode: 'revenueCode',
       rowNo: 'rowNo',
@@ -3441,7 +3441,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOLis
   static types(): { [key: string]: any } {
     return {
       amount: 'string',
-      goodName: 'string',
+      goodsName: 'string',
       quantity: 'string',
       revenueCode: 'string',
       rowNo: 'string',

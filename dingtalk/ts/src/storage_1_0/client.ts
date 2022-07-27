@@ -819,18 +819,15 @@ export class GetCurrentAppHeaders extends $tea.Model {
 }
 
 export class GetCurrentAppRequest extends $tea.Model {
-  corpId?: string;
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
-      corpId: 'corpId',
       unionId: 'unionId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      corpId: 'string',
       unionId: 'string',
     };
   }
@@ -4039,10 +4036,6 @@ export default class Client extends OpenApi {
   async getCurrentAppWithOptions(request: GetCurrentAppRequest, headers: GetCurrentAppHeaders, runtime: $Util.RuntimeOptions): Promise<GetCurrentAppResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.corpId)) {
-      query["corpId"] = request.corpId;
-    }
-
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
     }

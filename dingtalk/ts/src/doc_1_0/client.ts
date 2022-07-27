@@ -436,10 +436,12 @@ export class CreateSheetRequest extends $tea.Model {
 }
 
 export class CreateSheetResponseBody extends $tea.Model {
+  id?: string;
   name?: string;
   visibility?: string;
   static names(): { [key: string]: string } {
     return {
+      id: 'id',
       name: 'name',
       visibility: 'visibility',
     };
@@ -447,6 +449,7 @@ export class CreateSheetResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      id: 'string',
       name: 'string',
       visibility: 'string',
     };

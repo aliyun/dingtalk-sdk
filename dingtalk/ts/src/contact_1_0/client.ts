@@ -1877,6 +1877,100 @@ export class IsvCardEventPushResponse extends $tea.Model {
   }
 }
 
+export class ListBasicRoleInPageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListBasicRoleInPageRequest extends $tea.Model {
+  agentId?: string;
+  maxResults?: number;
+  nextToken?: number;
+  static names(): { [key: string]: string } {
+    return {
+      agentId: 'agentId',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      agentId: 'string',
+      maxResults: 'number',
+      nextToken: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListBasicRoleInPageResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  list?: ListBasicRoleInPageResponseBodyList[];
+  nextToken?: number;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': ListBasicRoleInPageResponseBodyList },
+      nextToken: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListBasicRoleInPageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListBasicRoleInPageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListBasicRoleInPageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListContactHideSettingsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4676,6 +4770,134 @@ export class GetUserCardHolderListResponseBodyList extends $tea.Model {
   }
 }
 
+export class ListBasicRoleInPageResponseBodyListOpenActionOpenConditionOpenContactScope extends $tea.Model {
+  deptIds?: number[];
+  includeMemberDepts?: boolean;
+  includeSelfManageDepts?: boolean;
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      deptIds: 'deptIds',
+      includeMemberDepts: 'includeMemberDepts',
+      includeSelfManageDepts: 'includeSelfManageDepts',
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptIds: { 'type': 'array', 'itemType': 'number' },
+      includeMemberDepts: 'boolean',
+      includeSelfManageDepts: 'boolean',
+      userIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListBasicRoleInPageResponseBodyListOpenActionOpenCondition extends $tea.Model {
+  openContactScope?: ListBasicRoleInPageResponseBodyListOpenActionOpenConditionOpenContactScope;
+  static names(): { [key: string]: string } {
+    return {
+      openContactScope: 'openContactScope',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openContactScope: ListBasicRoleInPageResponseBodyListOpenActionOpenConditionOpenContactScope,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListBasicRoleInPageResponseBodyListOpenAction extends $tea.Model {
+  actionIds?: string[];
+  openCondition?: ListBasicRoleInPageResponseBodyListOpenActionOpenCondition;
+  static names(): { [key: string]: string } {
+    return {
+      actionIds: 'actionIds',
+      openCondition: 'openCondition',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actionIds: { 'type': 'array', 'itemType': 'string' },
+      openCondition: ListBasicRoleInPageResponseBodyListOpenActionOpenCondition,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListBasicRoleInPageResponseBodyListOpenMembers extends $tea.Model {
+  belongCorpId?: string;
+  memberId?: string;
+  memberType?: string;
+  operateUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      belongCorpId: 'belongCorpId',
+      memberId: 'memberId',
+      memberType: 'memberType',
+      operateUserId: 'operateUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      belongCorpId: 'string',
+      memberId: 'string',
+      memberType: 'string',
+      operateUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListBasicRoleInPageResponseBodyList extends $tea.Model {
+  openAction?: ListBasicRoleInPageResponseBodyListOpenAction;
+  openMembers?: ListBasicRoleInPageResponseBodyListOpenMembers[];
+  openResources?: string[];
+  openRoleId?: string;
+  openRoleName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openAction: 'openAction',
+      openMembers: 'openMembers',
+      openResources: 'openResources',
+      openRoleId: 'openRoleId',
+      openRoleName: 'openRoleName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openAction: ListBasicRoleInPageResponseBodyListOpenAction,
+      openMembers: { 'type': 'array', 'itemType': ListBasicRoleInPageResponseBodyListOpenMembers },
+      openResources: { 'type': 'array', 'itemType': 'string' },
+      openRoleId: 'string',
+      openRoleName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListContactHideSettingsResponseBodyList extends $tea.Model {
   active?: boolean;
   description?: string;
@@ -5808,6 +6030,43 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<IsvCardEventPushResponse>(await this.doROARequest("IsvCardEventPush", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/cards/events/push`, "json", req, runtime), new IsvCardEventPushResponse({}));
+  }
+
+  async listBasicRoleInPage(request: ListBasicRoleInPageRequest): Promise<ListBasicRoleInPageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListBasicRoleInPageHeaders({ });
+    return await this.listBasicRoleInPageWithOptions(request, headers, runtime);
+  }
+
+  async listBasicRoleInPageWithOptions(request: ListBasicRoleInPageRequest, headers: ListBasicRoleInPageHeaders, runtime: $Util.RuntimeOptions): Promise<ListBasicRoleInPageResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.agentId)) {
+      query["agentId"] = request.agentId;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ListBasicRoleInPageResponse>(await this.doROARequest("ListBasicRoleInPage", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/rbac/administrativeGroups/baseInfos`, "json", req, runtime), new ListBasicRoleInPageResponse({}));
   }
 
   async listContactHideSettings(request: ListContactHideSettingsRequest): Promise<ListContactHideSettingsResponse> {

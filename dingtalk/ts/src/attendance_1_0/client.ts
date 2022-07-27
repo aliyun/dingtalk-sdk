@@ -38,6 +38,7 @@ export class AddLeaveTypeRequest extends $tea.Model {
   leaveViewUnit?: string;
   naturalDayLeave?: boolean;
   submitTimeRule?: AddLeaveTypeRequestSubmitTimeRule;
+  visibilityRules?: AddLeaveTypeRequestVisibilityRules[];
   opUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -49,6 +50,7 @@ export class AddLeaveTypeRequest extends $tea.Model {
       leaveViewUnit: 'leaveViewUnit',
       naturalDayLeave: 'naturalDayLeave',
       submitTimeRule: 'submitTimeRule',
+      visibilityRules: 'visibilityRules',
       opUserId: 'opUserId',
     };
   }
@@ -63,6 +65,7 @@ export class AddLeaveTypeRequest extends $tea.Model {
       leaveViewUnit: 'string',
       naturalDayLeave: 'boolean',
       submitTimeRule: AddLeaveTypeRequestSubmitTimeRule,
+      visibilityRules: { 'type': 'array', 'itemType': AddLeaveTypeRequestVisibilityRules },
       opUserId: 'string',
     };
   }
@@ -2082,6 +2085,7 @@ export class UpdateLeaveTypeRequest extends $tea.Model {
   leaveViewUnit?: string;
   naturalDayLeave?: boolean;
   submitTimeRule?: UpdateLeaveTypeRequestSubmitTimeRule;
+  visibilityRules?: UpdateLeaveTypeRequestVisibilityRules[];
   opUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2094,6 +2098,7 @@ export class UpdateLeaveTypeRequest extends $tea.Model {
       leaveViewUnit: 'leaveViewUnit',
       naturalDayLeave: 'naturalDayLeave',
       submitTimeRule: 'submitTimeRule',
+      visibilityRules: 'visibilityRules',
       opUserId: 'opUserId',
     };
   }
@@ -2109,6 +2114,7 @@ export class UpdateLeaveTypeRequest extends $tea.Model {
       leaveViewUnit: 'string',
       naturalDayLeave: 'boolean',
       submitTimeRule: UpdateLeaveTypeRequestSubmitTimeRule,
+      visibilityRules: { 'type': 'array', 'itemType': UpdateLeaveTypeRequestVisibilityRules },
       opUserId: 'string',
     };
   }
@@ -2267,6 +2273,28 @@ export class AddLeaveTypeRequestSubmitTimeRule extends $tea.Model {
   }
 }
 
+export class AddLeaveTypeRequestVisibilityRules extends $tea.Model {
+  type?: string;
+  visible?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      type: 'type',
+      visible: 'visible',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      type: 'string',
+      visible: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddLeaveTypeResponseBodyResultLeaveCertificate extends $tea.Model {
   duration?: number;
   enable?: boolean;
@@ -2323,6 +2351,28 @@ export class AddLeaveTypeResponseBodyResultSubmitTimeRule extends $tea.Model {
   }
 }
 
+export class AddLeaveTypeResponseBodyResultVisibilityRules extends $tea.Model {
+  type?: string;
+  visible?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      type: 'type',
+      visible: 'visible',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      type: 'string',
+      visible: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddLeaveTypeResponseBodyResult extends $tea.Model {
   bizType?: string;
   hoursInPerDay?: number;
@@ -2332,6 +2382,7 @@ export class AddLeaveTypeResponseBodyResult extends $tea.Model {
   leaveViewUnit?: string;
   naturalDayLeave?: boolean;
   submitTimeRule?: AddLeaveTypeResponseBodyResultSubmitTimeRule;
+  visibilityRules?: AddLeaveTypeResponseBodyResultVisibilityRules[];
   static names(): { [key: string]: string } {
     return {
       bizType: 'bizType',
@@ -2342,6 +2393,7 @@ export class AddLeaveTypeResponseBodyResult extends $tea.Model {
       leaveViewUnit: 'leaveViewUnit',
       naturalDayLeave: 'naturalDayLeave',
       submitTimeRule: 'submitTimeRule',
+      visibilityRules: 'visibilityRules',
     };
   }
 
@@ -2355,6 +2407,7 @@ export class AddLeaveTypeResponseBodyResult extends $tea.Model {
       leaveViewUnit: 'string',
       naturalDayLeave: 'boolean',
       submitTimeRule: AddLeaveTypeResponseBodyResultSubmitTimeRule,
+      visibilityRules: { 'type': 'array', 'itemType': AddLeaveTypeResponseBodyResultVisibilityRules },
     };
   }
 
@@ -2830,6 +2883,28 @@ export class GetLeaveTypeResponseBodyResultSubmitTimeRule extends $tea.Model {
   }
 }
 
+export class GetLeaveTypeResponseBodyResultVisibilityRules extends $tea.Model {
+  type?: string;
+  visible?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      type: 'type',
+      visible: 'visible',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      type: 'string',
+      visible: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetLeaveTypeResponseBodyResult extends $tea.Model {
   bizType?: string;
   hoursInPerDay?: number;
@@ -2842,6 +2917,7 @@ export class GetLeaveTypeResponseBodyResult extends $tea.Model {
   submitTimeRule?: GetLeaveTypeResponseBodyResultSubmitTimeRule;
   validityType?: string;
   validityValue?: string;
+  visibilityRules?: GetLeaveTypeResponseBodyResultVisibilityRules[];
   static names(): { [key: string]: string } {
     return {
       bizType: 'bizType',
@@ -2855,6 +2931,7 @@ export class GetLeaveTypeResponseBodyResult extends $tea.Model {
       submitTimeRule: 'submitTimeRule',
       validityType: 'validityType',
       validityValue: 'validityValue',
+      visibilityRules: 'visibilityRules',
     };
   }
 
@@ -2871,6 +2948,7 @@ export class GetLeaveTypeResponseBodyResult extends $tea.Model {
       submitTimeRule: GetLeaveTypeResponseBodyResultSubmitTimeRule,
       validityType: 'string',
       validityValue: 'string',
+      visibilityRules: { 'type': 'array', 'itemType': GetLeaveTypeResponseBodyResultVisibilityRules },
     };
   }
 
@@ -3416,6 +3494,28 @@ export class UpdateLeaveTypeRequestSubmitTimeRule extends $tea.Model {
   }
 }
 
+export class UpdateLeaveTypeRequestVisibilityRules extends $tea.Model {
+  type?: string;
+  visible?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      type: 'type',
+      visible: 'visible',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      type: 'string',
+      visible: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateLeaveTypeResponseBodyResultLeaveCertificate extends $tea.Model {
   duration?: number;
   enable?: boolean;
@@ -3472,6 +3572,28 @@ export class UpdateLeaveTypeResponseBodyResultSubmitTimeRule extends $tea.Model 
   }
 }
 
+export class UpdateLeaveTypeResponseBodyResultVisibilityRules extends $tea.Model {
+  type?: string;
+  visible?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      type: 'type',
+      visible: 'visible',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      type: 'string',
+      visible: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateLeaveTypeResponseBodyResult extends $tea.Model {
   bizType?: string;
   hoursInPerDay?: number;
@@ -3481,6 +3603,7 @@ export class UpdateLeaveTypeResponseBodyResult extends $tea.Model {
   leaveViewUnit?: string;
   naturalDayLeave?: boolean;
   submitTimeRule?: UpdateLeaveTypeResponseBodyResultSubmitTimeRule;
+  visibilityRules?: UpdateLeaveTypeResponseBodyResultVisibilityRules[];
   static names(): { [key: string]: string } {
     return {
       bizType: 'bizType',
@@ -3491,6 +3614,7 @@ export class UpdateLeaveTypeResponseBodyResult extends $tea.Model {
       leaveViewUnit: 'leaveViewUnit',
       naturalDayLeave: 'naturalDayLeave',
       submitTimeRule: 'submitTimeRule',
+      visibilityRules: 'visibilityRules',
     };
   }
 
@@ -3504,6 +3628,7 @@ export class UpdateLeaveTypeResponseBodyResult extends $tea.Model {
       leaveViewUnit: 'string',
       naturalDayLeave: 'boolean',
       submitTimeRule: UpdateLeaveTypeResponseBodyResultSubmitTimeRule,
+      visibilityRules: { 'type': 'array', 'itemType': UpdateLeaveTypeResponseBodyResultVisibilityRules },
     };
   }
 
@@ -3616,6 +3741,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset($tea.toMap(request.submitTimeRule))) {
       body["submitTimeRule"] = request.submitTimeRule;
+    }
+
+    if (!Util.isUnset(request.visibilityRules)) {
+      body["visibilityRules"] = request.visibilityRules;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -4536,6 +4665,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset($tea.toMap(request.submitTimeRule))) {
       body["submitTimeRule"] = request.submitTimeRule;
+    }
+
+    if (!Util.isUnset(request.visibilityRules)) {
+      body["visibilityRules"] = request.visibilityRules;
     }
 
     let realHeaders : {[key: string ]: string} = { };
