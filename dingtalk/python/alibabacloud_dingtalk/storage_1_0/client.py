@@ -781,8 +781,6 @@ class Client(OpenApiClient):
     ) -> dingtalkstorage__1__0_models.GetCurrentAppResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.corp_id):
-            query['corpId'] = request.corp_id
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
         real_headers = {}
@@ -807,8 +805,6 @@ class Client(OpenApiClient):
     ) -> dingtalkstorage__1__0_models.GetCurrentAppResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.corp_id):
-            query['corpId'] = request.corp_id
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
         real_headers = {}

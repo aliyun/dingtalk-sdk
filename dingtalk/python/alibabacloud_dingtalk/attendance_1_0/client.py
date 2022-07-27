@@ -66,6 +66,8 @@ class Client(OpenApiClient):
             body['naturalDayLeave'] = request.natural_day_leave
         if not UtilClient.is_unset(request.submit_time_rule):
             body['submitTimeRule'] = request.submit_time_rule
+        if not UtilClient.is_unset(request.visibility_rules):
+            body['visibilityRules'] = request.visibility_rules
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -108,6 +110,8 @@ class Client(OpenApiClient):
             body['naturalDayLeave'] = request.natural_day_leave
         if not UtilClient.is_unset(request.submit_time_rule):
             body['submitTimeRule'] = request.submit_time_rule
+        if not UtilClient.is_unset(request.visibility_rules):
+            body['visibilityRules'] = request.visibility_rules
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1798,6 +1802,8 @@ class Client(OpenApiClient):
             body['naturalDayLeave'] = request.natural_day_leave
         if not UtilClient.is_unset(request.submit_time_rule):
             body['submitTimeRule'] = request.submit_time_rule
+        if not UtilClient.is_unset(request.visibility_rules):
+            body['visibilityRules'] = request.visibility_rules
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1842,6 +1848,8 @@ class Client(OpenApiClient):
             body['naturalDayLeave'] = request.natural_day_leave
         if not UtilClient.is_unset(request.submit_time_rule):
             body['submitTimeRule'] = request.submit_time_rule
+        if not UtilClient.is_unset(request.visibility_rules):
+            body['visibilityRules'] = request.visibility_rules
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

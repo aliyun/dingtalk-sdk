@@ -3649,6 +3649,381 @@ class IsvCardEventPushResponse(TeaModel):
         return self
 
 
+class ListBasicRoleInPageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListBasicRoleInPageRequest(TeaModel):
+    def __init__(
+        self,
+        agent_id: str = None,
+        max_results: int = None,
+        next_token: int = None,
+    ):
+        # 应用的agentId
+        self.agent_id = agent_id
+        # 单页查询的最大条目数
+        self.max_results = max_results
+        # 查询凭证，初始使用0
+        self.next_token = next_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class ListBasicRoleInPageResponseBodyListOpenActionOpenConditionOpenContactScope(TeaModel):
+    def __init__(
+        self,
+        dept_ids: List[int] = None,
+        include_member_depts: bool = None,
+        include_self_manage_depts: bool = None,
+        user_ids: List[str] = None,
+    ):
+        self.dept_ids = dept_ids
+        self.include_member_depts = include_member_depts
+        self.include_self_manage_depts = include_self_manage_depts
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_ids is not None:
+            result['deptIds'] = self.dept_ids
+        if self.include_member_depts is not None:
+            result['includeMemberDepts'] = self.include_member_depts
+        if self.include_self_manage_depts is not None:
+            result['includeSelfManageDepts'] = self.include_self_manage_depts
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptIds') is not None:
+            self.dept_ids = m.get('deptIds')
+        if m.get('includeMemberDepts') is not None:
+            self.include_member_depts = m.get('includeMemberDepts')
+        if m.get('includeSelfManageDepts') is not None:
+            self.include_self_manage_depts = m.get('includeSelfManageDepts')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class ListBasicRoleInPageResponseBodyListOpenActionOpenCondition(TeaModel):
+    def __init__(
+        self,
+        open_contact_scope: ListBasicRoleInPageResponseBodyListOpenActionOpenConditionOpenContactScope = None,
+    ):
+        self.open_contact_scope = open_contact_scope
+
+    def validate(self):
+        if self.open_contact_scope:
+            self.open_contact_scope.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_contact_scope is not None:
+            result['openContactScope'] = self.open_contact_scope.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openContactScope') is not None:
+            temp_model = ListBasicRoleInPageResponseBodyListOpenActionOpenConditionOpenContactScope()
+            self.open_contact_scope = temp_model.from_map(m['openContactScope'])
+        return self
+
+
+class ListBasicRoleInPageResponseBodyListOpenAction(TeaModel):
+    def __init__(
+        self,
+        action_ids: List[str] = None,
+        open_condition: ListBasicRoleInPageResponseBodyListOpenActionOpenCondition = None,
+    ):
+        self.action_ids = action_ids
+        self.open_condition = open_condition
+
+    def validate(self):
+        if self.open_condition:
+            self.open_condition.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_ids is not None:
+            result['actionIds'] = self.action_ids
+        if self.open_condition is not None:
+            result['openCondition'] = self.open_condition.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionIds') is not None:
+            self.action_ids = m.get('actionIds')
+        if m.get('openCondition') is not None:
+            temp_model = ListBasicRoleInPageResponseBodyListOpenActionOpenCondition()
+            self.open_condition = temp_model.from_map(m['openCondition'])
+        return self
+
+
+class ListBasicRoleInPageResponseBodyListOpenMembers(TeaModel):
+    def __init__(
+        self,
+        belong_corp_id: str = None,
+        member_id: str = None,
+        member_type: str = None,
+        operate_user_id: str = None,
+    ):
+        self.belong_corp_id = belong_corp_id
+        self.member_id = member_id
+        self.member_type = member_type
+        self.operate_user_id = operate_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.belong_corp_id is not None:
+            result['belongCorpId'] = self.belong_corp_id
+        if self.member_id is not None:
+            result['memberId'] = self.member_id
+        if self.member_type is not None:
+            result['memberType'] = self.member_type
+        if self.operate_user_id is not None:
+            result['operateUserId'] = self.operate_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('belongCorpId') is not None:
+            self.belong_corp_id = m.get('belongCorpId')
+        if m.get('memberId') is not None:
+            self.member_id = m.get('memberId')
+        if m.get('memberType') is not None:
+            self.member_type = m.get('memberType')
+        if m.get('operateUserId') is not None:
+            self.operate_user_id = m.get('operateUserId')
+        return self
+
+
+class ListBasicRoleInPageResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        open_action: ListBasicRoleInPageResponseBodyListOpenAction = None,
+        open_members: List[ListBasicRoleInPageResponseBodyListOpenMembers] = None,
+        open_resources: List[str] = None,
+        open_role_id: str = None,
+        open_role_name: str = None,
+    ):
+        self.open_action = open_action
+        self.open_members = open_members
+        self.open_resources = open_resources
+        self.open_role_id = open_role_id
+        self.open_role_name = open_role_name
+
+    def validate(self):
+        if self.open_action:
+            self.open_action.validate()
+        if self.open_members:
+            for k in self.open_members:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_action is not None:
+            result['openAction'] = self.open_action.to_map()
+        result['openMembers'] = []
+        if self.open_members is not None:
+            for k in self.open_members:
+                result['openMembers'].append(k.to_map() if k else None)
+        if self.open_resources is not None:
+            result['openResources'] = self.open_resources
+        if self.open_role_id is not None:
+            result['openRoleId'] = self.open_role_id
+        if self.open_role_name is not None:
+            result['openRoleName'] = self.open_role_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openAction') is not None:
+            temp_model = ListBasicRoleInPageResponseBodyListOpenAction()
+            self.open_action = temp_model.from_map(m['openAction'])
+        self.open_members = []
+        if m.get('openMembers') is not None:
+            for k in m.get('openMembers'):
+                temp_model = ListBasicRoleInPageResponseBodyListOpenMembers()
+                self.open_members.append(temp_model.from_map(k))
+        if m.get('openResources') is not None:
+            self.open_resources = m.get('openResources')
+        if m.get('openRoleId') is not None:
+            self.open_role_id = m.get('openRoleId')
+        if m.get('openRoleName') is not None:
+            self.open_role_name = m.get('openRoleName')
+        return self
+
+
+class ListBasicRoleInPageResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        list: List[ListBasicRoleInPageResponseBodyList] = None,
+        next_token: int = None,
+    ):
+        self.has_more = has_more
+        self.list = list
+        self.next_token = next_token
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = ListBasicRoleInPageResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class ListBasicRoleInPageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListBasicRoleInPageResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListBasicRoleInPageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ListContactHideSettingsHeaders(TeaModel):
     def __init__(
         self,

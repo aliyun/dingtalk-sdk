@@ -1078,9 +1078,11 @@ class CreateSheetRequest(TeaModel):
 class CreateSheetResponseBody(TeaModel):
     def __init__(
         self,
+        id: str = None,
         name: str = None,
         visibility: str = None,
     ):
+        self.id = id
         # 创建的工作表的名称。当输入参数中的工作表名称在表格中已存在时，可能与输入参数指定的工作表名称不同。
         self.name = name
         # 工作表可见性
@@ -1095,6 +1097,8 @@ class CreateSheetResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.id is not None:
+            result['id'] = self.id
         if self.name is not None:
             result['name'] = self.name
         if self.visibility is not None:
@@ -1103,6 +1107,8 @@ class CreateSheetResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('visibility') is not None:

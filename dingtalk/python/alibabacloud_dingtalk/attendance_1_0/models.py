@@ -135,6 +135,41 @@ class AddLeaveTypeRequestSubmitTimeRule(TeaModel):
         return self
 
 
+class AddLeaveTypeRequestVisibilityRules(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        visible: List[str] = None,
+    ):
+        # 规则类型：dept-部门；staff-员工；label-角色
+        self.type = type
+        # 规则数据：当type=staff时，传员工userId列表；当type=dept时，传部门id列表；当type=label时，传角色id列表
+        self.visible = visible
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.visible is not None:
+            result['visible'] = self.visible
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('visible') is not None:
+            self.visible = m.get('visible')
+        return self
+
+
 class AddLeaveTypeRequest(TeaModel):
     def __init__(
         self,
@@ -146,6 +181,7 @@ class AddLeaveTypeRequest(TeaModel):
         leave_view_unit: str = None,
         natural_day_leave: bool = None,
         submit_time_rule: AddLeaveTypeRequestSubmitTimeRule = None,
+        visibility_rules: List[AddLeaveTypeRequestVisibilityRules] = None,
         op_user_id: str = None,
     ):
         # 假期类型，普通假期或者加班转调休假期。(general_leave、lieu_leave其中一种)
@@ -164,6 +200,8 @@ class AddLeaveTypeRequest(TeaModel):
         self.natural_day_leave = natural_day_leave
         # 限时提交规则
         self.submit_time_rule = submit_time_rule
+        # 适用范围规则列表：哪些部门/员工可以使用该假期类型，不传默认为全公司
+        self.visibility_rules = visibility_rules
         # 操作者ID
         self.op_user_id = op_user_id
 
@@ -172,6 +210,10 @@ class AddLeaveTypeRequest(TeaModel):
             self.leave_certificate.validate()
         if self.submit_time_rule:
             self.submit_time_rule.validate()
+        if self.visibility_rules:
+            for k in self.visibility_rules:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -195,6 +237,10 @@ class AddLeaveTypeRequest(TeaModel):
             result['naturalDayLeave'] = self.natural_day_leave
         if self.submit_time_rule is not None:
             result['submitTimeRule'] = self.submit_time_rule.to_map()
+        result['visibilityRules'] = []
+        if self.visibility_rules is not None:
+            for k in self.visibility_rules:
+                result['visibilityRules'].append(k.to_map() if k else None)
         if self.op_user_id is not None:
             result['opUserId'] = self.op_user_id
         return result
@@ -219,6 +265,11 @@ class AddLeaveTypeRequest(TeaModel):
         if m.get('submitTimeRule') is not None:
             temp_model = AddLeaveTypeRequestSubmitTimeRule()
             self.submit_time_rule = temp_model.from_map(m['submitTimeRule'])
+        self.visibility_rules = []
+        if m.get('visibilityRules') is not None:
+            for k in m.get('visibilityRules'):
+                temp_model = AddLeaveTypeRequestVisibilityRules()
+                self.visibility_rules.append(temp_model.from_map(k))
         if m.get('opUserId') is not None:
             self.op_user_id = m.get('opUserId')
         return self
@@ -322,6 +373,41 @@ class AddLeaveTypeResponseBodyResultSubmitTimeRule(TeaModel):
         return self
 
 
+class AddLeaveTypeResponseBodyResultVisibilityRules(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        visible: List[str] = None,
+    ):
+        # 规则类型：dept-部门；staff-员工；label-角色
+        self.type = type
+        # 规则数据：当type=staff时，传员工userId列表；当type=dept时，传部门id列表；当type=label时，传角色id列表
+        self.visible = visible
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.visible is not None:
+            result['visible'] = self.visible
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('visible') is not None:
+            self.visible = m.get('visible')
+        return self
+
+
 class AddLeaveTypeResponseBodyResult(TeaModel):
     def __init__(
         self,
@@ -333,6 +419,7 @@ class AddLeaveTypeResponseBodyResult(TeaModel):
         leave_view_unit: str = None,
         natural_day_leave: bool = None,
         submit_time_rule: AddLeaveTypeResponseBodyResultSubmitTimeRule = None,
+        visibility_rules: List[AddLeaveTypeResponseBodyResultVisibilityRules] = None,
     ):
         # 假期类型，普通假期或者加班转调休假期。(general_leave、lieu_leave其中一种)
         self.biz_type = biz_type
@@ -350,12 +437,18 @@ class AddLeaveTypeResponseBodyResult(TeaModel):
         self.natural_day_leave = natural_day_leave
         # 限时提交规则
         self.submit_time_rule = submit_time_rule
+        # 适用范围规则列表：哪些部门/员工可以使用该假期类型，不传默认为全公司
+        self.visibility_rules = visibility_rules
 
     def validate(self):
         if self.leave_certificate:
             self.leave_certificate.validate()
         if self.submit_time_rule:
             self.submit_time_rule.validate()
+        if self.visibility_rules:
+            for k in self.visibility_rules:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -379,6 +472,10 @@ class AddLeaveTypeResponseBodyResult(TeaModel):
             result['naturalDayLeave'] = self.natural_day_leave
         if self.submit_time_rule is not None:
             result['submitTimeRule'] = self.submit_time_rule.to_map()
+        result['visibilityRules'] = []
+        if self.visibility_rules is not None:
+            for k in self.visibility_rules:
+                result['visibilityRules'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
@@ -401,6 +498,11 @@ class AddLeaveTypeResponseBodyResult(TeaModel):
         if m.get('submitTimeRule') is not None:
             temp_model = AddLeaveTypeResponseBodyResultSubmitTimeRule()
             self.submit_time_rule = temp_model.from_map(m['submitTimeRule'])
+        self.visibility_rules = []
+        if m.get('visibilityRules') is not None:
+            for k in m.get('visibilityRules'):
+                temp_model = AddLeaveTypeResponseBodyResultVisibilityRules()
+                self.visibility_rules.append(temp_model.from_map(k))
         return self
 
 
@@ -3049,6 +3151,41 @@ class GetLeaveTypeResponseBodyResultSubmitTimeRule(TeaModel):
         return self
 
 
+class GetLeaveTypeResponseBodyResultVisibilityRules(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        visible: List[str] = None,
+    ):
+        # 规则类型：dept-部门；staff-员工；label-角色
+        self.type = type
+        # 规则数据：当type=staff时，传员工userId列表；当type=dept时，传部门id列表；当type=label时，传角色id列表
+        self.visible = visible
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.visible is not None:
+            result['visible'] = self.visible
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('visible') is not None:
+            self.visible = m.get('visible')
+        return self
+
+
 class GetLeaveTypeResponseBodyResult(TeaModel):
     def __init__(
         self,
@@ -3063,6 +3200,7 @@ class GetLeaveTypeResponseBodyResult(TeaModel):
         submit_time_rule: GetLeaveTypeResponseBodyResultSubmitTimeRule = None,
         validity_type: str = None,
         validity_value: str = None,
+        visibility_rules: List[GetLeaveTypeResponseBodyResultVisibilityRules] = None,
     ):
         # 假期类型，普通假期或者加班转调休假期。(general_leave、lieu_leave其中一种)
         self.biz_type = biz_type
@@ -3086,12 +3224,18 @@ class GetLeaveTypeResponseBodyResult(TeaModel):
         self.validity_type = validity_type
         # 延长日期(当validity_type为absolute_time该值该值不为空且满足yy-mm格式 validity_type为relative_time该值为大于1的整数)
         self.validity_value = validity_value
+        # 适用范围规则列表：哪些部门/员工可以使用该假期类型，不传默认为全公司
+        self.visibility_rules = visibility_rules
 
     def validate(self):
         if self.leave_certificate:
             self.leave_certificate.validate()
         if self.submit_time_rule:
             self.submit_time_rule.validate()
+        if self.visibility_rules:
+            for k in self.visibility_rules:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -3121,6 +3265,10 @@ class GetLeaveTypeResponseBodyResult(TeaModel):
             result['validityType'] = self.validity_type
         if self.validity_value is not None:
             result['validityValue'] = self.validity_value
+        result['visibilityRules'] = []
+        if self.visibility_rules is not None:
+            for k in self.visibility_rules:
+                result['visibilityRules'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
@@ -3149,6 +3297,11 @@ class GetLeaveTypeResponseBodyResult(TeaModel):
             self.validity_type = m.get('validityType')
         if m.get('validityValue') is not None:
             self.validity_value = m.get('validityValue')
+        self.visibility_rules = []
+        if m.get('visibilityRules') is not None:
+            for k in m.get('visibilityRules'):
+                temp_model = GetLeaveTypeResponseBodyResultVisibilityRules()
+                self.visibility_rules.append(temp_model.from_map(k))
         return self
 
 
@@ -5877,6 +6030,41 @@ class UpdateLeaveTypeRequestSubmitTimeRule(TeaModel):
         return self
 
 
+class UpdateLeaveTypeRequestVisibilityRules(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        visible: List[str] = None,
+    ):
+        # 规则类型：dept-部门；staff-员工；label-角色
+        self.type = type
+        # 规则数据：当type=staff时，传员工userId列表；当type=dept时，传部门id列表；当type=label时，传角色id列表
+        self.visible = visible
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.visible is not None:
+            result['visible'] = self.visible
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('visible') is not None:
+            self.visible = m.get('visible')
+        return self
+
+
 class UpdateLeaveTypeRequest(TeaModel):
     def __init__(
         self,
@@ -5889,6 +6077,7 @@ class UpdateLeaveTypeRequest(TeaModel):
         leave_view_unit: str = None,
         natural_day_leave: bool = None,
         submit_time_rule: UpdateLeaveTypeRequestSubmitTimeRule = None,
+        visibility_rules: List[UpdateLeaveTypeRequestVisibilityRules] = None,
         op_user_id: str = None,
     ):
         # 假期类型，普通假期或者加班转调休假期。(general_leave、lieu_leave其中一种)
@@ -5909,6 +6098,8 @@ class UpdateLeaveTypeRequest(TeaModel):
         self.natural_day_leave = natural_day_leave
         # 限时提交规则
         self.submit_time_rule = submit_time_rule
+        # 适用范围规则列表：哪些部门/员工可以使用该假期类型，不传默认为全公司
+        self.visibility_rules = visibility_rules
         # 操作者ID
         self.op_user_id = op_user_id
 
@@ -5917,6 +6108,10 @@ class UpdateLeaveTypeRequest(TeaModel):
             self.leave_certificate.validate()
         if self.submit_time_rule:
             self.submit_time_rule.validate()
+        if self.visibility_rules:
+            for k in self.visibility_rules:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -5942,6 +6137,10 @@ class UpdateLeaveTypeRequest(TeaModel):
             result['naturalDayLeave'] = self.natural_day_leave
         if self.submit_time_rule is not None:
             result['submitTimeRule'] = self.submit_time_rule.to_map()
+        result['visibilityRules'] = []
+        if self.visibility_rules is not None:
+            for k in self.visibility_rules:
+                result['visibilityRules'].append(k.to_map() if k else None)
         if self.op_user_id is not None:
             result['opUserId'] = self.op_user_id
         return result
@@ -5968,6 +6167,11 @@ class UpdateLeaveTypeRequest(TeaModel):
         if m.get('submitTimeRule') is not None:
             temp_model = UpdateLeaveTypeRequestSubmitTimeRule()
             self.submit_time_rule = temp_model.from_map(m['submitTimeRule'])
+        self.visibility_rules = []
+        if m.get('visibilityRules') is not None:
+            for k in m.get('visibilityRules'):
+                temp_model = UpdateLeaveTypeRequestVisibilityRules()
+                self.visibility_rules.append(temp_model.from_map(k))
         if m.get('opUserId') is not None:
             self.op_user_id = m.get('opUserId')
         return self
@@ -6071,6 +6275,41 @@ class UpdateLeaveTypeResponseBodyResultSubmitTimeRule(TeaModel):
         return self
 
 
+class UpdateLeaveTypeResponseBodyResultVisibilityRules(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        visible: List[str] = None,
+    ):
+        # 规则类型：dept-部门；staff-员工；label-角色
+        self.type = type
+        # 规则数据：当type=staff时，传员工userId列表；当type=dept时，传部门id列表；当type=label时，传角色id列表
+        self.visible = visible
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.visible is not None:
+            result['visible'] = self.visible
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('visible') is not None:
+            self.visible = m.get('visible')
+        return self
+
+
 class UpdateLeaveTypeResponseBodyResult(TeaModel):
     def __init__(
         self,
@@ -6082,6 +6321,7 @@ class UpdateLeaveTypeResponseBodyResult(TeaModel):
         leave_view_unit: str = None,
         natural_day_leave: bool = None,
         submit_time_rule: UpdateLeaveTypeResponseBodyResultSubmitTimeRule = None,
+        visibility_rules: List[UpdateLeaveTypeResponseBodyResultVisibilityRules] = None,
     ):
         # 假期类型，普通假期或者加班转调休假期。(general_leave、lieu_leave其中一种)
         self.biz_type = biz_type
@@ -6099,12 +6339,18 @@ class UpdateLeaveTypeResponseBodyResult(TeaModel):
         self.natural_day_leave = natural_day_leave
         # 限时提交规则
         self.submit_time_rule = submit_time_rule
+        # 适用范围规则列表：哪些部门/员工可以使用该假期类型，不传默认为全公司
+        self.visibility_rules = visibility_rules
 
     def validate(self):
         if self.leave_certificate:
             self.leave_certificate.validate()
         if self.submit_time_rule:
             self.submit_time_rule.validate()
+        if self.visibility_rules:
+            for k in self.visibility_rules:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -6128,6 +6374,10 @@ class UpdateLeaveTypeResponseBodyResult(TeaModel):
             result['naturalDayLeave'] = self.natural_day_leave
         if self.submit_time_rule is not None:
             result['submitTimeRule'] = self.submit_time_rule.to_map()
+        result['visibilityRules'] = []
+        if self.visibility_rules is not None:
+            for k in self.visibility_rules:
+                result['visibilityRules'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
@@ -6150,6 +6400,11 @@ class UpdateLeaveTypeResponseBodyResult(TeaModel):
         if m.get('submitTimeRule') is not None:
             temp_model = UpdateLeaveTypeResponseBodyResultSubmitTimeRule()
             self.submit_time_rule = temp_model.from_map(m['submitTimeRule'])
+        self.visibility_rules = []
+        if m.get('visibilityRules') is not None:
+            for k in m.get('visibilityRules'):
+                temp_model = UpdateLeaveTypeResponseBodyResultVisibilityRules()
+                self.visibility_rules.append(temp_model.from_map(k))
         return self
 
 

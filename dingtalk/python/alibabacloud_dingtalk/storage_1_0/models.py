@@ -450,7 +450,7 @@ class AddFolderResponseBody(TeaModel):
         dentry: AddFolderResponseBodyDentry = None,
     ):
         # 文件夹信息
-        # dentry.type等于DentryTypeEnum.FOLDER表示是文件夹
+        # dentry.type等于FOLDER表示是文件夹
         self.dentry = dentry
 
     def validate(self):
@@ -607,7 +607,7 @@ class AddSpaceRequestOption(TeaModel):
         self.capabilities = capabilities
         # 空间名称，默认无空间名称
         self.name = name
-        # owner类型, 空间Owner可以是用户或应用, 详见 SpaceOwnerTypeEnum
+        # owner类型, 空间Owner可以是用户或应用
         # 如果是应用类型，需要单独授权
         # 枚举值:
         # 	USER: 用户类型
@@ -777,7 +777,7 @@ class AddSpaceResponseBodySpace(TeaModel):
     ):
         # 开放平台应用appId
         self.app_id = app_id
-        # 空间能力项. key详见 SpaceCapabilityEnum
+        # 空间能力项
         self.capabilities = capabilities
         # 空间归属企业的id
         self.corp_id = corp_id
@@ -795,7 +795,7 @@ class AddSpaceResponseBodySpace(TeaModel):
         self.name = name
         # 所有者id, 根据ownerType定义, 确定值的所属类型
         self.owner_id = owner_id
-        # owner类型, 详见SpaceOwnerTypeEnum
+        # owner类型
         # 枚举值:
         # 	USER: 用户类型
         # 	APP: App类型
@@ -804,7 +804,8 @@ class AddSpaceResponseBodySpace(TeaModel):
         self.owner_type = owner_type
         # 总容量
         self.quota = quota
-        # 业务场景，可以自定义，表示多个不同空间的聚合，可以提供对特定场景做能力设计、容量管理，如根据场景来做搜索或查询。创建空间时，不指定scene, 默认值是default
+        # 业务场景，可以自定义，表示多个不同空间的聚合，可以提供对特定场景做能力设计、容量管理，如根据场景来做搜索或查询。
+        # 创建空间时，不指定scene, 默认值是default
         # 默认值:
         # 	default
         self.scene = scene
@@ -2072,7 +2073,7 @@ class DeleteDentryResponseBody(TeaModel):
         # 是否是异步任务
         # 如果操作对象有子节点，则会异步处理
         self.async_ = async_
-        # 任务Id，用于查询任务执行状态; 查询接口开发中
+        # 任务id，用于查询任务执行状态; 查询接口开发中
         self.task_id = task_id
 
     def validate(self):
@@ -2564,11 +2565,8 @@ class GetCurrentAppHeaders(TeaModel):
 class GetCurrentAppRequest(TeaModel):
     def __init__(
         self,
-        corp_id: str = None,
         union_id: str = None,
     ):
-        # 应用归属企业的Id
-        self.corp_id = corp_id
         # 用户id
         self.union_id = union_id
 
@@ -2581,16 +2579,12 @@ class GetCurrentAppRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
         if self.union_id is not None:
             result['unionId'] = self.union_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
         if m.get('unionId') is not None:
             self.union_id = m.get('unionId')
         return self
@@ -2608,6 +2602,7 @@ class GetCurrentAppResponseBodyAppPartitionsQuota(TeaModel):
         # 当前应用容量未设置max时，返回空，此时应用共享该企业剩余可用容量
         self.max = max
         # 容量类型
+        # 如果是企业维度容量，此值是PRIVATE, 表示企业独占
         # 枚举值:
         # 	SHARE: 共享容量
         # 此模式下，Quota.max为空，表示共享企业容量
@@ -4349,7 +4344,7 @@ class GetSpaceResponseBodySpace(TeaModel):
     ):
         # 开放平台应用appId
         self.app_id = app_id
-        # 空间能力项. key详见 SpaceCapabilityEnum
+        # 空间能力项
         self.capabilities = capabilities
         # 空间归属企业的id
         self.corp_id = corp_id
@@ -4367,7 +4362,7 @@ class GetSpaceResponseBodySpace(TeaModel):
         self.name = name
         # 所有者id, 根据ownerType定义, 确定值的所属类型
         self.owner_id = owner_id
-        # owner类型, 详见SpaceOwnerTypeEnum
+        # owner类型
         # 枚举值:
         # 	USER: 用户类型
         # 	APP: App类型
@@ -4376,7 +4371,8 @@ class GetSpaceResponseBodySpace(TeaModel):
         self.owner_type = owner_type
         # 总容量
         self.quota = quota
-        # 业务场景，可以自定义，表示多个不同空间的聚合，可以提供对特定场景做能力设计、容量管理，如根据场景来做搜索或查询。创建空间时，不指定scene, 默认值是default
+        # 业务场景，可以自定义，表示多个不同空间的聚合，可以提供对特定场景做能力设计、容量管理，如根据场景来做搜索或查询。
+        # 创建空间时，不指定scene, 默认值是default
         # 默认值:
         # 	default
         self.scene = scene
@@ -5413,7 +5409,7 @@ class ListRecycleItemsRequest(TeaModel):
         # 默认值:
         # 	50
         self.max_results = max_results
-        # 分页游标，首次拉取nextToken传null
+        # 分页游标，首次拉取nextToken传空
         self.next_token = next_token
         # 用户id
         self.union_id = union_id
@@ -5977,7 +5973,7 @@ class MoveDentryResponseBody(TeaModel):
         self.async_ = async_
         # 文件信息
         self.dentry = dentry
-        # 任务Id，用于查询任务执行状态; 查询接口开发中
+        # 任务id，用于查询任务执行状态; 查询接口开发中
         self.task_id = task_id
 
     def validate(self):
