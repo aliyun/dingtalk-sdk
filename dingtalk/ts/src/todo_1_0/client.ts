@@ -127,7 +127,9 @@ export class CreateTodoTaskHeaders extends $tea.Model {
 }
 
 export class CreateTodoTaskRequest extends $tea.Model {
+  actionList?: CreateTodoTaskRequestActionList[];
   bizCategoryId?: string;
+  contentFieldList?: CreateTodoTaskRequestContentFieldList[];
   creatorId?: string;
   description?: string;
   detailUrl?: CreateTodoTaskRequestDetailUrl;
@@ -142,7 +144,9 @@ export class CreateTodoTaskRequest extends $tea.Model {
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
+      actionList: 'actionList',
       bizCategoryId: 'bizCategoryId',
+      contentFieldList: 'contentFieldList',
       creatorId: 'creatorId',
       description: 'description',
       detailUrl: 'detailUrl',
@@ -160,7 +164,9 @@ export class CreateTodoTaskRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      actionList: { 'type': 'array', 'itemType': CreateTodoTaskRequestActionList },
       bizCategoryId: 'string',
+      contentFieldList: { 'type': 'array', 'itemType': CreateTodoTaskRequestContentFieldList },
       creatorId: 'string',
       description: 'string',
       detailUrl: CreateTodoTaskRequestDetailUrl,
@@ -183,6 +189,7 @@ export class CreateTodoTaskRequest extends $tea.Model {
 
 export class CreateTodoTaskResponseBody extends $tea.Model {
   bizTag?: string;
+  contentFieldList?: CreateTodoTaskResponseBodyContentFieldList[];
   createdTime?: number;
   creatorId?: string;
   description?: string;
@@ -206,6 +213,7 @@ export class CreateTodoTaskResponseBody extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       bizTag: 'bizTag',
+      contentFieldList: 'contentFieldList',
       createdTime: 'createdTime',
       creatorId: 'creatorId',
       description: 'description',
@@ -232,6 +240,7 @@ export class CreateTodoTaskResponseBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       bizTag: 'string',
+      contentFieldList: { 'type': 'array', 'itemType': CreateTodoTaskResponseBodyContentFieldList },
       createdTime: 'number',
       creatorId: 'string',
       description: 'string',
@@ -1586,6 +1595,87 @@ export class UpdateTodoTypeConfigResponse extends $tea.Model {
   }
 }
 
+export class CreateTodoTaskRequestActionListParam extends $tea.Model {
+  body?: string;
+  header?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      body: 'body',
+      header: 'header',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      body: 'string',
+      header: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTodoTaskRequestActionList extends $tea.Model {
+  actionKey?: string;
+  actionType?: number;
+  buttonStyleType?: number;
+  param?: CreateTodoTaskRequestActionListParam;
+  pcUrl?: string;
+  title?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      actionKey: 'actionKey',
+      actionType: 'actionType',
+      buttonStyleType: 'buttonStyleType',
+      param: 'param',
+      pcUrl: 'pcUrl',
+      title: 'title',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actionKey: 'string',
+      actionType: 'number',
+      buttonStyleType: 'number',
+      param: CreateTodoTaskRequestActionListParam,
+      pcUrl: 'string',
+      title: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTodoTaskRequestContentFieldList extends $tea.Model {
+  fieldKey?: string;
+  fieldValue?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldKey: 'fieldKey',
+      fieldValue: 'fieldValue',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldKey: 'string',
+      fieldValue: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateTodoTaskRequestDetailUrl extends $tea.Model {
   appUrl?: string;
   pcUrl?: string;
@@ -1619,6 +1709,28 @@ export class CreateTodoTaskRequestNotifyConfigs extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       dingNotify: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTodoTaskResponseBodyContentFieldList extends $tea.Model {
+  fieldKey?: string;
+  fieldValue?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldKey: 'fieldKey',
+      fieldValue: 'fieldValue',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldKey: 'string',
+      fieldValue: 'string',
     };
   }
 
@@ -2489,8 +2601,16 @@ export default class Client extends OpenApi {
     }
 
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.actionList)) {
+      body["actionList"] = request.actionList;
+    }
+
     if (!Util.isUnset(request.bizCategoryId)) {
       body["bizCategoryId"] = request.bizCategoryId;
+    }
+
+    if (!Util.isUnset(request.contentFieldList)) {
+      body["contentFieldList"] = request.contentFieldList;
     }
 
     if (!Util.isUnset(request.creatorId)) {

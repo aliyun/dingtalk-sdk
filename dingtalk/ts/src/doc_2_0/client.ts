@@ -951,6 +951,103 @@ export class QuerySpaceResponse extends $tea.Model {
   }
 }
 
+export class RelatedSpacesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RelatedSpacesRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: string;
+  operatorId?: string;
+  teamId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      operatorId: 'operatorId',
+      teamId: 'teamId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'string',
+      operatorId: 'string',
+      teamId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RelatedSpacesResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  items?: SpaceModel[];
+  nextToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      items: 'items',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      items: { 'type': 'array', 'itemType': SpaceModel },
+      nextToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RelatedSpacesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: RelatedSpacesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: RelatedSpacesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RenameDentryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1928,6 +2025,47 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QuerySpaceResponse>(await this.doROARequest("QuerySpace", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/spaces/${spaceId}`, "json", req, runtime), new QuerySpaceResponse({}));
+  }
+
+  async relatedSpaces(request: RelatedSpacesRequest): Promise<RelatedSpacesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RelatedSpacesHeaders({ });
+    return await this.relatedSpacesWithOptions(request, headers, runtime);
+  }
+
+  async relatedSpacesWithOptions(request: RelatedSpacesRequest, headers: RelatedSpacesHeaders, runtime: $Util.RuntimeOptions): Promise<RelatedSpacesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.teamId)) {
+      query["teamId"] = request.teamId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<RelatedSpacesResponse>(await this.doROARequest("RelatedSpaces", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/relations/spaces`, "json", req, runtime), new RelatedSpacesResponse({}));
   }
 
   async renameDentry(spaceId: string, dentryId: string, request: RenameDentryRequest): Promise<RenameDentryResponse> {

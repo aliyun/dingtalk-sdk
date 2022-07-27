@@ -1386,6 +1386,112 @@ export class GetSheetResponse extends $tea.Model {
   }
 }
 
+export class GetTemplateByIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTemplateByIdRequest extends $tea.Model {
+  belong?: string;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      belong: 'belong',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      belong: 'string',
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTemplateByIdResponseBody extends $tea.Model {
+  coverUrl?: string;
+  createTime?: number;
+  docType?: string;
+  id?: string;
+  templateType?: string;
+  title?: string;
+  updateTime?: number;
+  workspaceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      coverUrl: 'coverUrl',
+      createTime: 'createTime',
+      docType: 'docType',
+      id: 'id',
+      templateType: 'templateType',
+      title: 'title',
+      updateTime: 'updateTime',
+      workspaceId: 'workspaceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      coverUrl: 'string',
+      createTime: 'number',
+      docType: 'string',
+      id: 'string',
+      templateType: 'string',
+      title: 'string',
+      updateTime: 'number',
+      workspaceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTemplateByIdResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetTemplateByIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetTemplateByIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetWorkspaceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3732,6 +3838,40 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetSheetResponse>(await this.doROARequest("GetSheet", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}`, "json", req, runtime), new GetSheetResponse({}));
+  }
+
+  async getTemplateById(templateId: string, request: GetTemplateByIdRequest): Promise<GetTemplateByIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetTemplateByIdHeaders({ });
+    return await this.getTemplateByIdWithOptions(templateId, request, headers, runtime);
+  }
+
+  async getTemplateByIdWithOptions(templateId: string, request: GetTemplateByIdRequest, headers: GetTemplateByIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetTemplateByIdResponse> {
+    Util.validateModel(request);
+    templateId = OpenApiUtil.getEncodeParam(templateId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.belong)) {
+      query["belong"] = request.belong;
+    }
+
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetTemplateByIdResponse>(await this.doROARequest("GetTemplateById", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/templates/${templateId}`, "json", req, runtime), new GetTemplateByIdResponse({}));
   }
 
   async getWorkspace(workspaceId: string): Promise<GetWorkspaceResponse> {

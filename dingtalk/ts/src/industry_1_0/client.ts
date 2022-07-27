@@ -141,7 +141,8 @@ export class CampusCreateCampusRequest extends $tea.Model {
   creatorUnionId?: string;
   description?: string;
   extend?: string;
-  orderInfo?: number;
+  orderEndTime?: number;
+  orderInfo?: string;
   orderStartTime?: number;
   provId?: number;
   telephone?: string;
@@ -158,6 +159,7 @@ export class CampusCreateCampusRequest extends $tea.Model {
       creatorUnionId: 'creatorUnionId',
       description: 'description',
       extend: 'extend',
+      orderEndTime: 'orderEndTime',
       orderInfo: 'orderInfo',
       orderStartTime: 'orderStartTime',
       provId: 'provId',
@@ -178,7 +180,8 @@ export class CampusCreateCampusRequest extends $tea.Model {
       creatorUnionId: 'string',
       description: 'string',
       extend: 'string',
-      orderInfo: 'number',
+      orderEndTime: 'number',
+      orderInfo: 'string',
       orderStartTime: 'number',
       provId: 'number',
       telephone: 'string',
@@ -279,16 +282,16 @@ export class CampusCreateCampusGroupRequest extends $tea.Model {
 }
 
 export class CampusCreateCampusGroupResponseBody extends $tea.Model {
-  content?: number;
+  groupId?: number;
   static names(): { [key: string]: string } {
     return {
-      content: 'content',
+      groupId: 'groupId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      content: 'number',
+      groupId: 'number',
     };
   }
 
@@ -543,16 +546,16 @@ export class CampusDeleteCampusGroupRequest extends $tea.Model {
 }
 
 export class CampusDeleteCampusGroupResponseBody extends $tea.Model {
-  content?: string;
+  success?: boolean;
   static names(): { [key: string]: string } {
     return {
-      content: 'content',
+      success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      content: 'string',
+      success: 'boolean',
     };
   }
 
@@ -9732,6 +9735,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.extend)) {
       body["extend"] = request.extend;
+    }
+
+    if (!Util.isUnset(request.orderEndTime)) {
+      body["orderEndTime"] = request.orderEndTime;
     }
 
     if (!Util.isUnset(request.orderInfo)) {
