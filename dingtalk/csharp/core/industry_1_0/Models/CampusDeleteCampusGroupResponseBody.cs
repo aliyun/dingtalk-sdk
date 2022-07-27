@@ -9,12 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class CampusDeleteCampusGroupResponseBody : TeaModel {
-        /// <summary>
-        /// result
-        /// </summary>
-        [NameInMap("content")]
+        [NameInMap("success")]
         [Validation(Required=false)]
-        public string Content { get; set; }
+        public bool? Success { get; set; }
 
     }
 

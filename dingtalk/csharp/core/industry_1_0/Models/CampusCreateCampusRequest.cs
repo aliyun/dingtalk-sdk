@@ -86,12 +86,13 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public string Extend { get; set; }
 
-        /// <summary>
-        /// 项目订购结束时间
-        /// </summary>
+        [NameInMap("orderEndTime")]
+        [Validation(Required=false)]
+        public long? OrderEndTime { get; set; }
+
         [NameInMap("orderInfo")]
         [Validation(Required=false)]
-        public long? OrderInfo { get; set; }
+        public string OrderInfo { get; set; }
 
         /// <summary>
         /// 项目订购开始时间

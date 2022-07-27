@@ -17,6 +17,29 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         public string BizTag { get; set; }
 
         /// <summary>
+        /// 内容区表单字段配置
+        /// </summary>
+        [NameInMap("contentFieldList")]
+        [Validation(Required=false)]
+        public List<CreateTodoTaskResponseBodyContentFieldList> ContentFieldList { get; set; }
+        public class CreateTodoTaskResponseBodyContentFieldList : TeaModel {
+            /// <summary>
+            /// 字段唯一标识
+            /// </summary>
+            [NameInMap("fieldKey")]
+            [Validation(Required=false)]
+            public string FieldKey { get; set; }
+
+            /// <summary>
+            /// 字段值
+            /// </summary>
+            [NameInMap("fieldValue")]
+            [Validation(Required=false)]
+            public string FieldValue { get; set; }
+
+        }
+
+        /// <summary>
         /// 创建时间
         /// </summary>
         [NameInMap("createdTime")]

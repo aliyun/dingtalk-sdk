@@ -9,12 +9,77 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
 {
     public class CreateTodoTaskRequest : TeaModel {
+        [NameInMap("actionList")]
+        [Validation(Required=false)]
+        public List<CreateTodoTaskRequestActionList> ActionList { get; set; }
+        public class CreateTodoTaskRequestActionList : TeaModel {
+            [NameInMap("actionKey")]
+            [Validation(Required=false)]
+            public string ActionKey { get; set; }
+
+            [NameInMap("actionType")]
+            [Validation(Required=false)]
+            public int? ActionType { get; set; }
+
+            [NameInMap("buttonStyleType")]
+            [Validation(Required=false)]
+            public int? ButtonStyleType { get; set; }
+
+            [NameInMap("param")]
+            [Validation(Required=false)]
+            public CreateTodoTaskRequestActionListParam Param { get; set; }
+            public class CreateTodoTaskRequestActionListParam : TeaModel {
+                [NameInMap("body")]
+                [Validation(Required=false)]
+                public string Body { get; set; }
+                [NameInMap("header")]
+                [Validation(Required=false)]
+                public Dictionary<string, string> Header { get; set; }
+            };
+
+            [NameInMap("pcUrl")]
+            [Validation(Required=false)]
+            public string PcUrl { get; set; }
+
+            [NameInMap("title")]
+            [Validation(Required=false)]
+            public string Title { get; set; }
+
+            [NameInMap("url")]
+            [Validation(Required=false)]
+            public string Url { get; set; }
+
+        }
+
         /// <summary>
         /// 二级分类
         /// </summary>
         [NameInMap("bizCategoryId")]
         [Validation(Required=false)]
         public string BizCategoryId { get; set; }
+
+        /// <summary>
+        /// 待办卡片内容区表单自定义字段列表
+        /// </summary>
+        [NameInMap("contentFieldList")]
+        [Validation(Required=false)]
+        public List<CreateTodoTaskRequestContentFieldList> ContentFieldList { get; set; }
+        public class CreateTodoTaskRequestContentFieldList : TeaModel {
+            /// <summary>
+            /// 字段唯一标识
+            /// </summary>
+            [NameInMap("fieldKey")]
+            [Validation(Required=false)]
+            public string FieldKey { get; set; }
+
+            /// <summary>
+            /// 字段值
+            /// </summary>
+            [NameInMap("fieldValue")]
+            [Validation(Required=false)]
+            public string FieldValue { get; set; }
+
+        }
 
         /// <summary>
         /// 创建者id，需传用户的unionId

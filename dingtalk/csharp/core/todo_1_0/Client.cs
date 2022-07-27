@@ -156,9 +156,17 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActionList))
+            {
+                body["actionList"] = request.ActionList;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCategoryId))
             {
                 body["bizCategoryId"] = request.BizCategoryId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContentFieldList))
+            {
+                body["contentFieldList"] = request.ContentFieldList;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreatorId))
             {
@@ -232,9 +240,17 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActionList))
+            {
+                body["actionList"] = request.ActionList;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCategoryId))
             {
                 body["bizCategoryId"] = request.BizCategoryId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContentFieldList))
+            {
+                body["contentFieldList"] = request.ContentFieldList;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreatorId))
             {
