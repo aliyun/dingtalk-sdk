@@ -86,9 +86,12 @@ class CampusCreateCampusRequest extends Model
     public $extend;
 
     /**
-     * @description 项目订购结束时间
-     *
      * @var int
+     */
+    public $orderEndTime;
+
+    /**
+     * @var string
      */
     public $orderInfo;
 
@@ -124,6 +127,7 @@ class CampusCreateCampusRequest extends Model
         'creatorUnionId'       => 'creatorUnionId',
         'description'          => 'description',
         'extend'               => 'extend',
+        'orderEndTime'         => 'orderEndTime',
         'orderInfo'            => 'orderInfo',
         'orderStartTime'       => 'orderStartTime',
         'provId'               => 'provId',
@@ -169,6 +173,9 @@ class CampusCreateCampusRequest extends Model
         }
         if (null !== $this->extend) {
             $res['extend'] = $this->extend;
+        }
+        if (null !== $this->orderEndTime) {
+            $res['orderEndTime'] = $this->orderEndTime;
         }
         if (null !== $this->orderInfo) {
             $res['orderInfo'] = $this->orderInfo;
@@ -226,6 +233,9 @@ class CampusCreateCampusRequest extends Model
         }
         if (isset($map['extend'])) {
             $model->extend = $map['extend'];
+        }
+        if (isset($map['orderEndTime'])) {
+            $model->orderEndTime = $map['orderEndTime'];
         }
         if (isset($map['orderInfo'])) {
             $model->orderInfo = $map['orderInfo'];

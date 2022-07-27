@@ -56,6 +56,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRelatedWorkspacesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetSheetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetSheetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetSheetResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetTemplateByIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetTemplateByIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetTemplateByIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetWorkspaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetWorkspaceNodeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetWorkspaceNodeRequest;
@@ -937,6 +940,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetSheetResponse::fromMap($this->doROARequest('GetSheet', 'doc_1.0', 'HTTP', 'GET', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                 $templateId
+     * @param GetTemplateByIdRequest $request
+     *
+     * @return GetTemplateByIdResponse
+     */
+    public function getTemplateById($templateId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetTemplateByIdHeaders([]);
+
+        return $this->getTemplateByIdWithOptions($templateId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                 $templateId
+     * @param GetTemplateByIdRequest $request
+     * @param GetTemplateByIdHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return GetTemplateByIdResponse
+     */
+    public function getTemplateByIdWithOptions($templateId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $templateId = OpenApiUtilClient::getEncodeParam($templateId);
+        $query      = [];
+        if (!Utils::isUnset($request->belong)) {
+            @$query['belong'] = $request->belong;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetTemplateByIdResponse::fromMap($this->doROARequest('GetTemplateById', 'doc_1.0', 'HTTP', 'GET', 'AK', '/v1.0/doc/templates/' . $templateId . '', 'json', $req, $runtime));
     }
 
     /**

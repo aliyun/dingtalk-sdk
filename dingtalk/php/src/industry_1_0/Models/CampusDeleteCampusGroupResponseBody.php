@@ -9,13 +9,11 @@ use AlibabaCloud\Tea\Model;
 class CampusDeleteCampusGroupResponseBody extends Model
 {
     /**
-     * @description result
-     *
-     * @var string
+     * @var bool
      */
-    public $content;
+    public $success;
     protected $_name = [
-        'content' => 'content',
+        'success' => 'success',
     ];
 
     public function validate()
@@ -25,8 +23,8 @@ class CampusDeleteCampusGroupResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->content) {
-            $res['content'] = $this->content;
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
         }
 
         return $res;
@@ -40,8 +38,8 @@ class CampusDeleteCampusGroupResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['content'])) {
-            $model->content = $map['content'];
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
         }
 
         return $model;

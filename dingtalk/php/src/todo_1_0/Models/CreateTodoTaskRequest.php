@@ -4,6 +4,8 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskRequest\actionList;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskRequest\contentFieldList;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskRequest\detailUrl;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskRequest\notifyConfigs;
 use AlibabaCloud\Tea\Model;
@@ -11,11 +13,23 @@ use AlibabaCloud\Tea\Model;
 class CreateTodoTaskRequest extends Model
 {
     /**
+     * @var actionList[]
+     */
+    public $actionList;
+
+    /**
      * @description 二级分类
      *
      * @var string
      */
     public $bizCategoryId;
+
+    /**
+     * @description 待办卡片内容区表单自定义字段列表
+     *
+     * @var contentFieldList[]
+     */
+    public $contentFieldList;
 
     /**
      * @description 创建者id，需传用户的unionId
@@ -101,7 +115,9 @@ class CreateTodoTaskRequest extends Model
      */
     public $operatorId;
     protected $_name = [
+        'actionList'         => 'actionList',
         'bizCategoryId'      => 'bizCategoryId',
+        'contentFieldList'   => 'contentFieldList',
         'creatorId'          => 'creatorId',
         'description'        => 'description',
         'detailUrl'          => 'detailUrl',
@@ -123,8 +139,26 @@ class CreateTodoTaskRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->actionList) {
+            $res['actionList'] = [];
+            if (null !== $this->actionList && \is_array($this->actionList)) {
+                $n = 0;
+                foreach ($this->actionList as $item) {
+                    $res['actionList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
         if (null !== $this->bizCategoryId) {
             $res['bizCategoryId'] = $this->bizCategoryId;
+        }
+        if (null !== $this->contentFieldList) {
+            $res['contentFieldList'] = [];
+            if (null !== $this->contentFieldList && \is_array($this->contentFieldList)) {
+                $n = 0;
+                foreach ($this->contentFieldList as $item) {
+                    $res['contentFieldList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->creatorId) {
             $res['creatorId'] = $this->creatorId;
@@ -174,8 +208,26 @@ class CreateTodoTaskRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['actionList'])) {
+            if (!empty($map['actionList'])) {
+                $model->actionList = [];
+                $n                 = 0;
+                foreach ($map['actionList'] as $item) {
+                    $model->actionList[$n++] = null !== $item ? actionList::fromMap($item) : $item;
+                }
+            }
+        }
         if (isset($map['bizCategoryId'])) {
             $model->bizCategoryId = $map['bizCategoryId'];
+        }
+        if (isset($map['contentFieldList'])) {
+            if (!empty($map['contentFieldList'])) {
+                $model->contentFieldList = [];
+                $n                       = 0;
+                foreach ($map['contentFieldList'] as $item) {
+                    $model->contentFieldList[$n++] = null !== $item ? contentFieldList::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['creatorId'])) {
             $model->creatorId = $map['creatorId'];

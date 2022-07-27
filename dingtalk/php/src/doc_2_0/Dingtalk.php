@@ -31,6 +31,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryRecentListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QuerySpaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QuerySpaceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QuerySpaceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\RelatedSpacesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\RelatedSpacesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\RelatedSpacesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\RenameDentryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\RenameDentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\RenameDentryResponse;
@@ -520,6 +523,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QuerySpaceResponse::fromMap($this->doROARequest('QuerySpace', 'doc_2.0', 'HTTP', 'GET', 'AK', '/v2.0/doc/spaces/' . $spaceId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param RelatedSpacesRequest $request
+     *
+     * @return RelatedSpacesResponse
+     */
+    public function relatedSpaces($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RelatedSpacesHeaders([]);
+
+        return $this->relatedSpacesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RelatedSpacesRequest $request
+     * @param RelatedSpacesHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return RelatedSpacesResponse
+     */
+    public function relatedSpacesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->teamId)) {
+            @$query['teamId'] = $request->teamId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return RelatedSpacesResponse::fromMap($this->doROARequest('RelatedSpaces', 'doc_2.0', 'HTTP', 'GET', 'AK', '/v2.0/doc/relations/spaces', 'json', $req, $runtime));
     }
 
     /**

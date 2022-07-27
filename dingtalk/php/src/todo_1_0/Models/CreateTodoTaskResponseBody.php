@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskResponseBody\contentFieldList;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskResponseBody\detailUrl;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskResponseBody\notifyConfigs;
 use AlibabaCloud\Tea\Model;
@@ -16,6 +17,13 @@ class CreateTodoTaskResponseBody extends Model
      * @var string
      */
     public $bizTag;
+
+    /**
+     * @description 内容区表单字段配置
+     *
+     * @var contentFieldList[]
+     */
+    public $contentFieldList;
 
     /**
      * @description 创建时间
@@ -158,6 +166,7 @@ class CreateTodoTaskResponseBody extends Model
     public $subject;
     protected $_name = [
         'bizTag'             => 'bizTag',
+        'contentFieldList'   => 'contentFieldList',
         'createdTime'        => 'createdTime',
         'creatorId'          => 'creatorId',
         'description'        => 'description',
@@ -189,6 +198,15 @@ class CreateTodoTaskResponseBody extends Model
         $res = [];
         if (null !== $this->bizTag) {
             $res['bizTag'] = $this->bizTag;
+        }
+        if (null !== $this->contentFieldList) {
+            $res['contentFieldList'] = [];
+            if (null !== $this->contentFieldList && \is_array($this->contentFieldList)) {
+                $n = 0;
+                foreach ($this->contentFieldList as $item) {
+                    $res['contentFieldList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->createdTime) {
             $res['createdTime'] = $this->createdTime;
@@ -264,6 +282,15 @@ class CreateTodoTaskResponseBody extends Model
         $model = new self();
         if (isset($map['bizTag'])) {
             $model->bizTag = $map['bizTag'];
+        }
+        if (isset($map['contentFieldList'])) {
+            if (!empty($map['contentFieldList'])) {
+                $model->contentFieldList = [];
+                $n                       = 0;
+                foreach ($map['contentFieldList'] as $item) {
+                    $model->contentFieldList[$n++] = null !== $item ? contentFieldList::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['createdTime'])) {
             $model->createdTime = $map['createdTime'];

@@ -9,13 +9,11 @@ use AlibabaCloud\Tea\Model;
 class CampusCreateCampusGroupResponseBody extends Model
 {
     /**
-     * @description 项目组ID
-     *
      * @var int
      */
-    public $content;
+    public $groupId;
     protected $_name = [
-        'content' => 'content',
+        'groupId' => 'groupId',
     ];
 
     public function validate()
@@ -25,8 +23,8 @@ class CampusCreateCampusGroupResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->content) {
-            $res['content'] = $this->content;
+        if (null !== $this->groupId) {
+            $res['groupId'] = $this->groupId;
         }
 
         return $res;
@@ -40,8 +38,8 @@ class CampusCreateCampusGroupResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['content'])) {
-            $model->content = $map['content'];
+        if (isset($map['groupId'])) {
+            $model->groupId = $map['groupId'];
         }
 
         return $model;
