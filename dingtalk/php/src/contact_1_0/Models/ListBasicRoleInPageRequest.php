@@ -2,36 +2,36 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class ListRecycleItemsRequest extends Model
+class ListBasicRoleInPageRequest extends Model
 {
     /**
-     * @description 分页大小, 不保证全量返回
-     * 50
+     * @description 应用的agentId
+     *
+     * @var string
+     */
+    public $agentId;
+
+    /**
+     * @description 单页查询的最大条目数
+     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页游标，首次拉取nextToken传空
+     * @description 查询凭证，初始使用0
      *
-     * @var string
+     * @var int
      */
     public $nextToken;
-
-    /**
-     * @description 用户id
-     *
-     * @var string
-     */
-    public $unionId;
     protected $_name = [
+        'agentId'    => 'agentId',
         'maxResults' => 'maxResults',
         'nextToken'  => 'nextToken',
-        'unionId'    => 'unionId',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class ListRecycleItemsRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->agentId) {
+            $res['agentId'] = $this->agentId;
+        }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
-        }
-        if (null !== $this->unionId) {
-            $res['unionId'] = $this->unionId;
         }
 
         return $res;
@@ -57,19 +57,19 @@ class ListRecycleItemsRequest extends Model
     /**
      * @param array $map
      *
-     * @return ListRecycleItemsRequest
+     * @return ListBasicRoleInPageRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['agentId'])) {
+            $model->agentId = $map['agentId'];
+        }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
-        }
-        if (isset($map['unionId'])) {
-            $model->unionId = $map['unionId'];
         }
 
         return $model;

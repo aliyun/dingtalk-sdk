@@ -24,7 +24,7 @@ class option extends Model
     public $name;
 
     /**
-     * @description owner类型, 空间Owner可以是用户或应用, 详见 SpaceOwnerTypeEnum
+     * @description owner类型, 空间Owner可以是用户或应用
      * USER
      * @var string
      */

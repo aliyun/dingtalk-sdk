@@ -17,7 +17,7 @@ class space extends Model
     public $appId;
 
     /**
-     * @description 空间能力项. key详见 SpaceCapabilityEnum
+     * @description 空间能力项
      *
      * @var capabilities
      */
@@ -80,7 +80,7 @@ class space extends Model
     public $ownerId;
 
     /**
-     * @description owner类型, 详见SpaceOwnerTypeEnum
+     * @description owner类型
      * USER
      * @var string
      */
@@ -94,7 +94,7 @@ class space extends Model
     public $quota;
 
     /**
-     * @description 业务场景，可以自定义，表示多个不同空间的聚合，可以提供对特定场景做能力设计、容量管理，如根据场景来做搜索或查询。创建空间时，不指定scene, 默认值是default
+     * @description 业务场景，可以自定义，表示多个不同空间的聚合，可以提供对特定场景做能力设计、容量管理，如根据场景来做搜索或查询。
      * default
      * @var string
      */

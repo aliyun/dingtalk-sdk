@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class CreateSheetResponseBody extends Model
 {
     /**
+     * @var string
+     */
+    public $id;
+
+    /**
      * @description 创建的工作表的名称。当输入参数中的工作表名称在表格中已存在时，可能与输入参数指定的工作表名称不同。
      *
      * @var string
@@ -22,6 +27,7 @@ class CreateSheetResponseBody extends Model
      */
     public $visibility;
     protected $_name = [
+        'id'         => 'id',
         'name'       => 'name',
         'visibility' => 'visibility',
     ];
@@ -33,6 +39,9 @@ class CreateSheetResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->id) {
+            $res['id'] = $this->id;
+        }
         if (null !== $this->name) {
             $res['name'] = $this->name;
         }
@@ -51,6 +60,9 @@ class CreateSheetResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['id'])) {
+            $model->id = $map['id'];
+        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }

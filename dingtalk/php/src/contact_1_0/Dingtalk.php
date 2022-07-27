@@ -67,6 +67,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\IsvCardEventPushHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\IsvCardEventPushRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\IsvCardEventPushResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListBasicRoleInPageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListBasicRoleInPageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListBasicRoleInPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListContactHideSettingsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListContactHideSettingsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListContactHideSettingsResponse;
@@ -1164,6 +1167,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return IsvCardEventPushResponse::fromMap($this->doROARequest('IsvCardEventPush', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/cards/events/push', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListBasicRoleInPageRequest $request
+     *
+     * @return ListBasicRoleInPageResponse
+     */
+    public function listBasicRoleInPage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListBasicRoleInPageHeaders([]);
+
+        return $this->listBasicRoleInPageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListBasicRoleInPageRequest $request
+     * @param ListBasicRoleInPageHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return ListBasicRoleInPageResponse
+     */
+    public function listBasicRoleInPageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->agentId)) {
+            @$query['agentId'] = $request->agentId;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListBasicRoleInPageResponse::fromMap($this->doROARequest('ListBasicRoleInPage', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/rbac/administrativeGroups/baseInfos', 'json', $req, $runtime));
     }
 
     /**

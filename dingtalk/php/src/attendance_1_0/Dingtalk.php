@@ -144,6 +144,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->submitTimeRule)) {
             @$body['submitTimeRule'] = $request->submitTimeRule;
         }
+        if (!Utils::isUnset($request->visibilityRules)) {
+            @$body['visibilityRules'] = $request->visibilityRules;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -1302,6 +1305,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->submitTimeRule)) {
             @$body['submitTimeRule'] = $request->submitTimeRule;
+        }
+        if (!Utils::isUnset($request->visibilityRules)) {
+            @$body['visibilityRules'] = $request->visibilityRules;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

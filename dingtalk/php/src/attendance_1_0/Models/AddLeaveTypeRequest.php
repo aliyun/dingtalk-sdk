@@ -6,6 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\AddLeaveTypeRequest\leaveCertificate;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\AddLeaveTypeRequest\submitTimeRule;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\AddLeaveTypeRequest\visibilityRules;
 use AlibabaCloud\Tea\Model;
 
 class AddLeaveTypeRequest extends Model
@@ -67,6 +68,13 @@ class AddLeaveTypeRequest extends Model
     public $submitTimeRule;
 
     /**
+     * @description 适用范围规则列表：哪些部门/员工可以使用该假期类型，不传默认为全公司
+     *
+     * @var visibilityRules[]
+     */
+    public $visibilityRules;
+
+    /**
      * @description 操作者ID
      *
      * @var string
@@ -81,6 +89,7 @@ class AddLeaveTypeRequest extends Model
         'leaveViewUnit'    => 'leaveViewUnit',
         'naturalDayLeave'  => 'naturalDayLeave',
         'submitTimeRule'   => 'submitTimeRule',
+        'visibilityRules'  => 'visibilityRules',
         'opUserId'         => 'opUserId',
     ];
 
@@ -114,6 +123,15 @@ class AddLeaveTypeRequest extends Model
         }
         if (null !== $this->submitTimeRule) {
             $res['submitTimeRule'] = null !== $this->submitTimeRule ? $this->submitTimeRule->toMap() : null;
+        }
+        if (null !== $this->visibilityRules) {
+            $res['visibilityRules'] = [];
+            if (null !== $this->visibilityRules && \is_array($this->visibilityRules)) {
+                $n = 0;
+                foreach ($this->visibilityRules as $item) {
+                    $res['visibilityRules'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->opUserId) {
             $res['opUserId'] = $this->opUserId;
@@ -153,6 +171,15 @@ class AddLeaveTypeRequest extends Model
         }
         if (isset($map['submitTimeRule'])) {
             $model->submitTimeRule = submitTimeRule::fromMap($map['submitTimeRule']);
+        }
+        if (isset($map['visibilityRules'])) {
+            if (!empty($map['visibilityRules'])) {
+                $model->visibilityRules = [];
+                $n                      = 0;
+                foreach ($map['visibilityRules'] as $item) {
+                    $model->visibilityRules[$n++] = null !== $item ? visibilityRules::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['opUserId'])) {
             $model->opUserId = $map['opUserId'];
