@@ -746,6 +746,10 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         @NameInMap("invoiceNo")
         public String invoiceNo;
 
+        // 发票状态
+        @NameInMap("invoiceStatus")
+        public String invoiceStatus;
+
         // 发票类型
         @NameInMap("invoiceType")
         public String invoiceType;
@@ -946,6 +950,14 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         }
         public String getInvoiceNo() {
             return this.invoiceNo;
+        }
+
+        public GetInvoiceByPageResponseBodyResultList setInvoiceStatus(String invoiceStatus) {
+            this.invoiceStatus = invoiceStatus;
+            return this;
+        }
+        public String getInvoiceStatus() {
+            return this.invoiceStatus;
         }
 
         public GetInvoiceByPageResponseBodyResultList setInvoiceType(String invoiceType) {

@@ -294,6 +294,10 @@ public class DentryVO extends TeaModel {
         @NameInMap("dentryActions")
         public java.util.List<String> dentryActions;
 
+        // 当前用户对这个空间的访问角色。
+        @NameInMap("roleCode")
+        public String roleCode;
+
         // 空间的操作列表。
         @NameInMap("spaceActions")
         public java.util.List<String> spaceActions;
@@ -309,6 +313,14 @@ public class DentryVO extends TeaModel {
         }
         public java.util.List<String> getDentryActions() {
             return this.dentryActions;
+        }
+
+        public DentryVOVisitorInfo setRoleCode(String roleCode) {
+            this.roleCode = roleCode;
+            return this;
+        }
+        public String getRoleCode() {
+            return this.roleCode;
         }
 
         public DentryVOVisitorInfo setSpaceActions(java.util.List<String> spaceActions) {

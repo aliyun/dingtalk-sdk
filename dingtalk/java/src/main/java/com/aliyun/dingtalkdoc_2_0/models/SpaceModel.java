@@ -4,6 +4,18 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class SpaceModel extends TeaModel {
+    // 封面
+    @NameInMap("cover")
+    public String cover;
+
+    // 空间描述信息
+    @NameInMap("description")
+    public String description;
+
+    // 知识库图标
+    @NameInMap("iconVO")
+    public SpaceModelIconVO iconVO;
+
     // 知识库id。
     @NameInMap("id")
     public String id;
@@ -27,6 +39,30 @@ public class SpaceModel extends TeaModel {
     public static SpaceModel build(java.util.Map<String, ?> map) throws Exception {
         SpaceModel self = new SpaceModel();
         return TeaModel.build(map, self);
+    }
+
+    public SpaceModel setCover(String cover) {
+        this.cover = cover;
+        return this;
+    }
+    public String getCover() {
+        return this.cover;
+    }
+
+    public SpaceModel setDescription(String description) {
+        this.description = description;
+        return this;
+    }
+    public String getDescription() {
+        return this.description;
+    }
+
+    public SpaceModel setIconVO(SpaceModelIconVO iconVO) {
+        this.iconVO = iconVO;
+        return this;
+    }
+    public SpaceModelIconVO getIconVO() {
+        return this.iconVO;
     }
 
     public SpaceModel setId(String id) {
@@ -69,6 +105,38 @@ public class SpaceModel extends TeaModel {
         return this.visitorInfo;
     }
 
+    public static class SpaceModelIconVO extends TeaModel {
+        // 图标
+        @NameInMap("icon")
+        public String icon;
+
+        // 图标类型
+        @NameInMap("type")
+        public String type;
+
+        public static SpaceModelIconVO build(java.util.Map<String, ?> map) throws Exception {
+            SpaceModelIconVO self = new SpaceModelIconVO();
+            return TeaModel.build(map, self);
+        }
+
+        public SpaceModelIconVO setIcon(String icon) {
+            this.icon = icon;
+            return this;
+        }
+        public String getIcon() {
+            return this.icon;
+        }
+
+        public SpaceModelIconVO setType(String type) {
+            this.type = type;
+            return this;
+        }
+        public String getType() {
+            return this.type;
+        }
+
+    }
+
     public static class SpaceModelOwner extends TeaModel {
         // 用户名称。
         @NameInMap("name")
@@ -106,6 +174,10 @@ public class SpaceModel extends TeaModel {
         @NameInMap("dentryActions")
         public java.util.List<String> dentryActions;
 
+        // 权限
+        @NameInMap("roleCode")
+        public String roleCode;
+
         // 空间的操作列表。
         @NameInMap("spaceActions")
         public java.util.List<String> spaceActions;
@@ -121,6 +193,14 @@ public class SpaceModel extends TeaModel {
         }
         public java.util.List<String> getDentryActions() {
             return this.dentryActions;
+        }
+
+        public SpaceModelVisitorInfo setRoleCode(String roleCode) {
+            this.roleCode = roleCode;
+            return this;
+        }
+        public String getRoleCode() {
+            return this.roleCode;
         }
 
         public SpaceModelVisitorInfo setSpaceActions(java.util.List<String> spaceActions) {
