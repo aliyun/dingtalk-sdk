@@ -4195,6 +4195,7 @@ export class GetInvoiceByPageResponseBodyResultList extends $tea.Model {
   generalInvoiceDetailVOList?: GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList[];
   invoiceCode?: string;
   invoiceNo?: string;
+  invoiceStatus?: string;
   invoiceType?: string;
   machineCode?: string;
   oilFlag?: string;
@@ -4235,6 +4236,7 @@ export class GetInvoiceByPageResponseBodyResultList extends $tea.Model {
       generalInvoiceDetailVOList: 'generalInvoiceDetailVOList',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
+      invoiceStatus: 'invoiceStatus',
       invoiceType: 'invoiceType',
       machineCode: 'machineCode',
       oilFlag: 'oilFlag',
@@ -4278,6 +4280,7 @@ export class GetInvoiceByPageResponseBodyResultList extends $tea.Model {
       generalInvoiceDetailVOList: { 'type': 'array', 'itemType': GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList },
       invoiceCode: 'string',
       invoiceNo: 'string',
+      invoiceStatus: 'string',
       invoiceType: 'string',
       machineCode: 'string',
       oilFlag: 'string',

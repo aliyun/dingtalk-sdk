@@ -4539,6 +4539,160 @@ export class IndustryManufactureMaterialListResponse extends $tea.Model {
   }
 }
 
+export class IndustryManufactureMesDispatchTaskHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesDispatchTaskRequest extends $tea.Model {
+  action?: string;
+  appKey?: string;
+  baseDataName?: string;
+  defectsAmount?: string;
+  dispatchStaffName?: string;
+  dispatchStaffNo?: string;
+  fineAmount?: string;
+  overdue?: number;
+  planQuantity?: number;
+  priority?: number;
+  processName?: string;
+  processUuid?: string;
+  productCode?: string;
+  productName?: string;
+  productSpecification?: string;
+  projectCode?: string;
+  projectId?: string;
+  projectStatus?: string;
+  taskOperators?: string;
+  taskPlanEndTime?: string;
+  taskPlanStartTime?: string;
+  taskStatus?: string;
+  taskType?: string;
+  teamId?: string;
+  uuid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      action: 'action',
+      appKey: 'appKey',
+      baseDataName: 'baseDataName',
+      defectsAmount: 'defectsAmount',
+      dispatchStaffName: 'dispatchStaffName',
+      dispatchStaffNo: 'dispatchStaffNo',
+      fineAmount: 'fineAmount',
+      overdue: 'overdue',
+      planQuantity: 'planQuantity',
+      priority: 'priority',
+      processName: 'processName',
+      processUuid: 'processUuid',
+      productCode: 'productCode',
+      productName: 'productName',
+      productSpecification: 'productSpecification',
+      projectCode: 'projectCode',
+      projectId: 'projectId',
+      projectStatus: 'projectStatus',
+      taskOperators: 'taskOperators',
+      taskPlanEndTime: 'taskPlanEndTime',
+      taskPlanStartTime: 'taskPlanStartTime',
+      taskStatus: 'taskStatus',
+      taskType: 'taskType',
+      teamId: 'teamId',
+      uuid: 'uuid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      action: 'string',
+      appKey: 'string',
+      baseDataName: 'string',
+      defectsAmount: 'string',
+      dispatchStaffName: 'string',
+      dispatchStaffNo: 'string',
+      fineAmount: 'string',
+      overdue: 'number',
+      planQuantity: 'number',
+      priority: 'number',
+      processName: 'string',
+      processUuid: 'string',
+      productCode: 'string',
+      productName: 'string',
+      productSpecification: 'string',
+      projectCode: 'string',
+      projectId: 'string',
+      projectStatus: 'string',
+      taskOperators: 'string',
+      taskPlanEndTime: 'string',
+      taskPlanStartTime: 'string',
+      taskStatus: 'string',
+      taskType: 'string',
+      teamId: 'string',
+      uuid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesDispatchTaskResponseBody extends $tea.Model {
+  result?: IndustryManufactureMesDispatchTaskResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: IndustryManufactureMesDispatchTaskResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesDispatchTaskResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: IndustryManufactureMesDispatchTaskResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: IndustryManufactureMesDispatchTaskResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class IndustryManufactureMesMaterialHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4643,6 +4797,305 @@ export class IndustryManufactureMesMaterialResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: IndustryManufactureMesMaterialResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesOutPlanHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesOutPlanRequest extends $tea.Model {
+  approvalStatus?: string;
+  approver?: string;
+  baseDataName?: string;
+  outSourceProjectCode?: string;
+  outSourceTeamId?: string;
+  price?: string;
+  processIdentificationCode?: string;
+  processUuids?: string;
+  productCode?: string;
+  productName?: string;
+  productSpecification?: string;
+  projectCode?: string;
+  projectId?: string;
+  sendPlanQuantity?: string;
+  supplierCode?: string;
+  supplierName?: string;
+  totalWage?: string;
+  uuid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      approvalStatus: 'approvalStatus',
+      approver: 'approver',
+      baseDataName: 'baseDataName',
+      outSourceProjectCode: 'outSourceProjectCode',
+      outSourceTeamId: 'outSourceTeamId',
+      price: 'price',
+      processIdentificationCode: 'processIdentificationCode',
+      processUuids: 'processUuids',
+      productCode: 'productCode',
+      productName: 'productName',
+      productSpecification: 'productSpecification',
+      projectCode: 'projectCode',
+      projectId: 'projectId',
+      sendPlanQuantity: 'sendPlanQuantity',
+      supplierCode: 'supplierCode',
+      supplierName: 'supplierName',
+      totalWage: 'totalWage',
+      uuid: 'uuid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      approvalStatus: 'string',
+      approver: 'string',
+      baseDataName: 'string',
+      outSourceProjectCode: 'string',
+      outSourceTeamId: 'string',
+      price: 'string',
+      processIdentificationCode: 'string',
+      processUuids: 'string',
+      productCode: 'string',
+      productName: 'string',
+      productSpecification: 'string',
+      projectCode: 'string',
+      projectId: 'string',
+      sendPlanQuantity: 'string',
+      supplierCode: 'string',
+      supplierName: 'string',
+      totalWage: 'string',
+      uuid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesOutPlanResponseBody extends $tea.Model {
+  result?: IndustryManufactureMesOutPlanResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: IndustryManufactureMesOutPlanResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesOutPlanResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: IndustryManufactureMesOutPlanResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: IndustryManufactureMesOutPlanResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesOutputHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesOutputRequest extends $tea.Model {
+  action?: string;
+  appKey?: string;
+  approveStatus?: string;
+  baseDataName?: string;
+  defectsAmount?: string;
+  defectsReason?: string;
+  fineAmount?: string;
+  hasQualityTest?: string;
+  overdue?: number;
+  planQuantity?: number;
+  priority?: number;
+  processName?: string;
+  processUuid?: string;
+  productCode?: string;
+  productName?: string;
+  productSpecification?: string;
+  projectCode?: string;
+  projectId?: string;
+  projectStatus?: string;
+  qualityTestStatus?: string;
+  taskPlanEndTime?: string;
+  taskPlanStartTime?: string;
+  taskStatus?: string;
+  taskType?: string;
+  taskUuid?: string;
+  teamId?: string;
+  userId?: string;
+  userName?: string;
+  uuid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      action: 'action',
+      appKey: 'appKey',
+      approveStatus: 'approveStatus',
+      baseDataName: 'baseDataName',
+      defectsAmount: 'defectsAmount',
+      defectsReason: 'defectsReason',
+      fineAmount: 'fineAmount',
+      hasQualityTest: 'hasQualityTest',
+      overdue: 'overdue',
+      planQuantity: 'planQuantity',
+      priority: 'priority',
+      processName: 'processName',
+      processUuid: 'processUuid',
+      productCode: 'productCode',
+      productName: 'productName',
+      productSpecification: 'productSpecification',
+      projectCode: 'projectCode',
+      projectId: 'projectId',
+      projectStatus: 'projectStatus',
+      qualityTestStatus: 'qualityTestStatus',
+      taskPlanEndTime: 'taskPlanEndTime',
+      taskPlanStartTime: 'taskPlanStartTime',
+      taskStatus: 'taskStatus',
+      taskType: 'taskType',
+      taskUuid: 'taskUuid',
+      teamId: 'teamId',
+      userId: 'userId',
+      userName: 'userName',
+      uuid: 'uuid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      action: 'string',
+      appKey: 'string',
+      approveStatus: 'string',
+      baseDataName: 'string',
+      defectsAmount: 'string',
+      defectsReason: 'string',
+      fineAmount: 'string',
+      hasQualityTest: 'string',
+      overdue: 'number',
+      planQuantity: 'number',
+      priority: 'number',
+      processName: 'string',
+      processUuid: 'string',
+      productCode: 'string',
+      productName: 'string',
+      productSpecification: 'string',
+      projectCode: 'string',
+      projectId: 'string',
+      projectStatus: 'string',
+      qualityTestStatus: 'string',
+      taskPlanEndTime: 'string',
+      taskPlanStartTime: 'string',
+      taskStatus: 'string',
+      taskType: 'string',
+      taskUuid: 'string',
+      teamId: 'string',
+      userId: 'string',
+      userName: 'string',
+      uuid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesOutputResponseBody extends $tea.Model {
+  result?: IndustryManufactureMesOutputResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: IndustryManufactureMesOutputResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesOutputResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: IndustryManufactureMesOutputResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: IndustryManufactureMesOutputResponseBody,
     };
   }
 
@@ -4915,6 +5368,124 @@ export class IndustryManufactureMesProductionPlanResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: IndustryManufactureMesProductionPlanResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesSubCooperationTeamHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesSubCooperationTeamRequest extends $tea.Model {
+  action?: string;
+  appKey?: string;
+  baseDataName?: string;
+  events?: string[];
+  extendData?: IndustryManufactureMesSubCooperationTeamRequestExtendData[];
+  groupPlugins?: IndustryManufactureMesSubCooperationTeamRequestGroupPlugins[];
+  groupType?: string;
+  leaders?: IndustryManufactureMesSubCooperationTeamRequestLeaders[];
+  members?: IndustryManufactureMesSubCooperationTeamRequestMembers[];
+  name?: string;
+  outCorpId?: string;
+  processIds?: string[];
+  uuid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      action: 'action',
+      appKey: 'appKey',
+      baseDataName: 'baseDataName',
+      events: 'events',
+      extendData: 'extendData',
+      groupPlugins: 'groupPlugins',
+      groupType: 'groupType',
+      leaders: 'leaders',
+      members: 'members',
+      name: 'name',
+      outCorpId: 'outCorpId',
+      processIds: 'processIds',
+      uuid: 'uuid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      action: 'string',
+      appKey: 'string',
+      baseDataName: 'string',
+      events: { 'type': 'array', 'itemType': 'string' },
+      extendData: { 'type': 'array', 'itemType': IndustryManufactureMesSubCooperationTeamRequestExtendData },
+      groupPlugins: { 'type': 'array', 'itemType': IndustryManufactureMesSubCooperationTeamRequestGroupPlugins },
+      groupType: 'string',
+      leaders: { 'type': 'array', 'itemType': IndustryManufactureMesSubCooperationTeamRequestLeaders },
+      members: { 'type': 'array', 'itemType': IndustryManufactureMesSubCooperationTeamRequestMembers },
+      name: 'string',
+      outCorpId: 'string',
+      processIds: { 'type': 'array', 'itemType': 'string' },
+      uuid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesSubCooperationTeamResponseBody extends $tea.Model {
+  result?: IndustryManufactureMesSubCooperationTeamResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: IndustryManufactureMesSubCooperationTeamResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesSubCooperationTeamResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: IndustryManufactureMesSubCooperationTeamResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: IndustryManufactureMesSubCooperationTeamResponseBody,
     };
   }
 
@@ -7956,6 +8527,25 @@ export class IndustryManufactureMaterialListResponseBodyList extends $tea.Model 
   }
 }
 
+export class IndustryManufactureMesDispatchTaskResponseBodyResult extends $tea.Model {
+  content?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class IndustryManufactureMesMaterialRequestExtendData extends $tea.Model {
   code?: string;
   name?: string;
@@ -7985,6 +8575,44 @@ export class IndustryManufactureMesMaterialRequestExtendData extends $tea.Model 
 }
 
 export class IndustryManufactureMesMaterialResponseBodyResult extends $tea.Model {
+  content?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesOutPlanResponseBodyResult extends $tea.Model {
+  content?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesOutputResponseBodyResult extends $tea.Model {
   content?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8079,6 +8707,119 @@ export class IndustryManufactureMesProductionPlanRequestExtendData extends $tea.
 }
 
 export class IndustryManufactureMesProductionPlanResponseBodyResult extends $tea.Model {
+  content?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesSubCooperationTeamRequestExtendData extends $tea.Model {
+  code?: string;
+  name?: string;
+  value?: string;
+  valueType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      name: 'name',
+      value: 'value',
+      valueType: 'valueType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      name: 'string',
+      value: 'string',
+      valueType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesSubCooperationTeamRequestGroupPlugins extends $tea.Model {
+  label?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      label: 'label',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      label: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesSubCooperationTeamRequestLeaders extends $tea.Model {
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesSubCooperationTeamRequestMembers extends $tea.Model {
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IndustryManufactureMesSubCooperationTeamResponseBodyResult extends $tea.Model {
   content?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11603,6 +12344,131 @@ export default class Client extends OpenApi {
     return $tea.cast<IndustryManufactureMaterialListResponse>(await this.doROARequest("IndustryManufactureMaterialList", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufactures/materials/query`, "json", req, runtime), new IndustryManufactureMaterialListResponse({}));
   }
 
+  async industryManufactureMesDispatchTask(request: IndustryManufactureMesDispatchTaskRequest): Promise<IndustryManufactureMesDispatchTaskResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new IndustryManufactureMesDispatchTaskHeaders({ });
+    return await this.industryManufactureMesDispatchTaskWithOptions(request, headers, runtime);
+  }
+
+  async industryManufactureMesDispatchTaskWithOptions(request: IndustryManufactureMesDispatchTaskRequest, headers: IndustryManufactureMesDispatchTaskHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureMesDispatchTaskResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.action)) {
+      body["action"] = request.action;
+    }
+
+    if (!Util.isUnset(request.appKey)) {
+      body["appKey"] = request.appKey;
+    }
+
+    if (!Util.isUnset(request.baseDataName)) {
+      body["baseDataName"] = request.baseDataName;
+    }
+
+    if (!Util.isUnset(request.defectsAmount)) {
+      body["defectsAmount"] = request.defectsAmount;
+    }
+
+    if (!Util.isUnset(request.dispatchStaffName)) {
+      body["dispatchStaffName"] = request.dispatchStaffName;
+    }
+
+    if (!Util.isUnset(request.dispatchStaffNo)) {
+      body["dispatchStaffNo"] = request.dispatchStaffNo;
+    }
+
+    if (!Util.isUnset(request.fineAmount)) {
+      body["fineAmount"] = request.fineAmount;
+    }
+
+    if (!Util.isUnset(request.overdue)) {
+      body["overdue"] = request.overdue;
+    }
+
+    if (!Util.isUnset(request.planQuantity)) {
+      body["planQuantity"] = request.planQuantity;
+    }
+
+    if (!Util.isUnset(request.priority)) {
+      body["priority"] = request.priority;
+    }
+
+    if (!Util.isUnset(request.processName)) {
+      body["processName"] = request.processName;
+    }
+
+    if (!Util.isUnset(request.processUuid)) {
+      body["processUuid"] = request.processUuid;
+    }
+
+    if (!Util.isUnset(request.productCode)) {
+      body["productCode"] = request.productCode;
+    }
+
+    if (!Util.isUnset(request.productName)) {
+      body["productName"] = request.productName;
+    }
+
+    if (!Util.isUnset(request.productSpecification)) {
+      body["productSpecification"] = request.productSpecification;
+    }
+
+    if (!Util.isUnset(request.projectCode)) {
+      body["projectCode"] = request.projectCode;
+    }
+
+    if (!Util.isUnset(request.projectId)) {
+      body["projectId"] = request.projectId;
+    }
+
+    if (!Util.isUnset(request.projectStatus)) {
+      body["projectStatus"] = request.projectStatus;
+    }
+
+    if (!Util.isUnset(request.taskOperators)) {
+      body["taskOperators"] = request.taskOperators;
+    }
+
+    if (!Util.isUnset(request.taskPlanEndTime)) {
+      body["taskPlanEndTime"] = request.taskPlanEndTime;
+    }
+
+    if (!Util.isUnset(request.taskPlanStartTime)) {
+      body["taskPlanStartTime"] = request.taskPlanStartTime;
+    }
+
+    if (!Util.isUnset(request.taskStatus)) {
+      body["taskStatus"] = request.taskStatus;
+    }
+
+    if (!Util.isUnset(request.taskType)) {
+      body["taskType"] = request.taskType;
+    }
+
+    if (!Util.isUnset(request.teamId)) {
+      body["teamId"] = request.teamId;
+    }
+
+    if (!Util.isUnset(request.uuid)) {
+      body["uuid"] = request.uuid;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<IndustryManufactureMesDispatchTaskResponse>(await this.doROARequest("IndustryManufactureMesDispatchTask", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufacturings/dispatchTasks/manage`, "json", req, runtime), new IndustryManufactureMesDispatchTaskResponse({}));
+  }
+
   async industryManufactureMesMaterial(request: IndustryManufactureMesMaterialRequest): Promise<IndustryManufactureMesMaterialResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new IndustryManufactureMesMaterialHeaders({ });
@@ -11670,6 +12536,244 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<IndustryManufactureMesMaterialResponse>(await this.doROARequest("IndustryManufactureMesMaterial", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufacturings/materials/manage`, "json", req, runtime), new IndustryManufactureMesMaterialResponse({}));
+  }
+
+  async industryManufactureMesOutPlan(request: IndustryManufactureMesOutPlanRequest): Promise<IndustryManufactureMesOutPlanResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new IndustryManufactureMesOutPlanHeaders({ });
+    return await this.industryManufactureMesOutPlanWithOptions(request, headers, runtime);
+  }
+
+  async industryManufactureMesOutPlanWithOptions(request: IndustryManufactureMesOutPlanRequest, headers: IndustryManufactureMesOutPlanHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureMesOutPlanResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.approvalStatus)) {
+      body["approvalStatus"] = request.approvalStatus;
+    }
+
+    if (!Util.isUnset(request.approver)) {
+      body["approver"] = request.approver;
+    }
+
+    if (!Util.isUnset(request.baseDataName)) {
+      body["baseDataName"] = request.baseDataName;
+    }
+
+    if (!Util.isUnset(request.outSourceProjectCode)) {
+      body["outSourceProjectCode"] = request.outSourceProjectCode;
+    }
+
+    if (!Util.isUnset(request.outSourceTeamId)) {
+      body["outSourceTeamId"] = request.outSourceTeamId;
+    }
+
+    if (!Util.isUnset(request.price)) {
+      body["price"] = request.price;
+    }
+
+    if (!Util.isUnset(request.processIdentificationCode)) {
+      body["processIdentificationCode"] = request.processIdentificationCode;
+    }
+
+    if (!Util.isUnset(request.processUuids)) {
+      body["processUuids"] = request.processUuids;
+    }
+
+    if (!Util.isUnset(request.productCode)) {
+      body["productCode"] = request.productCode;
+    }
+
+    if (!Util.isUnset(request.productName)) {
+      body["productName"] = request.productName;
+    }
+
+    if (!Util.isUnset(request.productSpecification)) {
+      body["productSpecification"] = request.productSpecification;
+    }
+
+    if (!Util.isUnset(request.projectCode)) {
+      body["projectCode"] = request.projectCode;
+    }
+
+    if (!Util.isUnset(request.projectId)) {
+      body["projectId"] = request.projectId;
+    }
+
+    if (!Util.isUnset(request.sendPlanQuantity)) {
+      body["sendPlanQuantity"] = request.sendPlanQuantity;
+    }
+
+    if (!Util.isUnset(request.supplierCode)) {
+      body["supplierCode"] = request.supplierCode;
+    }
+
+    if (!Util.isUnset(request.supplierName)) {
+      body["supplierName"] = request.supplierName;
+    }
+
+    if (!Util.isUnset(request.totalWage)) {
+      body["totalWage"] = request.totalWage;
+    }
+
+    if (!Util.isUnset(request.uuid)) {
+      body["uuid"] = request.uuid;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<IndustryManufactureMesOutPlanResponse>(await this.doROARequest("IndustryManufactureMesOutPlan", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufacturings/outPlans/manage`, "json", req, runtime), new IndustryManufactureMesOutPlanResponse({}));
+  }
+
+  async industryManufactureMesOutput(request: IndustryManufactureMesOutputRequest): Promise<IndustryManufactureMesOutputResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new IndustryManufactureMesOutputHeaders({ });
+    return await this.industryManufactureMesOutputWithOptions(request, headers, runtime);
+  }
+
+  async industryManufactureMesOutputWithOptions(request: IndustryManufactureMesOutputRequest, headers: IndustryManufactureMesOutputHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureMesOutputResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.action)) {
+      body["action"] = request.action;
+    }
+
+    if (!Util.isUnset(request.appKey)) {
+      body["appKey"] = request.appKey;
+    }
+
+    if (!Util.isUnset(request.approveStatus)) {
+      body["approveStatus"] = request.approveStatus;
+    }
+
+    if (!Util.isUnset(request.baseDataName)) {
+      body["baseDataName"] = request.baseDataName;
+    }
+
+    if (!Util.isUnset(request.defectsAmount)) {
+      body["defectsAmount"] = request.defectsAmount;
+    }
+
+    if (!Util.isUnset(request.defectsReason)) {
+      body["defectsReason"] = request.defectsReason;
+    }
+
+    if (!Util.isUnset(request.fineAmount)) {
+      body["fineAmount"] = request.fineAmount;
+    }
+
+    if (!Util.isUnset(request.hasQualityTest)) {
+      body["hasQualityTest"] = request.hasQualityTest;
+    }
+
+    if (!Util.isUnset(request.overdue)) {
+      body["overdue"] = request.overdue;
+    }
+
+    if (!Util.isUnset(request.planQuantity)) {
+      body["planQuantity"] = request.planQuantity;
+    }
+
+    if (!Util.isUnset(request.priority)) {
+      body["priority"] = request.priority;
+    }
+
+    if (!Util.isUnset(request.processName)) {
+      body["processName"] = request.processName;
+    }
+
+    if (!Util.isUnset(request.processUuid)) {
+      body["processUuid"] = request.processUuid;
+    }
+
+    if (!Util.isUnset(request.productCode)) {
+      body["productCode"] = request.productCode;
+    }
+
+    if (!Util.isUnset(request.productName)) {
+      body["productName"] = request.productName;
+    }
+
+    if (!Util.isUnset(request.productSpecification)) {
+      body["productSpecification"] = request.productSpecification;
+    }
+
+    if (!Util.isUnset(request.projectCode)) {
+      body["projectCode"] = request.projectCode;
+    }
+
+    if (!Util.isUnset(request.projectId)) {
+      body["projectId"] = request.projectId;
+    }
+
+    if (!Util.isUnset(request.projectStatus)) {
+      body["projectStatus"] = request.projectStatus;
+    }
+
+    if (!Util.isUnset(request.qualityTestStatus)) {
+      body["qualityTestStatus"] = request.qualityTestStatus;
+    }
+
+    if (!Util.isUnset(request.taskPlanEndTime)) {
+      body["taskPlanEndTime"] = request.taskPlanEndTime;
+    }
+
+    if (!Util.isUnset(request.taskPlanStartTime)) {
+      body["taskPlanStartTime"] = request.taskPlanStartTime;
+    }
+
+    if (!Util.isUnset(request.taskStatus)) {
+      body["taskStatus"] = request.taskStatus;
+    }
+
+    if (!Util.isUnset(request.taskType)) {
+      body["taskType"] = request.taskType;
+    }
+
+    if (!Util.isUnset(request.taskUuid)) {
+      body["taskUuid"] = request.taskUuid;
+    }
+
+    if (!Util.isUnset(request.teamId)) {
+      body["teamId"] = request.teamId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.userName)) {
+      body["userName"] = request.userName;
+    }
+
+    if (!Util.isUnset(request.uuid)) {
+      body["uuid"] = request.uuid;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<IndustryManufactureMesOutputResponse>(await this.doROARequest("IndustryManufactureMesOutput", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufacturings/outputs/manage`, "json", req, runtime), new IndustryManufactureMesOutputResponse({}));
   }
 
   async industryManufactureMesProcess(request: IndustryManufactureMesProcessRequest): Promise<IndustryManufactureMesProcessResponse> {
@@ -11872,6 +12976,83 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<IndustryManufactureMesProductionPlanResponse>(await this.doROARequest("IndustryManufactureMesProductionPlan", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufacturings/productionPlans/manage`, "json", req, runtime), new IndustryManufactureMesProductionPlanResponse({}));
+  }
+
+  async industryManufactureMesSubCooperationTeam(request: IndustryManufactureMesSubCooperationTeamRequest): Promise<IndustryManufactureMesSubCooperationTeamResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new IndustryManufactureMesSubCooperationTeamHeaders({ });
+    return await this.industryManufactureMesSubCooperationTeamWithOptions(request, headers, runtime);
+  }
+
+  async industryManufactureMesSubCooperationTeamWithOptions(request: IndustryManufactureMesSubCooperationTeamRequest, headers: IndustryManufactureMesSubCooperationTeamHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureMesSubCooperationTeamResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.action)) {
+      body["action"] = request.action;
+    }
+
+    if (!Util.isUnset(request.appKey)) {
+      body["appKey"] = request.appKey;
+    }
+
+    if (!Util.isUnset(request.baseDataName)) {
+      body["baseDataName"] = request.baseDataName;
+    }
+
+    if (!Util.isUnset(request.events)) {
+      body["events"] = request.events;
+    }
+
+    if (!Util.isUnset(request.extendData)) {
+      body["extendData"] = request.extendData;
+    }
+
+    if (!Util.isUnset(request.groupPlugins)) {
+      body["groupPlugins"] = request.groupPlugins;
+    }
+
+    if (!Util.isUnset(request.groupType)) {
+      body["groupType"] = request.groupType;
+    }
+
+    if (!Util.isUnset(request.leaders)) {
+      body["leaders"] = request.leaders;
+    }
+
+    if (!Util.isUnset(request.members)) {
+      body["members"] = request.members;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.outCorpId)) {
+      body["outCorpId"] = request.outCorpId;
+    }
+
+    if (!Util.isUnset(request.processIds)) {
+      body["processIds"] = request.processIds;
+    }
+
+    if (!Util.isUnset(request.uuid)) {
+      body["uuid"] = request.uuid;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<IndustryManufactureMesSubCooperationTeamResponse>(await this.doROARequest("IndustryManufactureMesSubCooperationTeam", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufacturings/outTeams/manage`, "json", req, runtime), new IndustryManufactureMesSubCooperationTeamResponse({}));
   }
 
   async industryManufactureMesTeamMgmt(request: IndustryManufactureMesTeamMgmtRequest): Promise<IndustryManufactureMesTeamMgmtResponse> {

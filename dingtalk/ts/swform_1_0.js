@@ -1,0 +1,1 @@
+module.exports = require('./dist').swform_1_0;

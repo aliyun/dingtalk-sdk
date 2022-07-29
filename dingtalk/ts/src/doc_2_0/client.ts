@@ -201,6 +201,9 @@ export class OpenActionModel extends $tea.Model {
 }
 
 export class SpaceModel extends $tea.Model {
+  cover?: string;
+  description?: string;
+  iconVO?: SpaceModelIconVO;
   id?: string;
   name?: string;
   owner?: SpaceModelOwner;
@@ -208,6 +211,9 @@ export class SpaceModel extends $tea.Model {
   visitorInfo?: SpaceModelVisitorInfo;
   static names(): { [key: string]: string } {
     return {
+      cover: 'cover',
+      description: 'description',
+      iconVO: 'iconVO',
       id: 'id',
       name: 'name',
       owner: 'owner',
@@ -218,6 +224,9 @@ export class SpaceModel extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      cover: 'string',
+      description: 'string',
+      iconVO: SpaceModelIconVO,
       id: 'string',
       name: 'string',
       owner: SpaceModelOwner,
@@ -232,6 +241,9 @@ export class SpaceModel extends $tea.Model {
 }
 
 export class SpaceVO extends $tea.Model {
+  cover?: string;
+  description?: string;
+  iconVO?: SpaceVOIconVO;
   id?: string;
   name?: string;
   owner?: SpaceVOOwner;
@@ -239,6 +251,9 @@ export class SpaceVO extends $tea.Model {
   visitorInfo?: SpaceVOVisitorInfo;
   static names(): { [key: string]: string } {
     return {
+      cover: 'cover',
+      description: 'description',
+      iconVO: 'iconVO',
       id: 'id',
       name: 'name',
       owner: 'owner',
@@ -249,6 +264,9 @@ export class SpaceVO extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      cover: 'string',
+      description: 'string',
+      iconVO: SpaceVOIconVO,
       id: 'string',
       name: 'string',
       owner: SpaceVOOwner,
@@ -1254,10 +1272,12 @@ export class DentryModelUpdater extends $tea.Model {
 
 export class DentryModelVisitorInfo extends $tea.Model {
   dentryActions?: string[];
+  roleCode?: string;
   spaceActions?: string[];
   static names(): { [key: string]: string } {
     return {
       dentryActions: 'dentryActions',
+      roleCode: 'roleCode',
       spaceActions: 'spaceActions',
     };
   }
@@ -1265,6 +1285,7 @@ export class DentryModelVisitorInfo extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       dentryActions: { 'type': 'array', 'itemType': 'string' },
+      roleCode: 'string',
       spaceActions: { 'type': 'array', 'itemType': 'string' },
     };
   }
@@ -1320,10 +1341,12 @@ export class DentryVOUpdater extends $tea.Model {
 
 export class DentryVOVisitorInfo extends $tea.Model {
   dentryActions?: string[];
+  roleCode?: string;
   spaceActions?: string[];
   static names(): { [key: string]: string } {
     return {
       dentryActions: 'dentryActions',
+      roleCode: 'roleCode',
       spaceActions: 'spaceActions',
     };
   }
@@ -1331,6 +1354,7 @@ export class DentryVOVisitorInfo extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       dentryActions: { 'type': 'array', 'itemType': 'string' },
+      roleCode: 'string',
       spaceActions: { 'type': 'array', 'itemType': 'string' },
     };
   }
@@ -1354,6 +1378,28 @@ export class LinkSourceInfoIconUrl extends $tea.Model {
     return {
       line: 'string',
       small: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SpaceModelIconVO extends $tea.Model {
+  icon?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      icon: 'icon',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      icon: 'string',
+      type: 'string',
     };
   }
 
@@ -1386,10 +1432,12 @@ export class SpaceModelOwner extends $tea.Model {
 
 export class SpaceModelVisitorInfo extends $tea.Model {
   dentryActions?: string[];
+  roleCode?: string;
   spaceActions?: string[];
   static names(): { [key: string]: string } {
     return {
       dentryActions: 'dentryActions',
+      roleCode: 'roleCode',
       spaceActions: 'spaceActions',
     };
   }
@@ -1397,7 +1445,30 @@ export class SpaceModelVisitorInfo extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       dentryActions: { 'type': 'array', 'itemType': 'string' },
+      roleCode: 'string',
       spaceActions: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SpaceVOIconVO extends $tea.Model {
+  icon?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      icon: 'icon',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      icon: 'string',
+      type: 'string',
     };
   }
 
@@ -1430,10 +1501,12 @@ export class SpaceVOOwner extends $tea.Model {
 
 export class SpaceVOVisitorInfo extends $tea.Model {
   dentryActions?: string[];
+  roleCode?: string;
   spaceActions?: string[];
   static names(): { [key: string]: string } {
     return {
       dentryActions: 'dentryActions',
+      roleCode: 'roleCode',
       spaceActions: 'spaceActions',
     };
   }
@@ -1441,6 +1514,7 @@ export class SpaceVOVisitorInfo extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       dentryActions: { 'type': 'array', 'itemType': 'string' },
+      roleCode: 'string',
       spaceActions: { 'type': 'array', 'itemType': 'string' },
     };
   }
