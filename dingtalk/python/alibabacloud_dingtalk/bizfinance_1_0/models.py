@@ -3113,6 +3113,7 @@ class GetInvoiceByPageResponseBodyResultList(TeaModel):
         general_invoice_detail_volist: List[GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList] = None,
         invoice_code: str = None,
         invoice_no: str = None,
+        invoice_status: str = None,
         invoice_type: str = None,
         machine_code: str = None,
         oil_flag: str = None,
@@ -3164,6 +3165,8 @@ class GetInvoiceByPageResponseBodyResultList(TeaModel):
         self.invoice_code = invoice_code
         # 发票号码
         self.invoice_no = invoice_no
+        # 发票状态
+        self.invoice_status = invoice_status
         # 发票类型
         self.invoice_type = invoice_type
         # 机器码
@@ -3264,6 +3267,8 @@ class GetInvoiceByPageResponseBodyResultList(TeaModel):
             result['invoiceCode'] = self.invoice_code
         if self.invoice_no is not None:
             result['invoiceNo'] = self.invoice_no
+        if self.invoice_status is not None:
+            result['invoiceStatus'] = self.invoice_status
         if self.invoice_type is not None:
             result['invoiceType'] = self.invoice_type
         if self.machine_code is not None:
@@ -3353,6 +3358,8 @@ class GetInvoiceByPageResponseBodyResultList(TeaModel):
             self.invoice_code = m.get('invoiceCode')
         if m.get('invoiceNo') is not None:
             self.invoice_no = m.get('invoiceNo')
+        if m.get('invoiceStatus') is not None:
+            self.invoice_status = m.get('invoiceStatus')
         if m.get('invoiceType') is not None:
             self.invoice_type = m.get('invoiceType')
         if m.get('machineCode') is not None:

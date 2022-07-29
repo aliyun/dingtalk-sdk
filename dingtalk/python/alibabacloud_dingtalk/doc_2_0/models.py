@@ -78,10 +78,13 @@ class DentryModelVisitorInfo(TeaModel):
     def __init__(
         self,
         dentry_actions: List[str] = None,
+        role_code: str = None,
         space_actions: List[str] = None,
     ):
         # 节点的操作列表。
         self.dentry_actions = dentry_actions
+        # 当前用户对这个空间的访问角色。
+        self.role_code = role_code
         # 空间的操作列表。
         self.space_actions = space_actions
 
@@ -96,6 +99,8 @@ class DentryModelVisitorInfo(TeaModel):
         result = dict()
         if self.dentry_actions is not None:
             result['dentryActions'] = self.dentry_actions
+        if self.role_code is not None:
+            result['roleCode'] = self.role_code
         if self.space_actions is not None:
             result['spaceActions'] = self.space_actions
         return result
@@ -104,6 +109,8 @@ class DentryModelVisitorInfo(TeaModel):
         m = m or dict()
         if m.get('dentryActions') is not None:
             self.dentry_actions = m.get('dentryActions')
+        if m.get('roleCode') is not None:
+            self.role_code = m.get('roleCode')
         if m.get('spaceActions') is not None:
             self.space_actions = m.get('spaceActions')
         return self
@@ -202,6 +209,41 @@ class LinkSourceInfo(TeaModel):
         return self
 
 
+class SpaceModelIconVO(TeaModel):
+    def __init__(
+        self,
+        icon: str = None,
+        type: str = None,
+    ):
+        # 图标
+        self.icon = icon
+        # 图标类型
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
 class SpaceModelOwner(TeaModel):
     def __init__(
         self,
@@ -241,10 +283,13 @@ class SpaceModelVisitorInfo(TeaModel):
     def __init__(
         self,
         dentry_actions: List[str] = None,
+        role_code: str = None,
         space_actions: List[str] = None,
     ):
         # 节点的操作列表。
         self.dentry_actions = dentry_actions
+        # 权限
+        self.role_code = role_code
         # 空间的操作列表。
         self.space_actions = space_actions
 
@@ -259,6 +304,8 @@ class SpaceModelVisitorInfo(TeaModel):
         result = dict()
         if self.dentry_actions is not None:
             result['dentryActions'] = self.dentry_actions
+        if self.role_code is not None:
+            result['roleCode'] = self.role_code
         if self.space_actions is not None:
             result['spaceActions'] = self.space_actions
         return result
@@ -267,6 +314,8 @@ class SpaceModelVisitorInfo(TeaModel):
         m = m or dict()
         if m.get('dentryActions') is not None:
             self.dentry_actions = m.get('dentryActions')
+        if m.get('roleCode') is not None:
+            self.role_code = m.get('roleCode')
         if m.get('spaceActions') is not None:
             self.space_actions = m.get('spaceActions')
         return self
@@ -275,12 +324,21 @@ class SpaceModelVisitorInfo(TeaModel):
 class SpaceModel(TeaModel):
     def __init__(
         self,
+        cover: str = None,
+        description: str = None,
+        icon_vo: SpaceModelIconVO = None,
         id: str = None,
         name: str = None,
         owner: SpaceModelOwner = None,
         url: str = None,
         visitor_info: SpaceModelVisitorInfo = None,
     ):
+        # 封面
+        self.cover = cover
+        # 空间描述信息
+        self.description = description
+        # 知识库图标
+        self.icon_vo = icon_vo
         # 知识库id。
         self.id = id
         # 知识库名称。
@@ -293,6 +351,8 @@ class SpaceModel(TeaModel):
         self.visitor_info = visitor_info
 
     def validate(self):
+        if self.icon_vo:
+            self.icon_vo.validate()
         if self.owner:
             self.owner.validate()
         if self.visitor_info:
@@ -304,6 +364,12 @@ class SpaceModel(TeaModel):
             return _map
 
         result = dict()
+        if self.cover is not None:
+            result['cover'] = self.cover
+        if self.description is not None:
+            result['description'] = self.description
+        if self.icon_vo is not None:
+            result['iconVO'] = self.icon_vo.to_map()
         if self.id is not None:
             result['id'] = self.id
         if self.name is not None:
@@ -318,6 +384,13 @@ class SpaceModel(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('cover') is not None:
+            self.cover = m.get('cover')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('iconVO') is not None:
+            temp_model = SpaceModelIconVO()
+            self.icon_vo = temp_model.from_map(m['iconVO'])
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('name') is not None:
@@ -568,10 +641,13 @@ class DentryVOVisitorInfo(TeaModel):
     def __init__(
         self,
         dentry_actions: List[str] = None,
+        role_code: str = None,
         space_actions: List[str] = None,
     ):
         # 节点的操作列表。
         self.dentry_actions = dentry_actions
+        # 当前用户对这个空间的访问角色。
+        self.role_code = role_code
         # 空间的操作列表。
         self.space_actions = space_actions
 
@@ -586,6 +662,8 @@ class DentryVOVisitorInfo(TeaModel):
         result = dict()
         if self.dentry_actions is not None:
             result['dentryActions'] = self.dentry_actions
+        if self.role_code is not None:
+            result['roleCode'] = self.role_code
         if self.space_actions is not None:
             result['spaceActions'] = self.space_actions
         return result
@@ -594,6 +672,8 @@ class DentryVOVisitorInfo(TeaModel):
         m = m or dict()
         if m.get('dentryActions') is not None:
             self.dentry_actions = m.get('dentryActions')
+        if m.get('roleCode') is not None:
+            self.role_code = m.get('roleCode')
         if m.get('spaceActions') is not None:
             self.space_actions = m.get('spaceActions')
         return self
@@ -795,6 +875,41 @@ class OpenActionModel(TeaModel):
         return self
 
 
+class SpaceVOIconVO(TeaModel):
+    def __init__(
+        self,
+        icon: str = None,
+        type: str = None,
+    ):
+        # 图标
+        self.icon = icon
+        # 图标类型
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
 class SpaceVOOwner(TeaModel):
     def __init__(
         self,
@@ -834,10 +949,13 @@ class SpaceVOVisitorInfo(TeaModel):
     def __init__(
         self,
         dentry_actions: List[str] = None,
+        role_code: str = None,
         space_actions: List[str] = None,
     ):
         # 节点的操作列表。
         self.dentry_actions = dentry_actions
+        # 权限
+        self.role_code = role_code
         # 空间的操作列表。
         self.space_actions = space_actions
 
@@ -852,6 +970,8 @@ class SpaceVOVisitorInfo(TeaModel):
         result = dict()
         if self.dentry_actions is not None:
             result['dentryActions'] = self.dentry_actions
+        if self.role_code is not None:
+            result['roleCode'] = self.role_code
         if self.space_actions is not None:
             result['spaceActions'] = self.space_actions
         return result
@@ -860,6 +980,8 @@ class SpaceVOVisitorInfo(TeaModel):
         m = m or dict()
         if m.get('dentryActions') is not None:
             self.dentry_actions = m.get('dentryActions')
+        if m.get('roleCode') is not None:
+            self.role_code = m.get('roleCode')
         if m.get('spaceActions') is not None:
             self.space_actions = m.get('spaceActions')
         return self
@@ -868,12 +990,21 @@ class SpaceVOVisitorInfo(TeaModel):
 class SpaceVO(TeaModel):
     def __init__(
         self,
+        cover: str = None,
+        description: str = None,
+        icon_vo: SpaceVOIconVO = None,
         id: str = None,
         name: str = None,
         owner: SpaceVOOwner = None,
         url: str = None,
         visitor_info: SpaceVOVisitorInfo = None,
     ):
+        # 封面
+        self.cover = cover
+        # 访问者对当前知识库的权限等信息
+        self.description = description
+        # 知识库图标
+        self.icon_vo = icon_vo
         # 知识库id。
         self.id = id
         # 知识库名称。
@@ -886,6 +1017,8 @@ class SpaceVO(TeaModel):
         self.visitor_info = visitor_info
 
     def validate(self):
+        if self.icon_vo:
+            self.icon_vo.validate()
         if self.owner:
             self.owner.validate()
         if self.visitor_info:
@@ -897,6 +1030,12 @@ class SpaceVO(TeaModel):
             return _map
 
         result = dict()
+        if self.cover is not None:
+            result['cover'] = self.cover
+        if self.description is not None:
+            result['description'] = self.description
+        if self.icon_vo is not None:
+            result['iconVO'] = self.icon_vo.to_map()
         if self.id is not None:
             result['id'] = self.id
         if self.name is not None:
@@ -911,6 +1050,13 @@ class SpaceVO(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('cover') is not None:
+            self.cover = m.get('cover')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('iconVO') is not None:
+            temp_model = SpaceVOIconVO()
+            self.icon_vo = temp_model.from_map(m['iconVO'])
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('name') is not None:

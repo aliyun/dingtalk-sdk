@@ -8904,6 +8904,328 @@ class IndustryManufactureMaterialListResponse(TeaModel):
         return self
 
 
+class IndustryManufactureMesDispatchTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class IndustryManufactureMesDispatchTaskRequest(TeaModel):
+    def __init__(
+        self,
+        action: str = None,
+        app_key: str = None,
+        base_data_name: str = None,
+        defects_amount: str = None,
+        dispatch_staff_name: str = None,
+        dispatch_staff_no: str = None,
+        fine_amount: str = None,
+        overdue: int = None,
+        plan_quantity: int = None,
+        priority: int = None,
+        process_name: str = None,
+        process_uuid: str = None,
+        product_code: str = None,
+        product_name: str = None,
+        product_specification: str = None,
+        project_code: str = None,
+        project_id: str = None,
+        project_status: str = None,
+        task_operators: str = None,
+        task_plan_end_time: str = None,
+        task_plan_start_time: str = None,
+        task_status: str = None,
+        task_type: str = None,
+        team_id: str = None,
+        uuid: str = None,
+    ):
+        # 本次操作的行为
+        self.action = action
+        # 生态唯一标识, 需要注册
+        self.app_key = app_key
+        # 主数据名称
+        self.base_data_name = base_data_name
+        # 不良品总数(多次报工)
+        self.defects_amount = defects_amount
+        # 派工人名称
+        self.dispatch_staff_name = dispatch_staff_name
+        # 派工人ID
+        self.dispatch_staff_no = dispatch_staff_no
+        # 良品总数(多次报工)
+        self.fine_amount = fine_amount
+        # 任务逾期
+        self.overdue = overdue
+        # 派工(总)数
+        self.plan_quantity = plan_quantity
+        # 是否加急
+        self.priority = priority
+        # 工序名称
+        self.process_name = process_name
+        # 工序业务唯一标识
+        self.process_uuid = process_uuid
+        # 产品编号(物料编号)
+        self.product_code = product_code
+        # 产品名称
+        self.product_name = product_name
+        # 产品(物料)规格
+        self.product_specification = product_specification
+        # 工单编号(生产任务单)
+        self.project_code = project_code
+        # 工单(生产计划单)
+        self.project_id = project_id
+        # 工单状态
+        self.project_status = project_status
+        # 任务分配员工列表(生产人员)
+        self.task_operators = task_operators
+        # 任务计划结束(完成)时间
+        self.task_plan_end_time = task_plan_end_time
+        # 任务计划开始时间
+        self.task_plan_start_time = task_plan_start_time
+        # 派工任务状态
+        self.task_status = task_status
+        # 任务类型(正常和委外)
+        self.task_type = task_type
+        # 负责班组id
+        self.team_id = team_id
+        # 本次记录唯一标识
+        self.uuid = uuid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action is not None:
+            result['action'] = self.action
+        if self.app_key is not None:
+            result['appKey'] = self.app_key
+        if self.base_data_name is not None:
+            result['baseDataName'] = self.base_data_name
+        if self.defects_amount is not None:
+            result['defectsAmount'] = self.defects_amount
+        if self.dispatch_staff_name is not None:
+            result['dispatchStaffName'] = self.dispatch_staff_name
+        if self.dispatch_staff_no is not None:
+            result['dispatchStaffNo'] = self.dispatch_staff_no
+        if self.fine_amount is not None:
+            result['fineAmount'] = self.fine_amount
+        if self.overdue is not None:
+            result['overdue'] = self.overdue
+        if self.plan_quantity is not None:
+            result['planQuantity'] = self.plan_quantity
+        if self.priority is not None:
+            result['priority'] = self.priority
+        if self.process_name is not None:
+            result['processName'] = self.process_name
+        if self.process_uuid is not None:
+            result['processUuid'] = self.process_uuid
+        if self.product_code is not None:
+            result['productCode'] = self.product_code
+        if self.product_name is not None:
+            result['productName'] = self.product_name
+        if self.product_specification is not None:
+            result['productSpecification'] = self.product_specification
+        if self.project_code is not None:
+            result['projectCode'] = self.project_code
+        if self.project_id is not None:
+            result['projectId'] = self.project_id
+        if self.project_status is not None:
+            result['projectStatus'] = self.project_status
+        if self.task_operators is not None:
+            result['taskOperators'] = self.task_operators
+        if self.task_plan_end_time is not None:
+            result['taskPlanEndTime'] = self.task_plan_end_time
+        if self.task_plan_start_time is not None:
+            result['taskPlanStartTime'] = self.task_plan_start_time
+        if self.task_status is not None:
+            result['taskStatus'] = self.task_status
+        if self.task_type is not None:
+            result['taskType'] = self.task_type
+        if self.team_id is not None:
+            result['teamId'] = self.team_id
+        if self.uuid is not None:
+            result['uuid'] = self.uuid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('action') is not None:
+            self.action = m.get('action')
+        if m.get('appKey') is not None:
+            self.app_key = m.get('appKey')
+        if m.get('baseDataName') is not None:
+            self.base_data_name = m.get('baseDataName')
+        if m.get('defectsAmount') is not None:
+            self.defects_amount = m.get('defectsAmount')
+        if m.get('dispatchStaffName') is not None:
+            self.dispatch_staff_name = m.get('dispatchStaffName')
+        if m.get('dispatchStaffNo') is not None:
+            self.dispatch_staff_no = m.get('dispatchStaffNo')
+        if m.get('fineAmount') is not None:
+            self.fine_amount = m.get('fineAmount')
+        if m.get('overdue') is not None:
+            self.overdue = m.get('overdue')
+        if m.get('planQuantity') is not None:
+            self.plan_quantity = m.get('planQuantity')
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
+        if m.get('processName') is not None:
+            self.process_name = m.get('processName')
+        if m.get('processUuid') is not None:
+            self.process_uuid = m.get('processUuid')
+        if m.get('productCode') is not None:
+            self.product_code = m.get('productCode')
+        if m.get('productName') is not None:
+            self.product_name = m.get('productName')
+        if m.get('productSpecification') is not None:
+            self.product_specification = m.get('productSpecification')
+        if m.get('projectCode') is not None:
+            self.project_code = m.get('projectCode')
+        if m.get('projectId') is not None:
+            self.project_id = m.get('projectId')
+        if m.get('projectStatus') is not None:
+            self.project_status = m.get('projectStatus')
+        if m.get('taskOperators') is not None:
+            self.task_operators = m.get('taskOperators')
+        if m.get('taskPlanEndTime') is not None:
+            self.task_plan_end_time = m.get('taskPlanEndTime')
+        if m.get('taskPlanStartTime') is not None:
+            self.task_plan_start_time = m.get('taskPlanStartTime')
+        if m.get('taskStatus') is not None:
+            self.task_status = m.get('taskStatus')
+        if m.get('taskType') is not None:
+            self.task_type = m.get('taskType')
+        if m.get('teamId') is not None:
+            self.team_id = m.get('teamId')
+        if m.get('uuid') is not None:
+            self.uuid = m.get('uuid')
+        return self
+
+
+class IndustryManufactureMesDispatchTaskResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+    ):
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class IndustryManufactureMesDispatchTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: IndustryManufactureMesDispatchTaskResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = IndustryManufactureMesDispatchTaskResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class IndustryManufactureMesDispatchTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: IndustryManufactureMesDispatchTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = IndustryManufactureMesDispatchTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class IndustryManufactureMesMaterialHeaders(TeaModel):
     def __init__(
         self,
@@ -9181,6 +9503,629 @@ class IndustryManufactureMesMaterialResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = IndustryManufactureMesMaterialResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class IndustryManufactureMesOutPlanHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class IndustryManufactureMesOutPlanRequest(TeaModel):
+    def __init__(
+        self,
+        approval_status: str = None,
+        approver: str = None,
+        base_data_name: str = None,
+        out_source_project_code: str = None,
+        out_source_team_id: str = None,
+        price: str = None,
+        process_identification_code: str = None,
+        process_uuids: str = None,
+        product_code: str = None,
+        product_name: str = None,
+        product_specification: str = None,
+        project_code: str = None,
+        project_id: str = None,
+        send_plan_quantity: str = None,
+        supplier_code: str = None,
+        supplier_name: str = None,
+        total_wage: str = None,
+        uuid: str = None,
+    ):
+        # 审批状态
+        self.approval_status = approval_status
+        # 审批人
+        self.approver = approver
+        # 主数据名称
+        self.base_data_name = base_data_name
+        # 委外计划单号
+        self.out_source_project_code = out_source_project_code
+        # 委外群
+        self.out_source_team_id = out_source_team_id
+        # 单价（元）
+        self.price = price
+        # 工序识别码
+        self.process_identification_code = process_identification_code
+        # 委外的工序列表(多个)
+        self.process_uuids = process_uuids
+        # 产品代码(物料编号)
+        self.product_code = product_code
+        # 产品名称
+        self.product_name = product_name
+        # 规格型号
+        self.product_specification = product_specification
+        # 工单编号(生产任务单)
+        self.project_code = project_code
+        # 工单(生产计划单)ID
+        self.project_id = project_id
+        # 委外计划数
+        self.send_plan_quantity = send_plan_quantity
+        # 供应商代码
+        self.supplier_code = supplier_code
+        # 供应商名称
+        self.supplier_name = supplier_name
+        # 金额（元）
+        self.total_wage = total_wage
+        # 记录唯一标识
+        self.uuid = uuid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.approval_status is not None:
+            result['approvalStatus'] = self.approval_status
+        if self.approver is not None:
+            result['approver'] = self.approver
+        if self.base_data_name is not None:
+            result['baseDataName'] = self.base_data_name
+        if self.out_source_project_code is not None:
+            result['outSourceProjectCode'] = self.out_source_project_code
+        if self.out_source_team_id is not None:
+            result['outSourceTeamId'] = self.out_source_team_id
+        if self.price is not None:
+            result['price'] = self.price
+        if self.process_identification_code is not None:
+            result['processIdentificationCode'] = self.process_identification_code
+        if self.process_uuids is not None:
+            result['processUuids'] = self.process_uuids
+        if self.product_code is not None:
+            result['productCode'] = self.product_code
+        if self.product_name is not None:
+            result['productName'] = self.product_name
+        if self.product_specification is not None:
+            result['productSpecification'] = self.product_specification
+        if self.project_code is not None:
+            result['projectCode'] = self.project_code
+        if self.project_id is not None:
+            result['projectId'] = self.project_id
+        if self.send_plan_quantity is not None:
+            result['sendPlanQuantity'] = self.send_plan_quantity
+        if self.supplier_code is not None:
+            result['supplierCode'] = self.supplier_code
+        if self.supplier_name is not None:
+            result['supplierName'] = self.supplier_name
+        if self.total_wage is not None:
+            result['totalWage'] = self.total_wage
+        if self.uuid is not None:
+            result['uuid'] = self.uuid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('approvalStatus') is not None:
+            self.approval_status = m.get('approvalStatus')
+        if m.get('approver') is not None:
+            self.approver = m.get('approver')
+        if m.get('baseDataName') is not None:
+            self.base_data_name = m.get('baseDataName')
+        if m.get('outSourceProjectCode') is not None:
+            self.out_source_project_code = m.get('outSourceProjectCode')
+        if m.get('outSourceTeamId') is not None:
+            self.out_source_team_id = m.get('outSourceTeamId')
+        if m.get('price') is not None:
+            self.price = m.get('price')
+        if m.get('processIdentificationCode') is not None:
+            self.process_identification_code = m.get('processIdentificationCode')
+        if m.get('processUuids') is not None:
+            self.process_uuids = m.get('processUuids')
+        if m.get('productCode') is not None:
+            self.product_code = m.get('productCode')
+        if m.get('productName') is not None:
+            self.product_name = m.get('productName')
+        if m.get('productSpecification') is not None:
+            self.product_specification = m.get('productSpecification')
+        if m.get('projectCode') is not None:
+            self.project_code = m.get('projectCode')
+        if m.get('projectId') is not None:
+            self.project_id = m.get('projectId')
+        if m.get('sendPlanQuantity') is not None:
+            self.send_plan_quantity = m.get('sendPlanQuantity')
+        if m.get('supplierCode') is not None:
+            self.supplier_code = m.get('supplierCode')
+        if m.get('supplierName') is not None:
+            self.supplier_name = m.get('supplierName')
+        if m.get('totalWage') is not None:
+            self.total_wage = m.get('totalWage')
+        if m.get('uuid') is not None:
+            self.uuid = m.get('uuid')
+        return self
+
+
+class IndustryManufactureMesOutPlanResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+    ):
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class IndustryManufactureMesOutPlanResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: IndustryManufactureMesOutPlanResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = IndustryManufactureMesOutPlanResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class IndustryManufactureMesOutPlanResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: IndustryManufactureMesOutPlanResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = IndustryManufactureMesOutPlanResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class IndustryManufactureMesOutputHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class IndustryManufactureMesOutputRequest(TeaModel):
+    def __init__(
+        self,
+        action: str = None,
+        app_key: str = None,
+        approve_status: str = None,
+        base_data_name: str = None,
+        defects_amount: str = None,
+        defects_reason: str = None,
+        fine_amount: str = None,
+        has_quality_test: str = None,
+        overdue: int = None,
+        plan_quantity: int = None,
+        priority: int = None,
+        process_name: str = None,
+        process_uuid: str = None,
+        product_code: str = None,
+        product_name: str = None,
+        product_specification: str = None,
+        project_code: str = None,
+        project_id: str = None,
+        project_status: str = None,
+        quality_test_status: str = None,
+        task_plan_end_time: str = None,
+        task_plan_start_time: str = None,
+        task_status: str = None,
+        task_type: str = None,
+        task_uuid: str = None,
+        team_id: str = None,
+        user_id: str = None,
+        user_name: str = None,
+        uuid: str = None,
+    ):
+        # 本次操作的行为
+        self.action = action
+        # 生态唯一标识, 需要注册
+        self.app_key = app_key
+        # 审批状态
+        self.approve_status = approve_status
+        # 主数据名称
+        self.base_data_name = base_data_name
+        # 不良品总数(多次报工)
+        self.defects_amount = defects_amount
+        # 不良品原因
+        self.defects_reason = defects_reason
+        # 良品总数(多次报工)
+        self.fine_amount = fine_amount
+        # 是否已质检
+        self.has_quality_test = has_quality_test
+        # 任务逾期
+        self.overdue = overdue
+        # 派工(总)数
+        self.plan_quantity = plan_quantity
+        # 是否加急
+        self.priority = priority
+        # 工序名称
+        self.process_name = process_name
+        # 工序业务唯一标识
+        self.process_uuid = process_uuid
+        # 产品编号(物料编号)
+        self.product_code = product_code
+        # 产品名称
+        self.product_name = product_name
+        # 产品(物料)规格
+        self.product_specification = product_specification
+        # 工单编号(生产任务单)
+        self.project_code = project_code
+        # 工单(生产计划单)
+        self.project_id = project_id
+        # 工单状态
+        self.project_status = project_status
+        # 检验状态
+        self.quality_test_status = quality_test_status
+        # 任务计划结束(完成)时间
+        self.task_plan_end_time = task_plan_end_time
+        # 任务计划开始时间
+        self.task_plan_start_time = task_plan_start_time
+        # 派工任务状态
+        self.task_status = task_status
+        # 报工类型(正常,委外)
+        self.task_type = task_type
+        # 派工任务唯一标识
+        self.task_uuid = task_uuid
+        # 负责班组id
+        self.team_id = team_id
+        # 报工人staffNo(生产人员)
+        self.user_id = user_id
+        # 派工人名称
+        self.user_name = user_name
+        # 本次记录唯一标识
+        self.uuid = uuid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action is not None:
+            result['action'] = self.action
+        if self.app_key is not None:
+            result['appKey'] = self.app_key
+        if self.approve_status is not None:
+            result['approveStatus'] = self.approve_status
+        if self.base_data_name is not None:
+            result['baseDataName'] = self.base_data_name
+        if self.defects_amount is not None:
+            result['defectsAmount'] = self.defects_amount
+        if self.defects_reason is not None:
+            result['defectsReason'] = self.defects_reason
+        if self.fine_amount is not None:
+            result['fineAmount'] = self.fine_amount
+        if self.has_quality_test is not None:
+            result['hasQualityTest'] = self.has_quality_test
+        if self.overdue is not None:
+            result['overdue'] = self.overdue
+        if self.plan_quantity is not None:
+            result['planQuantity'] = self.plan_quantity
+        if self.priority is not None:
+            result['priority'] = self.priority
+        if self.process_name is not None:
+            result['processName'] = self.process_name
+        if self.process_uuid is not None:
+            result['processUuid'] = self.process_uuid
+        if self.product_code is not None:
+            result['productCode'] = self.product_code
+        if self.product_name is not None:
+            result['productName'] = self.product_name
+        if self.product_specification is not None:
+            result['productSpecification'] = self.product_specification
+        if self.project_code is not None:
+            result['projectCode'] = self.project_code
+        if self.project_id is not None:
+            result['projectId'] = self.project_id
+        if self.project_status is not None:
+            result['projectStatus'] = self.project_status
+        if self.quality_test_status is not None:
+            result['qualityTestStatus'] = self.quality_test_status
+        if self.task_plan_end_time is not None:
+            result['taskPlanEndTime'] = self.task_plan_end_time
+        if self.task_plan_start_time is not None:
+            result['taskPlanStartTime'] = self.task_plan_start_time
+        if self.task_status is not None:
+            result['taskStatus'] = self.task_status
+        if self.task_type is not None:
+            result['taskType'] = self.task_type
+        if self.task_uuid is not None:
+            result['taskUuid'] = self.task_uuid
+        if self.team_id is not None:
+            result['teamId'] = self.team_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_name is not None:
+            result['userName'] = self.user_name
+        if self.uuid is not None:
+            result['uuid'] = self.uuid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('action') is not None:
+            self.action = m.get('action')
+        if m.get('appKey') is not None:
+            self.app_key = m.get('appKey')
+        if m.get('approveStatus') is not None:
+            self.approve_status = m.get('approveStatus')
+        if m.get('baseDataName') is not None:
+            self.base_data_name = m.get('baseDataName')
+        if m.get('defectsAmount') is not None:
+            self.defects_amount = m.get('defectsAmount')
+        if m.get('defectsReason') is not None:
+            self.defects_reason = m.get('defectsReason')
+        if m.get('fineAmount') is not None:
+            self.fine_amount = m.get('fineAmount')
+        if m.get('hasQualityTest') is not None:
+            self.has_quality_test = m.get('hasQualityTest')
+        if m.get('overdue') is not None:
+            self.overdue = m.get('overdue')
+        if m.get('planQuantity') is not None:
+            self.plan_quantity = m.get('planQuantity')
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
+        if m.get('processName') is not None:
+            self.process_name = m.get('processName')
+        if m.get('processUuid') is not None:
+            self.process_uuid = m.get('processUuid')
+        if m.get('productCode') is not None:
+            self.product_code = m.get('productCode')
+        if m.get('productName') is not None:
+            self.product_name = m.get('productName')
+        if m.get('productSpecification') is not None:
+            self.product_specification = m.get('productSpecification')
+        if m.get('projectCode') is not None:
+            self.project_code = m.get('projectCode')
+        if m.get('projectId') is not None:
+            self.project_id = m.get('projectId')
+        if m.get('projectStatus') is not None:
+            self.project_status = m.get('projectStatus')
+        if m.get('qualityTestStatus') is not None:
+            self.quality_test_status = m.get('qualityTestStatus')
+        if m.get('taskPlanEndTime') is not None:
+            self.task_plan_end_time = m.get('taskPlanEndTime')
+        if m.get('taskPlanStartTime') is not None:
+            self.task_plan_start_time = m.get('taskPlanStartTime')
+        if m.get('taskStatus') is not None:
+            self.task_status = m.get('taskStatus')
+        if m.get('taskType') is not None:
+            self.task_type = m.get('taskType')
+        if m.get('taskUuid') is not None:
+            self.task_uuid = m.get('taskUuid')
+        if m.get('teamId') is not None:
+            self.team_id = m.get('teamId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
+        if m.get('uuid') is not None:
+            self.uuid = m.get('uuid')
+        return self
+
+
+class IndustryManufactureMesOutputResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+    ):
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class IndustryManufactureMesOutputResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: IndustryManufactureMesOutputResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = IndustryManufactureMesOutputResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class IndustryManufactureMesOutputResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: IndustryManufactureMesOutputResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = IndustryManufactureMesOutputResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -9855,6 +10800,431 @@ class IndustryManufactureMesProductionPlanResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = IndustryManufactureMesProductionPlanResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class IndustryManufactureMesSubCooperationTeamHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class IndustryManufactureMesSubCooperationTeamRequestExtendData(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+        value: str = None,
+        value_type: str = None,
+    ):
+        # 字段唯一标识
+        self.code = code
+        # 字段中文描述
+        self.name = name
+        # 字段的取值
+        self.value = value
+        # 字段的类型(string,number,boolean)
+        self.value_type = value_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        if self.value_type is not None:
+            result['valueType'] = self.value_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('valueType') is not None:
+            self.value_type = m.get('valueType')
+        return self
+
+
+class IndustryManufactureMesSubCooperationTeamRequestGroupPlugins(TeaModel):
+    def __init__(
+        self,
+        label: str = None,
+        value: str = None,
+    ):
+        self.label = label
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.label is not None:
+            result['label'] = self.label
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class IndustryManufactureMesSubCooperationTeamRequestLeaders(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        user_id: str = None,
+    ):
+        # 工人姓名
+        self.name = name
+        # 工人staffNo
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class IndustryManufactureMesSubCooperationTeamRequestMembers(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        user_id: str = None,
+    ):
+        # 工人姓名
+        self.name = name
+        # 工人staffNo
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class IndustryManufactureMesSubCooperationTeamRequest(TeaModel):
+    def __init__(
+        self,
+        action: str = None,
+        app_key: str = None,
+        base_data_name: str = None,
+        events: List[str] = None,
+        extend_data: List[IndustryManufactureMesSubCooperationTeamRequestExtendData] = None,
+        group_plugins: List[IndustryManufactureMesSubCooperationTeamRequestGroupPlugins] = None,
+        group_type: str = None,
+        leaders: List[IndustryManufactureMesSubCooperationTeamRequestLeaders] = None,
+        members: List[IndustryManufactureMesSubCooperationTeamRequestMembers] = None,
+        name: str = None,
+        out_corp_id: str = None,
+        process_ids: List[str] = None,
+        uuid: str = None,
+    ):
+        # 本次操作的行为，取值： ● add：增加   -- 创建群 ● update：更新 -- 群成员变更
+        self.action = action
+        # ISV的唯一标识,由BPaaS分配
+        self.app_key = app_key
+        # 基础数据名称。比如班组
+        self.base_data_name = base_data_name
+        # 事件配置列表(启用卡片列表),所有枚举值： 任务分配提醒: TASK_ASSIGN_REMINDER 任务逾期提醒: TASK_OVERDUE_REMINDER 置顶加急任务: STICK_URGET_TASK 报工审批提醒: OUTPUT_APPROVE_REMINDER 报工审批反馈: OUTPUT_APPROVE_RESULT 班组概览 :TEAM_OVERVIEW 我的任务:MYTASK_OVERVIEW     例如： ["STICK_URGET_TASK","OUTPUT_APPROVE_REMINDER"]
+        self.events = events
+        # 扩展字段
+        self.extend_data = extend_data
+        # 群插件列表
+        self.group_plugins = group_plugins
+        # 群类型，枚举
+        self.group_type = group_type
+        # 班组长(支持多个)
+        self.leaders = leaders
+        # 班组成员(群成员)
+        self.members = members
+        # 班组群名称
+        self.name = name
+        # 委外合作群所属组织
+        self.out_corp_id = out_corp_id
+        # 关联的工序
+        self.process_ids = process_ids
+        # 班组模型实例的唯一Id， 由业务方传递
+        self.uuid = uuid
+
+    def validate(self):
+        if self.extend_data:
+            for k in self.extend_data:
+                if k:
+                    k.validate()
+        if self.group_plugins:
+            for k in self.group_plugins:
+                if k:
+                    k.validate()
+        if self.leaders:
+            for k in self.leaders:
+                if k:
+                    k.validate()
+        if self.members:
+            for k in self.members:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action is not None:
+            result['action'] = self.action
+        if self.app_key is not None:
+            result['appKey'] = self.app_key
+        if self.base_data_name is not None:
+            result['baseDataName'] = self.base_data_name
+        if self.events is not None:
+            result['events'] = self.events
+        result['extendData'] = []
+        if self.extend_data is not None:
+            for k in self.extend_data:
+                result['extendData'].append(k.to_map() if k else None)
+        result['groupPlugins'] = []
+        if self.group_plugins is not None:
+            for k in self.group_plugins:
+                result['groupPlugins'].append(k.to_map() if k else None)
+        if self.group_type is not None:
+            result['groupType'] = self.group_type
+        result['leaders'] = []
+        if self.leaders is not None:
+            for k in self.leaders:
+                result['leaders'].append(k.to_map() if k else None)
+        result['members'] = []
+        if self.members is not None:
+            for k in self.members:
+                result['members'].append(k.to_map() if k else None)
+        if self.name is not None:
+            result['name'] = self.name
+        if self.out_corp_id is not None:
+            result['outCorpId'] = self.out_corp_id
+        if self.process_ids is not None:
+            result['processIds'] = self.process_ids
+        if self.uuid is not None:
+            result['uuid'] = self.uuid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('action') is not None:
+            self.action = m.get('action')
+        if m.get('appKey') is not None:
+            self.app_key = m.get('appKey')
+        if m.get('baseDataName') is not None:
+            self.base_data_name = m.get('baseDataName')
+        if m.get('events') is not None:
+            self.events = m.get('events')
+        self.extend_data = []
+        if m.get('extendData') is not None:
+            for k in m.get('extendData'):
+                temp_model = IndustryManufactureMesSubCooperationTeamRequestExtendData()
+                self.extend_data.append(temp_model.from_map(k))
+        self.group_plugins = []
+        if m.get('groupPlugins') is not None:
+            for k in m.get('groupPlugins'):
+                temp_model = IndustryManufactureMesSubCooperationTeamRequestGroupPlugins()
+                self.group_plugins.append(temp_model.from_map(k))
+        if m.get('groupType') is not None:
+            self.group_type = m.get('groupType')
+        self.leaders = []
+        if m.get('leaders') is not None:
+            for k in m.get('leaders'):
+                temp_model = IndustryManufactureMesSubCooperationTeamRequestLeaders()
+                self.leaders.append(temp_model.from_map(k))
+        self.members = []
+        if m.get('members') is not None:
+            for k in m.get('members'):
+                temp_model = IndustryManufactureMesSubCooperationTeamRequestMembers()
+                self.members.append(temp_model.from_map(k))
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('outCorpId') is not None:
+            self.out_corp_id = m.get('outCorpId')
+        if m.get('processIds') is not None:
+            self.process_ids = m.get('processIds')
+        if m.get('uuid') is not None:
+            self.uuid = m.get('uuid')
+        return self
+
+
+class IndustryManufactureMesSubCooperationTeamResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+    ):
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class IndustryManufactureMesSubCooperationTeamResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: IndustryManufactureMesSubCooperationTeamResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = IndustryManufactureMesSubCooperationTeamResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class IndustryManufactureMesSubCooperationTeamResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: IndustryManufactureMesSubCooperationTeamResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = IndustryManufactureMesSubCooperationTeamResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
