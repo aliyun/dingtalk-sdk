@@ -16,6 +16,13 @@ class visitorInfo extends Model
     public $dentryActions;
 
     /**
+     * @description 当前用户对这个空间的访问角色。
+     *
+     * @var string
+     */
+    public $roleCode;
+
+    /**
      * @description 空间的操作列表。
      *
      * @var string[]
@@ -23,6 +30,7 @@ class visitorInfo extends Model
     public $spaceActions;
     protected $_name = [
         'dentryActions' => 'dentryActions',
+        'roleCode'      => 'roleCode',
         'spaceActions'  => 'spaceActions',
     ];
 
@@ -35,6 +43,9 @@ class visitorInfo extends Model
         $res = [];
         if (null !== $this->dentryActions) {
             $res['dentryActions'] = $this->dentryActions;
+        }
+        if (null !== $this->roleCode) {
+            $res['roleCode'] = $this->roleCode;
         }
         if (null !== $this->spaceActions) {
             $res['spaceActions'] = $this->spaceActions;
@@ -55,6 +66,9 @@ class visitorInfo extends Model
             if (!empty($map['dentryActions'])) {
                 $model->dentryActions = $map['dentryActions'];
             }
+        }
+        if (isset($map['roleCode'])) {
+            $model->roleCode = $map['roleCode'];
         }
         if (isset($map['spaceActions'])) {
             if (!empty($map['spaceActions'])) {

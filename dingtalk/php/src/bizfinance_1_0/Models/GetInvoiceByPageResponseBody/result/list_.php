@@ -97,6 +97,13 @@ class list_ extends Model
     public $invoiceNo;
 
     /**
+     * @description 发票状态
+     *
+     * @var string
+     */
+    public $invoiceStatus;
+
+    /**
      * @description 发票类型
      *
      * @var string
@@ -284,6 +291,7 @@ class list_ extends Model
         'generalInvoiceDetailVOList'  => 'generalInvoiceDetailVOList',
         'invoiceCode'                 => 'invoiceCode',
         'invoiceNo'                   => 'invoiceNo',
+        'invoiceStatus'               => 'invoiceStatus',
         'invoiceType'                 => 'invoiceType',
         'machineCode'                 => 'machineCode',
         'oilFlag'                     => 'oilFlag',
@@ -360,6 +368,9 @@ class list_ extends Model
         }
         if (null !== $this->invoiceNo) {
             $res['invoiceNo'] = $this->invoiceNo;
+        }
+        if (null !== $this->invoiceStatus) {
+            $res['invoiceStatus'] = $this->invoiceStatus;
         }
         if (null !== $this->invoiceType) {
             $res['invoiceType'] = $this->invoiceType;
@@ -510,6 +521,9 @@ class list_ extends Model
         }
         if (isset($map['invoiceNo'])) {
             $model->invoiceNo = $map['invoiceNo'];
+        }
+        if (isset($map['invoiceStatus'])) {
+            $model->invoiceStatus = $map['invoiceStatus'];
         }
         if (isset($map['invoiceType'])) {
             $model->invoiceType = $map['invoiceType'];

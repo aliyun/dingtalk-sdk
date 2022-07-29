@@ -4,12 +4,34 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SpaceVO\iconVO;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SpaceVO\owner;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SpaceVO\visitorInfo;
 use AlibabaCloud\Tea\Model;
 
 class SpaceVO extends Model
 {
+    /**
+     * @description 封面
+     *
+     * @var string
+     */
+    public $cover;
+
+    /**
+     * @description 访问者对当前知识库的权限等信息
+     *
+     * @var string
+     */
+    public $description;
+
+    /**
+     * @description 知识库图标
+     *
+     * @var iconVO
+     */
+    public $iconVO;
+
     /**
      * @description 知识库id。
      *
@@ -45,6 +67,9 @@ class SpaceVO extends Model
      */
     public $visitorInfo;
     protected $_name = [
+        'cover'       => 'cover',
+        'description' => 'description',
+        'iconVO'      => 'iconVO',
         'id'          => 'id',
         'name'        => 'name',
         'owner'       => 'owner',
@@ -59,6 +84,15 @@ class SpaceVO extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->cover) {
+            $res['cover'] = $this->cover;
+        }
+        if (null !== $this->description) {
+            $res['description'] = $this->description;
+        }
+        if (null !== $this->iconVO) {
+            $res['iconVO'] = null !== $this->iconVO ? $this->iconVO->toMap() : null;
+        }
         if (null !== $this->id) {
             $res['id'] = $this->id;
         }
@@ -86,6 +120,15 @@ class SpaceVO extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['cover'])) {
+            $model->cover = $map['cover'];
+        }
+        if (isset($map['description'])) {
+            $model->description = $map['description'];
+        }
+        if (isset($map['iconVO'])) {
+            $model->iconVO = iconVO::fromMap($map['iconVO']);
+        }
         if (isset($map['id'])) {
             $model->id = $map['id'];
         }

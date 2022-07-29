@@ -4,12 +4,34 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SpaceModel\iconVO;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SpaceModel\owner;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SpaceModel\visitorInfo;
 use AlibabaCloud\Tea\Model;
 
 class SpaceModel extends Model
 {
+    /**
+     * @description 封面
+     *
+     * @var string
+     */
+    public $cover;
+
+    /**
+     * @description 空间描述信息
+     *
+     * @var string
+     */
+    public $description;
+
+    /**
+     * @description 知识库图标
+     *
+     * @var iconVO
+     */
+    public $iconVO;
+
     /**
      * @description 知识库id。
      *
@@ -45,6 +67,9 @@ class SpaceModel extends Model
      */
     public $visitorInfo;
     protected $_name = [
+        'cover'       => 'cover',
+        'description' => 'description',
+        'iconVO'      => 'iconVO',
         'id'          => 'id',
         'name'        => 'name',
         'owner'       => 'owner',
@@ -59,6 +84,15 @@ class SpaceModel extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->cover) {
+            $res['cover'] = $this->cover;
+        }
+        if (null !== $this->description) {
+            $res['description'] = $this->description;
+        }
+        if (null !== $this->iconVO) {
+            $res['iconVO'] = null !== $this->iconVO ? $this->iconVO->toMap() : null;
+        }
         if (null !== $this->id) {
             $res['id'] = $this->id;
         }
@@ -86,6 +120,15 @@ class SpaceModel extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['cover'])) {
+            $model->cover = $map['cover'];
+        }
+        if (isset($map['description'])) {
+            $model->description = $map['description'];
+        }
+        if (isset($map['iconVO'])) {
+            $model->iconVO = iconVO::fromMap($map['iconVO']);
+        }
         if (isset($map['id'])) {
             $model->id = $map['id'];
         }

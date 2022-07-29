@@ -145,15 +145,27 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureLabourCost
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMaterialListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMaterialListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMaterialListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesDispatchTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesDispatchTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesDispatchTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesMaterialHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesMaterialRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesMaterialResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesOutPlanHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesOutPlanRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesOutPlanResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesOutputHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesOutputRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesOutputResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesProcessHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesProcessRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesProcessResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesProductionPlanHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesProductionPlanRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesProductionPlanResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesSubCooperationTeamHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesSubCooperationTeamRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesSubCooperationTeamResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesTeamMgmtHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesTeamMgmtRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesTeamMgmtResponse;
@@ -2681,6 +2693,120 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param IndustryManufactureMesDispatchTaskRequest $request
+     *
+     * @return IndustryManufactureMesDispatchTaskResponse
+     */
+    public function industryManufactureMesDispatchTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IndustryManufactureMesDispatchTaskHeaders([]);
+
+        return $this->industryManufactureMesDispatchTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IndustryManufactureMesDispatchTaskRequest $request
+     * @param IndustryManufactureMesDispatchTaskHeaders $headers
+     * @param RuntimeOptions                            $runtime
+     *
+     * @return IndustryManufactureMesDispatchTaskResponse
+     */
+    public function industryManufactureMesDispatchTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->action)) {
+            @$body['action'] = $request->action;
+        }
+        if (!Utils::isUnset($request->appKey)) {
+            @$body['appKey'] = $request->appKey;
+        }
+        if (!Utils::isUnset($request->baseDataName)) {
+            @$body['baseDataName'] = $request->baseDataName;
+        }
+        if (!Utils::isUnset($request->defectsAmount)) {
+            @$body['defectsAmount'] = $request->defectsAmount;
+        }
+        if (!Utils::isUnset($request->dispatchStaffName)) {
+            @$body['dispatchStaffName'] = $request->dispatchStaffName;
+        }
+        if (!Utils::isUnset($request->dispatchStaffNo)) {
+            @$body['dispatchStaffNo'] = $request->dispatchStaffNo;
+        }
+        if (!Utils::isUnset($request->fineAmount)) {
+            @$body['fineAmount'] = $request->fineAmount;
+        }
+        if (!Utils::isUnset($request->overdue)) {
+            @$body['overdue'] = $request->overdue;
+        }
+        if (!Utils::isUnset($request->planQuantity)) {
+            @$body['planQuantity'] = $request->planQuantity;
+        }
+        if (!Utils::isUnset($request->priority)) {
+            @$body['priority'] = $request->priority;
+        }
+        if (!Utils::isUnset($request->processName)) {
+            @$body['processName'] = $request->processName;
+        }
+        if (!Utils::isUnset($request->processUuid)) {
+            @$body['processUuid'] = $request->processUuid;
+        }
+        if (!Utils::isUnset($request->productCode)) {
+            @$body['productCode'] = $request->productCode;
+        }
+        if (!Utils::isUnset($request->productName)) {
+            @$body['productName'] = $request->productName;
+        }
+        if (!Utils::isUnset($request->productSpecification)) {
+            @$body['productSpecification'] = $request->productSpecification;
+        }
+        if (!Utils::isUnset($request->projectCode)) {
+            @$body['projectCode'] = $request->projectCode;
+        }
+        if (!Utils::isUnset($request->projectId)) {
+            @$body['projectId'] = $request->projectId;
+        }
+        if (!Utils::isUnset($request->projectStatus)) {
+            @$body['projectStatus'] = $request->projectStatus;
+        }
+        if (!Utils::isUnset($request->taskOperators)) {
+            @$body['taskOperators'] = $request->taskOperators;
+        }
+        if (!Utils::isUnset($request->taskPlanEndTime)) {
+            @$body['taskPlanEndTime'] = $request->taskPlanEndTime;
+        }
+        if (!Utils::isUnset($request->taskPlanStartTime)) {
+            @$body['taskPlanStartTime'] = $request->taskPlanStartTime;
+        }
+        if (!Utils::isUnset($request->taskStatus)) {
+            @$body['taskStatus'] = $request->taskStatus;
+        }
+        if (!Utils::isUnset($request->taskType)) {
+            @$body['taskType'] = $request->taskType;
+        }
+        if (!Utils::isUnset($request->teamId)) {
+            @$body['teamId'] = $request->teamId;
+        }
+        if (!Utils::isUnset($request->uuid)) {
+            @$body['uuid'] = $request->uuid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return IndustryManufactureMesDispatchTaskResponse::fromMap($this->doROARequest('IndustryManufactureMesDispatchTask', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufacturings/dispatchTasks/manage', 'json', $req, $runtime));
+    }
+
+    /**
      * @param IndustryManufactureMesMaterialRequest $request
      *
      * @return IndustryManufactureMesMaterialResponse
@@ -2750,6 +2876,225 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return IndustryManufactureMesMaterialResponse::fromMap($this->doROARequest('IndustryManufactureMesMaterial', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufacturings/materials/manage', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param IndustryManufactureMesOutPlanRequest $request
+     *
+     * @return IndustryManufactureMesOutPlanResponse
+     */
+    public function industryManufactureMesOutPlan($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IndustryManufactureMesOutPlanHeaders([]);
+
+        return $this->industryManufactureMesOutPlanWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IndustryManufactureMesOutPlanRequest $request
+     * @param IndustryManufactureMesOutPlanHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return IndustryManufactureMesOutPlanResponse
+     */
+    public function industryManufactureMesOutPlanWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->approvalStatus)) {
+            @$body['approvalStatus'] = $request->approvalStatus;
+        }
+        if (!Utils::isUnset($request->approver)) {
+            @$body['approver'] = $request->approver;
+        }
+        if (!Utils::isUnset($request->baseDataName)) {
+            @$body['baseDataName'] = $request->baseDataName;
+        }
+        if (!Utils::isUnset($request->outSourceProjectCode)) {
+            @$body['outSourceProjectCode'] = $request->outSourceProjectCode;
+        }
+        if (!Utils::isUnset($request->outSourceTeamId)) {
+            @$body['outSourceTeamId'] = $request->outSourceTeamId;
+        }
+        if (!Utils::isUnset($request->price)) {
+            @$body['price'] = $request->price;
+        }
+        if (!Utils::isUnset($request->processIdentificationCode)) {
+            @$body['processIdentificationCode'] = $request->processIdentificationCode;
+        }
+        if (!Utils::isUnset($request->processUuids)) {
+            @$body['processUuids'] = $request->processUuids;
+        }
+        if (!Utils::isUnset($request->productCode)) {
+            @$body['productCode'] = $request->productCode;
+        }
+        if (!Utils::isUnset($request->productName)) {
+            @$body['productName'] = $request->productName;
+        }
+        if (!Utils::isUnset($request->productSpecification)) {
+            @$body['productSpecification'] = $request->productSpecification;
+        }
+        if (!Utils::isUnset($request->projectCode)) {
+            @$body['projectCode'] = $request->projectCode;
+        }
+        if (!Utils::isUnset($request->projectId)) {
+            @$body['projectId'] = $request->projectId;
+        }
+        if (!Utils::isUnset($request->sendPlanQuantity)) {
+            @$body['sendPlanQuantity'] = $request->sendPlanQuantity;
+        }
+        if (!Utils::isUnset($request->supplierCode)) {
+            @$body['supplierCode'] = $request->supplierCode;
+        }
+        if (!Utils::isUnset($request->supplierName)) {
+            @$body['supplierName'] = $request->supplierName;
+        }
+        if (!Utils::isUnset($request->totalWage)) {
+            @$body['totalWage'] = $request->totalWage;
+        }
+        if (!Utils::isUnset($request->uuid)) {
+            @$body['uuid'] = $request->uuid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return IndustryManufactureMesOutPlanResponse::fromMap($this->doROARequest('IndustryManufactureMesOutPlan', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufacturings/outPlans/manage', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param IndustryManufactureMesOutputRequest $request
+     *
+     * @return IndustryManufactureMesOutputResponse
+     */
+    public function industryManufactureMesOutput($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IndustryManufactureMesOutputHeaders([]);
+
+        return $this->industryManufactureMesOutputWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IndustryManufactureMesOutputRequest $request
+     * @param IndustryManufactureMesOutputHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return IndustryManufactureMesOutputResponse
+     */
+    public function industryManufactureMesOutputWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->action)) {
+            @$body['action'] = $request->action;
+        }
+        if (!Utils::isUnset($request->appKey)) {
+            @$body['appKey'] = $request->appKey;
+        }
+        if (!Utils::isUnset($request->approveStatus)) {
+            @$body['approveStatus'] = $request->approveStatus;
+        }
+        if (!Utils::isUnset($request->baseDataName)) {
+            @$body['baseDataName'] = $request->baseDataName;
+        }
+        if (!Utils::isUnset($request->defectsAmount)) {
+            @$body['defectsAmount'] = $request->defectsAmount;
+        }
+        if (!Utils::isUnset($request->defectsReason)) {
+            @$body['defectsReason'] = $request->defectsReason;
+        }
+        if (!Utils::isUnset($request->fineAmount)) {
+            @$body['fineAmount'] = $request->fineAmount;
+        }
+        if (!Utils::isUnset($request->hasQualityTest)) {
+            @$body['hasQualityTest'] = $request->hasQualityTest;
+        }
+        if (!Utils::isUnset($request->overdue)) {
+            @$body['overdue'] = $request->overdue;
+        }
+        if (!Utils::isUnset($request->planQuantity)) {
+            @$body['planQuantity'] = $request->planQuantity;
+        }
+        if (!Utils::isUnset($request->priority)) {
+            @$body['priority'] = $request->priority;
+        }
+        if (!Utils::isUnset($request->processName)) {
+            @$body['processName'] = $request->processName;
+        }
+        if (!Utils::isUnset($request->processUuid)) {
+            @$body['processUuid'] = $request->processUuid;
+        }
+        if (!Utils::isUnset($request->productCode)) {
+            @$body['productCode'] = $request->productCode;
+        }
+        if (!Utils::isUnset($request->productName)) {
+            @$body['productName'] = $request->productName;
+        }
+        if (!Utils::isUnset($request->productSpecification)) {
+            @$body['productSpecification'] = $request->productSpecification;
+        }
+        if (!Utils::isUnset($request->projectCode)) {
+            @$body['projectCode'] = $request->projectCode;
+        }
+        if (!Utils::isUnset($request->projectId)) {
+            @$body['projectId'] = $request->projectId;
+        }
+        if (!Utils::isUnset($request->projectStatus)) {
+            @$body['projectStatus'] = $request->projectStatus;
+        }
+        if (!Utils::isUnset($request->qualityTestStatus)) {
+            @$body['qualityTestStatus'] = $request->qualityTestStatus;
+        }
+        if (!Utils::isUnset($request->taskPlanEndTime)) {
+            @$body['taskPlanEndTime'] = $request->taskPlanEndTime;
+        }
+        if (!Utils::isUnset($request->taskPlanStartTime)) {
+            @$body['taskPlanStartTime'] = $request->taskPlanStartTime;
+        }
+        if (!Utils::isUnset($request->taskStatus)) {
+            @$body['taskStatus'] = $request->taskStatus;
+        }
+        if (!Utils::isUnset($request->taskType)) {
+            @$body['taskType'] = $request->taskType;
+        }
+        if (!Utils::isUnset($request->taskUuid)) {
+            @$body['taskUuid'] = $request->taskUuid;
+        }
+        if (!Utils::isUnset($request->teamId)) {
+            @$body['teamId'] = $request->teamId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->userName)) {
+            @$body['userName'] = $request->userName;
+        }
+        if (!Utils::isUnset($request->uuid)) {
+            @$body['uuid'] = $request->uuid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return IndustryManufactureMesOutputResponse::fromMap($this->doROARequest('IndustryManufactureMesOutput', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufacturings/outputs/manage', 'json', $req, $runtime));
     }
 
     /**
@@ -2942,6 +3287,84 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return IndustryManufactureMesProductionPlanResponse::fromMap($this->doROARequest('IndustryManufactureMesProductionPlan', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufacturings/productionPlans/manage', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param IndustryManufactureMesSubCooperationTeamRequest $request
+     *
+     * @return IndustryManufactureMesSubCooperationTeamResponse
+     */
+    public function industryManufactureMesSubCooperationTeam($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IndustryManufactureMesSubCooperationTeamHeaders([]);
+
+        return $this->industryManufactureMesSubCooperationTeamWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IndustryManufactureMesSubCooperationTeamRequest $request
+     * @param IndustryManufactureMesSubCooperationTeamHeaders $headers
+     * @param RuntimeOptions                                  $runtime
+     *
+     * @return IndustryManufactureMesSubCooperationTeamResponse
+     */
+    public function industryManufactureMesSubCooperationTeamWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->action)) {
+            @$body['action'] = $request->action;
+        }
+        if (!Utils::isUnset($request->appKey)) {
+            @$body['appKey'] = $request->appKey;
+        }
+        if (!Utils::isUnset($request->baseDataName)) {
+            @$body['baseDataName'] = $request->baseDataName;
+        }
+        if (!Utils::isUnset($request->events)) {
+            @$body['events'] = $request->events;
+        }
+        if (!Utils::isUnset($request->extendData)) {
+            @$body['extendData'] = $request->extendData;
+        }
+        if (!Utils::isUnset($request->groupPlugins)) {
+            @$body['groupPlugins'] = $request->groupPlugins;
+        }
+        if (!Utils::isUnset($request->groupType)) {
+            @$body['groupType'] = $request->groupType;
+        }
+        if (!Utils::isUnset($request->leaders)) {
+            @$body['leaders'] = $request->leaders;
+        }
+        if (!Utils::isUnset($request->members)) {
+            @$body['members'] = $request->members;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->outCorpId)) {
+            @$body['outCorpId'] = $request->outCorpId;
+        }
+        if (!Utils::isUnset($request->processIds)) {
+            @$body['processIds'] = $request->processIds;
+        }
+        if (!Utils::isUnset($request->uuid)) {
+            @$body['uuid'] = $request->uuid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return IndustryManufactureMesSubCooperationTeamResponse::fromMap($this->doROARequest('IndustryManufactureMesSubCooperationTeam', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/manufacturings/outTeams/manage', 'json', $req, $runtime));
     }
 
     /**
