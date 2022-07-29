@@ -154,6 +154,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
             [NameInMap("dentryActions")]
             [Validation(Required=false)]
             public List<string> DentryActions { get; set; }
+            [NameInMap("roleCode")]
+            [Validation(Required=false)]
+            public string RoleCode { get; set; }
             [NameInMap("spaceActions")]
             [Validation(Required=false)]
             public List<string> SpaceActions { get; set; }

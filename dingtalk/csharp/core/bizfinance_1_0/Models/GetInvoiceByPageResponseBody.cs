@@ -53,6 +53,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 }
                 public string InvoiceCode { get; set; }
                 public string InvoiceNo { get; set; }
+                public string InvoiceStatus { get; set; }
                 public string InvoiceType { get; set; }
                 public string MachineCode { get; set; }
                 public string OilFlag { get; set; }

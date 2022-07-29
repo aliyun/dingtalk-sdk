@@ -10,6 +10,35 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 {
     public class SpaceModel : TeaModel {
         /// <summary>
+        /// 封面
+        /// </summary>
+        [NameInMap("cover")]
+        [Validation(Required=false)]
+        public string Cover { get; set; }
+
+        /// <summary>
+        /// 空间描述信息
+        /// </summary>
+        [NameInMap("description")]
+        [Validation(Required=false)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// 知识库图标
+        /// </summary>
+        [NameInMap("iconVO")]
+        [Validation(Required=false)]
+        public SpaceModelIconVO IconVO { get; set; }
+        public class SpaceModelIconVO : TeaModel {
+            [NameInMap("icon")]
+            [Validation(Required=false)]
+            public string Icon { get; set; }
+            [NameInMap("type")]
+            [Validation(Required=false)]
+            public string Type { get; set; }
+        };
+
+        /// <summary>
         /// 知识库id。
         /// </summary>
         [NameInMap("id")]
@@ -55,6 +84,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
             [NameInMap("dentryActions")]
             [Validation(Required=false)]
             public List<string> DentryActions { get; set; }
+            [NameInMap("roleCode")]
+            [Validation(Required=false)]
+            public string RoleCode { get; set; }
             [NameInMap("spaceActions")]
             [Validation(Required=false)]
             public List<string> SpaceActions { get; set; }
