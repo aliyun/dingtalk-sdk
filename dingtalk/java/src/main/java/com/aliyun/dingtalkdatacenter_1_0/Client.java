@@ -21,6 +21,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public PostCorpAuthInfoResponse postCorpAuthInfo() throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        PostCorpAuthInfoHeaders headers = new PostCorpAuthInfoHeaders();
+        return this.postCorpAuthInfoWithOptions(headers, runtime);
+    }
+
+    public PostCorpAuthInfoResponse postCorpAuthInfoWithOptions(PostCorpAuthInfoHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("PostCorpAuthInfo", "datacenter_1.0", "HTTP", "POST", "AK", "/v1.0/datacenter/corporations/authorize", "json", req, runtime), new PostCorpAuthInfoResponse());
+    }
+
     public QueryActiveUserStatisticalDataResponse queryActiveUserStatisticalData(QueryActiveUserStatisticalDataRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         QueryActiveUserStatisticalDataHeaders headers = new QueryActiveUserStatisticalDataHeaders();
@@ -48,6 +70,35 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("QueryActiveUserStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", "/v1.0/datacenter/activeUserData", "json", req, runtime), new QueryActiveUserStatisticalDataResponse());
+    }
+
+    public QueryAnhmdStatisticalDataResponse queryAnhmdStatisticalData(QueryAnhmdStatisticalDataRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryAnhmdStatisticalDataHeaders headers = new QueryAnhmdStatisticalDataHeaders();
+        return this.queryAnhmdStatisticalDataWithOptions(request, headers, runtime);
+    }
+
+    public QueryAnhmdStatisticalDataResponse queryAnhmdStatisticalDataWithOptions(QueryAnhmdStatisticalDataRequest request, QueryAnhmdStatisticalDataHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.statDate)) {
+            query.put("statDate", request.statDate);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryAnhmdStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", "/v1.0/datacenter/statisticDatas/anHmd", "json", req, runtime), new QueryAnhmdStatisticalDataResponse());
     }
 
     public QueryApprovalStatisticalDataResponse queryApprovalStatisticalData(QueryApprovalStatisticalDataRequest request) throws Exception {

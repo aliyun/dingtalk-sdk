@@ -4,30 +4,31 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateStoreGroupConversationRequest extends TeaModel {
-    // 钉外用户在业务系统内的唯一标识
+    // 钉外用户在业务系统内的唯一标识。
     @NameInMap("appUserId")
     public String appUserId;
 
-    // 外部业务唯一标识（店铺唯一标识）
+    // 外部业务唯一标识（店铺唯一标识）。
     @NameInMap("businessUniqueKey")
     public String businessUniqueKey;
 
-    // 群头像
+    // 群头像。
     @NameInMap("groupAvatar")
     public String groupAvatar;
 
-    // 群名称
+    // 群名称。
     @NameInMap("groupName")
     public String groupName;
 
-    // 群模板
+    // 群模板Id。
     @NameInMap("groupTemplateId")
     public String groupTemplateId;
 
-    // 操作者在业务系统内的唯一标识
+    // 操作者在业务系统内的唯一标识。
     @NameInMap("operatorId")
     public String operatorId;
 
+    // 钉内用户列表。
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

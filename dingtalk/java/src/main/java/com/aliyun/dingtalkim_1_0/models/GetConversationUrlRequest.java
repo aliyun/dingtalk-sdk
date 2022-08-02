@@ -4,11 +4,11 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetConversationUrlRequest extends TeaModel {
-    // C端用户在业务账号体系内的用户userid，长度限制为1~64个字符。
+    // 钉外用户在业务系统内的唯一标志。
     @NameInMap("appUserId")
     public String appUserId;
 
-    // C端客户渠道code。
+    // 渠道code。
     @NameInMap("channelCode")
     public String channelCode;
 
@@ -16,11 +16,11 @@ public class GetConversationUrlRequest extends TeaModel {
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // C端客户标识。
+    // 钉外用户标识。
     @NameInMap("sourceCode")
     public String sourceCode;
 
-    // B端用户的钉钉userId。
+    // 钉内用户userId。
     @NameInMap("userId")
     public String userId;
 

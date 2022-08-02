@@ -4,11 +4,11 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUnReadMessageRequest extends TeaModel {
-    // C端客户appUserId
+    // 钉外用户在业务系统内的唯一标志。
     @NameInMap("appUserId")
     public String appUserId;
 
-    // 群会话Id列表
+    // 群会话列表。
     @NameInMap("openConversationIds")
     public java.util.List<String> openConversationIds;
 

@@ -8,11 +8,11 @@ public class SendRobotMessageRequest extends TeaModel {
     @NameInMap("atAll")
     public Boolean atAll;
 
-    // @钉外在业务系统内的唯一标识（openId）。
+    // @钉外在业务系统内的唯一标志。
     @NameInMap("atAppUserId")
     public String atAppUserId;
 
-    // @钉内用户在业务系统内的唯一标识（dingUserId）。
+    // @钉内用户userId。
     @NameInMap("atDingUserId")
     public String atDingUserId;
 
@@ -24,7 +24,7 @@ public class SendRobotMessageRequest extends TeaModel {
     @NameInMap("msgType")
     public String msgType;
 
-    // 群聊openConversationIds
+    // 群会话列表。
     @NameInMap("openConversationIds")
     public java.util.List<String> openConversationIds;
 

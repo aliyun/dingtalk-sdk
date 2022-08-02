@@ -4,15 +4,18 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateGroupConversationResponseBody extends TeaModel {
-    // 添加成功的C端客户列表
+    // 添加成功的钉外成员列表。
     @NameInMap("appUserIds")
     public java.util.List<String> appUserIds;
 
-    // 群会话Id
+    @NameInMap("chatId")
+    public String chatId;
+
+    // 群会话Id。
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 添加成功的B端客服列表
+    // 添加成功的钉内成员列表。
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 
@@ -27,6 +30,14 @@ public class CreateGroupConversationResponseBody extends TeaModel {
     }
     public java.util.List<String> getAppUserIds() {
         return this.appUserIds;
+    }
+
+    public CreateGroupConversationResponseBody setChatId(String chatId) {
+        this.chatId = chatId;
+        return this;
+    }
+    public String getChatId() {
+        return this.chatId;
     }
 
     public CreateGroupConversationResponseBody setOpenConversationId(String openConversationId) {

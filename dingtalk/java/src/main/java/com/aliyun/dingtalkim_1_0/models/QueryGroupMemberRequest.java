@@ -4,7 +4,7 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryGroupMemberRequest extends TeaModel {
-    // 群会话Id
+    // 群会话Id。
     @NameInMap("openConversationId")
     public String openConversationId;
 

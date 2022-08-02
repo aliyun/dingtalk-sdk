@@ -4,7 +4,7 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class QuerySingleGroupResponseBody extends TeaModel {
-    // 群会话列表
+    // 群会话列表。
     @NameInMap("openConversations")
     public java.util.List<QuerySingleGroupResponseBodyOpenConversations> openConversations;
 
@@ -22,15 +22,15 @@ public class QuerySingleGroupResponseBody extends TeaModel {
     }
 
     public static class QuerySingleGroupResponseBodyOpenConversations extends TeaModel {
-        // 客户appUserId
+        // 钉外用户在业务系统内的唯一标识。
         @NameInMap("appUserId")
         public String appUserId;
 
-        // 群会话Id
+        // 群会话Id。
         @NameInMap("openConversationId")
         public String openConversationId;
 
-        // 客服钉钉Id
+        // 钉内用户userId。
         @NameInMap("userId")
         public String userId;
 

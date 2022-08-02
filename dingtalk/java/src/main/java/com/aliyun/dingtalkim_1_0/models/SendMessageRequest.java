@@ -24,6 +24,10 @@ public class SendMessageRequest extends TeaModel {
     @NameInMap("senderId")
     public String senderId;
 
+    // 渠道按钮跳转信息
+    @NameInMap("sourceInfos")
+    public java.util.Map<String, ?> sourceInfos;
+
     public static SendMessageRequest build(java.util.Map<String, ?> map) throws Exception {
         SendMessageRequest self = new SendMessageRequest();
         return TeaModel.build(map, self);
@@ -67,6 +71,14 @@ public class SendMessageRequest extends TeaModel {
     }
     public String getSenderId() {
         return this.senderId;
+    }
+
+    public SendMessageRequest setSourceInfos(java.util.Map<String, ?> sourceInfos) {
+        this.sourceInfos = sourceInfos;
+        return this;
+    }
+    public java.util.Map<String, ?> getSourceInfos() {
+        return this.sourceInfos;
     }
 
 }

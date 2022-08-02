@@ -8,7 +8,7 @@ public class CampusCreateCampusRequest extends TeaModel {
     @NameInMap("address")
     public String address;
 
-    // 园区面积
+    // 园区面积，单位：平方千米
     @NameInMap("area")
     public Double area;
 
@@ -47,6 +47,10 @@ public class CampusCreateCampusRequest extends TeaModel {
     // 扩展字段
     @NameInMap("extend")
     public String extend;
+
+    // 园区经纬度,格式：经度,纬度
+    @NameInMap("location")
+    public String location;
 
     @NameInMap("orderEndTime")
     public Long orderEndTime;
@@ -157,6 +161,14 @@ public class CampusCreateCampusRequest extends TeaModel {
     }
     public String getExtend() {
         return this.extend;
+    }
+
+    public CampusCreateCampusRequest setLocation(String location) {
+        this.location = location;
+        return this;
+    }
+    public String getLocation() {
+        return this.location;
     }
 
     public CampusCreateCampusRequest setOrderEndTime(Long orderEndTime) {

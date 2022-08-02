@@ -4,11 +4,11 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendDingMessageRequest extends TeaModel {
-    // 客服oauth2.0授权码
+    // 钉内用户oauth2.0授权码。
     @NameInMap("code")
     public String code;
 
-    // 消息内容
+    // 消息内容。
     @NameInMap("message")
     public String message;
 
@@ -16,15 +16,15 @@ public class SendDingMessageRequest extends TeaModel {
     @NameInMap("messageType")
     public String messageType;
 
-    // 群会话Id
+    // 群会话Id。
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // C端客户appUserId
+    // 钉外用户在业务系统内的唯一标志。
     @NameInMap("receiverId")
     public String receiverId;
 
-    // B端客服钉钉Id
+    // 钉内用户userId。
     @NameInMap("senderId")
     public String senderId;
 

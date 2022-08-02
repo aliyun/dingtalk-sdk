@@ -4,11 +4,11 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryGroupMemberResponseBody extends TeaModel {
-    // 群成员列表
+    // 群成员列表。
     @NameInMap("groupMembers")
     public java.util.List<QueryGroupMemberResponseBodyGroupMembers> groupMembers;
 
-    // 群会话Id
+    // 群会话Id。
     @NameInMap("openConversationId")
     public String openConversationId;
 
@@ -34,23 +34,23 @@ public class QueryGroupMemberResponseBody extends TeaModel {
     }
 
     public static class QueryGroupMemberResponseBodyGroupMembers extends TeaModel {
-        // 群成员头像
+        // 群成员头像。
         @NameInMap("groupMemberAvatar")
         public String groupMemberAvatar;
 
-        // 群成员动态信息
+        // 群成员动态信息。
         @NameInMap("groupMemberDynamics")
         public String groupMemberDynamics;
 
-        // 群成员Id
+        // 群成员Id。
         @NameInMap("groupMemberId")
         public String groupMemberId;
 
-        // 群成员名称
+        // 群成员名称。
         @NameInMap("groupMemberName")
         public String groupMemberName;
 
-        // 群成员类型
+        // 群成员类型。
         @NameInMap("groupMemberType")
         public Integer groupMemberType;
 

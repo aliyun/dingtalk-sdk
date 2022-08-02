@@ -4,13 +4,9 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateInterconnectionRequest extends TeaModel {
-    // bc关系列表
+    // 钉外钉内关系列表。
     @NameInMap("interconnections")
     public java.util.List<CreateInterconnectionRequestInterconnections> interconnections;
-
-    // 参数签名
-    @NameInMap("signature")
-    public String signature;
 
     public static CreateInterconnectionRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateInterconnectionRequest self = new CreateInterconnectionRequest();
@@ -25,45 +21,37 @@ public class CreateInterconnectionRequest extends TeaModel {
         return this.interconnections;
     }
 
-    public CreateInterconnectionRequest setSignature(String signature) {
-        this.signature = signature;
-        return this;
-    }
-    public String getSignature() {
-        return this.signature;
-    }
-
     public static class CreateInterconnectionRequestInterconnections extends TeaModel {
-        // 客户头像链接
+        // 钉外用户头像链接。
         @NameInMap("appUserAvatar")
         public String appUserAvatar;
 
-        // 客户头像类型，取值：
+        // 钉外用户头像类型，取值：
         // 1：http
         @NameInMap("appUserAvatarMediaType")
         public Integer appUserAvatarMediaType;
 
-        // 客户动态
+        // 钉外用户动态。
         @NameInMap("appUserDynamics")
         public String appUserDynamics;
 
-        // 客户业务系统唯一标识
+        // 钉外用户在业务系统内的唯一标识。
         @NameInMap("appUserId")
         public String appUserId;
 
-        // 客户手机号
+        // 钉外用户手机号。
         @NameInMap("appUserMobile")
         public String appUserMobile;
 
-        // 客户名称
+        // 钉外用户名称。
         @NameInMap("appUserName")
         public String appUserName;
 
-        // 客户渠道code
+        // 渠道code。
         @NameInMap("channelCode")
         public String channelCode;
 
-        // 客服钉钉Id
+        // 钉内用户userId。
         @NameInMap("userId")
         public String userId;
 

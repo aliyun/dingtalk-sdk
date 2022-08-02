@@ -1229,6 +1229,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("deductStatus", request.deductStatus);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.generalInvoiceVOList)) {
+            body.put("generalInvoiceVOList", request.generalInvoiceVOList);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.invoiceKeyVOList)) {
             body.put("invoiceKeyVOList", request.invoiceKeyVOList);
         }
