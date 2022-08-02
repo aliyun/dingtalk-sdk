@@ -463,15 +463,18 @@ export class CreateCoupleGroupConversationRequest extends $tea.Model {
 }
 
 export class CreateCoupleGroupConversationResponseBody extends $tea.Model {
+  chatId?: string;
   openConversationId?: string;
   static names(): { [key: string]: string } {
     return {
+      chatId: 'chatId',
       openConversationId: 'openConversationId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      chatId: 'string',
       openConversationId: 'string',
     };
   }
@@ -564,11 +567,13 @@ export class CreateGroupConversationRequest extends $tea.Model {
 
 export class CreateGroupConversationResponseBody extends $tea.Model {
   appUserIds?: string[];
+  chatId?: string;
   openConversationId?: string;
   userIds?: string[];
   static names(): { [key: string]: string } {
     return {
       appUserIds: 'appUserIds',
+      chatId: 'chatId',
       openConversationId: 'openConversationId',
       userIds: 'userIds',
     };
@@ -577,6 +582,7 @@ export class CreateGroupConversationResponseBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       appUserIds: { 'type': 'array', 'itemType': 'string' },
+      chatId: 'string',
       openConversationId: 'string',
       userIds: { 'type': 'array', 'itemType': 'string' },
     };
@@ -633,18 +639,15 @@ export class CreateInterconnectionHeaders extends $tea.Model {
 
 export class CreateInterconnectionRequest extends $tea.Model {
   interconnections?: CreateInterconnectionRequestInterconnections[];
-  signature?: string;
   static names(): { [key: string]: string } {
     return {
       interconnections: 'interconnections',
-      signature: 'signature',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       interconnections: { 'type': 'array', 'itemType': CreateInterconnectionRequestInterconnections },
-      signature: 'string',
     };
   }
 
@@ -754,15 +757,18 @@ export class CreateStoreGroupConversationRequest extends $tea.Model {
 }
 
 export class CreateStoreGroupConversationResponseBody extends $tea.Model {
+  chatId?: string;
   openConversationId?: string;
   static names(): { [key: string]: string } {
     return {
+      chatId: 'chatId',
       openConversationId: 'openConversationId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      chatId: 'string',
       openConversationId: 'string',
     };
   }
@@ -4172,6 +4178,7 @@ export class SendMessageRequest extends $tea.Model {
   openConversationId?: string;
   receiverId?: string;
   senderId?: string;
+  sourceInfos?: { [key: string]: any };
   static names(): { [key: string]: string } {
     return {
       message: 'message',
@@ -4179,6 +4186,7 @@ export class SendMessageRequest extends $tea.Model {
       openConversationId: 'openConversationId',
       receiverId: 'receiverId',
       senderId: 'senderId',
+      sourceInfos: 'sourceInfos',
     };
   }
 
@@ -4189,6 +4197,7 @@ export class SendMessageRequest extends $tea.Model {
       openConversationId: 'string',
       receiverId: 'string',
       senderId: 'string',
+      sourceInfos: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
     };
   }
 
@@ -5007,10 +5016,6 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.interconnections)) {
       body["interconnections"] = request.interconnections;
-    }
-
-    if (!Util.isUnset(request.signature)) {
-      body["signature"] = request.signature;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -6725,6 +6730,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.senderId)) {
       body["senderId"] = request.senderId;
+    }
+
+    if (!Util.isUnset(request.sourceInfos)) {
+      body["sourceInfos"] = request.sourceInfos;
     }
 
     let realHeaders : {[key: string ]: string} = { };

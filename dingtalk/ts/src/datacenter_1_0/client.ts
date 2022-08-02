@@ -7,6 +7,69 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class PostCorpAuthInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PostCorpAuthInfoResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PostCorpAuthInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: PostCorpAuthInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: PostCorpAuthInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryActiveUserStatisticalDataHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -84,6 +147,91 @@ export class QueryActiveUserStatisticalDataResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryActiveUserStatisticalDataResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAnhmdStatisticalDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAnhmdStatisticalDataRequest extends $tea.Model {
+  statDate?: string;
+  static names(): { [key: string]: string } {
+    return {
+      statDate: 'statDate',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      statDate: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAnhmdStatisticalDataResponseBody extends $tea.Model {
+  dataList?: { [key: string]: any }[];
+  metaList?: QueryAnhmdStatisticalDataResponseBodyMetaList[];
+  static names(): { [key: string]: string } {
+    return {
+      dataList: 'dataList',
+      metaList: 'metaList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dataList: { 'type': 'array', 'itemType': { 'type': 'map', 'keyType': 'string', 'valueType': 'any' } },
+      metaList: { 'type': 'array', 'itemType': QueryAnhmdStatisticalDataResponseBodyMetaList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAnhmdStatisticalDataResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryAnhmdStatisticalDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryAnhmdStatisticalDataResponseBody,
     };
   }
 
@@ -5496,6 +5644,37 @@ export class QueryActiveUserStatisticalDataResponseBodyMetaList extends $tea.Mod
   }
 }
 
+export class QueryAnhmdStatisticalDataResponseBodyMetaList extends $tea.Model {
+  kpiCaliber?: string;
+  kpiId?: string;
+  kpiName?: string;
+  period?: string;
+  unit?: string;
+  static names(): { [key: string]: string } {
+    return {
+      kpiCaliber: 'kpiCaliber',
+      kpiId: 'kpiId',
+      kpiName: 'kpiName',
+      period: 'period',
+      unit: 'unit',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      kpiCaliber: 'string',
+      kpiId: 'string',
+      kpiName: 'string',
+      period: 'string',
+      unit: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryApprovalStatisticalDataResponseBodyMetaList extends $tea.Model {
   kpiCaliber?: string;
   kpiId?: string;
@@ -7400,6 +7579,28 @@ export default class Client extends OpenApi {
   }
 
 
+  async postCorpAuthInfo(): Promise<PostCorpAuthInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PostCorpAuthInfoHeaders({ });
+    return await this.postCorpAuthInfoWithOptions(headers, runtime);
+  }
+
+  async postCorpAuthInfoWithOptions(headers: PostCorpAuthInfoHeaders, runtime: $Util.RuntimeOptions): Promise<PostCorpAuthInfoResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<PostCorpAuthInfoResponse>(await this.doROARequest("PostCorpAuthInfo", "datacenter_1.0", "HTTP", "POST", "AK", `/v1.0/datacenter/corporations/authorize`, "json", req, runtime), new PostCorpAuthInfoResponse({}));
+  }
+
   async queryActiveUserStatisticalData(request: QueryActiveUserStatisticalDataRequest): Promise<QueryActiveUserStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryActiveUserStatisticalDataHeaders({ });
@@ -7427,6 +7628,35 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryActiveUserStatisticalDataResponse>(await this.doROARequest("QueryActiveUserStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/activeUserData`, "json", req, runtime), new QueryActiveUserStatisticalDataResponse({}));
+  }
+
+  async queryAnhmdStatisticalData(request: QueryAnhmdStatisticalDataRequest): Promise<QueryAnhmdStatisticalDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryAnhmdStatisticalDataHeaders({ });
+    return await this.queryAnhmdStatisticalDataWithOptions(request, headers, runtime);
+  }
+
+  async queryAnhmdStatisticalDataWithOptions(request: QueryAnhmdStatisticalDataRequest, headers: QueryAnhmdStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAnhmdStatisticalDataResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.statDate)) {
+      query["statDate"] = request.statDate;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryAnhmdStatisticalDataResponse>(await this.doROARequest("QueryAnhmdStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/statisticDatas/anHmd`, "json", req, runtime), new QueryAnhmdStatisticalDataResponse({}));
   }
 
   async queryApprovalStatisticalData(request: QueryApprovalStatisticalDataRequest): Promise<QueryApprovalStatisticalDataResponse> {

@@ -141,6 +141,7 @@ export class CampusCreateCampusRequest extends $tea.Model {
   creatorUnionId?: string;
   description?: string;
   extend?: string;
+  location?: string;
   orderEndTime?: number;
   orderInfo?: string;
   orderStartTime?: number;
@@ -159,6 +160,7 @@ export class CampusCreateCampusRequest extends $tea.Model {
       creatorUnionId: 'creatorUnionId',
       description: 'description',
       extend: 'extend',
+      location: 'location',
       orderEndTime: 'orderEndTime',
       orderInfo: 'orderInfo',
       orderStartTime: 'orderStartTime',
@@ -180,6 +182,7 @@ export class CampusCreateCampusRequest extends $tea.Model {
       creatorUnionId: 'string',
       description: 'string',
       extend: 'string',
+      location: 'string',
       orderEndTime: 'number',
       orderInfo: 'string',
       orderStartTime: 'number',
@@ -10476,6 +10479,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.extend)) {
       body["extend"] = request.extend;
+    }
+
+    if (!Util.isUnset(request.location)) {
+      body["location"] = request.location;
     }
 
     if (!Util.isUnset(request.orderEndTime)) {
