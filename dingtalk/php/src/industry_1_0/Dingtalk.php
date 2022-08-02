@@ -60,6 +60,66 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateRenterMemberReque
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateRenterMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateRenterRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateRenterResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeActiveCollegeDeptGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeActiveCollegeDeptGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeActiveCollegeDeptGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeAddCollegeDeptHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeAddCollegeDeptRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeAddCollegeDeptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeAddManagerHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeAddManagerRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeAddManagerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeAddStudentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeAddStudentRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeAddStudentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeChangeStudentDeptHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeChangeStudentDeptRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeChangeStudentDeptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeDeleteCollegeDeptHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeDeleteCollegeDeptRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeDeleteCollegeDeptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeListCollegeSubDeptHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeListCollegeSubDeptRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeListCollegeSubDeptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeListDeptManagerHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeListDeptManagerRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeListDeptManagerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeListStudentInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeListStudentInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeListStudentInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeQueryCollegeDeptGroupInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeQueryCollegeDeptGroupInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeQueryCollegeDeptGroupInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeQueryCollegeDeptInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeQueryCollegeDeptInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeQueryCollegeDeptInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeQueryStudentInfoByDeptHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeQueryStudentInfoByDeptRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeQueryStudentInfoByDeptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeQueryStudentInfoByMobileHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeQueryStudentInfoByMobileRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeQueryStudentInfoByMobileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeQueryStudentInfoByStudentIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeQueryStudentInfoByStudentIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeQueryStudentInfoByStudentIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeRemoveManagerHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeRemoveManagerRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeRemoveManagerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeRemoveStudentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeRemoveStudentRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeRemoveStudentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeUpdateCollegeDeptHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeUpdateCollegeDeptRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeUpdateCollegeDeptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeUpdateStudentDeptInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeUpdateStudentDeptInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeUpdateStudentDeptInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeUpdateStudentInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeUpdateStudentInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeUpdateStudentInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeUpdateStudentMoblieHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeUpdateStudentMoblieRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeUpdateStudentMoblieResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactCreateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactCreateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactCreateResponse;
@@ -1196,6 +1256,951 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CampusUpdateRenterMemberResponse::fromMap($this->doROARequest('CampusUpdateRenterMember', 'industry_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/industry/campuses/renters/members', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CollegeActiveCollegeDeptGroupRequest $request
+     *
+     * @return CollegeActiveCollegeDeptGroupResponse
+     */
+    public function collegeActiveCollegeDeptGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CollegeActiveCollegeDeptGroupHeaders([]);
+
+        return $this->collegeActiveCollegeDeptGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CollegeActiveCollegeDeptGroupRequest $request
+     * @param CollegeActiveCollegeDeptGroupHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return CollegeActiveCollegeDeptGroupResponse
+     */
+    public function collegeActiveCollegeDeptGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$query['deptId'] = $request->deptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CollegeActiveCollegeDeptGroupResponse::fromMap($this->doROARequest('CollegeActiveCollegeDeptGroup', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/colleges/depts/groups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CollegeAddCollegeDeptRequest $request
+     *
+     * @return CollegeAddCollegeDeptResponse
+     */
+    public function collegeAddCollegeDept($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CollegeAddCollegeDeptHeaders([]);
+
+        return $this->collegeAddCollegeDeptWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CollegeAddCollegeDeptRequest $request
+     * @param CollegeAddCollegeDeptHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return CollegeAddCollegeDeptResponse
+     */
+    public function collegeAddCollegeDeptWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptName)) {
+            @$query['deptName'] = $request->deptName;
+        }
+        if (!Utils::isUnset($request->deptType)) {
+            @$query['deptType'] = $request->deptType;
+        }
+        if (!Utils::isUnset($request->sortFactor)) {
+            @$query['sortFactor'] = $request->sortFactor;
+        }
+        if (!Utils::isUnset($request->superId)) {
+            @$query['superId'] = $request->superId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CollegeAddCollegeDeptResponse::fromMap($this->doROARequest('CollegeAddCollegeDept', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/colleges/depts', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CollegeAddManagerRequest $request
+     *
+     * @return CollegeAddManagerResponse
+     */
+    public function collegeAddManager($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CollegeAddManagerHeaders([]);
+
+        return $this->collegeAddManagerWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CollegeAddManagerRequest $request
+     * @param CollegeAddManagerHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return CollegeAddManagerResponse
+     */
+    public function collegeAddManagerWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$query['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CollegeAddManagerResponse::fromMap($this->doROARequest('CollegeAddManager', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/colleges/members/depts/managers', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CollegeAddStudentRequest $request
+     *
+     * @return CollegeAddStudentResponse
+     */
+    public function collegeAddStudent($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CollegeAddStudentHeaders([]);
+
+        return $this->collegeAddStudentWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CollegeAddStudentRequest $request
+     * @param CollegeAddStudentHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return CollegeAddStudentResponse
+     */
+    public function collegeAddStudentWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$body['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->empExtension)) {
+            @$body['empExtension'] = $request->empExtension;
+        }
+        if (!Utils::isUnset($request->gender)) {
+            @$body['gender'] = $request->gender;
+        }
+        if (!Utils::isUnset($request->identifyId)) {
+            @$body['identifyId'] = $request->identifyId;
+        }
+        if (!Utils::isUnset($request->mobile)) {
+            @$body['mobile'] = $request->mobile;
+        }
+        if (!Utils::isUnset($request->startYear)) {
+            @$body['startYear'] = $request->startYear;
+        }
+        if (!Utils::isUnset($request->studentName)) {
+            @$body['studentName'] = $request->studentName;
+        }
+        if (!Utils::isUnset($request->studentNumber)) {
+            @$body['studentNumber'] = $request->studentNumber;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CollegeAddStudentResponse::fromMap($this->doROARequest('CollegeAddStudent', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/colleges/members/depts/students', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CollegeChangeStudentDeptRequest $request
+     *
+     * @return CollegeChangeStudentDeptResponse
+     */
+    public function collegeChangeStudentDept($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CollegeChangeStudentDeptHeaders([]);
+
+        return $this->collegeChangeStudentDeptWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CollegeChangeStudentDeptRequest $request
+     * @param CollegeChangeStudentDeptHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return CollegeChangeStudentDeptResponse
+     */
+    public function collegeChangeStudentDeptWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$query['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->newDeptId)) {
+            @$query['newDeptId'] = $request->newDeptId;
+        }
+        if (!Utils::isUnset($request->studentId)) {
+            @$query['studentId'] = $request->studentId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CollegeChangeStudentDeptResponse::fromMap($this->doROARequest('CollegeChangeStudentDept', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/colleges/members/depts/students/move', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CollegeDeleteCollegeDeptRequest $request
+     *
+     * @return CollegeDeleteCollegeDeptResponse
+     */
+    public function collegeDeleteCollegeDept($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CollegeDeleteCollegeDeptHeaders([]);
+
+        return $this->collegeDeleteCollegeDeptWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CollegeDeleteCollegeDeptRequest $request
+     * @param CollegeDeleteCollegeDeptHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return CollegeDeleteCollegeDeptResponse
+     */
+    public function collegeDeleteCollegeDeptWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$query['deptId'] = $request->deptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CollegeDeleteCollegeDeptResponse::fromMap($this->doROARequest('CollegeDeleteCollegeDept', 'industry_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/industry/colleges/depts', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CollegeListCollegeSubDeptRequest $request
+     *
+     * @return CollegeListCollegeSubDeptResponse
+     */
+    public function collegeListCollegeSubDept($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CollegeListCollegeSubDeptHeaders([]);
+
+        return $this->collegeListCollegeSubDeptWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CollegeListCollegeSubDeptRequest $request
+     * @param CollegeListCollegeSubDeptHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return CollegeListCollegeSubDeptResponse
+     */
+    public function collegeListCollegeSubDeptWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$query['deptId'] = $request->deptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CollegeListCollegeSubDeptResponse::fromMap($this->doROARequest('CollegeListCollegeSubDept', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/colleges/subDepts', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CollegeListDeptManagerRequest $request
+     *
+     * @return CollegeListDeptManagerResponse
+     */
+    public function collegeListDeptManager($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CollegeListDeptManagerHeaders([]);
+
+        return $this->collegeListDeptManagerWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CollegeListDeptManagerRequest $request
+     * @param CollegeListDeptManagerHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return CollegeListDeptManagerResponse
+     */
+    public function collegeListDeptManagerWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$query['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CollegeListDeptManagerResponse::fromMap($this->doROARequest('CollegeListDeptManager', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/colleges/members/depts/managers', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CollegeListStudentInfoRequest $request
+     *
+     * @return CollegeListStudentInfoResponse
+     */
+    public function collegeListStudentInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CollegeListStudentInfoHeaders([]);
+
+        return $this->collegeListStudentInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CollegeListStudentInfoRequest $request
+     * @param CollegeListStudentInfoHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return CollegeListStudentInfoResponse
+     */
+    public function collegeListStudentInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$query['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->dingStudentStatus)) {
+            @$query['dingStudentStatus'] = $request->dingStudentStatus;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CollegeListStudentInfoResponse::fromMap($this->doROARequest('CollegeListStudentInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/colleges/members/depts/students', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CollegeQueryCollegeDeptGroupInfoRequest $request
+     *
+     * @return CollegeQueryCollegeDeptGroupInfoResponse
+     */
+    public function collegeQueryCollegeDeptGroupInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CollegeQueryCollegeDeptGroupInfoHeaders([]);
+
+        return $this->collegeQueryCollegeDeptGroupInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CollegeQueryCollegeDeptGroupInfoRequest $request
+     * @param CollegeQueryCollegeDeptGroupInfoHeaders $headers
+     * @param RuntimeOptions                          $runtime
+     *
+     * @return CollegeQueryCollegeDeptGroupInfoResponse
+     */
+    public function collegeQueryCollegeDeptGroupInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$query['deptId'] = $request->deptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CollegeQueryCollegeDeptGroupInfoResponse::fromMap($this->doROARequest('CollegeQueryCollegeDeptGroupInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/colleges/depts/groupInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CollegeQueryCollegeDeptInfoRequest $request
+     *
+     * @return CollegeQueryCollegeDeptInfoResponse
+     */
+    public function collegeQueryCollegeDeptInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CollegeQueryCollegeDeptInfoHeaders([]);
+
+        return $this->collegeQueryCollegeDeptInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CollegeQueryCollegeDeptInfoRequest $request
+     * @param CollegeQueryCollegeDeptInfoHeaders $headers
+     * @param RuntimeOptions                     $runtime
+     *
+     * @return CollegeQueryCollegeDeptInfoResponse
+     */
+    public function collegeQueryCollegeDeptInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$query['deptId'] = $request->deptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CollegeQueryCollegeDeptInfoResponse::fromMap($this->doROARequest('CollegeQueryCollegeDeptInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/colleges/deptInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CollegeQueryStudentInfoByDeptRequest $request
+     *
+     * @return CollegeQueryStudentInfoByDeptResponse
+     */
+    public function collegeQueryStudentInfoByDept($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CollegeQueryStudentInfoByDeptHeaders([]);
+
+        return $this->collegeQueryStudentInfoByDeptWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CollegeQueryStudentInfoByDeptRequest $request
+     * @param CollegeQueryStudentInfoByDeptHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return CollegeQueryStudentInfoByDeptResponse
+     */
+    public function collegeQueryStudentInfoByDeptWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$query['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->studentId)) {
+            @$query['studentId'] = $request->studentId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CollegeQueryStudentInfoByDeptResponse::fromMap($this->doROARequest('CollegeQueryStudentInfoByDept', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/colleges/members/depts/studentinfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CollegeQueryStudentInfoByMobileRequest $request
+     *
+     * @return CollegeQueryStudentInfoByMobileResponse
+     */
+    public function collegeQueryStudentInfoByMobile($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CollegeQueryStudentInfoByMobileHeaders([]);
+
+        return $this->collegeQueryStudentInfoByMobileWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CollegeQueryStudentInfoByMobileRequest $request
+     * @param CollegeQueryStudentInfoByMobileHeaders $headers
+     * @param RuntimeOptions                         $runtime
+     *
+     * @return CollegeQueryStudentInfoByMobileResponse
+     */
+    public function collegeQueryStudentInfoByMobileWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->mobile)) {
+            @$query['mobile'] = $request->mobile;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CollegeQueryStudentInfoByMobileResponse::fromMap($this->doROARequest('CollegeQueryStudentInfoByMobile', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/colleges/members/students/mobiles', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CollegeQueryStudentInfoByStudentIdRequest $request
+     *
+     * @return CollegeQueryStudentInfoByStudentIdResponse
+     */
+    public function collegeQueryStudentInfoByStudentId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CollegeQueryStudentInfoByStudentIdHeaders([]);
+
+        return $this->collegeQueryStudentInfoByStudentIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CollegeQueryStudentInfoByStudentIdRequest $request
+     * @param CollegeQueryStudentInfoByStudentIdHeaders $headers
+     * @param RuntimeOptions                            $runtime
+     *
+     * @return CollegeQueryStudentInfoByStudentIdResponse
+     */
+    public function collegeQueryStudentInfoByStudentIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->studentId)) {
+            @$query['studentId'] = $request->studentId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CollegeQueryStudentInfoByStudentIdResponse::fromMap($this->doROARequest('CollegeQueryStudentInfoByStudentId', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/colleges/members/students', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CollegeRemoveManagerRequest $request
+     *
+     * @return CollegeRemoveManagerResponse
+     */
+    public function collegeRemoveManager($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CollegeRemoveManagerHeaders([]);
+
+        return $this->collegeRemoveManagerWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CollegeRemoveManagerRequest $request
+     * @param CollegeRemoveManagerHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return CollegeRemoveManagerResponse
+     */
+    public function collegeRemoveManagerWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$query['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->isForce)) {
+            @$query['isForce'] = $request->isForce;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CollegeRemoveManagerResponse::fromMap($this->doROARequest('CollegeRemoveManager', 'industry_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/industry/colleges/members/managers', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CollegeRemoveStudentRequest $request
+     *
+     * @return CollegeRemoveStudentResponse
+     */
+    public function collegeRemoveStudent($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CollegeRemoveStudentHeaders([]);
+
+        return $this->collegeRemoveStudentWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CollegeRemoveStudentRequest $request
+     * @param CollegeRemoveStudentHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return CollegeRemoveStudentResponse
+     */
+    public function collegeRemoveStudentWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$query['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->studentId)) {
+            @$query['studentId'] = $request->studentId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CollegeRemoveStudentResponse::fromMap($this->doROARequest('CollegeRemoveStudent', 'industry_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/industry/colleges/members/depts/students', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CollegeUpdateCollegeDeptRequest $request
+     *
+     * @return CollegeUpdateCollegeDeptResponse
+     */
+    public function collegeUpdateCollegeDept($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CollegeUpdateCollegeDeptHeaders([]);
+
+        return $this->collegeUpdateCollegeDeptWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CollegeUpdateCollegeDeptRequest $request
+     * @param CollegeUpdateCollegeDeptHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return CollegeUpdateCollegeDeptResponse
+     */
+    public function collegeUpdateCollegeDeptWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$query['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->deptName)) {
+            @$query['deptName'] = $request->deptName;
+        }
+        if (!Utils::isUnset($request->sortFactor)) {
+            @$query['sortFactor'] = $request->sortFactor;
+        }
+        if (!Utils::isUnset($request->superId)) {
+            @$query['superId'] = $request->superId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CollegeUpdateCollegeDeptResponse::fromMap($this->doROARequest('CollegeUpdateCollegeDept', 'industry_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/industry/colleges/depts', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CollegeUpdateStudentDeptInfoRequest $request
+     *
+     * @return CollegeUpdateStudentDeptInfoResponse
+     */
+    public function collegeUpdateStudentDeptInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CollegeUpdateStudentDeptInfoHeaders([]);
+
+        return $this->collegeUpdateStudentDeptInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CollegeUpdateStudentDeptInfoRequest $request
+     * @param CollegeUpdateStudentDeptInfoHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return CollegeUpdateStudentDeptInfoResponse
+     */
+    public function collegeUpdateStudentDeptInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$query['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->studentId)) {
+            @$query['studentId'] = $request->studentId;
+        }
+        if (!Utils::isUnset($request->studentNumber)) {
+            @$query['studentNumber'] = $request->studentNumber;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CollegeUpdateStudentDeptInfoResponse::fromMap($this->doROARequest('CollegeUpdateStudentDeptInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/industry/colleges/members/deptInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CollegeUpdateStudentInfoRequest $request
+     *
+     * @return CollegeUpdateStudentInfoResponse
+     */
+    public function collegeUpdateStudentInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CollegeUpdateStudentInfoHeaders([]);
+
+        return $this->collegeUpdateStudentInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CollegeUpdateStudentInfoRequest $request
+     * @param CollegeUpdateStudentInfoHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return CollegeUpdateStudentInfoResponse
+     */
+    public function collegeUpdateStudentInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->empExtension)) {
+            @$body['empExtension'] = $request->empExtension;
+        }
+        if (!Utils::isUnset($request->gender)) {
+            @$body['gender'] = $request->gender;
+        }
+        if (!Utils::isUnset($request->identifyId)) {
+            @$body['identifyId'] = $request->identifyId;
+        }
+        if (!Utils::isUnset($request->startYear)) {
+            @$body['startYear'] = $request->startYear;
+        }
+        if (!Utils::isUnset($request->studentId)) {
+            @$body['studentId'] = $request->studentId;
+        }
+        if (!Utils::isUnset($request->studentName)) {
+            @$body['studentName'] = $request->studentName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CollegeUpdateStudentInfoResponse::fromMap($this->doROARequest('CollegeUpdateStudentInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/industry/colleges/members/depts/students', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CollegeUpdateStudentMoblieRequest $request
+     *
+     * @return CollegeUpdateStudentMoblieResponse
+     */
+    public function collegeUpdateStudentMoblie($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CollegeUpdateStudentMoblieHeaders([]);
+
+        return $this->collegeUpdateStudentMoblieWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CollegeUpdateStudentMoblieRequest $request
+     * @param CollegeUpdateStudentMoblieHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return CollegeUpdateStudentMoblieResponse
+     */
+    public function collegeUpdateStudentMoblieWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->isForce)) {
+            @$query['isForce'] = $request->isForce;
+        }
+        if (!Utils::isUnset($request->newMobile)) {
+            @$query['newMobile'] = $request->newMobile;
+        }
+        if (!Utils::isUnset($request->studentId)) {
+            @$query['studentId'] = $request->studentId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CollegeUpdateStudentMoblieResponse::fromMap($this->doROARequest('CollegeUpdateStudentMoblie', 'industry_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/industry/colleges/members/students/mobiles', 'json', $req, $runtime));
     }
 
     /**

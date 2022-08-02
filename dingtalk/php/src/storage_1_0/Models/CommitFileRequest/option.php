@@ -22,9 +22,17 @@ class option extends Model
      * @var string
      */
     public $conflictStrategy;
+
+    /**
+     * @description 默认文件大小, 单位:Byte
+     * 如果此字段不为空，企业存储系统会校验文件实际大小是否和此字段是否一致，不一致会报错
+     * @var int
+     */
+    public $size;
     protected $_name = [
         'appProperties'    => 'appProperties',
         'conflictStrategy' => 'conflictStrategy',
+        'size'             => 'size',
     ];
 
     public function validate()
@@ -45,6 +53,9 @@ class option extends Model
         }
         if (null !== $this->conflictStrategy) {
             $res['conflictStrategy'] = $this->conflictStrategy;
+        }
+        if (null !== $this->size) {
+            $res['size'] = $this->size;
         }
 
         return $res;
@@ -69,6 +80,9 @@ class option extends Model
         }
         if (isset($map['conflictStrategy'])) {
             $model->conflictStrategy = $map['conflictStrategy'];
+        }
+        if (isset($map['size'])) {
+            $model->size = $map['size'];
         }
 
         return $model;

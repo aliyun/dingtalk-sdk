@@ -97,6 +97,13 @@ class generalInvoiceVO extends Model
     public $invoiceNo;
 
     /**
+     * @description 发票状态
+     *
+     * @var string
+     */
+    public $invoiceStatus;
+
+    /**
      * @description 发票类型
      *
      * @var string
@@ -232,13 +239,6 @@ class generalInvoiceVO extends Model
     public $sellerTel;
 
     /**
-     * @description 发票状态
-     *
-     * @var string
-     */
-    public $status;
-
-    /**
      * @description 代开发票标识 1-自开，2-代开
      *
      * @var string
@@ -295,6 +295,7 @@ class generalInvoiceVO extends Model
         'generalInvoiceDetailVOList'     => 'generalInvoiceDetailVOList',
         'invoiceCode'                    => 'invoiceCode',
         'invoiceNo'                      => 'invoiceNo',
+        'invoiceStatus'                  => 'invoiceStatus',
         'invoiceType'                    => 'invoiceType',
         'machineCode'                    => 'machineCode',
         'oilFlag'                        => 'oilFlag',
@@ -315,7 +316,6 @@ class generalInvoiceVO extends Model
         'sellerName'                     => 'sellerName',
         'sellerTaxNo'                    => 'sellerTaxNo',
         'sellerTel'                      => 'sellerTel',
-        'status'                         => 'status',
         'supplySign'                     => 'supplySign',
         'taxAmount'                      => 'taxAmount',
         'usedVehicleSaleDetailVOList'    => 'usedVehicleSaleDetailVOList',
@@ -373,6 +373,9 @@ class generalInvoiceVO extends Model
         }
         if (null !== $this->invoiceNo) {
             $res['invoiceNo'] = $this->invoiceNo;
+        }
+        if (null !== $this->invoiceStatus) {
+            $res['invoiceStatus'] = $this->invoiceStatus;
         }
         if (null !== $this->invoiceType) {
             $res['invoiceType'] = $this->invoiceType;
@@ -439,9 +442,6 @@ class generalInvoiceVO extends Model
         }
         if (null !== $this->sellerTel) {
             $res['sellerTel'] = $this->sellerTel;
-        }
-        if (null !== $this->status) {
-            $res['status'] = $this->status;
         }
         if (null !== $this->supplySign) {
             $res['supplySign'] = $this->supplySign;
@@ -530,6 +530,9 @@ class generalInvoiceVO extends Model
         if (isset($map['invoiceNo'])) {
             $model->invoiceNo = $map['invoiceNo'];
         }
+        if (isset($map['invoiceStatus'])) {
+            $model->invoiceStatus = $map['invoiceStatus'];
+        }
         if (isset($map['invoiceType'])) {
             $model->invoiceType = $map['invoiceType'];
         }
@@ -595,9 +598,6 @@ class generalInvoiceVO extends Model
         }
         if (isset($map['sellerTel'])) {
             $model->sellerTel = $map['sellerTel'];
-        }
-        if (isset($map['status'])) {
-            $model->status = $map['status'];
         }
         if (isset($map['supplySign'])) {
             $model->supplySign = $map['supplySign'];

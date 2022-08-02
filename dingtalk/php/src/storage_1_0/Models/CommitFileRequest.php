@@ -33,13 +33,6 @@ class CommitFileRequest extends Model
     public $parentId;
 
     /**
-     * @description 大小
-     *
-     * @var int
-     */
-    public $size;
-
-    /**
      * @description 添加文件唯一标识，可通过DentryService.getUploadInfo来生成
      *
      * @var string
@@ -56,7 +49,6 @@ class CommitFileRequest extends Model
         'name'      => 'name',
         'option'    => 'option',
         'parentId'  => 'parentId',
-        'size'      => 'size',
         'uploadKey' => 'uploadKey',
         'unionId'   => 'unionId',
     ];
@@ -76,9 +68,6 @@ class CommitFileRequest extends Model
         }
         if (null !== $this->parentId) {
             $res['parentId'] = $this->parentId;
-        }
-        if (null !== $this->size) {
-            $res['size'] = $this->size;
         }
         if (null !== $this->uploadKey) {
             $res['uploadKey'] = $this->uploadKey;
@@ -106,9 +95,6 @@ class CommitFileRequest extends Model
         }
         if (isset($map['parentId'])) {
             $model->parentId = $map['parentId'];
-        }
-        if (isset($map['size'])) {
-            $model->size = $map['size'];
         }
         if (isset($map['uploadKey'])) {
             $model->uploadKey = $map['uploadKey'];

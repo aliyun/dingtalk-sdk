@@ -95,7 +95,7 @@ class dentry extends Model
     public $properties;
 
     /**
-     * @description 大小
+     * @description 大小, 单位:Byte
      *
      * @var int
      */

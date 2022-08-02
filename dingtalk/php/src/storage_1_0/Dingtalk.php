@@ -281,9 +281,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->parentId)) {
             @$body['parentId'] = $request->parentId;
         }
-        if (!Utils::isUnset($request->size)) {
-            @$body['size'] = $request->size;
-        }
         if (!Utils::isUnset($request->uploadKey)) {
             @$body['uploadKey'] = $request->uploadKey;
         }
