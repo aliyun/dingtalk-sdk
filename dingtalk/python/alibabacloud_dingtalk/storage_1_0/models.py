@@ -1181,6 +1181,7 @@ class CommitFileRequestOption(TeaModel):
         self,
         app_properties: List[CommitFileRequestOptionAppProperties] = None,
         conflict_strategy: str = None,
+        size: int = None,
     ):
         # 文件在应用上的属性, 一个应用最多只能设置3个属性
         self.app_properties = app_properties
@@ -1193,6 +1194,9 @@ class CommitFileRequestOption(TeaModel):
         # 默认值:
         # 	AUTO_RENAME
         self.conflict_strategy = conflict_strategy
+        # 默认文件大小, 单位:Byte
+        # 如果此字段不为空，企业存储系统会校验文件实际大小是否和此字段是否一致，不一致会报错
+        self.size = size
 
     def validate(self):
         if self.app_properties:
@@ -1212,6 +1216,8 @@ class CommitFileRequestOption(TeaModel):
                 result['appProperties'].append(k.to_map() if k else None)
         if self.conflict_strategy is not None:
             result['conflictStrategy'] = self.conflict_strategy
+        if self.size is not None:
+            result['size'] = self.size
         return result
 
     def from_map(self, m: dict = None):
@@ -1223,6 +1229,8 @@ class CommitFileRequestOption(TeaModel):
                 self.app_properties.append(temp_model.from_map(k))
         if m.get('conflictStrategy') is not None:
             self.conflict_strategy = m.get('conflictStrategy')
+        if m.get('size') is not None:
+            self.size = m.get('size')
         return self
 
 
@@ -1232,7 +1240,6 @@ class CommitFileRequest(TeaModel):
         name: str = None,
         option: CommitFileRequestOption = None,
         parent_id: str = None,
-        size: int = None,
         upload_key: str = None,
         union_id: str = None,
     ):
@@ -1245,8 +1252,6 @@ class CommitFileRequest(TeaModel):
         self.option = option
         # 父目录id, 根目录id值为0
         self.parent_id = parent_id
-        # 大小
-        self.size = size
         # 添加文件唯一标识，可通过DentryService.getUploadInfo来生成
         self.upload_key = upload_key
         # 用户id
@@ -1268,8 +1273,6 @@ class CommitFileRequest(TeaModel):
             result['option'] = self.option.to_map()
         if self.parent_id is not None:
             result['parentId'] = self.parent_id
-        if self.size is not None:
-            result['size'] = self.size
         if self.upload_key is not None:
             result['uploadKey'] = self.upload_key
         if self.union_id is not None:
@@ -1285,8 +1288,6 @@ class CommitFileRequest(TeaModel):
             self.option = temp_model.from_map(m['option'])
         if m.get('parentId') is not None:
             self.parent_id = m.get('parentId')
-        if m.get('size') is not None:
-            self.size = m.get('size')
         if m.get('uploadKey') is not None:
             self.upload_key = m.get('uploadKey')
         if m.get('unionId') is not None:
@@ -1374,7 +1375,7 @@ class CommitFileResponseBodyDentry(TeaModel):
         self.path = path
         # 属性
         self.properties = properties
-        # 大小
+        # 大小, 单位:Byte
         self.size = size
         # 所在空间id
         self.space_id = space_id

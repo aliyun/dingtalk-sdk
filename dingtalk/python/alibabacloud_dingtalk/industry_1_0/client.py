@@ -1423,6 +1423,1426 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CampusUpdateRenterMember', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/campuses/renters/members', 'json', req, runtime)
         )
 
+    def college_active_college_dept_group(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupHeaders()
+        return self.college_active_college_dept_group_with_options(request, headers, runtime)
+
+    async def college_active_college_dept_group_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupHeaders()
+        return await self.college_active_college_dept_group_with_options_async(request, headers, runtime)
+
+    def college_active_college_dept_group_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupRequest,
+        headers: dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupResponse(),
+            self.do_roarequest('CollegeActiveCollegeDeptGroup', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/colleges/depts/groups', 'json', req, runtime)
+        )
+
+    async def college_active_college_dept_group_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupRequest,
+        headers: dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupResponse(),
+            await self.do_roarequest_async('CollegeActiveCollegeDeptGroup', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/colleges/depts/groups', 'json', req, runtime)
+        )
+
+    def college_add_college_dept(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeAddCollegeDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeAddCollegeDeptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeAddCollegeDeptHeaders()
+        return self.college_add_college_dept_with_options(request, headers, runtime)
+
+    async def college_add_college_dept_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeAddCollegeDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeAddCollegeDeptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeAddCollegeDeptHeaders()
+        return await self.college_add_college_dept_with_options_async(request, headers, runtime)
+
+    def college_add_college_dept_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeAddCollegeDeptRequest,
+        headers: dingtalkindustry__1__0_models.CollegeAddCollegeDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeAddCollegeDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_name):
+            query['deptName'] = request.dept_name
+        if not UtilClient.is_unset(request.dept_type):
+            query['deptType'] = request.dept_type
+        if not UtilClient.is_unset(request.sort_factor):
+            query['sortFactor'] = request.sort_factor
+        if not UtilClient.is_unset(request.super_id):
+            query['superId'] = request.super_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeAddCollegeDeptResponse(),
+            self.do_roarequest('CollegeAddCollegeDept', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/colleges/depts', 'json', req, runtime)
+        )
+
+    async def college_add_college_dept_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeAddCollegeDeptRequest,
+        headers: dingtalkindustry__1__0_models.CollegeAddCollegeDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeAddCollegeDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_name):
+            query['deptName'] = request.dept_name
+        if not UtilClient.is_unset(request.dept_type):
+            query['deptType'] = request.dept_type
+        if not UtilClient.is_unset(request.sort_factor):
+            query['sortFactor'] = request.sort_factor
+        if not UtilClient.is_unset(request.super_id):
+            query['superId'] = request.super_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeAddCollegeDeptResponse(),
+            await self.do_roarequest_async('CollegeAddCollegeDept', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/colleges/depts', 'json', req, runtime)
+        )
+
+    def college_add_manager(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeAddManagerRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeAddManagerResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeAddManagerHeaders()
+        return self.college_add_manager_with_options(request, headers, runtime)
+
+    async def college_add_manager_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeAddManagerRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeAddManagerResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeAddManagerHeaders()
+        return await self.college_add_manager_with_options_async(request, headers, runtime)
+
+    def college_add_manager_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeAddManagerRequest,
+        headers: dingtalkindustry__1__0_models.CollegeAddManagerHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeAddManagerResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeAddManagerResponse(),
+            self.do_roarequest('CollegeAddManager', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/colleges/members/depts/managers', 'json', req, runtime)
+        )
+
+    async def college_add_manager_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeAddManagerRequest,
+        headers: dingtalkindustry__1__0_models.CollegeAddManagerHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeAddManagerResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeAddManagerResponse(),
+            await self.do_roarequest_async('CollegeAddManager', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/colleges/members/depts/managers', 'json', req, runtime)
+        )
+
+    def college_add_student(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeAddStudentRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeAddStudentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeAddStudentHeaders()
+        return self.college_add_student_with_options(request, headers, runtime)
+
+    async def college_add_student_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeAddStudentRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeAddStudentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeAddStudentHeaders()
+        return await self.college_add_student_with_options_async(request, headers, runtime)
+
+    def college_add_student_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeAddStudentRequest,
+        headers: dingtalkindustry__1__0_models.CollegeAddStudentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeAddStudentResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.emp_extension):
+            body['empExtension'] = request.emp_extension
+        if not UtilClient.is_unset(request.gender):
+            body['gender'] = request.gender
+        if not UtilClient.is_unset(request.identify_id):
+            body['identifyId'] = request.identify_id
+        if not UtilClient.is_unset(request.mobile):
+            body['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.start_year):
+            body['startYear'] = request.start_year
+        if not UtilClient.is_unset(request.student_name):
+            body['studentName'] = request.student_name
+        if not UtilClient.is_unset(request.student_number):
+            body['studentNumber'] = request.student_number
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeAddStudentResponse(),
+            self.do_roarequest('CollegeAddStudent', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/colleges/members/depts/students', 'json', req, runtime)
+        )
+
+    async def college_add_student_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeAddStudentRequest,
+        headers: dingtalkindustry__1__0_models.CollegeAddStudentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeAddStudentResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.emp_extension):
+            body['empExtension'] = request.emp_extension
+        if not UtilClient.is_unset(request.gender):
+            body['gender'] = request.gender
+        if not UtilClient.is_unset(request.identify_id):
+            body['identifyId'] = request.identify_id
+        if not UtilClient.is_unset(request.mobile):
+            body['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.start_year):
+            body['startYear'] = request.start_year
+        if not UtilClient.is_unset(request.student_name):
+            body['studentName'] = request.student_name
+        if not UtilClient.is_unset(request.student_number):
+            body['studentNumber'] = request.student_number
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeAddStudentResponse(),
+            await self.do_roarequest_async('CollegeAddStudent', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/colleges/members/depts/students', 'json', req, runtime)
+        )
+
+    def college_change_student_dept(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeChangeStudentDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeChangeStudentDeptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeChangeStudentDeptHeaders()
+        return self.college_change_student_dept_with_options(request, headers, runtime)
+
+    async def college_change_student_dept_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeChangeStudentDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeChangeStudentDeptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeChangeStudentDeptHeaders()
+        return await self.college_change_student_dept_with_options_async(request, headers, runtime)
+
+    def college_change_student_dept_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeChangeStudentDeptRequest,
+        headers: dingtalkindustry__1__0_models.CollegeChangeStudentDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeChangeStudentDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.new_dept_id):
+            query['newDeptId'] = request.new_dept_id
+        if not UtilClient.is_unset(request.student_id):
+            query['studentId'] = request.student_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeChangeStudentDeptResponse(),
+            self.do_roarequest('CollegeChangeStudentDept', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/colleges/members/depts/students/move', 'json', req, runtime)
+        )
+
+    async def college_change_student_dept_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeChangeStudentDeptRequest,
+        headers: dingtalkindustry__1__0_models.CollegeChangeStudentDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeChangeStudentDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.new_dept_id):
+            query['newDeptId'] = request.new_dept_id
+        if not UtilClient.is_unset(request.student_id):
+            query['studentId'] = request.student_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeChangeStudentDeptResponse(),
+            await self.do_roarequest_async('CollegeChangeStudentDept', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/colleges/members/depts/students/move', 'json', req, runtime)
+        )
+
+    def college_delete_college_dept(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptHeaders()
+        return self.college_delete_college_dept_with_options(request, headers, runtime)
+
+    async def college_delete_college_dept_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptHeaders()
+        return await self.college_delete_college_dept_with_options_async(request, headers, runtime)
+
+    def college_delete_college_dept_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptRequest,
+        headers: dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptResponse(),
+            self.do_roarequest('CollegeDeleteCollegeDept', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/colleges/depts', 'json', req, runtime)
+        )
+
+    async def college_delete_college_dept_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptRequest,
+        headers: dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptResponse(),
+            await self.do_roarequest_async('CollegeDeleteCollegeDept', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/colleges/depts', 'json', req, runtime)
+        )
+
+    def college_list_college_sub_dept(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeListCollegeSubDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeListCollegeSubDeptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeListCollegeSubDeptHeaders()
+        return self.college_list_college_sub_dept_with_options(request, headers, runtime)
+
+    async def college_list_college_sub_dept_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeListCollegeSubDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeListCollegeSubDeptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeListCollegeSubDeptHeaders()
+        return await self.college_list_college_sub_dept_with_options_async(request, headers, runtime)
+
+    def college_list_college_sub_dept_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeListCollegeSubDeptRequest,
+        headers: dingtalkindustry__1__0_models.CollegeListCollegeSubDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeListCollegeSubDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeListCollegeSubDeptResponse(),
+            self.do_roarequest('CollegeListCollegeSubDept', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/subDepts', 'json', req, runtime)
+        )
+
+    async def college_list_college_sub_dept_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeListCollegeSubDeptRequest,
+        headers: dingtalkindustry__1__0_models.CollegeListCollegeSubDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeListCollegeSubDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeListCollegeSubDeptResponse(),
+            await self.do_roarequest_async('CollegeListCollegeSubDept', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/subDepts', 'json', req, runtime)
+        )
+
+    def college_list_dept_manager(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeListDeptManagerRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeListDeptManagerResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeListDeptManagerHeaders()
+        return self.college_list_dept_manager_with_options(request, headers, runtime)
+
+    async def college_list_dept_manager_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeListDeptManagerRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeListDeptManagerResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeListDeptManagerHeaders()
+        return await self.college_list_dept_manager_with_options_async(request, headers, runtime)
+
+    def college_list_dept_manager_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeListDeptManagerRequest,
+        headers: dingtalkindustry__1__0_models.CollegeListDeptManagerHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeListDeptManagerResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeListDeptManagerResponse(),
+            self.do_roarequest('CollegeListDeptManager', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/depts/managers', 'json', req, runtime)
+        )
+
+    async def college_list_dept_manager_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeListDeptManagerRequest,
+        headers: dingtalkindustry__1__0_models.CollegeListDeptManagerHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeListDeptManagerResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeListDeptManagerResponse(),
+            await self.do_roarequest_async('CollegeListDeptManager', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/depts/managers', 'json', req, runtime)
+        )
+
+    def college_list_student_info(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeListStudentInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeListStudentInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeListStudentInfoHeaders()
+        return self.college_list_student_info_with_options(request, headers, runtime)
+
+    async def college_list_student_info_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeListStudentInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeListStudentInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeListStudentInfoHeaders()
+        return await self.college_list_student_info_with_options_async(request, headers, runtime)
+
+    def college_list_student_info_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeListStudentInfoRequest,
+        headers: dingtalkindustry__1__0_models.CollegeListStudentInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeListStudentInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.ding_student_status):
+            query['dingStudentStatus'] = request.ding_student_status
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeListStudentInfoResponse(),
+            self.do_roarequest('CollegeListStudentInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/depts/students', 'json', req, runtime)
+        )
+
+    async def college_list_student_info_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeListStudentInfoRequest,
+        headers: dingtalkindustry__1__0_models.CollegeListStudentInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeListStudentInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.ding_student_status):
+            query['dingStudentStatus'] = request.ding_student_status
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeListStudentInfoResponse(),
+            await self.do_roarequest_async('CollegeListStudentInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/depts/students', 'json', req, runtime)
+        )
+
+    def college_query_college_dept_group_info(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoHeaders()
+        return self.college_query_college_dept_group_info_with_options(request, headers, runtime)
+
+    async def college_query_college_dept_group_info_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoHeaders()
+        return await self.college_query_college_dept_group_info_with_options_async(request, headers, runtime)
+
+    def college_query_college_dept_group_info_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoRequest,
+        headers: dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoResponse(),
+            self.do_roarequest('CollegeQueryCollegeDeptGroupInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/depts/groupInfos', 'json', req, runtime)
+        )
+
+    async def college_query_college_dept_group_info_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoRequest,
+        headers: dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoResponse(),
+            await self.do_roarequest_async('CollegeQueryCollegeDeptGroupInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/depts/groupInfos', 'json', req, runtime)
+        )
+
+    def college_query_college_dept_info(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoHeaders()
+        return self.college_query_college_dept_info_with_options(request, headers, runtime)
+
+    async def college_query_college_dept_info_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoHeaders()
+        return await self.college_query_college_dept_info_with_options_async(request, headers, runtime)
+
+    def college_query_college_dept_info_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoRequest,
+        headers: dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoResponse(),
+            self.do_roarequest('CollegeQueryCollegeDeptInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/deptInfos', 'json', req, runtime)
+        )
+
+    async def college_query_college_dept_info_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoRequest,
+        headers: dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoResponse(),
+            await self.do_roarequest_async('CollegeQueryCollegeDeptInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/deptInfos', 'json', req, runtime)
+        )
+
+    def college_query_student_info_by_dept(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptHeaders()
+        return self.college_query_student_info_by_dept_with_options(request, headers, runtime)
+
+    async def college_query_student_info_by_dept_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptHeaders()
+        return await self.college_query_student_info_by_dept_with_options_async(request, headers, runtime)
+
+    def college_query_student_info_by_dept_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptRequest,
+        headers: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.student_id):
+            query['studentId'] = request.student_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptResponse(),
+            self.do_roarequest('CollegeQueryStudentInfoByDept', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/depts/studentinfos', 'json', req, runtime)
+        )
+
+    async def college_query_student_info_by_dept_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptRequest,
+        headers: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.student_id):
+            query['studentId'] = request.student_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptResponse(),
+            await self.do_roarequest_async('CollegeQueryStudentInfoByDept', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/depts/studentinfos', 'json', req, runtime)
+        )
+
+    def college_query_student_info_by_mobile(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileHeaders()
+        return self.college_query_student_info_by_mobile_with_options(request, headers, runtime)
+
+    async def college_query_student_info_by_mobile_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileHeaders()
+        return await self.college_query_student_info_by_mobile_with_options_async(request, headers, runtime)
+
+    def college_query_student_info_by_mobile_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileRequest,
+        headers: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.mobile):
+            query['mobile'] = request.mobile
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileResponse(),
+            self.do_roarequest('CollegeQueryStudentInfoByMobile', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/students/mobiles', 'json', req, runtime)
+        )
+
+    async def college_query_student_info_by_mobile_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileRequest,
+        headers: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.mobile):
+            query['mobile'] = request.mobile
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileResponse(),
+            await self.do_roarequest_async('CollegeQueryStudentInfoByMobile', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/students/mobiles', 'json', req, runtime)
+        )
+
+    def college_query_student_info_by_student_id(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdHeaders()
+        return self.college_query_student_info_by_student_id_with_options(request, headers, runtime)
+
+    async def college_query_student_info_by_student_id_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdHeaders()
+        return await self.college_query_student_info_by_student_id_with_options_async(request, headers, runtime)
+
+    def college_query_student_info_by_student_id_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdRequest,
+        headers: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.student_id):
+            query['studentId'] = request.student_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdResponse(),
+            self.do_roarequest('CollegeQueryStudentInfoByStudentId', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/students', 'json', req, runtime)
+        )
+
+    async def college_query_student_info_by_student_id_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdRequest,
+        headers: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.student_id):
+            query['studentId'] = request.student_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdResponse(),
+            await self.do_roarequest_async('CollegeQueryStudentInfoByStudentId', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/students', 'json', req, runtime)
+        )
+
+    def college_remove_manager(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeRemoveManagerRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeRemoveManagerResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeRemoveManagerHeaders()
+        return self.college_remove_manager_with_options(request, headers, runtime)
+
+    async def college_remove_manager_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeRemoveManagerRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeRemoveManagerResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeRemoveManagerHeaders()
+        return await self.college_remove_manager_with_options_async(request, headers, runtime)
+
+    def college_remove_manager_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeRemoveManagerRequest,
+        headers: dingtalkindustry__1__0_models.CollegeRemoveManagerHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeRemoveManagerResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.is_force):
+            query['isForce'] = request.is_force
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeRemoveManagerResponse(),
+            self.do_roarequest('CollegeRemoveManager', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/colleges/members/managers', 'json', req, runtime)
+        )
+
+    async def college_remove_manager_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeRemoveManagerRequest,
+        headers: dingtalkindustry__1__0_models.CollegeRemoveManagerHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeRemoveManagerResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.is_force):
+            query['isForce'] = request.is_force
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeRemoveManagerResponse(),
+            await self.do_roarequest_async('CollegeRemoveManager', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/colleges/members/managers', 'json', req, runtime)
+        )
+
+    def college_remove_student(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeRemoveStudentRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeRemoveStudentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeRemoveStudentHeaders()
+        return self.college_remove_student_with_options(request, headers, runtime)
+
+    async def college_remove_student_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeRemoveStudentRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeRemoveStudentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeRemoveStudentHeaders()
+        return await self.college_remove_student_with_options_async(request, headers, runtime)
+
+    def college_remove_student_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeRemoveStudentRequest,
+        headers: dingtalkindustry__1__0_models.CollegeRemoveStudentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeRemoveStudentResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.student_id):
+            query['studentId'] = request.student_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeRemoveStudentResponse(),
+            self.do_roarequest('CollegeRemoveStudent', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/colleges/members/depts/students', 'json', req, runtime)
+        )
+
+    async def college_remove_student_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeRemoveStudentRequest,
+        headers: dingtalkindustry__1__0_models.CollegeRemoveStudentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeRemoveStudentResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.student_id):
+            query['studentId'] = request.student_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeRemoveStudentResponse(),
+            await self.do_roarequest_async('CollegeRemoveStudent', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/colleges/members/depts/students', 'json', req, runtime)
+        )
+
+    def college_update_college_dept(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptHeaders()
+        return self.college_update_college_dept_with_options(request, headers, runtime)
+
+    async def college_update_college_dept_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptHeaders()
+        return await self.college_update_college_dept_with_options_async(request, headers, runtime)
+
+    def college_update_college_dept_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptRequest,
+        headers: dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.dept_name):
+            query['deptName'] = request.dept_name
+        if not UtilClient.is_unset(request.sort_factor):
+            query['sortFactor'] = request.sort_factor
+        if not UtilClient.is_unset(request.super_id):
+            query['superId'] = request.super_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptResponse(),
+            self.do_roarequest('CollegeUpdateCollegeDept', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/colleges/depts', 'json', req, runtime)
+        )
+
+    async def college_update_college_dept_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptRequest,
+        headers: dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.dept_name):
+            query['deptName'] = request.dept_name
+        if not UtilClient.is_unset(request.sort_factor):
+            query['sortFactor'] = request.sort_factor
+        if not UtilClient.is_unset(request.super_id):
+            query['superId'] = request.super_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptResponse(),
+            await self.do_roarequest_async('CollegeUpdateCollegeDept', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/colleges/depts', 'json', req, runtime)
+        )
+
+    def college_update_student_dept_info(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoHeaders()
+        return self.college_update_student_dept_info_with_options(request, headers, runtime)
+
+    async def college_update_student_dept_info_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoHeaders()
+        return await self.college_update_student_dept_info_with_options_async(request, headers, runtime)
+
+    def college_update_student_dept_info_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoRequest,
+        headers: dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.student_id):
+            query['studentId'] = request.student_id
+        if not UtilClient.is_unset(request.student_number):
+            query['studentNumber'] = request.student_number
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoResponse(),
+            self.do_roarequest('CollegeUpdateStudentDeptInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/colleges/members/deptInfos', 'json', req, runtime)
+        )
+
+    async def college_update_student_dept_info_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoRequest,
+        headers: dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.student_id):
+            query['studentId'] = request.student_id
+        if not UtilClient.is_unset(request.student_number):
+            query['studentNumber'] = request.student_number
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoResponse(),
+            await self.do_roarequest_async('CollegeUpdateStudentDeptInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/colleges/members/deptInfos', 'json', req, runtime)
+        )
+
+    def college_update_student_info(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeUpdateStudentInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeUpdateStudentInfoHeaders()
+        return self.college_update_student_info_with_options(request, headers, runtime)
+
+    async def college_update_student_info_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeUpdateStudentInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeUpdateStudentInfoHeaders()
+        return await self.college_update_student_info_with_options_async(request, headers, runtime)
+
+    def college_update_student_info_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeUpdateStudentInfoRequest,
+        headers: dingtalkindustry__1__0_models.CollegeUpdateStudentInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.emp_extension):
+            body['empExtension'] = request.emp_extension
+        if not UtilClient.is_unset(request.gender):
+            body['gender'] = request.gender
+        if not UtilClient.is_unset(request.identify_id):
+            body['identifyId'] = request.identify_id
+        if not UtilClient.is_unset(request.start_year):
+            body['startYear'] = request.start_year
+        if not UtilClient.is_unset(request.student_id):
+            body['studentId'] = request.student_id
+        if not UtilClient.is_unset(request.student_name):
+            body['studentName'] = request.student_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeUpdateStudentInfoResponse(),
+            self.do_roarequest('CollegeUpdateStudentInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/colleges/members/depts/students', 'json', req, runtime)
+        )
+
+    async def college_update_student_info_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeUpdateStudentInfoRequest,
+        headers: dingtalkindustry__1__0_models.CollegeUpdateStudentInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.emp_extension):
+            body['empExtension'] = request.emp_extension
+        if not UtilClient.is_unset(request.gender):
+            body['gender'] = request.gender
+        if not UtilClient.is_unset(request.identify_id):
+            body['identifyId'] = request.identify_id
+        if not UtilClient.is_unset(request.start_year):
+            body['startYear'] = request.start_year
+        if not UtilClient.is_unset(request.student_id):
+            body['studentId'] = request.student_id
+        if not UtilClient.is_unset(request.student_name):
+            body['studentName'] = request.student_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeUpdateStudentInfoResponse(),
+            await self.do_roarequest_async('CollegeUpdateStudentInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/colleges/members/depts/students', 'json', req, runtime)
+        )
+
+    def college_update_student_moblie(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieHeaders()
+        return self.college_update_student_moblie_with_options(request, headers, runtime)
+
+    async def college_update_student_moblie_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieHeaders()
+        return await self.college_update_student_moblie_with_options_async(request, headers, runtime)
+
+    def college_update_student_moblie_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieRequest,
+        headers: dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.is_force):
+            query['isForce'] = request.is_force
+        if not UtilClient.is_unset(request.new_mobile):
+            query['newMobile'] = request.new_mobile
+        if not UtilClient.is_unset(request.student_id):
+            query['studentId'] = request.student_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieResponse(),
+            self.do_roarequest('CollegeUpdateStudentMoblie', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/colleges/members/students/mobiles', 'json', req, runtime)
+        )
+
+    async def college_update_student_moblie_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieRequest,
+        headers: dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.is_force):
+            query['isForce'] = request.is_force
+        if not UtilClient.is_unset(request.new_mobile):
+            query['newMobile'] = request.new_mobile
+        if not UtilClient.is_unset(request.student_id):
+            query['studentId'] = request.student_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieResponse(),
+            await self.do_roarequest_async('CollegeUpdateStudentMoblie', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/colleges/members/students/mobiles', 'json', req, runtime)
+        )
+
     def customize_contact_create(
         self,
         request: dingtalkindustry__1__0_models.CustomizeContactCreateRequest,

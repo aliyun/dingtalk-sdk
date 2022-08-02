@@ -507,6 +507,7 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         general_invoice_detail_volist: List[BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList] = None,
         invoice_code: str = None,
         invoice_no: str = None,
+        invoice_status: str = None,
         invoice_type: str = None,
         machine_code: str = None,
         oil_flag: str = None,
@@ -527,7 +528,6 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         seller_name: str = None,
         seller_tax_no: str = None,
         seller_tel: str = None,
-        status: str = None,
         supply_sign: str = None,
         tax_amount: str = None,
         used_vehicle_sale_detail_volist: List[BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList] = None,
@@ -560,6 +560,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         self.invoice_code = invoice_code
         # 发票号码
         self.invoice_no = invoice_no
+        # 发票状态
+        self.invoice_status = invoice_status
         # 发票类型
         self.invoice_type = invoice_type
         # 机器码
@@ -599,8 +601,6 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         self.seller_tax_no = seller_tax_no
         # 销方电话
         self.seller_tel = seller_tel
-        # 发票状态
-        self.status = status
         # 代开发票标识 1-自开，2-代开
         self.supply_sign = supply_sign
         # 税额
@@ -664,6 +664,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             result['invoiceCode'] = self.invoice_code
         if self.invoice_no is not None:
             result['invoiceNo'] = self.invoice_no
+        if self.invoice_status is not None:
+            result['invoiceStatus'] = self.invoice_status
         if self.invoice_type is not None:
             result['invoiceType'] = self.invoice_type
         if self.machine_code is not None:
@@ -706,8 +708,6 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             result['sellerTaxNo'] = self.seller_tax_no
         if self.seller_tel is not None:
             result['sellerTel'] = self.seller_tel
-        if self.status is not None:
-            result['status'] = self.status
         if self.supply_sign is not None:
             result['supplySign'] = self.supply_sign
         if self.tax_amount is not None:
@@ -757,6 +757,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             self.invoice_code = m.get('invoiceCode')
         if m.get('invoiceNo') is not None:
             self.invoice_no = m.get('invoiceNo')
+        if m.get('invoiceStatus') is not None:
+            self.invoice_status = m.get('invoiceStatus')
         if m.get('invoiceType') is not None:
             self.invoice_type = m.get('invoiceType')
         if m.get('machineCode') is not None:
@@ -800,8 +802,6 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             self.seller_tax_no = m.get('sellerTaxNo')
         if m.get('sellerTel') is not None:
             self.seller_tel = m.get('sellerTel')
-        if m.get('status') is not None:
-            self.status = m.get('status')
         if m.get('supplySign') is not None:
             self.supply_sign = m.get('supplySign')
         if m.get('taxAmount') is not None:
@@ -7349,7 +7349,7 @@ class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGeneralInvoi
     def __init__(
         self,
         amount: str = None,
-        good_name: str = None,
+        goods_name: str = None,
         quantity: str = None,
         revenue_code: str = None,
         row_no: str = None,
@@ -7364,7 +7364,7 @@ class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGeneralInvoi
         # 金额
         self.amount = amount
         # 商品名称
-        self.good_name = good_name
+        self.goods_name = goods_name
         # 数量
         self.quantity = quantity
         # 税收分类编码
@@ -7397,8 +7397,8 @@ class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGeneralInvoi
         result = dict()
         if self.amount is not None:
             result['amount'] = self.amount
-        if self.good_name is not None:
-            result['goodName'] = self.good_name
+        if self.goods_name is not None:
+            result['goodsName'] = self.goods_name
         if self.quantity is not None:
             result['quantity'] = self.quantity
         if self.revenue_code is not None:
@@ -7425,8 +7425,8 @@ class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGeneralInvoi
         m = m or dict()
         if m.get('amount') is not None:
             self.amount = m.get('amount')
-        if m.get('goodName') is not None:
-            self.good_name = m.get('goodName')
+        if m.get('goodsName') is not None:
+            self.goods_name = m.get('goodsName')
         if m.get('quantity') is not None:
             self.quantity = m.get('quantity')
         if m.get('revenueCode') is not None:
@@ -7815,6 +7815,7 @@ class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList(TeaModel):
         general_invoice_detail_volist: List[UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList] = None,
         invoice_code: str = None,
         invoice_no: str = None,
+        invoice_status: str = None,
         invoice_type: str = None,
         machine_code: str = None,
         oil_flag: str = None,
@@ -7835,7 +7836,6 @@ class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList(TeaModel):
         seller_name: str = None,
         seller_tax_no: str = None,
         seller_tel: str = None,
-        status: str = None,
         supply_sign: str = None,
         tax_amount: str = None,
         used_vehicle_sale_detail_volist: List[UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList] = None,
@@ -7868,6 +7868,8 @@ class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList(TeaModel):
         self.invoice_code = invoice_code
         # 发票号码
         self.invoice_no = invoice_no
+        # 发票状态
+        self.invoice_status = invoice_status
         # 发票类型
         self.invoice_type = invoice_type
         # 机器码
@@ -7907,8 +7909,6 @@ class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList(TeaModel):
         self.seller_tax_no = seller_tax_no
         # 销方电话
         self.seller_tel = seller_tel
-        # 发票状态
-        self.status = status
         # 代开发票标识 1-自开，2-代开
         self.supply_sign = supply_sign
         # 税额
@@ -7972,6 +7972,8 @@ class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList(TeaModel):
             result['invoiceCode'] = self.invoice_code
         if self.invoice_no is not None:
             result['invoiceNo'] = self.invoice_no
+        if self.invoice_status is not None:
+            result['invoiceStatus'] = self.invoice_status
         if self.invoice_type is not None:
             result['invoiceType'] = self.invoice_type
         if self.machine_code is not None:
@@ -8014,8 +8016,6 @@ class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList(TeaModel):
             result['sellerTaxNo'] = self.seller_tax_no
         if self.seller_tel is not None:
             result['sellerTel'] = self.seller_tel
-        if self.status is not None:
-            result['status'] = self.status
         if self.supply_sign is not None:
             result['supplySign'] = self.supply_sign
         if self.tax_amount is not None:
@@ -8065,6 +8065,8 @@ class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList(TeaModel):
             self.invoice_code = m.get('invoiceCode')
         if m.get('invoiceNo') is not None:
             self.invoice_no = m.get('invoiceNo')
+        if m.get('invoiceStatus') is not None:
+            self.invoice_status = m.get('invoiceStatus')
         if m.get('invoiceType') is not None:
             self.invoice_type = m.get('invoiceType')
         if m.get('machineCode') is not None:
@@ -8108,8 +8110,6 @@ class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList(TeaModel):
             self.seller_tax_no = m.get('sellerTaxNo')
         if m.get('sellerTel') is not None:
             self.seller_tel = m.get('sellerTel')
-        if m.get('status') is not None:
-            self.status = m.get('status')
         if m.get('supplySign') is not None:
             self.supply_sign = m.get('supplySign')
         if m.get('taxAmount') is not None:
@@ -8513,7 +8513,7 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailV
     def __init__(
         self,
         amount: str = None,
-        good_name: str = None,
+        goods_name: str = None,
         quantity: str = None,
         revenue_code: str = None,
         row_no: str = None,
@@ -8528,7 +8528,7 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailV
         # 金额
         self.amount = amount
         # 商品名称
-        self.good_name = good_name
+        self.goods_name = goods_name
         # 数量
         self.quantity = quantity
         # 税收分类编码
@@ -8561,8 +8561,8 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailV
         result = dict()
         if self.amount is not None:
             result['amount'] = self.amount
-        if self.good_name is not None:
-            result['goodName'] = self.good_name
+        if self.goods_name is not None:
+            result['goodsName'] = self.goods_name
         if self.quantity is not None:
             result['quantity'] = self.quantity
         if self.revenue_code is not None:
@@ -8589,8 +8589,8 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailV
         m = m or dict()
         if m.get('amount') is not None:
             self.amount = m.get('amount')
-        if m.get('goodName') is not None:
-            self.good_name = m.get('goodName')
+        if m.get('goodsName') is not None:
+            self.goods_name = m.get('goodsName')
         if m.get('quantity') is not None:
             self.quantity = m.get('quantity')
         if m.get('revenueCode') is not None:
@@ -8978,6 +8978,7 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO(TeaModel):
         general_invoice_detail_volist: List[UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList] = None,
         invoice_code: str = None,
         invoice_no: str = None,
+        invoice_status: str = None,
         invoice_type: str = None,
         machine_code: str = None,
         oil_flag: str = None,
@@ -8998,7 +8999,6 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO(TeaModel):
         seller_name: str = None,
         seller_tax_no: str = None,
         seller_tel: str = None,
-        status: str = None,
         supply_sign: str = None,
         tax_amount: str = None,
         used_vehicle_sale_detail_volist: List[UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList] = None,
@@ -9031,6 +9031,8 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO(TeaModel):
         self.invoice_code = invoice_code
         # 发票号码
         self.invoice_no = invoice_no
+        # 发票状态
+        self.invoice_status = invoice_status
         # 发票类型
         self.invoice_type = invoice_type
         # 机器码
@@ -9070,8 +9072,6 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO(TeaModel):
         self.seller_tax_no = seller_tax_no
         # 销方电话
         self.seller_tel = seller_tel
-        # 发票状态
-        self.status = status
         # 代开发票标识 1-自开，2-代开
         self.supply_sign = supply_sign
         # 税额
@@ -9135,6 +9135,8 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO(TeaModel):
             result['invoiceCode'] = self.invoice_code
         if self.invoice_no is not None:
             result['invoiceNo'] = self.invoice_no
+        if self.invoice_status is not None:
+            result['invoiceStatus'] = self.invoice_status
         if self.invoice_type is not None:
             result['invoiceType'] = self.invoice_type
         if self.machine_code is not None:
@@ -9177,8 +9179,6 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO(TeaModel):
             result['sellerTaxNo'] = self.seller_tax_no
         if self.seller_tel is not None:
             result['sellerTel'] = self.seller_tel
-        if self.status is not None:
-            result['status'] = self.status
         if self.supply_sign is not None:
             result['supplySign'] = self.supply_sign
         if self.tax_amount is not None:
@@ -9228,6 +9228,8 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO(TeaModel):
             self.invoice_code = m.get('invoiceCode')
         if m.get('invoiceNo') is not None:
             self.invoice_no = m.get('invoiceNo')
+        if m.get('invoiceStatus') is not None:
+            self.invoice_status = m.get('invoiceStatus')
         if m.get('invoiceType') is not None:
             self.invoice_type = m.get('invoiceType')
         if m.get('machineCode') is not None:
@@ -9271,8 +9273,6 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO(TeaModel):
             self.seller_tax_no = m.get('sellerTaxNo')
         if m.get('sellerTel') is not None:
             self.seller_tel = m.get('sellerTel')
-        if m.get('status') is not None:
-            self.status = m.get('status')
         if m.get('supplySign') is not None:
             self.supply_sign = m.get('supplySign')
         if m.get('taxAmount') is not None:
@@ -9300,7 +9300,7 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVO
     def __init__(
         self,
         amount: str = None,
-        good_name: str = None,
+        goods_name: str = None,
         quantity: str = None,
         revenue_code: str = None,
         row_no: str = None,
@@ -9315,7 +9315,7 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVO
         # 金额
         self.amount = amount
         # 商品名称
-        self.good_name = good_name
+        self.goods_name = goods_name
         # 数量
         self.quantity = quantity
         # 税收分类编码
@@ -9348,8 +9348,8 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVO
         result = dict()
         if self.amount is not None:
             result['amount'] = self.amount
-        if self.good_name is not None:
-            result['goodName'] = self.good_name
+        if self.goods_name is not None:
+            result['goodsName'] = self.goods_name
         if self.quantity is not None:
             result['quantity'] = self.quantity
         if self.revenue_code is not None:
@@ -9376,8 +9376,8 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVO
         m = m or dict()
         if m.get('amount') is not None:
             self.amount = m.get('amount')
-        if m.get('goodName') is not None:
-            self.good_name = m.get('goodName')
+        if m.get('goodsName') is not None:
+            self.goods_name = m.get('goodsName')
         if m.get('quantity') is not None:
             self.quantity = m.get('quantity')
         if m.get('revenueCode') is not None:
@@ -10281,7 +10281,7 @@ class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoiceDetailV
     def __init__(
         self,
         amount: str = None,
-        good_name: str = None,
+        goods_name: str = None,
         quantity: str = None,
         revenue_code: str = None,
         row_no: str = None,
@@ -10296,7 +10296,7 @@ class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoiceDetailV
         # 金额
         self.amount = amount
         # 商品名称
-        self.good_name = good_name
+        self.goods_name = goods_name
         # 数量
         self.quantity = quantity
         # 税收分类编码
@@ -10329,8 +10329,8 @@ class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoiceDetailV
         result = dict()
         if self.amount is not None:
             result['amount'] = self.amount
-        if self.good_name is not None:
-            result['goodName'] = self.good_name
+        if self.goods_name is not None:
+            result['goodsName'] = self.goods_name
         if self.quantity is not None:
             result['quantity'] = self.quantity
         if self.revenue_code is not None:
@@ -10357,8 +10357,8 @@ class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoiceDetailV
         m = m or dict()
         if m.get('amount') is not None:
             self.amount = m.get('amount')
-        if m.get('goodName') is not None:
-            self.good_name = m.get('goodName')
+        if m.get('goodsName') is not None:
+            self.goods_name = m.get('goodsName')
         if m.get('quantity') is not None:
             self.quantity = m.get('quantity')
         if m.get('revenueCode') is not None:
@@ -10747,6 +10747,7 @@ class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList(TeaModel):
         general_invoice_detail_volist: List[UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList] = None,
         invoice_code: str = None,
         invoice_no: str = None,
+        invoice_status: str = None,
         invoice_type: str = None,
         machine_code: str = None,
         oil_flag: str = None,
@@ -10767,7 +10768,6 @@ class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList(TeaModel):
         seller_name: str = None,
         seller_tax_no: str = None,
         seller_tel: str = None,
-        status: str = None,
         supply_sign: str = None,
         tax_amount: str = None,
         used_vehicle_sale_detail_volist: List[UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList] = None,
@@ -10800,6 +10800,8 @@ class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList(TeaModel):
         self.invoice_code = invoice_code
         # 发票号码
         self.invoice_no = invoice_no
+        # 发票状态
+        self.invoice_status = invoice_status
         # 发票类型
         self.invoice_type = invoice_type
         # 机器码
@@ -10839,8 +10841,6 @@ class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList(TeaModel):
         self.seller_tax_no = seller_tax_no
         # 销方电话
         self.seller_tel = seller_tel
-        # 发票状态
-        self.status = status
         # 代开发票标识 1-自开，2-代开
         self.supply_sign = supply_sign
         # 税额
@@ -10904,6 +10904,8 @@ class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList(TeaModel):
             result['invoiceCode'] = self.invoice_code
         if self.invoice_no is not None:
             result['invoiceNo'] = self.invoice_no
+        if self.invoice_status is not None:
+            result['invoiceStatus'] = self.invoice_status
         if self.invoice_type is not None:
             result['invoiceType'] = self.invoice_type
         if self.machine_code is not None:
@@ -10946,8 +10948,6 @@ class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList(TeaModel):
             result['sellerTaxNo'] = self.seller_tax_no
         if self.seller_tel is not None:
             result['sellerTel'] = self.seller_tel
-        if self.status is not None:
-            result['status'] = self.status
         if self.supply_sign is not None:
             result['supplySign'] = self.supply_sign
         if self.tax_amount is not None:
@@ -10997,6 +10997,8 @@ class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList(TeaModel):
             self.invoice_code = m.get('invoiceCode')
         if m.get('invoiceNo') is not None:
             self.invoice_no = m.get('invoiceNo')
+        if m.get('invoiceStatus') is not None:
+            self.invoice_status = m.get('invoiceStatus')
         if m.get('invoiceType') is not None:
             self.invoice_type = m.get('invoiceType')
         if m.get('machineCode') is not None:
@@ -11040,8 +11042,6 @@ class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList(TeaModel):
             self.seller_tax_no = m.get('sellerTaxNo')
         if m.get('sellerTel') is not None:
             self.seller_tel = m.get('sellerTel')
-        if m.get('status') is not None:
-            self.status = m.get('status')
         if m.get('supplySign') is not None:
             self.supply_sign = m.get('supplySign')
         if m.get('taxAmount') is not None:
@@ -11733,6 +11733,7 @@ class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO(TeaModel):
         general_invoice_detail_volist: List[UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList] = None,
         invoice_code: str = None,
         invoice_no: str = None,
+        invoice_status: str = None,
         invoice_type: str = None,
         machine_code: str = None,
         oil_flag: str = None,
@@ -11753,7 +11754,6 @@ class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO(TeaModel):
         seller_name: str = None,
         seller_tax_no: str = None,
         seller_tel: str = None,
-        status: str = None,
         supply_sign: str = None,
         tax_amount: str = None,
         used_vehicle_sale_detail_volist: List[UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList] = None,
@@ -11786,6 +11786,8 @@ class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO(TeaModel):
         self.invoice_code = invoice_code
         # 发票号码
         self.invoice_no = invoice_no
+        # 发票状态
+        self.invoice_status = invoice_status
         # 发票类型
         self.invoice_type = invoice_type
         # 机器码
@@ -11824,8 +11826,6 @@ class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO(TeaModel):
         self.seller_tax_no = seller_tax_no
         # 销方电话
         self.seller_tel = seller_tel
-        # 发票状态
-        self.status = status
         # 代开发票标识 1-自开，2-代开
         self.supply_sign = supply_sign
         # 税额
@@ -11889,6 +11889,8 @@ class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO(TeaModel):
             result['invoiceCode'] = self.invoice_code
         if self.invoice_no is not None:
             result['invoiceNo'] = self.invoice_no
+        if self.invoice_status is not None:
+            result['invoiceStatus'] = self.invoice_status
         if self.invoice_type is not None:
             result['invoiceType'] = self.invoice_type
         if self.machine_code is not None:
@@ -11931,8 +11933,6 @@ class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO(TeaModel):
             result['sellerTaxNo'] = self.seller_tax_no
         if self.seller_tel is not None:
             result['sellerTel'] = self.seller_tel
-        if self.status is not None:
-            result['status'] = self.status
         if self.supply_sign is not None:
             result['supplySign'] = self.supply_sign
         if self.tax_amount is not None:
@@ -11982,6 +11982,8 @@ class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO(TeaModel):
             self.invoice_code = m.get('invoiceCode')
         if m.get('invoiceNo') is not None:
             self.invoice_no = m.get('invoiceNo')
+        if m.get('invoiceStatus') is not None:
+            self.invoice_status = m.get('invoiceStatus')
         if m.get('invoiceType') is not None:
             self.invoice_type = m.get('invoiceType')
         if m.get('machineCode') is not None:
@@ -12025,8 +12027,6 @@ class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO(TeaModel):
             self.seller_tax_no = m.get('sellerTaxNo')
         if m.get('sellerTel') is not None:
             self.seller_tel = m.get('sellerTel')
-        if m.get('status') is not None:
-            self.status = m.get('status')
         if m.get('supplySign') is not None:
             self.supply_sign = m.get('supplySign')
         if m.get('taxAmount') is not None:
@@ -12814,6 +12814,7 @@ class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList(TeaModel):
         general_invoice_detail_volist: List[UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList] = None,
         invoice_code: str = None,
         invoice_no: str = None,
+        invoice_status: str = None,
         invoice_type: str = None,
         machine_code: str = None,
         oil_flag: str = None,
@@ -12834,7 +12835,6 @@ class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList(TeaModel):
         seller_name: str = None,
         seller_tax_no: str = None,
         seller_tel: str = None,
-        status: str = None,
         supply_sign: str = None,
         tax_amount: str = None,
         used_vehicle_sale_detail_volist: List[UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList] = None,
@@ -12867,6 +12867,8 @@ class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList(TeaModel):
         self.invoice_code = invoice_code
         # 发票号码
         self.invoice_no = invoice_no
+        # 发票状态
+        self.invoice_status = invoice_status
         # 发票类型
         self.invoice_type = invoice_type
         # 机器码
@@ -12906,8 +12908,6 @@ class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList(TeaModel):
         self.seller_tax_no = seller_tax_no
         # 销方电话
         self.seller_tel = seller_tel
-        # 发票状态
-        self.status = status
         # 代开发票标识 1-自开，2-代开
         self.supply_sign = supply_sign
         # 税额
@@ -12971,6 +12971,8 @@ class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList(TeaModel):
             result['invoiceCode'] = self.invoice_code
         if self.invoice_no is not None:
             result['invoiceNo'] = self.invoice_no
+        if self.invoice_status is not None:
+            result['invoiceStatus'] = self.invoice_status
         if self.invoice_type is not None:
             result['invoiceType'] = self.invoice_type
         if self.machine_code is not None:
@@ -13013,8 +13015,6 @@ class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList(TeaModel):
             result['sellerTaxNo'] = self.seller_tax_no
         if self.seller_tel is not None:
             result['sellerTel'] = self.seller_tel
-        if self.status is not None:
-            result['status'] = self.status
         if self.supply_sign is not None:
             result['supplySign'] = self.supply_sign
         if self.tax_amount is not None:
@@ -13064,6 +13064,8 @@ class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList(TeaModel):
             self.invoice_code = m.get('invoiceCode')
         if m.get('invoiceNo') is not None:
             self.invoice_no = m.get('invoiceNo')
+        if m.get('invoiceStatus') is not None:
+            self.invoice_status = m.get('invoiceStatus')
         if m.get('invoiceType') is not None:
             self.invoice_type = m.get('invoiceType')
         if m.get('machineCode') is not None:
@@ -13107,8 +13109,6 @@ class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList(TeaModel):
             self.seller_tax_no = m.get('sellerTaxNo')
         if m.get('sellerTel') is not None:
             self.seller_tel = m.get('sellerTel')
-        if m.get('status') is not None:
-            self.status = m.get('status')
         if m.get('supplySign') is not None:
             self.supply_sign = m.get('supplySign')
         if m.get('taxAmount') is not None:

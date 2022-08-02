@@ -290,8 +290,6 @@ class Client(OpenApiClient):
             body['option'] = request.option
         if not UtilClient.is_unset(request.parent_id):
             body['parentId'] = request.parent_id
-        if not UtilClient.is_unset(request.size):
-            body['size'] = request.size
         if not UtilClient.is_unset(request.upload_key):
             body['uploadKey'] = request.upload_key
         real_headers = {}
@@ -328,8 +326,6 @@ class Client(OpenApiClient):
             body['option'] = request.option
         if not UtilClient.is_unset(request.parent_id):
             body['parentId'] = request.parent_id
-        if not UtilClient.is_unset(request.size):
-            body['size'] = request.size
         if not UtilClient.is_unset(request.upload_key):
             body['uploadKey'] = request.upload_key
         real_headers = {}
