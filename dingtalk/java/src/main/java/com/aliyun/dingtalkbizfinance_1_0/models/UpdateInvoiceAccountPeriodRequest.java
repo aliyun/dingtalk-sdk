@@ -63,8 +63,8 @@ public class UpdateInvoiceAccountPeriodRequest extends TeaModel {
         public String amount;
 
         // 商品名称
-        @NameInMap("goodName")
-        public String goodName;
+        @NameInMap("goodsName")
+        public String goodsName;
 
         // 数量
         @NameInMap("quantity")
@@ -119,12 +119,12 @@ public class UpdateInvoiceAccountPeriodRequest extends TeaModel {
             return this.amount;
         }
 
-        public UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList setGoodName(String goodName) {
-            this.goodName = goodName;
+        public UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList setGoodsName(String goodsName) {
+            this.goodsName = goodsName;
             return this;
         }
-        public String getGoodName() {
-            return this.goodName;
+        public String getGoodsName() {
+            return this.goodsName;
         }
 
         public UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList setQuantity(String quantity) {
@@ -774,6 +774,10 @@ public class UpdateInvoiceAccountPeriodRequest extends TeaModel {
         @NameInMap("invoiceNo")
         public String invoiceNo;
 
+        // 发票状态
+        @NameInMap("invoiceStatus")
+        public String invoiceStatus;
+
         // 发票类型
         @NameInMap("invoiceType")
         public String invoiceType;
@@ -852,10 +856,6 @@ public class UpdateInvoiceAccountPeriodRequest extends TeaModel {
         // 销方电话
         @NameInMap("sellerTel")
         public String sellerTel;
-
-        // 发票状态
-        @NameInMap("status")
-        public String status;
 
         // 代开发票标识 1-自开，2-代开
         @NameInMap("supplySign")
@@ -982,6 +982,14 @@ public class UpdateInvoiceAccountPeriodRequest extends TeaModel {
         }
         public String getInvoiceNo() {
             return this.invoiceNo;
+        }
+
+        public UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList setInvoiceStatus(String invoiceStatus) {
+            this.invoiceStatus = invoiceStatus;
+            return this;
+        }
+        public String getInvoiceStatus() {
+            return this.invoiceStatus;
         }
 
         public UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList setInvoiceType(String invoiceType) {
@@ -1142,14 +1150,6 @@ public class UpdateInvoiceAccountPeriodRequest extends TeaModel {
         }
         public String getSellerTel() {
             return this.sellerTel;
-        }
-
-        public UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList setStatus(String status) {
-            this.status = status;
-            return this;
-        }
-        public String getStatus() {
-            return this.status;
         }
 
         public UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList setSupplySign(String supplySign) {

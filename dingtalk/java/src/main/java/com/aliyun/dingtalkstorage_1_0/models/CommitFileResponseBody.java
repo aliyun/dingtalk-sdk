@@ -95,7 +95,7 @@ public class CommitFileResponseBody extends TeaModel {
         @NameInMap("properties")
         public CommitFileResponseBodyDentryProperties properties;
 
-        // 大小
+        // 大小, 单位:Byte
         @NameInMap("size")
         public Long size;
 

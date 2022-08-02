@@ -19,10 +19,6 @@ public class CommitFileRequest extends TeaModel {
     @NameInMap("parentId")
     public String parentId;
 
-    // 大小
-    @NameInMap("size")
-    public Long size;
-
     // 添加文件唯一标识，可通过DentryService.getUploadInfo来生成
     @NameInMap("uploadKey")
     public String uploadKey;
@@ -58,14 +54,6 @@ public class CommitFileRequest extends TeaModel {
     }
     public String getParentId() {
         return this.parentId;
-    }
-
-    public CommitFileRequest setSize(Long size) {
-        this.size = size;
-        return this;
-    }
-    public Long getSize() {
-        return this.size;
     }
 
     public CommitFileRequest setUploadKey(String uploadKey) {
@@ -149,6 +137,11 @@ public class CommitFileRequest extends TeaModel {
         @NameInMap("conflictStrategy")
         public String conflictStrategy;
 
+        // 默认文件大小, 单位:Byte
+        // 如果此字段不为空，企业存储系统会校验文件实际大小是否和此字段是否一致，不一致会报错
+        @NameInMap("size")
+        public Long size;
+
         public static CommitFileRequestOption build(java.util.Map<String, ?> map) throws Exception {
             CommitFileRequestOption self = new CommitFileRequestOption();
             return TeaModel.build(map, self);
@@ -168,6 +161,14 @@ public class CommitFileRequest extends TeaModel {
         }
         public String getConflictStrategy() {
             return this.conflictStrategy;
+        }
+
+        public CommitFileRequestOption setSize(Long size) {
+            this.size = size;
+            return this;
+        }
+        public Long getSize() {
+            return this.size;
         }
 
     }

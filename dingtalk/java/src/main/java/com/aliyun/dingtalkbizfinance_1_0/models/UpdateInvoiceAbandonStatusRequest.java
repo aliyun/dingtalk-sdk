@@ -135,8 +135,8 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         public String amount;
 
         // 商品名称
-        @NameInMap("goodName")
-        public String goodName;
+        @NameInMap("goodsName")
+        public String goodsName;
 
         // 数量
         @NameInMap("quantity")
@@ -191,12 +191,12 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.amount;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList setGoodName(String goodName) {
-            this.goodName = goodName;
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList setGoodsName(String goodsName) {
+            this.goodsName = goodsName;
             return this;
         }
-        public String getGoodName() {
-            return this.goodName;
+        public String getGoodsName() {
+            return this.goodsName;
         }
 
         public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList setQuantity(String quantity) {
@@ -845,6 +845,10 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("invoiceNo")
         public String invoiceNo;
 
+        // 发票状态
+        @NameInMap("invoiceStatus")
+        public String invoiceStatus;
+
         // 发票类型
         @NameInMap("invoiceType")
         public String invoiceType;
@@ -923,10 +927,6 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         // 销方电话
         @NameInMap("sellerTel")
         public String sellerTel;
-
-        // 发票状态
-        @NameInMap("status")
-        public String status;
 
         // 代开发票标识 1-自开，2-代开
         @NameInMap("supplySign")
@@ -1053,6 +1053,14 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         }
         public String getInvoiceNo() {
             return this.invoiceNo;
+        }
+
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO setInvoiceStatus(String invoiceStatus) {
+            this.invoiceStatus = invoiceStatus;
+            return this;
+        }
+        public String getInvoiceStatus() {
+            return this.invoiceStatus;
         }
 
         public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO setInvoiceType(String invoiceType) {
@@ -1215,14 +1223,6 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.sellerTel;
         }
 
-        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO setStatus(String status) {
-            this.status = status;
-            return this;
-        }
-        public String getStatus() {
-            return this.status;
-        }
-
         public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO setSupplySign(String supplySign) {
             this.supplySign = supplySign;
             return this;
@@ -1287,8 +1287,8 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         public String amount;
 
         // 商品名称
-        @NameInMap("goodName")
-        public String goodName;
+        @NameInMap("goodsName")
+        public String goodsName;
 
         // 数量
         @NameInMap("quantity")
@@ -1343,12 +1343,12 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.amount;
         }
 
-        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList setGoodName(String goodName) {
-            this.goodName = goodName;
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList setGoodsName(String goodsName) {
+            this.goodsName = goodsName;
             return this;
         }
-        public String getGoodName() {
-            return this.goodName;
+        public String getGoodsName() {
+            return this.goodsName;
         }
 
         public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList setQuantity(String quantity) {

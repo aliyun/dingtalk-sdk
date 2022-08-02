@@ -750,6 +750,10 @@ public class BatchAddInvoiceRequest extends TeaModel {
         @NameInMap("invoiceNo")
         public String invoiceNo;
 
+        // 发票状态
+        @NameInMap("invoiceStatus")
+        public String invoiceStatus;
+
         // 发票类型
         @NameInMap("invoiceType")
         public String invoiceType;
@@ -828,10 +832,6 @@ public class BatchAddInvoiceRequest extends TeaModel {
         // 销方电话
         @NameInMap("sellerTel")
         public String sellerTel;
-
-        // 发票状态
-        @NameInMap("status")
-        public String status;
 
         // 代开发票标识 1-自开，2-代开
         @NameInMap("supplySign")
@@ -958,6 +958,14 @@ public class BatchAddInvoiceRequest extends TeaModel {
         }
         public String getInvoiceNo() {
             return this.invoiceNo;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setInvoiceStatus(String invoiceStatus) {
+            this.invoiceStatus = invoiceStatus;
+            return this;
+        }
+        public String getInvoiceStatus() {
+            return this.invoiceStatus;
         }
 
         public BatchAddInvoiceRequestGeneralInvoiceVOList setInvoiceType(String invoiceType) {
@@ -1118,14 +1126,6 @@ public class BatchAddInvoiceRequest extends TeaModel {
         }
         public String getSellerTel() {
             return this.sellerTel;
-        }
-
-        public BatchAddInvoiceRequestGeneralInvoiceVOList setStatus(String status) {
-            this.status = status;
-            return this;
-        }
-        public String getStatus() {
-            return this.status;
         }
 
         public BatchAddInvoiceRequestGeneralInvoiceVOList setSupplySign(String supplySign) {

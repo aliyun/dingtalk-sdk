@@ -154,10 +154,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("parentId", request.parentId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.size)) {
-            body.put("size", request.size);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.uploadKey)) {
             body.put("uploadKey", request.uploadKey);
         }

@@ -51,8 +51,8 @@ public class UpdateApplyReceiptAndInvoiceRelatedRequest extends TeaModel {
         public String amount;
 
         // 商品名称
-        @NameInMap("goodName")
-        public String goodName;
+        @NameInMap("goodsName")
+        public String goodsName;
 
         // 数量
         @NameInMap("quantity")
@@ -107,12 +107,12 @@ public class UpdateApplyReceiptAndInvoiceRelatedRequest extends TeaModel {
             return this.amount;
         }
 
-        public UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList setGoodName(String goodName) {
-            this.goodName = goodName;
+        public UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList setGoodsName(String goodsName) {
+            this.goodsName = goodsName;
             return this;
         }
-        public String getGoodName() {
-            return this.goodName;
+        public String getGoodsName() {
+            return this.goodsName;
         }
 
         public UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList setQuantity(String quantity) {
@@ -762,6 +762,10 @@ public class UpdateApplyReceiptAndInvoiceRelatedRequest extends TeaModel {
         @NameInMap("invoiceNo")
         public String invoiceNo;
 
+        // 发票状态
+        @NameInMap("invoiceStatus")
+        public String invoiceStatus;
+
         // 发票类型
         @NameInMap("invoiceType")
         public String invoiceType;
@@ -840,10 +844,6 @@ public class UpdateApplyReceiptAndInvoiceRelatedRequest extends TeaModel {
         // 销方电话
         @NameInMap("sellerTel")
         public String sellerTel;
-
-        // 发票状态
-        @NameInMap("status")
-        public String status;
 
         // 代开发票标识 1-自开，2-代开
         @NameInMap("supplySign")
@@ -970,6 +970,14 @@ public class UpdateApplyReceiptAndInvoiceRelatedRequest extends TeaModel {
         }
         public String getInvoiceNo() {
             return this.invoiceNo;
+        }
+
+        public UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList setInvoiceStatus(String invoiceStatus) {
+            this.invoiceStatus = invoiceStatus;
+            return this;
+        }
+        public String getInvoiceStatus() {
+            return this.invoiceStatus;
         }
 
         public UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList setInvoiceType(String invoiceType) {
@@ -1130,14 +1138,6 @@ public class UpdateApplyReceiptAndInvoiceRelatedRequest extends TeaModel {
         }
         public String getSellerTel() {
             return this.sellerTel;
-        }
-
-        public UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList setStatus(String status) {
-            this.status = status;
-            return this;
-        }
-        public String getStatus() {
-            return this.status;
         }
 
         public UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList setSupplySign(String supplySign) {
