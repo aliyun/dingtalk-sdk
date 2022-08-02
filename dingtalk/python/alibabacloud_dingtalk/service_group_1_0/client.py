@@ -4371,6 +4371,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('RetractTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/retract', 'none', req, runtime)
         )
 
+    def robot_message_recall(
+        self,
+        request: dingtalkservice_group__1__0_models.RobotMessageRecallRequest,
+    ) -> dingtalkservice_group__1__0_models.RobotMessageRecallResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.RobotMessageRecallHeaders()
+        return self.robot_message_recall_with_options(request, headers, runtime)
+
+    async def robot_message_recall_async(
+        self,
+        request: dingtalkservice_group__1__0_models.RobotMessageRecallRequest,
+    ) -> dingtalkservice_group__1__0_models.RobotMessageRecallResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.RobotMessageRecallHeaders()
+        return await self.robot_message_recall_with_options_async(request, headers, runtime)
+
+    def robot_message_recall_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.RobotMessageRecallRequest,
+        headers: dingtalkservice_group__1__0_models.RobotMessageRecallHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.RobotMessageRecallResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_msg_id):
+            body['openMsgId'] = request.open_msg_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.RobotMessageRecallResponse(),
+            self.do_roarequest('RobotMessageRecall', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/robots/messages/recall', 'json', req, runtime)
+        )
+
+    async def robot_message_recall_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.RobotMessageRecallRequest,
+        headers: dingtalkservice_group__1__0_models.RobotMessageRecallHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.RobotMessageRecallResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_msg_id):
+            body['openMsgId'] = request.open_msg_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.RobotMessageRecallResponse(),
+            await self.do_roarequest_async('RobotMessageRecall', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/robots/messages/recall', 'json', req, runtime)
+        )
+
     def search_group(
         self,
         request: dingtalkservice_group__1__0_models.SearchGroupRequest,

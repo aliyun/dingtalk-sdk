@@ -4,6 +4,103 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
+class PostCorpAuthInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PostCorpAuthInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class PostCorpAuthInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: PostCorpAuthInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = PostCorpAuthInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryActiveUserStatisticalDataHeaders(TeaModel):
     def __init__(
         self,
@@ -197,6 +294,203 @@ class QueryActiveUserStatisticalDataResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryActiveUserStatisticalDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryAnhmdStatisticalDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryAnhmdStatisticalDataRequest(TeaModel):
+    def __init__(
+        self,
+        stat_date: str = None,
+    ):
+        # statDate
+        self.stat_date = stat_date
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.stat_date is not None:
+            result['statDate'] = self.stat_date
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('statDate') is not None:
+            self.stat_date = m.get('statDate')
+        return self
+
+
+class QueryAnhmdStatisticalDataResponseBodyMetaList(TeaModel):
+    def __init__(
+        self,
+        kpi_caliber: str = None,
+        kpi_id: str = None,
+        kpi_name: str = None,
+        period: str = None,
+        unit: str = None,
+    ):
+        # 指标口径
+        self.kpi_caliber = kpi_caliber
+        # 指标ID
+        self.kpi_id = kpi_id
+        # 指标名称
+        self.kpi_name = kpi_name
+        # 指标周期
+        self.period = period
+        # 指标单位
+        self.unit = unit
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.kpi_caliber is not None:
+            result['kpiCaliber'] = self.kpi_caliber
+        if self.kpi_id is not None:
+            result['kpiId'] = self.kpi_id
+        if self.kpi_name is not None:
+            result['kpiName'] = self.kpi_name
+        if self.period is not None:
+            result['period'] = self.period
+        if self.unit is not None:
+            result['unit'] = self.unit
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('kpiCaliber') is not None:
+            self.kpi_caliber = m.get('kpiCaliber')
+        if m.get('kpiId') is not None:
+            self.kpi_id = m.get('kpiId')
+        if m.get('kpiName') is not None:
+            self.kpi_name = m.get('kpiName')
+        if m.get('period') is not None:
+            self.period = m.get('period')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        return self
+
+
+class QueryAnhmdStatisticalDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        data_list: List[Dict[str, Any]] = None,
+        meta_list: List[QueryAnhmdStatisticalDataResponseBodyMetaList] = None,
+    ):
+        # 指标数据
+        self.data_list = data_list
+        # 指标元数据
+        self.meta_list = meta_list
+
+    def validate(self):
+        if self.meta_list:
+            for k in self.meta_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data_list is not None:
+            result['dataList'] = self.data_list
+        result['metaList'] = []
+        if self.meta_list is not None:
+            for k in self.meta_list:
+                result['metaList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dataList') is not None:
+            self.data_list = m.get('dataList')
+        self.meta_list = []
+        if m.get('metaList') is not None:
+            for k in m.get('metaList'):
+                temp_model = QueryAnhmdStatisticalDataResponseBodyMetaList()
+                self.meta_list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryAnhmdStatisticalDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryAnhmdStatisticalDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryAnhmdStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

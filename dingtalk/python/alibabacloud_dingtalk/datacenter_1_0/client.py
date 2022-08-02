@@ -23,6 +23,52 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def post_corp_auth_info(self) -> dingtalkdatacenter__1__0_models.PostCorpAuthInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.PostCorpAuthInfoHeaders()
+        return self.post_corp_auth_info_with_options(headers, runtime)
+
+    async def post_corp_auth_info_async(self) -> dingtalkdatacenter__1__0_models.PostCorpAuthInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.PostCorpAuthInfoHeaders()
+        return await self.post_corp_auth_info_with_options_async(headers, runtime)
+
+    def post_corp_auth_info_with_options(
+        self,
+        headers: dingtalkdatacenter__1__0_models.PostCorpAuthInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.PostCorpAuthInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.PostCorpAuthInfoResponse(),
+            self.do_roarequest('PostCorpAuthInfo', 'datacenter_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/datacenter/corporations/authorize', 'json', req, runtime)
+        )
+
+    async def post_corp_auth_info_with_options_async(
+        self,
+        headers: dingtalkdatacenter__1__0_models.PostCorpAuthInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.PostCorpAuthInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.PostCorpAuthInfoResponse(),
+            await self.do_roarequest_async('PostCorpAuthInfo', 'datacenter_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/datacenter/corporations/authorize', 'json', req, runtime)
+        )
+
     def query_active_user_statistical_data(
         self,
         request: dingtalkdatacenter__1__0_models.QueryActiveUserStatisticalDataRequest,
@@ -85,6 +131,70 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryActiveUserStatisticalDataResponse(),
             await self.do_roarequest_async('QueryActiveUserStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/activeUserData', 'json', req, runtime)
+        )
+
+    def query_anhmd_statistical_data(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataHeaders()
+        return self.query_anhmd_statistical_data_with_options(request, headers, runtime)
+
+    async def query_anhmd_statistical_data_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataHeaders()
+        return await self.query_anhmd_statistical_data_with_options_async(request, headers, runtime)
+
+    def query_anhmd_statistical_data_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataRequest,
+        headers: dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.stat_date):
+            query['statDate'] = request.stat_date
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataResponse(),
+            self.do_roarequest('QueryAnhmdStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/statisticDatas/anHmd', 'json', req, runtime)
+        )
+
+    async def query_anhmd_statistical_data_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataRequest,
+        headers: dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.stat_date):
+            query['statDate'] = request.stat_date
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataResponse(),
+            await self.do_roarequest_async('QueryAnhmdStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/statisticDatas/anHmd', 'json', req, runtime)
         )
 
     def query_approval_statistical_data(

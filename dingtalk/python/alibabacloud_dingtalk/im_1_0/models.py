@@ -683,17 +683,17 @@ class CreateCoupleGroupConversationRequest(TeaModel):
         group_template_id: str = None,
         operator_id: str = None,
     ):
-        # 钉外人员业务Id
+        # 钉外用户在业务系统内的唯一标识。
         self.app_user_id = app_user_id
-        # 群头像
+        # 群头像。
         self.group_avatar = group_avatar
-        # 群名称
+        # 群名称。
         self.group_name = group_name
-        # 钉外群主业务Id
+        # 群主(钉外用户)userId。
         self.group_owner_id = group_owner_id
-        # 群模板
+        # 群模板Id。
         self.group_template_id = group_template_id
-        # 操作者的钉钉Id
+        # 操作者在业务系统内的唯一标识。
         self.operator_id = operator_id
 
     def validate(self):
@@ -739,9 +739,12 @@ class CreateCoupleGroupConversationRequest(TeaModel):
 class CreateCoupleGroupConversationResponseBody(TeaModel):
     def __init__(
         self,
+        chat_id: str = None,
         open_conversation_id: str = None,
     ):
-        # 群会话Id
+        # 群chatId。
+        self.chat_id = chat_id
+        # 群会话Id。
         self.open_conversation_id = open_conversation_id
 
     def validate(self):
@@ -753,12 +756,16 @@ class CreateCoupleGroupConversationResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.chat_id is not None:
+            result['chatId'] = self.chat_id
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('chatId') is not None:
+            self.chat_id = m.get('chatId')
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
         return self
@@ -845,19 +852,19 @@ class CreateGroupConversationRequest(TeaModel):
         operator_id: str = None,
         user_ids: List[str] = None,
     ):
-        # C端客户成员列表
+        # 钉外成员列表。
         self.app_user_ids = app_user_ids
-        # 群头像
+        # 群头像。
         self.group_avatar = group_avatar
-        # 群名称
+        # 群名称。
         self.group_name = group_name
-        # 群主钉钉Id
+        # 群主(钉内用户)userId。
         self.group_owner_id = group_owner_id
-        # 群模板
+        # 群模板Id。
         self.group_template_id = group_template_id
-        # 操作者的钉钉Id
+        # 操作者在业务系统内的唯一标识。
         self.operator_id = operator_id
-        # B端客服成员列表
+        # 钉内成员列表。
         self.user_ids = user_ids
 
     def validate(self):
@@ -908,14 +915,16 @@ class CreateGroupConversationResponseBody(TeaModel):
     def __init__(
         self,
         app_user_ids: List[str] = None,
+        chat_id: str = None,
         open_conversation_id: str = None,
         user_ids: List[str] = None,
     ):
-        # 添加成功的C端客户列表
+        # 添加成功的钉外成员列表。
         self.app_user_ids = app_user_ids
-        # 群会话Id
+        self.chat_id = chat_id
+        # 群会话Id。
         self.open_conversation_id = open_conversation_id
-        # 添加成功的B端客服列表
+        # 添加成功的钉内成员列表。
         self.user_ids = user_ids
 
     def validate(self):
@@ -929,6 +938,8 @@ class CreateGroupConversationResponseBody(TeaModel):
         result = dict()
         if self.app_user_ids is not None:
             result['appUserIds'] = self.app_user_ids
+        if self.chat_id is not None:
+            result['chatId'] = self.chat_id
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
         if self.user_ids is not None:
@@ -939,6 +950,8 @@ class CreateGroupConversationResponseBody(TeaModel):
         m = m or dict()
         if m.get('appUserIds') is not None:
             self.app_user_ids = m.get('appUserIds')
+        if m.get('chatId') is not None:
+            self.chat_id = m.get('chatId')
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
         if m.get('userIds') is not None:
@@ -1028,22 +1041,22 @@ class CreateInterconnectionRequestInterconnections(TeaModel):
         channel_code: str = None,
         user_id: str = None,
     ):
-        # 客户头像链接
+        # 钉外用户头像链接。
         self.app_user_avatar = app_user_avatar
-        # 客户头像类型，取值：
+        # 钉外用户头像类型，取值：
         # 1：http
         self.app_user_avatar_media_type = app_user_avatar_media_type
-        # 客户动态
+        # 钉外用户动态。
         self.app_user_dynamics = app_user_dynamics
-        # 客户业务系统唯一标识
+        # 钉外用户在业务系统内的唯一标识。
         self.app_user_id = app_user_id
-        # 客户手机号
+        # 钉外用户手机号。
         self.app_user_mobile = app_user_mobile
-        # 客户名称
+        # 钉外用户名称。
         self.app_user_name = app_user_name
-        # 客户渠道code
+        # 渠道code。
         self.channel_code = channel_code
-        # 客服钉钉Id
+        # 钉内用户userId。
         self.user_id = user_id
 
     def validate(self):
@@ -1098,12 +1111,9 @@ class CreateInterconnectionRequest(TeaModel):
     def __init__(
         self,
         interconnections: List[CreateInterconnectionRequestInterconnections] = None,
-        signature: str = None,
     ):
-        # bc关系列表
+        # 钉外钉内关系列表。
         self.interconnections = interconnections
-        # 参数签名
-        self.signature = signature
 
     def validate(self):
         if self.interconnections:
@@ -1121,8 +1131,6 @@ class CreateInterconnectionRequest(TeaModel):
         if self.interconnections is not None:
             for k in self.interconnections:
                 result['interconnections'].append(k.to_map() if k else None)
-        if self.signature is not None:
-            result['signature'] = self.signature
         return result
 
     def from_map(self, m: dict = None):
@@ -1132,8 +1140,6 @@ class CreateInterconnectionRequest(TeaModel):
             for k in m.get('interconnections'):
                 temp_model = CreateInterconnectionRequestInterconnections()
                 self.interconnections.append(temp_model.from_map(k))
-        if m.get('signature') is not None:
-            self.signature = m.get('signature')
         return self
 
 
@@ -1143,9 +1149,9 @@ class CreateInterconnectionResponseBodyResults(TeaModel):
         app_user_id: str = None,
         user_id: str = None,
     ):
-        # 客户业务身份唯一标识
+        # 钉外用户在业务系统内的唯一标识。
         self.app_user_id = app_user_id
-        # 客服钉钉Id
+        # 钉内用户userId。
         self.user_id = user_id
 
     def validate(self):
@@ -1177,7 +1183,7 @@ class CreateInterconnectionResponseBody(TeaModel):
         self,
         results: List[CreateInterconnectionResponseBodyResults] = None,
     ):
-        # 失败的bc关系列表
+        # 创建失败的钉外钉内关系列表。
         self.results = results
 
     def validate(self):
@@ -1289,18 +1295,19 @@ class CreateStoreGroupConversationRequest(TeaModel):
         operator_id: str = None,
         user_ids: List[str] = None,
     ):
-        # 钉外用户在业务系统内的唯一标识
+        # 钉外用户在业务系统内的唯一标识。
         self.app_user_id = app_user_id
-        # 外部业务唯一标识（店铺唯一标识）
+        # 外部业务唯一标识（店铺唯一标识）。
         self.business_unique_key = business_unique_key
-        # 群头像
+        # 群头像。
         self.group_avatar = group_avatar
-        # 群名称
+        # 群名称。
         self.group_name = group_name
-        # 群模板
+        # 群模板Id。
         self.group_template_id = group_template_id
-        # 操作者在业务系统内的唯一标识
+        # 操作者在业务系统内的唯一标识。
         self.operator_id = operator_id
+        # 钉内用户列表。
         self.user_ids = user_ids
 
     def validate(self):
@@ -1350,9 +1357,11 @@ class CreateStoreGroupConversationRequest(TeaModel):
 class CreateStoreGroupConversationResponseBody(TeaModel):
     def __init__(
         self,
+        chat_id: str = None,
         open_conversation_id: str = None,
     ):
-        # 群会话Id
+        self.chat_id = chat_id
+        # 群会话Id。
         self.open_conversation_id = open_conversation_id
 
     def validate(self):
@@ -1364,12 +1373,16 @@ class CreateStoreGroupConversationResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.chat_id is not None:
+            result['chatId'] = self.chat_id
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('chatId') is not None:
+            self.chat_id = m.get('chatId')
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
         return self
@@ -1454,15 +1467,15 @@ class GetConversationUrlRequest(TeaModel):
         source_code: str = None,
         user_id: str = None,
     ):
-        # C端用户在业务账号体系内的用户userid，长度限制为1~64个字符。
+        # 钉外用户在业务系统内的唯一标志。
         self.app_user_id = app_user_id
-        # C端客户渠道code。
+        # 渠道code。
         self.channel_code = channel_code
         # 群会话Id。
         self.open_conversation_id = open_conversation_id
-        # C端客户标识。
+        # 钉外用户标识。
         self.source_code = source_code
-        # B端用户的钉钉userId。
+        # 钉内用户userId。
         self.user_id = user_id
 
     def validate(self):
@@ -3684,7 +3697,7 @@ class QueryGroupMemberRequest(TeaModel):
         self,
         open_conversation_id: str = None,
     ):
-        # 群会话Id
+        # 群会话Id。
         self.open_conversation_id = open_conversation_id
 
     def validate(self):
@@ -3716,15 +3729,15 @@ class QueryGroupMemberResponseBodyGroupMembers(TeaModel):
         group_member_name: str = None,
         group_member_type: int = None,
     ):
-        # 群成员头像
+        # 群成员头像。
         self.group_member_avatar = group_member_avatar
-        # 群成员动态信息
+        # 群成员动态信息。
         self.group_member_dynamics = group_member_dynamics
-        # 群成员Id
+        # 群成员Id。
         self.group_member_id = group_member_id
-        # 群成员名称
+        # 群成员名称。
         self.group_member_name = group_member_name
-        # 群成员类型
+        # 群成员类型。
         self.group_member_type = group_member_type
 
     def validate(self):
@@ -3769,9 +3782,9 @@ class QueryGroupMemberResponseBody(TeaModel):
         group_members: List[QueryGroupMemberResponseBodyGroupMembers] = None,
         open_conversation_id: str = None,
     ):
-        # 群成员列表
+        # 群成员列表。
         self.group_members = group_members
-        # 群会话Id
+        # 群会话Id。
         self.open_conversation_id = open_conversation_id
 
     def validate(self):
@@ -4396,9 +4409,9 @@ class QuerySingleGroupRequestGroupMembers(TeaModel):
         app_user_id: str = None,
         user_id: str = None,
     ):
-        # 客户appUserId
+        # 钉外用户在业务系统内的唯一标识。
         self.app_user_id = app_user_id
-        # 客服钉钉Id
+        # 钉内用户userId。
         self.user_id = user_id
 
     def validate(self):
@@ -4431,9 +4444,9 @@ class QuerySingleGroupRequest(TeaModel):
         group_members: List[QuerySingleGroupRequestGroupMembers] = None,
         group_template_id: str = None,
     ):
-        # 群成员列表
+        # 群成员列表。
         self.group_members = group_members
-        # 群模版Id
+        # 群模版Id。
         self.group_template_id = group_template_id
 
     def validate(self):
@@ -4475,11 +4488,11 @@ class QuerySingleGroupResponseBodyOpenConversations(TeaModel):
         open_conversation_id: str = None,
         user_id: str = None,
     ):
-        # 客户appUserId
+        # 钉外用户在业务系统内的唯一标识。
         self.app_user_id = app_user_id
-        # 群会话Id
+        # 群会话Id。
         self.open_conversation_id = open_conversation_id
-        # 客服钉钉Id
+        # 钉内用户userId。
         self.user_id = user_id
 
     def validate(self):
@@ -4515,7 +4528,7 @@ class QuerySingleGroupResponseBody(TeaModel):
         self,
         open_conversations: List[QuerySingleGroupResponseBodyOpenConversations] = None,
     ):
-        # 群会话列表
+        # 群会话列表。
         self.open_conversations = open_conversations
 
     def validate(self):
@@ -4622,9 +4635,9 @@ class QueryUnReadMessageRequest(TeaModel):
         app_user_id: str = None,
         open_conversation_ids: List[str] = None,
     ):
-        # C端客户appUserId
+        # 钉外用户在业务系统内的唯一标志。
         self.app_user_id = app_user_id
-        # 群会话Id列表
+        # 群会话列表。
         self.open_conversation_ids = open_conversation_ids
 
     def validate(self):
@@ -5389,15 +5402,15 @@ class SendRobotMessageRequest(TeaModel):
     ):
         # @群所有人为true， 默认false。
         self.at_all = at_all
-        # @钉外在业务系统内的唯一标识（openId）。
+        # @钉外在业务系统内的唯一标志。
         self.at_app_user_id = at_app_user_id
-        # @钉内用户在业务系统内的唯一标识（dingUserId）。
+        # @钉内用户userId。
         self.at_ding_user_id = at_ding_user_id
         # 消息体内容，按照下面参考示例格式上传。
         self.msg_content = msg_content
         # 消息类型 文本：text，图片：photo，markdown：markdown，actionCard：actionCard。
         self.msg_type = msg_type
-        # 群聊openConversationIds
+        # 群会话列表。
         self.open_conversation_ids = open_conversation_ids
 
     def validate(self):
@@ -7396,13 +7409,13 @@ class AddGroupMemberRequest(TeaModel):
         operator_id: str = None,
         user_ids: List[str] = None,
     ):
-        # C端客户成员列表
+        # 钉外成员列表。
         self.app_user_ids = app_user_ids
-        # 群会话Id
+        # 群会话Id。
         self.open_conversation_id = open_conversation_id
-        # 操作者钉钉Id
+        # 操作者在业务系统内的唯一标识。
         self.operator_id = operator_id
-        # B端客服成员列表
+        # 钉内成员列表。
         self.user_ids = user_ids
 
     def validate(self):
@@ -7443,9 +7456,9 @@ class AddGroupMemberResponseBody(TeaModel):
         app_user_ids: List[str] = None,
         user_ids: List[str] = None,
     ):
-        # 拉取成功的C端客户列表
+        # 添加成功的钉外用户列表。
         self.app_user_ids = app_user_ids
-        # 拉取成功的B端客服列表
+        # 添加成功的钉内用户列表。
         self.user_ids = user_ids
 
     def validate(self):
@@ -7550,13 +7563,13 @@ class RemoveGroupMemberRequest(TeaModel):
         operator_id: str = None,
         user_ids: List[str] = None,
     ):
-        # C端客户成员列表
+        # 钉外成员列表。
         self.app_user_ids = app_user_ids
-        # 群会话Id
+        # 群会话Id。
         self.open_conversation_id = open_conversation_id
-        # 操作者钉钉Id
+        # 操作者在业务系统内的唯一标识。
         self.operator_id = operator_id
-        # B端客服成员列表
+        # 钉内成员列表。
         self.user_ids = user_ids
 
     def validate(self):
@@ -7661,17 +7674,17 @@ class SendDingMessageRequest(TeaModel):
         receiver_id: str = None,
         sender_id: str = None,
     ):
-        # 客服oauth2.0授权码
+        # 钉内用户oauth2.0授权码。
         self.code = code
-        # 消息内容
+        # 消息内容。
         self.message = message
         # 消息类型
         self.message_type = message_type
-        # 群会话Id
+        # 群会话Id。
         self.open_conversation_id = open_conversation_id
-        # C端客户appUserId
+        # 钉外用户在业务系统内的唯一标志。
         self.receiver_id = receiver_id
-        # B端客服钉钉Id
+        # 钉内用户userId。
         self.sender_id = sender_id
 
     def validate(self):
@@ -7719,7 +7732,7 @@ class SendDingMessageResponseBody(TeaModel):
         self,
         request_id: str = None,
     ):
-        # 发送消息请求Id
+        # 发送消息请求Id。
         self.request_id = request_id
 
     def validate(self):
@@ -7820,6 +7833,7 @@ class SendMessageRequest(TeaModel):
         open_conversation_id: str = None,
         receiver_id: str = None,
         sender_id: str = None,
+        source_infos: Dict[str, Any] = None,
     ):
         # 消息内容
         self.message = message
@@ -7831,6 +7845,8 @@ class SendMessageRequest(TeaModel):
         self.receiver_id = receiver_id
         # C端客户appUserId
         self.sender_id = sender_id
+        # 渠道按钮跳转信息
+        self.source_infos = source_infos
 
     def validate(self):
         pass
@@ -7851,6 +7867,8 @@ class SendMessageRequest(TeaModel):
             result['receiverId'] = self.receiver_id
         if self.sender_id is not None:
             result['senderId'] = self.sender_id
+        if self.source_infos is not None:
+            result['sourceInfos'] = self.source_infos
         return result
 
     def from_map(self, m: dict = None):
@@ -7865,6 +7883,8 @@ class SendMessageRequest(TeaModel):
             self.receiver_id = m.get('receiverId')
         if m.get('senderId') is not None:
             self.sender_id = m.get('senderId')
+        if m.get('sourceInfos') is not None:
+            self.source_infos = m.get('sourceInfos')
         return self
 
 

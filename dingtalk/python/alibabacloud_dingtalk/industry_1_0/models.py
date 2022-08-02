@@ -216,6 +216,7 @@ class CampusCreateCampusRequest(TeaModel):
         creator_union_id: str = None,
         description: str = None,
         extend: str = None,
+        location: str = None,
         order_end_time: int = None,
         order_info: str = None,
         order_start_time: int = None,
@@ -224,7 +225,7 @@ class CampusCreateCampusRequest(TeaModel):
     ):
         # 园区所在详细地址
         self.address = address
-        # 园区面积
+        # 园区面积，单位：平方千米
         self.area = area
         # 归属项目组
         self.belong_project_group_id = belong_project_group_id
@@ -244,6 +245,8 @@ class CampusCreateCampusRequest(TeaModel):
         self.description = description
         # 扩展字段
         self.extend = extend
+        # 园区经纬度,格式：经度,纬度
+        self.location = location
         self.order_end_time = order_end_time
         self.order_info = order_info
         # 项目订购开始时间
@@ -284,6 +287,8 @@ class CampusCreateCampusRequest(TeaModel):
             result['description'] = self.description
         if self.extend is not None:
             result['extend'] = self.extend
+        if self.location is not None:
+            result['location'] = self.location
         if self.order_end_time is not None:
             result['orderEndTime'] = self.order_end_time
         if self.order_info is not None:
@@ -320,6 +325,8 @@ class CampusCreateCampusRequest(TeaModel):
             self.description = m.get('description')
         if m.get('extend') is not None:
             self.extend = m.get('extend')
+        if m.get('location') is not None:
+            self.location = m.get('location')
         if m.get('orderEndTime') is not None:
             self.order_end_time = m.get('orderEndTime')
         if m.get('orderInfo') is not None:

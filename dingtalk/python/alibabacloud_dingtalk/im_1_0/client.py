@@ -539,8 +539,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.interconnections):
             body['interconnections'] = request.interconnections
-        if not UtilClient.is_unset(request.signature):
-            body['signature'] = request.signature
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -565,8 +563,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.interconnections):
             body['interconnections'] = request.interconnections
-        if not UtilClient.is_unset(request.signature):
-            body['signature'] = request.signature
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3579,6 +3575,8 @@ class Client(OpenApiClient):
             body['receiverId'] = request.receiver_id
         if not UtilClient.is_unset(request.sender_id):
             body['senderId'] = request.sender_id
+        if not UtilClient.is_unset(request.source_infos):
+            body['sourceInfos'] = request.source_infos
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3611,6 +3609,8 @@ class Client(OpenApiClient):
             body['receiverId'] = request.receiver_id
         if not UtilClient.is_unset(request.sender_id):
             body['senderId'] = request.sender_id
+        if not UtilClient.is_unset(request.source_infos):
+            body['sourceInfos'] = request.source_infos
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

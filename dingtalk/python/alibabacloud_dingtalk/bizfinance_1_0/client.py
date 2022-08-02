@@ -2357,6 +2357,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.deduct_status):
             body['deductStatus'] = request.deduct_status
+        if not UtilClient.is_unset(request.general_invoice_volist):
+            body['generalInvoiceVOList'] = request.general_invoice_volist
         if not UtilClient.is_unset(request.invoice_key_volist):
             body['invoiceKeyVOList'] = request.invoice_key_volist
         if not UtilClient.is_unset(request.operator):
@@ -2387,6 +2389,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.deduct_status):
             body['deductStatus'] = request.deduct_status
+        if not UtilClient.is_unset(request.general_invoice_volist):
+            body['generalInvoiceVOList'] = request.general_invoice_volist
         if not UtilClient.is_unset(request.invoice_key_volist):
             body['invoiceKeyVOList'] = request.invoice_key_volist
         if not UtilClient.is_unset(request.operator):
