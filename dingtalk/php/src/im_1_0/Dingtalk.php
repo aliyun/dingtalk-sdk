@@ -515,9 +515,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->interconnections)) {
             @$body['interconnections'] = $request->interconnections;
         }
-        if (!Utils::isUnset($request->signature)) {
-            @$body['signature'] = $request->signature;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -2572,6 +2569,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->senderId)) {
             @$body['senderId'] = $request->senderId;
+        }
+        if (!Utils::isUnset($request->sourceInfos)) {
+            @$body['sourceInfos'] = $request->sourceInfos;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

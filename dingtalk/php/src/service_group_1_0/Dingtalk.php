@@ -166,6 +166,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ResubmitTicketResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\RetractTicketHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\RetractTicketRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\RetractTicketResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\RobotMessageRecallHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\RobotMessageRecallRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\RobotMessageRecallResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SearchGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SearchGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SearchGroupResponse;
@@ -3157,6 +3160,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return RetractTicketResponse::fromMap($this->doROARequest('RetractTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/tickets/retract', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param RobotMessageRecallRequest $request
+     *
+     * @return RobotMessageRecallResponse
+     */
+    public function robotMessageRecall($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RobotMessageRecallHeaders([]);
+
+        return $this->robotMessageRecallWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RobotMessageRecallRequest $request
+     * @param RobotMessageRecallHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return RobotMessageRecallResponse
+     */
+    public function robotMessageRecallWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->openMsgId)) {
+            @$body['openMsgId'] = $request->openMsgId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return RobotMessageRecallResponse::fromMap($this->doROARequest('RobotMessageRecall', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/robots/messages/recall', 'json', $req, $runtime));
     }
 
     /**

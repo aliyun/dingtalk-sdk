@@ -1707,6 +1707,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->deductStatus)) {
             @$body['deductStatus'] = $request->deductStatus;
         }
+        if (!Utils::isUnset($request->generalInvoiceVOList)) {
+            @$body['generalInvoiceVOList'] = $request->generalInvoiceVOList;
+        }
         if (!Utils::isUnset($request->invoiceKeyVOList)) {
             @$body['invoiceKeyVOList'] = $request->invoiceKeyVOList;
         }

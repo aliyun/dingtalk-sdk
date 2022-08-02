@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class groupMembers extends Model
 {
     /**
-     * @description 群成员头像
+     * @description 群成员头像。
      *
      * @var string
      */
     public $groupMemberAvatar;
 
     /**
-     * @description 群成员动态信息
+     * @description 群成员动态信息。
      *
      * @var string
      */
     public $groupMemberDynamics;
 
     /**
-     * @description 群成员Id
+     * @description 群成员Id。
      *
      * @var string
      */
     public $groupMemberId;
 
     /**
-     * @description 群成员名称
+     * @description 群成员名称。
      *
      * @var string
      */
     public $groupMemberName;
 
     /**
-     * @description 群成员类型
+     * @description 群成员类型。
      *
      * @var int
      */

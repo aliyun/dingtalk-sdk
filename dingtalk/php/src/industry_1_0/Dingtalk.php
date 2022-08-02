@@ -364,6 +364,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->extend)) {
             @$body['extend'] = $request->extend;
         }
+        if (!Utils::isUnset($request->location)) {
+            @$body['location'] = $request->location;
+        }
         if (!Utils::isUnset($request->orderEndTime)) {
             @$body['orderEndTime'] = $request->orderEndTime;
         }

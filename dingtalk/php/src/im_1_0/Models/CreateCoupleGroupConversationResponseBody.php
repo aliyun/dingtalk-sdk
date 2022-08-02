@@ -9,12 +9,20 @@ use AlibabaCloud\Tea\Model;
 class CreateCoupleGroupConversationResponseBody extends Model
 {
     /**
-     * @description 群会话Id
+     * @description 群chatId。
+     *
+     * @var string
+     */
+    public $chatId;
+
+    /**
+     * @description 群会话Id。
      *
      * @var string
      */
     public $openConversationId;
     protected $_name = [
+        'chatId'             => 'chatId',
         'openConversationId' => 'openConversationId',
     ];
 
@@ -25,6 +33,9 @@ class CreateCoupleGroupConversationResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->chatId) {
+            $res['chatId'] = $this->chatId;
+        }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
         }
@@ -40,6 +51,9 @@ class CreateCoupleGroupConversationResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['chatId'])) {
+            $model->chatId = $map['chatId'];
+        }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
         }

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class SendDingMessageRequest extends Model
 {
     /**
-     * @description 客服oauth2.0授权码
+     * @description 钉内用户oauth2.0授权码。
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 消息内容
+     * @description 消息内容。
      *
      * @var string
      */
@@ -30,21 +30,21 @@ class SendDingMessageRequest extends Model
     public $messageType;
 
     /**
-     * @description 群会话Id
+     * @description 群会话Id。
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description C端客户appUserId
+     * @description 钉外用户在业务系统内的唯一标志。
      *
      * @var string
      */
     public $receiverId;
 
     /**
-     * @description B端客服钉钉Id
+     * @description 钉内用户userId。
      *
      * @var string
      */

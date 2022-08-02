@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class QueryGroupMemberRequest extends Model
 {
     /**
-     * @description 群会话Id
+     * @description 群会话Id。
      *
      * @var string
      */

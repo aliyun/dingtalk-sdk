@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class RemoveGroupMemberRequest extends Model
 {
     /**
-     * @description C端客户成员列表
+     * @description 钉外成员列表。
      *
      * @var string[]
      */
     public $appUserIds;
 
     /**
-     * @description 群会话Id
+     * @description 群会话Id。
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 操作者钉钉Id
+     * @description 操作者在业务系统内的唯一标识。
      *
      * @var string
      */
     public $operatorId;
 
     /**
-     * @description B端客服成员列表
+     * @description 钉内成员列表。
      *
      * @var string[]
      */

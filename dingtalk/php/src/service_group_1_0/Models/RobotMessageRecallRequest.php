@@ -2,36 +2,36 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QuerySingleGroupResponseBody;
+namespace AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class openConversations extends Model
+class RobotMessageRecallRequest extends Model
 {
     /**
-     * @description 钉外用户在业务系统内的唯一标识。
-     *
-     * @var string
-     */
-    public $appUserId;
-
-    /**
-     * @description 群会话Id。
+     * @description 开放群id
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 钉内用户userId。
+     * @description 开放消息ID
      *
      * @var string
      */
-    public $userId;
+    public $openMsgId;
+
+    /**
+     * @description 开发团队ID
+     *
+     * @var string
+     */
+    public $openTeamId;
     protected $_name = [
-        'appUserId'          => 'appUserId',
         'openConversationId' => 'openConversationId',
-        'userId'             => 'userId',
+        'openMsgId'          => 'openMsgId',
+        'openTeamId'         => 'openTeamId',
     ];
 
     public function validate()
@@ -41,14 +41,14 @@ class openConversations extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->appUserId) {
-            $res['appUserId'] = $this->appUserId;
-        }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
         }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
+        if (null !== $this->openMsgId) {
+            $res['openMsgId'] = $this->openMsgId;
+        }
+        if (null !== $this->openTeamId) {
+            $res['openTeamId'] = $this->openTeamId;
         }
 
         return $res;
@@ -57,19 +57,19 @@ class openConversations extends Model
     /**
      * @param array $map
      *
-     * @return openConversations
+     * @return RobotMessageRecallRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['appUserId'])) {
-            $model->appUserId = $map['appUserId'];
-        }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
         }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
+        if (isset($map['openMsgId'])) {
+            $model->openMsgId = $map['openMsgId'];
+        }
+        if (isset($map['openTeamId'])) {
+            $model->openTeamId = $map['openTeamId'];
         }
 
         return $model;

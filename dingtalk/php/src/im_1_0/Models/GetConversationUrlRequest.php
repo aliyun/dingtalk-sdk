@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetConversationUrlRequest extends Model
 {
     /**
-     * @description C端用户在业务账号体系内的用户userid，长度限制为1~64个字符。
+     * @description 钉外用户在业务系统内的唯一标志。
      *
      * @var string
      */
     public $appUserId;
 
     /**
-     * @description C端客户渠道code。
+     * @description 渠道code。
      *
      * @var string
      */
@@ -30,14 +30,14 @@ class GetConversationUrlRequest extends Model
     public $openConversationId;
 
     /**
-     * @description C端客户标识。
+     * @description 钉外用户标识。
      *
      * @var string
      */
     public $sourceCode;
 
     /**
-     * @description B端用户的钉钉userId。
+     * @description 钉内用户userId。
      *
      * @var string
      */

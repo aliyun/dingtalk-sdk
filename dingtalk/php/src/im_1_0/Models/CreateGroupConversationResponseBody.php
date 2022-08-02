@@ -9,27 +9,33 @@ use AlibabaCloud\Tea\Model;
 class CreateGroupConversationResponseBody extends Model
 {
     /**
-     * @description 添加成功的C端客户列表
+     * @description 添加成功的钉外成员列表。
      *
      * @var string[]
      */
     public $appUserIds;
 
     /**
-     * @description 群会话Id
+     * @var string
+     */
+    public $chatId;
+
+    /**
+     * @description 群会话Id。
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 添加成功的B端客服列表
+     * @description 添加成功的钉内成员列表。
      *
      * @var string[]
      */
     public $userIds;
     protected $_name = [
         'appUserIds'         => 'appUserIds',
+        'chatId'             => 'chatId',
         'openConversationId' => 'openConversationId',
         'userIds'            => 'userIds',
     ];
@@ -43,6 +49,9 @@ class CreateGroupConversationResponseBody extends Model
         $res = [];
         if (null !== $this->appUserIds) {
             $res['appUserIds'] = $this->appUserIds;
+        }
+        if (null !== $this->chatId) {
+            $res['chatId'] = $this->chatId;
         }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
@@ -66,6 +75,9 @@ class CreateGroupConversationResponseBody extends Model
             if (!empty($map['appUserIds'])) {
                 $model->appUserIds = $map['appUserIds'];
             }
+        }
+        if (isset($map['chatId'])) {
+            $model->chatId = $map['chatId'];
         }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];

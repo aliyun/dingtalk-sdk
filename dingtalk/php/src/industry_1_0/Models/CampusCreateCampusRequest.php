@@ -16,7 +16,7 @@ class CampusCreateCampusRequest extends Model
     public $address;
 
     /**
-     * @description 园区面积
+     * @description 园区面积，单位：平方千米
      *
      * @var float
      */
@@ -86,6 +86,13 @@ class CampusCreateCampusRequest extends Model
     public $extend;
 
     /**
+     * @description 园区经纬度,格式：经度,纬度
+     *
+     * @var string
+     */
+    public $location;
+
+    /**
      * @var int
      */
     public $orderEndTime;
@@ -127,6 +134,7 @@ class CampusCreateCampusRequest extends Model
         'creatorUnionId'       => 'creatorUnionId',
         'description'          => 'description',
         'extend'               => 'extend',
+        'location'             => 'location',
         'orderEndTime'         => 'orderEndTime',
         'orderInfo'            => 'orderInfo',
         'orderStartTime'       => 'orderStartTime',
@@ -173,6 +181,9 @@ class CampusCreateCampusRequest extends Model
         }
         if (null !== $this->extend) {
             $res['extend'] = $this->extend;
+        }
+        if (null !== $this->location) {
+            $res['location'] = $this->location;
         }
         if (null !== $this->orderEndTime) {
             $res['orderEndTime'] = $this->orderEndTime;
@@ -233,6 +244,9 @@ class CampusCreateCampusRequest extends Model
         }
         if (isset($map['extend'])) {
             $model->extend = $map['extend'];
+        }
+        if (isset($map['location'])) {
+            $model->location = $map['location'];
         }
         if (isset($map['orderEndTime'])) {
             $model->orderEndTime = $map['orderEndTime'];

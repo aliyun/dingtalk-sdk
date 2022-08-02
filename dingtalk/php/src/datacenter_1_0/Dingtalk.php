@@ -5,9 +5,14 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\PostCorpAuthInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\PostCorpAuthInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryActiveUserStatisticalDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryActiveUserStatisticalDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryActiveUserStatisticalDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryAnhmdStatisticalDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryAnhmdStatisticalDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryAnhmdStatisticalDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryApprovalStatisticalDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryApprovalStatisticalDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryApprovalStatisticalDataResponse;
@@ -214,6 +219,39 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @return PostCorpAuthInfoResponse
+     */
+    public function postCorpAuthInfo()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PostCorpAuthInfoHeaders([]);
+
+        return $this->postCorpAuthInfoWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param PostCorpAuthInfoHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return PostCorpAuthInfoResponse
+     */
+    public function postCorpAuthInfoWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return PostCorpAuthInfoResponse::fromMap($this->doROARequest('PostCorpAuthInfo', 'datacenter_1.0', 'HTTP', 'POST', 'AK', '/v1.0/datacenter/corporations/authorize', 'json', $req, $runtime));
+    }
+
+    /**
      * @param QueryActiveUserStatisticalDataRequest $request
      *
      * @return QueryActiveUserStatisticalDataResponse
@@ -253,6 +291,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryActiveUserStatisticalDataResponse::fromMap($this->doROARequest('QueryActiveUserStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/activeUserData', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryAnhmdStatisticalDataRequest $request
+     *
+     * @return QueryAnhmdStatisticalDataResponse
+     */
+    public function queryAnhmdStatisticalData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryAnhmdStatisticalDataHeaders([]);
+
+        return $this->queryAnhmdStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryAnhmdStatisticalDataRequest $request
+     * @param QueryAnhmdStatisticalDataHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return QueryAnhmdStatisticalDataResponse
+     */
+    public function queryAnhmdStatisticalDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryAnhmdStatisticalDataResponse::fromMap($this->doROARequest('QueryAnhmdStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/statisticDatas/anHmd', 'json', $req, $runtime));
     }
 
     /**

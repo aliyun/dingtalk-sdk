@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class CreateCoupleGroupConversationRequest extends Model
 {
     /**
-     * @description 钉外人员业务Id
+     * @description 钉外用户在业务系统内的唯一标识。
      *
      * @var string
      */
     public $appUserId;
 
     /**
-     * @description 群头像
+     * @description 群头像。
      *
      * @var string
      */
     public $groupAvatar;
 
     /**
-     * @description 群名称
+     * @description 群名称。
      *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description 钉外群主业务Id
+     * @description 群主(钉外用户)userId。
      *
      * @var string
      */
     public $groupOwnerId;
 
     /**
-     * @description 群模板
+     * @description 群模板Id。
      *
      * @var string
      */
     public $groupTemplateId;
 
     /**
-     * @description 操作者的钉钉Id
+     * @description 操作者在业务系统内的唯一标识。
      *
      * @var string
      */

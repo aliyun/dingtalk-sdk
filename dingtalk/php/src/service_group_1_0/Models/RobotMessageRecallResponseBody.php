@@ -2,20 +2,20 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class SendDingMessageResponseBody extends Model
+class RobotMessageRecallResponseBody extends Model
 {
     /**
-     * @description 发送消息请求Id。
+     * @description 撤回成功的消息ID，失败时为空
      *
      * @var string
      */
-    public $requestId;
+    public $result;
     protected $_name = [
-        'requestId' => 'requestId',
+        'result' => 'result',
     ];
 
     public function validate()
@@ -25,8 +25,8 @@ class SendDingMessageResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->requestId) {
-            $res['requestId'] = $this->requestId;
+        if (null !== $this->result) {
+            $res['result'] = $this->result;
         }
 
         return $res;
@@ -35,13 +35,13 @@ class SendDingMessageResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return SendDingMessageResponseBody
+     * @return RobotMessageRecallResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['requestId'])) {
-            $model->requestId = $map['requestId'];
+        if (isset($map['result'])) {
+            $model->result = $map['result'];
         }
 
         return $model;

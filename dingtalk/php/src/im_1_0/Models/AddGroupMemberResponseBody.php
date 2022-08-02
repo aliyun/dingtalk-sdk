@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class AddGroupMemberResponseBody extends Model
 {
     /**
-     * @description 拉取成功的C端客户列表
+     * @description 添加成功的钉外用户列表。
      *
      * @var string[]
      */
     public $appUserIds;
 
     /**
-     * @description 拉取成功的B端客服列表
+     * @description 添加成功的钉内用户列表。
      *
      * @var string[]
      */

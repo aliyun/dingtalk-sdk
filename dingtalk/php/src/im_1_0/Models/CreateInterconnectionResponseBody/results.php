@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class results extends Model
 {
     /**
-     * @description 客户业务身份唯一标识
+     * @description 钉外用户在业务系统内的唯一标识。
      *
      * @var string
      */
     public $appUserId;
 
     /**
-     * @description 客服钉钉Id
+     * @description 钉内用户userId。
      *
      * @var string
      */

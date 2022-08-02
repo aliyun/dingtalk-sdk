@@ -42,12 +42,20 @@ class SendMessageRequest extends Model
      * @var string
      */
     public $senderId;
+
+    /**
+     * @description 渠道按钮跳转信息
+     *
+     * @var mixed[]
+     */
+    public $sourceInfos;
     protected $_name = [
         'message'            => 'message',
         'messageType'        => 'messageType',
         'openConversationId' => 'openConversationId',
         'receiverId'         => 'receiverId',
         'senderId'           => 'senderId',
+        'sourceInfos'        => 'sourceInfos',
     ];
 
     public function validate()
@@ -71,6 +79,9 @@ class SendMessageRequest extends Model
         }
         if (null !== $this->senderId) {
             $res['senderId'] = $this->senderId;
+        }
+        if (null !== $this->sourceInfos) {
+            $res['sourceInfos'] = $this->sourceInfos;
         }
 
         return $res;
@@ -98,6 +109,9 @@ class SendMessageRequest extends Model
         }
         if (isset($map['senderId'])) {
             $model->senderId = $map['senderId'];
+        }
+        if (isset($map['sourceInfos'])) {
+            $model->sourceInfos = $map['sourceInfos'];
         }
 
         return $model;

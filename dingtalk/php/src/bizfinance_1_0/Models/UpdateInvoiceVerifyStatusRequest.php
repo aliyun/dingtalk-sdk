@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceVerifyStatusRequest\generalInvoiceVOList;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceVerifyStatusRequest\invoiceKeyVOList;
 use AlibabaCloud\Tea\Model;
 
@@ -16,6 +17,13 @@ class UpdateInvoiceVerifyStatusRequest extends Model
      * @var string
      */
     public $deductStatus;
+
+    /**
+     * @description 发票模型
+     *
+     * @var generalInvoiceVOList[]
+     */
+    public $generalInvoiceVOList;
 
     /**
      * @description 待更新
@@ -38,10 +46,11 @@ class UpdateInvoiceVerifyStatusRequest extends Model
      */
     public $verifyStatus;
     protected $_name = [
-        'deductStatus'     => 'deductStatus',
-        'invoiceKeyVOList' => 'invoiceKeyVOList',
-        'operator'         => 'operator',
-        'verifyStatus'     => 'verifyStatus',
+        'deductStatus'         => 'deductStatus',
+        'generalInvoiceVOList' => 'generalInvoiceVOList',
+        'invoiceKeyVOList'     => 'invoiceKeyVOList',
+        'operator'             => 'operator',
+        'verifyStatus'         => 'verifyStatus',
     ];
 
     public function validate()
@@ -53,6 +62,15 @@ class UpdateInvoiceVerifyStatusRequest extends Model
         $res = [];
         if (null !== $this->deductStatus) {
             $res['deductStatus'] = $this->deductStatus;
+        }
+        if (null !== $this->generalInvoiceVOList) {
+            $res['generalInvoiceVOList'] = [];
+            if (null !== $this->generalInvoiceVOList && \is_array($this->generalInvoiceVOList)) {
+                $n = 0;
+                foreach ($this->generalInvoiceVOList as $item) {
+                    $res['generalInvoiceVOList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->invoiceKeyVOList) {
             $res['invoiceKeyVOList'] = [];
@@ -83,6 +101,15 @@ class UpdateInvoiceVerifyStatusRequest extends Model
         $model = new self();
         if (isset($map['deductStatus'])) {
             $model->deductStatus = $map['deductStatus'];
+        }
+        if (isset($map['generalInvoiceVOList'])) {
+            if (!empty($map['generalInvoiceVOList'])) {
+                $model->generalInvoiceVOList = [];
+                $n                           = 0;
+                foreach ($map['generalInvoiceVOList'] as $item) {
+                    $model->generalInvoiceVOList[$n++] = null !== $item ? generalInvoiceVOList::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['invoiceKeyVOList'])) {
             if (!empty($map['invoiceKeyVOList'])) {

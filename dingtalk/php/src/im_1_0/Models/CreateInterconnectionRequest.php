@@ -10,21 +10,13 @@ use AlibabaCloud\Tea\Model;
 class CreateInterconnectionRequest extends Model
 {
     /**
-     * @description bc关系列表
+     * @description 钉外钉内关系列表。
      *
      * @var interconnections[]
      */
     public $interconnections;
-
-    /**
-     * @description 参数签名
-     *
-     * @var string
-     */
-    public $signature;
     protected $_name = [
         'interconnections' => 'interconnections',
-        'signature'        => 'signature',
     ];
 
     public function validate()
@@ -42,9 +34,6 @@ class CreateInterconnectionRequest extends Model
                     $res['interconnections'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->signature) {
-            $res['signature'] = $this->signature;
         }
 
         return $res;
@@ -66,9 +55,6 @@ class CreateInterconnectionRequest extends Model
                     $model->interconnections[$n++] = null !== $item ? interconnections::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['signature'])) {
-            $model->signature = $map['signature'];
         }
 
         return $model;
