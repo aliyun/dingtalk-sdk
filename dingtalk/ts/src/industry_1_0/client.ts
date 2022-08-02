@@ -1772,6 +1772,1886 @@ export class CampusUpdateRenterMemberResponse extends $tea.Model {
   }
 }
 
+export class CollegeActiveCollegeDeptGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeActiveCollegeDeptGroupRequest extends $tea.Model {
+  deptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeActiveCollegeDeptGroupResponseBody extends $tea.Model {
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeActiveCollegeDeptGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollegeActiveCollegeDeptGroupResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollegeActiveCollegeDeptGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeAddCollegeDeptHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeAddCollegeDeptRequest extends $tea.Model {
+  deptName?: string;
+  deptType?: string;
+  sortFactor?: number;
+  superId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptName: 'deptName',
+      deptType: 'deptType',
+      sortFactor: 'sortFactor',
+      superId: 'superId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptName: 'string',
+      deptType: 'string',
+      sortFactor: 'number',
+      superId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeAddCollegeDeptResponseBody extends $tea.Model {
+  deptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeAddCollegeDeptResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollegeAddCollegeDeptResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollegeAddCollegeDeptResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeAddManagerHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeAddManagerRequest extends $tea.Model {
+  deptId?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeAddManagerResponseBody extends $tea.Model {
+  isSuccessful?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      isSuccessful: 'isSuccessful',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isSuccessful: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeAddManagerResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollegeAddManagerResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollegeAddManagerResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeAddStudentHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeAddStudentRequest extends $tea.Model {
+  deptId?: number;
+  empExtension?: { [key: string]: string };
+  gender?: string;
+  identifyId?: string;
+  mobile?: string;
+  startYear?: string;
+  studentName?: string;
+  studentNumber?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      empExtension: 'empExtension',
+      gender: 'gender',
+      identifyId: 'identifyId',
+      mobile: 'mobile',
+      startYear: 'startYear',
+      studentName: 'studentName',
+      studentNumber: 'studentNumber',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      empExtension: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      gender: 'string',
+      identifyId: 'string',
+      mobile: 'string',
+      startYear: 'string',
+      studentName: 'string',
+      studentNumber: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeAddStudentResponseBody extends $tea.Model {
+  dingMemberStatus?: string;
+  isActive?: boolean;
+  studentId?: number;
+  unionId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingMemberStatus: 'dingMemberStatus',
+      isActive: 'isActive',
+      studentId: 'studentId',
+      unionId: 'unionId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingMemberStatus: 'string',
+      isActive: 'boolean',
+      studentId: 'number',
+      unionId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeAddStudentResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollegeAddStudentResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollegeAddStudentResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeChangeStudentDeptHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeChangeStudentDeptRequest extends $tea.Model {
+  deptId?: number;
+  newDeptId?: number;
+  studentId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      newDeptId: 'newDeptId',
+      studentId: 'studentId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      newDeptId: 'number',
+      studentId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeChangeStudentDeptResponseBody extends $tea.Model {
+  isSuccessful?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      isSuccessful: 'isSuccessful',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isSuccessful: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeChangeStudentDeptResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollegeChangeStudentDeptResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollegeChangeStudentDeptResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeDeleteCollegeDeptHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeDeleteCollegeDeptRequest extends $tea.Model {
+  deptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeDeleteCollegeDeptResponseBody extends $tea.Model {
+  isSuccessful?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      isSuccessful: 'isSuccessful',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isSuccessful: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeDeleteCollegeDeptResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollegeDeleteCollegeDeptResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollegeDeleteCollegeDeptResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeListCollegeSubDeptHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeListCollegeSubDeptRequest extends $tea.Model {
+  deptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeListCollegeSubDeptResponseBody extends $tea.Model {
+  collegeDeptInfoSimpleList?: CollegeListCollegeSubDeptResponseBodyCollegeDeptInfoSimpleList[];
+  static names(): { [key: string]: string } {
+    return {
+      collegeDeptInfoSimpleList: 'collegeDeptInfoSimpleList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      collegeDeptInfoSimpleList: { 'type': 'array', 'itemType': CollegeListCollegeSubDeptResponseBodyCollegeDeptInfoSimpleList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeListCollegeSubDeptResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollegeListCollegeSubDeptResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollegeListCollegeSubDeptResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeListDeptManagerHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeListDeptManagerRequest extends $tea.Model {
+  deptId?: number;
+  pageNumber?: number;
+  pageSize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      pageNumber: 'number',
+      pageSize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeListDeptManagerResponseBody extends $tea.Model {
+  isActive?: boolean;
+  managerInfoSimpleList?: CollegeListDeptManagerResponseBodyManagerInfoSimpleList[];
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      isActive: 'isActive',
+      managerInfoSimpleList: 'managerInfoSimpleList',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isActive: 'boolean',
+      managerInfoSimpleList: { 'type': 'array', 'itemType': CollegeListDeptManagerResponseBodyManagerInfoSimpleList },
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeListDeptManagerResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollegeListDeptManagerResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollegeListDeptManagerResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeListStudentInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeListStudentInfoRequest extends $tea.Model {
+  deptId?: number;
+  dingStudentStatus?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      dingStudentStatus: 'dingStudentStatus',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      dingStudentStatus: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeListStudentInfoResponseBody extends $tea.Model {
+  dingMemberStatus?: string;
+  isActive?: boolean;
+  studentInfoSimpleList?: CollegeListStudentInfoResponseBodyStudentInfoSimpleList[];
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      dingMemberStatus: 'dingMemberStatus',
+      isActive: 'isActive',
+      studentInfoSimpleList: 'studentInfoSimpleList',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingMemberStatus: 'string',
+      isActive: 'boolean',
+      studentInfoSimpleList: { 'type': 'array', 'itemType': CollegeListStudentInfoResponseBodyStudentInfoSimpleList },
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeListStudentInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollegeListStudentInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollegeListStudentInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeQueryCollegeDeptGroupInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeQueryCollegeDeptGroupInfoRequest extends $tea.Model {
+  deptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeQueryCollegeDeptGroupInfoResponseBody extends $tea.Model {
+  groupName?: string;
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      groupName: 'groupName',
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupName: 'string',
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeQueryCollegeDeptGroupInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollegeQueryCollegeDeptGroupInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollegeQueryCollegeDeptGroupInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeQueryCollegeDeptInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeQueryCollegeDeptInfoRequest extends $tea.Model {
+  deptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeQueryCollegeDeptInfoResponseBody extends $tea.Model {
+  deptId?: number;
+  deptName?: string;
+  deptType?: string;
+  sortFactor?: number;
+  superId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      deptName: 'deptName',
+      deptType: 'deptType',
+      sortFactor: 'sortFactor',
+      superId: 'superId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      deptName: 'string',
+      deptType: 'string',
+      sortFactor: 'number',
+      superId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeQueryCollegeDeptInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollegeQueryCollegeDeptInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollegeQueryCollegeDeptInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeQueryStudentInfoByDeptHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeQueryStudentInfoByDeptRequest extends $tea.Model {
+  deptId?: number;
+  studentId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      studentId: 'studentId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      studentId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeQueryStudentInfoByDeptResponseBody extends $tea.Model {
+  deptId?: number;
+  dingMemberStatus?: string;
+  empExtension?: { [key: string]: any };
+  gender?: string;
+  identifyId?: string;
+  isActive?: boolean;
+  startYear?: string;
+  studentId?: number;
+  studentName?: string;
+  studentNumber?: string;
+  unionId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      dingMemberStatus: 'dingMemberStatus',
+      empExtension: 'empExtension',
+      gender: 'gender',
+      identifyId: 'identifyId',
+      isActive: 'isActive',
+      startYear: 'startYear',
+      studentId: 'studentId',
+      studentName: 'studentName',
+      studentNumber: 'studentNumber',
+      unionId: 'unionId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      dingMemberStatus: 'string',
+      empExtension: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      gender: 'string',
+      identifyId: 'string',
+      isActive: 'boolean',
+      startYear: 'string',
+      studentId: 'number',
+      studentName: 'string',
+      studentNumber: 'string',
+      unionId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeQueryStudentInfoByDeptResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollegeQueryStudentInfoByDeptResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollegeQueryStudentInfoByDeptResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeQueryStudentInfoByMobileHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeQueryStudentInfoByMobileRequest extends $tea.Model {
+  mobile?: string;
+  static names(): { [key: string]: string } {
+    return {
+      mobile: 'mobile',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      mobile: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeQueryStudentInfoByMobileResponseBody extends $tea.Model {
+  deptStudentInfoList?: CollegeQueryStudentInfoByMobileResponseBodyDeptStudentInfoList[];
+  dingMemberStatus?: string;
+  empExtension?: { [key: string]: any };
+  gender?: string;
+  identifyId?: string;
+  isActive?: boolean;
+  startYear?: string;
+  studentId?: number;
+  studentName?: string;
+  unionId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptStudentInfoList: 'deptStudentInfoList',
+      dingMemberStatus: 'dingMemberStatus',
+      empExtension: 'empExtension',
+      gender: 'gender',
+      identifyId: 'identifyId',
+      isActive: 'isActive',
+      startYear: 'startYear',
+      studentId: 'studentId',
+      studentName: 'studentName',
+      unionId: 'unionId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptStudentInfoList: { 'type': 'array', 'itemType': CollegeQueryStudentInfoByMobileResponseBodyDeptStudentInfoList },
+      dingMemberStatus: 'string',
+      empExtension: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      gender: 'string',
+      identifyId: 'string',
+      isActive: 'boolean',
+      startYear: 'string',
+      studentId: 'number',
+      studentName: 'string',
+      unionId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeQueryStudentInfoByMobileResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollegeQueryStudentInfoByMobileResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollegeQueryStudentInfoByMobileResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeQueryStudentInfoByStudentIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeQueryStudentInfoByStudentIdRequest extends $tea.Model {
+  studentId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      studentId: 'studentId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      studentId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeQueryStudentInfoByStudentIdResponseBody extends $tea.Model {
+  deptStudentInfoList?: CollegeQueryStudentInfoByStudentIdResponseBodyDeptStudentInfoList[];
+  dingMemberStatus?: string;
+  empExtension?: { [key: string]: any };
+  gender?: string;
+  identifyId?: string;
+  isActive?: boolean;
+  startYear?: string;
+  studentId?: number;
+  studentName?: string;
+  unionId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptStudentInfoList: 'deptStudentInfoList',
+      dingMemberStatus: 'dingMemberStatus',
+      empExtension: 'empExtension',
+      gender: 'gender',
+      identifyId: 'identifyId',
+      isActive: 'isActive',
+      startYear: 'startYear',
+      studentId: 'studentId',
+      studentName: 'studentName',
+      unionId: 'unionId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptStudentInfoList: { 'type': 'array', 'itemType': CollegeQueryStudentInfoByStudentIdResponseBodyDeptStudentInfoList },
+      dingMemberStatus: 'string',
+      empExtension: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      gender: 'string',
+      identifyId: 'string',
+      isActive: 'boolean',
+      startYear: 'string',
+      studentId: 'number',
+      studentName: 'string',
+      unionId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeQueryStudentInfoByStudentIdResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollegeQueryStudentInfoByStudentIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollegeQueryStudentInfoByStudentIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeRemoveManagerHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeRemoveManagerRequest extends $tea.Model {
+  deptId?: number;
+  isForce?: boolean;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      isForce: 'isForce',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      isForce: 'boolean',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeRemoveManagerResponseBody extends $tea.Model {
+  isSuccessful?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      isSuccessful: 'isSuccessful',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isSuccessful: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeRemoveManagerResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollegeRemoveManagerResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollegeRemoveManagerResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeRemoveStudentHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeRemoveStudentRequest extends $tea.Model {
+  deptId?: number;
+  studentId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      studentId: 'studentId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      studentId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeRemoveStudentResponseBody extends $tea.Model {
+  isSuccessful?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      isSuccessful: 'isSuccessful',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isSuccessful: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeRemoveStudentResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollegeRemoveStudentResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollegeRemoveStudentResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeUpdateCollegeDeptHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeUpdateCollegeDeptRequest extends $tea.Model {
+  deptId?: number;
+  deptName?: string;
+  sortFactor?: number;
+  superId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      deptName: 'deptName',
+      sortFactor: 'sortFactor',
+      superId: 'superId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      deptName: 'string',
+      sortFactor: 'number',
+      superId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeUpdateCollegeDeptResponseBody extends $tea.Model {
+  isSuccessful?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      isSuccessful: 'isSuccessful',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isSuccessful: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeUpdateCollegeDeptResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollegeUpdateCollegeDeptResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollegeUpdateCollegeDeptResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeUpdateStudentDeptInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeUpdateStudentDeptInfoRequest extends $tea.Model {
+  deptId?: number;
+  studentId?: number;
+  studentNumber?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      studentId: 'studentId',
+      studentNumber: 'studentNumber',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      studentId: 'number',
+      studentNumber: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeUpdateStudentDeptInfoResponseBody extends $tea.Model {
+  isSuccessful?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      isSuccessful: 'isSuccessful',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isSuccessful: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeUpdateStudentDeptInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollegeUpdateStudentDeptInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollegeUpdateStudentDeptInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeUpdateStudentInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeUpdateStudentInfoRequest extends $tea.Model {
+  empExtension?: { [key: string]: string };
+  gender?: string;
+  identifyId?: string;
+  startYear?: string;
+  studentId?: number;
+  studentName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      empExtension: 'empExtension',
+      gender: 'gender',
+      identifyId: 'identifyId',
+      startYear: 'startYear',
+      studentId: 'studentId',
+      studentName: 'studentName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      empExtension: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      gender: 'string',
+      identifyId: 'string',
+      startYear: 'string',
+      studentId: 'number',
+      studentName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeUpdateStudentInfoResponseBody extends $tea.Model {
+  isSuccessful?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      isSuccessful: 'isSuccessful',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isSuccessful: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeUpdateStudentInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollegeUpdateStudentInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollegeUpdateStudentInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeUpdateStudentMoblieHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeUpdateStudentMoblieRequest extends $tea.Model {
+  isForce?: boolean;
+  newMobile?: string;
+  studentId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      isForce: 'isForce',
+      newMobile: 'newMobile',
+      studentId: 'studentId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isForce: 'boolean',
+      newMobile: 'string',
+      studentId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeUpdateStudentMoblieResponseBody extends $tea.Model {
+  updateResult?: string;
+  static names(): { [key: string]: string } {
+    return {
+      updateResult: 'updateResult',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      updateResult: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeUpdateStudentMoblieResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollegeUpdateStudentMoblieResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollegeUpdateStudentMoblieResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CustomizeContactCreateHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -7944,6 +9824,131 @@ export class CampusListRenterMembersResponseBodyResult extends $tea.Model {
   }
 }
 
+export class CollegeListCollegeSubDeptResponseBodyCollegeDeptInfoSimpleList extends $tea.Model {
+  deptId?: number;
+  deptName?: string;
+  deptType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      deptName: 'deptName',
+      deptType: 'deptType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      deptName: 'string',
+      deptType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeListDeptManagerResponseBodyManagerInfoSimpleList extends $tea.Model {
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeListStudentInfoResponseBodyStudentInfoSimpleList extends $tea.Model {
+  studentId?: number;
+  studentName?: string;
+  unionId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      studentId: 'studentId',
+      studentName: 'studentName',
+      unionId: 'unionId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      studentId: 'number',
+      studentName: 'string',
+      unionId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeQueryStudentInfoByMobileResponseBodyDeptStudentInfoList extends $tea.Model {
+  deptId?: number;
+  memberType?: string;
+  studentNumber?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      memberType: 'memberType',
+      studentNumber: 'studentNumber',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      memberType: 'string',
+      studentNumber: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeQueryStudentInfoByStudentIdResponseBodyDeptStudentInfoList extends $tea.Model {
+  deptId?: number;
+  memberType?: string;
+  studentNumber?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      memberType: 'memberType',
+      studentNumber: 'studentNumber',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      memberType: 'string',
+      studentNumber: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CustomizeContactCreateResponseBodyContent extends $tea.Model {
   code?: string;
   name?: string;
@@ -11138,6 +13143,726 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CampusUpdateRenterMemberResponse>(await this.doROARequest("CampusUpdateRenterMember", "industry_1.0", "HTTP", "PUT", "AK", `/v1.0/industry/campuses/renters/members`, "json", req, runtime), new CampusUpdateRenterMemberResponse({}));
+  }
+
+  async collegeActiveCollegeDeptGroup(request: CollegeActiveCollegeDeptGroupRequest): Promise<CollegeActiveCollegeDeptGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollegeActiveCollegeDeptGroupHeaders({ });
+    return await this.collegeActiveCollegeDeptGroupWithOptions(request, headers, runtime);
+  }
+
+  async collegeActiveCollegeDeptGroupWithOptions(request: CollegeActiveCollegeDeptGroupRequest, headers: CollegeActiveCollegeDeptGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeActiveCollegeDeptGroupResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CollegeActiveCollegeDeptGroupResponse>(await this.doROARequest("CollegeActiveCollegeDeptGroup", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/colleges/depts/groups`, "json", req, runtime), new CollegeActiveCollegeDeptGroupResponse({}));
+  }
+
+  async collegeAddCollegeDept(request: CollegeAddCollegeDeptRequest): Promise<CollegeAddCollegeDeptResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollegeAddCollegeDeptHeaders({ });
+    return await this.collegeAddCollegeDeptWithOptions(request, headers, runtime);
+  }
+
+  async collegeAddCollegeDeptWithOptions(request: CollegeAddCollegeDeptRequest, headers: CollegeAddCollegeDeptHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeAddCollegeDeptResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptName)) {
+      query["deptName"] = request.deptName;
+    }
+
+    if (!Util.isUnset(request.deptType)) {
+      query["deptType"] = request.deptType;
+    }
+
+    if (!Util.isUnset(request.sortFactor)) {
+      query["sortFactor"] = request.sortFactor;
+    }
+
+    if (!Util.isUnset(request.superId)) {
+      query["superId"] = request.superId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CollegeAddCollegeDeptResponse>(await this.doROARequest("CollegeAddCollegeDept", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/colleges/depts`, "json", req, runtime), new CollegeAddCollegeDeptResponse({}));
+  }
+
+  async collegeAddManager(request: CollegeAddManagerRequest): Promise<CollegeAddManagerResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollegeAddManagerHeaders({ });
+    return await this.collegeAddManagerWithOptions(request, headers, runtime);
+  }
+
+  async collegeAddManagerWithOptions(request: CollegeAddManagerRequest, headers: CollegeAddManagerHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeAddManagerResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CollegeAddManagerResponse>(await this.doROARequest("CollegeAddManager", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/colleges/members/depts/managers`, "json", req, runtime), new CollegeAddManagerResponse({}));
+  }
+
+  async collegeAddStudent(request: CollegeAddStudentRequest): Promise<CollegeAddStudentResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollegeAddStudentHeaders({ });
+    return await this.collegeAddStudentWithOptions(request, headers, runtime);
+  }
+
+  async collegeAddStudentWithOptions(request: CollegeAddStudentRequest, headers: CollegeAddStudentHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeAddStudentResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      body["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.empExtension)) {
+      body["empExtension"] = request.empExtension;
+    }
+
+    if (!Util.isUnset(request.gender)) {
+      body["gender"] = request.gender;
+    }
+
+    if (!Util.isUnset(request.identifyId)) {
+      body["identifyId"] = request.identifyId;
+    }
+
+    if (!Util.isUnset(request.mobile)) {
+      body["mobile"] = request.mobile;
+    }
+
+    if (!Util.isUnset(request.startYear)) {
+      body["startYear"] = request.startYear;
+    }
+
+    if (!Util.isUnset(request.studentName)) {
+      body["studentName"] = request.studentName;
+    }
+
+    if (!Util.isUnset(request.studentNumber)) {
+      body["studentNumber"] = request.studentNumber;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CollegeAddStudentResponse>(await this.doROARequest("CollegeAddStudent", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/colleges/members/depts/students`, "json", req, runtime), new CollegeAddStudentResponse({}));
+  }
+
+  async collegeChangeStudentDept(request: CollegeChangeStudentDeptRequest): Promise<CollegeChangeStudentDeptResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollegeChangeStudentDeptHeaders({ });
+    return await this.collegeChangeStudentDeptWithOptions(request, headers, runtime);
+  }
+
+  async collegeChangeStudentDeptWithOptions(request: CollegeChangeStudentDeptRequest, headers: CollegeChangeStudentDeptHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeChangeStudentDeptResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.newDeptId)) {
+      query["newDeptId"] = request.newDeptId;
+    }
+
+    if (!Util.isUnset(request.studentId)) {
+      query["studentId"] = request.studentId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CollegeChangeStudentDeptResponse>(await this.doROARequest("CollegeChangeStudentDept", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/colleges/members/depts/students/move`, "json", req, runtime), new CollegeChangeStudentDeptResponse({}));
+  }
+
+  async collegeDeleteCollegeDept(request: CollegeDeleteCollegeDeptRequest): Promise<CollegeDeleteCollegeDeptResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollegeDeleteCollegeDeptHeaders({ });
+    return await this.collegeDeleteCollegeDeptWithOptions(request, headers, runtime);
+  }
+
+  async collegeDeleteCollegeDeptWithOptions(request: CollegeDeleteCollegeDeptRequest, headers: CollegeDeleteCollegeDeptHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeDeleteCollegeDeptResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CollegeDeleteCollegeDeptResponse>(await this.doROARequest("CollegeDeleteCollegeDept", "industry_1.0", "HTTP", "DELETE", "AK", `/v1.0/industry/colleges/depts`, "json", req, runtime), new CollegeDeleteCollegeDeptResponse({}));
+  }
+
+  async collegeListCollegeSubDept(request: CollegeListCollegeSubDeptRequest): Promise<CollegeListCollegeSubDeptResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollegeListCollegeSubDeptHeaders({ });
+    return await this.collegeListCollegeSubDeptWithOptions(request, headers, runtime);
+  }
+
+  async collegeListCollegeSubDeptWithOptions(request: CollegeListCollegeSubDeptRequest, headers: CollegeListCollegeSubDeptHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeListCollegeSubDeptResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CollegeListCollegeSubDeptResponse>(await this.doROARequest("CollegeListCollegeSubDept", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/colleges/subDepts`, "json", req, runtime), new CollegeListCollegeSubDeptResponse({}));
+  }
+
+  async collegeListDeptManager(request: CollegeListDeptManagerRequest): Promise<CollegeListDeptManagerResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollegeListDeptManagerHeaders({ });
+    return await this.collegeListDeptManagerWithOptions(request, headers, runtime);
+  }
+
+  async collegeListDeptManagerWithOptions(request: CollegeListDeptManagerRequest, headers: CollegeListDeptManagerHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeListDeptManagerResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CollegeListDeptManagerResponse>(await this.doROARequest("CollegeListDeptManager", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/colleges/members/depts/managers`, "json", req, runtime), new CollegeListDeptManagerResponse({}));
+  }
+
+  async collegeListStudentInfo(request: CollegeListStudentInfoRequest): Promise<CollegeListStudentInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollegeListStudentInfoHeaders({ });
+    return await this.collegeListStudentInfoWithOptions(request, headers, runtime);
+  }
+
+  async collegeListStudentInfoWithOptions(request: CollegeListStudentInfoRequest, headers: CollegeListStudentInfoHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeListStudentInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.dingStudentStatus)) {
+      query["dingStudentStatus"] = request.dingStudentStatus;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CollegeListStudentInfoResponse>(await this.doROARequest("CollegeListStudentInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/colleges/members/depts/students`, "json", req, runtime), new CollegeListStudentInfoResponse({}));
+  }
+
+  async collegeQueryCollegeDeptGroupInfo(request: CollegeQueryCollegeDeptGroupInfoRequest): Promise<CollegeQueryCollegeDeptGroupInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollegeQueryCollegeDeptGroupInfoHeaders({ });
+    return await this.collegeQueryCollegeDeptGroupInfoWithOptions(request, headers, runtime);
+  }
+
+  async collegeQueryCollegeDeptGroupInfoWithOptions(request: CollegeQueryCollegeDeptGroupInfoRequest, headers: CollegeQueryCollegeDeptGroupInfoHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeQueryCollegeDeptGroupInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CollegeQueryCollegeDeptGroupInfoResponse>(await this.doROARequest("CollegeQueryCollegeDeptGroupInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/colleges/depts/groupInfos`, "json", req, runtime), new CollegeQueryCollegeDeptGroupInfoResponse({}));
+  }
+
+  async collegeQueryCollegeDeptInfo(request: CollegeQueryCollegeDeptInfoRequest): Promise<CollegeQueryCollegeDeptInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollegeQueryCollegeDeptInfoHeaders({ });
+    return await this.collegeQueryCollegeDeptInfoWithOptions(request, headers, runtime);
+  }
+
+  async collegeQueryCollegeDeptInfoWithOptions(request: CollegeQueryCollegeDeptInfoRequest, headers: CollegeQueryCollegeDeptInfoHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeQueryCollegeDeptInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CollegeQueryCollegeDeptInfoResponse>(await this.doROARequest("CollegeQueryCollegeDeptInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/colleges/deptInfos`, "json", req, runtime), new CollegeQueryCollegeDeptInfoResponse({}));
+  }
+
+  async collegeQueryStudentInfoByDept(request: CollegeQueryStudentInfoByDeptRequest): Promise<CollegeQueryStudentInfoByDeptResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollegeQueryStudentInfoByDeptHeaders({ });
+    return await this.collegeQueryStudentInfoByDeptWithOptions(request, headers, runtime);
+  }
+
+  async collegeQueryStudentInfoByDeptWithOptions(request: CollegeQueryStudentInfoByDeptRequest, headers: CollegeQueryStudentInfoByDeptHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeQueryStudentInfoByDeptResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.studentId)) {
+      query["studentId"] = request.studentId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CollegeQueryStudentInfoByDeptResponse>(await this.doROARequest("CollegeQueryStudentInfoByDept", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/colleges/members/depts/studentinfos`, "json", req, runtime), new CollegeQueryStudentInfoByDeptResponse({}));
+  }
+
+  async collegeQueryStudentInfoByMobile(request: CollegeQueryStudentInfoByMobileRequest): Promise<CollegeQueryStudentInfoByMobileResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollegeQueryStudentInfoByMobileHeaders({ });
+    return await this.collegeQueryStudentInfoByMobileWithOptions(request, headers, runtime);
+  }
+
+  async collegeQueryStudentInfoByMobileWithOptions(request: CollegeQueryStudentInfoByMobileRequest, headers: CollegeQueryStudentInfoByMobileHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeQueryStudentInfoByMobileResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.mobile)) {
+      query["mobile"] = request.mobile;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CollegeQueryStudentInfoByMobileResponse>(await this.doROARequest("CollegeQueryStudentInfoByMobile", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/colleges/members/students/mobiles`, "json", req, runtime), new CollegeQueryStudentInfoByMobileResponse({}));
+  }
+
+  async collegeQueryStudentInfoByStudentId(request: CollegeQueryStudentInfoByStudentIdRequest): Promise<CollegeQueryStudentInfoByStudentIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollegeQueryStudentInfoByStudentIdHeaders({ });
+    return await this.collegeQueryStudentInfoByStudentIdWithOptions(request, headers, runtime);
+  }
+
+  async collegeQueryStudentInfoByStudentIdWithOptions(request: CollegeQueryStudentInfoByStudentIdRequest, headers: CollegeQueryStudentInfoByStudentIdHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeQueryStudentInfoByStudentIdResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.studentId)) {
+      query["studentId"] = request.studentId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CollegeQueryStudentInfoByStudentIdResponse>(await this.doROARequest("CollegeQueryStudentInfoByStudentId", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/colleges/members/students`, "json", req, runtime), new CollegeQueryStudentInfoByStudentIdResponse({}));
+  }
+
+  async collegeRemoveManager(request: CollegeRemoveManagerRequest): Promise<CollegeRemoveManagerResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollegeRemoveManagerHeaders({ });
+    return await this.collegeRemoveManagerWithOptions(request, headers, runtime);
+  }
+
+  async collegeRemoveManagerWithOptions(request: CollegeRemoveManagerRequest, headers: CollegeRemoveManagerHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeRemoveManagerResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.isForce)) {
+      query["isForce"] = request.isForce;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CollegeRemoveManagerResponse>(await this.doROARequest("CollegeRemoveManager", "industry_1.0", "HTTP", "DELETE", "AK", `/v1.0/industry/colleges/members/managers`, "json", req, runtime), new CollegeRemoveManagerResponse({}));
+  }
+
+  async collegeRemoveStudent(request: CollegeRemoveStudentRequest): Promise<CollegeRemoveStudentResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollegeRemoveStudentHeaders({ });
+    return await this.collegeRemoveStudentWithOptions(request, headers, runtime);
+  }
+
+  async collegeRemoveStudentWithOptions(request: CollegeRemoveStudentRequest, headers: CollegeRemoveStudentHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeRemoveStudentResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.studentId)) {
+      query["studentId"] = request.studentId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CollegeRemoveStudentResponse>(await this.doROARequest("CollegeRemoveStudent", "industry_1.0", "HTTP", "DELETE", "AK", `/v1.0/industry/colleges/members/depts/students`, "json", req, runtime), new CollegeRemoveStudentResponse({}));
+  }
+
+  async collegeUpdateCollegeDept(request: CollegeUpdateCollegeDeptRequest): Promise<CollegeUpdateCollegeDeptResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollegeUpdateCollegeDeptHeaders({ });
+    return await this.collegeUpdateCollegeDeptWithOptions(request, headers, runtime);
+  }
+
+  async collegeUpdateCollegeDeptWithOptions(request: CollegeUpdateCollegeDeptRequest, headers: CollegeUpdateCollegeDeptHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeUpdateCollegeDeptResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.deptName)) {
+      query["deptName"] = request.deptName;
+    }
+
+    if (!Util.isUnset(request.sortFactor)) {
+      query["sortFactor"] = request.sortFactor;
+    }
+
+    if (!Util.isUnset(request.superId)) {
+      query["superId"] = request.superId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CollegeUpdateCollegeDeptResponse>(await this.doROARequest("CollegeUpdateCollegeDept", "industry_1.0", "HTTP", "PUT", "AK", `/v1.0/industry/colleges/depts`, "json", req, runtime), new CollegeUpdateCollegeDeptResponse({}));
+  }
+
+  async collegeUpdateStudentDeptInfo(request: CollegeUpdateStudentDeptInfoRequest): Promise<CollegeUpdateStudentDeptInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollegeUpdateStudentDeptInfoHeaders({ });
+    return await this.collegeUpdateStudentDeptInfoWithOptions(request, headers, runtime);
+  }
+
+  async collegeUpdateStudentDeptInfoWithOptions(request: CollegeUpdateStudentDeptInfoRequest, headers: CollegeUpdateStudentDeptInfoHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeUpdateStudentDeptInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.studentId)) {
+      query["studentId"] = request.studentId;
+    }
+
+    if (!Util.isUnset(request.studentNumber)) {
+      query["studentNumber"] = request.studentNumber;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CollegeUpdateStudentDeptInfoResponse>(await this.doROARequest("CollegeUpdateStudentDeptInfo", "industry_1.0", "HTTP", "PUT", "AK", `/v1.0/industry/colleges/members/deptInfos`, "json", req, runtime), new CollegeUpdateStudentDeptInfoResponse({}));
+  }
+
+  async collegeUpdateStudentInfo(request: CollegeUpdateStudentInfoRequest): Promise<CollegeUpdateStudentInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollegeUpdateStudentInfoHeaders({ });
+    return await this.collegeUpdateStudentInfoWithOptions(request, headers, runtime);
+  }
+
+  async collegeUpdateStudentInfoWithOptions(request: CollegeUpdateStudentInfoRequest, headers: CollegeUpdateStudentInfoHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeUpdateStudentInfoResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.empExtension)) {
+      body["empExtension"] = request.empExtension;
+    }
+
+    if (!Util.isUnset(request.gender)) {
+      body["gender"] = request.gender;
+    }
+
+    if (!Util.isUnset(request.identifyId)) {
+      body["identifyId"] = request.identifyId;
+    }
+
+    if (!Util.isUnset(request.startYear)) {
+      body["startYear"] = request.startYear;
+    }
+
+    if (!Util.isUnset(request.studentId)) {
+      body["studentId"] = request.studentId;
+    }
+
+    if (!Util.isUnset(request.studentName)) {
+      body["studentName"] = request.studentName;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CollegeUpdateStudentInfoResponse>(await this.doROARequest("CollegeUpdateStudentInfo", "industry_1.0", "HTTP", "PUT", "AK", `/v1.0/industry/colleges/members/depts/students`, "json", req, runtime), new CollegeUpdateStudentInfoResponse({}));
+  }
+
+  async collegeUpdateStudentMoblie(request: CollegeUpdateStudentMoblieRequest): Promise<CollegeUpdateStudentMoblieResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollegeUpdateStudentMoblieHeaders({ });
+    return await this.collegeUpdateStudentMoblieWithOptions(request, headers, runtime);
+  }
+
+  async collegeUpdateStudentMoblieWithOptions(request: CollegeUpdateStudentMoblieRequest, headers: CollegeUpdateStudentMoblieHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeUpdateStudentMoblieResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.isForce)) {
+      query["isForce"] = request.isForce;
+    }
+
+    if (!Util.isUnset(request.newMobile)) {
+      query["newMobile"] = request.newMobile;
+    }
+
+    if (!Util.isUnset(request.studentId)) {
+      query["studentId"] = request.studentId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CollegeUpdateStudentMoblieResponse>(await this.doROARequest("CollegeUpdateStudentMoblie", "industry_1.0", "HTTP", "PUT", "AK", `/v1.0/industry/colleges/members/students/mobiles`, "json", req, runtime), new CollegeUpdateStudentMoblieResponse({}));
   }
 
   async customizeContactCreate(request: CustomizeContactCreateRequest): Promise<CustomizeContactCreateResponse> {

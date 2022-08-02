@@ -3647,6 +3647,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
   generalInvoiceDetailVOList?: BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList[];
   invoiceCode?: string;
   invoiceNo?: string;
+  invoiceStatus?: string;
   invoiceType?: string;
   machineCode?: string;
   oilFlag?: string;
@@ -3667,7 +3668,6 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
   sellerName?: string;
   sellerTaxNo?: string;
   sellerTel?: string;
-  status?: string;
   supplySign?: string;
   taxAmount?: string;
   usedVehicleSaleDetailVOList?: BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList[];
@@ -3689,6 +3689,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       generalInvoiceDetailVOList: 'generalInvoiceDetailVOList',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
+      invoiceStatus: 'invoiceStatus',
       invoiceType: 'invoiceType',
       machineCode: 'machineCode',
       oilFlag: 'oilFlag',
@@ -3709,7 +3710,6 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       sellerName: 'sellerName',
       sellerTaxNo: 'sellerTaxNo',
       sellerTel: 'sellerTel',
-      status: 'status',
       supplySign: 'supplySign',
       taxAmount: 'taxAmount',
       usedVehicleSaleDetailVOList: 'usedVehicleSaleDetailVOList',
@@ -3734,6 +3734,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       generalInvoiceDetailVOList: { 'type': 'array', 'itemType': BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList },
       invoiceCode: 'string',
       invoiceNo: 'string',
+      invoiceStatus: 'string',
       invoiceType: 'string',
       machineCode: 'string',
       oilFlag: 'string',
@@ -3754,7 +3755,6 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       sellerName: 'string',
       sellerTaxNo: 'string',
       sellerTel: 'string',
-      status: 'string',
       supplySign: 'string',
       taxAmount: 'string',
       usedVehicleSaleDetailVOList: { 'type': 'array', 'itemType': BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList },
@@ -4950,7 +4950,7 @@ export class QuerySupplierByPageResponseBodyList extends $tea.Model {
 
 export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList extends $tea.Model {
   amount?: string;
-  goodName?: string;
+  goodsName?: string;
   quantity?: string;
   revenueCode?: string;
   rowNo?: string;
@@ -4964,7 +4964,7 @@ export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGener
   static names(): { [key: string]: string } {
     return {
       amount: 'amount',
-      goodName: 'goodName',
+      goodsName: 'goodsName',
       quantity: 'quantity',
       revenueCode: 'revenueCode',
       rowNo: 'rowNo',
@@ -4981,7 +4981,7 @@ export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGener
   static types(): { [key: string]: any } {
     return {
       amount: 'string',
-      goodName: 'string',
+      goodsName: 'string',
       quantity: 'string',
       revenueCode: 'string',
       rowNo: 'string',
@@ -5184,6 +5184,7 @@ export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList exte
   generalInvoiceDetailVOList?: UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList[];
   invoiceCode?: string;
   invoiceNo?: string;
+  invoiceStatus?: string;
   invoiceType?: string;
   machineCode?: string;
   oilFlag?: string;
@@ -5204,7 +5205,6 @@ export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList exte
   sellerName?: string;
   sellerTaxNo?: string;
   sellerTel?: string;
-  status?: string;
   supplySign?: string;
   taxAmount?: string;
   usedVehicleSaleDetailVOList?: UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList[];
@@ -5226,6 +5226,7 @@ export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList exte
       generalInvoiceDetailVOList: 'generalInvoiceDetailVOList',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
+      invoiceStatus: 'invoiceStatus',
       invoiceType: 'invoiceType',
       machineCode: 'machineCode',
       oilFlag: 'oilFlag',
@@ -5246,7 +5247,6 @@ export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList exte
       sellerName: 'sellerName',
       sellerTaxNo: 'sellerTaxNo',
       sellerTel: 'sellerTel',
-      status: 'status',
       supplySign: 'supplySign',
       taxAmount: 'taxAmount',
       usedVehicleSaleDetailVOList: 'usedVehicleSaleDetailVOList',
@@ -5271,6 +5271,7 @@ export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList exte
       generalInvoiceDetailVOList: { 'type': 'array', 'itemType': UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList },
       invoiceCode: 'string',
       invoiceNo: 'string',
+      invoiceStatus: 'string',
       invoiceType: 'string',
       machineCode: 'string',
       oilFlag: 'string',
@@ -5291,7 +5292,6 @@ export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList exte
       sellerName: 'string',
       sellerTaxNo: 'string',
       sellerTel: 'string',
-      status: 'string',
       supplySign: 'string',
       taxAmount: 'string',
       usedVehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList },
@@ -5350,7 +5350,7 @@ export class UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceRe
 
 export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList extends $tea.Model {
   amount?: string;
-  goodName?: string;
+  goodsName?: string;
   quantity?: string;
   revenueCode?: string;
   rowNo?: string;
@@ -5364,7 +5364,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoice
   static names(): { [key: string]: string } {
     return {
       amount: 'amount',
-      goodName: 'goodName',
+      goodsName: 'goodsName',
       quantity: 'quantity',
       revenueCode: 'revenueCode',
       rowNo: 'rowNo',
@@ -5381,7 +5381,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoice
   static types(): { [key: string]: any } {
     return {
       amount: 'string',
-      goodName: 'string',
+      goodsName: 'string',
       quantity: 'string',
       revenueCode: 'string',
       rowNo: 'string',
@@ -5584,6 +5584,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
   generalInvoiceDetailVOList?: UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList[];
   invoiceCode?: string;
   invoiceNo?: string;
+  invoiceStatus?: string;
   invoiceType?: string;
   machineCode?: string;
   oilFlag?: string;
@@ -5604,7 +5605,6 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
   sellerName?: string;
   sellerTaxNo?: string;
   sellerTel?: string;
-  status?: string;
   supplySign?: string;
   taxAmount?: string;
   usedVehicleSaleDetailVOList?: UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList[];
@@ -5626,6 +5626,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
       generalInvoiceDetailVOList: 'generalInvoiceDetailVOList',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
+      invoiceStatus: 'invoiceStatus',
       invoiceType: 'invoiceType',
       machineCode: 'machineCode',
       oilFlag: 'oilFlag',
@@ -5646,7 +5647,6 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
       sellerName: 'sellerName',
       sellerTaxNo: 'sellerTaxNo',
       sellerTel: 'sellerTel',
-      status: 'status',
       supplySign: 'supplySign',
       taxAmount: 'taxAmount',
       usedVehicleSaleDetailVOList: 'usedVehicleSaleDetailVOList',
@@ -5671,6 +5671,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
       generalInvoiceDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList },
       invoiceCode: 'string',
       invoiceNo: 'string',
+      invoiceStatus: 'string',
       invoiceType: 'string',
       machineCode: 'string',
       oilFlag: 'string',
@@ -5691,7 +5692,6 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
       sellerName: 'string',
       sellerTaxNo: 'string',
       sellerTel: 'string',
-      status: 'string',
       supplySign: 'string',
       taxAmount: 'string',
       usedVehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOUsedVehicleSaleDetailVOList },
@@ -5709,7 +5709,7 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
 
 export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList extends $tea.Model {
   amount?: string;
-  goodName?: string;
+  goodsName?: string;
   quantity?: string;
   revenueCode?: string;
   rowNo?: string;
@@ -5723,7 +5723,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceD
   static names(): { [key: string]: string } {
     return {
       amount: 'amount',
-      goodName: 'goodName',
+      goodsName: 'goodsName',
       quantity: 'quantity',
       revenueCode: 'revenueCode',
       rowNo: 'rowNo',
@@ -5740,7 +5740,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceD
   static types(): { [key: string]: any } {
     return {
       amount: 'string',
-      goodName: 'string',
+      goodsName: 'string',
       quantity: 'string',
       revenueCode: 'string',
       rowNo: 'string',
@@ -6068,7 +6068,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
 
 export class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList extends $tea.Model {
   amount?: string;
-  goodName?: string;
+  goodsName?: string;
   quantity?: string;
   revenueCode?: string;
   rowNo?: string;
@@ -6082,7 +6082,7 @@ export class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoice
   static names(): { [key: string]: string } {
     return {
       amount: 'amount',
-      goodName: 'goodName',
+      goodsName: 'goodsName',
       quantity: 'quantity',
       revenueCode: 'revenueCode',
       rowNo: 'rowNo',
@@ -6099,7 +6099,7 @@ export class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoice
   static types(): { [key: string]: any } {
     return {
       amount: 'string',
-      goodName: 'string',
+      goodsName: 'string',
       quantity: 'string',
       revenueCode: 'string',
       rowNo: 'string',
@@ -6302,6 +6302,7 @@ export class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList extends $tea.
   generalInvoiceDetailVOList?: UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList[];
   invoiceCode?: string;
   invoiceNo?: string;
+  invoiceStatus?: string;
   invoiceType?: string;
   machineCode?: string;
   oilFlag?: string;
@@ -6322,7 +6323,6 @@ export class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList extends $tea.
   sellerName?: string;
   sellerTaxNo?: string;
   sellerTel?: string;
-  status?: string;
   supplySign?: string;
   taxAmount?: string;
   usedVehicleSaleDetailVOList?: UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList[];
@@ -6344,6 +6344,7 @@ export class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList extends $tea.
       generalInvoiceDetailVOList: 'generalInvoiceDetailVOList',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
+      invoiceStatus: 'invoiceStatus',
       invoiceType: 'invoiceType',
       machineCode: 'machineCode',
       oilFlag: 'oilFlag',
@@ -6364,7 +6365,6 @@ export class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList extends $tea.
       sellerName: 'sellerName',
       sellerTaxNo: 'sellerTaxNo',
       sellerTel: 'sellerTel',
-      status: 'status',
       supplySign: 'supplySign',
       taxAmount: 'taxAmount',
       usedVehicleSaleDetailVOList: 'usedVehicleSaleDetailVOList',
@@ -6389,6 +6389,7 @@ export class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList extends $tea.
       generalInvoiceDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList },
       invoiceCode: 'string',
       invoiceNo: 'string',
+      invoiceStatus: 'string',
       invoiceType: 'string',
       machineCode: 'string',
       oilFlag: 'string',
@@ -6409,7 +6410,6 @@ export class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList extends $tea.
       sellerName: 'string',
       sellerTaxNo: 'string',
       sellerTel: 'string',
-      status: 'string',
       supplySign: 'string',
       taxAmount: 'string',
       usedVehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList },
@@ -6683,6 +6683,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
   generalInvoiceDetailVOList?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList[];
   invoiceCode?: string;
   invoiceNo?: string;
+  invoiceStatus?: string;
   invoiceType?: string;
   machineCode?: string;
   oilFlag?: string;
@@ -6703,7 +6704,6 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
   sellerName?: string;
   sellerTaxNo?: string;
   sellerTel?: string;
-  status?: string;
   supplySign?: string;
   taxAmount?: string;
   usedVehicleSaleDetailVOList?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList[];
@@ -6725,6 +6725,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
       generalInvoiceDetailVOList: 'generalInvoiceDetailVOList',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
+      invoiceStatus: 'invoiceStatus',
       invoiceType: 'invoiceType',
       machineCode: 'machineCode',
       oilFlag: 'oilFlag',
@@ -6745,7 +6746,6 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
       sellerName: 'sellerName',
       sellerTaxNo: 'sellerTaxNo',
       sellerTel: 'sellerTel',
-      status: 'status',
       supplySign: 'supplySign',
       taxAmount: 'taxAmount',
       usedVehicleSaleDetailVOList: 'usedVehicleSaleDetailVOList',
@@ -6770,6 +6770,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
       generalInvoiceDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList },
       invoiceCode: 'string',
       invoiceNo: 'string',
+      invoiceStatus: 'string',
       invoiceType: 'string',
       machineCode: 'string',
       oilFlag: 'string',
@@ -6790,7 +6791,6 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
       sellerName: 'string',
       sellerTaxNo: 'string',
       sellerTel: 'string',
-      status: 'string',
       supplySign: 'string',
       taxAmount: 'string',
       usedVehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList },
@@ -7042,6 +7042,7 @@ export class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList extends $tea.M
   generalInvoiceDetailVOList?: UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList[];
   invoiceCode?: string;
   invoiceNo?: string;
+  invoiceStatus?: string;
   invoiceType?: string;
   machineCode?: string;
   oilFlag?: string;
@@ -7062,7 +7063,6 @@ export class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList extends $tea.M
   sellerName?: string;
   sellerTaxNo?: string;
   sellerTel?: string;
-  status?: string;
   supplySign?: string;
   taxAmount?: string;
   usedVehicleSaleDetailVOList?: UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList[];
@@ -7084,6 +7084,7 @@ export class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList extends $tea.M
       generalInvoiceDetailVOList: 'generalInvoiceDetailVOList',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
+      invoiceStatus: 'invoiceStatus',
       invoiceType: 'invoiceType',
       machineCode: 'machineCode',
       oilFlag: 'oilFlag',
@@ -7104,7 +7105,6 @@ export class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList extends $tea.M
       sellerName: 'sellerName',
       sellerTaxNo: 'sellerTaxNo',
       sellerTel: 'sellerTel',
-      status: 'status',
       supplySign: 'supplySign',
       taxAmount: 'taxAmount',
       usedVehicleSaleDetailVOList: 'usedVehicleSaleDetailVOList',
@@ -7129,6 +7129,7 @@ export class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList extends $tea.M
       generalInvoiceDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList },
       invoiceCode: 'string',
       invoiceNo: 'string',
+      invoiceStatus: 'string',
       invoiceType: 'string',
       machineCode: 'string',
       oilFlag: 'string',
@@ -7149,7 +7150,6 @@ export class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList extends $tea.M
       sellerName: 'string',
       sellerTaxNo: 'string',
       sellerTel: 'string',
-      status: 'string',
       supplySign: 'string',
       taxAmount: 'string',
       usedVehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList },

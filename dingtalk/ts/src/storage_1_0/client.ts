@@ -288,7 +288,6 @@ export class CommitFileRequest extends $tea.Model {
   name?: string;
   option?: CommitFileRequestOption;
   parentId?: string;
-  size?: number;
   uploadKey?: string;
   unionId?: string;
   static names(): { [key: string]: string } {
@@ -296,7 +295,6 @@ export class CommitFileRequest extends $tea.Model {
       name: 'name',
       option: 'option',
       parentId: 'parentId',
-      size: 'size',
       uploadKey: 'uploadKey',
       unionId: 'unionId',
     };
@@ -307,7 +305,6 @@ export class CommitFileRequest extends $tea.Model {
       name: 'string',
       option: CommitFileRequestOption,
       parentId: 'string',
-      size: 'number',
       uploadKey: 'string',
       unionId: 'string',
     };
@@ -2484,10 +2481,12 @@ export class CommitFileRequestOptionAppProperties extends $tea.Model {
 export class CommitFileRequestOption extends $tea.Model {
   appProperties?: CommitFileRequestOptionAppProperties[];
   conflictStrategy?: string;
+  size?: number;
   static names(): { [key: string]: string } {
     return {
       appProperties: 'appProperties',
       conflictStrategy: 'conflictStrategy',
+      size: 'size',
     };
   }
 
@@ -2495,6 +2494,7 @@ export class CommitFileRequestOption extends $tea.Model {
     return {
       appProperties: { 'type': 'array', 'itemType': CommitFileRequestOptionAppProperties },
       conflictStrategy: 'string',
+      size: 'number',
     };
   }
 
@@ -3816,10 +3816,6 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.parentId)) {
       body["parentId"] = request.parentId;
-    }
-
-    if (!Util.isUnset(request.size)) {
-      body["size"] = request.size;
     }
 
     if (!Util.isUnset(request.uploadKey)) {
