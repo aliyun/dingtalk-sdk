@@ -187,6 +187,13 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             public string InvoiceNo { get; set; }
 
             /// <summary>
+            /// 发票状态
+            /// </summary>
+            [NameInMap("invoiceStatus")]
+            [Validation(Required=false)]
+            public string InvoiceStatus { get; set; }
+
+            /// <summary>
             /// 发票类型
             /// </summary>
             [NameInMap("invoiceType")]
@@ -394,13 +401,6 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [NameInMap("sellerTel")]
             [Validation(Required=false)]
             public string SellerTel { get; set; }
-
-            /// <summary>
-            /// 发票状态
-            /// </summary>
-            [NameInMap("status")]
-            [Validation(Required=false)]
-            public string Status { get; set; }
 
             /// <summary>
             /// 代开发票标识 1-自开，2-代开

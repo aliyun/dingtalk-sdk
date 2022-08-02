@@ -292,10 +292,6 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0
             {
                 body["parentId"] = request.ParentId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Size))
-            {
-                body["size"] = request.Size;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UploadKey))
             {
                 body["uploadKey"] = request.UploadKey;
@@ -339,10 +335,6 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentId))
             {
                 body["parentId"] = request.ParentId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Size))
-            {
-                body["size"] = request.Size;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UploadKey))
             {

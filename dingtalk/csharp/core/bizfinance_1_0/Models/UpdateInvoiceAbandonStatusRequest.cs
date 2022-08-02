@@ -48,7 +48,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             public List<UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList> GeneralInvoiceDetailVOList { get; set; }
             public class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList : TeaModel {
                 public string Amount { get; set; }
-                public string GoodName { get; set; }
+                public string GoodsName { get; set; }
                 public string Quantity { get; set; }
                 public string RevenueCode { get; set; }
                 public string RowNo { get; set; }
@@ -66,6 +66,9 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [NameInMap("invoiceNo")]
             [Validation(Required=false)]
             public string InvoiceNo { get; set; }
+            [NameInMap("invoiceStatus")]
+            [Validation(Required=false)]
+            public string InvoiceStatus { get; set; }
             [NameInMap("invoiceType")]
             [Validation(Required=false)]
             public string InvoiceType { get; set; }
@@ -138,9 +141,6 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [NameInMap("sellerTel")]
             [Validation(Required=false)]
             public string SellerTel { get; set; }
-            [NameInMap("status")]
-            [Validation(Required=false)]
-            public string Status { get; set; }
             [NameInMap("supplySign")]
             [Validation(Required=false)]
             public string SupplySign { get; set; }
@@ -266,7 +266,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             public List<UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList> GeneralInvoiceDetailVOList { get; set; }
             public class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList : TeaModel {
                 public string Amount { get; set; }
-                public string GoodName { get; set; }
+                public string GoodsName { get; set; }
                 public string Quantity { get; set; }
                 public string RevenueCode { get; set; }
                 public string RowNo { get; set; }

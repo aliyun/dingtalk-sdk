@@ -37,6 +37,9 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
             [NameInMap("conflictStrategy")]
             [Validation(Required=false)]
             public string ConflictStrategy { get; set; }
+            [NameInMap("size")]
+            [Validation(Required=false)]
+            public long? Size { get; set; }
         };
 
         /// <summary>
@@ -45,13 +48,6 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         [NameInMap("parentId")]
         [Validation(Required=false)]
         public string ParentId { get; set; }
-
-        /// <summary>
-        /// 大小
-        /// </summary>
-        [NameInMap("size")]
-        [Validation(Required=false)]
-        public long? Size { get; set; }
 
         /// <summary>
         /// 添加文件唯一标识，可通过DentryService.getUploadInfo来生成
