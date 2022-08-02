@@ -184,6 +184,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             {
                 body["extend"] = request.Extend;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location))
+            {
+                body["location"] = request.Location;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderEndTime))
             {
                 body["orderEndTime"] = request.OrderEndTime;
@@ -268,6 +272,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extend))
             {
                 body["extend"] = request.Extend;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location))
+            {
+                body["location"] = request.Location;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderEndTime))
             {

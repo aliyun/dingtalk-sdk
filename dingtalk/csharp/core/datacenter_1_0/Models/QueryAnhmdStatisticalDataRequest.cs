@@ -6,15 +6,15 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
 {
-    public class SendDingMessageResponseBody : TeaModel {
+    public class QueryAnhmdStatisticalDataRequest : TeaModel {
         /// <summary>
-        /// 发送消息请求Id。
+        /// statDate
         /// </summary>
-        [NameInMap("requestId")]
+        [NameInMap("statDate")]
         [Validation(Required=false)]
-        public string RequestId { get; set; }
+        public string StatDate { get; set; }
 
     }
 

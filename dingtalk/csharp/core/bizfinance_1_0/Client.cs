@@ -2636,6 +2636,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 body["deductStatus"] = request.DeductStatus;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GeneralInvoiceVOList))
+            {
+                body["generalInvoiceVOList"] = request.GeneralInvoiceVOList;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceKeyVOList))
             {
                 body["invoiceKeyVOList"] = request.InvoiceKeyVOList;
@@ -2672,6 +2676,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeductStatus))
             {
                 body["deductStatus"] = request.DeductStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GeneralInvoiceVOList))
+            {
+                body["generalInvoiceVOList"] = request.GeneralInvoiceVOList;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceKeyVOList))
             {

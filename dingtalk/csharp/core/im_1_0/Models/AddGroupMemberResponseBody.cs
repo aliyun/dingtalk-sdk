@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class AddGroupMemberResponseBody : TeaModel {
         /// <summary>
-        /// 拉取成功的C端客户列表
+        /// 添加成功的钉外用户列表。
         /// </summary>
         [NameInMap("appUserIds")]
         [Validation(Required=false)]
         public List<string> AppUserIds { get; set; }
 
         /// <summary>
-        /// 拉取成功的B端客服列表
+        /// 添加成功的钉内用户列表。
         /// </summary>
         [NameInMap("userIds")]
         [Validation(Required=false)]

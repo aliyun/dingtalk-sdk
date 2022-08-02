@@ -26,6 +26,56 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
         }
 
 
+        public PostCorpAuthInfoResponse PostCorpAuthInfo()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PostCorpAuthInfoHeaders headers = new PostCorpAuthInfoHeaders();
+            return PostCorpAuthInfoWithOptions(headers, runtime);
+        }
+
+        public async Task<PostCorpAuthInfoResponse> PostCorpAuthInfoAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PostCorpAuthInfoHeaders headers = new PostCorpAuthInfoHeaders();
+            return await PostCorpAuthInfoWithOptionsAsync(headers, runtime);
+        }
+
+        public PostCorpAuthInfoResponse PostCorpAuthInfoWithOptions(PostCorpAuthInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<PostCorpAuthInfoResponse>(DoROARequest("PostCorpAuthInfo", "datacenter_1.0", "HTTP", "POST", "AK", "/v1.0/datacenter/corporations/authorize", "json", req, runtime));
+        }
+
+        public async Task<PostCorpAuthInfoResponse> PostCorpAuthInfoWithOptionsAsync(PostCorpAuthInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<PostCorpAuthInfoResponse>(await DoROARequestAsync("PostCorpAuthInfo", "datacenter_1.0", "HTTP", "POST", "AK", "/v1.0/datacenter/corporations/authorize", "json", req, runtime));
+        }
+
         public QueryActiveUserStatisticalDataResponse QueryActiveUserStatisticalData(QueryActiveUserStatisticalDataRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -88,6 +138,70 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             return TeaModel.ToObject<QueryActiveUserStatisticalDataResponse>(await DoROARequestAsync("QueryActiveUserStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", "/v1.0/datacenter/activeUserData", "json", req, runtime));
+        }
+
+        public QueryAnhmdStatisticalDataResponse QueryAnhmdStatisticalData(QueryAnhmdStatisticalDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryAnhmdStatisticalDataHeaders headers = new QueryAnhmdStatisticalDataHeaders();
+            return QueryAnhmdStatisticalDataWithOptions(request, headers, runtime);
+        }
+
+        public async Task<QueryAnhmdStatisticalDataResponse> QueryAnhmdStatisticalDataAsync(QueryAnhmdStatisticalDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryAnhmdStatisticalDataHeaders headers = new QueryAnhmdStatisticalDataHeaders();
+            return await QueryAnhmdStatisticalDataWithOptionsAsync(request, headers, runtime);
+        }
+
+        public QueryAnhmdStatisticalDataResponse QueryAnhmdStatisticalDataWithOptions(QueryAnhmdStatisticalDataRequest request, QueryAnhmdStatisticalDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StatDate))
+            {
+                query["statDate"] = request.StatDate;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<QueryAnhmdStatisticalDataResponse>(DoROARequest("QueryAnhmdStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", "/v1.0/datacenter/statisticDatas/anHmd", "json", req, runtime));
+        }
+
+        public async Task<QueryAnhmdStatisticalDataResponse> QueryAnhmdStatisticalDataWithOptionsAsync(QueryAnhmdStatisticalDataRequest request, QueryAnhmdStatisticalDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StatDate))
+            {
+                query["statDate"] = request.StatDate;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<QueryAnhmdStatisticalDataResponse>(await DoROARequestAsync("QueryAnhmdStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", "/v1.0/datacenter/statisticDatas/anHmd", "json", req, runtime));
         }
 
         public QueryApprovalStatisticalDataResponse QueryApprovalStatisticalData(QueryApprovalStatisticalDataRequest request)

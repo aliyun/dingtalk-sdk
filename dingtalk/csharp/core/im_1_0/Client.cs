@@ -606,10 +606,6 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["interconnections"] = request.Interconnections;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Signature))
-            {
-                body["signature"] = request.Signature;
-            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -634,10 +630,6 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Interconnections))
             {
                 body["interconnections"] = request.Interconnections;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Signature))
-            {
-                body["signature"] = request.Signature;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -4254,6 +4246,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["senderId"] = request.SenderId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceInfos))
+            {
+                body["sourceInfos"] = request.SourceInfos;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -4294,6 +4290,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SenderId))
             {
                 body["senderId"] = request.SenderId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceInfos))
+            {
+                body["sourceInfos"] = request.SourceInfos;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

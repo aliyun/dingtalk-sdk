@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class QuerySingleGroupRequest : TeaModel {
         /// <summary>
-        /// 群成员列表
+        /// 群成员列表。
         /// </summary>
         [NameInMap("groupMembers")]
         [Validation(Required=false)]
         public List<QuerySingleGroupRequestGroupMembers> GroupMembers { get; set; }
         public class QuerySingleGroupRequestGroupMembers : TeaModel {
             /// <summary>
-            /// 客户appUserId
+            /// 钉外用户在业务系统内的唯一标识。
             /// </summary>
             [NameInMap("appUserId")]
             [Validation(Required=false)]
             public string AppUserId { get; set; }
 
             /// <summary>
-            /// 客服钉钉Id
+            /// 钉内用户userId。
             /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
@@ -33,7 +33,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         }
 
         /// <summary>
-        /// 群模版Id
+        /// 群模版Id。
         /// </summary>
         [NameInMap("groupTemplateId")]
         [Validation(Required=false)]

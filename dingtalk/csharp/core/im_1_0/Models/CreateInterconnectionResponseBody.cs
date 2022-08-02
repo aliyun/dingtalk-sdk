@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class CreateInterconnectionResponseBody : TeaModel {
         /// <summary>
-        /// 失败的bc关系列表
+        /// 创建失败的钉外钉内关系列表。
         /// </summary>
         [NameInMap("results")]
         [Validation(Required=false)]
         public List<CreateInterconnectionResponseBodyResults> Results { get; set; }
         public class CreateInterconnectionResponseBodyResults : TeaModel {
             /// <summary>
-            /// 客户业务身份唯一标识
+            /// 钉外用户在业务系统内的唯一标识。
             /// </summary>
             [NameInMap("appUserId")]
             [Validation(Required=false)]
             public string AppUserId { get; set; }
 
             /// <summary>
-            /// 客服钉钉Id
+            /// 钉内用户userId。
             /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]

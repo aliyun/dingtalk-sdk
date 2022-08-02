@@ -10,28 +10,28 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class RemoveGroupMemberRequest : TeaModel {
         /// <summary>
-        /// C端客户成员列表
+        /// 钉外成员列表。
         /// </summary>
         [NameInMap("appUserIds")]
         [Validation(Required=false)]
         public List<string> AppUserIds { get; set; }
 
         /// <summary>
-        /// 群会话Id
+        /// 群会话Id。
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }
 
         /// <summary>
-        /// 操作者钉钉Id
+        /// 操作者在业务系统内的唯一标识。
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]
         public string OperatorId { get; set; }
 
         /// <summary>
-        /// B端客服成员列表
+        /// 钉内成员列表。
         /// </summary>
         [NameInMap("userIds")]
         [Validation(Required=false)]

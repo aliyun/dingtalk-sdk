@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class GetConversationUrlRequest : TeaModel {
         /// <summary>
-        /// C端用户在业务账号体系内的用户userid，长度限制为1~64个字符。
+        /// 钉外用户在业务系统内的唯一标志。
         /// </summary>
         [NameInMap("appUserId")]
         [Validation(Required=false)]
         public string AppUserId { get; set; }
 
         /// <summary>
-        /// C端客户渠道code。
+        /// 渠道code。
         /// </summary>
         [NameInMap("channelCode")]
         [Validation(Required=false)]
@@ -31,14 +31,14 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public string OpenConversationId { get; set; }
 
         /// <summary>
-        /// C端客户标识。
+        /// 钉外用户标识。
         /// </summary>
         [NameInMap("sourceCode")]
         [Validation(Required=false)]
         public string SourceCode { get; set; }
 
         /// <summary>
-        /// B端用户的钉钉userId。
+        /// 钉内用户userId。
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

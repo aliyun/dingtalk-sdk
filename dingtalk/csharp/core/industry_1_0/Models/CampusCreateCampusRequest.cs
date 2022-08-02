@@ -17,7 +17,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public string Address { get; set; }
 
         /// <summary>
-        /// 园区面积
+        /// 园区面积，单位：平方千米
         /// </summary>
         [NameInMap("area")]
         [Validation(Required=false)]
@@ -85,6 +85,13 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [NameInMap("extend")]
         [Validation(Required=false)]
         public string Extend { get; set; }
+
+        /// <summary>
+        /// 园区经纬度,格式：经度,纬度
+        /// </summary>
+        [NameInMap("location")]
+        [Validation(Required=false)]
+        public string Location { get; set; }
 
         [NameInMap("orderEndTime")]
         [Validation(Required=false)]

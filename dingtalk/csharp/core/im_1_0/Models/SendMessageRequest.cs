@@ -44,6 +44,13 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public string SenderId { get; set; }
 
+        /// <summary>
+        /// 渠道按钮跳转信息
+        /// </summary>
+        [NameInMap("sourceInfos")]
+        [Validation(Required=false)]
+        public Dictionary<string, object> SourceInfos { get; set; }
+
     }
 
 }

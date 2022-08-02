@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class QueryGroupMemberRequest : TeaModel {
         /// <summary>
-        /// 群会话Id
+        /// 群会话Id。
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]

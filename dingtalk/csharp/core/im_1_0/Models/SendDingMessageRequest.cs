@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class SendDingMessageRequest : TeaModel {
         /// <summary>
-        /// 客服oauth2.0授权码
+        /// 钉内用户oauth2.0授权码。
         /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]
         public string Code { get; set; }
 
         /// <summary>
-        /// 消息内容
+        /// 消息内容。
         /// </summary>
         [NameInMap("message")]
         [Validation(Required=false)]
@@ -31,21 +31,21 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public string MessageType { get; set; }
 
         /// <summary>
-        /// 群会话Id
+        /// 群会话Id。
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }
 
         /// <summary>
-        /// C端客户appUserId
+        /// 钉外用户在业务系统内的唯一标志。
         /// </summary>
         [NameInMap("receiverId")]
         [Validation(Required=false)]
         public string ReceiverId { get; set; }
 
         /// <summary>
-        /// B端客服钉钉Id
+        /// 钉内用户userId。
         /// </summary>
         [NameInMap("senderId")]
         [Validation(Required=false)]

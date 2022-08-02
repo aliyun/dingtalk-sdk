@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class CreateInterconnectionRequest : TeaModel {
         /// <summary>
-        /// bc关系列表
+        /// 钉外钉内关系列表。
         /// </summary>
         [NameInMap("interconnections")]
         [Validation(Required=false)]
         public List<CreateInterconnectionRequestInterconnections> Interconnections { get; set; }
         public class CreateInterconnectionRequestInterconnections : TeaModel {
             /// <summary>
-            /// 客户头像链接
+            /// 钉外用户头像链接。
             /// </summary>
             [NameInMap("appUserAvatar")]
             [Validation(Required=false)]
             public string AppUserAvatar { get; set; }
 
             /// <summary>
-            /// 客户头像类型，取值：
+            /// 钉外用户头像类型，取值：
             /// 1：http
             /// </summary>
             [NameInMap("appUserAvatarMediaType")]
@@ -32,55 +32,48 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
             public int? AppUserAvatarMediaType { get; set; }
 
             /// <summary>
-            /// 客户动态
+            /// 钉外用户动态。
             /// </summary>
             [NameInMap("appUserDynamics")]
             [Validation(Required=false)]
             public string AppUserDynamics { get; set; }
 
             /// <summary>
-            /// 客户业务系统唯一标识
+            /// 钉外用户在业务系统内的唯一标识。
             /// </summary>
             [NameInMap("appUserId")]
             [Validation(Required=false)]
             public string AppUserId { get; set; }
 
             /// <summary>
-            /// 客户手机号
+            /// 钉外用户手机号。
             /// </summary>
             [NameInMap("appUserMobile")]
             [Validation(Required=false)]
             public string AppUserMobile { get; set; }
 
             /// <summary>
-            /// 客户名称
+            /// 钉外用户名称。
             /// </summary>
             [NameInMap("appUserName")]
             [Validation(Required=false)]
             public string AppUserName { get; set; }
 
             /// <summary>
-            /// 客户渠道code
+            /// 渠道code。
             /// </summary>
             [NameInMap("channelCode")]
             [Validation(Required=false)]
             public string ChannelCode { get; set; }
 
             /// <summary>
-            /// 客服钉钉Id
+            /// 钉内用户userId。
             /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
             public string UserId { get; set; }
 
         }
-
-        /// <summary>
-        /// 参数签名
-        /// </summary>
-        [NameInMap("signature")]
-        [Validation(Required=false)]
-        public string Signature { get; set; }
 
     }
 
