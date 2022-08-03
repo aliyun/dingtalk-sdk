@@ -6449,7 +6449,7 @@ export class UpdateInvoiceAccountPeriodRequestInvoiceKeyVOList extends $tea.Mode
 
 export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList extends $tea.Model {
   amount?: string;
-  goodName?: string;
+  goodsName?: string;
   quantity?: string;
   revenueCode?: string;
   rowNo?: string;
@@ -6463,7 +6463,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoice
   static names(): { [key: string]: string } {
     return {
       amount: 'amount',
-      goodName: 'goodName',
+      goodsName: 'goodsName',
       quantity: 'quantity',
       revenueCode: 'revenueCode',
       rowNo: 'rowNo',
@@ -6480,7 +6480,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoice
   static types(): { [key: string]: any } {
     return {
       amount: 'string',
-      goodName: 'string',
+      goodsName: 'string',
       quantity: 'string',
       revenueCode: 'string',
       rowNo: 'string',
