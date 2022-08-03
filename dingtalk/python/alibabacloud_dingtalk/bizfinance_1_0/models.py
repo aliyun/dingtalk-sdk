@@ -11267,7 +11267,7 @@ class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailV
     def __init__(
         self,
         amount: str = None,
-        good_name: str = None,
+        goods_name: str = None,
         quantity: str = None,
         revenue_code: str = None,
         row_no: str = None,
@@ -11282,7 +11282,7 @@ class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailV
         # 金额
         self.amount = amount
         # 商品名称
-        self.good_name = good_name
+        self.goods_name = goods_name
         # 数量
         self.quantity = quantity
         # 税收分类编码
@@ -11315,8 +11315,8 @@ class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailV
         result = dict()
         if self.amount is not None:
             result['amount'] = self.amount
-        if self.good_name is not None:
-            result['goodName'] = self.good_name
+        if self.goods_name is not None:
+            result['goodsName'] = self.goods_name
         if self.quantity is not None:
             result['quantity'] = self.quantity
         if self.revenue_code is not None:
@@ -11343,8 +11343,8 @@ class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailV
         m = m or dict()
         if m.get('amount') is not None:
             self.amount = m.get('amount')
-        if m.get('goodName') is not None:
-            self.good_name = m.get('goodName')
+        if m.get('goodsName') is not None:
+            self.goods_name = m.get('goodsName')
         if m.get('quantity') is not None:
             self.quantity = m.get('quantity')
         if m.get('revenueCode') is not None:
