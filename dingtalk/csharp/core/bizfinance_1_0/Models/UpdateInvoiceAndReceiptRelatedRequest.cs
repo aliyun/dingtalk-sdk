@@ -48,7 +48,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             public List<UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList> GeneralInvoiceDetailVOList { get; set; }
             public class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList : TeaModel {
                 public string Amount { get; set; }
-                public string GoodName { get; set; }
+                public string GoodsName { get; set; }
                 public string Quantity { get; set; }
                 public string RevenueCode { get; set; }
                 public string RowNo { get; set; }
