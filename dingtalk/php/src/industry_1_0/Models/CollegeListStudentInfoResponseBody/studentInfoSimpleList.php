@@ -9,6 +9,20 @@ use AlibabaCloud\Tea\Model;
 class studentInfoSimpleList extends Model
 {
     /**
+     * @description 人员在组织的状态
+     *
+     * @var string
+     */
+    public $dingMemberStatus;
+
+    /**
+     * @description 账号是否激活
+     *
+     * @var bool
+     */
+    public $isActive;
+
+    /**
      * @description 学生id
      *
      * @var int
@@ -36,10 +50,12 @@ class studentInfoSimpleList extends Model
      */
     public $userId;
     protected $_name = [
-        'studentId'   => 'studentId',
-        'studentName' => 'studentName',
-        'unionId'     => 'unionId',
-        'userId'      => 'userId',
+        'dingMemberStatus' => 'dingMemberStatus',
+        'isActive'         => 'isActive',
+        'studentId'        => 'studentId',
+        'studentName'      => 'studentName',
+        'unionId'          => 'unionId',
+        'userId'           => 'userId',
     ];
 
     public function validate()
@@ -49,6 +65,12 @@ class studentInfoSimpleList extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->dingMemberStatus) {
+            $res['dingMemberStatus'] = $this->dingMemberStatus;
+        }
+        if (null !== $this->isActive) {
+            $res['isActive'] = $this->isActive;
+        }
         if (null !== $this->studentId) {
             $res['studentId'] = $this->studentId;
         }
@@ -73,6 +95,12 @@ class studentInfoSimpleList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['dingMemberStatus'])) {
+            $model->dingMemberStatus = $map['dingMemberStatus'];
+        }
+        if (isset($map['isActive'])) {
+            $model->isActive = $map['isActive'];
+        }
         if (isset($map['studentId'])) {
             $model->studentId = $map['studentId'];
         }

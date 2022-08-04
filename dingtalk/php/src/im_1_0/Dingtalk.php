@@ -16,6 +16,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\BatchQueryGroupMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CardTemplateBuildActionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CardTemplateBuildActionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CardTemplateBuildActionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ChangeGroupOwnerHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ChangeGroupOwnerRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ChangeGroupOwnerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ChatIdToOpenConversationIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ChatIdToOpenConversationIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ChatSubAdminUpdateHeaders;
@@ -33,6 +36,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateInterconnectionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateStoreGroupConversationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateStoreGroupConversationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateStoreGroupConversationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DismissGroupConversationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DismissGroupConversationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DismissGroupConversationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetConversationUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetConversationUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetConversationUrlResponse;
@@ -287,6 +293,54 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param ChangeGroupOwnerRequest $request
+     *
+     * @return ChangeGroupOwnerResponse
+     */
+    public function changeGroupOwner($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChangeGroupOwnerHeaders([]);
+
+        return $this->changeGroupOwnerWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ChangeGroupOwnerRequest $request
+     * @param ChangeGroupOwnerHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return ChangeGroupOwnerResponse
+     */
+    public function changeGroupOwnerWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->groupOwnerId)) {
+            @$body['groupOwnerId'] = $request->groupOwnerId;
+        }
+        if (!Utils::isUnset($request->groupOwnerType)) {
+            @$body['groupOwnerType'] = $request->groupOwnerType;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ChangeGroupOwnerResponse::fromMap($this->doROARequest('ChangeGroupOwner', 'im_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/im/interconnections/groups/owners', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string $chatId
      *
      * @return ChatIdToOpenConversationIdResponse
@@ -464,6 +518,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->groupOwnerId)) {
             @$body['groupOwnerId'] = $request->groupOwnerId;
         }
+        if (!Utils::isUnset($request->groupOwnerType)) {
+            @$body['groupOwnerType'] = $request->groupOwnerType;
+        }
         if (!Utils::isUnset($request->groupTemplateId)) {
             @$body['groupTemplateId'] = $request->groupTemplateId;
         }
@@ -588,6 +645,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateStoreGroupConversationResponse::fromMap($this->doROARequest('CreateStoreGroupConversation', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interconnections/storeGroups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DismissGroupConversationRequest $request
+     *
+     * @return DismissGroupConversationResponse
+     */
+    public function dismissGroupConversation($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DismissGroupConversationHeaders([]);
+
+        return $this->dismissGroupConversationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DismissGroupConversationRequest $request
+     * @param DismissGroupConversationHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return DismissGroupConversationResponse
+     */
+    public function dismissGroupConversationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DismissGroupConversationResponse::fromMap($this->doROARequest('DismissGroupConversation', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interconnections/groups/dismiss', 'json', $req, $runtime));
     }
 
     /**

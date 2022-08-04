@@ -11,12 +11,27 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyDentryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateDentryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateDentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateDentryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetSchemaHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetSchemaRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetSchemaResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetSpaceDirectoriesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetSpaceDirectoriesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetSpaceDirectoriesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetTeamHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetTeamRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetTeamResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUserInfoByOpenTokenHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUserInfoByOpenTokenRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUserInfoByOpenTokenResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListFeedsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListFeedsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListFeedsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListHotDocsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListHotDocsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListHotDocsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListSpaceSectionsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListSpaceSectionsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListSpaceSectionsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\MoveDentryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\MoveDentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\MoveDentryResponse;
@@ -177,6 +192,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string           $teamId
+     * @param GetSchemaRequest $request
+     *
+     * @return GetSchemaResponse
+     */
+    public function getSchema($teamId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetSchemaHeaders([]);
+
+        return $this->getSchemaWithOptions($teamId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string           $teamId
+     * @param GetSchemaRequest $request
+     * @param GetSchemaHeaders $headers
+     * @param RuntimeOptions   $runtime
+     *
+     * @return GetSchemaResponse
+     */
+    public function getSchemaWithOptions($teamId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $teamId = OpenApiUtilClient::getEncodeParam($teamId);
+        $query  = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetSchemaResponse::fromMap($this->doROARequest('GetSchema', 'doc_2.0', 'HTTP', 'GET', 'AK', '/v2.0/doc/teams/' . $teamId . '/schemas', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string                     $spaceId
      * @param GetSpaceDirectoriesRequest $request
      *
@@ -231,6 +291,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string         $teamId
+     * @param GetTeamRequest $request
+     *
+     * @return GetTeamResponse
+     */
+    public function getTeam($teamId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetTeamHeaders([]);
+
+        return $this->getTeamWithOptions($teamId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string         $teamId
+     * @param GetTeamRequest $request
+     * @param GetTeamHeaders $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return GetTeamResponse
+     */
+    public function getTeamWithOptions($teamId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $teamId = OpenApiUtilClient::getEncodeParam($teamId);
+        $query  = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetTeamResponse::fromMap($this->doROARequest('GetTeam', 'doc_2.0', 'HTTP', 'GET', 'AK', '/v2.0/doc/teams/' . $teamId . '', 'json', $req, $runtime));
+    }
+
+    /**
      * @param GetUserInfoByOpenTokenRequest $request
      *
      * @return GetUserInfoByOpenTokenResponse
@@ -273,6 +378,150 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetUserInfoByOpenTokenResponse::fromMap($this->doROARequest('GetUserInfoByOpenToken', 'doc_2.0', 'HTTP', 'GET', 'AK', '/v2.0/doc/userInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string           $teamId
+     * @param ListFeedsRequest $request
+     *
+     * @return ListFeedsResponse
+     */
+    public function listFeeds($teamId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListFeedsHeaders([]);
+
+        return $this->listFeedsWithOptions($teamId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string           $teamId
+     * @param ListFeedsRequest $request
+     * @param ListFeedsHeaders $headers
+     * @param RuntimeOptions   $runtime
+     *
+     * @return ListFeedsResponse
+     */
+    public function listFeedsWithOptions($teamId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $teamId = OpenApiUtilClient::getEncodeParam($teamId);
+        $query  = [];
+        if (!Utils::isUnset($request->excludeFile)) {
+            @$query['excludeFile'] = $request->excludeFile;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListFeedsResponse::fromMap($this->doROARequest('ListFeeds', 'doc_2.0', 'HTTP', 'GET', 'AK', '/v2.0/doc/teams/' . $teamId . '/feeds', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string             $teamId
+     * @param ListHotDocsRequest $request
+     *
+     * @return ListHotDocsResponse
+     */
+    public function listHotDocs($teamId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListHotDocsHeaders([]);
+
+        return $this->listHotDocsWithOptions($teamId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string             $teamId
+     * @param ListHotDocsRequest $request
+     * @param ListHotDocsHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return ListHotDocsResponse
+     */
+    public function listHotDocsWithOptions($teamId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $teamId = OpenApiUtilClient::getEncodeParam($teamId);
+        $query  = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListHotDocsResponse::fromMap($this->doROARequest('ListHotDocs', 'doc_2.0', 'HTTP', 'GET', 'AK', '/v2.0/doc/teams/' . $teamId . '/hotDocs', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                   $teamId
+     * @param ListSpaceSectionsRequest $request
+     *
+     * @return ListSpaceSectionsResponse
+     */
+    public function listSpaceSections($teamId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListSpaceSectionsHeaders([]);
+
+        return $this->listSpaceSectionsWithOptions($teamId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                   $teamId
+     * @param ListSpaceSectionsRequest $request
+     * @param ListSpaceSectionsHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return ListSpaceSectionsResponse
+     */
+    public function listSpaceSectionsWithOptions($teamId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $teamId = OpenApiUtilClient::getEncodeParam($teamId);
+        $query  = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListSpaceSectionsResponse::fromMap($this->doROARequest('ListSpaceSections', 'doc_2.0', 'HTTP', 'GET', 'AK', '/v2.0/doc/teams/' . $teamId . '/spaceSections', 'json', $req, $runtime));
     }
 
     /**

@@ -16,7 +16,7 @@ class CollegeListStudentInfoRequest extends Model
     public $deptId;
 
     /**
-     * @description 学生在组织状态
+     * @description 人员状态
      *
      * @var string
      */

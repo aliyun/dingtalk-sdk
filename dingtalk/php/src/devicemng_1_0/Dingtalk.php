@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\BatchRegisterDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\BatchRegisterDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\BatchRegisterDeviceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\ConnectorEventPushHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\ConnectorEventPushRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\ConnectorEventPushResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\CreateChatRoomHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\CreateChatRoomRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\CreateChatRoomResponse;
@@ -129,6 +132,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return BatchRegisterDeviceResponse::fromMap($this->doROARequest('BatchRegisterDevice', 'devicemng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/devicemng/devices/batch', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ConnectorEventPushRequest $request
+     *
+     * @return ConnectorEventPushResponse
+     */
+    public function connectorEventPush($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ConnectorEventPushHeaders([]);
+
+        return $this->connectorEventPushWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ConnectorEventPushRequest $request
+     * @param ConnectorEventPushHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return ConnectorEventPushResponse
+     */
+    public function connectorEventPushWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deviceTypeUuid)) {
+            @$body['deviceTypeUuid'] = $request->deviceTypeUuid;
+        }
+        if (!Utils::isUnset($request->eventName)) {
+            @$body['eventName'] = $request->eventName;
+        }
+        if (!Utils::isUnset($request->input)) {
+            @$body['input'] = $request->input;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ConnectorEventPushResponse::fromMap($this->doROARequest('ConnectorEventPush', 'devicemng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/devicemng/connectors/events/push', 'json', $req, $runtime));
     }
 
     /**

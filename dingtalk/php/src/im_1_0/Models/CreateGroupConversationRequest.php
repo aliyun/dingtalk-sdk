@@ -37,6 +37,13 @@ class CreateGroupConversationRequest extends Model
     public $groupOwnerId;
 
     /**
+     * @description 群主类型<2.钉内用户类型 3.钉外用户类型>，如果不指定的话，默认是钉钉用户类型
+     *
+     * @var int
+     */
+    public $groupOwnerType;
+
+    /**
      * @description 群模板Id。
      *
      * @var string
@@ -61,6 +68,7 @@ class CreateGroupConversationRequest extends Model
         'groupAvatar'     => 'groupAvatar',
         'groupName'       => 'groupName',
         'groupOwnerId'    => 'groupOwnerId',
+        'groupOwnerType'  => 'groupOwnerType',
         'groupTemplateId' => 'groupTemplateId',
         'operatorId'      => 'operatorId',
         'userIds'         => 'userIds',
@@ -84,6 +92,9 @@ class CreateGroupConversationRequest extends Model
         }
         if (null !== $this->groupOwnerId) {
             $res['groupOwnerId'] = $this->groupOwnerId;
+        }
+        if (null !== $this->groupOwnerType) {
+            $res['groupOwnerType'] = $this->groupOwnerType;
         }
         if (null !== $this->groupTemplateId) {
             $res['groupTemplateId'] = $this->groupTemplateId;
@@ -119,6 +130,9 @@ class CreateGroupConversationRequest extends Model
         }
         if (isset($map['groupOwnerId'])) {
             $model->groupOwnerId = $map['groupOwnerId'];
+        }
+        if (isset($map['groupOwnerType'])) {
+            $model->groupOwnerType = $map['groupOwnerType'];
         }
         if (isset($map['groupTemplateId'])) {
             $model->groupTemplateId = $map['groupTemplateId'];

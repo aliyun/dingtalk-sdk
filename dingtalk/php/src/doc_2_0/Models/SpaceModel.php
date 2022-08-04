@@ -54,6 +54,13 @@ class SpaceModel extends Model
     public $owner;
 
     /**
+     * @description 知识库中最近编辑的三篇文档。
+     *
+     * @var DentryModel[]
+     */
+    public $recentList;
+
+    /**
      * @description 知识库访问url。
      *
      * @var string
@@ -73,6 +80,7 @@ class SpaceModel extends Model
         'id'          => 'id',
         'name'        => 'name',
         'owner'       => 'owner',
+        'recentList'  => 'recentList',
         'url'         => 'url',
         'visitorInfo' => 'visitorInfo',
     ];
@@ -101,6 +109,15 @@ class SpaceModel extends Model
         }
         if (null !== $this->owner) {
             $res['owner'] = null !== $this->owner ? $this->owner->toMap() : null;
+        }
+        if (null !== $this->recentList) {
+            $res['recentList'] = [];
+            if (null !== $this->recentList && \is_array($this->recentList)) {
+                $n = 0;
+                foreach ($this->recentList as $item) {
+                    $res['recentList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->url) {
             $res['url'] = $this->url;
@@ -137,6 +154,15 @@ class SpaceModel extends Model
         }
         if (isset($map['owner'])) {
             $model->owner = owner::fromMap($map['owner']);
+        }
+        if (isset($map['recentList'])) {
+            if (!empty($map['recentList'])) {
+                $model->recentList = [];
+                $n                 = 0;
+                foreach ($map['recentList'] as $item) {
+                    $model->recentList[$n++] = null !== $item ? DentryModel::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['url'])) {
             $model->url = $map['url'];

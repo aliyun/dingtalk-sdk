@@ -6,10 +6,17 @@ namespace AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class RelatedSpacesRequest extends Model
+class ListFeedsRequest extends Model
 {
     /**
-     * @description 每页最大条目数，最大值100。
+     * @description 是否排除文件。
+     *
+     * @var bool
+     */
+    public $excludeFile;
+
+    /**
+     * @description 每页最大条目数，最大值50。
      *
      * @var int
      */
@@ -28,18 +35,11 @@ class RelatedSpacesRequest extends Model
      * @var string
      */
     public $operatorId;
-
-    /**
-     * @description 团队id。
-     *
-     * @var string
-     */
-    public $teamId;
     protected $_name = [
-        'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'operatorId' => 'operatorId',
-        'teamId'     => 'teamId',
+        'excludeFile' => 'excludeFile',
+        'maxResults'  => 'maxResults',
+        'nextToken'   => 'nextToken',
+        'operatorId'  => 'operatorId',
     ];
 
     public function validate()
@@ -49,6 +49,9 @@ class RelatedSpacesRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->excludeFile) {
+            $res['excludeFile'] = $this->excludeFile;
+        }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
         }
@@ -58,9 +61,6 @@ class RelatedSpacesRequest extends Model
         if (null !== $this->operatorId) {
             $res['operatorId'] = $this->operatorId;
         }
-        if (null !== $this->teamId) {
-            $res['teamId'] = $this->teamId;
-        }
 
         return $res;
     }
@@ -68,11 +68,14 @@ class RelatedSpacesRequest extends Model
     /**
      * @param array $map
      *
-     * @return RelatedSpacesRequest
+     * @return ListFeedsRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['excludeFile'])) {
+            $model->excludeFile = $map['excludeFile'];
+        }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
         }
@@ -81,9 +84,6 @@ class RelatedSpacesRequest extends Model
         }
         if (isset($map['operatorId'])) {
             $model->operatorId = $map['operatorId'];
-        }
-        if (isset($map['teamId'])) {
-            $model->teamId = $map['teamId'];
         }
 
         return $model;

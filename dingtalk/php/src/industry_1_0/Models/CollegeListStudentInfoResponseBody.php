@@ -10,20 +10,6 @@ use AlibabaCloud\Tea\Model;
 class CollegeListStudentInfoResponseBody extends Model
 {
     /**
-     * @description 学生在组织状态
-     *
-     * @var string
-     */
-    public $dingMemberStatus;
-
-    /**
-     * @description 账号是否激活
-     *
-     * @var bool
-     */
-    public $isActive;
-
-    /**
      * @description 学生信息列表
      *
      * @var studentInfoSimpleList[]
@@ -31,12 +17,12 @@ class CollegeListStudentInfoResponseBody extends Model
     public $studentInfoSimpleList;
 
     /**
+     * @description 条目总数
+     *
      * @var int
      */
     public $totalCount;
     protected $_name = [
-        'dingMemberStatus'      => 'dingMemberStatus',
-        'isActive'              => 'isActive',
         'studentInfoSimpleList' => 'studentInfoSimpleList',
         'totalCount'            => 'totalCount',
     ];
@@ -48,12 +34,6 @@ class CollegeListStudentInfoResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingMemberStatus) {
-            $res['dingMemberStatus'] = $this->dingMemberStatus;
-        }
-        if (null !== $this->isActive) {
-            $res['isActive'] = $this->isActive;
-        }
         if (null !== $this->studentInfoSimpleList) {
             $res['studentInfoSimpleList'] = [];
             if (null !== $this->studentInfoSimpleList && \is_array($this->studentInfoSimpleList)) {
@@ -78,12 +58,6 @@ class CollegeListStudentInfoResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingMemberStatus'])) {
-            $model->dingMemberStatus = $map['dingMemberStatus'];
-        }
-        if (isset($map['isActive'])) {
-            $model->isActive = $map['isActive'];
-        }
         if (isset($map['studentInfoSimpleList'])) {
             if (!empty($map['studentInfoSimpleList'])) {
                 $model->studentInfoSimpleList = [];
