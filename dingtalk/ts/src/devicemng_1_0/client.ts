@@ -92,6 +92,94 @@ export class BatchRegisterDeviceResponse extends $tea.Model {
   }
 }
 
+export class ConnectorEventPushHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConnectorEventPushRequest extends $tea.Model {
+  deviceTypeUuid?: string;
+  eventName?: string;
+  input?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deviceTypeUuid: 'deviceTypeUuid',
+      eventName: 'eventName',
+      input: 'input',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceTypeUuid: 'string',
+      eventName: 'string',
+      input: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConnectorEventPushResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConnectorEventPushResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ConnectorEventPushResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ConnectorEventPushResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateChatRoomHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2522,6 +2610,43 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<BatchRegisterDeviceResponse>(await this.doROARequest("BatchRegisterDevice", "devicemng_1.0", "HTTP", "POST", "AK", `/v1.0/devicemng/devices/batch`, "json", req, runtime), new BatchRegisterDeviceResponse({}));
+  }
+
+  async connectorEventPush(request: ConnectorEventPushRequest): Promise<ConnectorEventPushResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ConnectorEventPushHeaders({ });
+    return await this.connectorEventPushWithOptions(request, headers, runtime);
+  }
+
+  async connectorEventPushWithOptions(request: ConnectorEventPushRequest, headers: ConnectorEventPushHeaders, runtime: $Util.RuntimeOptions): Promise<ConnectorEventPushResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deviceTypeUuid)) {
+      body["deviceTypeUuid"] = request.deviceTypeUuid;
+    }
+
+    if (!Util.isUnset(request.eventName)) {
+      body["eventName"] = request.eventName;
+    }
+
+    if (!Util.isUnset(request.input)) {
+      body["input"] = request.input;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ConnectorEventPushResponse>(await this.doROARequest("ConnectorEventPush", "devicemng_1.0", "HTTP", "POST", "AK", `/v1.0/devicemng/connectors/events/push`, "json", req, runtime), new ConnectorEventPushResponse({}));
   }
 
   async createChatRoom(request: CreateChatRoomRequest): Promise<CreateChatRoomResponse> {

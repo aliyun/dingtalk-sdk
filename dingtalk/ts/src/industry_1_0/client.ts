@@ -2545,14 +2545,10 @@ export class CollegeListStudentInfoRequest extends $tea.Model {
 }
 
 export class CollegeListStudentInfoResponseBody extends $tea.Model {
-  dingMemberStatus?: string;
-  isActive?: boolean;
   studentInfoSimpleList?: CollegeListStudentInfoResponseBodyStudentInfoSimpleList[];
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
-      dingMemberStatus: 'dingMemberStatus',
-      isActive: 'isActive',
       studentInfoSimpleList: 'studentInfoSimpleList',
       totalCount: 'totalCount',
     };
@@ -2560,8 +2556,6 @@ export class CollegeListStudentInfoResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      dingMemberStatus: 'string',
-      isActive: 'boolean',
       studentInfoSimpleList: { 'type': 'array', 'itemType': CollegeListStudentInfoResponseBodyStudentInfoSimpleList },
       totalCount: 'number',
     };
@@ -9872,12 +9866,16 @@ export class CollegeListDeptManagerResponseBodyManagerInfoSimpleList extends $te
 }
 
 export class CollegeListStudentInfoResponseBodyStudentInfoSimpleList extends $tea.Model {
+  dingMemberStatus?: string;
+  isActive?: boolean;
   studentId?: number;
   studentName?: string;
   unionId?: string;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
+      dingMemberStatus: 'dingMemberStatus',
+      isActive: 'isActive',
       studentId: 'studentId',
       studentName: 'studentName',
       unionId: 'unionId',
@@ -9887,6 +9885,8 @@ export class CollegeListStudentInfoResponseBodyStudentInfoSimpleList extends $te
 
   static types(): { [key: string]: any } {
     return {
+      dingMemberStatus: 'string',
+      isActive: 'boolean',
       studentId: 'number',
       studentName: 'string',
       unionId: 'string',

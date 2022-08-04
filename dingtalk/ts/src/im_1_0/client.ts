@@ -255,6 +255,97 @@ export class CardTemplateBuildActionResponse extends $tea.Model {
   }
 }
 
+export class ChangeGroupOwnerHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChangeGroupOwnerRequest extends $tea.Model {
+  groupOwnerId?: string;
+  groupOwnerType?: number;
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      groupOwnerId: 'groupOwnerId',
+      groupOwnerType: 'groupOwnerType',
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupOwnerId: 'string',
+      groupOwnerType: 'number',
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChangeGroupOwnerResponseBody extends $tea.Model {
+  newGroupOwnerId?: string;
+  newGroupOwnerType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      newGroupOwnerId: 'newGroupOwnerId',
+      newGroupOwnerType: 'newGroupOwnerType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      newGroupOwnerId: 'string',
+      newGroupOwnerType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChangeGroupOwnerResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ChangeGroupOwnerResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ChangeGroupOwnerResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ChatIdToOpenConversationIdHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -533,6 +624,7 @@ export class CreateGroupConversationRequest extends $tea.Model {
   groupAvatar?: string;
   groupName?: string;
   groupOwnerId?: string;
+  groupOwnerType?: number;
   groupTemplateId?: string;
   operatorId?: string;
   userIds?: string[];
@@ -542,6 +634,7 @@ export class CreateGroupConversationRequest extends $tea.Model {
       groupAvatar: 'groupAvatar',
       groupName: 'groupName',
       groupOwnerId: 'groupOwnerId',
+      groupOwnerType: 'groupOwnerType',
       groupTemplateId: 'groupTemplateId',
       operatorId: 'operatorId',
       userIds: 'userIds',
@@ -554,6 +647,7 @@ export class CreateGroupConversationRequest extends $tea.Model {
       groupAvatar: 'string',
       groupName: 'string',
       groupOwnerId: 'string',
+      groupOwnerType: 'number',
       groupTemplateId: 'string',
       operatorId: 'string',
       userIds: { 'type': 'array', 'itemType': 'string' },
@@ -792,6 +886,88 @@ export class CreateStoreGroupConversationResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: CreateStoreGroupConversationResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DismissGroupConversationHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DismissGroupConversationRequest extends $tea.Model {
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DismissGroupConversationResponseBody extends $tea.Model {
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DismissGroupConversationResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DismissGroupConversationResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DismissGroupConversationResponseBody,
     };
   }
 
@@ -4843,6 +5019,43 @@ export default class Client extends OpenApi {
     return $tea.cast<CardTemplateBuildActionResponse>(await this.doROARequest("CardTemplateBuildAction", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interactiveCards/templates/buildAction`, "json", req, runtime), new CardTemplateBuildActionResponse({}));
   }
 
+  async changeGroupOwner(request: ChangeGroupOwnerRequest): Promise<ChangeGroupOwnerResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ChangeGroupOwnerHeaders({ });
+    return await this.changeGroupOwnerWithOptions(request, headers, runtime);
+  }
+
+  async changeGroupOwnerWithOptions(request: ChangeGroupOwnerRequest, headers: ChangeGroupOwnerHeaders, runtime: $Util.RuntimeOptions): Promise<ChangeGroupOwnerResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.groupOwnerId)) {
+      body["groupOwnerId"] = request.groupOwnerId;
+    }
+
+    if (!Util.isUnset(request.groupOwnerType)) {
+      body["groupOwnerType"] = request.groupOwnerType;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ChangeGroupOwnerResponse>(await this.doROARequest("ChangeGroupOwner", "im_1.0", "HTTP", "PUT", "AK", `/v1.0/im/interconnections/groups/owners`, "json", req, runtime), new ChangeGroupOwnerResponse({}));
+  }
+
   async chatIdToOpenConversationId(chatId: string): Promise<ChatIdToOpenConversationIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ChatIdToOpenConversationIdHeaders({ });
@@ -4977,6 +5190,10 @@ export default class Client extends OpenApi {
       body["groupOwnerId"] = request.groupOwnerId;
     }
 
+    if (!Util.isUnset(request.groupOwnerType)) {
+      body["groupOwnerType"] = request.groupOwnerType;
+    }
+
     if (!Util.isUnset(request.groupTemplateId)) {
       body["groupTemplateId"] = request.groupTemplateId;
     }
@@ -5085,6 +5302,35 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateStoreGroupConversationResponse>(await this.doROARequest("CreateStoreGroupConversation", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/storeGroups`, "json", req, runtime), new CreateStoreGroupConversationResponse({}));
+  }
+
+  async dismissGroupConversation(request: DismissGroupConversationRequest): Promise<DismissGroupConversationResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DismissGroupConversationHeaders({ });
+    return await this.dismissGroupConversationWithOptions(request, headers, runtime);
+  }
+
+  async dismissGroupConversationWithOptions(request: DismissGroupConversationRequest, headers: DismissGroupConversationHeaders, runtime: $Util.RuntimeOptions): Promise<DismissGroupConversationResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<DismissGroupConversationResponse>(await this.doROARequest("DismissGroupConversation", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/groups/dismiss`, "json", req, runtime), new DismissGroupConversationResponse({}));
   }
 
   async getConversationUrl(request: GetConversationUrlRequest): Promise<GetConversationUrlResponse> {
