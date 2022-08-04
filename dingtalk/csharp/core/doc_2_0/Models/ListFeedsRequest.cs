@@ -8,9 +8,16 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 {
-    public class RelatedSpacesRequest : TeaModel {
+    public class ListFeedsRequest : TeaModel {
         /// <summary>
-        /// 每页最大条目数，最大值100。
+        /// 是否排除文件。
+        /// </summary>
+        [NameInMap("excludeFile")]
+        [Validation(Required=false)]
+        public bool? ExcludeFile { get; set; }
+
+        /// <summary>
+        /// 每页最大条目数，最大值50。
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
@@ -29,13 +36,6 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         [NameInMap("operatorId")]
         [Validation(Required=false)]
         public string OperatorId { get; set; }
-
-        /// <summary>
-        /// 团队id。
-        /// </summary>
-        [NameInMap("teamId")]
-        [Validation(Required=false)]
-        public string TeamId { get; set; }
 
     }
 

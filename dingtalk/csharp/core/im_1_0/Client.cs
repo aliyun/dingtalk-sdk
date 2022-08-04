@@ -236,6 +236,86 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             return TeaModel.ToObject<CardTemplateBuildActionResponse>(await DoROARequestAsync("CardTemplateBuildAction", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interactiveCards/templates/buildAction", "json", req, runtime));
         }
 
+        public ChangeGroupOwnerResponse ChangeGroupOwner(ChangeGroupOwnerRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChangeGroupOwnerHeaders headers = new ChangeGroupOwnerHeaders();
+            return ChangeGroupOwnerWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ChangeGroupOwnerResponse> ChangeGroupOwnerAsync(ChangeGroupOwnerRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChangeGroupOwnerHeaders headers = new ChangeGroupOwnerHeaders();
+            return await ChangeGroupOwnerWithOptionsAsync(request, headers, runtime);
+        }
+
+        public ChangeGroupOwnerResponse ChangeGroupOwnerWithOptions(ChangeGroupOwnerRequest request, ChangeGroupOwnerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupOwnerId))
+            {
+                body["groupOwnerId"] = request.GroupOwnerId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupOwnerType))
+            {
+                body["groupOwnerType"] = request.GroupOwnerType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<ChangeGroupOwnerResponse>(DoROARequest("ChangeGroupOwner", "im_1.0", "HTTP", "PUT", "AK", "/v1.0/im/interconnections/groups/owners", "json", req, runtime));
+        }
+
+        public async Task<ChangeGroupOwnerResponse> ChangeGroupOwnerWithOptionsAsync(ChangeGroupOwnerRequest request, ChangeGroupOwnerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupOwnerId))
+            {
+                body["groupOwnerId"] = request.GroupOwnerId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupOwnerType))
+            {
+                body["groupOwnerType"] = request.GroupOwnerType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<ChangeGroupOwnerResponse>(await DoROARequestAsync("ChangeGroupOwner", "im_1.0", "HTTP", "PUT", "AK", "/v1.0/im/interconnections/groups/owners", "json", req, runtime));
+        }
+
         public ChatIdToOpenConversationIdResponse ChatIdToOpenConversationId(string chatId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -506,6 +586,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["groupOwnerId"] = request.GroupOwnerId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupOwnerType))
+            {
+                body["groupOwnerType"] = request.GroupOwnerType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupTemplateId))
             {
                 body["groupTemplateId"] = request.GroupTemplateId;
@@ -554,6 +638,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupOwnerId))
             {
                 body["groupOwnerId"] = request.GroupOwnerId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupOwnerType))
+            {
+                body["groupOwnerType"] = request.GroupOwnerType;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupTemplateId))
             {
@@ -758,6 +846,70 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<CreateStoreGroupConversationResponse>(await DoROARequestAsync("CreateStoreGroupConversation", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interconnections/storeGroups", "json", req, runtime));
+        }
+
+        public DismissGroupConversationResponse DismissGroupConversation(DismissGroupConversationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DismissGroupConversationHeaders headers = new DismissGroupConversationHeaders();
+            return DismissGroupConversationWithOptions(request, headers, runtime);
+        }
+
+        public async Task<DismissGroupConversationResponse> DismissGroupConversationAsync(DismissGroupConversationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DismissGroupConversationHeaders headers = new DismissGroupConversationHeaders();
+            return await DismissGroupConversationWithOptionsAsync(request, headers, runtime);
+        }
+
+        public DismissGroupConversationResponse DismissGroupConversationWithOptions(DismissGroupConversationRequest request, DismissGroupConversationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<DismissGroupConversationResponse>(DoROARequest("DismissGroupConversation", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interconnections/groups/dismiss", "json", req, runtime));
+        }
+
+        public async Task<DismissGroupConversationResponse> DismissGroupConversationWithOptionsAsync(DismissGroupConversationRequest request, DismissGroupConversationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<DismissGroupConversationResponse>(await DoROARequestAsync("DismissGroupConversation", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interconnections/groups/dismiss", "json", req, runtime));
         }
 
         public GetConversationUrlResponse GetConversationUrl(GetConversationUrlRequest request)

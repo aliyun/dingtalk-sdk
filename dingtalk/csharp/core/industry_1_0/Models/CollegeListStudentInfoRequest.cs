@@ -17,7 +17,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public long? DeptId { get; set; }
 
         /// <summary>
-        /// 学生在组织状态
+        /// 人员状态
         /// </summary>
         [NameInMap("dingStudentStatus")]
         [Validation(Required=false)]

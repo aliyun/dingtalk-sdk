@@ -38,6 +38,13 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public string GroupOwnerId { get; set; }
 
         /// <summary>
+        /// 群主类型<2.钉内用户类型 3.钉外用户类型>，如果不指定的话，默认是钉钉用户类型
+        /// </summary>
+        [NameInMap("groupOwnerType")]
+        [Validation(Required=false)]
+        public int? GroupOwnerType { get; set; }
+
+        /// <summary>
         /// 群模板Id。
         /// </summary>
         [NameInMap("groupTemplateId")]

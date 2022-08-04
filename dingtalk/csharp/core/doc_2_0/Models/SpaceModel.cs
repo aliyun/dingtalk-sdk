@@ -68,6 +68,13 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         };
 
         /// <summary>
+        /// 知识库中最近编辑的三篇文档。
+        /// </summary>
+        [NameInMap("recentList")]
+        [Validation(Required=false)]
+        public List<DentryModel> RecentList { get; set; }
+
+        /// <summary>
         /// 知识库访问url。
         /// </summary>
         [NameInMap("url")]
