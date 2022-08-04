@@ -402,6 +402,152 @@ class CardTemplateBuildActionResponse(TeaModel):
         return self
 
 
+class ChangeGroupOwnerHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ChangeGroupOwnerRequest(TeaModel):
+    def __init__(
+        self,
+        group_owner_id: str = None,
+        group_owner_type: int = None,
+        open_conversation_id: str = None,
+    ):
+        # 群主id
+        self.group_owner_id = group_owner_id
+        # 群主类型<2.钉钉 3.C端>
+        self.group_owner_type = group_owner_type
+        # 群id(客联系业务系统内的群id)
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group_owner_id is not None:
+            result['groupOwnerId'] = self.group_owner_id
+        if self.group_owner_type is not None:
+            result['groupOwnerType'] = self.group_owner_type
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('groupOwnerId') is not None:
+            self.group_owner_id = m.get('groupOwnerId')
+        if m.get('groupOwnerType') is not None:
+            self.group_owner_type = m.get('groupOwnerType')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class ChangeGroupOwnerResponseBody(TeaModel):
+    def __init__(
+        self,
+        new_group_owner_id: str = None,
+        new_group_owner_type: int = None,
+    ):
+        # Id of the request
+        self.new_group_owner_id = new_group_owner_id
+        self.new_group_owner_type = new_group_owner_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.new_group_owner_id is not None:
+            result['newGroupOwnerId'] = self.new_group_owner_id
+        if self.new_group_owner_type is not None:
+            result['newGroupOwnerType'] = self.new_group_owner_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('newGroupOwnerId') is not None:
+            self.new_group_owner_id = m.get('newGroupOwnerId')
+        if m.get('newGroupOwnerType') is not None:
+            self.new_group_owner_type = m.get('newGroupOwnerType')
+        return self
+
+
+class ChangeGroupOwnerResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ChangeGroupOwnerResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ChangeGroupOwnerResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ChatIdToOpenConversationIdHeaders(TeaModel):
     def __init__(
         self,
@@ -848,6 +994,7 @@ class CreateGroupConversationRequest(TeaModel):
         group_avatar: str = None,
         group_name: str = None,
         group_owner_id: str = None,
+        group_owner_type: int = None,
         group_template_id: str = None,
         operator_id: str = None,
         user_ids: List[str] = None,
@@ -860,6 +1007,8 @@ class CreateGroupConversationRequest(TeaModel):
         self.group_name = group_name
         # 群主(钉内用户)userId。
         self.group_owner_id = group_owner_id
+        # 群主类型<2.钉内用户类型 3.钉外用户类型>，如果不指定的话，默认是钉钉用户类型
+        self.group_owner_type = group_owner_type
         # 群模板Id。
         self.group_template_id = group_template_id
         # 操作者在业务系统内的唯一标识。
@@ -884,6 +1033,8 @@ class CreateGroupConversationRequest(TeaModel):
             result['groupName'] = self.group_name
         if self.group_owner_id is not None:
             result['groupOwnerId'] = self.group_owner_id
+        if self.group_owner_type is not None:
+            result['groupOwnerType'] = self.group_owner_type
         if self.group_template_id is not None:
             result['groupTemplateId'] = self.group_template_id
         if self.operator_id is not None:
@@ -902,6 +1053,8 @@ class CreateGroupConversationRequest(TeaModel):
             self.group_name = m.get('groupName')
         if m.get('groupOwnerId') is not None:
             self.group_owner_id = m.get('groupOwnerId')
+        if m.get('groupOwnerType') is not None:
+            self.group_owner_type = m.get('groupOwnerType')
         if m.get('groupTemplateId') is not None:
             self.group_template_id = m.get('groupTemplateId')
         if m.get('operatorId') is not None:
@@ -1421,6 +1574,132 @@ class CreateStoreGroupConversationResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CreateStoreGroupConversationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DismissGroupConversationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DismissGroupConversationRequest(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+    ):
+        # 群id(客联系业务系统内的群id)
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class DismissGroupConversationResponseBody(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+    ):
+        # 群会话Id。
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class DismissGroupConversationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DismissGroupConversationResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DismissGroupConversationResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

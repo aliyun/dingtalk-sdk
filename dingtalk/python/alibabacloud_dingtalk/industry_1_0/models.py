@@ -4567,7 +4567,7 @@ class CollegeListStudentInfoRequest(TeaModel):
     ):
         # 部门id
         self.dept_id = dept_id
-        # 学生在组织状态
+        # 人员状态
         self.ding_student_status = ding_student_status
         # 当前页数
         self.page_number = page_number
@@ -4609,11 +4609,17 @@ class CollegeListStudentInfoRequest(TeaModel):
 class CollegeListStudentInfoResponseBodyStudentInfoSimpleList(TeaModel):
     def __init__(
         self,
+        ding_member_status: str = None,
+        is_active: bool = None,
         student_id: int = None,
         student_name: str = None,
         union_id: str = None,
         user_id: str = None,
     ):
+        # 人员在组织的状态
+        self.ding_member_status = ding_member_status
+        # 账号是否激活
+        self.is_active = is_active
         # 学生id
         self.student_id = student_id
         # 学生姓名
@@ -4632,6 +4638,10 @@ class CollegeListStudentInfoResponseBodyStudentInfoSimpleList(TeaModel):
             return _map
 
         result = dict()
+        if self.ding_member_status is not None:
+            result['dingMemberStatus'] = self.ding_member_status
+        if self.is_active is not None:
+            result['isActive'] = self.is_active
         if self.student_id is not None:
             result['studentId'] = self.student_id
         if self.student_name is not None:
@@ -4644,6 +4654,10 @@ class CollegeListStudentInfoResponseBodyStudentInfoSimpleList(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('dingMemberStatus') is not None:
+            self.ding_member_status = m.get('dingMemberStatus')
+        if m.get('isActive') is not None:
+            self.is_active = m.get('isActive')
         if m.get('studentId') is not None:
             self.student_id = m.get('studentId')
         if m.get('studentName') is not None:
@@ -4658,17 +4672,12 @@ class CollegeListStudentInfoResponseBodyStudentInfoSimpleList(TeaModel):
 class CollegeListStudentInfoResponseBody(TeaModel):
     def __init__(
         self,
-        ding_member_status: str = None,
-        is_active: bool = None,
         student_info_simple_list: List[CollegeListStudentInfoResponseBodyStudentInfoSimpleList] = None,
         total_count: int = None,
     ):
-        # 学生在组织状态
-        self.ding_member_status = ding_member_status
-        # 账号是否激活
-        self.is_active = is_active
         # 学生信息列表
         self.student_info_simple_list = student_info_simple_list
+        # 条目总数
         self.total_count = total_count
 
     def validate(self):
@@ -4683,10 +4692,6 @@ class CollegeListStudentInfoResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.ding_member_status is not None:
-            result['dingMemberStatus'] = self.ding_member_status
-        if self.is_active is not None:
-            result['isActive'] = self.is_active
         result['studentInfoSimpleList'] = []
         if self.student_info_simple_list is not None:
             for k in self.student_info_simple_list:
@@ -4697,10 +4702,6 @@ class CollegeListStudentInfoResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('dingMemberStatus') is not None:
-            self.ding_member_status = m.get('dingMemberStatus')
-        if m.get('isActive') is not None:
-            self.is_active = m.get('isActive')
         self.student_info_simple_list = []
         if m.get('studentInfoSimpleList') is not None:
             for k in m.get('studentInfoSimpleList'):

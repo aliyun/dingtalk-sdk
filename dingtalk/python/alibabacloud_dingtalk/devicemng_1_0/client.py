@@ -91,6 +91,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('BatchRegisterDevice', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/devices/batch', 'json', req, runtime)
         )
 
+    def connector_event_push(
+        self,
+        request: dingtalkdevicemng__1__0_models.ConnectorEventPushRequest,
+    ) -> dingtalkdevicemng__1__0_models.ConnectorEventPushResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.ConnectorEventPushHeaders()
+        return self.connector_event_push_with_options(request, headers, runtime)
+
+    async def connector_event_push_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.ConnectorEventPushRequest,
+    ) -> dingtalkdevicemng__1__0_models.ConnectorEventPushResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.ConnectorEventPushHeaders()
+        return await self.connector_event_push_with_options_async(request, headers, runtime)
+
+    def connector_event_push_with_options(
+        self,
+        request: dingtalkdevicemng__1__0_models.ConnectorEventPushRequest,
+        headers: dingtalkdevicemng__1__0_models.ConnectorEventPushHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.ConnectorEventPushResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.device_type_uuid):
+            body['deviceTypeUuid'] = request.device_type_uuid
+        if not UtilClient.is_unset(request.event_name):
+            body['eventName'] = request.event_name
+        if not UtilClient.is_unset(request.input):
+            body['input'] = request.input
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.ConnectorEventPushResponse(),
+            self.do_roarequest('ConnectorEventPush', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/connectors/events/push', 'json', req, runtime)
+        )
+
+    async def connector_event_push_with_options_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.ConnectorEventPushRequest,
+        headers: dingtalkdevicemng__1__0_models.ConnectorEventPushHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.ConnectorEventPushResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.device_type_uuid):
+            body['deviceTypeUuid'] = request.device_type_uuid
+        if not UtilClient.is_unset(request.event_name):
+            body['eventName'] = request.event_name
+        if not UtilClient.is_unset(request.input):
+            body['input'] = request.input
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.ConnectorEventPushResponse(),
+            await self.do_roarequest_async('ConnectorEventPush', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/connectors/events/push', 'json', req, runtime)
+        )
+
     def create_chat_room(
         self,
         request: dingtalkdevicemng__1__0_models.CreateChatRoomRequest,
