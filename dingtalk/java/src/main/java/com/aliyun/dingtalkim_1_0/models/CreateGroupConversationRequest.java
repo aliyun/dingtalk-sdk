@@ -20,6 +20,10 @@ public class CreateGroupConversationRequest extends TeaModel {
     @NameInMap("groupOwnerId")
     public String groupOwnerId;
 
+    // 群主类型<2.钉内用户类型 3.钉外用户类型>，如果不指定的话，默认是钉钉用户类型
+    @NameInMap("groupOwnerType")
+    public Integer groupOwnerType;
+
     // 群模板Id。
     @NameInMap("groupTemplateId")
     public String groupTemplateId;
@@ -67,6 +71,14 @@ public class CreateGroupConversationRequest extends TeaModel {
     }
     public String getGroupOwnerId() {
         return this.groupOwnerId;
+    }
+
+    public CreateGroupConversationRequest setGroupOwnerType(Integer groupOwnerType) {
+        this.groupOwnerType = groupOwnerType;
+        return this;
+    }
+    public Integer getGroupOwnerType() {
+        return this.groupOwnerType;
     }
 
     public CreateGroupConversationRequest setGroupTemplateId(String groupTemplateId) {

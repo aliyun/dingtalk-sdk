@@ -3,8 +3,12 @@ package com.aliyun.dingtalkdoc_2_0.models;
 
 import com.aliyun.tea.*;
 
-public class RelatedSpacesRequest extends TeaModel {
-    // 每页最大条目数，最大值100。
+public class ListFeedsRequest extends TeaModel {
+    // 是否排除文件。
+    @NameInMap("excludeFile")
+    public Boolean excludeFile;
+
+    // 每页最大条目数，最大值50。
     @NameInMap("maxResults")
     public Integer maxResults;
 
@@ -16,16 +20,20 @@ public class RelatedSpacesRequest extends TeaModel {
     @NameInMap("operatorId")
     public String operatorId;
 
-    // 团队id。
-    @NameInMap("teamId")
-    public String teamId;
-
-    public static RelatedSpacesRequest build(java.util.Map<String, ?> map) throws Exception {
-        RelatedSpacesRequest self = new RelatedSpacesRequest();
+    public static ListFeedsRequest build(java.util.Map<String, ?> map) throws Exception {
+        ListFeedsRequest self = new ListFeedsRequest();
         return TeaModel.build(map, self);
     }
 
-    public RelatedSpacesRequest setMaxResults(Integer maxResults) {
+    public ListFeedsRequest setExcludeFile(Boolean excludeFile) {
+        this.excludeFile = excludeFile;
+        return this;
+    }
+    public Boolean getExcludeFile() {
+        return this.excludeFile;
+    }
+
+    public ListFeedsRequest setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
         return this;
     }
@@ -33,7 +41,7 @@ public class RelatedSpacesRequest extends TeaModel {
         return this.maxResults;
     }
 
-    public RelatedSpacesRequest setNextToken(String nextToken) {
+    public ListFeedsRequest setNextToken(String nextToken) {
         this.nextToken = nextToken;
         return this;
     }
@@ -41,20 +49,12 @@ public class RelatedSpacesRequest extends TeaModel {
         return this.nextToken;
     }
 
-    public RelatedSpacesRequest setOperatorId(String operatorId) {
+    public ListFeedsRequest setOperatorId(String operatorId) {
         this.operatorId = operatorId;
         return this;
     }
     public String getOperatorId() {
         return this.operatorId;
-    }
-
-    public RelatedSpacesRequest setTeamId(String teamId) {
-        this.teamId = teamId;
-        return this;
-    }
-    public String getTeamId() {
-        return this.teamId;
     }
 
 }

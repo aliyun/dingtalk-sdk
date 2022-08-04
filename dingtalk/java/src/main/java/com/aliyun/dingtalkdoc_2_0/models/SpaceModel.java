@@ -28,6 +28,10 @@ public class SpaceModel extends TeaModel {
     @NameInMap("owner")
     public SpaceModelOwner owner;
 
+    // 知识库中最近编辑的三篇文档。
+    @NameInMap("recentList")
+    public java.util.List<DentryModel> recentList;
+
     // 知识库访问url。
     @NameInMap("url")
     public String url;
@@ -87,6 +91,14 @@ public class SpaceModel extends TeaModel {
     }
     public SpaceModelOwner getOwner() {
         return this.owner;
+    }
+
+    public SpaceModel setRecentList(java.util.List<DentryModel> recentList) {
+        this.recentList = recentList;
+        return this;
+    }
+    public java.util.List<DentryModel> getRecentList() {
+        return this.recentList;
     }
 
     public SpaceModel setUrl(String url) {

@@ -8,7 +8,7 @@ public class CollegeListStudentInfoRequest extends TeaModel {
     @NameInMap("deptId")
     public Long deptId;
 
-    // 学生在组织状态
+    // 人员状态
     @NameInMap("dingStudentStatus")
     public String dingStudentStatus;
 

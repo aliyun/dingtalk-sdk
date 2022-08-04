@@ -54,6 +54,43 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("BatchRegisterDevice", "devicemng_1.0", "HTTP", "POST", "AK", "/v1.0/devicemng/devices/batch", "json", req, runtime), new BatchRegisterDeviceResponse());
     }
 
+    public ConnectorEventPushResponse connectorEventPush(ConnectorEventPushRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        ConnectorEventPushHeaders headers = new ConnectorEventPushHeaders();
+        return this.connectorEventPushWithOptions(request, headers, runtime);
+    }
+
+    public ConnectorEventPushResponse connectorEventPushWithOptions(ConnectorEventPushRequest request, ConnectorEventPushHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceTypeUuid)) {
+            body.put("deviceTypeUuid", request.deviceTypeUuid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.eventName)) {
+            body.put("eventName", request.eventName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.input)) {
+            body.put("input", request.input);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("ConnectorEventPush", "devicemng_1.0", "HTTP", "POST", "AK", "/v1.0/devicemng/connectors/events/push", "json", req, runtime), new ConnectorEventPushResponse());
+    }
+
     public CreateChatRoomResponse createChatRoom(CreateChatRoomRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         CreateChatRoomHeaders headers = new CreateChatRoomHeaders();
