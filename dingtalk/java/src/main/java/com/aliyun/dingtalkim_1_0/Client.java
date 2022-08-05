@@ -731,7 +731,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("GroupCapacityOrderConfirm", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/groups/capacities/orders/confirm", "none", req, runtime), new GroupCapacityOrderConfirmResponse());
+        return TeaModel.toModel(this.doROARequest("GroupCapacityOrderConfirm", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/groups/capacities/orders/confirm", "json", req, runtime), new GroupCapacityOrderConfirmResponse());
     }
 
     public GroupCapacityOrderPlaceResponse groupCapacityOrderPlace(GroupCapacityOrderPlaceRequest request) throws Exception {

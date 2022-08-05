@@ -81,6 +81,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public QueryAnhmdStatisticalDataResponse queryAnhmdStatisticalDataWithOptions(QueryAnhmdStatisticalDataRequest request, QueryAnhmdStatisticalDataHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            query.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.statDate)) {
             query.put("statDate", request.statDate);
         }

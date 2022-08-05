@@ -82,6 +82,10 @@ public class SearchResponseBody extends TeaModel {
         @NameInMap("spaceId")
         public String spaceId;
 
+        // 文档缩略图url。
+        @NameInMap("thumbnailUrl")
+        public String thumbnailUrl;
+
         // 节点访问url。
         @NameInMap("url")
         public String url;
@@ -187,6 +191,14 @@ public class SearchResponseBody extends TeaModel {
             return this.spaceId;
         }
 
+        public SearchResponseBodyDentryResultItems setThumbnailUrl(String thumbnailUrl) {
+            this.thumbnailUrl = thumbnailUrl;
+            return this;
+        }
+        public String getThumbnailUrl() {
+            return this.thumbnailUrl;
+        }
+
         public SearchResponseBodyDentryResultItems setUrl(String url) {
             this.url = url;
             return this;
@@ -241,7 +253,75 @@ public class SearchResponseBody extends TeaModel {
 
     }
 
+    public static class SearchResponseBodySpaceResultItemsIconVO extends TeaModel {
+        // 图标信息。
+        @NameInMap("icon")
+        public String icon;
+
+        // 知识库图标的类型。
+        @NameInMap("type")
+        public String type;
+
+        public static SearchResponseBodySpaceResultItemsIconVO build(java.util.Map<String, ?> map) throws Exception {
+            SearchResponseBodySpaceResultItemsIconVO self = new SearchResponseBodySpaceResultItemsIconVO();
+            return TeaModel.build(map, self);
+        }
+
+        public SearchResponseBodySpaceResultItemsIconVO setIcon(String icon) {
+            this.icon = icon;
+            return this;
+        }
+        public String getIcon() {
+            return this.icon;
+        }
+
+        public SearchResponseBodySpaceResultItemsIconVO setType(String type) {
+            this.type = type;
+            return this;
+        }
+        public String getType() {
+            return this.type;
+        }
+
+    }
+
+    public static class SearchResponseBodySpaceResultItemsUserLastOperation extends TeaModel {
+        // 操作人名称。
+        @NameInMap("name")
+        public String name;
+
+        // 操作的时间戳（ms）。
+        @NameInMap("time")
+        public Long time;
+
+        public static SearchResponseBodySpaceResultItemsUserLastOperation build(java.util.Map<String, ?> map) throws Exception {
+            SearchResponseBodySpaceResultItemsUserLastOperation self = new SearchResponseBodySpaceResultItemsUserLastOperation();
+            return TeaModel.build(map, self);
+        }
+
+        public SearchResponseBodySpaceResultItemsUserLastOperation setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public SearchResponseBodySpaceResultItemsUserLastOperation setTime(Long time) {
+            this.time = time;
+            return this;
+        }
+        public Long getTime() {
+            return this.time;
+        }
+
+    }
+
     public static class SearchResponseBodySpaceResultItems extends TeaModel {
+        // 知识库图标。
+        @NameInMap("iconVO")
+        public SearchResponseBodySpaceResultItemsIconVO iconVO;
+
         // 知识库名称，如果命中了关键词，会带有高亮。
         @NameInMap("name")
         public String name;
@@ -258,9 +338,21 @@ public class SearchResponseBody extends TeaModel {
         @NameInMap("url")
         public String url;
 
+        // 用户最后一次操作信息。
+        @NameInMap("userLastOperation")
+        public SearchResponseBodySpaceResultItemsUserLastOperation userLastOperation;
+
         public static SearchResponseBodySpaceResultItems build(java.util.Map<String, ?> map) throws Exception {
             SearchResponseBodySpaceResultItems self = new SearchResponseBodySpaceResultItems();
             return TeaModel.build(map, self);
+        }
+
+        public SearchResponseBodySpaceResultItems setIconVO(SearchResponseBodySpaceResultItemsIconVO iconVO) {
+            this.iconVO = iconVO;
+            return this;
+        }
+        public SearchResponseBodySpaceResultItemsIconVO getIconVO() {
+            return this.iconVO;
         }
 
         public SearchResponseBodySpaceResultItems setName(String name) {
@@ -293,6 +385,14 @@ public class SearchResponseBody extends TeaModel {
         }
         public String getUrl() {
             return this.url;
+        }
+
+        public SearchResponseBodySpaceResultItems setUserLastOperation(SearchResponseBodySpaceResultItemsUserLastOperation userLastOperation) {
+            this.userLastOperation = userLastOperation;
+            return this;
+        }
+        public SearchResponseBodySpaceResultItemsUserLastOperation getUserLastOperation() {
+            return this.userLastOperation;
         }
 
     }

@@ -57,6 +57,38 @@ public class SearchRequest extends TeaModel {
         return this.spaceRequest;
     }
 
+    public static class SearchRequestDentryRequestVisitTimeRange extends TeaModel {
+        // 结束时间戳（ms）。
+        @NameInMap("end")
+        public Long end;
+
+        // 起始时间戳（ms）。
+        @NameInMap("start")
+        public Long start;
+
+        public static SearchRequestDentryRequestVisitTimeRange build(java.util.Map<String, ?> map) throws Exception {
+            SearchRequestDentryRequestVisitTimeRange self = new SearchRequestDentryRequestVisitTimeRange();
+            return TeaModel.build(map, self);
+        }
+
+        public SearchRequestDentryRequestVisitTimeRange setEnd(Long end) {
+            this.end = end;
+            return this;
+        }
+        public Long getEnd() {
+            return this.end;
+        }
+
+        public SearchRequestDentryRequestVisitTimeRange setStart(Long start) {
+            this.start = start;
+            return this;
+        }
+        public Long getStart() {
+            return this.start;
+        }
+
+    }
+
     public static class SearchRequestDentryRequest extends TeaModel {
         // 每页最大条目数，最大值50。
         @NameInMap("maxResults")
@@ -66,6 +98,10 @@ public class SearchRequest extends TeaModel {
         @NameInMap("nextToken")
         public String nextToken;
 
+        // 搜索的字段。支持的有：1-标题和内容；2-标题、内容和评论；3-标题和评论；4-标题；5-内容；6-评论。
+        @NameInMap("searchField")
+        public Integer searchField;
+
         // 搜索指定的文件类型。支持的类型有：1-文档；2-表格；3-脑图；4-演示；5-白板。
         @NameInMap("searchFileType")
         public Integer searchFileType;
@@ -73,6 +109,14 @@ public class SearchRequest extends TeaModel {
         // 知识库id，在指定的知识库中搜索。
         @NameInMap("spaceId")
         public String spaceId;
+
+        // 文档内容命中了搜索关键词的时候，需要返回的文档摘要长度。
+        @NameInMap("summaryLength")
+        public Integer summaryLength;
+
+        // 文档访问时间的范围。
+        @NameInMap("visitTimeRange")
+        public SearchRequestDentryRequestVisitTimeRange visitTimeRange;
 
         public static SearchRequestDentryRequest build(java.util.Map<String, ?> map) throws Exception {
             SearchRequestDentryRequest self = new SearchRequestDentryRequest();
@@ -95,6 +139,14 @@ public class SearchRequest extends TeaModel {
             return this.nextToken;
         }
 
+        public SearchRequestDentryRequest setSearchField(Integer searchField) {
+            this.searchField = searchField;
+            return this;
+        }
+        public Integer getSearchField() {
+            return this.searchField;
+        }
+
         public SearchRequestDentryRequest setSearchFileType(Integer searchFileType) {
             this.searchFileType = searchFileType;
             return this;
@@ -109,6 +161,22 @@ public class SearchRequest extends TeaModel {
         }
         public String getSpaceId() {
             return this.spaceId;
+        }
+
+        public SearchRequestDentryRequest setSummaryLength(Integer summaryLength) {
+            this.summaryLength = summaryLength;
+            return this;
+        }
+        public Integer getSummaryLength() {
+            return this.summaryLength;
+        }
+
+        public SearchRequestDentryRequest setVisitTimeRange(SearchRequestDentryRequestVisitTimeRange visitTimeRange) {
+            this.visitTimeRange = visitTimeRange;
+            return this;
+        }
+        public SearchRequestDentryRequestVisitTimeRange getVisitTimeRange() {
+            return this.visitTimeRange;
         }
 
     }

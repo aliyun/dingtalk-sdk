@@ -4,10 +4,6 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeListDeptManagerResponseBody extends TeaModel {
-    // 账号是否激活
-    @NameInMap("isActive")
-    public Boolean isActive;
-
     // 负责人信息列表
     @NameInMap("managerInfoSimpleList")
     public java.util.List<CollegeListDeptManagerResponseBodyManagerInfoSimpleList> managerInfoSimpleList;
@@ -19,14 +15,6 @@ public class CollegeListDeptManagerResponseBody extends TeaModel {
     public static CollegeListDeptManagerResponseBody build(java.util.Map<String, ?> map) throws Exception {
         CollegeListDeptManagerResponseBody self = new CollegeListDeptManagerResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public CollegeListDeptManagerResponseBody setIsActive(Boolean isActive) {
-        this.isActive = isActive;
-        return this;
-    }
-    public Boolean getIsActive() {
-        return this.isActive;
     }
 
     public CollegeListDeptManagerResponseBody setManagerInfoSimpleList(java.util.List<CollegeListDeptManagerResponseBodyManagerInfoSimpleList> managerInfoSimpleList) {
@@ -46,6 +34,10 @@ public class CollegeListDeptManagerResponseBody extends TeaModel {
     }
 
     public static class CollegeListDeptManagerResponseBodyManagerInfoSimpleList extends TeaModel {
+        // 账号是否激活
+        @NameInMap("isActive")
+        public Boolean isActive;
+
         // 负责人姓名
         @NameInMap("name")
         public String name;
@@ -57,6 +49,14 @@ public class CollegeListDeptManagerResponseBody extends TeaModel {
         public static CollegeListDeptManagerResponseBodyManagerInfoSimpleList build(java.util.Map<String, ?> map) throws Exception {
             CollegeListDeptManagerResponseBodyManagerInfoSimpleList self = new CollegeListDeptManagerResponseBodyManagerInfoSimpleList();
             return TeaModel.build(map, self);
+        }
+
+        public CollegeListDeptManagerResponseBodyManagerInfoSimpleList setIsActive(Boolean isActive) {
+            this.isActive = isActive;
+            return this;
+        }
+        public Boolean getIsActive() {
+            return this.isActive;
         }
 
         public CollegeListDeptManagerResponseBodyManagerInfoSimpleList setName(String name) {
