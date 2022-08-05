@@ -3888,25 +3888,70 @@ class SearchHeaders(TeaModel):
         return self
 
 
+class SearchRequestDentryRequestVisitTimeRange(TeaModel):
+    def __init__(
+        self,
+        end: int = None,
+        start: int = None,
+    ):
+        # 结束时间戳（ms）。
+        self.end = end
+        # 起始时间戳（ms）。
+        self.start = start
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end is not None:
+            result['end'] = self.end
+        if self.start is not None:
+            result['start'] = self.start
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('end') is not None:
+            self.end = m.get('end')
+        if m.get('start') is not None:
+            self.start = m.get('start')
+        return self
+
+
 class SearchRequestDentryRequest(TeaModel):
     def __init__(
         self,
         max_results: int = None,
         next_token: str = None,
+        search_field: int = None,
         search_file_type: int = None,
         space_id: str = None,
+        summary_length: int = None,
+        visit_time_range: SearchRequestDentryRequestVisitTimeRange = None,
     ):
         # 每页最大条目数，最大值50。
         self.max_results = max_results
         # 分页游标。如果是首次调用，可不传；如果非首次调用，该参数传上次调用时返回的nextToken。
         self.next_token = next_token
+        # 搜索的字段。支持的有：1-标题和内容；2-标题、内容和评论；3-标题和评论；4-标题；5-内容；6-评论。
+        self.search_field = search_field
         # 搜索指定的文件类型。支持的类型有：1-文档；2-表格；3-脑图；4-演示；5-白板。
         self.search_file_type = search_file_type
         # 知识库id，在指定的知识库中搜索。
         self.space_id = space_id
+        # 文档内容命中了搜索关键词的时候，需要返回的文档摘要长度。
+        self.summary_length = summary_length
+        # 文档访问时间的范围。
+        self.visit_time_range = visit_time_range
 
     def validate(self):
-        pass
+        if self.visit_time_range:
+            self.visit_time_range.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -3918,10 +3963,16 @@ class SearchRequestDentryRequest(TeaModel):
             result['maxResults'] = self.max_results
         if self.next_token is not None:
             result['nextToken'] = self.next_token
+        if self.search_field is not None:
+            result['searchField'] = self.search_field
         if self.search_file_type is not None:
             result['searchFileType'] = self.search_file_type
         if self.space_id is not None:
             result['spaceId'] = self.space_id
+        if self.summary_length is not None:
+            result['summaryLength'] = self.summary_length
+        if self.visit_time_range is not None:
+            result['visitTimeRange'] = self.visit_time_range.to_map()
         return result
 
     def from_map(self, m: dict = None):
@@ -3930,10 +3981,17 @@ class SearchRequestDentryRequest(TeaModel):
             self.max_results = m.get('maxResults')
         if m.get('nextToken') is not None:
             self.next_token = m.get('nextToken')
+        if m.get('searchField') is not None:
+            self.search_field = m.get('searchField')
         if m.get('searchFileType') is not None:
             self.search_file_type = m.get('searchFileType')
         if m.get('spaceId') is not None:
             self.space_id = m.get('spaceId')
+        if m.get('summaryLength') is not None:
+            self.summary_length = m.get('summaryLength')
+        if m.get('visitTimeRange') is not None:
+            temp_model = SearchRequestDentryRequestVisitTimeRange()
+            self.visit_time_range = temp_model.from_map(m['visitTimeRange'])
         return self
 
 
@@ -4041,6 +4099,7 @@ class SearchResponseBodyDentryResultItems(TeaModel):
         path: str = None,
         search_file_type: int = None,
         space_id: str = None,
+        thumbnail_url: str = None,
         url: str = None,
     ):
         # 如果内容命中了关键词，会返回该部分内容，带高亮。
@@ -4067,6 +4126,8 @@ class SearchResponseBodyDentryResultItems(TeaModel):
         self.search_file_type = search_file_type
         # 节点所属的知识库id。
         self.space_id = space_id
+        # 文档缩略图url。
+        self.thumbnail_url = thumbnail_url
         # 节点访问url。
         self.url = url
 
@@ -4106,6 +4167,8 @@ class SearchResponseBodyDentryResultItems(TeaModel):
             result['searchFileType'] = self.search_file_type
         if self.space_id is not None:
             result['spaceId'] = self.space_id
+        if self.thumbnail_url is not None:
+            result['thumbnailUrl'] = self.thumbnail_url
         if self.url is not None:
             result['url'] = self.url
         return result
@@ -4138,6 +4201,8 @@ class SearchResponseBodyDentryResultItems(TeaModel):
             self.search_file_type = m.get('searchFileType')
         if m.get('spaceId') is not None:
             self.space_id = m.get('spaceId')
+        if m.get('thumbnailUrl') is not None:
+            self.thumbnail_url = m.get('thumbnailUrl')
         if m.get('url') is not None:
             self.url = m.get('url')
         return self
@@ -4193,22 +4258,51 @@ class SearchResponseBodyDentryResult(TeaModel):
         return self
 
 
-class SearchResponseBodySpaceResultItems(TeaModel):
+class SearchResponseBodySpaceResultItemsIconVO(TeaModel):
+    def __init__(
+        self,
+        icon: str = None,
+        type: str = None,
+    ):
+        # 图标信息。
+        self.icon = icon
+        # 知识库图标的类型。
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class SearchResponseBodySpaceResultItemsUserLastOperation(TeaModel):
     def __init__(
         self,
         name: str = None,
-        origin_name: str = None,
-        space_id: str = None,
-        url: str = None,
+        time: int = None,
     ):
-        # 知识库名称，如果命中了关键词，会带有高亮。
+        # 操作人名称。
         self.name = name
-        # 知识库原始名称，不带高亮。
-        self.origin_name = origin_name
-        # 知识库id。
-        self.space_id = space_id
-        # 知识库访问url。
-        self.url = url
+        # 操作的时间戳（ms）。
+        self.time = time
 
     def validate(self):
         pass
@@ -4221,16 +4315,73 @@ class SearchResponseBodySpaceResultItems(TeaModel):
         result = dict()
         if self.name is not None:
             result['name'] = self.name
+        if self.time is not None:
+            result['time'] = self.time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('time') is not None:
+            self.time = m.get('time')
+        return self
+
+
+class SearchResponseBodySpaceResultItems(TeaModel):
+    def __init__(
+        self,
+        icon_vo: SearchResponseBodySpaceResultItemsIconVO = None,
+        name: str = None,
+        origin_name: str = None,
+        space_id: str = None,
+        url: str = None,
+        user_last_operation: SearchResponseBodySpaceResultItemsUserLastOperation = None,
+    ):
+        # 知识库图标。
+        self.icon_vo = icon_vo
+        # 知识库名称，如果命中了关键词，会带有高亮。
+        self.name = name
+        # 知识库原始名称，不带高亮。
+        self.origin_name = origin_name
+        # 知识库id。
+        self.space_id = space_id
+        # 知识库访问url。
+        self.url = url
+        # 用户最后一次操作信息。
+        self.user_last_operation = user_last_operation
+
+    def validate(self):
+        if self.icon_vo:
+            self.icon_vo.validate()
+        if self.user_last_operation:
+            self.user_last_operation.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.icon_vo is not None:
+            result['iconVO'] = self.icon_vo.to_map()
+        if self.name is not None:
+            result['name'] = self.name
         if self.origin_name is not None:
             result['originName'] = self.origin_name
         if self.space_id is not None:
             result['spaceId'] = self.space_id
         if self.url is not None:
             result['url'] = self.url
+        if self.user_last_operation is not None:
+            result['userLastOperation'] = self.user_last_operation.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('iconVO') is not None:
+            temp_model = SearchResponseBodySpaceResultItemsIconVO()
+            self.icon_vo = temp_model.from_map(m['iconVO'])
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('originName') is not None:
@@ -4239,6 +4390,9 @@ class SearchResponseBodySpaceResultItems(TeaModel):
             self.space_id = m.get('spaceId')
         if m.get('url') is not None:
             self.url = m.get('url')
+        if m.get('userLastOperation') is not None:
+            temp_model = SearchResponseBodySpaceResultItemsUserLastOperation()
+            self.user_last_operation = temp_model.from_map(m['userLastOperation'])
         return self
 
 

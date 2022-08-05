@@ -157,6 +157,10 @@ class Client(OpenApiClient):
     ) -> dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataResponse:
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.stat_date):
             query['statDate'] = request.stat_date
         real_headers = {}
@@ -181,6 +185,10 @@ class Client(OpenApiClient):
     ) -> dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataResponse:
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.stat_date):
             query['statDate'] = request.stat_date
         real_headers = {}

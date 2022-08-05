@@ -1324,7 +1324,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GroupCapacityOrderConfirmResponse(),
-            self.do_roarequest('GroupCapacityOrderConfirm', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/groups/capacities/orders/confirm', 'none', req, runtime)
+            self.do_roarequest('GroupCapacityOrderConfirm', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/groups/capacities/orders/confirm', 'json', req, runtime)
         )
 
     async def group_capacity_order_confirm_with_options_async(
@@ -1350,7 +1350,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GroupCapacityOrderConfirmResponse(),
-            await self.do_roarequest_async('GroupCapacityOrderConfirm', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/groups/capacities/orders/confirm', 'none', req, runtime)
+            await self.do_roarequest_async('GroupCapacityOrderConfirm', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/groups/capacities/orders/confirm', 'json', req, runtime)
         )
 
     def group_capacity_order_place(

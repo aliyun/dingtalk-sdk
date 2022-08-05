@@ -9766,6 +9766,7 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO(TeaModel):
         general_invoice_detail_volist: List[UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList] = None,
         invoice_code: str = None,
         invoice_no: str = None,
+        invoice_status: str = None,
         invoice_type: str = None,
         machine_code: str = None,
         oil_flag: str = None,
@@ -9786,7 +9787,6 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO(TeaModel):
         seller_name: str = None,
         seller_tax_no: str = None,
         seller_tel: str = None,
-        status: str = None,
         supply_sign: str = None,
         tax_amount: str = None,
         used_vehicle_sale_detail_volist: List[UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList] = None,
@@ -9819,6 +9819,8 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO(TeaModel):
         self.invoice_code = invoice_code
         # 发票号码
         self.invoice_no = invoice_no
+        # 发票状态
+        self.invoice_status = invoice_status
         # 发票类型
         self.invoice_type = invoice_type
         # 机器码
@@ -9858,8 +9860,6 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO(TeaModel):
         self.seller_tax_no = seller_tax_no
         # 销方电话
         self.seller_tel = seller_tel
-        # 发票状态
-        self.status = status
         # 代开发票标识 1-自开，2-代开
         self.supply_sign = supply_sign
         # 税额
@@ -9923,6 +9923,8 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO(TeaModel):
             result['invoiceCode'] = self.invoice_code
         if self.invoice_no is not None:
             result['invoiceNo'] = self.invoice_no
+        if self.invoice_status is not None:
+            result['invoiceStatus'] = self.invoice_status
         if self.invoice_type is not None:
             result['invoiceType'] = self.invoice_type
         if self.machine_code is not None:
@@ -9965,8 +9967,6 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO(TeaModel):
             result['sellerTaxNo'] = self.seller_tax_no
         if self.seller_tel is not None:
             result['sellerTel'] = self.seller_tel
-        if self.status is not None:
-            result['status'] = self.status
         if self.supply_sign is not None:
             result['supplySign'] = self.supply_sign
         if self.tax_amount is not None:
@@ -10016,6 +10016,8 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO(TeaModel):
             self.invoice_code = m.get('invoiceCode')
         if m.get('invoiceNo') is not None:
             self.invoice_no = m.get('invoiceNo')
+        if m.get('invoiceStatus') is not None:
+            self.invoice_status = m.get('invoiceStatus')
         if m.get('invoiceType') is not None:
             self.invoice_type = m.get('invoiceType')
         if m.get('machineCode') is not None:
@@ -10059,8 +10061,6 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO(TeaModel):
             self.seller_tax_no = m.get('sellerTaxNo')
         if m.get('sellerTel') is not None:
             self.seller_tel = m.get('sellerTel')
-        if m.get('status') is not None:
-            self.status = m.get('status')
         if m.get('supplySign') is not None:
             self.supply_sign = m.get('supplySign')
         if m.get('taxAmount') is not None:

@@ -23,6 +23,82 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def add_contact_member_to_group(
+        self,
+        request: dingtalkservice_group__1__0_models.AddContactMemberToGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.AddContactMemberToGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.AddContactMemberToGroupHeaders()
+        return self.add_contact_member_to_group_with_options(request, headers, runtime)
+
+    async def add_contact_member_to_group_async(
+        self,
+        request: dingtalkservice_group__1__0_models.AddContactMemberToGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.AddContactMemberToGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.AddContactMemberToGroupHeaders()
+        return await self.add_contact_member_to_group_with_options_async(request, headers, runtime)
+
+    def add_contact_member_to_group_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.AddContactMemberToGroupRequest,
+        headers: dingtalkservice_group__1__0_models.AddContactMemberToGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.AddContactMemberToGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.member_union_id):
+            body['memberUnionId'] = request.member_union_id
+        if not UtilClient.is_unset(request.member_user_id):
+            body['memberUserId'] = request.member_user_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.AddContactMemberToGroupResponse(),
+            self.do_roarequest('AddContactMemberToGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/contacts', 'json', req, runtime)
+        )
+
+    async def add_contact_member_to_group_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.AddContactMemberToGroupRequest,
+        headers: dingtalkservice_group__1__0_models.AddContactMemberToGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.AddContactMemberToGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.member_union_id):
+            body['memberUnionId'] = request.member_union_id
+        if not UtilClient.is_unset(request.member_user_id):
+            body['memberUserId'] = request.member_user_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.AddContactMemberToGroupResponse(),
+            await self.do_roarequest_async('AddContactMemberToGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/contacts', 'json', req, runtime)
+        )
+
     def add_knowledge(
         self,
         request: dingtalkservice_group__1__0_models.AddKnowledgeRequest,
@@ -2083,6 +2159,86 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets', 'json', req, runtime)
         )
 
+    def delete_group_members_from_group(
+        self,
+        request: dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupHeaders()
+        return self.delete_group_members_from_group_with_options(request, headers, runtime)
+
+    async def delete_group_members_from_group_async(
+        self,
+        request: dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupHeaders()
+        return await self.delete_group_members_from_group_with_options_async(request, headers, runtime)
+
+    def delete_group_members_from_group_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupRequest,
+        headers: dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.delete_group_type):
+            body['deleteGroupType'] = request.delete_group_type
+        if not UtilClient.is_unset(request.member_union_id):
+            body['memberUnionId'] = request.member_union_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_group_set_id):
+            body['openGroupSetId'] = request.open_group_set_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupResponse(),
+            self.do_roarequest('DeleteGroupMembersFromGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/members/remove', 'json', req, runtime)
+        )
+
+    async def delete_group_members_from_group_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupRequest,
+        headers: dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.delete_group_type):
+            body['deleteGroupType'] = request.delete_group_type
+        if not UtilClient.is_unset(request.member_union_id):
+            body['memberUnionId'] = request.member_union_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_group_set_id):
+            body['openGroupSetId'] = request.open_group_set_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupResponse(),
+            await self.do_roarequest_async('DeleteGroupMembersFromGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/members/remove', 'json', req, runtime)
+        )
+
     def delete_instance(
         self,
         request: dingtalkservice_group__1__0_models.DeleteInstanceRequest,
@@ -3997,6 +4153,74 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QueueNotifyResponse(),
             await self.do_roarequest_async('QueueNotify', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/dts', 'json', req, runtime)
+        )
+
+    def remove_contact_from_org(
+        self,
+        request: dingtalkservice_group__1__0_models.RemoveContactFromOrgRequest,
+    ) -> dingtalkservice_group__1__0_models.RemoveContactFromOrgResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.RemoveContactFromOrgHeaders()
+        return self.remove_contact_from_org_with_options(request, headers, runtime)
+
+    async def remove_contact_from_org_async(
+        self,
+        request: dingtalkservice_group__1__0_models.RemoveContactFromOrgRequest,
+    ) -> dingtalkservice_group__1__0_models.RemoveContactFromOrgResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.RemoveContactFromOrgHeaders()
+        return await self.remove_contact_from_org_with_options_async(request, headers, runtime)
+
+    def remove_contact_from_org_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.RemoveContactFromOrgRequest,
+        headers: dingtalkservice_group__1__0_models.RemoveContactFromOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.RemoveContactFromOrgResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.contact_union_id):
+            body['contactUnionId'] = request.contact_union_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.RemoveContactFromOrgResponse(),
+            self.do_roarequest('RemoveContactFromOrg', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/organizations/contacts/remove', 'json', req, runtime)
+        )
+
+    async def remove_contact_from_org_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.RemoveContactFromOrgRequest,
+        headers: dingtalkservice_group__1__0_models.RemoveContactFromOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.RemoveContactFromOrgResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.contact_union_id):
+            body['contactUnionId'] = request.contact_union_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.RemoveContactFromOrgResponse(),
+            await self.do_roarequest_async('RemoveContactFromOrg', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/organizations/contacts/remove', 'json', req, runtime)
         )
 
     def report_customer_detail(

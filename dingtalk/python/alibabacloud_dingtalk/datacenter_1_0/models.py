@@ -334,8 +334,12 @@ class QueryAnhmdStatisticalDataHeaders(TeaModel):
 class QueryAnhmdStatisticalDataRequest(TeaModel):
     def __init__(
         self,
+        page_number: int = None,
+        page_size: int = None,
         stat_date: str = None,
     ):
+        self.page_number = page_number
+        self.page_size = page_size
         # statDate
         self.stat_date = stat_date
 
@@ -348,12 +352,20 @@ class QueryAnhmdStatisticalDataRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
         if self.stat_date is not None:
             result['statDate'] = self.stat_date
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
         if m.get('statDate') is not None:
             self.stat_date = m.get('statDate')
         return self

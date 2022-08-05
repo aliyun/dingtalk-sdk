@@ -4405,9 +4405,12 @@ class CollegeListDeptManagerRequest(TeaModel):
 class CollegeListDeptManagerResponseBodyManagerInfoSimpleList(TeaModel):
     def __init__(
         self,
+        is_active: bool = None,
         name: str = None,
         user_id: str = None,
     ):
+        # 账号是否激活
+        self.is_active = is_active
         # 负责人姓名
         self.name = name
         # userId
@@ -4422,6 +4425,8 @@ class CollegeListDeptManagerResponseBodyManagerInfoSimpleList(TeaModel):
             return _map
 
         result = dict()
+        if self.is_active is not None:
+            result['isActive'] = self.is_active
         if self.name is not None:
             result['name'] = self.name
         if self.user_id is not None:
@@ -4430,6 +4435,8 @@ class CollegeListDeptManagerResponseBodyManagerInfoSimpleList(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('isActive') is not None:
+            self.is_active = m.get('isActive')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('userId') is not None:
@@ -4440,12 +4447,9 @@ class CollegeListDeptManagerResponseBodyManagerInfoSimpleList(TeaModel):
 class CollegeListDeptManagerResponseBody(TeaModel):
     def __init__(
         self,
-        is_active: bool = None,
         manager_info_simple_list: List[CollegeListDeptManagerResponseBodyManagerInfoSimpleList] = None,
         total_count: int = None,
     ):
-        # 账号是否激活
-        self.is_active = is_active
         # 负责人信息列表
         self.manager_info_simple_list = manager_info_simple_list
         # 数据总条目数
@@ -4463,8 +4467,6 @@ class CollegeListDeptManagerResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.is_active is not None:
-            result['isActive'] = self.is_active
         result['managerInfoSimpleList'] = []
         if self.manager_info_simple_list is not None:
             for k in self.manager_info_simple_list:
@@ -4475,8 +4477,6 @@ class CollegeListDeptManagerResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('isActive') is not None:
-            self.is_active = m.get('isActive')
         self.manager_info_simple_list = []
         if m.get('managerInfoSimpleList') is not None:
             for k in m.get('managerInfoSimpleList'):
