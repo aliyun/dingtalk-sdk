@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class managerInfoSimpleList extends Model
 {
     /**
+     * @description 账号是否激活
+     *
+     * @var bool
+     */
+    public $isActive;
+
+    /**
      * @description 负责人姓名
      *
      * @var string
@@ -22,8 +29,9 @@ class managerInfoSimpleList extends Model
      */
     public $userId;
     protected $_name = [
-        'name'   => 'name',
-        'userId' => 'userId',
+        'isActive' => 'isActive',
+        'name'     => 'name',
+        'userId'   => 'userId',
     ];
 
     public function validate()
@@ -33,6 +41,9 @@ class managerInfoSimpleList extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->isActive) {
+            $res['isActive'] = $this->isActive;
+        }
         if (null !== $this->name) {
             $res['name'] = $this->name;
         }
@@ -51,6 +62,9 @@ class managerInfoSimpleList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['isActive'])) {
+            $model->isActive = $map['isActive'];
+        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }

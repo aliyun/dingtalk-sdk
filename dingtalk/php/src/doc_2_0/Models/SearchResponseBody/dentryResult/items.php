@@ -94,6 +94,13 @@ class items extends Model
     public $spaceId;
 
     /**
+     * @description 文档缩略图url。
+     *
+     * @var string
+     */
+    public $thumbnailUrl;
+
+    /**
      * @description 节点访问url。
      *
      * @var string
@@ -112,6 +119,7 @@ class items extends Model
         'path'           => 'path',
         'searchFileType' => 'searchFileType',
         'spaceId'        => 'spaceId',
+        'thumbnailUrl'   => 'thumbnailUrl',
         'url'            => 'url',
     ];
 
@@ -157,6 +165,9 @@ class items extends Model
         }
         if (null !== $this->spaceId) {
             $res['spaceId'] = $this->spaceId;
+        }
+        if (null !== $this->thumbnailUrl) {
+            $res['thumbnailUrl'] = $this->thumbnailUrl;
         }
         if (null !== $this->url) {
             $res['url'] = $this->url;
@@ -208,6 +219,9 @@ class items extends Model
         }
         if (isset($map['spaceId'])) {
             $model->spaceId = $map['spaceId'];
+        }
+        if (isset($map['thumbnailUrl'])) {
+            $model->thumbnailUrl = $map['thumbnailUrl'];
         }
         if (isset($map['url'])) {
             $model->url = $map['url'];

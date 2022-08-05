@@ -10,13 +10,6 @@ use AlibabaCloud\Tea\Model;
 class CollegeListDeptManagerResponseBody extends Model
 {
     /**
-     * @description 账号是否激活
-     *
-     * @var bool
-     */
-    public $isActive;
-
-    /**
      * @description 负责人信息列表
      *
      * @var managerInfoSimpleList[]
@@ -30,7 +23,6 @@ class CollegeListDeptManagerResponseBody extends Model
      */
     public $totalCount;
     protected $_name = [
-        'isActive'              => 'isActive',
         'managerInfoSimpleList' => 'managerInfoSimpleList',
         'totalCount'            => 'totalCount',
     ];
@@ -42,9 +34,6 @@ class CollegeListDeptManagerResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->isActive) {
-            $res['isActive'] = $this->isActive;
-        }
         if (null !== $this->managerInfoSimpleList) {
             $res['managerInfoSimpleList'] = [];
             if (null !== $this->managerInfoSimpleList && \is_array($this->managerInfoSimpleList)) {
@@ -69,9 +58,6 @@ class CollegeListDeptManagerResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['isActive'])) {
-            $model->isActive = $map['isActive'];
-        }
         if (isset($map['managerInfoSimpleList'])) {
             if (!empty($map['managerInfoSimpleList'])) {
                 $model->managerInfoSimpleList = [];

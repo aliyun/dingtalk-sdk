@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddContactMemberToGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddContactMemberToGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddContactMemberToGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddKnowledgeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddKnowledgeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddKnowledgeResponse;
@@ -77,6 +80,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateTeamResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateTicketHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateTicketRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateTicketResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\DeleteGroupMembersFromGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\DeleteGroupMembersFromGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\DeleteGroupMembersFromGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\DeleteInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\DeleteInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\DeleteInstanceResponse;
@@ -154,6 +160,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryServiceGroupMessage
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueueNotifyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueueNotifyRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueueNotifyResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\RemoveContactFromOrgHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\RemoveContactFromOrgRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\RemoveContactFromOrgResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ReportCustomerDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ReportCustomerDetailRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ReportCustomerDetailResponse;
@@ -222,6 +231,57 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param AddContactMemberToGroupRequest $request
+     *
+     * @return AddContactMemberToGroupResponse
+     */
+    public function addContactMemberToGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddContactMemberToGroupHeaders([]);
+
+        return $this->addContactMemberToGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddContactMemberToGroupRequest $request
+     * @param AddContactMemberToGroupHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return AddContactMemberToGroupResponse
+     */
+    public function addContactMemberToGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->memberUnionId)) {
+            @$body['memberUnionId'] = $request->memberUnionId;
+        }
+        if (!Utils::isUnset($request->memberUserId)) {
+            @$body['memberUserId'] = $request->memberUserId;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddContactMemberToGroupResponse::fromMap($this->doROARequest('AddContactMemberToGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/groups/contacts', 'json', $req, $runtime));
     }
 
     /**
@@ -1626,6 +1686,60 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param DeleteGroupMembersFromGroupRequest $request
+     *
+     * @return DeleteGroupMembersFromGroupResponse
+     */
+    public function deleteGroupMembersFromGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteGroupMembersFromGroupHeaders([]);
+
+        return $this->deleteGroupMembersFromGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DeleteGroupMembersFromGroupRequest $request
+     * @param DeleteGroupMembersFromGroupHeaders $headers
+     * @param RuntimeOptions                     $runtime
+     *
+     * @return DeleteGroupMembersFromGroupResponse
+     */
+    public function deleteGroupMembersFromGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deleteGroupType)) {
+            @$body['deleteGroupType'] = $request->deleteGroupType;
+        }
+        if (!Utils::isUnset($request->memberUnionId)) {
+            @$body['memberUnionId'] = $request->memberUnionId;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->openGroupSetId)) {
+            @$body['openGroupSetId'] = $request->openGroupSetId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DeleteGroupMembersFromGroupResponse::fromMap($this->doROARequest('DeleteGroupMembersFromGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/groups/members/remove', 'json', $req, $runtime));
+    }
+
+    /**
      * @param DeleteInstanceRequest $request
      *
      * @return DeleteInstanceResponse
@@ -2905,6 +3019,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueueNotifyResponse::fromMap($this->doROARequest('QueueNotify', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/dts', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param RemoveContactFromOrgRequest $request
+     *
+     * @return RemoveContactFromOrgResponse
+     */
+    public function removeContactFromOrg($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RemoveContactFromOrgHeaders([]);
+
+        return $this->removeContactFromOrgWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RemoveContactFromOrgRequest $request
+     * @param RemoveContactFromOrgHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return RemoveContactFromOrgResponse
+     */
+    public function removeContactFromOrgWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->contactUnionId)) {
+            @$body['contactUnionId'] = $request->contactUnionId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return RemoveContactFromOrgResponse::fromMap($this->doROARequest('RemoveContactFromOrg', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/organizations/contacts/remove', 'json', $req, $runtime));
     }
 
     /**

@@ -4,10 +4,19 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SearchResponseBody\spaceResult;
 
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SearchResponseBody\spaceResult\items\iconVO;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SearchResponseBody\spaceResult\items\userLastOperation;
 use AlibabaCloud\Tea\Model;
 
 class items extends Model
 {
+    /**
+     * @description 知识库图标。
+     *
+     * @var iconVO
+     */
+    public $iconVO;
+
     /**
      * @description 知识库名称，如果命中了关键词，会带有高亮。
      *
@@ -35,11 +44,20 @@ class items extends Model
      * @var string
      */
     public $url;
+
+    /**
+     * @description 用户最后一次操作信息。
+     *
+     * @var userLastOperation
+     */
+    public $userLastOperation;
     protected $_name = [
-        'name'       => 'name',
-        'originName' => 'originName',
-        'spaceId'    => 'spaceId',
-        'url'        => 'url',
+        'iconVO'            => 'iconVO',
+        'name'              => 'name',
+        'originName'        => 'originName',
+        'spaceId'           => 'spaceId',
+        'url'               => 'url',
+        'userLastOperation' => 'userLastOperation',
     ];
 
     public function validate()
@@ -49,6 +67,9 @@ class items extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->iconVO) {
+            $res['iconVO'] = null !== $this->iconVO ? $this->iconVO->toMap() : null;
+        }
         if (null !== $this->name) {
             $res['name'] = $this->name;
         }
@@ -60,6 +81,9 @@ class items extends Model
         }
         if (null !== $this->url) {
             $res['url'] = $this->url;
+        }
+        if (null !== $this->userLastOperation) {
+            $res['userLastOperation'] = null !== $this->userLastOperation ? $this->userLastOperation->toMap() : null;
         }
 
         return $res;
@@ -73,6 +97,9 @@ class items extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['iconVO'])) {
+            $model->iconVO = iconVO::fromMap($map['iconVO']);
+        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }
@@ -84,6 +111,9 @@ class items extends Model
         }
         if (isset($map['url'])) {
             $model->url = $map['url'];
+        }
+        if (isset($map['userLastOperation'])) {
+            $model->userLastOperation = userLastOperation::fromMap($map['userLastOperation']);
         }
 
         return $model;

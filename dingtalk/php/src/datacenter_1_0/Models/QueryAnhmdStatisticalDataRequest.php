@@ -9,13 +9,25 @@ use AlibabaCloud\Tea\Model;
 class QueryAnhmdStatisticalDataRequest extends Model
 {
     /**
+     * @var int
+     */
+    public $pageNumber;
+
+    /**
+     * @var int
+     */
+    public $pageSize;
+
+    /**
      * @description statDate
      *
      * @var string
      */
     public $statDate;
     protected $_name = [
-        'statDate' => 'statDate',
+        'pageNumber' => 'pageNumber',
+        'pageSize'   => 'pageSize',
+        'statDate'   => 'statDate',
     ];
 
     public function validate()
@@ -25,6 +37,12 @@ class QueryAnhmdStatisticalDataRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->pageNumber) {
+            $res['pageNumber'] = $this->pageNumber;
+        }
+        if (null !== $this->pageSize) {
+            $res['pageSize'] = $this->pageSize;
+        }
         if (null !== $this->statDate) {
             $res['statDate'] = $this->statDate;
         }
@@ -40,6 +58,12 @@ class QueryAnhmdStatisticalDataRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['pageNumber'])) {
+            $model->pageNumber = $map['pageNumber'];
+        }
+        if (isset($map['pageSize'])) {
+            $model->pageSize = $map['pageSize'];
+        }
         if (isset($map['statDate'])) {
             $model->statDate = $map['statDate'];
         }

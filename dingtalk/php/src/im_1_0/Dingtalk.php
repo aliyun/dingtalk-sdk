@@ -1055,7 +1055,7 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return GroupCapacityOrderConfirmResponse::fromMap($this->doROARequest('GroupCapacityOrderConfirm', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/groups/capacities/orders/confirm', 'none', $req, $runtime));
+        return GroupCapacityOrderConfirmResponse::fromMap($this->doROARequest('GroupCapacityOrderConfirm', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/groups/capacities/orders/confirm', 'json', $req, $runtime));
     }
 
     /**

@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class GroupCapacityOrderConfirmResponse extends Model
+class RemoveContactFromOrgResponse extends Model
 {
     /**
      * @var string[]
@@ -14,7 +14,7 @@ class GroupCapacityOrderConfirmResponse extends Model
     public $headers;
 
     /**
-     * @var GroupCapacityOrderConfirmResponseBody
+     * @var RemoveContactFromOrgResponseBody
      */
     public $body;
     protected $_name = [
@@ -44,7 +44,7 @@ class GroupCapacityOrderConfirmResponse extends Model
     /**
      * @param array $map
      *
-     * @return GroupCapacityOrderConfirmResponse
+     * @return RemoveContactFromOrgResponse
      */
     public static function fromMap($map = [])
     {
@@ -53,7 +53,7 @@ class GroupCapacityOrderConfirmResponse extends Model
             $model->headers = $map['headers'];
         }
         if (isset($map['body'])) {
-            $model->body = GroupCapacityOrderConfirmResponseBody::fromMap($map['body']);
+            $model->body = RemoveContactFromOrgResponseBody::fromMap($map['body']);
         }
 
         return $model;
