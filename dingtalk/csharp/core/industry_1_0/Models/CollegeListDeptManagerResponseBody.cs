@@ -10,19 +10,19 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class CollegeListDeptManagerResponseBody : TeaModel {
         /// <summary>
-        /// 账号是否激活
-        /// </summary>
-        [NameInMap("isActive")]
-        [Validation(Required=false)]
-        public bool? IsActive { get; set; }
-
-        /// <summary>
         /// 负责人信息列表
         /// </summary>
         [NameInMap("managerInfoSimpleList")]
         [Validation(Required=false)]
         public List<CollegeListDeptManagerResponseBodyManagerInfoSimpleList> ManagerInfoSimpleList { get; set; }
         public class CollegeListDeptManagerResponseBodyManagerInfoSimpleList : TeaModel {
+            /// <summary>
+            /// 账号是否激活
+            /// </summary>
+            [NameInMap("isActive")]
+            [Validation(Required=false)]
+            public bool? IsActive { get; set; }
+
             /// <summary>
             /// 负责人姓名
             /// </summary>

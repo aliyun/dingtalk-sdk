@@ -35,6 +35,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
                 public string Path { get; set; }
                 public int? SearchFileType { get; set; }
                 public string SpaceId { get; set; }
+                public string ThumbnailUrl { get; set; }
                 public string Url { get; set; }
             }
             [NameInMap("nextToken")]
@@ -56,10 +57,44 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
             [Validation(Required=false)]
             public List<SearchResponseBodySpaceResultItems> Items { get; set; }
             public class SearchResponseBodySpaceResultItems : TeaModel {
+                public SearchResponseBodySpaceResultItemsIconVO IconVO { get; set; }
+                public class SearchResponseBodySpaceResultItemsIconVO : TeaModel {
+                    /// <summary>
+                    /// 图标信息。
+                    /// </summary>
+                    [NameInMap("icon")]
+                    [Validation(Required=false)]
+                    public string Icon { get; set; }
+
+                    /// <summary>
+                    /// 知识库图标的类型。
+                    /// </summary>
+                    [NameInMap("type")]
+                    [Validation(Required=false)]
+                    public string Type { get; set; }
+
+                }
                 public string Name { get; set; }
                 public string OriginName { get; set; }
                 public string SpaceId { get; set; }
                 public string Url { get; set; }
+                public SearchResponseBodySpaceResultItemsUserLastOperation UserLastOperation { get; set; }
+                public class SearchResponseBodySpaceResultItemsUserLastOperation : TeaModel {
+                    /// <summary>
+                    /// 操作人名称。
+                    /// </summary>
+                    [NameInMap("name")]
+                    [Validation(Required=false)]
+                    public string Name { get; set; }
+
+                    /// <summary>
+                    /// 操作的时间戳（ms）。
+                    /// </summary>
+                    [NameInMap("time")]
+                    [Validation(Required=false)]
+                    public long? Time { get; set; }
+
+                }
             }
             [NameInMap("nextToken")]
             [Validation(Required=false)]

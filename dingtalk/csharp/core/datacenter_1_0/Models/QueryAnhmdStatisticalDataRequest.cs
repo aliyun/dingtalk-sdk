@@ -9,6 +9,14 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
 {
     public class QueryAnhmdStatisticalDataRequest : TeaModel {
+        [NameInMap("pageNumber")]
+        [Validation(Required=false)]
+        public long? PageNumber { get; set; }
+
+        [NameInMap("pageSize")]
+        [Validation(Required=false)]
+        public long? PageSize { get; set; }
+
         /// <summary>
         /// statDate
         /// </summary>

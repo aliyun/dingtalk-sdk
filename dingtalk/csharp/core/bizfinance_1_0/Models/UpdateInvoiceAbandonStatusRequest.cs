@@ -284,6 +284,9 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [NameInMap("invoiceNo")]
             [Validation(Required=false)]
             public string InvoiceNo { get; set; }
+            [NameInMap("invoiceStatus")]
+            [Validation(Required=false)]
+            public string InvoiceStatus { get; set; }
             [NameInMap("invoiceType")]
             [Validation(Required=false)]
             public string InvoiceType { get; set; }
@@ -356,9 +359,6 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [NameInMap("sellerTel")]
             [Validation(Required=false)]
             public string SellerTel { get; set; }
-            [NameInMap("status")]
-            [Validation(Required=false)]
-            public string Status { get; set; }
             [NameInMap("supplySign")]
             [Validation(Required=false)]
             public string SupplySign { get; set; }

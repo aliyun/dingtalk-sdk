@@ -1528,7 +1528,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GroupCapacityOrderConfirmResponse>(DoROARequest("GroupCapacityOrderConfirm", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/groups/capacities/orders/confirm", "none", req, runtime));
+            return TeaModel.ToObject<GroupCapacityOrderConfirmResponse>(DoROARequest("GroupCapacityOrderConfirm", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/groups/capacities/orders/confirm", "json", req, runtime));
         }
 
         public async Task<GroupCapacityOrderConfirmResponse> GroupCapacityOrderConfirmWithOptionsAsync(GroupCapacityOrderConfirmRequest request, GroupCapacityOrderConfirmHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1557,7 +1557,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GroupCapacityOrderConfirmResponse>(await DoROARequestAsync("GroupCapacityOrderConfirm", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/groups/capacities/orders/confirm", "none", req, runtime));
+            return TeaModel.ToObject<GroupCapacityOrderConfirmResponse>(await DoROARequestAsync("GroupCapacityOrderConfirm", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/groups/capacities/orders/confirm", "json", req, runtime));
         }
 
         public GroupCapacityOrderPlaceResponse GroupCapacityOrderPlace(GroupCapacityOrderPlaceRequest request)

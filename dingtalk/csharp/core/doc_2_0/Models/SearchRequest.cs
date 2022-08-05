@@ -22,12 +22,37 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
             [NameInMap("nextToken")]
             [Validation(Required=false)]
             public string NextToken { get; set; }
+            [NameInMap("searchField")]
+            [Validation(Required=false)]
+            public int? SearchField { get; set; }
             [NameInMap("searchFileType")]
             [Validation(Required=false)]
             public int? SearchFileType { get; set; }
             [NameInMap("spaceId")]
             [Validation(Required=false)]
             public string SpaceId { get; set; }
+            [NameInMap("summaryLength")]
+            [Validation(Required=false)]
+            public int? SummaryLength { get; set; }
+            [NameInMap("visitTimeRange")]
+            [Validation(Required=false)]
+            public SearchRequestDentryRequestVisitTimeRange VisitTimeRange { get; set; }
+            public class SearchRequestDentryRequestVisitTimeRange : TeaModel {
+                /// <summary>
+                /// 结束时间戳（ms）。
+                /// </summary>
+                [NameInMap("end")]
+                [Validation(Required=false)]
+                public long? End { get; set; }
+
+                /// <summary>
+                /// 起始时间戳（ms）。
+                /// </summary>
+                [NameInMap("start")]
+                [Validation(Required=false)]
+                public long? Start { get; set; }
+
+            }
         };
 
         /// <summary>
