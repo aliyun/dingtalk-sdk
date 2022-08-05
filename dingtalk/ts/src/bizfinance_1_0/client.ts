@@ -5943,6 +5943,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
   generalInvoiceDetailVOList?: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList[];
   invoiceCode?: string;
   invoiceNo?: string;
+  invoiceStatus?: string;
   invoiceType?: string;
   machineCode?: string;
   oilFlag?: string;
@@ -5963,7 +5964,6 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
   sellerName?: string;
   sellerTaxNo?: string;
   sellerTel?: string;
-  status?: string;
   supplySign?: string;
   taxAmount?: string;
   usedVehicleSaleDetailVOList?: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList[];
@@ -5985,6 +5985,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
       generalInvoiceDetailVOList: 'generalInvoiceDetailVOList',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
+      invoiceStatus: 'invoiceStatus',
       invoiceType: 'invoiceType',
       machineCode: 'machineCode',
       oilFlag: 'oilFlag',
@@ -6005,7 +6006,6 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
       sellerName: 'sellerName',
       sellerTaxNo: 'sellerTaxNo',
       sellerTel: 'sellerTel',
-      status: 'status',
       supplySign: 'supplySign',
       taxAmount: 'taxAmount',
       usedVehicleSaleDetailVOList: 'usedVehicleSaleDetailVOList',
@@ -6030,6 +6030,7 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
       generalInvoiceDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList },
       invoiceCode: 'string',
       invoiceNo: 'string',
+      invoiceStatus: 'string',
       invoiceType: 'string',
       machineCode: 'string',
       oilFlag: 'string',
@@ -6050,7 +6051,6 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
       sellerName: 'string',
       sellerTaxNo: 'string',
       sellerTel: 'string',
-      status: 'string',
       supplySign: 'string',
       taxAmount: 'string',
       usedVehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOUsedVehicleSaleDetailVOList },

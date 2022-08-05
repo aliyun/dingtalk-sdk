@@ -1631,17 +1631,39 @@ export class GroupCapacityOrderConfirmRequest extends $tea.Model {
   }
 }
 
+export class GroupCapacityOrderConfirmResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GroupCapacityOrderConfirmResponse extends $tea.Model {
   headers: { [key: string]: string };
+  body: GroupCapacityOrderConfirmResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      body: 'body',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GroupCapacityOrderConfirmResponseBody,
     };
   }
 
@@ -5633,7 +5655,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GroupCapacityOrderConfirmResponse>(await this.doROARequest("GroupCapacityOrderConfirm", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/groups/capacities/orders/confirm`, "none", req, runtime), new GroupCapacityOrderConfirmResponse({}));
+    return $tea.cast<GroupCapacityOrderConfirmResponse>(await this.doROARequest("GroupCapacityOrderConfirm", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/groups/capacities/orders/confirm`, "json", req, runtime), new GroupCapacityOrderConfirmResponse({}));
   }
 
   async groupCapacityOrderPlace(request: GroupCapacityOrderPlaceRequest): Promise<GroupCapacityOrderPlaceResponse> {

@@ -2303,17 +2303,45 @@ export class QueryRecentListResponseBodyRecentList extends $tea.Model {
   }
 }
 
+export class SearchRequestDentryRequestVisitTimeRange extends $tea.Model {
+  end?: number;
+  start?: number;
+  static names(): { [key: string]: string } {
+    return {
+      end: 'end',
+      start: 'start',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      end: 'number',
+      start: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchRequestDentryRequest extends $tea.Model {
   maxResults?: number;
   nextToken?: string;
+  searchField?: number;
   searchFileType?: number;
   spaceId?: string;
+  summaryLength?: number;
+  visitTimeRange?: SearchRequestDentryRequestVisitTimeRange;
   static names(): { [key: string]: string } {
     return {
       maxResults: 'maxResults',
       nextToken: 'nextToken',
+      searchField: 'searchField',
       searchFileType: 'searchFileType',
       spaceId: 'spaceId',
+      summaryLength: 'summaryLength',
+      visitTimeRange: 'visitTimeRange',
     };
   }
 
@@ -2321,8 +2349,11 @@ export class SearchRequestDentryRequest extends $tea.Model {
     return {
       maxResults: 'number',
       nextToken: 'string',
+      searchField: 'number',
       searchFileType: 'number',
       spaceId: 'string',
+      summaryLength: 'number',
+      visitTimeRange: SearchRequestDentryRequestVisitTimeRange,
     };
   }
 
@@ -2366,6 +2397,7 @@ export class SearchResponseBodyDentryResultItems extends $tea.Model {
   path?: string;
   searchFileType?: number;
   spaceId?: string;
+  thumbnailUrl?: string;
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2381,6 +2413,7 @@ export class SearchResponseBodyDentryResultItems extends $tea.Model {
       path: 'path',
       searchFileType: 'searchFileType',
       spaceId: 'spaceId',
+      thumbnailUrl: 'thumbnailUrl',
       url: 'url',
     };
   }
@@ -2399,6 +2432,7 @@ export class SearchResponseBodyDentryResultItems extends $tea.Model {
       path: 'string',
       searchFileType: 'number',
       spaceId: 'string',
+      thumbnailUrl: 'string',
       url: 'string',
     };
   }
@@ -2433,26 +2467,76 @@ export class SearchResponseBodyDentryResult extends $tea.Model {
   }
 }
 
-export class SearchResponseBodySpaceResultItems extends $tea.Model {
+export class SearchResponseBodySpaceResultItemsIconVO extends $tea.Model {
+  icon?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      icon: 'icon',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      icon: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchResponseBodySpaceResultItemsUserLastOperation extends $tea.Model {
   name?: string;
-  originName?: string;
-  spaceId?: string;
-  url?: string;
+  time?: number;
   static names(): { [key: string]: string } {
     return {
       name: 'name',
-      originName: 'originName',
-      spaceId: 'spaceId',
-      url: 'url',
+      time: 'time',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       name: 'string',
+      time: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchResponseBodySpaceResultItems extends $tea.Model {
+  iconVO?: SearchResponseBodySpaceResultItemsIconVO;
+  name?: string;
+  originName?: string;
+  spaceId?: string;
+  url?: string;
+  userLastOperation?: SearchResponseBodySpaceResultItemsUserLastOperation;
+  static names(): { [key: string]: string } {
+    return {
+      iconVO: 'iconVO',
+      name: 'name',
+      originName: 'originName',
+      spaceId: 'spaceId',
+      url: 'url',
+      userLastOperation: 'userLastOperation',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      iconVO: SearchResponseBodySpaceResultItemsIconVO,
+      name: 'string',
       originName: 'string',
       spaceId: 'string',
       url: 'string',
+      userLastOperation: SearchResponseBodySpaceResultItemsUserLastOperation,
     };
   }
 

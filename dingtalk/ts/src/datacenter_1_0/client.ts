@@ -178,15 +178,21 @@ export class QueryAnhmdStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryAnhmdStatisticalDataRequest extends $tea.Model {
+  pageNumber?: number;
+  pageSize?: number;
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
       statDate: 'statDate',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      pageNumber: 'number',
+      pageSize: 'number',
       statDate: 'string',
     };
   }
@@ -7639,6 +7645,14 @@ export default class Client extends OpenApi {
   async queryAnhmdStatisticalDataWithOptions(request: QueryAnhmdStatisticalDataRequest, headers: QueryAnhmdStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAnhmdStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
     if (!Util.isUnset(request.statDate)) {
       query["statDate"] = request.statDate;
     }

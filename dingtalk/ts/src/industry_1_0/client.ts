@@ -2448,12 +2448,10 @@ export class CollegeListDeptManagerRequest extends $tea.Model {
 }
 
 export class CollegeListDeptManagerResponseBody extends $tea.Model {
-  isActive?: boolean;
   managerInfoSimpleList?: CollegeListDeptManagerResponseBodyManagerInfoSimpleList[];
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
-      isActive: 'isActive',
       managerInfoSimpleList: 'managerInfoSimpleList',
       totalCount: 'totalCount',
     };
@@ -2461,7 +2459,6 @@ export class CollegeListDeptManagerResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      isActive: 'boolean',
       managerInfoSimpleList: { 'type': 'array', 'itemType': CollegeListDeptManagerResponseBodyManagerInfoSimpleList },
       totalCount: 'number',
     };
@@ -9844,10 +9841,12 @@ export class CollegeListCollegeSubDeptResponseBodyCollegeDeptInfoSimpleList exte
 }
 
 export class CollegeListDeptManagerResponseBodyManagerInfoSimpleList extends $tea.Model {
+  isActive?: boolean;
   name?: string;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
+      isActive: 'isActive',
       name: 'name',
       userId: 'userId',
     };
@@ -9855,6 +9854,7 @@ export class CollegeListDeptManagerResponseBodyManagerInfoSimpleList extends $te
 
   static types(): { [key: string]: any } {
     return {
+      isActive: 'boolean',
       name: 'string',
       userId: 'string',
     };
