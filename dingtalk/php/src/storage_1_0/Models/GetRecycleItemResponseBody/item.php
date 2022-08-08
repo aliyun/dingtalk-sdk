@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class item extends Model
 {
     /**
-     * @description 原文件(夹)所在应用id
-     *
-     * @var string
-     */
-    public $appId;
-
-    /**
      * @description 原文件(夹)id
      *
      * @var string
@@ -78,7 +71,6 @@ class item extends Model
      */
     public $type;
     protected $_name = [
-        'appId'        => 'appId',
         'dentryId'     => 'dentryId',
         'id'           => 'id',
         'operatorId'   => 'operatorId',
@@ -97,9 +89,6 @@ class item extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->appId) {
-            $res['appId'] = $this->appId;
-        }
         if (null !== $this->dentryId) {
             $res['dentryId'] = $this->dentryId;
         }
@@ -139,9 +128,6 @@ class item extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['appId'])) {
-            $model->appId = $map['appId'];
-        }
         if (isset($map['dentryId'])) {
             $model->dentryId = $map['dentryId'];
         }

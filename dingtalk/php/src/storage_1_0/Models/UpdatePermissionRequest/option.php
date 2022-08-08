@@ -2,20 +2,20 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\UpdatePermissionRequest;
 
 use AlibabaCloud\Tea\Model;
 
-class GetDentryRequest extends Model
+class option extends Model
 {
     /**
-     * @description 用户id
+     * @description 有效时间(秒)
      *
-     * @var string
+     * @var int
      */
-    public $unionId;
+    public $duration;
     protected $_name = [
-        'unionId' => 'unionId',
+        'duration' => 'duration',
     ];
 
     public function validate()
@@ -25,8 +25,8 @@ class GetDentryRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->unionId) {
-            $res['unionId'] = $this->unionId;
+        if (null !== $this->duration) {
+            $res['duration'] = $this->duration;
         }
 
         return $res;
@@ -35,13 +35,13 @@ class GetDentryRequest extends Model
     /**
      * @param array $map
      *
-     * @return GetDentryRequest
+     * @return option
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['unionId'])) {
-            $model->unionId = $map['unionId'];
+        if (isset($map['duration'])) {
+            $model->duration = $map['duration'];
         }
 
         return $model;

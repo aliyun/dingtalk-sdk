@@ -24,7 +24,7 @@ class option extends Model
     public $preferRegion;
 
     /**
-     * @description 文件存储驱动类型
+     * @description 文件存储驱动类型, 当前只支持DINGTALK
      * DINGTALK
      * @var string
      */

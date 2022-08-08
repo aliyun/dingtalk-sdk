@@ -10,13 +10,6 @@ use AlibabaCloud\Tea\Model;
 class space extends Model
 {
     /**
-     * @description 开放平台应用appId
-     *
-     * @var string
-     */
-    public $appId;
-
-    /**
      * @description 空间能力项
      *
      * @var capabilities
@@ -81,7 +74,7 @@ class space extends Model
 
     /**
      * @description owner类型
-     * USER
+     * APP: App类型
      * @var string
      */
     public $ownerType;
@@ -121,7 +114,6 @@ class space extends Model
      */
     public $usedQuota;
     protected $_name = [
-        'appId'        => 'appId',
         'capabilities' => 'capabilities',
         'corpId'       => 'corpId',
         'createTime'   => 'createTime',
@@ -146,9 +138,6 @@ class space extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->appId) {
-            $res['appId'] = $this->appId;
-        }
         if (null !== $this->capabilities) {
             $res['capabilities'] = null !== $this->capabilities ? $this->capabilities->toMap() : null;
         }
@@ -206,9 +195,6 @@ class space extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['appId'])) {
-            $model->appId = $map['appId'];
-        }
         if (isset($map['capabilities'])) {
             $model->capabilities = capabilities::fromMap($map['capabilities']);
         }

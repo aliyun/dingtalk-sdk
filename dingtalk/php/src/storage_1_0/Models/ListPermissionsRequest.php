@@ -4,18 +4,17 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListPermissionsRequest\option;
 use AlibabaCloud\Tea\Model;
 
-class RenameDentryRequest extends Model
+class ListPermissionsRequest extends Model
 {
     /**
-     * @description 名称(文件名+后缀), 规则：
-     * 1. 头尾不能包含空格，否则会自动去除
-     * 2. 不能包含特殊字符，包括：制表符、*、"、<、>、|
-     * 3. 不能以"."结尾
-     * @var string
+     * @description 可选参数
+     *
+     * @var option
      */
-    public $newName;
+    public $option;
 
     /**
      * @description 用户id
@@ -24,7 +23,7 @@ class RenameDentryRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'newName' => 'newName',
+        'option'  => 'option',
         'unionId' => 'unionId',
     ];
 
@@ -35,8 +34,8 @@ class RenameDentryRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->newName) {
-            $res['newName'] = $this->newName;
+        if (null !== $this->option) {
+            $res['option'] = null !== $this->option ? $this->option->toMap() : null;
         }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
@@ -48,13 +47,13 @@ class RenameDentryRequest extends Model
     /**
      * @param array $map
      *
-     * @return RenameDentryRequest
+     * @return ListPermissionsRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['newName'])) {
-            $model->newName = $map['newName'];
+        if (isset($map['option'])) {
+            $model->option = option::fromMap($map['option']);
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];

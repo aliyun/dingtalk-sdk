@@ -10,7 +10,7 @@ use AlibabaCloud\Tea\Model;
 class AddFolderRequest extends Model
 {
     /**
-     * @description 名称, 规则：
+     * @description 名称(文件名+后缀), 规则：
      * 1. 头尾不能包含空格，否则会自动去除
      * 2. 不能包含特殊字符，包括：制表符、*、"、<、>、|
      * 3. 不能以"."结尾

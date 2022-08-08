@@ -24,7 +24,7 @@ class appProperties extends Model
 
     /**
      * @description 属性可见范围
-     * PRIVATE
+     * PRIVATE: 该属性仅其归属App可见
      * @var string
      */
     public $visibility;

@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\AddFolderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\AddFolderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\AddFolderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\AddPermissionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\AddPermissionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\AddPermissionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\AddSpaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\AddSpaceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\AddSpaceResponse;
@@ -26,6 +29,9 @@ use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\DeleteDentryAppPropertiesRespo
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\DeleteDentryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\DeleteDentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\DeleteDentryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\DeletePermissionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\DeletePermissionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\DeletePermissionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\DeleteRecycleItemHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\DeleteRecycleItemRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\DeleteRecycleItemResponse;
@@ -59,6 +65,9 @@ use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListDentriesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListDentryVersionsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListDentryVersionsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListDentryVersionsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListPermissionsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListPermissionsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListPermissionsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListRecycleItemsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListRecycleItemsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListRecycleItemsResponse;
@@ -77,6 +86,9 @@ use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\RevertDentryVersionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\UpdateDentryAppPropertiesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\UpdateDentryAppPropertiesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\UpdateDentryAppPropertiesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\UpdatePermissionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\UpdatePermissionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\UpdatePermissionResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -147,6 +159,65 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return AddFolderResponse::fromMap($this->doROARequest('AddFolder', 'storage_1.0', 'HTTP', 'POST', 'AK', '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $parentId . '/folders', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string               $spaceId
+     * @param string               $dentryId
+     * @param AddPermissionRequest $request
+     *
+     * @return AddPermissionResponse
+     */
+    public function addPermission($spaceId, $dentryId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddPermissionHeaders([]);
+
+        return $this->addPermissionWithOptions($spaceId, $dentryId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string               $spaceId
+     * @param string               $dentryId
+     * @param AddPermissionRequest $request
+     * @param AddPermissionHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return AddPermissionResponse
+     */
+    public function addPermissionWithOptions($spaceId, $dentryId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $spaceId  = OpenApiUtilClient::getEncodeParam($spaceId);
+        $dentryId = OpenApiUtilClient::getEncodeParam($dentryId);
+        $query    = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->members)) {
+            @$body['members'] = $request->members;
+        }
+        if (!Utils::isUnset($request->option)) {
+            @$body['option'] = $request->option;
+        }
+        if (!Utils::isUnset($request->roleId)) {
+            @$body['roleId'] = $request->roleId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddPermissionResponse::fromMap($this->doROARequest('AddPermission', 'storage_1.0', 'HTTP', 'POST', 'AK', '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/permissions', 'json', $req, $runtime));
     }
 
     /**
@@ -464,6 +535,62 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string                  $spaceId
+     * @param string                  $dentryId
+     * @param DeletePermissionRequest $request
+     *
+     * @return DeletePermissionResponse
+     */
+    public function deletePermission($spaceId, $dentryId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeletePermissionHeaders([]);
+
+        return $this->deletePermissionWithOptions($spaceId, $dentryId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                  $spaceId
+     * @param string                  $dentryId
+     * @param DeletePermissionRequest $request
+     * @param DeletePermissionHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return DeletePermissionResponse
+     */
+    public function deletePermissionWithOptions($spaceId, $dentryId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $spaceId  = OpenApiUtilClient::getEncodeParam($spaceId);
+        $dentryId = OpenApiUtilClient::getEncodeParam($dentryId);
+        $query    = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->members)) {
+            @$body['members'] = $request->members;
+        }
+        if (!Utils::isUnset($request->roleId)) {
+            @$body['roleId'] = $request->roleId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DeletePermissionResponse::fromMap($this->doROARequest('DeletePermission', 'storage_1.0', 'HTTP', 'POST', 'AK', '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/permissions/remove', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string                   $recycleBinId
      * @param string                   $recycleItemId
      * @param DeleteRecycleItemRequest $request
@@ -636,10 +763,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->unionId)) {
             @$query['unionId'] = $request->unionId;
         }
-        $body = [];
-        if (!Utils::isUnset($request->option)) {
-            @$body['option'] = $request->option;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -650,7 +773,6 @@ class Dingtalk extends OpenApiClient
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
         return GetDentryResponse::fromMap($this->doROARequest('GetDentry', 'storage_1.0', 'HTTP', 'POST', 'AK', '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/query', 'json', $req, $runtime));
@@ -1021,6 +1143,59 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string                 $spaceId
+     * @param string                 $dentryId
+     * @param ListPermissionsRequest $request
+     *
+     * @return ListPermissionsResponse
+     */
+    public function listPermissions($spaceId, $dentryId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListPermissionsHeaders([]);
+
+        return $this->listPermissionsWithOptions($spaceId, $dentryId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                 $spaceId
+     * @param string                 $dentryId
+     * @param ListPermissionsRequest $request
+     * @param ListPermissionsHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return ListPermissionsResponse
+     */
+    public function listPermissionsWithOptions($spaceId, $dentryId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $spaceId  = OpenApiUtilClient::getEncodeParam($spaceId);
+        $dentryId = OpenApiUtilClient::getEncodeParam($dentryId);
+        $query    = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->option)) {
+            @$body['option'] = $request->option;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ListPermissionsResponse::fromMap($this->doROARequest('ListPermissions', 'storage_1.0', 'HTTP', 'POST', 'AK', '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/permissions/query', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string                  $recycleBinId
      * @param ListRecycleItemsRequest $request
      *
@@ -1338,5 +1513,64 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateDentryAppPropertiesResponse::fromMap($this->doROARequest('UpdateDentryAppProperties', 'storage_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/appProperties', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                  $spaceId
+     * @param string                  $dentryId
+     * @param UpdatePermissionRequest $request
+     *
+     * @return UpdatePermissionResponse
+     */
+    public function updatePermission($spaceId, $dentryId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdatePermissionHeaders([]);
+
+        return $this->updatePermissionWithOptions($spaceId, $dentryId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                  $spaceId
+     * @param string                  $dentryId
+     * @param UpdatePermissionRequest $request
+     * @param UpdatePermissionHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return UpdatePermissionResponse
+     */
+    public function updatePermissionWithOptions($spaceId, $dentryId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $spaceId  = OpenApiUtilClient::getEncodeParam($spaceId);
+        $dentryId = OpenApiUtilClient::getEncodeParam($dentryId);
+        $query    = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->members)) {
+            @$body['members'] = $request->members;
+        }
+        if (!Utils::isUnset($request->option)) {
+            @$body['option'] = $request->option;
+        }
+        if (!Utils::isUnset($request->roleId)) {
+            @$body['roleId'] = $request->roleId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdatePermissionResponse::fromMap($this->doROARequest('UpdatePermission', 'storage_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/permissions', 'json', $req, $runtime));
     }
 }
