@@ -4,7 +4,7 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class CommitFileRequest extends TeaModel {
-    // 名称, 规则：
+    // 名称(文件名+后缀), 规则：
     // 1. 头尾不能包含空格，否则会自动去除
     // 2. 不能包含特殊字符，包括：制表符、*、"、<、>、|
     // 3. 不能以"."结尾
@@ -85,8 +85,6 @@ public class CommitFileRequest extends TeaModel {
         // 枚举值:
         // 	PUBLIC: 该属性所有App可见
         // 	PRIVATE: 该属性仅其归属App可见
-        // 默认值:
-        // 	PRIVATE
         @NameInMap("visibility")
         public String visibility;
 

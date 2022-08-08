@@ -72,10 +72,6 @@ public class GetSpaceResponseBody extends TeaModel {
     }
 
     public static class GetSpaceResponseBodySpace extends TeaModel {
-        // 开放平台应用appId
-        @NameInMap("appId")
-        public String appId;
-
         // 空间能力项
         @NameInMap("capabilities")
         public GetSpaceResponseBodySpaceCapabilities capabilities;
@@ -116,8 +112,6 @@ public class GetSpaceResponseBody extends TeaModel {
         // 枚举值:
         // 	USER: 用户类型
         // 	APP: App类型
-        // 默认值:
-        // 	USER
         @NameInMap("ownerType")
         public String ownerType;
 
@@ -152,14 +146,6 @@ public class GetSpaceResponseBody extends TeaModel {
         public static GetSpaceResponseBodySpace build(java.util.Map<String, ?> map) throws Exception {
             GetSpaceResponseBodySpace self = new GetSpaceResponseBodySpace();
             return TeaModel.build(map, self);
-        }
-
-        public GetSpaceResponseBodySpace setAppId(String appId) {
-            this.appId = appId;
-            return this;
-        }
-        public String getAppId() {
-            return this.appId;
         }
 
         public GetSpaceResponseBodySpace setCapabilities(GetSpaceResponseBodySpaceCapabilities capabilities) {

@@ -55,11 +55,6 @@ public class ListDentryVersionsResponseBody extends TeaModel {
     }
 
     public static class ListDentryVersionsResponseBodyDentries extends TeaModel {
-        // 在特定应用上的属性。key是微应用Id, value是属性列表。
-        // 可以通过修改DentryAppProperty里的scope来设置属性的可见性
-        @NameInMap("appProperties")
-        public java.util.Map<String, java.util.List<DentriesAppPropertiesValue>> appProperties;
-
         // 创建时间
         @NameInMap("createTime")
         public String createTime;
@@ -108,7 +103,7 @@ public class ListDentryVersionsResponseBody extends TeaModel {
         @NameInMap("properties")
         public ListDentryVersionsResponseBodyDentriesProperties properties;
 
-        // 大小
+        // 大小, 单位:Byte
         @NameInMap("size")
         public Long size;
 
@@ -128,6 +123,7 @@ public class ListDentryVersionsResponseBody extends TeaModel {
         // 枚举值:
         // 	DINGTALK: 钉钉统一存储驱动
         // 	ALIDOC: 钉钉文档存储驱动
+        // 	SHANJI: 闪记存储驱动
         // 	UNKNOWN: 未知驱动
         @NameInMap("storageDriver")
         public String storageDriver;
@@ -150,14 +146,6 @@ public class ListDentryVersionsResponseBody extends TeaModel {
         public static ListDentryVersionsResponseBodyDentries build(java.util.Map<String, ?> map) throws Exception {
             ListDentryVersionsResponseBodyDentries self = new ListDentryVersionsResponseBodyDentries();
             return TeaModel.build(map, self);
-        }
-
-        public ListDentryVersionsResponseBodyDentries setAppProperties(java.util.Map<String, java.util.List<DentriesAppPropertiesValue>> appProperties) {
-            this.appProperties = appProperties;
-            return this;
-        }
-        public java.util.Map<String, java.util.List<DentriesAppPropertiesValue>> getAppProperties() {
-            return this.appProperties;
         }
 
         public ListDentryVersionsResponseBodyDentries setCreateTime(String createTime) {

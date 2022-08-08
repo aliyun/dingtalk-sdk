@@ -141,10 +141,11 @@ public class GetFileUploadInfoRequest extends TeaModel {
         @NameInMap("preferRegion")
         public String preferRegion;
 
-        // 文件存储驱动类型
+        // 文件存储驱动类型, 当前只支持DINGTALK
         // 枚举值:
         // 	DINGTALK: 钉钉统一存储驱动
         // 	ALIDOC: 钉钉文档存储驱动
+        // 	SHANJI: 闪记存储驱动
         // 	UNKNOWN: 未知驱动
         // 默认值:
         // 	DINGTALK

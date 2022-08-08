@@ -18,6 +18,7 @@ public class GetFileUploadInfoResponseBody extends TeaModel {
     // 枚举值:
     // 	DINGTALK: 钉钉统一存储驱动
     // 	ALIDOC: 钉钉文档存储驱动
+    // 	SHANJI: 闪记存储驱动
     // 	UNKNOWN: 未知驱动
     @NameInMap("storageDriver")
     public String storageDriver;

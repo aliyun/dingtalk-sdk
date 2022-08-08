@@ -22,10 +22,6 @@ public class GetRecycleItemResponseBody extends TeaModel {
     }
 
     public static class GetRecycleItemResponseBodyItem extends TeaModel {
-        // 原文件(夹)所在应用id
-        @NameInMap("appId")
-        public String appId;
-
         // 原文件(夹)id
         @NameInMap("dentryId")
         public String dentryId;
@@ -68,14 +64,6 @@ public class GetRecycleItemResponseBody extends TeaModel {
         public static GetRecycleItemResponseBodyItem build(java.util.Map<String, ?> map) throws Exception {
             GetRecycleItemResponseBodyItem self = new GetRecycleItemResponseBodyItem();
             return TeaModel.build(map, self);
-        }
-
-        public GetRecycleItemResponseBodyItem setAppId(String appId) {
-            this.appId = appId;
-            return this;
-        }
-        public String getAppId() {
-            return this.appId;
         }
 
         public GetRecycleItemResponseBodyItem setDentryId(String dentryId) {

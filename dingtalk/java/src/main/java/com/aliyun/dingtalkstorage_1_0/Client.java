@@ -62,6 +62,51 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("AddFolder", "storage_1.0", "HTTP", "POST", "AK", "/v1.0/storage/spaces/" + spaceId + "/dentries/" + parentId + "/folders", "json", req, runtime), new AddFolderResponse());
     }
 
+    public AddPermissionResponse addPermission(String spaceId, String dentryId, AddPermissionRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        AddPermissionHeaders headers = new AddPermissionHeaders();
+        return this.addPermissionWithOptions(spaceId, dentryId, request, headers, runtime);
+    }
+
+    public AddPermissionResponse addPermissionWithOptions(String spaceId, String dentryId, AddPermissionRequest request, AddPermissionHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
+        dentryId = com.aliyun.openapiutil.Client.getEncodeParam(dentryId);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.members)) {
+            body.put("members", request.members);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.option))) {
+            body.put("option", request.option);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.roleId)) {
+            body.put("roleId", request.roleId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("AddPermission", "storage_1.0", "HTTP", "POST", "AK", "/v1.0/storage/spaces/" + spaceId + "/dentries/" + dentryId + "/permissions", "json", req, runtime), new AddPermissionResponse());
+    }
+
     public AddSpaceResponse addSpace(AddSpaceRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         AddSpaceHeaders headers = new AddSpaceHeaders();
@@ -292,6 +337,47 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("DeleteDentryAppProperties", "storage_1.0", "HTTP", "POST", "AK", "/v1.0/storage/spaces/" + spaceId + "/dentries/" + dentryId + "/appProperties/remove", "json", req, runtime), new DeleteDentryAppPropertiesResponse());
     }
 
+    public DeletePermissionResponse deletePermission(String spaceId, String dentryId, DeletePermissionRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        DeletePermissionHeaders headers = new DeletePermissionHeaders();
+        return this.deletePermissionWithOptions(spaceId, dentryId, request, headers, runtime);
+    }
+
+    public DeletePermissionResponse deletePermissionWithOptions(String spaceId, String dentryId, DeletePermissionRequest request, DeletePermissionHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
+        dentryId = com.aliyun.openapiutil.Client.getEncodeParam(dentryId);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.members)) {
+            body.put("members", request.members);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.roleId)) {
+            body.put("roleId", request.roleId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("DeletePermission", "storage_1.0", "HTTP", "POST", "AK", "/v1.0/storage/spaces/" + spaceId + "/dentries/" + dentryId + "/permissions/remove", "json", req, runtime), new DeletePermissionResponse());
+    }
+
     public DeleteRecycleItemResponse deleteRecycleItem(String recycleBinId, String recycleItemId, DeleteRecycleItemRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         DeleteRecycleItemHeaders headers = new DeleteRecycleItemHeaders();
@@ -403,11 +489,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("unionId", request.unionId);
         }
 
-        java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.option))) {
-            body.put("option", request.option);
-        }
-
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -419,8 +500,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
-            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("GetDentry", "storage_1.0", "HTTP", "POST", "AK", "/v1.0/storage/spaces/" + spaceId + "/dentries/" + dentryId + "/query", "json", req, runtime), new GetDentryResponse());
     }
@@ -693,6 +773,43 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("ListDentryVersions", "storage_1.0", "HTTP", "GET", "AK", "/v1.0/storage/spaces/" + spaceId + "/dentries/" + dentryId + "/versions", "json", req, runtime), new ListDentryVersionsResponse());
     }
 
+    public ListPermissionsResponse listPermissions(String spaceId, String dentryId, ListPermissionsRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        ListPermissionsHeaders headers = new ListPermissionsHeaders();
+        return this.listPermissionsWithOptions(spaceId, dentryId, request, headers, runtime);
+    }
+
+    public ListPermissionsResponse listPermissionsWithOptions(String spaceId, String dentryId, ListPermissionsRequest request, ListPermissionsHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
+        dentryId = com.aliyun.openapiutil.Client.getEncodeParam(dentryId);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.option))) {
+            body.put("option", request.option);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("ListPermissions", "storage_1.0", "HTTP", "POST", "AK", "/v1.0/storage/spaces/" + spaceId + "/dentries/" + dentryId + "/permissions/query", "json", req, runtime), new ListPermissionsResponse());
+    }
+
     public ListRecycleItemsResponse listRecycleItems(String recycleBinId, ListRecycleItemsRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         ListRecycleItemsHeaders headers = new ListRecycleItemsHeaders();
@@ -917,5 +1034,50 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("UpdateDentryAppProperties", "storage_1.0", "HTTP", "PUT", "AK", "/v1.0/storage/spaces/" + spaceId + "/dentries/" + dentryId + "/appProperties", "json", req, runtime), new UpdateDentryAppPropertiesResponse());
+    }
+
+    public UpdatePermissionResponse updatePermission(String spaceId, String dentryId, UpdatePermissionRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        UpdatePermissionHeaders headers = new UpdatePermissionHeaders();
+        return this.updatePermissionWithOptions(spaceId, dentryId, request, headers, runtime);
+    }
+
+    public UpdatePermissionResponse updatePermissionWithOptions(String spaceId, String dentryId, UpdatePermissionRequest request, UpdatePermissionHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
+        dentryId = com.aliyun.openapiutil.Client.getEncodeParam(dentryId);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.members)) {
+            body.put("members", request.members);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.option))) {
+            body.put("option", request.option);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.roleId)) {
+            body.put("roleId", request.roleId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UpdatePermission", "storage_1.0", "HTTP", "PUT", "AK", "/v1.0/storage/spaces/" + spaceId + "/dentries/" + dentryId + "/permissions", "json", req, runtime), new UpdatePermissionResponse());
     }
 }
