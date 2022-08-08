@@ -16,9 +16,6 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         [Validation(Required=false)]
         public GetRecycleItemResponseBodyItem Item { get; set; }
         public class GetRecycleItemResponseBodyItem : TeaModel {
-            [NameInMap("appId")]
-            [Validation(Required=false)]
-            public string AppId { get; set; }
             [NameInMap("dentryId")]
             [Validation(Required=false)]
             public string DentryId { get; set; }

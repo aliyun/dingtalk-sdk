@@ -16,9 +16,6 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         [Validation(Required=false)]
         public GetSpaceResponseBodySpace Space { get; set; }
         public class GetSpaceResponseBodySpace : TeaModel {
-            [NameInMap("appId")]
-            [Validation(Required=false)]
-            public string AppId { get; set; }
             [NameInMap("capabilities")]
             [Validation(Required=false)]
             public GetSpaceResponseBodySpaceCapabilities Capabilities { get; set; }

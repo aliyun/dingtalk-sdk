@@ -17,14 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         public List<ListDentriesResponseBodyDentries> Dentries { get; set; }
         public class ListDentriesResponseBodyDentries : TeaModel {
             /// <summary>
-            /// 在特定应用上的属性。key是微应用Id, value是属性列表。
-            /// 可以通过修改DentryAppProperty里的scope来设置属性的可见性
-            /// </summary>
-            [NameInMap("appProperties")]
-            [Validation(Required=false)]
-            public Dictionary<string, List<DentriesAppPropertiesValue>> AppProperties { get; set; }
-
-            /// <summary>
             /// 创建时间
             /// </summary>
             [NameInMap("createTime")]
@@ -111,7 +103,7 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
             };
 
             /// <summary>
-            /// 大小
+            /// 大小, 单位:Byte
             /// </summary>
             [NameInMap("size")]
             [Validation(Required=false)]
@@ -140,6 +132,7 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
             /// 枚举值:
             /// 	DINGTALK: 钉钉统一存储驱动
             /// 	ALIDOC: 钉钉文档存储驱动
+            /// 	SHANJI: 闪记存储驱动
             /// 	UNKNOWN: 未知驱动
             /// </summary>
             [NameInMap("storageDriver")]

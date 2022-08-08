@@ -8,13 +8,13 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 {
-    public class GetDentryRequest : TeaModel {
+    public class DeletePermissionResponseBody : TeaModel {
         /// <summary>
-        /// 用户id
+        /// 本次操作是否成功
         /// </summary>
-        [NameInMap("unionId")]
+        [NameInMap("success")]
         [Validation(Required=false)]
-        public string UnionId { get; set; }
+        public bool? Success { get; set; }
 
     }
 

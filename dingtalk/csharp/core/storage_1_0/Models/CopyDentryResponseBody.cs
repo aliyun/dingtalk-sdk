@@ -24,9 +24,6 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         [Validation(Required=false)]
         public CopyDentryResponseBodyDentry Dentry { get; set; }
         public class CopyDentryResponseBodyDentry : TeaModel {
-            [NameInMap("appProperties")]
-            [Validation(Required=false)]
-            public Dictionary<string, string> AppProperties { get; set; }
             [NameInMap("createTime")]
             [Validation(Required=false)]
             public string CreateTime { get; set; }
