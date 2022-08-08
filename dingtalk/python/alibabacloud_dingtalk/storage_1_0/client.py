@@ -111,6 +111,98 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('AddFolder', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/{parent_id}/folders', 'json', req, runtime)
         )
 
+    def add_permission(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.AddPermissionRequest,
+    ) -> dingtalkstorage__1__0_models.AddPermissionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.AddPermissionHeaders()
+        return self.add_permission_with_options(space_id, dentry_id, request, headers, runtime)
+
+    async def add_permission_async(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.AddPermissionRequest,
+    ) -> dingtalkstorage__1__0_models.AddPermissionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.AddPermissionHeaders()
+        return await self.add_permission_with_options_async(space_id, dentry_id, request, headers, runtime)
+
+    def add_permission_with_options(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.AddPermissionRequest,
+        headers: dingtalkstorage__1__0_models.AddPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.AddPermissionResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        dentry_id = OpenApiUtilClient.get_encode_param(dentry_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.members):
+            body['members'] = request.members
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.role_id):
+            body['roleId'] = request.role_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.AddPermissionResponse(),
+            self.do_roarequest('AddPermission', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/{dentry_id}/permissions', 'json', req, runtime)
+        )
+
+    async def add_permission_with_options_async(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.AddPermissionRequest,
+        headers: dingtalkstorage__1__0_models.AddPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.AddPermissionResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        dentry_id = OpenApiUtilClient.get_encode_param(dentry_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.members):
+            body['members'] = request.members
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.role_id):
+            body['roleId'] = request.role_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.AddPermissionResponse(),
+            await self.do_roarequest_async('AddPermission', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/{dentry_id}/permissions', 'json', req, runtime)
+        )
+
     def add_space(
         self,
         request: dingtalkstorage__1__0_models.AddSpaceRequest,
@@ -599,6 +691,94 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DeleteDentryAppProperties', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/{dentry_id}/appProperties/remove', 'json', req, runtime)
         )
 
+    def delete_permission(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.DeletePermissionRequest,
+    ) -> dingtalkstorage__1__0_models.DeletePermissionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.DeletePermissionHeaders()
+        return self.delete_permission_with_options(space_id, dentry_id, request, headers, runtime)
+
+    async def delete_permission_async(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.DeletePermissionRequest,
+    ) -> dingtalkstorage__1__0_models.DeletePermissionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.DeletePermissionHeaders()
+        return await self.delete_permission_with_options_async(space_id, dentry_id, request, headers, runtime)
+
+    def delete_permission_with_options(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.DeletePermissionRequest,
+        headers: dingtalkstorage__1__0_models.DeletePermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.DeletePermissionResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        dentry_id = OpenApiUtilClient.get_encode_param(dentry_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.members):
+            body['members'] = request.members
+        if not UtilClient.is_unset(request.role_id):
+            body['roleId'] = request.role_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.DeletePermissionResponse(),
+            self.do_roarequest('DeletePermission', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/{dentry_id}/permissions/remove', 'json', req, runtime)
+        )
+
+    async def delete_permission_with_options_async(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.DeletePermissionRequest,
+        headers: dingtalkstorage__1__0_models.DeletePermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.DeletePermissionResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        dentry_id = OpenApiUtilClient.get_encode_param(dentry_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.members):
+            body['members'] = request.members
+        if not UtilClient.is_unset(request.role_id):
+            body['roleId'] = request.role_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.DeletePermissionResponse(),
+            await self.do_roarequest_async('DeletePermission', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/{dentry_id}/permissions/remove', 'json', req, runtime)
+        )
+
     def delete_recycle_item(
         self,
         recycle_bin_id: str,
@@ -851,9 +1031,6 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
-        body = {}
-        if not UtilClient.is_unset(request.option):
-            body['option'] = request.option
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -861,8 +1038,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query),
-            body=OpenApiUtilClient.parse_to_map(body)
+            query=OpenApiUtilClient.query(query)
         )
         return TeaCore.from_map(
             dingtalkstorage__1__0_models.GetDentryResponse(),
@@ -883,9 +1059,6 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
-        body = {}
-        if not UtilClient.is_unset(request.option):
-            body['option'] = request.option
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -893,8 +1066,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query),
-            body=OpenApiUtilClient.parse_to_map(body)
+            query=OpenApiUtilClient.query(query)
         )
         return TeaCore.from_map(
             dingtalkstorage__1__0_models.GetDentryResponse(),
@@ -1463,6 +1635,90 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListDentryVersions', 'storage_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/{dentry_id}/versions', 'json', req, runtime)
         )
 
+    def list_permissions(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.ListPermissionsRequest,
+    ) -> dingtalkstorage__1__0_models.ListPermissionsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.ListPermissionsHeaders()
+        return self.list_permissions_with_options(space_id, dentry_id, request, headers, runtime)
+
+    async def list_permissions_async(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.ListPermissionsRequest,
+    ) -> dingtalkstorage__1__0_models.ListPermissionsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.ListPermissionsHeaders()
+        return await self.list_permissions_with_options_async(space_id, dentry_id, request, headers, runtime)
+
+    def list_permissions_with_options(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.ListPermissionsRequest,
+        headers: dingtalkstorage__1__0_models.ListPermissionsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.ListPermissionsResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        dentry_id = OpenApiUtilClient.get_encode_param(dentry_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.ListPermissionsResponse(),
+            self.do_roarequest('ListPermissions', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/{dentry_id}/permissions/query', 'json', req, runtime)
+        )
+
+    async def list_permissions_with_options_async(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.ListPermissionsRequest,
+        headers: dingtalkstorage__1__0_models.ListPermissionsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.ListPermissionsResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        dentry_id = OpenApiUtilClient.get_encode_param(dentry_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.ListPermissionsResponse(),
+            await self.do_roarequest_async('ListPermissions', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/{dentry_id}/permissions/query', 'json', req, runtime)
+        )
+
     def list_recycle_items(
         self,
         recycle_bin_id: str,
@@ -1965,4 +2221,96 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkstorage__1__0_models.UpdateDentryAppPropertiesResponse(),
             await self.do_roarequest_async('UpdateDentryAppProperties', 'storage_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/{dentry_id}/appProperties', 'json', req, runtime)
+        )
+
+    def update_permission(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.UpdatePermissionRequest,
+    ) -> dingtalkstorage__1__0_models.UpdatePermissionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.UpdatePermissionHeaders()
+        return self.update_permission_with_options(space_id, dentry_id, request, headers, runtime)
+
+    async def update_permission_async(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.UpdatePermissionRequest,
+    ) -> dingtalkstorage__1__0_models.UpdatePermissionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.UpdatePermissionHeaders()
+        return await self.update_permission_with_options_async(space_id, dentry_id, request, headers, runtime)
+
+    def update_permission_with_options(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.UpdatePermissionRequest,
+        headers: dingtalkstorage__1__0_models.UpdatePermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.UpdatePermissionResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        dentry_id = OpenApiUtilClient.get_encode_param(dentry_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.members):
+            body['members'] = request.members
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.role_id):
+            body['roleId'] = request.role_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.UpdatePermissionResponse(),
+            self.do_roarequest('UpdatePermission', 'storage_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/{dentry_id}/permissions', 'json', req, runtime)
+        )
+
+    async def update_permission_with_options_async(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.UpdatePermissionRequest,
+        headers: dingtalkstorage__1__0_models.UpdatePermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.UpdatePermissionResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        dentry_id = OpenApiUtilClient.get_encode_param(dentry_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.members):
+            body['members'] = request.members
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.role_id):
+            body['roleId'] = request.role_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.UpdatePermissionResponse(),
+            await self.do_roarequest_async('UpdatePermission', 'storage_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/{dentry_id}/permissions', 'json', req, runtime)
         )
