@@ -3564,7 +3564,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkim__1__0_models.RemoveGroupMemberResponse(),
-            self.do_roarequest('removeGroupMember', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/groups/members/remove', 'none', req, runtime)
+            self.do_roarequest('removeGroupMember', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/groups/members/remove', 'json', req, runtime)
         )
 
     async def remove_group_member_with_options_async(
@@ -3594,7 +3594,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkim__1__0_models.RemoveGroupMemberResponse(),
-            await self.do_roarequest_async('removeGroupMember', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/groups/members/remove', 'none', req, runtime)
+            await self.do_roarequest_async('removeGroupMember', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/groups/members/remove', 'json', req, runtime)
         )
 
     def send_ding_message(

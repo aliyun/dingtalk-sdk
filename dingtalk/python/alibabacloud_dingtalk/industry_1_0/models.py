@@ -4749,6 +4749,224 @@ class CollegeListStudentInfoResponse(TeaModel):
         return self
 
 
+class CollegeListUncheckedStudentHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CollegeListUncheckedStudentRequest(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        page_number: int = None,
+        page_size: int = None,
+    ):
+        # 部门id
+        self.dept_id = dept_id
+        # 页码
+        self.page_number = page_number
+        # 分页条目数
+        self.page_size = page_size
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        return self
+
+
+class CollegeListUncheckedStudentResponseBodyStudentInfoSimpleList(TeaModel):
+    def __init__(
+        self,
+        ding_member_status: str = None,
+        is_active: bool = None,
+        student_id: int = None,
+        student_name: str = None,
+        union_id: str = None,
+        user_id: str = None,
+    ):
+        # 人员在组织的状态
+        self.ding_member_status = ding_member_status
+        # 账号是否激活
+        self.is_active = is_active
+        # 学生id
+        self.student_id = student_id
+        # 学生姓名
+        self.student_name = student_name
+        # unionId
+        self.union_id = union_id
+        # userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_member_status is not None:
+            result['dingMemberStatus'] = self.ding_member_status
+        if self.is_active is not None:
+            result['isActive'] = self.is_active
+        if self.student_id is not None:
+            result['studentId'] = self.student_id
+        if self.student_name is not None:
+            result['studentName'] = self.student_name
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingMemberStatus') is not None:
+            self.ding_member_status = m.get('dingMemberStatus')
+        if m.get('isActive') is not None:
+            self.is_active = m.get('isActive')
+        if m.get('studentId') is not None:
+            self.student_id = m.get('studentId')
+        if m.get('studentName') is not None:
+            self.student_name = m.get('studentName')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CollegeListUncheckedStudentResponseBody(TeaModel):
+    def __init__(
+        self,
+        student_info_simple_list: List[CollegeListUncheckedStudentResponseBodyStudentInfoSimpleList] = None,
+        total_count: int = None,
+    ):
+        # 学生信息列表
+        self.student_info_simple_list = student_info_simple_list
+        # 条目总数
+        self.total_count = total_count
+
+    def validate(self):
+        if self.student_info_simple_list:
+            for k in self.student_info_simple_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['studentInfoSimpleList'] = []
+        if self.student_info_simple_list is not None:
+            for k in self.student_info_simple_list:
+                result['studentInfoSimpleList'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.student_info_simple_list = []
+        if m.get('studentInfoSimpleList') is not None:
+            for k in m.get('studentInfoSimpleList'):
+                temp_model = CollegeListUncheckedStudentResponseBodyStudentInfoSimpleList()
+                self.student_info_simple_list.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class CollegeListUncheckedStudentResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CollegeListUncheckedStudentResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CollegeListUncheckedStudentResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CollegeQueryCollegeDeptGroupInfoHeaders(TeaModel):
     def __init__(
         self,
@@ -7213,6 +7431,139 @@ class CustomizeContactDeptDeleteResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CustomizeContactDeptDeleteResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CustomizeContactDeptGroupCreateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CustomizeContactDeptGroupCreateRequest(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        dept_id: int = None,
+    ):
+        # 自定义通讯录Code
+        self.code = code
+        # 部门Id
+        self.dept_id = dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        return self
+
+
+class CustomizeContactDeptGroupCreateResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+    ):
+        # Id of the request
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class CustomizeContactDeptGroupCreateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CustomizeContactDeptGroupCreateResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CustomizeContactDeptGroupCreateResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

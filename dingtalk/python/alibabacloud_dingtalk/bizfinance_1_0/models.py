@@ -868,7 +868,7 @@ class BatchAddInvoiceRequest(TeaModel):
         return self
 
 
-class BatchAddInvoiceResponseBodyResult(TeaModel):
+class BatchAddInvoiceResponseBodyErrorResult(TeaModel):
     def __init__(
         self,
         error_key: str = None,
@@ -903,17 +903,59 @@ class BatchAddInvoiceResponseBodyResult(TeaModel):
         return self
 
 
+class BatchAddInvoiceResponseBodySuccessResult(TeaModel):
+    def __init__(
+        self,
+        invoice_code: str = None,
+        invoice_no: str = None,
+    ):
+        # 发票代码
+        self.invoice_code = invoice_code
+        # 发票号码
+        self.invoice_no = invoice_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        return self
+
+
 class BatchAddInvoiceResponseBody(TeaModel):
     def __init__(
         self,
-        result: List[BatchAddInvoiceResponseBodyResult] = None,
+        error_result: List[BatchAddInvoiceResponseBodyErrorResult] = None,
+        success_result: List[BatchAddInvoiceResponseBodySuccessResult] = None,
     ):
         # 错误信息
-        self.result = result
+        self.error_result = error_result
+        # 成功信息
+        self.success_result = success_result
 
     def validate(self):
-        if self.result:
-            for k in self.result:
+        if self.error_result:
+            for k in self.error_result:
+                if k:
+                    k.validate()
+        if self.success_result:
+            for k in self.success_result:
                 if k:
                     k.validate()
 
@@ -923,19 +965,28 @@ class BatchAddInvoiceResponseBody(TeaModel):
             return _map
 
         result = dict()
-        result['result'] = []
-        if self.result is not None:
-            for k in self.result:
-                result['result'].append(k.to_map() if k else None)
+        result['errorResult'] = []
+        if self.error_result is not None:
+            for k in self.error_result:
+                result['errorResult'].append(k.to_map() if k else None)
+        result['successResult'] = []
+        if self.success_result is not None:
+            for k in self.success_result:
+                result['successResult'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.result = []
-        if m.get('result') is not None:
-            for k in m.get('result'):
-                temp_model = BatchAddInvoiceResponseBodyResult()
-                self.result.append(temp_model.from_map(k))
+        self.error_result = []
+        if m.get('errorResult') is not None:
+            for k in m.get('errorResult'):
+                temp_model = BatchAddInvoiceResponseBodyErrorResult()
+                self.error_result.append(temp_model.from_map(k))
+        self.success_result = []
+        if m.get('successResult') is not None:
+            for k in m.get('successResult'):
+                temp_model = BatchAddInvoiceResponseBodySuccessResult()
+                self.success_result.append(temp_model.from_map(k))
         return self
 
 
@@ -11166,12 +11217,16 @@ class UpdateInvoiceAccountPeriodRequest(TeaModel):
         return self
 
 
-class UpdateInvoiceAccountPeriodResponseBody(TeaModel):
+class UpdateInvoiceAccountPeriodResponseBodyErrorResult(TeaModel):
     def __init__(
         self,
-        result: bool = None,
+        error_key: str = None,
+        error_msg: str = None,
     ):
-        self.result = result
+        # 错误数据的key
+        self.error_key = error_key
+        # 错误信息
+        self.error_msg = error_msg
 
     def validate(self):
         pass
@@ -11182,14 +11237,105 @@ class UpdateInvoiceAccountPeriodResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.result is not None:
-            result['result'] = self.result
+        if self.error_key is not None:
+            result['errorKey'] = self.error_key
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('result') is not None:
-            self.result = m.get('result')
+        if m.get('errorKey') is not None:
+            self.error_key = m.get('errorKey')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        return self
+
+
+class UpdateInvoiceAccountPeriodResponseBodySuccessResult(TeaModel):
+    def __init__(
+        self,
+        invoice_code: str = None,
+        invoice_no: str = None,
+    ):
+        # 发票代码
+        self.invoice_code = invoice_code
+        # 发票号码
+        self.invoice_no = invoice_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        return self
+
+
+class UpdateInvoiceAccountPeriodResponseBody(TeaModel):
+    def __init__(
+        self,
+        error_result: List[UpdateInvoiceAccountPeriodResponseBodyErrorResult] = None,
+        success_result: List[UpdateInvoiceAccountPeriodResponseBodySuccessResult] = None,
+    ):
+        # 错误信息
+        self.error_result = error_result
+        # 成功信息
+        self.success_result = success_result
+
+    def validate(self):
+        if self.error_result:
+            for k in self.error_result:
+                if k:
+                    k.validate()
+        if self.success_result:
+            for k in self.success_result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['errorResult'] = []
+        if self.error_result is not None:
+            for k in self.error_result:
+                result['errorResult'].append(k.to_map() if k else None)
+        result['successResult'] = []
+        if self.success_result is not None:
+            for k in self.success_result:
+                result['successResult'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.error_result = []
+        if m.get('errorResult') is not None:
+            for k in m.get('errorResult'):
+                temp_model = UpdateInvoiceAccountPeriodResponseBodyErrorResult()
+                self.error_result.append(temp_model.from_map(k))
+        self.success_result = []
+        if m.get('successResult') is not None:
+            for k in m.get('successResult'):
+                temp_model = UpdateInvoiceAccountPeriodResponseBodySuccessResult()
+                self.success_result.append(temp_model.from_map(k))
         return self
 
 

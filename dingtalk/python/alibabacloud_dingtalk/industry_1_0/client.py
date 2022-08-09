@@ -2075,6 +2075,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CollegeListStudentInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/depts/students', 'json', req, runtime)
         )
 
+    def college_list_unchecked_student(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeListUncheckedStudentRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeListUncheckedStudentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeListUncheckedStudentHeaders()
+        return self.college_list_unchecked_student_with_options(request, headers, runtime)
+
+    async def college_list_unchecked_student_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeListUncheckedStudentRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeListUncheckedStudentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CollegeListUncheckedStudentHeaders()
+        return await self.college_list_unchecked_student_with_options_async(request, headers, runtime)
+
+    def college_list_unchecked_student_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeListUncheckedStudentRequest,
+        headers: dingtalkindustry__1__0_models.CollegeListUncheckedStudentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeListUncheckedStudentResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeListUncheckedStudentResponse(),
+            self.do_roarequest('CollegeListUncheckedStudent', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/organizations/unjoinedStudents', 'json', req, runtime)
+        )
+
+    async def college_list_unchecked_student_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CollegeListUncheckedStudentRequest,
+        headers: dingtalkindustry__1__0_models.CollegeListUncheckedStudentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CollegeListUncheckedStudentResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CollegeListUncheckedStudentResponse(),
+            await self.do_roarequest_async('CollegeListUncheckedStudent', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/organizations/unjoinedStudents', 'json', req, runtime)
+        )
+
     def college_query_college_dept_group_info(
         self,
         request: dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoRequest,
@@ -3133,6 +3205,74 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactDeptDeleteResponse(),
             await self.do_roarequest_async('CustomizeContactDeptDelete', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/customizations/departments', 'json', req, runtime)
+        )
+
+    def customize_contact_dept_group_create(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateHeaders()
+        return self.customize_contact_dept_group_create_with_options(request, headers, runtime)
+
+    async def customize_contact_dept_group_create_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateHeaders()
+        return await self.customize_contact_dept_group_create_with_options_async(request, headers, runtime)
+
+    def customize_contact_dept_group_create_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateResponse(),
+            self.do_roarequest('CustomizeContactDeptGroupCreate', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/customizations/departmentGroups', 'json', req, runtime)
+        )
+
+    async def customize_contact_dept_group_create_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateRequest,
+        headers: dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateResponse(),
+            await self.do_roarequest_async('CustomizeContactDeptGroupCreate', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/customizations/departmentGroups', 'json', req, runtime)
         )
 
     def customize_contact_dept_info(

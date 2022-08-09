@@ -885,11 +885,11 @@ class CreateCoupleGroupConversationRequest(TeaModel):
 class CreateCoupleGroupConversationResponseBody(TeaModel):
     def __init__(
         self,
-        chat_id: str = None,
+        conversation_id: str = None,
         open_conversation_id: str = None,
     ):
-        # 群chatId。
-        self.chat_id = chat_id
+        # 钉钉群会话id。
+        self.conversation_id = conversation_id
         # 群会话Id。
         self.open_conversation_id = open_conversation_id
 
@@ -902,16 +902,16 @@ class CreateCoupleGroupConversationResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.chat_id is not None:
-            result['chatId'] = self.chat_id
+        if self.conversation_id is not None:
+            result['conversationId'] = self.conversation_id
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('chatId') is not None:
-            self.chat_id = m.get('chatId')
+        if m.get('conversationId') is not None:
+            self.conversation_id = m.get('conversationId')
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
         return self
@@ -1068,13 +1068,14 @@ class CreateGroupConversationResponseBody(TeaModel):
     def __init__(
         self,
         app_user_ids: List[str] = None,
-        chat_id: str = None,
+        conversation_id: str = None,
         open_conversation_id: str = None,
         user_ids: List[str] = None,
     ):
         # 添加成功的钉外成员列表。
         self.app_user_ids = app_user_ids
-        self.chat_id = chat_id
+        # 钉钉群会话Id。
+        self.conversation_id = conversation_id
         # 群会话Id。
         self.open_conversation_id = open_conversation_id
         # 添加成功的钉内成员列表。
@@ -1091,8 +1092,8 @@ class CreateGroupConversationResponseBody(TeaModel):
         result = dict()
         if self.app_user_ids is not None:
             result['appUserIds'] = self.app_user_ids
-        if self.chat_id is not None:
-            result['chatId'] = self.chat_id
+        if self.conversation_id is not None:
+            result['conversationId'] = self.conversation_id
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
         if self.user_ids is not None:
@@ -1103,8 +1104,8 @@ class CreateGroupConversationResponseBody(TeaModel):
         m = m or dict()
         if m.get('appUserIds') is not None:
             self.app_user_ids = m.get('appUserIds')
-        if m.get('chatId') is not None:
-            self.chat_id = m.get('chatId')
+        if m.get('conversationId') is not None:
+            self.conversation_id = m.get('conversationId')
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
         if m.get('userIds') is not None:
@@ -1510,10 +1511,11 @@ class CreateStoreGroupConversationRequest(TeaModel):
 class CreateStoreGroupConversationResponseBody(TeaModel):
     def __init__(
         self,
-        chat_id: str = None,
+        conversation_id: str = None,
         open_conversation_id: str = None,
     ):
-        self.chat_id = chat_id
+        # 钉钉群会话id
+        self.conversation_id = conversation_id
         # 群会话Id。
         self.open_conversation_id = open_conversation_id
 
@@ -1526,16 +1528,16 @@ class CreateStoreGroupConversationResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.chat_id is not None:
-            result['chatId'] = self.chat_id
+        if self.conversation_id is not None:
+            result['conversationId'] = self.conversation_id
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('chatId') is not None:
-            self.chat_id = m.get('chatId')
+        if m.get('conversationId') is not None:
+            self.conversation_id = m.get('conversationId')
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
         return self
@@ -7921,15 +7923,48 @@ class RemoveGroupMemberRequest(TeaModel):
         return self
 
 
+class RemoveGroupMemberResponseBody(TeaModel):
+    def __init__(
+        self,
+        message: str = None,
+    ):
+        # 操作结果
+        self.message = message
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.message is not None:
+            result['message'] = self.message
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('message') is not None:
+            self.message = m.get('message')
+        return self
+
+
 class RemoveGroupMemberResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        body: RemoveGroupMemberResponseBody = None,
     ):
         self.headers = headers
+        self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -7939,12 +7974,17 @@ class RemoveGroupMemberResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = RemoveGroupMemberResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 
