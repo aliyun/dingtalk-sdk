@@ -4,8 +4,9 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateStoreGroupConversationResponseBody extends TeaModel {
-    @NameInMap("chatId")
-    public String chatId;
+    // 钉钉群会话id
+    @NameInMap("conversationId")
+    public String conversationId;
 
     // 群会话Id。
     @NameInMap("openConversationId")
@@ -16,12 +17,12 @@ public class CreateStoreGroupConversationResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public CreateStoreGroupConversationResponseBody setChatId(String chatId) {
-        this.chatId = chatId;
+    public CreateStoreGroupConversationResponseBody setConversationId(String conversationId) {
+        this.conversationId = conversationId;
         return this;
     }
-    public String getChatId() {
-        return this.chatId;
+    public String getConversationId() {
+        return this.conversationId;
     }
 
     public CreateStoreGroupConversationResponseBody setOpenConversationId(String openConversationId) {

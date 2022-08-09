@@ -1995,7 +1995,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("removeGroupMember", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interconnections/groups/members/remove", "none", req, runtime), new RemoveGroupMemberResponse());
+        return TeaModel.toModel(this.doROARequest("removeGroupMember", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interconnections/groups/members/remove", "json", req, runtime), new RemoveGroupMemberResponse());
     }
 
     public SendDingMessageResponse sendDingMessage(SendDingMessageRequest request) throws Exception {

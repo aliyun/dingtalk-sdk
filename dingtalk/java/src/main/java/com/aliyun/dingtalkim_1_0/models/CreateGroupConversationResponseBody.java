@@ -8,8 +8,9 @@ public class CreateGroupConversationResponseBody extends TeaModel {
     @NameInMap("appUserIds")
     public java.util.List<String> appUserIds;
 
-    @NameInMap("chatId")
-    public String chatId;
+    // 钉钉群会话Id。
+    @NameInMap("conversationId")
+    public String conversationId;
 
     // 群会话Id。
     @NameInMap("openConversationId")
@@ -32,12 +33,12 @@ public class CreateGroupConversationResponseBody extends TeaModel {
         return this.appUserIds;
     }
 
-    public CreateGroupConversationResponseBody setChatId(String chatId) {
-        this.chatId = chatId;
+    public CreateGroupConversationResponseBody setConversationId(String conversationId) {
+        this.conversationId = conversationId;
         return this;
     }
-    public String getChatId() {
-        return this.chatId;
+    public String getConversationId() {
+        return this.conversationId;
     }
 
     public CreateGroupConversationResponseBody setOpenConversationId(String openConversationId) {

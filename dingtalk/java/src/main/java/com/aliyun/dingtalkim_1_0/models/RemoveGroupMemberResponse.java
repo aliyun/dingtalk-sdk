@@ -8,6 +8,10 @@ public class RemoveGroupMemberResponse extends TeaModel {
     @Validation(required = true)
     public java.util.Map<String, String> headers;
 
+    @NameInMap("body")
+    @Validation(required = true)
+    public RemoveGroupMemberResponseBody body;
+
     public static RemoveGroupMemberResponse build(java.util.Map<String, ?> map) throws Exception {
         RemoveGroupMemberResponse self = new RemoveGroupMemberResponse();
         return TeaModel.build(map, self);
@@ -19,6 +23,14 @@ public class RemoveGroupMemberResponse extends TeaModel {
     }
     public java.util.Map<String, String> getHeaders() {
         return this.headers;
+    }
+
+    public RemoveGroupMemberResponse setBody(RemoveGroupMemberResponseBody body) {
+        this.body = body;
+        return this;
+    }
+    public RemoveGroupMemberResponseBody getBody() {
+        return this.body;
     }
 
 }
