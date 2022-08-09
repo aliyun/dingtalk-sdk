@@ -554,18 +554,18 @@ export class CreateCoupleGroupConversationRequest extends $tea.Model {
 }
 
 export class CreateCoupleGroupConversationResponseBody extends $tea.Model {
-  chatId?: string;
+  conversationId?: string;
   openConversationId?: string;
   static names(): { [key: string]: string } {
     return {
-      chatId: 'chatId',
+      conversationId: 'conversationId',
       openConversationId: 'openConversationId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      chatId: 'string',
+      conversationId: 'string',
       openConversationId: 'string',
     };
   }
@@ -661,13 +661,13 @@ export class CreateGroupConversationRequest extends $tea.Model {
 
 export class CreateGroupConversationResponseBody extends $tea.Model {
   appUserIds?: string[];
-  chatId?: string;
+  conversationId?: string;
   openConversationId?: string;
   userIds?: string[];
   static names(): { [key: string]: string } {
     return {
       appUserIds: 'appUserIds',
-      chatId: 'chatId',
+      conversationId: 'conversationId',
       openConversationId: 'openConversationId',
       userIds: 'userIds',
     };
@@ -676,7 +676,7 @@ export class CreateGroupConversationResponseBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       appUserIds: { 'type': 'array', 'itemType': 'string' },
-      chatId: 'string',
+      conversationId: 'string',
       openConversationId: 'string',
       userIds: { 'type': 'array', 'itemType': 'string' },
     };
@@ -851,18 +851,18 @@ export class CreateStoreGroupConversationRequest extends $tea.Model {
 }
 
 export class CreateStoreGroupConversationResponseBody extends $tea.Model {
-  chatId?: string;
+  conversationId?: string;
   openConversationId?: string;
   static names(): { [key: string]: string } {
     return {
-      chatId: 'chatId',
+      conversationId: 'conversationId',
       openConversationId: 'openConversationId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      chatId: 'string',
+      conversationId: 'string',
       openConversationId: 'string',
     };
   }
@@ -4232,17 +4232,39 @@ export class RemoveGroupMemberRequest extends $tea.Model {
   }
 }
 
+export class RemoveGroupMemberResponseBody extends $tea.Model {
+  message?: string;
+  static names(): { [key: string]: string } {
+    return {
+      message: 'message',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      message: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RemoveGroupMemberResponse extends $tea.Model {
   headers: { [key: string]: string };
+  body: RemoveGroupMemberResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      body: 'body',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: RemoveGroupMemberResponseBody,
     };
   }
 
@@ -6919,7 +6941,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RemoveGroupMemberResponse>(await this.doROARequest("removeGroupMember", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/groups/members/remove`, "none", req, runtime), new RemoveGroupMemberResponse({}));
+    return $tea.cast<RemoveGroupMemberResponse>(await this.doROARequest("removeGroupMember", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/groups/members/remove`, "json", req, runtime), new RemoveGroupMemberResponse({}));
   }
 
   async sendDingMessage(request: SendDingMessageRequest): Promise<SendDingMessageResponse> {

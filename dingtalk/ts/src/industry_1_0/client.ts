@@ -2585,6 +2585,97 @@ export class CollegeListStudentInfoResponse extends $tea.Model {
   }
 }
 
+export class CollegeListUncheckedStudentHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeListUncheckedStudentRequest extends $tea.Model {
+  deptId?: number;
+  pageNumber?: number;
+  pageSize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      pageNumber: 'number',
+      pageSize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeListUncheckedStudentResponseBody extends $tea.Model {
+  studentInfoSimpleList?: CollegeListUncheckedStudentResponseBodyStudentInfoSimpleList[];
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      studentInfoSimpleList: 'studentInfoSimpleList',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      studentInfoSimpleList: { 'type': 'array', 'itemType': CollegeListUncheckedStudentResponseBodyStudentInfoSimpleList },
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollegeListUncheckedStudentResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollegeListUncheckedStudentResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollegeListUncheckedStudentResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CollegeQueryCollegeDeptGroupInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3990,6 +4081,91 @@ export class CustomizeContactDeptDeleteResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: CustomizeContactDeptDeleteResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptGroupCreateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptGroupCreateRequest extends $tea.Model {
+  code?: string;
+  deptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      deptId: 'deptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      deptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptGroupCreateResponseBody extends $tea.Model {
+  content?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CustomizeContactDeptGroupCreateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CustomizeContactDeptGroupCreateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CustomizeContactDeptGroupCreateResponseBody,
     };
   }
 
@@ -9899,6 +10075,40 @@ export class CollegeListStudentInfoResponseBodyStudentInfoSimpleList extends $te
   }
 }
 
+export class CollegeListUncheckedStudentResponseBodyStudentInfoSimpleList extends $tea.Model {
+  dingMemberStatus?: string;
+  isActive?: boolean;
+  studentId?: number;
+  studentName?: string;
+  unionId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingMemberStatus: 'dingMemberStatus',
+      isActive: 'isActive',
+      studentId: 'studentId',
+      studentName: 'studentName',
+      unionId: 'unionId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingMemberStatus: 'string',
+      isActive: 'boolean',
+      studentId: 'number',
+      studentName: 'string',
+      unionId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CollegeQueryStudentInfoByMobileResponseBodyDeptStudentInfoList extends $tea.Model {
   deptId?: number;
   memberType?: string;
@@ -13482,6 +13692,43 @@ export default class Client extends OpenApi {
     return $tea.cast<CollegeListStudentInfoResponse>(await this.doROARequest("CollegeListStudentInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/colleges/members/depts/students`, "json", req, runtime), new CollegeListStudentInfoResponse({}));
   }
 
+  async collegeListUncheckedStudent(request: CollegeListUncheckedStudentRequest): Promise<CollegeListUncheckedStudentResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollegeListUncheckedStudentHeaders({ });
+    return await this.collegeListUncheckedStudentWithOptions(request, headers, runtime);
+  }
+
+  async collegeListUncheckedStudentWithOptions(request: CollegeListUncheckedStudentRequest, headers: CollegeListUncheckedStudentHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeListUncheckedStudentResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CollegeListUncheckedStudentResponse>(await this.doROARequest("CollegeListUncheckedStudent", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/colleges/members/organizations/unjoinedStudents`, "json", req, runtime), new CollegeListUncheckedStudentResponse({}));
+  }
+
   async collegeQueryCollegeDeptGroupInfo(request: CollegeQueryCollegeDeptGroupInfoRequest): Promise<CollegeQueryCollegeDeptGroupInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CollegeQueryCollegeDeptGroupInfoHeaders({ });
@@ -14015,6 +14262,39 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<CustomizeContactDeptDeleteResponse>(await this.doROARequest("CustomizeContactDeptDelete", "industry_1.0", "HTTP", "DELETE", "AK", `/v1.0/industry/customizations/departments`, "json", req, runtime), new CustomizeContactDeptDeleteResponse({}));
+  }
+
+  async customizeContactDeptGroupCreate(request: CustomizeContactDeptGroupCreateRequest): Promise<CustomizeContactDeptGroupCreateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CustomizeContactDeptGroupCreateHeaders({ });
+    return await this.customizeContactDeptGroupCreateWithOptions(request, headers, runtime);
+  }
+
+  async customizeContactDeptGroupCreateWithOptions(request: CustomizeContactDeptGroupCreateRequest, headers: CustomizeContactDeptGroupCreateHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactDeptGroupCreateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.code)) {
+      body["code"] = request.code;
+    }
+
+    if (!Util.isUnset(request.deptId)) {
+      body["deptId"] = request.deptId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CustomizeContactDeptGroupCreateResponse>(await this.doROARequest("CustomizeContactDeptGroupCreate", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/customizations/departmentGroups`, "json", req, runtime), new CustomizeContactDeptGroupCreateResponse({}));
   }
 
   async customizeContactDeptInfo(request: CustomizeContactDeptInfoRequest): Promise<CustomizeContactDeptInfoResponse> {

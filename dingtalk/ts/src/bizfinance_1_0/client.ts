@@ -52,16 +52,19 @@ export class BatchAddInvoiceRequest extends $tea.Model {
 }
 
 export class BatchAddInvoiceResponseBody extends $tea.Model {
-  result?: BatchAddInvoiceResponseBodyResult[];
+  errorResult?: BatchAddInvoiceResponseBodyErrorResult[];
+  successResult?: BatchAddInvoiceResponseBodySuccessResult[];
   static names(): { [key: string]: string } {
     return {
-      result: 'result',
+      errorResult: 'errorResult',
+      successResult: 'successResult',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      result: { 'type': 'array', 'itemType': BatchAddInvoiceResponseBodyResult },
+      errorResult: { 'type': 'array', 'itemType': BatchAddInvoiceResponseBodyErrorResult },
+      successResult: { 'type': 'array', 'itemType': BatchAddInvoiceResponseBodySuccessResult },
     };
   }
 
@@ -2797,16 +2800,19 @@ export class UpdateInvoiceAccountPeriodRequest extends $tea.Model {
 }
 
 export class UpdateInvoiceAccountPeriodResponseBody extends $tea.Model {
-  result?: boolean;
+  errorResult?: UpdateInvoiceAccountPeriodResponseBodyErrorResult[];
+  successResult?: UpdateInvoiceAccountPeriodResponseBodySuccessResult[];
   static names(): { [key: string]: string } {
     return {
-      result: 'result',
+      errorResult: 'errorResult',
+      successResult: 'successResult',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      result: 'boolean',
+      errorResult: { 'type': 'array', 'itemType': UpdateInvoiceAccountPeriodResponseBodyErrorResult },
+      successResult: { 'type': 'array', 'itemType': UpdateInvoiceAccountPeriodResponseBodySuccessResult },
     };
   }
 
@@ -3770,7 +3776,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
   }
 }
 
-export class BatchAddInvoiceResponseBodyResult extends $tea.Model {
+export class BatchAddInvoiceResponseBodyErrorResult extends $tea.Model {
   errorKey?: string;
   errorMsg?: string;
   static names(): { [key: string]: string } {
@@ -3784,6 +3790,28 @@ export class BatchAddInvoiceResponseBodyResult extends $tea.Model {
     return {
       errorKey: 'string',
       errorMsg: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchAddInvoiceResponseBodySuccessResult extends $tea.Model {
+  invoiceCode?: string;
+  invoiceNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      invoiceCode: 'invoiceCode',
+      invoiceNo: 'invoiceNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      invoiceCode: 'string',
+      invoiceNo: 'string',
     };
   }
 
@@ -6426,6 +6454,50 @@ export class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList extends $tea.
 }
 
 export class UpdateInvoiceAccountPeriodRequestInvoiceKeyVOList extends $tea.Model {
+  invoiceCode?: string;
+  invoiceNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      invoiceCode: 'invoiceCode',
+      invoiceNo: 'invoiceNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      invoiceCode: 'string',
+      invoiceNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceAccountPeriodResponseBodyErrorResult extends $tea.Model {
+  errorKey?: string;
+  errorMsg?: string;
+  static names(): { [key: string]: string } {
+    return {
+      errorKey: 'errorKey',
+      errorMsg: 'errorMsg',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      errorKey: 'string',
+      errorMsg: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceAccountPeriodResponseBodySuccessResult extends $tea.Model {
   invoiceCode?: string;
   invoiceNo?: string;
   static names(): { [key: string]: string } {
