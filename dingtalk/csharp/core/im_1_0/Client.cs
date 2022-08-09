@@ -4216,7 +4216,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<RemoveGroupMemberResponse>(DoROARequest("removeGroupMember", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interconnections/groups/members/remove", "none", req, runtime));
+            return TeaModel.ToObject<RemoveGroupMemberResponse>(DoROARequest("removeGroupMember", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interconnections/groups/members/remove", "json", req, runtime));
         }
 
         public async Task<RemoveGroupMemberResponse> RemoveGroupMemberWithOptionsAsync(RemoveGroupMemberRequest request, RemoveGroupMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -4253,7 +4253,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<RemoveGroupMemberResponse>(await DoROARequestAsync("removeGroupMember", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interconnections/groups/members/remove", "none", req, runtime));
+            return TeaModel.ToObject<RemoveGroupMemberResponse>(await DoROARequestAsync("removeGroupMember", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interconnections/groups/members/remove", "json", req, runtime));
         }
 
         public SendDingMessageResponse SendDingMessage(SendDingMessageRequest request)

@@ -9,9 +9,12 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class CreateStoreGroupConversationResponseBody : TeaModel {
-        [NameInMap("chatId")]
+        /// <summary>
+        /// 钉钉群会话id
+        /// </summary>
+        [NameInMap("conversationId")]
         [Validation(Required=false)]
-        public string ChatId { get; set; }
+        public string ConversationId { get; set; }
 
         /// <summary>
         /// 群会话Id。

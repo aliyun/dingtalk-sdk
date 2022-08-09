@@ -16,9 +16,12 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public List<string> AppUserIds { get; set; }
 
-        [NameInMap("chatId")]
+        /// <summary>
+        /// 钉钉群会话Id。
+        /// </summary>
+        [NameInMap("conversationId")]
         [Validation(Required=false)]
-        public string ChatId { get; set; }
+        public string ConversationId { get; set; }
 
         /// <summary>
         /// 群会话Id。

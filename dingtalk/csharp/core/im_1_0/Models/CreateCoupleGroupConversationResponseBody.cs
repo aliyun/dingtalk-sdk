@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class CreateCoupleGroupConversationResponseBody : TeaModel {
         /// <summary>
-        /// 群chatId。
+        /// 钉钉群会话id。
         /// </summary>
-        [NameInMap("chatId")]
+        [NameInMap("conversationId")]
         [Validation(Required=false)]
-        public string ChatId { get; set; }
+        public string ConversationId { get; set; }
 
         /// <summary>
         /// 群会话Id。

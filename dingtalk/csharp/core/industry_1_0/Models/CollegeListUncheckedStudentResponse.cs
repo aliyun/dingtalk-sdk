@@ -6,16 +6,16 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
-    public class RemoveGroupMemberResponse : TeaModel {
+    public class CollegeListUncheckedStudentResponse : TeaModel {
         [NameInMap("headers")]
         [Validation(Required=true)]
         public Dictionary<string, string> Headers { get; set; }
 
         [NameInMap("body")]
         [Validation(Required=true)]
-        public RemoveGroupMemberResponseBody Body { get; set; }
+        public CollegeListUncheckedStudentResponseBody Body { get; set; }
 
     }
 

@@ -12,10 +12,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         /// <summary>
         /// 错误信息
         /// </summary>
-        [NameInMap("result")]
+        [NameInMap("errorResult")]
         [Validation(Required=false)]
-        public List<BatchAddInvoiceResponseBodyResult> Result { get; set; }
-        public class BatchAddInvoiceResponseBodyResult : TeaModel {
+        public List<BatchAddInvoiceResponseBodyErrorResult> ErrorResult { get; set; }
+        public class BatchAddInvoiceResponseBodyErrorResult : TeaModel {
             /// <summary>
             /// 错误数据的key
             /// </summary>
@@ -29,6 +29,29 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [NameInMap("errorMsg")]
             [Validation(Required=false)]
             public string ErrorMsg { get; set; }
+
+        }
+
+        /// <summary>
+        /// 成功信息
+        /// </summary>
+        [NameInMap("successResult")]
+        [Validation(Required=false)]
+        public List<BatchAddInvoiceResponseBodySuccessResult> SuccessResult { get; set; }
+        public class BatchAddInvoiceResponseBodySuccessResult : TeaModel {
+            /// <summary>
+            /// 发票代码
+            /// </summary>
+            [NameInMap("invoiceCode")]
+            [Validation(Required=false)]
+            public string InvoiceCode { get; set; }
+
+            /// <summary>
+            /// 发票号码
+            /// </summary>
+            [NameInMap("invoiceNo")]
+            [Validation(Required=false)]
+            public string InvoiceNo { get; set; }
 
         }
 
