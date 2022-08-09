@@ -2570,7 +2570,7 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return RemoveGroupMemberResponse::fromMap($this->doROARequest('removeGroupMember', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interconnections/groups/members/remove', 'none', $req, $runtime));
+        return RemoveGroupMemberResponse::fromMap($this->doROARequest('removeGroupMember', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interconnections/groups/members/remove', 'json', $req, $runtime));
     }
 
     /**

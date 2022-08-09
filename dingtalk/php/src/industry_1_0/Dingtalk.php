@@ -87,6 +87,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeListDeptManagerRespons
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeListStudentInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeListStudentInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeListStudentInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeListUncheckedStudentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeListUncheckedStudentRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeListUncheckedStudentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeQueryCollegeDeptGroupInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeQueryCollegeDeptGroupInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeQueryCollegeDeptGroupInfoResponse;
@@ -132,6 +135,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptCreateRes
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptDeleteHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptDeleteRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptDeleteResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptGroupCreateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptGroupCreateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptGroupCreateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactDeptInfoResponse;
@@ -1694,6 +1700,54 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param CollegeListUncheckedStudentRequest $request
+     *
+     * @return CollegeListUncheckedStudentResponse
+     */
+    public function collegeListUncheckedStudent($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CollegeListUncheckedStudentHeaders([]);
+
+        return $this->collegeListUncheckedStudentWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CollegeListUncheckedStudentRequest $request
+     * @param CollegeListUncheckedStudentHeaders $headers
+     * @param RuntimeOptions                     $runtime
+     *
+     * @return CollegeListUncheckedStudentResponse
+     */
+    public function collegeListUncheckedStudentWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$query['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CollegeListUncheckedStudentResponse::fromMap($this->doROARequest('CollegeListUncheckedStudent', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/colleges/members/organizations/unjoinedStudents', 'json', $req, $runtime));
+    }
+
+    /**
      * @param CollegeQueryCollegeDeptGroupInfoRequest $request
      *
      * @return CollegeQueryCollegeDeptGroupInfoResponse
@@ -2396,6 +2450,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CustomizeContactDeptDeleteResponse::fromMap($this->doROARequest('CustomizeContactDeptDelete', 'industry_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/industry/customizations/departments', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CustomizeContactDeptGroupCreateRequest $request
+     *
+     * @return CustomizeContactDeptGroupCreateResponse
+     */
+    public function customizeContactDeptGroupCreate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CustomizeContactDeptGroupCreateHeaders([]);
+
+        return $this->customizeContactDeptGroupCreateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CustomizeContactDeptGroupCreateRequest $request
+     * @param CustomizeContactDeptGroupCreateHeaders $headers
+     * @param RuntimeOptions                         $runtime
+     *
+     * @return CustomizeContactDeptGroupCreateResponse
+     */
+    public function customizeContactDeptGroupCreateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->code)) {
+            @$body['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->deptId)) {
+            @$body['deptId'] = $request->deptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CustomizeContactDeptGroupCreateResponse::fromMap($this->doROARequest('CustomizeContactDeptGroupCreate', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/customizations/departmentGroups', 'json', $req, $runtime));
     }
 
     /**

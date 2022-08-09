@@ -4,7 +4,8 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BatchAddInvoiceResponseBody\result;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BatchAddInvoiceResponseBody\errorResult;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BatchAddInvoiceResponseBody\successResult;
 use AlibabaCloud\Tea\Model;
 
 class BatchAddInvoiceResponseBody extends Model
@@ -12,11 +13,19 @@ class BatchAddInvoiceResponseBody extends Model
     /**
      * @description 错误信息
      *
-     * @var result[]
+     * @var errorResult[]
      */
-    public $result;
+    public $errorResult;
+
+    /**
+     * @description 成功信息
+     *
+     * @var successResult[]
+     */
+    public $successResult;
     protected $_name = [
-        'result' => 'result',
+        'errorResult'   => 'errorResult',
+        'successResult' => 'successResult',
     ];
 
     public function validate()
@@ -26,12 +35,21 @@ class BatchAddInvoiceResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->result) {
-            $res['result'] = [];
-            if (null !== $this->result && \is_array($this->result)) {
+        if (null !== $this->errorResult) {
+            $res['errorResult'] = [];
+            if (null !== $this->errorResult && \is_array($this->errorResult)) {
                 $n = 0;
-                foreach ($this->result as $item) {
-                    $res['result'][$n++] = null !== $item ? $item->toMap() : $item;
+                foreach ($this->errorResult as $item) {
+                    $res['errorResult'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->successResult) {
+            $res['successResult'] = [];
+            if (null !== $this->successResult && \is_array($this->successResult)) {
+                $n = 0;
+                foreach ($this->successResult as $item) {
+                    $res['successResult'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -47,12 +65,21 @@ class BatchAddInvoiceResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['result'])) {
-            if (!empty($map['result'])) {
-                $model->result = [];
-                $n             = 0;
-                foreach ($map['result'] as $item) {
-                    $model->result[$n++] = null !== $item ? result::fromMap($item) : $item;
+        if (isset($map['errorResult'])) {
+            if (!empty($map['errorResult'])) {
+                $model->errorResult = [];
+                $n                  = 0;
+                foreach ($map['errorResult'] as $item) {
+                    $model->errorResult[$n++] = null !== $item ? errorResult::fromMap($item) : $item;
+                }
+            }
+        }
+        if (isset($map['successResult'])) {
+            if (!empty($map['successResult'])) {
+                $model->successResult = [];
+                $n                    = 0;
+                foreach ($map['successResult'] as $item) {
+                    $model->successResult[$n++] = null !== $item ? successResult::fromMap($item) : $item;
                 }
             }
         }

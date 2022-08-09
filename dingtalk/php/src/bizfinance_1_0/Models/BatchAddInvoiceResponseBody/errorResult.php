@@ -6,7 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BatchAddInvoiceRespon
 
 use AlibabaCloud\Tea\Model;
 
-class result extends Model
+class errorResult extends Model
 {
     /**
      * @description 错误数据的key
@@ -46,7 +46,7 @@ class result extends Model
     /**
      * @param array $map
      *
-     * @return result
+     * @return errorResult
      */
     public static function fromMap($map = [])
     {

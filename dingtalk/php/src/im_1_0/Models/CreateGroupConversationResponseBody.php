@@ -16,9 +16,11 @@ class CreateGroupConversationResponseBody extends Model
     public $appUserIds;
 
     /**
+     * @description 钉钉群会话Id。
+     *
      * @var string
      */
-    public $chatId;
+    public $conversationId;
 
     /**
      * @description 群会话Id。
@@ -35,7 +37,7 @@ class CreateGroupConversationResponseBody extends Model
     public $userIds;
     protected $_name = [
         'appUserIds'         => 'appUserIds',
-        'chatId'             => 'chatId',
+        'conversationId'     => 'conversationId',
         'openConversationId' => 'openConversationId',
         'userIds'            => 'userIds',
     ];
@@ -50,8 +52,8 @@ class CreateGroupConversationResponseBody extends Model
         if (null !== $this->appUserIds) {
             $res['appUserIds'] = $this->appUserIds;
         }
-        if (null !== $this->chatId) {
-            $res['chatId'] = $this->chatId;
+        if (null !== $this->conversationId) {
+            $res['conversationId'] = $this->conversationId;
         }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
@@ -76,8 +78,8 @@ class CreateGroupConversationResponseBody extends Model
                 $model->appUserIds = $map['appUserIds'];
             }
         }
-        if (isset($map['chatId'])) {
-            $model->chatId = $map['chatId'];
+        if (isset($map['conversationId'])) {
+            $model->conversationId = $map['conversationId'];
         }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
