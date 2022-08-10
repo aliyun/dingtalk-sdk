@@ -1236,6 +1236,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->startTime)) {
             @$query['startTime'] = $request->startTime;
         }
+        if (!Utils::isUnset($request->timeFilterField)) {
+            @$query['timeFilterField'] = $request->timeFilterField;
+        }
         if (!Utils::isUnset($request->title)) {
             @$query['title'] = $request->title;
         }

@@ -37,6 +37,13 @@ class QueryReceiptsBaseInfoRequest extends Model
     public $startTime;
 
     /**
+     * @description 时间筛选条件 gmt_create / record_time
+     *
+     * @var string
+     */
+    public $timeFilterField;
+
+    /**
      * @description 单据标题
      *
      * @var string
@@ -50,12 +57,13 @@ class QueryReceiptsBaseInfoRequest extends Model
      */
     public $voucherStatus;
     protected $_name = [
-        'endTime'       => 'endTime',
-        'pageNumber'    => 'pageNumber',
-        'pageSize'      => 'pageSize',
-        'startTime'     => 'startTime',
-        'title'         => 'title',
-        'voucherStatus' => 'voucherStatus',
+        'endTime'         => 'endTime',
+        'pageNumber'      => 'pageNumber',
+        'pageSize'        => 'pageSize',
+        'startTime'       => 'startTime',
+        'timeFilterField' => 'timeFilterField',
+        'title'           => 'title',
+        'voucherStatus'   => 'voucherStatus',
     ];
 
     public function validate()
@@ -76,6 +84,9 @@ class QueryReceiptsBaseInfoRequest extends Model
         }
         if (null !== $this->startTime) {
             $res['startTime'] = $this->startTime;
+        }
+        if (null !== $this->timeFilterField) {
+            $res['timeFilterField'] = $this->timeFilterField;
         }
         if (null !== $this->title) {
             $res['title'] = $this->title;
@@ -106,6 +117,9 @@ class QueryReceiptsBaseInfoRequest extends Model
         }
         if (isset($map['startTime'])) {
             $model->startTime = $map['startTime'];
+        }
+        if (isset($map['timeFilterField'])) {
+            $model->timeFilterField = $map['timeFilterField'];
         }
         if (isset($map['title'])) {
             $model->title = $map['title'];
