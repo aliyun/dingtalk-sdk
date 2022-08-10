@@ -2194,6 +2194,7 @@ export class QueryReceiptsBaseInfoRequest extends $tea.Model {
   pageNumber?: number;
   pageSize?: number;
   startTime?: number;
+  timeFilterField?: string;
   title?: string;
   voucherStatus?: string;
   static names(): { [key: string]: string } {
@@ -2202,6 +2203,7 @@ export class QueryReceiptsBaseInfoRequest extends $tea.Model {
       pageNumber: 'pageNumber',
       pageSize: 'pageSize',
       startTime: 'startTime',
+      timeFilterField: 'timeFilterField',
       title: 'title',
       voucherStatus: 'voucherStatus',
     };
@@ -2213,6 +2215,7 @@ export class QueryReceiptsBaseInfoRequest extends $tea.Model {
       pageNumber: 'number',
       pageSize: 'number',
       startTime: 'number',
+      timeFilterField: 'string',
       title: 'string',
       voucherStatus: 'string',
     };
@@ -8204,6 +8207,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.startTime)) {
       query["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.timeFilterField)) {
+      query["timeFilterField"] = request.timeFilterField;
     }
 
     if (!Util.isUnset(request.title)) {

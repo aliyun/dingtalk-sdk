@@ -1385,15 +1385,21 @@ export class GetPreviewInfoHeaders extends $tea.Model {
 
 export class GetPreviewInfoRequest extends $tea.Model {
   unionId?: string;
+  version?: number;
+  watermark?: boolean;
   static names(): { [key: string]: string } {
     return {
       unionId: 'unionId',
+      version: 'version',
+      watermark: 'watermark',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       unionId: 'string',
+      version: 'number',
+      watermark: 'boolean',
     };
   }
 
@@ -4257,6 +4263,14 @@ export default class Client extends OpenApi {
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
+    }
+
+    if (!Util.isUnset(request.version)) {
+      query["version"] = request.version;
+    }
+
+    if (!Util.isUnset(request.watermark)) {
+      query["watermark"] = request.watermark;
     }
 
     let realHeaders : {[key: string ]: string} = { };

@@ -195,6 +195,188 @@ export class CreateCloudFeedResponse extends $tea.Model {
   }
 }
 
+export class CreateLiveHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateLiveRequest extends $tea.Model {
+  coverUrl?: string;
+  introduction?: string;
+  preEndTime?: number;
+  preStartTime?: number;
+  title?: string;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      coverUrl: 'coverUrl',
+      introduction: 'introduction',
+      preEndTime: 'preEndTime',
+      preStartTime: 'preStartTime',
+      title: 'title',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      coverUrl: 'string',
+      introduction: 'string',
+      preEndTime: 'number',
+      preStartTime: 'number',
+      title: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateLiveResponseBody extends $tea.Model {
+  result?: CreateLiveResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: CreateLiveResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateLiveResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateLiveResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateLiveResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteLiveHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteLiveRequest extends $tea.Model {
+  liveId?: string;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      liveId: 'liveId',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      liveId: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteLiveResponseBody extends $tea.Model {
+  result?: DeleteLiveResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: DeleteLiveResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteLiveResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DeleteLiveResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DeleteLiveResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteLiveFeedHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -560,6 +742,267 @@ export class QueryFeedWhiteListResponse extends $tea.Model {
   }
 }
 
+export class QueryLiveInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryLiveInfoRequest extends $tea.Model {
+  liveId?: string;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      liveId: 'liveId',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      liveId: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryLiveInfoResponseBody extends $tea.Model {
+  result?: QueryLiveInfoResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryLiveInfoResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryLiveInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryLiveInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryLiveInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryLiveWatchDetailHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryLiveWatchDetailRequest extends $tea.Model {
+  liveId?: string;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      liveId: 'liveId',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      liveId: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryLiveWatchDetailResponseBody extends $tea.Model {
+  result?: QueryLiveWatchDetailResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryLiveWatchDetailResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryLiveWatchDetailResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryLiveWatchDetailResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryLiveWatchDetailResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryLiveWatchUserListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryLiveWatchUserListRequest extends $tea.Model {
+  liveId?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      liveId: 'liveId',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      liveId: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryLiveWatchUserListResponseBody extends $tea.Model {
+  result?: QueryLiveWatchUserListResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryLiveWatchUserListResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryLiveWatchUserListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryLiveWatchUserListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryLiveWatchUserListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class StartCloudFeedHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -724,6 +1167,106 @@ export class StopCloudFeedResponse extends $tea.Model {
   }
 }
 
+export class UpdateLiveHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateLiveRequest extends $tea.Model {
+  coverUrl?: string;
+  introduction?: string;
+  liveId?: string;
+  preEndTime?: number;
+  preStartTime?: number;
+  title?: string;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      coverUrl: 'coverUrl',
+      introduction: 'introduction',
+      liveId: 'liveId',
+      preEndTime: 'preEndTime',
+      preStartTime: 'preStartTime',
+      title: 'title',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      coverUrl: 'string',
+      introduction: 'string',
+      liveId: 'string',
+      preEndTime: 'number',
+      preStartTime: 'number',
+      title: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateLiveResponseBody extends $tea.Model {
+  result?: UpdateLiveResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: UpdateLiveResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateLiveResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateLiveResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateLiveResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateLiveFeedHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -810,6 +1353,261 @@ export class UpdateLiveFeedResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: UpdateLiveFeedResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateLiveResponseBodyResult extends $tea.Model {
+  liveId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      liveId: 'liveId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      liveId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteLiveResponseBodyResult extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryLiveInfoResponseBodyResultLiveInfo extends $tea.Model {
+  coverUrl?: string;
+  duration?: number;
+  endTime?: number;
+  introduction?: string;
+  liveId?: string;
+  livePlayUrl?: string;
+  liveStatus?: number;
+  startTime?: number;
+  subscribeCount?: number;
+  title?: string;
+  unionId?: string;
+  uv?: number;
+  static names(): { [key: string]: string } {
+    return {
+      coverUrl: 'coverUrl',
+      duration: 'duration',
+      endTime: 'endTime',
+      introduction: 'introduction',
+      liveId: 'liveId',
+      livePlayUrl: 'livePlayUrl',
+      liveStatus: 'liveStatus',
+      startTime: 'startTime',
+      subscribeCount: 'subscribeCount',
+      title: 'title',
+      unionId: 'unionId',
+      uv: 'uv',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      coverUrl: 'string',
+      duration: 'number',
+      endTime: 'number',
+      introduction: 'string',
+      liveId: 'string',
+      livePlayUrl: 'string',
+      liveStatus: 'number',
+      startTime: 'number',
+      subscribeCount: 'number',
+      title: 'string',
+      unionId: 'string',
+      uv: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryLiveInfoResponseBodyResult extends $tea.Model {
+  liveInfo?: QueryLiveInfoResponseBodyResultLiveInfo;
+  static names(): { [key: string]: string } {
+    return {
+      liveInfo: 'liveInfo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      liveInfo: QueryLiveInfoResponseBodyResultLiveInfo,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryLiveWatchDetailResponseBodyResult extends $tea.Model {
+  avgWatchTime?: number;
+  liveUv?: number;
+  msgCount?: number;
+  playbackUv?: number;
+  praiseCount?: number;
+  pv?: number;
+  totalWatchTime?: number;
+  uv?: number;
+  static names(): { [key: string]: string } {
+    return {
+      avgWatchTime: 'avgWatchTime',
+      liveUv: 'liveUv',
+      msgCount: 'msgCount',
+      playbackUv: 'playbackUv',
+      praiseCount: 'praiseCount',
+      pv: 'pv',
+      totalWatchTime: 'totalWatchTime',
+      uv: 'uv',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      avgWatchTime: 'number',
+      liveUv: 'number',
+      msgCount: 'number',
+      playbackUv: 'number',
+      praiseCount: 'number',
+      pv: 'number',
+      totalWatchTime: 'number',
+      uv: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryLiveWatchUserListResponseBodyResultOrgUsesList extends $tea.Model {
+  deptName?: string;
+  name?: string;
+  unionId?: string;
+  userId?: string;
+  watchLiveTime?: number;
+  watchPlaybackTime?: number;
+  watchProgressMs?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptName: 'deptName',
+      name: 'name',
+      unionId: 'unionId',
+      userId: 'userId',
+      watchLiveTime: 'watchLiveTime',
+      watchPlaybackTime: 'watchPlaybackTime',
+      watchProgressMs: 'watchProgressMs',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptName: 'string',
+      name: 'string',
+      unionId: 'string',
+      userId: 'string',
+      watchLiveTime: 'number',
+      watchPlaybackTime: 'number',
+      watchProgressMs: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryLiveWatchUserListResponseBodyResultOutOrgUserList extends $tea.Model {
+  name?: string;
+  watchLiveTime?: number;
+  watchPlaybackTime?: number;
+  watchProgressMs?: number;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      watchLiveTime: 'watchLiveTime',
+      watchPlaybackTime: 'watchPlaybackTime',
+      watchProgressMs: 'watchProgressMs',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      watchLiveTime: 'number',
+      watchPlaybackTime: 'number',
+      watchProgressMs: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryLiveWatchUserListResponseBodyResult extends $tea.Model {
+  orgUsesList?: QueryLiveWatchUserListResponseBodyResultOrgUsesList[];
+  outOrgUserList?: QueryLiveWatchUserListResponseBodyResultOutOrgUserList[];
+  static names(): { [key: string]: string } {
+    return {
+      orgUsesList: 'orgUsesList',
+      outOrgUserList: 'outOrgUserList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      orgUsesList: { 'type': 'array', 'itemType': QueryLiveWatchUserListResponseBodyResultOrgUsesList },
+      outOrgUserList: { 'type': 'array', 'itemType': QueryLiveWatchUserListResponseBodyResultOutOrgUserList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateLiveResponseBodyResult extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
     };
   }
 
@@ -916,6 +1714,88 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateCloudFeedResponse>(await this.doROARequest("CreateCloudFeed", "live_1.0", "HTTP", "POST", "AK", `/v1.0/live/cloudFeeds`, "json", req, runtime), new CreateCloudFeedResponse({}));
+  }
+
+  async createLive(request: CreateLiveRequest): Promise<CreateLiveResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateLiveHeaders({ });
+    return await this.createLiveWithOptions(request, headers, runtime);
+  }
+
+  async createLiveWithOptions(request: CreateLiveRequest, headers: CreateLiveHeaders, runtime: $Util.RuntimeOptions): Promise<CreateLiveResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.coverUrl)) {
+      body["coverUrl"] = request.coverUrl;
+    }
+
+    if (!Util.isUnset(request.introduction)) {
+      body["introduction"] = request.introduction;
+    }
+
+    if (!Util.isUnset(request.preEndTime)) {
+      body["preEndTime"] = request.preEndTime;
+    }
+
+    if (!Util.isUnset(request.preStartTime)) {
+      body["preStartTime"] = request.preStartTime;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateLiveResponse>(await this.doROARequest("CreateLive", "live_1.0", "HTTP", "POST", "AK", `/v1.0/live/lives`, "json", req, runtime), new CreateLiveResponse({}));
+  }
+
+  async deleteLive(request: DeleteLiveRequest): Promise<DeleteLiveResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteLiveHeaders({ });
+    return await this.deleteLiveWithOptions(request, headers, runtime);
+  }
+
+  async deleteLiveWithOptions(request: DeleteLiveRequest, headers: DeleteLiveHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteLiveResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.liveId)) {
+      query["liveId"] = request.liveId;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<DeleteLiveResponse>(await this.doROARequest("DeleteLive", "live_1.0", "HTTP", "DELETE", "AK", `/v1.0/live/lives`, "json", req, runtime), new DeleteLiveResponse({}));
   }
 
   async deleteLiveFeed(feedId: string, request: DeleteLiveFeedRequest): Promise<DeleteLiveFeedResponse> {
@@ -1060,6 +1940,113 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryFeedWhiteListResponse>(await this.doROARequest("QueryFeedWhiteList", "live_1.0", "HTTP", "GET", "AK", `/v1.0/live/openFeeds/${feedId}/whiteList`, "json", req, runtime), new QueryFeedWhiteListResponse({}));
   }
 
+  async queryLiveInfo(request: QueryLiveInfoRequest): Promise<QueryLiveInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryLiveInfoHeaders({ });
+    return await this.queryLiveInfoWithOptions(request, headers, runtime);
+  }
+
+  async queryLiveInfoWithOptions(request: QueryLiveInfoRequest, headers: QueryLiveInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryLiveInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.liveId)) {
+      query["liveId"] = request.liveId;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryLiveInfoResponse>(await this.doROARequest("QueryLiveInfo", "live_1.0", "HTTP", "GET", "AK", `/v1.0/live/lives`, "json", req, runtime), new QueryLiveInfoResponse({}));
+  }
+
+  async queryLiveWatchDetail(request: QueryLiveWatchDetailRequest): Promise<QueryLiveWatchDetailResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryLiveWatchDetailHeaders({ });
+    return await this.queryLiveWatchDetailWithOptions(request, headers, runtime);
+  }
+
+  async queryLiveWatchDetailWithOptions(request: QueryLiveWatchDetailRequest, headers: QueryLiveWatchDetailHeaders, runtime: $Util.RuntimeOptions): Promise<QueryLiveWatchDetailResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.liveId)) {
+      query["liveId"] = request.liveId;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryLiveWatchDetailResponse>(await this.doROARequest("QueryLiveWatchDetail", "live_1.0", "HTTP", "GET", "AK", `/v1.0/live/lives/watchDetails`, "json", req, runtime), new QueryLiveWatchDetailResponse({}));
+  }
+
+  async queryLiveWatchUserList(request: QueryLiveWatchUserListRequest): Promise<QueryLiveWatchUserListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryLiveWatchUserListHeaders({ });
+    return await this.queryLiveWatchUserListWithOptions(request, headers, runtime);
+  }
+
+  async queryLiveWatchUserListWithOptions(request: QueryLiveWatchUserListRequest, headers: QueryLiveWatchUserListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryLiveWatchUserListResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.liveId)) {
+      query["liveId"] = request.liveId;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryLiveWatchUserListResponse>(await this.doROARequest("QueryLiveWatchUserList", "live_1.0", "HTTP", "GET", "AK", `/v1.0/live/lives/watchUsers`, "json", req, runtime), new QueryLiveWatchUserListResponse({}));
+  }
+
   async startCloudFeed(feedId: string, request: StartCloudFeedRequest): Promise<StartCloudFeedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new StartCloudFeedHeaders({ });
@@ -1118,6 +2105,59 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<StopCloudFeedResponse>(await this.doROARequest("StopCloudFeed", "live_1.0", "HTTP", "POST", "AK", `/v1.0/live/cloudFeeds/${feedId}/stop`, "json", req, runtime), new StopCloudFeedResponse({}));
+  }
+
+  async updateLive(request: UpdateLiveRequest): Promise<UpdateLiveResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateLiveHeaders({ });
+    return await this.updateLiveWithOptions(request, headers, runtime);
+  }
+
+  async updateLiveWithOptions(request: UpdateLiveRequest, headers: UpdateLiveHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateLiveResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.coverUrl)) {
+      body["coverUrl"] = request.coverUrl;
+    }
+
+    if (!Util.isUnset(request.introduction)) {
+      body["introduction"] = request.introduction;
+    }
+
+    if (!Util.isUnset(request.liveId)) {
+      body["liveId"] = request.liveId;
+    }
+
+    if (!Util.isUnset(request.preEndTime)) {
+      body["preEndTime"] = request.preEndTime;
+    }
+
+    if (!Util.isUnset(request.preStartTime)) {
+      body["preStartTime"] = request.preStartTime;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateLiveResponse>(await this.doROARequest("UpdateLive", "live_1.0", "HTTP", "PUT", "AK", `/v1.0/live/lives`, "json", req, runtime), new UpdateLiveResponse({}));
   }
 
   async updateLiveFeed(feedId: string, request: UpdateLiveFeedRequest): Promise<UpdateLiveFeedResponse> {
