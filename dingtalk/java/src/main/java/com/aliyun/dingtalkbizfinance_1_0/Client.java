@@ -844,6 +844,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("startTime", request.startTime);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.timeFilterField)) {
+            query.put("timeFilterField", request.timeFilterField);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.title)) {
             query.put("title", request.title);
         }

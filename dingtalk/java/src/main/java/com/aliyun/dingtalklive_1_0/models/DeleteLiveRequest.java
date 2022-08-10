@@ -1,0 +1,36 @@
+// This file is auto-generated, don't edit it. Thanks.
+package com.aliyun.dingtalklive_1_0.models;
+
+import com.aliyun.tea.*;
+
+public class DeleteLiveRequest extends TeaModel {
+    // 直播id
+    @NameInMap("liveId")
+    public String liveId;
+
+    // 用户id
+    @NameInMap("unionId")
+    public String unionId;
+
+    public static DeleteLiveRequest build(java.util.Map<String, ?> map) throws Exception {
+        DeleteLiveRequest self = new DeleteLiveRequest();
+        return TeaModel.build(map, self);
+    }
+
+    public DeleteLiveRequest setLiveId(String liveId) {
+        this.liveId = liveId;
+        return this;
+    }
+    public String getLiveId() {
+        return this.liveId;
+    }
+
+    public DeleteLiveRequest setUnionId(String unionId) {
+        this.unionId = unionId;
+        return this;
+    }
+    public String getUnionId() {
+        return this.unionId;
+    }
+
+}

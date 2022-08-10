@@ -8,6 +8,12 @@ public class GetPreviewInfoRequest extends TeaModel {
     @NameInMap("unionId")
     public String unionId;
 
+    @NameInMap("version")
+    public Long version;
+
+    @NameInMap("watermark")
+    public Boolean watermark;
+
     public static GetPreviewInfoRequest build(java.util.Map<String, ?> map) throws Exception {
         GetPreviewInfoRequest self = new GetPreviewInfoRequest();
         return TeaModel.build(map, self);
@@ -19,6 +25,22 @@ public class GetPreviewInfoRequest extends TeaModel {
     }
     public String getUnionId() {
         return this.unionId;
+    }
+
+    public GetPreviewInfoRequest setVersion(Long version) {
+        this.version = version;
+        return this;
+    }
+    public Long getVersion() {
+        return this.version;
+    }
+
+    public GetPreviewInfoRequest setWatermark(Boolean watermark) {
+        this.watermark = watermark;
+        return this;
+    }
+    public Boolean getWatermark() {
+        return this.watermark;
     }
 
 }

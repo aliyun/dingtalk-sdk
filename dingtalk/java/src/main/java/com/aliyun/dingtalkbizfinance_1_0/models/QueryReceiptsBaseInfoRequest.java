@@ -20,6 +20,10 @@ public class QueryReceiptsBaseInfoRequest extends TeaModel {
     @NameInMap("startTime")
     public Long startTime;
 
+    // 时间筛选条件 gmt_create / record_time
+    @NameInMap("timeFilterField")
+    public String timeFilterField;
+
     // 单据标题
     @NameInMap("title")
     public String title;
@@ -63,6 +67,14 @@ public class QueryReceiptsBaseInfoRequest extends TeaModel {
     }
     public Long getStartTime() {
         return this.startTime;
+    }
+
+    public QueryReceiptsBaseInfoRequest setTimeFilterField(String timeFilterField) {
+        this.timeFilterField = timeFilterField;
+        return this;
+    }
+    public String getTimeFilterField() {
+        return this.timeFilterField;
     }
 
     public QueryReceiptsBaseInfoRequest setTitle(String title) {
