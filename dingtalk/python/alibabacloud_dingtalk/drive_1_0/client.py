@@ -1209,6 +1209,10 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.version):
+            query['version'] = request.version
+        if not UtilClient.is_unset(request.watermark):
+            query['watermark'] = request.watermark
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1237,6 +1241,10 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.version):
+            query['version'] = request.version
+        if not UtilClient.is_unset(request.watermark):
+            query['watermark'] = request.watermark
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

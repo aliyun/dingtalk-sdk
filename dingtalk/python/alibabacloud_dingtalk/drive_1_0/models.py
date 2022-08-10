@@ -2550,9 +2550,13 @@ class GetPreviewInfoRequest(TeaModel):
     def __init__(
         self,
         union_id: str = None,
+        version: int = None,
+        watermark: bool = None,
     ):
         # 用户id
         self.union_id = union_id
+        self.version = version
+        self.watermark = watermark
 
     def validate(self):
         pass
@@ -2565,12 +2569,20 @@ class GetPreviewInfoRequest(TeaModel):
         result = dict()
         if self.union_id is not None:
             result['unionId'] = self.union_id
+        if self.version is not None:
+            result['version'] = self.version
+        if self.watermark is not None:
+            result['watermark'] = self.watermark
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('unionId') is not None:
             self.union_id = m.get('unionId')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        if m.get('watermark') is not None:
+            self.watermark = m.get('watermark')
         return self
 
 

@@ -6466,6 +6466,7 @@ class QueryReceiptsBaseInfoRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
         start_time: int = None,
+        time_filter_field: str = None,
         title: str = None,
         voucher_status: str = None,
     ):
@@ -6477,6 +6478,8 @@ class QueryReceiptsBaseInfoRequest(TeaModel):
         self.page_size = page_size
         # 开始时间
         self.start_time = start_time
+        # 时间筛选条件 gmt_create / record_time
+        self.time_filter_field = time_filter_field
         # 单据标题
         self.title = title
         # 凭证状态
@@ -6499,6 +6502,8 @@ class QueryReceiptsBaseInfoRequest(TeaModel):
             result['pageSize'] = self.page_size
         if self.start_time is not None:
             result['startTime'] = self.start_time
+        if self.time_filter_field is not None:
+            result['timeFilterField'] = self.time_filter_field
         if self.title is not None:
             result['title'] = self.title
         if self.voucher_status is not None:
@@ -6515,6 +6520,8 @@ class QueryReceiptsBaseInfoRequest(TeaModel):
             self.page_size = m.get('pageSize')
         if m.get('startTime') is not None:
             self.start_time = m.get('startTime')
+        if m.get('timeFilterField') is not None:
+            self.time_filter_field = m.get('timeFilterField')
         if m.get('title') is not None:
             self.title = m.get('title')
         if m.get('voucherStatus') is not None:

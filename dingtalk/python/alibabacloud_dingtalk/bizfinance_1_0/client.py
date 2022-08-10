@@ -1651,6 +1651,8 @@ class Client(OpenApiClient):
             query['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.start_time):
             query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.time_filter_field):
+            query['timeFilterField'] = request.time_filter_field
         if not UtilClient.is_unset(request.title):
             query['title'] = request.title
         if not UtilClient.is_unset(request.voucher_status):
@@ -1685,6 +1687,8 @@ class Client(OpenApiClient):
             query['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.start_time):
             query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.time_filter_field):
+            query['timeFilterField'] = request.time_filter_field
         if not UtilClient.is_unset(request.title):
             query['title'] = request.title
         if not UtilClient.is_unset(request.voucher_status):
