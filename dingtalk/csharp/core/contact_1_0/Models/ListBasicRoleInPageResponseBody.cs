@@ -34,7 +34,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
                     public class ListBasicRoleInPageResponseBodyListOpenActionOpenConditionOpenContactScope : TeaModel {
                         [NameInMap("deptIds")]
                         [Validation(Required=false)]
-                        public List<string> DeptIds { get; set; }
+                        public List<long?> DeptIds { get; set; }
                         [NameInMap("includeMemberDepts")]
                         [Validation(Required=false)]
                         public bool? IncludeMemberDepts { get; set; }

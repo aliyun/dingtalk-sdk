@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
             [Validation(Required=false)]
             public List<GetUserOkrResponseBodyDataList> List { get; set; }
             public class GetUserOkrResponseBodyDataList : TeaModel {
-                public List<string> AlignFromIds { get; set; }
-                public List<string> AlignToIds { get; set; }
+                public List<Stream> AlignFromIds { get; set; }
+                public List<Stream> AlignToIds { get; set; }
                 public Stream Content { get; set; }
                 public float? GmtCreate { get; set; }
                 public float? GmtModified { get; set; }
@@ -33,7 +33,7 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
                     public float? GmtModified { get; set; }
                     public Stream Id { get; set; }
                     public Stream ObjectiveId { get; set; }
-                    public List<string> Permission { get; set; }
+                    public List<float?> Permission { get; set; }
                     public long? Position { get; set; }
                     public GetUserOkrResponseBodyDataListKrListProgress Progress { get; set; }
                     public class GetUserOkrResponseBodyDataListKrListProgress : TeaModel {
@@ -87,7 +87,7 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 
                 }
                 public Stream PeriodId { get; set; }
-                public List<string> Permission { get; set; }
+                public List<float?> Permission { get; set; }
                 public int? Position { get; set; }
                 public GetUserOkrResponseBodyDataListProgress Progress { get; set; }
                 public class GetUserOkrResponseBodyDataListProgress : TeaModel {

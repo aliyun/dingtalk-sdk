@@ -81,7 +81,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
                 }
                 public int? DayOfWeek { get; set; }
-                public List<string> SectionIndex { get; set; }
+                public List<int?> SectionIndex { get; set; }
             }
             [NameInMap("isvCourseGroupCode")]
             [Validation(Required=false)]

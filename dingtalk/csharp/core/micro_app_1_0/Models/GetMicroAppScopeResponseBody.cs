@@ -18,13 +18,13 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         public class GetMicroAppScopeResponseBodyResult : TeaModel {
             [NameInMap("deptIds")]
             [Validation(Required=false)]
-            public List<string> DeptIds { get; set; }
+            public List<long?> DeptIds { get; set; }
             [NameInMap("onlyAdminVisible")]
             [Validation(Required=false)]
             public bool? OnlyAdminVisible { get; set; }
             [NameInMap("roleIds")]
             [Validation(Required=false)]
-            public List<string> RoleIds { get; set; }
+            public List<long?> RoleIds { get; set; }
             [NameInMap("userIds")]
             [Validation(Required=false)]
             public List<string> UserIds { get; set; }

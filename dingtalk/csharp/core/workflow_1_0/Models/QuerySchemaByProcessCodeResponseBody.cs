@@ -215,7 +215,7 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                         public bool? HideLabel { get; set; }
                         [NameInMap("holidayOptions")]
                         [Validation(Required=false)]
-                        public List<string> HolidayOptions { get; set; }
+                        public List<Dictionary<string, string>> HolidayOptions { get; set; }
                         [NameInMap("id")]
                         [Validation(Required=false)]
                         public string Id { get; set; }

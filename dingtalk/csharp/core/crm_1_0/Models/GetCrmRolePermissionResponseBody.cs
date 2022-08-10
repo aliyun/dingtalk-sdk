@@ -62,7 +62,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 public class GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt : TeaModel {
                     [NameInMap("deptIdList")]
                     [Validation(Required=false)]
-                    public List<string> DeptIdList { get; set; }
+                    public List<double?> DeptIdList { get; set; }
                     [NameInMap("userIdList")]
                     [Validation(Required=false)]
                     public List<string> UserIdList { get; set; }

@@ -31,7 +31,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             public int? CardCycle { get; set; }
             [NameInMap("cardFrequency")]
             [Validation(Required=false)]
-            public List<string> CardFrequency { get; set; }
+            public List<int?> CardFrequency { get; set; }
             [NameInMap("cardRuleItemParamList")]
             [Validation(Required=false)]
             public List<BatchCreateRequestDataCardRuleItemParamList> CardRuleItemParamList { get; set; }

@@ -38,6 +38,13 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         public long? StartTime { get; set; }
 
         /// <summary>
+        /// 时间筛选条件 gmt_create / record_time
+        /// </summary>
+        [NameInMap("timeFilterField")]
+        [Validation(Required=false)]
+        public string TimeFilterField { get; set; }
+
+        /// <summary>
         /// 单据标题
         /// </summary>
         [NameInMap("title")]

@@ -16,6 +16,14 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         [Validation(Required=false)]
         public string UnionId { get; set; }
 
+        [NameInMap("version")]
+        [Validation(Required=false)]
+        public long? Version { get; set; }
+
+        [NameInMap("watermark")]
+        [Validation(Required=false)]
+        public bool? Watermark { get; set; }
+
     }
 
 }

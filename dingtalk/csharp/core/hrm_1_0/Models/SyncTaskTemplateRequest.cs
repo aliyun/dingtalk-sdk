@@ -60,7 +60,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         public class SyncTaskTemplateRequestTaskScopeVO : TeaModel {
             [NameInMap("deptIds")]
             [Validation(Required=false)]
-            public List<string> DeptIds { get; set; }
+            public List<long?> DeptIds { get; set; }
             [NameInMap("positionIds")]
             [Validation(Required=false)]
             public List<string> PositionIds { get; set; }

@@ -1800,6 +1800,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 query["startTime"] = request.StartTime;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeFilterField))
+            {
+                query["timeFilterField"] = request.TimeFilterField;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
             {
                 query["title"] = request.Title;
@@ -1844,6 +1848,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
             {
                 query["startTime"] = request.StartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeFilterField))
+            {
+                query["timeFilterField"] = request.TimeFilterField;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
             {

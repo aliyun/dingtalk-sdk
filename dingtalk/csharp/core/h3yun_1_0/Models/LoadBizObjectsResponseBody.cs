@@ -25,7 +25,7 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
         public class LoadBizObjectsResponseBodyData : TeaModel {
             [NameInMap("bizObjects")]
             [Validation(Required=false)]
-            public List<string> BizObjects { get; set; }
+            public List<Dictionary<string, object>> BizObjects { get; set; }
             [NameInMap("pageNumber")]
             [Validation(Required=false)]
             public int? PageNumber { get; set; }
