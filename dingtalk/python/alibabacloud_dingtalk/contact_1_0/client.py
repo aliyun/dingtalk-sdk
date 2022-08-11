@@ -23,6 +23,130 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def annual_certification_audit(
+        self,
+        request: dingtalkcontact__1__0_models.AnnualCertificationAuditRequest,
+    ) -> dingtalkcontact__1__0_models.AnnualCertificationAuditResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.AnnualCertificationAuditHeaders()
+        return self.annual_certification_audit_with_options(request, headers, runtime)
+
+    async def annual_certification_audit_async(
+        self,
+        request: dingtalkcontact__1__0_models.AnnualCertificationAuditRequest,
+    ) -> dingtalkcontact__1__0_models.AnnualCertificationAuditResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.AnnualCertificationAuditHeaders()
+        return await self.annual_certification_audit_with_options_async(request, headers, runtime)
+
+    def annual_certification_audit_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.AnnualCertificationAuditRequest,
+        headers: dingtalkcontact__1__0_models.AnnualCertificationAuditHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.AnnualCertificationAuditResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.applicant_mobile):
+            body['applicantMobile'] = request.applicant_mobile
+        if not UtilClient.is_unset(request.applicant_name):
+            body['applicantName'] = request.applicant_name
+        if not UtilClient.is_unset(request.application_letter):
+            body['applicationLetter'] = request.application_letter
+        if not UtilClient.is_unset(request.auth_status):
+            body['authStatus'] = request.auth_status
+        if not UtilClient.is_unset(request.certificate_type):
+            body['certificateType'] = request.certificate_type
+        if not UtilClient.is_unset(request.corp_name):
+            body['corpName'] = request.corp_name
+        if not UtilClient.is_unset(request.depositary_bank):
+            body['depositaryBank'] = request.depositary_bank
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.legal_person):
+            body['legalPerson'] = request.legal_person
+        if not UtilClient.is_unset(request.license_number):
+            body['licenseNumber'] = request.license_number
+        if not UtilClient.is_unset(request.license_url):
+            body['licenseUrl'] = request.license_url
+        if not UtilClient.is_unset(request.order_id):
+            body['orderId'] = request.order_id
+        if not UtilClient.is_unset(request.public_account):
+            body['publicAccount'] = request.public_account
+        if not UtilClient.is_unset(request.reason_code):
+            body['reasonCode'] = request.reason_code
+        if not UtilClient.is_unset(request.reason_msg):
+            body['reasonMsg'] = request.reason_msg
+        if not UtilClient.is_unset(request.tag):
+            body['tag'] = request.tag
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.AnnualCertificationAuditResponse(),
+            self.do_roarequest('AnnualCertificationAudit', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/organizations/authorities/audit', 'json', req, runtime)
+        )
+
+    async def annual_certification_audit_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.AnnualCertificationAuditRequest,
+        headers: dingtalkcontact__1__0_models.AnnualCertificationAuditHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.AnnualCertificationAuditResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.applicant_mobile):
+            body['applicantMobile'] = request.applicant_mobile
+        if not UtilClient.is_unset(request.applicant_name):
+            body['applicantName'] = request.applicant_name
+        if not UtilClient.is_unset(request.application_letter):
+            body['applicationLetter'] = request.application_letter
+        if not UtilClient.is_unset(request.auth_status):
+            body['authStatus'] = request.auth_status
+        if not UtilClient.is_unset(request.certificate_type):
+            body['certificateType'] = request.certificate_type
+        if not UtilClient.is_unset(request.corp_name):
+            body['corpName'] = request.corp_name
+        if not UtilClient.is_unset(request.depositary_bank):
+            body['depositaryBank'] = request.depositary_bank
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.legal_person):
+            body['legalPerson'] = request.legal_person
+        if not UtilClient.is_unset(request.license_number):
+            body['licenseNumber'] = request.license_number
+        if not UtilClient.is_unset(request.license_url):
+            body['licenseUrl'] = request.license_url
+        if not UtilClient.is_unset(request.order_id):
+            body['orderId'] = request.order_id
+        if not UtilClient.is_unset(request.public_account):
+            body['publicAccount'] = request.public_account
+        if not UtilClient.is_unset(request.reason_code):
+            body['reasonCode'] = request.reason_code
+        if not UtilClient.is_unset(request.reason_msg):
+            body['reasonMsg'] = request.reason_msg
+        if not UtilClient.is_unset(request.tag):
+            body['tag'] = request.tag
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.AnnualCertificationAuditResponse(),
+            await self.do_roarequest_async('AnnualCertificationAudit', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/organizations/authorities/audit', 'json', req, runtime)
+        )
+
     def batch_approve_union_apply(
         self,
         request: dingtalkcontact__1__0_models.BatchApproveUnionApplyRequest,

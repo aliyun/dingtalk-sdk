@@ -4,6 +4,252 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
+class AnnualCertificationAuditHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AnnualCertificationAuditRequest(TeaModel):
+    def __init__(
+        self,
+        applicant_mobile: str = None,
+        applicant_name: str = None,
+        application_letter: str = None,
+        auth_status: int = None,
+        certificate_type: int = None,
+        corp_name: str = None,
+        depositary_bank: str = None,
+        extension: str = None,
+        legal_person: str = None,
+        license_number: str = None,
+        license_url: str = None,
+        order_id: str = None,
+        public_account: str = None,
+        reason_code: str = None,
+        reason_msg: str = None,
+        tag: str = None,
+    ):
+        # 申请人手机号。
+        self.applicant_mobile = applicant_mobile
+        # 申请人姓名。
+        self.applicant_name = applicant_name
+        # 认证/修改认证授权函
+        self.application_letter = application_letter
+        # 结果状态  
+        # 1: 认证中预警 和 认证中需要补充材料 合并，通过code区分 
+        # 2:认证失败 
+        # 3:审核通过
+        self.auth_status = auth_status
+        # 证书类型：
+        # 
+        # 0：社会统一信用代码
+        # 
+        # 1：其它
+        self.certificate_type = certificate_type
+        # 用户提交的企业名称
+        self.corp_name = corp_name
+        # 开户行。
+        self.depositary_bank = depositary_bank
+        # 扩展字段，json格式传递，传递上面字段的额外字段。
+        self.extension = extension
+        # 法人姓名。
+        self.legal_person = legal_person
+        # 证件号：
+        # 
+        # 营业执照注册号（一般15位）
+        # 
+        # 社会统一信用代码（固定18位）
+        # 
+        # 组织机构代码证号（格式11111111-1）
+        self.license_number = license_number
+        # 企业证件照片url。
+        self.license_url = license_url
+        # 订单ID
+        self.order_id = order_id
+        # 对公账号。
+        self.public_account = public_account
+        # 失败原因，认证中预警 和 认证中需要补充材料以及认证失败时需要提供。
+        self.reason_code = reason_code
+        self.reason_msg = reason_msg
+        # 送审打标类型：
+        # 
+        # "V":四要素通过
+        # 
+        # "AV"：四要素未通过
+        self.tag = tag
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.applicant_mobile is not None:
+            result['applicantMobile'] = self.applicant_mobile
+        if self.applicant_name is not None:
+            result['applicantName'] = self.applicant_name
+        if self.application_letter is not None:
+            result['applicationLetter'] = self.application_letter
+        if self.auth_status is not None:
+            result['authStatus'] = self.auth_status
+        if self.certificate_type is not None:
+            result['certificateType'] = self.certificate_type
+        if self.corp_name is not None:
+            result['corpName'] = self.corp_name
+        if self.depositary_bank is not None:
+            result['depositaryBank'] = self.depositary_bank
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.legal_person is not None:
+            result['legalPerson'] = self.legal_person
+        if self.license_number is not None:
+            result['licenseNumber'] = self.license_number
+        if self.license_url is not None:
+            result['licenseUrl'] = self.license_url
+        if self.order_id is not None:
+            result['orderId'] = self.order_id
+        if self.public_account is not None:
+            result['publicAccount'] = self.public_account
+        if self.reason_code is not None:
+            result['reasonCode'] = self.reason_code
+        if self.reason_msg is not None:
+            result['reasonMsg'] = self.reason_msg
+        if self.tag is not None:
+            result['tag'] = self.tag
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('applicantMobile') is not None:
+            self.applicant_mobile = m.get('applicantMobile')
+        if m.get('applicantName') is not None:
+            self.applicant_name = m.get('applicantName')
+        if m.get('applicationLetter') is not None:
+            self.application_letter = m.get('applicationLetter')
+        if m.get('authStatus') is not None:
+            self.auth_status = m.get('authStatus')
+        if m.get('certificateType') is not None:
+            self.certificate_type = m.get('certificateType')
+        if m.get('corpName') is not None:
+            self.corp_name = m.get('corpName')
+        if m.get('depositaryBank') is not None:
+            self.depositary_bank = m.get('depositaryBank')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('legalPerson') is not None:
+            self.legal_person = m.get('legalPerson')
+        if m.get('licenseNumber') is not None:
+            self.license_number = m.get('licenseNumber')
+        if m.get('licenseUrl') is not None:
+            self.license_url = m.get('licenseUrl')
+        if m.get('orderId') is not None:
+            self.order_id = m.get('orderId')
+        if m.get('publicAccount') is not None:
+            self.public_account = m.get('publicAccount')
+        if m.get('reasonCode') is not None:
+            self.reason_code = m.get('reasonCode')
+        if m.get('reasonMsg') is not None:
+            self.reason_msg = m.get('reasonMsg')
+        if m.get('tag') is not None:
+            self.tag = m.get('tag')
+        return self
+
+
+class AnnualCertificationAuditResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class AnnualCertificationAuditResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AnnualCertificationAuditResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AnnualCertificationAuditResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchApproveUnionApplyHeaders(TeaModel):
     def __init__(
         self,
