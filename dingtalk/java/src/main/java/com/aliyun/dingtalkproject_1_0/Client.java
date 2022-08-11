@@ -21,6 +21,37 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public AddProjectMemberResponse addProjectMember(String userId, String projectId, AddProjectMemberRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        AddProjectMemberHeaders headers = new AddProjectMemberHeaders();
+        return this.addProjectMemberWithOptions(userId, projectId, request, headers, runtime);
+    }
+
+    public AddProjectMemberResponse addProjectMemberWithOptions(String userId, String projectId, AddProjectMemberRequest request, AddProjectMemberHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
+        projectId = com.aliyun.openapiutil.Client.getEncodeParam(projectId);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
+            body.put("userIds", request.userIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("AddProjectMember", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/members", "json", req, runtime), new AddProjectMemberResponse());
+    }
+
     public CreateOrganizationTaskResponse createOrganizationTask(String userId, CreateOrganizationTaskRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         CreateOrganizationTaskHeaders headers = new CreateOrganizationTaskHeaders();
@@ -85,6 +116,40 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("CreateOrganizationTask", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/organizations/users/" + userId + "/tasks", "json", req, runtime), new CreateOrganizationTaskResponse());
+    }
+
+    public CreateProjectByTemplateResponse createProjectByTemplate(String userId, CreateProjectByTemplateRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CreateProjectByTemplateHeaders headers = new CreateProjectByTemplateHeaders();
+        return this.createProjectByTemplateWithOptions(userId, request, headers, runtime);
+    }
+
+    public CreateProjectByTemplateResponse createProjectByTemplateWithOptions(String userId, CreateProjectByTemplateRequest request, CreateProjectByTemplateHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.templateId)) {
+            body.put("templateId", request.templateId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CreateProjectByTemplate", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/templates/projects", "json", req, runtime), new CreateProjectByTemplateResponse());
     }
 
     public CreateTaskResponse createTask(String userId, CreateTaskRequest request) throws Exception {
@@ -331,6 +396,40 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetOrganizationTask", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/organizations/users/" + userId + "/tasks/" + taskId + "", "json", req, runtime), new GetOrganizationTaskResponse());
     }
 
+    public GetProjectGroupResponse getProjectGroup(String userId, GetProjectGroupRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetProjectGroupHeaders headers = new GetProjectGroupHeaders();
+        return this.getProjectGroupWithOptions(userId, request, headers, runtime);
+    }
+
+    public GetProjectGroupResponse getProjectGroupWithOptions(String userId, GetProjectGroupRequest request, GetProjectGroupHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.viewerId)) {
+            query.put("viewerId", request.viewerId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetProjectGroup", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/organizations/users/" + userId + "/groups", "json", req, runtime), new GetProjectGroupResponse());
+    }
+
     public GetTbProjectGrayResponse getTbProjectGray(GetTbProjectGrayRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetTbProjectGrayHeaders headers = new GetTbProjectGrayHeaders();
@@ -420,6 +519,36 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders)
         ));
         return TeaModel.toModel(this.doROARequest("GetTbProjectSource", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/projects/source", "json", req, runtime), new GetTbProjectSourceResponse());
+    }
+
+    public SearchProjectTemplateResponse searchProjectTemplate(String userId, SearchProjectTemplateRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        SearchProjectTemplateHeaders headers = new SearchProjectTemplateHeaders();
+        return this.searchProjectTemplateWithOptions(userId, request, headers, runtime);
+    }
+
+    public SearchProjectTemplateResponse searchProjectTemplateWithOptions(String userId, SearchProjectTemplateRequest request, SearchProjectTemplateHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.keyword)) {
+            query.put("keyword", request.keyword);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("SearchProjectTemplate", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/organizations/users/" + userId + "/templates", "json", req, runtime), new SearchProjectTemplateResponse());
     }
 
     public UpdateOrganizationTaskContentResponse updateOrganizationTaskContent(String taskId, String userId, UpdateOrganizationTaskContentRequest request) throws Exception {
@@ -701,5 +830,40 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("UpdateOrganizationTaskStatus", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/organizations/users/" + userId + "/tasks/" + taskId + "/states", "json", req, runtime), new UpdateOrganizationTaskStatusResponse());
+    }
+
+    public UpdateProjectGroupResponse updateProjectGroup(String userId, String projectId, UpdateProjectGroupRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        UpdateProjectGroupHeaders headers = new UpdateProjectGroupHeaders();
+        return this.updateProjectGroupWithOptions(userId, projectId, request, headers, runtime);
+    }
+
+    public UpdateProjectGroupResponse updateProjectGroupWithOptions(String userId, String projectId, UpdateProjectGroupRequest request, UpdateProjectGroupHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
+        projectId = com.aliyun.openapiutil.Client.getEncodeParam(projectId);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.addProjectGroupIds)) {
+            body.put("addProjectGroupIds", request.addProjectGroupIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.delProjectGroupIds)) {
+            body.put("delProjectGroupIds", request.delProjectGroupIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UpdateProjectGroup", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/groups", "json", req, runtime), new UpdateProjectGroupResponse());
     }
 }

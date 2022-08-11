@@ -21,6 +21,95 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public AnnualCertificationAuditResponse annualCertificationAudit(AnnualCertificationAuditRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        AnnualCertificationAuditHeaders headers = new AnnualCertificationAuditHeaders();
+        return this.annualCertificationAuditWithOptions(request, headers, runtime);
+    }
+
+    public AnnualCertificationAuditResponse annualCertificationAuditWithOptions(AnnualCertificationAuditRequest request, AnnualCertificationAuditHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.applicantMobile)) {
+            body.put("applicantMobile", request.applicantMobile);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.applicantName)) {
+            body.put("applicantName", request.applicantName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.applicationLetter)) {
+            body.put("applicationLetter", request.applicationLetter);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.authStatus)) {
+            body.put("authStatus", request.authStatus);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.certificateType)) {
+            body.put("certificateType", request.certificateType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.corpName)) {
+            body.put("corpName", request.corpName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.depositaryBank)) {
+            body.put("depositaryBank", request.depositaryBank);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.extension)) {
+            body.put("extension", request.extension);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.legalPerson)) {
+            body.put("legalPerson", request.legalPerson);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.licenseNumber)) {
+            body.put("licenseNumber", request.licenseNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.licenseUrl)) {
+            body.put("licenseUrl", request.licenseUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orderId)) {
+            body.put("orderId", request.orderId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.publicAccount)) {
+            body.put("publicAccount", request.publicAccount);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.reasonCode)) {
+            body.put("reasonCode", request.reasonCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.reasonMsg)) {
+            body.put("reasonMsg", request.reasonMsg);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tag)) {
+            body.put("tag", request.tag);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("AnnualCertificationAudit", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/organizations/authorities/audit", "json", req, runtime), new AnnualCertificationAuditResponse());
+    }
+
     public BatchApproveUnionApplyResponse batchApproveUnionApply(BatchApproveUnionApplyRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         BatchApproveUnionApplyHeaders headers = new BatchApproveUnionApplyHeaders();
