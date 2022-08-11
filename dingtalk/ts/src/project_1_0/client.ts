@@ -7,6 +7,88 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class AddProjectMemberHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddProjectMemberRequest extends $tea.Model {
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddProjectMemberResponseBody extends $tea.Model {
+  result?: AddProjectMemberResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': AddProjectMemberResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddProjectMemberResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AddProjectMemberResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AddProjectMemberResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateOrganizationTaskHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -108,6 +190,91 @@ export class CreateOrganizationTaskResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: CreateOrganizationTaskResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateProjectByTemplateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateProjectByTemplateRequest extends $tea.Model {
+  name?: string;
+  templateId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      templateId: 'templateId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      templateId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateProjectByTemplateResponseBody extends $tea.Model {
+  result?: CreateProjectByTemplateResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: CreateProjectByTemplateResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateProjectByTemplateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateProjectByTemplateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateProjectByTemplateResponseBody,
     };
   }
 
@@ -703,6 +870,91 @@ export class GetOrganizationTaskResponse extends $tea.Model {
   }
 }
 
+export class GetProjectGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProjectGroupRequest extends $tea.Model {
+  pageSize?: number;
+  viewerId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      pageSize: 'pageSize',
+      viewerId: 'viewerId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pageSize: 'number',
+      viewerId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProjectGroupResponseBody extends $tea.Model {
+  result?: GetProjectGroupResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetProjectGroupResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProjectGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetProjectGroupResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetProjectGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetTbProjectGrayHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   dingAccessTokenType?: string;
@@ -873,6 +1125,88 @@ export class GetTbProjectSourceResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetTbProjectSourceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchProjectTemplateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchProjectTemplateRequest extends $tea.Model {
+  keyword?: string;
+  static names(): { [key: string]: string } {
+    return {
+      keyword: 'keyword',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      keyword: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchProjectTemplateResponseBody extends $tea.Model {
+  result?: SearchProjectTemplateResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': SearchProjectTemplateResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchProjectTemplateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SearchProjectTemplateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SearchProjectTemplateResponseBody,
     };
   }
 
@@ -1503,6 +1837,113 @@ export class UpdateOrganizationTaskStatusResponse extends $tea.Model {
   }
 }
 
+export class UpdateProjectGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateProjectGroupRequest extends $tea.Model {
+  addProjectGroupIds?: string[];
+  delProjectGroupIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      addProjectGroupIds: 'addProjectGroupIds',
+      delProjectGroupIds: 'delProjectGroupIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      addProjectGroupIds: { 'type': 'array', 'itemType': 'string' },
+      delProjectGroupIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateProjectGroupResponseBody extends $tea.Model {
+  result?: UpdateProjectGroupResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: UpdateProjectGroupResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateProjectGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateProjectGroupResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateProjectGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddProjectMemberResponseBodyResult extends $tea.Model {
+  joined?: string;
+  nickname?: string;
+  static names(): { [key: string]: string } {
+    return {
+      joined: 'joined',
+      nickname: 'nickname',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      joined: 'string',
+      nickname: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateOrganizationTaskResponseBodyResultCreator extends $tea.Model {
   avatarUrl?: string;
   name?: string;
@@ -1643,6 +2084,34 @@ export class CreateOrganizationTaskResponseBodyResult extends $tea.Model {
       priority: 'number',
       updated: 'string',
       visible: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateProjectByTemplateResponseBodyResult extends $tea.Model {
+  created?: string;
+  id?: string;
+  logo?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      created: 'created',
+      id: 'id',
+      logo: 'logo',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      created: 'string',
+      id: 'string',
+      logo: 'string',
+      name: 'string',
     };
   }
 
@@ -1974,6 +2443,80 @@ export class GetOrganizationTaskResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetProjectGroupResponseBodyResult extends $tea.Model {
+  created?: string;
+  id?: string;
+  name?: string;
+  updated?: string;
+  visible?: string;
+  static names(): { [key: string]: string } {
+    return {
+      created: 'created',
+      id: 'id',
+      name: 'name',
+      updated: 'updated',
+      visible: 'visible',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      created: 'string',
+      id: 'string',
+      name: 'string',
+      updated: 'string',
+      visible: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchProjectTemplateResponseBodyResult extends $tea.Model {
+  created?: string;
+  description?: string;
+  id?: string;
+  isDeleted?: boolean;
+  isDemo?: boolean;
+  logo?: string;
+  name?: string;
+  updated?: string;
+  visible?: string;
+  static names(): { [key: string]: string } {
+    return {
+      created: 'created',
+      description: 'description',
+      id: 'id',
+      isDeleted: 'isDeleted',
+      isDemo: 'isDemo',
+      logo: 'logo',
+      name: 'name',
+      updated: 'updated',
+      visible: 'visible',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      created: 'string',
+      description: 'string',
+      id: 'string',
+      isDeleted: 'boolean',
+      isDemo: 'boolean',
+      logo: 'string',
+      name: 'string',
+      updated: 'string',
+      visible: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateOrganizationTaskContentResponseBodyResult extends $tea.Model {
   content?: string;
   updated?: string;
@@ -2209,6 +2752,25 @@ export class UpdateOrganizationTaskStatusResponseBodyResult extends $tea.Model {
   }
 }
 
+export class UpdateProjectGroupResponseBodyResult extends $tea.Model {
+  ok?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      ok: 'ok',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      ok: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -2221,6 +2783,37 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async addProjectMember(userId: string, projectId: string, request: AddProjectMemberRequest): Promise<AddProjectMemberResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddProjectMemberHeaders({ });
+    return await this.addProjectMemberWithOptions(userId, projectId, request, headers, runtime);
+  }
+
+  async addProjectMemberWithOptions(userId: string, projectId: string, request: AddProjectMemberRequest, headers: AddProjectMemberHeaders, runtime: $Util.RuntimeOptions): Promise<AddProjectMemberResponse> {
+    Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    projectId = OpenApiUtil.getEncodeParam(projectId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AddProjectMemberResponse>(await this.doROARequest("AddProjectMember", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/projects/${projectId}/members`, "json", req, runtime), new AddProjectMemberResponse({}));
+  }
 
   async createOrganizationTask(userId: string, request: CreateOrganizationTaskRequest): Promise<CreateOrganizationTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2286,6 +2879,40 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateOrganizationTaskResponse>(await this.doROARequest("CreateOrganizationTask", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/organizations/users/${userId}/tasks`, "json", req, runtime), new CreateOrganizationTaskResponse({}));
+  }
+
+  async createProjectByTemplate(userId: string, request: CreateProjectByTemplateRequest): Promise<CreateProjectByTemplateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateProjectByTemplateHeaders({ });
+    return await this.createProjectByTemplateWithOptions(userId, request, headers, runtime);
+  }
+
+  async createProjectByTemplateWithOptions(userId: string, request: CreateProjectByTemplateRequest, headers: CreateProjectByTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<CreateProjectByTemplateResponse> {
+    Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.templateId)) {
+      body["templateId"] = request.templateId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateProjectByTemplateResponse>(await this.doROARequest("CreateProjectByTemplate", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/templates/projects`, "json", req, runtime), new CreateProjectByTemplateResponse({}));
   }
 
   async createTask(userId: string, request: CreateTaskRequest): Promise<CreateTaskResponse> {
@@ -2532,6 +3159,40 @@ export default class Client extends OpenApi {
     return $tea.cast<GetOrganizationTaskResponse>(await this.doROARequest("GetOrganizationTask", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/organizations/users/${userId}/tasks/${taskId}`, "json", req, runtime), new GetOrganizationTaskResponse({}));
   }
 
+  async getProjectGroup(userId: string, request: GetProjectGroupRequest): Promise<GetProjectGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetProjectGroupHeaders({ });
+    return await this.getProjectGroupWithOptions(userId, request, headers, runtime);
+  }
+
+  async getProjectGroupWithOptions(userId: string, request: GetProjectGroupRequest, headers: GetProjectGroupHeaders, runtime: $Util.RuntimeOptions): Promise<GetProjectGroupResponse> {
+    Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.viewerId)) {
+      query["viewerId"] = request.viewerId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetProjectGroupResponse>(await this.doROARequest("GetProjectGroup", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/organizations/users/${userId}/groups`, "json", req, runtime), new GetProjectGroupResponse({}));
+  }
+
   async getTbProjectGray(request: GetTbProjectGrayRequest): Promise<GetTbProjectGrayResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetTbProjectGrayHeaders({ });
@@ -2621,6 +3282,36 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<GetTbProjectSourceResponse>(await this.doROARequest("GetTbProjectSource", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/projects/source`, "json", req, runtime), new GetTbProjectSourceResponse({}));
+  }
+
+  async searchProjectTemplate(userId: string, request: SearchProjectTemplateRequest): Promise<SearchProjectTemplateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SearchProjectTemplateHeaders({ });
+    return await this.searchProjectTemplateWithOptions(userId, request, headers, runtime);
+  }
+
+  async searchProjectTemplateWithOptions(userId: string, request: SearchProjectTemplateRequest, headers: SearchProjectTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<SearchProjectTemplateResponse> {
+    Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.keyword)) {
+      query["keyword"] = request.keyword;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<SearchProjectTemplateResponse>(await this.doROARequest("SearchProjectTemplate", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/organizations/users/${userId}/templates`, "json", req, runtime), new SearchProjectTemplateResponse({}));
   }
 
   async updateOrganizationTaskContent(taskId: string, userId: string, request: UpdateOrganizationTaskContentRequest): Promise<UpdateOrganizationTaskContentResponse> {
@@ -2902,6 +3593,41 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateOrganizationTaskStatusResponse>(await this.doROARequest("UpdateOrganizationTaskStatus", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/users/${userId}/tasks/${taskId}/states`, "json", req, runtime), new UpdateOrganizationTaskStatusResponse({}));
+  }
+
+  async updateProjectGroup(userId: string, projectId: string, request: UpdateProjectGroupRequest): Promise<UpdateProjectGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateProjectGroupHeaders({ });
+    return await this.updateProjectGroupWithOptions(userId, projectId, request, headers, runtime);
+  }
+
+  async updateProjectGroupWithOptions(userId: string, projectId: string, request: UpdateProjectGroupRequest, headers: UpdateProjectGroupHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateProjectGroupResponse> {
+    Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    projectId = OpenApiUtil.getEncodeParam(projectId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.addProjectGroupIds)) {
+      body["addProjectGroupIds"] = request.addProjectGroupIds;
+    }
+
+    if (!Util.isUnset(request.delProjectGroupIds)) {
+      body["delProjectGroupIds"] = request.delProjectGroupIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateProjectGroupResponse>(await this.doROARequest("UpdateProjectGroup", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/users/${userId}/projects/${projectId}/groups`, "json", req, runtime), new UpdateProjectGroupResponse({}));
   }
 
 }

@@ -7,6 +7,133 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class AnnualCertificationAuditHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AnnualCertificationAuditRequest extends $tea.Model {
+  applicantMobile?: string;
+  applicantName?: string;
+  applicationLetter?: string;
+  authStatus?: number;
+  certificateType?: number;
+  corpName?: string;
+  depositaryBank?: string;
+  extension?: string;
+  legalPerson?: string;
+  licenseNumber?: string;
+  licenseUrl?: string;
+  orderId?: string;
+  publicAccount?: string;
+  reasonCode?: string;
+  reasonMsg?: string;
+  tag?: string;
+  static names(): { [key: string]: string } {
+    return {
+      applicantMobile: 'applicantMobile',
+      applicantName: 'applicantName',
+      applicationLetter: 'applicationLetter',
+      authStatus: 'authStatus',
+      certificateType: 'certificateType',
+      corpName: 'corpName',
+      depositaryBank: 'depositaryBank',
+      extension: 'extension',
+      legalPerson: 'legalPerson',
+      licenseNumber: 'licenseNumber',
+      licenseUrl: 'licenseUrl',
+      orderId: 'orderId',
+      publicAccount: 'publicAccount',
+      reasonCode: 'reasonCode',
+      reasonMsg: 'reasonMsg',
+      tag: 'tag',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      applicantMobile: 'string',
+      applicantName: 'string',
+      applicationLetter: 'string',
+      authStatus: 'number',
+      certificateType: 'number',
+      corpName: 'string',
+      depositaryBank: 'string',
+      extension: 'string',
+      legalPerson: 'string',
+      licenseNumber: 'string',
+      licenseUrl: 'string',
+      orderId: 'string',
+      publicAccount: 'string',
+      reasonCode: 'string',
+      reasonMsg: 'string',
+      tag: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AnnualCertificationAuditResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AnnualCertificationAuditResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AnnualCertificationAuditResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AnnualCertificationAuditResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchApproveUnionApplyHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5338,6 +5465,95 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async annualCertificationAudit(request: AnnualCertificationAuditRequest): Promise<AnnualCertificationAuditResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AnnualCertificationAuditHeaders({ });
+    return await this.annualCertificationAuditWithOptions(request, headers, runtime);
+  }
+
+  async annualCertificationAuditWithOptions(request: AnnualCertificationAuditRequest, headers: AnnualCertificationAuditHeaders, runtime: $Util.RuntimeOptions): Promise<AnnualCertificationAuditResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.applicantMobile)) {
+      body["applicantMobile"] = request.applicantMobile;
+    }
+
+    if (!Util.isUnset(request.applicantName)) {
+      body["applicantName"] = request.applicantName;
+    }
+
+    if (!Util.isUnset(request.applicationLetter)) {
+      body["applicationLetter"] = request.applicationLetter;
+    }
+
+    if (!Util.isUnset(request.authStatus)) {
+      body["authStatus"] = request.authStatus;
+    }
+
+    if (!Util.isUnset(request.certificateType)) {
+      body["certificateType"] = request.certificateType;
+    }
+
+    if (!Util.isUnset(request.corpName)) {
+      body["corpName"] = request.corpName;
+    }
+
+    if (!Util.isUnset(request.depositaryBank)) {
+      body["depositaryBank"] = request.depositaryBank;
+    }
+
+    if (!Util.isUnset(request.extension)) {
+      body["extension"] = request.extension;
+    }
+
+    if (!Util.isUnset(request.legalPerson)) {
+      body["legalPerson"] = request.legalPerson;
+    }
+
+    if (!Util.isUnset(request.licenseNumber)) {
+      body["licenseNumber"] = request.licenseNumber;
+    }
+
+    if (!Util.isUnset(request.licenseUrl)) {
+      body["licenseUrl"] = request.licenseUrl;
+    }
+
+    if (!Util.isUnset(request.orderId)) {
+      body["orderId"] = request.orderId;
+    }
+
+    if (!Util.isUnset(request.publicAccount)) {
+      body["publicAccount"] = request.publicAccount;
+    }
+
+    if (!Util.isUnset(request.reasonCode)) {
+      body["reasonCode"] = request.reasonCode;
+    }
+
+    if (!Util.isUnset(request.reasonMsg)) {
+      body["reasonMsg"] = request.reasonMsg;
+    }
+
+    if (!Util.isUnset(request.tag)) {
+      body["tag"] = request.tag;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AnnualCertificationAuditResponse>(await this.doROARequest("AnnualCertificationAudit", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/organizations/authorities/audit`, "json", req, runtime), new AnnualCertificationAuditResponse({}));
+  }
 
   async batchApproveUnionApply(request: BatchApproveUnionApplyRequest): Promise<BatchApproveUnionApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
