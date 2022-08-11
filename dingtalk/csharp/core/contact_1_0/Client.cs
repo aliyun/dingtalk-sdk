@@ -26,6 +26,190 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
         }
 
 
+        public AnnualCertificationAuditResponse AnnualCertificationAudit(AnnualCertificationAuditRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AnnualCertificationAuditHeaders headers = new AnnualCertificationAuditHeaders();
+            return AnnualCertificationAuditWithOptions(request, headers, runtime);
+        }
+
+        public async Task<AnnualCertificationAuditResponse> AnnualCertificationAuditAsync(AnnualCertificationAuditRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AnnualCertificationAuditHeaders headers = new AnnualCertificationAuditHeaders();
+            return await AnnualCertificationAuditWithOptionsAsync(request, headers, runtime);
+        }
+
+        public AnnualCertificationAuditResponse AnnualCertificationAuditWithOptions(AnnualCertificationAuditRequest request, AnnualCertificationAuditHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ApplicantMobile))
+            {
+                body["applicantMobile"] = request.ApplicantMobile;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ApplicantName))
+            {
+                body["applicantName"] = request.ApplicantName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ApplicationLetter))
+            {
+                body["applicationLetter"] = request.ApplicationLetter;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthStatus))
+            {
+                body["authStatus"] = request.AuthStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CertificateType))
+            {
+                body["certificateType"] = request.CertificateType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpName))
+            {
+                body["corpName"] = request.CorpName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DepositaryBank))
+            {
+                body["depositaryBank"] = request.DepositaryBank;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegalPerson))
+            {
+                body["legalPerson"] = request.LegalPerson;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LicenseNumber))
+            {
+                body["licenseNumber"] = request.LicenseNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LicenseUrl))
+            {
+                body["licenseUrl"] = request.LicenseUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderId))
+            {
+                body["orderId"] = request.OrderId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PublicAccount))
+            {
+                body["publicAccount"] = request.PublicAccount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReasonCode))
+            {
+                body["reasonCode"] = request.ReasonCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReasonMsg))
+            {
+                body["reasonMsg"] = request.ReasonMsg;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tag))
+            {
+                body["tag"] = request.Tag;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<AnnualCertificationAuditResponse>(DoROARequest("AnnualCertificationAudit", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/organizations/authorities/audit", "json", req, runtime));
+        }
+
+        public async Task<AnnualCertificationAuditResponse> AnnualCertificationAuditWithOptionsAsync(AnnualCertificationAuditRequest request, AnnualCertificationAuditHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ApplicantMobile))
+            {
+                body["applicantMobile"] = request.ApplicantMobile;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ApplicantName))
+            {
+                body["applicantName"] = request.ApplicantName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ApplicationLetter))
+            {
+                body["applicationLetter"] = request.ApplicationLetter;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthStatus))
+            {
+                body["authStatus"] = request.AuthStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CertificateType))
+            {
+                body["certificateType"] = request.CertificateType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpName))
+            {
+                body["corpName"] = request.CorpName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DepositaryBank))
+            {
+                body["depositaryBank"] = request.DepositaryBank;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegalPerson))
+            {
+                body["legalPerson"] = request.LegalPerson;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LicenseNumber))
+            {
+                body["licenseNumber"] = request.LicenseNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LicenseUrl))
+            {
+                body["licenseUrl"] = request.LicenseUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderId))
+            {
+                body["orderId"] = request.OrderId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PublicAccount))
+            {
+                body["publicAccount"] = request.PublicAccount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReasonCode))
+            {
+                body["reasonCode"] = request.ReasonCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReasonMsg))
+            {
+                body["reasonMsg"] = request.ReasonMsg;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tag))
+            {
+                body["tag"] = request.Tag;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<AnnualCertificationAuditResponse>(await DoROARequestAsync("AnnualCertificationAudit", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/organizations/authorities/audit", "json", req, runtime));
+        }
+
         public BatchApproveUnionApplyResponse BatchApproveUnionApply(BatchApproveUnionApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
