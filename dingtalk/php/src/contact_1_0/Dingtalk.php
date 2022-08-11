@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vcontact_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AnnualCertificationAuditHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AnnualCertificationAuditRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AnnualCertificationAuditResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchApproveUnionApplyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchApproveUnionApplyRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchApproveUnionApplyResponse;
@@ -172,6 +175,93 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param AnnualCertificationAuditRequest $request
+     *
+     * @return AnnualCertificationAuditResponse
+     */
+    public function annualCertificationAudit($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AnnualCertificationAuditHeaders([]);
+
+        return $this->annualCertificationAuditWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AnnualCertificationAuditRequest $request
+     * @param AnnualCertificationAuditHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return AnnualCertificationAuditResponse
+     */
+    public function annualCertificationAuditWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->applicantMobile)) {
+            @$body['applicantMobile'] = $request->applicantMobile;
+        }
+        if (!Utils::isUnset($request->applicantName)) {
+            @$body['applicantName'] = $request->applicantName;
+        }
+        if (!Utils::isUnset($request->applicationLetter)) {
+            @$body['applicationLetter'] = $request->applicationLetter;
+        }
+        if (!Utils::isUnset($request->authStatus)) {
+            @$body['authStatus'] = $request->authStatus;
+        }
+        if (!Utils::isUnset($request->certificateType)) {
+            @$body['certificateType'] = $request->certificateType;
+        }
+        if (!Utils::isUnset($request->corpName)) {
+            @$body['corpName'] = $request->corpName;
+        }
+        if (!Utils::isUnset($request->depositaryBank)) {
+            @$body['depositaryBank'] = $request->depositaryBank;
+        }
+        if (!Utils::isUnset($request->extension)) {
+            @$body['extension'] = $request->extension;
+        }
+        if (!Utils::isUnset($request->legalPerson)) {
+            @$body['legalPerson'] = $request->legalPerson;
+        }
+        if (!Utils::isUnset($request->licenseNumber)) {
+            @$body['licenseNumber'] = $request->licenseNumber;
+        }
+        if (!Utils::isUnset($request->licenseUrl)) {
+            @$body['licenseUrl'] = $request->licenseUrl;
+        }
+        if (!Utils::isUnset($request->orderId)) {
+            @$body['orderId'] = $request->orderId;
+        }
+        if (!Utils::isUnset($request->publicAccount)) {
+            @$body['publicAccount'] = $request->publicAccount;
+        }
+        if (!Utils::isUnset($request->reasonCode)) {
+            @$body['reasonCode'] = $request->reasonCode;
+        }
+        if (!Utils::isUnset($request->reasonMsg)) {
+            @$body['reasonMsg'] = $request->reasonMsg;
+        }
+        if (!Utils::isUnset($request->tag)) {
+            @$body['tag'] = $request->tag;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AnnualCertificationAuditResponse::fromMap($this->doROARequest('AnnualCertificationAudit', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/organizations/authorities/audit', 'json', $req, $runtime));
     }
 
     /**

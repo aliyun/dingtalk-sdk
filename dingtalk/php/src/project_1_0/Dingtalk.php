@@ -5,9 +5,15 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vproject_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\AddProjectMemberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\AddProjectMemberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\AddProjectMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateOrganizationTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateOrganizationTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateOrganizationTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateProjectByTemplateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateProjectByTemplateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateProjectByTemplateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateTaskObjectLinkHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateTaskObjectLinkRequest;
@@ -27,11 +33,17 @@ use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetOrganizationTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetOrganizatioTaskByIdsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetOrganizatioTaskByIdsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetOrganizatioTaskByIdsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetProjectGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetProjectGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetProjectGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbProjectGrayHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbProjectGrayRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbProjectGrayResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbProjectSourceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbProjectSourceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchProjectTemplateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchProjectTemplateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchProjectTemplateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskContentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskContentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskContentResponse;
@@ -53,6 +65,9 @@ use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskPriority
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateProjectGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateProjectGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateProjectGroupResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -67,6 +82,54 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param string                  $userId
+     * @param string                  $projectId
+     * @param AddProjectMemberRequest $request
+     *
+     * @return AddProjectMemberResponse
+     */
+    public function addProjectMember($userId, $projectId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddProjectMemberHeaders([]);
+
+        return $this->addProjectMemberWithOptions($userId, $projectId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                  $userId
+     * @param string                  $projectId
+     * @param AddProjectMemberRequest $request
+     * @param AddProjectMemberHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return AddProjectMemberResponse
+     */
+    public function addProjectMemberWithOptions($userId, $projectId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $userId    = OpenApiUtilClient::getEncodeParam($userId);
+        $projectId = OpenApiUtilClient::getEncodeParam($projectId);
+        $body      = [];
+        if (!Utils::isUnset($request->userIds)) {
+            @$body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddProjectMemberResponse::fromMap($this->doROARequest('AddProjectMember', 'project_1.0', 'HTTP', 'POST', 'AK', '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/members', 'json', $req, $runtime));
     }
 
     /**
@@ -139,6 +202,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateOrganizationTaskResponse::fromMap($this->doROARequest('CreateOrganizationTask', 'project_1.0', 'HTTP', 'POST', 'AK', '/v1.0/project/organizations/users/' . $userId . '/tasks', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                         $userId
+     * @param CreateProjectByTemplateRequest $request
+     *
+     * @return CreateProjectByTemplateResponse
+     */
+    public function createProjectByTemplate($userId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateProjectByTemplateHeaders([]);
+
+        return $this->createProjectByTemplateWithOptions($userId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                         $userId
+     * @param CreateProjectByTemplateRequest $request
+     * @param CreateProjectByTemplateHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return CreateProjectByTemplateResponse
+     */
+    public function createProjectByTemplateWithOptions($userId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $body   = [];
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->templateId)) {
+            @$body['templateId'] = $request->templateId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateProjectByTemplateResponse::fromMap($this->doROARequest('CreateProjectByTemplate', 'project_1.0', 'HTTP', 'POST', 'AK', '/v1.0/project/users/' . $userId . '/templates/projects', 'json', $req, $runtime));
     }
 
     /**
@@ -477,6 +588,54 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string                 $userId
+     * @param GetProjectGroupRequest $request
+     *
+     * @return GetProjectGroupResponse
+     */
+    public function getProjectGroup($userId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetProjectGroupHeaders([]);
+
+        return $this->getProjectGroupWithOptions($userId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                 $userId
+     * @param GetProjectGroupRequest $request
+     * @param GetProjectGroupHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return GetProjectGroupResponse
+     */
+    public function getProjectGroupWithOptions($userId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $query  = [];
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->viewerId)) {
+            @$query['viewerId'] = $request->viewerId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetProjectGroupResponse::fromMap($this->doROARequest('GetProjectGroup', 'project_1.0', 'HTTP', 'GET', 'AK', '/v1.0/project/organizations/users/' . $userId . '/groups', 'json', $req, $runtime));
+    }
+
+    /**
      * @param GetTbProjectGrayRequest $request
      *
      * @return GetTbProjectGrayResponse
@@ -579,6 +738,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetTbProjectSourceResponse::fromMap($this->doROARequest('GetTbProjectSource', 'project_1.0', 'HTTP', 'POST', 'AK', '/v1.0/project/projects/source', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                       $userId
+     * @param SearchProjectTemplateRequest $request
+     *
+     * @return SearchProjectTemplateResponse
+     */
+    public function searchProjectTemplate($userId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SearchProjectTemplateHeaders([]);
+
+        return $this->searchProjectTemplateWithOptions($userId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                       $userId
+     * @param SearchProjectTemplateRequest $request
+     * @param SearchProjectTemplateHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return SearchProjectTemplateResponse
+     */
+    public function searchProjectTemplateWithOptions($userId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $query  = [];
+        if (!Utils::isUnset($request->keyword)) {
+            @$query['keyword'] = $request->keyword;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return SearchProjectTemplateResponse::fromMap($this->doROARequest('SearchProjectTemplate', 'project_1.0', 'HTTP', 'GET', 'AK', '/v1.0/project/organizations/users/' . $userId . '/templates', 'json', $req, $runtime));
     }
 
     /**
@@ -963,5 +1167,56 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateOrganizationTaskStatusResponse::fromMap($this->doROARequest('UpdateOrganizationTaskStatus', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '/states', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                    $userId
+     * @param string                    $projectId
+     * @param UpdateProjectGroupRequest $request
+     *
+     * @return UpdateProjectGroupResponse
+     */
+    public function updateProjectGroup($userId, $projectId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateProjectGroupHeaders([]);
+
+        return $this->updateProjectGroupWithOptions($userId, $projectId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                    $userId
+     * @param string                    $projectId
+     * @param UpdateProjectGroupRequest $request
+     * @param UpdateProjectGroupHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return UpdateProjectGroupResponse
+     */
+    public function updateProjectGroupWithOptions($userId, $projectId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $userId    = OpenApiUtilClient::getEncodeParam($userId);
+        $projectId = OpenApiUtilClient::getEncodeParam($projectId);
+        $body      = [];
+        if (!Utils::isUnset($request->addProjectGroupIds)) {
+            @$body['addProjectGroupIds'] = $request->addProjectGroupIds;
+        }
+        if (!Utils::isUnset($request->delProjectGroupIds)) {
+            @$body['delProjectGroupIds'] = $request->delProjectGroupIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateProjectGroupResponse::fromMap($this->doROARequest('UpdateProjectGroup', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/groups', 'json', $req, $runtime));
     }
 }
