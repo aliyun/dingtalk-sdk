@@ -627,8 +627,8 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->appId)) {
-            @$body['appId'] = $request->appId;
+        if (!Utils::isUnset($request->alipayAppId)) {
+            @$body['alipayAppId'] = $request->alipayAppId;
         }
         if (!Utils::isUnset($request->merchantId)) {
             @$body['merchantId'] = $request->merchantId;

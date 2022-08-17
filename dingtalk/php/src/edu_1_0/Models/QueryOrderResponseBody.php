@@ -14,11 +14,11 @@ class QueryOrderResponseBody extends Model
     public $actualAmount;
 
     /**
-     * @description 应用id。
+     * @description 支付宝应用id。
      *
      * @var string
      */
-    public $appId;
+    public $alipayAppId;
 
     /**
      * @description 订单关单时间。
@@ -153,7 +153,7 @@ class QueryOrderResponseBody extends Model
     public $userId;
     protected $_name = [
         'actualAmount'         => 'actualAmount',
-        'appId'                => 'appId',
+        'alipayAppId'          => 'alipayAppId',
         'closeTime'            => 'closeTime',
         'createTime'           => 'createTime',
         'feature'              => 'feature',
@@ -186,8 +186,8 @@ class QueryOrderResponseBody extends Model
         if (null !== $this->actualAmount) {
             $res['actualAmount'] = $this->actualAmount;
         }
-        if (null !== $this->appId) {
-            $res['appId'] = $this->appId;
+        if (null !== $this->alipayAppId) {
+            $res['alipayAppId'] = $this->alipayAppId;
         }
         if (null !== $this->closeTime) {
             $res['closeTime'] = $this->closeTime;
@@ -264,8 +264,8 @@ class QueryOrderResponseBody extends Model
         if (isset($map['actualAmount'])) {
             $model->actualAmount = $map['actualAmount'];
         }
-        if (isset($map['appId'])) {
-            $model->appId = $map['appId'];
+        if (isset($map['alipayAppId'])) {
+            $model->alipayAppId = $map['alipayAppId'];
         }
         if (isset($map['closeTime'])) {
             $model->closeTime = $map['closeTime'];

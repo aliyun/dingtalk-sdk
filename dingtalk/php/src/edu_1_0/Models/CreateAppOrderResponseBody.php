@@ -16,11 +16,11 @@ class CreateAppOrderResponseBody extends Model
     public $actualAmount;
 
     /**
-     * @description 应用id。
+     * @description 支付宝应用id。
      *
      * @var string
      */
-    public $appId;
+    public $alipayAppId;
 
     /**
      * @description 订单信息。
@@ -51,7 +51,7 @@ class CreateAppOrderResponseBody extends Model
     public $orderNo;
     protected $_name = [
         'actualAmount'    => 'actualAmount',
-        'appId'           => 'appId',
+        'alipayAppId'     => 'alipayAppId',
         'body'            => 'body',
         'merchantId'      => 'merchantId',
         'merchantOrderNo' => 'merchantOrderNo',
@@ -68,8 +68,8 @@ class CreateAppOrderResponseBody extends Model
         if (null !== $this->actualAmount) {
             $res['actualAmount'] = $this->actualAmount;
         }
-        if (null !== $this->appId) {
-            $res['appId'] = $this->appId;
+        if (null !== $this->alipayAppId) {
+            $res['alipayAppId'] = $this->alipayAppId;
         }
         if (null !== $this->body) {
             $res['body'] = $this->body;
@@ -98,8 +98,8 @@ class CreateAppOrderResponseBody extends Model
         if (isset($map['actualAmount'])) {
             $model->actualAmount = $map['actualAmount'];
         }
-        if (isset($map['appId'])) {
-            $model->appId = $map['appId'];
+        if (isset($map['alipayAppId'])) {
+            $model->alipayAppId = $map['alipayAppId'];
         }
         if (isset($map['body'])) {
             $model->body = $map['body'];

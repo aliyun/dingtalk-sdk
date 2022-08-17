@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class CancelUserOrderRequest extends Model
 {
     /**
-     * @description 应用id。
+     * @description 支付宝应用id。
      *
      * @var string
      */
-    public $appId;
+    public $alipayAppId;
 
     /**
      * @description 商户id。
@@ -43,11 +43,11 @@ class CancelUserOrderRequest extends Model
      */
     public $timestamp;
     protected $_name = [
-        'appId'      => 'appId',
-        'merchantId' => 'merchantId',
-        'orderNo'    => 'orderNo',
-        'signature'  => 'signature',
-        'timestamp'  => 'timestamp',
+        'alipayAppId' => 'alipayAppId',
+        'merchantId'  => 'merchantId',
+        'orderNo'     => 'orderNo',
+        'signature'   => 'signature',
+        'timestamp'   => 'timestamp',
     ];
 
     public function validate()
@@ -57,8 +57,8 @@ class CancelUserOrderRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->appId) {
-            $res['appId'] = $this->appId;
+        if (null !== $this->alipayAppId) {
+            $res['alipayAppId'] = $this->alipayAppId;
         }
         if (null !== $this->merchantId) {
             $res['merchantId'] = $this->merchantId;
@@ -84,8 +84,8 @@ class CancelUserOrderRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['appId'])) {
-            $model->appId = $map['appId'];
+        if (isset($map['alipayAppId'])) {
+            $model->alipayAppId = $map['alipayAppId'];
         }
         if (isset($map['merchantId'])) {
             $model->merchantId = $map['merchantId'];
