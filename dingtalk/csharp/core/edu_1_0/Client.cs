@@ -634,6 +634,102 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             return TeaModel.ToObject<CancelOrderResponse>(await DoROARequestAsync("CancelOrder", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/orders/cancel", "json", req, runtime));
         }
 
+        public CancelUserOrderResponse CancelUserOrder(CancelUserOrderRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CancelUserOrderHeaders headers = new CancelUserOrderHeaders();
+            return CancelUserOrderWithOptions(request, headers, runtime);
+        }
+
+        public async Task<CancelUserOrderResponse> CancelUserOrderAsync(CancelUserOrderRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CancelUserOrderHeaders headers = new CancelUserOrderHeaders();
+            return await CancelUserOrderWithOptionsAsync(request, headers, runtime);
+        }
+
+        public CancelUserOrderResponse CancelUserOrderWithOptions(CancelUserOrderRequest request, CancelUserOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MerchantId))
+            {
+                body["merchantId"] = request.MerchantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderNo))
+            {
+                body["orderNo"] = request.OrderNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Signature))
+            {
+                body["signature"] = request.Signature;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Timestamp))
+            {
+                body["timestamp"] = request.Timestamp;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CancelUserOrderResponse>(DoROARequest("CancelUserOrder", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/userOrders/cancel", "json", req, runtime));
+        }
+
+        public async Task<CancelUserOrderResponse> CancelUserOrderWithOptionsAsync(CancelUserOrderRequest request, CancelUserOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MerchantId))
+            {
+                body["merchantId"] = request.MerchantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderNo))
+            {
+                body["orderNo"] = request.OrderNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Signature))
+            {
+                body["signature"] = request.Signature;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Timestamp))
+            {
+                body["timestamp"] = request.Timestamp;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CancelUserOrderResponse>(await DoROARequestAsync("CancelUserOrder", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/userOrders/cancel", "json", req, runtime));
+        }
+
         public CheckRestrictionResponse CheckRestriction(CheckRestrictionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -792,6 +888,150 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             return TeaModel.ToObject<CourseSchedulingComplimentNoticeResponse>(await DoROARequestAsync("CourseSchedulingComplimentNotice", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/schedules/finishNotify", "json", req, runtime));
+        }
+
+        public CreateAppOrderResponse CreateAppOrder(CreateAppOrderRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateAppOrderHeaders headers = new CreateAppOrderHeaders();
+            return CreateAppOrderWithOptions(request, headers, runtime);
+        }
+
+        public async Task<CreateAppOrderResponse> CreateAppOrderAsync(CreateAppOrderRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateAppOrderHeaders headers = new CreateAppOrderHeaders();
+            return await CreateAppOrderWithOptionsAsync(request, headers, runtime);
+        }
+
+        public CreateAppOrderResponse CreateAppOrderWithOptions(CreateAppOrderRequest request, CreateAppOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActualAmount))
+            {
+                body["actualAmount"] = request.ActualAmount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                body["bizCode"] = request.BizCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DetailList))
+            {
+                body["detailList"] = request.DetailList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LabelAmount))
+            {
+                body["labelAmount"] = request.LabelAmount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MerchantId))
+            {
+                body["merchantId"] = request.MerchantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MerchantOrderNo))
+            {
+                body["merchantOrderNo"] = request.MerchantOrderNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Signature))
+            {
+                body["signature"] = request.Signature;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Subject))
+            {
+                body["subject"] = request.Subject;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Timestamp))
+            {
+                body["timestamp"] = request.Timestamp;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CreateAppOrderResponse>(DoROARequest("CreateAppOrder", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/appOrders", "json", req, runtime));
+        }
+
+        public async Task<CreateAppOrderResponse> CreateAppOrderWithOptionsAsync(CreateAppOrderRequest request, CreateAppOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActualAmount))
+            {
+                body["actualAmount"] = request.ActualAmount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                body["bizCode"] = request.BizCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DetailList))
+            {
+                body["detailList"] = request.DetailList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LabelAmount))
+            {
+                body["labelAmount"] = request.LabelAmount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MerchantId))
+            {
+                body["merchantId"] = request.MerchantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MerchantOrderNo))
+            {
+                body["merchantOrderNo"] = request.MerchantOrderNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Signature))
+            {
+                body["signature"] = request.Signature;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Subject))
+            {
+                body["subject"] = request.Subject;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Timestamp))
+            {
+                body["timestamp"] = request.Timestamp;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CreateAppOrderResponse>(await DoROARequestAsync("CreateAppOrder", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/appOrders", "json", req, runtime));
         }
 
         public CreateCustomClassResponse CreateCustomClass(CreateCustomClassRequest request)
@@ -5312,6 +5552,94 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             return TeaModel.ToObject<QueryGroupIdResponse>(await DoROARequestAsync("QueryGroupId", "edu_1.0", "HTTP", "GET", "AK", "/v1.0/edu/faces/groups", "json", req, runtime));
+        }
+
+        public QueryOrderResponse QueryOrder(QueryOrderRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryOrderHeaders headers = new QueryOrderHeaders();
+            return QueryOrderWithOptions(request, headers, runtime);
+        }
+
+        public async Task<QueryOrderResponse> QueryOrderAsync(QueryOrderRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryOrderHeaders headers = new QueryOrderHeaders();
+            return await QueryOrderWithOptionsAsync(request, headers, runtime);
+        }
+
+        public QueryOrderResponse QueryOrderWithOptions(QueryOrderRequest request, QueryOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                query["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MerchantId))
+            {
+                query["merchantId"] = request.MerchantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderNo))
+            {
+                query["orderNo"] = request.OrderNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Signature))
+            {
+                query["signature"] = request.Signature;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<QueryOrderResponse>(DoROARequest("QueryOrder", "edu_1.0", "HTTP", "GET", "AK", "/v1.0/edu/orders", "json", req, runtime));
+        }
+
+        public async Task<QueryOrderResponse> QueryOrderWithOptionsAsync(QueryOrderRequest request, QueryOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                query["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MerchantId))
+            {
+                query["merchantId"] = request.MerchantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderNo))
+            {
+                query["orderNo"] = request.OrderNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Signature))
+            {
+                query["signature"] = request.Signature;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<QueryOrderResponse>(await DoROARequestAsync("QueryOrder", "edu_1.0", "HTTP", "GET", "AK", "/v1.0/edu/orders", "json", req, runtime));
         }
 
         public QueryOrgRelationListResponse QueryOrgRelationList(QueryOrgRelationListRequest request)
