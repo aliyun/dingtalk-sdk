@@ -863,6 +863,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetProjectGroup', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/organizations/users/{user_id}/groups', 'json', req, runtime)
         )
 
+    def get_tb_org_id_by_ding_org_id(
+        self,
+        request: dingtalkproject__1__0_models.GetTbOrgIdByDingOrgIdRequest,
+    ) -> dingtalkproject__1__0_models.GetTbOrgIdByDingOrgIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.GetTbOrgIdByDingOrgIdHeaders()
+        return self.get_tb_org_id_by_ding_org_id_with_options(request, headers, runtime)
+
+    async def get_tb_org_id_by_ding_org_id_async(
+        self,
+        request: dingtalkproject__1__0_models.GetTbOrgIdByDingOrgIdRequest,
+    ) -> dingtalkproject__1__0_models.GetTbOrgIdByDingOrgIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.GetTbOrgIdByDingOrgIdHeaders()
+        return await self.get_tb_org_id_by_ding_org_id_with_options_async(request, headers, runtime)
+
+    def get_tb_org_id_by_ding_org_id_with_options(
+        self,
+        request: dingtalkproject__1__0_models.GetTbOrgIdByDingOrgIdRequest,
+        headers: dingtalkproject__1__0_models.GetTbOrgIdByDingOrgIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.GetTbOrgIdByDingOrgIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.opt_user_id):
+            query['optUserId'] = request.opt_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.GetTbOrgIdByDingOrgIdResponse(),
+            self.do_roarequest('GetTbOrgIdByDingOrgId', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/teambition/organizations', 'json', req, runtime)
+        )
+
+    async def get_tb_org_id_by_ding_org_id_with_options_async(
+        self,
+        request: dingtalkproject__1__0_models.GetTbOrgIdByDingOrgIdRequest,
+        headers: dingtalkproject__1__0_models.GetTbOrgIdByDingOrgIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.GetTbOrgIdByDingOrgIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.opt_user_id):
+            query['optUserId'] = request.opt_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.GetTbOrgIdByDingOrgIdResponse(),
+            await self.do_roarequest_async('GetTbOrgIdByDingOrgId', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/teambition/organizations', 'json', req, runtime)
+        )
+
     def get_tb_project_gray(
         self,
         request: dingtalkproject__1__0_models.GetTbProjectGrayRequest,
@@ -1011,6 +1075,74 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkproject__1__0_models.GetTbProjectSourceResponse(),
             await self.do_roarequest_async('GetTbProjectSource', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/projects/source', 'json', req, runtime)
+        )
+
+    def get_tb_user_id_by_staff_id(
+        self,
+        request: dingtalkproject__1__0_models.GetTbUserIdByStaffIdRequest,
+    ) -> dingtalkproject__1__0_models.GetTbUserIdByStaffIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.GetTbUserIdByStaffIdHeaders()
+        return self.get_tb_user_id_by_staff_id_with_options(request, headers, runtime)
+
+    async def get_tb_user_id_by_staff_id_async(
+        self,
+        request: dingtalkproject__1__0_models.GetTbUserIdByStaffIdRequest,
+    ) -> dingtalkproject__1__0_models.GetTbUserIdByStaffIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.GetTbUserIdByStaffIdHeaders()
+        return await self.get_tb_user_id_by_staff_id_with_options_async(request, headers, runtime)
+
+    def get_tb_user_id_by_staff_id_with_options(
+        self,
+        request: dingtalkproject__1__0_models.GetTbUserIdByStaffIdRequest,
+        headers: dingtalkproject__1__0_models.GetTbUserIdByStaffIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.GetTbUserIdByStaffIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.opt_user_id):
+            query['optUserId'] = request.opt_user_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.GetTbUserIdByStaffIdResponse(),
+            self.do_roarequest('GetTbUserIdByStaffId', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/teambition/users', 'json', req, runtime)
+        )
+
+    async def get_tb_user_id_by_staff_id_with_options_async(
+        self,
+        request: dingtalkproject__1__0_models.GetTbUserIdByStaffIdRequest,
+        headers: dingtalkproject__1__0_models.GetTbUserIdByStaffIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.GetTbUserIdByStaffIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.opt_user_id):
+            query['optUserId'] = request.opt_user_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.GetTbUserIdByStaffIdResponse(),
+            await self.do_roarequest_async('GetTbUserIdByStaffId', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/teambition/users', 'json', req, runtime)
         )
 
     def search_project_template(

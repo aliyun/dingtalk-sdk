@@ -3855,6 +3855,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('SendInvitation', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/partnerDepartments/invitations/send', 'none', req, runtime)
         )
 
+    def send_phone_ding(
+        self,
+        request: dingtalkexclusive__1__0_models.SendPhoneDingRequest,
+    ) -> dingtalkexclusive__1__0_models.SendPhoneDingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SendPhoneDingHeaders()
+        return self.send_phone_ding_with_options(request, headers, runtime)
+
+    async def send_phone_ding_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SendPhoneDingRequest,
+    ) -> dingtalkexclusive__1__0_models.SendPhoneDingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SendPhoneDingHeaders()
+        return await self.send_phone_ding_with_options_async(request, headers, runtime)
+
+    def send_phone_ding_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.SendPhoneDingRequest,
+        headers: dingtalkexclusive__1__0_models.SendPhoneDingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SendPhoneDingResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.userids):
+            body['userids'] = request.userids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SendPhoneDingResponse(),
+            self.do_roarequest('SendPhoneDing', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/phoneDings/send', 'json', req, runtime)
+        )
+
+    async def send_phone_ding_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SendPhoneDingRequest,
+        headers: dingtalkexclusive__1__0_models.SendPhoneDingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SendPhoneDingResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.userids):
+            body['userids'] = request.userids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SendPhoneDingResponse(),
+            await self.do_roarequest_async('SendPhoneDing', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/phoneDings/send', 'json', req, runtime)
+        )
+
     def set_dept_partner_type_and_num(
         self,
         request: dingtalkexclusive__1__0_models.SetDeptPartnerTypeAndNumRequest,

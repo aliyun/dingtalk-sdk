@@ -485,6 +485,246 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('EditFeedReplay', 'live_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/live/openFeeds/{feed_id}/cutReplay', 'json', req, runtime)
         )
 
+    def get_user_all_live_list(
+        self,
+        request: dingtalklive__1__0_models.GetUserAllLiveListRequest,
+    ) -> dingtalklive__1__0_models.GetUserAllLiveListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.GetUserAllLiveListHeaders()
+        return self.get_user_all_live_list_with_options(request, headers, runtime)
+
+    async def get_user_all_live_list_async(
+        self,
+        request: dingtalklive__1__0_models.GetUserAllLiveListRequest,
+    ) -> dingtalklive__1__0_models.GetUserAllLiveListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.GetUserAllLiveListHeaders()
+        return await self.get_user_all_live_list_with_options_async(request, headers, runtime)
+
+    def get_user_all_live_list_with_options(
+        self,
+        request: dingtalklive__1__0_models.GetUserAllLiveListRequest,
+        headers: dingtalklive__1__0_models.GetUserAllLiveListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.GetUserAllLiveListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.statuses):
+            body['statuses'] = request.statuses
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.GetUserAllLiveListResponse(),
+            self.do_roarequest('GetUserAllLiveList', 'live_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/live/users/allLiveInfos/query', 'json', req, runtime)
+        )
+
+    async def get_user_all_live_list_with_options_async(
+        self,
+        request: dingtalklive__1__0_models.GetUserAllLiveListRequest,
+        headers: dingtalklive__1__0_models.GetUserAllLiveListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.GetUserAllLiveListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.statuses):
+            body['statuses'] = request.statuses
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.GetUserAllLiveListResponse(),
+            await self.do_roarequest_async('GetUserAllLiveList', 'live_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/live/users/allLiveInfos/query', 'json', req, runtime)
+        )
+
+    def get_user_create_live_list(
+        self,
+        request: dingtalklive__1__0_models.GetUserCreateLiveListRequest,
+    ) -> dingtalklive__1__0_models.GetUserCreateLiveListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.GetUserCreateLiveListHeaders()
+        return self.get_user_create_live_list_with_options(request, headers, runtime)
+
+    async def get_user_create_live_list_async(
+        self,
+        request: dingtalklive__1__0_models.GetUserCreateLiveListRequest,
+    ) -> dingtalklive__1__0_models.GetUserCreateLiveListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.GetUserCreateLiveListHeaders()
+        return await self.get_user_create_live_list_with_options_async(request, headers, runtime)
+
+    def get_user_create_live_list_with_options(
+        self,
+        tmp_req: dingtalklive__1__0_models.GetUserCreateLiveListRequest,
+        headers: dingtalklive__1__0_models.GetUserCreateLiveListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.GetUserCreateLiveListResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalklive__1__0_models.GetUserCreateLiveListShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.statuses):
+            request.statuses_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.statuses), 'statuses', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.statuses_shrink):
+            query['statuses'] = request.statuses_shrink
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.GetUserCreateLiveListResponse(),
+            self.do_roarequest('GetUserCreateLiveList', 'live_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/live/users/createLiveInfos/query', 'json', req, runtime)
+        )
+
+    async def get_user_create_live_list_with_options_async(
+        self,
+        tmp_req: dingtalklive__1__0_models.GetUserCreateLiveListRequest,
+        headers: dingtalklive__1__0_models.GetUserCreateLiveListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.GetUserCreateLiveListResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalklive__1__0_models.GetUserCreateLiveListShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.statuses):
+            request.statuses_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.statuses), 'statuses', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.statuses_shrink):
+            query['statuses'] = request.statuses_shrink
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.GetUserCreateLiveListResponse(),
+            await self.do_roarequest_async('GetUserCreateLiveList', 'live_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/live/users/createLiveInfos/query', 'json', req, runtime)
+        )
+
+    def get_user_watch_live_list(
+        self,
+        request: dingtalklive__1__0_models.GetUserWatchLiveListRequest,
+    ) -> dingtalklive__1__0_models.GetUserWatchLiveListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.GetUserWatchLiveListHeaders()
+        return self.get_user_watch_live_list_with_options(request, headers, runtime)
+
+    async def get_user_watch_live_list_async(
+        self,
+        request: dingtalklive__1__0_models.GetUserWatchLiveListRequest,
+    ) -> dingtalklive__1__0_models.GetUserWatchLiveListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.GetUserWatchLiveListHeaders()
+        return await self.get_user_watch_live_list_with_options_async(request, headers, runtime)
+
+    def get_user_watch_live_list_with_options(
+        self,
+        request: dingtalklive__1__0_models.GetUserWatchLiveListRequest,
+        headers: dingtalklive__1__0_models.GetUserWatchLiveListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.GetUserWatchLiveListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.filter_type):
+            query['filterType'] = request.filter_type
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.GetUserWatchLiveListResponse(),
+            self.do_roarequest('GetUserWatchLiveList', 'live_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/live/users/watchRecords', 'json', req, runtime)
+        )
+
+    async def get_user_watch_live_list_with_options_async(
+        self,
+        request: dingtalklive__1__0_models.GetUserWatchLiveListRequest,
+        headers: dingtalklive__1__0_models.GetUserWatchLiveListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.GetUserWatchLiveListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.filter_type):
+            query['filterType'] = request.filter_type
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.GetUserWatchLiveListResponse(),
+            await self.do_roarequest_async('GetUserWatchLiveList', 'live_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/live/users/watchRecords', 'json', req, runtime)
+        )
+
     def modify_feed_white_list(
         self,
         feed_id: str,
@@ -853,6 +1093,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryLiveWatchUserList', 'live_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/live/lives/watchUsers', 'json', req, runtime)
         )
 
+    def query_subscribe_status(
+        self,
+        request: dingtalklive__1__0_models.QuerySubscribeStatusRequest,
+    ) -> dingtalklive__1__0_models.QuerySubscribeStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.QuerySubscribeStatusHeaders()
+        return self.query_subscribe_status_with_options(request, headers, runtime)
+
+    async def query_subscribe_status_async(
+        self,
+        request: dingtalklive__1__0_models.QuerySubscribeStatusRequest,
+    ) -> dingtalklive__1__0_models.QuerySubscribeStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.QuerySubscribeStatusHeaders()
+        return await self.query_subscribe_status_with_options_async(request, headers, runtime)
+
+    def query_subscribe_status_with_options(
+        self,
+        tmp_req: dingtalklive__1__0_models.QuerySubscribeStatusRequest,
+        headers: dingtalklive__1__0_models.QuerySubscribeStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.QuerySubscribeStatusResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalklive__1__0_models.QuerySubscribeStatusShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.body):
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.body), 'body', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.body_shrink):
+            query['body'] = request.body_shrink
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.QuerySubscribeStatusResponse(),
+            self.do_roarequest('QuerySubscribeStatus', 'live_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/live/subscribeStatuses/query', 'json', req, runtime)
+        )
+
+    async def query_subscribe_status_with_options_async(
+        self,
+        tmp_req: dingtalklive__1__0_models.QuerySubscribeStatusRequest,
+        headers: dingtalklive__1__0_models.QuerySubscribeStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.QuerySubscribeStatusResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalklive__1__0_models.QuerySubscribeStatusShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.body):
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.body), 'body', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.body_shrink):
+            query['body'] = request.body_shrink
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.QuerySubscribeStatusResponse(),
+            await self.do_roarequest_async('QuerySubscribeStatus', 'live_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/live/subscribeStatuses/query', 'json', req, runtime)
+        )
+
     def start_cloud_feed(
         self,
         feed_id: str,
@@ -991,6 +1307,74 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalklive__1__0_models.StopCloudFeedResponse(),
             await self.do_roarequest_async('StopCloudFeed', 'live_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/live/cloudFeeds/{feed_id}/stop', 'json', req, runtime)
+        )
+
+    def subscribe_live(
+        self,
+        request: dingtalklive__1__0_models.SubscribeLiveRequest,
+    ) -> dingtalklive__1__0_models.SubscribeLiveResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.SubscribeLiveHeaders()
+        return self.subscribe_live_with_options(request, headers, runtime)
+
+    async def subscribe_live_async(
+        self,
+        request: dingtalklive__1__0_models.SubscribeLiveRequest,
+    ) -> dingtalklive__1__0_models.SubscribeLiveResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.SubscribeLiveHeaders()
+        return await self.subscribe_live_with_options_async(request, headers, runtime)
+
+    def subscribe_live_with_options(
+        self,
+        request: dingtalklive__1__0_models.SubscribeLiveRequest,
+        headers: dingtalklive__1__0_models.SubscribeLiveHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.SubscribeLiveResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.live_id):
+            query['liveId'] = request.live_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.SubscribeLiveResponse(),
+            self.do_roarequest('SubscribeLive', 'live_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/live/lives/subscribe', 'json', req, runtime)
+        )
+
+    async def subscribe_live_with_options_async(
+        self,
+        request: dingtalklive__1__0_models.SubscribeLiveRequest,
+        headers: dingtalklive__1__0_models.SubscribeLiveHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.SubscribeLiveResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.live_id):
+            query['liveId'] = request.live_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.SubscribeLiveResponse(),
+            await self.do_roarequest_async('SubscribeLive', 'live_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/live/lives/subscribe', 'json', req, runtime)
         )
 
     def update_live(

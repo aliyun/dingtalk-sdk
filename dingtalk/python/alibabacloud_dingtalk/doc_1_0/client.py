@@ -1681,6 +1681,88 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListTemplate', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/templates', 'json', req, runtime)
         )
 
+    def merge_range(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.MergeRangeRequest,
+    ) -> dingtalkdoc__1__0_models.MergeRangeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.MergeRangeHeaders()
+        return self.merge_range_with_options(workbook_id, sheet_id, range_address, request, headers, runtime)
+
+    async def merge_range_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.MergeRangeRequest,
+    ) -> dingtalkdoc__1__0_models.MergeRangeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.MergeRangeHeaders()
+        return await self.merge_range_with_options_async(workbook_id, sheet_id, range_address, request, headers, runtime)
+
+    def merge_range_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.MergeRangeRequest,
+        headers: dingtalkdoc__1__0_models.MergeRangeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.MergeRangeResponse:
+        UtilClient.validate_model(request)
+        workbook_id = OpenApiUtilClient.get_encode_param(workbook_id)
+        sheet_id = OpenApiUtilClient.get_encode_param(sheet_id)
+        range_address = OpenApiUtilClient.get_encode_param(range_address)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.MergeRangeResponse(),
+            self.do_roarequest('MergeRange', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/ranges/{range_address}/merge', 'json', req, runtime)
+        )
+
+    async def merge_range_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.MergeRangeRequest,
+        headers: dingtalkdoc__1__0_models.MergeRangeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.MergeRangeResponse:
+        UtilClient.validate_model(request)
+        workbook_id = OpenApiUtilClient.get_encode_param(workbook_id)
+        sheet_id = OpenApiUtilClient.get_encode_param(sheet_id)
+        range_address = OpenApiUtilClient.get_encode_param(range_address)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.MergeRangeResponse(),
+            await self.do_roarequest_async('MergeRange', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/ranges/{range_address}/merge', 'json', req, runtime)
+        )
+
     def range_find_next(
         self,
         workbook_id: str,

@@ -3435,13 +3435,10 @@ class GetWorkspaceHeaders(TeaModel):
 class GetWorkspaceResponseBody(TeaModel):
     def __init__(
         self,
-        corp_id: str = None,
         is_deleted: bool = None,
         owner: str = None,
         url: str = None,
     ):
-        # 团队空间所属企业id
-        self.corp_id = corp_id
         self.is_deleted = is_deleted
         self.owner = owner
         self.url = url
@@ -3455,8 +3452,6 @@ class GetWorkspaceResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
         if self.is_deleted is not None:
             result['isDeleted'] = self.is_deleted
         if self.owner is not None:
@@ -3467,8 +3462,6 @@ class GetWorkspaceResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
         if m.get('isDeleted') is not None:
             self.is_deleted = m.get('isDeleted')
         if m.get('owner') is not None:
@@ -4375,6 +4368,132 @@ class ListTemplateResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = ListTemplateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class MergeRangeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class MergeRangeRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+    ):
+        # 操作人unionId
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class MergeRangeResponseBody(TeaModel):
+    def __init__(
+        self,
+        a_1notation: str = None,
+    ):
+        # 合并的单元格地址
+        self.a_1notation = a_1notation
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.a_1notation is not None:
+            result['a1Notation'] = self.a_1notation
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('a1Notation') is not None:
+            self.a_1notation = m.get('a1Notation')
+        return self
+
+
+class MergeRangeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: MergeRangeResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = MergeRangeResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
