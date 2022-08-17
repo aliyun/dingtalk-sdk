@@ -4,10 +4,6 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetWorkspaceResponseBody extends TeaModel {
-    // 团队空间所属企业id
-    @NameInMap("corpId")
-    public String corpId;
-
     @NameInMap("isDeleted")
     public Boolean isDeleted;
 
@@ -20,14 +16,6 @@ public class GetWorkspaceResponseBody extends TeaModel {
     public static GetWorkspaceResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetWorkspaceResponseBody self = new GetWorkspaceResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public GetWorkspaceResponseBody setCorpId(String corpId) {
-        this.corpId = corpId;
-        return this;
-    }
-    public String getCorpId() {
-        return this.corpId;
     }
 
     public GetWorkspaceResponseBody setIsDeleted(Boolean isDeleted) {
