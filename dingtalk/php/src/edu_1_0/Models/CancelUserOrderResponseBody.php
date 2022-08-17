@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class CancelUserOrderResponseBody extends Model
 {
     /**
-     * @description 应用id。
+     * @description 支付宝应用id。
      *
      * @var string
      */
-    public $appId;
+    public $alipayAppId;
 
     /**
      * @description 商户id。
@@ -51,7 +51,7 @@ class CancelUserOrderResponseBody extends Model
      */
     public $totalAmount;
     protected $_name = [
-        'appId'           => 'appId',
+        'alipayAppId'     => 'alipayAppId',
         'merchantId'      => 'merchantId',
         'merchantOrderNo' => 'merchantOrderNo',
         'orderNo'         => 'orderNo',
@@ -67,8 +67,8 @@ class CancelUserOrderResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->appId) {
-            $res['appId'] = $this->appId;
+        if (null !== $this->alipayAppId) {
+            $res['alipayAppId'] = $this->alipayAppId;
         }
         if (null !== $this->merchantId) {
             $res['merchantId'] = $this->merchantId;
@@ -100,8 +100,8 @@ class CancelUserOrderResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['appId'])) {
-            $model->appId = $map['appId'];
+        if (isset($map['alipayAppId'])) {
+            $model->alipayAppId = $map['alipayAppId'];
         }
         if (isset($map['merchantId'])) {
             $model->merchantId = $map['merchantId'];

@@ -780,8 +780,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->actualAmount)) {
             @$body['actualAmount'] = $request->actualAmount;
         }
-        if (!Utils::isUnset($request->appId)) {
-            @$body['appId'] = $request->appId;
+        if (!Utils::isUnset($request->alipayAppId)) {
+            @$body['alipayAppId'] = $request->alipayAppId;
         }
         if (!Utils::isUnset($request->bizCode)) {
             @$body['bizCode'] = $request->bizCode;
@@ -3481,8 +3481,8 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->appId)) {
-            @$query['appId'] = $request->appId;
+        if (!Utils::isUnset($request->alipayAppId)) {
+            @$query['alipayAppId'] = $request->alipayAppId;
         }
         if (!Utils::isUnset($request->merchantId)) {
             @$query['merchantId'] = $request->merchantId;

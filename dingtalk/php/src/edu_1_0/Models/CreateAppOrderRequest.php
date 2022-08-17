@@ -17,11 +17,11 @@ class CreateAppOrderRequest extends Model
     public $actualAmount;
 
     /**
-     * @description 应用id。
+     * @description 支付宝应用id。
      *
      * @var string
      */
-    public $appId;
+    public $alipayAppId;
 
     /**
      * @description 业务编码。
@@ -87,7 +87,7 @@ class CreateAppOrderRequest extends Model
     public $userId;
     protected $_name = [
         'actualAmount'    => 'actualAmount',
-        'appId'           => 'appId',
+        'alipayAppId'     => 'alipayAppId',
         'bizCode'         => 'bizCode',
         'detailList'      => 'detailList',
         'labelAmount'     => 'labelAmount',
@@ -109,8 +109,8 @@ class CreateAppOrderRequest extends Model
         if (null !== $this->actualAmount) {
             $res['actualAmount'] = $this->actualAmount;
         }
-        if (null !== $this->appId) {
-            $res['appId'] = $this->appId;
+        if (null !== $this->alipayAppId) {
+            $res['alipayAppId'] = $this->alipayAppId;
         }
         if (null !== $this->bizCode) {
             $res['bizCode'] = $this->bizCode;
@@ -160,8 +160,8 @@ class CreateAppOrderRequest extends Model
         if (isset($map['actualAmount'])) {
             $model->actualAmount = $map['actualAmount'];
         }
-        if (isset($map['appId'])) {
-            $model->appId = $map['appId'];
+        if (isset($map['alipayAppId'])) {
+            $model->alipayAppId = $map['alipayAppId'];
         }
         if (isset($map['bizCode'])) {
             $model->bizCode = $map['bizCode'];
