@@ -20,12 +20,18 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchOrgCreateHWResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelOrderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelUserOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelUserOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelUserOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CheckRestrictionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CheckRestrictionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CheckRestrictionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CourseSchedulingComplimentNoticeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CourseSchedulingComplimentNoticeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CourseSchedulingComplimentNoticeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateAppOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateAppOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateAppOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCustomClassHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCustomClassRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCustomClassResponse;
@@ -177,6 +183,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryEduAssetSpacesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryGroupIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryGroupIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryGroupIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgRelationListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgRelationListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgRelationListResponse;
@@ -595,6 +604,60 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param CancelUserOrderRequest $request
+     *
+     * @return CancelUserOrderResponse
+     */
+    public function cancelUserOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CancelUserOrderHeaders([]);
+
+        return $this->cancelUserOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CancelUserOrderRequest $request
+     * @param CancelUserOrderHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return CancelUserOrderResponse
+     */
+    public function cancelUserOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appId)) {
+            @$body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->merchantId)) {
+            @$body['merchantId'] = $request->merchantId;
+        }
+        if (!Utils::isUnset($request->orderNo)) {
+            @$body['orderNo'] = $request->orderNo;
+        }
+        if (!Utils::isUnset($request->signature)) {
+            @$body['signature'] = $request->signature;
+        }
+        if (!Utils::isUnset($request->timestamp)) {
+            @$body['timestamp'] = $request->timestamp;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CancelUserOrderResponse::fromMap($this->doROARequest('CancelUserOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/userOrders/cancel', 'json', $req, $runtime));
+    }
+
+    /**
      * @param CheckRestrictionRequest $request
      *
      * @return CheckRestrictionResponse
@@ -688,6 +751,78 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CourseSchedulingComplimentNoticeResponse::fromMap($this->doROARequest('CourseSchedulingComplimentNotice', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/schedules/finishNotify', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateAppOrderRequest $request
+     *
+     * @return CreateAppOrderResponse
+     */
+    public function createAppOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateAppOrderHeaders([]);
+
+        return $this->createAppOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateAppOrderRequest $request
+     * @param CreateAppOrderHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return CreateAppOrderResponse
+     */
+    public function createAppOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->actualAmount)) {
+            @$body['actualAmount'] = $request->actualAmount;
+        }
+        if (!Utils::isUnset($request->appId)) {
+            @$body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->bizCode)) {
+            @$body['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->detailList)) {
+            @$body['detailList'] = $request->detailList;
+        }
+        if (!Utils::isUnset($request->labelAmount)) {
+            @$body['labelAmount'] = $request->labelAmount;
+        }
+        if (!Utils::isUnset($request->merchantId)) {
+            @$body['merchantId'] = $request->merchantId;
+        }
+        if (!Utils::isUnset($request->merchantOrderNo)) {
+            @$body['merchantOrderNo'] = $request->merchantOrderNo;
+        }
+        if (!Utils::isUnset($request->signature)) {
+            @$body['signature'] = $request->signature;
+        }
+        if (!Utils::isUnset($request->subject)) {
+            @$body['subject'] = $request->subject;
+        }
+        if (!Utils::isUnset($request->timestamp)) {
+            @$body['timestamp'] = $request->timestamp;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateAppOrderResponse::fromMap($this->doROARequest('CreateAppOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/appOrders', 'json', $req, $runtime));
     }
 
     /**
@@ -3320,6 +3455,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryGroupIdResponse::fromMap($this->doROARequest('QueryGroupId', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/faces/groups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryOrderRequest $request
+     *
+     * @return QueryOrderResponse
+     */
+    public function queryOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryOrderHeaders([]);
+
+        return $this->queryOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryOrderRequest $request
+     * @param QueryOrderHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return QueryOrderResponse
+     */
+    public function queryOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appId)) {
+            @$query['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->merchantId)) {
+            @$query['merchantId'] = $request->merchantId;
+        }
+        if (!Utils::isUnset($request->orderNo)) {
+            @$query['orderNo'] = $request->orderNo;
+        }
+        if (!Utils::isUnset($request->signature)) {
+            @$query['signature'] = $request->signature;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryOrderResponse::fromMap($this->doROARequest('QueryOrder', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/orders', 'json', $req, $runtime));
     }
 
     /**

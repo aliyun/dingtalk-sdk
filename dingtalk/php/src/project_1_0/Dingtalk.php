@@ -36,11 +36,17 @@ use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetOrganizatioTaskByIdsRespons
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetProjectGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetProjectGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetProjectGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbOrgIdByDingOrgIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbOrgIdByDingOrgIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbOrgIdByDingOrgIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbProjectGrayHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbProjectGrayRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbProjectGrayResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbProjectSourceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbProjectSourceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbUserIdByStaffIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbUserIdByStaffIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbUserIdByStaffIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchProjectTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchProjectTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchProjectTemplateResponse;
@@ -636,6 +642,48 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetTbOrgIdByDingOrgIdRequest $request
+     *
+     * @return GetTbOrgIdByDingOrgIdResponse
+     */
+    public function getTbOrgIdByDingOrgId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetTbOrgIdByDingOrgIdHeaders([]);
+
+        return $this->getTbOrgIdByDingOrgIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetTbOrgIdByDingOrgIdRequest $request
+     * @param GetTbOrgIdByDingOrgIdHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return GetTbOrgIdByDingOrgIdResponse
+     */
+    public function getTbOrgIdByDingOrgIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->optUserId)) {
+            @$query['optUserId'] = $request->optUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetTbOrgIdByDingOrgIdResponse::fromMap($this->doROARequest('GetTbOrgIdByDingOrgId', 'project_1.0', 'HTTP', 'GET', 'AK', '/v1.0/project/teambition/organizations', 'json', $req, $runtime));
+    }
+
+    /**
      * @param GetTbProjectGrayRequest $request
      *
      * @return GetTbProjectGrayResponse
@@ -738,6 +786,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetTbProjectSourceResponse::fromMap($this->doROARequest('GetTbProjectSource', 'project_1.0', 'HTTP', 'POST', 'AK', '/v1.0/project/projects/source', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetTbUserIdByStaffIdRequest $request
+     *
+     * @return GetTbUserIdByStaffIdResponse
+     */
+    public function getTbUserIdByStaffId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetTbUserIdByStaffIdHeaders([]);
+
+        return $this->getTbUserIdByStaffIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetTbUserIdByStaffIdRequest $request
+     * @param GetTbUserIdByStaffIdHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetTbUserIdByStaffIdResponse
+     */
+    public function getTbUserIdByStaffIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->optUserId)) {
+            @$query['optUserId'] = $request->optUserId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetTbUserIdByStaffIdResponse::fromMap($this->doROARequest('GetTbUserIdByStaffId', 'project_1.0', 'HTTP', 'GET', 'AK', '/v1.0/project/teambition/users', 'json', $req, $runtime));
     }
 
     /**

@@ -155,6 +155,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendAppDingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendInvitationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendInvitationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendInvitationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendPhoneDingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendPhoneDingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendPhoneDingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumResponse;
@@ -2742,6 +2745,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SendInvitationResponse::fromMap($this->doROARequest('SendInvitation', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/partnerDepartments/invitations/send', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param SendPhoneDingRequest $request
+     *
+     * @return SendPhoneDingResponse
+     */
+    public function sendPhoneDing($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendPhoneDingHeaders([]);
+
+        return $this->sendPhoneDingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SendPhoneDingRequest $request
+     * @param SendPhoneDingHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return SendPhoneDingResponse
+     */
+    public function sendPhoneDingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->content)) {
+            @$body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->userids)) {
+            @$body['userids'] = $request->userids;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SendPhoneDingResponse::fromMap($this->doROARequest('SendPhoneDing', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/phoneDings/send', 'json', $req, $runtime));
     }
 
     /**

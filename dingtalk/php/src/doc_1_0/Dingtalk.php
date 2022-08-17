@@ -70,6 +70,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertBlocksResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ListTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ListTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ListTemplateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\MergeRangeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\MergeRangeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\MergeRangeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\RangeFindNextHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\RangeFindNextRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\RangeFindNextResponse;
@@ -1178,6 +1181,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListTemplateResponse::fromMap($this->doROARequest('ListTemplate', 'doc_1.0', 'HTTP', 'GET', 'AK', '/v1.0/doc/templates', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string            $workbookId
+     * @param string            $sheetId
+     * @param string            $rangeAddress
+     * @param MergeRangeRequest $request
+     *
+     * @return MergeRangeResponse
+     */
+    public function mergeRange($workbookId, $sheetId, $rangeAddress, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new MergeRangeHeaders([]);
+
+        return $this->mergeRangeWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string            $workbookId
+     * @param string            $sheetId
+     * @param string            $rangeAddress
+     * @param MergeRangeRequest $request
+     * @param MergeRangeHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return MergeRangeResponse
+     */
+    public function mergeRangeWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $workbookId   = OpenApiUtilClient::getEncodeParam($workbookId);
+        $sheetId      = OpenApiUtilClient::getEncodeParam($sheetId);
+        $rangeAddress = OpenApiUtilClient::getEncodeParam($rangeAddress);
+        $query        = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return MergeRangeResponse::fromMap($this->doROARequest('MergeRange', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/merge', 'json', $req, $runtime));
     }
 
     /**

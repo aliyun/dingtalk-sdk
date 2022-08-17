@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetWorkspaceResponseBody extends Model
 {
     /**
-     * @description 团队空间所属企业id
-     *
-     * @var string
-     */
-    public $corpId;
-
-    /**
      * @var bool
      */
     public $isDeleted;
@@ -30,7 +23,6 @@ class GetWorkspaceResponseBody extends Model
      */
     public $url;
     protected $_name = [
-        'corpId'    => 'corpId',
         'isDeleted' => 'isDeleted',
         'owner'     => 'owner',
         'url'       => 'url',
@@ -43,9 +35,6 @@ class GetWorkspaceResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
-        }
         if (null !== $this->isDeleted) {
             $res['isDeleted'] = $this->isDeleted;
         }
@@ -67,9 +56,6 @@ class GetWorkspaceResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
-        }
         if (isset($map['isDeleted'])) {
             $model->isDeleted = $map['isDeleted'];
         }

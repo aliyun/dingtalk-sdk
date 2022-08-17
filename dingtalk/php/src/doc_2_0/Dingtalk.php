@@ -29,6 +29,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListFeedsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListHotDocsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListHotDocsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListHotDocsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListRelatedSpaceTeamsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListRelatedSpaceTeamsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListRelatedSpaceTeamsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListSpaceSectionsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListSpaceSectionsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListSpaceSectionsResponse;
@@ -477,6 +480,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListHotDocsResponse::fromMap($this->doROARequest('ListHotDocs', 'doc_2.0', 'HTTP', 'GET', 'AK', '/v2.0/doc/teams/' . $teamId . '/hotDocs', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListRelatedSpaceTeamsRequest $request
+     *
+     * @return ListRelatedSpaceTeamsResponse
+     */
+    public function listRelatedSpaceTeams($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListRelatedSpaceTeamsHeaders([]);
+
+        return $this->listRelatedSpaceTeamsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListRelatedSpaceTeamsRequest $request
+     * @param ListRelatedSpaceTeamsHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return ListRelatedSpaceTeamsResponse
+     */
+    public function listRelatedSpaceTeamsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$query['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListRelatedSpaceTeamsResponse::fromMap($this->doROARequest('ListRelatedSpaceTeams', 'doc_2.0', 'HTTP', 'GET', 'AK', '/v2.0/doc/teams/relations/spaceTeams', 'json', $req, $runtime));
     }
 
     /**
