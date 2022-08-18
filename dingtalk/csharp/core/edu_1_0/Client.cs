@@ -652,9 +652,9 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AlipayAppId))
             {
-                body["appId"] = request.AppId;
+                body["alipayAppId"] = request.AlipayAppId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MerchantId))
             {
@@ -693,9 +693,9 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AlipayAppId))
             {
-                body["appId"] = request.AppId;
+                body["alipayAppId"] = request.AlipayAppId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MerchantId))
             {
@@ -912,9 +912,9 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             {
                 body["actualAmount"] = request.ActualAmount;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AlipayAppId))
             {
-                body["appId"] = request.AppId;
+                body["alipayAppId"] = request.AlipayAppId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
             {
@@ -977,9 +977,9 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             {
                 body["actualAmount"] = request.ActualAmount;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AlipayAppId))
             {
-                body["appId"] = request.AppId;
+                body["alipayAppId"] = request.AlipayAppId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
             {
@@ -5572,9 +5572,9 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AlipayAppId))
             {
-                query["appId"] = request.AppId;
+                query["alipayAppId"] = request.AlipayAppId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MerchantId))
             {
@@ -5609,9 +5609,9 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AlipayAppId))
             {
-                query["appId"] = request.AppId;
+                query["alipayAppId"] = request.AlipayAppId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MerchantId))
             {

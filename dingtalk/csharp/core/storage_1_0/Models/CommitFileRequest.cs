@@ -26,14 +26,6 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         [Validation(Required=false)]
         public CommitFileRequestOption Option { get; set; }
         public class CommitFileRequestOption : TeaModel {
-            [NameInMap("appProperties")]
-            [Validation(Required=false)]
-            public List<CommitFileRequestOptionAppProperties> AppProperties { get; set; }
-            public class CommitFileRequestOptionAppProperties : TeaModel {
-                public string Name { get; set; }
-                public string Value { get; set; }
-                public string Visibility { get; set; }
-            }
             [NameInMap("conflictStrategy")]
             [Validation(Required=false)]
             public string ConflictStrategy { get; set; }

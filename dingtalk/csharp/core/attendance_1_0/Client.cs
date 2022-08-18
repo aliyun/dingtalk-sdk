@@ -1500,6 +1500,710 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             return TeaModel.ToObject<GetUserHolidaysResponse>(await DoROARequestAsync("GetUserHolidays", "attendance_1.0", "HTTP", "POST", "AK", "/v1.0/attendance/holidays", "json", req, runtime));
         }
 
+        public GroupAddResponse GroupAdd(GroupAddRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GroupAddHeaders headers = new GroupAddHeaders();
+            return GroupAddWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GroupAddResponse> GroupAddAsync(GroupAddRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GroupAddHeaders headers = new GroupAddHeaders();
+            return await GroupAddWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GroupAddResponse GroupAddWithOptions(GroupAddRequest request, GroupAddHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
+            {
+                query["opUserId"] = request.OpUserId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AdjustmentSettingId))
+            {
+                body["adjustmentSettingId"] = request.AdjustmentSettingId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BleDeviceList))
+            {
+                body["bleDeviceList"] = request.BleDeviceList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CheckNeedHealthyCode))
+            {
+                body["checkNeedHealthyCode"] = request.CheckNeedHealthyCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DefaultClassId))
+            {
+                body["defaultClassId"] = request.DefaultClassId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DisableCheckWhenRest))
+            {
+                body["disableCheckWhenRest"] = request.DisableCheckWhenRest;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DisableCheckWithoutSchedule))
+            {
+                body["disableCheckWithoutSchedule"] = request.DisableCheckWithoutSchedule;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableCameraCheck))
+            {
+                body["enableCameraCheck"] = request.EnableCameraCheck;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableEmpSelectClass))
+            {
+                body["enableEmpSelectClass"] = request.EnableEmpSelectClass;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableFaceCheck))
+            {
+                body["enableFaceCheck"] = request.EnableFaceCheck;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableFaceStrictMode))
+            {
+                body["enableFaceStrictMode"] = request.EnableFaceStrictMode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableNextDay))
+            {
+                body["enableNextDay"] = request.EnableNextDay;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableOutSideUpdateNormalCheck))
+            {
+                body["enableOutSideUpdateNormalCheck"] = request.EnableOutSideUpdateNormalCheck;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableOutsideApply))
+            {
+                body["enableOutsideApply"] = request.EnableOutsideApply;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableOutsideCameraCheck))
+            {
+                body["enableOutsideCameraCheck"] = request.EnableOutsideCameraCheck;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableOutsideCheck))
+            {
+                body["enableOutsideCheck"] = request.EnableOutsideCheck;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableOutsideRemark))
+            {
+                body["enableOutsideRemark"] = request.EnableOutsideRemark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnablePositionBle))
+            {
+                body["enablePositionBle"] = request.EnablePositionBle;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableTrimDistance))
+            {
+                body["enableTrimDistance"] = request.EnableTrimDistance;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ForbidHideOutSideAddress))
+            {
+                body["forbidHideOutSideAddress"] = request.ForbidHideOutSideAddress;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeCheckSetting.ToMap()))
+            {
+                body["freeCheckSetting"] = request.FreeCheckSetting;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeCheckTypeId))
+            {
+                body["freeCheckTypeId"] = request.FreeCheckTypeId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreecheckDayStartMinOffset))
+            {
+                body["freecheckDayStartMinOffset"] = request.FreecheckDayStartMinOffset;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreecheckWorkDays))
+            {
+                body["freecheckWorkDays"] = request.FreecheckWorkDays;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupId))
+            {
+                body["groupId"] = request.GroupId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupName))
+            {
+                body["groupName"] = request.GroupName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManagerList))
+            {
+                body["managerList"] = request.ManagerList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
+            {
+                body["members"] = request.Members;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ModifyMember))
+            {
+                body["modifyMember"] = request.ModifyMember;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Offset))
+            {
+                body["offset"] = request.Offset;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenFaceCheck))
+            {
+                body["openFaceCheck"] = request.OpenFaceCheck;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutsideCheckApproveModeId))
+            {
+                body["outsideCheckApproveModeId"] = request.OutsideCheckApproveModeId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OvertimeSettingId))
+            {
+                body["overtimeSettingId"] = request.OvertimeSettingId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Owner))
+            {
+                body["owner"] = request.Owner;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Positions))
+            {
+                body["positions"] = request.Positions;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResourcePermissionMap))
+            {
+                body["resourcePermissionMap"] = request.ResourcePermissionMap;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShiftVOList))
+            {
+                body["shiftVOList"] = request.ShiftVOList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SkipHolidays))
+            {
+                body["skipHolidays"] = request.SkipHolidays;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpecialDays))
+            {
+                body["specialDays"] = request.SpecialDays;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TrimDistance))
+            {
+                body["trimDistance"] = request.TrimDistance;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Wifis))
+            {
+                body["wifis"] = request.Wifis;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkdayClassList))
+            {
+                body["workdayClassList"] = request.WorkdayClassList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<GroupAddResponse>(DoROARequest("GroupAdd", "attendance_1.0", "HTTP", "POST", "AK", "/v1.0/attendance/groups", "json", req, runtime));
+        }
+
+        public async Task<GroupAddResponse> GroupAddWithOptionsAsync(GroupAddRequest request, GroupAddHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
+            {
+                query["opUserId"] = request.OpUserId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AdjustmentSettingId))
+            {
+                body["adjustmentSettingId"] = request.AdjustmentSettingId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BleDeviceList))
+            {
+                body["bleDeviceList"] = request.BleDeviceList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CheckNeedHealthyCode))
+            {
+                body["checkNeedHealthyCode"] = request.CheckNeedHealthyCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DefaultClassId))
+            {
+                body["defaultClassId"] = request.DefaultClassId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DisableCheckWhenRest))
+            {
+                body["disableCheckWhenRest"] = request.DisableCheckWhenRest;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DisableCheckWithoutSchedule))
+            {
+                body["disableCheckWithoutSchedule"] = request.DisableCheckWithoutSchedule;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableCameraCheck))
+            {
+                body["enableCameraCheck"] = request.EnableCameraCheck;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableEmpSelectClass))
+            {
+                body["enableEmpSelectClass"] = request.EnableEmpSelectClass;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableFaceCheck))
+            {
+                body["enableFaceCheck"] = request.EnableFaceCheck;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableFaceStrictMode))
+            {
+                body["enableFaceStrictMode"] = request.EnableFaceStrictMode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableNextDay))
+            {
+                body["enableNextDay"] = request.EnableNextDay;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableOutSideUpdateNormalCheck))
+            {
+                body["enableOutSideUpdateNormalCheck"] = request.EnableOutSideUpdateNormalCheck;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableOutsideApply))
+            {
+                body["enableOutsideApply"] = request.EnableOutsideApply;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableOutsideCameraCheck))
+            {
+                body["enableOutsideCameraCheck"] = request.EnableOutsideCameraCheck;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableOutsideCheck))
+            {
+                body["enableOutsideCheck"] = request.EnableOutsideCheck;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableOutsideRemark))
+            {
+                body["enableOutsideRemark"] = request.EnableOutsideRemark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnablePositionBle))
+            {
+                body["enablePositionBle"] = request.EnablePositionBle;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableTrimDistance))
+            {
+                body["enableTrimDistance"] = request.EnableTrimDistance;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ForbidHideOutSideAddress))
+            {
+                body["forbidHideOutSideAddress"] = request.ForbidHideOutSideAddress;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeCheckSetting.ToMap()))
+            {
+                body["freeCheckSetting"] = request.FreeCheckSetting;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeCheckTypeId))
+            {
+                body["freeCheckTypeId"] = request.FreeCheckTypeId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreecheckDayStartMinOffset))
+            {
+                body["freecheckDayStartMinOffset"] = request.FreecheckDayStartMinOffset;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreecheckWorkDays))
+            {
+                body["freecheckWorkDays"] = request.FreecheckWorkDays;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupId))
+            {
+                body["groupId"] = request.GroupId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupName))
+            {
+                body["groupName"] = request.GroupName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManagerList))
+            {
+                body["managerList"] = request.ManagerList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
+            {
+                body["members"] = request.Members;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ModifyMember))
+            {
+                body["modifyMember"] = request.ModifyMember;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Offset))
+            {
+                body["offset"] = request.Offset;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenFaceCheck))
+            {
+                body["openFaceCheck"] = request.OpenFaceCheck;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutsideCheckApproveModeId))
+            {
+                body["outsideCheckApproveModeId"] = request.OutsideCheckApproveModeId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OvertimeSettingId))
+            {
+                body["overtimeSettingId"] = request.OvertimeSettingId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Owner))
+            {
+                body["owner"] = request.Owner;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Positions))
+            {
+                body["positions"] = request.Positions;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResourcePermissionMap))
+            {
+                body["resourcePermissionMap"] = request.ResourcePermissionMap;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShiftVOList))
+            {
+                body["shiftVOList"] = request.ShiftVOList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SkipHolidays))
+            {
+                body["skipHolidays"] = request.SkipHolidays;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpecialDays))
+            {
+                body["specialDays"] = request.SpecialDays;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TrimDistance))
+            {
+                body["trimDistance"] = request.TrimDistance;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Wifis))
+            {
+                body["wifis"] = request.Wifis;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkdayClassList))
+            {
+                body["workdayClassList"] = request.WorkdayClassList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<GroupAddResponse>(await DoROARequestAsync("GroupAdd", "attendance_1.0", "HTTP", "POST", "AK", "/v1.0/attendance/groups", "json", req, runtime));
+        }
+
+        public GroupUpdateResponse GroupUpdate(GroupUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GroupUpdateHeaders headers = new GroupUpdateHeaders();
+            return GroupUpdateWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GroupUpdateResponse> GroupUpdateAsync(GroupUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GroupUpdateHeaders headers = new GroupUpdateHeaders();
+            return await GroupUpdateWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GroupUpdateResponse GroupUpdateWithOptions(GroupUpdateRequest request, GroupUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
+            {
+                query["opUserId"] = request.OpUserId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AdjustmentSettingId))
+            {
+                body["adjustmentSettingId"] = request.AdjustmentSettingId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DisableCheckWhenRest))
+            {
+                body["disableCheckWhenRest"] = request.DisableCheckWhenRest;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DisableCheckWithoutSchedule))
+            {
+                body["disableCheckWithoutSchedule"] = request.DisableCheckWithoutSchedule;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableCameraCheck))
+            {
+                body["enableCameraCheck"] = request.EnableCameraCheck;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableEmpSelectClass))
+            {
+                body["enableEmpSelectClass"] = request.EnableEmpSelectClass;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableFaceCheck))
+            {
+                body["enableFaceCheck"] = request.EnableFaceCheck;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableFaceStrictMode))
+            {
+                body["enableFaceStrictMode"] = request.EnableFaceStrictMode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableOutSideUpdateNormalCheck))
+            {
+                body["enableOutSideUpdateNormalCheck"] = request.EnableOutSideUpdateNormalCheck;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableOutsideApply))
+            {
+                body["enableOutsideApply"] = request.EnableOutsideApply;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableOutsideCheck))
+            {
+                body["enableOutsideCheck"] = request.EnableOutsideCheck;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableOutsideRemark))
+            {
+                body["enableOutsideRemark"] = request.EnableOutsideRemark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableTrimDistance))
+            {
+                body["enableTrimDistance"] = request.EnableTrimDistance;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ForbidHideOutSideAddress))
+            {
+                body["forbidHideOutSideAddress"] = request.ForbidHideOutSideAddress;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeCheckSetting.ToMap()))
+            {
+                body["freeCheckSetting"] = request.FreeCheckSetting;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeCheckTypeId))
+            {
+                body["freeCheckTypeId"] = request.FreeCheckTypeId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupId))
+            {
+                body["groupId"] = request.GroupId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupName))
+            {
+                body["groupName"] = request.GroupName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManagerList))
+            {
+                body["managerList"] = request.ManagerList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Offset))
+            {
+                body["offset"] = request.Offset;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenFaceCheck))
+            {
+                body["openFaceCheck"] = request.OpenFaceCheck;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutsideCheckApproveModeId))
+            {
+                body["outsideCheckApproveModeId"] = request.OutsideCheckApproveModeId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OvertimeSettingId))
+            {
+                body["overtimeSettingId"] = request.OvertimeSettingId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Owner))
+            {
+                body["owner"] = request.Owner;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Positions))
+            {
+                body["positions"] = request.Positions;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResourcePermissionMap))
+            {
+                body["resourcePermissionMap"] = request.ResourcePermissionMap;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShiftVOList))
+            {
+                body["shiftVOList"] = request.ShiftVOList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SkipHolidays))
+            {
+                body["skipHolidays"] = request.SkipHolidays;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TrimDistance))
+            {
+                body["trimDistance"] = request.TrimDistance;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkdayClassList))
+            {
+                body["workdayClassList"] = request.WorkdayClassList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<GroupUpdateResponse>(DoROARequest("GroupUpdate", "attendance_1.0", "HTTP", "PUT", "AK", "/v1.0/attendance/groups", "json", req, runtime));
+        }
+
+        public async Task<GroupUpdateResponse> GroupUpdateWithOptionsAsync(GroupUpdateRequest request, GroupUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
+            {
+                query["opUserId"] = request.OpUserId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AdjustmentSettingId))
+            {
+                body["adjustmentSettingId"] = request.AdjustmentSettingId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DisableCheckWhenRest))
+            {
+                body["disableCheckWhenRest"] = request.DisableCheckWhenRest;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DisableCheckWithoutSchedule))
+            {
+                body["disableCheckWithoutSchedule"] = request.DisableCheckWithoutSchedule;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableCameraCheck))
+            {
+                body["enableCameraCheck"] = request.EnableCameraCheck;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableEmpSelectClass))
+            {
+                body["enableEmpSelectClass"] = request.EnableEmpSelectClass;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableFaceCheck))
+            {
+                body["enableFaceCheck"] = request.EnableFaceCheck;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableFaceStrictMode))
+            {
+                body["enableFaceStrictMode"] = request.EnableFaceStrictMode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableOutSideUpdateNormalCheck))
+            {
+                body["enableOutSideUpdateNormalCheck"] = request.EnableOutSideUpdateNormalCheck;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableOutsideApply))
+            {
+                body["enableOutsideApply"] = request.EnableOutsideApply;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableOutsideCheck))
+            {
+                body["enableOutsideCheck"] = request.EnableOutsideCheck;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableOutsideRemark))
+            {
+                body["enableOutsideRemark"] = request.EnableOutsideRemark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableTrimDistance))
+            {
+                body["enableTrimDistance"] = request.EnableTrimDistance;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ForbidHideOutSideAddress))
+            {
+                body["forbidHideOutSideAddress"] = request.ForbidHideOutSideAddress;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeCheckSetting.ToMap()))
+            {
+                body["freeCheckSetting"] = request.FreeCheckSetting;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeCheckTypeId))
+            {
+                body["freeCheckTypeId"] = request.FreeCheckTypeId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupId))
+            {
+                body["groupId"] = request.GroupId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupName))
+            {
+                body["groupName"] = request.GroupName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManagerList))
+            {
+                body["managerList"] = request.ManagerList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Offset))
+            {
+                body["offset"] = request.Offset;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenFaceCheck))
+            {
+                body["openFaceCheck"] = request.OpenFaceCheck;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutsideCheckApproveModeId))
+            {
+                body["outsideCheckApproveModeId"] = request.OutsideCheckApproveModeId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OvertimeSettingId))
+            {
+                body["overtimeSettingId"] = request.OvertimeSettingId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Owner))
+            {
+                body["owner"] = request.Owner;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Positions))
+            {
+                body["positions"] = request.Positions;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResourcePermissionMap))
+            {
+                body["resourcePermissionMap"] = request.ResourcePermissionMap;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShiftVOList))
+            {
+                body["shiftVOList"] = request.ShiftVOList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SkipHolidays))
+            {
+                body["skipHolidays"] = request.SkipHolidays;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TrimDistance))
+            {
+                body["trimDistance"] = request.TrimDistance;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkdayClassList))
+            {
+                body["workdayClassList"] = request.WorkdayClassList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<GroupUpdateResponse>(await DoROARequestAsync("GroupUpdate", "attendance_1.0", "HTTP", "PUT", "AK", "/v1.0/attendance/groups", "json", req, runtime));
+        }
+
         public InitAndGetLeaveALlocationQuotasResponse InitAndGetLeaveALlocationQuotas(InitAndGetLeaveALlocationQuotasRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

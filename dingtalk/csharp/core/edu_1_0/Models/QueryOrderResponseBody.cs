@@ -14,11 +14,11 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public long? ActualAmount { get; set; }
 
         /// <summary>
-        /// 应用id。
+        /// 支付宝应用id。
         /// </summary>
-        [NameInMap("appId")]
+        [NameInMap("alipayAppId")]
         [Validation(Required=false)]
-        public string AppId { get; set; }
+        public string AlipayAppId { get; set; }
 
         /// <summary>
         /// 订单关单时间。

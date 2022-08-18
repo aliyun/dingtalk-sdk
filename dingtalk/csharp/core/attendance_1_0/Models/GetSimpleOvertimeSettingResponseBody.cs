@@ -37,6 +37,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
                 [Validation(Required=false)]
                 public string Name { get; set; }
 
+                [NameInMap("settingId")]
+                [Validation(Required=false)]
+                public long? SettingId { get; set; }
+
             }
 
             /// <summary>

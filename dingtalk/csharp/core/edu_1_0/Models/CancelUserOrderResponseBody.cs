@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class CancelUserOrderResponseBody : TeaModel {
         /// <summary>
-        /// 应用id。
+        /// 支付宝应用id。
         /// </summary>
-        [NameInMap("appId")]
+        [NameInMap("alipayAppId")]
         [Validation(Required=false)]
-        public string AppId { get; set; }
+        public string AlipayAppId { get; set; }
 
         /// <summary>
         /// 商户id。
