@@ -1560,14 +1560,14 @@ class CancelUserOrderHeaders(TeaModel):
 class CancelUserOrderRequest(TeaModel):
     def __init__(
         self,
-        app_id: str = None,
+        alipay_app_id: str = None,
         merchant_id: str = None,
         order_no: str = None,
         signature: str = None,
         timestamp: int = None,
     ):
-        # 应用id。
-        self.app_id = app_id
+        # 支付宝应用id。
+        self.alipay_app_id = alipay_app_id
         # 商户id。
         self.merchant_id = merchant_id
         # 订单号。
@@ -1586,8 +1586,8 @@ class CancelUserOrderRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.app_id is not None:
-            result['appId'] = self.app_id
+        if self.alipay_app_id is not None:
+            result['alipayAppId'] = self.alipay_app_id
         if self.merchant_id is not None:
             result['merchantId'] = self.merchant_id
         if self.order_no is not None:
@@ -1600,8 +1600,8 @@ class CancelUserOrderRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('appId') is not None:
-            self.app_id = m.get('appId')
+        if m.get('alipayAppId') is not None:
+            self.alipay_app_id = m.get('alipayAppId')
         if m.get('merchantId') is not None:
             self.merchant_id = m.get('merchantId')
         if m.get('orderNo') is not None:
@@ -1616,7 +1616,7 @@ class CancelUserOrderRequest(TeaModel):
 class CancelUserOrderResponseBody(TeaModel):
     def __init__(
         self,
-        app_id: str = None,
+        alipay_app_id: str = None,
         merchant_id: str = None,
         merchant_order_no: str = None,
         order_no: str = None,
@@ -1624,8 +1624,8 @@ class CancelUserOrderResponseBody(TeaModel):
         refund_status: int = None,
         total_amount: int = None,
     ):
-        # 应用id。
-        self.app_id = app_id
+        # 支付宝应用id。
+        self.alipay_app_id = alipay_app_id
         # 商户id。
         self.merchant_id = merchant_id
         # 商户订单号。
@@ -1645,8 +1645,8 @@ class CancelUserOrderResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.app_id is not None:
-            result['appId'] = self.app_id
+        if self.alipay_app_id is not None:
+            result['alipayAppId'] = self.alipay_app_id
         if self.merchant_id is not None:
             result['merchantId'] = self.merchant_id
         if self.merchant_order_no is not None:
@@ -1663,8 +1663,8 @@ class CancelUserOrderResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('appId') is not None:
-            self.app_id = m.get('appId')
+        if m.get('alipayAppId') is not None:
+            self.alipay_app_id = m.get('alipayAppId')
         if m.get('merchantId') is not None:
             self.merchant_id = m.get('merchantId')
         if m.get('merchantOrderNo') is not None:
@@ -2090,7 +2090,7 @@ class CreateAppOrderRequest(TeaModel):
     def __init__(
         self,
         actual_amount: int = None,
-        app_id: str = None,
+        alipay_app_id: str = None,
         biz_code: int = None,
         detail_list: List[CreateAppOrderRequestDetailList] = None,
         label_amount: int = None,
@@ -2103,8 +2103,8 @@ class CreateAppOrderRequest(TeaModel):
     ):
         # 实际金额，单位分。
         self.actual_amount = actual_amount
-        # 应用id。
-        self.app_id = app_id
+        # 支付宝应用id。
+        self.alipay_app_id = alipay_app_id
         # 业务编码。
         self.biz_code = biz_code
         # 订单明细列表。
@@ -2138,8 +2138,8 @@ class CreateAppOrderRequest(TeaModel):
         result = dict()
         if self.actual_amount is not None:
             result['actualAmount'] = self.actual_amount
-        if self.app_id is not None:
-            result['appId'] = self.app_id
+        if self.alipay_app_id is not None:
+            result['alipayAppId'] = self.alipay_app_id
         if self.biz_code is not None:
             result['bizCode'] = self.biz_code
         result['detailList'] = []
@@ -2166,8 +2166,8 @@ class CreateAppOrderRequest(TeaModel):
         m = m or dict()
         if m.get('actualAmount') is not None:
             self.actual_amount = m.get('actualAmount')
-        if m.get('appId') is not None:
-            self.app_id = m.get('appId')
+        if m.get('alipayAppId') is not None:
+            self.alipay_app_id = m.get('alipayAppId')
         if m.get('bizCode') is not None:
             self.biz_code = m.get('bizCode')
         self.detail_list = []
@@ -2196,7 +2196,7 @@ class CreateAppOrderResponseBody(TeaModel):
     def __init__(
         self,
         actual_amount: int = None,
-        app_id: str = None,
+        alipay_app_id: str = None,
         body: str = None,
         merchant_id: str = None,
         merchant_order_no: str = None,
@@ -2204,8 +2204,8 @@ class CreateAppOrderResponseBody(TeaModel):
     ):
         # 实际金额，单位分。
         self.actual_amount = actual_amount
-        # 应用id。
-        self.app_id = app_id
+        # 支付宝应用id。
+        self.alipay_app_id = alipay_app_id
         # 订单信息。
         self.body = body
         # 商户id。
@@ -2226,8 +2226,8 @@ class CreateAppOrderResponseBody(TeaModel):
         result = dict()
         if self.actual_amount is not None:
             result['actualAmount'] = self.actual_amount
-        if self.app_id is not None:
-            result['appId'] = self.app_id
+        if self.alipay_app_id is not None:
+            result['alipayAppId'] = self.alipay_app_id
         if self.body is not None:
             result['body'] = self.body
         if self.merchant_id is not None:
@@ -2242,8 +2242,8 @@ class CreateAppOrderResponseBody(TeaModel):
         m = m or dict()
         if m.get('actualAmount') is not None:
             self.actual_amount = m.get('actualAmount')
-        if m.get('appId') is not None:
-            self.app_id = m.get('appId')
+        if m.get('alipayAppId') is not None:
+            self.alipay_app_id = m.get('alipayAppId')
         if m.get('body') is not None:
             self.body = m.get('body')
         if m.get('merchantId') is not None:
@@ -14121,13 +14121,13 @@ class QueryOrderHeaders(TeaModel):
 class QueryOrderRequest(TeaModel):
     def __init__(
         self,
-        app_id: str = None,
+        alipay_app_id: str = None,
         merchant_id: str = None,
         order_no: str = None,
         signature: str = None,
     ):
-        # 应用id。
-        self.app_id = app_id
+        # 支付宝应用id。
+        self.alipay_app_id = alipay_app_id
         # 商户id。
         self.merchant_id = merchant_id
         # 订单号。
@@ -14144,8 +14144,8 @@ class QueryOrderRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.app_id is not None:
-            result['appId'] = self.app_id
+        if self.alipay_app_id is not None:
+            result['alipayAppId'] = self.alipay_app_id
         if self.merchant_id is not None:
             result['merchantId'] = self.merchant_id
         if self.order_no is not None:
@@ -14156,8 +14156,8 @@ class QueryOrderRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('appId') is not None:
-            self.app_id = m.get('appId')
+        if m.get('alipayAppId') is not None:
+            self.alipay_app_id = m.get('alipayAppId')
         if m.get('merchantId') is not None:
             self.merchant_id = m.get('merchantId')
         if m.get('orderNo') is not None:
@@ -14171,7 +14171,7 @@ class QueryOrderResponseBody(TeaModel):
     def __init__(
         self,
         actual_amount: int = None,
-        app_id: str = None,
+        alipay_app_id: str = None,
         close_time: int = None,
         create_time: int = None,
         feature: str = None,
@@ -14194,8 +14194,8 @@ class QueryOrderResponseBody(TeaModel):
         user_id: str = None,
     ):
         self.actual_amount = actual_amount
-        # 应用id。
-        self.app_id = app_id
+        # 支付宝应用id。
+        self.alipay_app_id = alipay_app_id
         # 订单关单时间。
         self.close_time = close_time
         # 订单创建时间。
@@ -14244,8 +14244,8 @@ class QueryOrderResponseBody(TeaModel):
         result = dict()
         if self.actual_amount is not None:
             result['actualAmount'] = self.actual_amount
-        if self.app_id is not None:
-            result['appId'] = self.app_id
+        if self.alipay_app_id is not None:
+            result['alipayAppId'] = self.alipay_app_id
         if self.close_time is not None:
             result['closeTime'] = self.close_time
         if self.create_time is not None:
@@ -14292,8 +14292,8 @@ class QueryOrderResponseBody(TeaModel):
         m = m or dict()
         if m.get('actualAmount') is not None:
             self.actual_amount = m.get('actualAmount')
-        if m.get('appId') is not None:
-            self.app_id = m.get('appId')
+        if m.get('alipayAppId') is not None:
+            self.alipay_app_id = m.get('alipayAppId')
         if m.get('closeTime') is not None:
             self.close_time = m.get('closeTime')
         if m.get('createTime') is not None:

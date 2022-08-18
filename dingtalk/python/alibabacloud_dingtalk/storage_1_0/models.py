@@ -37,59 +37,11 @@ class AddFolderHeaders(TeaModel):
         return self
 
 
-class AddFolderRequestOptionAppProperties(TeaModel):
-    def __init__(
-        self,
-        name: str = None,
-        value: str = None,
-        visibility: str = None,
-    ):
-        # 属性名称 该属性名称在当前app下需要保证唯一，不同app间同名属性互不影响
-        self.name = name
-        # 属性值
-        self.value = value
-        # 属性可见范围
-        # 枚举值:
-        # 	PUBLIC: 该属性所有App可见
-        # 	PRIVATE: 该属性仅其归属App可见
-        self.visibility = visibility
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.name is not None:
-            result['name'] = self.name
-        if self.value is not None:
-            result['value'] = self.value
-        if self.visibility is not None:
-            result['visibility'] = self.visibility
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('name') is not None:
-            self.name = m.get('name')
-        if m.get('value') is not None:
-            self.value = m.get('value')
-        if m.get('visibility') is not None:
-            self.visibility = m.get('visibility')
-        return self
-
-
 class AddFolderRequestOption(TeaModel):
     def __init__(
         self,
-        app_properties: List[AddFolderRequestOptionAppProperties] = None,
         conflict_strategy: str = None,
     ):
-        # 文件夹在应用上的属性, 一个应用最多只能设置3个属性
-        self.app_properties = app_properties
         # 文件夹名称冲突策略
         # 枚举值:
         # 	AUTO_RENAME: 自动重命名
@@ -101,10 +53,7 @@ class AddFolderRequestOption(TeaModel):
         self.conflict_strategy = conflict_strategy
 
     def validate(self):
-        if self.app_properties:
-            for k in self.app_properties:
-                if k:
-                    k.validate()
+        pass
 
     def to_map(self):
         _map = super().to_map()
@@ -112,21 +61,12 @@ class AddFolderRequestOption(TeaModel):
             return _map
 
         result = dict()
-        result['appProperties'] = []
-        if self.app_properties is not None:
-            for k in self.app_properties:
-                result['appProperties'].append(k.to_map() if k else None)
         if self.conflict_strategy is not None:
             result['conflictStrategy'] = self.conflict_strategy
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.app_properties = []
-        if m.get('appProperties') is not None:
-            for k in m.get('appProperties'):
-                temp_model = AddFolderRequestOptionAppProperties()
-                self.app_properties.append(temp_model.from_map(k))
         if m.get('conflictStrategy') is not None:
             self.conflict_strategy = m.get('conflictStrategy')
         return self
@@ -1286,60 +1226,12 @@ class CommitFileHeaders(TeaModel):
         return self
 
 
-class CommitFileRequestOptionAppProperties(TeaModel):
-    def __init__(
-        self,
-        name: str = None,
-        value: str = None,
-        visibility: str = None,
-    ):
-        # 属性名称 该属性名称在当前app下需要保证唯一，不同app间同名属性互不影响
-        self.name = name
-        # 属性值
-        self.value = value
-        # 属性可见范围
-        # 枚举值:
-        # 	PUBLIC: 该属性所有App可见
-        # 	PRIVATE: 该属性仅其归属App可见
-        self.visibility = visibility
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.name is not None:
-            result['name'] = self.name
-        if self.value is not None:
-            result['value'] = self.value
-        if self.visibility is not None:
-            result['visibility'] = self.visibility
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('name') is not None:
-            self.name = m.get('name')
-        if m.get('value') is not None:
-            self.value = m.get('value')
-        if m.get('visibility') is not None:
-            self.visibility = m.get('visibility')
-        return self
-
-
 class CommitFileRequestOption(TeaModel):
     def __init__(
         self,
-        app_properties: List[CommitFileRequestOptionAppProperties] = None,
         conflict_strategy: str = None,
         size: int = None,
     ):
-        # 文件在应用上的属性, 一个应用最多只能设置3个属性
-        self.app_properties = app_properties
         # 文件名称冲突策略
         # 枚举值:
         # 	AUTO_RENAME: 自动重命名
@@ -1354,10 +1246,7 @@ class CommitFileRequestOption(TeaModel):
         self.size = size
 
     def validate(self):
-        if self.app_properties:
-            for k in self.app_properties:
-                if k:
-                    k.validate()
+        pass
 
     def to_map(self):
         _map = super().to_map()
@@ -1365,10 +1254,6 @@ class CommitFileRequestOption(TeaModel):
             return _map
 
         result = dict()
-        result['appProperties'] = []
-        if self.app_properties is not None:
-            for k in self.app_properties:
-                result['appProperties'].append(k.to_map() if k else None)
         if self.conflict_strategy is not None:
             result['conflictStrategy'] = self.conflict_strategy
         if self.size is not None:
@@ -1377,11 +1262,6 @@ class CommitFileRequestOption(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.app_properties = []
-        if m.get('appProperties') is not None:
-            for k in m.get('appProperties'):
-                temp_model = CommitFileRequestOptionAppProperties()
-                self.app_properties.append(temp_model.from_map(k))
         if m.get('conflictStrategy') is not None:
             self.conflict_strategy = m.get('conflictStrategy')
         if m.get('size') is not None:

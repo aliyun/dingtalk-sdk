@@ -2222,11 +2222,13 @@ class GetAdjustmentsResponseBodyResultItems(TeaModel):
         self,
         id: int = None,
         name: str = None,
+        setting_id: int = None,
     ):
         # 补卡规则id
         self.id = id
         # 补卡规则名称
         self.name = name
+        self.setting_id = setting_id
 
     def validate(self):
         pass
@@ -2241,6 +2243,8 @@ class GetAdjustmentsResponseBodyResultItems(TeaModel):
             result['id'] = self.id
         if self.name is not None:
             result['name'] = self.name
+        if self.setting_id is not None:
+            result['settingId'] = self.setting_id
         return result
 
     def from_map(self, m: dict = None):
@@ -2249,6 +2253,8 @@ class GetAdjustmentsResponseBodyResultItems(TeaModel):
             self.id = m.get('id')
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('settingId') is not None:
+            self.setting_id = m.get('settingId')
         return self
 
 
@@ -4486,11 +4492,13 @@ class GetSimpleOvertimeSettingResponseBodyResultItems(TeaModel):
         self,
         id: int = None,
         name: str = None,
+        setting_id: int = None,
     ):
         # 加班规则id
         self.id = id
         # 加班规则名称
         self.name = name
+        self.setting_id = setting_id
 
     def validate(self):
         pass
@@ -4505,6 +4513,8 @@ class GetSimpleOvertimeSettingResponseBodyResultItems(TeaModel):
             result['id'] = self.id
         if self.name is not None:
             result['name'] = self.name
+        if self.setting_id is not None:
+            result['settingId'] = self.setting_id
         return result
 
     def from_map(self, m: dict = None):
@@ -4513,6 +4523,8 @@ class GetSimpleOvertimeSettingResponseBodyResultItems(TeaModel):
             self.id = m.get('id')
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('settingId') is not None:
+            self.setting_id = m.get('settingId')
         return self
 
 
@@ -4875,6 +4887,1535 @@ class GetUserHolidaysResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetUserHolidaysResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GroupAddHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GroupAddRequestBleDeviceList(TeaModel):
+    def __init__(
+        self,
+        device_id: int = None,
+    ):
+        # 设备ID，调用查询员工智能考勤机列表获取。
+        self.device_id = device_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.device_id is not None:
+            result['deviceId'] = self.device_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deviceId') is not None:
+            self.device_id = m.get('deviceId')
+        return self
+
+
+class GroupAddRequestFreeCheckSettingFreeCheckGap(TeaModel):
+    def __init__(
+        self,
+        off_on_check_gap_minutes: int = None,
+        on_off_check_gap_minutes: int = None,
+    ):
+        # 下班打卡最小打卡间隔（单位分钟）。
+        self.off_on_check_gap_minutes = off_on_check_gap_minutes
+        # 上班打卡最小打卡间隔（单位分钟）。
+        self.on_off_check_gap_minutes = on_off_check_gap_minutes
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.off_on_check_gap_minutes is not None:
+            result['offOnCheckGapMinutes'] = self.off_on_check_gap_minutes
+        if self.on_off_check_gap_minutes is not None:
+            result['onOffCheckGapMinutes'] = self.on_off_check_gap_minutes
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('offOnCheckGapMinutes') is not None:
+            self.off_on_check_gap_minutes = m.get('offOnCheckGapMinutes')
+        if m.get('onOffCheckGapMinutes') is not None:
+            self.on_off_check_gap_minutes = m.get('onOffCheckGapMinutes')
+        return self
+
+
+class GroupAddRequestFreeCheckSetting(TeaModel):
+    def __init__(
+        self,
+        free_check_gap: GroupAddRequestFreeCheckSettingFreeCheckGap = None,
+    ):
+        # 休息日打卡间隔设置。
+        self.free_check_gap = free_check_gap
+
+    def validate(self):
+        if self.free_check_gap:
+            self.free_check_gap.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.free_check_gap is not None:
+            result['freeCheckGap'] = self.free_check_gap.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('freeCheckGap') is not None:
+            temp_model = GroupAddRequestFreeCheckSettingFreeCheckGap()
+            self.free_check_gap = temp_model.from_map(m['freeCheckGap'])
+        return self
+
+
+class GroupAddRequestMembers(TeaModel):
+    def __init__(
+        self,
+        role: str = None,
+        type: str = None,
+        user_id: str = None,
+    ):
+        # 角色，固定值Attendance。
+        self.role = role
+        # 类型，固定值StaffMember。
+        self.type = type
+        # 用户userid。
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.role is not None:
+            result['role'] = self.role
+        if self.type is not None:
+            result['type'] = self.type
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('role') is not None:
+            self.role = m.get('role')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GroupAddRequestPositions(TeaModel):
+    def __init__(
+        self,
+        address: str = None,
+        latitude: str = None,
+        longitude: str = None,
+        offset: int = None,
+        title: str = None,
+    ):
+        # 考勤地址。
+        self.address = address
+        # 纬度。
+        self.latitude = latitude
+        # 经度。
+        self.longitude = longitude
+        # 考勤范围。
+        self.offset = offset
+        # 考勤标题。
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.address is not None:
+            result['address'] = self.address
+        if self.latitude is not None:
+            result['latitude'] = self.latitude
+        if self.longitude is not None:
+            result['longitude'] = self.longitude
+        if self.offset is not None:
+            result['offset'] = self.offset
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('address') is not None:
+            self.address = m.get('address')
+        if m.get('latitude') is not None:
+            self.latitude = m.get('latitude')
+        if m.get('longitude') is not None:
+            self.longitude = m.get('longitude')
+        if m.get('offset') is not None:
+            self.offset = m.get('offset')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class GroupAddRequestResourcePermissionMap(TeaModel):
+    def __init__(
+        self,
+        camera_check: str = None,
+        check_position_type: str = None,
+        check_time: str = None,
+        group_member: str = None,
+        group_type: str = None,
+        out_side_check: str = None,
+        over_time_rule: str = None,
+        schedule: str = None,
+    ):
+        # 设置拍照打卡规则。
+        self.camera_check = camera_check
+        # 设置打卡方式。
+        self.check_position_type = check_position_type
+        # 设置考勤时间。
+        self.check_time = check_time
+        # 设置参与考勤人员。
+        self.group_member = group_member
+        # 设置考勤类型。
+        self.group_type = group_type
+        # 设置外勤打卡。
+        self.out_side_check = out_side_check
+        # 设置加班规则。
+        self.over_time_rule = over_time_rule
+        # 员工排班。
+        self.schedule = schedule
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.camera_check is not None:
+            result['cameraCheck'] = self.camera_check
+        if self.check_position_type is not None:
+            result['checkPositionType'] = self.check_position_type
+        if self.check_time is not None:
+            result['checkTime'] = self.check_time
+        if self.group_member is not None:
+            result['groupMember'] = self.group_member
+        if self.group_type is not None:
+            result['groupType'] = self.group_type
+        if self.out_side_check is not None:
+            result['outSideCheck'] = self.out_side_check
+        if self.over_time_rule is not None:
+            result['overTimeRule'] = self.over_time_rule
+        if self.schedule is not None:
+            result['schedule'] = self.schedule
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cameraCheck') is not None:
+            self.camera_check = m.get('cameraCheck')
+        if m.get('checkPositionType') is not None:
+            self.check_position_type = m.get('checkPositionType')
+        if m.get('checkTime') is not None:
+            self.check_time = m.get('checkTime')
+        if m.get('groupMember') is not None:
+            self.group_member = m.get('groupMember')
+        if m.get('groupType') is not None:
+            self.group_type = m.get('groupType')
+        if m.get('outSideCheck') is not None:
+            self.out_side_check = m.get('outSideCheck')
+        if m.get('overTimeRule') is not None:
+            self.over_time_rule = m.get('overTimeRule')
+        if m.get('schedule') is not None:
+            self.schedule = m.get('schedule')
+        return self
+
+
+class GroupAddRequestShiftVOList(TeaModel):
+    def __init__(
+        self,
+        shift_id: int = None,
+    ):
+        # 班次ID，可通过获取班次摘要信息接口获取。
+        self.shift_id = shift_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.shift_id is not None:
+            result['shiftId'] = self.shift_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('shiftId') is not None:
+            self.shift_id = m.get('shiftId')
+        return self
+
+
+class GroupAddRequestWifis(TeaModel):
+    def __init__(
+        self,
+        mac_addr: str = None,
+        ssid: str = None,
+    ):
+        # mac地址。
+        self.mac_addr = mac_addr
+        # wifi的ssid。
+        self.ssid = ssid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.mac_addr is not None:
+            result['macAddr'] = self.mac_addr
+        if self.ssid is not None:
+            result['ssid'] = self.ssid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('macAddr') is not None:
+            self.mac_addr = m.get('macAddr')
+        if m.get('ssid') is not None:
+            self.ssid = m.get('ssid')
+        return self
+
+
+class GroupAddRequest(TeaModel):
+    def __init__(
+        self,
+        adjustment_setting_id: int = None,
+        ble_device_list: List[GroupAddRequestBleDeviceList] = None,
+        check_need_healthy_code: bool = None,
+        default_class_id: int = None,
+        disable_check_when_rest: bool = None,
+        disable_check_without_schedule: bool = None,
+        enable_camera_check: bool = None,
+        enable_emp_select_class: bool = None,
+        enable_face_check: bool = None,
+        enable_face_strict_mode: bool = None,
+        enable_next_day: bool = None,
+        enable_out_side_update_normal_check: bool = None,
+        enable_outside_apply: bool = None,
+        enable_outside_camera_check: bool = None,
+        enable_outside_check: bool = None,
+        enable_outside_remark: bool = None,
+        enable_position_ble: bool = None,
+        enable_trim_distance: bool = None,
+        forbid_hide_out_side_address: bool = None,
+        free_check_setting: GroupAddRequestFreeCheckSetting = None,
+        free_check_type_id: int = None,
+        freecheck_day_start_min_offset: int = None,
+        freecheck_work_days: List[int] = None,
+        group_id: int = None,
+        group_name: str = None,
+        manager_list: List[str] = None,
+        members: List[GroupAddRequestMembers] = None,
+        modify_member: bool = None,
+        offset: int = None,
+        open_face_check: bool = None,
+        outside_check_approve_mode_id: int = None,
+        overtime_setting_id: int = None,
+        owner: str = None,
+        positions: List[GroupAddRequestPositions] = None,
+        resource_permission_map: List[GroupAddRequestResourcePermissionMap] = None,
+        shift_volist: List[GroupAddRequestShiftVOList] = None,
+        skip_holidays: bool = None,
+        special_days: str = None,
+        trim_distance: int = None,
+        type: str = None,
+        wifis: List[GroupAddRequestWifis] = None,
+        workday_class_list: List[int] = None,
+        op_user_id: str = None,
+    ):
+        # 补卡规则settingId。
+        self.adjustment_setting_id = adjustment_setting_id
+        # 蓝牙打卡相关配置信息。
+        self.ble_device_list = ble_device_list
+        # 打卡是否需要健康码：
+        # 
+        # true：开启
+        # 
+        # false：关闭（默认值）
+        self.check_need_healthy_code = check_need_healthy_code
+        # 默认班次ID。
+        # 
+        # 说明 固定班制必填，可通过获取班次摘要信息接口获取
+        self.default_class_id = default_class_id
+        # 休息日打卡是否需审批：
+        # 
+        # true：需要
+        # 
+        # false：不需要
+        self.disable_check_when_rest = disable_check_when_rest
+        # 未排班时是否禁止员工打卡。
+        self.disable_check_without_schedule = disable_check_without_schedule
+        # 是否开启拍照打卡。
+        # 
+        # true：开启
+        # 
+        # false：关闭（默认值）
+        self.enable_camera_check = enable_camera_check
+        # 未排班时是否允许员工选择班次打卡。
+        self.enable_emp_select_class = enable_emp_select_class
+        # 是否开启人脸检测。
+        # 
+        # true：开启
+        # 
+        # false：关闭（默认值）
+        self.enable_face_check = enable_face_check
+        # 是否开启真人验证。
+        self.enable_face_strict_mode = enable_face_strict_mode
+        # 是否第二天生效。
+        # true：是
+        # false：否
+        self.enable_next_day = enable_next_day
+        # 是否允许外勤卡更新内勤卡。
+        self.enable_out_side_update_normal_check = enable_out_side_update_normal_check
+        # 外勤打卡是否需要审批。
+        self.enable_outside_apply = enable_outside_apply
+        # 是否开启外勤打卡必须拍照。
+        # 
+        # true：开启
+        # 
+        # false：关闭（默认值）
+        self.enable_outside_camera_check = enable_outside_camera_check
+        # 是否可以外勤打卡。
+        # 
+        # true：允许（默认值）
+        # 
+        # false：不允许
+        self.enable_outside_check = enable_outside_check
+        # 外勤打卡是否需要拍照备注。
+        self.enable_outside_remark = enable_outside_remark
+        # 是否启用蓝牙定位。
+        self.enable_position_ble = enable_position_ble
+        # 是否允许地点微调距离。
+        self.enable_trim_distance = enable_trim_distance
+        # 是否禁止员工隐藏详细地址。
+        self.forbid_hide_out_side_address = forbid_hide_out_side_address
+        # 休息日打卡规则。
+        self.free_check_setting = free_check_setting
+        # 休息日打卡方式。
+        # 0严格打卡模式 
+        # 1标准打卡模式
+        self.free_check_type_id = free_check_type_id
+        # 自由工时考勤组考勤开始时间与当天0点偏移分钟数。
+        # 
+        # 例如：540表示9:00
+        self.freecheck_day_start_min_offset = freecheck_day_start_min_offset
+        # 自由工时考勤组工作日。
+        # 说明
+        # 0表示休息。
+        # 数组内的值，从左到右依次代表周日到周六，每日的排班情况。
+        self.freecheck_work_days = freecheck_work_days
+        # 考勤组ID。
+        self.group_id = group_id
+        # 考勤组名。
+        self.group_name = group_name
+        # 考勤组子管理员userid列表。
+        self.manager_list = manager_list
+        # 考勤组成员相关设置信息。
+        self.members = members
+        # 是否有修改考勤组成员相关信息。
+        self.modify_member = modify_member
+        # 考勤范围。
+        self.offset = offset
+        # 是否开启人脸打卡。
+        self.open_face_check = open_face_check
+        # 外勤打卡审批模式-1无需审批，0先审批后打卡是1先打卡后审批
+        self.outside_check_approve_mode_id = outside_check_approve_mode_id
+        # 加班规则settingId。
+        self.overtime_setting_id = overtime_setting_id
+        # 考勤组负责人。
+        self.owner = owner
+        # 考勤地点相关设置信息。
+        self.positions = positions
+        # 子管理员权限范围。
+        # 
+        # w：可管理
+        # 
+        # r：可读
+        self.resource_permission_map = resource_permission_map
+        # 班次相关配置信息。
+        self.shift_volist = shift_volist
+        # 是否跳过节假日。
+        # 
+        # true：跳过（默认值）
+        # 
+        # false：不跳过
+        self.skip_holidays = skip_holidays
+        # 特殊日期配置。
+        self.special_days = special_days
+        # 地点微调范围（单位米）。
+        self.trim_distance = trim_distance
+        # 考勤组类型：
+        # 
+        # FIXED：固定班制考勤组
+        # 
+        # TURN：排班制考勤组
+        # 
+        # NONE：自由工时考勤组
+        self.type = type
+        # 考勤wifi打卡相关配置信息。
+        self.wifis = wifis
+        # 周班次列表。
+        # 说明
+        # 固定班制必填，0表示休息。
+        # 数组内的值，从左到右依次代表周日到周六，每日的排班情况。
+        self.workday_class_list = workday_class_list
+        # 操作人的userid。
+        self.op_user_id = op_user_id
+
+    def validate(self):
+        if self.ble_device_list:
+            for k in self.ble_device_list:
+                if k:
+                    k.validate()
+        if self.free_check_setting:
+            self.free_check_setting.validate()
+        if self.members:
+            for k in self.members:
+                if k:
+                    k.validate()
+        if self.positions:
+            for k in self.positions:
+                if k:
+                    k.validate()
+        if self.resource_permission_map:
+            for k in self.resource_permission_map:
+                if k:
+                    k.validate()
+        if self.shift_volist:
+            for k in self.shift_volist:
+                if k:
+                    k.validate()
+        if self.wifis:
+            for k in self.wifis:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.adjustment_setting_id is not None:
+            result['adjustmentSettingId'] = self.adjustment_setting_id
+        result['bleDeviceList'] = []
+        if self.ble_device_list is not None:
+            for k in self.ble_device_list:
+                result['bleDeviceList'].append(k.to_map() if k else None)
+        if self.check_need_healthy_code is not None:
+            result['checkNeedHealthyCode'] = self.check_need_healthy_code
+        if self.default_class_id is not None:
+            result['defaultClassId'] = self.default_class_id
+        if self.disable_check_when_rest is not None:
+            result['disableCheckWhenRest'] = self.disable_check_when_rest
+        if self.disable_check_without_schedule is not None:
+            result['disableCheckWithoutSchedule'] = self.disable_check_without_schedule
+        if self.enable_camera_check is not None:
+            result['enableCameraCheck'] = self.enable_camera_check
+        if self.enable_emp_select_class is not None:
+            result['enableEmpSelectClass'] = self.enable_emp_select_class
+        if self.enable_face_check is not None:
+            result['enableFaceCheck'] = self.enable_face_check
+        if self.enable_face_strict_mode is not None:
+            result['enableFaceStrictMode'] = self.enable_face_strict_mode
+        if self.enable_next_day is not None:
+            result['enableNextDay'] = self.enable_next_day
+        if self.enable_out_side_update_normal_check is not None:
+            result['enableOutSideUpdateNormalCheck'] = self.enable_out_side_update_normal_check
+        if self.enable_outside_apply is not None:
+            result['enableOutsideApply'] = self.enable_outside_apply
+        if self.enable_outside_camera_check is not None:
+            result['enableOutsideCameraCheck'] = self.enable_outside_camera_check
+        if self.enable_outside_check is not None:
+            result['enableOutsideCheck'] = self.enable_outside_check
+        if self.enable_outside_remark is not None:
+            result['enableOutsideRemark'] = self.enable_outside_remark
+        if self.enable_position_ble is not None:
+            result['enablePositionBle'] = self.enable_position_ble
+        if self.enable_trim_distance is not None:
+            result['enableTrimDistance'] = self.enable_trim_distance
+        if self.forbid_hide_out_side_address is not None:
+            result['forbidHideOutSideAddress'] = self.forbid_hide_out_side_address
+        if self.free_check_setting is not None:
+            result['freeCheckSetting'] = self.free_check_setting.to_map()
+        if self.free_check_type_id is not None:
+            result['freeCheckTypeId'] = self.free_check_type_id
+        if self.freecheck_day_start_min_offset is not None:
+            result['freecheckDayStartMinOffset'] = self.freecheck_day_start_min_offset
+        if self.freecheck_work_days is not None:
+            result['freecheckWorkDays'] = self.freecheck_work_days
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.manager_list is not None:
+            result['managerList'] = self.manager_list
+        result['members'] = []
+        if self.members is not None:
+            for k in self.members:
+                result['members'].append(k.to_map() if k else None)
+        if self.modify_member is not None:
+            result['modifyMember'] = self.modify_member
+        if self.offset is not None:
+            result['offset'] = self.offset
+        if self.open_face_check is not None:
+            result['openFaceCheck'] = self.open_face_check
+        if self.outside_check_approve_mode_id is not None:
+            result['outsideCheckApproveModeId'] = self.outside_check_approve_mode_id
+        if self.overtime_setting_id is not None:
+            result['overtimeSettingId'] = self.overtime_setting_id
+        if self.owner is not None:
+            result['owner'] = self.owner
+        result['positions'] = []
+        if self.positions is not None:
+            for k in self.positions:
+                result['positions'].append(k.to_map() if k else None)
+        result['resourcePermissionMap'] = []
+        if self.resource_permission_map is not None:
+            for k in self.resource_permission_map:
+                result['resourcePermissionMap'].append(k.to_map() if k else None)
+        result['shiftVOList'] = []
+        if self.shift_volist is not None:
+            for k in self.shift_volist:
+                result['shiftVOList'].append(k.to_map() if k else None)
+        if self.skip_holidays is not None:
+            result['skipHolidays'] = self.skip_holidays
+        if self.special_days is not None:
+            result['specialDays'] = self.special_days
+        if self.trim_distance is not None:
+            result['trimDistance'] = self.trim_distance
+        if self.type is not None:
+            result['type'] = self.type
+        result['wifis'] = []
+        if self.wifis is not None:
+            for k in self.wifis:
+                result['wifis'].append(k.to_map() if k else None)
+        if self.workday_class_list is not None:
+            result['workdayClassList'] = self.workday_class_list
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('adjustmentSettingId') is not None:
+            self.adjustment_setting_id = m.get('adjustmentSettingId')
+        self.ble_device_list = []
+        if m.get('bleDeviceList') is not None:
+            for k in m.get('bleDeviceList'):
+                temp_model = GroupAddRequestBleDeviceList()
+                self.ble_device_list.append(temp_model.from_map(k))
+        if m.get('checkNeedHealthyCode') is not None:
+            self.check_need_healthy_code = m.get('checkNeedHealthyCode')
+        if m.get('defaultClassId') is not None:
+            self.default_class_id = m.get('defaultClassId')
+        if m.get('disableCheckWhenRest') is not None:
+            self.disable_check_when_rest = m.get('disableCheckWhenRest')
+        if m.get('disableCheckWithoutSchedule') is not None:
+            self.disable_check_without_schedule = m.get('disableCheckWithoutSchedule')
+        if m.get('enableCameraCheck') is not None:
+            self.enable_camera_check = m.get('enableCameraCheck')
+        if m.get('enableEmpSelectClass') is not None:
+            self.enable_emp_select_class = m.get('enableEmpSelectClass')
+        if m.get('enableFaceCheck') is not None:
+            self.enable_face_check = m.get('enableFaceCheck')
+        if m.get('enableFaceStrictMode') is not None:
+            self.enable_face_strict_mode = m.get('enableFaceStrictMode')
+        if m.get('enableNextDay') is not None:
+            self.enable_next_day = m.get('enableNextDay')
+        if m.get('enableOutSideUpdateNormalCheck') is not None:
+            self.enable_out_side_update_normal_check = m.get('enableOutSideUpdateNormalCheck')
+        if m.get('enableOutsideApply') is not None:
+            self.enable_outside_apply = m.get('enableOutsideApply')
+        if m.get('enableOutsideCameraCheck') is not None:
+            self.enable_outside_camera_check = m.get('enableOutsideCameraCheck')
+        if m.get('enableOutsideCheck') is not None:
+            self.enable_outside_check = m.get('enableOutsideCheck')
+        if m.get('enableOutsideRemark') is not None:
+            self.enable_outside_remark = m.get('enableOutsideRemark')
+        if m.get('enablePositionBle') is not None:
+            self.enable_position_ble = m.get('enablePositionBle')
+        if m.get('enableTrimDistance') is not None:
+            self.enable_trim_distance = m.get('enableTrimDistance')
+        if m.get('forbidHideOutSideAddress') is not None:
+            self.forbid_hide_out_side_address = m.get('forbidHideOutSideAddress')
+        if m.get('freeCheckSetting') is not None:
+            temp_model = GroupAddRequestFreeCheckSetting()
+            self.free_check_setting = temp_model.from_map(m['freeCheckSetting'])
+        if m.get('freeCheckTypeId') is not None:
+            self.free_check_type_id = m.get('freeCheckTypeId')
+        if m.get('freecheckDayStartMinOffset') is not None:
+            self.freecheck_day_start_min_offset = m.get('freecheckDayStartMinOffset')
+        if m.get('freecheckWorkDays') is not None:
+            self.freecheck_work_days = m.get('freecheckWorkDays')
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('managerList') is not None:
+            self.manager_list = m.get('managerList')
+        self.members = []
+        if m.get('members') is not None:
+            for k in m.get('members'):
+                temp_model = GroupAddRequestMembers()
+                self.members.append(temp_model.from_map(k))
+        if m.get('modifyMember') is not None:
+            self.modify_member = m.get('modifyMember')
+        if m.get('offset') is not None:
+            self.offset = m.get('offset')
+        if m.get('openFaceCheck') is not None:
+            self.open_face_check = m.get('openFaceCheck')
+        if m.get('outsideCheckApproveModeId') is not None:
+            self.outside_check_approve_mode_id = m.get('outsideCheckApproveModeId')
+        if m.get('overtimeSettingId') is not None:
+            self.overtime_setting_id = m.get('overtimeSettingId')
+        if m.get('owner') is not None:
+            self.owner = m.get('owner')
+        self.positions = []
+        if m.get('positions') is not None:
+            for k in m.get('positions'):
+                temp_model = GroupAddRequestPositions()
+                self.positions.append(temp_model.from_map(k))
+        self.resource_permission_map = []
+        if m.get('resourcePermissionMap') is not None:
+            for k in m.get('resourcePermissionMap'):
+                temp_model = GroupAddRequestResourcePermissionMap()
+                self.resource_permission_map.append(temp_model.from_map(k))
+        self.shift_volist = []
+        if m.get('shiftVOList') is not None:
+            for k in m.get('shiftVOList'):
+                temp_model = GroupAddRequestShiftVOList()
+                self.shift_volist.append(temp_model.from_map(k))
+        if m.get('skipHolidays') is not None:
+            self.skip_holidays = m.get('skipHolidays')
+        if m.get('specialDays') is not None:
+            self.special_days = m.get('specialDays')
+        if m.get('trimDistance') is not None:
+            self.trim_distance = m.get('trimDistance')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        self.wifis = []
+        if m.get('wifis') is not None:
+            for k in m.get('wifis'):
+                temp_model = GroupAddRequestWifis()
+                self.wifis.append(temp_model.from_map(k))
+        if m.get('workdayClassList') is not None:
+            self.workday_class_list = m.get('workdayClassList')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        return self
+
+
+class GroupAddResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        group_id: int = None,
+        group_name: str = None,
+    ):
+        # 考勤组id
+        self.group_id = group_id
+        # 考勤组名
+        self.group_name = group_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        return self
+
+
+class GroupAddResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[GroupAddResponseBodyResult] = None,
+    ):
+        # Id of the request
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GroupAddResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class GroupAddResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GroupAddResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GroupAddResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GroupUpdateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GroupUpdateRequestFreeCheckSettingFreeCheckGap(TeaModel):
+    def __init__(
+        self,
+        off_on_check_gap_minutes: int = None,
+        on_off_check_gap_minutes: int = None,
+    ):
+        # 下班打卡最小打卡间隔（单位分钟）。
+        self.off_on_check_gap_minutes = off_on_check_gap_minutes
+        # 上班打卡最小打卡间隔（单位分钟）。
+        self.on_off_check_gap_minutes = on_off_check_gap_minutes
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.off_on_check_gap_minutes is not None:
+            result['offOnCheckGapMinutes'] = self.off_on_check_gap_minutes
+        if self.on_off_check_gap_minutes is not None:
+            result['onOffCheckGapMinutes'] = self.on_off_check_gap_minutes
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('offOnCheckGapMinutes') is not None:
+            self.off_on_check_gap_minutes = m.get('offOnCheckGapMinutes')
+        if m.get('onOffCheckGapMinutes') is not None:
+            self.on_off_check_gap_minutes = m.get('onOffCheckGapMinutes')
+        return self
+
+
+class GroupUpdateRequestFreeCheckSetting(TeaModel):
+    def __init__(
+        self,
+        free_check_gap: GroupUpdateRequestFreeCheckSettingFreeCheckGap = None,
+    ):
+        # 休息日打卡间隔设置。
+        self.free_check_gap = free_check_gap
+
+    def validate(self):
+        if self.free_check_gap:
+            self.free_check_gap.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.free_check_gap is not None:
+            result['freeCheckGap'] = self.free_check_gap.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('freeCheckGap') is not None:
+            temp_model = GroupUpdateRequestFreeCheckSettingFreeCheckGap()
+            self.free_check_gap = temp_model.from_map(m['freeCheckGap'])
+        return self
+
+
+class GroupUpdateRequestPositions(TeaModel):
+    def __init__(
+        self,
+        address: str = None,
+        latitude: str = None,
+        longitude: str = None,
+        offset: int = None,
+        title: str = None,
+    ):
+        # 考勤地址。
+        self.address = address
+        # 纬度。
+        self.latitude = latitude
+        # 经度。
+        self.longitude = longitude
+        # 考勤范围。
+        self.offset = offset
+        # 考勤标题。
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.address is not None:
+            result['address'] = self.address
+        if self.latitude is not None:
+            result['latitude'] = self.latitude
+        if self.longitude is not None:
+            result['longitude'] = self.longitude
+        if self.offset is not None:
+            result['offset'] = self.offset
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('address') is not None:
+            self.address = m.get('address')
+        if m.get('latitude') is not None:
+            self.latitude = m.get('latitude')
+        if m.get('longitude') is not None:
+            self.longitude = m.get('longitude')
+        if m.get('offset') is not None:
+            self.offset = m.get('offset')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class GroupUpdateRequestResourcePermissionMap(TeaModel):
+    def __init__(
+        self,
+        camera_check: str = None,
+        check_position_type: str = None,
+        check_time: str = None,
+        group_member: str = None,
+        group_type: str = None,
+        out_side_check: str = None,
+        over_time_rule: str = None,
+        schedule: str = None,
+    ):
+        # 设置拍照打卡规则。
+        self.camera_check = camera_check
+        # 设置打卡方式。
+        self.check_position_type = check_position_type
+        # 设置考勤时间。
+        self.check_time = check_time
+        # 设置参与考勤人员。
+        self.group_member = group_member
+        # 设置考勤类型。
+        self.group_type = group_type
+        # 设置外勤打卡。
+        self.out_side_check = out_side_check
+        # 设置加班规则。
+        self.over_time_rule = over_time_rule
+        # 员工排班。
+        self.schedule = schedule
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.camera_check is not None:
+            result['cameraCheck'] = self.camera_check
+        if self.check_position_type is not None:
+            result['checkPositionType'] = self.check_position_type
+        if self.check_time is not None:
+            result['checkTime'] = self.check_time
+        if self.group_member is not None:
+            result['groupMember'] = self.group_member
+        if self.group_type is not None:
+            result['groupType'] = self.group_type
+        if self.out_side_check is not None:
+            result['outSideCheck'] = self.out_side_check
+        if self.over_time_rule is not None:
+            result['overTimeRule'] = self.over_time_rule
+        if self.schedule is not None:
+            result['schedule'] = self.schedule
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cameraCheck') is not None:
+            self.camera_check = m.get('cameraCheck')
+        if m.get('checkPositionType') is not None:
+            self.check_position_type = m.get('checkPositionType')
+        if m.get('checkTime') is not None:
+            self.check_time = m.get('checkTime')
+        if m.get('groupMember') is not None:
+            self.group_member = m.get('groupMember')
+        if m.get('groupType') is not None:
+            self.group_type = m.get('groupType')
+        if m.get('outSideCheck') is not None:
+            self.out_side_check = m.get('outSideCheck')
+        if m.get('overTimeRule') is not None:
+            self.over_time_rule = m.get('overTimeRule')
+        if m.get('schedule') is not None:
+            self.schedule = m.get('schedule')
+        return self
+
+
+class GroupUpdateRequestShiftVOList(TeaModel):
+    def __init__(
+        self,
+        shift_id: int = None,
+    ):
+        # 班次ID，可通过获取班次摘要信息接口获取。
+        self.shift_id = shift_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.shift_id is not None:
+            result['shiftId'] = self.shift_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('shiftId') is not None:
+            self.shift_id = m.get('shiftId')
+        return self
+
+
+class GroupUpdateRequest(TeaModel):
+    def __init__(
+        self,
+        adjustment_setting_id: int = None,
+        disable_check_when_rest: bool = None,
+        disable_check_without_schedule: bool = None,
+        enable_camera_check: bool = None,
+        enable_emp_select_class: bool = None,
+        enable_face_check: bool = None,
+        enable_face_strict_mode: bool = None,
+        enable_out_side_update_normal_check: bool = None,
+        enable_outside_apply: bool = None,
+        enable_outside_check: bool = None,
+        enable_outside_remark: bool = None,
+        enable_trim_distance: bool = None,
+        forbid_hide_out_side_address: bool = None,
+        free_check_setting: GroupUpdateRequestFreeCheckSetting = None,
+        free_check_type_id: int = None,
+        group_id: int = None,
+        group_name: str = None,
+        manager_list: List[str] = None,
+        offset: int = None,
+        open_face_check: bool = None,
+        outside_check_approve_mode_id: int = None,
+        overtime_setting_id: int = None,
+        owner: str = None,
+        positions: List[GroupUpdateRequestPositions] = None,
+        resource_permission_map: List[GroupUpdateRequestResourcePermissionMap] = None,
+        shift_volist: List[GroupUpdateRequestShiftVOList] = None,
+        skip_holidays: bool = None,
+        trim_distance: int = None,
+        workday_class_list: List[int] = None,
+        op_user_id: str = None,
+    ):
+        # 补卡规则settingId。
+        self.adjustment_setting_id = adjustment_setting_id
+        # 休息日打卡是否需审批：true：需要false：不需要
+        self.disable_check_when_rest = disable_check_when_rest
+        # 未排班时是否禁止员工打卡。
+        self.disable_check_without_schedule = disable_check_without_schedule
+        # 是否开启拍照打卡。true：开启false：关闭（默认值）
+        self.enable_camera_check = enable_camera_check
+        # 未排班时是否允许员工选择班次打卡。
+        self.enable_emp_select_class = enable_emp_select_class
+        # 是否开启人脸检测。true：开启false：关闭（默认值）
+        self.enable_face_check = enable_face_check
+        # 是否开启真人验证。
+        self.enable_face_strict_mode = enable_face_strict_mode
+        # 是否允许外勤卡更新内勤卡。
+        self.enable_out_side_update_normal_check = enable_out_side_update_normal_check
+        # 外勤打卡是否需要审批。
+        self.enable_outside_apply = enable_outside_apply
+        # 是否可以外勤打卡。true：允许（默认值）false：不允许
+        self.enable_outside_check = enable_outside_check
+        # 外勤打卡是否需要拍照备注。
+        self.enable_outside_remark = enable_outside_remark
+        # 是否允许地点微调距离。
+        self.enable_trim_distance = enable_trim_distance
+        # 是否禁止员工隐藏详细地址。
+        self.forbid_hide_out_side_address = forbid_hide_out_side_address
+        # 休息日打卡规则。
+        self.free_check_setting = free_check_setting
+        # 休息日打卡方式。0严格打卡模式 1标准打卡模式
+        self.free_check_type_id = free_check_type_id
+        # 考勤组ID。
+        self.group_id = group_id
+        # 考勤组名。
+        self.group_name = group_name
+        # 考勤组子管理员userid列表。
+        self.manager_list = manager_list
+        # 考勤范围。
+        self.offset = offset
+        # 是否开启人脸打卡。
+        self.open_face_check = open_face_check
+        # 外勤打卡审批模式-1无需审批，0先审批后打卡是1先打卡后审批
+        self.outside_check_approve_mode_id = outside_check_approve_mode_id
+        # 加班规则settingId。
+        self.overtime_setting_id = overtime_setting_id
+        # 考勤组负责人。
+        self.owner = owner
+        # 考勤地点相关设置信息。
+        self.positions = positions
+        # 子管理员权限范围。w：可管理r：可读
+        self.resource_permission_map = resource_permission_map
+        # 班次相关配置信息。
+        self.shift_volist = shift_volist
+        # 是否跳过节假日。true：跳过（默认值）false：不跳过
+        self.skip_holidays = skip_holidays
+        # 地点微调范围（单位米）。
+        self.trim_distance = trim_distance
+        # 周班次列表。说明固定班制必填，0表示休息。数组内的值，从左到右依次代表周日到周六，每日的排班情况。
+        self.workday_class_list = workday_class_list
+        # 操作人的userid。
+        self.op_user_id = op_user_id
+
+    def validate(self):
+        if self.free_check_setting:
+            self.free_check_setting.validate()
+        if self.positions:
+            for k in self.positions:
+                if k:
+                    k.validate()
+        if self.resource_permission_map:
+            for k in self.resource_permission_map:
+                if k:
+                    k.validate()
+        if self.shift_volist:
+            for k in self.shift_volist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.adjustment_setting_id is not None:
+            result['adjustmentSettingId'] = self.adjustment_setting_id
+        if self.disable_check_when_rest is not None:
+            result['disableCheckWhenRest'] = self.disable_check_when_rest
+        if self.disable_check_without_schedule is not None:
+            result['disableCheckWithoutSchedule'] = self.disable_check_without_schedule
+        if self.enable_camera_check is not None:
+            result['enableCameraCheck'] = self.enable_camera_check
+        if self.enable_emp_select_class is not None:
+            result['enableEmpSelectClass'] = self.enable_emp_select_class
+        if self.enable_face_check is not None:
+            result['enableFaceCheck'] = self.enable_face_check
+        if self.enable_face_strict_mode is not None:
+            result['enableFaceStrictMode'] = self.enable_face_strict_mode
+        if self.enable_out_side_update_normal_check is not None:
+            result['enableOutSideUpdateNormalCheck'] = self.enable_out_side_update_normal_check
+        if self.enable_outside_apply is not None:
+            result['enableOutsideApply'] = self.enable_outside_apply
+        if self.enable_outside_check is not None:
+            result['enableOutsideCheck'] = self.enable_outside_check
+        if self.enable_outside_remark is not None:
+            result['enableOutsideRemark'] = self.enable_outside_remark
+        if self.enable_trim_distance is not None:
+            result['enableTrimDistance'] = self.enable_trim_distance
+        if self.forbid_hide_out_side_address is not None:
+            result['forbidHideOutSideAddress'] = self.forbid_hide_out_side_address
+        if self.free_check_setting is not None:
+            result['freeCheckSetting'] = self.free_check_setting.to_map()
+        if self.free_check_type_id is not None:
+            result['freeCheckTypeId'] = self.free_check_type_id
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.manager_list is not None:
+            result['managerList'] = self.manager_list
+        if self.offset is not None:
+            result['offset'] = self.offset
+        if self.open_face_check is not None:
+            result['openFaceCheck'] = self.open_face_check
+        if self.outside_check_approve_mode_id is not None:
+            result['outsideCheckApproveModeId'] = self.outside_check_approve_mode_id
+        if self.overtime_setting_id is not None:
+            result['overtimeSettingId'] = self.overtime_setting_id
+        if self.owner is not None:
+            result['owner'] = self.owner
+        result['positions'] = []
+        if self.positions is not None:
+            for k in self.positions:
+                result['positions'].append(k.to_map() if k else None)
+        result['resourcePermissionMap'] = []
+        if self.resource_permission_map is not None:
+            for k in self.resource_permission_map:
+                result['resourcePermissionMap'].append(k.to_map() if k else None)
+        result['shiftVOList'] = []
+        if self.shift_volist is not None:
+            for k in self.shift_volist:
+                result['shiftVOList'].append(k.to_map() if k else None)
+        if self.skip_holidays is not None:
+            result['skipHolidays'] = self.skip_holidays
+        if self.trim_distance is not None:
+            result['trimDistance'] = self.trim_distance
+        if self.workday_class_list is not None:
+            result['workdayClassList'] = self.workday_class_list
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('adjustmentSettingId') is not None:
+            self.adjustment_setting_id = m.get('adjustmentSettingId')
+        if m.get('disableCheckWhenRest') is not None:
+            self.disable_check_when_rest = m.get('disableCheckWhenRest')
+        if m.get('disableCheckWithoutSchedule') is not None:
+            self.disable_check_without_schedule = m.get('disableCheckWithoutSchedule')
+        if m.get('enableCameraCheck') is not None:
+            self.enable_camera_check = m.get('enableCameraCheck')
+        if m.get('enableEmpSelectClass') is not None:
+            self.enable_emp_select_class = m.get('enableEmpSelectClass')
+        if m.get('enableFaceCheck') is not None:
+            self.enable_face_check = m.get('enableFaceCheck')
+        if m.get('enableFaceStrictMode') is not None:
+            self.enable_face_strict_mode = m.get('enableFaceStrictMode')
+        if m.get('enableOutSideUpdateNormalCheck') is not None:
+            self.enable_out_side_update_normal_check = m.get('enableOutSideUpdateNormalCheck')
+        if m.get('enableOutsideApply') is not None:
+            self.enable_outside_apply = m.get('enableOutsideApply')
+        if m.get('enableOutsideCheck') is not None:
+            self.enable_outside_check = m.get('enableOutsideCheck')
+        if m.get('enableOutsideRemark') is not None:
+            self.enable_outside_remark = m.get('enableOutsideRemark')
+        if m.get('enableTrimDistance') is not None:
+            self.enable_trim_distance = m.get('enableTrimDistance')
+        if m.get('forbidHideOutSideAddress') is not None:
+            self.forbid_hide_out_side_address = m.get('forbidHideOutSideAddress')
+        if m.get('freeCheckSetting') is not None:
+            temp_model = GroupUpdateRequestFreeCheckSetting()
+            self.free_check_setting = temp_model.from_map(m['freeCheckSetting'])
+        if m.get('freeCheckTypeId') is not None:
+            self.free_check_type_id = m.get('freeCheckTypeId')
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('managerList') is not None:
+            self.manager_list = m.get('managerList')
+        if m.get('offset') is not None:
+            self.offset = m.get('offset')
+        if m.get('openFaceCheck') is not None:
+            self.open_face_check = m.get('openFaceCheck')
+        if m.get('outsideCheckApproveModeId') is not None:
+            self.outside_check_approve_mode_id = m.get('outsideCheckApproveModeId')
+        if m.get('overtimeSettingId') is not None:
+            self.overtime_setting_id = m.get('overtimeSettingId')
+        if m.get('owner') is not None:
+            self.owner = m.get('owner')
+        self.positions = []
+        if m.get('positions') is not None:
+            for k in m.get('positions'):
+                temp_model = GroupUpdateRequestPositions()
+                self.positions.append(temp_model.from_map(k))
+        self.resource_permission_map = []
+        if m.get('resourcePermissionMap') is not None:
+            for k in m.get('resourcePermissionMap'):
+                temp_model = GroupUpdateRequestResourcePermissionMap()
+                self.resource_permission_map.append(temp_model.from_map(k))
+        self.shift_volist = []
+        if m.get('shiftVOList') is not None:
+            for k in m.get('shiftVOList'):
+                temp_model = GroupUpdateRequestShiftVOList()
+                self.shift_volist.append(temp_model.from_map(k))
+        if m.get('skipHolidays') is not None:
+            self.skip_holidays = m.get('skipHolidays')
+        if m.get('trimDistance') is not None:
+            self.trim_distance = m.get('trimDistance')
+        if m.get('workdayClassList') is not None:
+            self.workday_class_list = m.get('workdayClassList')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        return self
+
+
+class GroupUpdateResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        group_id: int = None,
+        group_name: str = None,
+    ):
+        # 考勤组id
+        self.group_id = group_id
+        # 考勤组名
+        self.group_name = group_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        return self
+
+
+class GroupUpdateResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[GroupUpdateResponseBodyResult] = None,
+    ):
+        # Id of the request
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GroupUpdateResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class GroupUpdateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GroupUpdateResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GroupUpdateResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

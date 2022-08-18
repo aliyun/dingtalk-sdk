@@ -1341,6 +1341,426 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetUserHolidays', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/holidays', 'json', req, runtime)
         )
 
+    def group_add(
+        self,
+        request: dingtalkattendance__1__0_models.GroupAddRequest,
+    ) -> dingtalkattendance__1__0_models.GroupAddResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GroupAddHeaders()
+        return self.group_add_with_options(request, headers, runtime)
+
+    async def group_add_async(
+        self,
+        request: dingtalkattendance__1__0_models.GroupAddRequest,
+    ) -> dingtalkattendance__1__0_models.GroupAddResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GroupAddHeaders()
+        return await self.group_add_with_options_async(request, headers, runtime)
+
+    def group_add_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.GroupAddRequest,
+        headers: dingtalkattendance__1__0_models.GroupAddHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GroupAddResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.adjustment_setting_id):
+            body['adjustmentSettingId'] = request.adjustment_setting_id
+        if not UtilClient.is_unset(request.ble_device_list):
+            body['bleDeviceList'] = request.ble_device_list
+        if not UtilClient.is_unset(request.check_need_healthy_code):
+            body['checkNeedHealthyCode'] = request.check_need_healthy_code
+        if not UtilClient.is_unset(request.default_class_id):
+            body['defaultClassId'] = request.default_class_id
+        if not UtilClient.is_unset(request.disable_check_when_rest):
+            body['disableCheckWhenRest'] = request.disable_check_when_rest
+        if not UtilClient.is_unset(request.disable_check_without_schedule):
+            body['disableCheckWithoutSchedule'] = request.disable_check_without_schedule
+        if not UtilClient.is_unset(request.enable_camera_check):
+            body['enableCameraCheck'] = request.enable_camera_check
+        if not UtilClient.is_unset(request.enable_emp_select_class):
+            body['enableEmpSelectClass'] = request.enable_emp_select_class
+        if not UtilClient.is_unset(request.enable_face_check):
+            body['enableFaceCheck'] = request.enable_face_check
+        if not UtilClient.is_unset(request.enable_face_strict_mode):
+            body['enableFaceStrictMode'] = request.enable_face_strict_mode
+        if not UtilClient.is_unset(request.enable_next_day):
+            body['enableNextDay'] = request.enable_next_day
+        if not UtilClient.is_unset(request.enable_out_side_update_normal_check):
+            body['enableOutSideUpdateNormalCheck'] = request.enable_out_side_update_normal_check
+        if not UtilClient.is_unset(request.enable_outside_apply):
+            body['enableOutsideApply'] = request.enable_outside_apply
+        if not UtilClient.is_unset(request.enable_outside_camera_check):
+            body['enableOutsideCameraCheck'] = request.enable_outside_camera_check
+        if not UtilClient.is_unset(request.enable_outside_check):
+            body['enableOutsideCheck'] = request.enable_outside_check
+        if not UtilClient.is_unset(request.enable_outside_remark):
+            body['enableOutsideRemark'] = request.enable_outside_remark
+        if not UtilClient.is_unset(request.enable_position_ble):
+            body['enablePositionBle'] = request.enable_position_ble
+        if not UtilClient.is_unset(request.enable_trim_distance):
+            body['enableTrimDistance'] = request.enable_trim_distance
+        if not UtilClient.is_unset(request.forbid_hide_out_side_address):
+            body['forbidHideOutSideAddress'] = request.forbid_hide_out_side_address
+        if not UtilClient.is_unset(request.free_check_setting):
+            body['freeCheckSetting'] = request.free_check_setting
+        if not UtilClient.is_unset(request.free_check_type_id):
+            body['freeCheckTypeId'] = request.free_check_type_id
+        if not UtilClient.is_unset(request.freecheck_day_start_min_offset):
+            body['freecheckDayStartMinOffset'] = request.freecheck_day_start_min_offset
+        if not UtilClient.is_unset(request.freecheck_work_days):
+            body['freecheckWorkDays'] = request.freecheck_work_days
+        if not UtilClient.is_unset(request.group_id):
+            body['groupId'] = request.group_id
+        if not UtilClient.is_unset(request.group_name):
+            body['groupName'] = request.group_name
+        if not UtilClient.is_unset(request.manager_list):
+            body['managerList'] = request.manager_list
+        if not UtilClient.is_unset(request.members):
+            body['members'] = request.members
+        if not UtilClient.is_unset(request.modify_member):
+            body['modifyMember'] = request.modify_member
+        if not UtilClient.is_unset(request.offset):
+            body['offset'] = request.offset
+        if not UtilClient.is_unset(request.open_face_check):
+            body['openFaceCheck'] = request.open_face_check
+        if not UtilClient.is_unset(request.outside_check_approve_mode_id):
+            body['outsideCheckApproveModeId'] = request.outside_check_approve_mode_id
+        if not UtilClient.is_unset(request.overtime_setting_id):
+            body['overtimeSettingId'] = request.overtime_setting_id
+        if not UtilClient.is_unset(request.owner):
+            body['owner'] = request.owner
+        if not UtilClient.is_unset(request.positions):
+            body['positions'] = request.positions
+        if not UtilClient.is_unset(request.resource_permission_map):
+            body['resourcePermissionMap'] = request.resource_permission_map
+        if not UtilClient.is_unset(request.shift_volist):
+            body['shiftVOList'] = request.shift_volist
+        if not UtilClient.is_unset(request.skip_holidays):
+            body['skipHolidays'] = request.skip_holidays
+        if not UtilClient.is_unset(request.special_days):
+            body['specialDays'] = request.special_days
+        if not UtilClient.is_unset(request.trim_distance):
+            body['trimDistance'] = request.trim_distance
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        if not UtilClient.is_unset(request.wifis):
+            body['wifis'] = request.wifis
+        if not UtilClient.is_unset(request.workday_class_list):
+            body['workdayClassList'] = request.workday_class_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GroupAddResponse(),
+            self.do_roarequest('GroupAdd', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/groups', 'json', req, runtime)
+        )
+
+    async def group_add_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.GroupAddRequest,
+        headers: dingtalkattendance__1__0_models.GroupAddHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GroupAddResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.adjustment_setting_id):
+            body['adjustmentSettingId'] = request.adjustment_setting_id
+        if not UtilClient.is_unset(request.ble_device_list):
+            body['bleDeviceList'] = request.ble_device_list
+        if not UtilClient.is_unset(request.check_need_healthy_code):
+            body['checkNeedHealthyCode'] = request.check_need_healthy_code
+        if not UtilClient.is_unset(request.default_class_id):
+            body['defaultClassId'] = request.default_class_id
+        if not UtilClient.is_unset(request.disable_check_when_rest):
+            body['disableCheckWhenRest'] = request.disable_check_when_rest
+        if not UtilClient.is_unset(request.disable_check_without_schedule):
+            body['disableCheckWithoutSchedule'] = request.disable_check_without_schedule
+        if not UtilClient.is_unset(request.enable_camera_check):
+            body['enableCameraCheck'] = request.enable_camera_check
+        if not UtilClient.is_unset(request.enable_emp_select_class):
+            body['enableEmpSelectClass'] = request.enable_emp_select_class
+        if not UtilClient.is_unset(request.enable_face_check):
+            body['enableFaceCheck'] = request.enable_face_check
+        if not UtilClient.is_unset(request.enable_face_strict_mode):
+            body['enableFaceStrictMode'] = request.enable_face_strict_mode
+        if not UtilClient.is_unset(request.enable_next_day):
+            body['enableNextDay'] = request.enable_next_day
+        if not UtilClient.is_unset(request.enable_out_side_update_normal_check):
+            body['enableOutSideUpdateNormalCheck'] = request.enable_out_side_update_normal_check
+        if not UtilClient.is_unset(request.enable_outside_apply):
+            body['enableOutsideApply'] = request.enable_outside_apply
+        if not UtilClient.is_unset(request.enable_outside_camera_check):
+            body['enableOutsideCameraCheck'] = request.enable_outside_camera_check
+        if not UtilClient.is_unset(request.enable_outside_check):
+            body['enableOutsideCheck'] = request.enable_outside_check
+        if not UtilClient.is_unset(request.enable_outside_remark):
+            body['enableOutsideRemark'] = request.enable_outside_remark
+        if not UtilClient.is_unset(request.enable_position_ble):
+            body['enablePositionBle'] = request.enable_position_ble
+        if not UtilClient.is_unset(request.enable_trim_distance):
+            body['enableTrimDistance'] = request.enable_trim_distance
+        if not UtilClient.is_unset(request.forbid_hide_out_side_address):
+            body['forbidHideOutSideAddress'] = request.forbid_hide_out_side_address
+        if not UtilClient.is_unset(request.free_check_setting):
+            body['freeCheckSetting'] = request.free_check_setting
+        if not UtilClient.is_unset(request.free_check_type_id):
+            body['freeCheckTypeId'] = request.free_check_type_id
+        if not UtilClient.is_unset(request.freecheck_day_start_min_offset):
+            body['freecheckDayStartMinOffset'] = request.freecheck_day_start_min_offset
+        if not UtilClient.is_unset(request.freecheck_work_days):
+            body['freecheckWorkDays'] = request.freecheck_work_days
+        if not UtilClient.is_unset(request.group_id):
+            body['groupId'] = request.group_id
+        if not UtilClient.is_unset(request.group_name):
+            body['groupName'] = request.group_name
+        if not UtilClient.is_unset(request.manager_list):
+            body['managerList'] = request.manager_list
+        if not UtilClient.is_unset(request.members):
+            body['members'] = request.members
+        if not UtilClient.is_unset(request.modify_member):
+            body['modifyMember'] = request.modify_member
+        if not UtilClient.is_unset(request.offset):
+            body['offset'] = request.offset
+        if not UtilClient.is_unset(request.open_face_check):
+            body['openFaceCheck'] = request.open_face_check
+        if not UtilClient.is_unset(request.outside_check_approve_mode_id):
+            body['outsideCheckApproveModeId'] = request.outside_check_approve_mode_id
+        if not UtilClient.is_unset(request.overtime_setting_id):
+            body['overtimeSettingId'] = request.overtime_setting_id
+        if not UtilClient.is_unset(request.owner):
+            body['owner'] = request.owner
+        if not UtilClient.is_unset(request.positions):
+            body['positions'] = request.positions
+        if not UtilClient.is_unset(request.resource_permission_map):
+            body['resourcePermissionMap'] = request.resource_permission_map
+        if not UtilClient.is_unset(request.shift_volist):
+            body['shiftVOList'] = request.shift_volist
+        if not UtilClient.is_unset(request.skip_holidays):
+            body['skipHolidays'] = request.skip_holidays
+        if not UtilClient.is_unset(request.special_days):
+            body['specialDays'] = request.special_days
+        if not UtilClient.is_unset(request.trim_distance):
+            body['trimDistance'] = request.trim_distance
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        if not UtilClient.is_unset(request.wifis):
+            body['wifis'] = request.wifis
+        if not UtilClient.is_unset(request.workday_class_list):
+            body['workdayClassList'] = request.workday_class_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GroupAddResponse(),
+            await self.do_roarequest_async('GroupAdd', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/groups', 'json', req, runtime)
+        )
+
+    def group_update(
+        self,
+        request: dingtalkattendance__1__0_models.GroupUpdateRequest,
+    ) -> dingtalkattendance__1__0_models.GroupUpdateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GroupUpdateHeaders()
+        return self.group_update_with_options(request, headers, runtime)
+
+    async def group_update_async(
+        self,
+        request: dingtalkattendance__1__0_models.GroupUpdateRequest,
+    ) -> dingtalkattendance__1__0_models.GroupUpdateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GroupUpdateHeaders()
+        return await self.group_update_with_options_async(request, headers, runtime)
+
+    def group_update_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.GroupUpdateRequest,
+        headers: dingtalkattendance__1__0_models.GroupUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GroupUpdateResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.adjustment_setting_id):
+            body['adjustmentSettingId'] = request.adjustment_setting_id
+        if not UtilClient.is_unset(request.disable_check_when_rest):
+            body['disableCheckWhenRest'] = request.disable_check_when_rest
+        if not UtilClient.is_unset(request.disable_check_without_schedule):
+            body['disableCheckWithoutSchedule'] = request.disable_check_without_schedule
+        if not UtilClient.is_unset(request.enable_camera_check):
+            body['enableCameraCheck'] = request.enable_camera_check
+        if not UtilClient.is_unset(request.enable_emp_select_class):
+            body['enableEmpSelectClass'] = request.enable_emp_select_class
+        if not UtilClient.is_unset(request.enable_face_check):
+            body['enableFaceCheck'] = request.enable_face_check
+        if not UtilClient.is_unset(request.enable_face_strict_mode):
+            body['enableFaceStrictMode'] = request.enable_face_strict_mode
+        if not UtilClient.is_unset(request.enable_out_side_update_normal_check):
+            body['enableOutSideUpdateNormalCheck'] = request.enable_out_side_update_normal_check
+        if not UtilClient.is_unset(request.enable_outside_apply):
+            body['enableOutsideApply'] = request.enable_outside_apply
+        if not UtilClient.is_unset(request.enable_outside_check):
+            body['enableOutsideCheck'] = request.enable_outside_check
+        if not UtilClient.is_unset(request.enable_outside_remark):
+            body['enableOutsideRemark'] = request.enable_outside_remark
+        if not UtilClient.is_unset(request.enable_trim_distance):
+            body['enableTrimDistance'] = request.enable_trim_distance
+        if not UtilClient.is_unset(request.forbid_hide_out_side_address):
+            body['forbidHideOutSideAddress'] = request.forbid_hide_out_side_address
+        if not UtilClient.is_unset(request.free_check_setting):
+            body['freeCheckSetting'] = request.free_check_setting
+        if not UtilClient.is_unset(request.free_check_type_id):
+            body['freeCheckTypeId'] = request.free_check_type_id
+        if not UtilClient.is_unset(request.group_id):
+            body['groupId'] = request.group_id
+        if not UtilClient.is_unset(request.group_name):
+            body['groupName'] = request.group_name
+        if not UtilClient.is_unset(request.manager_list):
+            body['managerList'] = request.manager_list
+        if not UtilClient.is_unset(request.offset):
+            body['offset'] = request.offset
+        if not UtilClient.is_unset(request.open_face_check):
+            body['openFaceCheck'] = request.open_face_check
+        if not UtilClient.is_unset(request.outside_check_approve_mode_id):
+            body['outsideCheckApproveModeId'] = request.outside_check_approve_mode_id
+        if not UtilClient.is_unset(request.overtime_setting_id):
+            body['overtimeSettingId'] = request.overtime_setting_id
+        if not UtilClient.is_unset(request.owner):
+            body['owner'] = request.owner
+        if not UtilClient.is_unset(request.positions):
+            body['positions'] = request.positions
+        if not UtilClient.is_unset(request.resource_permission_map):
+            body['resourcePermissionMap'] = request.resource_permission_map
+        if not UtilClient.is_unset(request.shift_volist):
+            body['shiftVOList'] = request.shift_volist
+        if not UtilClient.is_unset(request.skip_holidays):
+            body['skipHolidays'] = request.skip_holidays
+        if not UtilClient.is_unset(request.trim_distance):
+            body['trimDistance'] = request.trim_distance
+        if not UtilClient.is_unset(request.workday_class_list):
+            body['workdayClassList'] = request.workday_class_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GroupUpdateResponse(),
+            self.do_roarequest('GroupUpdate', 'attendance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/attendance/groups', 'json', req, runtime)
+        )
+
+    async def group_update_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.GroupUpdateRequest,
+        headers: dingtalkattendance__1__0_models.GroupUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GroupUpdateResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.adjustment_setting_id):
+            body['adjustmentSettingId'] = request.adjustment_setting_id
+        if not UtilClient.is_unset(request.disable_check_when_rest):
+            body['disableCheckWhenRest'] = request.disable_check_when_rest
+        if not UtilClient.is_unset(request.disable_check_without_schedule):
+            body['disableCheckWithoutSchedule'] = request.disable_check_without_schedule
+        if not UtilClient.is_unset(request.enable_camera_check):
+            body['enableCameraCheck'] = request.enable_camera_check
+        if not UtilClient.is_unset(request.enable_emp_select_class):
+            body['enableEmpSelectClass'] = request.enable_emp_select_class
+        if not UtilClient.is_unset(request.enable_face_check):
+            body['enableFaceCheck'] = request.enable_face_check
+        if not UtilClient.is_unset(request.enable_face_strict_mode):
+            body['enableFaceStrictMode'] = request.enable_face_strict_mode
+        if not UtilClient.is_unset(request.enable_out_side_update_normal_check):
+            body['enableOutSideUpdateNormalCheck'] = request.enable_out_side_update_normal_check
+        if not UtilClient.is_unset(request.enable_outside_apply):
+            body['enableOutsideApply'] = request.enable_outside_apply
+        if not UtilClient.is_unset(request.enable_outside_check):
+            body['enableOutsideCheck'] = request.enable_outside_check
+        if not UtilClient.is_unset(request.enable_outside_remark):
+            body['enableOutsideRemark'] = request.enable_outside_remark
+        if not UtilClient.is_unset(request.enable_trim_distance):
+            body['enableTrimDistance'] = request.enable_trim_distance
+        if not UtilClient.is_unset(request.forbid_hide_out_side_address):
+            body['forbidHideOutSideAddress'] = request.forbid_hide_out_side_address
+        if not UtilClient.is_unset(request.free_check_setting):
+            body['freeCheckSetting'] = request.free_check_setting
+        if not UtilClient.is_unset(request.free_check_type_id):
+            body['freeCheckTypeId'] = request.free_check_type_id
+        if not UtilClient.is_unset(request.group_id):
+            body['groupId'] = request.group_id
+        if not UtilClient.is_unset(request.group_name):
+            body['groupName'] = request.group_name
+        if not UtilClient.is_unset(request.manager_list):
+            body['managerList'] = request.manager_list
+        if not UtilClient.is_unset(request.offset):
+            body['offset'] = request.offset
+        if not UtilClient.is_unset(request.open_face_check):
+            body['openFaceCheck'] = request.open_face_check
+        if not UtilClient.is_unset(request.outside_check_approve_mode_id):
+            body['outsideCheckApproveModeId'] = request.outside_check_approve_mode_id
+        if not UtilClient.is_unset(request.overtime_setting_id):
+            body['overtimeSettingId'] = request.overtime_setting_id
+        if not UtilClient.is_unset(request.owner):
+            body['owner'] = request.owner
+        if not UtilClient.is_unset(request.positions):
+            body['positions'] = request.positions
+        if not UtilClient.is_unset(request.resource_permission_map):
+            body['resourcePermissionMap'] = request.resource_permission_map
+        if not UtilClient.is_unset(request.shift_volist):
+            body['shiftVOList'] = request.shift_volist
+        if not UtilClient.is_unset(request.skip_holidays):
+            body['skipHolidays'] = request.skip_holidays
+        if not UtilClient.is_unset(request.trim_distance):
+            body['trimDistance'] = request.trim_distance
+        if not UtilClient.is_unset(request.workday_class_list):
+            body['workdayClassList'] = request.workday_class_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GroupUpdateResponse(),
+            await self.do_roarequest_async('GroupUpdate', 'attendance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/attendance/groups', 'json', req, runtime)
+        )
+
     def init_and_get_leave_allocation_quotas(
         self,
         request: dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasRequest,

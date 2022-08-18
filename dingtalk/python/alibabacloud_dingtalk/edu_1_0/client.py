@@ -511,8 +511,8 @@ class Client(OpenApiClient):
     ) -> dingtalkedu__1__0_models.CancelUserOrderResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.app_id):
-            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.alipay_app_id):
+            body['alipayAppId'] = request.alipay_app_id
         if not UtilClient.is_unset(request.merchant_id):
             body['merchantId'] = request.merchant_id
         if not UtilClient.is_unset(request.order_no):
@@ -543,8 +543,8 @@ class Client(OpenApiClient):
     ) -> dingtalkedu__1__0_models.CancelUserOrderResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.app_id):
-            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.alipay_app_id):
+            body['alipayAppId'] = request.alipay_app_id
         if not UtilClient.is_unset(request.merchant_id):
             body['merchantId'] = request.merchant_id
         if not UtilClient.is_unset(request.order_no):
@@ -737,8 +737,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.actual_amount):
             body['actualAmount'] = request.actual_amount
-        if not UtilClient.is_unset(request.app_id):
-            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.alipay_app_id):
+            body['alipayAppId'] = request.alipay_app_id
         if not UtilClient.is_unset(request.biz_code):
             body['bizCode'] = request.biz_code
         if not UtilClient.is_unset(request.detail_list):
@@ -781,8 +781,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.actual_amount):
             body['actualAmount'] = request.actual_amount
-        if not UtilClient.is_unset(request.app_id):
-            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.alipay_app_id):
+            body['alipayAppId'] = request.alipay_app_id
         if not UtilClient.is_unset(request.biz_code):
             body['bizCode'] = request.biz_code
         if not UtilClient.is_unset(request.detail_list):
@@ -4775,8 +4775,8 @@ class Client(OpenApiClient):
     ) -> dingtalkedu__1__0_models.QueryOrderResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.app_id):
-            query['appId'] = request.app_id
+        if not UtilClient.is_unset(request.alipay_app_id):
+            query['alipayAppId'] = request.alipay_app_id
         if not UtilClient.is_unset(request.merchant_id):
             query['merchantId'] = request.merchant_id
         if not UtilClient.is_unset(request.order_no):
@@ -4805,8 +4805,8 @@ class Client(OpenApiClient):
     ) -> dingtalkedu__1__0_models.QueryOrderResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.app_id):
-            query['appId'] = request.app_id
+        if not UtilClient.is_unset(request.alipay_app_id):
+            query['alipayAppId'] = request.alipay_app_id
         if not UtilClient.is_unset(request.merchant_id):
             query['merchantId'] = request.merchant_id
         if not UtilClient.is_unset(request.order_no):

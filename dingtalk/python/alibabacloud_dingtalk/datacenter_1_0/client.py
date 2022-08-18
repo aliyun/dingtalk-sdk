@@ -1305,6 +1305,214 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryMailStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/mailData', 'json', req, runtime)
         )
 
+    def query_official_data(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryOfficialDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryOfficialDataHeaders()
+        return self.query_official_data_with_options(request, headers, runtime)
+
+    async def query_official_data_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryOfficialDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryOfficialDataHeaders()
+        return await self.query_official_data_with_options_async(request, headers, runtime)
+
+    def query_official_data_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryOfficialDataRequest,
+        headers: dingtalkdatacenter__1__0_models.QueryOfficialDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDataResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.param):
+            query['param'] = request.param
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryOfficialDataResponse(),
+            self.do_roarequest('QueryOfficialData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/datas', 'json', req, runtime)
+        )
+
+    async def query_official_data_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryOfficialDataRequest,
+        headers: dingtalkdatacenter__1__0_models.QueryOfficialDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDataResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.param):
+            query['param'] = request.param
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryOfficialDataResponse(),
+            await self.do_roarequest_async('QueryOfficialData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/datas', 'json', req, runtime)
+        )
+
+    def query_official_dataset_fields(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsHeaders()
+        return self.query_official_dataset_fields_with_options(request, headers, runtime)
+
+    async def query_official_dataset_fields_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsHeaders()
+        return await self.query_official_dataset_fields_with_options_async(request, headers, runtime)
+
+    def query_official_dataset_fields_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsRequest,
+        headers: dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ds_id):
+            query['dsId'] = request.ds_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsResponse(),
+            self.do_roarequest('QueryOfficialDatasetFields', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/datasetFields', 'json', req, runtime)
+        )
+
+    async def query_official_dataset_fields_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsRequest,
+        headers: dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ds_id):
+            query['dsId'] = request.ds_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsResponse(),
+            await self.do_roarequest_async('QueryOfficialDatasetFields', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/datasetFields', 'json', req, runtime)
+        )
+
+    def query_official_dataset_list(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryOfficialDatasetListRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDatasetListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryOfficialDatasetListHeaders()
+        return self.query_official_dataset_list_with_options(request, headers, runtime)
+
+    async def query_official_dataset_list_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryOfficialDatasetListRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDatasetListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryOfficialDatasetListHeaders()
+        return await self.query_official_dataset_list_with_options_async(request, headers, runtime)
+
+    def query_official_dataset_list_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryOfficialDatasetListRequest,
+        headers: dingtalkdatacenter__1__0_models.QueryOfficialDatasetListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDatasetListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.keyword):
+            query['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryOfficialDatasetListResponse(),
+            self.do_roarequest('QueryOfficialDatasetList', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/datasetLists', 'json', req, runtime)
+        )
+
+    async def query_official_dataset_list_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryOfficialDatasetListRequest,
+        headers: dingtalkdatacenter__1__0_models.QueryOfficialDatasetListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDatasetListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.keyword):
+            query['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryOfficialDatasetListResponse(),
+            await self.do_roarequest_async('QueryOfficialDatasetList', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/datasetLists', 'json', req, runtime)
+        )
+
     def query_online_user_statistical_data(
         self,
         request: dingtalkdatacenter__1__0_models.QueryOnlineUserStatisticalDataRequest,
