@@ -21,9 +21,15 @@ class items extends Model
      * @var string
      */
     public $name;
+
+    /**
+     * @var int
+     */
+    public $settingId;
     protected $_name = [
-        'id'   => 'id',
-        'name' => 'name',
+        'id'        => 'id',
+        'name'      => 'name',
+        'settingId' => 'settingId',
     ];
 
     public function validate()
@@ -38,6 +44,9 @@ class items extends Model
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->settingId) {
+            $res['settingId'] = $this->settingId;
         }
 
         return $res;
@@ -56,6 +65,9 @@ class items extends Model
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['settingId'])) {
+            $model->settingId = $map['settingId'];
         }
 
         return $model;

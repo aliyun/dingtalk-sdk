@@ -64,6 +64,15 @@ use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryHealthStatisticalDataR
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryMailStatisticalDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryMailStatisticalDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryMailStatisticalDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialDatasetFieldsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialDatasetFieldsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialDatasetFieldsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialDatasetListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialDatasetListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialDatasetListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOnlineUserStatisticalDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOnlineUserStatisticalDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOnlineUserStatisticalDataResponse;
@@ -1062,6 +1071,144 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryMailStatisticalDataResponse::fromMap($this->doROARequest('QueryMailStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/mailData', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryOfficialDataRequest $request
+     *
+     * @return QueryOfficialDataResponse
+     */
+    public function queryOfficialData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryOfficialDataHeaders([]);
+
+        return $this->queryOfficialDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryOfficialDataRequest $request
+     * @param QueryOfficialDataHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return QueryOfficialDataResponse
+     */
+    public function queryOfficialDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->param)) {
+            @$query['param'] = $request->param;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryOfficialDataResponse::fromMap($this->doROARequest('QueryOfficialData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/datas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryOfficialDatasetFieldsRequest $request
+     *
+     * @return QueryOfficialDatasetFieldsResponse
+     */
+    public function queryOfficialDatasetFields($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryOfficialDatasetFieldsHeaders([]);
+
+        return $this->queryOfficialDatasetFieldsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryOfficialDatasetFieldsRequest $request
+     * @param QueryOfficialDatasetFieldsHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return QueryOfficialDatasetFieldsResponse
+     */
+    public function queryOfficialDatasetFieldsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->dsId)) {
+            @$query['dsId'] = $request->dsId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryOfficialDatasetFieldsResponse::fromMap($this->doROARequest('QueryOfficialDatasetFields', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/datasetFields', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryOfficialDatasetListRequest $request
+     *
+     * @return QueryOfficialDatasetListResponse
+     */
+    public function queryOfficialDatasetList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryOfficialDatasetListHeaders([]);
+
+        return $this->queryOfficialDatasetListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryOfficialDatasetListRequest $request
+     * @param QueryOfficialDatasetListHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return QueryOfficialDatasetListResponse
+     */
+    public function queryOfficialDatasetListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->keyword)) {
+            @$query['keyword'] = $request->keyword;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryOfficialDatasetListResponse::fromMap($this->doROARequest('QueryOfficialDatasetList', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/datasetLists', 'json', $req, $runtime));
     }
 
     /**

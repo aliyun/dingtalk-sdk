@@ -58,6 +58,12 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetSimpleOvertimeSettingRes
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GroupAddHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GroupAddRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GroupAddResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GroupUpdateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GroupUpdateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GroupUpdateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\InitAndGetLeaveALlocationQuotasHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\InitAndGetLeaveALlocationQuotasRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\InitAndGetLeaveALlocationQuotasResponse;
@@ -969,6 +975,307 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetUserHolidaysResponse::fromMap($this->doROARequest('GetUserHolidays', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/holidays', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GroupAddRequest $request
+     *
+     * @return GroupAddResponse
+     */
+    public function groupAdd($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GroupAddHeaders([]);
+
+        return $this->groupAddWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GroupAddRequest $request
+     * @param GroupAddHeaders $headers
+     * @param RuntimeOptions  $runtime
+     *
+     * @return GroupAddResponse
+     */
+    public function groupAddWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            @$query['opUserId'] = $request->opUserId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->adjustmentSettingId)) {
+            @$body['adjustmentSettingId'] = $request->adjustmentSettingId;
+        }
+        if (!Utils::isUnset($request->bleDeviceList)) {
+            @$body['bleDeviceList'] = $request->bleDeviceList;
+        }
+        if (!Utils::isUnset($request->checkNeedHealthyCode)) {
+            @$body['checkNeedHealthyCode'] = $request->checkNeedHealthyCode;
+        }
+        if (!Utils::isUnset($request->defaultClassId)) {
+            @$body['defaultClassId'] = $request->defaultClassId;
+        }
+        if (!Utils::isUnset($request->disableCheckWhenRest)) {
+            @$body['disableCheckWhenRest'] = $request->disableCheckWhenRest;
+        }
+        if (!Utils::isUnset($request->disableCheckWithoutSchedule)) {
+            @$body['disableCheckWithoutSchedule'] = $request->disableCheckWithoutSchedule;
+        }
+        if (!Utils::isUnset($request->enableCameraCheck)) {
+            @$body['enableCameraCheck'] = $request->enableCameraCheck;
+        }
+        if (!Utils::isUnset($request->enableEmpSelectClass)) {
+            @$body['enableEmpSelectClass'] = $request->enableEmpSelectClass;
+        }
+        if (!Utils::isUnset($request->enableFaceCheck)) {
+            @$body['enableFaceCheck'] = $request->enableFaceCheck;
+        }
+        if (!Utils::isUnset($request->enableFaceStrictMode)) {
+            @$body['enableFaceStrictMode'] = $request->enableFaceStrictMode;
+        }
+        if (!Utils::isUnset($request->enableNextDay)) {
+            @$body['enableNextDay'] = $request->enableNextDay;
+        }
+        if (!Utils::isUnset($request->enableOutSideUpdateNormalCheck)) {
+            @$body['enableOutSideUpdateNormalCheck'] = $request->enableOutSideUpdateNormalCheck;
+        }
+        if (!Utils::isUnset($request->enableOutsideApply)) {
+            @$body['enableOutsideApply'] = $request->enableOutsideApply;
+        }
+        if (!Utils::isUnset($request->enableOutsideCameraCheck)) {
+            @$body['enableOutsideCameraCheck'] = $request->enableOutsideCameraCheck;
+        }
+        if (!Utils::isUnset($request->enableOutsideCheck)) {
+            @$body['enableOutsideCheck'] = $request->enableOutsideCheck;
+        }
+        if (!Utils::isUnset($request->enableOutsideRemark)) {
+            @$body['enableOutsideRemark'] = $request->enableOutsideRemark;
+        }
+        if (!Utils::isUnset($request->enablePositionBle)) {
+            @$body['enablePositionBle'] = $request->enablePositionBle;
+        }
+        if (!Utils::isUnset($request->enableTrimDistance)) {
+            @$body['enableTrimDistance'] = $request->enableTrimDistance;
+        }
+        if (!Utils::isUnset($request->forbidHideOutSideAddress)) {
+            @$body['forbidHideOutSideAddress'] = $request->forbidHideOutSideAddress;
+        }
+        if (!Utils::isUnset($request->freeCheckSetting)) {
+            @$body['freeCheckSetting'] = $request->freeCheckSetting;
+        }
+        if (!Utils::isUnset($request->freeCheckTypeId)) {
+            @$body['freeCheckTypeId'] = $request->freeCheckTypeId;
+        }
+        if (!Utils::isUnset($request->freecheckDayStartMinOffset)) {
+            @$body['freecheckDayStartMinOffset'] = $request->freecheckDayStartMinOffset;
+        }
+        if (!Utils::isUnset($request->freecheckWorkDays)) {
+            @$body['freecheckWorkDays'] = $request->freecheckWorkDays;
+        }
+        if (!Utils::isUnset($request->groupId)) {
+            @$body['groupId'] = $request->groupId;
+        }
+        if (!Utils::isUnset($request->groupName)) {
+            @$body['groupName'] = $request->groupName;
+        }
+        if (!Utils::isUnset($request->managerList)) {
+            @$body['managerList'] = $request->managerList;
+        }
+        if (!Utils::isUnset($request->members)) {
+            @$body['members'] = $request->members;
+        }
+        if (!Utils::isUnset($request->modifyMember)) {
+            @$body['modifyMember'] = $request->modifyMember;
+        }
+        if (!Utils::isUnset($request->offset)) {
+            @$body['offset'] = $request->offset;
+        }
+        if (!Utils::isUnset($request->openFaceCheck)) {
+            @$body['openFaceCheck'] = $request->openFaceCheck;
+        }
+        if (!Utils::isUnset($request->outsideCheckApproveModeId)) {
+            @$body['outsideCheckApproveModeId'] = $request->outsideCheckApproveModeId;
+        }
+        if (!Utils::isUnset($request->overtimeSettingId)) {
+            @$body['overtimeSettingId'] = $request->overtimeSettingId;
+        }
+        if (!Utils::isUnset($request->owner)) {
+            @$body['owner'] = $request->owner;
+        }
+        if (!Utils::isUnset($request->positions)) {
+            @$body['positions'] = $request->positions;
+        }
+        if (!Utils::isUnset($request->resourcePermissionMap)) {
+            @$body['resourcePermissionMap'] = $request->resourcePermissionMap;
+        }
+        if (!Utils::isUnset($request->shiftVOList)) {
+            @$body['shiftVOList'] = $request->shiftVOList;
+        }
+        if (!Utils::isUnset($request->skipHolidays)) {
+            @$body['skipHolidays'] = $request->skipHolidays;
+        }
+        if (!Utils::isUnset($request->specialDays)) {
+            @$body['specialDays'] = $request->specialDays;
+        }
+        if (!Utils::isUnset($request->trimDistance)) {
+            @$body['trimDistance'] = $request->trimDistance;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$body['type'] = $request->type;
+        }
+        if (!Utils::isUnset($request->wifis)) {
+            @$body['wifis'] = $request->wifis;
+        }
+        if (!Utils::isUnset($request->workdayClassList)) {
+            @$body['workdayClassList'] = $request->workdayClassList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GroupAddResponse::fromMap($this->doROARequest('GroupAdd', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/groups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GroupUpdateRequest $request
+     *
+     * @return GroupUpdateResponse
+     */
+    public function groupUpdate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GroupUpdateHeaders([]);
+
+        return $this->groupUpdateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GroupUpdateRequest $request
+     * @param GroupUpdateHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return GroupUpdateResponse
+     */
+    public function groupUpdateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            @$query['opUserId'] = $request->opUserId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->adjustmentSettingId)) {
+            @$body['adjustmentSettingId'] = $request->adjustmentSettingId;
+        }
+        if (!Utils::isUnset($request->disableCheckWhenRest)) {
+            @$body['disableCheckWhenRest'] = $request->disableCheckWhenRest;
+        }
+        if (!Utils::isUnset($request->disableCheckWithoutSchedule)) {
+            @$body['disableCheckWithoutSchedule'] = $request->disableCheckWithoutSchedule;
+        }
+        if (!Utils::isUnset($request->enableCameraCheck)) {
+            @$body['enableCameraCheck'] = $request->enableCameraCheck;
+        }
+        if (!Utils::isUnset($request->enableEmpSelectClass)) {
+            @$body['enableEmpSelectClass'] = $request->enableEmpSelectClass;
+        }
+        if (!Utils::isUnset($request->enableFaceCheck)) {
+            @$body['enableFaceCheck'] = $request->enableFaceCheck;
+        }
+        if (!Utils::isUnset($request->enableFaceStrictMode)) {
+            @$body['enableFaceStrictMode'] = $request->enableFaceStrictMode;
+        }
+        if (!Utils::isUnset($request->enableOutSideUpdateNormalCheck)) {
+            @$body['enableOutSideUpdateNormalCheck'] = $request->enableOutSideUpdateNormalCheck;
+        }
+        if (!Utils::isUnset($request->enableOutsideApply)) {
+            @$body['enableOutsideApply'] = $request->enableOutsideApply;
+        }
+        if (!Utils::isUnset($request->enableOutsideCheck)) {
+            @$body['enableOutsideCheck'] = $request->enableOutsideCheck;
+        }
+        if (!Utils::isUnset($request->enableOutsideRemark)) {
+            @$body['enableOutsideRemark'] = $request->enableOutsideRemark;
+        }
+        if (!Utils::isUnset($request->enableTrimDistance)) {
+            @$body['enableTrimDistance'] = $request->enableTrimDistance;
+        }
+        if (!Utils::isUnset($request->forbidHideOutSideAddress)) {
+            @$body['forbidHideOutSideAddress'] = $request->forbidHideOutSideAddress;
+        }
+        if (!Utils::isUnset($request->freeCheckSetting)) {
+            @$body['freeCheckSetting'] = $request->freeCheckSetting;
+        }
+        if (!Utils::isUnset($request->freeCheckTypeId)) {
+            @$body['freeCheckTypeId'] = $request->freeCheckTypeId;
+        }
+        if (!Utils::isUnset($request->groupId)) {
+            @$body['groupId'] = $request->groupId;
+        }
+        if (!Utils::isUnset($request->groupName)) {
+            @$body['groupName'] = $request->groupName;
+        }
+        if (!Utils::isUnset($request->managerList)) {
+            @$body['managerList'] = $request->managerList;
+        }
+        if (!Utils::isUnset($request->offset)) {
+            @$body['offset'] = $request->offset;
+        }
+        if (!Utils::isUnset($request->openFaceCheck)) {
+            @$body['openFaceCheck'] = $request->openFaceCheck;
+        }
+        if (!Utils::isUnset($request->outsideCheckApproveModeId)) {
+            @$body['outsideCheckApproveModeId'] = $request->outsideCheckApproveModeId;
+        }
+        if (!Utils::isUnset($request->overtimeSettingId)) {
+            @$body['overtimeSettingId'] = $request->overtimeSettingId;
+        }
+        if (!Utils::isUnset($request->owner)) {
+            @$body['owner'] = $request->owner;
+        }
+        if (!Utils::isUnset($request->positions)) {
+            @$body['positions'] = $request->positions;
+        }
+        if (!Utils::isUnset($request->resourcePermissionMap)) {
+            @$body['resourcePermissionMap'] = $request->resourcePermissionMap;
+        }
+        if (!Utils::isUnset($request->shiftVOList)) {
+            @$body['shiftVOList'] = $request->shiftVOList;
+        }
+        if (!Utils::isUnset($request->skipHolidays)) {
+            @$body['skipHolidays'] = $request->skipHolidays;
+        }
+        if (!Utils::isUnset($request->trimDistance)) {
+            @$body['trimDistance'] = $request->trimDistance;
+        }
+        if (!Utils::isUnset($request->workdayClassList)) {
+            @$body['workdayClassList'] = $request->workdayClassList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GroupUpdateResponse::fromMap($this->doROARequest('GroupUpdate', 'attendance_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/attendance/groups', 'json', $req, $runtime));
     }
 
     /**
