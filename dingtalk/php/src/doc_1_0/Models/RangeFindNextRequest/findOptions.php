@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class findOptions extends Model
 {
     /**
+     * @var bool
+     */
+    public $includeHidden;
+
+    /**
      * @description 匹配大小写
      *
      * @var bool
@@ -41,6 +46,7 @@ class findOptions extends Model
      */
     public $useRegExp;
     protected $_name = [
+        'includeHidden'    => 'includeHidden',
         'matchCase'        => 'matchCase',
         'matchEntireCell'  => 'matchEntireCell',
         'matchFormulaText' => 'matchFormulaText',
@@ -55,6 +61,9 @@ class findOptions extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->includeHidden) {
+            $res['includeHidden'] = $this->includeHidden;
+        }
         if (null !== $this->matchCase) {
             $res['matchCase'] = $this->matchCase;
         }
@@ -82,6 +91,9 @@ class findOptions extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['includeHidden'])) {
+            $model->includeHidden = $map['includeHidden'];
+        }
         if (isset($map['matchCase'])) {
             $model->matchCase = $map['matchCase'];
         }

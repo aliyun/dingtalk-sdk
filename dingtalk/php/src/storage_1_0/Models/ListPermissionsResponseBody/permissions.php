@@ -46,13 +46,6 @@ class permissions extends Model
     public $modifiedTime;
 
     /**
-     * @description 操作人id
-     *
-     * @var int
-     */
-    public $operatorId;
-
-    /**
      * @description 权限角色
      *
      * @var role
@@ -71,7 +64,6 @@ class permissions extends Model
         'duration'     => 'duration',
         'member'       => 'member',
         'modifiedTime' => 'modifiedTime',
-        'operatorId'   => 'operatorId',
         'role'         => 'role',
         'spaceId'      => 'spaceId',
     ];
@@ -97,9 +89,6 @@ class permissions extends Model
         }
         if (null !== $this->modifiedTime) {
             $res['modifiedTime'] = $this->modifiedTime;
-        }
-        if (null !== $this->operatorId) {
-            $res['operatorId'] = $this->operatorId;
         }
         if (null !== $this->role) {
             $res['role'] = null !== $this->role ? $this->role->toMap() : null;
@@ -133,9 +122,6 @@ class permissions extends Model
         }
         if (isset($map['modifiedTime'])) {
             $model->modifiedTime = $map['modifiedTime'];
-        }
-        if (isset($map['operatorId'])) {
-            $model->operatorId = $map['operatorId'];
         }
         if (isset($map['role'])) {
             $model->role = role::fromMap($map['role']);
