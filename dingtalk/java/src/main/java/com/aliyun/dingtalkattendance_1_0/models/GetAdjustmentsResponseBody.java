@@ -30,6 +30,9 @@ public class GetAdjustmentsResponseBody extends TeaModel {
         @NameInMap("name")
         public String name;
 
+        @NameInMap("settingId")
+        public Long settingId;
+
         public static GetAdjustmentsResponseBodyResultItems build(java.util.Map<String, ?> map) throws Exception {
             GetAdjustmentsResponseBodyResultItems self = new GetAdjustmentsResponseBodyResultItems();
             return TeaModel.build(map, self);
@@ -49,6 +52,14 @@ public class GetAdjustmentsResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
+        }
+
+        public GetAdjustmentsResponseBodyResultItems setSettingId(Long settingId) {
+            this.settingId = settingId;
+            return this;
+        }
+        public Long getSettingId() {
+            return this.settingId;
         }
 
     }

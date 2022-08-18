@@ -319,8 +319,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public CancelUserOrderResponse cancelUserOrderWithOptions(CancelUserOrderRequest request, CancelUserOrderHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
-            body.put("appId", request.appId);
+        if (!com.aliyun.teautil.Common.isUnset(request.alipayAppId)) {
+            body.put("alipayAppId", request.alipayAppId);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.merchantId)) {
@@ -442,8 +442,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("actualAmount", request.actualAmount);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
-            body.put("appId", request.appId);
+        if (!com.aliyun.teautil.Common.isUnset(request.alipayAppId)) {
+            body.put("alipayAppId", request.alipayAppId);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.bizCode)) {
@@ -2614,8 +2614,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public QueryOrderResponse queryOrderWithOptions(QueryOrderRequest request, QueryOrderHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
-            query.put("appId", request.appId);
+        if (!com.aliyun.teautil.Common.isUnset(request.alipayAppId)) {
+            query.put("alipayAppId", request.alipayAppId);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.merchantId)) {

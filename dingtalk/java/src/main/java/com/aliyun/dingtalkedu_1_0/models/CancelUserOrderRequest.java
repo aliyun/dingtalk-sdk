@@ -4,9 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CancelUserOrderRequest extends TeaModel {
-    // 应用id。
-    @NameInMap("appId")
-    public String appId;
+    // 支付宝应用id。
+    @NameInMap("alipayAppId")
+    public String alipayAppId;
 
     // 商户id。
     @NameInMap("merchantId")
@@ -29,12 +29,12 @@ public class CancelUserOrderRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public CancelUserOrderRequest setAppId(String appId) {
-        this.appId = appId;
+    public CancelUserOrderRequest setAlipayAppId(String alipayAppId) {
+        this.alipayAppId = alipayAppId;
         return this;
     }
-    public String getAppId() {
-        return this.appId;
+    public String getAlipayAppId() {
+        return this.alipayAppId;
     }
 
     public CancelUserOrderRequest setMerchantId(String merchantId) {

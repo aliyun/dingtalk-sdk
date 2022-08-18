@@ -7,9 +7,9 @@ public class QueryOrderResponseBody extends TeaModel {
     @NameInMap("actualAmount")
     public Long actualAmount;
 
-    // 应用id。
-    @NameInMap("appId")
-    public String appId;
+    // 支付宝应用id。
+    @NameInMap("alipayAppId")
+    public String alipayAppId;
 
     // 订单关单时间。
     @NameInMap("closeTime")
@@ -100,12 +100,12 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.actualAmount;
     }
 
-    public QueryOrderResponseBody setAppId(String appId) {
-        this.appId = appId;
+    public QueryOrderResponseBody setAlipayAppId(String alipayAppId) {
+        this.alipayAppId = alipayAppId;
         return this;
     }
-    public String getAppId() {
-        return this.appId;
+    public String getAlipayAppId() {
+        return this.alipayAppId;
     }
 
     public QueryOrderResponseBody setCloseTime(Long closeTime) {

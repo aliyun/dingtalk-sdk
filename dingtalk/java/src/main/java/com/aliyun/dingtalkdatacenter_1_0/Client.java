@@ -614,6 +614,109 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("QueryMailStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", "/v1.0/datacenter/mailData", "json", req, runtime), new QueryMailStatisticalDataResponse());
     }
 
+    public QueryOfficialDataResponse queryOfficialData(QueryOfficialDataRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryOfficialDataHeaders headers = new QueryOfficialDataHeaders();
+        return this.queryOfficialDataWithOptions(request, headers, runtime);
+    }
+
+    public QueryOfficialDataResponse queryOfficialDataWithOptions(QueryOfficialDataRequest request, QueryOfficialDataHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.param)) {
+            query.put("param", request.param);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryOfficialData", "datacenter_1.0", "HTTP", "GET", "AK", "/v1.0/datacenter/datas", "json", req, runtime), new QueryOfficialDataResponse());
+    }
+
+    public QueryOfficialDatasetFieldsResponse queryOfficialDatasetFields(QueryOfficialDatasetFieldsRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryOfficialDatasetFieldsHeaders headers = new QueryOfficialDatasetFieldsHeaders();
+        return this.queryOfficialDatasetFieldsWithOptions(request, headers, runtime);
+    }
+
+    public QueryOfficialDatasetFieldsResponse queryOfficialDatasetFieldsWithOptions(QueryOfficialDatasetFieldsRequest request, QueryOfficialDatasetFieldsHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dsId)) {
+            query.put("dsId", request.dsId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryOfficialDatasetFields", "datacenter_1.0", "HTTP", "GET", "AK", "/v1.0/datacenter/datasetFields", "json", req, runtime), new QueryOfficialDatasetFieldsResponse());
+    }
+
+    public QueryOfficialDatasetListResponse queryOfficialDatasetList(QueryOfficialDatasetListRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryOfficialDatasetListHeaders headers = new QueryOfficialDatasetListHeaders();
+        return this.queryOfficialDatasetListWithOptions(request, headers, runtime);
+    }
+
+    public QueryOfficialDatasetListResponse queryOfficialDatasetListWithOptions(QueryOfficialDatasetListRequest request, QueryOfficialDatasetListHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.keyword)) {
+            query.put("keyword", request.keyword);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            query.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryOfficialDatasetList", "datacenter_1.0", "HTTP", "GET", "AK", "/v1.0/datacenter/datasetLists", "json", req, runtime), new QueryOfficialDatasetListResponse());
+    }
+
     public QueryOnlineUserStatisticalDataResponse queryOnlineUserStatisticalData(QueryOnlineUserStatisticalDataRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         QueryOnlineUserStatisticalDataHeaders headers = new QueryOnlineUserStatisticalDataHeaders();

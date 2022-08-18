@@ -704,6 +704,352 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetUserHolidays", "attendance_1.0", "HTTP", "POST", "AK", "/v1.0/attendance/holidays", "json", req, runtime), new GetUserHolidaysResponse());
     }
 
+    public GroupAddResponse groupAdd(GroupAddRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GroupAddHeaders headers = new GroupAddHeaders();
+        return this.groupAddWithOptions(request, headers, runtime);
+    }
+
+    public GroupAddResponse groupAddWithOptions(GroupAddRequest request, GroupAddHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.opUserId)) {
+            query.put("opUserId", request.opUserId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.adjustmentSettingId)) {
+            body.put("adjustmentSettingId", request.adjustmentSettingId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bleDeviceList)) {
+            body.put("bleDeviceList", request.bleDeviceList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.checkNeedHealthyCode)) {
+            body.put("checkNeedHealthyCode", request.checkNeedHealthyCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.defaultClassId)) {
+            body.put("defaultClassId", request.defaultClassId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.disableCheckWhenRest)) {
+            body.put("disableCheckWhenRest", request.disableCheckWhenRest);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.disableCheckWithoutSchedule)) {
+            body.put("disableCheckWithoutSchedule", request.disableCheckWithoutSchedule);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enableCameraCheck)) {
+            body.put("enableCameraCheck", request.enableCameraCheck);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enableEmpSelectClass)) {
+            body.put("enableEmpSelectClass", request.enableEmpSelectClass);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enableFaceCheck)) {
+            body.put("enableFaceCheck", request.enableFaceCheck);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enableFaceStrictMode)) {
+            body.put("enableFaceStrictMode", request.enableFaceStrictMode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enableNextDay)) {
+            body.put("enableNextDay", request.enableNextDay);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enableOutSideUpdateNormalCheck)) {
+            body.put("enableOutSideUpdateNormalCheck", request.enableOutSideUpdateNormalCheck);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enableOutsideApply)) {
+            body.put("enableOutsideApply", request.enableOutsideApply);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enableOutsideCameraCheck)) {
+            body.put("enableOutsideCameraCheck", request.enableOutsideCameraCheck);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enableOutsideCheck)) {
+            body.put("enableOutsideCheck", request.enableOutsideCheck);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enableOutsideRemark)) {
+            body.put("enableOutsideRemark", request.enableOutsideRemark);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enablePositionBle)) {
+            body.put("enablePositionBle", request.enablePositionBle);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enableTrimDistance)) {
+            body.put("enableTrimDistance", request.enableTrimDistance);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.forbidHideOutSideAddress)) {
+            body.put("forbidHideOutSideAddress", request.forbidHideOutSideAddress);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.freeCheckSetting))) {
+            body.put("freeCheckSetting", request.freeCheckSetting);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.freeCheckTypeId)) {
+            body.put("freeCheckTypeId", request.freeCheckTypeId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.freecheckDayStartMinOffset)) {
+            body.put("freecheckDayStartMinOffset", request.freecheckDayStartMinOffset);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.freecheckWorkDays)) {
+            body.put("freecheckWorkDays", request.freecheckWorkDays);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.groupId)) {
+            body.put("groupId", request.groupId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.groupName)) {
+            body.put("groupName", request.groupName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.managerList)) {
+            body.put("managerList", request.managerList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.members)) {
+            body.put("members", request.members);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.modifyMember)) {
+            body.put("modifyMember", request.modifyMember);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.offset)) {
+            body.put("offset", request.offset);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openFaceCheck)) {
+            body.put("openFaceCheck", request.openFaceCheck);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outsideCheckApproveModeId)) {
+            body.put("outsideCheckApproveModeId", request.outsideCheckApproveModeId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.overtimeSettingId)) {
+            body.put("overtimeSettingId", request.overtimeSettingId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.owner)) {
+            body.put("owner", request.owner);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.positions)) {
+            body.put("positions", request.positions);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.resourcePermissionMap)) {
+            body.put("resourcePermissionMap", request.resourcePermissionMap);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.shiftVOList)) {
+            body.put("shiftVOList", request.shiftVOList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.skipHolidays)) {
+            body.put("skipHolidays", request.skipHolidays);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.specialDays)) {
+            body.put("specialDays", request.specialDays);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.trimDistance)) {
+            body.put("trimDistance", request.trimDistance);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.type)) {
+            body.put("type", request.type);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.wifis)) {
+            body.put("wifis", request.wifis);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.workdayClassList)) {
+            body.put("workdayClassList", request.workdayClassList);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("GroupAdd", "attendance_1.0", "HTTP", "POST", "AK", "/v1.0/attendance/groups", "json", req, runtime), new GroupAddResponse());
+    }
+
+    public GroupUpdateResponse groupUpdate(GroupUpdateRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GroupUpdateHeaders headers = new GroupUpdateHeaders();
+        return this.groupUpdateWithOptions(request, headers, runtime);
+    }
+
+    public GroupUpdateResponse groupUpdateWithOptions(GroupUpdateRequest request, GroupUpdateHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.opUserId)) {
+            query.put("opUserId", request.opUserId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.adjustmentSettingId)) {
+            body.put("adjustmentSettingId", request.adjustmentSettingId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.disableCheckWhenRest)) {
+            body.put("disableCheckWhenRest", request.disableCheckWhenRest);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.disableCheckWithoutSchedule)) {
+            body.put("disableCheckWithoutSchedule", request.disableCheckWithoutSchedule);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enableCameraCheck)) {
+            body.put("enableCameraCheck", request.enableCameraCheck);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enableEmpSelectClass)) {
+            body.put("enableEmpSelectClass", request.enableEmpSelectClass);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enableFaceCheck)) {
+            body.put("enableFaceCheck", request.enableFaceCheck);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enableFaceStrictMode)) {
+            body.put("enableFaceStrictMode", request.enableFaceStrictMode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enableOutSideUpdateNormalCheck)) {
+            body.put("enableOutSideUpdateNormalCheck", request.enableOutSideUpdateNormalCheck);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enableOutsideApply)) {
+            body.put("enableOutsideApply", request.enableOutsideApply);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enableOutsideCheck)) {
+            body.put("enableOutsideCheck", request.enableOutsideCheck);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enableOutsideRemark)) {
+            body.put("enableOutsideRemark", request.enableOutsideRemark);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enableTrimDistance)) {
+            body.put("enableTrimDistance", request.enableTrimDistance);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.forbidHideOutSideAddress)) {
+            body.put("forbidHideOutSideAddress", request.forbidHideOutSideAddress);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.freeCheckSetting))) {
+            body.put("freeCheckSetting", request.freeCheckSetting);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.freeCheckTypeId)) {
+            body.put("freeCheckTypeId", request.freeCheckTypeId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.groupId)) {
+            body.put("groupId", request.groupId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.groupName)) {
+            body.put("groupName", request.groupName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.managerList)) {
+            body.put("managerList", request.managerList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.offset)) {
+            body.put("offset", request.offset);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openFaceCheck)) {
+            body.put("openFaceCheck", request.openFaceCheck);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outsideCheckApproveModeId)) {
+            body.put("outsideCheckApproveModeId", request.outsideCheckApproveModeId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.overtimeSettingId)) {
+            body.put("overtimeSettingId", request.overtimeSettingId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.owner)) {
+            body.put("owner", request.owner);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.positions)) {
+            body.put("positions", request.positions);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.resourcePermissionMap)) {
+            body.put("resourcePermissionMap", request.resourcePermissionMap);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.shiftVOList)) {
+            body.put("shiftVOList", request.shiftVOList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.skipHolidays)) {
+            body.put("skipHolidays", request.skipHolidays);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.trimDistance)) {
+            body.put("trimDistance", request.trimDistance);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.workdayClassList)) {
+            body.put("workdayClassList", request.workdayClassList);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("GroupUpdate", "attendance_1.0", "HTTP", "PUT", "AK", "/v1.0/attendance/groups", "json", req, runtime), new GroupUpdateResponse());
+    }
+
     public InitAndGetLeaveALlocationQuotasResponse initAndGetLeaveALlocationQuotas(InitAndGetLeaveALlocationQuotasRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         InitAndGetLeaveALlocationQuotasHeaders headers = new InitAndGetLeaveALlocationQuotasHeaders();

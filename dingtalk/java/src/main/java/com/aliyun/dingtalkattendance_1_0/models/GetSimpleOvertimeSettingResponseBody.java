@@ -30,6 +30,9 @@ public class GetSimpleOvertimeSettingResponseBody extends TeaModel {
         @NameInMap("name")
         public String name;
 
+        @NameInMap("settingId")
+        public Long settingId;
+
         public static GetSimpleOvertimeSettingResponseBodyResultItems build(java.util.Map<String, ?> map) throws Exception {
             GetSimpleOvertimeSettingResponseBodyResultItems self = new GetSimpleOvertimeSettingResponseBodyResultItems();
             return TeaModel.build(map, self);
@@ -49,6 +52,14 @@ public class GetSimpleOvertimeSettingResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
+        }
+
+        public GetSimpleOvertimeSettingResponseBodyResultItems setSettingId(Long settingId) {
+            this.settingId = settingId;
+            return this;
+        }
+        public Long getSettingId() {
+            return this.settingId;
         }
 
     }

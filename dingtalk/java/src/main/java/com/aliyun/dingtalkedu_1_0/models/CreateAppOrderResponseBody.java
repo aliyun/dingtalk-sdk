@@ -8,9 +8,9 @@ public class CreateAppOrderResponseBody extends TeaModel {
     @NameInMap("actualAmount")
     public Long actualAmount;
 
-    // 应用id。
-    @NameInMap("appId")
-    public String appId;
+    // 支付宝应用id。
+    @NameInMap("alipayAppId")
+    public String alipayAppId;
 
     // 订单信息。
     @NameInMap("body")
@@ -41,12 +41,12 @@ public class CreateAppOrderResponseBody extends TeaModel {
         return this.actualAmount;
     }
 
-    public CreateAppOrderResponseBody setAppId(String appId) {
-        this.appId = appId;
+    public CreateAppOrderResponseBody setAlipayAppId(String alipayAppId) {
+        this.alipayAppId = alipayAppId;
         return this;
     }
-    public String getAppId() {
-        return this.appId;
+    public String getAlipayAppId() {
+        return this.alipayAppId;
     }
 
     public CreateAppOrderResponseBody setBody(String body) {

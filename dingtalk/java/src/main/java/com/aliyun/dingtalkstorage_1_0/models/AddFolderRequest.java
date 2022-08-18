@@ -48,58 +48,7 @@ public class AddFolderRequest extends TeaModel {
         return this.unionId;
     }
 
-    public static class AddFolderRequestOptionAppProperties extends TeaModel {
-        // 属性名称 该属性名称在当前app下需要保证唯一，不同app间同名属性互不影响
-        @NameInMap("name")
-        public String name;
-
-        // 属性值
-        @NameInMap("value")
-        public String value;
-
-        // 属性可见范围
-        // 枚举值:
-        // 	PUBLIC: 该属性所有App可见
-        // 	PRIVATE: 该属性仅其归属App可见
-        @NameInMap("visibility")
-        public String visibility;
-
-        public static AddFolderRequestOptionAppProperties build(java.util.Map<String, ?> map) throws Exception {
-            AddFolderRequestOptionAppProperties self = new AddFolderRequestOptionAppProperties();
-            return TeaModel.build(map, self);
-        }
-
-        public AddFolderRequestOptionAppProperties setName(String name) {
-            this.name = name;
-            return this;
-        }
-        public String getName() {
-            return this.name;
-        }
-
-        public AddFolderRequestOptionAppProperties setValue(String value) {
-            this.value = value;
-            return this;
-        }
-        public String getValue() {
-            return this.value;
-        }
-
-        public AddFolderRequestOptionAppProperties setVisibility(String visibility) {
-            this.visibility = visibility;
-            return this;
-        }
-        public String getVisibility() {
-            return this.visibility;
-        }
-
-    }
-
     public static class AddFolderRequestOption extends TeaModel {
-        // 文件夹在应用上的属性, 一个应用最多只能设置3个属性
-        @NameInMap("appProperties")
-        public java.util.List<AddFolderRequestOptionAppProperties> appProperties;
-
         // 文件夹名称冲突策略
         // 枚举值:
         // 	AUTO_RENAME: 自动重命名
@@ -114,14 +63,6 @@ public class AddFolderRequest extends TeaModel {
         public static AddFolderRequestOption build(java.util.Map<String, ?> map) throws Exception {
             AddFolderRequestOption self = new AddFolderRequestOption();
             return TeaModel.build(map, self);
-        }
-
-        public AddFolderRequestOption setAppProperties(java.util.List<AddFolderRequestOptionAppProperties> appProperties) {
-            this.appProperties = appProperties;
-            return this;
-        }
-        public java.util.List<AddFolderRequestOptionAppProperties> getAppProperties() {
-            return this.appProperties;
         }
 
         public AddFolderRequestOption setConflictStrategy(String conflictStrategy) {
