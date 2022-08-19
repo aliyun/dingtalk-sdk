@@ -46,6 +46,9 @@ public class RangeFindNextRequest extends TeaModel {
     }
 
     public static class RangeFindNextRequestFindOptions extends TeaModel {
+        @NameInMap("includeHidden")
+        public Boolean includeHidden;
+
         // 匹配大小写
         @NameInMap("matchCase")
         public Boolean matchCase;
@@ -68,6 +71,14 @@ public class RangeFindNextRequest extends TeaModel {
         public static RangeFindNextRequestFindOptions build(java.util.Map<String, ?> map) throws Exception {
             RangeFindNextRequestFindOptions self = new RangeFindNextRequestFindOptions();
             return TeaModel.build(map, self);
+        }
+
+        public RangeFindNextRequestFindOptions setIncludeHidden(Boolean includeHidden) {
+            this.includeHidden = includeHidden;
+            return this;
+        }
+        public Boolean getIncludeHidden() {
+            return this.includeHidden;
         }
 
         public RangeFindNextRequestFindOptions setMatchCase(Boolean matchCase) {

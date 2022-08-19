@@ -8,6 +8,10 @@ public class GetSheetResponseBody extends TeaModel {
     @NameInMap("columnCount")
     public Long columnCount;
 
+    // 工作表ID
+    @NameInMap("id")
+    public String id;
+
     // 最后一列非空列的位置，从0开始。表为空时返回-1。
     @NameInMap("lastNonEmptyColumn")
     public Long lastNonEmptyColumn;
@@ -39,6 +43,14 @@ public class GetSheetResponseBody extends TeaModel {
     }
     public Long getColumnCount() {
         return this.columnCount;
+    }
+
+    public GetSheetResponseBody setId(String id) {
+        this.id = id;
+        return this;
+    }
+    public String getId() {
+        return this.id;
     }
 
     public GetSheetResponseBody setLastNonEmptyColumn(Long lastNonEmptyColumn) {

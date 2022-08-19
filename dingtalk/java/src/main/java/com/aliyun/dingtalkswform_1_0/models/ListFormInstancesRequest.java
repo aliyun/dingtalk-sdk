@@ -12,11 +12,11 @@ public class ListFormInstancesRequest extends TeaModel {
     @NameInMap("bizType")
     public Integer bizType;
 
-    // 10
+    // 分页大小，最大100。
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 0
+    // 分页起始，从0开始。当返回结果中hasMore为false时，表示没有下一页了。否则取返回结果中nextToken的值作为下一次请求的offset。
     @NameInMap("nextToken")
     public Integer nextToken;
 
