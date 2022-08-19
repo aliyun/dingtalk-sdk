@@ -16,6 +16,13 @@ class GetSheetResponseBody extends Model
     public $columnCount;
 
     /**
+     * @description 工作表ID
+     *
+     * @var string
+     */
+    public $id;
+
+    /**
      * @description 最后一列非空列的位置，从0开始。表为空时返回-1。
      *
      * @var int
@@ -51,6 +58,7 @@ class GetSheetResponseBody extends Model
     public $visibility;
     protected $_name = [
         'columnCount'        => 'columnCount',
+        'id'                 => 'id',
         'lastNonEmptyColumn' => 'lastNonEmptyColumn',
         'lastNonEmptyRow'    => 'lastNonEmptyRow',
         'name'               => 'name',
@@ -67,6 +75,9 @@ class GetSheetResponseBody extends Model
         $res = [];
         if (null !== $this->columnCount) {
             $res['columnCount'] = $this->columnCount;
+        }
+        if (null !== $this->id) {
+            $res['id'] = $this->id;
         }
         if (null !== $this->lastNonEmptyColumn) {
             $res['lastNonEmptyColumn'] = $this->lastNonEmptyColumn;
@@ -97,6 +108,9 @@ class GetSheetResponseBody extends Model
         $model = new self();
         if (isset($map['columnCount'])) {
             $model->columnCount = $map['columnCount'];
+        }
+        if (isset($map['id'])) {
+            $model->id = $map['id'];
         }
         if (isset($map['lastNonEmptyColumn'])) {
             $model->lastNonEmptyColumn = $map['lastNonEmptyColumn'];

@@ -20,6 +20,12 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchGetWorkspaceDocsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchGetWorkspacesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchGetWorkspacesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchGetWorkspacesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateRangeProtectionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateRangeProtectionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateRangeProtectionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateSheetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateSheetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateSheetResponse;
@@ -29,6 +35,15 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateWorkspaceDocResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateWorkspaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateWorkspaceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateWorkspaceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteColumnsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteColumnsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteColumnsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteRangeProtectionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteRangeProtectionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteRangeProtectionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteRowsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteRowsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteRowsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteSheetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteSheetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteSheetResponse;
@@ -67,6 +82,12 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetWorkspaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertBlocksHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertBlocksRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertBlocksResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertColumnsBeforeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertColumnsBeforeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertColumnsBeforeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertRowsBeforeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertRowsBeforeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertRowsBeforeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ListTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ListTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ListTemplateResponse;
@@ -79,6 +100,15 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\RangeFindNextResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SearchWorkspaceDocsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SearchWorkspaceDocsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SearchWorkspaceDocsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnsVisibilityHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnsVisibilityRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnsVisibilityResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetRowsVisibilityHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetRowsVisibilityRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetRowsVisibilityResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SheetAutofitRowsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SheetAutofitRowsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SheetAutofitRowsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateRangeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateRangeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateRangeResponse;
@@ -353,6 +383,113 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string           $workbookId
+     * @param string           $sheetId
+     * @param string           $rangeAddress
+     * @param ClearDataRequest $request
+     *
+     * @return ClearDataResponse
+     */
+    public function clearData($workbookId, $sheetId, $rangeAddress, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ClearDataHeaders([]);
+
+        return $this->clearDataWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string           $workbookId
+     * @param string           $sheetId
+     * @param string           $rangeAddress
+     * @param ClearDataRequest $request
+     * @param ClearDataHeaders $headers
+     * @param RuntimeOptions   $runtime
+     *
+     * @return ClearDataResponse
+     */
+    public function clearDataWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $workbookId   = OpenApiUtilClient::getEncodeParam($workbookId);
+        $sheetId      = OpenApiUtilClient::getEncodeParam($sheetId);
+        $rangeAddress = OpenApiUtilClient::getEncodeParam($rangeAddress);
+        $query        = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ClearDataResponse::fromMap($this->doROARequest('ClearData', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/clearData', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                       $workbookId
+     * @param string                       $sheetId
+     * @param string                       $rangeAddress
+     * @param CreateRangeProtectionRequest $request
+     *
+     * @return CreateRangeProtectionResponse
+     */
+    public function createRangeProtection($workbookId, $sheetId, $rangeAddress, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateRangeProtectionHeaders([]);
+
+        return $this->createRangeProtectionWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                       $workbookId
+     * @param string                       $sheetId
+     * @param string                       $rangeAddress
+     * @param CreateRangeProtectionRequest $request
+     * @param CreateRangeProtectionHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return CreateRangeProtectionResponse
+     */
+    public function createRangeProtectionWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $workbookId   = OpenApiUtilClient::getEncodeParam($workbookId);
+        $sheetId      = OpenApiUtilClient::getEncodeParam($sheetId);
+        $rangeAddress = OpenApiUtilClient::getEncodeParam($rangeAddress);
+        $query        = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->otherUserPermission)) {
+            @$body['otherUserPermission'] = $request->otherUserPermission;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateRangeProtectionResponse::fromMap($this->doROARequest('CreateRangeProtection', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/protections', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string             $workbookId
      * @param CreateSheetRequest $request
      *
@@ -508,6 +645,172 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateWorkspaceDocResponse::fromMap($this->doROARequest('CreateWorkspaceDoc', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workspaces/' . $workspaceId . '/docs', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string               $workbookId
+     * @param string               $sheetId
+     * @param DeleteColumnsRequest $request
+     *
+     * @return DeleteColumnsResponse
+     */
+    public function deleteColumns($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteColumnsHeaders([]);
+
+        return $this->deleteColumnsWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string               $workbookId
+     * @param string               $sheetId
+     * @param DeleteColumnsRequest $request
+     * @param DeleteColumnsHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return DeleteColumnsResponse
+     */
+    public function deleteColumnsWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $workbookId = OpenApiUtilClient::getEncodeParam($workbookId);
+        $sheetId    = OpenApiUtilClient::getEncodeParam($sheetId);
+        $query      = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->column)) {
+            @$body['column'] = $request->column;
+        }
+        if (!Utils::isUnset($request->columnCount)) {
+            @$body['columnCount'] = $request->columnCount;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DeleteColumnsResponse::fromMap($this->doROARequest('DeleteColumns', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/deleteColumns', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                       $workbookId
+     * @param string                       $sheetId
+     * @param string                       $rangeAddress
+     * @param string                       $protectionId
+     * @param DeleteRangeProtectionRequest $request
+     *
+     * @return DeleteRangeProtectionResponse
+     */
+    public function deleteRangeProtection($workbookId, $sheetId, $rangeAddress, $protectionId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteRangeProtectionHeaders([]);
+
+        return $this->deleteRangeProtectionWithOptions($workbookId, $sheetId, $rangeAddress, $protectionId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                       $workbookId
+     * @param string                       $sheetId
+     * @param string                       $rangeAddress
+     * @param string                       $protectionId
+     * @param DeleteRangeProtectionRequest $request
+     * @param DeleteRangeProtectionHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return DeleteRangeProtectionResponse
+     */
+    public function deleteRangeProtectionWithOptions($workbookId, $sheetId, $rangeAddress, $protectionId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $workbookId   = OpenApiUtilClient::getEncodeParam($workbookId);
+        $sheetId      = OpenApiUtilClient::getEncodeParam($sheetId);
+        $rangeAddress = OpenApiUtilClient::getEncodeParam($rangeAddress);
+        $protectionId = OpenApiUtilClient::getEncodeParam($protectionId);
+        $query        = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return DeleteRangeProtectionResponse::fromMap($this->doROARequest('DeleteRangeProtection', 'doc_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/protections/' . $protectionId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string            $workbookId
+     * @param string            $sheetId
+     * @param DeleteRowsRequest $request
+     *
+     * @return DeleteRowsResponse
+     */
+    public function deleteRows($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteRowsHeaders([]);
+
+        return $this->deleteRowsWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string            $workbookId
+     * @param string            $sheetId
+     * @param DeleteRowsRequest $request
+     * @param DeleteRowsHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return DeleteRowsResponse
+     */
+    public function deleteRowsWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $workbookId = OpenApiUtilClient::getEncodeParam($workbookId);
+        $sheetId    = OpenApiUtilClient::getEncodeParam($sheetId);
+        $query      = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->row)) {
+            @$body['row'] = $request->row;
+        }
+        if (!Utils::isUnset($request->rowCount)) {
+            @$body['rowCount'] = $request->rowCount;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DeleteRowsResponse::fromMap($this->doROARequest('DeleteRows', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/deleteRows', 'json', $req, $runtime));
     }
 
     /**
@@ -1130,6 +1433,118 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string                     $workbookId
+     * @param string                     $sheetId
+     * @param InsertColumnsBeforeRequest $request
+     *
+     * @return InsertColumnsBeforeResponse
+     */
+    public function insertColumnsBefore($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InsertColumnsBeforeHeaders([]);
+
+        return $this->insertColumnsBeforeWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                     $workbookId
+     * @param string                     $sheetId
+     * @param InsertColumnsBeforeRequest $request
+     * @param InsertColumnsBeforeHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return InsertColumnsBeforeResponse
+     */
+    public function insertColumnsBeforeWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $workbookId = OpenApiUtilClient::getEncodeParam($workbookId);
+        $sheetId    = OpenApiUtilClient::getEncodeParam($sheetId);
+        $query      = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->column)) {
+            @$body['column'] = $request->column;
+        }
+        if (!Utils::isUnset($request->columnCount)) {
+            @$body['columnCount'] = $request->columnCount;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return InsertColumnsBeforeResponse::fromMap($this->doROARequest('InsertColumnsBefore', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/insertColumnsBefore', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                  $workbookId
+     * @param string                  $sheetId
+     * @param InsertRowsBeforeRequest $request
+     *
+     * @return InsertRowsBeforeResponse
+     */
+    public function insertRowsBefore($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InsertRowsBeforeHeaders([]);
+
+        return $this->insertRowsBeforeWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                  $workbookId
+     * @param string                  $sheetId
+     * @param InsertRowsBeforeRequest $request
+     * @param InsertRowsBeforeHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return InsertRowsBeforeResponse
+     */
+    public function insertRowsBeforeWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $workbookId = OpenApiUtilClient::getEncodeParam($workbookId);
+        $sheetId    = OpenApiUtilClient::getEncodeParam($sheetId);
+        $query      = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->row)) {
+            @$body['row'] = $request->row;
+        }
+        if (!Utils::isUnset($request->rowCount)) {
+            @$body['rowCount'] = $request->rowCount;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return InsertRowsBeforeResponse::fromMap($this->doROARequest('InsertRowsBefore', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/insertRowsBefore', 'json', $req, $runtime));
+    }
+
+    /**
      * @param ListTemplateRequest $request
      *
      * @return ListTemplateResponse
@@ -1345,6 +1760,183 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SearchWorkspaceDocsResponse::fromMap($this->doROARequest('SearchWorkspaceDocs', 'doc_1.0', 'HTTP', 'GET', 'AK', '/v1.0/doc/docs', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                      $workbookId
+     * @param string                      $sheetId
+     * @param SetColumnsVisibilityRequest $request
+     *
+     * @return SetColumnsVisibilityResponse
+     */
+    public function setColumnsVisibility($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetColumnsVisibilityHeaders([]);
+
+        return $this->setColumnsVisibilityWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                      $workbookId
+     * @param string                      $sheetId
+     * @param SetColumnsVisibilityRequest $request
+     * @param SetColumnsVisibilityHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return SetColumnsVisibilityResponse
+     */
+    public function setColumnsVisibilityWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $workbookId = OpenApiUtilClient::getEncodeParam($workbookId);
+        $sheetId    = OpenApiUtilClient::getEncodeParam($sheetId);
+        $query      = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->column)) {
+            @$body['column'] = $request->column;
+        }
+        if (!Utils::isUnset($request->columnCount)) {
+            @$body['columnCount'] = $request->columnCount;
+        }
+        if (!Utils::isUnset($request->visibility)) {
+            @$body['visibility'] = $request->visibility;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SetColumnsVisibilityResponse::fromMap($this->doROARequest('SetColumnsVisibility', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/setColumnsVisibility', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                   $workbookId
+     * @param string                   $sheetId
+     * @param SetRowsVisibilityRequest $request
+     *
+     * @return SetRowsVisibilityResponse
+     */
+    public function setRowsVisibility($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetRowsVisibilityHeaders([]);
+
+        return $this->setRowsVisibilityWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                   $workbookId
+     * @param string                   $sheetId
+     * @param SetRowsVisibilityRequest $request
+     * @param SetRowsVisibilityHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return SetRowsVisibilityResponse
+     */
+    public function setRowsVisibilityWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $workbookId = OpenApiUtilClient::getEncodeParam($workbookId);
+        $sheetId    = OpenApiUtilClient::getEncodeParam($sheetId);
+        $query      = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->row)) {
+            @$body['row'] = $request->row;
+        }
+        if (!Utils::isUnset($request->rowCount)) {
+            @$body['rowCount'] = $request->rowCount;
+        }
+        if (!Utils::isUnset($request->visibility)) {
+            @$body['visibility'] = $request->visibility;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SetRowsVisibilityResponse::fromMap($this->doROARequest('SetRowsVisibility', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/setRowsVisibility', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                  $workbookId
+     * @param string                  $sheetId
+     * @param SheetAutofitRowsRequest $request
+     *
+     * @return SheetAutofitRowsResponse
+     */
+    public function sheetAutofitRows($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SheetAutofitRowsHeaders([]);
+
+        return $this->sheetAutofitRowsWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                  $workbookId
+     * @param string                  $sheetId
+     * @param SheetAutofitRowsRequest $request
+     * @param SheetAutofitRowsHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return SheetAutofitRowsResponse
+     */
+    public function sheetAutofitRowsWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $workbookId = OpenApiUtilClient::getEncodeParam($workbookId);
+        $sheetId    = OpenApiUtilClient::getEncodeParam($sheetId);
+        $query      = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->fontWidth)) {
+            @$body['fontWidth'] = $request->fontWidth;
+        }
+        if (!Utils::isUnset($request->row)) {
+            @$body['row'] = $request->row;
+        }
+        if (!Utils::isUnset($request->rowCount)) {
+            @$body['rowCount'] = $request->rowCount;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SheetAutofitRowsResponse::fromMap($this->doROARequest('SheetAutofitRows', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/autofitRows', 'json', $req, $runtime));
     }
 
     /**
