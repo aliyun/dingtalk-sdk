@@ -1007,6 +1007,265 @@ class BatchGetWorkspacesResponse(TeaModel):
         return self
 
 
+class ClearDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ClearDataRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+    ):
+        # 操作人unionId
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class ClearDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        a_1notation: str = None,
+    ):
+        # 单元格地址
+        self.a_1notation = a_1notation
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.a_1notation is not None:
+            result['a1Notation'] = self.a_1notation
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('a1Notation') is not None:
+            self.a_1notation = m.get('a1Notation')
+        return self
+
+
+class ClearDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ClearDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ClearDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateRangeProtectionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateRangeProtectionRequest(TeaModel):
+    def __init__(
+        self,
+        other_user_permission: str = None,
+        operator_id: str = None,
+    ):
+        # 其它用户的权限
+        self.other_user_permission = other_user_permission
+        # 操作人unionId
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.other_user_permission is not None:
+            result['otherUserPermission'] = self.other_user_permission
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('otherUserPermission') is not None:
+            self.other_user_permission = m.get('otherUserPermission')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class CreateRangeProtectionResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+    ):
+        # 单元格锁定ID
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class CreateRangeProtectionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateRangeProtectionResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateRangeProtectionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateSheetHeaders(TeaModel):
     def __init__(
         self,
@@ -1491,6 +1750,412 @@ class CreateWorkspaceDocResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CreateWorkspaceDocResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteColumnsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteColumnsRequest(TeaModel):
+    def __init__(
+        self,
+        column: int = None,
+        column_count: int = None,
+        operator_id: str = None,
+    ):
+        # 要删除的第一列的位置，从0开始
+        self.column = column
+        # 要删除的列的数量
+        self.column_count = column_count
+        # 操作人unionId
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.column is not None:
+            result['column'] = self.column
+        if self.column_count is not None:
+            result['columnCount'] = self.column_count
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('column') is not None:
+            self.column = m.get('column')
+        if m.get('columnCount') is not None:
+            self.column_count = m.get('columnCount')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class DeleteColumnsResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+    ):
+        # 工作表ID
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class DeleteColumnsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DeleteColumnsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DeleteColumnsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteRangeProtectionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteRangeProtectionRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+    ):
+        # 操作人unionId
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class DeleteRangeProtectionResponseBody(TeaModel):
+    def __init__(
+        self,
+        a_1notation: str = None,
+    ):
+        # Range地址
+        self.a_1notation = a_1notation
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.a_1notation is not None:
+            result['a1Notation'] = self.a_1notation
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('a1Notation') is not None:
+            self.a_1notation = m.get('a1Notation')
+        return self
+
+
+class DeleteRangeProtectionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DeleteRangeProtectionResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DeleteRangeProtectionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteRowsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteRowsRequest(TeaModel):
+    def __init__(
+        self,
+        row: int = None,
+        row_count: int = None,
+        operator_id: str = None,
+    ):
+        # 要删除的第一行的位置，从0开始
+        self.row = row
+        # 要删除的行的数量
+        self.row_count = row_count
+        # 操作人unionId
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.row is not None:
+            result['row'] = self.row
+        if self.row_count is not None:
+            result['rowCount'] = self.row_count
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('row') is not None:
+            self.row = m.get('row')
+        if m.get('rowCount') is not None:
+            self.row_count = m.get('rowCount')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class DeleteRowsResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+    ):
+        # 工作表ID
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class DeleteRowsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DeleteRowsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DeleteRowsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -3118,6 +3783,7 @@ class GetSheetResponseBody(TeaModel):
     def __init__(
         self,
         column_count: int = None,
+        id: str = None,
         last_non_empty_column: int = None,
         last_non_empty_row: int = None,
         name: str = None,
@@ -3126,6 +3792,8 @@ class GetSheetResponseBody(TeaModel):
     ):
         # 工作表列数
         self.column_count = column_count
+        # 工作表ID
+        self.id = id
         # 最后一列非空列的位置，从0开始。表为空时返回-1。
         self.last_non_empty_column = last_non_empty_column
         # 最后一行非空行的位置，从0开始。表为空时返回-1。
@@ -3148,6 +3816,8 @@ class GetSheetResponseBody(TeaModel):
         result = dict()
         if self.column_count is not None:
             result['columnCount'] = self.column_count
+        if self.id is not None:
+            result['id'] = self.id
         if self.last_non_empty_column is not None:
             result['lastNonEmptyColumn'] = self.last_non_empty_column
         if self.last_non_empty_row is not None:
@@ -3164,6 +3834,8 @@ class GetSheetResponseBody(TeaModel):
         m = m or dict()
         if m.get('columnCount') is not None:
             self.column_count = m.get('columnCount')
+        if m.get('id') is not None:
+            self.id = m.get('id')
         if m.get('lastNonEmptyColumn') is not None:
             self.last_non_empty_column = m.get('lastNonEmptyColumn')
         if m.get('lastNonEmptyRow') is not None:
@@ -4119,6 +4791,286 @@ class InsertBlocksResponse(TeaModel):
         return self
 
 
+class InsertColumnsBeforeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class InsertColumnsBeforeRequest(TeaModel):
+    def __init__(
+        self,
+        column: int = None,
+        column_count: int = None,
+        operator_id: str = None,
+    ):
+        # 插入列的位置，从0开始
+        self.column = column
+        # 插入列的数量
+        self.column_count = column_count
+        # 操作人unionId
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.column is not None:
+            result['column'] = self.column
+        if self.column_count is not None:
+            result['columnCount'] = self.column_count
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('column') is not None:
+            self.column = m.get('column')
+        if m.get('columnCount') is not None:
+            self.column_count = m.get('columnCount')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class InsertColumnsBeforeResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+    ):
+        # 工作表ID
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class InsertColumnsBeforeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: InsertColumnsBeforeResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = InsertColumnsBeforeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class InsertRowsBeforeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class InsertRowsBeforeRequest(TeaModel):
+    def __init__(
+        self,
+        row: int = None,
+        row_count: int = None,
+        operator_id: str = None,
+    ):
+        # 插入行的位置，从0开始
+        self.row = row
+        # 插入行的数量
+        self.row_count = row_count
+        # 操作人unionId
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.row is not None:
+            result['row'] = self.row
+        if self.row_count is not None:
+            result['rowCount'] = self.row_count
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('row') is not None:
+            self.row = m.get('row')
+        if m.get('rowCount') is not None:
+            self.row_count = m.get('rowCount')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class InsertRowsBeforeResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+    ):
+        # 工作表ID
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class InsertRowsBeforeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: InsertRowsBeforeResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = InsertRowsBeforeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ListTemplateHeaders(TeaModel):
     def __init__(
         self,
@@ -4534,12 +5486,14 @@ class RangeFindNextHeaders(TeaModel):
 class RangeFindNextRequestFindOptions(TeaModel):
     def __init__(
         self,
+        include_hidden: bool = None,
         match_case: bool = None,
         match_entire_cell: bool = None,
         match_formula_text: bool = None,
         scope: str = None,
         use_reg_exp: bool = None,
     ):
+        self.include_hidden = include_hidden
         # 匹配大小写
         self.match_case = match_case
         # 匹配整个单元格
@@ -4559,6 +5513,8 @@ class RangeFindNextRequestFindOptions(TeaModel):
             return _map
 
         result = dict()
+        if self.include_hidden is not None:
+            result['includeHidden'] = self.include_hidden
         if self.match_case is not None:
             result['matchCase'] = self.match_case
         if self.match_entire_cell is not None:
@@ -4573,6 +5529,8 @@ class RangeFindNextRequestFindOptions(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('includeHidden') is not None:
+            self.include_hidden = m.get('includeHidden')
         if m.get('matchCase') is not None:
             self.match_case = m.get('matchCase')
         if m.get('matchEntireCell') is not None:
@@ -5001,6 +5959,446 @@ class SearchWorkspaceDocsResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = SearchWorkspaceDocsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SetColumnsVisibilityHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SetColumnsVisibilityRequest(TeaModel):
+    def __init__(
+        self,
+        column: int = None,
+        column_count: int = None,
+        visibility: str = None,
+        operator_id: str = None,
+    ):
+        # 要显示、隐藏的第一列的位置，从0开始
+        self.column = column
+        # 要显示、隐藏的列的数量
+        self.column_count = column_count
+        # 可见性
+        self.visibility = visibility
+        # 操作人unionId
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.column is not None:
+            result['column'] = self.column
+        if self.column_count is not None:
+            result['columnCount'] = self.column_count
+        if self.visibility is not None:
+            result['visibility'] = self.visibility
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('column') is not None:
+            self.column = m.get('column')
+        if m.get('columnCount') is not None:
+            self.column_count = m.get('columnCount')
+        if m.get('visibility') is not None:
+            self.visibility = m.get('visibility')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class SetColumnsVisibilityResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+    ):
+        # 工作表ID
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class SetColumnsVisibilityResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SetColumnsVisibilityResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SetColumnsVisibilityResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SetRowsVisibilityHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SetRowsVisibilityRequest(TeaModel):
+    def __init__(
+        self,
+        row: int = None,
+        row_count: int = None,
+        visibility: str = None,
+        operator_id: str = None,
+    ):
+        # 要显示、隐藏的第一行的位置，从0开始
+        self.row = row
+        # 要显示、隐藏的行的数量
+        self.row_count = row_count
+        # 可见性
+        self.visibility = visibility
+        # 操作人unionId
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.row is not None:
+            result['row'] = self.row
+        if self.row_count is not None:
+            result['rowCount'] = self.row_count
+        if self.visibility is not None:
+            result['visibility'] = self.visibility
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('row') is not None:
+            self.row = m.get('row')
+        if m.get('rowCount') is not None:
+            self.row_count = m.get('rowCount')
+        if m.get('visibility') is not None:
+            self.visibility = m.get('visibility')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class SetRowsVisibilityResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+    ):
+        # 工作表ID
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class SetRowsVisibilityResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SetRowsVisibilityResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SetRowsVisibilityResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SheetAutofitRowsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SheetAutofitRowsRequest(TeaModel):
+    def __init__(
+        self,
+        font_width: int = None,
+        row: int = None,
+        row_count: int = None,
+        operator_id: str = None,
+    ):
+        self.font_width = font_width
+        # 行号，从0开始
+        self.row = row
+        # 行数
+        self.row_count = row_count
+        # 操作人unionId
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.font_width is not None:
+            result['fontWidth'] = self.font_width
+        if self.row is not None:
+            result['row'] = self.row
+        if self.row_count is not None:
+            result['rowCount'] = self.row_count
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fontWidth') is not None:
+            self.font_width = m.get('fontWidth')
+        if m.get('row') is not None:
+            self.row = m.get('row')
+        if m.get('rowCount') is not None:
+            self.row_count = m.get('rowCount')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class SheetAutofitRowsResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+    ):
+        # 当前工作表ID
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class SheetAutofitRowsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SheetAutofitRowsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SheetAutofitRowsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

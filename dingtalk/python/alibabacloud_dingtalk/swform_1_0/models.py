@@ -297,9 +297,9 @@ class ListFormInstancesRequest(TeaModel):
         self.action_date = action_date
         # 填表类型。0表示通用填表，1表示教育版填表
         self.biz_type = biz_type
-        # 10
+        # 分页大小，最大100。
         self.max_results = max_results
-        # 0
+        # 分页起始，从0开始。当返回结果中hasMore为false时，表示没有下一页了。否则取返回结果中nextToken的值作为下一次请求的offset。
         self.next_token = next_token
 
     def validate(self):

@@ -5595,7 +5595,6 @@ class ListPermissionsResponseBodyPermissions(TeaModel):
         duration: int = None,
         member: ListPermissionsResponseBodyPermissionsMember = None,
         modified_time: str = None,
-        operator_id: int = None,
         role: ListPermissionsResponseBodyPermissionsRole = None,
         space_id: str = None,
     ):
@@ -5609,8 +5608,6 @@ class ListPermissionsResponseBodyPermissions(TeaModel):
         self.member = member
         # 修改时间
         self.modified_time = modified_time
-        # 操作人id
-        self.operator_id = operator_id
         # 权限角色
         self.role = role
         # 空间id
@@ -5638,8 +5635,6 @@ class ListPermissionsResponseBodyPermissions(TeaModel):
             result['member'] = self.member.to_map()
         if self.modified_time is not None:
             result['modifiedTime'] = self.modified_time
-        if self.operator_id is not None:
-            result['operatorId'] = self.operator_id
         if self.role is not None:
             result['role'] = self.role.to_map()
         if self.space_id is not None:
@@ -5659,8 +5654,6 @@ class ListPermissionsResponseBodyPermissions(TeaModel):
             self.member = temp_model.from_map(m['member'])
         if m.get('modifiedTime') is not None:
             self.modified_time = m.get('modifiedTime')
-        if m.get('operatorId') is not None:
-            self.operator_id = m.get('operatorId')
         if m.get('role') is not None:
             temp_model = ListPermissionsResponseBodyPermissionsRole()
             self.role = temp_model.from_map(m['role'])
