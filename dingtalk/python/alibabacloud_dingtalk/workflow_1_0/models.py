@@ -515,6 +515,277 @@ class FormComponent(TeaModel):
         return self
 
 
+class CopyProcessHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CopyProcessRequestCopyOptions(TeaModel):
+    def __init__(
+        self,
+        copy_type: int = None,
+    ):
+        # 默认为1
+        # COPE_TYPE_DEFAULT = 1 默认会使用groupId进行隔离分组，审批首页不可见
+        # COPE_TYPE_INCLUDE_FLOW = 2 使用dingtalk 2作为隔离分组，审批首页可见
+        self.copy_type = copy_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.copy_type is not None:
+            result['copyType'] = self.copy_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('copyType') is not None:
+            self.copy_type = m.get('copyType')
+        return self
+
+
+class CopyProcessRequestSourceProcessVOList(TeaModel):
+    def __init__(
+        self,
+        biz_type: str = None,
+        name: str = None,
+        process_code: str = None,
+    ):
+        # 套件业务标识
+        self.biz_type = biz_type
+        # 模板名称
+        self.name = name
+        # 模板code
+        self.process_code = process_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.name is not None:
+            result['name'] = self.name
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        return self
+
+
+class CopyProcessRequest(TeaModel):
+    def __init__(
+        self,
+        copy_options: CopyProcessRequestCopyOptions = None,
+        source_corp_id: str = None,
+        source_process_volist: List[CopyProcessRequestSourceProcessVOList] = None,
+    ):
+        # 复制选项
+        self.copy_options = copy_options
+        self.source_corp_id = source_corp_id
+        # 源模版列表
+        self.source_process_volist = source_process_volist
+
+    def validate(self):
+        if self.copy_options:
+            self.copy_options.validate()
+        if self.source_process_volist:
+            for k in self.source_process_volist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.copy_options is not None:
+            result['copyOptions'] = self.copy_options.to_map()
+        if self.source_corp_id is not None:
+            result['sourceCorpId'] = self.source_corp_id
+        result['sourceProcessVOList'] = []
+        if self.source_process_volist is not None:
+            for k in self.source_process_volist:
+                result['sourceProcessVOList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('copyOptions') is not None:
+            temp_model = CopyProcessRequestCopyOptions()
+            self.copy_options = temp_model.from_map(m['copyOptions'])
+        if m.get('sourceCorpId') is not None:
+            self.source_corp_id = m.get('sourceCorpId')
+        self.source_process_volist = []
+        if m.get('sourceProcessVOList') is not None:
+            for k in m.get('sourceProcessVOList'):
+                temp_model = CopyProcessRequestSourceProcessVOList()
+                self.source_process_volist.append(temp_model.from_map(k))
+        return self
+
+
+class CopyProcessResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        biz_type: str = None,
+        name: str = None,
+        process_code: str = None,
+    ):
+        # 业务标识
+        self.biz_type = biz_type
+        # 模板名称
+        self.name = name
+        # 模板code
+        self.process_code = process_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.name is not None:
+            result['name'] = self.name
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        return self
+
+
+class CopyProcessResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[CopyProcessResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = CopyProcessResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class CopyProcessResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CopyProcessResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CopyProcessResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class FormCreateHeaders(TeaModel):
     def __init__(
         self,
@@ -3799,6 +4070,201 @@ class QueryFormInstanceResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryFormInstanceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryProcessByBizCategoryIdHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryProcessByBizCategoryIdRequest(TeaModel):
+    def __init__(
+        self,
+        biz_type: str = None,
+        user_id: str = None,
+    ):
+        # 业务标识
+        self.biz_type = biz_type
+        # 用户id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryProcessByBizCategoryIdResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        name: str = None,
+        process_code: str = None,
+        status: str = None,
+    ):
+        # 模板描述
+        self.description = description
+        # 模板名称
+        self.name = name
+        # 模板code
+        self.process_code = process_code
+        # 模版发布状态。
+        # 
+        # - PUBLISHED：已启用
+        # 
+        # - INVALID：停用
+        # 
+        # - SAVED：已保存
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.name is not None:
+            result['name'] = self.name
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class QueryProcessByBizCategoryIdResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[QueryProcessByBizCategoryIdResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = QueryProcessByBizCategoryIdResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class QueryProcessByBizCategoryIdResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryProcessByBizCategoryIdResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryProcessByBizCategoryIdResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

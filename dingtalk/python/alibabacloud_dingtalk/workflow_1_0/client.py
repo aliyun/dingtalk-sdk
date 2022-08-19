@@ -23,6 +23,78 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def copy_process(
+        self,
+        request: dingtalkworkflow__1__0_models.CopyProcessRequest,
+    ) -> dingtalkworkflow__1__0_models.CopyProcessResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.CopyProcessHeaders()
+        return self.copy_process_with_options(request, headers, runtime)
+
+    async def copy_process_async(
+        self,
+        request: dingtalkworkflow__1__0_models.CopyProcessRequest,
+    ) -> dingtalkworkflow__1__0_models.CopyProcessResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.CopyProcessHeaders()
+        return await self.copy_process_with_options_async(request, headers, runtime)
+
+    def copy_process_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.CopyProcessRequest,
+        headers: dingtalkworkflow__1__0_models.CopyProcessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.CopyProcessResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.copy_options):
+            body['copyOptions'] = request.copy_options
+        if not UtilClient.is_unset(request.source_corp_id):
+            body['sourceCorpId'] = request.source_corp_id
+        if not UtilClient.is_unset(request.source_process_volist):
+            body['sourceProcessVOList'] = request.source_process_volist
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.CopyProcessResponse(),
+            self.do_roarequest('CopyProcess', 'workflow_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/workflow/processes/copy', 'json', req, runtime)
+        )
+
+    async def copy_process_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.CopyProcessRequest,
+        headers: dingtalkworkflow__1__0_models.CopyProcessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.CopyProcessResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.copy_options):
+            body['copyOptions'] = request.copy_options
+        if not UtilClient.is_unset(request.source_corp_id):
+            body['sourceCorpId'] = request.source_corp_id
+        if not UtilClient.is_unset(request.source_process_volist):
+            body['sourceProcessVOList'] = request.source_process_volist
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.CopyProcessResponse(),
+            await self.do_roarequest_async('CopyProcess', 'workflow_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/workflow/processes/copy', 'json', req, runtime)
+        )
+
     def form_create(
         self,
         request: dingtalkworkflow__1__0_models.FormCreateRequest,
@@ -663,6 +735,74 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkworkflow__1__0_models.QueryFormInstanceResponse(),
             await self.do_roarequest_async('QueryFormInstance', 'workflow_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workflow/forms/instances', 'json', req, runtime)
+        )
+
+    def query_process_by_biz_category_id(
+        self,
+        request: dingtalkworkflow__1__0_models.QueryProcessByBizCategoryIdRequest,
+    ) -> dingtalkworkflow__1__0_models.QueryProcessByBizCategoryIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.QueryProcessByBizCategoryIdHeaders()
+        return self.query_process_by_biz_category_id_with_options(request, headers, runtime)
+
+    async def query_process_by_biz_category_id_async(
+        self,
+        request: dingtalkworkflow__1__0_models.QueryProcessByBizCategoryIdRequest,
+    ) -> dingtalkworkflow__1__0_models.QueryProcessByBizCategoryIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.QueryProcessByBizCategoryIdHeaders()
+        return await self.query_process_by_biz_category_id_with_options_async(request, headers, runtime)
+
+    def query_process_by_biz_category_id_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.QueryProcessByBizCategoryIdRequest,
+        headers: dingtalkworkflow__1__0_models.QueryProcessByBizCategoryIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.QueryProcessByBizCategoryIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_type):
+            query['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.QueryProcessByBizCategoryIdResponse(),
+            self.do_roarequest('QueryProcessByBizCategoryId', 'workflow_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workflow/processes/categories/templates', 'json', req, runtime)
+        )
+
+    async def query_process_by_biz_category_id_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.QueryProcessByBizCategoryIdRequest,
+        headers: dingtalkworkflow__1__0_models.QueryProcessByBizCategoryIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.QueryProcessByBizCategoryIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_type):
+            query['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.QueryProcessByBizCategoryIdResponse(),
+            await self.do_roarequest_async('QueryProcessByBizCategoryId', 'workflow_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workflow/processes/categories/templates', 'json', req, runtime)
         )
 
     def query_schema_by_process_code(

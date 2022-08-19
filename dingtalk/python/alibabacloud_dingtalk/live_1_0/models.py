@@ -964,13 +964,22 @@ class GetUserAllLiveListHeaders(TeaModel):
 class GetUserAllLiveListRequest(TeaModel):
     def __init__(
         self,
+        end_time: int = None,
+        start_time: int = None,
         statuses: List[int] = None,
+        title: str = None,
         page_number: int = None,
         page_size: int = None,
         union_id: str = None,
     ):
+        # 筛选直播截止时间
+        self.end_time = end_time
+        # 筛选直播开始时间
+        self.start_time = start_time
         # 直播状态列表
         self.statuses = statuses
+        # 筛选直播标题
+        self.title = title
         # 第几页，从1开始
         self.page_number = page_number
         # 单次拉去上限，默认40个
@@ -987,8 +996,14 @@ class GetUserAllLiveListRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
         if self.statuses is not None:
             result['statuses'] = self.statuses
+        if self.title is not None:
+            result['title'] = self.title
         if self.page_number is not None:
             result['pageNumber'] = self.page_number
         if self.page_size is not None:
@@ -999,8 +1014,14 @@ class GetUserAllLiveListRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
         if m.get('statuses') is not None:
             self.statuses = m.get('statuses')
+        if m.get('title') is not None:
+            self.title = m.get('title')
         if m.get('pageNumber') is not None:
             self.page_number = m.get('pageNumber')
         if m.get('pageSize') is not None:
@@ -1016,7 +1037,9 @@ class GetUserAllLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
         cover_url: str = None,
         duration: int = None,
         end_time: int = None,
+        has_subscribed: bool = None,
         introduction: str = None,
+        is_forecast_expired: bool = None,
         live_id: str = None,
         live_play_url: str = None,
         live_status: int = None,
@@ -1025,6 +1048,7 @@ class GetUserAllLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
         title: str = None,
         union_id: str = None,
         uv: int = None,
+        watch_progress_ms: int = None,
     ):
         # 直播封面
         self.cover_url = cover_url
@@ -1032,8 +1056,12 @@ class GetUserAllLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
         self.duration = duration
         # 直播真实结束时间
         self.end_time = end_time
+        # 是否订阅
+        self.has_subscribed = has_subscribed
         # 直播简介
         self.introduction = introduction
+        # 预告是否过期
+        self.is_forecast_expired = is_forecast_expired
         # 直播id
         self.live_id = live_id
         # 直播观看地址
@@ -1050,6 +1078,8 @@ class GetUserAllLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
         self.union_id = union_id
         # 观看人数
         self.uv = uv
+        # 回放观看进度
+        self.watch_progress_ms = watch_progress_ms
 
     def validate(self):
         pass
@@ -1066,8 +1096,12 @@ class GetUserAllLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
             result['duration'] = self.duration
         if self.end_time is not None:
             result['endTime'] = self.end_time
+        if self.has_subscribed is not None:
+            result['hasSubscribed'] = self.has_subscribed
         if self.introduction is not None:
             result['introduction'] = self.introduction
+        if self.is_forecast_expired is not None:
+            result['isForecastExpired'] = self.is_forecast_expired
         if self.live_id is not None:
             result['liveId'] = self.live_id
         if self.live_play_url is not None:
@@ -1084,6 +1118,8 @@ class GetUserAllLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
             result['unionId'] = self.union_id
         if self.uv is not None:
             result['uv'] = self.uv
+        if self.watch_progress_ms is not None:
+            result['watchProgressMs'] = self.watch_progress_ms
         return result
 
     def from_map(self, m: dict = None):
@@ -1094,8 +1130,12 @@ class GetUserAllLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
             self.duration = m.get('duration')
         if m.get('endTime') is not None:
             self.end_time = m.get('endTime')
+        if m.get('hasSubscribed') is not None:
+            self.has_subscribed = m.get('hasSubscribed')
         if m.get('introduction') is not None:
             self.introduction = m.get('introduction')
+        if m.get('isForecastExpired') is not None:
+            self.is_forecast_expired = m.get('isForecastExpired')
         if m.get('liveId') is not None:
             self.live_id = m.get('liveId')
         if m.get('livePlayUrl') is not None:
@@ -1112,6 +1152,8 @@ class GetUserAllLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
             self.union_id = m.get('unionId')
         if m.get('uv') is not None:
             self.uv = m.get('uv')
+        if m.get('watchProgressMs') is not None:
+            self.watch_progress_ms = m.get('watchProgressMs')
         return self
 
 
@@ -1257,13 +1299,22 @@ class GetUserCreateLiveListHeaders(TeaModel):
         return self
 
 
-class GetUserCreateLiveListRequestStatuses(TeaModel):
+class GetUserCreateLiveListRequestBody(TeaModel):
     def __init__(
         self,
+        end_time: int = None,
+        start_time: int = None,
         statuses: List[int] = None,
+        title: str = None,
     ):
+        # 筛选直播截止时间
+        self.end_time = end_time
+        # 筛选直播开始时间
+        self.start_time = start_time
         # 直播状态列表
         self.statuses = statuses
+        # 筛选的直播标题
+        self.title = title
 
     def validate(self):
         pass
@@ -1274,37 +1325,49 @@ class GetUserCreateLiveListRequestStatuses(TeaModel):
             return _map
 
         result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
         if self.statuses is not None:
             result['statuses'] = self.statuses
+        if self.title is not None:
+            result['title'] = self.title
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
         if m.get('statuses') is not None:
             self.statuses = m.get('statuses')
+        if m.get('title') is not None:
+            self.title = m.get('title')
         return self
 
 
 class GetUserCreateLiveListRequest(TeaModel):
     def __init__(
         self,
+        body: GetUserCreateLiveListRequestBody = None,
         next_token: str = None,
         page_size: int = None,
-        statuses: GetUserCreateLiveListRequestStatuses = None,
         union_id: str = None,
     ):
+        # post请求体, 开放平台建议以对象形式存储
+        self.body = body
         # 分页游标 第一次可不填， 后面填回包的值
         self.next_token = next_token
         # 单次拉去上限，默认40个
         self.page_size = page_size
-        # post请求体, 开放平台建议以对象形式存储
-        self.statuses = statuses
         # 用户uid
         self.union_id = union_id
 
     def validate(self):
-        if self.statuses:
-            self.statuses.validate()
+        if self.body:
+            self.body.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1312,25 +1375,25 @@ class GetUserCreateLiveListRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.body is not None:
+            result['body'] = self.body.to_map()
         if self.next_token is not None:
             result['nextToken'] = self.next_token
         if self.page_size is not None:
             result['pageSize'] = self.page_size
-        if self.statuses is not None:
-            result['statuses'] = self.statuses.to_map()
         if self.union_id is not None:
             result['unionId'] = self.union_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('body') is not None:
+            temp_model = GetUserCreateLiveListRequestBody()
+            self.body = temp_model.from_map(m['body'])
         if m.get('nextToken') is not None:
             self.next_token = m.get('nextToken')
         if m.get('pageSize') is not None:
             self.page_size = m.get('pageSize')
-        if m.get('statuses') is not None:
-            temp_model = GetUserCreateLiveListRequestStatuses()
-            self.statuses = temp_model.from_map(m['statuses'])
         if m.get('unionId') is not None:
             self.union_id = m.get('unionId')
         return self
@@ -1339,17 +1402,17 @@ class GetUserCreateLiveListRequest(TeaModel):
 class GetUserCreateLiveListShrinkRequest(TeaModel):
     def __init__(
         self,
+        body_shrink: str = None,
         next_token: str = None,
         page_size: int = None,
-        statuses_shrink: str = None,
         union_id: str = None,
     ):
+        # post请求体, 开放平台建议以对象形式存储
+        self.body_shrink = body_shrink
         # 分页游标 第一次可不填， 后面填回包的值
         self.next_token = next_token
         # 单次拉去上限，默认40个
         self.page_size = page_size
-        # post请求体, 开放平台建议以对象形式存储
-        self.statuses_shrink = statuses_shrink
         # 用户uid
         self.union_id = union_id
 
@@ -1362,24 +1425,24 @@ class GetUserCreateLiveListShrinkRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.body_shrink is not None:
+            result['body'] = self.body_shrink
         if self.next_token is not None:
             result['nextToken'] = self.next_token
         if self.page_size is not None:
             result['pageSize'] = self.page_size
-        if self.statuses_shrink is not None:
-            result['statuses'] = self.statuses_shrink
         if self.union_id is not None:
             result['unionId'] = self.union_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('body') is not None:
+            self.body_shrink = m.get('body')
         if m.get('nextToken') is not None:
             self.next_token = m.get('nextToken')
         if m.get('pageSize') is not None:
             self.page_size = m.get('pageSize')
-        if m.get('statuses') is not None:
-            self.statuses_shrink = m.get('statuses')
         if m.get('unionId') is not None:
             self.union_id = m.get('unionId')
         return self
@@ -1392,6 +1455,7 @@ class GetUserCreateLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
         duration: int = None,
         end_time: int = None,
         introduction: str = None,
+        is_forecast_expired: bool = None,
         live_id: str = None,
         live_play_url: str = None,
         live_status: int = None,
@@ -1400,6 +1464,7 @@ class GetUserCreateLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
         title: str = None,
         union_id: str = None,
         uv: int = None,
+        watch_progress_ms: int = None,
     ):
         # 直播封面
         self.cover_url = cover_url
@@ -1409,6 +1474,8 @@ class GetUserCreateLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
         self.end_time = end_time
         # 直播简介
         self.introduction = introduction
+        # 预告是否过期
+        self.is_forecast_expired = is_forecast_expired
         # 直播id
         self.live_id = live_id
         # 直播观看地址
@@ -1425,6 +1492,8 @@ class GetUserCreateLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
         self.union_id = union_id
         # 观看人数
         self.uv = uv
+        # 回放观看进度
+        self.watch_progress_ms = watch_progress_ms
 
     def validate(self):
         pass
@@ -1443,6 +1512,8 @@ class GetUserCreateLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
             result['endTime'] = self.end_time
         if self.introduction is not None:
             result['introduction'] = self.introduction
+        if self.is_forecast_expired is not None:
+            result['isForecastExpired'] = self.is_forecast_expired
         if self.live_id is not None:
             result['liveId'] = self.live_id
         if self.live_play_url is not None:
@@ -1459,6 +1530,8 @@ class GetUserCreateLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
             result['unionId'] = self.union_id
         if self.uv is not None:
             result['uv'] = self.uv
+        if self.watch_progress_ms is not None:
+            result['watchProgressMs'] = self.watch_progress_ms
         return result
 
     def from_map(self, m: dict = None):
@@ -1471,6 +1544,8 @@ class GetUserCreateLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
             self.end_time = m.get('endTime')
         if m.get('introduction') is not None:
             self.introduction = m.get('introduction')
+        if m.get('isForecastExpired') is not None:
+            self.is_forecast_expired = m.get('isForecastExpired')
         if m.get('liveId') is not None:
             self.live_id = m.get('liveId')
         if m.get('livePlayUrl') is not None:
@@ -1487,6 +1562,8 @@ class GetUserCreateLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
             self.union_id = m.get('unionId')
         if m.get('uv') is not None:
             self.uv = m.get('uv')
+        if m.get('watchProgressMs') is not None:
+            self.watch_progress_ms = m.get('watchProgressMs')
         return self
 
 
@@ -1701,6 +1778,7 @@ class GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
         cover_url: str = None,
         duration: int = None,
         end_time: int = None,
+        has_subscribed: bool = None,
         introduction: str = None,
         live_id: str = None,
         live_play_url: str = None,
@@ -1710,6 +1788,7 @@ class GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
         title: str = None,
         union_id: str = None,
         uv: int = None,
+        watch_progress_ms: int = None,
     ):
         # 直播封面
         self.cover_url = cover_url
@@ -1717,6 +1796,8 @@ class GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
         self.duration = duration
         # 直播真实结束时间
         self.end_time = end_time
+        # 是否订阅
+        self.has_subscribed = has_subscribed
         # 直播简介
         self.introduction = introduction
         # 直播id
@@ -1735,6 +1816,8 @@ class GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
         self.union_id = union_id
         # 观看人数
         self.uv = uv
+        # 回放观看进度
+        self.watch_progress_ms = watch_progress_ms
 
     def validate(self):
         pass
@@ -1751,6 +1834,8 @@ class GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
             result['duration'] = self.duration
         if self.end_time is not None:
             result['endTime'] = self.end_time
+        if self.has_subscribed is not None:
+            result['hasSubscribed'] = self.has_subscribed
         if self.introduction is not None:
             result['introduction'] = self.introduction
         if self.live_id is not None:
@@ -1769,6 +1854,8 @@ class GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
             result['unionId'] = self.union_id
         if self.uv is not None:
             result['uv'] = self.uv
+        if self.watch_progress_ms is not None:
+            result['watchProgressMs'] = self.watch_progress_ms
         return result
 
     def from_map(self, m: dict = None):
@@ -1779,6 +1866,8 @@ class GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
             self.duration = m.get('duration')
         if m.get('endTime') is not None:
             self.end_time = m.get('endTime')
+        if m.get('hasSubscribed') is not None:
+            self.has_subscribed = m.get('hasSubscribed')
         if m.get('introduction') is not None:
             self.introduction = m.get('introduction')
         if m.get('liveId') is not None:
@@ -1797,6 +1886,8 @@ class GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
             self.union_id = m.get('unionId')
         if m.get('uv') is not None:
             self.uv = m.get('uv')
+        if m.get('watchProgressMs') is not None:
+            self.watch_progress_ms = m.get('watchProgressMs')
         return self
 
 
@@ -3586,10 +3677,13 @@ class SubscribeLiveRequest(TeaModel):
     def __init__(
         self,
         live_id: str = None,
+        subscribe: bool = None,
         union_id: str = None,
     ):
         # 直播uuid
         self.live_id = live_id
+        # true:关注 false:取消关注
+        self.subscribe = subscribe
         # 用户id
         self.union_id = union_id
 
@@ -3604,6 +3698,8 @@ class SubscribeLiveRequest(TeaModel):
         result = dict()
         if self.live_id is not None:
             result['liveId'] = self.live_id
+        if self.subscribe is not None:
+            result['subscribe'] = self.subscribe
         if self.union_id is not None:
             result['unionId'] = self.union_id
         return result
@@ -3612,6 +3708,8 @@ class SubscribeLiveRequest(TeaModel):
         m = m or dict()
         if m.get('liveId') is not None:
             self.live_id = m.get('liveId')
+        if m.get('subscribe') is not None:
+            self.subscribe = m.get('subscribe')
         if m.get('unionId') is not None:
             self.union_id = m.get('unionId')
         return self
