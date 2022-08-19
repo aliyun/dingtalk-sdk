@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetUserCreateLiveListRequest;
 
 use AlibabaCloud\Tea\Model;
 
-class GetUserAllLiveListRequest extends Model
+class body extends Model
 {
     /**
      * @description 筛选直播截止时间
@@ -30,40 +30,16 @@ class GetUserAllLiveListRequest extends Model
     public $statuses;
 
     /**
-     * @description 筛选直播标题
+     * @description 筛选的直播标题
      *
      * @var string
      */
     public $title;
-
-    /**
-     * @description 第几页，从1开始
-     *
-     * @var int
-     */
-    public $pageNumber;
-
-    /**
-     * @description 单次拉去上限，默认40个
-     *
-     * @var int
-     */
-    public $pageSize;
-
-    /**
-     * @description 用户uid
-     *
-     * @var string
-     */
-    public $unionId;
     protected $_name = [
-        'endTime'    => 'endTime',
-        'startTime'  => 'startTime',
-        'statuses'   => 'statuses',
-        'title'      => 'title',
-        'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'unionId'    => 'unionId',
+        'endTime'   => 'endTime',
+        'startTime' => 'startTime',
+        'statuses'  => 'statuses',
+        'title'     => 'title',
     ];
 
     public function validate()
@@ -85,15 +61,6 @@ class GetUserAllLiveListRequest extends Model
         if (null !== $this->title) {
             $res['title'] = $this->title;
         }
-        if (null !== $this->pageNumber) {
-            $res['pageNumber'] = $this->pageNumber;
-        }
-        if (null !== $this->pageSize) {
-            $res['pageSize'] = $this->pageSize;
-        }
-        if (null !== $this->unionId) {
-            $res['unionId'] = $this->unionId;
-        }
 
         return $res;
     }
@@ -101,7 +68,7 @@ class GetUserAllLiveListRequest extends Model
     /**
      * @param array $map
      *
-     * @return GetUserAllLiveListRequest
+     * @return body
      */
     public static function fromMap($map = [])
     {
@@ -119,15 +86,6 @@ class GetUserAllLiveListRequest extends Model
         }
         if (isset($map['title'])) {
             $model->title = $map['title'];
-        }
-        if (isset($map['pageNumber'])) {
-            $model->pageNumber = $map['pageNumber'];
-        }
-        if (isset($map['pageSize'])) {
-            $model->pageSize = $map['pageSize'];
-        }
-        if (isset($map['unionId'])) {
-            $model->unionId = $map['unionId'];
         }
 
         return $model;

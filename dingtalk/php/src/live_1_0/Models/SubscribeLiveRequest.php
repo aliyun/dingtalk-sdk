@@ -16,14 +16,22 @@ class SubscribeLiveRequest extends Model
     public $liveId;
 
     /**
+     * @description true:关注 false:取消关注
+     *
+     * @var bool
+     */
+    public $subscribe;
+
+    /**
      * @description 用户id
      *
      * @var string
      */
     public $unionId;
     protected $_name = [
-        'liveId'  => 'liveId',
-        'unionId' => 'unionId',
+        'liveId'    => 'liveId',
+        'subscribe' => 'subscribe',
+        'unionId'   => 'unionId',
     ];
 
     public function validate()
@@ -35,6 +43,9 @@ class SubscribeLiveRequest extends Model
         $res = [];
         if (null !== $this->liveId) {
             $res['liveId'] = $this->liveId;
+        }
+        if (null !== $this->subscribe) {
+            $res['subscribe'] = $this->subscribe;
         }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
@@ -53,6 +64,9 @@ class SubscribeLiveRequest extends Model
         $model = new self();
         if (isset($map['liveId'])) {
             $model->liveId = $map['liveId'];
+        }
+        if (isset($map['subscribe'])) {
+            $model->subscribe = $map['subscribe'];
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];

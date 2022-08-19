@@ -37,6 +37,13 @@ class liveInfoPopModelList extends Model
     public $introduction;
 
     /**
+     * @description 预告是否过期
+     *
+     * @var bool
+     */
+    public $isForecastExpired;
+
+    /**
      * @description 直播id
      *
      * @var string
@@ -91,19 +98,28 @@ class liveInfoPopModelList extends Model
      * @var int
      */
     public $uv;
+
+    /**
+     * @description 回放观看进度
+     *
+     * @var int
+     */
+    public $watchProgressMs;
     protected $_name = [
-        'coverUrl'       => 'coverUrl',
-        'duration'       => 'duration',
-        'endTime'        => 'endTime',
-        'introduction'   => 'introduction',
-        'liveId'         => 'liveId',
-        'livePlayUrl'    => 'livePlayUrl',
-        'liveStatus'     => 'liveStatus',
-        'startTime'      => 'startTime',
-        'subscribeCount' => 'subscribeCount',
-        'title'          => 'title',
-        'unionId'        => 'unionId',
-        'uv'             => 'uv',
+        'coverUrl'          => 'coverUrl',
+        'duration'          => 'duration',
+        'endTime'           => 'endTime',
+        'introduction'      => 'introduction',
+        'isForecastExpired' => 'isForecastExpired',
+        'liveId'            => 'liveId',
+        'livePlayUrl'       => 'livePlayUrl',
+        'liveStatus'        => 'liveStatus',
+        'startTime'         => 'startTime',
+        'subscribeCount'    => 'subscribeCount',
+        'title'             => 'title',
+        'unionId'           => 'unionId',
+        'uv'                => 'uv',
+        'watchProgressMs'   => 'watchProgressMs',
     ];
 
     public function validate()
@@ -124,6 +140,9 @@ class liveInfoPopModelList extends Model
         }
         if (null !== $this->introduction) {
             $res['introduction'] = $this->introduction;
+        }
+        if (null !== $this->isForecastExpired) {
+            $res['isForecastExpired'] = $this->isForecastExpired;
         }
         if (null !== $this->liveId) {
             $res['liveId'] = $this->liveId;
@@ -149,6 +168,9 @@ class liveInfoPopModelList extends Model
         if (null !== $this->uv) {
             $res['uv'] = $this->uv;
         }
+        if (null !== $this->watchProgressMs) {
+            $res['watchProgressMs'] = $this->watchProgressMs;
+        }
 
         return $res;
     }
@@ -173,6 +195,9 @@ class liveInfoPopModelList extends Model
         if (isset($map['introduction'])) {
             $model->introduction = $map['introduction'];
         }
+        if (isset($map['isForecastExpired'])) {
+            $model->isForecastExpired = $map['isForecastExpired'];
+        }
         if (isset($map['liveId'])) {
             $model->liveId = $map['liveId'];
         }
@@ -196,6 +221,9 @@ class liveInfoPopModelList extends Model
         }
         if (isset($map['uv'])) {
             $model->uv = $map['uv'];
+        }
+        if (isset($map['watchProgressMs'])) {
+            $model->watchProgressMs = $map['watchProgressMs'];
         }
 
         return $model;

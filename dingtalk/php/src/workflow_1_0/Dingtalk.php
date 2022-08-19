@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\CopyProcessHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\CopyProcessRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\CopyProcessResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\FormCreateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\FormCreateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\FormCreateResponse;
@@ -31,6 +34,9 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryFormByBizTypeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryFormInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryFormInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryFormInstanceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryProcessByBizCategoryIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryProcessByBizCategoryIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryProcessByBizCategoryIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QuerySchemaByProcessCodeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QuerySchemaByProcessCodeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QuerySchemaByProcessCodeResponse;
@@ -51,6 +57,54 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param CopyProcessRequest $request
+     *
+     * @return CopyProcessResponse
+     */
+    public function copyProcess($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CopyProcessHeaders([]);
+
+        return $this->copyProcessWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CopyProcessRequest $request
+     * @param CopyProcessHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return CopyProcessResponse
+     */
+    public function copyProcessWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->copyOptions)) {
+            @$body['copyOptions'] = $request->copyOptions;
+        }
+        if (!Utils::isUnset($request->sourceCorpId)) {
+            @$body['sourceCorpId'] = $request->sourceCorpId;
+        }
+        if (!Utils::isUnset($request->sourceProcessVOList)) {
+            @$body['sourceProcessVOList'] = $request->sourceProcessVOList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CopyProcessResponse::fromMap($this->doROARequest('CopyProcess', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processes/copy', 'json', $req, $runtime));
     }
 
     /**
@@ -483,6 +537,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryFormInstanceResponse::fromMap($this->doROARequest('QueryFormInstance', 'workflow_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workflow/forms/instances', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryProcessByBizCategoryIdRequest $request
+     *
+     * @return QueryProcessByBizCategoryIdResponse
+     */
+    public function queryProcessByBizCategoryId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryProcessByBizCategoryIdHeaders([]);
+
+        return $this->queryProcessByBizCategoryIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryProcessByBizCategoryIdRequest $request
+     * @param QueryProcessByBizCategoryIdHeaders $headers
+     * @param RuntimeOptions                     $runtime
+     *
+     * @return QueryProcessByBizCategoryIdResponse
+     */
+    public function queryProcessByBizCategoryIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizType)) {
+            @$query['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryProcessByBizCategoryIdResponse::fromMap($this->doROARequest('QueryProcessByBizCategoryId', 'workflow_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workflow/processes/categories/templates', 'json', $req, $runtime));
     }
 
     /**

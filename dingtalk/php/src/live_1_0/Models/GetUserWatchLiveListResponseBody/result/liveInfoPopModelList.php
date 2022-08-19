@@ -30,6 +30,13 @@ class liveInfoPopModelList extends Model
     public $endTime;
 
     /**
+     * @description 是否订阅
+     *
+     * @var bool
+     */
+    public $hasSubscribed;
+
+    /**
      * @description 直播简介
      *
      * @var string
@@ -91,19 +98,28 @@ class liveInfoPopModelList extends Model
      * @var int
      */
     public $uv;
+
+    /**
+     * @description 回放观看进度
+     *
+     * @var int
+     */
+    public $watchProgressMs;
     protected $_name = [
-        'coverUrl'       => 'coverUrl',
-        'duration'       => 'duration',
-        'endTime'        => 'endTime',
-        'introduction'   => 'introduction',
-        'liveId'         => 'liveId',
-        'livePlayUrl'    => 'livePlayUrl',
-        'liveStatus'     => 'liveStatus',
-        'startTime'      => 'startTime',
-        'subscribeCount' => 'subscribeCount',
-        'title'          => 'title',
-        'unionId'        => 'unionId',
-        'uv'             => 'uv',
+        'coverUrl'        => 'coverUrl',
+        'duration'        => 'duration',
+        'endTime'         => 'endTime',
+        'hasSubscribed'   => 'hasSubscribed',
+        'introduction'    => 'introduction',
+        'liveId'          => 'liveId',
+        'livePlayUrl'     => 'livePlayUrl',
+        'liveStatus'      => 'liveStatus',
+        'startTime'       => 'startTime',
+        'subscribeCount'  => 'subscribeCount',
+        'title'           => 'title',
+        'unionId'         => 'unionId',
+        'uv'              => 'uv',
+        'watchProgressMs' => 'watchProgressMs',
     ];
 
     public function validate()
@@ -121,6 +137,9 @@ class liveInfoPopModelList extends Model
         }
         if (null !== $this->endTime) {
             $res['endTime'] = $this->endTime;
+        }
+        if (null !== $this->hasSubscribed) {
+            $res['hasSubscribed'] = $this->hasSubscribed;
         }
         if (null !== $this->introduction) {
             $res['introduction'] = $this->introduction;
@@ -149,6 +168,9 @@ class liveInfoPopModelList extends Model
         if (null !== $this->uv) {
             $res['uv'] = $this->uv;
         }
+        if (null !== $this->watchProgressMs) {
+            $res['watchProgressMs'] = $this->watchProgressMs;
+        }
 
         return $res;
     }
@@ -169,6 +191,9 @@ class liveInfoPopModelList extends Model
         }
         if (isset($map['endTime'])) {
             $model->endTime = $map['endTime'];
+        }
+        if (isset($map['hasSubscribed'])) {
+            $model->hasSubscribed = $map['hasSubscribed'];
         }
         if (isset($map['introduction'])) {
             $model->introduction = $map['introduction'];
@@ -196,6 +221,9 @@ class liveInfoPopModelList extends Model
         }
         if (isset($map['uv'])) {
             $model->uv = $map['uv'];
+        }
+        if (isset($map['watchProgressMs'])) {
+            $model->watchProgressMs = $map['watchProgressMs'];
         }
 
         return $model;

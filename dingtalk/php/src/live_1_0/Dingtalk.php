@@ -425,8 +425,17 @@ class Dingtalk extends OpenApiClient
             @$query['unionId'] = $request->unionId;
         }
         $body = [];
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
         if (!Utils::isUnset($request->statuses)) {
             @$body['statuses'] = $request->statuses;
+        }
+        if (!Utils::isUnset($request->title)) {
+            @$body['title'] = $request->title;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -469,18 +478,18 @@ class Dingtalk extends OpenApiClient
         Utils::validateModel($tmpReq);
         $request = new GetUserCreateLiveListShrinkRequest([]);
         OpenApiUtilClient::convert($tmpReq, $request);
-        if (!Utils::isUnset($tmpReq->statuses)) {
-            $request->statusesShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle(Tea::merge($tmpReq->statuses), 'statuses', 'json');
+        if (!Utils::isUnset($tmpReq->body)) {
+            $request->bodyShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle(Tea::merge($tmpReq->body), 'body', 'json');
         }
         $query = [];
+        if (!Utils::isUnset($request->bodyShrink)) {
+            @$query['body'] = $request->bodyShrink;
+        }
         if (!Utils::isUnset($request->nextToken)) {
             @$query['nextToken'] = $request->nextToken;
         }
         if (!Utils::isUnset($request->pageSize)) {
             @$query['pageSize'] = $request->pageSize;
-        }
-        if (!Utils::isUnset($request->statusesShrink)) {
-            @$query['statuses'] = $request->statusesShrink;
         }
         if (!Utils::isUnset($request->unionId)) {
             @$query['unionId'] = $request->unionId;
@@ -959,6 +968,9 @@ class Dingtalk extends OpenApiClient
         $query = [];
         if (!Utils::isUnset($request->liveId)) {
             @$query['liveId'] = $request->liveId;
+        }
+        if (!Utils::isUnset($request->subscribe)) {
+            @$query['subscribe'] = $request->subscribe;
         }
         if (!Utils::isUnset($request->unionId)) {
             @$query['unionId'] = $request->unionId;
