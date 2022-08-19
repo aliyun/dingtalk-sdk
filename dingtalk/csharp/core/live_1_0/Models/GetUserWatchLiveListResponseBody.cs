@@ -23,6 +23,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
                 public string CoverUrl { get; set; }
                 public long? Duration { get; set; }
                 public long? EndTime { get; set; }
+                public bool? HasSubscribed { get; set; }
                 public string Introduction { get; set; }
                 public string LiveId { get; set; }
                 public string LivePlayUrl { get; set; }
@@ -32,6 +33,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
                 public string Title { get; set; }
                 public string UnionId { get; set; }
                 public int? Uv { get; set; }
+                public long? WatchProgressMs { get; set; }
             }
             [NameInMap("nextToken")]
             [Validation(Required=false)]

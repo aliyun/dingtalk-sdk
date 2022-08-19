@@ -567,9 +567,21 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
                 query["unionId"] = request.UnionId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                body["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                body["startTime"] = request.StartTime;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Statuses))
             {
                 body["statuses"] = request.Statuses;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            {
+                body["title"] = request.Title;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -606,9 +618,21 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
                 query["unionId"] = request.UnionId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                body["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                body["startTime"] = request.StartTime;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Statuses))
             {
                 body["statuses"] = request.Statuses;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            {
+                body["title"] = request.Title;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -647,11 +671,15 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
             GetUserCreateLiveListShrinkRequest request = new GetUserCreateLiveListShrinkRequest();
             AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Statuses.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body.ToMap()))
             {
-                request.StatusesShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Statuses.ToMap(), "statuses", "json");
+                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body.ToMap(), "body", "json");
             }
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BodyShrink))
+            {
+                query["body"] = request.BodyShrink;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
                 query["nextToken"] = request.NextToken;
@@ -659,10 +687,6 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
             {
                 query["pageSize"] = request.PageSize;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StatusesShrink))
-            {
-                query["statuses"] = request.StatusesShrink;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
@@ -690,11 +714,15 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
             GetUserCreateLiveListShrinkRequest request = new GetUserCreateLiveListShrinkRequest();
             AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Statuses.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body.ToMap()))
             {
-                request.StatusesShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Statuses.ToMap(), "statuses", "json");
+                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body.ToMap(), "body", "json");
             }
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BodyShrink))
+            {
+                query["body"] = request.BodyShrink;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
                 query["nextToken"] = request.NextToken;
@@ -702,10 +730,6 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
             {
                 query["pageSize"] = request.PageSize;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StatusesShrink))
-            {
-                query["statuses"] = request.StatusesShrink;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
@@ -1446,6 +1470,10 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             {
                 query["liveId"] = request.LiveId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Subscribe))
+            {
+                query["subscribe"] = request.Subscribe;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
                 query["unionId"] = request.UnionId;
@@ -1474,6 +1502,10 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveId))
             {
                 query["liveId"] = request.LiveId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Subscribe))
+            {
+                query["subscribe"] = request.Subscribe;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
