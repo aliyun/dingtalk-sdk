@@ -4,6 +4,10 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserCreateLiveListRequest extends TeaModel {
+    // post请求体, 开放平台建议以对象形式存储
+    @NameInMap("body")
+    public GetUserCreateLiveListRequestBody body;
+
     // 分页游标 第一次可不填， 后面填回包的值
     @NameInMap("nextToken")
     public String nextToken;
@@ -12,10 +16,6 @@ public class GetUserCreateLiveListRequest extends TeaModel {
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    // post请求体, 开放平台建议以对象形式存储
-    @NameInMap("statuses")
-    public GetUserCreateLiveListRequestStatuses statuses;
-
     // 用户uid
     @NameInMap("unionId")
     public String unionId;
@@ -23,6 +23,14 @@ public class GetUserCreateLiveListRequest extends TeaModel {
     public static GetUserCreateLiveListRequest build(java.util.Map<String, ?> map) throws Exception {
         GetUserCreateLiveListRequest self = new GetUserCreateLiveListRequest();
         return TeaModel.build(map, self);
+    }
+
+    public GetUserCreateLiveListRequest setBody(GetUserCreateLiveListRequestBody body) {
+        this.body = body;
+        return this;
+    }
+    public GetUserCreateLiveListRequestBody getBody() {
+        return this.body;
     }
 
     public GetUserCreateLiveListRequest setNextToken(String nextToken) {
@@ -41,14 +49,6 @@ public class GetUserCreateLiveListRequest extends TeaModel {
         return this.pageSize;
     }
 
-    public GetUserCreateLiveListRequest setStatuses(GetUserCreateLiveListRequestStatuses statuses) {
-        this.statuses = statuses;
-        return this;
-    }
-    public GetUserCreateLiveListRequestStatuses getStatuses() {
-        return this.statuses;
-    }
-
     public GetUserCreateLiveListRequest setUnionId(String unionId) {
         this.unionId = unionId;
         return this;
@@ -57,22 +57,58 @@ public class GetUserCreateLiveListRequest extends TeaModel {
         return this.unionId;
     }
 
-    public static class GetUserCreateLiveListRequestStatuses extends TeaModel {
+    public static class GetUserCreateLiveListRequestBody extends TeaModel {
+        // 筛选直播截止时间
+        @NameInMap("endTime")
+        public Long endTime;
+
+        // 筛选直播开始时间
+        @NameInMap("startTime")
+        public Long startTime;
+
         // 直播状态列表
         @NameInMap("statuses")
         public java.util.List<Long> statuses;
 
-        public static GetUserCreateLiveListRequestStatuses build(java.util.Map<String, ?> map) throws Exception {
-            GetUserCreateLiveListRequestStatuses self = new GetUserCreateLiveListRequestStatuses();
+        // 筛选的直播标题
+        @NameInMap("title")
+        public String title;
+
+        public static GetUserCreateLiveListRequestBody build(java.util.Map<String, ?> map) throws Exception {
+            GetUserCreateLiveListRequestBody self = new GetUserCreateLiveListRequestBody();
             return TeaModel.build(map, self);
         }
 
-        public GetUserCreateLiveListRequestStatuses setStatuses(java.util.List<Long> statuses) {
+        public GetUserCreateLiveListRequestBody setEndTime(Long endTime) {
+            this.endTime = endTime;
+            return this;
+        }
+        public Long getEndTime() {
+            return this.endTime;
+        }
+
+        public GetUserCreateLiveListRequestBody setStartTime(Long startTime) {
+            this.startTime = startTime;
+            return this;
+        }
+        public Long getStartTime() {
+            return this.startTime;
+        }
+
+        public GetUserCreateLiveListRequestBody setStatuses(java.util.List<Long> statuses) {
             this.statuses = statuses;
             return this;
         }
         public java.util.List<Long> getStatuses() {
             return this.statuses;
+        }
+
+        public GetUserCreateLiveListRequestBody setTitle(String title) {
+            this.title = title;
+            return this;
+        }
+        public String getTitle() {
+            return this.title;
         }
 
     }

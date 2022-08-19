@@ -21,6 +21,43 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public CopyProcessResponse copyProcess(CopyProcessRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CopyProcessHeaders headers = new CopyProcessHeaders();
+        return this.copyProcessWithOptions(request, headers, runtime);
+    }
+
+    public CopyProcessResponse copyProcessWithOptions(CopyProcessRequest request, CopyProcessHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.copyOptions))) {
+            body.put("copyOptions", request.copyOptions);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sourceCorpId)) {
+            body.put("sourceCorpId", request.sourceCorpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sourceProcessVOList)) {
+            body.put("sourceProcessVOList", request.sourceProcessVOList);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CopyProcess", "workflow_1.0", "HTTP", "POST", "AK", "/v1.0/workflow/processes/copy", "json", req, runtime), new CopyProcessResponse());
+    }
+
     public FormCreateResponse formCreate(FormCreateRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         FormCreateHeaders headers = new FormCreateHeaders();
@@ -357,6 +394,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("QueryFormInstance", "workflow_1.0", "HTTP", "GET", "AK", "/v1.0/workflow/forms/instances", "json", req, runtime), new QueryFormInstanceResponse());
+    }
+
+    public QueryProcessByBizCategoryIdResponse queryProcessByBizCategoryId(QueryProcessByBizCategoryIdRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryProcessByBizCategoryIdHeaders headers = new QueryProcessByBizCategoryIdHeaders();
+        return this.queryProcessByBizCategoryIdWithOptions(request, headers, runtime);
+    }
+
+    public QueryProcessByBizCategoryIdResponse queryProcessByBizCategoryIdWithOptions(QueryProcessByBizCategoryIdRequest request, QueryProcessByBizCategoryIdHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizType)) {
+            query.put("bizType", request.bizType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryProcessByBizCategoryId", "workflow_1.0", "HTTP", "GET", "AK", "/v1.0/workflow/processes/categories/templates", "json", req, runtime), new QueryProcessByBizCategoryIdResponse());
     }
 
     public QuerySchemaByProcessCodeResponse querySchemaByProcessCode(QuerySchemaByProcessCodeRequest request) throws Exception {

@@ -33,9 +33,17 @@ public class GetUserAllLiveListResponseBody extends TeaModel {
         @NameInMap("endTime")
         public Long endTime;
 
+        // 是否订阅
+        @NameInMap("hasSubscribed")
+        public Boolean hasSubscribed;
+
         // 直播简介
         @NameInMap("introduction")
         public String introduction;
+
+        // 预告是否过期
+        @NameInMap("isForecastExpired")
+        public Boolean isForecastExpired;
 
         // 直播id
         @NameInMap("liveId")
@@ -69,6 +77,10 @@ public class GetUserAllLiveListResponseBody extends TeaModel {
         @NameInMap("uv")
         public Integer uv;
 
+        // 回放观看进度
+        @NameInMap("watchProgressMs")
+        public Long watchProgressMs;
+
         public static GetUserAllLiveListResponseBodyResultLiveInfoPopModelList build(java.util.Map<String, ?> map) throws Exception {
             GetUserAllLiveListResponseBodyResultLiveInfoPopModelList self = new GetUserAllLiveListResponseBodyResultLiveInfoPopModelList();
             return TeaModel.build(map, self);
@@ -98,12 +110,28 @@ public class GetUserAllLiveListResponseBody extends TeaModel {
             return this.endTime;
         }
 
+        public GetUserAllLiveListResponseBodyResultLiveInfoPopModelList setHasSubscribed(Boolean hasSubscribed) {
+            this.hasSubscribed = hasSubscribed;
+            return this;
+        }
+        public Boolean getHasSubscribed() {
+            return this.hasSubscribed;
+        }
+
         public GetUserAllLiveListResponseBodyResultLiveInfoPopModelList setIntroduction(String introduction) {
             this.introduction = introduction;
             return this;
         }
         public String getIntroduction() {
             return this.introduction;
+        }
+
+        public GetUserAllLiveListResponseBodyResultLiveInfoPopModelList setIsForecastExpired(Boolean isForecastExpired) {
+            this.isForecastExpired = isForecastExpired;
+            return this;
+        }
+        public Boolean getIsForecastExpired() {
+            return this.isForecastExpired;
         }
 
         public GetUserAllLiveListResponseBodyResultLiveInfoPopModelList setLiveId(String liveId) {
@@ -168,6 +196,14 @@ public class GetUserAllLiveListResponseBody extends TeaModel {
         }
         public Integer getUv() {
             return this.uv;
+        }
+
+        public GetUserAllLiveListResponseBodyResultLiveInfoPopModelList setWatchProgressMs(Long watchProgressMs) {
+            this.watchProgressMs = watchProgressMs;
+            return this;
+        }
+        public Long getWatchProgressMs() {
+            return this.watchProgressMs;
         }
 
     }

@@ -33,6 +33,10 @@ public class GetUserWatchLiveListResponseBody extends TeaModel {
         @NameInMap("endTime")
         public Long endTime;
 
+        // 是否订阅
+        @NameInMap("hasSubscribed")
+        public Boolean hasSubscribed;
+
         // 直播简介
         @NameInMap("introduction")
         public String introduction;
@@ -69,6 +73,10 @@ public class GetUserWatchLiveListResponseBody extends TeaModel {
         @NameInMap("uv")
         public Integer uv;
 
+        // 回放观看进度
+        @NameInMap("watchProgressMs")
+        public Long watchProgressMs;
+
         public static GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList build(java.util.Map<String, ?> map) throws Exception {
             GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList self = new GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList();
             return TeaModel.build(map, self);
@@ -96,6 +104,14 @@ public class GetUserWatchLiveListResponseBody extends TeaModel {
         }
         public Long getEndTime() {
             return this.endTime;
+        }
+
+        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList setHasSubscribed(Boolean hasSubscribed) {
+            this.hasSubscribed = hasSubscribed;
+            return this;
+        }
+        public Boolean getHasSubscribed() {
+            return this.hasSubscribed;
         }
 
         public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList setIntroduction(String introduction) {
@@ -168,6 +184,14 @@ public class GetUserWatchLiveListResponseBody extends TeaModel {
         }
         public Integer getUv() {
             return this.uv;
+        }
+
+        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList setWatchProgressMs(Long watchProgressMs) {
+            this.watchProgressMs = watchProgressMs;
+            return this;
+        }
+        public Long getWatchProgressMs() {
+            return this.watchProgressMs;
         }
 
     }

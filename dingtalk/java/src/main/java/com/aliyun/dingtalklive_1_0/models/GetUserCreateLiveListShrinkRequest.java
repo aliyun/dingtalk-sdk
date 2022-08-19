@@ -4,6 +4,10 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserCreateLiveListShrinkRequest extends TeaModel {
+    // post请求体, 开放平台建议以对象形式存储
+    @NameInMap("body")
+    public String bodyShrink;
+
     // 分页游标 第一次可不填， 后面填回包的值
     @NameInMap("nextToken")
     public String nextToken;
@@ -12,10 +16,6 @@ public class GetUserCreateLiveListShrinkRequest extends TeaModel {
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    // post请求体, 开放平台建议以对象形式存储
-    @NameInMap("statuses")
-    public String statusesShrink;
-
     // 用户uid
     @NameInMap("unionId")
     public String unionId;
@@ -23,6 +23,14 @@ public class GetUserCreateLiveListShrinkRequest extends TeaModel {
     public static GetUserCreateLiveListShrinkRequest build(java.util.Map<String, ?> map) throws Exception {
         GetUserCreateLiveListShrinkRequest self = new GetUserCreateLiveListShrinkRequest();
         return TeaModel.build(map, self);
+    }
+
+    public GetUserCreateLiveListShrinkRequest setBodyShrink(String bodyShrink) {
+        this.bodyShrink = bodyShrink;
+        return this;
+    }
+    public String getBodyShrink() {
+        return this.bodyShrink;
     }
 
     public GetUserCreateLiveListShrinkRequest setNextToken(String nextToken) {
@@ -39,14 +47,6 @@ public class GetUserCreateLiveListShrinkRequest extends TeaModel {
     }
     public Integer getPageSize() {
         return this.pageSize;
-    }
-
-    public GetUserCreateLiveListShrinkRequest setStatusesShrink(String statusesShrink) {
-        this.statusesShrink = statusesShrink;
-        return this;
-    }
-    public String getStatusesShrink() {
-        return this.statusesShrink;
     }
 
     public GetUserCreateLiveListShrinkRequest setUnionId(String unionId) {

@@ -8,6 +8,10 @@ public class SubscribeLiveRequest extends TeaModel {
     @NameInMap("liveId")
     public String liveId;
 
+    // true:关注 false:取消关注
+    @NameInMap("subscribe")
+    public Boolean subscribe;
+
     // 用户id
     @NameInMap("unionId")
     public String unionId;
@@ -23,6 +27,14 @@ public class SubscribeLiveRequest extends TeaModel {
     }
     public String getLiveId() {
         return this.liveId;
+    }
+
+    public SubscribeLiveRequest setSubscribe(Boolean subscribe) {
+        this.subscribe = subscribe;
+        return this;
+    }
+    public Boolean getSubscribe() {
+        return this.subscribe;
     }
 
     public SubscribeLiveRequest setUnionId(String unionId) {
