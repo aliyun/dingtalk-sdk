@@ -24,14 +24,14 @@ namespace AlibabaCloud.SDK.Dingtalkswform_1_0.Models
         public int? BizType { get; set; }
 
         /// <summary>
-        /// 10
+        /// 分页大小，最大100。
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
 
         /// <summary>
-        /// 0
+        /// 分页起始，从0开始。当返回结果中hasMore为false时，表示没有下一页了。否则取返回结果中nextToken的值作为下一次请求的offset。
         /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]

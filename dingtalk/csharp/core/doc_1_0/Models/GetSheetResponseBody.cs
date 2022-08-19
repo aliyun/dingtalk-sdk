@@ -17,6 +17,13 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         public long? ColumnCount { get; set; }
 
         /// <summary>
+        /// 工作表ID
+        /// </summary>
+        [NameInMap("id")]
+        [Validation(Required=false)]
+        public string Id { get; set; }
+
+        /// <summary>
         /// 最后一列非空列的位置，从0开始。表为空时返回-1。
         /// </summary>
         [NameInMap("lastNonEmptyColumn")]

@@ -16,6 +16,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=false)]
         public RangeFindNextRequestFindOptions FindOptions { get; set; }
         public class RangeFindNextRequestFindOptions : TeaModel {
+            [NameInMap("includeHidden")]
+            [Validation(Required=false)]
+            public bool? IncludeHidden { get; set; }
             [NameInMap("matchCase")]
             [Validation(Required=false)]
             public bool? MatchCase { get; set; }
