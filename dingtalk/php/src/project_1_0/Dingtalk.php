@@ -50,6 +50,9 @@ use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbUserIdByStaffIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchProjectTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchProjectTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchProjectTemplateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateCustomfieldValueHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateCustomfieldValueRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateCustomfieldValueResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskContentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskContentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskContentResponse;
@@ -287,6 +290,9 @@ class Dingtalk extends OpenApiClient
         $body   = [];
         if (!Utils::isUnset($request->content)) {
             @$body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->customfields)) {
+            @$body['customfields'] = $request->customfields;
         }
         if (!Utils::isUnset($request->dueDate)) {
             @$body['dueDate'] = $request->dueDate;
@@ -876,6 +882,60 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SearchProjectTemplateResponse::fromMap($this->doROARequest('SearchProjectTemplate', 'project_1.0', 'HTTP', 'GET', 'AK', '/v1.0/project/organizations/users/' . $userId . '/templates', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                        $userId
+     * @param string                        $taskId
+     * @param UpdateCustomfieldValueRequest $request
+     *
+     * @return UpdateCustomfieldValueResponse
+     */
+    public function updateCustomfieldValue($userId, $taskId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateCustomfieldValueHeaders([]);
+
+        return $this->updateCustomfieldValueWithOptions($userId, $taskId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                        $userId
+     * @param string                        $taskId
+     * @param UpdateCustomfieldValueRequest $request
+     * @param UpdateCustomfieldValueHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return UpdateCustomfieldValueResponse
+     */
+    public function updateCustomfieldValueWithOptions($userId, $taskId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $taskId = OpenApiUtilClient::getEncodeParam($taskId);
+        $body   = [];
+        if (!Utils::isUnset($request->customfieldId)) {
+            @$body['customfieldId'] = $request->customfieldId;
+        }
+        if (!Utils::isUnset($request->customfieldName)) {
+            @$body['customfieldName'] = $request->customfieldName;
+        }
+        if (!Utils::isUnset($request->value)) {
+            @$body['value'] = $request->value;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateCustomfieldValueResponse::fromMap($this->doROARequest('UpdateCustomfieldValue', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/customFields', 'json', $req, $runtime));
     }
 
     /**

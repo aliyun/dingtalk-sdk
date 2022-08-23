@@ -29,7 +29,6 @@ use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetUserAllLiveListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetUserCreateLiveListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetUserCreateLiveListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetUserCreateLiveListResponse;
-use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetUserCreateLiveListShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetUserWatchLiveListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetUserWatchLiveListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetUserWatchLiveListResponse;
@@ -467,32 +466,37 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserCreateLiveListRequest $tmpReq
+     * @param GetUserCreateLiveListRequest $request
      * @param GetUserCreateLiveListHeaders $headers
      * @param RuntimeOptions               $runtime
      *
      * @return GetUserCreateLiveListResponse
      */
-    public function getUserCreateLiveListWithOptions($tmpReq, $headers, $runtime)
+    public function getUserCreateLiveListWithOptions($request, $headers, $runtime)
     {
-        Utils::validateModel($tmpReq);
-        $request = new GetUserCreateLiveListShrinkRequest([]);
-        OpenApiUtilClient::convert($tmpReq, $request);
-        if (!Utils::isUnset($tmpReq->body)) {
-            $request->bodyShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle(Tea::merge($tmpReq->body), 'body', 'json');
-        }
+        Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->bodyShrink)) {
-            @$query['body'] = $request->bodyShrink;
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
         }
         if (!Utils::isUnset($request->nextToken)) {
             @$query['nextToken'] = $request->nextToken;
         }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
-        }
         if (!Utils::isUnset($request->unionId)) {
             @$query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->statuses)) {
+            @$body['statuses'] = $request->statuses;
+        }
+        if (!Utils::isUnset($request->title)) {
+            @$body['title'] = $request->title;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -504,6 +508,7 @@ class Dingtalk extends OpenApiClient
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
         return GetUserCreateLiveListResponse::fromMap($this->doROARequest('GetUserCreateLiveList', 'live_1.0', 'HTTP', 'POST', 'AK', '/v1.0/live/users/createLiveInfos/query', 'json', $req, $runtime));

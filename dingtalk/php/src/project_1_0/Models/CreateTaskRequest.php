@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateTaskRequest\customfields;
 use AlibabaCloud\Tea\Model;
 
 class CreateTaskRequest extends Model
@@ -14,6 +15,13 @@ class CreateTaskRequest extends Model
      * @var string
      */
     public $content;
+
+    /**
+     * @description 自定义字段列表
+     *
+     * @var customfields[]
+     */
+    public $customfields;
 
     /**
      * @description 任务截止时间
@@ -50,12 +58,13 @@ class CreateTaskRequest extends Model
      */
     public $projectId;
     protected $_name = [
-        'content'    => 'content',
-        'dueDate'    => 'dueDate',
-        'executorId' => 'executorId',
-        'note'       => 'note',
-        'priority'   => 'priority',
-        'projectId'  => 'projectId',
+        'content'      => 'content',
+        'customfields' => 'customfields',
+        'dueDate'      => 'dueDate',
+        'executorId'   => 'executorId',
+        'note'         => 'note',
+        'priority'     => 'priority',
+        'projectId'    => 'projectId',
     ];
 
     public function validate()
@@ -67,6 +76,15 @@ class CreateTaskRequest extends Model
         $res = [];
         if (null !== $this->content) {
             $res['content'] = $this->content;
+        }
+        if (null !== $this->customfields) {
+            $res['customfields'] = [];
+            if (null !== $this->customfields && \is_array($this->customfields)) {
+                $n = 0;
+                foreach ($this->customfields as $item) {
+                    $res['customfields'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->dueDate) {
             $res['dueDate'] = $this->dueDate;
@@ -97,6 +115,15 @@ class CreateTaskRequest extends Model
         $model = new self();
         if (isset($map['content'])) {
             $model->content = $map['content'];
+        }
+        if (isset($map['customfields'])) {
+            if (!empty($map['customfields'])) {
+                $model->customfields = [];
+                $n                   = 0;
+                foreach ($map['customfields'] as $item) {
+                    $model->customfields[$n++] = null !== $item ? customfields::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['dueDate'])) {
             $model->dueDate = $map['dueDate'];

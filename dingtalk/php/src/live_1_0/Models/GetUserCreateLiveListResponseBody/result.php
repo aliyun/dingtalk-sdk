@@ -24,7 +24,7 @@ class result extends Model
     public $liveInfoPopModelList;
 
     /**
-     * @description 分页游标 第一次可不填， 后面填回包的值
+     * @description 分页游标 分页时填到请求中
      *
      * @var string
      */

@@ -4,122 +4,28 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetUserCreateLiveListResponseBody\result;
 
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetUserCreateLiveListResponseBody\result\liveInfoPopModelList\hasSubscribed;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetUserCreateLiveListResponseBody\result\liveInfoPopModelList\liveBasicInfo;
 use AlibabaCloud\Tea\Model;
 
 class liveInfoPopModelList extends Model
 {
     /**
-     * @description 直播封面
+     * @description 直播额外信息
      *
-     * @var string
+     * @var hasSubscribed
      */
-    public $coverUrl;
+    public $hasSubscribed;
 
     /**
-     * @description 直播时长
+     * @description 直播基础信息
      *
-     * @var int
+     * @var liveBasicInfo
      */
-    public $duration;
-
-    /**
-     * @description 直播真实结束时间
-     *
-     * @var int
-     */
-    public $endTime;
-
-    /**
-     * @description 直播简介
-     *
-     * @var string
-     */
-    public $introduction;
-
-    /**
-     * @description 预告是否过期
-     *
-     * @var bool
-     */
-    public $isForecastExpired;
-
-    /**
-     * @description 直播id
-     *
-     * @var string
-     */
-    public $liveId;
-
-    /**
-     * @description 直播观看地址
-     *
-     * @var string
-     */
-    public $livePlayUrl;
-
-    /**
-     * @description 直播状态
-     *
-     * @var int
-     */
-    public $liveStatus;
-
-    /**
-     * @description 直播真实开始时间
-     *
-     * @var int
-     */
-    public $startTime;
-
-    /**
-     * @description 预约人数
-     *
-     * @var int
-     */
-    public $subscribeCount;
-
-    /**
-     * @description 直播标题
-     *
-     * @var string
-     */
-    public $title;
-
-    /**
-     * @description 主播id
-     *
-     * @var string
-     */
-    public $unionId;
-
-    /**
-     * @description 观看人数
-     *
-     * @var int
-     */
-    public $uv;
-
-    /**
-     * @description 回放观看进度
-     *
-     * @var int
-     */
-    public $watchProgressMs;
+    public $liveBasicInfo;
     protected $_name = [
-        'coverUrl'          => 'coverUrl',
-        'duration'          => 'duration',
-        'endTime'           => 'endTime',
-        'introduction'      => 'introduction',
-        'isForecastExpired' => 'isForecastExpired',
-        'liveId'            => 'liveId',
-        'livePlayUrl'       => 'livePlayUrl',
-        'liveStatus'        => 'liveStatus',
-        'startTime'         => 'startTime',
-        'subscribeCount'    => 'subscribeCount',
-        'title'             => 'title',
-        'unionId'           => 'unionId',
-        'uv'                => 'uv',
-        'watchProgressMs'   => 'watchProgressMs',
+        'hasSubscribed' => 'hasSubscribed',
+        'liveBasicInfo' => 'liveBasicInfo',
     ];
 
     public function validate()
@@ -129,47 +35,11 @@ class liveInfoPopModelList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->coverUrl) {
-            $res['coverUrl'] = $this->coverUrl;
+        if (null !== $this->hasSubscribed) {
+            $res['hasSubscribed'] = null !== $this->hasSubscribed ? $this->hasSubscribed->toMap() : null;
         }
-        if (null !== $this->duration) {
-            $res['duration'] = $this->duration;
-        }
-        if (null !== $this->endTime) {
-            $res['endTime'] = $this->endTime;
-        }
-        if (null !== $this->introduction) {
-            $res['introduction'] = $this->introduction;
-        }
-        if (null !== $this->isForecastExpired) {
-            $res['isForecastExpired'] = $this->isForecastExpired;
-        }
-        if (null !== $this->liveId) {
-            $res['liveId'] = $this->liveId;
-        }
-        if (null !== $this->livePlayUrl) {
-            $res['livePlayUrl'] = $this->livePlayUrl;
-        }
-        if (null !== $this->liveStatus) {
-            $res['liveStatus'] = $this->liveStatus;
-        }
-        if (null !== $this->startTime) {
-            $res['startTime'] = $this->startTime;
-        }
-        if (null !== $this->subscribeCount) {
-            $res['subscribeCount'] = $this->subscribeCount;
-        }
-        if (null !== $this->title) {
-            $res['title'] = $this->title;
-        }
-        if (null !== $this->unionId) {
-            $res['unionId'] = $this->unionId;
-        }
-        if (null !== $this->uv) {
-            $res['uv'] = $this->uv;
-        }
-        if (null !== $this->watchProgressMs) {
-            $res['watchProgressMs'] = $this->watchProgressMs;
+        if (null !== $this->liveBasicInfo) {
+            $res['liveBasicInfo'] = null !== $this->liveBasicInfo ? $this->liveBasicInfo->toMap() : null;
         }
 
         return $res;
@@ -183,47 +53,11 @@ class liveInfoPopModelList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['coverUrl'])) {
-            $model->coverUrl = $map['coverUrl'];
+        if (isset($map['hasSubscribed'])) {
+            $model->hasSubscribed = hasSubscribed::fromMap($map['hasSubscribed']);
         }
-        if (isset($map['duration'])) {
-            $model->duration = $map['duration'];
-        }
-        if (isset($map['endTime'])) {
-            $model->endTime = $map['endTime'];
-        }
-        if (isset($map['introduction'])) {
-            $model->introduction = $map['introduction'];
-        }
-        if (isset($map['isForecastExpired'])) {
-            $model->isForecastExpired = $map['isForecastExpired'];
-        }
-        if (isset($map['liveId'])) {
-            $model->liveId = $map['liveId'];
-        }
-        if (isset($map['livePlayUrl'])) {
-            $model->livePlayUrl = $map['livePlayUrl'];
-        }
-        if (isset($map['liveStatus'])) {
-            $model->liveStatus = $map['liveStatus'];
-        }
-        if (isset($map['startTime'])) {
-            $model->startTime = $map['startTime'];
-        }
-        if (isset($map['subscribeCount'])) {
-            $model->subscribeCount = $map['subscribeCount'];
-        }
-        if (isset($map['title'])) {
-            $model->title = $map['title'];
-        }
-        if (isset($map['unionId'])) {
-            $model->unionId = $map['unionId'];
-        }
-        if (isset($map['uv'])) {
-            $model->uv = $map['uv'];
-        }
-        if (isset($map['watchProgressMs'])) {
-            $model->watchProgressMs = $map['watchProgressMs'];
+        if (isset($map['liveBasicInfo'])) {
+            $model->liveBasicInfo = liveBasicInfo::fromMap($map['liveBasicInfo']);
         }
 
         return $model;

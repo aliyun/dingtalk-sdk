@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateTaskResponseBody;
 
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateTaskResponseBody\result\customfields;
 use AlibabaCloud\Tea\Model;
 
 class result extends Model
@@ -28,6 +29,13 @@ class result extends Model
      * @var string
      */
     public $creatorId;
+
+    /**
+     * @description 自定义字段列表
+     *
+     * @var customfields[]
+     */
+    public $customfields;
 
     /**
      * @description 任务截止时间
@@ -88,6 +96,7 @@ class result extends Model
         'content'        => 'content',
         'created'        => 'created',
         'creatorId'      => 'creatorId',
+        'customfields'   => 'customfields',
         'dueDate'        => 'dueDate',
         'executorId'     => 'executorId',
         'involveMembers' => 'involveMembers',
@@ -113,6 +122,15 @@ class result extends Model
         }
         if (null !== $this->creatorId) {
             $res['creatorId'] = $this->creatorId;
+        }
+        if (null !== $this->customfields) {
+            $res['customfields'] = [];
+            if (null !== $this->customfields && \is_array($this->customfields)) {
+                $n = 0;
+                foreach ($this->customfields as $item) {
+                    $res['customfields'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->dueDate) {
             $res['dueDate'] = $this->dueDate;
@@ -158,6 +176,15 @@ class result extends Model
         }
         if (isset($map['creatorId'])) {
             $model->creatorId = $map['creatorId'];
+        }
+        if (isset($map['customfields'])) {
+            if (!empty($map['customfields'])) {
+                $model->customfields = [];
+                $n                   = 0;
+                foreach ($map['customfields'] as $item) {
+                    $model->customfields[$n++] = null !== $item ? customfields::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['dueDate'])) {
             $model->dueDate = $map['dueDate'];

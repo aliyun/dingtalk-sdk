@@ -20,6 +20,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateCooperateOrgResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateManagementGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateManagementGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateManagementGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateSecondaryManagementGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateSecondaryManagementGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateSecondaryManagementGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteContactHideSettingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteContactHideSettingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteContactRestrictSettingHeaders;
@@ -447,6 +450,62 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateManagementGroupResponse::fromMap($this->doROARequest('CreateManagementGroup', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/managementGroups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateSecondaryManagementGroupRequest $request
+     *
+     * @return CreateSecondaryManagementGroupResponse
+     */
+    public function createSecondaryManagementGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateSecondaryManagementGroupHeaders([]);
+
+        return $this->createSecondaryManagementGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateSecondaryManagementGroupRequest $request
+     * @param CreateSecondaryManagementGroupHeaders $headers
+     * @param RuntimeOptions                        $runtime
+     *
+     * @return CreateSecondaryManagementGroupResponse
+     */
+    public function createSecondaryManagementGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->groupName)) {
+            @$body['groupName'] = $request->groupName;
+        }
+        if (!Utils::isUnset($request->members)) {
+            @$body['members'] = $request->members;
+        }
+        if (!Utils::isUnset($request->resourceIds)) {
+            @$body['resourceIds'] = $request->resourceIds;
+        }
+        if (!Utils::isUnset($request->scope)) {
+            @$body['scope'] = $request->scope;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateSecondaryManagementGroupResponse::fromMap($this->doROARequest('CreateSecondaryManagementGroup', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/secondaryAdministrators/managementGroups', 'json', $req, $runtime));
     }
 
     /**

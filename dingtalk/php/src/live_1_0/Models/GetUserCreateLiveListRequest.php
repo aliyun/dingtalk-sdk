@@ -4,17 +4,44 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetUserCreateLiveListRequest\body;
 use AlibabaCloud\Tea\Model;
 
 class GetUserCreateLiveListRequest extends Model
 {
     /**
-     * @description post请求体, 开放平台建议以对象形式存储
+     * @description 筛选直播截止时间
      *
-     * @var body
+     * @var int
      */
-    public $body;
+    public $endTime;
+
+    /**
+     * @description 筛选直播开始时间
+     *
+     * @var int
+     */
+    public $startTime;
+
+    /**
+     * @description 直播状态列表
+     *
+     * @var int[]
+     */
+    public $statuses;
+
+    /**
+     * @description 筛选的直播标题
+     *
+     * @var string
+     */
+    public $title;
+
+    /**
+     * @description 单次拉去上限，默认40个
+     *
+     * @var int
+     */
+    public $maxResults;
 
     /**
      * @description 分页游标 第一次可不填， 后面填回包的值
@@ -24,23 +51,19 @@ class GetUserCreateLiveListRequest extends Model
     public $nextToken;
 
     /**
-     * @description 单次拉去上限，默认40个
-     *
-     * @var int
-     */
-    public $pageSize;
-
-    /**
      * @description 用户uid
      *
      * @var string
      */
     public $unionId;
     protected $_name = [
-        'body'      => 'body',
-        'nextToken' => 'nextToken',
-        'pageSize'  => 'pageSize',
-        'unionId'   => 'unionId',
+        'endTime'    => 'endTime',
+        'startTime'  => 'startTime',
+        'statuses'   => 'statuses',
+        'title'      => 'title',
+        'maxResults' => 'maxResults',
+        'nextToken'  => 'nextToken',
+        'unionId'    => 'unionId',
     ];
 
     public function validate()
@@ -50,14 +73,23 @@ class GetUserCreateLiveListRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->body) {
-            $res['body'] = null !== $this->body ? $this->body->toMap() : null;
+        if (null !== $this->endTime) {
+            $res['endTime'] = $this->endTime;
+        }
+        if (null !== $this->startTime) {
+            $res['startTime'] = $this->startTime;
+        }
+        if (null !== $this->statuses) {
+            $res['statuses'] = $this->statuses;
+        }
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
+        }
+        if (null !== $this->maxResults) {
+            $res['maxResults'] = $this->maxResults;
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
-        }
-        if (null !== $this->pageSize) {
-            $res['pageSize'] = $this->pageSize;
         }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
@@ -74,14 +106,25 @@ class GetUserCreateLiveListRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['body'])) {
-            $model->body = body::fromMap($map['body']);
+        if (isset($map['endTime'])) {
+            $model->endTime = $map['endTime'];
+        }
+        if (isset($map['startTime'])) {
+            $model->startTime = $map['startTime'];
+        }
+        if (isset($map['statuses'])) {
+            if (!empty($map['statuses'])) {
+                $model->statuses = $map['statuses'];
+            }
+        }
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
+        }
+        if (isset($map['maxResults'])) {
+            $model->maxResults = $map['maxResults'];
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
-        }
-        if (isset($map['pageSize'])) {
-            $model->pageSize = $map['pageSize'];
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];
