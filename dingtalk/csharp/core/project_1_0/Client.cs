@@ -329,6 +329,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             {
                 body["content"] = request.Content;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Customfields))
+            {
+                body["customfields"] = request.Customfields;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DueDate))
             {
                 body["dueDate"] = request.DueDate;
@@ -374,6 +378,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
             {
                 body["content"] = request.Content;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Customfields))
+            {
+                body["customfields"] = request.Customfields;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DueDate))
             {
@@ -1304,6 +1312,90 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             return TeaModel.ToObject<SearchProjectTemplateResponse>(await DoROARequestAsync("SearchProjectTemplate", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/organizations/users/" + userId + "/templates", "json", req, runtime));
+        }
+
+        public UpdateCustomfieldValueResponse UpdateCustomfieldValue(string userId, string taskId, UpdateCustomfieldValueRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCustomfieldValueHeaders headers = new UpdateCustomfieldValueHeaders();
+            return UpdateCustomfieldValueWithOptions(userId, taskId, request, headers, runtime);
+        }
+
+        public async Task<UpdateCustomfieldValueResponse> UpdateCustomfieldValueAsync(string userId, string taskId, UpdateCustomfieldValueRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCustomfieldValueHeaders headers = new UpdateCustomfieldValueHeaders();
+            return await UpdateCustomfieldValueWithOptionsAsync(userId, taskId, request, headers, runtime);
+        }
+
+        public UpdateCustomfieldValueResponse UpdateCustomfieldValueWithOptions(string userId, string taskId, UpdateCustomfieldValueRequest request, UpdateCustomfieldValueHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomfieldId))
+            {
+                body["customfieldId"] = request.CustomfieldId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomfieldName))
+            {
+                body["customfieldName"] = request.CustomfieldName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Value))
+            {
+                body["value"] = request.Value;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateCustomfieldValueResponse>(DoROARequest("UpdateCustomfieldValue", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/customFields", "json", req, runtime));
+        }
+
+        public async Task<UpdateCustomfieldValueResponse> UpdateCustomfieldValueWithOptionsAsync(string userId, string taskId, UpdateCustomfieldValueRequest request, UpdateCustomfieldValueHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomfieldId))
+            {
+                body["customfieldId"] = request.CustomfieldId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomfieldName))
+            {
+                body["customfieldName"] = request.CustomfieldName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Value))
+            {
+                body["value"] = request.Value;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateCustomfieldValueResponse>(await DoROARequestAsync("UpdateCustomfieldValue", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/customFields", "json", req, runtime));
         }
 
         public UpdateOrganizationTaskContentResponse UpdateOrganizationTaskContent(string taskId, string userId, UpdateOrganizationTaskContentRequest request)

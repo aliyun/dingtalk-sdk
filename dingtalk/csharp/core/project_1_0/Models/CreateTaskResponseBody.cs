@@ -25,6 +25,16 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             [NameInMap("creatorId")]
             [Validation(Required=false)]
             public string CreatorId { get; set; }
+            [NameInMap("customfields")]
+            [Validation(Required=false)]
+            public List<CreateTaskResponseBodyResultCustomfields> Customfields { get; set; }
+            public class CreateTaskResponseBodyResultCustomfields : TeaModel {
+                public string CustomfieldId { get; set; }
+                public List<CreateTaskResponseBodyResultCustomfieldsValue> Value { get; set; }
+                public class CreateTaskResponseBodyResultCustomfieldsValue : TeaModel {
+                    public string Title { get; set; }
+                }
+            }
             [NameInMap("dueDate")]
             [Validation(Required=false)]
             public string DueDate { get; set; }

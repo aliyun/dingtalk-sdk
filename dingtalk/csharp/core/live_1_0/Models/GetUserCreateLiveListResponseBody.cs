@@ -20,20 +20,117 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
             [Validation(Required=false)]
             public List<GetUserCreateLiveListResponseBodyResultLiveInfoPopModelList> LiveInfoPopModelList { get; set; }
             public class GetUserCreateLiveListResponseBodyResultLiveInfoPopModelList : TeaModel {
-                public string CoverUrl { get; set; }
-                public long? Duration { get; set; }
-                public long? EndTime { get; set; }
-                public string Introduction { get; set; }
-                public bool? IsForecastExpired { get; set; }
-                public string LiveId { get; set; }
-                public string LivePlayUrl { get; set; }
-                public int? LiveStatus { get; set; }
-                public long? StartTime { get; set; }
-                public int? SubscribeCount { get; set; }
-                public string Title { get; set; }
-                public string UnionId { get; set; }
-                public int? Uv { get; set; }
-                public long? WatchProgressMs { get; set; }
+                public GetUserCreateLiveListResponseBodyResultLiveInfoPopModelListHasSubscribed HasSubscribed { get; set; }
+                public class GetUserCreateLiveListResponseBodyResultLiveInfoPopModelListHasSubscribed : TeaModel {
+                    /// <summary>
+                    /// 是否关注
+                    /// </summary>
+                    [NameInMap("hasSubscribed")]
+                    [Validation(Required=false)]
+                    public bool? HasSubscribed { get; set; }
+
+                    /// <summary>
+                    /// 预告是否过期
+                    /// </summary>
+                    [NameInMap("isForecastExpired")]
+                    [Validation(Required=false)]
+                    public bool? IsForecastExpired { get; set; }
+
+                    /// <summary>
+                    /// 回放观看进度
+                    /// </summary>
+                    [NameInMap("watchProgressMs")]
+                    [Validation(Required=false)]
+                    public long? WatchProgressMs { get; set; }
+
+                }
+                public GetUserCreateLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo LiveBasicInfo { get; set; }
+                public class GetUserCreateLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo : TeaModel {
+                    /// <summary>
+                    /// 直播封面
+                    /// </summary>
+                    [NameInMap("coverUrl")]
+                    [Validation(Required=false)]
+                    public string CoverUrl { get; set; }
+
+                    /// <summary>
+                    /// 直播时长
+                    /// </summary>
+                    [NameInMap("duration")]
+                    [Validation(Required=false)]
+                    public long? Duration { get; set; }
+
+                    /// <summary>
+                    /// 直播真实结束时间
+                    /// </summary>
+                    [NameInMap("endTime")]
+                    [Validation(Required=false)]
+                    public long? EndTime { get; set; }
+
+                    /// <summary>
+                    /// 直播简介
+                    /// </summary>
+                    [NameInMap("introduction")]
+                    [Validation(Required=false)]
+                    public string Introduction { get; set; }
+
+                    /// <summary>
+                    /// 直播id
+                    /// </summary>
+                    [NameInMap("liveId")]
+                    [Validation(Required=false)]
+                    public string LiveId { get; set; }
+
+                    /// <summary>
+                    /// 直播观看地址
+                    /// </summary>
+                    [NameInMap("livePlayUrl")]
+                    [Validation(Required=false)]
+                    public string LivePlayUrl { get; set; }
+
+                    /// <summary>
+                    /// 直播状态
+                    /// </summary>
+                    [NameInMap("liveStatus")]
+                    [Validation(Required=false)]
+                    public int? LiveStatus { get; set; }
+
+                    /// <summary>
+                    /// 直播真实开始时间
+                    /// </summary>
+                    [NameInMap("startTime")]
+                    [Validation(Required=false)]
+                    public long? StartTime { get; set; }
+
+                    /// <summary>
+                    /// 预约人数
+                    /// </summary>
+                    [NameInMap("subscribeCount")]
+                    [Validation(Required=false)]
+                    public int? SubscribeCount { get; set; }
+
+                    /// <summary>
+                    /// 直播标题
+                    /// </summary>
+                    [NameInMap("title")]
+                    [Validation(Required=false)]
+                    public string Title { get; set; }
+
+                    /// <summary>
+                    /// 主播id
+                    /// </summary>
+                    [NameInMap("unionId")]
+                    [Validation(Required=false)]
+                    public string UnionId { get; set; }
+
+                    /// <summary>
+                    /// 观看人数
+                    /// </summary>
+                    [NameInMap("uv")]
+                    [Validation(Required=false)]
+                    public int? Uv { get; set; }
+
+                }
             }
             [NameInMap("nextToken")]
             [Validation(Required=false)]

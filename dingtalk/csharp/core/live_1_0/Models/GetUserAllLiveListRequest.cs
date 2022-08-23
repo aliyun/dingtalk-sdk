@@ -28,7 +28,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
         /// </summary>
         [NameInMap("statuses")]
         [Validation(Required=false)]
-        public List<long?> Statuses { get; set; }
+        public List<int?> Statuses { get; set; }
 
         /// <summary>
         /// 筛选直播标题

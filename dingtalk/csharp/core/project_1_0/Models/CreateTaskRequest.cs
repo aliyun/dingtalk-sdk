@@ -17,6 +17,45 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         public string Content { get; set; }
 
         /// <summary>
+        /// 自定义字段列表
+        /// </summary>
+        [NameInMap("customfields")]
+        [Validation(Required=false)]
+        public List<CreateTaskRequestCustomfields> Customfields { get; set; }
+        public class CreateTaskRequestCustomfields : TeaModel {
+            /// <summary>
+            /// 自定义字段id
+            /// </summary>
+            [NameInMap("customfieldId")]
+            [Validation(Required=false)]
+            public string CustomfieldId { get; set; }
+
+            /// <summary>
+            /// 自定义字段名称
+            /// </summary>
+            [NameInMap("customfieldName")]
+            [Validation(Required=false)]
+            public string CustomfieldName { get; set; }
+
+            /// <summary>
+            /// 自定义字段值
+            /// </summary>
+            [NameInMap("value")]
+            [Validation(Required=false)]
+            public List<CreateTaskRequestCustomfieldsValue> Value { get; set; }
+            public class CreateTaskRequestCustomfieldsValue : TeaModel {
+                /// <summary>
+                /// 自定义字段显示值
+                /// </summary>
+                [NameInMap("title")]
+                [Validation(Required=false)]
+                public string Title { get; set; }
+
+            }
+
+        }
+
+        /// <summary>
         /// 任务截止时间
         /// </summary>
         [NameInMap("dueDate")]

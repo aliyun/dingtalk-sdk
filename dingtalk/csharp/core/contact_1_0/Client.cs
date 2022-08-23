@@ -512,6 +512,106 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             return TeaModel.ToObject<CreateManagementGroupResponse>(await DoROARequestAsync("CreateManagementGroup", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/managementGroups", "json", req, runtime));
         }
 
+        public CreateSecondaryManagementGroupResponse CreateSecondaryManagementGroup(CreateSecondaryManagementGroupRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateSecondaryManagementGroupHeaders headers = new CreateSecondaryManagementGroupHeaders();
+            return CreateSecondaryManagementGroupWithOptions(request, headers, runtime);
+        }
+
+        public async Task<CreateSecondaryManagementGroupResponse> CreateSecondaryManagementGroupAsync(CreateSecondaryManagementGroupRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateSecondaryManagementGroupHeaders headers = new CreateSecondaryManagementGroupHeaders();
+            return await CreateSecondaryManagementGroupWithOptionsAsync(request, headers, runtime);
+        }
+
+        public CreateSecondaryManagementGroupResponse CreateSecondaryManagementGroupWithOptions(CreateSecondaryManagementGroupRequest request, CreateSecondaryManagementGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupName))
+            {
+                body["groupName"] = request.GroupName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
+            {
+                body["members"] = request.Members;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResourceIds))
+            {
+                body["resourceIds"] = request.ResourceIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scope.ToMap()))
+            {
+                body["scope"] = request.Scope;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CreateSecondaryManagementGroupResponse>(DoROARequest("CreateSecondaryManagementGroup", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/secondaryAdministrators/managementGroups", "json", req, runtime));
+        }
+
+        public async Task<CreateSecondaryManagementGroupResponse> CreateSecondaryManagementGroupWithOptionsAsync(CreateSecondaryManagementGroupRequest request, CreateSecondaryManagementGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupName))
+            {
+                body["groupName"] = request.GroupName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
+            {
+                body["members"] = request.Members;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResourceIds))
+            {
+                body["resourceIds"] = request.ResourceIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scope.ToMap()))
+            {
+                body["scope"] = request.Scope;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CreateSecondaryManagementGroupResponse>(await DoROARequestAsync("CreateSecondaryManagementGroup", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/secondaryAdministrators/managementGroups", "json", req, runtime));
+        }
+
         public DeleteContactHideSettingResponse DeleteContactHideSetting(string settingId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
