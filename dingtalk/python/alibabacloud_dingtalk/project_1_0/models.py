@@ -872,10 +872,89 @@ class CreateTaskHeaders(TeaModel):
         return self
 
 
+class CreateTaskRequestCustomfieldsValue(TeaModel):
+    def __init__(
+        self,
+        title: str = None,
+    ):
+        # 自定义字段显示值
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class CreateTaskRequestCustomfields(TeaModel):
+    def __init__(
+        self,
+        customfield_id: str = None,
+        customfield_name: str = None,
+        value: List[CreateTaskRequestCustomfieldsValue] = None,
+    ):
+        # 自定义字段id
+        self.customfield_id = customfield_id
+        # 自定义字段名称
+        self.customfield_name = customfield_name
+        # 自定义字段值
+        self.value = value
+
+    def validate(self):
+        if self.value:
+            for k in self.value:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.customfield_id is not None:
+            result['customfieldId'] = self.customfield_id
+        if self.customfield_name is not None:
+            result['customfieldName'] = self.customfield_name
+        result['value'] = []
+        if self.value is not None:
+            for k in self.value:
+                result['value'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customfieldId') is not None:
+            self.customfield_id = m.get('customfieldId')
+        if m.get('customfieldName') is not None:
+            self.customfield_name = m.get('customfieldName')
+        self.value = []
+        if m.get('value') is not None:
+            for k in m.get('value'):
+                temp_model = CreateTaskRequestCustomfieldsValue()
+                self.value.append(temp_model.from_map(k))
+        return self
+
+
 class CreateTaskRequest(TeaModel):
     def __init__(
         self,
         content: str = None,
+        customfields: List[CreateTaskRequestCustomfields] = None,
         due_date: str = None,
         executor_id: str = None,
         note: str = None,
@@ -884,6 +963,8 @@ class CreateTaskRequest(TeaModel):
     ):
         # 任务标题
         self.content = content
+        # 自定义字段列表
+        self.customfields = customfields
         # 任务截止时间
         self.due_date = due_date
         # 执行者userId
@@ -896,7 +977,10 @@ class CreateTaskRequest(TeaModel):
         self.project_id = project_id
 
     def validate(self):
-        pass
+        if self.customfields:
+            for k in self.customfields:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -906,6 +990,10 @@ class CreateTaskRequest(TeaModel):
         result = dict()
         if self.content is not None:
             result['content'] = self.content
+        result['customfields'] = []
+        if self.customfields is not None:
+            for k in self.customfields:
+                result['customfields'].append(k.to_map() if k else None)
         if self.due_date is not None:
             result['dueDate'] = self.due_date
         if self.executor_id is not None:
@@ -922,6 +1010,11 @@ class CreateTaskRequest(TeaModel):
         m = m or dict()
         if m.get('content') is not None:
             self.content = m.get('content')
+        self.customfields = []
+        if m.get('customfields') is not None:
+            for k in m.get('customfields'):
+                temp_model = CreateTaskRequestCustomfields()
+                self.customfields.append(temp_model.from_map(k))
         if m.get('dueDate') is not None:
             self.due_date = m.get('dueDate')
         if m.get('executorId') is not None:
@@ -935,12 +1028,84 @@ class CreateTaskRequest(TeaModel):
         return self
 
 
+class CreateTaskResponseBodyResultCustomfieldsValue(TeaModel):
+    def __init__(
+        self,
+        title: str = None,
+    ):
+        # 自定义字段显示值
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class CreateTaskResponseBodyResultCustomfields(TeaModel):
+    def __init__(
+        self,
+        customfield_id: str = None,
+        value: List[CreateTaskResponseBodyResultCustomfieldsValue] = None,
+    ):
+        # 自定义字段id
+        self.customfield_id = customfield_id
+        # 自定义字段值
+        self.value = value
+
+    def validate(self):
+        if self.value:
+            for k in self.value:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.customfield_id is not None:
+            result['customfieldId'] = self.customfield_id
+        result['value'] = []
+        if self.value is not None:
+            for k in self.value:
+                result['value'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customfieldId') is not None:
+            self.customfield_id = m.get('customfieldId')
+        self.value = []
+        if m.get('value') is not None:
+            for k in m.get('value'):
+                temp_model = CreateTaskResponseBodyResultCustomfieldsValue()
+                self.value.append(temp_model.from_map(k))
+        return self
+
+
 class CreateTaskResponseBodyResult(TeaModel):
     def __init__(
         self,
         content: str = None,
         created: str = None,
         creator_id: str = None,
+        customfields: List[CreateTaskResponseBodyResultCustomfields] = None,
         due_date: str = None,
         executor_id: str = None,
         involve_members: List[str] = None,
@@ -956,6 +1121,8 @@ class CreateTaskResponseBodyResult(TeaModel):
         self.created = created
         # 任务创建者userId
         self.creator_id = creator_id
+        # 自定义字段列表
+        self.customfields = customfields
         # 任务截止时间
         self.due_date = due_date
         # 任务执行者userId
@@ -974,7 +1141,10 @@ class CreateTaskResponseBodyResult(TeaModel):
         self.updated = updated
 
     def validate(self):
-        pass
+        if self.customfields:
+            for k in self.customfields:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -988,6 +1158,10 @@ class CreateTaskResponseBodyResult(TeaModel):
             result['created'] = self.created
         if self.creator_id is not None:
             result['creatorId'] = self.creator_id
+        result['customfields'] = []
+        if self.customfields is not None:
+            for k in self.customfields:
+                result['customfields'].append(k.to_map() if k else None)
         if self.due_date is not None:
             result['dueDate'] = self.due_date
         if self.executor_id is not None:
@@ -1014,6 +1188,11 @@ class CreateTaskResponseBodyResult(TeaModel):
             self.created = m.get('created')
         if m.get('creatorId') is not None:
             self.creator_id = m.get('creatorId')
+        self.customfields = []
+        if m.get('customfields') is not None:
+            for k in m.get('customfields'):
+                temp_model = CreateTaskResponseBodyResultCustomfields()
+                self.customfields.append(temp_model.from_map(k))
         if m.get('dueDate') is not None:
             self.due_date = m.get('dueDate')
         if m.get('executorId') is not None:
@@ -3454,6 +3633,291 @@ class SearchProjectTemplateResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = SearchProjectTemplateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateCustomfieldValueHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateCustomfieldValueRequestValue(TeaModel):
+    def __init__(
+        self,
+        title: str = None,
+    ):
+        # 自定义字段显示值
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class UpdateCustomfieldValueRequest(TeaModel):
+    def __init__(
+        self,
+        customfield_id: str = None,
+        customfield_name: str = None,
+        value: List[UpdateCustomfieldValueRequestValue] = None,
+    ):
+        # 自定义字段id
+        self.customfield_id = customfield_id
+        # 自定义字段名
+        self.customfield_name = customfield_name
+        # 自定义字段值列表，最多10个
+        self.value = value
+
+    def validate(self):
+        if self.value:
+            for k in self.value:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.customfield_id is not None:
+            result['customfieldId'] = self.customfield_id
+        if self.customfield_name is not None:
+            result['customfieldName'] = self.customfield_name
+        result['value'] = []
+        if self.value is not None:
+            for k in self.value:
+                result['value'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customfieldId') is not None:
+            self.customfield_id = m.get('customfieldId')
+        if m.get('customfieldName') is not None:
+            self.customfield_name = m.get('customfieldName')
+        self.value = []
+        if m.get('value') is not None:
+            for k in m.get('value'):
+                temp_model = UpdateCustomfieldValueRequestValue()
+                self.value.append(temp_model.from_map(k))
+        return self
+
+
+class UpdateCustomfieldValueResponseBodyResultCustomfieldsValue(TeaModel):
+    def __init__(
+        self,
+        title: str = None,
+    ):
+        # 自定义字段显示值
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class UpdateCustomfieldValueResponseBodyResultCustomfields(TeaModel):
+    def __init__(
+        self,
+        customfield_id: str = None,
+        value: List[UpdateCustomfieldValueResponseBodyResultCustomfieldsValue] = None,
+    ):
+        # 自定义字段id
+        self.customfield_id = customfield_id
+        # 自定义字段值对象
+        self.value = value
+
+    def validate(self):
+        if self.value:
+            for k in self.value:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.customfield_id is not None:
+            result['customfieldId'] = self.customfield_id
+        result['value'] = []
+        if self.value is not None:
+            for k in self.value:
+                result['value'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customfieldId') is not None:
+            self.customfield_id = m.get('customfieldId')
+        self.value = []
+        if m.get('value') is not None:
+            for k in m.get('value'):
+                temp_model = UpdateCustomfieldValueResponseBodyResultCustomfieldsValue()
+                self.value.append(temp_model.from_map(k))
+        return self
+
+
+class UpdateCustomfieldValueResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        customfields: List[UpdateCustomfieldValueResponseBodyResultCustomfields] = None,
+    ):
+        # 自定义字段数组
+        self.customfields = customfields
+
+    def validate(self):
+        if self.customfields:
+            for k in self.customfields:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['customfields'] = []
+        if self.customfields is not None:
+            for k in self.customfields:
+                result['customfields'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.customfields = []
+        if m.get('customfields') is not None:
+            for k in m.get('customfields'):
+                temp_model = UpdateCustomfieldValueResponseBodyResultCustomfields()
+                self.customfields.append(temp_model.from_map(k))
+        return self
+
+
+class UpdateCustomfieldValueResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UpdateCustomfieldValueResponseBodyResult = None,
+    ):
+        # 返回对象
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UpdateCustomfieldValueResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class UpdateCustomfieldValueResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateCustomfieldValueResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateCustomfieldValueResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

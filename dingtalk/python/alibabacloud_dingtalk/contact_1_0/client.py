@@ -425,6 +425,90 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateManagementGroup', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/managementGroups', 'json', req, runtime)
         )
 
+    def create_secondary_management_group(
+        self,
+        request: dingtalkcontact__1__0_models.CreateSecondaryManagementGroupRequest,
+    ) -> dingtalkcontact__1__0_models.CreateSecondaryManagementGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.CreateSecondaryManagementGroupHeaders()
+        return self.create_secondary_management_group_with_options(request, headers, runtime)
+
+    async def create_secondary_management_group_async(
+        self,
+        request: dingtalkcontact__1__0_models.CreateSecondaryManagementGroupRequest,
+    ) -> dingtalkcontact__1__0_models.CreateSecondaryManagementGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.CreateSecondaryManagementGroupHeaders()
+        return await self.create_secondary_management_group_with_options_async(request, headers, runtime)
+
+    def create_secondary_management_group_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.CreateSecondaryManagementGroupRequest,
+        headers: dingtalkcontact__1__0_models.CreateSecondaryManagementGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.CreateSecondaryManagementGroupResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        body = {}
+        if not UtilClient.is_unset(request.group_name):
+            body['groupName'] = request.group_name
+        if not UtilClient.is_unset(request.members):
+            body['members'] = request.members
+        if not UtilClient.is_unset(request.resource_ids):
+            body['resourceIds'] = request.resource_ids
+        if not UtilClient.is_unset(request.scope):
+            body['scope'] = request.scope
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.CreateSecondaryManagementGroupResponse(),
+            self.do_roarequest('CreateSecondaryManagementGroup', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/secondaryAdministrators/managementGroups', 'json', req, runtime)
+        )
+
+    async def create_secondary_management_group_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.CreateSecondaryManagementGroupRequest,
+        headers: dingtalkcontact__1__0_models.CreateSecondaryManagementGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.CreateSecondaryManagementGroupResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        body = {}
+        if not UtilClient.is_unset(request.group_name):
+            body['groupName'] = request.group_name
+        if not UtilClient.is_unset(request.members):
+            body['members'] = request.members
+        if not UtilClient.is_unset(request.resource_ids):
+            body['resourceIds'] = request.resource_ids
+        if not UtilClient.is_unset(request.scope):
+            body['scope'] = request.scope
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.CreateSecondaryManagementGroupResponse(),
+            await self.do_roarequest_async('CreateSecondaryManagementGroup', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/secondaryAdministrators/managementGroups', 'json', req, runtime)
+        )
+
     def delete_contact_hide_setting(
         self,
         setting_id: str,

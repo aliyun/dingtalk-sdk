@@ -595,24 +595,27 @@ class Client(OpenApiClient):
 
     def get_user_create_live_list_with_options(
         self,
-        tmp_req: dingtalklive__1__0_models.GetUserCreateLiveListRequest,
+        request: dingtalklive__1__0_models.GetUserCreateLiveListRequest,
         headers: dingtalklive__1__0_models.GetUserCreateLiveListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.GetUserCreateLiveListResponse:
-        UtilClient.validate_model(tmp_req)
-        request = dingtalklive__1__0_models.GetUserCreateLiveListShrinkRequest()
-        OpenApiUtilClient.convert(tmp_req, request)
-        if not UtilClient.is_unset(tmp_req.body):
-            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.body), 'body', 'json')
+        UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.body_shrink):
-            query['body'] = request.body_shrink
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
-        if not UtilClient.is_unset(request.page_size):
-            query['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.statuses):
+            body['statuses'] = request.statuses
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -620,7 +623,8 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
             dingtalklive__1__0_models.GetUserCreateLiveListResponse(),
@@ -629,24 +633,27 @@ class Client(OpenApiClient):
 
     async def get_user_create_live_list_with_options_async(
         self,
-        tmp_req: dingtalklive__1__0_models.GetUserCreateLiveListRequest,
+        request: dingtalklive__1__0_models.GetUserCreateLiveListRequest,
         headers: dingtalklive__1__0_models.GetUserCreateLiveListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.GetUserCreateLiveListResponse:
-        UtilClient.validate_model(tmp_req)
-        request = dingtalklive__1__0_models.GetUserCreateLiveListShrinkRequest()
-        OpenApiUtilClient.convert(tmp_req, request)
-        if not UtilClient.is_unset(tmp_req.body):
-            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.body), 'body', 'json')
+        UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.body_shrink):
-            query['body'] = request.body_shrink
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
-        if not UtilClient.is_unset(request.page_size):
-            query['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.statuses):
+            body['statuses'] = request.statuses
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -654,7 +661,8 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
             dingtalklive__1__0_models.GetUserCreateLiveListResponse(),

@@ -309,6 +309,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.content):
             body['content'] = request.content
+        if not UtilClient.is_unset(request.customfields):
+            body['customfields'] = request.customfields
         if not UtilClient.is_unset(request.due_date):
             body['dueDate'] = request.due_date
         if not UtilClient.is_unset(request.executor_id):
@@ -345,6 +347,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.content):
             body['content'] = request.content
+        if not UtilClient.is_unset(request.customfields):
+            body['customfields'] = request.customfields
         if not UtilClient.is_unset(request.due_date):
             body['dueDate'] = request.due_date
         if not UtilClient.is_unset(request.executor_id):
@@ -1213,6 +1217,90 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkproject__1__0_models.SearchProjectTemplateResponse(),
             await self.do_roarequest_async('SearchProjectTemplate', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/organizations/users/{user_id}/templates', 'json', req, runtime)
+        )
+
+    def update_customfield_value(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateCustomfieldValueRequest,
+    ) -> dingtalkproject__1__0_models.UpdateCustomfieldValueResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateCustomfieldValueHeaders()
+        return self.update_customfield_value_with_options(user_id, task_id, request, headers, runtime)
+
+    async def update_customfield_value_async(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateCustomfieldValueRequest,
+    ) -> dingtalkproject__1__0_models.UpdateCustomfieldValueResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateCustomfieldValueHeaders()
+        return await self.update_customfield_value_with_options_async(user_id, task_id, request, headers, runtime)
+
+    def update_customfield_value_with_options(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateCustomfieldValueRequest,
+        headers: dingtalkproject__1__0_models.UpdateCustomfieldValueHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateCustomfieldValueResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.customfield_id):
+            body['customfieldId'] = request.customfield_id
+        if not UtilClient.is_unset(request.customfield_name):
+            body['customfieldName'] = request.customfield_name
+        if not UtilClient.is_unset(request.value):
+            body['value'] = request.value
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateCustomfieldValueResponse(),
+            self.do_roarequest('UpdateCustomfieldValue', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/users/{user_id}/tasks/{task_id}/customFields', 'json', req, runtime)
+        )
+
+    async def update_customfield_value_with_options_async(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateCustomfieldValueRequest,
+        headers: dingtalkproject__1__0_models.UpdateCustomfieldValueHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateCustomfieldValueResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.customfield_id):
+            body['customfieldId'] = request.customfield_id
+        if not UtilClient.is_unset(request.customfield_name):
+            body['customfieldName'] = request.customfield_name
+        if not UtilClient.is_unset(request.value):
+            body['value'] = request.value
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateCustomfieldValueResponse(),
+            await self.do_roarequest_async('UpdateCustomfieldValue', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/users/{user_id}/tasks/{task_id}/customFields', 'json', req, runtime)
         )
 
     def update_organization_task_content(
