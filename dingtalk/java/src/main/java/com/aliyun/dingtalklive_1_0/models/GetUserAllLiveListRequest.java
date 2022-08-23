@@ -14,7 +14,7 @@ public class GetUserAllLiveListRequest extends TeaModel {
 
     // 直播状态列表
     @NameInMap("statuses")
-    public java.util.List<Long> statuses;
+    public java.util.List<Integer> statuses;
 
     // 筛选直播标题
     @NameInMap("title")
@@ -53,11 +53,11 @@ public class GetUserAllLiveListRequest extends TeaModel {
         return this.startTime;
     }
 
-    public GetUserAllLiveListRequest setStatuses(java.util.List<Long> statuses) {
+    public GetUserAllLiveListRequest setStatuses(java.util.List<Integer> statuses) {
         this.statuses = statuses;
         return this;
     }
-    public java.util.List<Long> getStatuses() {
+    public java.util.List<Integer> getStatuses() {
         return this.statuses;
     }
 

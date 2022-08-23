@@ -20,7 +20,51 @@ public class GetUserWatchLiveListResponseBody extends TeaModel {
         return this.result;
     }
 
-    public static class GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList extends TeaModel {
+    public static class GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListExtraInfo extends TeaModel {
+        // 是否关注
+        @NameInMap("hasSubscribed")
+        public Boolean hasSubscribed;
+
+        // 预告是否过期
+        @NameInMap("isForecastExpired")
+        public Boolean isForecastExpired;
+
+        // 回放观看进度
+        @NameInMap("watchProgressMs")
+        public Long watchProgressMs;
+
+        public static GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListExtraInfo build(java.util.Map<String, ?> map) throws Exception {
+            GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListExtraInfo self = new GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListExtraInfo();
+            return TeaModel.build(map, self);
+        }
+
+        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListExtraInfo setHasSubscribed(Boolean hasSubscribed) {
+            this.hasSubscribed = hasSubscribed;
+            return this;
+        }
+        public Boolean getHasSubscribed() {
+            return this.hasSubscribed;
+        }
+
+        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListExtraInfo setIsForecastExpired(Boolean isForecastExpired) {
+            this.isForecastExpired = isForecastExpired;
+            return this;
+        }
+        public Boolean getIsForecastExpired() {
+            return this.isForecastExpired;
+        }
+
+        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListExtraInfo setWatchProgressMs(Long watchProgressMs) {
+            this.watchProgressMs = watchProgressMs;
+            return this;
+        }
+        public Long getWatchProgressMs() {
+            return this.watchProgressMs;
+        }
+
+    }
+
+    public static class GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo extends TeaModel {
         // 直播封面
         @NameInMap("coverUrl")
         public String coverUrl;
@@ -32,10 +76,6 @@ public class GetUserWatchLiveListResponseBody extends TeaModel {
         // 直播真实结束时间
         @NameInMap("endTime")
         public Long endTime;
-
-        // 是否订阅
-        @NameInMap("hasSubscribed")
-        public Boolean hasSubscribed;
 
         // 直播简介
         @NameInMap("introduction")
@@ -73,16 +113,12 @@ public class GetUserWatchLiveListResponseBody extends TeaModel {
         @NameInMap("uv")
         public Integer uv;
 
-        // 回放观看进度
-        @NameInMap("watchProgressMs")
-        public Long watchProgressMs;
-
-        public static GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList build(java.util.Map<String, ?> map) throws Exception {
-            GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList self = new GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList();
+        public static GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo build(java.util.Map<String, ?> map) throws Exception {
+            GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo self = new GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo();
             return TeaModel.build(map, self);
         }
 
-        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList setCoverUrl(String coverUrl) {
+        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo setCoverUrl(String coverUrl) {
             this.coverUrl = coverUrl;
             return this;
         }
@@ -90,7 +126,7 @@ public class GetUserWatchLiveListResponseBody extends TeaModel {
             return this.coverUrl;
         }
 
-        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList setDuration(Long duration) {
+        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo setDuration(Long duration) {
             this.duration = duration;
             return this;
         }
@@ -98,7 +134,7 @@ public class GetUserWatchLiveListResponseBody extends TeaModel {
             return this.duration;
         }
 
-        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList setEndTime(Long endTime) {
+        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo setEndTime(Long endTime) {
             this.endTime = endTime;
             return this;
         }
@@ -106,15 +142,7 @@ public class GetUserWatchLiveListResponseBody extends TeaModel {
             return this.endTime;
         }
 
-        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList setHasSubscribed(Boolean hasSubscribed) {
-            this.hasSubscribed = hasSubscribed;
-            return this;
-        }
-        public Boolean getHasSubscribed() {
-            return this.hasSubscribed;
-        }
-
-        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList setIntroduction(String introduction) {
+        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo setIntroduction(String introduction) {
             this.introduction = introduction;
             return this;
         }
@@ -122,7 +150,7 @@ public class GetUserWatchLiveListResponseBody extends TeaModel {
             return this.introduction;
         }
 
-        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList setLiveId(String liveId) {
+        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo setLiveId(String liveId) {
             this.liveId = liveId;
             return this;
         }
@@ -130,7 +158,7 @@ public class GetUserWatchLiveListResponseBody extends TeaModel {
             return this.liveId;
         }
 
-        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList setLivePlayUrl(String livePlayUrl) {
+        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo setLivePlayUrl(String livePlayUrl) {
             this.livePlayUrl = livePlayUrl;
             return this;
         }
@@ -138,7 +166,7 @@ public class GetUserWatchLiveListResponseBody extends TeaModel {
             return this.livePlayUrl;
         }
 
-        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList setLiveStatus(Integer liveStatus) {
+        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo setLiveStatus(Integer liveStatus) {
             this.liveStatus = liveStatus;
             return this;
         }
@@ -146,7 +174,7 @@ public class GetUserWatchLiveListResponseBody extends TeaModel {
             return this.liveStatus;
         }
 
-        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList setStartTime(Long startTime) {
+        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo setStartTime(Long startTime) {
             this.startTime = startTime;
             return this;
         }
@@ -154,7 +182,7 @@ public class GetUserWatchLiveListResponseBody extends TeaModel {
             return this.startTime;
         }
 
-        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList setSubscribeCount(Integer subscribeCount) {
+        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo setSubscribeCount(Integer subscribeCount) {
             this.subscribeCount = subscribeCount;
             return this;
         }
@@ -162,7 +190,7 @@ public class GetUserWatchLiveListResponseBody extends TeaModel {
             return this.subscribeCount;
         }
 
-        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList setTitle(String title) {
+        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo setTitle(String title) {
             this.title = title;
             return this;
         }
@@ -170,7 +198,7 @@ public class GetUserWatchLiveListResponseBody extends TeaModel {
             return this.title;
         }
 
-        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList setUnionId(String unionId) {
+        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo setUnionId(String unionId) {
             this.unionId = unionId;
             return this;
         }
@@ -178,7 +206,7 @@ public class GetUserWatchLiveListResponseBody extends TeaModel {
             return this.unionId;
         }
 
-        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList setUv(Integer uv) {
+        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo setUv(Integer uv) {
             this.uv = uv;
             return this;
         }
@@ -186,12 +214,36 @@ public class GetUserWatchLiveListResponseBody extends TeaModel {
             return this.uv;
         }
 
-        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList setWatchProgressMs(Long watchProgressMs) {
-            this.watchProgressMs = watchProgressMs;
+    }
+
+    public static class GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList extends TeaModel {
+        // 直播额外信息
+        @NameInMap("extraInfo")
+        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListExtraInfo extraInfo;
+
+        // 直播基础信息
+        @NameInMap("liveBasicInfo")
+        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo liveBasicInfo;
+
+        public static GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList build(java.util.Map<String, ?> map) throws Exception {
+            GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList self = new GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList();
+            return TeaModel.build(map, self);
+        }
+
+        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList setExtraInfo(GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListExtraInfo extraInfo) {
+            this.extraInfo = extraInfo;
             return this;
         }
-        public Long getWatchProgressMs() {
-            return this.watchProgressMs;
+        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListExtraInfo getExtraInfo() {
+            return this.extraInfo;
+        }
+
+        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList setLiveBasicInfo(GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo liveBasicInfo) {
+            this.liveBasicInfo = liveBasicInfo;
+            return this;
+        }
+        public GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo getLiveBasicInfo() {
+            return this.liveBasicInfo;
         }
 
     }

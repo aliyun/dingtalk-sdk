@@ -8,6 +8,10 @@ public class CreateTaskRequest extends TeaModel {
     @NameInMap("content")
     public String content;
 
+    // 自定义字段列表
+    @NameInMap("customfields")
+    public java.util.List<CreateTaskRequestCustomfields> customfields;
+
     // 任务截止时间
     @NameInMap("dueDate")
     public String dueDate;
@@ -39,6 +43,14 @@ public class CreateTaskRequest extends TeaModel {
     }
     public String getContent() {
         return this.content;
+    }
+
+    public CreateTaskRequest setCustomfields(java.util.List<CreateTaskRequestCustomfields> customfields) {
+        this.customfields = customfields;
+        return this;
+    }
+    public java.util.List<CreateTaskRequestCustomfields> getCustomfields() {
+        return this.customfields;
     }
 
     public CreateTaskRequest setDueDate(String dueDate) {
@@ -79,6 +91,70 @@ public class CreateTaskRequest extends TeaModel {
     }
     public String getProjectId() {
         return this.projectId;
+    }
+
+    public static class CreateTaskRequestCustomfieldsValue extends TeaModel {
+        // 自定义字段显示值
+        @NameInMap("title")
+        public String title;
+
+        public static CreateTaskRequestCustomfieldsValue build(java.util.Map<String, ?> map) throws Exception {
+            CreateTaskRequestCustomfieldsValue self = new CreateTaskRequestCustomfieldsValue();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateTaskRequestCustomfieldsValue setTitle(String title) {
+            this.title = title;
+            return this;
+        }
+        public String getTitle() {
+            return this.title;
+        }
+
+    }
+
+    public static class CreateTaskRequestCustomfields extends TeaModel {
+        // 自定义字段id
+        @NameInMap("customfieldId")
+        public String customfieldId;
+
+        // 自定义字段名称
+        @NameInMap("customfieldName")
+        public String customfieldName;
+
+        // 自定义字段值
+        @NameInMap("value")
+        public java.util.List<CreateTaskRequestCustomfieldsValue> value;
+
+        public static CreateTaskRequestCustomfields build(java.util.Map<String, ?> map) throws Exception {
+            CreateTaskRequestCustomfields self = new CreateTaskRequestCustomfields();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateTaskRequestCustomfields setCustomfieldId(String customfieldId) {
+            this.customfieldId = customfieldId;
+            return this;
+        }
+        public String getCustomfieldId() {
+            return this.customfieldId;
+        }
+
+        public CreateTaskRequestCustomfields setCustomfieldName(String customfieldName) {
+            this.customfieldName = customfieldName;
+            return this;
+        }
+        public String getCustomfieldName() {
+            return this.customfieldName;
+        }
+
+        public CreateTaskRequestCustomfields setValue(java.util.List<CreateTaskRequestCustomfieldsValue> value) {
+            this.value = value;
+            return this;
+        }
+        public java.util.List<CreateTaskRequestCustomfieldsValue> getValue() {
+            return this.value;
+        }
+
     }
 
 }

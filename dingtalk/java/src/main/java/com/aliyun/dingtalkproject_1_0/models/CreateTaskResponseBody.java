@@ -21,6 +21,58 @@ public class CreateTaskResponseBody extends TeaModel {
         return this.result;
     }
 
+    public static class CreateTaskResponseBodyResultCustomfieldsValue extends TeaModel {
+        // 自定义字段显示值
+        @NameInMap("title")
+        public String title;
+
+        public static CreateTaskResponseBodyResultCustomfieldsValue build(java.util.Map<String, ?> map) throws Exception {
+            CreateTaskResponseBodyResultCustomfieldsValue self = new CreateTaskResponseBodyResultCustomfieldsValue();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateTaskResponseBodyResultCustomfieldsValue setTitle(String title) {
+            this.title = title;
+            return this;
+        }
+        public String getTitle() {
+            return this.title;
+        }
+
+    }
+
+    public static class CreateTaskResponseBodyResultCustomfields extends TeaModel {
+        // 自定义字段id
+        @NameInMap("customfieldId")
+        public String customfieldId;
+
+        // 自定义字段值
+        @NameInMap("value")
+        public java.util.List<CreateTaskResponseBodyResultCustomfieldsValue> value;
+
+        public static CreateTaskResponseBodyResultCustomfields build(java.util.Map<String, ?> map) throws Exception {
+            CreateTaskResponseBodyResultCustomfields self = new CreateTaskResponseBodyResultCustomfields();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateTaskResponseBodyResultCustomfields setCustomfieldId(String customfieldId) {
+            this.customfieldId = customfieldId;
+            return this;
+        }
+        public String getCustomfieldId() {
+            return this.customfieldId;
+        }
+
+        public CreateTaskResponseBodyResultCustomfields setValue(java.util.List<CreateTaskResponseBodyResultCustomfieldsValue> value) {
+            this.value = value;
+            return this;
+        }
+        public java.util.List<CreateTaskResponseBodyResultCustomfieldsValue> getValue() {
+            return this.value;
+        }
+
+    }
+
     public static class CreateTaskResponseBodyResult extends TeaModel {
         // 任务标题
         @NameInMap("content")
@@ -33,6 +85,10 @@ public class CreateTaskResponseBody extends TeaModel {
         // 任务创建者userId
         @NameInMap("creatorId")
         public String creatorId;
+
+        // 自定义字段列表
+        @NameInMap("customfields")
+        public java.util.List<CreateTaskResponseBodyResultCustomfields> customfields;
 
         // 任务截止时间
         @NameInMap("dueDate")
@@ -93,6 +149,14 @@ public class CreateTaskResponseBody extends TeaModel {
         }
         public String getCreatorId() {
             return this.creatorId;
+        }
+
+        public CreateTaskResponseBodyResult setCustomfields(java.util.List<CreateTaskResponseBodyResultCustomfields> customfields) {
+            this.customfields = customfields;
+            return this;
+        }
+        public java.util.List<CreateTaskResponseBodyResultCustomfields> getCustomfields() {
+            return this.customfields;
         }
 
         public CreateTaskResponseBodyResult setDueDate(String dueDate) {
