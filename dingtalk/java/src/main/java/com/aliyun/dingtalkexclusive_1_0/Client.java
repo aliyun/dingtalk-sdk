@@ -516,6 +516,43 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GenerateDarkWaterMark", "exclusive_1.0", "HTTP", "POST", "AK", "/v1.0/exclusive/enterpriseSecurities/darkWatermarks/generate", "json", req, runtime), new GenerateDarkWaterMarkResponse());
     }
 
+    public GetAccountTransferListResponse getAccountTransferList(GetAccountTransferListRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetAccountTransferListHeaders headers = new GetAccountTransferListHeaders();
+        return this.getAccountTransferListWithOptions(request, headers, runtime);
+    }
+
+    public GetAccountTransferListResponse getAccountTransferListWithOptions(GetAccountTransferListRequest request, GetAccountTransferListHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            query.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.status)) {
+            query.put("status", request.status);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetAccountTransferList", "exclusive_1.0", "HTTP", "GET", "AK", "/v1.0/exclusive/dataTransfer/accounts", "json", req, runtime), new GetAccountTransferListResponse());
+    }
+
     public GetActiveUserSummaryResponse getActiveUserSummary(String dataId) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetActiveUserSummaryHeaders headers = new GetActiveUserSummaryHeaders();
