@@ -1009,6 +1009,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GenerateDarkWaterMark', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/enterpriseSecurities/darkWatermarks/generate', 'json', req, runtime)
         )
 
+    def get_account_transfer_list(
+        self,
+        request: dingtalkexclusive__1__0_models.GetAccountTransferListRequest,
+    ) -> dingtalkexclusive__1__0_models.GetAccountTransferListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetAccountTransferListHeaders()
+        return self.get_account_transfer_list_with_options(request, headers, runtime)
+
+    async def get_account_transfer_list_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetAccountTransferListRequest,
+    ) -> dingtalkexclusive__1__0_models.GetAccountTransferListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetAccountTransferListHeaders()
+        return await self.get_account_transfer_list_with_options_async(request, headers, runtime)
+
+    def get_account_transfer_list_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetAccountTransferListRequest,
+        headers: dingtalkexclusive__1__0_models.GetAccountTransferListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetAccountTransferListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.status):
+            query['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetAccountTransferListResponse(),
+            self.do_roarequest('GetAccountTransferList', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/dataTransfer/accounts', 'json', req, runtime)
+        )
+
+    async def get_account_transfer_list_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetAccountTransferListRequest,
+        headers: dingtalkexclusive__1__0_models.GetAccountTransferListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetAccountTransferListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.status):
+            query['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetAccountTransferListResponse(),
+            await self.do_roarequest_async('GetAccountTransferList', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/dataTransfer/accounts', 'json', req, runtime)
+        )
+
     def get_active_user_summary(
         self,
         data_id: str,
