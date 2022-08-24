@@ -45,6 +45,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageUpdateStorageResp
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GenerateDarkWaterMarkHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GenerateDarkWaterMarkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GenerateDarkWaterMarkResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAccountTransferListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAccountTransferListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAccountTransferListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetActiveUserSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetActiveUserSummaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAgentIdByRelatedAppIdHeaders;
@@ -846,6 +849,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GenerateDarkWaterMarkResponse::fromMap($this->doROARequest('GenerateDarkWaterMark', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/enterpriseSecurities/darkWatermarks/generate', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetAccountTransferListRequest $request
+     *
+     * @return GetAccountTransferListResponse
+     */
+    public function getAccountTransferList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAccountTransferListHeaders([]);
+
+        return $this->getAccountTransferListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetAccountTransferListRequest $request
+     * @param GetAccountTransferListHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return GetAccountTransferListResponse
+     */
+    public function getAccountTransferListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->status)) {
+            @$query['status'] = $request->status;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetAccountTransferListResponse::fromMap($this->doROARequest('GetAccountTransferList', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/dataTransfer/accounts', 'json', $req, $runtime));
     }
 
     /**
