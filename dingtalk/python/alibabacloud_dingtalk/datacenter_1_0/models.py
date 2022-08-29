@@ -4,6 +4,1103 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
+class GetAbnormalOperationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetAbnormalOperationRequest(TeaModel):
+    def __init__(
+        self,
+        page_number: int = None,
+        page_size: int = None,
+        search_key: str = None,
+    ):
+        # 页数,第几页
+        self.page_number = page_number
+        # 每页条数
+        self.page_size = page_size
+        # 关键词
+        self.search_key = search_key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.search_key is not None:
+            result['searchKey'] = self.search_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('searchKey') is not None:
+            self.search_key = m.get('searchKey')
+        return self
+
+
+class GetAbnormalOperationResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: str = None,
+        total: int = None,
+    ):
+        # 返回结果
+        # DEPARTMENT:列入决定机关
+        # IN_REASON 列入原因
+        # OUT_DATE:移出日期
+        # OUT_DEPARTMENT:移出决定机关
+        # OUT_REASON:移出原因
+        # IN_DATE:列入日期
+        self.data = data
+        # 总条数
+        self.total = total
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data
+        if self.total is not None:
+            result['total'] = self.total
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        return self
+
+
+class GetAbnormalOperationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetAbnormalOperationResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetAbnormalOperationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetAdministrativePenaltiesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetAdministrativePenaltiesRequest(TeaModel):
+    def __init__(
+        self,
+        page_number: int = None,
+        page_size: int = None,
+        search_key: str = None,
+    ):
+        # 页数,第几页
+        self.page_number = page_number
+        # 每页条数
+        self.page_size = page_size
+        # 关键词
+        self.search_key = search_key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.search_key is not None:
+            result['searchKey'] = self.search_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('searchKey') is not None:
+            self.search_key = m.get('searchKey')
+        return self
+
+
+class GetAdministrativePenaltiesResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: str = None,
+        total: int = None,
+    ):
+        # 返回结果
+        # DATE_COL:处罚日期
+        # NUMBER:决定书文号
+        # ILLEGAL_TYPE:处罚类型
+        # DEPARTMENT:处罚机关
+        # PUBLIC_DATE 公示日期
+        # CONTENT:处罚内容
+        # BASED_ON:处罚依据
+        # DESCRIPTION:处罚判决书
+        self.data = data
+        # 总条数
+        self.total = total
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data
+        if self.total is not None:
+            result['total'] = self.total
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        return self
+
+
+class GetAdministrativePenaltiesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetAdministrativePenaltiesResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetAdministrativePenaltiesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetBasicInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetBasicInfoRequest(TeaModel):
+    def __init__(
+        self,
+        page_number: int = None,
+        page_size: int = None,
+        search_key: str = None,
+    ):
+        # 页数,第几页
+        self.page_number = page_number
+        # 每页条数
+        self.page_size = page_size
+        # 关键词
+        self.search_key = search_key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.search_key is not None:
+            result['searchKey'] = self.search_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('searchKey') is not None:
+            self.search_key = m.get('searchKey')
+        return self
+
+
+class GetBasicInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: str = None,
+        total: int = None,
+    ):
+        # 返回结果
+        # ENT_NAME:企业名称
+        # LEGAL_NAME:法定代表人姓名
+        # ES_DATE:开业日期
+        # ENT_STATUS:经营状态
+        # REG_CAP:注册资本
+        # REC_CAP:实收资本
+        # SOCIAL_CREDIT_CODE:统一社会信用代码
+        # LICENSE_NUMBER:工商注册号
+        # ORG_NO:组织机构代码
+        # TAX_NUM:纳税人识别号
+        # ENT_TYPE:企业类型
+        # INDUSTRY_NAME_LV1:国民经济行业门类名称
+        # INDUSTRY_NAME_LV2:国民经济行业大类名称
+        # OP_FROM:经营期限自
+        # OP_TO:经营期限至
+        # COLLEGUES_NUM:人员规模
+        # INSURED_NUM:参保人数
+        # ENT_NAME_ENG:英文名称
+        # FORMER_NAMES:曾用名
+        # REG_ORG:登记机关
+        # CHECK_DATE:核准日期
+        # OP_SCOPE:经营范围
+        # IDENTITY_ID:ID
+        # ENT_ADDRESS:企业地址
+        # EMPLOYEES_INFO:主要管理人员
+        # ENT_BRIEF:公司简介
+        # REG_ORG_PROVINCE:注册地址所在省
+        # REG_ORG_CITY:注册地址所在城市
+        # REG_ORG_DISTRICT:注册地址所在区县
+        # STD_REG_CAP:清洗后注册资本
+        self.data = data
+        # 总条数
+        self.total = total
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data
+        if self.total is not None:
+            result['total'] = self.total
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        return self
+
+
+class GetBasicInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetBasicInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetBasicInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetEnvironmentalPenaltiesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetEnvironmentalPenaltiesRequest(TeaModel):
+    def __init__(
+        self,
+        page_number: int = None,
+        page_size: int = None,
+        search_key: str = None,
+    ):
+        # 页数,第几页
+        self.page_number = page_number
+        # 每页条数
+        self.page_size = page_size
+        # 关键词
+        self.search_key = search_key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.search_key is not None:
+            result['searchKey'] = self.search_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('searchKey') is not None:
+            self.search_key = m.get('searchKey')
+        return self
+
+
+class GetEnvironmentalPenaltiesResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: str = None,
+        total: int = None,
+    ):
+        # 返回结果
+        # DEPARTMENT:处罚单位
+        # ENT_NAME:企业名称
+        # EXEC_STATUS 执行情况
+        # PUNISH_BASIS:处罚依据
+        # PUNISH_CONTENT:处罚事由
+        # PUNISH_LAW:违反法律
+        # PUNISH_NUM:决定文书号
+        # PUNISH_RES:处罚结果
+        # PUNISH_DATE:处罚时间
+        self.data = data
+        # 总条数
+        self.total = total
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data
+        if self.total is not None:
+            result['total'] = self.total
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        return self
+
+
+class GetEnvironmentalPenaltiesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetEnvironmentalPenaltiesResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetEnvironmentalPenaltiesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetHolderInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetHolderInfoRequest(TeaModel):
+    def __init__(
+        self,
+        page_number: int = None,
+        page_size: int = None,
+        search_key: str = None,
+    ):
+        # 页数,第几页
+        self.page_number = page_number
+        # 每页条数
+        self.page_size = page_size
+        # 关键词
+        self.search_key = search_key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.search_key is not None:
+            result['searchKey'] = self.search_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('searchKey') is not None:
+            self.search_key = m.get('searchKey')
+        return self
+
+
+class GetHolderInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: str = None,
+        total: int = None,
+    ):
+        # 返回结果
+        # STOCK_TYPE:股东类型
+        # STOCK_NAME:股东名称
+        # STOCK_PERCENT:持股比例
+        # SHOULD_CAPI:认缴出资额
+        # SHOULD_CAPI_TIME:认缴出资日期
+        self.data = data
+        # 总条数
+        self.total = total
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data
+        if self.total is not None:
+            result['total'] = self.total
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        return self
+
+
+class GetHolderInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetHolderInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetHolderInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetQeneralTaxpayerInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetQeneralTaxpayerInfoRequest(TeaModel):
+    def __init__(
+        self,
+        page_number: int = None,
+        page_size: int = None,
+        search_key: str = None,
+    ):
+        # 页数,第几页
+        self.page_number = page_number
+        # 每页条数
+        self.page_size = page_size
+        # 关键词
+        self.search_key = search_key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.search_key is not None:
+            result['searchKey'] = self.search_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('searchKey') is not None:
+            self.search_key = m.get('searchKey')
+        return self
+
+
+class GetQeneralTaxpayerInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: str = None,
+        total: int = None,
+    ):
+        # 返回结果
+        # DEPARTMENT:主管机关
+        # END_DATE:有效日期止
+        # ENT_NAME:纳税人名称
+        # QUALIFICATION 纳税人资格
+        # START_DATE:有效日期起
+        # TAXPAYER_NUM:纳税人识别号
+        # JUDGE_DATE:认定时间
+        self.data = data
+        # 总条数
+        self.total = total
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data
+        if self.total is not None:
+            result['total'] = self.total
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        return self
+
+
+class GetQeneralTaxpayerInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetQeneralTaxpayerInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetQeneralTaxpayerInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetSeriousViolationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetSeriousViolationRequest(TeaModel):
+    def __init__(
+        self,
+        page_number: int = None,
+        page_size: int = None,
+        search_key: str = None,
+    ):
+        # 页数,第几页
+        self.page_number = page_number
+        # 每页条数
+        self.page_size = page_size
+        # 关键词
+        self.search_key = search_key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.search_key is not None:
+            result['searchKey'] = self.search_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('searchKey') is not None:
+            self.search_key = m.get('searchKey')
+        return self
+
+
+class GetSeriousViolationResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: str = None,
+        total: int = None,
+    ):
+        # 返回结果
+        # IN_DATE:列入日期
+        # IN_DEPARTMENT:列入决定机关
+        # IN_REASON:列入严重违法失信企业名单原因
+        self.data = data
+        # 总条数
+        self.total = total
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data
+        if self.total is not None:
+            result['total'] = self.total
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        return self
+
+
+class GetSeriousViolationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetSeriousViolationResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetSeriousViolationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class PostCorpAuthInfoHeaders(TeaModel):
     def __init__(
         self,
@@ -2973,6 +4070,238 @@ class QueryEmployeeTypeStatisticalDataResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryEmployeeTypeStatisticalDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryGeneralDataServiceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryGeneralDataServiceRequest(TeaModel):
+    def __init__(
+        self,
+        dept_id: str = None,
+        end_date: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        service_id: str = None,
+        start_date: str = None,
+        user_id: str = None,
+    ):
+        # 部门ID
+        self.dept_id = dept_id
+        # 结束日期
+        self.end_date = end_date
+        # 分页页码
+        self.page_number = page_number
+        # 每页大小
+        self.page_size = page_size
+        # 服务编码
+        self.service_id = service_id
+        # statDate
+        self.start_date = start_date
+        # 员工ID
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.service_id is not None:
+            result['serviceId'] = self.service_id
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('serviceId') is not None:
+            self.service_id = m.get('serviceId')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryGeneralDataServiceResponseBodyMetaList(TeaModel):
+    def __init__(
+        self,
+        field_desc: str = None,
+        field_id: str = None,
+        field_name: str = None,
+        field_type: str = None,
+    ):
+        # 指标名称
+        self.field_desc = field_desc
+        # 指标口径
+        self.field_id = field_id
+        # 指标ID
+        self.field_name = field_name
+        # 指标单位
+        self.field_type = field_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_desc is not None:
+            result['fieldDesc'] = self.field_desc
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        if self.field_name is not None:
+            result['fieldName'] = self.field_name
+        if self.field_type is not None:
+            result['fieldType'] = self.field_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldDesc') is not None:
+            self.field_desc = m.get('fieldDesc')
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        if m.get('fieldName') is not None:
+            self.field_name = m.get('fieldName')
+        if m.get('fieldType') is not None:
+            self.field_type = m.get('fieldType')
+        return self
+
+
+class QueryGeneralDataServiceResponseBody(TeaModel):
+    def __init__(
+        self,
+        data_list: List[Dict[str, Any]] = None,
+        meta_list: List[QueryGeneralDataServiceResponseBodyMetaList] = None,
+    ):
+        # 指标数据
+        self.data_list = data_list
+        # 指标元数据
+        self.meta_list = meta_list
+
+    def validate(self):
+        if self.meta_list:
+            for k in self.meta_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data_list is not None:
+            result['dataList'] = self.data_list
+        result['metaList'] = []
+        if self.meta_list is not None:
+            for k in self.meta_list:
+                result['metaList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dataList') is not None:
+            self.data_list = m.get('dataList')
+        self.meta_list = []
+        if m.get('metaList') is not None:
+            for k in m.get('metaList'):
+                temp_model = QueryGeneralDataServiceResponseBodyMetaList()
+                self.meta_list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryGeneralDataServiceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryGeneralDataServiceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryGeneralDataServiceResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -13406,6 +14735,153 @@ class QueryYydTotalWeekStatisticalDataResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryYydTotalWeekStatisticalDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SearchCompanyHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SearchCompanyRequest(TeaModel):
+    def __init__(
+        self,
+        page_number: int = None,
+        page_size: int = None,
+        search_key: str = None,
+    ):
+        # 起始页
+        self.page_number = page_number
+        # 页面大小
+        self.page_size = page_size
+        # 关键词
+        self.search_key = search_key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.search_key is not None:
+            result['searchKey'] = self.search_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('searchKey') is not None:
+            self.search_key = m.get('searchKey')
+        return self
+
+
+class SearchCompanyResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: str = None,
+        total: int = None,
+    ):
+        # 返回数据结果
+        self.data = data
+        # 总条数
+        self.total = total
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data
+        if self.total is not None:
+            result['total'] = self.total
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        return self
+
+
+class SearchCompanyResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SearchCompanyResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SearchCompanyResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

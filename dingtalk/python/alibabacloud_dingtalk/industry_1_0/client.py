@@ -4605,6 +4605,98 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ExternalQueryExternalOrgs', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/externals/organizations', 'json', req, runtime)
         )
 
+    def hospital_data_check(
+        self,
+        request: dingtalkindustry__1__0_models.HospitalDataCheckRequest,
+    ) -> dingtalkindustry__1__0_models.HospitalDataCheckResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.HospitalDataCheckHeaders()
+        return self.hospital_data_check_with_options(request, headers, runtime)
+
+    async def hospital_data_check_async(
+        self,
+        request: dingtalkindustry__1__0_models.HospitalDataCheckRequest,
+    ) -> dingtalkindustry__1__0_models.HospitalDataCheckResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.HospitalDataCheckHeaders()
+        return await self.hospital_data_check_with_options_async(request, headers, runtime)
+
+    def hospital_data_check_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.HospitalDataCheckRequest,
+        headers: dingtalkindustry__1__0_models.HospitalDataCheckHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.HospitalDataCheckResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.all_dept_count):
+            body['allDeptCount'] = request.all_dept_count
+        if not UtilClient.is_unset(request.all_dept_user_count):
+            body['allDeptUserCount'] = request.all_dept_user_count
+        if not UtilClient.is_unset(request.all_group_count):
+            body['allGroupCount'] = request.all_group_count
+        if not UtilClient.is_unset(request.all_group_user_count):
+            body['allGroupUserCount'] = request.all_group_user_count
+        if not UtilClient.is_unset(request.dept_count):
+            body['deptCount'] = request.dept_count
+        if not UtilClient.is_unset(request.dept_user_count):
+            body['deptUserCount'] = request.dept_user_count
+        if not UtilClient.is_unset(request.group_count):
+            body['groupCount'] = request.group_count
+        if not UtilClient.is_unset(request.group_user_count):
+            body['groupUserCount'] = request.group_user_count
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.HospitalDataCheckResponse(),
+            self.do_roarequest('HospitalDataCheck', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/medicals/datas/check', 'json', req, runtime)
+        )
+
+    async def hospital_data_check_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.HospitalDataCheckRequest,
+        headers: dingtalkindustry__1__0_models.HospitalDataCheckHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.HospitalDataCheckResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.all_dept_count):
+            body['allDeptCount'] = request.all_dept_count
+        if not UtilClient.is_unset(request.all_dept_user_count):
+            body['allDeptUserCount'] = request.all_dept_user_count
+        if not UtilClient.is_unset(request.all_group_count):
+            body['allGroupCount'] = request.all_group_count
+        if not UtilClient.is_unset(request.all_group_user_count):
+            body['allGroupUserCount'] = request.all_group_user_count
+        if not UtilClient.is_unset(request.dept_count):
+            body['deptCount'] = request.dept_count
+        if not UtilClient.is_unset(request.dept_user_count):
+            body['deptUserCount'] = request.dept_user_count
+        if not UtilClient.is_unset(request.group_count):
+            body['groupCount'] = request.group_count
+        if not UtilClient.is_unset(request.group_user_count):
+            body['groupUserCount'] = request.group_user_count
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.HospitalDataCheckResponse(),
+            await self.do_roarequest_async('HospitalDataCheck', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/medicals/datas/check', 'json', req, runtime)
+        )
+
     def industry_manufacture_common_event(
         self,
         request: dingtalkindustry__1__0_models.IndustryManufactureCommonEventRequest,
@@ -7682,33 +7774,41 @@ class Client(OpenApiClient):
     def query_user_info(
         self,
         user_id: str,
+        request: dingtalkindustry__1__0_models.QueryUserInfoRequest,
     ) -> dingtalkindustry__1__0_models.QueryUserInfoResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkindustry__1__0_models.QueryUserInfoHeaders()
-        return self.query_user_info_with_options(user_id, headers, runtime)
+        return self.query_user_info_with_options(user_id, request, headers, runtime)
 
     async def query_user_info_async(
         self,
         user_id: str,
+        request: dingtalkindustry__1__0_models.QueryUserInfoRequest,
     ) -> dingtalkindustry__1__0_models.QueryUserInfoResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkindustry__1__0_models.QueryUserInfoHeaders()
-        return await self.query_user_info_with_options_async(user_id, headers, runtime)
+        return await self.query_user_info_with_options_async(user_id, request, headers, runtime)
 
     def query_user_info_with_options(
         self,
         user_id: str,
+        request: dingtalkindustry__1__0_models.QueryUserInfoRequest,
         headers: dingtalkindustry__1__0_models.QueryUserInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.QueryUserInfoResponse:
+        UtilClient.validate_model(request)
         user_id = OpenApiUtilClient.get_encode_param(user_id)
+        query = {}
+        if not UtilClient.is_unset(request.month_mark):
+            query['monthMark'] = request.month_mark
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryUserInfoResponse(),
@@ -7718,17 +7818,23 @@ class Client(OpenApiClient):
     async def query_user_info_with_options_async(
         self,
         user_id: str,
+        request: dingtalkindustry__1__0_models.QueryUserInfoRequest,
         headers: dingtalkindustry__1__0_models.QueryUserInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.QueryUserInfoResponse:
+        UtilClient.validate_model(request)
         user_id = OpenApiUtilClient.get_encode_param(user_id)
+        query = {}
+        if not UtilClient.is_unset(request.month_mark):
+            query['monthMark'] = request.month_mark
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryUserInfoResponse(),

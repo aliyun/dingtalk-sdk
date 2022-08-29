@@ -1031,6 +1031,9 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1038,7 +1041,8 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
             dingtalkstorage__1__0_models.GetDentryResponse(),
@@ -1059,6 +1063,9 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1066,7 +1073,8 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
             dingtalkstorage__1__0_models.GetDentryResponse(),
@@ -1241,6 +1249,76 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkstorage__1__0_models.GetFileUploadInfoResponse(),
             await self.do_roarequest_async('GetFileUploadInfo', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/files/uploadInfos/query', 'json', req, runtime)
+        )
+
+    def get_org(
+        self,
+        corp_id: str,
+        request: dingtalkstorage__1__0_models.GetOrgRequest,
+    ) -> dingtalkstorage__1__0_models.GetOrgResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.GetOrgHeaders()
+        return self.get_org_with_options(corp_id, request, headers, runtime)
+
+    async def get_org_async(
+        self,
+        corp_id: str,
+        request: dingtalkstorage__1__0_models.GetOrgRequest,
+    ) -> dingtalkstorage__1__0_models.GetOrgResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.GetOrgHeaders()
+        return await self.get_org_with_options_async(corp_id, request, headers, runtime)
+
+    def get_org_with_options(
+        self,
+        corp_id: str,
+        request: dingtalkstorage__1__0_models.GetOrgRequest,
+        headers: dingtalkstorage__1__0_models.GetOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.GetOrgResponse:
+        UtilClient.validate_model(request)
+        corp_id = OpenApiUtilClient.get_encode_param(corp_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.GetOrgResponse(),
+            self.do_roarequest('GetOrg', 'storage_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/storage/orgs/{corp_id}', 'json', req, runtime)
+        )
+
+    async def get_org_with_options_async(
+        self,
+        corp_id: str,
+        request: dingtalkstorage__1__0_models.GetOrgRequest,
+        headers: dingtalkstorage__1__0_models.GetOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.GetOrgResponse:
+        UtilClient.validate_model(request)
+        corp_id = OpenApiUtilClient.get_encode_param(corp_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.GetOrgResponse(),
+            await self.do_roarequest_async('GetOrg', 'storage_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/storage/orgs/{corp_id}', 'json', req, runtime)
         )
 
     def get_recycle_bin(

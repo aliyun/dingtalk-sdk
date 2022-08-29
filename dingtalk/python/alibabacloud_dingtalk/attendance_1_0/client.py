@@ -731,6 +731,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DingTalkSecurityCheck', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/securities/check', 'json', req, runtime)
         )
 
+    def get_atmanage_scope(
+        self,
+        request: dingtalkattendance__1__0_models.GetATManageScopeRequest,
+    ) -> dingtalkattendance__1__0_models.GetATManageScopeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetATManageScopeHeaders()
+        return self.get_atmanage_scope_with_options(request, headers, runtime)
+
+    async def get_atmanage_scope_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetATManageScopeRequest,
+    ) -> dingtalkattendance__1__0_models.GetATManageScopeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetATManageScopeHeaders()
+        return await self.get_atmanage_scope_with_options_async(request, headers, runtime)
+
+    def get_atmanage_scope_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.GetATManageScopeRequest,
+        headers: dingtalkattendance__1__0_models.GetATManageScopeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetATManageScopeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetATManageScopeResponse(),
+            self.do_roarequest('GetATManageScope', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/manageScopes', 'json', req, runtime)
+        )
+
+    async def get_atmanage_scope_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetATManageScopeRequest,
+        headers: dingtalkattendance__1__0_models.GetATManageScopeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetATManageScopeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetATManageScopeResponse(),
+            await self.do_roarequest_async('GetATManageScope', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/manageScopes', 'json', req, runtime)
+        )
+
     def get_adjustments(
         self,
         request: dingtalkattendance__1__0_models.GetAdjustmentsRequest,

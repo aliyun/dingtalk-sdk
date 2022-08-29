@@ -2077,6 +2077,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryMembersOfGroupRole', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/sceneGroups/roles/members/query', 'json', req, runtime)
         )
 
+    def query_scene_group_template_robot(
+        self,
+        request: dingtalkim__1__0_models.QuerySceneGroupTemplateRobotRequest,
+    ) -> dingtalkim__1__0_models.QuerySceneGroupTemplateRobotResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QuerySceneGroupTemplateRobotHeaders()
+        return self.query_scene_group_template_robot_with_options(request, headers, runtime)
+
+    async def query_scene_group_template_robot_async(
+        self,
+        request: dingtalkim__1__0_models.QuerySceneGroupTemplateRobotRequest,
+    ) -> dingtalkim__1__0_models.QuerySceneGroupTemplateRobotResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QuerySceneGroupTemplateRobotHeaders()
+        return await self.query_scene_group_template_robot_with_options_async(request, headers, runtime)
+
+    def query_scene_group_template_robot_with_options(
+        self,
+        request: dingtalkim__1__0_models.QuerySceneGroupTemplateRobotRequest,
+        headers: dingtalkim__1__0_models.QuerySceneGroupTemplateRobotHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QuerySceneGroupTemplateRobotResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.robot_code):
+            query['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QuerySceneGroupTemplateRobotResponse(),
+            self.do_roarequest('QuerySceneGroupTemplateRobot', 'im_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/im/sceneGroups/templates/robots', 'json', req, runtime)
+        )
+
+    async def query_scene_group_template_robot_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.QuerySceneGroupTemplateRobotRequest,
+        headers: dingtalkim__1__0_models.QuerySceneGroupTemplateRobotHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QuerySceneGroupTemplateRobotResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.robot_code):
+            query['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QuerySceneGroupTemplateRobotResponse(),
+            await self.do_roarequest_async('QuerySceneGroupTemplateRobot', 'im_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/im/sceneGroups/templates/robots', 'json', req, runtime)
+        )
+
     def query_single_group(
         self,
         request: dingtalkim__1__0_models.QuerySingleGroupRequest,

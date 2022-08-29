@@ -37,11 +37,59 @@ class AddFolderHeaders(TeaModel):
         return self
 
 
+class AddFolderRequestOptionAppProperties(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        value: str = None,
+        visibility: str = None,
+    ):
+        # 属性名称 该属性名称在当前app下需要保证唯一，不同app间同名属性互不影响
+        self.name = name
+        # 属性值
+        self.value = value
+        # 属性可见范围
+        # 枚举值:
+        # 	PUBLIC: 该属性所有App可见
+        # 	PRIVATE: 该属性仅其归属App可见
+        self.visibility = visibility
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        if self.visibility is not None:
+            result['visibility'] = self.visibility
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('visibility') is not None:
+            self.visibility = m.get('visibility')
+        return self
+
+
 class AddFolderRequestOption(TeaModel):
     def __init__(
         self,
+        app_properties: List[AddFolderRequestOptionAppProperties] = None,
         conflict_strategy: str = None,
     ):
+        # 文件夹在应用上的属性, 一个应用最多只能设置3个属性
+        self.app_properties = app_properties
         # 文件夹名称冲突策略
         # 枚举值:
         # 	AUTO_RENAME: 自动重命名
@@ -53,7 +101,10 @@ class AddFolderRequestOption(TeaModel):
         self.conflict_strategy = conflict_strategy
 
     def validate(self):
-        pass
+        if self.app_properties:
+            for k in self.app_properties:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -61,12 +112,21 @@ class AddFolderRequestOption(TeaModel):
             return _map
 
         result = dict()
+        result['appProperties'] = []
+        if self.app_properties is not None:
+            for k in self.app_properties:
+                result['appProperties'].append(k.to_map() if k else None)
         if self.conflict_strategy is not None:
             result['conflictStrategy'] = self.conflict_strategy
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.app_properties = []
+        if m.get('appProperties') is not None:
+            for k in m.get('appProperties'):
+                temp_model = AddFolderRequestOptionAppProperties()
+                self.app_properties.append(temp_model.from_map(k))
         if m.get('conflictStrategy') is not None:
             self.conflict_strategy = m.get('conflictStrategy')
         return self
@@ -147,9 +207,55 @@ class AddFolderResponseBodyDentryProperties(TeaModel):
         return self
 
 
+class DentryAppPropertiesValue(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        value: str = None,
+        visibility: str = None,
+    ):
+        # 属性名称 该属性名称在当前app下需要保证唯一，不同app间同名属性互不影响
+        self.name = name
+        # 属性值
+        self.value = value
+        # 属性可见范围
+        # 枚举值:
+        # 	PUBLIC: 该属性所有App可见
+        # 	PRIVATE: 该属性仅其归属App可见
+        self.visibility = visibility
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        if self.visibility is not None:
+            result['visibility'] = self.visibility
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('visibility') is not None:
+            self.visibility = m.get('visibility')
+        return self
+
+
 class AddFolderResponseBodyDentry(TeaModel):
     def __init__(
         self,
+        app_properties: Dict[str, List[DentryAppPropertiesValue]] = None,
         create_time: str = None,
         creator_id: str = None,
         extension: str = None,
@@ -169,6 +275,9 @@ class AddFolderResponseBodyDentry(TeaModel):
         uuid: str = None,
         version: int = None,
     ):
+        # 在特定应用上的属性。key是微应用Id, value是属性列表。
+        # 可以通过修改DentryAppProperty里的scope来设置属性的可见性
+        self.app_properties = app_properties
         # 创建时间
         self.create_time = create_time
         # 创建者id
@@ -223,6 +332,11 @@ class AddFolderResponseBodyDentry(TeaModel):
         self.version = version
 
     def validate(self):
+        if self.app_properties:
+            for v in self.app_properties.values():
+                for k1 in v:
+                    if k1:
+                        k1.validate()
         if self.properties:
             self.properties.validate()
 
@@ -232,6 +346,13 @@ class AddFolderResponseBodyDentry(TeaModel):
             return _map
 
         result = dict()
+        result['appProperties'] = {}
+        if self.app_properties is not None:
+            for k, v in self.app_properties.items():
+                l1 = []
+                for k1 in v:
+                    l1.append(k1.to_map() if k1 else None)
+                result['appProperties'][k] = l1
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator_id is not None:
@@ -272,6 +393,14 @@ class AddFolderResponseBodyDentry(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.app_properties = {}
+        if m.get('appProperties') is not None:
+            for k, v in m.get('appProperties').items():
+                l1 = []
+                for k1 in v:
+                    temp_model = DentryAppPropertiesValue()
+                    l1.append(temp_model.from_map(k1))
+                self.app_properties['k'] = l1
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creatorId') is not None:
@@ -1226,12 +1355,60 @@ class CommitFileHeaders(TeaModel):
         return self
 
 
+class CommitFileRequestOptionAppProperties(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        value: str = None,
+        visibility: str = None,
+    ):
+        # 属性名称 该属性名称在当前app下需要保证唯一，不同app间同名属性互不影响
+        self.name = name
+        # 属性值
+        self.value = value
+        # 属性可见范围
+        # 枚举值:
+        # 	PUBLIC: 该属性所有App可见
+        # 	PRIVATE: 该属性仅其归属App可见
+        self.visibility = visibility
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        if self.visibility is not None:
+            result['visibility'] = self.visibility
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('visibility') is not None:
+            self.visibility = m.get('visibility')
+        return self
+
+
 class CommitFileRequestOption(TeaModel):
     def __init__(
         self,
+        app_properties: List[CommitFileRequestOptionAppProperties] = None,
         conflict_strategy: str = None,
         size: int = None,
     ):
+        # 文件在应用上的属性, 一个应用最多只能设置3个属性
+        self.app_properties = app_properties
         # 文件名称冲突策略
         # 枚举值:
         # 	AUTO_RENAME: 自动重命名
@@ -1246,7 +1423,10 @@ class CommitFileRequestOption(TeaModel):
         self.size = size
 
     def validate(self):
-        pass
+        if self.app_properties:
+            for k in self.app_properties:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1254,6 +1434,10 @@ class CommitFileRequestOption(TeaModel):
             return _map
 
         result = dict()
+        result['appProperties'] = []
+        if self.app_properties is not None:
+            for k in self.app_properties:
+                result['appProperties'].append(k.to_map() if k else None)
         if self.conflict_strategy is not None:
             result['conflictStrategy'] = self.conflict_strategy
         if self.size is not None:
@@ -1262,6 +1446,11 @@ class CommitFileRequestOption(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.app_properties = []
+        if m.get('appProperties') is not None:
+            for k in m.get('appProperties'):
+                temp_model = CommitFileRequestOptionAppProperties()
+                self.app_properties.append(temp_model.from_map(k))
         if m.get('conflictStrategy') is not None:
             self.conflict_strategy = m.get('conflictStrategy')
         if m.get('size') is not None:
@@ -1361,6 +1550,7 @@ class CommitFileResponseBodyDentryProperties(TeaModel):
 class CommitFileResponseBodyDentry(TeaModel):
     def __init__(
         self,
+        app_properties: Dict[str, List[DentryAppPropertiesValue]] = None,
         create_time: str = None,
         creator_id: str = None,
         extension: str = None,
@@ -1380,6 +1570,9 @@ class CommitFileResponseBodyDentry(TeaModel):
         uuid: str = None,
         version: int = None,
     ):
+        # 在特定应用上的属性。key是微应用Id, value是属性列表。
+        # 可以通过修改DentryAppProperty里的scope来设置属性的可见性
+        self.app_properties = app_properties
         # 创建时间
         self.create_time = create_time
         # 创建者id
@@ -1434,6 +1627,11 @@ class CommitFileResponseBodyDentry(TeaModel):
         self.version = version
 
     def validate(self):
+        if self.app_properties:
+            for v in self.app_properties.values():
+                for k1 in v:
+                    if k1:
+                        k1.validate()
         if self.properties:
             self.properties.validate()
 
@@ -1443,6 +1641,13 @@ class CommitFileResponseBodyDentry(TeaModel):
             return _map
 
         result = dict()
+        result['appProperties'] = {}
+        if self.app_properties is not None:
+            for k, v in self.app_properties.items():
+                l1 = []
+                for k1 in v:
+                    l1.append(k1.to_map() if k1 else None)
+                result['appProperties'][k] = l1
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator_id is not None:
@@ -1483,6 +1688,14 @@ class CommitFileResponseBodyDentry(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.app_properties = {}
+        if m.get('appProperties') is not None:
+            for k, v in m.get('appProperties').items():
+                l1 = []
+                for k1 in v:
+                    temp_model = DentryAppPropertiesValue()
+                    l1.append(temp_model.from_map(k1))
+                self.app_properties['k'] = l1
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creatorId') is not None:
@@ -3043,13 +3256,15 @@ class GetDentryHeaders(TeaModel):
         return self
 
 
-class GetDentryRequest(TeaModel):
+class GetDentryRequestOption(TeaModel):
     def __init__(
         self,
-        union_id: str = None,
+        app_ids_for_app_properties: List[str] = None,
     ):
-        # 用户id
-        self.union_id = union_id
+        # 通过指定应用id, 返回对应的可见属性，即dentry.appProperties，
+        # 默认都会返回当前应用的属性，
+        # 如不指定appIds, 则默认返回当前应用的appProperties
+        self.app_ids_for_app_properties = app_ids_for_app_properties
 
     def validate(self):
         pass
@@ -3060,12 +3275,49 @@ class GetDentryRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.app_ids_for_app_properties is not None:
+            result['appIdsForAppProperties'] = self.app_ids_for_app_properties
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appIdsForAppProperties') is not None:
+            self.app_ids_for_app_properties = m.get('appIdsForAppProperties')
+        return self
+
+
+class GetDentryRequest(TeaModel):
+    def __init__(
+        self,
+        option: GetDentryRequestOption = None,
+        union_id: str = None,
+    ):
+        # 可选参数
+        self.option = option
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        if self.option:
+            self.option.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.option is not None:
+            result['option'] = self.option.to_map()
         if self.union_id is not None:
             result['unionId'] = self.union_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('option') is not None:
+            temp_model = GetDentryRequestOption()
+            self.option = temp_model.from_map(m['option'])
         if m.get('unionId') is not None:
             self.union_id = m.get('unionId')
         return self
@@ -3102,6 +3354,7 @@ class GetDentryResponseBodyDentryProperties(TeaModel):
 class GetDentryResponseBodyDentry(TeaModel):
     def __init__(
         self,
+        app_properties: Dict[str, List[DentryAppPropertiesValue]] = None,
         create_time: str = None,
         creator_id: str = None,
         extension: str = None,
@@ -3121,6 +3374,9 @@ class GetDentryResponseBodyDentry(TeaModel):
         uuid: str = None,
         version: int = None,
     ):
+        # 在特定应用上的属性。key是微应用Id, value是属性列表。
+        # 可以通过修改DentryAppProperty里的scope来设置属性的可见性
+        self.app_properties = app_properties
         # 创建时间
         self.create_time = create_time
         # 创建者id
@@ -3175,6 +3431,11 @@ class GetDentryResponseBodyDentry(TeaModel):
         self.version = version
 
     def validate(self):
+        if self.app_properties:
+            for v in self.app_properties.values():
+                for k1 in v:
+                    if k1:
+                        k1.validate()
         if self.properties:
             self.properties.validate()
 
@@ -3184,6 +3445,13 @@ class GetDentryResponseBodyDentry(TeaModel):
             return _map
 
         result = dict()
+        result['appProperties'] = {}
+        if self.app_properties is not None:
+            for k, v in self.app_properties.items():
+                l1 = []
+                for k1 in v:
+                    l1.append(k1.to_map() if k1 else None)
+                result['appProperties'][k] = l1
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator_id is not None:
@@ -3224,6 +3492,14 @@ class GetDentryResponseBodyDentry(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.app_properties = {}
+        if m.get('appProperties') is not None:
+            for k, v in m.get('appProperties').items():
+                l1 = []
+                for k1 in v:
+                    temp_model = DentryAppPropertiesValue()
+                    l1.append(temp_model.from_map(k1))
+                self.app_properties['k'] = l1
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creatorId') is not None:
@@ -3923,6 +4199,269 @@ class GetFileUploadInfoResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetFileUploadInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetOrgHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetOrgRequest(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+    ):
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class GetOrgResponseBodyOrgPartitionsQuota(TeaModel):
+    def __init__(
+        self,
+        max: int = None,
+        type: str = None,
+        used: int = None,
+    ):
+        # 最大容量, 单位: Byte
+        # 当前应用容量被设置为max时，代表当前应用容量设置了上限，used<=max
+        # 当前应用容量未设置max时，返回空，此时应用共享该企业剩余可用容量
+        self.max = max
+        # 容量类型
+        # 如果是企业维度容量，此值是PRIVATE, 表示企业独占
+        # 枚举值:
+        # 	SHARE: 共享容量
+        # 此模式下，Quota.max为空，表示共享企业容量
+        # 	PRIVATE: 专享容量
+        # 当Quota.max设置值后，表示容量独占
+        # 使用场景：当需要保证单个应用的可用容量不受其他应用影响时, 可使用共享容量
+        self.type = type
+        # 已使用容量, 单位: Byte
+        # 表示该应用下所用文件占用容量的总和，文件的上传、复制、删除相关操作会对used的值做相应变更
+        self.used = used
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max is not None:
+            result['max'] = self.max
+        if self.type is not None:
+            result['type'] = self.type
+        if self.used is not None:
+            result['used'] = self.used
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('max') is not None:
+            self.max = m.get('max')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('used') is not None:
+            self.used = m.get('used')
+        return self
+
+
+class GetOrgResponseBodyOrgPartitions(TeaModel):
+    def __init__(
+        self,
+        partition_type: str = None,
+        quota: GetOrgResponseBodyOrgPartitionsQuota = None,
+    ):
+        # 分区类型
+        # 枚举值:
+        # 	PUBLIC_OSS_PARTITION: 公有云OSS存储分区
+        # 	MINI_OSS_PARTITION: 专属Mini OSS存储分区
+        self.partition_type = partition_type
+        # 容量信息
+        self.quota = quota
+
+    def validate(self):
+        if self.quota:
+            self.quota.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.partition_type is not None:
+            result['partitionType'] = self.partition_type
+        if self.quota is not None:
+            result['quota'] = self.quota.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('partitionType') is not None:
+            self.partition_type = m.get('partitionType')
+        if m.get('quota') is not None:
+            temp_model = GetOrgResponseBodyOrgPartitionsQuota()
+            self.quota = temp_model.from_map(m['quota'])
+        return self
+
+
+class GetOrgResponseBodyOrg(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        partitions: List[GetOrgResponseBodyOrgPartitions] = None,
+    ):
+        # 企业id
+        self.corp_id = corp_id
+        # 分区容量信息
+        self.partitions = partitions
+
+    def validate(self):
+        if self.partitions:
+            for k in self.partitions:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        result['partitions'] = []
+        if self.partitions is not None:
+            for k in self.partitions:
+                result['partitions'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        self.partitions = []
+        if m.get('partitions') is not None:
+            for k in m.get('partitions'):
+                temp_model = GetOrgResponseBodyOrgPartitions()
+                self.partitions.append(temp_model.from_map(k))
+        return self
+
+
+class GetOrgResponseBody(TeaModel):
+    def __init__(
+        self,
+        org: GetOrgResponseBodyOrg = None,
+    ):
+        # 企业信息
+        self.org = org
+
+    def validate(self):
+        if self.org:
+            self.org.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.org is not None:
+            result['org'] = self.org.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('org') is not None:
+            temp_model = GetOrgResponseBodyOrg()
+            self.org = temp_model.from_map(m['org'])
+        return self
+
+
+class GetOrgResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetOrgResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetOrgResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -5595,6 +6134,7 @@ class ListPermissionsResponseBodyPermissions(TeaModel):
         duration: int = None,
         member: ListPermissionsResponseBodyPermissionsMember = None,
         modified_time: str = None,
+        operator_id: str = None,
         role: ListPermissionsResponseBodyPermissionsRole = None,
         space_id: str = None,
     ):
@@ -5608,6 +6148,8 @@ class ListPermissionsResponseBodyPermissions(TeaModel):
         self.member = member
         # 修改时间
         self.modified_time = modified_time
+        # 操作人id
+        self.operator_id = operator_id
         # 权限角色
         self.role = role
         # 空间id
@@ -5635,6 +6177,8 @@ class ListPermissionsResponseBodyPermissions(TeaModel):
             result['member'] = self.member.to_map()
         if self.modified_time is not None:
             result['modifiedTime'] = self.modified_time
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
         if self.role is not None:
             result['role'] = self.role.to_map()
         if self.space_id is not None:
@@ -5654,6 +6198,8 @@ class ListPermissionsResponseBodyPermissions(TeaModel):
             self.member = temp_model.from_map(m['member'])
         if m.get('modifiedTime') is not None:
             self.modified_time = m.get('modifiedTime')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
         if m.get('role') is not None:
             temp_model = ListPermissionsResponseBodyPermissionsRole()
             self.role = temp_model.from_map(m['role'])
@@ -7066,8 +7612,6 @@ class UpdateDentryAppPropertiesRequestAppProperties(TeaModel):
         # 枚举值:
         # 	PUBLIC: 该属性所有App可见
         # 	PRIVATE: 该属性仅其归属App可见
-        # 默认值:
-        # 	PRIVATE
         self.visibility = visibility
 
     def validate(self):

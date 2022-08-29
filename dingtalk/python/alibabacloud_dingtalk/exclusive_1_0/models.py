@@ -4646,6 +4646,196 @@ class GetDocCreatedSummaryResponse(TeaModel):
         return self
 
 
+class GetExclusiveAccountAllOrgListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetExclusiveAccountAllOrgListRequest(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+    ):
+        # 用户unionId
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class GetExclusiveAccountAllOrgListResponseBodyOrgInfoList(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        is_main_org: bool = None,
+        logo_url: str = None,
+        org_full_name: str = None,
+        org_name: str = None,
+    ):
+        # 组织ID
+        self.corp_id = corp_id
+        # 是否是主组织
+        self.is_main_org = is_main_org
+        # 组织图标地址
+        self.logo_url = logo_url
+        # 组织全称
+        self.org_full_name = org_full_name
+        # 组织名称
+        self.org_name = org_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.is_main_org is not None:
+            result['isMainOrg'] = self.is_main_org
+        if self.logo_url is not None:
+            result['logoUrl'] = self.logo_url
+        if self.org_full_name is not None:
+            result['orgFullName'] = self.org_full_name
+        if self.org_name is not None:
+            result['orgName'] = self.org_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('isMainOrg') is not None:
+            self.is_main_org = m.get('isMainOrg')
+        if m.get('logoUrl') is not None:
+            self.logo_url = m.get('logoUrl')
+        if m.get('orgFullName') is not None:
+            self.org_full_name = m.get('orgFullName')
+        if m.get('orgName') is not None:
+            self.org_name = m.get('orgName')
+        return self
+
+
+class GetExclusiveAccountAllOrgListResponseBody(TeaModel):
+    def __init__(
+        self,
+        org_info_list: List[GetExclusiveAccountAllOrgListResponseBodyOrgInfoList] = None,
+    ):
+        # 组织信息列表
+        self.org_info_list = org_info_list
+
+    def validate(self):
+        if self.org_info_list:
+            for k in self.org_info_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['orgInfoList'] = []
+        if self.org_info_list is not None:
+            for k in self.org_info_list:
+                result['orgInfoList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.org_info_list = []
+        if m.get('orgInfoList') is not None:
+            for k in m.get('orgInfoList'):
+                temp_model = GetExclusiveAccountAllOrgListResponseBodyOrgInfoList()
+                self.org_info_list.append(temp_model.from_map(k))
+        return self
+
+
+class GetExclusiveAccountAllOrgListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetExclusiveAccountAllOrgListResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetExclusiveAccountAllOrgListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetGeneralFormCreatedDeptSummaryHeaders(TeaModel):
     def __init__(
         self,
@@ -6222,6 +6412,498 @@ class GetPublisherSummaryResponse(TeaModel):
         return self
 
 
+class GetRealPeopleRecordsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetRealPeopleRecordsRequest(TeaModel):
+    def __init__(
+        self,
+        agent_id: int = None,
+        from_time: int = None,
+        max_results: int = None,
+        next_token: int = None,
+        person_identification: int = None,
+        to_time: int = None,
+        user_ids: List[str] = None,
+    ):
+        # 应用唯一标识
+        self.agent_id = agent_id
+        # 记录开始时间(毫秒时间戳)
+        self.from_time = from_time
+        # 一页最大值（最大50）
+        self.max_results = max_results
+        # 查询数据的起始位置，0表示从头开始。
+        self.next_token = next_token
+        # 实人认证结果 1-成功 2-失败
+        self.person_identification = person_identification
+        # 记录结束时间(毫秒时间戳)
+        self.to_time = to_time
+        # 员工userIds
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.from_time is not None:
+            result['fromTime'] = self.from_time
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.person_identification is not None:
+            result['personIdentification'] = self.person_identification
+        if self.to_time is not None:
+            result['toTime'] = self.to_time
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('fromTime') is not None:
+            self.from_time = m.get('fromTime')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('personIdentification') is not None:
+            self.person_identification = m.get('personIdentification')
+        if m.get('toTime') is not None:
+            self.to_time = m.get('toTime')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class GetRealPeopleRecordsResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        agent_id: int = None,
+        invoke_time: int = None,
+        person_identification: int = None,
+        platform: int = None,
+        user_id: str = None,
+    ):
+        # agentId
+        self.agent_id = agent_id
+        # 接口调用时间(毫秒时间戳)
+        self.invoke_time = invoke_time
+        # 实人认证结果 1-成功 2-失败
+        self.person_identification = person_identification
+        # 平台 0-Android 或 1-iOS
+        self.platform = platform
+        # userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.invoke_time is not None:
+            result['invokeTime'] = self.invoke_time
+        if self.person_identification is not None:
+            result['personIdentification'] = self.person_identification
+        if self.platform is not None:
+            result['platform'] = self.platform
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('invokeTime') is not None:
+            self.invoke_time = m.get('invokeTime')
+        if m.get('personIdentification') is not None:
+            self.person_identification = m.get('personIdentification')
+        if m.get('platform') is not None:
+            self.platform = m.get('platform')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetRealPeopleRecordsResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[GetRealPeopleRecordsResponseBodyData] = None,
+        next_token: int = None,
+        total: int = None,
+    ):
+        # data
+        self.data = data
+        # 下一次拉取启始值
+        self.next_token = next_token
+        # 总数据数
+        self.total = total
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.total is not None:
+            result['total'] = self.total
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = GetRealPeopleRecordsResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        return self
+
+
+class GetRealPeopleRecordsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetRealPeopleRecordsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetRealPeopleRecordsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetRecognizeRecordsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetRecognizeRecordsRequest(TeaModel):
+    def __init__(
+        self,
+        agent_id: int = None,
+        face_compare_result: int = None,
+        from_time: int = None,
+        max_results: int = None,
+        next_token: int = None,
+        to_time: int = None,
+        user_ids: List[str] = None,
+    ):
+        # 应用唯一标识
+        self.agent_id = agent_id
+        # 人脸对比结果 1-成功 2-失败
+        self.face_compare_result = face_compare_result
+        # 记录开始时间(毫秒时间戳)
+        self.from_time = from_time
+        # 一页最大值（最大50）
+        self.max_results = max_results
+        # 查询数据的起始位置，0表示从头开始。
+        self.next_token = next_token
+        # 记录结束时间(毫秒时间戳)
+        self.to_time = to_time
+        # 员工userIds
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.face_compare_result is not None:
+            result['faceCompareResult'] = self.face_compare_result
+        if self.from_time is not None:
+            result['fromTime'] = self.from_time
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.to_time is not None:
+            result['toTime'] = self.to_time
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('faceCompareResult') is not None:
+            self.face_compare_result = m.get('faceCompareResult')
+        if m.get('fromTime') is not None:
+            self.from_time = m.get('fromTime')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('toTime') is not None:
+            self.to_time = m.get('toTime')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class GetRecognizeRecordsResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        agent_id: int = None,
+        face_compare_result: int = None,
+        invoke_time: int = None,
+        platform: int = None,
+        user_id: str = None,
+    ):
+        # agentId
+        self.agent_id = agent_id
+        # 人脸对比结果 1-成功 2-失败
+        self.face_compare_result = face_compare_result
+        # 接口调用时间(毫秒时间戳)
+        self.invoke_time = invoke_time
+        # 平台 0-Android 或 1-iOS
+        self.platform = platform
+        # userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.face_compare_result is not None:
+            result['faceCompareResult'] = self.face_compare_result
+        if self.invoke_time is not None:
+            result['invokeTime'] = self.invoke_time
+        if self.platform is not None:
+            result['platform'] = self.platform
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('faceCompareResult') is not None:
+            self.face_compare_result = m.get('faceCompareResult')
+        if m.get('invokeTime') is not None:
+            self.invoke_time = m.get('invokeTime')
+        if m.get('platform') is not None:
+            self.platform = m.get('platform')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetRecognizeRecordsResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[GetRecognizeRecordsResponseBodyData] = None,
+        next_token: int = None,
+        total: int = None,
+    ):
+        # data
+        self.data = data
+        # 下一次拉取启始值
+        self.next_token = next_token
+        # 总数据数
+        self.total = total
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.total is not None:
+            result['total'] = self.total
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = GetRecognizeRecordsResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        return self
+
+
+class GetRecognizeRecordsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetRecognizeRecordsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetRecognizeRecordsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetSignedDetailByPageHeaders(TeaModel):
     def __init__(
         self,
@@ -6870,6 +7552,344 @@ class GetUserAppVersionSummaryResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetUserAppVersionSummaryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetUserFaceStateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetUserFaceStateRequest(TeaModel):
+    def __init__(
+        self,
+        user_ids: List[str] = None,
+    ):
+        # userIds
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class GetUserFaceStateResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        state: int = None,
+        user_id: str = None,
+    ):
+        # 人脸录入状态 1-无人脸 2-有人脸
+        self.state = state
+        # userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.state is not None:
+            result['state'] = self.state
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('state') is not None:
+            self.state = m.get('state')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetUserFaceStateResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[GetUserFaceStateResponseBodyData] = None,
+    ):
+        # data
+        self.data = data
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = GetUserFaceStateResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        return self
+
+
+class GetUserFaceStateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetUserFaceStateResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetUserFaceStateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetUserRealPeopleStateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetUserRealPeopleStateRequest(TeaModel):
+    def __init__(
+        self,
+        user_ids: List[str] = None,
+    ):
+        # userIds
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class GetUserRealPeopleStateResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        state: int = None,
+        user_id: str = None,
+    ):
+        # 认证状态 1-未认证 2-已认证
+        self.state = state
+        # userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.state is not None:
+            result['state'] = self.state
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('state') is not None:
+            self.state = m.get('state')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetUserRealPeopleStateResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[GetUserRealPeopleStateResponseBodyData] = None,
+    ):
+        # data
+        self.data = data
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = GetUserRealPeopleStateResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        return self
+
+
+class GetUserRealPeopleStateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetUserRealPeopleStateResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetUserRealPeopleStateResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

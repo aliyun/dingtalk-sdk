@@ -2373,6 +2373,62 @@ class GetEventResponseBodyEnd(TeaModel):
         return self
 
 
+class GetEventResponseBodyExtendedPropertiesSharedProperties(TeaModel):
+    def __init__(
+        self,
+        source_open_cid: str = None,
+    ):
+        self.source_open_cid = source_open_cid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.source_open_cid is not None:
+            result['sourceOpenCid'] = self.source_open_cid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sourceOpenCid') is not None:
+            self.source_open_cid = m.get('sourceOpenCid')
+        return self
+
+
+class GetEventResponseBodyExtendedProperties(TeaModel):
+    def __init__(
+        self,
+        shared_properties: GetEventResponseBodyExtendedPropertiesSharedProperties = None,
+    ):
+        self.shared_properties = shared_properties
+
+    def validate(self):
+        if self.shared_properties:
+            self.shared_properties.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.shared_properties is not None:
+            result['sharedProperties'] = self.shared_properties.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sharedProperties') is not None:
+            temp_model = GetEventResponseBodyExtendedPropertiesSharedProperties()
+            self.shared_properties = temp_model.from_map(m['sharedProperties'])
+        return self
+
+
 class GetEventResponseBodyLocation(TeaModel):
     def __init__(
         self,
@@ -2713,6 +2769,7 @@ class GetEventResponseBody(TeaModel):
         create_time: str = None,
         description: str = None,
         end: GetEventResponseBodyEnd = None,
+        extended_properties: GetEventResponseBodyExtendedProperties = None,
         id: str = None,
         is_all_day: bool = None,
         location: GetEventResponseBodyLocation = None,
@@ -2733,6 +2790,7 @@ class GetEventResponseBody(TeaModel):
         self.description = description
         # 日程结束时间
         self.end = end
+        self.extended_properties = extended_properties
         self.id = id
         # 是否为全天日程
         self.is_all_day = is_all_day
@@ -2759,6 +2817,8 @@ class GetEventResponseBody(TeaModel):
                     k.validate()
         if self.end:
             self.end.validate()
+        if self.extended_properties:
+            self.extended_properties.validate()
         if self.location:
             self.location.validate()
         if self.online_meeting_info:
@@ -2790,6 +2850,8 @@ class GetEventResponseBody(TeaModel):
             result['description'] = self.description
         if self.end is not None:
             result['end'] = self.end.to_map()
+        if self.extended_properties is not None:
+            result['extendedProperties'] = self.extended_properties.to_map()
         if self.id is not None:
             result['id'] = self.id
         if self.is_all_day is not None:
@@ -2832,6 +2894,9 @@ class GetEventResponseBody(TeaModel):
         if m.get('end') is not None:
             temp_model = GetEventResponseBodyEnd()
             self.end = temp_model.from_map(m['end'])
+        if m.get('extendedProperties') is not None:
+            temp_model = GetEventResponseBodyExtendedProperties()
+            self.extended_properties = temp_model.from_map(m['extendedProperties'])
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('isAllDay') is not None:
@@ -4587,6 +4652,62 @@ class ListEventsResponseBodyEventsEnd(TeaModel):
         return self
 
 
+class ListEventsResponseBodyEventsExtendedPropertiesSharedProperties(TeaModel):
+    def __init__(
+        self,
+        source_open_cid: str = None,
+    ):
+        self.source_open_cid = source_open_cid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.source_open_cid is not None:
+            result['sourceOpenCid'] = self.source_open_cid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sourceOpenCid') is not None:
+            self.source_open_cid = m.get('sourceOpenCid')
+        return self
+
+
+class ListEventsResponseBodyEventsExtendedProperties(TeaModel):
+    def __init__(
+        self,
+        shared_properties: ListEventsResponseBodyEventsExtendedPropertiesSharedProperties = None,
+    ):
+        self.shared_properties = shared_properties
+
+    def validate(self):
+        if self.shared_properties:
+            self.shared_properties.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.shared_properties is not None:
+            result['sharedProperties'] = self.shared_properties.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sharedProperties') is not None:
+            temp_model = ListEventsResponseBodyEventsExtendedPropertiesSharedProperties()
+            self.shared_properties = temp_model.from_map(m['sharedProperties'])
+        return self
+
+
 class ListEventsResponseBodyEventsLocation(TeaModel):
     def __init__(
         self,
@@ -4929,6 +5050,7 @@ class ListEventsResponseBodyEvents(TeaModel):
         create_time: str = None,
         description: str = None,
         end: ListEventsResponseBodyEventsEnd = None,
+        extended_properties: ListEventsResponseBodyEventsExtendedProperties = None,
         id: str = None,
         is_all_day: bool = None,
         location: ListEventsResponseBodyEventsLocation = None,
@@ -4950,6 +5072,7 @@ class ListEventsResponseBodyEvents(TeaModel):
         self.description = description
         # 日程结束时间
         self.end = end
+        self.extended_properties = extended_properties
         # 日程事件id
         self.id = id
         # 是否为全天日程
@@ -4980,6 +5103,8 @@ class ListEventsResponseBodyEvents(TeaModel):
                     k.validate()
         if self.end:
             self.end.validate()
+        if self.extended_properties:
+            self.extended_properties.validate()
         if self.location:
             self.location.validate()
         if self.online_meeting_info:
@@ -5011,6 +5136,8 @@ class ListEventsResponseBodyEvents(TeaModel):
             result['description'] = self.description
         if self.end is not None:
             result['end'] = self.end.to_map()
+        if self.extended_properties is not None:
+            result['extendedProperties'] = self.extended_properties.to_map()
         if self.id is not None:
             result['id'] = self.id
         if self.is_all_day is not None:
@@ -5053,6 +5180,9 @@ class ListEventsResponseBodyEvents(TeaModel):
         if m.get('end') is not None:
             temp_model = ListEventsResponseBodyEventsEnd()
             self.end = temp_model.from_map(m['end'])
+        if m.get('extendedProperties') is not None:
+            temp_model = ListEventsResponseBodyEventsExtendedProperties()
+            self.extended_properties = temp_model.from_map(m['extendedProperties'])
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('isAllDay') is not None:
@@ -5351,6 +5481,62 @@ class ListEventsInstancesResponseBodyEventsEnd(TeaModel):
             self.date_time = m.get('dateTime')
         if m.get('timeZone') is not None:
             self.time_zone = m.get('timeZone')
+        return self
+
+
+class ListEventsInstancesResponseBodyEventsExtendedPropertiesSharedProperties(TeaModel):
+    def __init__(
+        self,
+        source_open_cid: str = None,
+    ):
+        self.source_open_cid = source_open_cid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.source_open_cid is not None:
+            result['sourceOpenCid'] = self.source_open_cid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sourceOpenCid') is not None:
+            self.source_open_cid = m.get('sourceOpenCid')
+        return self
+
+
+class ListEventsInstancesResponseBodyEventsExtendedProperties(TeaModel):
+    def __init__(
+        self,
+        shared_properties: ListEventsInstancesResponseBodyEventsExtendedPropertiesSharedProperties = None,
+    ):
+        self.shared_properties = shared_properties
+
+    def validate(self):
+        if self.shared_properties:
+            self.shared_properties.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.shared_properties is not None:
+            result['sharedProperties'] = self.shared_properties.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sharedProperties') is not None:
+            temp_model = ListEventsInstancesResponseBodyEventsExtendedPropertiesSharedProperties()
+            self.shared_properties = temp_model.from_map(m['sharedProperties'])
         return self
 
 
@@ -5701,6 +5887,7 @@ class ListEventsInstancesResponseBodyEvents(TeaModel):
         create_time: str = None,
         description: str = None,
         end: ListEventsInstancesResponseBodyEventsEnd = None,
+        extended_properties: ListEventsInstancesResponseBodyEventsExtendedProperties = None,
         id: str = None,
         is_all_day: bool = None,
         location: ListEventsInstancesResponseBodyEventsLocation = None,
@@ -5722,6 +5909,7 @@ class ListEventsInstancesResponseBodyEvents(TeaModel):
         self.description = description
         # 日程结束时间
         self.end = end
+        self.extended_properties = extended_properties
         # 日程事件id
         self.id = id
         # 是否为全天日程
@@ -5754,6 +5942,8 @@ class ListEventsInstancesResponseBodyEvents(TeaModel):
                     k.validate()
         if self.end:
             self.end.validate()
+        if self.extended_properties:
+            self.extended_properties.validate()
         if self.location:
             self.location.validate()
         if self.online_meeting_info:
@@ -5785,6 +5975,8 @@ class ListEventsInstancesResponseBodyEvents(TeaModel):
             result['description'] = self.description
         if self.end is not None:
             result['end'] = self.end.to_map()
+        if self.extended_properties is not None:
+            result['extendedProperties'] = self.extended_properties.to_map()
         if self.id is not None:
             result['id'] = self.id
         if self.is_all_day is not None:
@@ -5827,6 +6019,9 @@ class ListEventsInstancesResponseBodyEvents(TeaModel):
         if m.get('end') is not None:
             temp_model = ListEventsInstancesResponseBodyEventsEnd()
             self.end = temp_model.from_map(m['end'])
+        if m.get('extendedProperties') is not None:
+            temp_model = ListEventsInstancesResponseBodyEventsExtendedProperties()
+            self.extended_properties = temp_model.from_map(m['extendedProperties'])
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('isAllDay') is not None:
@@ -6115,6 +6310,62 @@ class ListEventsViewResponseBodyEventsEnd(TeaModel):
             self.date_time = m.get('dateTime')
         if m.get('timeZone') is not None:
             self.time_zone = m.get('timeZone')
+        return self
+
+
+class ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties(TeaModel):
+    def __init__(
+        self,
+        source_open_cid: str = None,
+    ):
+        self.source_open_cid = source_open_cid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.source_open_cid is not None:
+            result['sourceOpenCid'] = self.source_open_cid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sourceOpenCid') is not None:
+            self.source_open_cid = m.get('sourceOpenCid')
+        return self
+
+
+class ListEventsViewResponseBodyEventsExtendedProperties(TeaModel):
+    def __init__(
+        self,
+        shared_properties: ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties = None,
+    ):
+        self.shared_properties = shared_properties
+
+    def validate(self):
+        if self.shared_properties:
+            self.shared_properties.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.shared_properties is not None:
+            result['sharedProperties'] = self.shared_properties.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sharedProperties') is not None:
+            temp_model = ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties()
+            self.shared_properties = temp_model.from_map(m['sharedProperties'])
         return self
 
 
@@ -6427,6 +6678,7 @@ class ListEventsViewResponseBodyEvents(TeaModel):
         create_time: str = None,
         description: str = None,
         end: ListEventsViewResponseBodyEventsEnd = None,
+        extended_properties: ListEventsViewResponseBodyEventsExtendedProperties = None,
         id: str = None,
         is_all_day: bool = None,
         location: ListEventsViewResponseBodyEventsLocation = None,
@@ -6447,6 +6699,7 @@ class ListEventsViewResponseBodyEvents(TeaModel):
         self.description = description
         # 日程结束时间
         self.end = end
+        self.extended_properties = extended_properties
         # 日程事件id
         self.id = id
         # 是否为全天日程
@@ -6476,6 +6729,8 @@ class ListEventsViewResponseBodyEvents(TeaModel):
                     k.validate()
         if self.end:
             self.end.validate()
+        if self.extended_properties:
+            self.extended_properties.validate()
         if self.location:
             self.location.validate()
         if self.online_meeting_info:
@@ -6503,6 +6758,8 @@ class ListEventsViewResponseBodyEvents(TeaModel):
             result['description'] = self.description
         if self.end is not None:
             result['end'] = self.end.to_map()
+        if self.extended_properties is not None:
+            result['extendedProperties'] = self.extended_properties.to_map()
         if self.id is not None:
             result['id'] = self.id
         if self.is_all_day is not None:
@@ -6541,6 +6798,9 @@ class ListEventsViewResponseBodyEvents(TeaModel):
         if m.get('end') is not None:
             temp_model = ListEventsViewResponseBodyEventsEnd()
             self.end = temp_model.from_map(m['end'])
+        if m.get('extendedProperties') is not None:
+            temp_model = ListEventsViewResponseBodyEventsExtendedProperties()
+            self.extended_properties = temp_model.from_map(m['extendedProperties'])
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('isAllDay') is not None:

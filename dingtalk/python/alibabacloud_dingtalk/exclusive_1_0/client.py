@@ -1829,6 +1829,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetDocCreatedSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/doc/org/{data_id}', 'json', req, runtime)
         )
 
+    def get_exclusive_account_all_org_list(
+        self,
+        request: dingtalkexclusive__1__0_models.GetExclusiveAccountAllOrgListRequest,
+    ) -> dingtalkexclusive__1__0_models.GetExclusiveAccountAllOrgListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetExclusiveAccountAllOrgListHeaders()
+        return self.get_exclusive_account_all_org_list_with_options(request, headers, runtime)
+
+    async def get_exclusive_account_all_org_list_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetExclusiveAccountAllOrgListRequest,
+    ) -> dingtalkexclusive__1__0_models.GetExclusiveAccountAllOrgListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetExclusiveAccountAllOrgListHeaders()
+        return await self.get_exclusive_account_all_org_list_with_options_async(request, headers, runtime)
+
+    def get_exclusive_account_all_org_list_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetExclusiveAccountAllOrgListRequest,
+        headers: dingtalkexclusive__1__0_models.GetExclusiveAccountAllOrgListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetExclusiveAccountAllOrgListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetExclusiveAccountAllOrgListResponse(),
+            self.do_roarequest('GetExclusiveAccountAllOrgList', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/exclusiveAccounts/organizations', 'json', req, runtime)
+        )
+
+    async def get_exclusive_account_all_org_list_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetExclusiveAccountAllOrgListRequest,
+        headers: dingtalkexclusive__1__0_models.GetExclusiveAccountAllOrgListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetExclusiveAccountAllOrgListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetExclusiveAccountAllOrgListResponse(),
+            await self.do_roarequest_async('GetExclusiveAccountAllOrgList', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/exclusiveAccounts/organizations', 'json', req, runtime)
+        )
+
     def get_general_form_created_dept_summary(
         self,
         data_id: str,
@@ -2393,6 +2457,182 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetPublisherSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/publisher/{data_id}', 'json', req, runtime)
         )
 
+    def get_real_people_records(
+        self,
+        request: dingtalkexclusive__1__0_models.GetRealPeopleRecordsRequest,
+    ) -> dingtalkexclusive__1__0_models.GetRealPeopleRecordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetRealPeopleRecordsHeaders()
+        return self.get_real_people_records_with_options(request, headers, runtime)
+
+    async def get_real_people_records_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetRealPeopleRecordsRequest,
+    ) -> dingtalkexclusive__1__0_models.GetRealPeopleRecordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetRealPeopleRecordsHeaders()
+        return await self.get_real_people_records_with_options_async(request, headers, runtime)
+
+    def get_real_people_records_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetRealPeopleRecordsRequest,
+        headers: dingtalkexclusive__1__0_models.GetRealPeopleRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetRealPeopleRecordsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_id):
+            body['agentId'] = request.agent_id
+        if not UtilClient.is_unset(request.from_time):
+            body['fromTime'] = request.from_time
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.person_identification):
+            body['personIdentification'] = request.person_identification
+        if not UtilClient.is_unset(request.to_time):
+            body['toTime'] = request.to_time
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetRealPeopleRecordsResponse(),
+            self.do_roarequest('GetRealPeopleRecords', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/persons/identificationRecords/query', 'json', req, runtime)
+        )
+
+    async def get_real_people_records_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetRealPeopleRecordsRequest,
+        headers: dingtalkexclusive__1__0_models.GetRealPeopleRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetRealPeopleRecordsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_id):
+            body['agentId'] = request.agent_id
+        if not UtilClient.is_unset(request.from_time):
+            body['fromTime'] = request.from_time
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.person_identification):
+            body['personIdentification'] = request.person_identification
+        if not UtilClient.is_unset(request.to_time):
+            body['toTime'] = request.to_time
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetRealPeopleRecordsResponse(),
+            await self.do_roarequest_async('GetRealPeopleRecords', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/persons/identificationRecords/query', 'json', req, runtime)
+        )
+
+    def get_recognize_records(
+        self,
+        request: dingtalkexclusive__1__0_models.GetRecognizeRecordsRequest,
+    ) -> dingtalkexclusive__1__0_models.GetRecognizeRecordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetRecognizeRecordsHeaders()
+        return self.get_recognize_records_with_options(request, headers, runtime)
+
+    async def get_recognize_records_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetRecognizeRecordsRequest,
+    ) -> dingtalkexclusive__1__0_models.GetRecognizeRecordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetRecognizeRecordsHeaders()
+        return await self.get_recognize_records_with_options_async(request, headers, runtime)
+
+    def get_recognize_records_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetRecognizeRecordsRequest,
+        headers: dingtalkexclusive__1__0_models.GetRecognizeRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetRecognizeRecordsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_id):
+            body['agentId'] = request.agent_id
+        if not UtilClient.is_unset(request.face_compare_result):
+            body['faceCompareResult'] = request.face_compare_result
+        if not UtilClient.is_unset(request.from_time):
+            body['fromTime'] = request.from_time
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.to_time):
+            body['toTime'] = request.to_time
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetRecognizeRecordsResponse(),
+            self.do_roarequest('GetRecognizeRecords', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/faces/recognizeRecords/query', 'json', req, runtime)
+        )
+
+    async def get_recognize_records_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetRecognizeRecordsRequest,
+        headers: dingtalkexclusive__1__0_models.GetRecognizeRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetRecognizeRecordsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_id):
+            body['agentId'] = request.agent_id
+        if not UtilClient.is_unset(request.face_compare_result):
+            body['faceCompareResult'] = request.face_compare_result
+        if not UtilClient.is_unset(request.from_time):
+            body['fromTime'] = request.from_time
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.to_time):
+            body['toTime'] = request.to_time
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetRecognizeRecordsResponse(),
+            await self.do_roarequest_async('GetRecognizeRecords', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/faces/recognizeRecords/query', 'json', req, runtime)
+        )
+
     def get_signed_detail_by_page(
         self,
         request: dingtalkexclusive__1__0_models.GetSignedDetailByPageRequest,
@@ -2601,6 +2841,134 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkexclusive__1__0_models.GetUserAppVersionSummaryResponse(),
             await self.do_roarequest_async('GetUserAppVersionSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/appVersion/org/{data_id}', 'json', req, runtime)
+        )
+
+    def get_user_face_state(
+        self,
+        request: dingtalkexclusive__1__0_models.GetUserFaceStateRequest,
+    ) -> dingtalkexclusive__1__0_models.GetUserFaceStateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetUserFaceStateHeaders()
+        return self.get_user_face_state_with_options(request, headers, runtime)
+
+    async def get_user_face_state_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetUserFaceStateRequest,
+    ) -> dingtalkexclusive__1__0_models.GetUserFaceStateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetUserFaceStateHeaders()
+        return await self.get_user_face_state_with_options_async(request, headers, runtime)
+
+    def get_user_face_state_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetUserFaceStateRequest,
+        headers: dingtalkexclusive__1__0_models.GetUserFaceStateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetUserFaceStateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetUserFaceStateResponse(),
+            self.do_roarequest('GetUserFaceState', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/faces/recognizeStates/query', 'json', req, runtime)
+        )
+
+    async def get_user_face_state_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetUserFaceStateRequest,
+        headers: dingtalkexclusive__1__0_models.GetUserFaceStateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetUserFaceStateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetUserFaceStateResponse(),
+            await self.do_roarequest_async('GetUserFaceState', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/faces/recognizeStates/query', 'json', req, runtime)
+        )
+
+    def get_user_real_people_state(
+        self,
+        request: dingtalkexclusive__1__0_models.GetUserRealPeopleStateRequest,
+    ) -> dingtalkexclusive__1__0_models.GetUserRealPeopleStateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetUserRealPeopleStateHeaders()
+        return self.get_user_real_people_state_with_options(request, headers, runtime)
+
+    async def get_user_real_people_state_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetUserRealPeopleStateRequest,
+    ) -> dingtalkexclusive__1__0_models.GetUserRealPeopleStateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetUserRealPeopleStateHeaders()
+        return await self.get_user_real_people_state_with_options_async(request, headers, runtime)
+
+    def get_user_real_people_state_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetUserRealPeopleStateRequest,
+        headers: dingtalkexclusive__1__0_models.GetUserRealPeopleStateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetUserRealPeopleStateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetUserRealPeopleStateResponse(),
+            self.do_roarequest('GetUserRealPeopleState', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/persons/identificationStates/query', 'json', req, runtime)
+        )
+
+    async def get_user_real_people_state_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetUserRealPeopleStateRequest,
+        headers: dingtalkexclusive__1__0_models.GetUserRealPeopleStateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetUserRealPeopleStateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetUserRealPeopleStateResponse(),
+            await self.do_roarequest_async('GetUserRealPeopleState', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/persons/identificationStates/query', 'json', req, runtime)
         )
 
     def get_user_stay_length(

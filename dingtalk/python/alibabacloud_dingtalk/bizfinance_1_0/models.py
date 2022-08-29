@@ -1027,6 +1027,269 @@ class BatchAddInvoiceResponse(TeaModel):
         return self
 
 
+class BatchCreateCustomerHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchCreateCustomerRequestCreateCustomerRequestList(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        name: str = None,
+        purchaser_account: str = None,
+        purchaser_address: str = None,
+        purchaser_bank_name: str = None,
+        purchaser_name: str = None,
+        purchaser_tax_no: str = None,
+        purchaser_tel: str = None,
+    ):
+        # 客户描述
+        self.description = description
+        # 客户名字
+        self.name = name
+        # 购方账户
+        self.purchaser_account = purchaser_account
+        # 购房地址
+        self.purchaser_address = purchaser_address
+        # 购方银行
+        self.purchaser_bank_name = purchaser_bank_name
+        # 购方名字
+        self.purchaser_name = purchaser_name
+        # 购方税号
+        self.purchaser_tax_no = purchaser_tax_no
+        # 购方电话
+        self.purchaser_tel = purchaser_tel
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.name is not None:
+            result['name'] = self.name
+        if self.purchaser_account is not None:
+            result['purchaserAccount'] = self.purchaser_account
+        if self.purchaser_address is not None:
+            result['purchaserAddress'] = self.purchaser_address
+        if self.purchaser_bank_name is not None:
+            result['purchaserBankName'] = self.purchaser_bank_name
+        if self.purchaser_name is not None:
+            result['purchaserName'] = self.purchaser_name
+        if self.purchaser_tax_no is not None:
+            result['purchaserTaxNo'] = self.purchaser_tax_no
+        if self.purchaser_tel is not None:
+            result['purchaserTel'] = self.purchaser_tel
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('purchaserAccount') is not None:
+            self.purchaser_account = m.get('purchaserAccount')
+        if m.get('purchaserAddress') is not None:
+            self.purchaser_address = m.get('purchaserAddress')
+        if m.get('purchaserBankName') is not None:
+            self.purchaser_bank_name = m.get('purchaserBankName')
+        if m.get('purchaserName') is not None:
+            self.purchaser_name = m.get('purchaserName')
+        if m.get('purchaserTaxNo') is not None:
+            self.purchaser_tax_no = m.get('purchaserTaxNo')
+        if m.get('purchaserTel') is not None:
+            self.purchaser_tel = m.get('purchaserTel')
+        return self
+
+
+class BatchCreateCustomerRequest(TeaModel):
+    def __init__(
+        self,
+        create_customer_request_list: List[BatchCreateCustomerRequestCreateCustomerRequestList] = None,
+        operator: str = None,
+    ):
+        self.create_customer_request_list = create_customer_request_list
+        # 创建人userId
+        self.operator = operator
+
+    def validate(self):
+        if self.create_customer_request_list:
+            for k in self.create_customer_request_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['createCustomerRequestList'] = []
+        if self.create_customer_request_list is not None:
+            for k in self.create_customer_request_list:
+                result['createCustomerRequestList'].append(k.to_map() if k else None)
+        if self.operator is not None:
+            result['operator'] = self.operator
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.create_customer_request_list = []
+        if m.get('createCustomerRequestList') is not None:
+            for k in m.get('createCustomerRequestList'):
+                temp_model = BatchCreateCustomerRequestCreateCustomerRequestList()
+                self.create_customer_request_list.append(temp_model.from_map(k))
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
+        return self
+
+
+class BatchCreateCustomerResponseBodyErrorResult(TeaModel):
+    def __init__(
+        self,
+        error_key: str = None,
+        error_msg: str = None,
+    ):
+        self.error_key = error_key
+        self.error_msg = error_msg
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_key is not None:
+            result['errorKey'] = self.error_key
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorKey') is not None:
+            self.error_key = m.get('errorKey')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        return self
+
+
+class BatchCreateCustomerResponseBody(TeaModel):
+    def __init__(
+        self,
+        error_result: List[BatchCreateCustomerResponseBodyErrorResult] = None,
+        success: bool = None,
+    ):
+        self.error_result = error_result
+        self.success = success
+
+    def validate(self):
+        if self.error_result:
+            for k in self.error_result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['errorResult'] = []
+        if self.error_result is not None:
+            for k in self.error_result:
+                result['errorResult'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.error_result = []
+        if m.get('errorResult') is not None:
+            for k in m.get('errorResult'):
+                temp_model = BatchCreateCustomerResponseBodyErrorResult()
+                self.error_result.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class BatchCreateCustomerResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BatchCreateCustomerResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BatchCreateCustomerResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CheckVoucherStatusHeaders(TeaModel):
     def __init__(
         self,
@@ -7366,6 +7629,271 @@ class QuerySupplierByPageResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QuerySupplierByPageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UnbindApplyReceiptAndInvoiceRelatedHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UnbindApplyReceiptAndInvoiceRelatedRequestInvoiceKeyVOList(TeaModel):
+    def __init__(
+        self,
+        invoice_code: str = None,
+        invoice_no: str = None,
+    ):
+        # 发票代码
+        self.invoice_code = invoice_code
+        # 发票号码
+        self.invoice_no = invoice_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        return self
+
+
+class UnbindApplyReceiptAndInvoiceRelatedRequest(TeaModel):
+    def __init__(
+        self,
+        instance_id: str = None,
+        invoice_key_volist: List[UnbindApplyReceiptAndInvoiceRelatedRequestInvoiceKeyVOList] = None,
+        operator: str = None,
+    ):
+        # 审批单id
+        self.instance_id = instance_id
+        # 发票模型
+        self.invoice_key_volist = invoice_key_volist
+        # 操作员
+        self.operator = operator
+
+    def validate(self):
+        if self.invoice_key_volist:
+            for k in self.invoice_key_volist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        result['invoiceKeyVOList'] = []
+        if self.invoice_key_volist is not None:
+            for k in self.invoice_key_volist:
+                result['invoiceKeyVOList'].append(k.to_map() if k else None)
+        if self.operator is not None:
+            result['operator'] = self.operator
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        self.invoice_key_volist = []
+        if m.get('invoiceKeyVOList') is not None:
+            for k in m.get('invoiceKeyVOList'):
+                temp_model = UnbindApplyReceiptAndInvoiceRelatedRequestInvoiceKeyVOList()
+                self.invoice_key_volist.append(temp_model.from_map(k))
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
+        return self
+
+
+class UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList(TeaModel):
+    def __init__(
+        self,
+        invoice_code: str = None,
+        invoice_no: str = None,
+    ):
+        # 发票编码
+        self.invoice_code = invoice_code
+        # 发票号码
+        self.invoice_no = invoice_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        return self
+
+
+class UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse(TeaModel):
+    def __init__(
+        self,
+        invoice_key_volist: List[UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList] = None,
+    ):
+        # 错误结果列表
+        # 
+        self.invoice_key_volist = invoice_key_volist
+
+    def validate(self):
+        if self.invoice_key_volist:
+            for k in self.invoice_key_volist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['invoiceKeyVOList'] = []
+        if self.invoice_key_volist is not None:
+            for k in self.invoice_key_volist:
+                result['invoiceKeyVOList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.invoice_key_volist = []
+        if m.get('invoiceKeyVOList') is not None:
+            for k in m.get('invoiceKeyVOList'):
+                temp_model = UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList()
+                self.invoice_key_volist.append(temp_model.from_map(k))
+        return self
+
+
+class UnbindApplyReceiptAndInvoiceRelatedResponseBody(TeaModel):
+    def __init__(
+        self,
+        batch_update_invoice_response: UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse = None,
+        success: bool = None,
+    ):
+        # 批量更新发票返回结果
+        # 
+        self.batch_update_invoice_response = batch_update_invoice_response
+        # 是否成功
+        self.success = success
+
+    def validate(self):
+        if self.batch_update_invoice_response:
+            self.batch_update_invoice_response.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.batch_update_invoice_response is not None:
+            result['batchUpdateInvoiceResponse'] = self.batch_update_invoice_response.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('batchUpdateInvoiceResponse') is not None:
+            temp_model = UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse()
+            self.batch_update_invoice_response = temp_model.from_map(m['batchUpdateInvoiceResponse'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UnbindApplyReceiptAndInvoiceRelatedResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UnbindApplyReceiptAndInvoiceRelatedResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UnbindApplyReceiptAndInvoiceRelatedResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

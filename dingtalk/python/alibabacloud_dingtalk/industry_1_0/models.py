@@ -10939,6 +10939,237 @@ class ExternalQueryExternalOrgsResponse(TeaModel):
         return self
 
 
+class HospitalDataCheckHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class HospitalDataCheckRequest(TeaModel):
+    def __init__(
+        self,
+        all_dept_count: int = None,
+        all_dept_user_count: int = None,
+        all_group_count: int = None,
+        all_group_user_count: int = None,
+        dept_count: int = None,
+        dept_user_count: int = None,
+        group_count: int = None,
+        group_user_count: int = None,
+    ):
+        # 所有状态的科室数量
+        self.all_dept_count = all_dept_count
+        # 正常状态的科室人员数量
+        self.all_dept_user_count = all_dept_user_count
+        # 所有状态的医疗组数量
+        self.all_group_count = all_group_count
+        # 所有状态的医疗组人员数量
+        self.all_group_user_count = all_group_user_count
+        # 状态为0的科室数量
+        self.dept_count = dept_count
+        # 正常状态的科室人员数量
+        self.dept_user_count = dept_user_count
+        # 正常状态的医疗组数量
+        self.group_count = group_count
+        # 正常状态的医疗组人员数量
+        self.group_user_count = group_user_count
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.all_dept_count is not None:
+            result['allDeptCount'] = self.all_dept_count
+        if self.all_dept_user_count is not None:
+            result['allDeptUserCount'] = self.all_dept_user_count
+        if self.all_group_count is not None:
+            result['allGroupCount'] = self.all_group_count
+        if self.all_group_user_count is not None:
+            result['allGroupUserCount'] = self.all_group_user_count
+        if self.dept_count is not None:
+            result['deptCount'] = self.dept_count
+        if self.dept_user_count is not None:
+            result['deptUserCount'] = self.dept_user_count
+        if self.group_count is not None:
+            result['groupCount'] = self.group_count
+        if self.group_user_count is not None:
+            result['groupUserCount'] = self.group_user_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('allDeptCount') is not None:
+            self.all_dept_count = m.get('allDeptCount')
+        if m.get('allDeptUserCount') is not None:
+            self.all_dept_user_count = m.get('allDeptUserCount')
+        if m.get('allGroupCount') is not None:
+            self.all_group_count = m.get('allGroupCount')
+        if m.get('allGroupUserCount') is not None:
+            self.all_group_user_count = m.get('allGroupUserCount')
+        if m.get('deptCount') is not None:
+            self.dept_count = m.get('deptCount')
+        if m.get('deptUserCount') is not None:
+            self.dept_user_count = m.get('deptUserCount')
+        if m.get('groupCount') is not None:
+            self.group_count = m.get('groupCount')
+        if m.get('groupUserCount') is not None:
+            self.group_user_count = m.get('groupUserCount')
+        return self
+
+
+class HospitalDataCheckResponseBody(TeaModel):
+    def __init__(
+        self,
+        all_dept_count: int = None,
+        all_dept_user_count: int = None,
+        all_group_count: int = None,
+        all_group_user_count: int = None,
+        dept_count: int = None,
+        dept_user_count: int = None,
+        group_count: int = None,
+        group_user_count: int = None,
+        match: bool = None,
+    ):
+        # 所有状态的科室数量
+        self.all_dept_count = all_dept_count
+        # 所有状态的科室人员数量
+        self.all_dept_user_count = all_dept_user_count
+        # 所有状态的医疗组数量
+        self.all_group_count = all_group_count
+        # 所有状态的医疗组人员数量
+        self.all_group_user_count = all_group_user_count
+        # 正常状态的科室数量
+        self.dept_count = dept_count
+        # 正常状态的科室人员数量
+        self.dept_user_count = dept_user_count
+        # 正常状态的医疗组数量
+        self.group_count = group_count
+        # 正常状态的医疗组人员数量
+        self.group_user_count = group_user_count
+        # 数据是否一致
+        self.match = match
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.all_dept_count is not None:
+            result['allDeptCount'] = self.all_dept_count
+        if self.all_dept_user_count is not None:
+            result['allDeptUserCount'] = self.all_dept_user_count
+        if self.all_group_count is not None:
+            result['allGroupCount'] = self.all_group_count
+        if self.all_group_user_count is not None:
+            result['allGroupUserCount'] = self.all_group_user_count
+        if self.dept_count is not None:
+            result['deptCount'] = self.dept_count
+        if self.dept_user_count is not None:
+            result['deptUserCount'] = self.dept_user_count
+        if self.group_count is not None:
+            result['groupCount'] = self.group_count
+        if self.group_user_count is not None:
+            result['groupUserCount'] = self.group_user_count
+        if self.match is not None:
+            result['match'] = self.match
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('allDeptCount') is not None:
+            self.all_dept_count = m.get('allDeptCount')
+        if m.get('allDeptUserCount') is not None:
+            self.all_dept_user_count = m.get('allDeptUserCount')
+        if m.get('allGroupCount') is not None:
+            self.all_group_count = m.get('allGroupCount')
+        if m.get('allGroupUserCount') is not None:
+            self.all_group_user_count = m.get('allGroupUserCount')
+        if m.get('deptCount') is not None:
+            self.dept_count = m.get('deptCount')
+        if m.get('deptUserCount') is not None:
+            self.dept_user_count = m.get('deptUserCount')
+        if m.get('groupCount') is not None:
+            self.group_count = m.get('groupCount')
+        if m.get('groupUserCount') is not None:
+            self.group_user_count = m.get('groupUserCount')
+        if m.get('match') is not None:
+            self.match = m.get('match')
+        return self
+
+
+class HospitalDataCheckResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: HospitalDataCheckResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = HospitalDataCheckResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class IndustryManufactureCommonEventHeaders(TeaModel):
     def __init__(
         self,
@@ -20644,6 +20875,34 @@ class QueryUserInfoHeaders(TeaModel):
             self.common_headers = m.get('commonHeaders')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryUserInfoRequest(TeaModel):
+    def __init__(
+        self,
+        month_mark: str = None,
+    ):
+        # 按月标记。不填默认当月。填0为次月。
+        self.month_mark = month_mark
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.month_mark is not None:
+            result['monthMark'] = self.month_mark
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('monthMark') is not None:
+            self.month_mark = m.get('monthMark')
         return self
 
 
