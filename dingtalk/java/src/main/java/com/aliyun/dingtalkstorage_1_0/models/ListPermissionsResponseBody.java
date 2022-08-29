@@ -140,6 +140,10 @@ public class ListPermissionsResponseBody extends TeaModel {
         @NameInMap("modifiedTime")
         public String modifiedTime;
 
+        // 操作人id
+        @NameInMap("operatorId")
+        public String operatorId;
+
         // 权限角色
         @NameInMap("role")
         public ListPermissionsResponseBodyPermissionsRole role;
@@ -191,6 +195,14 @@ public class ListPermissionsResponseBody extends TeaModel {
         }
         public String getModifiedTime() {
             return this.modifiedTime;
+        }
+
+        public ListPermissionsResponseBodyPermissions setOperatorId(String operatorId) {
+            this.operatorId = operatorId;
+            return this;
+        }
+        public String getOperatorId() {
+            return this.operatorId;
         }
 
         public ListPermissionsResponseBodyPermissions setRole(ListPermissionsResponseBodyPermissionsRole role) {

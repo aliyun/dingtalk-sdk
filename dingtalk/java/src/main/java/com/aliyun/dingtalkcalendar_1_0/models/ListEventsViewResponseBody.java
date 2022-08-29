@@ -141,6 +141,44 @@ public class ListEventsViewResponseBody extends TeaModel {
 
     }
 
+    public static class ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties extends TeaModel {
+        @NameInMap("sourceOpenCid")
+        public String sourceOpenCid;
+
+        public static ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties build(java.util.Map<String, ?> map) throws Exception {
+            ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties self = new ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties();
+            return TeaModel.build(map, self);
+        }
+
+        public ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties setSourceOpenCid(String sourceOpenCid) {
+            this.sourceOpenCid = sourceOpenCid;
+            return this;
+        }
+        public String getSourceOpenCid() {
+            return this.sourceOpenCid;
+        }
+
+    }
+
+    public static class ListEventsViewResponseBodyEventsExtendedProperties extends TeaModel {
+        @NameInMap("sharedProperties")
+        public ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties sharedProperties;
+
+        public static ListEventsViewResponseBodyEventsExtendedProperties build(java.util.Map<String, ?> map) throws Exception {
+            ListEventsViewResponseBodyEventsExtendedProperties self = new ListEventsViewResponseBodyEventsExtendedProperties();
+            return TeaModel.build(map, self);
+        }
+
+        public ListEventsViewResponseBodyEventsExtendedProperties setSharedProperties(ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties sharedProperties) {
+            this.sharedProperties = sharedProperties;
+            return this;
+        }
+        public ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties getSharedProperties() {
+            return this.sharedProperties;
+        }
+
+    }
+
     public static class ListEventsViewResponseBodyEventsLocation extends TeaModel {
         // 展示名称
         @NameInMap("displayName")
@@ -479,6 +517,9 @@ public class ListEventsViewResponseBody extends TeaModel {
         @NameInMap("end")
         public ListEventsViewResponseBodyEventsEnd end;
 
+        @NameInMap("extendedProperties")
+        public ListEventsViewResponseBodyEventsExtendedProperties extendedProperties;
+
         // 日程事件id
         @NameInMap("id")
         public String id;
@@ -557,6 +598,14 @@ public class ListEventsViewResponseBody extends TeaModel {
         }
         public ListEventsViewResponseBodyEventsEnd getEnd() {
             return this.end;
+        }
+
+        public ListEventsViewResponseBodyEvents setExtendedProperties(ListEventsViewResponseBodyEventsExtendedProperties extendedProperties) {
+            this.extendedProperties = extendedProperties;
+            return this;
+        }
+        public ListEventsViewResponseBodyEventsExtendedProperties getExtendedProperties() {
+            return this.extendedProperties;
         }
 
         public ListEventsViewResponseBodyEvents setId(String id) {

@@ -3,15 +3,10 @@ package com.aliyun.dingtalkwiki_1_0;
 
 import com.aliyun.tea.*;
 import com.aliyun.dingtalkwiki_1_0.models.*;
-import com.aliyun.teautil.*;
-import com.aliyun.teautil.models.*;
-import com.aliyun.teaopenapi.*;
-import com.aliyun.teaopenapi.models.*;
-import com.aliyun.openapiutil.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public Client(Config config) throws Exception {
+    public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
@@ -22,12 +17,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     public WikiWordsDetailResponse wikiWordsDetail(WikiWordsDetailRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         WikiWordsDetailHeaders headers = new WikiWordsDetailHeaders();
         return this.wikiWordsDetailWithOptions(request, headers, runtime);
     }
 
-    public WikiWordsDetailResponse wikiWordsDetailWithOptions(WikiWordsDetailRequest request, WikiWordsDetailHeaders headers, RuntimeOptions runtime) throws Exception {
+    public WikiWordsDetailResponse wikiWordsDetailWithOptions(WikiWordsDetailRequest request, WikiWordsDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.wordName)) {
@@ -43,7 +38,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
@@ -51,12 +46,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public WikiWordsParseResponse wikiWordsParse(WikiWordsParseRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         WikiWordsParseHeaders headers = new WikiWordsParseHeaders();
         return this.wikiWordsParseWithOptions(request, headers, runtime);
     }
 
-    public WikiWordsParseResponse wikiWordsParseWithOptions(WikiWordsParseRequest request, WikiWordsParseHeaders headers, RuntimeOptions runtime) throws Exception {
+    public WikiWordsParseResponse wikiWordsParseWithOptions(WikiWordsParseRequest request, WikiWordsParseHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.content)) {
@@ -72,7 +67,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));

@@ -3,15 +3,10 @@ package com.aliyun.dingtalkmanufacturing_1_0;
 
 import com.aliyun.tea.*;
 import com.aliyun.dingtalkmanufacturing_1_0.models.*;
-import com.aliyun.teautil.*;
-import com.aliyun.teautil.models.*;
-import com.aliyun.teaopenapi.*;
-import com.aliyun.teaopenapi.models.*;
-import com.aliyun.openapiutil.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public Client(Config config) throws Exception {
+    public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
@@ -22,12 +17,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     public IndustrializeManufactureJobBookResponse industrializeManufactureJobBook(String userId, IndustrializeManufactureJobBookRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         java.util.Map<String, String> headers = new java.util.HashMap<>();
         return this.industrializeManufactureJobBookWithOptions(userId, request, headers, runtime);
     }
 
-    public IndustrializeManufactureJobBookResponse industrializeManufactureJobBookWithOptions(String userId, IndustrializeManufactureJobBookRequest request, java.util.Map<String, String> headers, RuntimeOptions runtime) throws Exception {
+    public IndustrializeManufactureJobBookResponse industrializeManufactureJobBookWithOptions(String userId, IndustrializeManufactureJobBookRequest request, java.util.Map<String, String> headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -111,7 +106,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("uuid", request.uuid);
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", headers),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
@@ -119,12 +114,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public IndustrializeManufactureQueryJobsResponse industrializeManufactureQueryJobs(IndustrializeManufactureQueryJobsRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         IndustrializeManufactureQueryJobsHeaders headers = new IndustrializeManufactureQueryJobsHeaders();
         return this.industrializeManufactureQueryJobsWithOptions(request, headers, runtime);
     }
 
-    public IndustrializeManufactureQueryJobsResponse industrializeManufactureQueryJobsWithOptions(IndustrializeManufactureQueryJobsRequest request, IndustrializeManufactureQueryJobsHeaders headers, RuntimeOptions runtime) throws Exception {
+    public IndustrializeManufactureQueryJobsResponse industrializeManufactureQueryJobsWithOptions(IndustrializeManufactureQueryJobsRequest request, IndustrializeManufactureQueryJobsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.currentPage)) {
@@ -196,7 +191,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));

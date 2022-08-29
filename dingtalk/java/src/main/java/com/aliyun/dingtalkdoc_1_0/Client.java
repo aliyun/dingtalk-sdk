@@ -3,15 +3,10 @@ package com.aliyun.dingtalkdoc_1_0;
 
 import com.aliyun.tea.*;
 import com.aliyun.dingtalkdoc_1_0.models.*;
-import com.aliyun.teautil.*;
-import com.aliyun.teautil.models.*;
-import com.aliyun.teaopenapi.*;
-import com.aliyun.teaopenapi.models.*;
-import com.aliyun.openapiutil.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public Client(Config config) throws Exception {
+    public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
@@ -22,12 +17,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     public AddWorkspaceDocMembersResponse addWorkspaceDocMembers(String workspaceId, String nodeId, AddWorkspaceDocMembersRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AddWorkspaceDocMembersHeaders headers = new AddWorkspaceDocMembersHeaders();
         return this.addWorkspaceDocMembersWithOptions(workspaceId, nodeId, request, headers, runtime);
     }
 
-    public AddWorkspaceDocMembersResponse addWorkspaceDocMembersWithOptions(String workspaceId, String nodeId, AddWorkspaceDocMembersRequest request, AddWorkspaceDocMembersHeaders headers, RuntimeOptions runtime) throws Exception {
+    public AddWorkspaceDocMembersResponse addWorkspaceDocMembersWithOptions(String workspaceId, String nodeId, AddWorkspaceDocMembersRequest request, AddWorkspaceDocMembersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workspaceId = com.aliyun.openapiutil.Client.getEncodeParam(workspaceId);
         nodeId = com.aliyun.openapiutil.Client.getEncodeParam(nodeId);
@@ -49,7 +44,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
@@ -57,12 +52,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public AddWorkspaceMembersResponse addWorkspaceMembers(String workspaceId, AddWorkspaceMembersRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AddWorkspaceMembersHeaders headers = new AddWorkspaceMembersHeaders();
         return this.addWorkspaceMembersWithOptions(workspaceId, request, headers, runtime);
     }
 
-    public AddWorkspaceMembersResponse addWorkspaceMembersWithOptions(String workspaceId, AddWorkspaceMembersRequest request, AddWorkspaceMembersHeaders headers, RuntimeOptions runtime) throws Exception {
+    public AddWorkspaceMembersResponse addWorkspaceMembersWithOptions(String workspaceId, AddWorkspaceMembersRequest request, AddWorkspaceMembersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workspaceId = com.aliyun.openapiutil.Client.getEncodeParam(workspaceId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -83,7 +78,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
@@ -91,12 +86,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public AppendRowsResponse appendRows(String workbookId, String sheetId, AppendRowsRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AppendRowsHeaders headers = new AppendRowsHeaders();
         return this.appendRowsWithOptions(workbookId, sheetId, request, headers, runtime);
     }
 
-    public AppendRowsResponse appendRowsWithOptions(String workbookId, String sheetId, AppendRowsRequest request, AppendRowsHeaders headers, RuntimeOptions runtime) throws Exception {
+    public AppendRowsResponse appendRowsWithOptions(String workbookId, String sheetId, AppendRowsRequest request, AppendRowsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workbookId = com.aliyun.openapiutil.Client.getEncodeParam(workbookId);
         sheetId = com.aliyun.openapiutil.Client.getEncodeParam(sheetId);
@@ -119,7 +114,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
@@ -128,12 +123,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public BatchGetWorkspaceDocsResponse batchGetWorkspaceDocs(BatchGetWorkspaceDocsRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         BatchGetWorkspaceDocsHeaders headers = new BatchGetWorkspaceDocsHeaders();
         return this.batchGetWorkspaceDocsWithOptions(request, headers, runtime);
     }
 
-    public BatchGetWorkspaceDocsResponse batchGetWorkspaceDocsWithOptions(BatchGetWorkspaceDocsRequest request, BatchGetWorkspaceDocsHeaders headers, RuntimeOptions runtime) throws Exception {
+    public BatchGetWorkspaceDocsResponse batchGetWorkspaceDocsWithOptions(BatchGetWorkspaceDocsRequest request, BatchGetWorkspaceDocsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.nodeIds)) {
@@ -153,7 +148,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
@@ -161,12 +156,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public BatchGetWorkspacesResponse batchGetWorkspaces(BatchGetWorkspacesRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         BatchGetWorkspacesHeaders headers = new BatchGetWorkspacesHeaders();
         return this.batchGetWorkspacesWithOptions(request, headers, runtime);
     }
 
-    public BatchGetWorkspacesResponse batchGetWorkspacesWithOptions(BatchGetWorkspacesRequest request, BatchGetWorkspacesHeaders headers, RuntimeOptions runtime) throws Exception {
+    public BatchGetWorkspacesResponse batchGetWorkspacesWithOptions(BatchGetWorkspacesRequest request, BatchGetWorkspacesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.includeRecent)) {
@@ -190,20 +185,20 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("BatchGetWorkspaces", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workspaces/infos/query", "json", req, runtime), new BatchGetWorkspacesResponse());
     }
 
-    public ClearDataResponse clearData(String workbookId, String sheetId, String rangeAddress, ClearDataRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
-        ClearDataHeaders headers = new ClearDataHeaders();
-        return this.clearDataWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
+    public ClearResponse clear(String workbookId, String sheetId, String rangeAddress, ClearRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ClearHeaders headers = new ClearHeaders();
+        return this.clearWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
     }
 
-    public ClearDataResponse clearDataWithOptions(String workbookId, String sheetId, String rangeAddress, ClearDataRequest request, ClearDataHeaders headers, RuntimeOptions runtime) throws Exception {
+    public ClearResponse clearWithOptions(String workbookId, String sheetId, String rangeAddress, ClearRequest request, ClearHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workbookId = com.aliyun.openapiutil.Client.getEncodeParam(workbookId);
         sheetId = com.aliyun.openapiutil.Client.getEncodeParam(sheetId);
@@ -222,7 +217,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("Clear", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/clear", "json", req, runtime), new ClearResponse());
+    }
+
+    public ClearDataResponse clearData(String workbookId, String sheetId, String rangeAddress, ClearDataRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ClearDataHeaders headers = new ClearDataHeaders();
+        return this.clearDataWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
+    }
+
+    public ClearDataResponse clearDataWithOptions(String workbookId, String sheetId, String rangeAddress, ClearDataRequest request, ClearDataHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        workbookId = com.aliyun.openapiutil.Client.getEncodeParam(workbookId);
+        sheetId = com.aliyun.openapiutil.Client.getEncodeParam(sheetId);
+        rangeAddress = com.aliyun.openapiutil.Client.getEncodeParam(rangeAddress);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
@@ -230,12 +257,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public CreateRangeProtectionResponse createRangeProtection(String workbookId, String sheetId, String rangeAddress, CreateRangeProtectionRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateRangeProtectionHeaders headers = new CreateRangeProtectionHeaders();
         return this.createRangeProtectionWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
     }
 
-    public CreateRangeProtectionResponse createRangeProtectionWithOptions(String workbookId, String sheetId, String rangeAddress, CreateRangeProtectionRequest request, CreateRangeProtectionHeaders headers, RuntimeOptions runtime) throws Exception {
+    public CreateRangeProtectionResponse createRangeProtectionWithOptions(String workbookId, String sheetId, String rangeAddress, CreateRangeProtectionRequest request, CreateRangeProtectionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workbookId = com.aliyun.openapiutil.Client.getEncodeParam(workbookId);
         sheetId = com.aliyun.openapiutil.Client.getEncodeParam(sheetId);
@@ -259,7 +286,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
@@ -268,12 +295,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public CreateSheetResponse createSheet(String workbookId, CreateSheetRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateSheetHeaders headers = new CreateSheetHeaders();
         return this.createSheetWithOptions(workbookId, request, headers, runtime);
     }
 
-    public CreateSheetResponse createSheetWithOptions(String workbookId, CreateSheetRequest request, CreateSheetHeaders headers, RuntimeOptions runtime) throws Exception {
+    public CreateSheetResponse createSheetWithOptions(String workbookId, CreateSheetRequest request, CreateSheetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workbookId = com.aliyun.openapiutil.Client.getEncodeParam(workbookId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -295,7 +322,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
@@ -304,12 +331,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public CreateWorkspaceResponse createWorkspace(CreateWorkspaceRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateWorkspaceHeaders headers = new CreateWorkspaceHeaders();
         return this.createWorkspaceWithOptions(request, headers, runtime);
     }
 
-    public CreateWorkspaceResponse createWorkspaceWithOptions(CreateWorkspaceRequest request, CreateWorkspaceHeaders headers, RuntimeOptions runtime) throws Exception {
+    public CreateWorkspaceResponse createWorkspaceWithOptions(CreateWorkspaceRequest request, CreateWorkspaceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.description)) {
@@ -333,7 +360,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
@@ -341,12 +368,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public CreateWorkspaceDocResponse createWorkspaceDoc(String workspaceId, CreateWorkspaceDocRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateWorkspaceDocHeaders headers = new CreateWorkspaceDocHeaders();
         return this.createWorkspaceDocWithOptions(workspaceId, request, headers, runtime);
     }
 
-    public CreateWorkspaceDocResponse createWorkspaceDocWithOptions(String workspaceId, CreateWorkspaceDocRequest request, CreateWorkspaceDocHeaders headers, RuntimeOptions runtime) throws Exception {
+    public CreateWorkspaceDocResponse createWorkspaceDocWithOptions(String workspaceId, CreateWorkspaceDocRequest request, CreateWorkspaceDocHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workspaceId = com.aliyun.openapiutil.Client.getEncodeParam(workspaceId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -383,7 +410,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
@@ -391,12 +418,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public DeleteColumnsResponse deleteColumns(String workbookId, String sheetId, DeleteColumnsRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteColumnsHeaders headers = new DeleteColumnsHeaders();
         return this.deleteColumnsWithOptions(workbookId, sheetId, request, headers, runtime);
     }
 
-    public DeleteColumnsResponse deleteColumnsWithOptions(String workbookId, String sheetId, DeleteColumnsRequest request, DeleteColumnsHeaders headers, RuntimeOptions runtime) throws Exception {
+    public DeleteColumnsResponse deleteColumnsWithOptions(String workbookId, String sheetId, DeleteColumnsRequest request, DeleteColumnsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workbookId = com.aliyun.openapiutil.Client.getEncodeParam(workbookId);
         sheetId = com.aliyun.openapiutil.Client.getEncodeParam(sheetId);
@@ -423,7 +450,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
@@ -432,12 +459,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public DeleteRangeProtectionResponse deleteRangeProtection(String workbookId, String sheetId, String rangeAddress, String protectionId, DeleteRangeProtectionRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteRangeProtectionHeaders headers = new DeleteRangeProtectionHeaders();
         return this.deleteRangeProtectionWithOptions(workbookId, sheetId, rangeAddress, protectionId, request, headers, runtime);
     }
 
-    public DeleteRangeProtectionResponse deleteRangeProtectionWithOptions(String workbookId, String sheetId, String rangeAddress, String protectionId, DeleteRangeProtectionRequest request, DeleteRangeProtectionHeaders headers, RuntimeOptions runtime) throws Exception {
+    public DeleteRangeProtectionResponse deleteRangeProtectionWithOptions(String workbookId, String sheetId, String rangeAddress, String protectionId, DeleteRangeProtectionRequest request, DeleteRangeProtectionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workbookId = com.aliyun.openapiutil.Client.getEncodeParam(workbookId);
         sheetId = com.aliyun.openapiutil.Client.getEncodeParam(sheetId);
@@ -457,7 +484,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
@@ -465,12 +492,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public DeleteRowsResponse deleteRows(String workbookId, String sheetId, DeleteRowsRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteRowsHeaders headers = new DeleteRowsHeaders();
         return this.deleteRowsWithOptions(workbookId, sheetId, request, headers, runtime);
     }
 
-    public DeleteRowsResponse deleteRowsWithOptions(String workbookId, String sheetId, DeleteRowsRequest request, DeleteRowsHeaders headers, RuntimeOptions runtime) throws Exception {
+    public DeleteRowsResponse deleteRowsWithOptions(String workbookId, String sheetId, DeleteRowsRequest request, DeleteRowsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workbookId = com.aliyun.openapiutil.Client.getEncodeParam(workbookId);
         sheetId = com.aliyun.openapiutil.Client.getEncodeParam(sheetId);
@@ -497,7 +524,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
@@ -506,12 +533,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public DeleteSheetResponse deleteSheet(String workbookId, String sheetId, DeleteSheetRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteSheetHeaders headers = new DeleteSheetHeaders();
         return this.deleteSheetWithOptions(workbookId, sheetId, request, headers, runtime);
     }
 
-    public DeleteSheetResponse deleteSheetWithOptions(String workbookId, String sheetId, DeleteSheetRequest request, DeleteSheetHeaders headers, RuntimeOptions runtime) throws Exception {
+    public DeleteSheetResponse deleteSheetWithOptions(String workbookId, String sheetId, DeleteSheetRequest request, DeleteSheetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workbookId = com.aliyun.openapiutil.Client.getEncodeParam(workbookId);
         sheetId = com.aliyun.openapiutil.Client.getEncodeParam(sheetId);
@@ -529,7 +556,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
@@ -537,12 +564,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public DeleteWorkspaceDocResponse deleteWorkspaceDoc(String workspaceId, String nodeId, DeleteWorkspaceDocRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteWorkspaceDocHeaders headers = new DeleteWorkspaceDocHeaders();
         return this.deleteWorkspaceDocWithOptions(workspaceId, nodeId, request, headers, runtime);
     }
 
-    public DeleteWorkspaceDocResponse deleteWorkspaceDocWithOptions(String workspaceId, String nodeId, DeleteWorkspaceDocRequest request, DeleteWorkspaceDocHeaders headers, RuntimeOptions runtime) throws Exception {
+    public DeleteWorkspaceDocResponse deleteWorkspaceDocWithOptions(String workspaceId, String nodeId, DeleteWorkspaceDocRequest request, DeleteWorkspaceDocHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workspaceId = com.aliyun.openapiutil.Client.getEncodeParam(workspaceId);
         nodeId = com.aliyun.openapiutil.Client.getEncodeParam(nodeId);
@@ -560,7 +587,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
@@ -568,12 +595,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public DeleteWorkspaceDocMembersResponse deleteWorkspaceDocMembers(String workspaceId, String nodeId, DeleteWorkspaceDocMembersRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteWorkspaceDocMembersHeaders headers = new DeleteWorkspaceDocMembersHeaders();
         return this.deleteWorkspaceDocMembersWithOptions(workspaceId, nodeId, request, headers, runtime);
     }
 
-    public DeleteWorkspaceDocMembersResponse deleteWorkspaceDocMembersWithOptions(String workspaceId, String nodeId, DeleteWorkspaceDocMembersRequest request, DeleteWorkspaceDocMembersHeaders headers, RuntimeOptions runtime) throws Exception {
+    public DeleteWorkspaceDocMembersResponse deleteWorkspaceDocMembersWithOptions(String workspaceId, String nodeId, DeleteWorkspaceDocMembersRequest request, DeleteWorkspaceDocMembersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workspaceId = com.aliyun.openapiutil.Client.getEncodeParam(workspaceId);
         nodeId = com.aliyun.openapiutil.Client.getEncodeParam(nodeId);
@@ -595,7 +622,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
@@ -603,12 +630,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public DeleteWorkspaceMembersResponse deleteWorkspaceMembers(String workspaceId, DeleteWorkspaceMembersRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteWorkspaceMembersHeaders headers = new DeleteWorkspaceMembersHeaders();
         return this.deleteWorkspaceMembersWithOptions(workspaceId, request, headers, runtime);
     }
 
-    public DeleteWorkspaceMembersResponse deleteWorkspaceMembersWithOptions(String workspaceId, DeleteWorkspaceMembersRequest request, DeleteWorkspaceMembersHeaders headers, RuntimeOptions runtime) throws Exception {
+    public DeleteWorkspaceMembersResponse deleteWorkspaceMembersWithOptions(String workspaceId, DeleteWorkspaceMembersRequest request, DeleteWorkspaceMembersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workspaceId = com.aliyun.openapiutil.Client.getEncodeParam(workspaceId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -629,7 +656,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
@@ -637,12 +664,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetRangeResponse getRange(String workbookId, String sheetId, String rangeAddress, GetRangeRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetRangeHeaders headers = new GetRangeHeaders();
         return this.getRangeWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
     }
 
-    public GetRangeResponse getRangeWithOptions(String workbookId, String sheetId, String rangeAddress, GetRangeRequest request, GetRangeHeaders headers, RuntimeOptions runtime) throws Exception {
+    public GetRangeResponse getRangeWithOptions(String workbookId, String sheetId, String rangeAddress, GetRangeRequest request, GetRangeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workbookId = com.aliyun.openapiutil.Client.getEncodeParam(workbookId);
         sheetId = com.aliyun.openapiutil.Client.getEncodeParam(sheetId);
@@ -661,7 +688,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
@@ -669,12 +696,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetRecentEditDocsResponse getRecentEditDocs(GetRecentEditDocsRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetRecentEditDocsHeaders headers = new GetRecentEditDocsHeaders();
         return this.getRecentEditDocsWithOptions(request, headers, runtime);
     }
 
-    public GetRecentEditDocsResponse getRecentEditDocsWithOptions(GetRecentEditDocsRequest request, GetRecentEditDocsHeaders headers, RuntimeOptions runtime) throws Exception {
+    public GetRecentEditDocsResponse getRecentEditDocsWithOptions(GetRecentEditDocsRequest request, GetRecentEditDocsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
@@ -698,7 +725,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
@@ -706,12 +733,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetRecentOpenDocsResponse getRecentOpenDocs(GetRecentOpenDocsRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetRecentOpenDocsHeaders headers = new GetRecentOpenDocsHeaders();
         return this.getRecentOpenDocsWithOptions(request, headers, runtime);
     }
 
-    public GetRecentOpenDocsResponse getRecentOpenDocsWithOptions(GetRecentOpenDocsRequest request, GetRecentOpenDocsHeaders headers, RuntimeOptions runtime) throws Exception {
+    public GetRecentOpenDocsResponse getRecentOpenDocsWithOptions(GetRecentOpenDocsRequest request, GetRecentOpenDocsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
@@ -735,7 +762,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
@@ -743,12 +770,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetRelatedWorkspacesResponse getRelatedWorkspaces(GetRelatedWorkspacesRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetRelatedWorkspacesHeaders headers = new GetRelatedWorkspacesHeaders();
         return this.getRelatedWorkspacesWithOptions(request, headers, runtime);
     }
 
-    public GetRelatedWorkspacesResponse getRelatedWorkspacesWithOptions(GetRelatedWorkspacesRequest request, GetRelatedWorkspacesHeaders headers, RuntimeOptions runtime) throws Exception {
+    public GetRelatedWorkspacesResponse getRelatedWorkspacesWithOptions(GetRelatedWorkspacesRequest request, GetRelatedWorkspacesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.includeRecent)) {
@@ -768,7 +795,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
@@ -776,12 +803,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetSheetResponse getSheet(String workbookId, String sheetId, GetSheetRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetSheetHeaders headers = new GetSheetHeaders();
         return this.getSheetWithOptions(workbookId, sheetId, request, headers, runtime);
     }
 
-    public GetSheetResponse getSheetWithOptions(String workbookId, String sheetId, GetSheetRequest request, GetSheetHeaders headers, RuntimeOptions runtime) throws Exception {
+    public GetSheetResponse getSheetWithOptions(String workbookId, String sheetId, GetSheetRequest request, GetSheetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workbookId = com.aliyun.openapiutil.Client.getEncodeParam(workbookId);
         sheetId = com.aliyun.openapiutil.Client.getEncodeParam(sheetId);
@@ -799,7 +826,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
@@ -807,12 +834,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetTemplateByIdResponse getTemplateById(String templateId, GetTemplateByIdRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetTemplateByIdHeaders headers = new GetTemplateByIdHeaders();
         return this.getTemplateByIdWithOptions(templateId, request, headers, runtime);
     }
 
-    public GetTemplateByIdResponse getTemplateByIdWithOptions(String templateId, GetTemplateByIdRequest request, GetTemplateByIdHeaders headers, RuntimeOptions runtime) throws Exception {
+    public GetTemplateByIdResponse getTemplateByIdWithOptions(String templateId, GetTemplateByIdRequest request, GetTemplateByIdHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         templateId = com.aliyun.openapiutil.Client.getEncodeParam(templateId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -833,7 +860,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
@@ -841,12 +868,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetWorkspaceResponse getWorkspace(String workspaceId) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetWorkspaceHeaders headers = new GetWorkspaceHeaders();
         return this.getWorkspaceWithOptions(workspaceId, headers, runtime);
     }
 
-    public GetWorkspaceResponse getWorkspaceWithOptions(String workspaceId, GetWorkspaceHeaders headers, RuntimeOptions runtime) throws Exception {
+    public GetWorkspaceResponse getWorkspaceWithOptions(String workspaceId, GetWorkspaceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         workspaceId = com.aliyun.openapiutil.Client.getEncodeParam(workspaceId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -857,19 +884,19 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
         return TeaModel.toModel(this.doROARequest("GetWorkspace", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workspaces/" + workspaceId + "", "json", req, runtime), new GetWorkspaceResponse());
     }
 
     public GetWorkspaceNodeResponse getWorkspaceNode(String workspaceId, String nodeId, GetWorkspaceNodeRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetWorkspaceNodeHeaders headers = new GetWorkspaceNodeHeaders();
         return this.getWorkspaceNodeWithOptions(workspaceId, nodeId, request, headers, runtime);
     }
 
-    public GetWorkspaceNodeResponse getWorkspaceNodeWithOptions(String workspaceId, String nodeId, GetWorkspaceNodeRequest request, GetWorkspaceNodeHeaders headers, RuntimeOptions runtime) throws Exception {
+    public GetWorkspaceNodeResponse getWorkspaceNodeWithOptions(String workspaceId, String nodeId, GetWorkspaceNodeRequest request, GetWorkspaceNodeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workspaceId = com.aliyun.openapiutil.Client.getEncodeParam(workspaceId);
         nodeId = com.aliyun.openapiutil.Client.getEncodeParam(nodeId);
@@ -887,7 +914,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
@@ -895,12 +922,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public InsertBlocksResponse insertBlocks(String documentId, InsertBlocksRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         InsertBlocksHeaders headers = new InsertBlocksHeaders();
         return this.insertBlocksWithOptions(documentId, request, headers, runtime);
     }
 
-    public InsertBlocksResponse insertBlocksWithOptions(String documentId, InsertBlocksRequest request, InsertBlocksHeaders headers, RuntimeOptions runtime) throws Exception {
+    public InsertBlocksResponse insertBlocksWithOptions(String documentId, InsertBlocksRequest request, InsertBlocksHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         documentId = com.aliyun.openapiutil.Client.getEncodeParam(documentId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -925,7 +952,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
@@ -933,12 +960,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public InsertColumnsBeforeResponse insertColumnsBefore(String workbookId, String sheetId, InsertColumnsBeforeRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         InsertColumnsBeforeHeaders headers = new InsertColumnsBeforeHeaders();
         return this.insertColumnsBeforeWithOptions(workbookId, sheetId, request, headers, runtime);
     }
 
-    public InsertColumnsBeforeResponse insertColumnsBeforeWithOptions(String workbookId, String sheetId, InsertColumnsBeforeRequest request, InsertColumnsBeforeHeaders headers, RuntimeOptions runtime) throws Exception {
+    public InsertColumnsBeforeResponse insertColumnsBeforeWithOptions(String workbookId, String sheetId, InsertColumnsBeforeRequest request, InsertColumnsBeforeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workbookId = com.aliyun.openapiutil.Client.getEncodeParam(workbookId);
         sheetId = com.aliyun.openapiutil.Client.getEncodeParam(sheetId);
@@ -965,7 +992,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
@@ -974,12 +1001,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public InsertRowsBeforeResponse insertRowsBefore(String workbookId, String sheetId, InsertRowsBeforeRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         InsertRowsBeforeHeaders headers = new InsertRowsBeforeHeaders();
         return this.insertRowsBeforeWithOptions(workbookId, sheetId, request, headers, runtime);
     }
 
-    public InsertRowsBeforeResponse insertRowsBeforeWithOptions(String workbookId, String sheetId, InsertRowsBeforeRequest request, InsertRowsBeforeHeaders headers, RuntimeOptions runtime) throws Exception {
+    public InsertRowsBeforeResponse insertRowsBeforeWithOptions(String workbookId, String sheetId, InsertRowsBeforeRequest request, InsertRowsBeforeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workbookId = com.aliyun.openapiutil.Client.getEncodeParam(workbookId);
         sheetId = com.aliyun.openapiutil.Client.getEncodeParam(sheetId);
@@ -1006,7 +1033,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
@@ -1015,12 +1042,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public ListTemplateResponse listTemplate(ListTemplateRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListTemplateHeaders headers = new ListTemplateHeaders();
         return this.listTemplateWithOptions(request, headers, runtime);
     }
 
-    public ListTemplateResponse listTemplateWithOptions(ListTemplateRequest request, ListTemplateHeaders headers, RuntimeOptions runtime) throws Exception {
+    public ListTemplateResponse listTemplateWithOptions(ListTemplateRequest request, ListTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
@@ -1052,7 +1079,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
@@ -1060,12 +1087,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public MergeRangeResponse mergeRange(String workbookId, String sheetId, String rangeAddress, MergeRangeRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         MergeRangeHeaders headers = new MergeRangeHeaders();
         return this.mergeRangeWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
     }
 
-    public MergeRangeResponse mergeRangeWithOptions(String workbookId, String sheetId, String rangeAddress, MergeRangeRequest request, MergeRangeHeaders headers, RuntimeOptions runtime) throws Exception {
+    public MergeRangeResponse mergeRangeWithOptions(String workbookId, String sheetId, String rangeAddress, MergeRangeRequest request, MergeRangeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workbookId = com.aliyun.openapiutil.Client.getEncodeParam(workbookId);
         sheetId = com.aliyun.openapiutil.Client.getEncodeParam(sheetId);
@@ -1084,7 +1111,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
@@ -1092,12 +1119,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public RangeFindNextResponse rangeFindNext(String workbookId, String sheetId, String rangeAddress, RangeFindNextRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RangeFindNextHeaders headers = new RangeFindNextHeaders();
         return this.rangeFindNextWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
     }
 
-    public RangeFindNextResponse rangeFindNextWithOptions(String workbookId, String sheetId, String rangeAddress, RangeFindNextRequest request, RangeFindNextHeaders headers, RuntimeOptions runtime) throws Exception {
+    public RangeFindNextResponse rangeFindNextWithOptions(String workbookId, String sheetId, String rangeAddress, RangeFindNextRequest request, RangeFindNextHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workbookId = com.aliyun.openapiutil.Client.getEncodeParam(workbookId);
         sheetId = com.aliyun.openapiutil.Client.getEncodeParam(sheetId);
@@ -1125,7 +1152,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
@@ -1134,12 +1161,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public SearchWorkspaceDocsResponse searchWorkspaceDocs(SearchWorkspaceDocsRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SearchWorkspaceDocsHeaders headers = new SearchWorkspaceDocsHeaders();
         return this.searchWorkspaceDocsWithOptions(request, headers, runtime);
     }
 
-    public SearchWorkspaceDocsResponse searchWorkspaceDocsWithOptions(SearchWorkspaceDocsRequest request, SearchWorkspaceDocsHeaders headers, RuntimeOptions runtime) throws Exception {
+    public SearchWorkspaceDocsResponse searchWorkspaceDocsWithOptions(SearchWorkspaceDocsRequest request, SearchWorkspaceDocsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.keyword)) {
@@ -1171,7 +1198,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
@@ -1179,12 +1206,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public SetColumnsVisibilityResponse setColumnsVisibility(String workbookId, String sheetId, SetColumnsVisibilityRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SetColumnsVisibilityHeaders headers = new SetColumnsVisibilityHeaders();
         return this.setColumnsVisibilityWithOptions(workbookId, sheetId, request, headers, runtime);
     }
 
-    public SetColumnsVisibilityResponse setColumnsVisibilityWithOptions(String workbookId, String sheetId, SetColumnsVisibilityRequest request, SetColumnsVisibilityHeaders headers, RuntimeOptions runtime) throws Exception {
+    public SetColumnsVisibilityResponse setColumnsVisibilityWithOptions(String workbookId, String sheetId, SetColumnsVisibilityRequest request, SetColumnsVisibilityHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workbookId = com.aliyun.openapiutil.Client.getEncodeParam(workbookId);
         sheetId = com.aliyun.openapiutil.Client.getEncodeParam(sheetId);
@@ -1215,7 +1242,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
@@ -1224,12 +1251,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public SetRowsVisibilityResponse setRowsVisibility(String workbookId, String sheetId, SetRowsVisibilityRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SetRowsVisibilityHeaders headers = new SetRowsVisibilityHeaders();
         return this.setRowsVisibilityWithOptions(workbookId, sheetId, request, headers, runtime);
     }
 
-    public SetRowsVisibilityResponse setRowsVisibilityWithOptions(String workbookId, String sheetId, SetRowsVisibilityRequest request, SetRowsVisibilityHeaders headers, RuntimeOptions runtime) throws Exception {
+    public SetRowsVisibilityResponse setRowsVisibilityWithOptions(String workbookId, String sheetId, SetRowsVisibilityRequest request, SetRowsVisibilityHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workbookId = com.aliyun.openapiutil.Client.getEncodeParam(workbookId);
         sheetId = com.aliyun.openapiutil.Client.getEncodeParam(sheetId);
@@ -1260,7 +1287,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
@@ -1269,12 +1296,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public SheetAutofitRowsResponse sheetAutofitRows(String workbookId, String sheetId, SheetAutofitRowsRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SheetAutofitRowsHeaders headers = new SheetAutofitRowsHeaders();
         return this.sheetAutofitRowsWithOptions(workbookId, sheetId, request, headers, runtime);
     }
 
-    public SheetAutofitRowsResponse sheetAutofitRowsWithOptions(String workbookId, String sheetId, SheetAutofitRowsRequest request, SheetAutofitRowsHeaders headers, RuntimeOptions runtime) throws Exception {
+    public SheetAutofitRowsResponse sheetAutofitRowsWithOptions(String workbookId, String sheetId, SheetAutofitRowsRequest request, SheetAutofitRowsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workbookId = com.aliyun.openapiutil.Client.getEncodeParam(workbookId);
         sheetId = com.aliyun.openapiutil.Client.getEncodeParam(sheetId);
@@ -1305,7 +1332,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
@@ -1314,12 +1341,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public UpdateRangeResponse updateRange(String workbookId, String sheetId, String rangeAddress, UpdateRangeRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateRangeHeaders headers = new UpdateRangeHeaders();
         return this.updateRangeWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
     }
 
-    public UpdateRangeResponse updateRangeWithOptions(String workbookId, String sheetId, String rangeAddress, UpdateRangeRequest request, UpdateRangeHeaders headers, RuntimeOptions runtime) throws Exception {
+    public UpdateRangeResponse updateRangeWithOptions(String workbookId, String sheetId, String rangeAddress, UpdateRangeRequest request, UpdateRangeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workbookId = com.aliyun.openapiutil.Client.getEncodeParam(workbookId);
         sheetId = com.aliyun.openapiutil.Client.getEncodeParam(sheetId);
@@ -1351,7 +1378,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
@@ -1360,12 +1387,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public UpdateSheetResponse updateSheet(String workbookId, String sheetId, UpdateSheetRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateSheetHeaders headers = new UpdateSheetHeaders();
         return this.updateSheetWithOptions(workbookId, sheetId, request, headers, runtime);
     }
 
-    public UpdateSheetResponse updateSheetWithOptions(String workbookId, String sheetId, UpdateSheetRequest request, UpdateSheetHeaders headers, RuntimeOptions runtime) throws Exception {
+    public UpdateSheetResponse updateSheetWithOptions(String workbookId, String sheetId, UpdateSheetRequest request, UpdateSheetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workbookId = com.aliyun.openapiutil.Client.getEncodeParam(workbookId);
         sheetId = com.aliyun.openapiutil.Client.getEncodeParam(sheetId);
@@ -1392,7 +1419,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
@@ -1401,12 +1428,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public UpdateWorkspaceDocMembersResponse updateWorkspaceDocMembers(String workspaceId, String nodeId, UpdateWorkspaceDocMembersRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateWorkspaceDocMembersHeaders headers = new UpdateWorkspaceDocMembersHeaders();
         return this.updateWorkspaceDocMembersWithOptions(workspaceId, nodeId, request, headers, runtime);
     }
 
-    public UpdateWorkspaceDocMembersResponse updateWorkspaceDocMembersWithOptions(String workspaceId, String nodeId, UpdateWorkspaceDocMembersRequest request, UpdateWorkspaceDocMembersHeaders headers, RuntimeOptions runtime) throws Exception {
+    public UpdateWorkspaceDocMembersResponse updateWorkspaceDocMembersWithOptions(String workspaceId, String nodeId, UpdateWorkspaceDocMembersRequest request, UpdateWorkspaceDocMembersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workspaceId = com.aliyun.openapiutil.Client.getEncodeParam(workspaceId);
         nodeId = com.aliyun.openapiutil.Client.getEncodeParam(nodeId);
@@ -1428,7 +1455,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
@@ -1436,12 +1463,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public UpdateWorkspaceMembersResponse updateWorkspaceMembers(String workspaceId, UpdateWorkspaceMembersRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateWorkspaceMembersHeaders headers = new UpdateWorkspaceMembersHeaders();
         return this.updateWorkspaceMembersWithOptions(workspaceId, request, headers, runtime);
     }
 
-    public UpdateWorkspaceMembersResponse updateWorkspaceMembersWithOptions(String workspaceId, UpdateWorkspaceMembersRequest request, UpdateWorkspaceMembersHeaders headers, RuntimeOptions runtime) throws Exception {
+    public UpdateWorkspaceMembersResponse updateWorkspaceMembersWithOptions(String workspaceId, UpdateWorkspaceMembersRequest request, UpdateWorkspaceMembersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         workspaceId = com.aliyun.openapiutil.Client.getEncodeParam(workspaceId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1462,7 +1489,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
 
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));

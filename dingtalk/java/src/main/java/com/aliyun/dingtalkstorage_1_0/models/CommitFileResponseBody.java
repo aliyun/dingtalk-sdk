@@ -42,6 +42,11 @@ public class CommitFileResponseBody extends TeaModel {
     }
 
     public static class CommitFileResponseBodyDentry extends TeaModel {
+        // 在特定应用上的属性。key是微应用Id, value是属性列表。
+        // 可以通过修改DentryAppProperty里的scope来设置属性的可见性
+        @NameInMap("appProperties")
+        public java.util.Map<String, java.util.List<DentryAppPropertiesValue>> appProperties;
+
         // 创建时间
         @NameInMap("createTime")
         public String createTime;
@@ -133,6 +138,14 @@ public class CommitFileResponseBody extends TeaModel {
         public static CommitFileResponseBodyDentry build(java.util.Map<String, ?> map) throws Exception {
             CommitFileResponseBodyDentry self = new CommitFileResponseBodyDentry();
             return TeaModel.build(map, self);
+        }
+
+        public CommitFileResponseBodyDentry setAppProperties(java.util.Map<String, java.util.List<DentryAppPropertiesValue>> appProperties) {
+            this.appProperties = appProperties;
+            return this;
+        }
+        public java.util.Map<String, java.util.List<DentryAppPropertiesValue>> getAppProperties() {
+            return this.appProperties;
         }
 
         public CommitFileResponseBodyDentry setCreateTime(String createTime) {

@@ -19,6 +19,9 @@ public class GetEventResponseBody extends TeaModel {
     @NameInMap("end")
     public GetEventResponseBodyEnd end;
 
+    @NameInMap("extendedProperties")
+    public GetEventResponseBodyExtendedProperties extendedProperties;
+
     @NameInMap("id")
     public String id;
 
@@ -96,6 +99,14 @@ public class GetEventResponseBody extends TeaModel {
     }
     public GetEventResponseBodyEnd getEnd() {
         return this.end;
+    }
+
+    public GetEventResponseBody setExtendedProperties(GetEventResponseBodyExtendedProperties extendedProperties) {
+        this.extendedProperties = extendedProperties;
+        return this;
+    }
+    public GetEventResponseBodyExtendedProperties getExtendedProperties() {
+        return this.extendedProperties;
     }
 
     public GetEventResponseBody setId(String id) {
@@ -297,6 +308,44 @@ public class GetEventResponseBody extends TeaModel {
         }
         public String getTimeZone() {
             return this.timeZone;
+        }
+
+    }
+
+    public static class GetEventResponseBodyExtendedPropertiesSharedProperties extends TeaModel {
+        @NameInMap("sourceOpenCid")
+        public String sourceOpenCid;
+
+        public static GetEventResponseBodyExtendedPropertiesSharedProperties build(java.util.Map<String, ?> map) throws Exception {
+            GetEventResponseBodyExtendedPropertiesSharedProperties self = new GetEventResponseBodyExtendedPropertiesSharedProperties();
+            return TeaModel.build(map, self);
+        }
+
+        public GetEventResponseBodyExtendedPropertiesSharedProperties setSourceOpenCid(String sourceOpenCid) {
+            this.sourceOpenCid = sourceOpenCid;
+            return this;
+        }
+        public String getSourceOpenCid() {
+            return this.sourceOpenCid;
+        }
+
+    }
+
+    public static class GetEventResponseBodyExtendedProperties extends TeaModel {
+        @NameInMap("sharedProperties")
+        public GetEventResponseBodyExtendedPropertiesSharedProperties sharedProperties;
+
+        public static GetEventResponseBodyExtendedProperties build(java.util.Map<String, ?> map) throws Exception {
+            GetEventResponseBodyExtendedProperties self = new GetEventResponseBodyExtendedProperties();
+            return TeaModel.build(map, self);
+        }
+
+        public GetEventResponseBodyExtendedProperties setSharedProperties(GetEventResponseBodyExtendedPropertiesSharedProperties sharedProperties) {
+            this.sharedProperties = sharedProperties;
+            return this;
+        }
+        public GetEventResponseBodyExtendedPropertiesSharedProperties getSharedProperties() {
+            return this.sharedProperties;
         }
 
     }
