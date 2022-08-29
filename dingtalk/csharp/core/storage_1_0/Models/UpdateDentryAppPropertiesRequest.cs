@@ -35,8 +35,6 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
             /// 枚举值:
             /// 	PUBLIC: 该属性所有App可见
             /// 	PRIVATE: 该属性仅其归属App可见
-            /// 默认值:
-            /// 	PRIVATE
             /// </summary>
             [NameInMap("visibility")]
             [Validation(Required=false)]

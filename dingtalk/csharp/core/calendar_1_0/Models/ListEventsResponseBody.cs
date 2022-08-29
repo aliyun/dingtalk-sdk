@@ -89,6 +89,21 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 public string TimeZone { get; set; }
             };
 
+            [NameInMap("extendedProperties")]
+            [Validation(Required=false)]
+            public ListEventsResponseBodyEventsExtendedProperties ExtendedProperties { get; set; }
+            public class ListEventsResponseBodyEventsExtendedProperties : TeaModel {
+                [NameInMap("sharedProperties")]
+                [Validation(Required=false)]
+                public ListEventsResponseBodyEventsExtendedPropertiesSharedProperties SharedProperties { get; set; }
+                public class ListEventsResponseBodyEventsExtendedPropertiesSharedProperties : TeaModel {
+                    [NameInMap("sourceOpenCid")]
+                    [Validation(Required=false)]
+                    public string SourceOpenCid { get; set; }
+
+                }
+            };
+
             /// <summary>
             /// 日程事件id
             /// </summary>

@@ -5120,6 +5120,126 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ExternalQueryExternalOrgsResponse>(await DoROARequestAsync("ExternalQueryExternalOrgs", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/externals/organizations", "json", req, runtime));
         }
 
+        public HospitalDataCheckResponse HospitalDataCheck(HospitalDataCheckRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HospitalDataCheckHeaders headers = new HospitalDataCheckHeaders();
+            return HospitalDataCheckWithOptions(request, headers, runtime);
+        }
+
+        public async Task<HospitalDataCheckResponse> HospitalDataCheckAsync(HospitalDataCheckRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HospitalDataCheckHeaders headers = new HospitalDataCheckHeaders();
+            return await HospitalDataCheckWithOptionsAsync(request, headers, runtime);
+        }
+
+        public HospitalDataCheckResponse HospitalDataCheckWithOptions(HospitalDataCheckRequest request, HospitalDataCheckHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AllDeptCount))
+            {
+                body["allDeptCount"] = request.AllDeptCount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AllDeptUserCount))
+            {
+                body["allDeptUserCount"] = request.AllDeptUserCount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AllGroupCount))
+            {
+                body["allGroupCount"] = request.AllGroupCount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AllGroupUserCount))
+            {
+                body["allGroupUserCount"] = request.AllGroupUserCount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptCount))
+            {
+                body["deptCount"] = request.DeptCount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptUserCount))
+            {
+                body["deptUserCount"] = request.DeptUserCount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupCount))
+            {
+                body["groupCount"] = request.GroupCount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupUserCount))
+            {
+                body["groupUserCount"] = request.GroupUserCount;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<HospitalDataCheckResponse>(DoROARequest("HospitalDataCheck", "industry_1.0", "HTTP", "POST", "AK", "/v1.0/industry/medicals/datas/check", "json", req, runtime));
+        }
+
+        public async Task<HospitalDataCheckResponse> HospitalDataCheckWithOptionsAsync(HospitalDataCheckRequest request, HospitalDataCheckHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AllDeptCount))
+            {
+                body["allDeptCount"] = request.AllDeptCount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AllDeptUserCount))
+            {
+                body["allDeptUserCount"] = request.AllDeptUserCount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AllGroupCount))
+            {
+                body["allGroupCount"] = request.AllGroupCount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AllGroupUserCount))
+            {
+                body["allGroupUserCount"] = request.AllGroupUserCount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptCount))
+            {
+                body["deptCount"] = request.DeptCount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptUserCount))
+            {
+                body["deptUserCount"] = request.DeptUserCount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupCount))
+            {
+                body["groupCount"] = request.GroupCount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupUserCount))
+            {
+                body["groupUserCount"] = request.GroupUserCount;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<HospitalDataCheckResponse>(await DoROARequestAsync("HospitalDataCheck", "industry_1.0", "HTTP", "POST", "AK", "/v1.0/industry/medicals/datas/check", "json", req, runtime));
+        }
+
         public IndustryManufactureCommonEventResponse IndustryManufactureCommonEvent(IndustryManufactureCommonEventRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -9162,23 +9282,29 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryUserExtendValuesResponse>(await DoROARequestAsync("QueryUserExtendValues", "industry_1.0", "HTTP", "POST", "AK", "/v1.0/industry/medicals/users/extends/query", "json", req, runtime));
         }
 
-        public QueryUserInfoResponse QueryUserInfo(string userId)
+        public QueryUserInfoResponse QueryUserInfo(string userId, QueryUserInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryUserInfoHeaders headers = new QueryUserInfoHeaders();
-            return QueryUserInfoWithOptions(userId, headers, runtime);
+            return QueryUserInfoWithOptions(userId, request, headers, runtime);
         }
 
-        public async Task<QueryUserInfoResponse> QueryUserInfoAsync(string userId)
+        public async Task<QueryUserInfoResponse> QueryUserInfoAsync(string userId, QueryUserInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryUserInfoHeaders headers = new QueryUserInfoHeaders();
-            return await QueryUserInfoWithOptionsAsync(userId, headers, runtime);
+            return await QueryUserInfoWithOptionsAsync(userId, request, headers, runtime);
         }
 
-        public QueryUserInfoResponse QueryUserInfoWithOptions(string userId, QueryUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public QueryUserInfoResponse QueryUserInfoWithOptions(string userId, QueryUserInfoRequest request, QueryUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MonthMark))
+            {
+                query["monthMark"] = request.MonthMark;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -9191,13 +9317,20 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             return TeaModel.ToObject<QueryUserInfoResponse>(DoROARequest("QueryUserInfo", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/medicals/users/" + userId, "json", req, runtime));
         }
 
-        public async Task<QueryUserInfoResponse> QueryUserInfoWithOptionsAsync(string userId, QueryUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<QueryUserInfoResponse> QueryUserInfoWithOptionsAsync(string userId, QueryUserInfoRequest request, QueryUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MonthMark))
+            {
+                query["monthMark"] = request.MonthMark;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -9210,6 +9343,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             return TeaModel.ToObject<QueryUserInfoResponse>(await DoROARequestAsync("QueryUserInfo", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/medicals/users/" + userId, "json", req, runtime));
         }

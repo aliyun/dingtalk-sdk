@@ -26,6 +26,14 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         [Validation(Required=false)]
         public AddFolderRequestOption Option { get; set; }
         public class AddFolderRequestOption : TeaModel {
+            [NameInMap("appProperties")]
+            [Validation(Required=false)]
+            public List<AddFolderRequestOptionAppProperties> AppProperties { get; set; }
+            public class AddFolderRequestOptionAppProperties : TeaModel {
+                public string Name { get; set; }
+                public string Value { get; set; }
+                public string Visibility { get; set; }
+            }
             [NameInMap("conflictStrategy")]
             [Validation(Required=false)]
             public string ConflictStrategy { get; set; }

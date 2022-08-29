@@ -70,6 +70,13 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
             public string ModifiedTime { get; set; }
 
             /// <summary>
+            /// 操作人id
+            /// </summary>
+            [NameInMap("operatorId")]
+            [Validation(Required=false)]
+            public string OperatorId { get; set; }
+
+            /// <summary>
             /// 权限角色
             /// </summary>
             [NameInMap("role")]
