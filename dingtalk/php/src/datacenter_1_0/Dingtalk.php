@@ -5,6 +5,27 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetAbnormalOperationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetAbnormalOperationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetAbnormalOperationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetAdministrativePenaltiesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetAdministrativePenaltiesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetAdministrativePenaltiesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetBasicInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetBasicInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetBasicInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetEnvironmentalPenaltiesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetEnvironmentalPenaltiesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetEnvironmentalPenaltiesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetHolderInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetHolderInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetHolderInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetQeneralTaxpayerInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetQeneralTaxpayerInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetQeneralTaxpayerInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetSeriousViolationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetSeriousViolationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetSeriousViolationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\PostCorpAuthInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\PostCorpAuthInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryActiveUserStatisticalDataHeaders;
@@ -52,6 +73,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryDriveStatisticalDataRe
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryEmployeeTypeStatisticalDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryEmployeeTypeStatisticalDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryEmployeeTypeStatisticalDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryGeneralDataServiceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryGeneralDataServiceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryGeneralDataServiceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryGroupLiveStatisticalDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryGroupLiveStatisticalDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryGroupLiveStatisticalDataResponse;
@@ -211,6 +235,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryYydTotalStdStatistical
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryYydTotalWeekStatisticalDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryYydTotalWeekStatisticalDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryYydTotalWeekStatisticalDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\SearchCompanyHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\SearchCompanyRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\SearchCompanyResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -225,6 +252,342 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param GetAbnormalOperationRequest $request
+     *
+     * @return GetAbnormalOperationResponse
+     */
+    public function getAbnormalOperation($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAbnormalOperationHeaders([]);
+
+        return $this->getAbnormalOperationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetAbnormalOperationRequest $request
+     * @param GetAbnormalOperationHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetAbnormalOperationResponse
+     */
+    public function getAbnormalOperationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->searchKey)) {
+            @$query['searchKey'] = $request->searchKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetAbnormalOperationResponse::fromMap($this->doROARequest('GetAbnormalOperation', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/companies/abnormalOperations', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetAdministrativePenaltiesRequest $request
+     *
+     * @return GetAdministrativePenaltiesResponse
+     */
+    public function getAdministrativePenalties($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAdministrativePenaltiesHeaders([]);
+
+        return $this->getAdministrativePenaltiesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetAdministrativePenaltiesRequest $request
+     * @param GetAdministrativePenaltiesHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return GetAdministrativePenaltiesResponse
+     */
+    public function getAdministrativePenaltiesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->searchKey)) {
+            @$query['searchKey'] = $request->searchKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetAdministrativePenaltiesResponse::fromMap($this->doROARequest('GetAdministrativePenalties', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/companies/administrativePenalties', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetBasicInfoRequest $request
+     *
+     * @return GetBasicInfoResponse
+     */
+    public function getBasicInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetBasicInfoHeaders([]);
+
+        return $this->getBasicInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetBasicInfoRequest $request
+     * @param GetBasicInfoHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return GetBasicInfoResponse
+     */
+    public function getBasicInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->searchKey)) {
+            @$query['searchKey'] = $request->searchKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetBasicInfoResponse::fromMap($this->doROARequest('GetBasicInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/companies/businessBasicInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetEnvironmentalPenaltiesRequest $request
+     *
+     * @return GetEnvironmentalPenaltiesResponse
+     */
+    public function getEnvironmentalPenalties($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetEnvironmentalPenaltiesHeaders([]);
+
+        return $this->getEnvironmentalPenaltiesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetEnvironmentalPenaltiesRequest $request
+     * @param GetEnvironmentalPenaltiesHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return GetEnvironmentalPenaltiesResponse
+     */
+    public function getEnvironmentalPenaltiesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->searchKey)) {
+            @$query['searchKey'] = $request->searchKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetEnvironmentalPenaltiesResponse::fromMap($this->doROARequest('GetEnvironmentalPenalties', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/companies/environmentalPenalties', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetHolderInfoRequest $request
+     *
+     * @return GetHolderInfoResponse
+     */
+    public function getHolderInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetHolderInfoHeaders([]);
+
+        return $this->getHolderInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetHolderInfoRequest $request
+     * @param GetHolderInfoHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return GetHolderInfoResponse
+     */
+    public function getHolderInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->searchKey)) {
+            @$query['searchKey'] = $request->searchKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetHolderInfoResponse::fromMap($this->doROARequest('GetHolderInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/companies/shareholderInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetQeneralTaxpayerInfoRequest $request
+     *
+     * @return GetQeneralTaxpayerInfoResponse
+     */
+    public function getQeneralTaxpayerInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetQeneralTaxpayerInfoHeaders([]);
+
+        return $this->getQeneralTaxpayerInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetQeneralTaxpayerInfoRequest $request
+     * @param GetQeneralTaxpayerInfoHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return GetQeneralTaxpayerInfoResponse
+     */
+    public function getQeneralTaxpayerInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->searchKey)) {
+            @$query['searchKey'] = $request->searchKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetQeneralTaxpayerInfoResponse::fromMap($this->doROARequest('GetQeneralTaxpayerInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/companies/generalTaxpayerInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetSeriousViolationRequest $request
+     *
+     * @return GetSeriousViolationResponse
+     */
+    public function getSeriousViolation($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetSeriousViolationHeaders([]);
+
+        return $this->getSeriousViolationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetSeriousViolationRequest $request
+     * @param GetSeriousViolationHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return GetSeriousViolationResponse
+     */
+    public function getSeriousViolationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->searchKey)) {
+            @$query['searchKey'] = $request->searchKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetSeriousViolationResponse::fromMap($this->doROARequest('GetSeriousViolation', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/companies/seriousViolations', 'json', $req, $runtime));
     }
 
     /**
@@ -903,6 +1266,66 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryEmployeeTypeStatisticalDataResponse::fromMap($this->doROARequest('QueryEmployeeTypeStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/employeeTypeData', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryGeneralDataServiceRequest $request
+     *
+     * @return QueryGeneralDataServiceResponse
+     */
+    public function queryGeneralDataService($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryGeneralDataServiceHeaders([]);
+
+        return $this->queryGeneralDataServiceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryGeneralDataServiceRequest $request
+     * @param QueryGeneralDataServiceHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return QueryGeneralDataServiceResponse
+     */
+    public function queryGeneralDataServiceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$query['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->endDate)) {
+            @$query['endDate'] = $request->endDate;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->serviceId)) {
+            @$query['serviceId'] = $request->serviceId;
+        }
+        if (!Utils::isUnset($request->startDate)) {
+            @$query['startDate'] = $request->startDate;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryGeneralDataServiceResponse::fromMap($this->doROARequest('QueryGeneralDataService', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/generalDataServices', 'json', $req, $runtime));
     }
 
     /**
@@ -3141,5 +3564,53 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryYydTotalWeekStatisticalDataResponse::fromMap($this->doROARequest('QueryYydTotalWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/yydTotalWeekDatas', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SearchCompanyRequest $request
+     *
+     * @return SearchCompanyResponse
+     */
+    public function searchCompany($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SearchCompanyHeaders([]);
+
+        return $this->searchCompanyWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SearchCompanyRequest $request
+     * @param SearchCompanyHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return SearchCompanyResponse
+     */
+    public function searchCompanyWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->searchKey)) {
+            @$query['searchKey'] = $request->searchKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return SearchCompanyResponse::fromMap($this->doROARequest('SearchCompany', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/keywords/companies', 'json', $req, $runtime));
     }
 }

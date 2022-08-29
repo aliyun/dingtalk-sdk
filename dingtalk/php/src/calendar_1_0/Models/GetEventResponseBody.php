@@ -6,6 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\attendees;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\end;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\extendedProperties;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\location;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\onlineMeetingInfo;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\organizer;
@@ -41,6 +42,11 @@ class GetEventResponseBody extends Model
      * @var end
      */
     public $end;
+
+    /**
+     * @var extendedProperties
+     */
+    public $extendedProperties;
 
     /**
      * @var string
@@ -114,22 +120,23 @@ class GetEventResponseBody extends Model
      */
     public $updateTime;
     protected $_name = [
-        'attendees'         => 'attendees',
-        'createTime'        => 'createTime',
-        'description'       => 'description',
-        'end'               => 'end',
-        'id'                => 'id',
-        'isAllDay'          => 'isAllDay',
-        'location'          => 'location',
-        'onlineMeetingInfo' => 'onlineMeetingInfo',
-        'organizer'         => 'organizer',
-        'recurrence'        => 'recurrence',
-        'reminders'         => 'reminders',
-        'seriesMasterId'    => 'seriesMasterId',
-        'start'             => 'start',
-        'status'            => 'status',
-        'summary'           => 'summary',
-        'updateTime'        => 'updateTime',
+        'attendees'          => 'attendees',
+        'createTime'         => 'createTime',
+        'description'        => 'description',
+        'end'                => 'end',
+        'extendedProperties' => 'extendedProperties',
+        'id'                 => 'id',
+        'isAllDay'           => 'isAllDay',
+        'location'           => 'location',
+        'onlineMeetingInfo'  => 'onlineMeetingInfo',
+        'organizer'          => 'organizer',
+        'recurrence'         => 'recurrence',
+        'reminders'          => 'reminders',
+        'seriesMasterId'     => 'seriesMasterId',
+        'start'              => 'start',
+        'status'             => 'status',
+        'summary'            => 'summary',
+        'updateTime'         => 'updateTime',
     ];
 
     public function validate()
@@ -156,6 +163,9 @@ class GetEventResponseBody extends Model
         }
         if (null !== $this->end) {
             $res['end'] = null !== $this->end ? $this->end->toMap() : null;
+        }
+        if (null !== $this->extendedProperties) {
+            $res['extendedProperties'] = null !== $this->extendedProperties ? $this->extendedProperties->toMap() : null;
         }
         if (null !== $this->id) {
             $res['id'] = $this->id;
@@ -228,6 +238,9 @@ class GetEventResponseBody extends Model
         }
         if (isset($map['end'])) {
             $model->end = end::fromMap($map['end']);
+        }
+        if (isset($map['extendedProperties'])) {
+            $model->extendedProperties = extendedProperties::fromMap($map['extendedProperties']);
         }
         if (isset($map['id'])) {
             $model->id = $map['id'];

@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BatchAddInvoiceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BatchAddInvoiceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BatchAddInvoiceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BatchCreateCustomerHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BatchCreateCustomerRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BatchCreateCustomerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\CheckVoucherStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\CheckVoucherStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\CheckVoucherStatusResponse;
@@ -83,6 +86,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptsByPageResponse
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QuerySupplierByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QuerySupplierByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QuerySupplierByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UnbindApplyReceiptAndInvoiceRelatedHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UnbindApplyReceiptAndInvoiceRelatedRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UnbindApplyReceiptAndInvoiceRelatedResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateApplyReceiptAndInvoiceRelatedHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateApplyReceiptAndInvoiceRelatedRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateApplyReceiptAndInvoiceRelatedResponse;
@@ -173,6 +179,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return BatchAddInvoiceResponse::fromMap($this->doROARequest('BatchAddInvoice', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/bizfinance/invoices/batch', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BatchCreateCustomerRequest $request
+     *
+     * @return BatchCreateCustomerResponse
+     */
+    public function batchCreateCustomer($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchCreateCustomerHeaders([]);
+
+        return $this->batchCreateCustomerWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchCreateCustomerRequest $request
+     * @param BatchCreateCustomerHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return BatchCreateCustomerResponse
+     */
+    public function batchCreateCustomerWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->createCustomerRequestList)) {
+            @$body['createCustomerRequestList'] = $request->createCustomerRequestList;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            @$body['operator'] = $request->operator;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchCreateCustomerResponse::fromMap($this->doROARequest('BatchCreateCustomer', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/bizfinance/auxiliaries/batch', 'json', $req, $runtime));
     }
 
     /**
@@ -1360,6 +1411,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QuerySupplierByPageResponse::fromMap($this->doROARequest('QuerySupplierByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/bizfinance/suppliers', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UnbindApplyReceiptAndInvoiceRelatedRequest $request
+     *
+     * @return UnbindApplyReceiptAndInvoiceRelatedResponse
+     */
+    public function unbindApplyReceiptAndInvoiceRelated($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UnbindApplyReceiptAndInvoiceRelatedHeaders([]);
+
+        return $this->unbindApplyReceiptAndInvoiceRelatedWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UnbindApplyReceiptAndInvoiceRelatedRequest $request
+     * @param UnbindApplyReceiptAndInvoiceRelatedHeaders $headers
+     * @param RuntimeOptions                             $runtime
+     *
+     * @return UnbindApplyReceiptAndInvoiceRelatedResponse
+     */
+    public function unbindApplyReceiptAndInvoiceRelatedWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->instanceId)) {
+            @$body['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->invoiceKeyVOList)) {
+            @$body['invoiceKeyVOList'] = $request->invoiceKeyVOList;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            @$body['operator'] = $request->operator;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UnbindApplyReceiptAndInvoiceRelatedResponse::fromMap($this->doROARequest('UnbindApplyReceiptAndInvoiceRelated', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/bizfinance/invoices/unbind', 'json', $req, $runtime));
     }
 
     /**

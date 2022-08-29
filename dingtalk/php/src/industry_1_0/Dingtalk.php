@@ -196,6 +196,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ExternalQueryExternalBelongMa
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ExternalQueryExternalOrgsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ExternalQueryExternalOrgsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ExternalQueryExternalOrgsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\HospitalDataCheckHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\HospitalDataCheckRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\HospitalDataCheckResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureCommonEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureCommonEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureCommonEventResponse;
@@ -292,6 +295,7 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserExtendValuesResponse
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserExtInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserExtInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserProbCodeDictionaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserProbCodeDictionaryResponse;
@@ -3392,6 +3396,69 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param HospitalDataCheckRequest $request
+     *
+     * @return HospitalDataCheckResponse
+     */
+    public function hospitalDataCheck($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HospitalDataCheckHeaders([]);
+
+        return $this->hospitalDataCheckWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param HospitalDataCheckRequest $request
+     * @param HospitalDataCheckHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return HospitalDataCheckResponse
+     */
+    public function hospitalDataCheckWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->allDeptCount)) {
+            @$body['allDeptCount'] = $request->allDeptCount;
+        }
+        if (!Utils::isUnset($request->allDeptUserCount)) {
+            @$body['allDeptUserCount'] = $request->allDeptUserCount;
+        }
+        if (!Utils::isUnset($request->allGroupCount)) {
+            @$body['allGroupCount'] = $request->allGroupCount;
+        }
+        if (!Utils::isUnset($request->allGroupUserCount)) {
+            @$body['allGroupUserCount'] = $request->allGroupUserCount;
+        }
+        if (!Utils::isUnset($request->deptCount)) {
+            @$body['deptCount'] = $request->deptCount;
+        }
+        if (!Utils::isUnset($request->deptUserCount)) {
+            @$body['deptUserCount'] = $request->deptUserCount;
+        }
+        if (!Utils::isUnset($request->groupCount)) {
+            @$body['groupCount'] = $request->groupCount;
+        }
+        if (!Utils::isUnset($request->groupUserCount)) {
+            @$body['groupUserCount'] = $request->groupUserCount;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return HospitalDataCheckResponse::fromMap($this->doROARequest('HospitalDataCheck', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/medicals/datas/check', 'json', $req, $runtime));
+    }
+
+    /**
      * @param IndustryManufactureCommonEventRequest $request
      *
      * @return IndustryManufactureCommonEventResponse
@@ -5510,28 +5577,35 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string $userId
+     * @param string               $userId
+     * @param QueryUserInfoRequest $request
      *
      * @return QueryUserInfoResponse
      */
-    public function queryUserInfo($userId)
+    public function queryUserInfo($userId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new QueryUserInfoHeaders([]);
 
-        return $this->queryUserInfoWithOptions($userId, $headers, $runtime);
+        return $this->queryUserInfoWithOptions($userId, $request, $headers, $runtime);
     }
 
     /**
      * @param string               $userId
+     * @param QueryUserInfoRequest $request
      * @param QueryUserInfoHeaders $headers
      * @param RuntimeOptions       $runtime
      *
      * @return QueryUserInfoResponse
      */
-    public function queryUserInfoWithOptions($userId, $headers, $runtime)
+    public function queryUserInfoWithOptions($userId, $request, $headers, $runtime)
     {
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
+        Utils::validateModel($request);
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $query  = [];
+        if (!Utils::isUnset($request->monthMark)) {
+            @$query['monthMark'] = $request->monthMark;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -5541,6 +5615,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
         ]);
 
         return QueryUserInfoResponse::fromMap($this->doROARequest('QueryUserInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/users/' . $userId . '', 'json', $req, $runtime));

@@ -50,6 +50,9 @@ use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetFileDownloadInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetFileUploadInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetFileUploadInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetFileUploadInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetOrgHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetOrgRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetOrgResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetRecycleBinHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetRecycleBinRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetRecycleBinResponse;
@@ -763,6 +766,10 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->unionId)) {
             @$query['unionId'] = $request->unionId;
         }
+        $body = [];
+        if (!Utils::isUnset($request->option)) {
+            @$body['option'] = $request->option;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -773,6 +780,7 @@ class Dingtalk extends OpenApiClient
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
         return GetDentryResponse::fromMap($this->doROARequest('GetDentry', 'storage_1.0', 'HTTP', 'POST', 'AK', '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/query', 'json', $req, $runtime));
@@ -885,6 +893,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetFileUploadInfoResponse::fromMap($this->doROARequest('GetFileUploadInfo', 'storage_1.0', 'HTTP', 'POST', 'AK', '/v1.0/storage/spaces/' . $spaceId . '/files/uploadInfos/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string        $corpId
+     * @param GetOrgRequest $request
+     *
+     * @return GetOrgResponse
+     */
+    public function getOrg($corpId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetOrgHeaders([]);
+
+        return $this->getOrgWithOptions($corpId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string         $corpId
+     * @param GetOrgRequest  $request
+     * @param GetOrgHeaders  $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return GetOrgResponse
+     */
+    public function getOrgWithOptions($corpId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $corpId = OpenApiUtilClient::getEncodeParam($corpId);
+        $query  = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetOrgResponse::fromMap($this->doROARequest('GetOrg', 'storage_1.0', 'HTTP', 'GET', 'AK', '/v1.0/storage/orgs/' . $corpId . '', 'json', $req, $runtime));
     }
 
     /**

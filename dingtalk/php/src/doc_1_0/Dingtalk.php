@@ -23,6 +23,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchGetWorkspacesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateRangeProtectionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateRangeProtectionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateRangeProtectionResponse;
@@ -380,6 +383,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return BatchGetWorkspacesResponse::fromMap($this->doROARequest('BatchGetWorkspaces', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workspaces/infos/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string       $workbookId
+     * @param string       $sheetId
+     * @param string       $rangeAddress
+     * @param ClearRequest $request
+     *
+     * @return ClearResponse
+     */
+    public function clear($workbookId, $sheetId, $rangeAddress, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ClearHeaders([]);
+
+        return $this->clearWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string         $workbookId
+     * @param string         $sheetId
+     * @param string         $rangeAddress
+     * @param ClearRequest   $request
+     * @param ClearHeaders   $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return ClearResponse
+     */
+    public function clearWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $workbookId   = OpenApiUtilClient::getEncodeParam($workbookId);
+        $sheetId      = OpenApiUtilClient::getEncodeParam($sheetId);
+        $rangeAddress = OpenApiUtilClient::getEncodeParam($rangeAddress);
+        $query        = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ClearResponse::fromMap($this->doROARequest('Clear', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/clear', 'json', $req, $runtime));
     }
 
     /**

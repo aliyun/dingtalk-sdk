@@ -78,6 +78,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDocCreatedDeptSummaryRequ
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDocCreatedDeptSummaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDocCreatedSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDocCreatedSummaryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetExclusiveAccountAllOrgListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetExclusiveAccountAllOrgListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetExclusiveAccountAllOrgListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGeneralFormCreatedDeptSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGeneralFormCreatedDeptSummaryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGeneralFormCreatedDeptSummaryResponse;
@@ -100,6 +103,12 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPartnerTypeByParentIdResp
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPublisherSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPublisherSummaryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPublisherSummaryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetRealPeopleRecordsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetRealPeopleRecordsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetRealPeopleRecordsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetRecognizeRecordsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetRecognizeRecordsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetRecognizeRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetSignedDetailByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetSignedDetailByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetSignedDetailByPageResponse;
@@ -109,6 +118,12 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetTrustDeviceListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserAppVersionSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserAppVersionSummaryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserAppVersionSummaryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserFaceStateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserFaceStateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserFaceStateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserRealPeopleStateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserRealPeopleStateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserRealPeopleStateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserStayLengthHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserStayLengthRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserStayLengthResponse;
@@ -1394,6 +1409,48 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetExclusiveAccountAllOrgListRequest $request
+     *
+     * @return GetExclusiveAccountAllOrgListResponse
+     */
+    public function getExclusiveAccountAllOrgList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetExclusiveAccountAllOrgListHeaders([]);
+
+        return $this->getExclusiveAccountAllOrgListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetExclusiveAccountAllOrgListRequest $request
+     * @param GetExclusiveAccountAllOrgListHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return GetExclusiveAccountAllOrgListResponse
+     */
+    public function getExclusiveAccountAllOrgListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetExclusiveAccountAllOrgListResponse::fromMap($this->doROARequest('GetExclusiveAccountAllOrgList', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/exclusiveAccounts/organizations', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string                                  $dataId
      * @param GetGeneralFormCreatedDeptSummaryRequest $request
      *
@@ -1768,6 +1825,126 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetRealPeopleRecordsRequest $request
+     *
+     * @return GetRealPeopleRecordsResponse
+     */
+    public function getRealPeopleRecords($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetRealPeopleRecordsHeaders([]);
+
+        return $this->getRealPeopleRecordsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetRealPeopleRecordsRequest $request
+     * @param GetRealPeopleRecordsHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetRealPeopleRecordsResponse
+     */
+    public function getRealPeopleRecordsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->agentId)) {
+            @$body['agentId'] = $request->agentId;
+        }
+        if (!Utils::isUnset($request->fromTime)) {
+            @$body['fromTime'] = $request->fromTime;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->personIdentification)) {
+            @$body['personIdentification'] = $request->personIdentification;
+        }
+        if (!Utils::isUnset($request->toTime)) {
+            @$body['toTime'] = $request->toTime;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            @$body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetRealPeopleRecordsResponse::fromMap($this->doROARequest('GetRealPeopleRecords', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/persons/identificationRecords/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetRecognizeRecordsRequest $request
+     *
+     * @return GetRecognizeRecordsResponse
+     */
+    public function getRecognizeRecords($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetRecognizeRecordsHeaders([]);
+
+        return $this->getRecognizeRecordsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetRecognizeRecordsRequest $request
+     * @param GetRecognizeRecordsHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return GetRecognizeRecordsResponse
+     */
+    public function getRecognizeRecordsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->agentId)) {
+            @$body['agentId'] = $request->agentId;
+        }
+        if (!Utils::isUnset($request->faceCompareResult)) {
+            @$body['faceCompareResult'] = $request->faceCompareResult;
+        }
+        if (!Utils::isUnset($request->fromTime)) {
+            @$body['fromTime'] = $request->fromTime;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->toTime)) {
+            @$body['toTime'] = $request->toTime;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            @$body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetRecognizeRecordsResponse::fromMap($this->doROARequest('GetRecognizeRecords', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/faces/recognizeRecords/query', 'json', $req, $runtime));
+    }
+
+    /**
      * @param GetSignedDetailByPageRequest $request
      *
      * @return GetSignedDetailByPageResponse
@@ -1903,6 +2080,90 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetUserAppVersionSummaryResponse::fromMap($this->doROARequest('GetUserAppVersionSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/data/appVersion/org/' . $dataId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetUserFaceStateRequest $request
+     *
+     * @return GetUserFaceStateResponse
+     */
+    public function getUserFaceState($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetUserFaceStateHeaders([]);
+
+        return $this->getUserFaceStateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetUserFaceStateRequest $request
+     * @param GetUserFaceStateHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return GetUserFaceStateResponse
+     */
+    public function getUserFaceStateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userIds)) {
+            @$body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetUserFaceStateResponse::fromMap($this->doROARequest('GetUserFaceState', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/faces/recognizeStates/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetUserRealPeopleStateRequest $request
+     *
+     * @return GetUserRealPeopleStateResponse
+     */
+    public function getUserRealPeopleState($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetUserRealPeopleStateHeaders([]);
+
+        return $this->getUserRealPeopleStateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetUserRealPeopleStateRequest $request
+     * @param GetUserRealPeopleStateHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return GetUserRealPeopleStateResponse
+     */
+    public function getUserRealPeopleStateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userIds)) {
+            @$body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetUserRealPeopleStateResponse::fromMap($this->doROARequest('GetUserRealPeopleState', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/persons/identificationStates/query', 'json', $req, $runtime));
     }
 
     /**

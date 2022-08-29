@@ -35,6 +35,9 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\DingTalkSecurityCheckRespon
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetAdjustmentsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetAdjustmentsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetAdjustmentsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetATManageScopeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetATManageScopeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetATManageScopeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetCheckInSchemaTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetCheckInSchemaTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetCheckInSchemaTemplateResponse;
@@ -572,6 +575,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DingTalkSecurityCheckResponse::fromMap($this->doROARequest('DingTalkSecurityCheck', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/securities/check', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetATManageScopeRequest $request
+     *
+     * @return GetATManageScopeResponse
+     */
+    public function getATManageScope($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetATManageScopeHeaders([]);
+
+        return $this->getATManageScopeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetATManageScopeRequest $request
+     * @param GetATManageScopeHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return GetATManageScopeResponse
+     */
+    public function getATManageScopeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetATManageScopeResponse::fromMap($this->doROARequest('GetATManageScope', 'attendance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/attendance/manageScopes', 'json', $req, $runtime));
     }
 
     /**

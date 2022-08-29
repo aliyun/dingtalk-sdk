@@ -6,6 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsInstancesResp
 
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsInstancesResponseBody\events\attendees;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsInstancesResponseBody\events\end;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsInstancesResponseBody\events\extendedProperties;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsInstancesResponseBody\events\location;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsInstancesResponseBody\events\onlineMeetingInfo;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsInstancesResponseBody\events\organizer;
@@ -43,6 +44,11 @@ class events extends Model
      * @var end
      */
     public $end;
+
+    /**
+     * @var extendedProperties
+     */
+    public $extendedProperties;
 
     /**
      * @description 日程事件id
@@ -128,22 +134,23 @@ class events extends Model
      */
     public $updateTime;
     protected $_name = [
-        'attendees'         => 'attendees',
-        'createTime'        => 'createTime',
-        'description'       => 'description',
-        'end'               => 'end',
-        'id'                => 'id',
-        'isAllDay'          => 'isAllDay',
-        'location'          => 'location',
-        'onlineMeetingInfo' => 'onlineMeetingInfo',
-        'organizer'         => 'organizer',
-        'recurrence'        => 'recurrence',
-        'reminders'         => 'reminders',
-        'seriesMasterId'    => 'seriesMasterId',
-        'start'             => 'start',
-        'status'            => 'status',
-        'summary'           => 'summary',
-        'updateTime'        => 'updateTime',
+        'attendees'          => 'attendees',
+        'createTime'         => 'createTime',
+        'description'        => 'description',
+        'end'                => 'end',
+        'extendedProperties' => 'extendedProperties',
+        'id'                 => 'id',
+        'isAllDay'           => 'isAllDay',
+        'location'           => 'location',
+        'onlineMeetingInfo'  => 'onlineMeetingInfo',
+        'organizer'          => 'organizer',
+        'recurrence'         => 'recurrence',
+        'reminders'          => 'reminders',
+        'seriesMasterId'     => 'seriesMasterId',
+        'start'              => 'start',
+        'status'             => 'status',
+        'summary'            => 'summary',
+        'updateTime'         => 'updateTime',
     ];
 
     public function validate()
@@ -170,6 +177,9 @@ class events extends Model
         }
         if (null !== $this->end) {
             $res['end'] = null !== $this->end ? $this->end->toMap() : null;
+        }
+        if (null !== $this->extendedProperties) {
+            $res['extendedProperties'] = null !== $this->extendedProperties ? $this->extendedProperties->toMap() : null;
         }
         if (null !== $this->id) {
             $res['id'] = $this->id;
@@ -242,6 +252,9 @@ class events extends Model
         }
         if (isset($map['end'])) {
             $model->end = end::fromMap($map['end']);
+        }
+        if (isset($map['extendedProperties'])) {
+            $model->extendedProperties = extendedProperties::fromMap($map['extendedProperties']);
         }
         if (isset($map['id'])) {
             $model->id = $map['id'];

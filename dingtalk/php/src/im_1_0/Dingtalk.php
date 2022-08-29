@@ -87,6 +87,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupMuteStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMembersOfGroupRoleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMembersOfGroupRoleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMembersOfGroupRoleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QuerySceneGroupTemplateRobotHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QuerySceneGroupTemplateRobotRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QuerySceneGroupTemplateRobotResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QuerySingleGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QuerySingleGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QuerySingleGroupResponse;
@@ -1545,6 +1548,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryMembersOfGroupRoleResponse::fromMap($this->doROARequest('QueryMembersOfGroupRole', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/sceneGroups/roles/members/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QuerySceneGroupTemplateRobotRequest $request
+     *
+     * @return QuerySceneGroupTemplateRobotResponse
+     */
+    public function querySceneGroupTemplateRobot($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QuerySceneGroupTemplateRobotHeaders([]);
+
+        return $this->querySceneGroupTemplateRobotWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QuerySceneGroupTemplateRobotRequest $request
+     * @param QuerySceneGroupTemplateRobotHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return QuerySceneGroupTemplateRobotResponse
+     */
+    public function querySceneGroupTemplateRobotWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$query['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            @$query['robotCode'] = $request->robotCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QuerySceneGroupTemplateRobotResponse::fromMap($this->doROARequest('QuerySceneGroupTemplateRobot', 'im_1.0', 'HTTP', 'GET', 'AK', '/v1.0/im/sceneGroups/templates/robots', 'json', $req, $runtime));
     }
 
     /**
