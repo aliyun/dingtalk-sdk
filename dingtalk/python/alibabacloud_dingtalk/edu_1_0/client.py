@@ -3345,6 +3345,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetDefaultChild', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/defaultChildren', 'json', req, runtime)
         )
 
+    def get_edu_user_identity(
+        self,
+        request: dingtalkedu__1__0_models.GetEduUserIdentityRequest,
+    ) -> dingtalkedu__1__0_models.GetEduUserIdentityResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetEduUserIdentityHeaders()
+        return self.get_edu_user_identity_with_options(request, headers, runtime)
+
+    async def get_edu_user_identity_async(
+        self,
+        request: dingtalkedu__1__0_models.GetEduUserIdentityRequest,
+    ) -> dingtalkedu__1__0_models.GetEduUserIdentityResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetEduUserIdentityHeaders()
+        return await self.get_edu_user_identity_with_options_async(request, headers, runtime)
+
+    def get_edu_user_identity_with_options(
+        self,
+        request: dingtalkedu__1__0_models.GetEduUserIdentityRequest,
+        headers: dingtalkedu__1__0_models.GetEduUserIdentityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetEduUserIdentityResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetEduUserIdentityResponse(),
+            self.do_roarequest('GetEduUserIdentity', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/apollos/activities/userIdentities', 'json', req, runtime)
+        )
+
+    async def get_edu_user_identity_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.GetEduUserIdentityRequest,
+        headers: dingtalkedu__1__0_models.GetEduUserIdentityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetEduUserIdentityResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetEduUserIdentityResponse(),
+            await self.do_roarequest_async('GetEduUserIdentity', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/apollos/activities/userIdentities', 'json', req, runtime)
+        )
+
     def get_open_course_detail(
         self,
         course_id: str,

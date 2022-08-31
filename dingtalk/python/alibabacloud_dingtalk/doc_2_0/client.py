@@ -427,6 +427,142 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetTeam', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/teams/{team_id}', 'json', req, runtime)
         )
 
+    def get_total_number_of_dentries(
+        self,
+        request: dingtalkdoc__2__0_models.GetTotalNumberOfDentriesRequest,
+    ) -> dingtalkdoc__2__0_models.GetTotalNumberOfDentriesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetTotalNumberOfDentriesHeaders()
+        return self.get_total_number_of_dentries_with_options(request, headers, runtime)
+
+    async def get_total_number_of_dentries_async(
+        self,
+        request: dingtalkdoc__2__0_models.GetTotalNumberOfDentriesRequest,
+    ) -> dingtalkdoc__2__0_models.GetTotalNumberOfDentriesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetTotalNumberOfDentriesHeaders()
+        return await self.get_total_number_of_dentries_with_options_async(request, headers, runtime)
+
+    def get_total_number_of_dentries_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.GetTotalNumberOfDentriesRequest,
+        headers: dingtalkdoc__2__0_models.GetTotalNumberOfDentriesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetTotalNumberOfDentriesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.include_folder):
+            query['includeFolder'] = request.include_folder
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.space_types):
+            query['spaceTypes'] = request.space_types
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetTotalNumberOfDentriesResponse(),
+            self.do_roarequest('GetTotalNumberOfDentries', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/spaces/statistics/dentryCounts', 'json', req, runtime)
+        )
+
+    async def get_total_number_of_dentries_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.GetTotalNumberOfDentriesRequest,
+        headers: dingtalkdoc__2__0_models.GetTotalNumberOfDentriesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetTotalNumberOfDentriesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.include_folder):
+            query['includeFolder'] = request.include_folder
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.space_types):
+            query['spaceTypes'] = request.space_types
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetTotalNumberOfDentriesResponse(),
+            await self.do_roarequest_async('GetTotalNumberOfDentries', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/spaces/statistics/dentryCounts', 'json', req, runtime)
+        )
+
+    def get_total_number_of_spaces(
+        self,
+        request: dingtalkdoc__2__0_models.GetTotalNumberOfSpacesRequest,
+    ) -> dingtalkdoc__2__0_models.GetTotalNumberOfSpacesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetTotalNumberOfSpacesHeaders()
+        return self.get_total_number_of_spaces_with_options(request, headers, runtime)
+
+    async def get_total_number_of_spaces_async(
+        self,
+        request: dingtalkdoc__2__0_models.GetTotalNumberOfSpacesRequest,
+    ) -> dingtalkdoc__2__0_models.GetTotalNumberOfSpacesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetTotalNumberOfSpacesHeaders()
+        return await self.get_total_number_of_spaces_with_options_async(request, headers, runtime)
+
+    def get_total_number_of_spaces_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.GetTotalNumberOfSpacesRequest,
+        headers: dingtalkdoc__2__0_models.GetTotalNumberOfSpacesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetTotalNumberOfSpacesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetTotalNumberOfSpacesResponse(),
+            self.do_roarequest('GetTotalNumberOfSpaces', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/spaces/statistics/spaceCounts', 'json', req, runtime)
+        )
+
+    async def get_total_number_of_spaces_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.GetTotalNumberOfSpacesRequest,
+        headers: dingtalkdoc__2__0_models.GetTotalNumberOfSpacesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetTotalNumberOfSpacesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetTotalNumberOfSpacesResponse(),
+            await self.do_roarequest_async('GetTotalNumberOfSpaces', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/spaces/statistics/spaceCounts', 'json', req, runtime)
+        )
+
     def get_user_info_by_open_token(
         self,
         request: dingtalkdoc__2__0_models.GetUserInfoByOpenTokenRequest,
