@@ -127,6 +127,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetBindChildInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetBindChildInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetDefaultChildHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetDefaultChildResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetEduUserIdentityHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetEduUserIdentityRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetEduUserIdentityResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetOpenCourseDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetOpenCourseDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetOpenCoursesHeaders;
@@ -2516,6 +2519,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetDefaultChildResponse::fromMap($this->doROARequest('GetDefaultChild', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/defaultChildren', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetEduUserIdentityRequest $request
+     *
+     * @return GetEduUserIdentityResponse
+     */
+    public function getEduUserIdentity($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetEduUserIdentityHeaders([]);
+
+        return $this->getEduUserIdentityWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetEduUserIdentityRequest $request
+     * @param GetEduUserIdentityHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return GetEduUserIdentityResponse
+     */
+    public function getEduUserIdentityWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetEduUserIdentityResponse::fromMap($this->doROARequest('GetEduUserIdentity', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/apollos/activities/userIdentities', 'json', $req, $runtime));
     }
 
     /**

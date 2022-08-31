@@ -20,6 +20,12 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetSpaceDirectoriesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetTeamHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetTeamRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetTeamResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetTotalNumberOfDentriesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetTotalNumberOfDentriesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetTotalNumberOfDentriesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetTotalNumberOfSpacesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetTotalNumberOfSpacesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetTotalNumberOfSpacesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUserInfoByOpenTokenHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUserInfoByOpenTokenRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUserInfoByOpenTokenResponse;
@@ -336,6 +342,96 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetTeamResponse::fromMap($this->doROARequest('GetTeam', 'doc_2.0', 'HTTP', 'GET', 'AK', '/v2.0/doc/teams/' . $teamId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetTotalNumberOfDentriesRequest $request
+     *
+     * @return GetTotalNumberOfDentriesResponse
+     */
+    public function getTotalNumberOfDentries($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetTotalNumberOfDentriesHeaders([]);
+
+        return $this->getTotalNumberOfDentriesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetTotalNumberOfDentriesRequest $request
+     * @param GetTotalNumberOfDentriesHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return GetTotalNumberOfDentriesResponse
+     */
+    public function getTotalNumberOfDentriesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->includeFolder)) {
+            @$query['includeFolder'] = $request->includeFolder;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->spaceTypes)) {
+            @$query['spaceTypes'] = $request->spaceTypes;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetTotalNumberOfDentriesResponse::fromMap($this->doROARequest('GetTotalNumberOfDentries', 'doc_2.0', 'HTTP', 'GET', 'AK', '/v2.0/doc/spaces/statistics/dentryCounts', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetTotalNumberOfSpacesRequest $request
+     *
+     * @return GetTotalNumberOfSpacesResponse
+     */
+    public function getTotalNumberOfSpaces($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetTotalNumberOfSpacesHeaders([]);
+
+        return $this->getTotalNumberOfSpacesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetTotalNumberOfSpacesRequest $request
+     * @param GetTotalNumberOfSpacesHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return GetTotalNumberOfSpacesResponse
+     */
+    public function getTotalNumberOfSpacesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetTotalNumberOfSpacesResponse::fromMap($this->doROARequest('GetTotalNumberOfSpaces', 'doc_2.0', 'HTTP', 'GET', 'AK', '/v2.0/doc/spaces/statistics/spaceCounts', 'json', $req, $runtime));
     }
 
     /**
