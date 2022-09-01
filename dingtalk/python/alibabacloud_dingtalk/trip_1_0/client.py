@@ -23,6 +23,90 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def sync_business_sign_info(
+        self,
+        request: dingtalktrip__1__0_models.SyncBusinessSignInfoRequest,
+    ) -> dingtalktrip__1__0_models.SyncBusinessSignInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.SyncBusinessSignInfoHeaders()
+        return self.sync_business_sign_info_with_options(request, headers, runtime)
+
+    async def sync_business_sign_info_async(
+        self,
+        request: dingtalktrip__1__0_models.SyncBusinessSignInfoRequest,
+    ) -> dingtalktrip__1__0_models.SyncBusinessSignInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.SyncBusinessSignInfoHeaders()
+        return await self.sync_business_sign_info_with_options_async(request, headers, runtime)
+
+    def sync_business_sign_info_with_options(
+        self,
+        request: dingtalktrip__1__0_models.SyncBusinessSignInfoRequest,
+        headers: dingtalktrip__1__0_models.SyncBusinessSignInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.SyncBusinessSignInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_type_list):
+            body['bizTypeList'] = request.biz_type_list
+        if not UtilClient.is_unset(request.gmt_org_pay):
+            body['gmtOrgPay'] = request.gmt_org_pay
+        if not UtilClient.is_unset(request.gmt_sign):
+            body['gmtSign'] = request.gmt_sign
+        if not UtilClient.is_unset(request.org_pay_status):
+            body['orgPayStatus'] = request.org_pay_status
+        if not UtilClient.is_unset(request.sign_status):
+            body['signStatus'] = request.sign_status
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.SyncBusinessSignInfoResponse(),
+            self.do_roarequest('SyncBusinessSignInfo', 'trip_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/trip/businessSignInfos/sync', 'json', req, runtime)
+        )
+
+    async def sync_business_sign_info_with_options_async(
+        self,
+        request: dingtalktrip__1__0_models.SyncBusinessSignInfoRequest,
+        headers: dingtalktrip__1__0_models.SyncBusinessSignInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.SyncBusinessSignInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_type_list):
+            body['bizTypeList'] = request.biz_type_list
+        if not UtilClient.is_unset(request.gmt_org_pay):
+            body['gmtOrgPay'] = request.gmt_org_pay
+        if not UtilClient.is_unset(request.gmt_sign):
+            body['gmtSign'] = request.gmt_sign
+        if not UtilClient.is_unset(request.org_pay_status):
+            body['orgPayStatus'] = request.org_pay_status
+        if not UtilClient.is_unset(request.sign_status):
+            body['signStatus'] = request.sign_status
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.SyncBusinessSignInfoResponse(),
+            await self.do_roarequest_async('SyncBusinessSignInfo', 'trip_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/trip/businessSignInfos/sync', 'json', req, runtime)
+        )
+
     def sync_secret_key(
         self,
         request: dingtalktrip__1__0_models.SyncSecretKeyRequest,

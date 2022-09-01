@@ -6240,7 +6240,6 @@ class QuerySchemaByProcessCodeResponseBodyResult(TeaModel):
         app_type: int = None,
         app_uuid: str = None,
         biz_type: str = None,
-        creator_uid: int = None,
         creator_user_id: str = None,
         custom_setting: str = None,
         engine_type: int = None,
@@ -6252,7 +6251,6 @@ class QuerySchemaByProcessCodeResponseBodyResult(TeaModel):
         list_order: int = None,
         memo: str = None,
         name: str = None,
-        owner_id: str = None,
         owner_id_type: str = None,
         proc_type: str = None,
         schema_content: QuerySchemaByProcessCodeResponseBodyResultSchemaContent = None,
@@ -6265,8 +6263,6 @@ class QuerySchemaByProcessCodeResponseBodyResult(TeaModel):
         self.app_uuid = app_uuid
         # 代表表单业务含义的类型。
         self.biz_type = biz_type
-        # 创建人 uid。
-        self.creator_uid = creator_uid
         # 创建人 userId。
         self.creator_user_id = creator_user_id
         # 业务自定义设置数据。
@@ -6289,8 +6285,6 @@ class QuerySchemaByProcessCodeResponseBodyResult(TeaModel):
         self.memo = memo
         # 表单名称。
         self.name = name
-        # 数据归属者的 id。
-        self.owner_id = owner_id
         # 数据归属者的 id 类型。企业(orgId), 群(cid), 人(uid)。
         self.owner_id_type = owner_id_type
         # 目标类型: inner, outer, customer。
@@ -6318,8 +6312,6 @@ class QuerySchemaByProcessCodeResponseBodyResult(TeaModel):
             result['appUuid'] = self.app_uuid
         if self.biz_type is not None:
             result['bizType'] = self.biz_type
-        if self.creator_uid is not None:
-            result['creatorUid'] = self.creator_uid
         if self.creator_user_id is not None:
             result['creatorUserId'] = self.creator_user_id
         if self.custom_setting is not None:
@@ -6342,8 +6334,6 @@ class QuerySchemaByProcessCodeResponseBodyResult(TeaModel):
             result['memo'] = self.memo
         if self.name is not None:
             result['name'] = self.name
-        if self.owner_id is not None:
-            result['ownerId'] = self.owner_id
         if self.owner_id_type is not None:
             result['ownerIdType'] = self.owner_id_type
         if self.proc_type is not None:
@@ -6364,8 +6354,6 @@ class QuerySchemaByProcessCodeResponseBodyResult(TeaModel):
             self.app_uuid = m.get('appUuid')
         if m.get('bizType') is not None:
             self.biz_type = m.get('bizType')
-        if m.get('creatorUid') is not None:
-            self.creator_uid = m.get('creatorUid')
         if m.get('creatorUserId') is not None:
             self.creator_user_id = m.get('creatorUserId')
         if m.get('customSetting') is not None:
@@ -6388,8 +6376,6 @@ class QuerySchemaByProcessCodeResponseBodyResult(TeaModel):
             self.memo = m.get('memo')
         if m.get('name') is not None:
             self.name = m.get('name')
-        if m.get('ownerId') is not None:
-            self.owner_id = m.get('ownerId')
         if m.get('ownerIdType') is not None:
             self.owner_id_type = m.get('ownerIdType')
         if m.get('procType') is not None:

@@ -4,6 +4,178 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class SyncBusinessSignInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SyncBusinessSignInfoRequest(TeaModel):
+    def __init__(
+        self,
+        biz_type_list: List[str] = None,
+        gmt_org_pay: str = None,
+        gmt_sign: str = None,
+        org_pay_status: str = None,
+        sign_status: str = None,
+        target_corp_id: str = None,
+    ):
+        # 签约企业所支持的订单类目，如机票、酒店、火车票、打车。
+        # 枚举值如下：
+        # ["HOTEL","FLIGHT","TAXI","TRAIN"]
+        self.biz_type_list = biz_type_list
+        # 开通企业支付的时间戳，毫秒
+        # 
+        self.gmt_org_pay = gmt_org_pay
+        # 签约时间戳，毫秒
+        # 
+        self.gmt_sign = gmt_sign
+        # 开通企业支付状态
+        # 
+        self.org_pay_status = org_pay_status
+        # 企业签约状态
+        self.sign_status = sign_status
+        # 签约企业corpId
+        self.target_corp_id = target_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type_list is not None:
+            result['bizTypeList'] = self.biz_type_list
+        if self.gmt_org_pay is not None:
+            result['gmtOrgPay'] = self.gmt_org_pay
+        if self.gmt_sign is not None:
+            result['gmtSign'] = self.gmt_sign
+        if self.org_pay_status is not None:
+            result['orgPayStatus'] = self.org_pay_status
+        if self.sign_status is not None:
+            result['signStatus'] = self.sign_status
+        if self.target_corp_id is not None:
+            result['targetCorpId'] = self.target_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizTypeList') is not None:
+            self.biz_type_list = m.get('bizTypeList')
+        if m.get('gmtOrgPay') is not None:
+            self.gmt_org_pay = m.get('gmtOrgPay')
+        if m.get('gmtSign') is not None:
+            self.gmt_sign = m.get('gmtSign')
+        if m.get('orgPayStatus') is not None:
+            self.org_pay_status = m.get('orgPayStatus')
+        if m.get('signStatus') is not None:
+            self.sign_status = m.get('signStatus')
+        if m.get('targetCorpId') is not None:
+            self.target_corp_id = m.get('targetCorpId')
+        return self
+
+
+class SyncBusinessSignInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        success: bool = None,
+    ):
+        # Id of the request
+        self.request_id = request_id
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SyncBusinessSignInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SyncBusinessSignInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SyncBusinessSignInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SyncSecretKeyHeaders(TeaModel):
     def __init__(
         self,
