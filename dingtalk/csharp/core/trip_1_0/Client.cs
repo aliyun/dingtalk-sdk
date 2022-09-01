@@ -26,6 +26,110 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
         }
 
 
+        public SyncBusinessSignInfoResponse SyncBusinessSignInfo(SyncBusinessSignInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SyncBusinessSignInfoHeaders headers = new SyncBusinessSignInfoHeaders();
+            return SyncBusinessSignInfoWithOptions(request, headers, runtime);
+        }
+
+        public async Task<SyncBusinessSignInfoResponse> SyncBusinessSignInfoAsync(SyncBusinessSignInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SyncBusinessSignInfoHeaders headers = new SyncBusinessSignInfoHeaders();
+            return await SyncBusinessSignInfoWithOptionsAsync(request, headers, runtime);
+        }
+
+        public SyncBusinessSignInfoResponse SyncBusinessSignInfoWithOptions(SyncBusinessSignInfoRequest request, SyncBusinessSignInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizTypeList))
+            {
+                body["bizTypeList"] = request.BizTypeList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GmtOrgPay))
+            {
+                body["gmtOrgPay"] = request.GmtOrgPay;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GmtSign))
+            {
+                body["gmtSign"] = request.GmtSign;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgPayStatus))
+            {
+                body["orgPayStatus"] = request.OrgPayStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignStatus))
+            {
+                body["signStatus"] = request.SignStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetCorpId))
+            {
+                body["targetCorpId"] = request.TargetCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<SyncBusinessSignInfoResponse>(DoROARequest("SyncBusinessSignInfo", "trip_1.0", "HTTP", "POST", "AK", "/v1.0/trip/businessSignInfos/sync", "json", req, runtime));
+        }
+
+        public async Task<SyncBusinessSignInfoResponse> SyncBusinessSignInfoWithOptionsAsync(SyncBusinessSignInfoRequest request, SyncBusinessSignInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizTypeList))
+            {
+                body["bizTypeList"] = request.BizTypeList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GmtOrgPay))
+            {
+                body["gmtOrgPay"] = request.GmtOrgPay;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GmtSign))
+            {
+                body["gmtSign"] = request.GmtSign;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgPayStatus))
+            {
+                body["orgPayStatus"] = request.OrgPayStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignStatus))
+            {
+                body["signStatus"] = request.SignStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetCorpId))
+            {
+                body["targetCorpId"] = request.TargetCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<SyncBusinessSignInfoResponse>(await DoROARequestAsync("SyncBusinessSignInfo", "trip_1.0", "HTTP", "POST", "AK", "/v1.0/trip/businessSignInfos/sync", "json", req, runtime));
+        }
+
         public SyncSecretKeyResponse SyncSecretKey(SyncSecretKeyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

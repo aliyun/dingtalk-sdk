@@ -25,9 +25,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [NameInMap("bizType")]
             [Validation(Required=false)]
             public string BizType { get; set; }
-            [NameInMap("creatorUid")]
-            [Validation(Required=false)]
-            public long? CreatorUid { get; set; }
             [NameInMap("creatorUserId")]
             [Validation(Required=false)]
             public string CreatorUserId { get; set; }
@@ -61,9 +58,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
-            [NameInMap("ownerId")]
-            [Validation(Required=false)]
-            public string OwnerId { get; set; }
             [NameInMap("ownerIdType")]
             [Validation(Required=false)]
             public string OwnerIdType { get; set; }
