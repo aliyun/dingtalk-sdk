@@ -31,13 +31,6 @@ class result extends Model
     public $bizType;
 
     /**
-     * @description 创建人 uid。
-     *
-     * @var int
-     */
-    public $creatorUid;
-
-    /**
      * @description 创建人 userId。
      *
      * @var string
@@ -115,13 +108,6 @@ class result extends Model
     public $name;
 
     /**
-     * @description 数据归属者的 id。
-     *
-     * @var string
-     */
-    public $ownerId;
-
-    /**
      * @description 数据归属者的 id 类型。企业(orgId), 群(cid), 人(uid)。
      *
      * @var string
@@ -159,7 +145,6 @@ class result extends Model
         'appType'       => 'appType',
         'appUuid'       => 'appUuid',
         'bizType'       => 'bizType',
-        'creatorUid'    => 'creatorUid',
         'creatorUserId' => 'creatorUserId',
         'customSetting' => 'customSetting',
         'engineType'    => 'engineType',
@@ -171,7 +156,6 @@ class result extends Model
         'listOrder'     => 'listOrder',
         'memo'          => 'memo',
         'name'          => 'name',
-        'ownerId'       => 'ownerId',
         'ownerIdType'   => 'ownerIdType',
         'procType'      => 'procType',
         'schemaContent' => 'schemaContent',
@@ -194,9 +178,6 @@ class result extends Model
         }
         if (null !== $this->bizType) {
             $res['bizType'] = $this->bizType;
-        }
-        if (null !== $this->creatorUid) {
-            $res['creatorUid'] = $this->creatorUid;
         }
         if (null !== $this->creatorUserId) {
             $res['creatorUserId'] = $this->creatorUserId;
@@ -230,9 +211,6 @@ class result extends Model
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
-        }
-        if (null !== $this->ownerId) {
-            $res['ownerId'] = $this->ownerId;
         }
         if (null !== $this->ownerIdType) {
             $res['ownerIdType'] = $this->ownerIdType;
@@ -270,9 +248,6 @@ class result extends Model
         if (isset($map['bizType'])) {
             $model->bizType = $map['bizType'];
         }
-        if (isset($map['creatorUid'])) {
-            $model->creatorUid = $map['creatorUid'];
-        }
         if (isset($map['creatorUserId'])) {
             $model->creatorUserId = $map['creatorUserId'];
         }
@@ -305,9 +280,6 @@ class result extends Model
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
-        }
-        if (isset($map['ownerId'])) {
-            $model->ownerId = $map['ownerId'];
         }
         if (isset($map['ownerIdType'])) {
             $model->ownerIdType = $map['ownerIdType'];

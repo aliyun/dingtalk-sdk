@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vtrip_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncBusinessSignInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncBusinessSignInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncBusinessSignInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncSecretKeyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncSecretKeyRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncSecretKeyResponse;
@@ -25,6 +28,63 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param SyncBusinessSignInfoRequest $request
+     *
+     * @return SyncBusinessSignInfoResponse
+     */
+    public function syncBusinessSignInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SyncBusinessSignInfoHeaders([]);
+
+        return $this->syncBusinessSignInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SyncBusinessSignInfoRequest $request
+     * @param SyncBusinessSignInfoHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return SyncBusinessSignInfoResponse
+     */
+    public function syncBusinessSignInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizTypeList)) {
+            @$body['bizTypeList'] = $request->bizTypeList;
+        }
+        if (!Utils::isUnset($request->gmtOrgPay)) {
+            @$body['gmtOrgPay'] = $request->gmtOrgPay;
+        }
+        if (!Utils::isUnset($request->gmtSign)) {
+            @$body['gmtSign'] = $request->gmtSign;
+        }
+        if (!Utils::isUnset($request->orgPayStatus)) {
+            @$body['orgPayStatus'] = $request->orgPayStatus;
+        }
+        if (!Utils::isUnset($request->signStatus)) {
+            @$body['signStatus'] = $request->signStatus;
+        }
+        if (!Utils::isUnset($request->targetCorpId)) {
+            @$body['targetCorpId'] = $request->targetCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SyncBusinessSignInfoResponse::fromMap($this->doROARequest('SyncBusinessSignInfo', 'trip_1.0', 'HTTP', 'POST', 'AK', '/v1.0/trip/businessSignInfos/sync', 'json', $req, $runtime));
     }
 
     /**
