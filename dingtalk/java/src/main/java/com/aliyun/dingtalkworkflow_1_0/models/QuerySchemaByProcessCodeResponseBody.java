@@ -941,10 +941,6 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
         @NameInMap("bizType")
         public String bizType;
 
-        // 创建人 uid。
-        @NameInMap("creatorUid")
-        public Long creatorUid;
-
         // 创建人 userId。
         @NameInMap("creatorUserId")
         public String creatorUserId;
@@ -988,10 +984,6 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
         // 表单名称。
         @NameInMap("name")
         public String name;
-
-        // 数据归属者的 id。
-        @NameInMap("ownerId")
-        public String ownerId;
 
         // 数据归属者的 id 类型。企业(orgId), 群(cid), 人(uid)。
         @NameInMap("ownerIdType")
@@ -1040,14 +1032,6 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
         }
         public String getBizType() {
             return this.bizType;
-        }
-
-        public QuerySchemaByProcessCodeResponseBodyResult setCreatorUid(Long creatorUid) {
-            this.creatorUid = creatorUid;
-            return this;
-        }
-        public Long getCreatorUid() {
-            return this.creatorUid;
         }
 
         public QuerySchemaByProcessCodeResponseBodyResult setCreatorUserId(String creatorUserId) {
@@ -1136,14 +1120,6 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
-        }
-
-        public QuerySchemaByProcessCodeResponseBodyResult setOwnerId(String ownerId) {
-            this.ownerId = ownerId;
-            return this;
-        }
-        public String getOwnerId() {
-            return this.ownerId;
         }
 
         public QuerySchemaByProcessCodeResponseBodyResult setOwnerIdType(String ownerIdType) {

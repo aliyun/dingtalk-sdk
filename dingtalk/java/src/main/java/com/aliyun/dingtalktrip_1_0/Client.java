@@ -16,6 +16,55 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public SyncBusinessSignInfoResponse syncBusinessSignInfo(SyncBusinessSignInfoRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SyncBusinessSignInfoHeaders headers = new SyncBusinessSignInfoHeaders();
+        return this.syncBusinessSignInfoWithOptions(request, headers, runtime);
+    }
+
+    public SyncBusinessSignInfoResponse syncBusinessSignInfoWithOptions(SyncBusinessSignInfoRequest request, SyncBusinessSignInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizTypeList)) {
+            body.put("bizTypeList", request.bizTypeList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.gmtOrgPay)) {
+            body.put("gmtOrgPay", request.gmtOrgPay);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.gmtSign)) {
+            body.put("gmtSign", request.gmtSign);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orgPayStatus)) {
+            body.put("orgPayStatus", request.orgPayStatus);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.signStatus)) {
+            body.put("signStatus", request.signStatus);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetCorpId)) {
+            body.put("targetCorpId", request.targetCorpId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("SyncBusinessSignInfo", "trip_1.0", "HTTP", "POST", "AK", "/v1.0/trip/businessSignInfos/sync", "json", req, runtime), new SyncBusinessSignInfoResponse());
+    }
+
     public SyncSecretKeyResponse syncSecretKey(SyncSecretKeyRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SyncSecretKeyHeaders headers = new SyncSecretKeyHeaders();
