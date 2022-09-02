@@ -26,7 +26,8 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [NameInMap("openPushId")]
             [Validation(Required=false)]
             public string OpenPushId { get; set; }
-        };
+
+        }
 
     }
 

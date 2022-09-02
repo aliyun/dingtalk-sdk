@@ -137,13 +137,21 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public ListGroupSetResponseBodyResultListOwner Owner { get; set; }
             public class ListGroupSetResponseBodyResultListOwner : TeaModel {
+                /// <summary>
+                /// 群主姓名
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
+
+                /// <summary>
+                /// 群主userId
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 群主userId，裂变出的新群会自动设置该userId为群主

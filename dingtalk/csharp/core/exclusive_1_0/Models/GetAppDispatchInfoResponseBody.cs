@@ -85,10 +85,14 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public GetAppDispatchInfoResponseBodyIOSExt Ext { get; set; }
             public class GetAppDispatchInfoResponseBodyIOSExt : TeaModel {
+                /// <summary>
+                /// plist下载地址
+                /// </summary>
                 [NameInMap("plist")]
                 [Validation(Required=false)]
                 public string Plist { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 是否灰度。true 灰度发布中 | false 全量灰度发布。为空则为未发布

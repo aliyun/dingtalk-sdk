@@ -37,16 +37,28 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public CreateEventRequestEnd End { get; set; }
         public class CreateEventRequestEnd : TeaModel {
+            /// <summary>
+            /// 日程结束日期，如果是全天日程必须有值，非全天日程必须留空，格式：yyyy-MM-dd
+            /// </summary>
             [NameInMap("date")]
             [Validation(Required=false)]
             public string Date { get; set; }
+
+            /// <summary>
+            /// 日程结束时间，非全天日程必须有值，全天日程必须留空，格式为ISO-8601的date-time格式
+            /// </summary>
             [NameInMap("dateTime")]
             [Validation(Required=false)]
             public string DateTime { get; set; }
+
+            /// <summary>
+            /// 日程结束时间所属时区，非全天日程必须有值，全天日程必须留空，tz database name格式，参考：https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+            /// </summary>
             [NameInMap("timeZone")]
             [Validation(Required=false)]
             public string TimeZone { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 扩展信息
@@ -69,7 +81,8 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [NameInMap("displayName")]
             [Validation(Required=false)]
             public string DisplayName { get; set; }
-        };
+
+        }
 
         [NameInMap("onlineMeetingInfo")]
         [Validation(Required=false)]
@@ -78,7 +91,8 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [NameInMap("type")]
             [Validation(Required=false)]
             public string Type { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 日程循环规则
@@ -87,6 +101,9 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public CreateEventRequestRecurrence Recurrence { get; set; }
         public class CreateEventRequestRecurrence : TeaModel {
+            /// <summary>
+            /// 循环规则
+            /// </summary>
             [NameInMap("pattern")]
             [Validation(Required=false)]
             public CreateEventRequestRecurrencePattern Pattern { get; set; }
@@ -116,6 +133,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 public string Type { get; set; }
 
             }
+
             [NameInMap("range")]
             [Validation(Required=false)]
             public CreateEventRequestRecurrenceRange Range { get; set; }
@@ -133,7 +151,8 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 public string Type { get; set; }
 
             }
-        };
+
+        }
 
         [NameInMap("reminders")]
         [Validation(Required=false)]
@@ -156,16 +175,28 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public CreateEventRequestStart Start { get; set; }
         public class CreateEventRequestStart : TeaModel {
+            /// <summary>
+            /// 日程开始日期，如果是全天日程必须有值，非全天日程必须留空，格式：yyyy-MM-dd
+            /// </summary>
             [NameInMap("date")]
             [Validation(Required=false)]
             public string Date { get; set; }
+
+            /// <summary>
+            /// 日程开始时间，非全天日程必须有值，全天日程必须留空，格式为ISO-8601的date-time格式
+            /// </summary>
             [NameInMap("dateTime")]
             [Validation(Required=false)]
             public string DateTime { get; set; }
+
+            /// <summary>
+            /// 日程开始时间所属时区，非全天日程必须有值，全天日程必须留空，tz database name格式，参考：https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+            /// </summary>
             [NameInMap("timeZone")]
             [Validation(Required=false)]
             public string TimeZone { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 日程标题

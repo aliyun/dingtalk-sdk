@@ -93,13 +93,21 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 [Validation(Required=false)]
                 public GetOfficialAccountContactsResponseBodyValuesContactsPermission Permission { get; set; }
                 public class GetOfficialAccountContactsResponseBodyValuesContactsPermission : TeaModel {
+                    /// <summary>
+                    /// 负责人用户ID列表
+                    /// </summary>
                     [NameInMap("ownerStaffIds")]
                     [Validation(Required=false)]
                     public List<string> OwnerStaffIds { get; set; }
+
+                    /// <summary>
+                    /// 协同人用户ID列表
+                    /// </summary>
                     [NameInMap("participantStaffIds")]
                     [Validation(Required=false)]
                     public List<string> ParticipantStaffIds { get; set; }
-                };
+
+                }
 
             }
 

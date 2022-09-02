@@ -44,10 +44,15 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public SaveProcessRequestProcessFeatureConfig ProcessFeatureConfig { get; set; }
         public class SaveProcessRequestProcessFeatureConfig : TeaModel {
+            /// <summary>
+            /// 配置列表
+            /// </summary>
             [NameInMap("features")]
             [Validation(Required=false)]
             public List<SaveProcessRequestProcessFeatureConfigFeatures> Features { get; set; }
             public class SaveProcessRequestProcessFeatureConfigFeatures : TeaModel {
+                [NameInMap("callback")]
+                [Validation(Required=false)]
                 public SaveProcessRequestProcessFeatureConfigFeaturesCallback Callback { get; set; }
                 public class SaveProcessRequestProcessFeatureConfigFeaturesCallback : TeaModel {
                     /// <summary>
@@ -72,12 +77,40 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                     public string Version { get; set; }
 
                 }
+
+                /// <summary>
+                /// 手机端链接
+                /// </summary>
+                [NameInMap("mobileUrl")]
+                [Validation(Required=false)]
                 public string MobileUrl { get; set; }
+
+                /// <summary>
+                /// 名称
+                /// </summary>
+                [NameInMap("name")]
+                [Validation(Required=false)]
                 public string Name { get; set; }
+
+                /// <summary>
+                /// pc端链接
+                /// </summary>
+                [NameInMap("pcUrl")]
+                [Validation(Required=false)]
                 public string PcUrl { get; set; }
+
+                /// <summary>
+                /// 运行方式：
+                /// ORIGIN：原生运行，即在官方审批内运行对应功能；
+                /// REDIRECT：外部跳转运行，需要跳转到三方地址运行对应功能
+                /// </summary>
+                [NameInMap("runType")]
+                [Validation(Required=false)]
                 public string RunType { get; set; }
+
             }
-        };
+
+        }
 
     }
 

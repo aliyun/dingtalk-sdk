@@ -16,18 +16,30 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
             [NameInMap("displayName")]
             [Validation(Required=false)]
             public string DisplayName { get; set; }
+
             [NameInMap("dsId")]
             [Validation(Required=false)]
             public string DsId { get; set; }
+
             [NameInMap("fields")]
             [Validation(Required=false)]
             public List<QueryOfficialDatasetFieldsResponseBodyResultFields> Fields { get; set; }
             public class QueryOfficialDatasetFieldsResponseBodyResultFields : TeaModel {
+                [NameInMap("displayName")]
+                [Validation(Required=false)]
                 public string DisplayName { get; set; }
+
+                [NameInMap("fieldId")]
+                [Validation(Required=false)]
                 public string FieldId { get; set; }
+
+                [NameInMap("fieldType")]
+                [Validation(Required=false)]
                 public string FieldType { get; set; }
+
             }
-        };
+
+        }
 
         [NameInMap("success")]
         [Validation(Required=false)]

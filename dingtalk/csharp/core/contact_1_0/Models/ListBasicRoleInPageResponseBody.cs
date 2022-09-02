@@ -24,6 +24,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
                 [NameInMap("actionIds")]
                 [Validation(Required=false)]
                 public List<string> ActionIds { get; set; }
+
                 [NameInMap("openCondition")]
                 [Validation(Required=false)]
                 public ListBasicRoleInPageResponseBodyListOpenActionOpenCondition OpenCondition { get; set; }
@@ -35,19 +36,24 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
                         [NameInMap("deptIds")]
                         [Validation(Required=false)]
                         public List<long?> DeptIds { get; set; }
+
                         [NameInMap("includeMemberDepts")]
                         [Validation(Required=false)]
                         public bool? IncludeMemberDepts { get; set; }
+
                         [NameInMap("includeSelfManageDepts")]
                         [Validation(Required=false)]
                         public bool? IncludeSelfManageDepts { get; set; }
+
                         [NameInMap("userIds")]
                         [Validation(Required=false)]
                         public List<string> UserIds { get; set; }
-                    };
+
+                    }
 
                 }
-            };
+
+            }
 
             [NameInMap("openMembers")]
             [Validation(Required=false)]

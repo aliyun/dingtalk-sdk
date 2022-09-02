@@ -16,10 +16,14 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         [Validation(Required=false)]
         public DeleteObjectiveResponseBodyData Data { get; set; }
         public class DeleteObjectiveResponseBodyData : TeaModel {
+            /// <summary>
+            /// 当前 Objective ID。
+            /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]
             public string Id { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 请求成功的标识。

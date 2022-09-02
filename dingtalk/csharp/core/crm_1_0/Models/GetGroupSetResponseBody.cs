@@ -81,10 +81,12 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
+
             [NameInMap("userId")]
             [Validation(Required=false)]
             public string UserId { get; set; }
-        };
+
+        }
 
         [NameInMap("ownerUserId")]
         [Validation(Required=false)]

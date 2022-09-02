@@ -30,10 +30,14 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0.Models
         [Validation(Required=false)]
         public GetMiniAppMetaDataResponseBodyResult Result { get; set; }
         public class GetMiniAppMetaDataResponseBodyResult : TeaModel {
+            /// <summary>
+            /// data
+            /// </summary>
             [NameInMap("data")]
             [Validation(Required=false)]
-            public Dictionary<string, string> Data { get; set; }
-        };
+            public Dictionary<string, object> Data { get; set; }
+
+        }
 
         /// <summary>
         /// requestId

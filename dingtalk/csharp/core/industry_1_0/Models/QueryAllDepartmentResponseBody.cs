@@ -23,6 +23,9 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [Validation(Required=false)]
             public QueryAllDepartmentResponseBodyContentDeptAndExt DeptAndExt { get; set; }
             public class QueryAllDepartmentResponseBodyContentDeptAndExt : TeaModel {
+                /// <summary>
+                /// 科室详情
+                /// </summary>
                 [NameInMap("department")]
                 [Validation(Required=false)]
                 public QueryAllDepartmentResponseBodyContentDeptAndExtDepartment Department { get; set; }
@@ -112,20 +115,73 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                     public List<long?> WardIdList { get; set; }
 
                 }
+
+                /// <summary>
+                /// 科室扩展信息列表
+                /// </summary>
                 [NameInMap("extendInfos")]
                 [Validation(Required=false)]
                 public List<QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos> ExtendInfos { get; set; }
                 public class QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos : TeaModel {
+                    /// <summary>
+                    /// 部门code
+                    /// </summary>
+                    [NameInMap("deptCode")]
+                    [Validation(Required=false)]
                     public string DeptCode { get; set; }
+
+                    /// <summary>
+                    /// 科室扩展字段描述
+                    /// </summary>
+                    [NameInMap("deptExtendDisplayName")]
+                    [Validation(Required=false)]
                     public string DeptExtendDisplayName { get; set; }
+
+                    /// <summary>
+                    /// 科室扩展字段key
+                    /// </summary>
+                    [NameInMap("deptExtendKey")]
+                    [Validation(Required=false)]
                     public string DeptExtendKey { get; set; }
+
+                    /// <summary>
+                    /// 科室扩展字段value
+                    /// </summary>
+                    [NameInMap("deptExtendValue")]
+                    [Validation(Required=false)]
                     public string DeptExtendValue { get; set; }
+
+                    /// <summary>
+                    /// 创建时间
+                    /// </summary>
+                    [NameInMap("gmtCreateStr")]
+                    [Validation(Required=false)]
                     public string GmtCreateStr { get; set; }
+
+                    /// <summary>
+                    /// 修改时间
+                    /// </summary>
+                    [NameInMap("gmtModifiedStr")]
+                    [Validation(Required=false)]
                     public string GmtModifiedStr { get; set; }
+
+                    /// <summary>
+                    /// 扩展信息id
+                    /// </summary>
+                    [NameInMap("id")]
+                    [Validation(Required=false)]
                     public long? Id { get; set; }
+
+                    /// <summary>
+                    /// 0-有效 ，1-无效
+                    /// </summary>
+                    [NameInMap("status")]
+                    [Validation(Required=false)]
                     public int? Status { get; set; }
+
                 }
-            };
+
+            }
 
             /// <summary>
             /// 医疗组列表
@@ -206,21 +262,44 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 [Validation(Required=false)]
                 public QueryAllDepartmentResponseBodyContentGroupAndExtListGroup Group { get; set; }
                 public class QueryAllDepartmentResponseBodyContentGroupAndExtListGroup : TeaModel {
+                    /// <summary>
+                    /// 科室ID，同parentDeptCode，这里保留是做兼容，原来定义成Long不太好改成了String了
+                    /// </summary>
                     [NameInMap("deptId")]
                     [Validation(Required=false)]
                     public long? DeptId { get; set; }
+
+                    /// <summary>
+                    /// 部门状态：0-正常，1-删除
+                    /// </summary>
                     [NameInMap("deptStatus")]
                     [Validation(Required=false)]
                     public int? DeptStatus { get; set; }
+
+                    /// <summary>
+                    /// 创建时间
+                    /// </summary>
                     [NameInMap("gmtCreateStr")]
                     [Validation(Required=false)]
                     public string GmtCreateStr { get; set; }
+
+                    /// <summary>
+                    /// 修改时间
+                    /// </summary>
                     [NameInMap("gmtModifiedStr")]
                     [Validation(Required=false)]
                     public string GmtModifiedStr { get; set; }
+
+                    /// <summary>
+                    /// 医疗组ID
+                    /// </summary>
                     [NameInMap("id")]
                     [Validation(Required=false)]
                     public long? Id { get; set; }
+
+                    /// <summary>
+                    /// 医疗组组长信息
+                    /// </summary>
                     [NameInMap("leader")]
                     [Validation(Required=false)]
                     public QueryAllDepartmentResponseBodyContentGroupAndExtListGroupLeader Leader { get; set; }
@@ -247,16 +326,29 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                         public string UserId { get; set; }
 
                     }
+
+                    /// <summary>
+                    /// 医疗组名称
+                    /// </summary>
                     [NameInMap("name")]
                     [Validation(Required=false)]
                     public string Name { get; set; }
+
+                    /// <summary>
+                    /// 父级组织id，这里医疗组的父级就是科室
+                    /// </summary>
                     [NameInMap("parentDeptCode")]
                     [Validation(Required=false)]
                     public string ParentDeptCode { get; set; }
+
+                    /// <summary>
+                    /// 备注
+                    /// </summary>
                     [NameInMap("remark")]
                     [Validation(Required=false)]
                     public string Remark { get; set; }
-                };
+
+                }
 
             }
 

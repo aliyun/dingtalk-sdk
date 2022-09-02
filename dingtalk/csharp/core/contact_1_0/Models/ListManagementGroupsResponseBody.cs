@@ -67,13 +67,21 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
             [Validation(Required=false)]
             public ListManagementGroupsResponseBodyGroupsScope Scope { get; set; }
             public class ListManagementGroupsResponseBodyGroupsScope : TeaModel {
+                /// <summary>
+                /// 部门列表，只在scopeType=3 生效
+                /// </summary>
                 [NameInMap("deptIds")]
                 [Validation(Required=false)]
                 public List<long?> DeptIds { get; set; }
+
+                /// <summary>
+                /// 1
+                /// </summary>
                 [NameInMap("scopeType")]
                 [Validation(Required=false)]
                 public int? ScopeType { get; set; }
-            };
+
+            }
 
         }
 

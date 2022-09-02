@@ -58,13 +58,21 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
             [Validation(Required=false)]
             public QueryTodoTasksResponseBodyTodoCardsDetailUrl DetailUrl { get; set; }
             public class QueryTodoTasksResponseBodyTodoCardsDetailUrl : TeaModel {
+                /// <summary>
+                /// 移动端url地址
+                /// </summary>
                 [NameInMap("appUrl")]
                 [Validation(Required=false)]
                 public string AppUrl { get; set; }
+
+                /// <summary>
+                /// pc端url地址
+                /// </summary>
                 [NameInMap("pcUrl")]
                 [Validation(Required=false)]
                 public string PcUrl { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 待办截止时间
@@ -94,13 +102,21 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
             [Validation(Required=false)]
             public QueryTodoTasksResponseBodyTodoCardsOrgInfo OrgInfo { get; set; }
             public class QueryTodoTasksResponseBodyTodoCardsOrgInfo : TeaModel {
+                /// <summary>
+                /// 组织corpId
+                /// </summary>
                 [NameInMap("corpId")]
                 [Validation(Required=false)]
                 public string CorpId { get; set; }
+
+                /// <summary>
+                /// 组织名称
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 业务来源信息
@@ -109,10 +125,14 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
             [Validation(Required=false)]
             public QueryTodoTasksResponseBodyTodoCardsOriginalSource OriginalSource { get; set; }
             public class QueryTodoTasksResponseBodyTodoCardsOriginalSource : TeaModel {
+                /// <summary>
+                /// 业务来源展示名称
+                /// </summary>
                 [NameInMap("sourceTitle")]
                 [Validation(Required=false)]
                 public string SourceTitle { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 优先级
@@ -149,32 +169,69 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
             [Validation(Required=false)]
             public QueryTodoTasksResponseBodyTodoCardsTodoCardView TodoCardView { get; set; }
             public class QueryTodoTasksResponseBodyTodoCardsTodoCardView : TeaModel {
+                /// <summary>
+                /// link, button, 操作区类型，是链接类型，或者按钮类型
+                /// </summary>
                 [NameInMap("actionType")]
                 [Validation(Required=false)]
                 public string ActionType { get; set; }
+
+                /// <summary>
+                /// 卡片类型
+                /// </summary>
                 [NameInMap("cardType")]
                 [Validation(Required=false)]
                 public string CardType { get; set; }
+
+                /// <summary>
+                /// 卡片左上角 区域类型是 icon, 或者checkbox 类型的
+                /// </summary>
                 [NameInMap("circleELType")]
                 [Validation(Required=false)]
                 public string CircleELType { get; set; }
+
+                /// <summary>
+                /// icon, name ,内容区域类型是 icon+value, 或者name+value 类型的
+                /// </summary>
                 [NameInMap("contentType")]
                 [Validation(Required=false)]
                 public string ContentType { get; set; }
+
+                /// <summary>
+                /// 卡片icon
+                /// </summary>
                 [NameInMap("icon")]
                 [Validation(Required=false)]
                 public string Icon { get; set; }
+
                 [NameInMap("todoCardContentList")]
                 [Validation(Required=false)]
                 public List<QueryTodoTasksResponseBodyTodoCardsTodoCardViewTodoCardContentList> TodoCardContentList { get; set; }
                 public class QueryTodoTasksResponseBodyTodoCardsTodoCardViewTodoCardContentList : TeaModel {
+                    /// <summary>
+                    /// 自定义表单内容名字
+                    /// </summary>
+                    [NameInMap("name")]
+                    [Validation(Required=false)]
                     public string Name { get; set; }
+
+                    /// <summary>
+                    /// 自定义表单内容值
+                    /// </summary>
+                    [NameInMap("value")]
+                    [Validation(Required=false)]
                     public string Value { get; set; }
+
                 }
+
+                /// <summary>
+                /// 卡片标题
+                /// </summary>
                 [NameInMap("todoCardTitle")]
                 [Validation(Required=false)]
                 public string TodoCardTitle { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 待办状态

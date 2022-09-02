@@ -16,10 +16,14 @@ namespace AlibabaCloud.SDK.Dingtalkapp_market_1_0.Models
         [Validation(Required=false)]
         public GetPersonalExperienceInfoResponseBodyResult Result { get; set; }
         public class GetPersonalExperienceInfoResponseBodyResult : TeaModel {
+            /// <summary>
+            /// 主组织corpId
+            /// </summary>
             [NameInMap("mainCorpId")]
             [Validation(Required=false)]
             public string MainCorpId { get; set; }
-        };
+
+        }
 
     }
 

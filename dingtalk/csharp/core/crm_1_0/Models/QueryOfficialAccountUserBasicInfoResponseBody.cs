@@ -23,10 +23,14 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public QueryOfficialAccountUserBasicInfoResponseBodyResult Result { get; set; }
         public class QueryOfficialAccountUserBasicInfoResponseBodyResult : TeaModel {
+            /// <summary>
+            /// 关注状态
+            /// </summary>
             [NameInMap("status")]
             [Validation(Required=false)]
             public string Status { get; set; }
-        };
+
+        }
 
     }
 

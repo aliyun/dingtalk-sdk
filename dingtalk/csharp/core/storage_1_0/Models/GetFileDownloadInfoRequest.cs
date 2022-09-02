@@ -16,10 +16,14 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         [Validation(Required=false)]
         public GetFileDownloadInfoRequestOption Option { get; set; }
         public class GetFileDownloadInfoRequestOption : TeaModel {
+            /// <summary>
+            /// 历史版本号
+            /// </summary>
             [NameInMap("version")]
             [Validation(Required=false)]
             public long? Version { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 用户id

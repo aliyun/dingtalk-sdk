@@ -16,9 +16,16 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         [Validation(Required=false)]
         public BatchAddPermissionResponseBodyData Data { get; set; }
         public class BatchAddPermissionResponseBodyData : TeaModel {
+            /// <summary>
+            /// 是否有无效的成员。
+            /// </summary>
             [NameInMap("hasInvalidUser")]
             [Validation(Required=false)]
             public bool? HasInvalidUser { get; set; }
+
+            /// <summary>
+            /// 权限信息。
+            /// </summary>
             [NameInMap("permissionTree")]
             [Validation(Required=false)]
             public BatchAddPermissionResponseBodyDataPermissionTree PermissionTree { get; set; }
@@ -80,7 +87,8 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
                 public string Type { get; set; }
 
             }
-        };
+
+        }
 
         /// <summary>
         /// 请求成功的标识。

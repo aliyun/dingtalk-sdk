@@ -44,13 +44,21 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public GetOpenCourseDetailResponseBodyPushModel PushModel { get; set; }
         public class GetOpenCourseDetailResponseBodyPushModel : TeaModel {
+            /// <summary>
+            /// 参与学校的名称列表
+            /// </summary>
             [NameInMap("pushOrgNameList")]
             [Validation(Required=false)]
             public List<string> PushOrgNameList { get; set; }
+
+            /// <summary>
+            /// 参与角色的名称列表
+            /// </summary>
             [NameInMap("pushRoleNameList")]
             [Validation(Required=false)]
             public List<string> PushRoleNameList { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 课程开始时间

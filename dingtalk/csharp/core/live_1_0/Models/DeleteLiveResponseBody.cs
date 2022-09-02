@@ -16,7 +16,8 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
             [NameInMap("success")]
             [Validation(Required=false)]
             public bool? Success { get; set; }
-        };
+
+        }
 
     }
 

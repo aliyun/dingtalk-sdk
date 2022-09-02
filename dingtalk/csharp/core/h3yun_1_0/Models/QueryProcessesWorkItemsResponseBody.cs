@@ -79,19 +79,35 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
             [Validation(Required=false)]
             public QueryProcessesWorkItemsResponseBodyDataFinisher Finisher { get; set; }
             public class QueryProcessesWorkItemsResponseBodyDataFinisher : TeaModel {
+                /// <summary>
+                /// 用户直属的部门id
+                /// </summary>
                 [NameInMap("departmentId")]
                 [Validation(Required=false)]
                 public string DepartmentId { get; set; }
+
+                /// <summary>
+                /// 用户直属的部门名称
+                /// </summary>
                 [NameInMap("departmentName")]
                 [Validation(Required=false)]
                 public string DepartmentName { get; set; }
+
+                /// <summary>
+                /// 用户名称
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
+
+                /// <summary>
+                /// 用户id
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 对该工作项是否同意
@@ -114,19 +130,35 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
             [Validation(Required=false)]
             public QueryProcessesWorkItemsResponseBodyDataParticipant Participant { get; set; }
             public class QueryProcessesWorkItemsResponseBodyDataParticipant : TeaModel {
+                /// <summary>
+                /// 用户直属的部门id
+                /// </summary>
                 [NameInMap("departmentId")]
                 [Validation(Required=false)]
                 public string DepartmentId { get; set; }
+
+                /// <summary>
+                /// 用户直属的部门名称
+                /// </summary>
                 [NameInMap("departmentName")]
                 [Validation(Required=false)]
                 public string DepartmentName { get; set; }
+
+                /// <summary>
+                /// 用户名称
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
+
+                /// <summary>
+                /// 用户id
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 流程实例ID
@@ -149,19 +181,35 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
             [Validation(Required=false)]
             public QueryProcessesWorkItemsResponseBodyDataReceiptor Receiptor { get; set; }
             public class QueryProcessesWorkItemsResponseBodyDataReceiptor : TeaModel {
+                /// <summary>
+                /// 用户直属的部门id
+                /// </summary>
                 [NameInMap("departmentId")]
                 [Validation(Required=false)]
                 public string DepartmentId { get; set; }
+
+                /// <summary>
+                /// 用户直属的部门名称
+                /// </summary>
                 [NameInMap("departmentName")]
                 [Validation(Required=false)]
                 public string DepartmentName { get; set; }
+
+                /// <summary>
+                /// 用户名称
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
+
+                /// <summary>
+                /// 用户id
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 接收时间

@@ -51,16 +51,28 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public QueryReceiptForInvoiceResponseBodyListCreator Creator { get; set; }
             public class QueryReceiptForInvoiceResponseBodyListCreator : TeaModel {
+                /// <summary>
+                /// 创建人头像
+                /// </summary>
                 [NameInMap("avatarUrl")]
                 [Validation(Required=false)]
                 public string AvatarUrl { get; set; }
+
+                /// <summary>
+                /// 创建人昵称
+                /// </summary>
                 [NameInMap("nick")]
                 [Validation(Required=false)]
                 public string Nick { get; set; }
+
+                /// <summary>
+                /// 创建人工号
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 客户
@@ -69,13 +81,21 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public QueryReceiptForInvoiceResponseBodyListCustomer Customer { get; set; }
             public class QueryReceiptForInvoiceResponseBodyListCustomer : TeaModel {
+                /// <summary>
+                /// 客户code
+                /// </summary>
                 [NameInMap("code")]
                 [Validation(Required=false)]
                 public string Code { get; set; }
+
+                /// <summary>
+                /// 客户名字
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 发票种类

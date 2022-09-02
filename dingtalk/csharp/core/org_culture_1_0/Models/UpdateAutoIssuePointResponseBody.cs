@@ -13,10 +13,14 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
         [Validation(Required=false)]
         public UpdateAutoIssuePointResponseBodyResult Result { get; set; }
         public class UpdateAutoIssuePointResponseBodyResult : TeaModel {
+            /// <summary>
+            /// 下次自动发放时间
+            /// </summary>
             [NameInMap("nextAutoIssuePointTime")]
             [Validation(Required=false)]
             public long? NextAutoIssuePointTime { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 调用是否成功

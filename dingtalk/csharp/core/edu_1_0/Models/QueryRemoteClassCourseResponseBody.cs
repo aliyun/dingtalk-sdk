@@ -106,19 +106,35 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public QueryRemoteClassCourseResponseBodyResultTeachingParticipant TeachingParticipant { get; set; }
             public class QueryRemoteClassCourseResponseBodyResultTeachingParticipant : TeaModel {
+                /// <summary>
+                /// 组织ID
+                /// </summary>
                 [NameInMap("corpId")]
                 [Validation(Required=false)]
                 public string CorpId { get; set; }
+
+                /// <summary>
+                /// 组织名称
+                /// </summary>
                 [NameInMap("orgName")]
                 [Validation(Required=false)]
                 public string OrgName { get; set; }
+
+                /// <summary>
+                /// 参与方ID
+                /// </summary>
                 [NameInMap("participantId")]
                 [Validation(Required=false)]
                 public string ParticipantId { get; set; }
+
+                /// <summary>
+                /// 参与方名称
+                /// </summary>
                 [NameInMap("participantName")]
                 [Validation(Required=false)]
                 public string ParticipantName { get; set; }
-            };
+
+            }
 
         }
 

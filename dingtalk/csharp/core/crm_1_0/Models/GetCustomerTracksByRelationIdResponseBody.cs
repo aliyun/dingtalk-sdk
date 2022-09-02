@@ -72,13 +72,21 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public GetCustomerTracksByRelationIdResponseBodyResultListIsvInfo IsvInfo { get; set; }
             public class GetCustomerTracksByRelationIdResponseBodyResultListIsvInfo : TeaModel {
+                /// <summary>
+                /// 写入动态的三方应用所属应用名。
+                /// </summary>
                 [NameInMap("appName")]
                 [Validation(Required=false)]
                 public string AppName { get; set; }
+
+                /// <summary>
+                /// 写入动态的三方应用所属组织名。
+                /// </summary>
                 [NameInMap("orgName")]
                 [Validation(Required=false)]
                 public string OrgName { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 动态标题。

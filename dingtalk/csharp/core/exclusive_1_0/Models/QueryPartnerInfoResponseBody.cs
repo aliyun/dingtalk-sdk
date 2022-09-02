@@ -30,13 +30,21 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1 PartnerLabelModelLevel1 { get; set; }
             public class QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1 : TeaModel {
+                /// <summary>
+                /// 标签id
+                /// </summary>
                 [NameInMap("labelId")]
                 [Validation(Required=false)]
                 public long? LabelId { get; set; }
+
+                /// <summary>
+                /// 标签名称
+                /// </summary>
                 [NameInMap("labelname")]
                 [Validation(Required=false)]
                 public string Labelname { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 伙伴编码

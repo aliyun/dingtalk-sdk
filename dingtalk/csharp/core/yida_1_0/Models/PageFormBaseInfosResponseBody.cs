@@ -16,17 +16,35 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [Validation(Required=false)]
         public PageFormBaseInfosResponseBodyResult Result { get; set; }
         public class PageFormBaseInfosResponseBodyResult : TeaModel {
+            /// <summary>
+            /// 当前页
+            /// </summary>
             [NameInMap("currentPage")]
             [Validation(Required=false)]
             public int? CurrentPage { get; set; }
+
             [NameInMap("data")]
             [Validation(Required=false)]
             public List<PageFormBaseInfosResponseBodyResultData> Data { get; set; }
             public class PageFormBaseInfosResponseBodyResultData : TeaModel {
+                [NameInMap("creator")]
+                [Validation(Required=false)]
                 public string Creator { get; set; }
+
+                [NameInMap("formType")]
+                [Validation(Required=false)]
                 public string FormType { get; set; }
+
+                [NameInMap("formUuid")]
+                [Validation(Required=false)]
                 public string FormUuid { get; set; }
+
+                [NameInMap("gmtCreate")]
+                [Validation(Required=false)]
                 public string GmtCreate { get; set; }
+
+                [NameInMap("title")]
+                [Validation(Required=false)]
                 public PageFormBaseInfosResponseBodyResultDataTitle Title { get; set; }
                 public class PageFormBaseInfosResponseBodyResultDataTitle : TeaModel {
                     [NameInMap("enUS")]
@@ -38,11 +56,17 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
                     public string ZhCN { get; set; }
 
                 }
+
             }
+
+            /// <summary>
+            /// 总行数
+            /// </summary>
             [NameInMap("totalCount")]
             [Validation(Required=false)]
             public int? TotalCount { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 是否成功

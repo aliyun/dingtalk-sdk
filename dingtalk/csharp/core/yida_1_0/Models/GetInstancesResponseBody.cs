@@ -44,16 +44,28 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
                 [Validation(Required=false)]
                 public GetInstancesResponseBodyDataActionExecutorName Name { get; set; }
                 public class GetInstancesResponseBodyDataActionExecutorName : TeaModel {
+                    /// <summary>
+                    /// 中文名称
+                    /// </summary>
                     [NameInMap("nameInChinese")]
                     [Validation(Required=false)]
                     public string NameInChinese { get; set; }
+
+                    /// <summary>
+                    /// 英文名称
+                    /// </summary>
                     [NameInMap("nameInEnglish")]
                     [Validation(Required=false)]
                     public string NameInEnglish { get; set; }
+
+                    /// <summary>
+                    /// type
+                    /// </summary>
                     [NameInMap("type")]
                     [Validation(Required=false)]
                     public string Type { get; set; }
-                };
+
+                }
 
                 /// <summary>
                 /// userId
@@ -113,12 +125,23 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public GetInstancesResponseBodyDataOriginator Originator { get; set; }
             public class GetInstancesResponseBodyDataOriginator : TeaModel {
+                /// <summary>
+                /// deptName
+                /// </summary>
                 [NameInMap("deptName")]
                 [Validation(Required=false)]
                 public string DeptName { get; set; }
+
+                /// <summary>
+                /// email
+                /// </summary>
                 [NameInMap("email")]
                 [Validation(Required=false)]
                 public string Email { get; set; }
+
+                /// <summary>
+                /// name
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public GetInstancesResponseBodyDataOriginatorName Name { get; set; }
@@ -145,10 +168,15 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
                     public string Type { get; set; }
 
                 }
+
+                /// <summary>
+                /// userId
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// processCode

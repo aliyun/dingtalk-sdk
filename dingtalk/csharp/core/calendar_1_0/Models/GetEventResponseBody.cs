@@ -68,13 +68,16 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [NameInMap("date")]
             [Validation(Required=false)]
             public string Date { get; set; }
+
             [NameInMap("dateTime")]
             [Validation(Required=false)]
             public string DateTime { get; set; }
+
             [NameInMap("timeZone")]
             [Validation(Required=false)]
             public string TimeZone { get; set; }
-        };
+
+        }
 
         [NameInMap("extendedProperties")]
         [Validation(Required=false)]
@@ -89,7 +92,8 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 public string SourceOpenCid { get; set; }
 
             }
-        };
+
+        }
 
         [NameInMap("id")]
         [Validation(Required=false)]
@@ -109,10 +113,12 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [NameInMap("displayName")]
             [Validation(Required=false)]
             public string DisplayName { get; set; }
+
             [NameInMap("meetingRooms")]
             [Validation(Required=false)]
             public List<string> MeetingRooms { get; set; }
-        };
+
+        }
 
         [NameInMap("onlineMeetingInfo")]
         [Validation(Required=false)]
@@ -121,39 +127,59 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [NameInMap("conferenceId")]
             [Validation(Required=false)]
             public string ConferenceId { get; set; }
+
             [NameInMap("extraInfo")]
             [Validation(Required=false)]
-            public Dictionary<string, string> ExtraInfo { get; set; }
+            public Dictionary<string, object> ExtraInfo { get; set; }
+
             [NameInMap("type")]
             [Validation(Required=false)]
             public string Type { get; set; }
+
             [NameInMap("url")]
             [Validation(Required=false)]
             public string Url { get; set; }
-        };
+
+        }
 
         [NameInMap("organizer")]
         [Validation(Required=false)]
         public GetEventResponseBodyOrganizer Organizer { get; set; }
         public class GetEventResponseBodyOrganizer : TeaModel {
+            /// <summary>
+            /// 用户名
+            /// </summary>
             [NameInMap("displayName")]
             [Validation(Required=false)]
             public string DisplayName { get; set; }
+
             [NameInMap("id")]
             [Validation(Required=false)]
             public string Id { get; set; }
+
+            /// <summary>
+            /// 回复状态
+            /// </summary>
             [NameInMap("responseStatus")]
             [Validation(Required=false)]
             public string ResponseStatus { get; set; }
+
+            /// <summary>
+            /// 是否是当前登陆用户
+            /// </summary>
             [NameInMap("self")]
             [Validation(Required=false)]
             public bool? Self { get; set; }
-        };
+
+        }
 
         [NameInMap("recurrence")]
         [Validation(Required=false)]
         public GetEventResponseBodyRecurrence Recurrence { get; set; }
         public class GetEventResponseBodyRecurrence : TeaModel {
+            /// <summary>
+            /// 重复模式
+            /// </summary>
             [NameInMap("pattern")]
             [Validation(Required=false)]
             public GetEventResponseBodyRecurrencePattern Pattern { get; set; }
@@ -182,6 +208,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 public string Type { get; set; }
 
             }
+
+            /// <summary>
+            /// 重复范围
+            /// </summary>
             [NameInMap("range")]
             [Validation(Required=false)]
             public GetEventResponseBodyRecurrenceRange Range { get; set; }
@@ -202,7 +232,8 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 public string Type { get; set; }
 
             }
-        };
+
+        }
 
         [NameInMap("reminders")]
         [Validation(Required=false)]
@@ -232,16 +263,28 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public GetEventResponseBodyStart Start { get; set; }
         public class GetEventResponseBodyStart : TeaModel {
+            /// <summary>
+            /// 日期，格式：yyyyMMdd
+            /// </summary>
             [NameInMap("date")]
             [Validation(Required=false)]
             public string Date { get; set; }
+
+            /// <summary>
+            /// 时间戳，按照ISO 8601格式
+            /// </summary>
             [NameInMap("dateTime")]
             [Validation(Required=false)]
             public string DateTime { get; set; }
+
+            /// <summary>
+            /// 时区
+            /// </summary>
             [NameInMap("timeZone")]
             [Validation(Required=false)]
             public string TimeZone { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 日程状态

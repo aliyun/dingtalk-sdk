@@ -13,13 +13,25 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
         [Validation(Required=false)]
         public GetUserCreateLiveListResponseBodyResult Result { get; set; }
         public class GetUserCreateLiveListResponseBodyResult : TeaModel {
+            /// <summary>
+            /// 是否拉取完成
+            /// </summary>
             [NameInMap("hasFinish")]
             [Validation(Required=false)]
             public bool? HasFinish { get; set; }
+
+            /// <summary>
+            /// 直播详情
+            /// </summary>
             [NameInMap("liveInfoPopModelList")]
             [Validation(Required=false)]
             public List<GetUserCreateLiveListResponseBodyResultLiveInfoPopModelList> LiveInfoPopModelList { get; set; }
             public class GetUserCreateLiveListResponseBodyResultLiveInfoPopModelList : TeaModel {
+                /// <summary>
+                /// 直播额外信息
+                /// </summary>
+                [NameInMap("hasSubscribed")]
+                [Validation(Required=false)]
                 public GetUserCreateLiveListResponseBodyResultLiveInfoPopModelListHasSubscribed HasSubscribed { get; set; }
                 public class GetUserCreateLiveListResponseBodyResultLiveInfoPopModelListHasSubscribed : TeaModel {
                     /// <summary>
@@ -44,6 +56,12 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
                     public long? WatchProgressMs { get; set; }
 
                 }
+
+                /// <summary>
+                /// 直播基础信息
+                /// </summary>
+                [NameInMap("liveBasicInfo")]
+                [Validation(Required=false)]
                 public GetUserCreateLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo LiveBasicInfo { get; set; }
                 public class GetUserCreateLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo : TeaModel {
                     /// <summary>
@@ -131,14 +149,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
                     public int? Uv { get; set; }
 
                 }
+
             }
+
+            /// <summary>
+            /// 分页游标 分页时填到请求中
+            /// </summary>
             [NameInMap("nextToken")]
             [Validation(Required=false)]
             public string NextToken { get; set; }
+
+            /// <summary>
+            /// 总数
+            /// </summary>
             [NameInMap("total")]
             [Validation(Required=false)]
             public int? Total { get; set; }
-        };
+
+        }
 
     }
 

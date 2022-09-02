@@ -86,6 +86,9 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public BatchGetFormDataByIdListResponseBodyResultModifyUser ModifyUser { get; set; }
             public class BatchGetFormDataByIdListResponseBodyResultModifyUser : TeaModel {
+                /// <summary>
+                /// 名称
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public BatchGetFormDataByIdListResponseBodyResultModifyUserName Name { get; set; }
@@ -105,10 +108,15 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
                     public string NameInEnglish { get; set; }
 
                 }
+
+                /// <summary>
+                /// 钉钉userId
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 表单提交人
@@ -117,6 +125,9 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public BatchGetFormDataByIdListResponseBodyResultOriginator Originator { get; set; }
             public class BatchGetFormDataByIdListResponseBodyResultOriginator : TeaModel {
+                /// <summary>
+                /// 名称
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public BatchGetFormDataByIdListResponseBodyResultOriginatorName Name { get; set; }
@@ -136,10 +147,15 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
                     public string NameInEnglish { get; set; }
 
                 }
+
+                /// <summary>
+                /// 钉钉userId
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 该表单实例对应的批量导入的批次号(如果是通过批量导入创建的)

@@ -37,6 +37,9 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [Validation(Required=false)]
         public GetCardInfoResponseBodyExtension Extension { get; set; }
         public class GetCardInfoResponseBodyExtension : TeaModel {
+            /// <summary>
+            /// 联系信息
+            /// </summary>
             [NameInMap("cardContactInfo")]
             [Validation(Required=false)]
             public GetCardInfoResponseBodyExtensionCardContactInfo CardContactInfo { get; set; }
@@ -55,13 +58,21 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
                     [Validation(Required=false)]
                     public GetCardInfoResponseBodyExtensionCardContactInfoAddressArea Area { get; set; }
                     public class GetCardInfoResponseBodyExtensionCardContactInfoAddressArea : TeaModel {
+                        /// <summary>
+                        /// 地区
+                        /// </summary>
                         [NameInMap("region")]
                         [Validation(Required=false)]
                         public string Region { get; set; }
+
+                        /// <summary>
+                        /// 地区详细数据
+                        /// </summary>
                         [NameInMap("regionFullName")]
                         [Validation(Required=false)]
                         public string RegionFullName { get; set; }
-                    };
+
+                    }
 
                     /// <summary>
                     /// 详细地址
@@ -124,40 +135,85 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
                 }
 
             }
+
+            /// <summary>
+            /// 企业corpId
+            /// </summary>
             [NameInMap("corpId")]
             [Validation(Required=false)]
             public string CorpId { get; set; }
+
+            /// <summary>
+            /// 拍名片部门
+            /// </summary>
             [NameInMap("department")]
             [Validation(Required=false)]
             public string Department { get; set; }
+
+            /// <summary>
+            /// 企业认证等级
+            /// </summary>
             [NameInMap("orgAuthLevel")]
             [Validation(Required=false)]
             public long? OrgAuthLevel { get; set; }
+
+            /// <summary>
+            /// 企业是否认证
+            /// </summary>
             [NameInMap("orgAuthed")]
             [Validation(Required=false)]
             public bool? OrgAuthed { get; set; }
+
+            /// <summary>
+            /// 企业LOGO
+            /// </summary>
             [NameInMap("orgLogo")]
             [Validation(Required=false)]
             public string OrgLogo { get; set; }
+
+            /// <summary>
+            /// 拍名片图片链接
+            /// </summary>
             [NameInMap("originCardUrl")]
             [Validation(Required=false)]
             public string OriginCardUrl { get; set; }
+
+            /// <summary>
+            /// 分享文案
+            /// </summary>
             [NameInMap("shareContent")]
             [Validation(Required=false)]
             public string ShareContent { get; set; }
+
+            /// <summary>
+            /// 视频缩略图
+            /// </summary>
             [NameInMap("thumbnailUrl")]
             [Validation(Required=false)]
             public string ThumbnailUrl { get; set; }
+
+            /// <summary>
+            /// 视频文件名称
+            /// </summary>
             [NameInMap("videoFileName")]
             [Validation(Required=false)]
             public string VideoFileName { get; set; }
+
+            /// <summary>
+            /// 视频标题
+            /// </summary>
             [NameInMap("videoTitle")]
             [Validation(Required=false)]
             public string VideoTitle { get; set; }
+
+            /// <summary>
+            /// 视频链接
+            /// </summary>
             [NameInMap("videoUrl")]
             [Validation(Required=false)]
             public string VideoUrl { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 行业

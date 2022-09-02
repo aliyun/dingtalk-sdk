@@ -58,16 +58,28 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0.Models
         [Validation(Required=false)]
         public RegisterDeviceRequestLiveUrls LiveUrls { get; set; }
         public class RegisterDeviceRequestLiveUrls : TeaModel {
+            /// <summary>
+            /// flv格式视频流
+            /// </summary>
             [NameInMap("flv")]
             [Validation(Required=false)]
             public string Flv { get; set; }
+
+            /// <summary>
+            /// hls格式视频流地址
+            /// </summary>
             [NameInMap("hls")]
             [Validation(Required=false)]
             public string Hls { get; set; }
+
+            /// <summary>
+            /// rtmp格式视频流
+            /// </summary>
             [NameInMap("rtmp")]
             [Validation(Required=false)]
             public string Rtmp { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 设备地址

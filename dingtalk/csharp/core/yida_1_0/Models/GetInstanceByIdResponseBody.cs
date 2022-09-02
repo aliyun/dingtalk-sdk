@@ -37,16 +37,28 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public GetInstanceByIdResponseBodyActionExecutorName Name { get; set; }
             public class GetInstanceByIdResponseBodyActionExecutorName : TeaModel {
+                /// <summary>
+                /// 中文名称
+                /// </summary>
                 [NameInMap("nameInChinese")]
                 [Validation(Required=false)]
                 public string NameInChinese { get; set; }
+
+                /// <summary>
+                /// 英文名称
+                /// </summary>
                 [NameInMap("nameInEnglish")]
                 [Validation(Required=false)]
                 public string NameInEnglish { get; set; }
+
+                /// <summary>
+                /// type
+                /// </summary>
                 [NameInMap("type")]
                 [Validation(Required=false)]
                 public string Type { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// userId
@@ -106,12 +118,23 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [Validation(Required=false)]
         public GetInstanceByIdResponseBodyOriginator Originator { get; set; }
         public class GetInstanceByIdResponseBodyOriginator : TeaModel {
+            /// <summary>
+            /// deptName
+            /// </summary>
             [NameInMap("deptName")]
             [Validation(Required=false)]
             public string DeptName { get; set; }
+
+            /// <summary>
+            /// email
+            /// </summary>
             [NameInMap("email")]
             [Validation(Required=false)]
             public string Email { get; set; }
+
+            /// <summary>
+            /// name
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public GetInstanceByIdResponseBodyOriginatorName Name { get; set; }
@@ -138,10 +161,15 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
                 public string Type { get; set; }
 
             }
+
+            /// <summary>
+            /// userId
+            /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
             public string UserId { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// processCode

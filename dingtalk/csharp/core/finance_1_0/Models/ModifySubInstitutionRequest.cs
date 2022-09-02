@@ -23,13 +23,21 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         [Validation(Required=false)]
         public ModifySubInstitutionRequestContactInfo ContactInfo { get; set; }
         public class ModifySubInstitutionRequestContactInfo : TeaModel {
+            /// <summary>
+            /// 联系人姓名
+            /// </summary>
             [NameInMap("contactName")]
             [Validation(Required=false)]
             public string ContactName { get; set; }
+
+            /// <summary>
+            /// 联系人手机号
+            /// </summary>
             [NameInMap("mobile")]
             [Validation(Required=false)]
             public string Mobile { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 主机构编号
@@ -42,22 +50,42 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         [Validation(Required=false)]
         public ModifySubInstitutionRequestLegalPersonCertInfo LegalPersonCertInfo { get; set; }
         public class ModifySubInstitutionRequestLegalPersonCertInfo : TeaModel {
+            /// <summary>
+            /// 法人证件反面url
+            /// </summary>
             [NameInMap("certBackImage")]
             [Validation(Required=false)]
             public string CertBackImage { get; set; }
+
+            /// <summary>
+            /// 法人证件正面url
+            /// </summary>
             [NameInMap("certFrontImage")]
             [Validation(Required=false)]
             public string CertFrontImage { get; set; }
+
+            /// <summary>
+            /// 法人姓名
+            /// </summary>
             [NameInMap("certName")]
             [Validation(Required=false)]
             public string CertName { get; set; }
+
+            /// <summary>
+            /// 法人证件类型 不填默认为身份证
+            /// </summary>
             [NameInMap("certType")]
             [Validation(Required=false)]
             public string CertType { get; set; }
+
+            /// <summary>
+            /// 法人证件号
+            /// </summary>
             [NameInMap("idCardNo")]
             [Validation(Required=false)]
             public string IdCardNo { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 进件创建外部流水号
@@ -110,40 +138,84 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         [Validation(Required=false)]
         public ModifySubInstitutionRequestSettleInfo SettleInfo { get; set; }
         public class ModifySubInstitutionRequestSettleInfo : TeaModel {
+            /// <summary>
+            /// 账户账号
+            /// </summary>
             [NameInMap("accountId")]
             [Validation(Required=false)]
             public string AccountId { get; set; }
+
+            /// <summary>
+            /// 账户名称 账号类型银行卡时为卡户名
+            /// </summary>
             [NameInMap("accountName")]
             [Validation(Required=false)]
             public string AccountName { get; set; }
+
+            /// <summary>
+            /// 卡类型
+            /// </summary>
             [NameInMap("accountType")]
             [Validation(Required=false)]
             public string AccountType { get; set; }
+
+            /// <summary>
+            /// 支行名称
+            /// </summary>
             [NameInMap("bankBranchName")]
             [Validation(Required=false)]
             public string BankBranchName { get; set; }
+
+            /// <summary>
+            /// 开户行所在地 市
+            /// </summary>
             [NameInMap("bankCity")]
             [Validation(Required=false)]
             public string BankCity { get; set; }
+
+            /// <summary>
+            /// 联行号
+            /// </summary>
             [NameInMap("bankCode")]
             [Validation(Required=false)]
             public string BankCode { get; set; }
+
+            /// <summary>
+            /// 银行名称
+            /// </summary>
             [NameInMap("bankName")]
             [Validation(Required=false)]
             public string BankName { get; set; }
+
+            /// <summary>
+            /// 开户行所在地 省
+            /// </summary>
             [NameInMap("bankProvince")]
             [Validation(Required=false)]
             public string BankProvince { get; set; }
+
+            /// <summary>
+            /// 开户行简称缩写
+            /// </summary>
             [NameInMap("bankShortNameCode")]
             [Validation(Required=false)]
             public string BankShortNameCode { get; set; }
+
+            /// <summary>
+            /// 账号类型
+            /// </summary>
             [NameInMap("type")]
             [Validation(Required=false)]
             public string Type { get; set; }
+
+            /// <summary>
+            /// 账户使用类型
+            /// </summary>
             [NameInMap("usageType")]
             [Validation(Required=false)]
             public string UsageType { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 子机构地址信息
@@ -152,19 +224,35 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         [Validation(Required=false)]
         public ModifySubInstitutionRequestSubInstAddressInfo SubInstAddressInfo { get; set; }
         public class ModifySubInstitutionRequestSubInstAddressInfo : TeaModel {
+            /// <summary>
+            /// 详细地址
+            /// </summary>
             [NameInMap("address")]
             [Validation(Required=false)]
             public string Address { get; set; }
+
+            /// <summary>
+            /// 市码
+            /// </summary>
             [NameInMap("cityCode")]
             [Validation(Required=false)]
             public string CityCode { get; set; }
+
+            /// <summary>
+            /// 区码
+            /// </summary>
             [NameInMap("districtCode")]
             [Validation(Required=false)]
             public string DistrictCode { get; set; }
+
+            /// <summary>
+            /// 省码
+            /// </summary>
             [NameInMap("provinceCode")]
             [Validation(Required=false)]
             public string ProvinceCode { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 授权信息
@@ -173,10 +261,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         [Validation(Required=false)]
         public ModifySubInstitutionRequestSubInstAuthInfo SubInstAuthInfo { get; set; }
         public class ModifySubInstitutionRequestSubInstAuthInfo : TeaModel {
+            /// <summary>
+            /// 授权函图片url
+            /// </summary>
             [NameInMap("authorizationLetterUrl")]
             [Validation(Required=false)]
             public string AuthorizationLetterUrl { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 子机构基本信息
@@ -185,19 +277,35 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         [Validation(Required=false)]
         public ModifySubInstitutionRequestSubInstBasicInfo SubInstBasicInfo { get; set; }
         public class ModifySubInstitutionRequestSubInstBasicInfo : TeaModel {
+            /// <summary>
+            /// 别名
+            /// </summary>
             [NameInMap("aliasName")]
             [Validation(Required=false)]
             public string AliasName { get; set; }
+
+            /// <summary>
+            /// 机构识别码
+            /// </summary>
             [NameInMap("mcc")]
             [Validation(Required=false)]
             public string Mcc { get; set; }
+
+            /// <summary>
+            /// 名称
+            /// </summary>
             [NameInMap("subInstName")]
             [Validation(Required=false)]
             public string SubInstName { get; set; }
+
+            /// <summary>
+            /// 类型
+            /// </summary>
             [NameInMap("type")]
             [Validation(Required=false)]
             public string Type { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 子机构认证信息
@@ -206,16 +314,28 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         [Validation(Required=false)]
         public ModifySubInstitutionRequestSubInstCertifyInfo SubInstCertifyInfo { get; set; }
         public class ModifySubInstitutionRequestSubInstCertifyInfo : TeaModel {
+            /// <summary>
+            /// 证件图片, 如果是特殊行业必填
+            /// </summary>
             [NameInMap("certImage")]
             [Validation(Required=false)]
             public string CertImage { get; set; }
+
+            /// <summary>
+            /// 证件号码
+            /// </summary>
             [NameInMap("certNo")]
             [Validation(Required=false)]
             public string CertNo { get; set; }
+
+            /// <summary>
+            /// 证件类型
+            /// </summary>
             [NameInMap("certType")]
             [Validation(Required=false)]
             public string CertType { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 子机构编号
@@ -231,21 +351,44 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         [Validation(Required=false)]
         public ModifySubInstitutionRequestSubInstInvoiceInfo SubInstInvoiceInfo { get; set; }
         public class ModifySubInstitutionRequestSubInstInvoiceInfo : TeaModel {
+            /// <summary>
+            /// 是否接受电票
+            /// </summary>
             [NameInMap("acceptElectronic")]
             [Validation(Required=false)]
             public bool? AcceptElectronic { get; set; }
+
+            /// <summary>
+            /// 开票地址
+            /// </summary>
             [NameInMap("address")]
             [Validation(Required=false)]
             public string Address { get; set; }
+
+            /// <summary>
+            /// 是否自动开票
+            /// </summary>
             [NameInMap("autoInvoice")]
             [Validation(Required=false)]
             public bool? AutoInvoice { get; set; }
+
+            /// <summary>
+            /// 银行账户
+            /// </summary>
             [NameInMap("bankAccount")]
             [Validation(Required=false)]
             public string BankAccount { get; set; }
+
+            /// <summary>
+            /// 银行名称
+            /// </summary>
             [NameInMap("bankName")]
             [Validation(Required=false)]
             public string BankName { get; set; }
+
+            /// <summary>
+            /// 收件地址
+            /// </summary>
             [NameInMap("mailAddress")]
             [Validation(Required=false)]
             public ModifySubInstitutionRequestSubInstInvoiceInfoMailAddress MailAddress { get; set; }
@@ -279,28 +422,57 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
                 public string ProvinceCode { get; set; }
 
             }
+
+            /// <summary>
+            /// 收件人名称
+            /// </summary>
             [NameInMap("mailName")]
             [Validation(Required=false)]
             public string MailName { get; set; }
+
+            /// <summary>
+            /// 收件人号码
+            /// </summary>
             [NameInMap("mailPhone")]
             [Validation(Required=false)]
             public string MailPhone { get; set; }
+
+            /// <summary>
+            /// 纳税人识别号
+            /// </summary>
             [NameInMap("taxNo")]
             [Validation(Required=false)]
             public string TaxNo { get; set; }
+
+            /// <summary>
+            /// 纳税人资质
+            /// </summary>
             [NameInMap("taxPayerQualification")]
             [Validation(Required=false)]
             public string TaxPayerQualification { get; set; }
+
+            /// <summary>
+            /// 纳税人资格开始时间
+            /// </summary>
             [NameInMap("taxPayerValidDate")]
             [Validation(Required=false)]
             public string TaxPayerValidDate { get; set; }
+
+            /// <summary>
+            /// 开票电话
+            /// </summary>
             [NameInMap("telephone")]
             [Validation(Required=false)]
             public string Telephone { get; set; }
+
+            /// <summary>
+            /// 纳税人抬头
+            /// </summary>
             [NameInMap("title")]
             [Validation(Required=false)]
             public string Title { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 子机构门店信息
@@ -309,13 +481,21 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         [Validation(Required=false)]
         public ModifySubInstitutionRequestSubInstShopInfo SubInstShopInfo { get; set; }
         public class ModifySubInstitutionRequestSubInstShopInfo : TeaModel {
+            /// <summary>
+            /// 内景照
+            /// </summary>
             [NameInMap("inDoorImages")]
             [Validation(Required=false)]
             public List<string> InDoorImages { get; set; }
+
+            /// <summary>
+            /// 外景照
+            /// </summary>
             [NameInMap("outDoorImages")]
             [Validation(Required=false)]
             public List<string> OutDoorImages { get; set; }
-        };
+
+        }
 
     }
 

@@ -20,14 +20,33 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
             [Validation(Required=false)]
             public List<GetPeriodListResponseBodyDataPeriodList> PeriodList { get; set; }
             public class GetPeriodListResponseBodyDataPeriodList : TeaModel {
+                [NameInMap("endTime")]
+                [Validation(Required=false)]
                 public float? EndTime { get; set; }
+
+                [NameInMap("id")]
+                [Validation(Required=false)]
                 public Stream Id { get; set; }
+
+                [NameInMap("isCurrent")]
+                [Validation(Required=false)]
                 public bool? IsCurrent { get; set; }
+
+                [NameInMap("isYearly")]
+                [Validation(Required=false)]
                 public bool? IsYearly { get; set; }
+
+                [NameInMap("name")]
+                [Validation(Required=false)]
                 public Stream Name { get; set; }
+
+                [NameInMap("startTime")]
+                [Validation(Required=false)]
                 public float? StartTime { get; set; }
+
             }
-        };
+
+        }
 
         /// <summary>
         /// success

@@ -23,10 +23,14 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0.Models
         [Validation(Required=false)]
         public UpdateInteractiveOTOMessageResponseBodyResult Result { get; set; }
         public class UpdateInteractiveOTOMessageResponseBodyResult : TeaModel {
+            /// <summary>
+            /// 推送ID
+            /// </summary>
             [NameInMap("openPushId")]
             [Validation(Required=false)]
             public string OpenPushId { get; set; }
-        };
+
+        }
 
     }
 

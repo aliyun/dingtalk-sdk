@@ -20,22 +20,28 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
             [NameInMap("downloadUrl")]
             [Validation(Required=false)]
             public string DownloadUrl { get; set; }
+
             [NameInMap("fileId")]
             [Validation(Required=false)]
             public string FileId { get; set; }
+
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
+
             [NameInMap("pdfTotalPages")]
             [Validation(Required=false)]
             public int? PdfTotalPages { get; set; }
+
             [NameInMap("size")]
             [Validation(Required=false)]
             public long? Size { get; set; }
+
             [NameInMap("status")]
             [Validation(Required=false)]
             public int? Status { get; set; }
-        };
+
+        }
 
         [NameInMap("message")]
         [Validation(Required=false)]

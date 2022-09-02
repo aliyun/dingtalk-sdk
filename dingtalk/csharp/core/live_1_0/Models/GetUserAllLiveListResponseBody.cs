@@ -13,13 +13,25 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
         [Validation(Required=false)]
         public GetUserAllLiveListResponseBodyResult Result { get; set; }
         public class GetUserAllLiveListResponseBodyResult : TeaModel {
+            /// <summary>
+            /// 是否拉取完成
+            /// </summary>
             [NameInMap("hasFinish")]
             [Validation(Required=false)]
             public bool? HasFinish { get; set; }
+
+            /// <summary>
+            /// 直播详情
+            /// </summary>
             [NameInMap("liveInfoPopModelList")]
             [Validation(Required=false)]
             public List<GetUserAllLiveListResponseBodyResultLiveInfoPopModelList> LiveInfoPopModelList { get; set; }
             public class GetUserAllLiveListResponseBodyResultLiveInfoPopModelList : TeaModel {
+                /// <summary>
+                /// 直播额外信息
+                /// </summary>
+                [NameInMap("extraInfo")]
+                [Validation(Required=false)]
                 public GetUserAllLiveListResponseBodyResultLiveInfoPopModelListExtraInfo ExtraInfo { get; set; }
                 public class GetUserAllLiveListResponseBodyResultLiveInfoPopModelListExtraInfo : TeaModel {
                     /// <summary>
@@ -44,6 +56,12 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
                     public long? WatchProgressMs { get; set; }
 
                 }
+
+                /// <summary>
+                /// 直播基础信息
+                /// </summary>
+                [NameInMap("liveBasicInfo")]
+                [Validation(Required=false)]
                 public GetUserAllLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo LiveBasicInfo { get; set; }
                 public class GetUserAllLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo : TeaModel {
                     /// <summary>
@@ -131,8 +149,10 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
                     public int? Uv { get; set; }
 
                 }
+
             }
-        };
+
+        }
 
     }
 

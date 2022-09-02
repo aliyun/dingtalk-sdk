@@ -34,16 +34,28 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 [Validation(Required=false)]
                 public GetScheduleResponseBodyScheduleInformationScheduleItemsEnd End { get; set; }
                 public class GetScheduleResponseBodyScheduleInformationScheduleItemsEnd : TeaModel {
+                    /// <summary>
+                    /// 结束日期
+                    /// </summary>
                     [NameInMap("date")]
                     [Validation(Required=false)]
                     public string Date { get; set; }
+
+                    /// <summary>
+                    /// 结束时间戳，按照ISO 8601格式
+                    /// </summary>
                     [NameInMap("dateTime")]
                     [Validation(Required=false)]
                     public string DateTime { get; set; }
+
+                    /// <summary>
+                    /// 时间戳所属时区
+                    /// </summary>
                     [NameInMap("timeZone")]
                     [Validation(Required=false)]
                     public string TimeZone { get; set; }
-                };
+
+                }
 
                 /// <summary>
                 /// 开始时间，表示一个日期，或者一个带时区的时间戳
@@ -52,16 +64,28 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 [Validation(Required=false)]
                 public GetScheduleResponseBodyScheduleInformationScheduleItemsStart Start { get; set; }
                 public class GetScheduleResponseBodyScheduleInformationScheduleItemsStart : TeaModel {
+                    /// <summary>
+                    /// 开始日期
+                    /// </summary>
                     [NameInMap("date")]
                     [Validation(Required=false)]
                     public string Date { get; set; }
+
+                    /// <summary>
+                    /// 开始时间戳，按照ISO 8601格式
+                    /// </summary>
                     [NameInMap("dateTime")]
                     [Validation(Required=false)]
                     public string DateTime { get; set; }
+
+                    /// <summary>
+                    /// 所属时区
+                    /// </summary>
                     [NameInMap("timeZone")]
                     [Validation(Required=false)]
                     public string TimeZone { get; set; }
-                };
+
+                }
 
                 /// <summary>
                 /// 状态: - BUSY：繁忙, - TENTATIVE：暂定繁忙

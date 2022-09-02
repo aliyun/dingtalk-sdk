@@ -30,13 +30,21 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public CreateAclsResponseBodyScope Scope { get; set; }
         public class CreateAclsResponseBodyScope : TeaModel {
+            /// <summary>
+            /// 权限类型
+            /// </summary>
             [NameInMap("scopeType")]
             [Validation(Required=false)]
             public string ScopeType { get; set; }
+
+            /// <summary>
+            /// 用户id
+            /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
             public string UserId { get; set; }
-        };
+
+        }
 
     }
 

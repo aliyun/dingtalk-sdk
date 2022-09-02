@@ -48,10 +48,12 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
                 [NameInMap("customSchemaMapping")]
                 [Validation(Required=false)]
                 public string CustomSchemaMapping { get; set; }
+
                 [NameInMap("rules")]
                 [Validation(Required=false)]
                 public string Rules { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 入参schema
@@ -118,10 +120,12 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
                 [NameInMap("customSchemaMapping")]
                 [Validation(Required=false)]
                 public string CustomSchemaMapping { get; set; }
+
                 [NameInMap("rules")]
                 [Validation(Required=false)]
                 public string Rules { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 出参schema

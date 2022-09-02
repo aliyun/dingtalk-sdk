@@ -34,13 +34,16 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [NameInMap("date")]
             [Validation(Required=false)]
             public string Date { get; set; }
+
             [NameInMap("dateTime")]
             [Validation(Required=false)]
             public string DateTime { get; set; }
+
             [NameInMap("timeZone")]
             [Validation(Required=false)]
             public string TimeZone { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 扩展信息
@@ -67,7 +70,8 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [NameInMap("displayName")]
             [Validation(Required=false)]
             public string DisplayName { get; set; }
-        };
+
+        }
 
         [NameInMap("recurrence")]
         [Validation(Required=false)]
@@ -98,6 +102,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 public string Type { get; set; }
 
             }
+
             [NameInMap("range")]
             [Validation(Required=false)]
             public PatchEventRequestRecurrenceRange Range { get; set; }
@@ -115,7 +120,8 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 public string Type { get; set; }
 
             }
-        };
+
+        }
 
         [NameInMap("reminders")]
         [Validation(Required=false)]
@@ -141,13 +147,16 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [NameInMap("date")]
             [Validation(Required=false)]
             public string Date { get; set; }
+
             [NameInMap("dateTime")]
             [Validation(Required=false)]
             public string DateTime { get; set; }
+
             [NameInMap("timeZone")]
             [Validation(Required=false)]
             public string TimeZone { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 日程标题

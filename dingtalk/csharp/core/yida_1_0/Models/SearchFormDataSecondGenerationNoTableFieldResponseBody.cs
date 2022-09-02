@@ -86,6 +86,9 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUser ModifyUser { get; set; }
             public class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUser : TeaModel {
+                /// <summary>
+                /// 名称
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUserName Name { get; set; }
@@ -105,10 +108,15 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
                     public string NameInEnglish { get; set; }
 
                 }
+
+                /// <summary>
+                /// 钉钉userId
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 表单实例提交人
@@ -117,6 +125,9 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator Originator { get; set; }
             public class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator : TeaModel {
+                /// <summary>
+                /// 名称
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginatorName Name { get; set; }
@@ -136,10 +147,15 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
                     public string NameInEnglish { get; set; }
 
                 }
+
+                /// <summary>
+                /// 钉钉userId
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 此表单实例所对应的批量导入批次号(如果该表单实例是通过批量导入创建的)

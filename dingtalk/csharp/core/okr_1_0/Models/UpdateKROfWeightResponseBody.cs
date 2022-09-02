@@ -25,10 +25,15 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
                 public long? Percent { get; set; }
 
             }
+
+            /// <summary>
+            /// 目标分数。
+            /// </summary>
             [NameInMap("objectiveScore")]
             [Validation(Required=false)]
             public long? ObjectiveScore { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 请求成功的标识。

@@ -13,13 +13,21 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public SetRobotConfigResponseBodyResult Result { get; set; }
         public class SetRobotConfigResponseBodyResult : TeaModel {
+            /// <summary>
+            /// 业务Key
+            /// </summary>
             [NameInMap("configKey")]
             [Validation(Required=false)]
             public string ConfigKey { get; set; }
+
+            /// <summary>
+            /// 业务value
+            /// </summary>
             [NameInMap("configValue")]
             [Validation(Required=false)]
             public string ConfigValue { get; set; }
-        };
+
+        }
 
     }
 

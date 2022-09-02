@@ -13,10 +13,14 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
         [Validation(Required=false)]
         public GetDataViewResponseBodyData Data { get; set; }
         public class GetDataViewResponseBodyData : TeaModel {
+            /// <summary>
+            /// 数据详情
+            /// </summary>
             [NameInMap("detail")]
             [Validation(Required=false)]
             public Dictionary<string, string> Detail { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 字段明细

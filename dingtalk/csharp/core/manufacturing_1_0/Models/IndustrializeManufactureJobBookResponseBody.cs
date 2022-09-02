@@ -16,13 +16,21 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0.Models
         [Validation(Required=false)]
         public IndustrializeManufactureJobBookResponseBodyContent Content { get; set; }
         public class IndustrializeManufactureJobBookResponseBodyContent : TeaModel {
+            /// <summary>
+            /// 影响行数
+            /// </summary>
             [NameInMap("count")]
             [Validation(Required=false)]
             public int? Count { get; set; }
+
+            /// <summary>
+            /// 新增记录的数据库id
+            /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]
             public long? Id { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// errorCode

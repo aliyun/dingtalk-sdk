@@ -23,19 +23,35 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
         [Validation(Required=false)]
         public LoadBizObjectsResponseBodyData Data { get; set; }
         public class LoadBizObjectsResponseBodyData : TeaModel {
+            /// <summary>
+            /// 业务数据实例数组
+            /// </summary>
             [NameInMap("bizObjects")]
             [Validation(Required=false)]
             public List<Dictionary<string, object>> BizObjects { get; set; }
+
+            /// <summary>
+            /// 页码
+            /// </summary>
             [NameInMap("pageNumber")]
             [Validation(Required=false)]
             public int? PageNumber { get; set; }
+
+            /// <summary>
+            /// 页大小
+            /// </summary>
             [NameInMap("pageSize")]
             [Validation(Required=false)]
             public int? PageSize { get; set; }
+
+            /// <summary>
+            /// 匹配条件的结果总数量
+            /// </summary>
             [NameInMap("totalCount")]
             [Validation(Required=false)]
             public int? TotalCount { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 提示信息

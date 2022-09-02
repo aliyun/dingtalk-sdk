@@ -79,13 +79,21 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
                 [Validation(Required=false)]
                 public MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO FieldDataVO { get; set; }
                 public class MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO : TeaModel {
+                    /// <summary>
+                    /// 字段值的key
+                    /// </summary>
                     [NameInMap("key")]
                     [Validation(Required=false)]
                     public string Key { get; set; }
+
+                    /// <summary>
+                    /// 字段值的文本
+                    /// </summary>
                     [NameInMap("value")]
                     [Validation(Required=false)]
                     public string Value { get; set; }
-                };
+
+                }
 
                 /// <summary>
                 /// 字段名称

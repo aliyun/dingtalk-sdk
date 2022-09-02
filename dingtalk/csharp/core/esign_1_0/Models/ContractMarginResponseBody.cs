@@ -20,7 +20,8 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
             [NameInMap("margin")]
             [Validation(Required=false)]
             public long? Margin { get; set; }
-        };
+
+        }
 
         [NameInMap("message")]
         [Validation(Required=false)]

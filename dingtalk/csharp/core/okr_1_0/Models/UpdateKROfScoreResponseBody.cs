@@ -13,10 +13,14 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         [Validation(Required=false)]
         public UpdateKROfScoreResponseBodyData Data { get; set; }
         public class UpdateKROfScoreResponseBodyData : TeaModel {
+            /// <summary>
+            /// 目标分数。
+            /// </summary>
             [NameInMap("objectiveScore")]
             [Validation(Required=false)]
             public long? ObjectiveScore { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 请求成功的标识。

@@ -30,13 +30,21 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         [Validation(Required=false)]
         public SpaceVOIconVO IconVO { get; set; }
         public class SpaceVOIconVO : TeaModel {
+            /// <summary>
+            /// 图标
+            /// </summary>
             [NameInMap("icon")]
             [Validation(Required=false)]
             public string Icon { get; set; }
+
+            /// <summary>
+            /// 图标类型
+            /// </summary>
             [NameInMap("type")]
             [Validation(Required=false)]
             public string Type { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 知识库id。
@@ -59,13 +67,21 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         [Validation(Required=false)]
         public SpaceVOOwner Owner { get; set; }
         public class SpaceVOOwner : TeaModel {
+            /// <summary>
+            /// 用户名称。
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
+
+            /// <summary>
+            /// 用户unionId。
+            /// </summary>
             [NameInMap("unionId")]
             [Validation(Required=false)]
             public string UnionId { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 知识库访问url。
@@ -81,16 +97,28 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         [Validation(Required=false)]
         public SpaceVOVisitorInfo VisitorInfo { get; set; }
         public class SpaceVOVisitorInfo : TeaModel {
+            /// <summary>
+            /// 节点的操作列表。
+            /// </summary>
             [NameInMap("dentryActions")]
             [Validation(Required=false)]
             public List<string> DentryActions { get; set; }
+
+            /// <summary>
+            /// 权限
+            /// </summary>
             [NameInMap("roleCode")]
             [Validation(Required=false)]
             public string RoleCode { get; set; }
+
+            /// <summary>
+            /// 空间的操作列表。
+            /// </summary>
             [NameInMap("spaceActions")]
             [Validation(Required=false)]
             public List<string> SpaceActions { get; set; }
-        };
+
+        }
 
     }
 

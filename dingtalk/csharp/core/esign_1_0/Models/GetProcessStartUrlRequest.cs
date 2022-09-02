@@ -94,13 +94,16 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
             [NameInMap("mobileUrl")]
             [Validation(Required=false)]
             public string MobileUrl { get; set; }
+
             [NameInMap("pcUrl")]
             [Validation(Required=false)]
             public string PcUrl { get; set; }
+
             [NameInMap("showText")]
             [Validation(Required=false)]
             public string ShowText { get; set; }
-        };
+
+        }
 
         [NameInMap("taskName")]
         [Validation(Required=false)]

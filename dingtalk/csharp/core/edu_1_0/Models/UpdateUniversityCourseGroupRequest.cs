@@ -65,16 +65,28 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate CourserGroupItemEndDate { get; set; }
             public class UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate : TeaModel {
+                /// <summary>
+                /// 一月的第几天
+                /// </summary>
                 [NameInMap("dayOfMonth")]
                 [Validation(Required=false)]
                 public int? DayOfMonth { get; set; }
+
+                /// <summary>
+                /// 月
+                /// </summary>
                 [NameInMap("month")]
                 [Validation(Required=false)]
                 public int? Month { get; set; }
+
+                /// <summary>
+                /// 年
+                /// </summary>
                 [NameInMap("year")]
                 [Validation(Required=false)]
                 public int? Year { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 开始时间
@@ -83,16 +95,28 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate CourserGroupItemStartDate { get; set; }
             public class UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate : TeaModel {
+                /// <summary>
+                /// 一月的第几天
+                /// </summary>
                 [NameInMap("dayOfMonth")]
                 [Validation(Required=false)]
                 public int? DayOfMonth { get; set; }
+
+                /// <summary>
+                /// 月
+                /// </summary>
                 [NameInMap("month")]
                 [Validation(Required=false)]
                 public int? Month { get; set; }
+
+                /// <summary>
+                /// 年
+                /// </summary>
                 [NameInMap("year")]
                 [Validation(Required=false)]
                 public int? Year { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 一周的第几天

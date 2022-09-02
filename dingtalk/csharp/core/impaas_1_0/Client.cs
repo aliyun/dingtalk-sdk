@@ -1357,10 +1357,6 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperationSource))
-            {
-                realHeaders["operationSource"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.OperationSource);
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
                 realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
@@ -1370,7 +1366,7 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateGroupOwnerResponse>(DoROARequest("UpdateGroupOwner", "impaas_1.0", "HTTP", "PUT", "AK", "/v1.0/impaas/interconnections/groups/owners", "none", req, runtime));
+            return TeaModel.ToObject<UpdateGroupOwnerResponse>(DoROARequest("UpdateGroupOwner", "impaas_1.0", "HTTP", "PUT", "AK", "/v1.0/impaas/interconnections/groups/owners", "json", req, runtime));
         }
 
         public async Task<UpdateGroupOwnerResponse> UpdateGroupOwnerWithOptionsAsync(UpdateGroupOwnerRequest request, UpdateGroupOwnerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1394,10 +1390,6 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperationSource))
-            {
-                realHeaders["operationSource"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.OperationSource);
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
                 realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
@@ -1407,7 +1399,7 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateGroupOwnerResponse>(await DoROARequestAsync("UpdateGroupOwner", "impaas_1.0", "HTTP", "PUT", "AK", "/v1.0/impaas/interconnections/groups/owners", "none", req, runtime));
+            return TeaModel.ToObject<UpdateGroupOwnerResponse>(await DoROARequestAsync("UpdateGroupOwner", "impaas_1.0", "HTTP", "PUT", "AK", "/v1.0/impaas/interconnections/groups/owners", "json", req, runtime));
         }
 
     }

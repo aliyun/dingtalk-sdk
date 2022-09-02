@@ -197,20 +197,44 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         [Validation(Required=false)]
         public GetUserResponseBodyUnionEmpExt UnionEmpExt { get; set; }
         public class GetUserResponseBodyUnionEmpExt : TeaModel {
+            /// <summary>
+            /// 企业id
+            /// </summary>
             [NameInMap("corpId")]
             [Validation(Required=false)]
             public string CorpId { get; set; }
+
+            /// <summary>
+            /// 员工id
+            /// </summary>
             [NameInMap("staffId")]
             [Validation(Required=false)]
             public string StaffId { get; set; }
+
+            /// <summary>
+            /// 关联映射关系
+            /// </summary>
             [NameInMap("unionEmpMapList")]
             [Validation(Required=false)]
             public List<GetUserResponseBodyUnionEmpExtUnionEmpMapList> UnionEmpMapList { get; set; }
             public class GetUserResponseBodyUnionEmpExtUnionEmpMapList : TeaModel {
+                /// <summary>
+                /// 企业 id
+                /// </summary>
+                [NameInMap("corpId")]
+                [Validation(Required=false)]
                 public string CorpId { get; set; }
+
+                /// <summary>
+                /// 员工 id
+                /// </summary>
+                [NameInMap("staffId")]
+                [Validation(Required=false)]
                 public string StaffId { get; set; }
+
             }
-        };
+
+        }
 
         /// <summary>
         /// 员工在当前开发者企业账号范围内的唯一标识

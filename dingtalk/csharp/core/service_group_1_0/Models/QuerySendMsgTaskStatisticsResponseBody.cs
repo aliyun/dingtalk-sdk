@@ -32,22 +32,28 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
                 [NameInMap("bizId")]
                 [Validation(Required=false)]
                 public string BizId { get; set; }
+
                 [NameInMap("groupName")]
                 [Validation(Required=false)]
                 public string GroupName { get; set; }
+
                 [NameInMap("groupSetName")]
                 [Validation(Required=false)]
                 public string GroupSetName { get; set; }
+
                 [NameInMap("openConversationId")]
                 [Validation(Required=false)]
                 public string OpenConversationId { get; set; }
+
                 [NameInMap("openGroupSetId")]
                 [Validation(Required=false)]
                 public string OpenGroupSetId { get; set; }
+
                 [NameInMap("openTeamId")]
                 [Validation(Required=false)]
                 public string OpenTeamId { get; set; }
-            };
+
+            }
 
             [NameInMap("groupUserReadStatistics")]
             [Validation(Required=false)]
@@ -56,19 +62,24 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
                 [NameInMap("openBatchTaskId")]
                 [Validation(Required=false)]
                 public string OpenBatchTaskId { get; set; }
+
                 [NameInMap("openConversationId")]
                 [Validation(Required=false)]
                 public string OpenConversationId { get; set; }
+
                 [NameInMap("readUserInc")]
                 [Validation(Required=false)]
                 public long? ReadUserInc { get; set; }
+
                 [NameInMap("sendUserInc")]
                 [Validation(Required=false)]
                 public long? SendUserInc { get; set; }
+
                 [NameInMap("unReadUserInc")]
                 [Validation(Required=false)]
                 public long? UnReadUserInc { get; set; }
-            };
+
+            }
 
             [NameInMap("openMsgId")]
             [Validation(Required=false)]

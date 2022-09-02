@@ -16,19 +16,24 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0.Models
             [NameInMap("blackWords")]
             [Validation(Required=false)]
             public List<string> BlackWords { get; set; }
+
             [NameInMap("candidateWords")]
             [Validation(Required=false)]
             public List<string> CandidateWords { get; set; }
+
             [NameInMap("corpId")]
             [Validation(Required=false)]
             public string CorpId { get; set; }
+
             [NameInMap("deptIds")]
             [Validation(Required=false)]
             public List<string> DeptIds { get; set; }
+
             [NameInMap("userId")]
             [Validation(Required=false)]
             public string UserId { get; set; }
-        };
+
+        }
 
         [NameInMap("isvAppId")]
         [Validation(Required=false)]

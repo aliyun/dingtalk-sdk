@@ -16,16 +16,30 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         [Validation(Required=false)]
         public ListPermissionsRequestOption Option { get; set; }
         public class ListPermissionsRequestOption : TeaModel {
+            /// <summary>
+            /// 角色过滤列表
+            /// </summary>
             [NameInMap("filterRoleIds")]
             [Validation(Required=false)]
             public List<string> FilterRoleIds { get; set; }
+
+            /// <summary>
+            /// 分页大小
+            /// 默认值:
+            /// 	50
+            /// </summary>
             [NameInMap("maxResults")]
             [Validation(Required=false)]
             public int? MaxResults { get; set; }
+
+            /// <summary>
+            /// 分页游标
+            /// </summary>
             [NameInMap("nextToken")]
             [Validation(Required=false)]
             public string NextToken { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 用户id

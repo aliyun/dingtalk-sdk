@@ -23,43 +23,91 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
         [Validation(Required=false)]
         public GetTrainExceedApplyResponseBodyApplyIntentionInfoDO ApplyIntentionInfoDO { get; set; }
         public class GetTrainExceedApplyResponseBodyApplyIntentionInfoDO : TeaModel {
+            /// <summary>
+            /// 到达城市三字码
+            /// </summary>
             [NameInMap("arrCity")]
             [Validation(Required=false)]
             public string ArrCity { get; set; }
+
+            /// <summary>
+            /// 到达城市名
+            /// </summary>
             [NameInMap("arrCityName")]
             [Validation(Required=false)]
             public string ArrCityName { get; set; }
+
+            /// <summary>
+            /// 到达站点名称
+            /// </summary>
             [NameInMap("arrStation")]
             [Validation(Required=false)]
             public string ArrStation { get; set; }
+
+            /// <summary>
+            /// 到达时间
+            /// </summary>
             [NameInMap("arrTime")]
             [Validation(Required=false)]
             public string ArrTime { get; set; }
+
+            /// <summary>
+            /// 出发城市三字码
+            /// </summary>
             [NameInMap("depCity")]
             [Validation(Required=false)]
             public string DepCity { get; set; }
+
+            /// <summary>
+            /// 出发城市名
+            /// </summary>
             [NameInMap("depCityName")]
             [Validation(Required=false)]
             public string DepCityName { get; set; }
+
+            /// <summary>
+            /// 出发站点名称
+            /// </summary>
             [NameInMap("depStation")]
             [Validation(Required=false)]
             public string DepStation { get; set; }
+
+            /// <summary>
+            /// 出发时间
+            /// </summary>
             [NameInMap("depTime")]
             [Validation(Required=false)]
             public string DepTime { get; set; }
+
+            /// <summary>
+            /// 意向坐席价格（分）
+            /// </summary>
             [NameInMap("price")]
             [Validation(Required=false)]
             public long? Price { get; set; }
+
+            /// <summary>
+            /// 意向坐席名称
+            /// </summary>
             [NameInMap("seatName")]
             [Validation(Required=false)]
             public string SeatName { get; set; }
+
+            /// <summary>
+            /// 意向车次号
+            /// </summary>
             [NameInMap("trainNo")]
             [Validation(Required=false)]
             public string TrainNo { get; set; }
+
+            /// <summary>
+            /// 意向车次类型
+            /// </summary>
             [NameInMap("trainTypeDesc")]
             [Validation(Required=false)]
             public string TrainTypeDesc { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 出差原因

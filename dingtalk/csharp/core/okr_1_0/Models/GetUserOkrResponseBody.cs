@@ -16,25 +16,116 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         [Validation(Required=false)]
         public GetUserOkrResponseBodyData Data { get; set; }
         public class GetUserOkrResponseBodyData : TeaModel {
+            /// <summary>
+            /// OKR 列表详情。
+            /// </summary>
             [NameInMap("list")]
             [Validation(Required=false)]
             public List<GetUserOkrResponseBodyDataList> List { get; set; }
             public class GetUserOkrResponseBodyDataList : TeaModel {
+                /// <summary>
+                /// 被对齐的 Objective。
+                /// </summary>
+                [NameInMap("alignFromIds")]
+                [Validation(Required=false)]
                 public List<Stream> AlignFromIds { get; set; }
+
+                /// <summary>
+                /// 对齐的 Objective。
+                /// </summary>
+                [NameInMap("alignToIds")]
+                [Validation(Required=false)]
                 public List<Stream> AlignToIds { get; set; }
+
+                /// <summary>
+                /// Objective 内容。
+                /// </summary>
+                [NameInMap("content")]
+                [Validation(Required=false)]
                 public Stream Content { get; set; }
+
+                /// <summary>
+                /// 创建时间。时间戳
+                /// </summary>
+                [NameInMap("gmtCreate")]
+                [Validation(Required=false)]
                 public float? GmtCreate { get; set; }
+
+                /// <summary>
+                /// 更新时间。时间戳
+                /// </summary>
+                [NameInMap("gmtModified")]
+                [Validation(Required=false)]
                 public float? GmtModified { get; set; }
+
+                /// <summary>
+                /// objective。
+                /// </summary>
+                [NameInMap("id")]
+                [Validation(Required=false)]
                 public Stream Id { get; set; }
+
+                /// <summary>
+                /// KR 详情列表。
+                /// </summary>
+                [NameInMap("krList")]
+                [Validation(Required=false)]
                 public List<GetUserOkrResponseBodyDataListKrList> KrList { get; set; }
                 public class GetUserOkrResponseBodyDataListKrList : TeaModel {
+                    /// <summary>
+                    /// KR 内容。
+                    /// </summary>
+                    [NameInMap("content")]
+                    [Validation(Required=false)]
                     public Stream Content { get; set; }
+
+                    /// <summary>
+                    /// 创建时间。时间戳
+                    /// </summary>
+                    [NameInMap("gmtCreate")]
+                    [Validation(Required=false)]
                     public float? GmtCreate { get; set; }
+
+                    /// <summary>
+                    /// 更新时间。时间戳
+                    /// </summary>
+                    [NameInMap("gmtModified")]
+                    [Validation(Required=false)]
                     public float? GmtModified { get; set; }
+
+                    /// <summary>
+                    /// KR 的 ID。
+                    /// </summary>
+                    [NameInMap("id")]
+                    [Validation(Required=false)]
                     public Stream Id { get; set; }
+
+                    /// <summary>
+                    /// 所属 Objective ID。
+                    /// </summary>
+                    [NameInMap("objectiveId")]
+                    [Validation(Required=false)]
                     public Stream ObjectiveId { get; set; }
+
+                    /// <summary>
+                    /// KR 权限。
+                    /// </summary>
+                    [NameInMap("permission")]
+                    [Validation(Required=false)]
                     public List<float?> Permission { get; set; }
+
+                    /// <summary>
+                    /// 所处位置。
+                    /// </summary>
+                    [NameInMap("position")]
+                    [Validation(Required=false)]
                     public long? Position { get; set; }
+
+                    /// <summary>
+                    /// KR 进度。
+                    /// </summary>
+                    [NameInMap("progress")]
+                    [Validation(Required=false)]
                     public GetUserOkrResponseBodyDataListKrListProgress Progress { get; set; }
                     public class GetUserOkrResponseBodyDataListKrListProgress : TeaModel {
                         /// <summary>
@@ -45,9 +136,28 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
                         public int? Percent { get; set; }
 
                     }
+
+                    /// <summary>
+                    /// 所占分数。
+                    /// </summary>
+                    [NameInMap("score")]
+                    [Validation(Required=false)]
                     public float? Score { get; set; }
+
+                    /// <summary>
+                    /// 所占权重。
+                    /// </summary>
+                    [NameInMap("weight")]
+                    [Validation(Required=false)]
                     public float? Weight { get; set; }
+
                 }
+
+                /// <summary>
+                /// 所属者信息。
+                /// </summary>
+                [NameInMap("owner")]
+                [Validation(Required=false)]
                 public GetUserOkrResponseBodyDataListOwner Owner { get; set; }
                 public class GetUserOkrResponseBodyDataListOwner : TeaModel {
                     /// <summary>
@@ -86,9 +196,33 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
                     public Stream UserId { get; set; }
 
                 }
+
+                /// <summary>
+                /// 周期 ID。
+                /// </summary>
+                [NameInMap("periodId")]
+                [Validation(Required=false)]
                 public Stream PeriodId { get; set; }
+
+                /// <summary>
+                /// 权限值。
+                /// </summary>
+                [NameInMap("permission")]
+                [Validation(Required=false)]
                 public List<float?> Permission { get; set; }
+
+                /// <summary>
+                /// 所在位置。
+                /// </summary>
+                [NameInMap("position")]
+                [Validation(Required=false)]
                 public int? Position { get; set; }
+
+                /// <summary>
+                /// 进度值。
+                /// </summary>
+                [NameInMap("progress")]
+                [Validation(Required=false)]
                 public GetUserOkrResponseBodyDataListProgress Progress { get; set; }
                 public class GetUserOkrResponseBodyDataListProgress : TeaModel {
                     /// <summary>
@@ -99,23 +233,73 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
                     public int? Percent { get; set; }
 
                 }
+
+                /// <summary>
+                /// 百分比值。
+                /// </summary>
+                [NameInMap("progressPercent")]
+                [Validation(Required=false)]
                 public float? ProgressPercent { get; set; }
+
+                /// <summary>
+                /// 是否已发布。
+                /// </summary>
+                [NameInMap("published")]
+                [Validation(Required=false)]
                 public bool? Published { get; set; }
+
+                /// <summary>
+                /// 分数值。
+                /// </summary>
+                [NameInMap("score")]
+                [Validation(Required=false)]
                 public float? Score { get; set; }
+
+                /// <summary>
+                /// 当前内容状态。
+                /// </summary>
+                [NameInMap("status")]
+                [Validation(Required=false)]
                 public int? Status { get; set; }
+
+                /// <summary>
+                /// 用户 ID。
+                /// </summary>
+                [NameInMap("userId")]
+                [Validation(Required=false)]
                 public Stream UserId { get; set; }
+
+                /// <summary>
+                /// 权重值。
+                /// </summary>
+                [NameInMap("weight")]
+                [Validation(Required=false)]
                 public float? Weight { get; set; }
+
             }
+
+            /// <summary>
+            /// 当前页码。
+            /// </summary>
             [NameInMap("pageNumber")]
             [Validation(Required=false)]
             public long? PageNumber { get; set; }
+
+            /// <summary>
+            /// 每一页的个数。
+            /// </summary>
             [NameInMap("pageSize")]
             [Validation(Required=false)]
             public long? PageSize { get; set; }
+
+            /// <summary>
+            /// 总数。
+            /// </summary>
             [NameInMap("totalCount")]
             [Validation(Required=false)]
             public long? TotalCount { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 请求成功的标识。

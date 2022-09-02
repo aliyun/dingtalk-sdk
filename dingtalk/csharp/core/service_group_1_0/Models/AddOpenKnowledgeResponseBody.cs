@@ -16,16 +16,28 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public AddOpenKnowledgeResponseBodyResult Result { get; set; }
         public class AddOpenKnowledgeResponseBodyResult : TeaModel {
+            /// <summary>
+            /// 知识点ID
+            /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]
             public long? Id { get; set; }
+
+            /// <summary>
+            /// 失败错误消息
+            /// </summary>
             [NameInMap("message")]
             [Validation(Required=false)]
             public string Message { get; set; }
+
+            /// <summary>
+            /// 操作是否成功标识
+            /// </summary>
             [NameInMap("success")]
             [Validation(Required=false)]
             public bool? Success { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 请求是否成功

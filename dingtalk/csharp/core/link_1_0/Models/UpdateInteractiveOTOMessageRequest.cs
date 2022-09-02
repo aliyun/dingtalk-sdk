@@ -19,9 +19,11 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0.Models
             [NameInMap("cardBizId")]
             [Validation(Required=false)]
             public string CardBizId { get; set; }
+
             [NameInMap("cardData")]
             [Validation(Required=false)]
             public string CardData { get; set; }
+
             [NameInMap("updateOptions")]
             [Validation(Required=false)]
             public UpdateInteractiveOTOMessageRequestDetailUpdateOptions UpdateOptions { get; set; }
@@ -35,10 +37,12 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0.Models
                 public bool? UpdatePrivateDataByKey { get; set; }
 
             }
+
             [NameInMap("userIdPrivateDataMap")]
             [Validation(Required=false)]
             public string UserIdPrivateDataMap { get; set; }
-        };
+
+        }
 
     }
 

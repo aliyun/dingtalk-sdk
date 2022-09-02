@@ -78,16 +78,28 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [Validation(Required=false)]
             public ListEventsInstancesResponseBodyEventsEnd End { get; set; }
             public class ListEventsInstancesResponseBodyEventsEnd : TeaModel {
+                /// <summary>
+                /// 日期，格式：yyyyMMdd
+                /// </summary>
                 [NameInMap("date")]
                 [Validation(Required=false)]
                 public string Date { get; set; }
+
+                /// <summary>
+                /// 时间戳，按照ISO 8601格式
+                /// </summary>
                 [NameInMap("dateTime")]
                 [Validation(Required=false)]
                 public string DateTime { get; set; }
+
+                /// <summary>
+                /// 时区
+                /// </summary>
                 [NameInMap("timeZone")]
                 [Validation(Required=false)]
                 public string TimeZone { get; set; }
-            };
+
+            }
 
             [NameInMap("extendedProperties")]
             [Validation(Required=false)]
@@ -102,7 +114,8 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                     public string SourceOpenCid { get; set; }
 
                 }
-            };
+
+            }
 
             /// <summary>
             /// 日程事件id
@@ -125,13 +138,18 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [Validation(Required=false)]
             public ListEventsInstancesResponseBodyEventsLocation Location { get; set; }
             public class ListEventsInstancesResponseBodyEventsLocation : TeaModel {
+                /// <summary>
+                /// 展示名称
+                /// </summary>
                 [NameInMap("displayName")]
                 [Validation(Required=false)]
                 public string DisplayName { get; set; }
+
                 [NameInMap("meetingRooms")]
                 [Validation(Required=false)]
                 public List<string> MeetingRooms { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 线上会议
@@ -140,16 +158,28 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [Validation(Required=false)]
             public ListEventsInstancesResponseBodyEventsOnlineMeetingInfo OnlineMeetingInfo { get; set; }
             public class ListEventsInstancesResponseBodyEventsOnlineMeetingInfo : TeaModel {
+                /// <summary>
+                /// 会议ID
+                /// </summary>
                 [NameInMap("conferenceId")]
                 [Validation(Required=false)]
                 public string ConferenceId { get; set; }
+
+                /// <summary>
+                /// 线上会议类型，目前支持：  dingtalk：钉钉视频会议
+                /// </summary>
                 [NameInMap("type")]
                 [Validation(Required=false)]
                 public string Type { get; set; }
+
+                /// <summary>
+                /// 会议url
+                /// </summary>
                 [NameInMap("url")]
                 [Validation(Required=false)]
                 public string Url { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 日程组织人
@@ -158,19 +188,35 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [Validation(Required=false)]
             public ListEventsInstancesResponseBodyEventsOrganizer Organizer { get; set; }
             public class ListEventsInstancesResponseBodyEventsOrganizer : TeaModel {
+                /// <summary>
+                /// 用户名
+                /// </summary>
                 [NameInMap("displayName")]
                 [Validation(Required=false)]
                 public string DisplayName { get; set; }
+
+                /// <summary>
+                /// 用户id
+                /// </summary>
                 [NameInMap("id")]
                 [Validation(Required=false)]
                 public string Id { get; set; }
+
+                /// <summary>
+                /// 回复状态
+                /// </summary>
                 [NameInMap("responseStatus")]
                 [Validation(Required=false)]
                 public string ResponseStatus { get; set; }
+
+                /// <summary>
+                /// 是否是当前登陆用户
+                /// </summary>
                 [NameInMap("self")]
                 [Validation(Required=false)]
                 public bool? Self { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 日程重复规则
@@ -179,6 +225,9 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [Validation(Required=false)]
             public ListEventsInstancesResponseBodyEventsRecurrence Recurrence { get; set; }
             public class ListEventsInstancesResponseBodyEventsRecurrence : TeaModel {
+                /// <summary>
+                /// 重复模式
+                /// </summary>
                 [NameInMap("pattern")]
                 [Validation(Required=false)]
                 public ListEventsInstancesResponseBodyEventsRecurrencePattern Pattern { get; set; }
@@ -219,6 +268,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                     public string Type { get; set; }
 
                 }
+
+                /// <summary>
+                /// 重复范围
+                /// </summary>
                 [NameInMap("range")]
                 [Validation(Required=false)]
                 public ListEventsInstancesResponseBodyEventsRecurrenceRange Range { get; set; }
@@ -245,7 +298,8 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                     public string Type { get; set; }
 
                 }
-            };
+
+            }
 
             /// <summary>
             /// 日程提醒
@@ -284,16 +338,28 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [Validation(Required=false)]
             public ListEventsInstancesResponseBodyEventsStart Start { get; set; }
             public class ListEventsInstancesResponseBodyEventsStart : TeaModel {
+                /// <summary>
+                /// 日期，格式：yyyyMMdd
+                /// </summary>
                 [NameInMap("date")]
                 [Validation(Required=false)]
                 public string Date { get; set; }
+
+                /// <summary>
+                /// 时间戳，按照ISO 8601格式
+                /// </summary>
                 [NameInMap("dateTime")]
                 [Validation(Required=false)]
                 public string DateTime { get; set; }
+
+                /// <summary>
+                /// 时区
+                /// </summary>
                 [NameInMap("timeZone")]
                 [Validation(Required=false)]
                 public string TimeZone { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 日程状态

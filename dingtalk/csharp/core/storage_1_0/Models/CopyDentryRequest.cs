@@ -16,10 +16,21 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         [Validation(Required=false)]
         public CopyDentryRequestOption Option { get; set; }
         public class CopyDentryRequestOption : TeaModel {
+            /// <summary>
+            /// 文件(夹)名称冲突策略
+            /// 枚举值:
+            /// 	AUTO_RENAME: 自动重命名
+            /// 	OVERWRITE: 覆盖
+            /// 	RETURN_DENTRY_IF_EXISTS: 返回已存在文件
+            /// 	RETURN_ERROR_IF_EXISTS: 文件已存在时报错
+            /// 默认值:
+            /// 	AUTO_RENAME
+            /// </summary>
             [NameInMap("conflictStrategy")]
             [Validation(Required=false)]
             public string ConflictStrategy { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 目标文件夹id, 根目录id值为0

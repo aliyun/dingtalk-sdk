@@ -37,13 +37,21 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public UpdateRobotInteractiveCardRequestUpdateOptions UpdateOptions { get; set; }
         public class UpdateRobotInteractiveCardRequestUpdateOptions : TeaModel {
+            /// <summary>
+            /// 按key更新数据(默认全量更新)
+            /// </summary>
             [NameInMap("updateCardDataByKey")]
             [Validation(Required=false)]
             public bool? UpdateCardDataByKey { get; set; }
+
+            /// <summary>
+            /// 按key更新用户数据(默认全量更新)
+            /// </summary>
             [NameInMap("updatePrivateDataByKey")]
             [Validation(Required=false)]
             public bool? UpdatePrivateDataByKey { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 卡片模板-userId差异用户参数（json结构体）

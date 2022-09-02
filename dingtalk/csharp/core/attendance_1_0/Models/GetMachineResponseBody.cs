@@ -16,21 +16,44 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public GetMachineResponseBodyResult Result { get; set; }
         public class GetMachineResponseBodyResult : TeaModel {
+            /// <summary>
+            /// 设备管理员列表
+            /// </summary>
             [NameInMap("atmManagerList")]
             [Validation(Required=false)]
             public List<string> AtmManagerList { get; set; }
+
+            /// <summary>
+            /// 设备id (deviceId)
+            /// </summary>
             [NameInMap("devId")]
             [Validation(Required=false)]
             public long? DevId { get; set; }
+
+            /// <summary>
+            /// 设备id (deviceUid加密之后)
+            /// </summary>
             [NameInMap("deviceId")]
             [Validation(Required=false)]
             public string DeviceId { get; set; }
+
+            /// <summary>
+            /// 设备名称
+            /// </summary>
             [NameInMap("deviceName")]
             [Validation(Required=false)]
             public string DeviceName { get; set; }
+
+            /// <summary>
+            /// 设备sn号
+            /// </summary>
             [NameInMap("deviceSn")]
             [Validation(Required=false)]
             public string DeviceSn { get; set; }
+
+            /// <summary>
+            /// 考勤机蓝牙相关设置信息
+            /// </summary>
             [NameInMap("machineBluetoothVO")]
             [Validation(Required=false)]
             public GetMachineResponseBodyResultMachineBluetoothVO MachineBluetoothVO { get; set; }
@@ -106,22 +129,43 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
                 public int? UserDeviceCount { get; set; }
 
             }
+
+            /// <summary>
+            /// 人脸容量
+            /// </summary>
             [NameInMap("maxFace")]
             [Validation(Required=false)]
             public int? MaxFace { get; set; }
+
+            /// <summary>
+            /// 网络状态
+            /// </summary>
             [NameInMap("netStatus")]
             [Validation(Required=false)]
             public string NetStatus { get; set; }
+
+            /// <summary>
+            /// 设备类型名称
+            /// </summary>
             [NameInMap("productName")]
             [Validation(Required=false)]
             public string ProductName { get; set; }
+
+            /// <summary>
+            /// 固件版本
+            /// </summary>
             [NameInMap("productVersion")]
             [Validation(Required=false)]
             public string ProductVersion { get; set; }
+
+            /// <summary>
+            /// 音量模式
+            /// </summary>
             [NameInMap("voiceMode")]
             [Validation(Required=false)]
             public int? VoiceMode { get; set; }
-        };
+
+        }
 
     }
 

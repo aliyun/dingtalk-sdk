@@ -19,7 +19,8 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [NameInMap("corpIdCardIdMap")]
             [Validation(Required=false)]
             public Dictionary<string, string> CorpIdCardIdMap { get; set; }
-        };
+
+        }
 
     }
 

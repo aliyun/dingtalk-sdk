@@ -56,13 +56,16 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [NameInMap("date")]
             [Validation(Required=false)]
             public string Date { get; set; }
+
             [NameInMap("dateTime")]
             [Validation(Required=false)]
             public string DateTime { get; set; }
+
             [NameInMap("timeZone")]
             [Validation(Required=false)]
             public string TimeZone { get; set; }
-        };
+
+        }
 
         [NameInMap("id")]
         [Validation(Required=false)]
@@ -79,7 +82,8 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [NameInMap("displayName")]
             [Validation(Required=false)]
             public string DisplayName { get; set; }
-        };
+
+        }
 
         [NameInMap("onlineMeetingInfo")]
         [Validation(Required=false)]
@@ -88,34 +92,48 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [NameInMap("conferenceId")]
             [Validation(Required=false)]
             public string ConferenceId { get; set; }
+
             [NameInMap("extraInfo")]
             [Validation(Required=false)]
-            public Dictionary<string, string> ExtraInfo { get; set; }
+            public Dictionary<string, object> ExtraInfo { get; set; }
+
             [NameInMap("type")]
             [Validation(Required=false)]
             public string Type { get; set; }
+
             [NameInMap("url")]
             [Validation(Required=false)]
             public string Url { get; set; }
-        };
+
+        }
 
         [NameInMap("organizer")]
         [Validation(Required=false)]
         public CreateEventResponseBodyOrganizer Organizer { get; set; }
         public class CreateEventResponseBodyOrganizer : TeaModel {
+            /// <summary>
+            /// 用户名
+            /// </summary>
             [NameInMap("displayName")]
             [Validation(Required=false)]
             public string DisplayName { get; set; }
+
             [NameInMap("id")]
             [Validation(Required=false)]
             public string Id { get; set; }
+
+            /// <summary>
+            /// 回复状态
+            /// </summary>
             [NameInMap("responseStatus")]
             [Validation(Required=false)]
             public string ResponseStatus { get; set; }
+
             [NameInMap("self")]
             [Validation(Required=false)]
             public bool? Self { get; set; }
-        };
+
+        }
 
         [NameInMap("recurrence")]
         [Validation(Required=false)]
@@ -146,6 +164,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 public string Type { get; set; }
 
             }
+
             [NameInMap("range")]
             [Validation(Required=false)]
             public CreateEventResponseBodyRecurrenceRange Range { get; set; }
@@ -163,7 +182,8 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 public string Type { get; set; }
 
             }
-        };
+
+        }
 
         [NameInMap("reminders")]
         [Validation(Required=false)]
@@ -189,13 +209,16 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [NameInMap("date")]
             [Validation(Required=false)]
             public string Date { get; set; }
+
             [NameInMap("dateTime")]
             [Validation(Required=false)]
             public string DateTime { get; set; }
+
             [NameInMap("timeZone")]
             [Validation(Required=false)]
             public string TimeZone { get; set; }
-        };
+
+        }
 
         [NameInMap("summary")]
         [Validation(Required=false)]

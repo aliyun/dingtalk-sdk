@@ -16,7 +16,8 @@ namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0.Models
             [NameInMap("bizType")]
             [Validation(Required=false)]
             public int? BizType { get; set; }
-        };
+
+        }
 
         [NameInMap("statusCode")]
         [Validation(Required=false)]

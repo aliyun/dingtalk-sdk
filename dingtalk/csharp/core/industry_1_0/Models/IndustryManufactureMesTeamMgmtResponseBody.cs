@@ -24,7 +24,8 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [NameInMap("content")]
             [Validation(Required=false)]
             public string Content { get; set; }
-        };
+
+        }
 
     }
 

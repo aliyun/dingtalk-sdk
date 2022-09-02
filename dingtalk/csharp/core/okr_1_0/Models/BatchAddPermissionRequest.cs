@@ -20,10 +20,12 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
                 [NameInMap("id")]
                 [Validation(Required=false)]
                 public string Id { get; set; }
+
                 [NameInMap("type")]
                 [Validation(Required=false)]
                 public string Type { get; set; }
-            };
+
+            }
 
             [NameInMap("policyType")]
             [Validation(Required=false)]

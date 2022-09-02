@@ -58,19 +58,35 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         [Validation(Required=false)]
         public SyncTaskTemplateRequestTaskScopeVO TaskScopeVO { get; set; }
         public class SyncTaskTemplateRequestTaskScopeVO : TeaModel {
+            /// <summary>
+            /// 按照部门圈人
+            /// </summary>
             [NameInMap("deptIds")]
             [Validation(Required=false)]
             public List<long?> DeptIds { get; set; }
+
+            /// <summary>
+            /// 按照职位圈人
+            /// </summary>
             [NameInMap("positionIds")]
             [Validation(Required=false)]
             public List<string> PositionIds { get; set; }
+
+            /// <summary>
+            /// 按照角色圈人
+            /// </summary>
             [NameInMap("roleIds")]
             [Validation(Required=false)]
             public List<string> RoleIds { get; set; }
+
+            /// <summary>
+            /// 按照员工userId圈人
+            /// </summary>
             [NameInMap("userIds")]
             [Validation(Required=false)]
             public List<string> UserIds { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 任务模版类型：TRAIN_TASK、PERFORMANCE_TASK

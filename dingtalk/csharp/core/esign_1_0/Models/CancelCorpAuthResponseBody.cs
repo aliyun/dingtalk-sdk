@@ -20,7 +20,8 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
             [NameInMap("result")]
             [Validation(Required=false)]
             public bool? Result { get; set; }
-        };
+
+        }
 
         [NameInMap("message")]
         [Validation(Required=false)]

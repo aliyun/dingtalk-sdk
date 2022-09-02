@@ -23,10 +23,14 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0.Models
         [Validation(Required=false)]
         public GetPictureDownloadUrlResponseBodyResult Result { get; set; }
         public class GetPictureDownloadUrlResponseBodyResult : TeaModel {
+            /// <summary>
+            /// 关注状态
+            /// </summary>
             [NameInMap("url")]
             [Validation(Required=false)]
             public string Url { get; set; }
-        };
+
+        }
 
     }
 

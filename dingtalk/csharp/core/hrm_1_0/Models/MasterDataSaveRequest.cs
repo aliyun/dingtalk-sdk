@@ -67,13 +67,21 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             [Validation(Required=false)]
             public MasterDataSaveRequestBodyScope Scope { get; set; }
             public class MasterDataSaveRequestBodyScope : TeaModel {
+                /// <summary>
+                /// 业务域code，如PERFORMANCE，系统分配
+                /// </summary>
                 [NameInMap("scopeCode")]
                 [Validation(Required=false)]
                 public string ScopeCode { get; set; }
+
+                /// <summary>
+                /// 业务域版本，接入时系统分配，默认传1
+                /// </summary>
                 [NameInMap("version")]
                 [Validation(Required=false)]
                 public int? Version { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 员工id

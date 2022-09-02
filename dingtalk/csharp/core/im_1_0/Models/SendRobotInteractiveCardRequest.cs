@@ -65,19 +65,35 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public SendRobotInteractiveCardRequestSendOptions SendOptions { get; set; }
         public class SendRobotInteractiveCardRequestSendOptions : TeaModel {
+            /// <summary>
+            /// 是否@所有人
+            /// </summary>
             [NameInMap("atAll")]
             [Validation(Required=false)]
             public bool? AtAll { get; set; }
+
+            /// <summary>
+            /// 消息@人，JSON格式：[{"nickName":"张三","userId":"userId0001"},{"nickName":"李四","unionId":"unionId001"}]
+            /// </summary>
             [NameInMap("atUserListJson")]
             [Validation(Required=false)]
             public string AtUserListJson { get; set; }
+
+            /// <summary>
+            /// 卡片特殊属性json串
+            /// </summary>
             [NameInMap("cardPropertyJson")]
             [Validation(Required=false)]
             public string CardPropertyJson { get; set; }
+
+            /// <summary>
+            /// 消息仅部分人可见的接收人列表【可空：为空则群所有人可见】，JSON格式：[{"userId":"userId0001"},{"unionId":"unionId001"}]
+            /// </summary>
             [NameInMap("receiverListJson")]
             [Validation(Required=false)]
             public string ReceiverListJson { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 【openConversationId & singleChatReceiver 二选一必填】单聊会话接受者json串

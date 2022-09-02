@@ -16,19 +16,35 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public CreateTaskObjectLinkRequestLinkedData LinkedData { get; set; }
         public class CreateTaskObjectLinkRequestLinkedData : TeaModel {
+            /// <summary>
+            /// 关联对象描述
+            /// </summary>
             [NameInMap("content")]
             [Validation(Required=false)]
             public string Content { get; set; }
+
+            /// <summary>
+            /// 关联对象头像url
+            /// </summary>
             [NameInMap("thumbnailUrl")]
             [Validation(Required=false)]
             public string ThumbnailUrl { get; set; }
+
+            /// <summary>
+            /// 关联对象标题
+            /// </summary>
             [NameInMap("title")]
             [Validation(Required=false)]
             public string Title { get; set; }
+
+            /// <summary>
+            /// 关联对象链接url
+            /// </summary>
             [NameInMap("url")]
             [Validation(Required=false)]
             public string Url { get; set; }
-        };
+
+        }
 
     }
 

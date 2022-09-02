@@ -23,13 +23,21 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
         [Validation(Required=false)]
         public GetSignNoticeUrlResponseBodyData Data { get; set; }
         public class GetSignNoticeUrlResponseBodyData : TeaModel {
+            /// <summary>
+            /// 移动端URL
+            /// </summary>
             [NameInMap("mobileUrl")]
             [Validation(Required=false)]
             public string MobileUrl { get; set; }
+
+            /// <summary>
+            /// PC端URL
+            /// </summary>
             [NameInMap("pcUrl")]
             [Validation(Required=false)]
             public string PcUrl { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 返回结果信息

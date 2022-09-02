@@ -65,19 +65,35 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
             [Validation(Required=false)]
             public QueryProcessesInstanceResponseBodyDataOriginator Originator { get; set; }
             public class QueryProcessesInstanceResponseBodyDataOriginator : TeaModel {
+                /// <summary>
+                /// 所属组织id
+                /// </summary>
                 [NameInMap("departmentId")]
                 [Validation(Required=false)]
                 public string DepartmentId { get; set; }
+
+                /// <summary>
+                /// 所属组织名称
+                /// </summary>
                 [NameInMap("departmentName")]
                 [Validation(Required=false)]
                 public string DepartmentName { get; set; }
+
+                /// <summary>
+                /// 用户名称
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
+
+                /// <summary>
+                /// 用户id
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 流程名称

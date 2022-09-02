@@ -30,19 +30,35 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             [Validation(Required=false)]
             public ListPermissionsResponseBodyMembersMember Member { get; set; }
             public class ListPermissionsResponseBodyMembersMember : TeaModel {
+                /// <summary>
+                /// 企业corpId
+                /// </summary>
                 [NameInMap("corpId")]
                 [Validation(Required=false)]
                 public string CorpId { get; set; }
+
+                /// <summary>
+                /// 成员id
+                /// </summary>
                 [NameInMap("memberId")]
                 [Validation(Required=false)]
                 public string MemberId { get; set; }
+
+                /// <summary>
+                /// 成员名称
+                /// </summary>
                 [NameInMap("memberName")]
                 [Validation(Required=false)]
                 public string MemberName { get; set; }
+
+                /// <summary>
+                /// 成员类型
+                /// </summary>
                 [NameInMap("memberType")]
                 [Validation(Required=false)]
                 public string MemberType { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 权限角色
@@ -74,19 +90,35 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             [Validation(Required=false)]
             public ListPermissionsResponseBodyOutMembersMember Member { get; set; }
             public class ListPermissionsResponseBodyOutMembersMember : TeaModel {
+                /// <summary>
+                /// 企业corpId
+                /// </summary>
                 [NameInMap("corpId")]
                 [Validation(Required=false)]
                 public string CorpId { get; set; }
+
+                /// <summary>
+                /// 成员id
+                /// </summary>
                 [NameInMap("memberId")]
                 [Validation(Required=false)]
                 public string MemberId { get; set; }
+
+                /// <summary>
+                /// 成员名称
+                /// </summary>
                 [NameInMap("memberName")]
                 [Validation(Required=false)]
                 public string MemberName { get; set; }
+
+                /// <summary>
+                /// 成员类型
+                /// </summary>
                 [NameInMap("memberType")]
                 [Validation(Required=false)]
                 public string MemberType { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 权限角色

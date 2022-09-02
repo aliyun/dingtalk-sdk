@@ -16,10 +16,16 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         [Validation(Required=false)]
         public GetDentryRequestOption Option { get; set; }
         public class GetDentryRequestOption : TeaModel {
+            /// <summary>
+            /// 通过指定应用id, 返回对应的可见属性，即dentry.appProperties，
+            /// 默认都会返回当前应用的属性，
+            /// 如不指定appIds, 则默认返回当前应用的appProperties
+            /// </summary>
             [NameInMap("appIdsForAppProperties")]
             [Validation(Required=false)]
             public List<string> AppIdsForAppProperties { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 用户id

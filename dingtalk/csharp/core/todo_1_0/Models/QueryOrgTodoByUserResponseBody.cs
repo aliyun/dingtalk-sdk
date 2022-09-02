@@ -58,13 +58,21 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
             [Validation(Required=false)]
             public QueryOrgTodoByUserResponseBodyTodoCardsDetailUrl DetailUrl { get; set; }
             public class QueryOrgTodoByUserResponseBodyTodoCardsDetailUrl : TeaModel {
+                /// <summary>
+                /// 移动端url地址
+                /// </summary>
                 [NameInMap("appUrl")]
                 [Validation(Required=false)]
                 public string AppUrl { get; set; }
+
+                /// <summary>
+                /// pc端url地址
+                /// </summary>
                 [NameInMap("pcUrl")]
                 [Validation(Required=false)]
                 public string PcUrl { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 待办截止时间

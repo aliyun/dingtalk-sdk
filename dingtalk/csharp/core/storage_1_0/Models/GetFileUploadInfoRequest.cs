@@ -26,6 +26,9 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         [Validation(Required=false)]
         public GetFileUploadInfoRequestOption Option { get; set; }
         public class GetFileUploadInfoRequestOption : TeaModel {
+            /// <summary>
+            /// 预检查的字段。可实现对文件名称，文件完整性，容量的校验
+            /// </summary>
             [NameInMap("preCheckParam")]
             [Validation(Required=false)]
             public GetFileUploadInfoRequestOptionPreCheckParam PreCheckParam { get; set; }
@@ -65,13 +68,35 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
                 public long? Size { get; set; }
 
             }
+
+            /// <summary>
+            /// 优先地域, 倾向于将资源存到哪个地域，可实现就近上传等功能
+            /// 枚举值:
+            /// 	ZHANGJIAKOU: 张家口
+            /// 	SHENZHEN: 深圳
+            /// 	SHANGHAI: 上海
+            /// 	SINGAPORE: 新加坡
+            /// 	UNKNOWN: 未知
+            /// </summary>
             [NameInMap("preferRegion")]
             [Validation(Required=false)]
             public string PreferRegion { get; set; }
+
+            /// <summary>
+            /// 文件存储驱动类型, 当前只支持DINGTALK
+            /// 枚举值:
+            /// 	DINGTALK: 钉钉统一存储驱动
+            /// 	ALIDOC: 钉钉文档存储驱动
+            /// 	SHANJI: 闪记存储驱动
+            /// 	UNKNOWN: 未知驱动
+            /// 默认值:
+            /// 	DINGTALK
+            /// </summary>
             [NameInMap("storageDriver")]
             [Validation(Required=false)]
             public string StorageDriver { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 通过指定上传协议返回不同协议上传所需要的信息

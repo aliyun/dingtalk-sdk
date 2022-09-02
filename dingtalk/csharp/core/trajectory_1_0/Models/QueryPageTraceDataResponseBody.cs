@@ -30,13 +30,21 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0.Models
             [Validation(Required=false)]
             public QueryPageTraceDataResponseBodyListCoordinates Coordinates { get; set; }
             public class QueryPageTraceDataResponseBodyListCoordinates : TeaModel {
+                /// <summary>
+                /// 纬度
+                /// </summary>
                 [NameInMap("latitude")]
                 [Validation(Required=false)]
                 public float? Latitude { get; set; }
+
+                /// <summary>
+                /// 经度
+                /// </summary>
                 [NameInMap("longitude")]
                 [Validation(Required=false)]
                 public float? Longitude { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 定位时间

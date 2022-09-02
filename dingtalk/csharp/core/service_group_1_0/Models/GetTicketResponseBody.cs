@@ -20,10 +20,12 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             [NameInMap("nickName")]
             [Validation(Required=false)]
             public string NickName { get; set; }
+
             [NameInMap("unionId")]
             [Validation(Required=false)]
             public string UnionId { get; set; }
-        };
+
+        }
 
         [NameInMap("customFields")]
         [Validation(Required=false)]
@@ -47,10 +49,12 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             [NameInMap("nickName")]
             [Validation(Required=false)]
             public string NickName { get; set; }
+
             [NameInMap("unionId")]
             [Validation(Required=false)]
             public string UnionId { get; set; }
-        };
+
+        }
 
         [NameInMap("scene")]
         [Validation(Required=false)]
@@ -82,16 +86,28 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public GetTicketResponseBodyTemplate Template { get; set; }
         public class GetTicketResponseBodyTemplate : TeaModel {
+            /// <summary>
+            /// 工单模版业务ID
+            /// </summary>
             [NameInMap("openTemplateBizId")]
             [Validation(Required=false)]
             public string OpenTemplateBizId { get; set; }
+
+            /// <summary>
+            /// 工单模版ID
+            /// </summary>
             [NameInMap("openTemplateId")]
             [Validation(Required=false)]
             public string OpenTemplateId { get; set; }
+
+            /// <summary>
+            /// 工单模版名称
+            /// </summary>
             [NameInMap("templateName")]
             [Validation(Required=false)]
             public string TemplateName { get; set; }
-        };
+
+        }
 
         [NameInMap("title")]
         [Validation(Required=false)]

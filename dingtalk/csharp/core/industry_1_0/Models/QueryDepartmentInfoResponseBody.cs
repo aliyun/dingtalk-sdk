@@ -16,6 +16,9 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public QueryDepartmentInfoResponseBodyContent Content { get; set; }
         public class QueryDepartmentInfoResponseBodyContent : TeaModel {
+            /// <summary>
+            /// 科室列表
+            /// </summary>
             [NameInMap("department")]
             [Validation(Required=false)]
             public QueryDepartmentInfoResponseBodyContentDepartment Department { get; set; }
@@ -105,20 +108,73 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 public List<long?> WardIdList { get; set; }
 
             }
+
+            /// <summary>
+            /// 科室扩展属性值
+            /// </summary>
             [NameInMap("extendInfos")]
             [Validation(Required=false)]
             public List<QueryDepartmentInfoResponseBodyContentExtendInfos> ExtendInfos { get; set; }
             public class QueryDepartmentInfoResponseBodyContentExtendInfos : TeaModel {
+                /// <summary>
+                /// 部门code
+                /// </summary>
+                [NameInMap("deptCode")]
+                [Validation(Required=false)]
                 public string DeptCode { get; set; }
+
+                /// <summary>
+                /// 扩展属性描述
+                /// </summary>
+                [NameInMap("deptExtendDisplayName")]
+                [Validation(Required=false)]
                 public string DeptExtendDisplayName { get; set; }
+
+                /// <summary>
+                /// 扩展属性key
+                /// </summary>
+                [NameInMap("deptExtendKey")]
+                [Validation(Required=false)]
                 public string DeptExtendKey { get; set; }
+
+                /// <summary>
+                /// 扩展属性value
+                /// </summary>
+                [NameInMap("deptExtendValue")]
+                [Validation(Required=false)]
                 public string DeptExtendValue { get; set; }
+
+                /// <summary>
+                /// 创建时间
+                /// </summary>
+                [NameInMap("gmtCreateStr")]
+                [Validation(Required=false)]
                 public string GmtCreateStr { get; set; }
+
+                /// <summary>
+                /// 修改时间
+                /// </summary>
+                [NameInMap("gmtModifiedStr")]
+                [Validation(Required=false)]
                 public string GmtModifiedStr { get; set; }
+
+                /// <summary>
+                /// id
+                /// </summary>
+                [NameInMap("id")]
+                [Validation(Required=false)]
                 public long? Id { get; set; }
+
+                /// <summary>
+                /// 状态
+                /// </summary>
+                [NameInMap("status")]
+                [Validation(Required=false)]
                 public int? Status { get; set; }
+
             }
-        };
+
+        }
 
     }
 

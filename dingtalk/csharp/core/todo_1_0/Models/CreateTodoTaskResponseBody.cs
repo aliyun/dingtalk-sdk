@@ -67,13 +67,21 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         [Validation(Required=false)]
         public CreateTodoTaskResponseBodyDetailUrl DetailUrl { get; set; }
         public class CreateTodoTaskResponseBodyDetailUrl : TeaModel {
+            /// <summary>
+            /// app端详情页地址
+            /// </summary>
             [NameInMap("appUrl")]
             [Validation(Required=false)]
             public string AppUrl { get; set; }
+
+            /// <summary>
+            /// pc端详情页地址
+            /// </summary>
             [NameInMap("pcUrl")]
             [Validation(Required=false)]
             public string PcUrl { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 完成状态
@@ -138,10 +146,14 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         [Validation(Required=false)]
         public CreateTodoTaskResponseBodyNotifyConfigs NotifyConfigs { get; set; }
         public class CreateTodoTaskResponseBodyNotifyConfigs : TeaModel {
+            /// <summary>
+            /// ding通知配置：value:"channel"（1钉弹框通知，2钉短信通知，3钉电话通知）
+            /// </summary>
             [NameInMap("dingNotify")]
             [Validation(Required=false)]
             public string DingNotify { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 参与者列表（用户的unionId）

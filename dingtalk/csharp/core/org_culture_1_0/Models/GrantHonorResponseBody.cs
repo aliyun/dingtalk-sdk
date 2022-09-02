@@ -13,13 +13,21 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
         [Validation(Required=false)]
         public GrantHonorResponseBodyResult Result { get; set; }
         public class GrantHonorResponseBodyResult : TeaModel {
+            /// <summary>
+            /// 失败的userId
+            /// </summary>
             [NameInMap("failedUserIds")]
             [Validation(Required=false)]
             public List<string> FailedUserIds { get; set; }
+
+            /// <summary>
+            /// 成功的userId
+            /// </summary>
             [NameInMap("successUserIds")]
             [Validation(Required=false)]
             public List<string> SuccessUserIds { get; set; }
-        };
+
+        }
 
         [NameInMap("success")]
         [Validation(Required=false)]

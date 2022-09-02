@@ -53,13 +53,21 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [Validation(Required=false)]
         public CreateSecondaryManagementGroupRequestScope Scope { get; set; }
         public class CreateSecondaryManagementGroupRequestScope : TeaModel {
+            /// <summary>
+            /// 部门id列表
+            /// </summary>
             [NameInMap("deptIds")]
             [Validation(Required=false)]
             public List<long?> DeptIds { get; set; }
+
+            /// <summary>
+            /// 权限范围
+            /// </summary>
             [NameInMap("scopeType")]
             [Validation(Required=false)]
             public int? ScopeType { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 员工id

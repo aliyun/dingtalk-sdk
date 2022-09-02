@@ -13,10 +13,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public DeleteProcessResponseBodyResult Result { get; set; }
         public class DeleteProcessResponseBodyResult : TeaModel {
+            /// <summary>
+            /// 模板code
+            /// </summary>
             [NameInMap("processCode")]
             [Validation(Required=false)]
             public string ProcessCode { get; set; }
-        };
+
+        }
 
     }
 

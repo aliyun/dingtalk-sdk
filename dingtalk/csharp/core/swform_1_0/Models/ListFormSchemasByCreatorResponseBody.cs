@@ -16,17 +16,53 @@ namespace AlibabaCloud.SDK.Dingtalkswform_1_0.Models
         [Validation(Required=false)]
         public ListFormSchemasByCreatorResponseBodyResult Result { get; set; }
         public class ListFormSchemasByCreatorResponseBodyResult : TeaModel {
+            /// <summary>
+            /// 是否还有下一页数据。
+            /// </summary>
             [NameInMap("hasMore")]
             [Validation(Required=false)]
             public bool? HasMore { get; set; }
+
+            /// <summary>
+            /// 创建的填表列表。
+            /// </summary>
             [NameInMap("list")]
             [Validation(Required=false)]
             public List<ListFormSchemasByCreatorResponseBodyResultList> List { get; set; }
             public class ListFormSchemasByCreatorResponseBodyResultList : TeaModel {
+                /// <summary>
+                /// 创建人。
+                /// </summary>
+                [NameInMap("creator")]
+                [Validation(Required=false)]
                 public string Creator { get; set; }
+
+                /// <summary>
+                /// 填表code，用此code可调接口获取填表列表。
+                /// </summary>
+                [NameInMap("formCode")]
+                [Validation(Required=false)]
                 public string FormCode { get; set; }
+
+                /// <summary>
+                /// 填表提示。
+                /// </summary>
+                [NameInMap("memo")]
+                [Validation(Required=false)]
                 public string Memo { get; set; }
+
+                /// <summary>
+                /// 填表名称。
+                /// </summary>
+                [NameInMap("name")]
+                [Validation(Required=false)]
                 public string Name { get; set; }
+
+                /// <summary>
+                /// 填表设置。
+                /// </summary>
+                [NameInMap("setting")]
+                [Validation(Required=false)]
                 public ListFormSchemasByCreatorResponseBodyResultListSetting Setting { get; set; }
                 public class ListFormSchemasByCreatorResponseBodyResultListSetting : TeaModel {
                     /// <summary>
@@ -79,11 +115,17 @@ namespace AlibabaCloud.SDK.Dingtalkswform_1_0.Models
                     public bool? Stop { get; set; }
 
                 }
+
             }
+
+            /// <summary>
+            /// 下一次分页offset的值。
+            /// </summary>
             [NameInMap("nextToken")]
             [Validation(Required=false)]
             public long? NextToken { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 是否成功。

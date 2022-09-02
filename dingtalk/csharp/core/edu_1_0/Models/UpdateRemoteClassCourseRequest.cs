@@ -71,13 +71,21 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public UpdateRemoteClassCourseRequestTeachingParticipant TeachingParticipant { get; set; }
         public class UpdateRemoteClassCourseRequestTeachingParticipant : TeaModel {
+            /// <summary>
+            /// 组织ID
+            /// </summary>
             [NameInMap("corpId")]
             [Validation(Required=false)]
             public string CorpId { get; set; }
+
+            /// <summary>
+            /// 参与方ID
+            /// </summary>
             [NameInMap("participantId")]
             [Validation(Required=false)]
             public string ParticipantId { get; set; }
-        };
+
+        }
 
     }
 

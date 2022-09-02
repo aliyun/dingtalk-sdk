@@ -16,10 +16,14 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public QueryOrgSecretKeyResponseBodyUniversitySecretKeyInfo UniversitySecretKeyInfo { get; set; }
         public class QueryOrgSecretKeyResponseBodyUniversitySecretKeyInfo : TeaModel {
+            /// <summary>
+            /// 秘钥key
+            /// </summary>
             [NameInMap("secretKey")]
             [Validation(Required=false)]
             public string SecretKey { get; set; }
-        };
+
+        }
 
     }
 

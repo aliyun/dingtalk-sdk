@@ -16,6 +16,9 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public QueryClassScheduleResponseBodyConfig Config { get; set; }
         public class QueryClassScheduleResponseBodyConfig : TeaModel {
+            /// <summary>
+            /// 开始时间（到日）。
+            /// </summary>
             [NameInMap("end")]
             [Validation(Required=false)]
             public QueryClassScheduleResponseBodyConfigEnd End { get; set; }
@@ -42,10 +45,19 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
                 public long? Year { get; set; }
 
             }
+
+            /// <summary>
+            /// 节次模型。
+            /// </summary>
             [NameInMap("sectionModels")]
             [Validation(Required=false)]
             public List<QueryClassScheduleResponseBodyConfigSectionModels> SectionModels { get; set; }
             public class QueryClassScheduleResponseBodyConfigSectionModels : TeaModel {
+                /// <summary>
+                /// 结束时间（时分级别）
+                /// </summary>
+                [NameInMap("end")]
+                [Validation(Required=false)]
                 public QueryClassScheduleResponseBodyConfigSectionModelsEnd End { get; set; }
                 public class QueryClassScheduleResponseBodyConfigSectionModelsEnd : TeaModel {
                     /// <summary>
@@ -63,9 +75,33 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
                     public long? Min { get; set; }
 
                 }
+
+                /// <summary>
+                /// 节次序列。
+                /// </summary>
+                [NameInMap("sectionIndex")]
+                [Validation(Required=false)]
                 public long? SectionIndex { get; set; }
+
+                /// <summary>
+                /// 节次名称。
+                /// </summary>
+                [NameInMap("sectionName")]
+                [Validation(Required=false)]
                 public string SectionName { get; set; }
+
+                /// <summary>
+                /// 节次类型：  COURSE：上课节次 REST：休息节次
+                /// </summary>
+                [NameInMap("sectionType")]
+                [Validation(Required=false)]
                 public string SectionType { get; set; }
+
+                /// <summary>
+                /// 开始时间（时分级别）。
+                /// </summary>
+                [NameInMap("start")]
+                [Validation(Required=false)]
                 public QueryClassScheduleResponseBodyConfigSectionModelsStart Start { get; set; }
                 public class QueryClassScheduleResponseBodyConfigSectionModelsStart : TeaModel {
                     /// <summary>
@@ -83,7 +119,12 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
                     public long? Min { get; set; }
 
                 }
+
             }
+
+            /// <summary>
+            /// 开始时间（到日）。
+            /// </summary>
             [NameInMap("start")]
             [Validation(Required=false)]
             public QueryClassScheduleResponseBodyConfigStart Start { get; set; }
@@ -110,7 +151,8 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
                 public long? Year { get; set; }
 
             }
-        };
+
+        }
 
         /// <summary>
         /// 课程列表

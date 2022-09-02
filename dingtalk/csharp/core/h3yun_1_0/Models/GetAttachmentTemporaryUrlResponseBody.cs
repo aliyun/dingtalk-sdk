@@ -23,10 +23,14 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
         [Validation(Required=false)]
         public GetAttachmentTemporaryUrlResponseBodyData Data { get; set; }
         public class GetAttachmentTemporaryUrlResponseBodyData : TeaModel {
+            /// <summary>
+            /// 附件临时免登地址。有效期为30分钟
+            /// </summary>
             [NameInMap("attachmentUrl")]
             [Validation(Required=false)]
             public string AttachmentUrl { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 提示信息

@@ -16,7 +16,8 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [NameInMap("inviteUrl")]
             [Validation(Required=false)]
             public string InviteUrl { get; set; }
-        };
+
+        }
 
         [NameInMap("success")]
         [Validation(Required=false)]

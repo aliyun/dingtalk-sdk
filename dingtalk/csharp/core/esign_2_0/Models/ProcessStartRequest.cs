@@ -149,16 +149,28 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
         [Validation(Required=false)]
         public ProcessStartRequestSourceInfo SourceInfo { get; set; }
         public class ProcessStartRequestSourceInfo : TeaModel {
+            /// <summary>
+            /// 移动端跳转地址
+            /// </summary>
             [NameInMap("mobileUrl")]
             [Validation(Required=false)]
             public string MobileUrl { get; set; }
+
+            /// <summary>
+            /// pc端跳转地址
+            /// </summary>
             [NameInMap("pcUrl")]
             [Validation(Required=false)]
             public string PcUrl { get; set; }
+
+            /// <summary>
+            /// 展示文案
+            /// </summary>
             [NameInMap("showText")]
             [Validation(Required=false)]
             public string ShowText { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 任务名称（默认文件名）

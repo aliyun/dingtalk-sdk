@@ -37,19 +37,35 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public UpdateLeaveTypeRequestLeaveCertificate LeaveCertificate { get; set; }
         public class UpdateLeaveTypeRequestLeaveCertificate : TeaModel {
+            /// <summary>
+            /// 超过多长时间需提供请假证明
+            /// </summary>
             [NameInMap("duration")]
             [Validation(Required=false)]
             public double? Duration { get; set; }
+
+            /// <summary>
+            /// 是否开启请假证明
+            /// </summary>
             [NameInMap("enable")]
             [Validation(Required=false)]
             public bool? Enable { get; set; }
+
+            /// <summary>
+            /// 请假提示文案
+            /// </summary>
             [NameInMap("promptInformation")]
             [Validation(Required=false)]
             public string PromptInformation { get; set; }
+
+            /// <summary>
+            /// 请假证明单位hour，day
+            /// </summary>
             [NameInMap("unit")]
             [Validation(Required=false)]
             public string Unit { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 假期类型唯一标识
@@ -86,19 +102,35 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public UpdateLeaveTypeRequestSubmitTimeRule SubmitTimeRule { get; set; }
         public class UpdateLeaveTypeRequestSubmitTimeRule : TeaModel {
+            /// <summary>
+            /// 是否开启限时提交功能：仅且为true时开启
+            /// </summary>
             [NameInMap("enableTimeLimit")]
             [Validation(Required=false)]
             public bool? EnableTimeLimit { get; set; }
+
+            /// <summary>
+            /// 限制类型：before-提前；after-补交
+            /// </summary>
             [NameInMap("timeType")]
             [Validation(Required=false)]
             public string TimeType { get; set; }
+
+            /// <summary>
+            /// 时间单位：day-天；hour-小时
+            /// </summary>
             [NameInMap("timeUnit")]
             [Validation(Required=false)]
             public string TimeUnit { get; set; }
+
+            /// <summary>
+            /// 限制值：timeUnit=day时，有效值范围[0~30] 天；timeUnit=hour时，有效值范围[0~24] 小时
+            /// </summary>
             [NameInMap("timeValue")]
             [Validation(Required=false)]
             public long? TimeValue { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 适用范围规则列表：哪些部门/员工可以使用该假期类型，不传默认为全公司

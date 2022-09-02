@@ -23,13 +23,21 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         [Validation(Required=false)]
         public LinkSourceInfoIconUrl IconUrl { get; set; }
         public class LinkSourceInfoIconUrl : TeaModel {
+            /// <summary>
+            /// 默认的目录树图标。
+            /// </summary>
             [NameInMap("line")]
             [Validation(Required=false)]
             public string Line { get; set; }
+
+            /// <summary>
+            /// 被选中时的加深图标。
+            /// </summary>
             [NameInMap("small")]
             [Validation(Required=false)]
             public string Small { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 快捷方式关联的源文件ID（空间内唯一）。

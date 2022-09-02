@@ -16,7 +16,8 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
             [NameInMap("liveId")]
             [Validation(Required=false)]
             public string LiveId { get; set; }
-        };
+
+        }
 
     }
 

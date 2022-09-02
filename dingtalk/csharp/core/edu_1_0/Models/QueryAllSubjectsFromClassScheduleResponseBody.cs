@@ -30,25 +30,65 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public QueryAllSubjectsFromClassScheduleResponseBodyResultExt Ext { get; set; }
             public class QueryAllSubjectsFromClassScheduleResponseBodyResultExt : TeaModel {
+                /// <summary>
+                /// 学科背景颜色
+                /// </summary>
                 [NameInMap("backgroundColor")]
                 [Validation(Required=false)]
                 public string BackgroundColor { get; set; }
+
+                /// <summary>
+                /// 班级id。
+                /// </summary>
                 [NameInMap("classId")]
                 [Validation(Required=false)]
                 public long? ClassId { get; set; }
+
+                /// <summary>
+                /// 学科字体颜色
+                /// </summary>
                 [NameInMap("fontColor")]
                 [Validation(Required=false)]
                 public string FontColor { get; set; }
+
+                /// <summary>
+                /// 老师列表
+                /// </summary>
                 [NameInMap("teacherList")]
                 [Validation(Required=false)]
                 public List<QueryAllSubjectsFromClassScheduleResponseBodyResultExtTeacherList> TeacherList { get; set; }
                 public class QueryAllSubjectsFromClassScheduleResponseBodyResultExtTeacherList : TeaModel {
+                    /// <summary>
+                    /// 老师的头像url
+                    /// </summary>
+                    [NameInMap("avator")]
+                    [Validation(Required=false)]
                     public string Avator { get; set; }
+
+                    /// <summary>
+                    /// 老师名称。
+                    /// </summary>
+                    [NameInMap("name")]
+                    [Validation(Required=false)]
                     public string Name { get; set; }
+
+                    /// <summary>
+                    /// 老师的uid。
+                    /// </summary>
+                    [NameInMap("uid")]
+                    [Validation(Required=false)]
                     public long? Uid { get; set; }
+
+                    /// <summary>
+                    /// 老师的userid。
+                    /// </summary>
+                    [NameInMap("userId")]
+                    [Validation(Required=false)]
                     public string UserId { get; set; }
+
                 }
-            };
+
+            }
 
             /// <summary>
             /// 学段编码：  KINDERGARTEN：小学 PRIMARY_SCHOOL：小学 MODDLE_SCHOOL： 初中 HIGH_SCHOOL： 高中 UNIVERSITY：大学 NOT_SCHOOL：无学段

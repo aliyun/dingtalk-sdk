@@ -20,10 +20,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
             [NameInMap("fileId")]
             [Validation(Required=false)]
             public string FileId { get; set; }
+
             [NameInMap("uploadUrl")]
             [Validation(Required=false)]
             public string UploadUrl { get; set; }
-        };
+
+        }
 
         [NameInMap("message")]
         [Validation(Required=false)]

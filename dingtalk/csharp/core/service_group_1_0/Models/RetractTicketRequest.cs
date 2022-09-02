@@ -16,13 +16,19 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             [NameInMap("groupNoticeReceiverUnionIds")]
             [Validation(Required=false)]
             public List<string> GroupNoticeReceiverUnionIds { get; set; }
+
+            /// <summary>
+            /// 是否向群内推送一个全员可见工单通知卡片
+            /// </summary>
             [NameInMap("noticeAllGroupMember")]
             [Validation(Required=false)]
             public bool? NoticeAllGroupMember { get; set; }
+
             [NameInMap("workNoticeReceiverUnionIds")]
             [Validation(Required=false)]
             public List<string> WorkNoticeReceiverUnionIds { get; set; }
-        };
+
+        }
 
         [NameInMap("openTeamId")]
         [Validation(Required=false)]
@@ -50,13 +56,21 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             [Validation(Required=false)]
             public List<RetractTicketRequestTicketMemoAttachments> Attachments { get; set; }
             public class RetractTicketRequestTicketMemoAttachments : TeaModel {
+                [NameInMap("fileName")]
+                [Validation(Required=false)]
                 public string FileName { get; set; }
+
+                [NameInMap("key")]
+                [Validation(Required=false)]
                 public string Key { get; set; }
+
             }
+
             [NameInMap("memo")]
             [Validation(Required=false)]
             public string Memo { get; set; }
-        };
+
+        }
 
     }
 

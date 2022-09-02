@@ -24,22 +24,34 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                 [NameInMap("deleted")]
                 [Validation(Required=false)]
                 public bool? Deleted { get; set; }
+
+                /// <summary>
+                /// 节点类型
+                /// </summary>
                 [NameInMap("docType")]
                 [Validation(Required=false)]
                 public string DocType { get; set; }
+
+                /// <summary>
+                /// 最后编辑时间
+                /// </summary>
                 [NameInMap("lastEditTime")]
                 [Validation(Required=false)]
                 public long? LastEditTime { get; set; }
+
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
+
                 [NameInMap("nodeId")]
                 [Validation(Required=false)]
                 public string NodeId { get; set; }
+
                 [NameInMap("url")]
                 [Validation(Required=false)]
                 public string Url { get; set; }
-            };
+
+            }
 
             [NameInMap("workspaceBO")]
             [Validation(Required=false)]
@@ -48,10 +60,12 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
+
                 [NameInMap("workspaceId")]
                 [Validation(Required=false)]
                 public string WorkspaceId { get; set; }
-            };
+
+            }
 
         }
 

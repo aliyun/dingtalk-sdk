@@ -16,19 +16,35 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         [Validation(Required=false)]
         public GetDownloadInfoResponseBodyDownloadInfo DownloadInfo { get; set; }
         public class GetDownloadInfoResponseBodyDownloadInfo : TeaModel {
+            /// <summary>
+            /// 加签url过期时间
+            /// </summary>
             [NameInMap("expirationSeconds")]
             [Validation(Required=false)]
             public int? ExpirationSeconds { get; set; }
+
+            /// <summary>
+            /// headers
+            /// </summary>
             [NameInMap("headers")]
             [Validation(Required=false)]
-            public Dictionary<string, string> Headers { get; set; }
+            public Dictionary<string, object> Headers { get; set; }
+
+            /// <summary>
+            /// 内网加签url
+            /// </summary>
             [NameInMap("internalResourceUrl")]
             [Validation(Required=false)]
             public string InternalResourceUrl { get; set; }
+
+            /// <summary>
+            /// 加签url
+            /// </summary>
             [NameInMap("resourceUrl")]
             [Validation(Required=false)]
             public string ResourceUrl { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 文件所存储的区域

@@ -16,10 +16,14 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public GetTbOrgIdByDingOrgIdResponseBodyResult Result { get; set; }
         public class GetTbOrgIdByDingOrgIdResponseBodyResult : TeaModel {
+            /// <summary>
+            /// Teambition企业Id
+            /// </summary>
             [NameInMap("tbOrganizationId")]
             [Validation(Required=false)]
             public string TbOrganizationId { get; set; }
-        };
+
+        }
 
     }
 

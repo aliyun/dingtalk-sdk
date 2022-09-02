@@ -44,13 +44,21 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         [Validation(Required=false)]
         public GetTodoTaskBySourceIdResponseBodyDetailUrl DetailUrl { get; set; }
         public class GetTodoTaskBySourceIdResponseBodyDetailUrl : TeaModel {
+            /// <summary>
+            /// app端详情页地址
+            /// </summary>
             [NameInMap("appUrl")]
             [Validation(Required=false)]
             public string AppUrl { get; set; }
+
+            /// <summary>
+            /// pc端详情页地址
+            /// </summary>
             [NameInMap("pcUrl")]
             [Validation(Required=false)]
             public string PcUrl { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 完成状态

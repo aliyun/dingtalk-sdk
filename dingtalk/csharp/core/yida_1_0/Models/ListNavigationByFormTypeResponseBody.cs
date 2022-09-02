@@ -34,16 +34,28 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public ListNavigationByFormTypeResponseBodyResultTitle Title { get; set; }
             public class ListNavigationByFormTypeResponseBodyResultTitle : TeaModel {
+                /// <summary>
+                /// 中文名称
+                /// </summary>
                 [NameInMap("nameInChinese")]
                 [Validation(Required=false)]
                 public string NameInChinese { get; set; }
+
+                /// <summary>
+                /// 英文名称
+                /// </summary>
                 [NameInMap("nameInEnglish")]
                 [Validation(Required=false)]
                 public string NameInEnglish { get; set; }
+
+                /// <summary>
+                /// type
+                /// </summary>
                 [NameInMap("type")]
                 [Validation(Required=false)]
                 public string Type { get; set; }
-            };
+
+            }
 
         }
 

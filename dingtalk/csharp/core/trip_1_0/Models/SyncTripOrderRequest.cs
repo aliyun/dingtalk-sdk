@@ -41,13 +41,21 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         [Validation(Required=false)]
         public SyncTripOrderRequestEvent Event { get; set; }
         public class SyncTripOrderRequestEvent : TeaModel {
+            /// <summary>
+            /// 订单事件
+            /// </summary>
             [NameInMap("action")]
             [Validation(Required=false)]
             public string Action { get; set; }
+
+            /// <summary>
+            /// 事件时间
+            /// </summary>
             [NameInMap("gmtAction")]
             [Validation(Required=false)]
             public string GmtAction { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 下单时间
@@ -175,19 +183,38 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
             [Validation(Required=false)]
             public SyncTripOrderRequestOrderDetailsHotelLocation HotelLocation { get; set; }
             public class SyncTripOrderRequestOrderDetailsHotelLocation : TeaModel {
+                /// <summary>
+                /// 纬度
+                /// </summary>
                 [NameInMap("lat")]
                 [Validation(Required=false)]
                 public string Lat { get; set; }
+
+                /// <summary>
+                /// 经度
+                /// </summary>
                 [NameInMap("lon")]
                 [Validation(Required=false)]
                 public string Lon { get; set; }
+
+                /// <summary>
+                /// 坐标数据源
+                /// - BD09：来自百度地图的经纬坐标
+                /// - GCJ02: 来自高德地图，腾讯地图，Apple地图的坐标
+                /// - WGS84: 来自GPS的坐标
+                /// </summary>
                 [NameInMap("source")]
                 [Validation(Required=false)]
                 public string Source { get; set; }
+
+                /// <summary>
+                /// 定位url
+                /// </summary>
                 [NameInMap("url")]
                 [Validation(Required=false)]
                 public string Url { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 酒店名称

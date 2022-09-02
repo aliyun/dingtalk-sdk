@@ -16,13 +16,21 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public UpdateInteractiveCardRequestCardData CardData { get; set; }
         public class UpdateInteractiveCardRequestCardData : TeaModel {
+            /// <summary>
+            /// 卡片模板内容替换参数-多媒体类型
+            /// </summary>
             [NameInMap("cardMediaIdParamMap")]
             [Validation(Required=false)]
             public Dictionary<string, string> CardMediaIdParamMap { get; set; }
+
+            /// <summary>
+            /// 卡片模板内容替换参数-普通文本类型
+            /// </summary>
             [NameInMap("cardParamMap")]
             [Validation(Required=false)]
             public Dictionary<string, string> CardParamMap { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 发送可交互卡片的一些功能选项
@@ -31,13 +39,21 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public UpdateInteractiveCardRequestCardOptions CardOptions { get; set; }
         public class UpdateInteractiveCardRequestCardOptions : TeaModel {
+            /// <summary>
+            /// 按key更新cardData数据(不填默认覆盖更新)
+            /// </summary>
             [NameInMap("updateCardDataByKey")]
             [Validation(Required=false)]
             public bool? UpdateCardDataByKey { get; set; }
+
+            /// <summary>
+            /// 按key更新privateData用户数据(不填默认覆盖更新)
+            /// </summary>
             [NameInMap("updatePrivateDataByKey")]
             [Validation(Required=false)]
             public bool? UpdatePrivateDataByKey { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 唯一标识一张卡片的外部ID

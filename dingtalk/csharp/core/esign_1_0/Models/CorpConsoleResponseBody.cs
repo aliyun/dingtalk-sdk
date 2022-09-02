@@ -20,7 +20,8 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
             [NameInMap("orgConsoleUrl")]
             [Validation(Required=false)]
             public long? OrgConsoleUrl { get; set; }
-        };
+
+        }
 
         [NameInMap("message")]
         [Validation(Required=false)]

@@ -67,13 +67,21 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public BatchAddRelationDatasRequestRelationListRelationPermissionDTO RelationPermissionDTO { get; set; }
             public class BatchAddRelationDatasRequestRelationListRelationPermissionDTO : TeaModel {
+                /// <summary>
+                /// 协同人列表
+                /// </summary>
                 [NameInMap("participantUserIds")]
                 [Validation(Required=false)]
                 public List<string> ParticipantUserIds { get; set; }
+
+                /// <summary>
+                /// 负责人列表
+                /// </summary>
                 [NameInMap("principalUserIds")]
                 [Validation(Required=false)]
                 public List<string> PrincipalUserIds { get; set; }
-            };
+
+            }
 
         }
 

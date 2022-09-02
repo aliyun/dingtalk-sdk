@@ -186,6 +186,9 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public GroupAddRequestFreeCheckSetting FreeCheckSetting { get; set; }
         public class GroupAddRequestFreeCheckSetting : TeaModel {
+            /// <summary>
+            /// 休息日打卡间隔设置。
+            /// </summary>
             [NameInMap("freeCheckGap")]
             [Validation(Required=false)]
             public GroupAddRequestFreeCheckSettingFreeCheckGap FreeCheckGap { get; set; }
@@ -205,7 +208,8 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
                 public int? OnOffCheckGapMinutes { get; set; }
 
             }
-        };
+
+        }
 
         /// <summary>
         /// 休息日打卡方式。

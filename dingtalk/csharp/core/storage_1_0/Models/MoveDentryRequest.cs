@@ -16,13 +16,30 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         [Validation(Required=false)]
         public MoveDentryRequestOption Option { get; set; }
         public class MoveDentryRequestOption : TeaModel {
+            /// <summary>
+            /// 文件(夹)名称冲突策略
+            /// 枚举值:
+            /// 	AUTO_RENAME: 自动重命名
+            /// 	OVERWRITE: 覆盖
+            /// 	RETURN_DENTRY_IF_EXISTS: 返回已存在文件
+            /// 	RETURN_ERROR_IF_EXISTS: 文件已存在时报错
+            /// 默认值:
+            /// 	AUTO_RENAME
+            /// </summary>
             [NameInMap("conflictStrategy")]
             [Validation(Required=false)]
             public string ConflictStrategy { get; set; }
+
+            /// <summary>
+            /// 移动后，是否保留权限
+            /// 默认值:
+            /// 	false
+            /// </summary>
             [NameInMap("presevePermissions")]
             [Validation(Required=false)]
             public bool? PresevePermissions { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 目标文件夹ID

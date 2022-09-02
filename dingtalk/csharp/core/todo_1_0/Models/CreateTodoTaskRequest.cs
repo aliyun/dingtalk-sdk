@@ -32,10 +32,12 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
                 [NameInMap("body")]
                 [Validation(Required=false)]
                 public string Body { get; set; }
+
                 [NameInMap("header")]
                 [Validation(Required=false)]
-                public Dictionary<string, string> Header { get; set; }
-            };
+                public Dictionary<string, object> Header { get; set; }
+
+            }
 
             [NameInMap("pcUrl")]
             [Validation(Required=false)]
@@ -102,13 +104,21 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         [Validation(Required=false)]
         public CreateTodoTaskRequestDetailUrl DetailUrl { get; set; }
         public class CreateTodoTaskRequestDetailUrl : TeaModel {
+            /// <summary>
+            /// app端详情页url
+            /// </summary>
             [NameInMap("appUrl")]
             [Validation(Required=false)]
             public string AppUrl { get; set; }
+
+            /// <summary>
+            /// pc端详情页url
+            /// </summary>
             [NameInMap("pcUrl")]
             [Validation(Required=false)]
             public string PcUrl { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 截止时间
@@ -138,10 +148,14 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         [Validation(Required=false)]
         public CreateTodoTaskRequestNotifyConfigs NotifyConfigs { get; set; }
         public class CreateTodoTaskRequestNotifyConfigs : TeaModel {
+            /// <summary>
+            /// ding通知配置：1钉弹框通知
+            /// </summary>
             [NameInMap("dingNotify")]
             [Validation(Required=false)]
             public string DingNotify { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 参与者列表，需传用户的unionId

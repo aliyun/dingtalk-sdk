@@ -16,10 +16,14 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
         [Validation(Required=false)]
         public QueryUserPointsResponseBodyResult Result { get; set; }
         public class QueryUserPointsResponseBodyResult : TeaModel {
+            /// <summary>
+            /// 员工积分数量
+            /// </summary>
             [NameInMap("amount")]
             [Validation(Required=false)]
             public long? Amount { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 请求响应状态

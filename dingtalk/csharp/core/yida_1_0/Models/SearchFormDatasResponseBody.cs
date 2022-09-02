@@ -100,15 +100,30 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public SearchFormDatasResponseBodyDataModifyUser ModifyUser { get; set; }
             public class SearchFormDatasResponseBodyDataModifyUser : TeaModel {
+                /// <summary>
+                /// 部门名称
+                /// </summary>
                 [NameInMap("departmentName")]
                 [Validation(Required=false)]
                 public string DepartmentName { get; set; }
+
+                /// <summary>
+                /// 邮箱
+                /// </summary>
                 [NameInMap("email")]
                 [Validation(Required=false)]
                 public string Email { get; set; }
+
+                /// <summary>
+                /// 用户工号
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
+
+                /// <summary>
+                /// 用户名
+                /// </summary>
                 [NameInMap("userName")]
                 [Validation(Required=false)]
                 public SearchFormDatasResponseBodyDataModifyUserUserName UserName { get; set; }
@@ -135,7 +150,8 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
                     public string Type { get; set; }
 
                 }
-            };
+
+            }
 
             /// <summary>
             /// 发起人
@@ -144,15 +160,30 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public SearchFormDatasResponseBodyDataOriginator Originator { get; set; }
             public class SearchFormDatasResponseBodyDataOriginator : TeaModel {
+                /// <summary>
+                /// 部门名称
+                /// </summary>
                 [NameInMap("departmentName")]
                 [Validation(Required=false)]
                 public string DepartmentName { get; set; }
+
+                /// <summary>
+                /// 邮箱
+                /// </summary>
                 [NameInMap("email")]
                 [Validation(Required=false)]
                 public string Email { get; set; }
+
+                /// <summary>
+                /// 用户工号
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
+
+                /// <summary>
+                /// 用户名
+                /// </summary>
                 [NameInMap("userName")]
                 [Validation(Required=false)]
                 public SearchFormDatasResponseBodyDataOriginatorUserName UserName { get; set; }
@@ -179,7 +210,8 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
                     public string Type { get; set; }
 
                 }
-            };
+
+            }
 
             /// <summary>
             /// 批次号

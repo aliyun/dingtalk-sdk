@@ -20,10 +20,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
             [NameInMap("orgRealName")]
             [Validation(Required=false)]
             public string OrgRealName { get; set; }
+
             [NameInMap("realName")]
             [Validation(Required=false)]
             public bool? RealName { get; set; }
-        };
+
+        }
 
         [NameInMap("message")]
         [Validation(Required=false)]

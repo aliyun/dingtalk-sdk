@@ -17,13 +17,21 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
             [Validation(Required=false)]
             public List<QueryOfficialDatasetListResponseBodyResultRows> Rows { get; set; }
             public class QueryOfficialDatasetListResponseBodyResultRows : TeaModel {
+                [NameInMap("displayName")]
+                [Validation(Required=false)]
                 public string DisplayName { get; set; }
+
+                [NameInMap("dsId")]
+                [Validation(Required=false)]
                 public string DsId { get; set; }
+
             }
+
             [NameInMap("totalCount")]
             [Validation(Required=false)]
             public long? TotalCount { get; set; }
-        };
+
+        }
 
         [NameInMap("success")]
         [Validation(Required=false)]

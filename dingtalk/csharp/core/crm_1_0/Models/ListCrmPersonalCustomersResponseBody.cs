@@ -60,10 +60,12 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 [NameInMap("ownerStaffIds")]
                 [Validation(Required=false)]
                 public List<string> OwnerStaffIds { get; set; }
+
                 [NameInMap("participantStaffIds")]
                 [Validation(Required=false)]
                 public List<string> ParticipantStaffIds { get; set; }
-            };
+
+            }
 
             [NameInMap("procInstStatus")]
             [Validation(Required=false)]

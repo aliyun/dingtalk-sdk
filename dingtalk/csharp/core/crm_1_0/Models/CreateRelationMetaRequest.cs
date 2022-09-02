@@ -20,11 +20,17 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [NameInMap("desc")]
             [Validation(Required=false)]
             public string Desc { get; set; }
+
             [NameInMap("items")]
             [Validation(Required=false)]
             public List<CreateRelationMetaRequestRelationMetaDTOItems> Items { get; set; }
             public class CreateRelationMetaRequestRelationMetaDTOItems : TeaModel {
+                [NameInMap("componentName")]
+                [Validation(Required=false)]
                 public string ComponentName { get; set; }
+
+                [NameInMap("props")]
+                [Validation(Required=false)]
                 public CreateRelationMetaRequestRelationMetaDTOItemsProps Props { get; set; }
                 public class CreateRelationMetaRequestRelationMetaDTOItemsProps : TeaModel {
                     [NameInMap("align")]
@@ -126,14 +132,18 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                     public string Unit { get; set; }
 
                 }
+
             }
+
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
+
             [NameInMap("relationType")]
             [Validation(Required=false)]
             public string RelationType { get; set; }
-        };
+
+        }
 
         [NameInMap("tenant")]
         [Validation(Required=false)]

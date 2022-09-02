@@ -16,26 +16,63 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         [Validation(Required=false)]
         public GetCurrentAppResponseBodyApp App { get; set; }
         public class GetCurrentAppResponseBodyApp : TeaModel {
+            /// <summary>
+            /// 开放平台应用appId
+            /// </summary>
             [NameInMap("appId")]
             [Validation(Required=false)]
             public string AppId { get; set; }
+
+            /// <summary>
+            /// 应用归属企业的id
+            /// </summary>
             [NameInMap("corpId")]
             [Validation(Required=false)]
             public string CorpId { get; set; }
+
+            /// <summary>
+            /// 应用创建时间
+            /// </summary>
             [NameInMap("createTime")]
             [Validation(Required=false)]
             public string CreateTime { get; set; }
+
+            /// <summary>
+            /// 应用修改时间
+            /// </summary>
             [NameInMap("modifiedTime")]
             [Validation(Required=false)]
             public string ModifiedTime { get; set; }
+
+            /// <summary>
+            /// 应用名称，对应开放平台应用名称
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
+
+            /// <summary>
+            /// 分区容量信息
+            /// </summary>
             [NameInMap("partitions")]
             [Validation(Required=false)]
             public List<GetCurrentAppResponseBodyAppPartitions> Partitions { get; set; }
             public class GetCurrentAppResponseBodyAppPartitions : TeaModel {
+                /// <summary>
+                /// 分区类型
+                /// 枚举值:
+                /// 	PUBLIC_OSS_PARTITION: 公有云OSS存储分区
+                /// 	MINI_OSS_PARTITION: 专属Mini OSS存储分区
+                /// </summary>
+                [NameInMap("partitionType")]
+                [Validation(Required=false)]
                 public string PartitionType { get; set; }
+
+                /// <summary>
+                /// 容量信息
+                /// </summary>
+                [NameInMap("quota")]
+                [Validation(Required=false)]
                 public GetCurrentAppResponseBodyAppPartitionsQuota Quota { get; set; }
                 public class GetCurrentAppResponseBodyAppPartitionsQuota : TeaModel {
                     /// <summary>
@@ -70,8 +107,10 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
                     public long? Used { get; set; }
 
                 }
+
             }
-        };
+
+        }
 
     }
 

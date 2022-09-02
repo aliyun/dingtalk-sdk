@@ -44,16 +44,28 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel1 PartnerLabelVOLevel1 { get; set; }
             public class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel1 : TeaModel {
+                /// <summary>
+                /// 伙伴类型id
+                /// </summary>
                 [NameInMap("labelId")]
                 [Validation(Required=false)]
                 public long? LabelId { get; set; }
+
+                /// <summary>
+                /// 伙伴类型
+                /// </summary>
                 [NameInMap("labelName")]
                 [Validation(Required=false)]
                 public string LabelName { get; set; }
+
+                /// <summary>
+                /// 伙伴类型层级
+                /// </summary>
                 [NameInMap("levelNum")]
                 [Validation(Required=false)]
                 public long? LevelNum { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 部门二级伙伴类型
@@ -62,16 +74,28 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel2 PartnerLabelVOLevel2 { get; set; }
             public class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel2 : TeaModel {
+                /// <summary>
+                /// 伙伴类型id
+                /// </summary>
                 [NameInMap("labelId")]
                 [Validation(Required=false)]
                 public long? LabelId { get; set; }
+
+                /// <summary>
+                /// 伙伴类型
+                /// </summary>
                 [NameInMap("labelName")]
                 [Validation(Required=false)]
                 public string LabelName { get; set; }
+
+                /// <summary>
+                /// 伙伴类型层级
+                /// </summary>
                 [NameInMap("levelNum")]
                 [Validation(Required=false)]
                 public long? LevelNum { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 部门三级伙伴类型
@@ -80,16 +104,28 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel3 PartnerLabelVOLevel3 { get; set; }
             public class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel3 : TeaModel {
+                /// <summary>
+                /// 伙伴类型id
+                /// </summary>
                 [NameInMap("labelId")]
                 [Validation(Required=false)]
                 public long? LabelId { get; set; }
+
+                /// <summary>
+                /// 伙伴类型
+                /// </summary>
                 [NameInMap("labelName")]
                 [Validation(Required=false)]
                 public string LabelName { get; set; }
+
+                /// <summary>
+                /// 伙伴类型层级
+                /// </summary>
                 [NameInMap("levelNum")]
                 [Validation(Required=false)]
                 public long? LevelNum { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 部门四级伙伴类型
@@ -98,16 +134,28 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel4 PartnerLabelVOLevel4 { get; set; }
             public class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel4 : TeaModel {
+                /// <summary>
+                /// 伙伴类型id
+                /// </summary>
                 [NameInMap("labelId")]
                 [Validation(Required=false)]
                 public long? LabelId { get; set; }
+
+                /// <summary>
+                /// 伙伴类型
+                /// </summary>
                 [NameInMap("labelName")]
                 [Validation(Required=false)]
                 public string LabelName { get; set; }
+
+                /// <summary>
+                /// 伙伴类型层级
+                /// </summary>
                 [NameInMap("levelNum")]
                 [Validation(Required=false)]
                 public long? LevelNum { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 部门五级伙伴类型
@@ -116,16 +164,28 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel5 PartnerLabelVOLevel5 { get; set; }
             public class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel5 : TeaModel {
+                /// <summary>
+                /// 伙伴类型id
+                /// </summary>
                 [NameInMap("labelId")]
                 [Validation(Required=false)]
                 public long? LabelId { get; set; }
+
+                /// <summary>
+                /// 伙伴类型
+                /// </summary>
                 [NameInMap("labelName")]
                 [Validation(Required=false)]
                 public string LabelName { get; set; }
+
+                /// <summary>
+                /// 伙伴类型层级
+                /// </summary>
                 [NameInMap("levelNum")]
                 [Validation(Required=false)]
                 public long? LevelNum { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 部门伙伴编码

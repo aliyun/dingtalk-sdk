@@ -121,10 +121,14 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
                 [Validation(Required=false)]
                 public BatchQueryObjectiveResponseBodyDataKrListProgress Progress { get; set; }
                 public class BatchQueryObjectiveResponseBodyDataKrListProgress : TeaModel {
+                    /// <summary>
+                    /// 百分比。
+                    /// </summary>
                     [NameInMap("percent")]
                     [Validation(Required=false)]
                     public int? Percent { get; set; }
-                };
+
+                }
 
                 /// <summary>
                 /// 所占分数。
@@ -149,22 +153,42 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
             [Validation(Required=false)]
             public BatchQueryObjectiveResponseBodyDataOwner Owner { get; set; }
             public class BatchQueryObjectiveResponseBodyDataOwner : TeaModel {
+                /// <summary>
+                /// 所属者头像。 ID
+                /// </summary>
                 [NameInMap("avatarMediaId")]
                 [Validation(Required=false)]
                 public Stream AvatarMediaId { get; set; }
+
+                /// <summary>
+                /// 所属者组织 I。D
+                /// </summary>
                 [NameInMap("corpId")]
                 [Validation(Required=false)]
                 public Stream CorpId { get; set; }
+
+                /// <summary>
+                /// 所属者在 OKR 系统中的 ID。
+                /// </summary>
                 [NameInMap("id")]
                 [Validation(Required=false)]
                 public Stream Id { get; set; }
+
+                /// <summary>
+                /// 所属者昵称。
+                /// </summary>
                 [NameInMap("nickname")]
                 [Validation(Required=false)]
                 public Stream Nickname { get; set; }
+
+                /// <summary>
+                /// 所属者 userId。
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public Stream UserId { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 周期 ID。
@@ -194,10 +218,14 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
             [Validation(Required=false)]
             public BatchQueryObjectiveResponseBodyDataProgress Progress { get; set; }
             public class BatchQueryObjectiveResponseBodyDataProgress : TeaModel {
+                /// <summary>
+                /// 百分比。
+                /// </summary>
                 [NameInMap("percent")]
                 [Validation(Required=false)]
                 public int? Percent { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 百分比值。

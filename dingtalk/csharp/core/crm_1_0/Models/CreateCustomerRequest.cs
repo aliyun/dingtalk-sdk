@@ -74,13 +74,21 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public CreateCustomerRequestPermission Permission { get; set; }
         public class CreateCustomerRequestPermission : TeaModel {
+            /// <summary>
+            /// 负责人
+            /// </summary>
             [NameInMap("ownerStaffIds")]
             [Validation(Required=false)]
             public List<string> OwnerStaffIds { get; set; }
+
+            /// <summary>
+            /// 协同人
+            /// </summary>
             [NameInMap("participantStaffIds")]
             [Validation(Required=false)]
             public List<string> ParticipantStaffIds { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 保存配置项
@@ -89,19 +97,35 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public CreateCustomerRequestSaveOption SaveOption { get; set; }
         public class CreateCustomerRequestSaveOption : TeaModel {
+            /// <summary>
+            /// 客户已存在时的处理策略：APPEND_CONTACT_FORCE 直接追加联系人； REJECT 返回失败
+            /// </summary>
             [NameInMap("customerExistedPolicy")]
             [Validation(Required=false)]
             public string CustomerExistedPolicy { get; set; }
+
+            /// <summary>
+            /// 跳过uk查重
+            /// </summary>
             [NameInMap("skipDuplicateCheck")]
             [Validation(Required=false)]
             public bool? SkipDuplicateCheck { get; set; }
+
+            /// <summary>
+            /// 关注配置：0 不处理， 1 自动关注（需要单独申请白名单）
+            /// </summary>
             [NameInMap("subscribePolicy")]
             [Validation(Required=false)]
             public long? SubscribePolicy { get; set; }
+
+            /// <summary>
+            /// 保存联系人失败时是否阻断
+            /// </summary>
             [NameInMap("throwExceptionWhileSavingContactFailed")]
             [Validation(Required=false)]
             public bool? ThrowExceptionWhileSavingContactFailed { get; set; }
-        };
+
+        }
 
     }
 

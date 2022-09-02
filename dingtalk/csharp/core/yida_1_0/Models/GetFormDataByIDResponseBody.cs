@@ -44,12 +44,23 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [Validation(Required=false)]
         public GetFormDataByIDResponseBodyOriginator Originator { get; set; }
         public class GetFormDataByIDResponseBodyOriginator : TeaModel {
+            /// <summary>
+            /// 部门名称
+            /// </summary>
             [NameInMap("departmentName")]
             [Validation(Required=false)]
             public string DepartmentName { get; set; }
+
+            /// <summary>
+            /// 邮箱
+            /// </summary>
             [NameInMap("email")]
             [Validation(Required=false)]
             public string Email { get; set; }
+
+            /// <summary>
+            /// 用户名
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public GetFormDataByIDResponseBodyOriginatorName Name { get; set; }
@@ -76,10 +87,15 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
                 public string Type { get; set; }
 
             }
+
+            /// <summary>
+            /// 用户工号
+            /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
             public string UserId { get; set; }
-        };
+
+        }
 
     }
 

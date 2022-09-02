@@ -80,16 +80,28 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         [Validation(Required=false)]
         public GetResidentInfoResponseBodyProjectManager ProjectManager { get; set; }
         public class GetResidentInfoResponseBodyProjectManager : TeaModel {
+            /// <summary>
+            /// 头像
+            /// </summary>
             [NameInMap("avatar")]
             [Validation(Required=false)]
             public string Avatar { get; set; }
+
+            /// <summary>
+            /// 人员唯一标识
+            /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
             public string UserId { get; set; }
+
+            /// <summary>
+            /// 姓名
+            /// </summary>
             [NameInMap("userName")]
             [Validation(Required=false)]
             public string UserName { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 物业部门群cid

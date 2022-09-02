@@ -30,13 +30,21 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         [Validation(Required=false)]
         public TeamVOCreator Creator { get; set; }
         public class TeamVOCreator : TeaModel {
+            /// <summary>
+            /// 名字
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
+
+            /// <summary>
+            /// unionId
+            /// </summary>
             [NameInMap("unionId")]
             [Validation(Required=false)]
             public string UnionId { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 团队描述
@@ -73,13 +81,21 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         [Validation(Required=false)]
         public TeamVORelatedDeptInfo RelatedDeptInfo { get; set; }
         public class TeamVORelatedDeptInfo : TeaModel {
+            /// <summary>
+            /// 部门id
+            /// </summary>
             [NameInMap("deptId")]
             [Validation(Required=false)]
             public string DeptId { get; set; }
+
+            /// <summary>
+            /// 部门名称
+            /// </summary>
             [NameInMap("deptName")]
             [Validation(Required=false)]
             public string DeptName { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 团队状态
@@ -109,13 +125,21 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         [Validation(Required=false)]
         public TeamVOUpdater Updater { get; set; }
         public class TeamVOUpdater : TeaModel {
+            /// <summary>
+            /// 名字
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
+
+            /// <summary>
+            /// unionId
+            /// </summary>
             [NameInMap("unionId")]
             [Validation(Required=false)]
             public string UnionId { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 团队链接
@@ -131,10 +155,14 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         [Validation(Required=false)]
         public TeamVOVisitInfo VisitInfo { get; set; }
         public class TeamVOVisitInfo : TeaModel {
+            /// <summary>
+            /// 用户对这个团队的访问情况
+            /// </summary>
             [NameInMap("roleCode")]
             [Validation(Required=false)]
             public string RoleCode { get; set; }
-        };
+
+        }
 
     }
 

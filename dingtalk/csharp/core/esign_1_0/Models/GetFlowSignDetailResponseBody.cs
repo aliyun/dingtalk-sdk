@@ -20,17 +20,26 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
             [NameInMap("businessSense")]
             [Validation(Required=false)]
             public string BusinessSense { get; set; }
+
             [NameInMap("flowStatus")]
             [Validation(Required=false)]
             public int? FlowStatus { get; set; }
+
             [NameInMap("signers")]
             [Validation(Required=false)]
             public List<GetFlowSignDetailResponseBodyDataSigners> Signers { get; set; }
             public class GetFlowSignDetailResponseBodyDataSigners : TeaModel {
+                [NameInMap("signStatus")]
+                [Validation(Required=false)]
                 public int? SignStatus { get; set; }
+
+                [NameInMap("signerName")]
+                [Validation(Required=false)]
                 public string SignerName { get; set; }
+
             }
-        };
+
+        }
 
         [NameInMap("message")]
         [Validation(Required=false)]

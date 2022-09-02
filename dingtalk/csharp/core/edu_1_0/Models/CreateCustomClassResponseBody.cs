@@ -16,10 +16,14 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public CreateCustomClassResponseBodyResult Result { get; set; }
         public class CreateCustomClassResponseBodyResult : TeaModel {
+            /// <summary>
+            /// 班级ID
+            /// </summary>
             [NameInMap("deptId")]
             [Validation(Required=false)]
             public long? DeptId { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// success

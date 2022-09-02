@@ -17,10 +17,17 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public List<BatchOrgCreateHWResponseBodyResultPublishList> PublishList { get; set; }
             public class BatchOrgCreateHWResponseBodyResultPublishList : TeaModel {
+                [NameInMap("corpid")]
+                [Validation(Required=false)]
                 public string Corpid { get; set; }
+
+                [NameInMap("hwid")]
+                [Validation(Required=false)]
                 public long? Hwid { get; set; }
+
             }
-        };
+
+        }
 
     }
 

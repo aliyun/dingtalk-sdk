@@ -16,13 +16,21 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public UpdateOrganizationTaskDueDateResponseBodyResult Result { get; set; }
         public class UpdateOrganizationTaskDueDateResponseBodyResult : TeaModel {
+            /// <summary>
+            /// 任务截止时间
+            /// </summary>
             [NameInMap("dueDate")]
             [Validation(Required=false)]
             public string DueDate { get; set; }
+
+            /// <summary>
+            /// 更新时间
+            /// </summary>
             [NameInMap("updateTime")]
             [Validation(Required=false)]
             public string UpdateTime { get; set; }
-        };
+
+        }
 
     }
 

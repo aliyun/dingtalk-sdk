@@ -16,14 +16,35 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         [Validation(Required=false)]
         public GetOrgResponseBodyOrg Org { get; set; }
         public class GetOrgResponseBodyOrg : TeaModel {
+            /// <summary>
+            /// 企业id
+            /// </summary>
             [NameInMap("corpId")]
             [Validation(Required=false)]
             public string CorpId { get; set; }
+
+            /// <summary>
+            /// 分区容量信息
+            /// </summary>
             [NameInMap("partitions")]
             [Validation(Required=false)]
             public List<GetOrgResponseBodyOrgPartitions> Partitions { get; set; }
             public class GetOrgResponseBodyOrgPartitions : TeaModel {
+                /// <summary>
+                /// 分区类型
+                /// 枚举值:
+                /// 	PUBLIC_OSS_PARTITION: 公有云OSS存储分区
+                /// 	MINI_OSS_PARTITION: 专属Mini OSS存储分区
+                /// </summary>
+                [NameInMap("partitionType")]
+                [Validation(Required=false)]
                 public string PartitionType { get; set; }
+
+                /// <summary>
+                /// 容量信息
+                /// </summary>
+                [NameInMap("quota")]
+                [Validation(Required=false)]
                 public GetOrgResponseBodyOrgPartitionsQuota Quota { get; set; }
                 public class GetOrgResponseBodyOrgPartitionsQuota : TeaModel {
                     /// <summary>
@@ -58,8 +79,10 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
                     public long? Used { get; set; }
 
                 }
+
             }
-        };
+
+        }
 
     }
 

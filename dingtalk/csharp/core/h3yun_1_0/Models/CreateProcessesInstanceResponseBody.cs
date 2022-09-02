@@ -23,10 +23,14 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
         [Validation(Required=false)]
         public CreateProcessesInstanceResponseBodyData Data { get; set; }
         public class CreateProcessesInstanceResponseBodyData : TeaModel {
+            /// <summary>
+            /// 流程实例ID
+            /// </summary>
             [NameInMap("processInstanceId")]
             [Validation(Required=false)]
             public string ProcessInstanceId { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 提示信息

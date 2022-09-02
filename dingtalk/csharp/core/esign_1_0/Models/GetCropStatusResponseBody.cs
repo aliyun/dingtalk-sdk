@@ -20,10 +20,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
             [NameInMap("authStatus")]
             [Validation(Required=false)]
             public string AuthStatus { get; set; }
+
             [NameInMap("installStatus")]
             [Validation(Required=false)]
             public string InstallStatus { get; set; }
-        };
+
+        }
 
         [NameInMap("message")]
         [Validation(Required=false)]

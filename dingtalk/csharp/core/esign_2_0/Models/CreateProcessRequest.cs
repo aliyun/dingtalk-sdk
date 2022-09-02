@@ -120,10 +120,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
                 [Validation(Required=false)]
                 public CreateProcessRequestParticipantsSignPosListSignDate SignDate { get; set; }
                 public class CreateProcessRequestParticipantsSignPosListSignDate : TeaModel {
+                    /// <summary>
+                    /// 签署区时间格式， 支持yyyy/MM/dd, yyyy-MM-dd, yyyy年MM月dd日
+                    /// </summary>
                     [NameInMap("format")]
                     [Validation(Required=false)]
                     public string Format { get; set; }
-                };
+
+                }
 
                 /// <summary>
                 /// 签署要求,1-企业章 2-经办人
@@ -173,13 +177,16 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
             [NameInMap("mobileUrl")]
             [Validation(Required=false)]
             public string MobileUrl { get; set; }
+
             [NameInMap("pcUrl")]
             [Validation(Required=false)]
             public string PcUrl { get; set; }
+
             [NameInMap("showText")]
             [Validation(Required=false)]
             public string ShowText { get; set; }
-        };
+
+        }
 
         [NameInMap("taskName")]
         [Validation(Required=false)]

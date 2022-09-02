@@ -37,16 +37,28 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public UpdateSubscribedCalendarsRequestSubscribeScope SubscribeScope { get; set; }
         public class UpdateSubscribedCalendarsRequestSubscribeScope : TeaModel {
+            /// <summary>
+            /// 可订阅组织列表
+            /// </summary>
             [NameInMap("corpIds")]
             [Validation(Required=false)]
             public List<string> CorpIds { get; set; }
+
+            /// <summary>
+            /// 可订阅群组列表
+            /// </summary>
             [NameInMap("openConversationIds")]
             [Validation(Required=false)]
             public List<string> OpenConversationIds { get; set; }
+
+            /// <summary>
+            /// 可订阅人员列表
+            /// </summary>
             [NameInMap("unionIds")]
             [Validation(Required=false)]
             public List<string> UnionIds { get; set; }
-        };
+
+        }
 
     }
 

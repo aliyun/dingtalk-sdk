@@ -44,16 +44,28 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public QueryReceiptsBaseInfoResponseBodyListCreator Creator { get; set; }
             public class QueryReceiptsBaseInfoResponseBodyListCreator : TeaModel {
+                /// <summary>
+                /// 创建人头像
+                /// </summary>
                 [NameInMap("avatarUrl")]
                 [Validation(Required=false)]
                 public string AvatarUrl { get; set; }
+
+                /// <summary>
+                /// 创建人昵称
+                /// </summary>
                 [NameInMap("nick")]
                 [Validation(Required=false)]
                 public string Nick { get; set; }
+
+                /// <summary>
+                /// 创建人工号
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 客户
@@ -62,13 +74,21 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public QueryReceiptsBaseInfoResponseBodyListCustomer Customer { get; set; }
             public class QueryReceiptsBaseInfoResponseBodyListCustomer : TeaModel {
+                /// <summary>
+                /// 客户code
+                /// </summary>
                 [NameInMap("code")]
                 [Validation(Required=false)]
                 public string Code { get; set; }
+
+                /// <summary>
+                /// 客户名字
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 主数据modelId
@@ -84,13 +104,16 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 [NameInMap("avatarUrl")]
                 [Validation(Required=false)]
                 public string AvatarUrl { get; set; }
+
                 [NameInMap("nick")]
                 [Validation(Required=false)]
                 public string Nick { get; set; }
+
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
-            };
+
+            }
 
             [NameInMap("project")]
             [Validation(Required=false)]
@@ -99,10 +122,12 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 [NameInMap("code")]
                 [Validation(Required=false)]
                 public string Code { get; set; }
+
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 单据ID
@@ -146,10 +171,12 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 [NameInMap("code")]
                 [Validation(Required=false)]
                 public string Code { get; set; }
+
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 单据标题

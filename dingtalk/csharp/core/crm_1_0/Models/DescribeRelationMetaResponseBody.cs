@@ -66,25 +66,43 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                         [NameInMap("actionName")]
                         [Validation(Required=false)]
                         public string ActionName { get; set; }
+
                         [NameInMap("align")]
                         [Validation(Required=false)]
                         public string Align { get; set; }
+
                         [NameInMap("availableTemplates")]
                         [Validation(Required=false)]
                         public List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsAvailableTemplates> AvailableTemplates { get; set; }
                         public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsAvailableTemplates : TeaModel {
+                            /// <summary>
+                            /// PROC-BFA563D4-BBC7-4B1F-8F72-886A302665FC
+                            /// </summary>
+                            [NameInMap("id")]
+                            [Validation(Required=false)]
                             public string Id { get; set; }
+
+                            /// <summary>
+                            /// 补卡申请
+                            /// </summary>
+                            [NameInMap("name")]
+                            [Validation(Required=false)]
                             public string Name { get; set; }
+
                         }
+
                         [NameInMap("bizAlias")]
                         [Validation(Required=false)]
                         public string BizAlias { get; set; }
+
                         [NameInMap("choice")]
                         [Validation(Required=false)]
                         public long? Choice { get; set; }
+
                         [NameInMap("content")]
                         [Validation(Required=false)]
                         public string Content { get; set; }
+
                         [NameInMap("dataSource")]
                         [Validation(Required=false)]
                         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSource DataSource { get; set; }
@@ -97,12 +115,25 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                                 [Validation(Required=false)]
                                 public List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceParamsFilters> Filters { get; set; }
                                 public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceParamsFilters : TeaModel {
+                                    [NameInMap("fieldId")]
+                                    [Validation(Required=false)]
                                     public string FieldId { get; set; }
+
+                                    [NameInMap("filterType")]
+                                    [Validation(Required=false)]
                                     public string FilterType { get; set; }
+
+                                    [NameInMap("value")]
+                                    [Validation(Required=false)]
                                     public string Value { get; set; }
+
+                                    [NameInMap("valueType")]
+                                    [Validation(Required=false)]
                                     public string ValueType { get; set; }
+
                                 }
-                            };
+
+                            }
 
                             [NameInMap("target")]
                             [Validation(Required=false)]
@@ -111,39 +142,53 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                                 [NameInMap("appType")]
                                 [Validation(Required=false)]
                                 public long? AppType { get; set; }
+
                                 [NameInMap("appUuid")]
                                 [Validation(Required=false)]
                                 public string AppUuid { get; set; }
+
                                 [NameInMap("bizType")]
                                 [Validation(Required=false)]
                                 public string BizType { get; set; }
+
                                 [NameInMap("formCode")]
                                 [Validation(Required=false)]
                                 public string FormCode { get; set; }
-                            };
+
+                            }
 
                             [NameInMap("type")]
                             [Validation(Required=false)]
                             public string Type { get; set; }
 
                         }
+
                         [NameInMap("disabled")]
                         [Validation(Required=false)]
                         public bool? Disabled { get; set; }
+
                         [NameInMap("duration")]
                         [Validation(Required=false)]
                         public bool? Duration { get; set; }
+
                         [NameInMap("durationLabel")]
                         [Validation(Required=false)]
                         public string DurationLabel { get; set; }
+
                         [NameInMap("fieldId")]
                         [Validation(Required=false)]
                         public string FieldId { get; set; }
+
                         [NameInMap("fields")]
                         [Validation(Required=false)]
                         public List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFields> Fields { get; set; }
                         public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFields : TeaModel {
+                            [NameInMap("componentName")]
+                            [Validation(Required=false)]
                             public string ComponentName { get; set; }
+
+                            [NameInMap("relateProps")]
+                            [Validation(Required=false)]
                             public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelateProps RelateProps { get; set; }
                             public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelateProps : TeaModel {
                                 [NameInMap("align")]
@@ -225,7 +270,8 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                                         [NameInMap("editFreeze")]
                                         [Validation(Required=false)]
                                         public bool? EditFreeze { get; set; }
-                                    };
+
+                                    }
 
                                     [NameInMap("key")]
                                     [Validation(Required=false)]
@@ -296,44 +342,62 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                                 public bool? Watermark { get; set; }
 
                             }
+
                         }
+
                         [NameInMap("format")]
                         [Validation(Required=false)]
                         public string Format { get; set; }
+
                         [NameInMap("formula")]
                         [Validation(Required=false)]
                         public string Formula { get; set; }
+
                         [NameInMap("invisible")]
                         [Validation(Required=false)]
                         public bool? Invisible { get; set; }
+
                         [NameInMap("label")]
                         [Validation(Required=false)]
                         public string Label { get; set; }
+
                         [NameInMap("labelEditableFreeze")]
                         [Validation(Required=false)]
                         public bool? LabelEditableFreeze { get; set; }
+
                         [NameInMap("limit")]
                         [Validation(Required=false)]
                         public long? Limit { get; set; }
+
                         [NameInMap("link")]
                         [Validation(Required=false)]
                         public string Link { get; set; }
+
                         [NameInMap("mode")]
                         [Validation(Required=false)]
                         public string Mode { get; set; }
+
+                        /// <summary>
+                        /// 支持选择多个部门
+                        /// </summary>
                         [NameInMap("multiple")]
                         [Validation(Required=false)]
                         public bool? Multiple { get; set; }
+
                         [NameInMap("notPrint")]
                         [Validation(Required=false)]
                         public string NotPrint { get; set; }
+
                         [NameInMap("notUpper")]
                         [Validation(Required=false)]
                         public string NotUpper { get; set; }
+
                         [NameInMap("options")]
                         [Validation(Required=false)]
                         public List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptions> Options { get; set; }
                         public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptions : TeaModel {
+                            [NameInMap("extension")]
+                            [Validation(Required=false)]
                             public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptionsExtension Extension { get; set; }
                             public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptionsExtension : TeaModel {
                                 [NameInMap("editFreeze")]
@@ -341,26 +405,43 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                                 public bool? EditFreeze { get; set; }
 
                             }
+
+                            [NameInMap("key")]
+                            [Validation(Required=false)]
                             public string Key { get; set; }
+
+                            [NameInMap("value")]
+                            [Validation(Required=false)]
                             public string Value { get; set; }
+
                         }
+
                         [NameInMap("payEnable")]
                         [Validation(Required=false)]
                         public bool? PayEnable { get; set; }
+
                         [NameInMap("placeholder")]
                         [Validation(Required=false)]
                         public string Placeholder { get; set; }
+
                         [NameInMap("quote")]
                         [Validation(Required=false)]
                         public long? Quote { get; set; }
+
                         [NameInMap("ratio")]
                         [Validation(Required=false)]
                         public long? Ratio { get; set; }
+
                         [NameInMap("relateSource")]
                         [Validation(Required=false)]
                         public List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSource> RelateSource { get; set; }
                         public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSource : TeaModel {
+                            [NameInMap("bizType")]
+                            [Validation(Required=false)]
                             public string BizType { get; set; }
+
+                            [NameInMap("dataSource")]
+                            [Validation(Required=false)]
                             public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSource DataSource { get; set; }
                             public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSource : TeaModel {
                                 [NameInMap("params")]
@@ -371,12 +452,25 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                                     [Validation(Required=false)]
                                     public List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSourceParamsFilters> Filters { get; set; }
                                     public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSourceParamsFilters : TeaModel {
+                                        [NameInMap("fieldId")]
+                                        [Validation(Required=false)]
                                         public string FieldId { get; set; }
+
+                                        [NameInMap("filterType")]
+                                        [Validation(Required=false)]
                                         public string FilterType { get; set; }
+
+                                        [NameInMap("value")]
+                                        [Validation(Required=false)]
                                         public string Value { get; set; }
+
+                                        [NameInMap("valueType")]
+                                        [Validation(Required=false)]
                                         public string ValueType { get; set; }
+
                                     }
-                                };
+
+                                }
 
                                 [NameInMap("target")]
                                 [Validation(Required=false)]
@@ -385,25 +479,46 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                                     [NameInMap("appType")]
                                     [Validation(Required=false)]
                                     public long? AppType { get; set; }
+
                                     [NameInMap("appUuid")]
                                     [Validation(Required=false)]
                                     public string AppUuid { get; set; }
+
                                     [NameInMap("bizType")]
                                     [Validation(Required=false)]
                                     public string BizType { get; set; }
+
                                     [NameInMap("formCode")]
                                     [Validation(Required=false)]
                                     public string FormCode { get; set; }
-                                };
+
+                                }
 
                                 [NameInMap("type")]
                                 [Validation(Required=false)]
                                 public string Type { get; set; }
 
                             }
+
+                            /// <summary>
+                            /// 关联表单的关联控件显示
+                            /// </summary>
+                            [NameInMap("fields")]
+                            [Validation(Required=false)]
                             public List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFields> Fields { get; set; }
                             public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFields : TeaModel {
+                                /// <summary>
+                                /// 字段类型
+                                /// </summary>
+                                [NameInMap("componentName")]
+                                [Validation(Required=false)]
                                 public string ComponentName { get; set; }
+
+                                /// <summary>
+                                /// 字段属性
+                                /// </summary>
+                                [NameInMap("relateProps")]
+                                [Validation(Required=false)]
                                 public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFieldsRelateProps RelateProps { get; set; }
                                 public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFieldsRelateProps : TeaModel {
                                     /// <summary>
@@ -597,49 +712,80 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                                     public bool? VerticalPrint { get; set; }
 
                                 }
+
                             }
+
                         }
+
                         [NameInMap("required")]
                         [Validation(Required=false)]
                         public bool? Required { get; set; }
+
                         [NameInMap("requiredEditableFreeze")]
                         [Validation(Required=false)]
                         public bool? RequiredEditableFreeze { get; set; }
+
                         [NameInMap("rule")]
                         [Validation(Required=false)]
                         public List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRule> Rule { get; set; }
                         public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRule : TeaModel {
+                            [NameInMap("type")]
+                            [Validation(Required=false)]
                             public string Type { get; set; }
+
+                            [NameInMap("value")]
+                            [Validation(Required=false)]
                             public string Value { get; set; }
+
                         }
+
                         [NameInMap("sortable")]
                         [Validation(Required=false)]
                         public bool? Sortable { get; set; }
+
                         [NameInMap("spread")]
                         [Validation(Required=false)]
                         public bool? Spread { get; set; }
+
                         [NameInMap("statField")]
                         [Validation(Required=false)]
                         public List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsStatField> StatField { get; set; }
                         public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsStatField : TeaModel {
+                            [NameInMap("fieldId")]
+                            [Validation(Required=false)]
                             public string FieldId { get; set; }
+
+                            [NameInMap("label")]
+                            [Validation(Required=false)]
                             public string Label { get; set; }
+
+                            [NameInMap("unit")]
+                            [Validation(Required=false)]
                             public string Unit { get; set; }
+
+                            [NameInMap("upper")]
+                            [Validation(Required=false)]
                             public bool? Upper { get; set; }
+
                         }
+
                         [NameInMap("tableViewMode")]
                         [Validation(Required=false)]
                         public string TableViewMode { get; set; }
+
                         [NameInMap("unit")]
                         [Validation(Required=false)]
                         public string Unit { get; set; }
+
                         [NameInMap("verticalPrint")]
                         [Validation(Required=false)]
                         public bool? VerticalPrint { get; set; }
+
                         [NameInMap("watermark")]
                         [Validation(Required=false)]
                         public bool? Watermark { get; set; }
-                    };
+
+                    }
 
                 }
 
@@ -660,25 +806,58 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                     [NameInMap("actionName")]
                     [Validation(Required=false)]
                     public string ActionName { get; set; }
+
+                    /// <summary>
+                    /// textnote的样式
+                    /// </summary>
                     [NameInMap("align")]
                     [Validation(Required=false)]
                     public string Align { get; set; }
+
                     [NameInMap("availableTemplates")]
                     [Validation(Required=false)]
                     public List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates> AvailableTemplates { get; set; }
                     public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates : TeaModel {
+                        /// <summary>
+                        /// PROC-BFA563D4-BBC7-4B1F-8F72-886A302665FC
+                        /// </summary>
+                        [NameInMap("id")]
+                        [Validation(Required=false)]
                         public string Id { get; set; }
+
+                        /// <summary>
+                        /// 补卡申请
+                        /// </summary>
+                        [NameInMap("name")]
+                        [Validation(Required=false)]
                         public string Name { get; set; }
+
                     }
+
+                    /// <summary>
+                    /// 字段别名
+                    /// </summary>
                     [NameInMap("bizAlias")]
                     [Validation(Required=false)]
                     public string BizAlias { get; set; }
+
+                    /// <summary>
+                    /// 内部联系人choice
+                    /// </summary>
                     [NameInMap("choice")]
                     [Validation(Required=false)]
                     public long? Choice { get; set; }
+
+                    /// <summary>
+                    /// 说明文字内容
+                    /// </summary>
                     [NameInMap("content")]
                     [Validation(Required=false)]
                     public string Content { get; set; }
+
+                    /// <summary>
+                    /// 关联表单的数据源配置
+                    /// </summary>
                     [NameInMap("dataSource")]
                     [Validation(Required=false)]
                     public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSource DataSource { get; set; }
@@ -691,12 +870,25 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                             [Validation(Required=false)]
                             public List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceParamsFilters> Filters { get; set; }
                             public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceParamsFilters : TeaModel {
+                                [NameInMap("fieldId")]
+                                [Validation(Required=false)]
                                 public string FieldId { get; set; }
+
+                                [NameInMap("filterType")]
+                                [Validation(Required=false)]
                                 public string FilterType { get; set; }
+
+                                [NameInMap("value")]
+                                [Validation(Required=false)]
                                 public string Value { get; set; }
+
+                                [NameInMap("valueType")]
+                                [Validation(Required=false)]
                                 public string ValueType { get; set; }
+
                             }
-                        };
+
+                        }
 
                         /// <summary>
                         /// 关联表单的业务标识
@@ -705,19 +897,35 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                         [Validation(Required=false)]
                         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceTarget Target { get; set; }
                         public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceTarget : TeaModel {
+                            /// <summary>
+                            /// 应用类型
+                            /// </summary>
                             [NameInMap("appType")]
                             [Validation(Required=false)]
                             public long? AppType { get; set; }
+
+                            /// <summary>
+                            /// 应用搭建id
+                            /// </summary>
                             [NameInMap("appUuid")]
                             [Validation(Required=false)]
                             public string AppUuid { get; set; }
+
+                            /// <summary>
+                            /// 表单业务标识
+                            /// </summary>
                             [NameInMap("bizType")]
                             [Validation(Required=false)]
                             public string BizType { get; set; }
+
+                            /// <summary>
+                            /// 被关联表单的formCode
+                            /// </summary>
                             [NameInMap("formCode")]
                             [Validation(Required=false)]
                             public string FormCode { get; set; }
-                        };
+
+                        }
 
                         /// <summary>
                         /// 关联类型{ "form": 关联表单 }
@@ -727,23 +935,51 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                         public string Type { get; set; }
 
                     }
+
+                    /// <summary>
+                    /// 是否可编辑
+                    /// </summary>
                     [NameInMap("disabled")]
                     [Validation(Required=false)]
                     public bool? Disabled { get; set; }
+
+                    /// <summary>
+                    /// 是否自动计算时长
+                    /// </summary>
                     [NameInMap("duration")]
                     [Validation(Required=false)]
                     public bool? Duration { get; set; }
+
                     [NameInMap("durationLabel")]
                     [Validation(Required=false)]
                     public string DurationLabel { get; set; }
+
+                    /// <summary>
+                    /// 字段id
+                    /// </summary>
                     [NameInMap("fieldId")]
                     [Validation(Required=false)]
                     public string FieldId { get; set; }
+
+                    /// <summary>
+                    /// 关联表单的关联控件显示
+                    /// </summary>
                     [NameInMap("fields")]
                     [Validation(Required=false)]
                     public List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFields> Fields { get; set; }
                     public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFields : TeaModel {
+                        /// <summary>
+                        /// 字段类型
+                        /// </summary>
+                        [NameInMap("componentName")]
+                        [Validation(Required=false)]
                         public string ComponentName { get; set; }
+
+                        /// <summary>
+                        /// 字段属性
+                        /// </summary>
+                        [NameInMap("relateProps")]
+                        [Validation(Required=false)]
                         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelateProps RelateProps { get; set; }
                         public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelateProps : TeaModel {
                             /// <summary>
@@ -867,7 +1103,8 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                                     [NameInMap("editFreeze")]
                                     [Validation(Required=false)]
                                     public bool? EditFreeze { get; set; }
-                                };
+
+                                }
 
                                 /// <summary>
                                 /// 选项数据主键
@@ -962,50 +1199,103 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                             public bool? Watermark { get; set; }
 
                         }
+
                     }
+
+                    /// <summary>
+                    /// 时间格式
+                    /// </summary>
                     [NameInMap("format")]
                     [Validation(Required=false)]
                     public string Format { get; set; }
+
+                    /// <summary>
+                    /// 公式
+                    /// </summary>
                     [NameInMap("formula")]
                     [Validation(Required=false)]
                     public string Formula { get; set; }
+
+                    /// <summary>
+                    /// 隐藏字段
+                    /// </summary>
                     [NameInMap("invisible")]
                     [Validation(Required=false)]
                     public bool? Invisible { get; set; }
+
+                    /// <summary>
+                    /// 字段标题
+                    /// </summary>
                     [NameInMap("label")]
                     [Validation(Required=false)]
                     public string Label { get; set; }
+
+                    /// <summary>
+                    /// 字段标题是否可修改
+                    /// </summary>
                     [NameInMap("labelEditableFreeze")]
                     [Validation(Required=false)]
                     public bool? LabelEditableFreeze { get; set; }
+
+                    /// <summary>
+                    /// 5
+                    /// </summary>
                     [NameInMap("limit")]
                     [Validation(Required=false)]
                     public long? Limit { get; set; }
+
+                    /// <summary>
+                    /// 说明文案的链接地址
+                    /// </summary>
                     [NameInMap("link")]
                     [Validation(Required=false)]
                     public string Link { get; set; }
+
+                    /// <summary>
+                    /// phone
+                    /// </summary>
                     [NameInMap("mode")]
                     [Validation(Required=false)]
                     public string Mode { get; set; }
+
                     [NameInMap("multi")]
                     [Validation(Required=false)]
                     public long? Multi { get; set; }
+
+                    /// <summary>
+                    /// 支持选择多个部门
+                    /// </summary>
                     [NameInMap("multiple")]
                     [Validation(Required=false)]
                     public bool? Multiple { get; set; }
+
                     [NameInMap("needDetail")]
                     [Validation(Required=false)]
                     public string NeedDetail { get; set; }
+
+                    /// <summary>
+                    /// 是否参与打印
+                    /// </summary>
                     [NameInMap("notPrint")]
                     [Validation(Required=false)]
                     public string NotPrint { get; set; }
+
+                    /// <summary>
+                    /// 是否需要大写 默认是需要
+                    /// </summary>
                     [NameInMap("notUpper")]
                     [Validation(Required=false)]
                     public string NotUpper { get; set; }
+
+                    /// <summary>
+                    /// 选项内容列表
+                    /// </summary>
                     [NameInMap("options")]
                     [Validation(Required=false)]
                     public List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptions> Options { get; set; }
                     public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptions : TeaModel {
+                        [NameInMap("extension")]
+                        [Validation(Required=false)]
                         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptionsExtension Extension { get; set; }
                         public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptionsExtension : TeaModel {
                             /// <summary>
@@ -1016,27 +1306,68 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                             public bool? EditFreeze { get; set; }
 
                         }
+
+                        /// <summary>
+                        /// 选项数据主键
+                        /// </summary>
+                        [NameInMap("key")]
+                        [Validation(Required=false)]
                         public string Key { get; set; }
+
+                        /// <summary>
+                        /// 选项显示内容
+                        /// </summary>
+                        [NameInMap("value")]
+                        [Validation(Required=false)]
                         public string Value { get; set; }
+
+                        /// <summary>
+                        /// false
+                        /// </summary>
+                        [NameInMap("warn")]
+                        [Validation(Required=false)]
                         public bool? Warn { get; set; }
+
                     }
+
+                    /// <summary>
+                    /// 是否有支付属性
+                    /// </summary>
                     [NameInMap("payEnable")]
                     [Validation(Required=false)]
                     public bool? PayEnable { get; set; }
+
+                    /// <summary>
+                    /// 界面空值提示占位符 前后端统一用placeholder
+                    /// </summary>
                     [NameInMap("placeholder")]
                     [Validation(Required=false)]
                     public string Placeholder { get; set; }
+
+                    /// <summary>
+                    /// 1
+                    /// </summary>
                     [NameInMap("quote")]
                     [Validation(Required=false)]
                     public long? Quote { get; set; }
+
+                    /// <summary>
+                    /// 50
+                    /// </summary>
                     [NameInMap("ratio")]
                     [Validation(Required=false)]
                     public long? Ratio { get; set; }
+
                     [NameInMap("relateSource")]
                     [Validation(Required=false)]
                     public List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSource> RelateSource { get; set; }
                     public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSource : TeaModel {
+                        [NameInMap("bizType")]
+                        [Validation(Required=false)]
                         public string BizType { get; set; }
+
+                        [NameInMap("dataSource")]
+                        [Validation(Required=false)]
                         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSource DataSource { get; set; }
                         public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSource : TeaModel {
                             [NameInMap("params")]
@@ -1047,12 +1378,25 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                                 [Validation(Required=false)]
                                 public List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSourceParamsFilters> Filters { get; set; }
                                 public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSourceParamsFilters : TeaModel {
+                                    [NameInMap("fieldId")]
+                                    [Validation(Required=false)]
                                     public string FieldId { get; set; }
+
+                                    [NameInMap("filterType")]
+                                    [Validation(Required=false)]
                                     public string FilterType { get; set; }
+
+                                    [NameInMap("value")]
+                                    [Validation(Required=false)]
                                     public string Value { get; set; }
+
+                                    [NameInMap("valueType")]
+                                    [Validation(Required=false)]
                                     public string ValueType { get; set; }
+
                                 }
-                            };
+
+                            }
 
                             [NameInMap("target")]
                             [Validation(Required=false)]
@@ -1061,25 +1405,46 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                                 [NameInMap("appType")]
                                 [Validation(Required=false)]
                                 public long? AppType { get; set; }
+
                                 [NameInMap("appUuid")]
                                 [Validation(Required=false)]
                                 public string AppUuid { get; set; }
+
                                 [NameInMap("bizType")]
                                 [Validation(Required=false)]
                                 public string BizType { get; set; }
+
                                 [NameInMap("formCode")]
                                 [Validation(Required=false)]
                                 public string FormCode { get; set; }
-                            };
+
+                            }
 
                             [NameInMap("type")]
                             [Validation(Required=false)]
                             public string Type { get; set; }
 
                         }
+
+                        /// <summary>
+                        /// 关联表单的关联控件显示
+                        /// </summary>
+                        [NameInMap("fields")]
+                        [Validation(Required=false)]
                         public List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFields> Fields { get; set; }
                         public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFields : TeaModel {
+                            /// <summary>
+                            /// 字段类型
+                            /// </summary>
+                            [NameInMap("componentName")]
+                            [Validation(Required=false)]
                             public string ComponentName { get; set; }
+
+                            /// <summary>
+                            /// 字段属性
+                            /// </summary>
+                            [NameInMap("relateProps")]
+                            [Validation(Required=false)]
                             public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelateProps RelateProps { get; set; }
                             public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelateProps : TeaModel {
                                 /// <summary>
@@ -1195,7 +1560,8 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                                         [NameInMap("editFreeze")]
                                         [Validation(Required=false)]
                                         public bool? EditFreeze { get; set; }
-                                    };
+
+                                    }
 
                                     /// <summary>
                                     /// 选项数据主键
@@ -1282,49 +1648,107 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                                 public bool? VerticalPrint { get; set; }
 
                             }
+
                         }
+
                     }
+
+                    /// <summary>
+                    /// 字段是否必填
+                    /// </summary>
                     [NameInMap("required")]
                     [Validation(Required=false)]
                     public bool? Required { get; set; }
+
+                    /// <summary>
+                    /// 字段必填是否修改
+                    /// </summary>
                     [NameInMap("requiredEditableFreeze")]
                     [Validation(Required=false)]
                     public bool? RequiredEditableFreeze { get; set; }
+
+                    /// <summary>
+                    /// 流水号控件规则
+                    /// </summary>
                     [NameInMap("rule")]
                     [Validation(Required=false)]
                     public List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRule> Rule { get; set; }
                     public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRule : TeaModel {
+                        [NameInMap("type")]
+                        [Validation(Required=false)]
                         public string Type { get; set; }
+
+                        [NameInMap("value")]
+                        [Validation(Required=false)]
                         public string Value { get; set; }
+
                     }
+
                     [NameInMap("sortable")]
                     [Validation(Required=false)]
                     public bool? Sortable { get; set; }
+
+                    /// <summary>
+                    /// true
+                    /// </summary>
                     [NameInMap("spread")]
                     [Validation(Required=false)]
                     public bool? Spread { get; set; }
+
+                    /// <summary>
+                    /// 需要计算总和的明细组件
+                    /// </summary>
                     [NameInMap("statField")]
                     [Validation(Required=false)]
                     public List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsStatField> StatField { get; set; }
                     public class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsStatField : TeaModel {
+                        [NameInMap("fieldId")]
+                        [Validation(Required=false)]
                         public string FieldId { get; set; }
+
+                        [NameInMap("label")]
+                        [Validation(Required=false)]
                         public string Label { get; set; }
+
+                        [NameInMap("unit")]
+                        [Validation(Required=false)]
                         public string Unit { get; set; }
+
+                        [NameInMap("upper")]
+                        [Validation(Required=false)]
                         public bool? Upper { get; set; }
+
                     }
+
+                    /// <summary>
+                    /// table
+                    /// </summary>
                     [NameInMap("tableViewMode")]
                     [Validation(Required=false)]
                     public string TableViewMode { get; set; }
+
+                    /// <summary>
+                    /// 数字组件/日期区间组件单位属性
+                    /// </summary>
                     [NameInMap("unit")]
                     [Validation(Required=false)]
                     public string Unit { get; set; }
+
+                    /// <summary>
+                    /// 明细打印排版方式
+                    /// </summary>
                     [NameInMap("verticalPrint")]
                     [Validation(Required=false)]
                     public bool? VerticalPrint { get; set; }
+
+                    /// <summary>
+                    /// true
+                    /// </summary>
                     [NameInMap("watermark")]
                     [Validation(Required=false)]
                     public bool? Watermark { get; set; }
-                };
+
+                }
 
             }
 

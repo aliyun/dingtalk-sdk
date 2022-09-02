@@ -16,19 +16,35 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public CreateProjectByTemplateResponseBodyResult Result { get; set; }
         public class CreateProjectByTemplateResponseBodyResult : TeaModel {
+            /// <summary>
+            /// 创建时间
+            /// </summary>
             [NameInMap("created")]
             [Validation(Required=false)]
             public string Created { get; set; }
+
+            /// <summary>
+            /// 项目ID
+            /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]
             public string Id { get; set; }
+
+            /// <summary>
+            /// 项目图标地址
+            /// </summary>
             [NameInMap("logo")]
             [Validation(Required=false)]
             public string Logo { get; set; }
+
+            /// <summary>
+            /// 项目名字
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
-        };
+
+        }
 
     }
 

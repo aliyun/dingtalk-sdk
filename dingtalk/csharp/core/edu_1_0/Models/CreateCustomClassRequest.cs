@@ -16,10 +16,14 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public CreateCustomClassRequestCustomClass CustomClass { get; set; }
         public class CreateCustomClassRequestCustomClass : TeaModel {
+            /// <summary>
+            /// 班级名称
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 钉钉企业管理员工ID

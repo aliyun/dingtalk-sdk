@@ -97,10 +97,14 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
             [Validation(Required=false)]
             public ListDentryVersionsResponseBodyDentriesProperties Properties { get; set; }
             public class ListDentryVersionsResponseBodyDentriesProperties : TeaModel {
+                /// <summary>
+                /// 文件是否只读
+                /// </summary>
                 [NameInMap("readOnly")]
                 [Validation(Required=false)]
                 public bool? ReadOnly { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// 大小, 单位:Byte

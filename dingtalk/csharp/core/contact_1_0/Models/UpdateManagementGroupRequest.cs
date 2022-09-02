@@ -50,13 +50,21 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [Validation(Required=false)]
         public UpdateManagementGroupRequestScope Scope { get; set; }
         public class UpdateManagementGroupRequestScope : TeaModel {
+            /// <summary>
+            /// 部门列表，只在scopeType=3 生效
+            /// </summary>
             [NameInMap("deptIds")]
             [Validation(Required=false)]
             public List<long?> DeptIds { get; set; }
+
+            /// <summary>
+            /// 范围类型
+            /// </summary>
             [NameInMap("scopeType")]
             [Validation(Required=false)]
             public int? ScopeType { get; set; }
-        };
+
+        }
 
     }
 

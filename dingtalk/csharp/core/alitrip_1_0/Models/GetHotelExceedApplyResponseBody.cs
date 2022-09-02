@@ -23,28 +23,56 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
         [Validation(Required=false)]
         public GetHotelExceedApplyResponseBodyApplyIntentionInfoDO ApplyIntentionInfoDO { get; set; }
         public class GetHotelExceedApplyResponseBodyApplyIntentionInfoDO : TeaModel {
+            /// <summary>
+            /// 入住日期
+            /// </summary>
             [NameInMap("checkIn")]
             [Validation(Required=false)]
             public string CheckIn { get; set; }
+
+            /// <summary>
+            /// 离店日期
+            /// </summary>
             [NameInMap("checkOut")]
             [Validation(Required=false)]
             public string CheckOut { get; set; }
+
+            /// <summary>
+            /// 入住城市三字码
+            /// </summary>
             [NameInMap("cityCode")]
             [Validation(Required=false)]
             public string CityCode { get; set; }
+
+            /// <summary>
+            /// 入住城市名称
+            /// </summary>
             [NameInMap("cityName")]
             [Validation(Required=false)]
             public string CityName { get; set; }
+
+            /// <summary>
+            /// 意向酒店金额（分）
+            /// </summary>
             [NameInMap("price")]
             [Validation(Required=false)]
             public long? Price { get; set; }
+
+            /// <summary>
+            /// 是否合住
+            /// </summary>
             [NameInMap("together")]
             [Validation(Required=false)]
             public bool? Together { get; set; }
+
+            /// <summary>
+            /// 超标类型，32：金额超标
+            /// </summary>
             [NameInMap("type")]
             [Validation(Required=false)]
             public int? Type { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 出差原因

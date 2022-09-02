@@ -23,47 +23,135 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [Validation(Required=false)]
         public GetProcessDefinitionResponseBodyOriginator Originator { get; set; }
         public class GetProcessDefinitionResponseBodyOriginator : TeaModel {
+            /// <summary>
+            /// departmentDescription
+            /// </summary>
             [NameInMap("departmentDescription")]
             [Validation(Required=false)]
             public string DepartmentDescription { get; set; }
+
+            /// <summary>
+            /// displayEnName
+            /// </summary>
             [NameInMap("displayEnName")]
             [Validation(Required=false)]
             public string DisplayEnName { get; set; }
+
+            /// <summary>
+            /// displayName
+            /// </summary>
             [NameInMap("displayName")]
             [Validation(Required=false)]
             public string DisplayName { get; set; }
+
+            /// <summary>
+            /// masterDataDepartments
+            /// </summary>
             [NameInMap("masterDataDepartments")]
             [Validation(Required=false)]
             public List<GetProcessDefinitionResponseBodyOriginatorMasterDataDepartments> MasterDataDepartments { get; set; }
             public class GetProcessDefinitionResponseBodyOriginatorMasterDataDepartments : TeaModel {
+                /// <summary>
+                /// deptName
+                /// </summary>
+                [NameInMap("deptName")]
+                [Validation(Required=false)]
                 public string DeptName { get; set; }
+
+                /// <summary>
+                /// deptNameEn
+                /// </summary>
+                [NameInMap("deptNameInEnglish")]
+                [Validation(Required=false)]
                 public string DeptNameInEnglish { get; set; }
+
+                /// <summary>
+                /// deptNo
+                /// </summary>
+                [NameInMap("deptNo")]
+                [Validation(Required=false)]
                 public string DeptNo { get; set; }
+
+                /// <summary>
+                /// deptPath
+                /// </summary>
+                [NameInMap("deptPath")]
+                [Validation(Required=false)]
                 public string DeptPath { get; set; }
+
+                /// <summary>
+                /// humanSourceGroupOrderNum
+                /// </summary>
+                [NameInMap("humanSourceGroupOrderNumber")]
+                [Validation(Required=false)]
                 public string HumanSourceGroupOrderNumber { get; set; }
+
+                /// <summary>
+                /// humanSourceGroupWorkNo
+                /// </summary>
+                [NameInMap("humanSourceGroupWorkNo")]
+                [Validation(Required=false)]
                 public string HumanSourceGroupWorkNo { get; set; }
+
+                /// <summary>
+                /// id
+                /// </summary>
+                [NameInMap("id")]
+                [Validation(Required=false)]
                 public long? Id { get; set; }
+
+                /// <summary>
+                /// masterWorkNo
+                /// </summary>
+                [NameInMap("masterWorkNo")]
+                [Validation(Required=false)]
                 public string MasterWorkNo { get; set; }
+
             }
+
+            /// <summary>
+            /// orderNum
+            /// </summary>
             [NameInMap("orderNumber")]
             [Validation(Required=false)]
             public string OrderNumber { get; set; }
+
+            /// <summary>
+            /// personalPhoto
+            /// </summary>
             [NameInMap("personalPhoto")]
             [Validation(Required=false)]
             public string PersonalPhoto { get; set; }
+
+            /// <summary>
+            /// status
+            /// </summary>
             [NameInMap("status")]
             [Validation(Required=false)]
             public string Status { get; set; }
+
+            /// <summary>
+            /// tbWang
+            /// </summary>
             [NameInMap("tbWang")]
             [Validation(Required=false)]
             public string TbWang { get; set; }
+
+            /// <summary>
+            /// userId
+            /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
             public string UserId { get; set; }
+
+            /// <summary>
+            /// userInfo
+            /// </summary>
             [NameInMap("userInfo")]
             [Validation(Required=false)]
             public string UserInfo { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// outResult
@@ -251,22 +339,42 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public GetProcessDefinitionResponseBodyTasksActivity Activity { get; set; }
             public class GetProcessDefinitionResponseBodyTasksActivity : TeaModel {
+                /// <summary>
+                /// activityId
+                /// </summary>
                 [NameInMap("activityId")]
                 [Validation(Required=false)]
                 public string ActivityId { get; set; }
+
+                /// <summary>
+                /// activityInstanceStatus
+                /// </summary>
                 [NameInMap("activityInstanceStatus")]
                 [Validation(Required=false)]
                 public string ActivityInstanceStatus { get; set; }
+
+                /// <summary>
+                /// activityName
+                /// </summary>
                 [NameInMap("activityName")]
                 [Validation(Required=false)]
                 public string ActivityName { get; set; }
+
+                /// <summary>
+                /// activityNameEn
+                /// </summary>
                 [NameInMap("activityNameInEnglish")]
                 [Validation(Required=false)]
                 public string ActivityNameInEnglish { get; set; }
+
+                /// <summary>
+                /// id
+                /// </summary>
                 [NameInMap("id")]
                 [Validation(Required=false)]
                 public long? Id { get; set; }
-            };
+
+            }
 
             /// <summary>
             /// status

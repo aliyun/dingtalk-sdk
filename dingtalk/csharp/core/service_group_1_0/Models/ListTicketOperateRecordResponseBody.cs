@@ -55,10 +55,12 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
                 [NameInMap("nickName")]
                 [Validation(Required=false)]
                 public string NickName { get; set; }
+
                 [NameInMap("unionId")]
                 [Validation(Required=false)]
                 public string UnionId { get; set; }
-            };
+
+            }
 
             [NameInMap("ticketMemo")]
             [Validation(Required=false)]
@@ -68,13 +70,21 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
                 [Validation(Required=false)]
                 public List<ListTicketOperateRecordResponseBodyRecordsTicketMemoAttachments> Attachments { get; set; }
                 public class ListTicketOperateRecordResponseBodyRecordsTicketMemoAttachments : TeaModel {
+                    [NameInMap("fileName")]
+                    [Validation(Required=false)]
                     public string FileName { get; set; }
+
+                    [NameInMap("key")]
+                    [Validation(Required=false)]
                     public string Key { get; set; }
+
                 }
+
                 [NameInMap("memo")]
                 [Validation(Required=false)]
                 public string Memo { get; set; }
-            };
+
+            }
 
         }
 

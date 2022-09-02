@@ -60,13 +60,21 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 [Validation(Required=false)]
                 public GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt Ext { get; set; }
                 public class GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt : TeaModel {
+                    /// <summary>
+                    /// 管理部门列表
+                    /// </summary>
                     [NameInMap("deptIdList")]
                     [Validation(Required=false)]
                     public List<double?> DeptIdList { get; set; }
+
+                    /// <summary>
+                    /// 管理员工列表
+                    /// </summary>
                     [NameInMap("userIdList")]
                     [Validation(Required=false)]
                     public List<string> UserIdList { get; set; }
-                };
+
+                }
 
                 /// <summary>
                 /// 是否是主管

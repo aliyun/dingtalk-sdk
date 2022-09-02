@@ -13,10 +13,6 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }
 
-        [NameInMap("operationSource")]
-        [Validation(Required=false)]
-        public string OperationSource { get; set; }
-
         [NameInMap("x-acs-dingtalk-access-token")]
         [Validation(Required=false)]
         public string XAcsDingtalkAccessToken { get; set; }

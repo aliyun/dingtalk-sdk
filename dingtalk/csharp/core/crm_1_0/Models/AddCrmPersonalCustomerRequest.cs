@@ -51,13 +51,21 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public AddCrmPersonalCustomerRequestPermission Permission { get; set; }
         public class AddCrmPersonalCustomerRequestPermission : TeaModel {
+            /// <summary>
+            /// 负责人的用户ID
+            /// </summary>
             [NameInMap("ownerStaffIds")]
             [Validation(Required=false)]
             public List<string> OwnerStaffIds { get; set; }
+
+            /// <summary>
+            /// 协同人的用户ID
+            /// </summary>
             [NameInMap("participantStaffIds")]
             [Validation(Required=false)]
             public List<string> ParticipantStaffIds { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 关系类型

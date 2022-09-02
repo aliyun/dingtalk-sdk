@@ -56,10 +56,14 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         [Validation(Required=false)]
         public UpdatePermissionRequestOption Option { get; set; }
         public class UpdatePermissionRequestOption : TeaModel {
+            /// <summary>
+            /// 有效时间(秒)
+            /// </summary>
             [NameInMap("duration")]
             [Validation(Required=false)]
             public long? Duration { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 权限角色id

@@ -30,13 +30,21 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public SendInteractiveCardRequestCardData CardData { get; set; }
         public class SendInteractiveCardRequestCardData : TeaModel {
+            /// <summary>
+            /// 卡片模板内容替换参数-多媒体类型
+            /// </summary>
             [NameInMap("cardMediaIdParamMap")]
             [Validation(Required=false)]
             public Dictionary<string, string> CardMediaIdParamMap { get; set; }
+
+            /// <summary>
+            /// 卡片模板内容替换参数-普通文本类型
+            /// </summary>
             [NameInMap("cardParamMap")]
             [Validation(Required=false)]
             public Dictionary<string, string> CardParamMap { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 卡片属性
@@ -45,10 +53,14 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public SendInteractiveCardRequestCardOptions CardOptions { get; set; }
         public class SendInteractiveCardRequestCardOptions : TeaModel {
+            /// <summary>
+            /// 是否支持转发
+            /// </summary>
             [NameInMap("supportForward")]
             [Validation(Required=false)]
             public bool? SupportForward { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 卡片模板ID

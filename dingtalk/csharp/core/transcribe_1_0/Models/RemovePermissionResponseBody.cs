@@ -19,7 +19,8 @@ namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0.Models
             [NameInMap("failNameList")]
             [Validation(Required=false)]
             public List<string> FailNameList { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 服务端返回的错误代码

@@ -16,13 +16,21 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         [Validation(Required=false)]
         public AlignObjectiveResponseBodyData Data { get; set; }
         public class AlignObjectiveResponseBodyData : TeaModel {
+            /// <summary>
+            /// 对齐目标的 ID。
+            /// </summary>
             [NameInMap("alignId")]
             [Validation(Required=false)]
             public Stream AlignId { get; set; }
+
+            /// <summary>
+            /// 当前 Objective 的ID
+            /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]
             public Stream Id { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// success

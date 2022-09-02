@@ -20,7 +20,8 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
             [NameInMap("esignOrderId")]
             [Validation(Required=false)]
             public string EsignOrderId { get; set; }
-        };
+
+        }
 
         [NameInMap("message")]
         [Validation(Required=false)]

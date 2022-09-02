@@ -16,10 +16,14 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         [Validation(Required=false)]
         public GetPreviewInfoResponseBodyInfo Info { get; set; }
         public class GetPreviewInfoResponseBodyInfo : TeaModel {
+            /// <summary>
+            /// 预览url
+            /// </summary>
             [NameInMap("url")]
             [Validation(Required=false)]
             public string Url { get; set; }
-        };
+
+        }
 
     }
 

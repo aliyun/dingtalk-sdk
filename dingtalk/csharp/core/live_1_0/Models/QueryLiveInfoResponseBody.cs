@@ -102,7 +102,8 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
                 public int? Uv { get; set; }
 
             }
-        };
+
+        }
 
     }
 

@@ -16,25 +16,49 @@ namespace AlibabaCloud.SDK.Dingtalksmart_device_1_0.Models
         [Validation(Required=false)]
         public MachineManagerUpdateRequestAtmManagerRightMap AtmManagerRightMap { get; set; }
         public class MachineManagerUpdateRequestAtmManagerRightMap : TeaModel {
+            /// <summary>
+            /// 添加/删除考勤人员。
+            /// </summary>
             [NameInMap("attendancePersonManage")]
             [Validation(Required=false)]
             public bool? AttendancePersonManage { get; set; }
+
+            /// <summary>
+            /// 蓝牙打卡管理。
+            /// </summary>
             [NameInMap("bluetoothPunchManage")]
             [Validation(Required=false)]
             public bool? BluetoothPunchManage { get; set; }
+
+            /// <summary>
+            /// 设备解绑并重置。
+            /// </summary>
             [NameInMap("deviceReset")]
             [Validation(Required=false)]
             public bool? DeviceReset { get; set; }
+
+            /// <summary>
+            /// 设备设置。
+            /// </summary>
             [NameInMap("deviceSettings")]
             [Validation(Required=false)]
             public bool? DeviceSettings { get; set; }
+
+            /// <summary>
+            /// 人脸打卡管理。
+            /// </summary>
             [NameInMap("facePunchManage")]
             [Validation(Required=false)]
             public bool? FacePunchManage { get; set; }
+
+            /// <summary>
+            /// 指纹打卡管理。
+            /// </summary>
             [NameInMap("fingerPunchManage")]
             [Validation(Required=false)]
             public bool? FingerPunchManage { get; set; }
-        };
+
+        }
 
         /// <summary>
         /// 设备id。
