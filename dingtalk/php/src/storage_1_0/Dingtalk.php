@@ -42,6 +42,9 @@ use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetCurrentAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetCurrentAppRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetCurrentAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetDentryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetDentryOpenInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetDentryOpenInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetDentryOpenInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetDentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetDentryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetFileDownloadInfoHeaders;
@@ -784,6 +787,59 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetDentryResponse::fromMap($this->doROARequest('GetDentry', 'storage_1.0', 'HTTP', 'POST', 'AK', '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                   $spaceId
+     * @param string                   $dentryId
+     * @param GetDentryOpenInfoRequest $request
+     *
+     * @return GetDentryOpenInfoResponse
+     */
+    public function getDentryOpenInfo($spaceId, $dentryId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetDentryOpenInfoHeaders([]);
+
+        return $this->getDentryOpenInfoWithOptions($spaceId, $dentryId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                   $spaceId
+     * @param string                   $dentryId
+     * @param GetDentryOpenInfoRequest $request
+     * @param GetDentryOpenInfoHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return GetDentryOpenInfoResponse
+     */
+    public function getDentryOpenInfoWithOptions($spaceId, $dentryId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $spaceId  = OpenApiUtilClient::getEncodeParam($spaceId);
+        $dentryId = OpenApiUtilClient::getEncodeParam($dentryId);
+        $query    = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->option)) {
+            @$body['option'] = $request->option;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetDentryOpenInfoResponse::fromMap($this->doROARequest('GetDentryOpenInfo', 'storage_1.0', 'HTTP', 'POST', 'AK', '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/openInfos/query', 'json', $req, $runtime));
     }
 
     /**

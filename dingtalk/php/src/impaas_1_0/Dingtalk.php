@@ -862,9 +862,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
-        if (!Utils::isUnset($headers->operationSource)) {
-            @$realHeaders['operationSource'] = Utils::toJSONString($headers->operationSource);
-        }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
@@ -873,6 +870,6 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return UpdateGroupOwnerResponse::fromMap($this->doROARequest('UpdateGroupOwner', 'impaas_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/impaas/interconnections/groups/owners', 'none', $req, $runtime));
+        return UpdateGroupOwnerResponse::fromMap($this->doROARequest('UpdateGroupOwner', 'impaas_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/impaas/interconnections/groups/owners', 'json', $req, $runtime));
     }
 }

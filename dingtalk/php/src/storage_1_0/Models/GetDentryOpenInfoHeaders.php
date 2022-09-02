@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class UpdateGroupOwnerHeaders extends Model
+class GetDentryOpenInfoHeaders extends Model
 {
     public $commonHeaders;
 
@@ -38,7 +38,7 @@ class UpdateGroupOwnerHeaders extends Model
     /**
      * @param array $map
      *
-     * @return UpdateGroupOwnerHeaders
+     * @return GetDentryOpenInfoHeaders
      */
     public static function fromMap($map = [])
     {

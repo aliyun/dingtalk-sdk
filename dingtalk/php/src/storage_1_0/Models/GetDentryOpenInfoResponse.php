@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class UpdateGroupOwnerResponse extends Model
+class GetDentryOpenInfoResponse extends Model
 {
     /**
      * @var string[]
@@ -14,7 +14,7 @@ class UpdateGroupOwnerResponse extends Model
     public $headers;
 
     /**
-     * @var UpdateGroupOwnerResponseBody
+     * @var GetDentryOpenInfoResponseBody
      */
     public $body;
     protected $_name = [
@@ -44,7 +44,7 @@ class UpdateGroupOwnerResponse extends Model
     /**
      * @param array $map
      *
-     * @return UpdateGroupOwnerResponse
+     * @return GetDentryOpenInfoResponse
      */
     public static function fromMap($map = [])
     {
@@ -53,7 +53,7 @@ class UpdateGroupOwnerResponse extends Model
             $model->headers = $map['headers'];
         }
         if (isset($map['body'])) {
-            $model->body = UpdateGroupOwnerResponseBody::fromMap($map['body']);
+            $model->body = GetDentryOpenInfoResponseBody::fromMap($map['body']);
         }
 
         return $model;
