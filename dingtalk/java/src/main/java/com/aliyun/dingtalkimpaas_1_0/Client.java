@@ -645,10 +645,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders = headers.commonHeaders;
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(headers.operationSource)) {
-            realHeaders.put("operationSource", com.aliyun.teautil.Common.toJSONString(headers.operationSource));
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
@@ -657,6 +653,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateGroupOwner", "impaas_1.0", "HTTP", "PUT", "AK", "/v1.0/impaas/interconnections/groups/owners", "none", req, runtime), new UpdateGroupOwnerResponse());
+        return TeaModel.toModel(this.doROARequest("UpdateGroupOwner", "impaas_1.0", "HTTP", "PUT", "AK", "/v1.0/impaas/interconnections/groups/owners", "json", req, runtime), new UpdateGroupOwnerResponse());
     }
 }
