@@ -70,6 +70,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserCardHolderListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserCardHolderListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\IsFriendHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\IsFriendRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\IsFriendResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\IsvCardEventPushHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\IsvCardEventPushRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\IsvCardEventPushResponse;
@@ -1260,6 +1263,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetUserCardHolderListResponse::fromMap($this->doROARequest('GetUserCardHolderList', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/cards/holders/lists', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param IsFriendRequest $request
+     *
+     * @return IsFriendResponse
+     */
+    public function isFriend($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IsFriendHeaders([]);
+
+        return $this->isFriendWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IsFriendRequest $request
+     * @param IsFriendHeaders $headers
+     * @param RuntimeOptions  $runtime
+     *
+     * @return IsFriendResponse
+     */
+    public function isFriendWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->mobileNo)) {
+            @$body['mobileNo'] = $request->mobileNo;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return IsFriendResponse::fromMap($this->doROARequest('IsFriend', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/relationships/friends/judge', 'json', $req, $runtime));
     }
 
     /**

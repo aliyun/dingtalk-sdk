@@ -42,12 +42,18 @@ class CreateVideoConferenceResponseBody extends Model
      * @var string[]
      */
     public $phoneNumbers;
+
+    /**
+     * @var string
+     */
+    public $roomCode;
     protected $_name = [
         'conferenceId'       => 'conferenceId',
         'conferencePassword' => 'conferencePassword',
         'externalLinkUrl'    => 'externalLinkUrl',
         'hostPassword'       => 'hostPassword',
         'phoneNumbers'       => 'phoneNumbers',
+        'roomCode'           => 'roomCode',
     ];
 
     public function validate()
@@ -71,6 +77,9 @@ class CreateVideoConferenceResponseBody extends Model
         }
         if (null !== $this->phoneNumbers) {
             $res['phoneNumbers'] = $this->phoneNumbers;
+        }
+        if (null !== $this->roomCode) {
+            $res['roomCode'] = $this->roomCode;
         }
 
         return $res;
@@ -100,6 +109,9 @@ class CreateVideoConferenceResponseBody extends Model
             if (!empty($map['phoneNumbers'])) {
                 $model->phoneNumbers = $map['phoneNumbers'];
             }
+        }
+        if (isset($map['roomCode'])) {
+            $model->roomCode = $map['roomCode'];
         }
 
         return $model;
