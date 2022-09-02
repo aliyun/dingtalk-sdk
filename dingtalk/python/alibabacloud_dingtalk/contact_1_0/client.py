@@ -1645,6 +1645,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetUserCardHolderList', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/cards/holders/lists', 'json', req, runtime)
         )
 
+    def is_friend(
+        self,
+        request: dingtalkcontact__1__0_models.IsFriendRequest,
+    ) -> dingtalkcontact__1__0_models.IsFriendResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.IsFriendHeaders()
+        return self.is_friend_with_options(request, headers, runtime)
+
+    async def is_friend_async(
+        self,
+        request: dingtalkcontact__1__0_models.IsFriendRequest,
+    ) -> dingtalkcontact__1__0_models.IsFriendResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.IsFriendHeaders()
+        return await self.is_friend_with_options_async(request, headers, runtime)
+
+    def is_friend_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.IsFriendRequest,
+        headers: dingtalkcontact__1__0_models.IsFriendHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.IsFriendResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.mobile_no):
+            body['mobileNo'] = request.mobile_no
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.IsFriendResponse(),
+            self.do_roarequest('IsFriend', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/relationships/friends/judge', 'json', req, runtime)
+        )
+
+    async def is_friend_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.IsFriendRequest,
+        headers: dingtalkcontact__1__0_models.IsFriendHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.IsFriendResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.mobile_no):
+            body['mobileNo'] = request.mobile_no
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.IsFriendResponse(),
+            await self.do_roarequest_async('IsFriend', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/relationships/friends/judge', 'json', req, runtime)
+        )
+
     def isv_card_event_push(
         self,
         request: dingtalkcontact__1__0_models.IsvCardEventPushRequest,

@@ -225,6 +225,7 @@ class CreateVideoConferenceResponseBody(TeaModel):
         external_link_url: str = None,
         host_password: str = None,
         phone_numbers: List[str] = None,
+        room_code: str = None,
     ):
         # conferenceId
         self.conference_id = conference_id
@@ -236,6 +237,7 @@ class CreateVideoConferenceResponseBody(TeaModel):
         self.host_password = host_password
         # 电话入会号码
         self.phone_numbers = phone_numbers
+        self.room_code = room_code
 
     def validate(self):
         pass
@@ -256,6 +258,8 @@ class CreateVideoConferenceResponseBody(TeaModel):
             result['hostPassword'] = self.host_password
         if self.phone_numbers is not None:
             result['phoneNumbers'] = self.phone_numbers
+        if self.room_code is not None:
+            result['roomCode'] = self.room_code
         return result
 
     def from_map(self, m: dict = None):
@@ -270,6 +274,8 @@ class CreateVideoConferenceResponseBody(TeaModel):
             self.host_password = m.get('hostPassword')
         if m.get('phoneNumbers') is not None:
             self.phone_numbers = m.get('phoneNumbers')
+        if m.get('roomCode') is not None:
+            self.room_code = m.get('roomCode')
         return self
 
 
