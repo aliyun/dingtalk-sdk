@@ -24,6 +24,9 @@ public class CreateVideoConferenceResponseBody extends TeaModel {
     @NameInMap("phoneNumbers")
     public java.util.List<String> phoneNumbers;
 
+    @NameInMap("roomCode")
+    public String roomCode;
+
     public static CreateVideoConferenceResponseBody build(java.util.Map<String, ?> map) throws Exception {
         CreateVideoConferenceResponseBody self = new CreateVideoConferenceResponseBody();
         return TeaModel.build(map, self);
@@ -67,6 +70,14 @@ public class CreateVideoConferenceResponseBody extends TeaModel {
     }
     public java.util.List<String> getPhoneNumbers() {
         return this.phoneNumbers;
+    }
+
+    public CreateVideoConferenceResponseBody setRoomCode(String roomCode) {
+        this.roomCode = roomCode;
+        return this;
+    }
+    public String getRoomCode() {
+        return this.roomCode;
     }
 
 }
