@@ -1740,6 +1740,78 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             return TeaModel.ToObject<GetUserCardHolderListResponse>(await DoROARequestAsync("GetUserCardHolderList", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/cards/holders/lists", "json", req, runtime));
         }
 
+        public IsFriendResponse IsFriend(IsFriendRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            IsFriendHeaders headers = new IsFriendHeaders();
+            return IsFriendWithOptions(request, headers, runtime);
+        }
+
+        public async Task<IsFriendResponse> IsFriendAsync(IsFriendRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            IsFriendHeaders headers = new IsFriendHeaders();
+            return await IsFriendWithOptionsAsync(request, headers, runtime);
+        }
+
+        public IsFriendResponse IsFriendWithOptions(IsFriendRequest request, IsFriendHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MobileNo))
+            {
+                body["mobileNo"] = request.MobileNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<IsFriendResponse>(DoROARequest("IsFriend", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/relationships/friends/judge", "json", req, runtime));
+        }
+
+        public async Task<IsFriendResponse> IsFriendWithOptionsAsync(IsFriendRequest request, IsFriendHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MobileNo))
+            {
+                body["mobileNo"] = request.MobileNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<IsFriendResponse>(await DoROARequestAsync("IsFriend", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/relationships/friends/judge", "json", req, runtime));
+        }
+
         public IsvCardEventPushResponse IsvCardEventPush(IsvCardEventPushRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

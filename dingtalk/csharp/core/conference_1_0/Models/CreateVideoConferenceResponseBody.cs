@@ -44,6 +44,10 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
         [Validation(Required=false)]
         public List<string> PhoneNumbers { get; set; }
 
+        [NameInMap("roomCode")]
+        [Validation(Required=false)]
+        public string RoomCode { get; set; }
+
     }
 
 }
