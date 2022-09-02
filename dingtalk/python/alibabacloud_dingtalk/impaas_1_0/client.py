@@ -1184,8 +1184,6 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.operation_source):
-            real_headers['operationSource'] = UtilClient.to_jsonstring(headers.operation_source)
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
@@ -1194,7 +1192,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.UpdateGroupOwnerResponse(),
-            self.do_roarequest('UpdateGroupOwner', 'impaas_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/impaas/interconnections/groups/owners', 'none', req, runtime)
+            self.do_roarequest('UpdateGroupOwner', 'impaas_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/impaas/interconnections/groups/owners', 'json', req, runtime)
         )
 
     async def update_group_owner_with_options_async(
@@ -1214,8 +1212,6 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.operation_source):
-            real_headers['operationSource'] = UtilClient.to_jsonstring(headers.operation_source)
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
@@ -1224,5 +1220,5 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.UpdateGroupOwnerResponse(),
-            await self.do_roarequest_async('UpdateGroupOwner', 'impaas_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/impaas/interconnections/groups/owners', 'none', req, runtime)
+            await self.do_roarequest_async('UpdateGroupOwner', 'impaas_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/impaas/interconnections/groups/owners', 'json', req, runtime)
         )

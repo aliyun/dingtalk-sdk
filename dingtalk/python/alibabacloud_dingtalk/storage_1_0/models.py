@@ -3607,6 +3607,204 @@ class GetDentryResponse(TeaModel):
         return self
 
 
+class GetDentryOpenInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetDentryOpenInfoRequestOption(TeaModel):
+    def __init__(
+        self,
+        check_login: bool = None,
+        type: str = None,
+        version: int = None,
+        water_mark: bool = None,
+    ):
+        # 是否检查钉钉登录态, 目前仅对预览生效。
+        # 设置true时, 进入页面的时候会校验钉钉登录态。如果没有登录态, 会跳转到登录页面, 登录成功之后继续跳转到当前页面。
+        # 设置false时, 进入页面后不校验钉钉登录态, 但有以下的限制: 
+        #     1. 只支持WPS格式文件、有限图片格式, 不支持显示toolbar
+        #     2. 一个链接只能使用一次(针对浏览器session)
+        #     3. 链接5分钟不使用会失效
+        # 默认值:
+        # 	false
+        self.check_login = check_login
+        # 打开方式，可以分为预览和编辑
+        # 枚举值:
+        # 	PREVIEW: 预览
+        # 	EDIT: 编辑
+        # 默认值:
+        # 	PREVIEW
+        self.type = type
+        # 历史版本号, 不填表示最新版本
+        self.version = version
+        # 是否需要水印
+        # 默认值:
+        # 	false
+        self.water_mark = water_mark
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.check_login is not None:
+            result['checkLogin'] = self.check_login
+        if self.type is not None:
+            result['type'] = self.type
+        if self.version is not None:
+            result['version'] = self.version
+        if self.water_mark is not None:
+            result['waterMark'] = self.water_mark
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('checkLogin') is not None:
+            self.check_login = m.get('checkLogin')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        if m.get('waterMark') is not None:
+            self.water_mark = m.get('waterMark')
+        return self
+
+
+class GetDentryOpenInfoRequest(TeaModel):
+    def __init__(
+        self,
+        option: GetDentryOpenInfoRequestOption = None,
+        union_id: str = None,
+    ):
+        # 可选参数
+        self.option = option
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        if self.option:
+            self.option.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.option is not None:
+            result['option'] = self.option.to_map()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('option') is not None:
+            temp_model = GetDentryOpenInfoRequestOption()
+            self.option = temp_model.from_map(m['option'])
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class GetDentryOpenInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        url: str = None,
+    ):
+        # 链接, 用于编辑或预览
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class GetDentryOpenInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetDentryOpenInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetDentryOpenInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetFileDownloadInfoHeaders(TeaModel):
     def __init__(
         self,

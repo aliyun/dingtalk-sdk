@@ -1081,6 +1081,90 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetDentry', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/{dentry_id}/query', 'json', req, runtime)
         )
 
+    def get_dentry_open_info(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.GetDentryOpenInfoRequest,
+    ) -> dingtalkstorage__1__0_models.GetDentryOpenInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.GetDentryOpenInfoHeaders()
+        return self.get_dentry_open_info_with_options(space_id, dentry_id, request, headers, runtime)
+
+    async def get_dentry_open_info_async(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.GetDentryOpenInfoRequest,
+    ) -> dingtalkstorage__1__0_models.GetDentryOpenInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.GetDentryOpenInfoHeaders()
+        return await self.get_dentry_open_info_with_options_async(space_id, dentry_id, request, headers, runtime)
+
+    def get_dentry_open_info_with_options(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.GetDentryOpenInfoRequest,
+        headers: dingtalkstorage__1__0_models.GetDentryOpenInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.GetDentryOpenInfoResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        dentry_id = OpenApiUtilClient.get_encode_param(dentry_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.GetDentryOpenInfoResponse(),
+            self.do_roarequest('GetDentryOpenInfo', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/{dentry_id}/openInfos/query', 'json', req, runtime)
+        )
+
+    async def get_dentry_open_info_with_options_async(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.GetDentryOpenInfoRequest,
+        headers: dingtalkstorage__1__0_models.GetDentryOpenInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.GetDentryOpenInfoResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        dentry_id = OpenApiUtilClient.get_encode_param(dentry_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.GetDentryOpenInfoResponse(),
+            await self.do_roarequest_async('GetDentryOpenInfo', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/{dentry_id}/openInfos/query', 'json', req, runtime)
+        )
+
     def get_file_download_info(
         self,
         space_id: str,
