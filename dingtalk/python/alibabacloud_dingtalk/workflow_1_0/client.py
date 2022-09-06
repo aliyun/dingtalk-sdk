@@ -1289,6 +1289,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QuerySchemaByProcessCode', 'workflow_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workflow/forms/schemas/processCodes', 'json', req, runtime)
         )
 
+    def redirect_workflow_task(
+        self,
+        request: dingtalkworkflow__1__0_models.RedirectWorkflowTaskRequest,
+    ) -> dingtalkworkflow__1__0_models.RedirectWorkflowTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.RedirectWorkflowTaskHeaders()
+        return self.redirect_workflow_task_with_options(request, headers, runtime)
+
+    async def redirect_workflow_task_async(
+        self,
+        request: dingtalkworkflow__1__0_models.RedirectWorkflowTaskRequest,
+    ) -> dingtalkworkflow__1__0_models.RedirectWorkflowTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.RedirectWorkflowTaskHeaders()
+        return await self.redirect_workflow_task_with_options_async(request, headers, runtime)
+
+    def redirect_workflow_task_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.RedirectWorkflowTaskRequest,
+        headers: dingtalkworkflow__1__0_models.RedirectWorkflowTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.RedirectWorkflowTaskResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_name):
+            body['actionName'] = request.action_name
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        if not UtilClient.is_unset(request.to_user_id):
+            body['toUserId'] = request.to_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.RedirectWorkflowTaskResponse(),
+            self.do_roarequest('RedirectWorkflowTask', 'workflow_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/workflow/tasks/redirect', 'json', req, runtime)
+        )
+
+    async def redirect_workflow_task_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.RedirectWorkflowTaskRequest,
+        headers: dingtalkworkflow__1__0_models.RedirectWorkflowTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.RedirectWorkflowTaskResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_name):
+            body['actionName'] = request.action_name
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        if not UtilClient.is_unset(request.to_user_id):
+            body['toUserId'] = request.to_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.RedirectWorkflowTaskResponse(),
+            await self.do_roarequest_async('RedirectWorkflowTask', 'workflow_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/workflow/tasks/redirect', 'json', req, runtime)
+        )
+
     def save_integrated_instance(
         self,
         request: dingtalkworkflow__1__0_models.SaveIntegratedInstanceRequest,
