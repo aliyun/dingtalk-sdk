@@ -58,6 +58,9 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryProcessByBizCategoryIdRe
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QuerySchemaByProcessCodeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QuerySchemaByProcessCodeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QuerySchemaByProcessCodeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\RedirectWorkflowTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\RedirectWorkflowTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\RedirectWorkflowTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\SaveIntegratedInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\SaveIntegratedInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\SaveIntegratedInstanceResponse;
@@ -933,6 +936,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QuerySchemaByProcessCodeResponse::fromMap($this->doROARequest('QuerySchemaByProcessCode', 'workflow_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workflow/forms/schemas/processCodes', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param RedirectWorkflowTaskRequest $request
+     *
+     * @return RedirectWorkflowTaskResponse
+     */
+    public function redirectWorkflowTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RedirectWorkflowTaskHeaders([]);
+
+        return $this->redirectWorkflowTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RedirectWorkflowTaskRequest $request
+     * @param RedirectWorkflowTaskHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return RedirectWorkflowTaskResponse
+     */
+    public function redirectWorkflowTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->actionName)) {
+            @$body['actionName'] = $request->actionName;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            @$body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            @$body['taskId'] = $request->taskId;
+        }
+        if (!Utils::isUnset($request->toUserId)) {
+            @$body['toUserId'] = $request->toUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return RedirectWorkflowTaskResponse::fromMap($this->doROARequest('RedirectWorkflowTask', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/tasks/redirect', 'json', $req, $runtime));
     }
 
     /**
