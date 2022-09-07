@@ -515,6 +515,458 @@ class FormComponent(TeaModel):
         return self
 
 
+class AddApproveDentryAuthHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddApproveDentryAuthRequestFileInfos(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        space_id: int = None,
+    ):
+        # 文件ID。
+        self.file_id = file_id
+        # 钉盘空间spaceId。
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class AddApproveDentryAuthRequest(TeaModel):
+    def __init__(
+        self,
+        file_infos: List[AddApproveDentryAuthRequestFileInfos] = None,
+        user_id: str = None,
+    ):
+        # 授权的钉盘文件信息列表。支持批量授权，最大列表长度：10。
+        self.file_infos = file_infos
+        # 授权的用户userid。
+        self.user_id = user_id
+
+    def validate(self):
+        if self.file_infos:
+            for k in self.file_infos:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['fileInfos'] = []
+        if self.file_infos is not None:
+            for k in self.file_infos:
+                result['fileInfos'].append(k.to_map() if k else None)
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.file_infos = []
+        if m.get('fileInfos') is not None:
+            for k in m.get('fileInfos'):
+                temp_model = AddApproveDentryAuthRequestFileInfos()
+                self.file_infos.append(temp_model.from_map(k))
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class AddApproveDentryAuthResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        # 请求ID。
+        self.request_id = request_id
+        # 返回结果。
+        self.result = result
+        # 接口调用是否成功。
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AddApproveDentryAuthResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AddApproveDentryAuthResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AddApproveDentryAuthResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AddProcessInstanceCommentHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddProcessInstanceCommentRequestFileAttachments(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        file_name: str = None,
+        file_size: str = None,
+        file_type: str = None,
+        space_id: str = None,
+    ):
+        # 文件ID。
+        self.file_id = file_id
+        # 文件名称。
+        self.file_name = file_name
+        # 文件大小。
+        self.file_size = file_size
+        # 文件类型。
+        self.file_type = file_type
+        # 钉盘空间ID。
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class AddProcessInstanceCommentRequestFile(TeaModel):
+    def __init__(
+        self,
+        attachments: List[AddProcessInstanceCommentRequestFileAttachments] = None,
+        photos: List[str] = None,
+    ):
+        # 附件列表。
+        self.attachments = attachments
+        # 图片URL地址。
+        self.photos = photos
+
+    def validate(self):
+        if self.attachments:
+            for k in self.attachments:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['attachments'] = []
+        if self.attachments is not None:
+            for k in self.attachments:
+                result['attachments'].append(k.to_map() if k else None)
+        if self.photos is not None:
+            result['photos'] = self.photos
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.attachments = []
+        if m.get('attachments') is not None:
+            for k in m.get('attachments'):
+                temp_model = AddProcessInstanceCommentRequestFileAttachments()
+                self.attachments.append(temp_model.from_map(k))
+        if m.get('photos') is not None:
+            self.photos = m.get('photos')
+        return self
+
+
+class AddProcessInstanceCommentRequest(TeaModel):
+    def __init__(
+        self,
+        comment_user_id: str = None,
+        file: AddProcessInstanceCommentRequestFile = None,
+        process_instance_id: str = None,
+        text: str = None,
+    ):
+        # 评论人的userid。
+        self.comment_user_id = comment_user_id
+        # 文件。
+        self.file = file
+        # 审批实例ID，可通过调用获取审批实例ID列表接口获取。
+        self.process_instance_id = process_instance_id
+        # 评论的内容。
+        self.text = text
+
+    def validate(self):
+        if self.file:
+            self.file.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.comment_user_id is not None:
+            result['commentUserId'] = self.comment_user_id
+        if self.file is not None:
+            result['file'] = self.file.to_map()
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.text is not None:
+            result['text'] = self.text
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commentUserId') is not None:
+            self.comment_user_id = m.get('commentUserId')
+        if m.get('file') is not None:
+            temp_model = AddProcessInstanceCommentRequestFile()
+            self.file = temp_model.from_map(m['file'])
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        return self
+
+
+class AddProcessInstanceCommentResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        # 请求ID。
+        self.request_id = request_id
+        # 评论是否成功。
+        self.result = result
+        # 接口调用是否成功。
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AddProcessInstanceCommentResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AddProcessInstanceCommentResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AddProcessInstanceCommentResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchUpdateProcessInstanceHeaders(TeaModel):
     def __init__(
         self,
@@ -1505,6 +1957,286 @@ class DeleteProcessResponse(TeaModel):
         return self
 
 
+class ExecuteProcessInstanceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ExecuteProcessInstanceRequestFileAttachments(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        file_name: str = None,
+        file_size: str = None,
+        file_type: str = None,
+        space_id: str = None,
+    ):
+        # 文件ID。
+        self.file_id = file_id
+        # 文件名称。
+        self.file_name = file_name
+        # 文件大小。
+        self.file_size = file_size
+        # 文件类型。
+        self.file_type = file_type
+        # 钉盘空间ID。
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class ExecuteProcessInstanceRequestFile(TeaModel):
+    def __init__(
+        self,
+        attachments: List[ExecuteProcessInstanceRequestFileAttachments] = None,
+        photos: List[str] = None,
+    ):
+        # 附件列表。
+        self.attachments = attachments
+        # 图片URL地址。
+        self.photos = photos
+
+    def validate(self):
+        if self.attachments:
+            for k in self.attachments:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['attachments'] = []
+        if self.attachments is not None:
+            for k in self.attachments:
+                result['attachments'].append(k.to_map() if k else None)
+        if self.photos is not None:
+            result['photos'] = self.photos
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.attachments = []
+        if m.get('attachments') is not None:
+            for k in m.get('attachments'):
+                temp_model = ExecuteProcessInstanceRequestFileAttachments()
+                self.attachments.append(temp_model.from_map(k))
+        if m.get('photos') is not None:
+            self.photos = m.get('photos')
+        return self
+
+
+class ExecuteProcessInstanceRequest(TeaModel):
+    def __init__(
+        self,
+        actioner_user_id: str = None,
+        file: ExecuteProcessInstanceRequestFile = None,
+        process_instance_id: str = None,
+        remark: str = None,
+        result: str = None,
+        task_id: int = None,
+    ):
+        # 操作人userid，可通过调用获取审批实例详情接口获取。
+        self.actioner_user_id = actioner_user_id
+        # 文件。
+        self.file = file
+        # 审批实例ID，可通过调用获取审批实例ID列表接口获取。
+        self.process_instance_id = process_instance_id
+        # 审批意见，可为空。
+        self.remark = remark
+        # 审批操作，取值。
+        # 
+        # agree：同意
+        # 
+        # refuse：拒绝
+        self.result = result
+        # 任务节点id，可通过调用获取审批实例详情接口获取。
+        self.task_id = task_id
+
+    def validate(self):
+        if self.file:
+            self.file.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.actioner_user_id is not None:
+            result['actionerUserId'] = self.actioner_user_id
+        if self.file is not None:
+            result['file'] = self.file.to_map()
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.result is not None:
+            result['result'] = self.result
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionerUserId') is not None:
+            self.actioner_user_id = m.get('actionerUserId')
+        if m.get('file') is not None:
+            temp_model = ExecuteProcessInstanceRequestFile()
+            self.file = temp_model.from_map(m['file'])
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class ExecuteProcessInstanceResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        # 请求ID。
+        self.request_id = request_id
+        # 同意或拒绝结果。
+        self.result = result
+        # 接口调用是否成功。
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ExecuteProcessInstanceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ExecuteProcessInstanceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ExecuteProcessInstanceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class FormCreateHeaders(TeaModel):
     def __init__(
         self,
@@ -1776,6 +2508,183 @@ class FormCreateResponse(TeaModel):
         return self
 
 
+class GetAttachmentSpaceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetAttachmentSpaceRequest(TeaModel):
+    def __init__(
+        self,
+        agent_id: int = None,
+        user_id: str = None,
+    ):
+        # 应用的agentid。
+        self.agent_id = agent_id
+        # 用户的userid
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetAttachmentSpaceResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        space_id: int = None,
+    ):
+        # 钉盘空间ID。
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class GetAttachmentSpaceResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: GetAttachmentSpaceResponseBodyResult = None,
+        success: bool = None,
+    ):
+        # 请求ID。
+        self.request_id = request_id
+        # 返回结果。
+        self.result = result
+        # 接口调用是否成功。
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            temp_model = GetAttachmentSpaceResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetAttachmentSpaceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetAttachmentSpaceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetAttachmentSpaceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetCrmProcCodesHeaders(TeaModel):
     def __init__(
         self,
@@ -1869,6 +2778,228 @@ class GetCrmProcCodesResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetCrmProcCodesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetManageProcessByStaffIdHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetManageProcessByStaffIdRequest(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+    ):
+        # 用户的userid。
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetManageProcessByStaffIdResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        attendance_type: int = None,
+        flow_title: str = None,
+        gmt_modified: str = None,
+        icon_name: str = None,
+        icon_url: str = None,
+        new_process: bool = None,
+        process_code: str = None,
+    ):
+        # 关联考勤类型，取值。
+        # 
+        # 0：无
+        # 1：补卡申请
+        # 2：请假
+        self.attendance_type = attendance_type
+        # 模版名称。
+        self.flow_title = flow_title
+        # 修改时间。
+        self.gmt_modified = gmt_modified
+        # 模板图标名。
+        self.icon_name = icon_name
+        # 图标URL地址。
+        self.icon_url = icon_url
+        # 是否新模版。
+        self.new_process = new_process
+        # 模版code。
+        self.process_code = process_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.attendance_type is not None:
+            result['attendanceType'] = self.attendance_type
+        if self.flow_title is not None:
+            result['flowTitle'] = self.flow_title
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.icon_name is not None:
+            result['iconName'] = self.icon_name
+        if self.icon_url is not None:
+            result['iconUrl'] = self.icon_url
+        if self.new_process is not None:
+            result['newProcess'] = self.new_process
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('attendanceType') is not None:
+            self.attendance_type = m.get('attendanceType')
+        if m.get('flowTitle') is not None:
+            self.flow_title = m.get('flowTitle')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('iconName') is not None:
+            self.icon_name = m.get('iconName')
+        if m.get('iconUrl') is not None:
+            self.icon_url = m.get('iconUrl')
+        if m.get('newProcess') is not None:
+            self.new_process = m.get('newProcess')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        return self
+
+
+class GetManageProcessByStaffIdResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: List[GetManageProcessByStaffIdResponseBodyResult] = None,
+        success: bool = None,
+    ):
+        # 请求ID。
+        self.request_id = request_id
+        # 返回结果列表。
+        self.result = result
+        # 接口调用是否成功。
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetManageProcessByStaffIdResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetManageProcessByStaffIdResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetManageProcessByStaffIdResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetManageProcessByStaffIdResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -2562,6 +3693,927 @@ class GetProcessConfigResponse(TeaModel):
         return self
 
 
+class GetProcessInstanceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetProcessInstanceRequest(TeaModel):
+    def __init__(
+        self,
+        process_instance_id: str = None,
+    ):
+        # 审批实例ID企业内部应用可通过获取审批实例ID列表接口获取。钉钉三方企业应用可以通过推送的审批事件中获取，参考biz_type=22。
+        self.process_instance_id = process_instance_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        return self
+
+
+class GetProcessInstanceResponseBodyResultFormComponentValues(TeaModel):
+    def __init__(
+        self,
+        biz_alias: str = None,
+        component_type: str = None,
+        ext_value: str = None,
+        id: str = None,
+        name: str = None,
+        value: str = None,
+    ):
+        # 组件别名。
+        self.biz_alias = biz_alias
+        # 组件类型。
+        self.component_type = component_type
+        # 标签扩展值。
+        self.ext_value = ext_value
+        # 组件ID。
+        self.id = id
+        # 组件名称。
+        self.name = name
+        # 标签值。
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.component_type is not None:
+            result['componentType'] = self.component_type
+        if self.ext_value is not None:
+            result['extValue'] = self.ext_value
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('componentType') is not None:
+            self.component_type = m.get('componentType')
+        if m.get('extValue') is not None:
+            self.ext_value = m.get('extValue')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class GetProcessInstanceResponseBodyResultOperationRecordsAttachments(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        file_name: str = None,
+        file_size: str = None,
+        file_type: str = None,
+    ):
+        # 附件ID。
+        self.file_id = file_id
+        # 附件名称。
+        self.file_name = file_name
+        # 附件大小。
+        self.file_size = file_size
+        # 附件类型。
+        self.file_type = file_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        return self
+
+
+class GetProcessInstanceResponseBodyResultOperationRecords(TeaModel):
+    def __init__(
+        self,
+        attachments: List[GetProcessInstanceResponseBodyResultOperationRecordsAttachments] = None,
+        date: str = None,
+        remark: str = None,
+        result: str = None,
+        type: str = None,
+        user_id: str = None,
+    ):
+        # 评论附件列表。
+        self.attachments = attachments
+        # 操作时间。
+        self.date = date
+        # 评论内容。  审批操作附带评论时才返回该字段。
+        self.remark = remark
+        # 操作结果：  AGREE：同意  REFUSE：拒绝  NONE
+        self.result = result
+        # 操作类型：  EXECUTE_TASK_NORMAL：正常执行任务  EXECUTE_TASK_AGENT：代理人执行任务  APPEND_TASK_BEFORE：前加签任务  APPEND_TASK_AFTER：后加签任务  REDIRECT_TASK：转交任务  START_PROCESS_INSTANCE：发起流程实例  TERMINATE_PROCESS_INSTANCE：终止(撤销)流程实例  FINISH_PROCESS_INSTANCE：结束流程实例  ADD_REMARK：添加评论  REDIRECT_PROCESS：审批退回  PROCESS_CC：抄送
+        self.type = type
+        # 操作人userid。
+        self.user_id = user_id
+
+    def validate(self):
+        if self.attachments:
+            for k in self.attachments:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['attachments'] = []
+        if self.attachments is not None:
+            for k in self.attachments:
+                result['attachments'].append(k.to_map() if k else None)
+        if self.date is not None:
+            result['date'] = self.date
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.result is not None:
+            result['result'] = self.result
+        if self.type is not None:
+            result['type'] = self.type
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.attachments = []
+        if m.get('attachments') is not None:
+            for k in m.get('attachments'):
+                temp_model = GetProcessInstanceResponseBodyResultOperationRecordsAttachments()
+                self.attachments.append(temp_model.from_map(k))
+        if m.get('date') is not None:
+            self.date = m.get('date')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetProcessInstanceResponseBodyResultTasks(TeaModel):
+    def __init__(
+        self,
+        activity_id: str = None,
+        create_time: str = None,
+        finish_time: str = None,
+        mobile_url: str = None,
+        pc_url: str = None,
+        process_instance_id: str = None,
+        result: str = None,
+        status: str = None,
+        task_id: int = None,
+        user_id: str = None,
+    ):
+        # 任务节点ID。
+        self.activity_id = activity_id
+        # 开始时间。
+        self.create_time = create_time
+        # 结束时间。
+        self.finish_time = finish_time
+        # 移动端任务URL。
+        self.mobile_url = mobile_url
+        # PC端任务URL。
+        self.pc_url = pc_url
+        # 实例ID。
+        self.process_instance_id = process_instance_id
+        # 结果：  AGREE：同意  REFUSE：拒绝  REDIRECTED：转交
+        self.result = result
+        # 任务状态：  NEW：未启动  RUNNING：处理中  PAUSED：暂停  CANCELED：取消  COMPLETED：完成  TERMINATED：终止
+        self.status = status
+        # 任务ID。
+        self.task_id = task_id
+        # 任务处理人。
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.activity_id is not None:
+            result['activityId'] = self.activity_id
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.finish_time is not None:
+            result['finishTime'] = self.finish_time
+        if self.mobile_url is not None:
+            result['mobileUrl'] = self.mobile_url
+        if self.pc_url is not None:
+            result['pcUrl'] = self.pc_url
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.status is not None:
+            result['status'] = self.status
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('activityId') is not None:
+            self.activity_id = m.get('activityId')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('finishTime') is not None:
+            self.finish_time = m.get('finishTime')
+        if m.get('mobileUrl') is not None:
+            self.mobile_url = m.get('mobileUrl')
+        if m.get('pcUrl') is not None:
+            self.pc_url = m.get('pcUrl')
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetProcessInstanceResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        approver_user_ids: List[str] = None,
+        attached_process_instance_ids: List[str] = None,
+        biz_action: str = None,
+        business_id: str = None,
+        cc_user_ids: List[str] = None,
+        create_time: str = None,
+        finish_time: str = None,
+        form_component_values: List[GetProcessInstanceResponseBodyResultFormComponentValues] = None,
+        main_process_instance_id: str = None,
+        operation_records: List[GetProcessInstanceResponseBodyResultOperationRecords] = None,
+        originator_dept_id: str = None,
+        originator_dept_name: str = None,
+        originator_user_id: str = None,
+        result: str = None,
+        status: str = None,
+        tasks: List[GetProcessInstanceResponseBodyResultTasks] = None,
+        title: str = None,
+    ):
+        # 审批人userid列表。
+        self.approver_user_ids = approver_user_ids
+        # 审批附属实例列表，当已经通过的审批实例被修改或撤销，会生成一个新的实例，作为原有审批实例的附属。  如果想知道当前已经通过的审批实例的状态，可以依次遍历它的附属列表，查询里面每个实例的biz_action。
+        self.attached_process_instance_ids = attached_process_instance_ids
+        # 审批实例业务动作：  MODIFY：表示该审批实例是基于原来的实例修改而来  REVOKE：表示该审批实例是由原来的实例撤销后重新发起的  NONE表示正常发起
+        self.biz_action = biz_action
+        # 审批实例业务编号。
+        self.business_id = business_id
+        # 抄送人userid列表。
+        self.cc_user_ids = cc_user_ids
+        # 创建时间。
+        self.create_time = create_time
+        # 结束时间。
+        self.finish_time = finish_time
+        # 表单详情列表。
+        self.form_component_values = form_component_values
+        # 主流程实例标识。
+        self.main_process_instance_id = main_process_instance_id
+        # 操作记录列表。
+        self.operation_records = operation_records
+        # 发起人的部门。-1表示根部门。
+        self.originator_dept_id = originator_dept_id
+        # 发起人的部门名。
+        self.originator_dept_name = originator_dept_name
+        # 发起人的userid。
+        self.originator_user_id = originator_user_id
+        # 审批结果：  agree：同意  refuse：拒绝。 说明 status为COMPLETED且result为同意时，表示审批单完结并审批通过。
+        self.result = result
+        # 审批状态：  NEW：新创建  RUNNING：审批中  TERMINATED：被终止  COMPLETED：完成  CANCELED：取消
+        self.status = status
+        # 任务列表。
+        self.tasks = tasks
+        # 审批实例标题。
+        self.title = title
+
+    def validate(self):
+        if self.form_component_values:
+            for k in self.form_component_values:
+                if k:
+                    k.validate()
+        if self.operation_records:
+            for k in self.operation_records:
+                if k:
+                    k.validate()
+        if self.tasks:
+            for k in self.tasks:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.approver_user_ids is not None:
+            result['approverUserIds'] = self.approver_user_ids
+        if self.attached_process_instance_ids is not None:
+            result['attachedProcessInstanceIds'] = self.attached_process_instance_ids
+        if self.biz_action is not None:
+            result['bizAction'] = self.biz_action
+        if self.business_id is not None:
+            result['businessId'] = self.business_id
+        if self.cc_user_ids is not None:
+            result['ccUserIds'] = self.cc_user_ids
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.finish_time is not None:
+            result['finishTime'] = self.finish_time
+        result['formComponentValues'] = []
+        if self.form_component_values is not None:
+            for k in self.form_component_values:
+                result['formComponentValues'].append(k.to_map() if k else None)
+        if self.main_process_instance_id is not None:
+            result['mainProcessInstanceId'] = self.main_process_instance_id
+        result['operationRecords'] = []
+        if self.operation_records is not None:
+            for k in self.operation_records:
+                result['operationRecords'].append(k.to_map() if k else None)
+        if self.originator_dept_id is not None:
+            result['originatorDeptId'] = self.originator_dept_id
+        if self.originator_dept_name is not None:
+            result['originatorDeptName'] = self.originator_dept_name
+        if self.originator_user_id is not None:
+            result['originatorUserId'] = self.originator_user_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.status is not None:
+            result['status'] = self.status
+        result['tasks'] = []
+        if self.tasks is not None:
+            for k in self.tasks:
+                result['tasks'].append(k.to_map() if k else None)
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('approverUserIds') is not None:
+            self.approver_user_ids = m.get('approverUserIds')
+        if m.get('attachedProcessInstanceIds') is not None:
+            self.attached_process_instance_ids = m.get('attachedProcessInstanceIds')
+        if m.get('bizAction') is not None:
+            self.biz_action = m.get('bizAction')
+        if m.get('businessId') is not None:
+            self.business_id = m.get('businessId')
+        if m.get('ccUserIds') is not None:
+            self.cc_user_ids = m.get('ccUserIds')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('finishTime') is not None:
+            self.finish_time = m.get('finishTime')
+        self.form_component_values = []
+        if m.get('formComponentValues') is not None:
+            for k in m.get('formComponentValues'):
+                temp_model = GetProcessInstanceResponseBodyResultFormComponentValues()
+                self.form_component_values.append(temp_model.from_map(k))
+        if m.get('mainProcessInstanceId') is not None:
+            self.main_process_instance_id = m.get('mainProcessInstanceId')
+        self.operation_records = []
+        if m.get('operationRecords') is not None:
+            for k in m.get('operationRecords'):
+                temp_model = GetProcessInstanceResponseBodyResultOperationRecords()
+                self.operation_records.append(temp_model.from_map(k))
+        if m.get('originatorDeptId') is not None:
+            self.originator_dept_id = m.get('originatorDeptId')
+        if m.get('originatorDeptName') is not None:
+            self.originator_dept_name = m.get('originatorDeptName')
+        if m.get('originatorUserId') is not None:
+            self.originator_user_id = m.get('originatorUserId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        self.tasks = []
+        if m.get('tasks') is not None:
+            for k in m.get('tasks'):
+                temp_model = GetProcessInstanceResponseBodyResultTasks()
+                self.tasks.append(temp_model.from_map(k))
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class GetProcessInstanceResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: GetProcessInstanceResponseBodyResult = None,
+        success: str = None,
+    ):
+        # 请求ID。
+        self.request_id = request_id
+        # 返回结果。
+        self.result = result
+        # 调用是否成功。
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            temp_model = GetProcessInstanceResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetProcessInstanceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetProcessInstanceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetProcessInstanceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetSpaceWithDownloadAuthHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetSpaceWithDownloadAuthRequest(TeaModel):
+    def __init__(
+        self,
+        agent_id: int = None,
+        file_id: str = None,
+        file_id_list: List[str] = None,
+        process_instance_id: str = None,
+        user_id: str = None,
+    ):
+        # 应用的agentid。
+        self.agent_id = agent_id
+        # 审批附件ID。
+        self.file_id = file_id
+        # 附件ID列表，支持批量授权，最大列表长度：20。
+        self.file_id_list = file_id_list
+        # 实例ID。
+        # 
+        # 企业内部应用
+        # 
+        # 可通过获取审批实例ID列表接口获取。
+        # 
+        # 第三方企业应用
+        # 
+        # 可以通过推送的审批事件中获取，参考biz_type=22。
+        self.process_instance_id = process_instance_id
+        # 授权允许预览附件的用户userid。
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_id_list is not None:
+            result['fileIdList'] = self.file_id_list
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileIdList') is not None:
+            self.file_id_list = m.get('fileIdList')
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetSpaceWithDownloadAuthResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        space_id: int = None,
+    ):
+        # 钉盘空间ID。
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class GetSpaceWithDownloadAuthResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: GetSpaceWithDownloadAuthResponseBodyResult = None,
+        success: bool = None,
+    ):
+        # 请求ID。
+        self.request_id = request_id
+        # 返回结果。
+        self.result = result
+        # 接口调用是否成功。
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            temp_model = GetSpaceWithDownloadAuthResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetSpaceWithDownloadAuthResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetSpaceWithDownloadAuthResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetSpaceWithDownloadAuthResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetUserTodoTaskSumHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetUserTodoTaskSumRequest(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+    ):
+        # 要查询的用户userid。
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetUserTodoTaskSumResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: int = None,
+    ):
+        # 请求ID。
+        self.request_id = request_id
+        # 待处理的审批数量。
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class GetUserTodoTaskSumResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetUserTodoTaskSumResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetUserTodoTaskSumResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GrantCspaceAuthorizationHeaders(TeaModel):
     def __init__(
         self,
@@ -2668,6 +4720,656 @@ class GrantCspaceAuthorizationResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        return self
+
+
+class GrantProcessInstanceForDownloadFileHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GrantProcessInstanceForDownloadFileRequest(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        process_instance_id: str = None,
+    ):
+        # 文件id，调用获取审批实例详情接口获取。
+        self.file_id = file_id
+        # 实例ID。
+        # 
+        # 调用获取审批实例详情接口获取。
+        self.process_instance_id = process_instance_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        return self
+
+
+class GrantProcessInstanceForDownloadFileResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        download_uri: str = None,
+        file_id: str = None,
+        space_id: int = None,
+    ):
+        # 文件下载地址。
+        self.download_uri = download_uri
+        # 文件ID。
+        self.file_id = file_id
+        # 钉盘空间ID。
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.download_uri is not None:
+            result['downloadUri'] = self.download_uri
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('downloadUri') is not None:
+            self.download_uri = m.get('downloadUri')
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class GrantProcessInstanceForDownloadFileResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: GrantProcessInstanceForDownloadFileResponseBodyResult = None,
+        success: bool = None,
+    ):
+        # 请求ID。
+        self.request_id = request_id
+        # 返回结果。
+        self.result = result
+        # 接口调用是否成功。
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            temp_model = GrantProcessInstanceForDownloadFileResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GrantProcessInstanceForDownloadFileResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GrantProcessInstanceForDownloadFileResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GrantProcessInstanceForDownloadFileResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListProcessInstanceIdsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListProcessInstanceIdsRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: int = None,
+        max_results: int = None,
+        next_token: int = None,
+        process_code: str = None,
+        start_time: int = None,
+        user_ids: List[str] = None,
+    ):
+        # 审批实例结束时间，Unix时间戳，单位毫秒。  例如：获取审批单发起时间在2020.4.10-2020.4.14之间审批单，该值传2020.4.14 23:59:59对应的时间戳1586879999000。
+        self.end_time = end_time
+        # 分页参数，每页大小，最多传20。
+        self.max_results = max_results
+        # 分页查询的游标，最开始传0，后续传返回参数中的nextToken值。
+        self.next_token = next_token
+        # 审批流的唯一码。
+        # 
+        # processCode在审批模板编辑页面的URL中获取。
+        self.process_code = process_code
+        # 审批实例开始时间。Unix时间戳，单位毫秒。
+        # 
+        # 例如：获取审批单发起时间在2020.4.10-2020.4.14之间审批单，该值传2020.4.10 00:00:00对应的时间戳1586448000000。
+        self.start_time = start_time
+        # 发起userid列表，最大列表长度为10。
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class ListProcessInstanceIdsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        list: List[str] = None,
+        next_token: str = None,
+    ):
+        # 审批实例ID列表。
+        self.list = list
+        # 表示下次查询的游标，当返回结果没有该字段时表示没有更多数据了。
+        self.next_token = next_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.list is not None:
+            result['list'] = self.list
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('list') is not None:
+            self.list = m.get('list')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class ListProcessInstanceIdsResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: ListProcessInstanceIdsResponseBodyResult = None,
+        success: bool = None,
+    ):
+        # 请求ID。
+        self.request_id = request_id
+        # 返回结果。
+        self.result = result
+        # 接口请求是否成功。
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            temp_model = ListProcessInstanceIdsResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ListProcessInstanceIdsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListProcessInstanceIdsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListProcessInstanceIdsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListUserVisibleBpmsProcessesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListUserVisibleBpmsProcessesRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: int = None,
+        user_id: str = None,
+    ):
+        # 分页大小，最大可设置成100。
+        self.max_results = max_results
+        # 分页游标，从0开始。根据返回结果里的nextToken是否为空来判断是否还有下一页，且再次调用时设置成nextToken的最新值。
+        self.next_token = next_token
+        # 要查询的员工的userid。不传表示查询企业下所有审批表单。
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ListUserVisibleBpmsProcessesResponseBodyResultProcessList(TeaModel):
+    def __init__(
+        self,
+        icon_url: str = None,
+        name: str = None,
+        process_code: str = None,
+        url: str = None,
+    ):
+        # 图标URL。
+        self.icon_url = icon_url
+        # 表单名称。
+        self.name = name
+        # 表单唯一标识。
+        self.process_code = process_code
+        # 表单URL。
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.icon_url is not None:
+            result['iconUrl'] = self.icon_url
+        if self.name is not None:
+            result['name'] = self.name
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('iconUrl') is not None:
+            self.icon_url = m.get('iconUrl')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class ListUserVisibleBpmsProcessesResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        next_token: int = None,
+        process_list: List[ListUserVisibleBpmsProcessesResponseBodyResultProcessList] = None,
+    ):
+        # 下一次分页调用的值，当返回结果里没有nextToken时，表示分页结束。
+        self.next_token = next_token
+        # 可见表单列表。
+        self.process_list = process_list
+
+    def validate(self):
+        if self.process_list:
+            for k in self.process_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['processList'] = []
+        if self.process_list is not None:
+            for k in self.process_list:
+                result['processList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.process_list = []
+        if m.get('processList') is not None:
+            for k in m.get('processList'):
+                temp_model = ListUserVisibleBpmsProcessesResponseBodyResultProcessList()
+                self.process_list.append(temp_model.from_map(k))
+        return self
+
+
+class ListUserVisibleBpmsProcessesResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: ListUserVisibleBpmsProcessesResponseBodyResult = None,
+    ):
+        # 请求ID。
+        self.request_id = request_id
+        # 返回结果。
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            temp_model = ListUserVisibleBpmsProcessesResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class ListUserVisibleBpmsProcessesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListUserVisibleBpmsProcessesResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListUserVisibleBpmsProcessesResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 
@@ -7764,6 +10466,173 @@ class StartProcessInstanceResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = StartProcessInstanceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class TerminateProcessInstanceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class TerminateProcessInstanceRequest(TeaModel):
+    def __init__(
+        self,
+        is_system: bool = None,
+        operating_user_id: str = None,
+        process_instance_id: str = None,
+        remark: str = None,
+    ):
+        # 是否通过系统操作：
+        # 
+        # true：由系统直接终止
+        # 
+        # false：由指定的操作者终止
+        self.is_system = is_system
+        # 操作人的userid。
+        # 
+        # 当is_system为false时，该参数必传。
+        self.operating_user_id = operating_user_id
+        # 审批实例ID，可通过调用获取审批实例ID列表接口获取。
+        self.process_instance_id = process_instance_id
+        # 终止说明。
+        self.remark = remark
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.is_system is not None:
+            result['isSystem'] = self.is_system
+        if self.operating_user_id is not None:
+            result['operatingUserId'] = self.operating_user_id
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.remark is not None:
+            result['remark'] = self.remark
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('isSystem') is not None:
+            self.is_system = m.get('isSystem')
+        if m.get('operatingUserId') is not None:
+            self.operating_user_id = m.get('operatingUserId')
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        return self
+
+
+class TerminateProcessInstanceResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        # 请求ID。
+        self.request_id = request_id
+        # 撤销结果。
+        self.result = result
+        # 接口调用是否成功。
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class TerminateProcessInstanceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: TerminateProcessInstanceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = TerminateProcessInstanceResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

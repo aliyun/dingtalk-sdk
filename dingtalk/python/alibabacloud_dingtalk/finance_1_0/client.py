@@ -2163,6 +2163,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('UpdateInvoiceVerifyStatus', 'finance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/finance/invoices/verifyStatus', 'json', req, runtime)
         )
 
+    def upload_invoice(
+        self,
+        request: dingtalkfinance__1__0_models.UploadInvoiceRequest,
+    ) -> dingtalkfinance__1__0_models.UploadInvoiceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.UploadInvoiceHeaders()
+        return self.upload_invoice_with_options(request, headers, runtime)
+
+    async def upload_invoice_async(
+        self,
+        request: dingtalkfinance__1__0_models.UploadInvoiceRequest,
+    ) -> dingtalkfinance__1__0_models.UploadInvoiceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.UploadInvoiceHeaders()
+        return await self.upload_invoice_with_options_async(request, headers, runtime)
+
+    def upload_invoice_with_options(
+        self,
+        request: dingtalkfinance__1__0_models.UploadInvoiceRequest,
+        headers: dingtalkfinance__1__0_models.UploadInvoiceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.UploadInvoiceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.invoices):
+            body['invoices'] = request.invoices
+        if not UtilClient.is_unset(request.user_identity):
+            body['userIdentity'] = request.user_identity
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.UploadInvoiceResponse(),
+            self.do_roarequest('UploadInvoice', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/invoices/upload', 'json', req, runtime)
+        )
+
+    async def upload_invoice_with_options_async(
+        self,
+        request: dingtalkfinance__1__0_models.UploadInvoiceRequest,
+        headers: dingtalkfinance__1__0_models.UploadInvoiceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.UploadInvoiceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.invoices):
+            body['invoices'] = request.invoices
+        if not UtilClient.is_unset(request.user_identity):
+            body['userIdentity'] = request.user_identity
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.UploadInvoiceResponse(),
+            await self.do_roarequest_async('UploadInvoice', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/invoices/upload', 'json', req, runtime)
+        )
+
     def upload_invoice_by_auth(
         self,
         request: dingtalkfinance__1__0_models.UploadInvoiceByAuthRequest,
@@ -2187,6 +2259,8 @@ class Client(OpenApiClient):
     ) -> dingtalkfinance__1__0_models.UploadInvoiceByAuthResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
         if not UtilClient.is_unset(request.invoices):
             body['invoices'] = request.invoices
         real_headers = {}
@@ -2211,6 +2285,8 @@ class Client(OpenApiClient):
     ) -> dingtalkfinance__1__0_models.UploadInvoiceByAuthResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
         if not UtilClient.is_unset(request.invoices):
             body['invoices'] = request.invoices
         real_headers = {}

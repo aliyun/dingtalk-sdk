@@ -7501,6 +7501,467 @@ class UpdateInvoiceVerifyStatusResponse(TeaModel):
         return self
 
 
+class UploadInvoiceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UploadInvoiceRequestExtension(TeaModel):
+    def __init__(
+        self,
+        biz_code: str = None,
+        order_no: str = None,
+        order_type: str = None,
+    ):
+        self.biz_code = biz_code
+        self.order_no = order_no
+        self.order_type = order_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        if self.order_type is not None:
+            result['orderType'] = self.order_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        if m.get('orderType') is not None:
+            self.order_type = m.get('orderType')
+        return self
+
+
+class UploadInvoiceRequestInvoices(TeaModel):
+    def __init__(
+        self,
+        invoice_amount: str = None,
+        invoice_code: str = None,
+        invoice_date: str = None,
+        invoice_no: str = None,
+        invoice_type: str = None,
+        logo_url: str = None,
+        payee_name: str = None,
+        payee_tax_no: str = None,
+        payer_name: str = None,
+        payer_tax_no: str = None,
+        pdf_url: str = None,
+        tax_amount: str = None,
+        verify_code: str = None,
+        without_tax_amount: str = None,
+    ):
+        # 发票总金额
+        self.invoice_amount = invoice_amount
+        # 发票代码
+        self.invoice_code = invoice_code
+        # 开票时间
+        self.invoice_date = invoice_date
+        # 发票号码
+        self.invoice_no = invoice_no
+        # 发票类型
+        self.invoice_type = invoice_type
+        # 发票logo地址
+        self.logo_url = logo_url
+        # 收款方名称
+        self.payee_name = payee_name
+        # 收款方税号
+        self.payee_tax_no = payee_tax_no
+        # 付款方名称
+        self.payer_name = payer_name
+        # 付款方税号
+        self.payer_tax_no = payer_tax_no
+        # 发票pdf原件下载链接
+        self.pdf_url = pdf_url
+        # 税金额
+        self.tax_amount = tax_amount
+        # 发票校验码
+        self.verify_code = verify_code
+        # 不含税金额
+        self.without_tax_amount = without_tax_amount
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.invoice_amount is not None:
+            result['invoiceAmount'] = self.invoice_amount
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_date is not None:
+            result['invoiceDate'] = self.invoice_date
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        if self.invoice_type is not None:
+            result['invoiceType'] = self.invoice_type
+        if self.logo_url is not None:
+            result['logoUrl'] = self.logo_url
+        if self.payee_name is not None:
+            result['payeeName'] = self.payee_name
+        if self.payee_tax_no is not None:
+            result['payeeTaxNo'] = self.payee_tax_no
+        if self.payer_name is not None:
+            result['payerName'] = self.payer_name
+        if self.payer_tax_no is not None:
+            result['payerTaxNo'] = self.payer_tax_no
+        if self.pdf_url is not None:
+            result['pdfUrl'] = self.pdf_url
+        if self.tax_amount is not None:
+            result['taxAmount'] = self.tax_amount
+        if self.verify_code is not None:
+            result['verifyCode'] = self.verify_code
+        if self.without_tax_amount is not None:
+            result['withoutTaxAmount'] = self.without_tax_amount
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('invoiceAmount') is not None:
+            self.invoice_amount = m.get('invoiceAmount')
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceDate') is not None:
+            self.invoice_date = m.get('invoiceDate')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        if m.get('invoiceType') is not None:
+            self.invoice_type = m.get('invoiceType')
+        if m.get('logoUrl') is not None:
+            self.logo_url = m.get('logoUrl')
+        if m.get('payeeName') is not None:
+            self.payee_name = m.get('payeeName')
+        if m.get('payeeTaxNo') is not None:
+            self.payee_tax_no = m.get('payeeTaxNo')
+        if m.get('payerName') is not None:
+            self.payer_name = m.get('payerName')
+        if m.get('payerTaxNo') is not None:
+            self.payer_tax_no = m.get('payerTaxNo')
+        if m.get('pdfUrl') is not None:
+            self.pdf_url = m.get('pdfUrl')
+        if m.get('taxAmount') is not None:
+            self.tax_amount = m.get('taxAmount')
+        if m.get('verifyCode') is not None:
+            self.verify_code = m.get('verifyCode')
+        if m.get('withoutTaxAmount') is not None:
+            self.without_tax_amount = m.get('withoutTaxAmount')
+        return self
+
+
+class UploadInvoiceRequestUserIdentity(TeaModel):
+    def __init__(
+        self,
+        mobile: str = None,
+        mobile_state_code: str = None,
+        target_corp_id: str = None,
+        type: str = None,
+        union_id: str = None,
+        user_id: str = None,
+    ):
+        self.mobile = mobile
+        self.mobile_state_code = mobile_state_code
+        self.target_corp_id = target_corp_id
+        self.type = type
+        self.union_id = union_id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.mobile is not None:
+            result['mobile'] = self.mobile
+        if self.mobile_state_code is not None:
+            result['mobileStateCode'] = self.mobile_state_code
+        if self.target_corp_id is not None:
+            result['targetCorpId'] = self.target_corp_id
+        if self.type is not None:
+            result['type'] = self.type
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('mobile') is not None:
+            self.mobile = m.get('mobile')
+        if m.get('mobileStateCode') is not None:
+            self.mobile_state_code = m.get('mobileStateCode')
+        if m.get('targetCorpId') is not None:
+            self.target_corp_id = m.get('targetCorpId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class UploadInvoiceRequest(TeaModel):
+    def __init__(
+        self,
+        extension: UploadInvoiceRequestExtension = None,
+        invoices: List[UploadInvoiceRequestInvoices] = None,
+        user_identity: UploadInvoiceRequestUserIdentity = None,
+    ):
+        self.extension = extension
+        # 上传发票列表
+        self.invoices = invoices
+        self.user_identity = user_identity
+
+    def validate(self):
+        if self.extension:
+            self.extension.validate()
+        if self.invoices:
+            for k in self.invoices:
+                if k:
+                    k.validate()
+        if self.user_identity:
+            self.user_identity.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.extension is not None:
+            result['extension'] = self.extension.to_map()
+        result['invoices'] = []
+        if self.invoices is not None:
+            for k in self.invoices:
+                result['invoices'].append(k.to_map() if k else None)
+        if self.user_identity is not None:
+            result['userIdentity'] = self.user_identity.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('extension') is not None:
+            temp_model = UploadInvoiceRequestExtension()
+            self.extension = temp_model.from_map(m['extension'])
+        self.invoices = []
+        if m.get('invoices') is not None:
+            for k in m.get('invoices'):
+                temp_model = UploadInvoiceRequestInvoices()
+                self.invoices.append(temp_model.from_map(k))
+        if m.get('userIdentity') is not None:
+            temp_model = UploadInvoiceRequestUserIdentity()
+            self.user_identity = temp_model.from_map(m['userIdentity'])
+        return self
+
+
+class UploadInvoiceResponseBodyResultResults(TeaModel):
+    def __init__(
+        self,
+        err_code: str = None,
+        invoice_code: str = None,
+        invoice_no: str = None,
+        reason: str = None,
+        success: bool = None,
+    ):
+        # 业务错误码
+        self.err_code = err_code
+        # 发票代码
+        self.invoice_code = invoice_code
+        # 发票号码
+        self.invoice_no = invoice_no
+        # 失败原因
+        self.reason = reason
+        # 是否成功
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.err_code is not None:
+            result['errCode'] = self.err_code
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        if self.reason is not None:
+            result['reason'] = self.reason
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errCode') is not None:
+            self.err_code = m.get('errCode')
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        if m.get('reason') is not None:
+            self.reason = m.get('reason')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UploadInvoiceResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        results: List[UploadInvoiceResponseBodyResultResults] = None,
+    ):
+        # 上传结果
+        self.results = results
+
+    def validate(self):
+        if self.results:
+            for k in self.results:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['results'] = []
+        if self.results is not None:
+            for k in self.results:
+                result['results'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.results = []
+        if m.get('results') is not None:
+            for k in m.get('results'):
+                temp_model = UploadInvoiceResponseBodyResultResults()
+                self.results.append(temp_model.from_map(k))
+        return self
+
+
+class UploadInvoiceResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UploadInvoiceResponseBodyResult = None,
+    ):
+        # 结果
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UploadInvoiceResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class UploadInvoiceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UploadInvoiceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UploadInvoiceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UploadInvoiceByAuthHeaders(TeaModel):
     def __init__(
         self,
@@ -7531,6 +7992,45 @@ class UploadInvoiceByAuthHeaders(TeaModel):
             self.common_headers = m.get('commonHeaders')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UploadInvoiceByAuthRequestExtension(TeaModel):
+    def __init__(
+        self,
+        biz_code: str = None,
+        order_no: str = None,
+        order_type: str = None,
+    ):
+        self.biz_code = biz_code
+        self.order_no = order_no
+        self.order_type = order_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        if self.order_type is not None:
+            result['orderType'] = self.order_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        if m.get('orderType') is not None:
+            self.order_type = m.get('orderType')
         return self
 
 
@@ -7656,12 +8156,16 @@ class UploadInvoiceByAuthRequestInvoices(TeaModel):
 class UploadInvoiceByAuthRequest(TeaModel):
     def __init__(
         self,
+        extension: UploadInvoiceByAuthRequestExtension = None,
         invoices: List[UploadInvoiceByAuthRequestInvoices] = None,
     ):
+        self.extension = extension
         # 上传发票列表
         self.invoices = invoices
 
     def validate(self):
+        if self.extension:
+            self.extension.validate()
         if self.invoices:
             for k in self.invoices:
                 if k:
@@ -7673,6 +8177,8 @@ class UploadInvoiceByAuthRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.extension is not None:
+            result['extension'] = self.extension.to_map()
         result['invoices'] = []
         if self.invoices is not None:
             for k in self.invoices:
@@ -7681,6 +8187,9 @@ class UploadInvoiceByAuthRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('extension') is not None:
+            temp_model = UploadInvoiceByAuthRequestExtension()
+            self.extension = temp_model.from_map(m['extension'])
         self.invoices = []
         if m.get('invoices') is not None:
             for k in m.get('invoices'):
