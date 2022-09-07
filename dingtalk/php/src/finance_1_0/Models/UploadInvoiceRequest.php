@@ -4,11 +4,12 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UploadInvoiceByAuthRequest\extension;
-use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UploadInvoiceByAuthRequest\invoices;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UploadInvoiceRequest\extension;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UploadInvoiceRequest\invoices;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UploadInvoiceRequest\userIdentity;
 use AlibabaCloud\Tea\Model;
 
-class UploadInvoiceByAuthRequest extends Model
+class UploadInvoiceRequest extends Model
 {
     /**
      * @var extension
@@ -21,9 +22,15 @@ class UploadInvoiceByAuthRequest extends Model
      * @var invoices[]
      */
     public $invoices;
+
+    /**
+     * @var userIdentity
+     */
+    public $userIdentity;
     protected $_name = [
-        'extension' => 'extension',
-        'invoices'  => 'invoices',
+        'extension'    => 'extension',
+        'invoices'     => 'invoices',
+        'userIdentity' => 'userIdentity',
     ];
 
     public function validate()
@@ -45,6 +52,9 @@ class UploadInvoiceByAuthRequest extends Model
                 }
             }
         }
+        if (null !== $this->userIdentity) {
+            $res['userIdentity'] = null !== $this->userIdentity ? $this->userIdentity->toMap() : null;
+        }
 
         return $res;
     }
@@ -52,7 +62,7 @@ class UploadInvoiceByAuthRequest extends Model
     /**
      * @param array $map
      *
-     * @return UploadInvoiceByAuthRequest
+     * @return UploadInvoiceRequest
      */
     public static function fromMap($map = [])
     {
@@ -68,6 +78,9 @@ class UploadInvoiceByAuthRequest extends Model
                     $model->invoices[$n++] = null !== $item ? invoices::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['userIdentity'])) {
+            $model->userIdentity = userIdentity::fromMap($map['userIdentity']);
         }
 
         return $model;

@@ -81,6 +81,9 @@ use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UploadInvoiceByAuthResponse;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UploadInvoiceByMobileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UploadInvoiceByMobileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UploadInvoiceByMobileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UploadInvoiceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UploadInvoiceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UploadInvoiceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UploadRegisterImageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UploadRegisterImageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\UploadRegisterImageResponse;
@@ -1574,6 +1577,54 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param UploadInvoiceRequest $request
+     *
+     * @return UploadInvoiceResponse
+     */
+    public function uploadInvoice($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UploadInvoiceHeaders([]);
+
+        return $this->uploadInvoiceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UploadInvoiceRequest $request
+     * @param UploadInvoiceHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return UploadInvoiceResponse
+     */
+    public function uploadInvoiceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->extension)) {
+            @$body['extension'] = $request->extension;
+        }
+        if (!Utils::isUnset($request->invoices)) {
+            @$body['invoices'] = $request->invoices;
+        }
+        if (!Utils::isUnset($request->userIdentity)) {
+            @$body['userIdentity'] = $request->userIdentity;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UploadInvoiceResponse::fromMap($this->doROARequest('UploadInvoice', 'finance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/finance/invoices/upload', 'json', $req, $runtime));
+    }
+
+    /**
      * @param UploadInvoiceByAuthRequest $request
      *
      * @return UploadInvoiceByAuthResponse
@@ -1597,6 +1648,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->extension)) {
+            @$body['extension'] = $request->extension;
+        }
         if (!Utils::isUnset($request->invoices)) {
             @$body['invoices'] = $request->invoices;
         }
