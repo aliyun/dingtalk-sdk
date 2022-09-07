@@ -8,11 +8,11 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
 {
-    public class UploadInvoiceByAuthRequest : TeaModel {
+    public class UploadInvoiceRequest : TeaModel {
         [NameInMap("extension")]
         [Validation(Required=false)]
-        public UploadInvoiceByAuthRequestExtension Extension { get; set; }
-        public class UploadInvoiceByAuthRequestExtension : TeaModel {
+        public UploadInvoiceRequestExtension Extension { get; set; }
+        public class UploadInvoiceRequestExtension : TeaModel {
             [NameInMap("bizCode")]
             [Validation(Required=false)]
             public string BizCode { get; set; }
@@ -32,8 +32,8 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         /// </summary>
         [NameInMap("invoices")]
         [Validation(Required=false)]
-        public List<UploadInvoiceByAuthRequestInvoices> Invoices { get; set; }
-        public class UploadInvoiceByAuthRequestInvoices : TeaModel {
+        public List<UploadInvoiceRequestInvoices> Invoices { get; set; }
+        public class UploadInvoiceRequestInvoices : TeaModel {
             /// <summary>
             /// 发票总金额
             /// </summary>
@@ -131,6 +131,36 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             [NameInMap("withoutTaxAmount")]
             [Validation(Required=false)]
             public string WithoutTaxAmount { get; set; }
+
+        }
+
+        [NameInMap("userIdentity")]
+        [Validation(Required=false)]
+        public UploadInvoiceRequestUserIdentity UserIdentity { get; set; }
+        public class UploadInvoiceRequestUserIdentity : TeaModel {
+            [NameInMap("mobile")]
+            [Validation(Required=false)]
+            public string Mobile { get; set; }
+
+            [NameInMap("mobileStateCode")]
+            [Validation(Required=false)]
+            public string MobileStateCode { get; set; }
+
+            [NameInMap("targetCorpId")]
+            [Validation(Required=false)]
+            public string TargetCorpId { get; set; }
+
+            [NameInMap("type")]
+            [Validation(Required=false)]
+            public string Type { get; set; }
+
+            [NameInMap("unionId")]
+            [Validation(Required=false)]
+            public string UnionId { get; set; }
+
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
 
         }
 
