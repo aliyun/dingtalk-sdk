@@ -4,6 +4,9 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UploadInvoiceByAuthRequest extends TeaModel {
+    @NameInMap("extension")
+    public UploadInvoiceByAuthRequestExtension extension;
+
     // 上传发票列表
     @NameInMap("invoices")
     public java.util.List<UploadInvoiceByAuthRequestInvoices> invoices;
@@ -13,12 +16,61 @@ public class UploadInvoiceByAuthRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
+    public UploadInvoiceByAuthRequest setExtension(UploadInvoiceByAuthRequestExtension extension) {
+        this.extension = extension;
+        return this;
+    }
+    public UploadInvoiceByAuthRequestExtension getExtension() {
+        return this.extension;
+    }
+
     public UploadInvoiceByAuthRequest setInvoices(java.util.List<UploadInvoiceByAuthRequestInvoices> invoices) {
         this.invoices = invoices;
         return this;
     }
     public java.util.List<UploadInvoiceByAuthRequestInvoices> getInvoices() {
         return this.invoices;
+    }
+
+    public static class UploadInvoiceByAuthRequestExtension extends TeaModel {
+        @NameInMap("bizCode")
+        public String bizCode;
+
+        @NameInMap("orderNo")
+        public String orderNo;
+
+        @NameInMap("orderType")
+        public String orderType;
+
+        public static UploadInvoiceByAuthRequestExtension build(java.util.Map<String, ?> map) throws Exception {
+            UploadInvoiceByAuthRequestExtension self = new UploadInvoiceByAuthRequestExtension();
+            return TeaModel.build(map, self);
+        }
+
+        public UploadInvoiceByAuthRequestExtension setBizCode(String bizCode) {
+            this.bizCode = bizCode;
+            return this;
+        }
+        public String getBizCode() {
+            return this.bizCode;
+        }
+
+        public UploadInvoiceByAuthRequestExtension setOrderNo(String orderNo) {
+            this.orderNo = orderNo;
+            return this;
+        }
+        public String getOrderNo() {
+            return this.orderNo;
+        }
+
+        public UploadInvoiceByAuthRequestExtension setOrderType(String orderType) {
+            this.orderType = orderType;
+            return this;
+        }
+        public String getOrderType() {
+            return this.orderType;
+        }
+
     }
 
     public static class UploadInvoiceByAuthRequestInvoices extends TeaModel {
