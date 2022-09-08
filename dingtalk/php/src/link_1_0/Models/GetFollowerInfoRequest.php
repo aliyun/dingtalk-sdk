@@ -2,28 +2,30 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class UniqueQueryUserCardRequest extends Model
+class GetFollowerInfoRequest extends Model
 {
     /**
-     * @description 名片模版id
-     *
      * @var string
      */
-    public $templateId;
+    public $accountId;
 
     /**
-     * @description 用户unionId
-     *
      * @var string
      */
     public $unionId;
+
+    /**
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'templateId' => 'templateId',
-        'unionId'    => 'unionId',
+        'accountId' => 'accountId',
+        'unionId'   => 'unionId',
+        'userId'    => 'userId',
     ];
 
     public function validate()
@@ -33,11 +35,14 @@ class UniqueQueryUserCardRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->templateId) {
-            $res['templateId'] = $this->templateId;
+        if (null !== $this->accountId) {
+            $res['accountId'] = $this->accountId;
         }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -46,16 +51,19 @@ class UniqueQueryUserCardRequest extends Model
     /**
      * @param array $map
      *
-     * @return UniqueQueryUserCardRequest
+     * @return GetFollowerInfoRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['templateId'])) {
-            $model->templateId = $map['templateId'];
+        if (isset($map['accountId'])) {
+            $model->accountId = $map['accountId'];
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

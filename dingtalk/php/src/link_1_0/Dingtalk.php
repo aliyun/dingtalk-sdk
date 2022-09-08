@@ -5,9 +5,15 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vlink_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\GetFollowerInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\GetFollowerInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\GetFollowerInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\GetPictureDownloadUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\GetPictureDownloadUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\GetPictureDownloadUrlResponse;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\ListFollowerHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\ListFollowerRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\ListFollowerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\SendAgentOTOMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\SendAgentOTOMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\SendAgentOTOMessageResponse;
@@ -31,6 +37,54 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param GetFollowerInfoRequest $request
+     *
+     * @return GetFollowerInfoResponse
+     */
+    public function getFollowerInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetFollowerInfoHeaders([]);
+
+        return $this->getFollowerInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetFollowerInfoRequest $request
+     * @param GetFollowerInfoHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return GetFollowerInfoResponse
+     */
+    public function getFollowerInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->accountId)) {
+            @$query['accountId'] = $request->accountId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetFollowerInfoResponse::fromMap($this->doROARequest('GetFollowerInfo', 'link_1.0', 'HTTP', 'GET', 'AK', '/v1.0/link/followers/infos', 'json', $req, $runtime));
     }
 
     /**
@@ -76,6 +130,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetPictureDownloadUrlResponse::fromMap($this->doROARequest('GetPictureDownloadUrl', 'link_1.0', 'HTTP', 'GET', 'AK', '/v1.0/link/oToMessages/pictures/downloadUrls', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListFollowerRequest $request
+     *
+     * @return ListFollowerResponse
+     */
+    public function listFollower($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListFollowerHeaders([]);
+
+        return $this->listFollowerWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListFollowerRequest $request
+     * @param ListFollowerHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return ListFollowerResponse
+     */
+    public function listFollowerWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->accountId)) {
+            @$query['accountId'] = $request->accountId;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListFollowerResponse::fromMap($this->doROARequest('ListFollower', 'link_1.0', 'HTTP', 'GET', 'AK', '/v1.0/link/followers', 'json', $req, $runtime));
     }
 
     /**
