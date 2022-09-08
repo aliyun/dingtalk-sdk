@@ -7866,8 +7866,11 @@ class UniqueQueryUserCardHeaders(TeaModel):
 class UniqueQueryUserCardRequest(TeaModel):
     def __init__(
         self,
+        template_id: str = None,
         union_id: str = None,
     ):
+        # 名片模版id
+        self.template_id = template_id
         # 用户unionId
         self.union_id = union_id
 
@@ -7880,12 +7883,16 @@ class UniqueQueryUserCardRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
         if self.union_id is not None:
             result['unionId'] = self.union_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
         if m.get('unionId') is not None:
             self.union_id = m.get('unionId')
         return self

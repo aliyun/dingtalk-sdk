@@ -3245,6 +3245,8 @@ class Client(OpenApiClient):
     ) -> dingtalkcontact__1__0_models.UniqueQueryUserCardResponse:
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.template_id):
+            query['templateId'] = request.template_id
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
         real_headers = {}
@@ -3269,6 +3271,8 @@ class Client(OpenApiClient):
     ) -> dingtalkcontact__1__0_models.UniqueQueryUserCardResponse:
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.template_id):
+            query['templateId'] = request.template_id
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
         real_headers = {}

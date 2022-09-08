@@ -4,6 +4,226 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class GetFollowerInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetFollowerInfoRequest(TeaModel):
+    def __init__(
+        self,
+        account_id: str = None,
+        union_id: str = None,
+        user_id: str = None,
+    ):
+        self.account_id = account_id
+        self.union_id = union_id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.account_id is not None:
+            result['accountId'] = self.account_id
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountId') is not None:
+            self.account_id = m.get('accountId')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetFollowerInfoResponseBodyResultUser(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        status: str = None,
+        timestamp: str = None,
+        user_id: str = None,
+    ):
+        self.name = name
+        self.status = status
+        self.timestamp = timestamp
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.status is not None:
+            result['status'] = self.status
+        if self.timestamp is not None:
+            result['timestamp'] = self.timestamp
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('timestamp') is not None:
+            self.timestamp = m.get('timestamp')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetFollowerInfoResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        user: GetFollowerInfoResponseBodyResultUser = None,
+    ):
+        self.user = user
+
+    def validate(self):
+        if self.user:
+            self.user.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user is not None:
+            result['user'] = self.user.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('user') is not None:
+            temp_model = GetFollowerInfoResponseBodyResultUser()
+            self.user = temp_model.from_map(m['user'])
+        return self
+
+
+class GetFollowerInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: GetFollowerInfoResponseBodyResult = None,
+    ):
+        # Id of the request
+        self.request_id = request_id
+        # 响应结果
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            temp_model = GetFollowerInfoResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class GetFollowerInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetFollowerInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetFollowerInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetPictureDownloadUrlHeaders(TeaModel):
     def __init__(
         self,
@@ -168,6 +388,242 @@ class GetPictureDownloadUrlResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetPictureDownloadUrlResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListFollowerHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListFollowerRequest(TeaModel):
+    def __init__(
+        self,
+        account_id: str = None,
+        max_results: int = None,
+        next_token: str = None,
+    ):
+        # 服务窗帐号ID，用于非服务窗自建应用场景下指定服务窗帐号。
+        self.account_id = account_id
+        # 分页查询页大小。
+        self.max_results = max_results
+        # 分页查询下一页token,首页查询此字段可空，其它页查询时需要将此值设置炎上一次接口调用的token
+        self.next_token = next_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.account_id is not None:
+            result['accountId'] = self.account_id
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountId') is not None:
+            self.account_id = m.get('accountId')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class ListFollowerResponseBodyResultUserList(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        timestamp: int = None,
+        user_id: str = None,
+    ):
+        # 关注者昵称
+        self.name = name
+        # 关注时间 
+        self.timestamp = timestamp
+        # 关注者userId，可用于消息推送等场景。
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.timestamp is not None:
+            result['timestamp'] = self.timestamp
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('timestamp') is not None:
+            self.timestamp = m.get('timestamp')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ListFollowerResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        next_token: str = None,
+        user_list: List[ListFollowerResponseBodyResultUserList] = None,
+    ):
+        # 下一页查询位置
+        # 当此返回值为空时，则说明全部数据查询完成。
+        # 当此返回值不为空时，可以将此值设置为下一次查询的参数。
+        self.next_token = next_token
+        # 用户列表
+        self.user_list = user_list
+
+    def validate(self):
+        if self.user_list:
+            for k in self.user_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['userList'] = []
+        if self.user_list is not None:
+            for k in self.user_list:
+                result['userList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.user_list = []
+        if m.get('userList') is not None:
+            for k in m.get('userList'):
+                temp_model = ListFollowerResponseBodyResultUserList()
+                self.user_list.append(temp_model.from_map(k))
+        return self
+
+
+class ListFollowerResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: ListFollowerResponseBodyResult = None,
+    ):
+        # Id of the request
+        self.request_id = request_id
+        # 响应结果
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            temp_model = ListFollowerResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class ListFollowerResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListFollowerResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListFollowerResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
