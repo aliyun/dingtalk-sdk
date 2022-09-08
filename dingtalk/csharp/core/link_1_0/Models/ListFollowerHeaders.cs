@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalklink_1_0.Models
 {
-    public class GetPictureDownloadUrlHeaders : TeaModel {
+    public class ListFollowerHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }
