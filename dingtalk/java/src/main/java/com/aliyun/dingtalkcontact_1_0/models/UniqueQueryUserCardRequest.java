@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class UniqueQueryUserCardRequest extends TeaModel {
+    // 名片模版id
+    @NameInMap("templateId")
+    public String templateId;
+
     // 用户unionId
     @NameInMap("unionId")
     public String unionId;
@@ -11,6 +15,14 @@ public class UniqueQueryUserCardRequest extends TeaModel {
     public static UniqueQueryUserCardRequest build(java.util.Map<String, ?> map) throws Exception {
         UniqueQueryUserCardRequest self = new UniqueQueryUserCardRequest();
         return TeaModel.build(map, self);
+    }
+
+    public UniqueQueryUserCardRequest setTemplateId(String templateId) {
+        this.templateId = templateId;
+        return this;
+    }
+    public String getTemplateId() {
+        return this.templateId;
     }
 
     public UniqueQueryUserCardRequest setUnionId(String unionId) {
