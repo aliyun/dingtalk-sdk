@@ -37,9 +37,6 @@ public class GetFollowerInfoResponseBody extends TeaModel {
         @NameInMap("name")
         public String name;
 
-        @NameInMap("status")
-        public String status;
-
         @NameInMap("timestamp")
         public String timestamp;
 
@@ -57,14 +54,6 @@ public class GetFollowerInfoResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
-        }
-
-        public GetFollowerInfoResponseBodyResultUser setStatus(String status) {
-            this.status = status;
-            return this;
-        }
-        public String getStatus() {
-            return this.status;
         }
 
         public GetFollowerInfoResponseBodyResultUser setTimestamp(String timestamp) {

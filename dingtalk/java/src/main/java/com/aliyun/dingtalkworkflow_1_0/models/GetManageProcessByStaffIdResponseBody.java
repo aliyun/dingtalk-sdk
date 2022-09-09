@@ -4,10 +4,6 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetManageProcessByStaffIdResponseBody extends TeaModel {
-    // 请求ID。
-    @NameInMap("requestId")
-    public String requestId;
-
     // 返回结果列表。
     @NameInMap("result")
     public java.util.List<GetManageProcessByStaffIdResponseBodyResult> result;
@@ -19,14 +15,6 @@ public class GetManageProcessByStaffIdResponseBody extends TeaModel {
     public static GetManageProcessByStaffIdResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetManageProcessByStaffIdResponseBody self = new GetManageProcessByStaffIdResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public GetManageProcessByStaffIdResponseBody setRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-    public String getRequestId() {
-        return this.requestId;
     }
 
     public GetManageProcessByStaffIdResponseBody setResult(java.util.List<GetManageProcessByStaffIdResponseBodyResult> result) {

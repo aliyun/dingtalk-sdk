@@ -4,10 +4,6 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListUserVisibleBpmsProcessesResponseBody extends TeaModel {
-    // 请求ID。
-    @NameInMap("requestId")
-    public String requestId;
-
     // 返回结果。
     @NameInMap("result")
     public ListUserVisibleBpmsProcessesResponseBodyResult result;
@@ -15,14 +11,6 @@ public class ListUserVisibleBpmsProcessesResponseBody extends TeaModel {
     public static ListUserVisibleBpmsProcessesResponseBody build(java.util.Map<String, ?> map) throws Exception {
         ListUserVisibleBpmsProcessesResponseBody self = new ListUserVisibleBpmsProcessesResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public ListUserVisibleBpmsProcessesResponseBody setRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-    public String getRequestId() {
-        return this.requestId;
     }
 
     public ListUserVisibleBpmsProcessesResponseBody setResult(ListUserVisibleBpmsProcessesResponseBodyResult result) {

@@ -4,6 +4,10 @@ package com.aliyun.dingtalktrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class SyncTripOrderRequest extends TeaModel {
+    // 订单渠道，枚举值：BUSINESS、CUSTOMER
+    @NameInMap("channelType")
+    public String channelType;
+
     // 币种
     @NameInMap("currency")
     public String currency;
@@ -86,6 +90,14 @@ public class SyncTripOrderRequest extends TeaModel {
     public static SyncTripOrderRequest build(java.util.Map<String, ?> map) throws Exception {
         SyncTripOrderRequest self = new SyncTripOrderRequest();
         return TeaModel.build(map, self);
+    }
+
+    public SyncTripOrderRequest setChannelType(String channelType) {
+        this.channelType = channelType;
+        return this;
+    }
+    public String getChannelType() {
+        return this.channelType;
     }
 
     public SyncTripOrderRequest setCurrency(String currency) {

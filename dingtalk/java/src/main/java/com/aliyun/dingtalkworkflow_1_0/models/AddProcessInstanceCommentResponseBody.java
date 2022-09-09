@@ -4,10 +4,6 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddProcessInstanceCommentResponseBody extends TeaModel {
-    // 请求ID。
-    @NameInMap("requestId")
-    public String requestId;
-
     // 评论是否成功。
     @NameInMap("result")
     public Boolean result;
@@ -19,14 +15,6 @@ public class AddProcessInstanceCommentResponseBody extends TeaModel {
     public static AddProcessInstanceCommentResponseBody build(java.util.Map<String, ?> map) throws Exception {
         AddProcessInstanceCommentResponseBody self = new AddProcessInstanceCommentResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public AddProcessInstanceCommentResponseBody setRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-    public String getRequestId() {
-        return this.requestId;
     }
 
     public AddProcessInstanceCommentResponseBody setResult(Boolean result) {
