@@ -16,11 +16,6 @@ class user extends Model
     /**
      * @var string
      */
-    public $status;
-
-    /**
-     * @var string
-     */
     public $timestamp;
 
     /**
@@ -29,7 +24,6 @@ class user extends Model
     public $userId;
     protected $_name = [
         'name'      => 'name',
-        'status'    => 'status',
         'timestamp' => 'timestamp',
         'userId'    => 'userId',
     ];
@@ -43,9 +37,6 @@ class user extends Model
         $res = [];
         if (null !== $this->name) {
             $res['name'] = $this->name;
-        }
-        if (null !== $this->status) {
-            $res['status'] = $this->status;
         }
         if (null !== $this->timestamp) {
             $res['timestamp'] = $this->timestamp;
@@ -67,9 +58,6 @@ class user extends Model
         $model = new self();
         if (isset($map['name'])) {
             $model->name = $map['name'];
-        }
-        if (isset($map['status'])) {
-            $model->status = $map['status'];
         }
         if (isset($map['timestamp'])) {
             $model->timestamp = $map['timestamp'];

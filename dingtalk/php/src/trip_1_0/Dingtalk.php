@@ -168,6 +168,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->channelType)) {
+            @$body['channelType'] = $request->channelType;
+        }
         if (!Utils::isUnset($request->currency)) {
             @$body['currency'] = $request->currency;
         }

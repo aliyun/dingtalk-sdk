@@ -11,6 +11,13 @@ use AlibabaCloud\Tea\Model;
 class SyncTripOrderRequest extends Model
 {
     /**
+     * @description 订单渠道，枚举值：BUSINESS、CUSTOMER
+     *
+     * @var string
+     */
+    public $channelType;
+
+    /**
      * @description 币种
      *
      * @var string
@@ -148,6 +155,7 @@ class SyncTripOrderRequest extends Model
      */
     public $type;
     protected $_name = [
+        'channelType'     => 'channelType',
         'currency'        => 'currency',
         'dingUserId'      => 'dingUserId',
         'discountAmount'  => 'discountAmount',
@@ -177,6 +185,9 @@ class SyncTripOrderRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->channelType) {
+            $res['channelType'] = $this->channelType;
+        }
         if (null !== $this->currency) {
             $res['currency'] = $this->currency;
         }
@@ -255,6 +266,9 @@ class SyncTripOrderRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['channelType'])) {
+            $model->channelType = $map['channelType'];
+        }
         if (isset($map['currency'])) {
             $model->currency = $map['currency'];
         }

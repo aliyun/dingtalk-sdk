@@ -10,13 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetProcessInstanceResponseBody extends Model
 {
     /**
-     * @description 请求ID。
-     *
-     * @var string
-     */
-    public $requestId;
-
-    /**
      * @description 返回结果。
      *
      * @var result
@@ -30,9 +23,8 @@ class GetProcessInstanceResponseBody extends Model
      */
     public $success;
     protected $_name = [
-        'requestId' => 'requestId',
-        'result'    => 'result',
-        'success'   => 'success',
+        'result'  => 'result',
+        'success' => 'success',
     ];
 
     public function validate()
@@ -42,9 +34,6 @@ class GetProcessInstanceResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->requestId) {
-            $res['requestId'] = $this->requestId;
-        }
         if (null !== $this->result) {
             $res['result'] = null !== $this->result ? $this->result->toMap() : null;
         }
@@ -63,9 +52,6 @@ class GetProcessInstanceResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['requestId'])) {
-            $model->requestId = $map['requestId'];
-        }
         if (isset($map['result'])) {
             $model->result = result::fromMap($map['result']);
         }

@@ -9,21 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetUserTodoTaskSumResponseBody extends Model
 {
     /**
-     * @description 请求ID。
-     *
-     * @var string
-     */
-    public $requestId;
-
-    /**
      * @description 待处理的审批数量。
      *
      * @var int
      */
     public $result;
     protected $_name = [
-        'requestId' => 'requestId',
-        'result'    => 'result',
+        'result' => 'result',
     ];
 
     public function validate()
@@ -33,9 +25,6 @@ class GetUserTodoTaskSumResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->requestId) {
-            $res['requestId'] = $this->requestId;
-        }
         if (null !== $this->result) {
             $res['result'] = $this->result;
         }
@@ -51,9 +40,6 @@ class GetUserTodoTaskSumResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['requestId'])) {
-            $model->requestId = $map['requestId'];
-        }
         if (isset($map['result'])) {
             $model->result = $map['result'];
         }

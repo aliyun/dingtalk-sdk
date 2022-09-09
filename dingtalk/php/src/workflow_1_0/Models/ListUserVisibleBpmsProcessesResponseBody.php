@@ -10,21 +10,13 @@ use AlibabaCloud\Tea\Model;
 class ListUserVisibleBpmsProcessesResponseBody extends Model
 {
     /**
-     * @description 请求ID。
-     *
-     * @var string
-     */
-    public $requestId;
-
-    /**
      * @description 返回结果。
      *
      * @var result
      */
     public $result;
     protected $_name = [
-        'requestId' => 'requestId',
-        'result'    => 'result',
+        'result' => 'result',
     ];
 
     public function validate()
@@ -34,9 +26,6 @@ class ListUserVisibleBpmsProcessesResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->requestId) {
-            $res['requestId'] = $this->requestId;
-        }
         if (null !== $this->result) {
             $res['result'] = null !== $this->result ? $this->result->toMap() : null;
         }
@@ -52,9 +41,6 @@ class ListUserVisibleBpmsProcessesResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['requestId'])) {
-            $model->requestId = $map['requestId'];
-        }
         if (isset($map['result'])) {
             $model->result = result::fromMap($map['result']);
         }

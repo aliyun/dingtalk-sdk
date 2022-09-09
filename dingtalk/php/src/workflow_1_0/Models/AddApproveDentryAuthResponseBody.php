@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class AddApproveDentryAuthResponseBody extends Model
 {
     /**
-     * @description 请求ID。
-     *
-     * @var string
-     */
-    public $requestId;
-
-    /**
      * @description 返回结果。
      *
      * @var bool
@@ -29,9 +22,8 @@ class AddApproveDentryAuthResponseBody extends Model
      */
     public $success;
     protected $_name = [
-        'requestId' => 'requestId',
-        'result'    => 'result',
-        'success'   => 'success',
+        'result'  => 'result',
+        'success' => 'success',
     ];
 
     public function validate()
@@ -41,9 +33,6 @@ class AddApproveDentryAuthResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->requestId) {
-            $res['requestId'] = $this->requestId;
-        }
         if (null !== $this->result) {
             $res['result'] = $this->result;
         }
@@ -62,9 +51,6 @@ class AddApproveDentryAuthResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['requestId'])) {
-            $model->requestId = $map['requestId'];
-        }
         if (isset($map['result'])) {
             $model->result = $map['result'];
         }
