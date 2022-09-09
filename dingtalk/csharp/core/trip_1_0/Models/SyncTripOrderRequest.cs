@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
 {
     public class SyncTripOrderRequest : TeaModel {
         /// <summary>
+        /// 订单渠道，枚举值：BUSINESS、CUSTOMER
+        /// </summary>
+        [NameInMap("channelType")]
+        [Validation(Required=false)]
+        public string ChannelType { get; set; }
+
+        /// <summary>
         /// 币种
         /// </summary>
         [NameInMap("currency")]

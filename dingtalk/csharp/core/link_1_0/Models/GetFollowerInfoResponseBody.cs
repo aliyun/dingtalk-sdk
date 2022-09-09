@@ -31,10 +31,6 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0.Models
                 [Validation(Required=false)]
                 public string Name { get; set; }
 
-                [NameInMap("status")]
-                [Validation(Required=false)]
-                public string Status { get; set; }
-
                 [NameInMap("timestamp")]
                 [Validation(Required=false)]
                 public string Timestamp { get; set; }

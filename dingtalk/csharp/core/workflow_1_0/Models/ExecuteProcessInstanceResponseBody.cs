@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class ExecuteProcessInstanceResponseBody : TeaModel {
         /// <summary>
-        /// 请求ID。
-        /// </summary>
-        [NameInMap("requestId")]
-        [Validation(Required=false)]
-        public string RequestId { get; set; }
-
-        /// <summary>
         /// 同意或拒绝结果。
         /// </summary>
         [NameInMap("result")]

@@ -252,6 +252,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChannelType))
+            {
+                body["channelType"] = request.ChannelType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Currency))
             {
                 body["currency"] = request.Currency;
@@ -353,6 +357,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChannelType))
+            {
+                body["channelType"] = request.ChannelType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Currency))
             {
                 body["currency"] = request.Currency;
