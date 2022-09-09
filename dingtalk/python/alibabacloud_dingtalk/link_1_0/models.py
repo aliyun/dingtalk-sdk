@@ -80,12 +80,10 @@ class GetFollowerInfoResponseBodyResultUser(TeaModel):
     def __init__(
         self,
         name: str = None,
-        status: str = None,
         timestamp: str = None,
         user_id: str = None,
     ):
         self.name = name
-        self.status = status
         self.timestamp = timestamp
         self.user_id = user_id
 
@@ -100,8 +98,6 @@ class GetFollowerInfoResponseBodyResultUser(TeaModel):
         result = dict()
         if self.name is not None:
             result['name'] = self.name
-        if self.status is not None:
-            result['status'] = self.status
         if self.timestamp is not None:
             result['timestamp'] = self.timestamp
         if self.user_id is not None:
@@ -112,8 +108,6 @@ class GetFollowerInfoResponseBodyResultUser(TeaModel):
         m = m or dict()
         if m.get('name') is not None:
             self.name = m.get('name')
-        if m.get('status') is not None:
-            self.status = m.get('status')
         if m.get('timestamp') is not None:
             self.timestamp = m.get('timestamp')
         if m.get('userId') is not None:

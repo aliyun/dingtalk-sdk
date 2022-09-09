@@ -629,12 +629,9 @@ class AddApproveDentryAuthRequest(TeaModel):
 class AddApproveDentryAuthResponseBody(TeaModel):
     def __init__(
         self,
-        request_id: str = None,
         result: bool = None,
         success: bool = None,
     ):
-        # 请求ID。
-        self.request_id = request_id
         # 返回结果。
         self.result = result
         # 接口调用是否成功。
@@ -649,8 +646,6 @@ class AddApproveDentryAuthResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.request_id is not None:
-            result['requestId'] = self.request_id
         if self.result is not None:
             result['result'] = self.result
         if self.success is not None:
@@ -659,8 +654,6 @@ class AddApproveDentryAuthResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('requestId') is not None:
-            self.request_id = m.get('requestId')
         if m.get('result') is not None:
             self.result = m.get('result')
         if m.get('success') is not None:
@@ -891,12 +884,9 @@ class AddProcessInstanceCommentRequest(TeaModel):
 class AddProcessInstanceCommentResponseBody(TeaModel):
     def __init__(
         self,
-        request_id: str = None,
         result: bool = None,
         success: bool = None,
     ):
-        # 请求ID。
-        self.request_id = request_id
         # 评论是否成功。
         self.result = result
         # 接口调用是否成功。
@@ -911,8 +901,6 @@ class AddProcessInstanceCommentResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.request_id is not None:
-            result['requestId'] = self.request_id
         if self.result is not None:
             result['result'] = self.result
         if self.success is not None:
@@ -921,8 +909,6 @@ class AddProcessInstanceCommentResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('requestId') is not None:
-            self.request_id = m.get('requestId')
         if m.get('result') is not None:
             self.result = m.get('result')
         if m.get('success') is not None:
@@ -2161,12 +2147,9 @@ class ExecuteProcessInstanceRequest(TeaModel):
 class ExecuteProcessInstanceResponseBody(TeaModel):
     def __init__(
         self,
-        request_id: str = None,
         result: bool = None,
         success: bool = None,
     ):
-        # 请求ID。
-        self.request_id = request_id
         # 同意或拒绝结果。
         self.result = result
         # 接口调用是否成功。
@@ -2181,8 +2164,6 @@ class ExecuteProcessInstanceResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.request_id is not None:
-            result['requestId'] = self.request_id
         if self.result is not None:
             result['result'] = self.result
         if self.success is not None:
@@ -2191,8 +2172,6 @@ class ExecuteProcessInstanceResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('requestId') is not None:
-            self.request_id = m.get('requestId')
         if m.get('result') is not None:
             self.result = m.get('result')
         if m.get('success') is not None:
@@ -2607,12 +2586,9 @@ class GetAttachmentSpaceResponseBodyResult(TeaModel):
 class GetAttachmentSpaceResponseBody(TeaModel):
     def __init__(
         self,
-        request_id: str = None,
         result: GetAttachmentSpaceResponseBodyResult = None,
         success: bool = None,
     ):
-        # 请求ID。
-        self.request_id = request_id
         # 返回结果。
         self.result = result
         # 接口调用是否成功。
@@ -2628,8 +2604,6 @@ class GetAttachmentSpaceResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.request_id is not None:
-            result['requestId'] = self.request_id
         if self.result is not None:
             result['result'] = self.result.to_map()
         if self.success is not None:
@@ -2638,8 +2612,6 @@ class GetAttachmentSpaceResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('requestId') is not None:
-            self.request_id = m.get('requestId')
         if m.get('result') is not None:
             temp_model = GetAttachmentSpaceResponseBodyResult()
             self.result = temp_model.from_map(m['result'])
@@ -2920,12 +2892,9 @@ class GetManageProcessByStaffIdResponseBodyResult(TeaModel):
 class GetManageProcessByStaffIdResponseBody(TeaModel):
     def __init__(
         self,
-        request_id: str = None,
         result: List[GetManageProcessByStaffIdResponseBodyResult] = None,
         success: bool = None,
     ):
-        # 请求ID。
-        self.request_id = request_id
         # 返回结果列表。
         self.result = result
         # 接口调用是否成功。
@@ -2943,8 +2912,6 @@ class GetManageProcessByStaffIdResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.request_id is not None:
-            result['requestId'] = self.request_id
         result['result'] = []
         if self.result is not None:
             for k in self.result:
@@ -2955,8 +2922,6 @@ class GetManageProcessByStaffIdResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('requestId') is not None:
-            self.request_id = m.get('requestId')
         self.result = []
         if m.get('result') is not None:
             for k in m.get('result'):
@@ -4197,12 +4162,9 @@ class GetProcessInstanceResponseBodyResult(TeaModel):
 class GetProcessInstanceResponseBody(TeaModel):
     def __init__(
         self,
-        request_id: str = None,
         result: GetProcessInstanceResponseBodyResult = None,
         success: str = None,
     ):
-        # 请求ID。
-        self.request_id = request_id
         # 返回结果。
         self.result = result
         # 调用是否成功。
@@ -4218,8 +4180,6 @@ class GetProcessInstanceResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.request_id is not None:
-            result['requestId'] = self.request_id
         if self.result is not None:
             result['result'] = self.result.to_map()
         if self.success is not None:
@@ -4228,8 +4188,6 @@ class GetProcessInstanceResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('requestId') is not None:
-            self.request_id = m.get('requestId')
         if m.get('result') is not None:
             temp_model = GetProcessInstanceResponseBodyResult()
             self.result = temp_model.from_map(m['result'])
@@ -4403,12 +4361,9 @@ class GetSpaceWithDownloadAuthResponseBodyResult(TeaModel):
 class GetSpaceWithDownloadAuthResponseBody(TeaModel):
     def __init__(
         self,
-        request_id: str = None,
         result: GetSpaceWithDownloadAuthResponseBodyResult = None,
         success: bool = None,
     ):
-        # 请求ID。
-        self.request_id = request_id
         # 返回结果。
         self.result = result
         # 接口调用是否成功。
@@ -4424,8 +4379,6 @@ class GetSpaceWithDownloadAuthResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.request_id is not None:
-            result['requestId'] = self.request_id
         if self.result is not None:
             result['result'] = self.result.to_map()
         if self.success is not None:
@@ -4434,8 +4387,6 @@ class GetSpaceWithDownloadAuthResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('requestId') is not None:
-            self.request_id = m.get('requestId')
         if m.get('result') is not None:
             temp_model = GetSpaceWithDownloadAuthResponseBodyResult()
             self.result = temp_model.from_map(m['result'])
@@ -4545,11 +4496,8 @@ class GetUserTodoTaskSumRequest(TeaModel):
 class GetUserTodoTaskSumResponseBody(TeaModel):
     def __init__(
         self,
-        request_id: str = None,
         result: int = None,
     ):
-        # 请求ID。
-        self.request_id = request_id
         # 待处理的审批数量。
         self.result = result
 
@@ -4562,16 +4510,12 @@ class GetUserTodoTaskSumResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.request_id is not None:
-            result['requestId'] = self.request_id
         if self.result is not None:
             result['result'] = self.result
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('requestId') is not None:
-            self.request_id = m.get('requestId')
         if m.get('result') is not None:
             self.result = m.get('result')
         return self
@@ -4838,12 +4782,9 @@ class GrantProcessInstanceForDownloadFileResponseBodyResult(TeaModel):
 class GrantProcessInstanceForDownloadFileResponseBody(TeaModel):
     def __init__(
         self,
-        request_id: str = None,
         result: GrantProcessInstanceForDownloadFileResponseBodyResult = None,
         success: bool = None,
     ):
-        # 请求ID。
-        self.request_id = request_id
         # 返回结果。
         self.result = result
         # 接口调用是否成功。
@@ -4859,8 +4800,6 @@ class GrantProcessInstanceForDownloadFileResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.request_id is not None:
-            result['requestId'] = self.request_id
         if self.result is not None:
             result['result'] = self.result.to_map()
         if self.success is not None:
@@ -4869,8 +4808,6 @@ class GrantProcessInstanceForDownloadFileResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('requestId') is not None:
-            self.request_id = m.get('requestId')
         if m.get('result') is not None:
             temp_model = GrantProcessInstanceForDownloadFileResponseBodyResult()
             self.result = temp_model.from_map(m['result'])
@@ -5054,12 +4991,9 @@ class ListProcessInstanceIdsResponseBodyResult(TeaModel):
 class ListProcessInstanceIdsResponseBody(TeaModel):
     def __init__(
         self,
-        request_id: str = None,
         result: ListProcessInstanceIdsResponseBodyResult = None,
         success: bool = None,
     ):
-        # 请求ID。
-        self.request_id = request_id
         # 返回结果。
         self.result = result
         # 接口请求是否成功。
@@ -5075,8 +5009,6 @@ class ListProcessInstanceIdsResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.request_id is not None:
-            result['requestId'] = self.request_id
         if self.result is not None:
             result['result'] = self.result.to_map()
         if self.success is not None:
@@ -5085,8 +5017,6 @@ class ListProcessInstanceIdsResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('requestId') is not None:
-            self.request_id = m.get('requestId')
         if m.get('result') is not None:
             temp_model = ListProcessInstanceIdsResponseBodyResult()
             self.result = temp_model.from_map(m['result'])
@@ -5302,11 +5232,8 @@ class ListUserVisibleBpmsProcessesResponseBodyResult(TeaModel):
 class ListUserVisibleBpmsProcessesResponseBody(TeaModel):
     def __init__(
         self,
-        request_id: str = None,
         result: ListUserVisibleBpmsProcessesResponseBodyResult = None,
     ):
-        # 请求ID。
-        self.request_id = request_id
         # 返回结果。
         self.result = result
 
@@ -5320,16 +5247,12 @@ class ListUserVisibleBpmsProcessesResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.request_id is not None:
-            result['requestId'] = self.request_id
         if self.result is not None:
             result['result'] = self.result.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('requestId') is not None:
-            self.request_id = m.get('requestId')
         if m.get('result') is not None:
             temp_model = ListUserVisibleBpmsProcessesResponseBodyResult()
             self.result = temp_model.from_map(m['result'])
@@ -10561,12 +10484,9 @@ class TerminateProcessInstanceRequest(TeaModel):
 class TerminateProcessInstanceResponseBody(TeaModel):
     def __init__(
         self,
-        request_id: str = None,
         result: bool = None,
         success: bool = None,
     ):
-        # 请求ID。
-        self.request_id = request_id
         # 撤销结果。
         self.result = result
         # 接口调用是否成功。
@@ -10581,8 +10501,6 @@ class TerminateProcessInstanceResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.request_id is not None:
-            result['requestId'] = self.request_id
         if self.result is not None:
             result['result'] = self.result
         if self.success is not None:
@@ -10591,8 +10509,6 @@ class TerminateProcessInstanceResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('requestId') is not None:
-            self.request_id = m.get('requestId')
         if m.get('result') is not None:
             self.result = m.get('result')
         if m.get('success') is not None:

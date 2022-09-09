@@ -716,6 +716,7 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
 class SyncTripOrderRequest(TeaModel):
     def __init__(
         self,
+        channel_type: str = None,
         currency: str = None,
         ding_user_id: str = None,
         discount_amount: str = None,
@@ -737,6 +738,8 @@ class SyncTripOrderRequest(TeaModel):
         total_amount: str = None,
         type: str = None,
     ):
+        # 订单渠道，枚举值：BUSINESS、CUSTOMER
+        self.channel_type = channel_type
         # 币种
         self.currency = currency
         # 钉钉用户id
@@ -791,6 +794,8 @@ class SyncTripOrderRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.channel_type is not None:
+            result['channelType'] = self.channel_type
         if self.currency is not None:
             result['currency'] = self.currency
         if self.ding_user_id is not None:
@@ -837,6 +842,8 @@ class SyncTripOrderRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('channelType') is not None:
+            self.channel_type = m.get('channelType')
         if m.get('currency') is not None:
             self.currency = m.get('currency')
         if m.get('dingUserId') is not None:
