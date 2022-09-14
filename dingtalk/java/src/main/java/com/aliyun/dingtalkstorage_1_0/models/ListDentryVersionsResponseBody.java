@@ -55,6 +55,11 @@ public class ListDentryVersionsResponseBody extends TeaModel {
     }
 
     public static class ListDentryVersionsResponseBodyDentries extends TeaModel {
+        // 在特定应用上的属性。key是微应用Id, value是属性列表。
+        // 可以通过修改DentryAppProperty里的scope来设置属性的可见性
+        @NameInMap("appProperties")
+        public java.util.Map<String, java.util.List<DentriesAppPropertiesValue>> appProperties;
+
         // 创建时间
         @NameInMap("createTime")
         public String createTime;
@@ -146,6 +151,14 @@ public class ListDentryVersionsResponseBody extends TeaModel {
         public static ListDentryVersionsResponseBodyDentries build(java.util.Map<String, ?> map) throws Exception {
             ListDentryVersionsResponseBodyDentries self = new ListDentryVersionsResponseBodyDentries();
             return TeaModel.build(map, self);
+        }
+
+        public ListDentryVersionsResponseBodyDentries setAppProperties(java.util.Map<String, java.util.List<DentriesAppPropertiesValue>> appProperties) {
+            this.appProperties = appProperties;
+            return this;
+        }
+        public java.util.Map<String, java.util.List<DentriesAppPropertiesValue>> getAppProperties() {
+            return this.appProperties;
         }
 
         public ListDentryVersionsResponseBodyDentries setCreateTime(String createTime) {
