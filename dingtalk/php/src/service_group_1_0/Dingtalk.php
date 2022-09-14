@@ -14,6 +14,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddKnowledgeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddLibraryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddLibraryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddLibraryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddMemberToServiceGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddMemberToServiceGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddMemberToServiceGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddOpenCategoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddOpenCategoryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddOpenCategoryResponse;
@@ -426,6 +429,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return AddLibraryResponse::fromMap($this->doROARequest('AddLibrary', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/librarys', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param AddMemberToServiceGroupRequest $request
+     *
+     * @return AddMemberToServiceGroupResponse
+     */
+    public function addMemberToServiceGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddMemberToServiceGroupHeaders([]);
+
+        return $this->addMemberToServiceGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddMemberToServiceGroupRequest $request
+     * @param AddMemberToServiceGroupHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return AddMemberToServiceGroupResponse
+     */
+    public function addMemberToServiceGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            @$body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddMemberToServiceGroupResponse::fromMap($this->doROARequest('AddMemberToServiceGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/groups/members', 'json', $req, $runtime));
     }
 
     /**

@@ -4,11 +4,19 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListDentriesResponseBody;
 
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\DentriesAppPropertiesValue;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListDentriesResponseBody\dentries\properties;
 use AlibabaCloud\Tea\Model;
 
 class dentries extends Model
 {
+    /**
+     * @description 在特定应用上的属性。key是微应用Id, value是属性列表。
+     * 可以通过修改DentryAppProperty里的scope来设置属性的可见性
+     * @var DentriesAppPropertiesValue[][]
+     */
+    public $appProperties;
+
     /**
      * @description 创建时间
      *
@@ -135,6 +143,7 @@ class dentries extends Model
      */
     public $version;
     protected $_name = [
+        'appProperties' => 'appProperties',
         'createTime'    => 'createTime',
         'creatorId'     => 'creatorId',
         'extension'     => 'extension',
@@ -162,6 +171,9 @@ class dentries extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->appProperties) {
+            $res['appProperties'] = $this->appProperties;
+        }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
         }
@@ -228,6 +240,9 @@ class dentries extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['appProperties'])) {
+            $model->appProperties = $map['appProperties'];
+        }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];
         }
