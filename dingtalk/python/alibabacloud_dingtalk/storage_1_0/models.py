@@ -1953,6 +1953,7 @@ class CopyDentryResponseBodyDentryProperties(TeaModel):
 class CopyDentryResponseBodyDentry(TeaModel):
     def __init__(
         self,
+        app_properties: Dict[str, List[DentryAppPropertiesValue]] = None,
         create_time: str = None,
         creator_id: str = None,
         extension: str = None,
@@ -1972,6 +1973,9 @@ class CopyDentryResponseBodyDentry(TeaModel):
         uuid: str = None,
         version: int = None,
     ):
+        # 在特定应用上的属性。key是微应用Id, value是属性列表。
+        # 可以通过修改DentryAppProperty里的scope来设置属性的可见性
+        self.app_properties = app_properties
         # 创建时间
         self.create_time = create_time
         # 创建者id
@@ -2026,6 +2030,11 @@ class CopyDentryResponseBodyDentry(TeaModel):
         self.version = version
 
     def validate(self):
+        if self.app_properties:
+            for v in self.app_properties.values():
+                for k1 in v:
+                    if k1:
+                        k1.validate()
         if self.properties:
             self.properties.validate()
 
@@ -2035,6 +2044,13 @@ class CopyDentryResponseBodyDentry(TeaModel):
             return _map
 
         result = dict()
+        result['appProperties'] = {}
+        if self.app_properties is not None:
+            for k, v in self.app_properties.items():
+                l1 = []
+                for k1 in v:
+                    l1.append(k1.to_map() if k1 else None)
+                result['appProperties'][k] = l1
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator_id is not None:
@@ -2075,6 +2091,14 @@ class CopyDentryResponseBodyDentry(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.app_properties = {}
+        if m.get('appProperties') is not None:
+            for k, v in m.get('appProperties').items():
+                l1 = []
+                for k1 in v:
+                    temp_model = DentryAppPropertiesValue()
+                    l1.append(temp_model.from_map(k1))
+                self.app_properties['k'] = l1
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creatorId') is not None:
@@ -5526,9 +5550,55 @@ class ListDentriesResponseBodyDentriesProperties(TeaModel):
         return self
 
 
+class DentriesAppPropertiesValue(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        value: str = None,
+        visibility: str = None,
+    ):
+        # 属性名称 该属性名称在当前app下需要保证唯一，不同app间同名属性互不影响
+        self.name = name
+        # 属性值
+        self.value = value
+        # 属性可见范围
+        # 枚举值:
+        # 	PUBLIC: 该属性所有App可见
+        # 	PRIVATE: 该属性仅其归属App可见
+        self.visibility = visibility
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        if self.visibility is not None:
+            result['visibility'] = self.visibility
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('visibility') is not None:
+            self.visibility = m.get('visibility')
+        return self
+
+
 class ListDentriesResponseBodyDentries(TeaModel):
     def __init__(
         self,
+        app_properties: Dict[str, List[DentriesAppPropertiesValue]] = None,
         create_time: str = None,
         creator_id: str = None,
         extension: str = None,
@@ -5548,6 +5618,9 @@ class ListDentriesResponseBodyDentries(TeaModel):
         uuid: str = None,
         version: int = None,
     ):
+        # 在特定应用上的属性。key是微应用Id, value是属性列表。
+        # 可以通过修改DentryAppProperty里的scope来设置属性的可见性
+        self.app_properties = app_properties
         # 创建时间
         self.create_time = create_time
         # 创建者id
@@ -5602,6 +5675,11 @@ class ListDentriesResponseBodyDentries(TeaModel):
         self.version = version
 
     def validate(self):
+        if self.app_properties:
+            for v in self.app_properties.values():
+                for k1 in v:
+                    if k1:
+                        k1.validate()
         if self.properties:
             self.properties.validate()
 
@@ -5611,6 +5689,13 @@ class ListDentriesResponseBodyDentries(TeaModel):
             return _map
 
         result = dict()
+        result['appProperties'] = {}
+        if self.app_properties is not None:
+            for k, v in self.app_properties.items():
+                l1 = []
+                for k1 in v:
+                    l1.append(k1.to_map() if k1 else None)
+                result['appProperties'][k] = l1
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator_id is not None:
@@ -5651,6 +5736,14 @@ class ListDentriesResponseBodyDentries(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.app_properties = {}
+        if m.get('appProperties') is not None:
+            for k, v in m.get('appProperties').items():
+                l1 = []
+                for k1 in v:
+                    temp_model = DentriesAppPropertiesValue()
+                    l1.append(temp_model.from_map(k1))
+                self.app_properties['k'] = l1
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creatorId') is not None:
@@ -5880,6 +5973,7 @@ class ListDentryVersionsResponseBodyDentriesProperties(TeaModel):
 class ListDentryVersionsResponseBodyDentries(TeaModel):
     def __init__(
         self,
+        app_properties: Dict[str, List[DentriesAppPropertiesValue]] = None,
         create_time: str = None,
         creator_id: str = None,
         extension: str = None,
@@ -5899,6 +5993,9 @@ class ListDentryVersionsResponseBodyDentries(TeaModel):
         uuid: str = None,
         version: int = None,
     ):
+        # 在特定应用上的属性。key是微应用Id, value是属性列表。
+        # 可以通过修改DentryAppProperty里的scope来设置属性的可见性
+        self.app_properties = app_properties
         # 创建时间
         self.create_time = create_time
         # 创建者id
@@ -5953,6 +6050,11 @@ class ListDentryVersionsResponseBodyDentries(TeaModel):
         self.version = version
 
     def validate(self):
+        if self.app_properties:
+            for v in self.app_properties.values():
+                for k1 in v:
+                    if k1:
+                        k1.validate()
         if self.properties:
             self.properties.validate()
 
@@ -5962,6 +6064,13 @@ class ListDentryVersionsResponseBodyDentries(TeaModel):
             return _map
 
         result = dict()
+        result['appProperties'] = {}
+        if self.app_properties is not None:
+            for k, v in self.app_properties.items():
+                l1 = []
+                for k1 in v:
+                    l1.append(k1.to_map() if k1 else None)
+                result['appProperties'][k] = l1
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator_id is not None:
@@ -6002,6 +6111,14 @@ class ListDentryVersionsResponseBodyDentries(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.app_properties = {}
+        if m.get('appProperties') is not None:
+            for k, v in m.get('appProperties').items():
+                l1 = []
+                for k1 in v:
+                    temp_model = DentriesAppPropertiesValue()
+                    l1.append(temp_model.from_map(k1))
+                self.app_properties['k'] = l1
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creatorId') is not None:
@@ -6890,6 +7007,7 @@ class MoveDentryResponseBodyDentryProperties(TeaModel):
 class MoveDentryResponseBodyDentry(TeaModel):
     def __init__(
         self,
+        app_properties: Dict[str, List[DentryAppPropertiesValue]] = None,
         create_time: str = None,
         creator_id: str = None,
         extension: str = None,
@@ -6909,6 +7027,9 @@ class MoveDentryResponseBodyDentry(TeaModel):
         uuid: str = None,
         version: int = None,
     ):
+        # 在特定应用上的属性。key是微应用Id, value是属性列表。
+        # 可以通过修改DentryAppProperty里的scope来设置属性的可见性
+        self.app_properties = app_properties
         # 创建时间
         self.create_time = create_time
         # 创建者id
@@ -6963,6 +7084,11 @@ class MoveDentryResponseBodyDentry(TeaModel):
         self.version = version
 
     def validate(self):
+        if self.app_properties:
+            for v in self.app_properties.values():
+                for k1 in v:
+                    if k1:
+                        k1.validate()
         if self.properties:
             self.properties.validate()
 
@@ -6972,6 +7098,13 @@ class MoveDentryResponseBodyDentry(TeaModel):
             return _map
 
         result = dict()
+        result['appProperties'] = {}
+        if self.app_properties is not None:
+            for k, v in self.app_properties.items():
+                l1 = []
+                for k1 in v:
+                    l1.append(k1.to_map() if k1 else None)
+                result['appProperties'][k] = l1
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator_id is not None:
@@ -7012,6 +7145,14 @@ class MoveDentryResponseBodyDentry(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.app_properties = {}
+        if m.get('appProperties') is not None:
+            for k, v in m.get('appProperties').items():
+                l1 = []
+                for k1 in v:
+                    temp_model = DentryAppPropertiesValue()
+                    l1.append(temp_model.from_map(k1))
+                self.app_properties['k'] = l1
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creatorId') is not None:
@@ -7236,6 +7377,7 @@ class RenameDentryResponseBodyDentryProperties(TeaModel):
 class RenameDentryResponseBodyDentry(TeaModel):
     def __init__(
         self,
+        app_properties: Dict[str, List[DentryAppPropertiesValue]] = None,
         create_time: str = None,
         creator_id: str = None,
         extension: str = None,
@@ -7255,6 +7397,9 @@ class RenameDentryResponseBodyDentry(TeaModel):
         uuid: str = None,
         version: int = None,
     ):
+        # 在特定应用上的属性。key是微应用Id, value是属性列表。
+        # 可以通过修改DentryAppProperty里的scope来设置属性的可见性
+        self.app_properties = app_properties
         # 创建时间
         self.create_time = create_time
         # 创建者id
@@ -7309,6 +7454,11 @@ class RenameDentryResponseBodyDentry(TeaModel):
         self.version = version
 
     def validate(self):
+        if self.app_properties:
+            for v in self.app_properties.values():
+                for k1 in v:
+                    if k1:
+                        k1.validate()
         if self.properties:
             self.properties.validate()
 
@@ -7318,6 +7468,13 @@ class RenameDentryResponseBodyDentry(TeaModel):
             return _map
 
         result = dict()
+        result['appProperties'] = {}
+        if self.app_properties is not None:
+            for k, v in self.app_properties.items():
+                l1 = []
+                for k1 in v:
+                    l1.append(k1.to_map() if k1 else None)
+                result['appProperties'][k] = l1
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator_id is not None:
@@ -7358,6 +7515,14 @@ class RenameDentryResponseBodyDentry(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.app_properties = {}
+        if m.get('appProperties') is not None:
+            for k, v in m.get('appProperties').items():
+                l1 = []
+                for k1 in v:
+                    temp_model = DentryAppPropertiesValue()
+                    l1.append(temp_model.from_map(k1))
+                self.app_properties['k'] = l1
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creatorId') is not None:

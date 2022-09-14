@@ -307,6 +307,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('AddLibrary', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/librarys', 'json', req, runtime)
         )
 
+    def add_member_to_service_group(
+        self,
+        request: dingtalkservice_group__1__0_models.AddMemberToServiceGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.AddMemberToServiceGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.AddMemberToServiceGroupHeaders()
+        return self.add_member_to_service_group_with_options(request, headers, runtime)
+
+    async def add_member_to_service_group_async(
+        self,
+        request: dingtalkservice_group__1__0_models.AddMemberToServiceGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.AddMemberToServiceGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.AddMemberToServiceGroupHeaders()
+        return await self.add_member_to_service_group_with_options_async(request, headers, runtime)
+
+    def add_member_to_service_group_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.AddMemberToServiceGroupRequest,
+        headers: dingtalkservice_group__1__0_models.AddMemberToServiceGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.AddMemberToServiceGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.AddMemberToServiceGroupResponse(),
+            self.do_roarequest('AddMemberToServiceGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/members', 'json', req, runtime)
+        )
+
+    async def add_member_to_service_group_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.AddMemberToServiceGroupRequest,
+        headers: dingtalkservice_group__1__0_models.AddMemberToServiceGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.AddMemberToServiceGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.AddMemberToServiceGroupResponse(),
+            await self.do_roarequest_async('AddMemberToServiceGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/members', 'json', req, runtime)
+        )
+
     def add_open_category(
         self,
         request: dingtalkservice_group__1__0_models.AddOpenCategoryRequest,

@@ -205,6 +205,252 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateDentry', 'doc_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/doc/spaces/{space_id}/dentries', 'json', req, runtime)
         )
 
+    def create_space(
+        self,
+        request: dingtalkdoc__2__0_models.CreateSpaceRequest,
+    ) -> dingtalkdoc__2__0_models.CreateSpaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.CreateSpaceHeaders()
+        return self.create_space_with_options(request, headers, runtime)
+
+    async def create_space_async(
+        self,
+        request: dingtalkdoc__2__0_models.CreateSpaceRequest,
+    ) -> dingtalkdoc__2__0_models.CreateSpaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.CreateSpaceHeaders()
+        return await self.create_space_with_options_async(request, headers, runtime)
+
+    def create_space_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.CreateSpaceRequest,
+        headers: dingtalkdoc__2__0_models.CreateSpaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.CreateSpaceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.section_id):
+            body['sectionId'] = request.section_id
+        if not UtilClient.is_unset(request.share_scope):
+            body['shareScope'] = request.share_scope
+        if not UtilClient.is_unset(request.team_id):
+            body['teamId'] = request.team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.CreateSpaceResponse(),
+            self.do_roarequest('CreateSpace', 'doc_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/doc/spaces', 'json', req, runtime)
+        )
+
+    async def create_space_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.CreateSpaceRequest,
+        headers: dingtalkdoc__2__0_models.CreateSpaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.CreateSpaceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.section_id):
+            body['sectionId'] = request.section_id
+        if not UtilClient.is_unset(request.share_scope):
+            body['shareScope'] = request.share_scope
+        if not UtilClient.is_unset(request.team_id):
+            body['teamId'] = request.team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.CreateSpaceResponse(),
+            await self.do_roarequest_async('CreateSpace', 'doc_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/doc/spaces', 'json', req, runtime)
+        )
+
+    def create_team(
+        self,
+        request: dingtalkdoc__2__0_models.CreateTeamRequest,
+    ) -> dingtalkdoc__2__0_models.CreateTeamResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.CreateTeamHeaders()
+        return self.create_team_with_options(request, headers, runtime)
+
+    async def create_team_async(
+        self,
+        request: dingtalkdoc__2__0_models.CreateTeamRequest,
+    ) -> dingtalkdoc__2__0_models.CreateTeamResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.CreateTeamHeaders()
+        return await self.create_team_with_options_async(request, headers, runtime)
+
+    def create_team_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.CreateTeamRequest,
+        headers: dingtalkdoc__2__0_models.CreateTeamHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.CreateTeamResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.cover):
+            body['cover'] = request.cover
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
+        if not UtilClient.is_unset(request.members):
+            body['members'] = request.members
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.team_type):
+            body['teamType'] = request.team_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.CreateTeamResponse(),
+            self.do_roarequest('CreateTeam', 'doc_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/doc/teams', 'json', req, runtime)
+        )
+
+    async def create_team_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.CreateTeamRequest,
+        headers: dingtalkdoc__2__0_models.CreateTeamHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.CreateTeamResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.cover):
+            body['cover'] = request.cover
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
+        if not UtilClient.is_unset(request.members):
+            body['members'] = request.members
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.team_type):
+            body['teamType'] = request.team_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.CreateTeamResponse(),
+            await self.do_roarequest_async('CreateTeam', 'doc_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/doc/teams', 'json', req, runtime)
+        )
+
+    def delete_team(
+        self,
+        team_id: str,
+        request: dingtalkdoc__2__0_models.DeleteTeamRequest,
+    ) -> dingtalkdoc__2__0_models.DeleteTeamResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.DeleteTeamHeaders()
+        return self.delete_team_with_options(team_id, request, headers, runtime)
+
+    async def delete_team_async(
+        self,
+        team_id: str,
+        request: dingtalkdoc__2__0_models.DeleteTeamRequest,
+    ) -> dingtalkdoc__2__0_models.DeleteTeamResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.DeleteTeamHeaders()
+        return await self.delete_team_with_options_async(team_id, request, headers, runtime)
+
+    def delete_team_with_options(
+        self,
+        team_id: str,
+        request: dingtalkdoc__2__0_models.DeleteTeamRequest,
+        headers: dingtalkdoc__2__0_models.DeleteTeamHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.DeleteTeamResponse:
+        UtilClient.validate_model(request)
+        team_id = OpenApiUtilClient.get_encode_param(team_id)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.DeleteTeamResponse(),
+            self.do_roarequest('DeleteTeam', 'doc_2.0', 'HTTP', 'DELETE', 'AK', f'/v2.0/doc/teams/{team_id}', 'json', req, runtime)
+        )
+
+    async def delete_team_with_options_async(
+        self,
+        team_id: str,
+        request: dingtalkdoc__2__0_models.DeleteTeamRequest,
+        headers: dingtalkdoc__2__0_models.DeleteTeamHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.DeleteTeamResponse:
+        UtilClient.validate_model(request)
+        team_id = OpenApiUtilClient.get_encode_param(team_id)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.DeleteTeamResponse(),
+            await self.do_roarequest_async('DeleteTeam', 'doc_2.0', 'HTTP', 'DELETE', 'AK', f'/v2.0/doc/teams/{team_id}', 'json', req, runtime)
+        )
+
     def get_schema(
         self,
         team_id: str,
@@ -851,6 +1097,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListRelatedSpaceTeams', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/teams/relations/spaceTeams', 'json', req, runtime)
         )
 
+    def list_related_teams(
+        self,
+        request: dingtalkdoc__2__0_models.ListRelatedTeamsRequest,
+    ) -> dingtalkdoc__2__0_models.ListRelatedTeamsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.ListRelatedTeamsHeaders()
+        return self.list_related_teams_with_options(request, headers, runtime)
+
+    async def list_related_teams_async(
+        self,
+        request: dingtalkdoc__2__0_models.ListRelatedTeamsRequest,
+    ) -> dingtalkdoc__2__0_models.ListRelatedTeamsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.ListRelatedTeamsHeaders()
+        return await self.list_related_teams_with_options_async(request, headers, runtime)
+
+    def list_related_teams_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.ListRelatedTeamsRequest,
+        headers: dingtalkdoc__2__0_models.ListRelatedTeamsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.ListRelatedTeamsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.type):
+            query['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.ListRelatedTeamsResponse(),
+            self.do_roarequest('ListRelatedTeams', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/teams', 'json', req, runtime)
+        )
+
+    async def list_related_teams_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.ListRelatedTeamsRequest,
+        headers: dingtalkdoc__2__0_models.ListRelatedTeamsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.ListRelatedTeamsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.type):
+            query['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.ListRelatedTeamsResponse(),
+            await self.do_roarequest_async('ListRelatedTeams', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/teams', 'json', req, runtime)
+        )
+
     def list_space_sections(
         self,
         team_id: str,
@@ -919,6 +1241,76 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkdoc__2__0_models.ListSpaceSectionsResponse(),
             await self.do_roarequest_async('ListSpaceSections', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/teams/{team_id}/spaceSections', 'json', req, runtime)
+        )
+
+    def list_team_members(
+        self,
+        team_id: str,
+        request: dingtalkdoc__2__0_models.ListTeamMembersRequest,
+    ) -> dingtalkdoc__2__0_models.ListTeamMembersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.ListTeamMembersHeaders()
+        return self.list_team_members_with_options(team_id, request, headers, runtime)
+
+    async def list_team_members_async(
+        self,
+        team_id: str,
+        request: dingtalkdoc__2__0_models.ListTeamMembersRequest,
+    ) -> dingtalkdoc__2__0_models.ListTeamMembersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.ListTeamMembersHeaders()
+        return await self.list_team_members_with_options_async(team_id, request, headers, runtime)
+
+    def list_team_members_with_options(
+        self,
+        team_id: str,
+        request: dingtalkdoc__2__0_models.ListTeamMembersRequest,
+        headers: dingtalkdoc__2__0_models.ListTeamMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.ListTeamMembersResponse:
+        UtilClient.validate_model(request)
+        team_id = OpenApiUtilClient.get_encode_param(team_id)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.ListTeamMembersResponse(),
+            self.do_roarequest('ListTeamMembers', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/teams/{team_id}/members', 'json', req, runtime)
+        )
+
+    async def list_team_members_with_options_async(
+        self,
+        team_id: str,
+        request: dingtalkdoc__2__0_models.ListTeamMembersRequest,
+        headers: dingtalkdoc__2__0_models.ListTeamMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.ListTeamMembersResponse:
+        UtilClient.validate_model(request)
+        team_id = OpenApiUtilClient.get_encode_param(team_id)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.ListTeamMembersResponse(),
+            await self.do_roarequest_async('ListTeamMembers', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/teams/{team_id}/members', 'json', req, runtime)
         )
 
     def move_dentry(
@@ -1379,6 +1771,84 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('RelatedSpaces', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/relations/spaces', 'json', req, runtime)
         )
 
+    def remove_team_members(
+        self,
+        team_id: str,
+        request: dingtalkdoc__2__0_models.RemoveTeamMembersRequest,
+    ) -> dingtalkdoc__2__0_models.RemoveTeamMembersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.RemoveTeamMembersHeaders()
+        return self.remove_team_members_with_options(team_id, request, headers, runtime)
+
+    async def remove_team_members_async(
+        self,
+        team_id: str,
+        request: dingtalkdoc__2__0_models.RemoveTeamMembersRequest,
+    ) -> dingtalkdoc__2__0_models.RemoveTeamMembersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.RemoveTeamMembersHeaders()
+        return await self.remove_team_members_with_options_async(team_id, request, headers, runtime)
+
+    def remove_team_members_with_options(
+        self,
+        team_id: str,
+        request: dingtalkdoc__2__0_models.RemoveTeamMembersRequest,
+        headers: dingtalkdoc__2__0_models.RemoveTeamMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.RemoveTeamMembersResponse:
+        UtilClient.validate_model(request)
+        team_id = OpenApiUtilClient.get_encode_param(team_id)
+        body = {}
+        if not UtilClient.is_unset(request.members):
+            body['members'] = request.members
+        if not UtilClient.is_unset(request.notify):
+            body['notify'] = request.notify
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.RemoveTeamMembersResponse(),
+            self.do_roarequest('RemoveTeamMembers', 'doc_2.0', 'HTTP', 'PUT', 'AK', f'/v2.0/doc/teams/{team_id}/members/remove', 'json', req, runtime)
+        )
+
+    async def remove_team_members_with_options_async(
+        self,
+        team_id: str,
+        request: dingtalkdoc__2__0_models.RemoveTeamMembersRequest,
+        headers: dingtalkdoc__2__0_models.RemoveTeamMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.RemoveTeamMembersResponse:
+        UtilClient.validate_model(request)
+        team_id = OpenApiUtilClient.get_encode_param(team_id)
+        body = {}
+        if not UtilClient.is_unset(request.members):
+            body['members'] = request.members
+        if not UtilClient.is_unset(request.notify):
+            body['notify'] = request.notify
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.RemoveTeamMembersResponse(),
+            await self.do_roarequest_async('RemoveTeamMembers', 'doc_2.0', 'HTTP', 'PUT', 'AK', f'/v2.0/doc/teams/{team_id}/members/remove', 'json', req, runtime)
+        )
+
     def rename_dentry(
         self,
         space_id: str,
@@ -1459,6 +1929,84 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('RenameDentry', 'doc_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/doc/spaces/{space_id}/dentries/{dentry_id}/rename', 'json', req, runtime)
         )
 
+    def save_team_members(
+        self,
+        team_id: str,
+        request: dingtalkdoc__2__0_models.SaveTeamMembersRequest,
+    ) -> dingtalkdoc__2__0_models.SaveTeamMembersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.SaveTeamMembersHeaders()
+        return self.save_team_members_with_options(team_id, request, headers, runtime)
+
+    async def save_team_members_async(
+        self,
+        team_id: str,
+        request: dingtalkdoc__2__0_models.SaveTeamMembersRequest,
+    ) -> dingtalkdoc__2__0_models.SaveTeamMembersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.SaveTeamMembersHeaders()
+        return await self.save_team_members_with_options_async(team_id, request, headers, runtime)
+
+    def save_team_members_with_options(
+        self,
+        team_id: str,
+        request: dingtalkdoc__2__0_models.SaveTeamMembersRequest,
+        headers: dingtalkdoc__2__0_models.SaveTeamMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.SaveTeamMembersResponse:
+        UtilClient.validate_model(request)
+        team_id = OpenApiUtilClient.get_encode_param(team_id)
+        body = {}
+        if not UtilClient.is_unset(request.members):
+            body['members'] = request.members
+        if not UtilClient.is_unset(request.notify):
+            body['notify'] = request.notify
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.SaveTeamMembersResponse(),
+            self.do_roarequest('SaveTeamMembers', 'doc_2.0', 'HTTP', 'PUT', 'AK', f'/v2.0/doc/teams/{team_id}/members', 'json', req, runtime)
+        )
+
+    async def save_team_members_with_options_async(
+        self,
+        team_id: str,
+        request: dingtalkdoc__2__0_models.SaveTeamMembersRequest,
+        headers: dingtalkdoc__2__0_models.SaveTeamMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.SaveTeamMembersResponse:
+        UtilClient.validate_model(request)
+        team_id = OpenApiUtilClient.get_encode_param(team_id)
+        body = {}
+        if not UtilClient.is_unset(request.members):
+            body['members'] = request.members
+        if not UtilClient.is_unset(request.notify):
+            body['notify'] = request.notify
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.SaveTeamMembersResponse(),
+            await self.do_roarequest_async('SaveTeamMembers', 'doc_2.0', 'HTTP', 'PUT', 'AK', f'/v2.0/doc/teams/{team_id}/members', 'json', req, runtime)
+        )
+
     def search(
         self,
         request: dingtalkdoc__2__0_models.SearchRequest,
@@ -1533,4 +2081,82 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkdoc__2__0_models.SearchResponse(),
             await self.do_roarequest_async('Search', 'doc_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/doc/search', 'json', req, runtime)
+        )
+
+    def update_team(
+        self,
+        team_id: str,
+        request: dingtalkdoc__2__0_models.UpdateTeamRequest,
+    ) -> dingtalkdoc__2__0_models.UpdateTeamResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.UpdateTeamHeaders()
+        return self.update_team_with_options(team_id, request, headers, runtime)
+
+    async def update_team_async(
+        self,
+        team_id: str,
+        request: dingtalkdoc__2__0_models.UpdateTeamRequest,
+    ) -> dingtalkdoc__2__0_models.UpdateTeamResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.UpdateTeamHeaders()
+        return await self.update_team_with_options_async(team_id, request, headers, runtime)
+
+    def update_team_with_options(
+        self,
+        team_id: str,
+        request: dingtalkdoc__2__0_models.UpdateTeamRequest,
+        headers: dingtalkdoc__2__0_models.UpdateTeamHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.UpdateTeamResponse:
+        UtilClient.validate_model(request)
+        team_id = OpenApiUtilClient.get_encode_param(team_id)
+        body = {}
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.UpdateTeamResponse(),
+            self.do_roarequest('UpdateTeam', 'doc_2.0', 'HTTP', 'PUT', 'AK', f'/v2.0/doc/teams/{team_id}', 'json', req, runtime)
+        )
+
+    async def update_team_with_options_async(
+        self,
+        team_id: str,
+        request: dingtalkdoc__2__0_models.UpdateTeamRequest,
+        headers: dingtalkdoc__2__0_models.UpdateTeamHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.UpdateTeamResponse:
+        UtilClient.validate_model(request)
+        team_id = OpenApiUtilClient.get_encode_param(team_id)
+        body = {}
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.UpdateTeamResponse(),
+            await self.do_roarequest_async('UpdateTeam', 'doc_2.0', 'HTTP', 'PUT', 'AK', f'/v2.0/doc/teams/{team_id}', 'json', req, runtime)
         )

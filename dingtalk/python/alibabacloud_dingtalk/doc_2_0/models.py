@@ -1873,6 +1873,474 @@ class CreateDentryResponse(TeaModel):
         return self
 
 
+class CreateSpaceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateSpaceRequestShareScope(TeaModel):
+    def __init__(
+        self,
+        scope: int = None,
+    ):
+        # 公开范围。
+        # 0-仅知识库成员可见；
+        # 1-当前组织所有人可见。
+        self.scope = scope
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.scope is not None:
+            result['scope'] = self.scope
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('scope') is not None:
+            self.scope = m.get('scope')
+        return self
+
+
+class CreateSpaceRequest(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        icon: str = None,
+        name: str = None,
+        operator_id: str = None,
+        section_id: str = None,
+        share_scope: CreateSpaceRequestShareScope = None,
+        team_id: str = None,
+    ):
+        # 知识库简介。
+        # 最大长度50。
+        self.description = description
+        # 知识库图标。
+        self.icon = icon
+        # 知识库名称。
+        # 最大长度50。
+        self.name = name
+        # 操作人unionId。
+        self.operator_id = operator_id
+        # 知识库分组id。只有选择了所属小组的情况下，才需要设置知识库分组。
+        self.section_id = section_id
+        # 公开范围。
+        self.share_scope = share_scope
+        # 所属小组id。
+        self.team_id = team_id
+
+    def validate(self):
+        if self.share_scope:
+            self.share_scope.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.name is not None:
+            result['name'] = self.name
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.section_id is not None:
+            result['sectionId'] = self.section_id
+        if self.share_scope is not None:
+            result['shareScope'] = self.share_scope.to_map()
+        if self.team_id is not None:
+            result['teamId'] = self.team_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('sectionId') is not None:
+            self.section_id = m.get('sectionId')
+        if m.get('shareScope') is not None:
+            temp_model = CreateSpaceRequestShareScope()
+            self.share_scope = temp_model.from_map(m['shareScope'])
+        if m.get('teamId') is not None:
+            self.team_id = m.get('teamId')
+        return self
+
+
+class CreateSpaceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SpaceVO = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SpaceVO()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateTeamHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateTeamRequestMembers(TeaModel):
+    def __init__(
+        self,
+        member_id: str = None,
+        member_type: int = None,
+        role_code: str = None,
+    ):
+        # 成员unionId。
+        self.member_id = member_id
+        # 成员类型。
+        # 1-群；2-用户；3-组织；4-部门；5-虚拟组织；6-通讯录角色组。
+        self.member_type = member_type
+        # 成员角色。
+        # 0-无权限；1-只读；2-只读/下载；3-编辑；4-管理员；5-所有者。
+        self.role_code = role_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.member_id is not None:
+            result['memberId'] = self.member_id
+        if self.member_type is not None:
+            result['memberType'] = self.member_type
+        if self.role_code is not None:
+            result['roleCode'] = self.role_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('memberId') is not None:
+            self.member_id = m.get('memberId')
+        if m.get('memberType') is not None:
+            self.member_type = m.get('memberType')
+        if m.get('roleCode') is not None:
+            self.role_code = m.get('roleCode')
+        return self
+
+
+class CreateTeamRequest(TeaModel):
+    def __init__(
+        self,
+        cover: str = None,
+        description: str = None,
+        icon: str = None,
+        members: List[CreateTeamRequestMembers] = None,
+        name: str = None,
+        operator_id: str = None,
+        team_type: int = None,
+    ):
+        # 小组封面。
+        self.cover = cover
+        # 小组介绍。
+        self.description = description
+        # 小组图标。
+        self.icon = icon
+        # 小组成员列表。
+        self.members = members
+        # 小组名称。
+        self.name = name
+        # 操作人unionId。
+        self.operator_id = operator_id
+        # 小组类型。
+        # 0-默认；
+        # 1-部门；
+        # 2-项目组；
+        # 3-兴趣小组。
+        self.team_type = team_type
+
+    def validate(self):
+        if self.members:
+            for k in self.members:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cover is not None:
+            result['cover'] = self.cover
+        if self.description is not None:
+            result['description'] = self.description
+        if self.icon is not None:
+            result['icon'] = self.icon
+        result['members'] = []
+        if self.members is not None:
+            for k in self.members:
+                result['members'].append(k.to_map() if k else None)
+        if self.name is not None:
+            result['name'] = self.name
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.team_type is not None:
+            result['teamType'] = self.team_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cover') is not None:
+            self.cover = m.get('cover')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        self.members = []
+        if m.get('members') is not None:
+            for k in m.get('members'):
+                temp_model = CreateTeamRequestMembers()
+                self.members.append(temp_model.from_map(k))
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('teamType') is not None:
+            self.team_type = m.get('teamType')
+        return self
+
+
+class CreateTeamResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: TeamVO = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = TeamVO()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteTeamHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteTeamRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+    ):
+        # 操作人unionId。
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class DeleteTeamResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: TeamVO = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = TeamVO()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetSchemaHeaders(TeaModel):
     def __init__(
         self,
@@ -3163,6 +3631,176 @@ class ListRelatedSpaceTeamsResponse(TeaModel):
         return self
 
 
+class ListRelatedTeamsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListRelatedTeamsRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        operator_id: str = None,
+        type: int = None,
+    ):
+        # 每页最大条目数，最大值50。
+        self.max_results = max_results
+        # 分页游标，第一页可不传。
+        self.next_token = next_token
+        # 操作用户unionId。
+        self.operator_id = operator_id
+        # 小组类型。
+        # 0-默认；1-部门；2-项目组；3-兴趣小组。
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class ListRelatedTeamsResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        items: List[TeamModel] = None,
+        next_token: str = None,
+    ):
+        # 是否还有更多数据。
+        self.has_more = has_more
+        # 小组列表。
+        self.items = items
+        # 分页游标。
+        self.next_token = next_token
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = TeamModel()
+                self.items.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class ListRelatedTeamsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListRelatedTeamsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListRelatedTeamsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ListSpaceSectionsHeaders(TeaModel):
     def __init__(
         self,
@@ -3357,6 +3995,198 @@ class ListSpaceSectionsResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = ListSpaceSectionsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListTeamMembersHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListTeamMembersRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+    ):
+        # 操作用户unionId。
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class ListTeamMembersResponseBodyMembers(TeaModel):
+    def __init__(
+        self,
+        member_id: str = None,
+        member_type: int = None,
+        name: str = None,
+        role_code: str = None,
+    ):
+        # 成员id。
+        self.member_id = member_id
+        # 成员类型。
+        # 1-群；2-用户；3-组织；4-部门；5-虚拟组。
+        self.member_type = member_type
+        # 成员名称。
+        self.name = name
+        # 成员角色。
+        # 0-无权限；1-只读；2-只读/下载；3-编辑；4-管理员；5-所有者。
+        self.role_code = role_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.member_id is not None:
+            result['memberId'] = self.member_id
+        if self.member_type is not None:
+            result['memberType'] = self.member_type
+        if self.name is not None:
+            result['name'] = self.name
+        if self.role_code is not None:
+            result['roleCode'] = self.role_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('memberId') is not None:
+            self.member_id = m.get('memberId')
+        if m.get('memberType') is not None:
+            self.member_type = m.get('memberType')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('roleCode') is not None:
+            self.role_code = m.get('roleCode')
+        return self
+
+
+class ListTeamMembersResponseBody(TeaModel):
+    def __init__(
+        self,
+        members: List[ListTeamMembersResponseBodyMembers] = None,
+        team_name: str = None,
+    ):
+        # 小组成员列表。
+        self.members = members
+        # 小组名称。
+        self.team_name = team_name
+
+    def validate(self):
+        if self.members:
+            for k in self.members:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['members'] = []
+        if self.members is not None:
+            for k in self.members:
+                result['members'].append(k.to_map() if k else None)
+        if self.team_name is not None:
+            result['teamName'] = self.team_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.members = []
+        if m.get('members') is not None:
+            for k in m.get('members'):
+                temp_model = ListTeamMembersResponseBodyMembers()
+                self.members.append(temp_model.from_map(k))
+        if m.get('teamName') is not None:
+            self.team_name = m.get('teamName')
+        return self
+
+
+class ListTeamMembersResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListTeamMembersResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListTeamMembersResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -4155,6 +4985,265 @@ class RelatedSpacesResponse(TeaModel):
         return self
 
 
+class RemoveTeamMembersHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RemoveTeamMembersRequestMembers(TeaModel):
+    def __init__(
+        self,
+        member_id: str = None,
+        member_type: int = None,
+        role_code: str = None,
+    ):
+        # 成员id。
+        self.member_id = member_id
+        # 成员类型。
+        # 1-群；2-用户；3-组织；4-部门；5-虚拟组织；6-通讯录角色组。
+        self.member_type = member_type
+        # 成员角色。
+        # 0-无权限；1-只读；2-只读/下载；3-编辑；4-管理员；5-所有者。
+        self.role_code = role_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.member_id is not None:
+            result['memberId'] = self.member_id
+        if self.member_type is not None:
+            result['memberType'] = self.member_type
+        if self.role_code is not None:
+            result['roleCode'] = self.role_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('memberId') is not None:
+            self.member_id = m.get('memberId')
+        if m.get('memberType') is not None:
+            self.member_type = m.get('memberType')
+        if m.get('roleCode') is not None:
+            self.role_code = m.get('roleCode')
+        return self
+
+
+class RemoveTeamMembersRequest(TeaModel):
+    def __init__(
+        self,
+        members: List[RemoveTeamMembersRequestMembers] = None,
+        notify: bool = None,
+        operator_id: str = None,
+    ):
+        # 待移除的成员列表。
+        self.members = members
+        # 是否通知被移除的成员，默认否。
+        self.notify = notify
+        # 操作人unionId。
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.members:
+            for k in self.members:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['members'] = []
+        if self.members is not None:
+            for k in self.members:
+                result['members'].append(k.to_map() if k else None)
+        if self.notify is not None:
+            result['notify'] = self.notify
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.members = []
+        if m.get('members') is not None:
+            for k in m.get('members'):
+                temp_model = RemoveTeamMembersRequestMembers()
+                self.members.append(temp_model.from_map(k))
+        if m.get('notify') is not None:
+            self.notify = m.get('notify')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class RemoveTeamMembersResponseBodyNotInOrgMembers(TeaModel):
+    def __init__(
+        self,
+        member_id: str = None,
+        member_type: int = None,
+        name: str = None,
+        role_code: str = None,
+    ):
+        # 成员id。
+        self.member_id = member_id
+        # 成员类型。
+        # 1-群；2-用户；3-组织；4-部门；5-虚拟组织；6-通讯录角色组。
+        self.member_type = member_type
+        # 成员名称。
+        self.name = name
+        # 成员角色。
+        # 0-无权限；1-只读；2-只读/下载；3-编辑、4-管理员；5-所有者。
+        self.role_code = role_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.member_id is not None:
+            result['memberId'] = self.member_id
+        if self.member_type is not None:
+            result['memberType'] = self.member_type
+        if self.name is not None:
+            result['name'] = self.name
+        if self.role_code is not None:
+            result['roleCode'] = self.role_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('memberId') is not None:
+            self.member_id = m.get('memberId')
+        if m.get('memberType') is not None:
+            self.member_type = m.get('memberType')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('roleCode') is not None:
+            self.role_code = m.get('roleCode')
+        return self
+
+
+class RemoveTeamMembersResponseBody(TeaModel):
+    def __init__(
+        self,
+        not_in_org_members: List[RemoveTeamMembersResponseBodyNotInOrgMembers] = None,
+        save_success: bool = None,
+    ):
+        # 企业外的成员列表。
+        # 保存失败的时候会返回此列表。
+        self.not_in_org_members = not_in_org_members
+        # 是否保存成功。
+        self.save_success = save_success
+
+    def validate(self):
+        if self.not_in_org_members:
+            for k in self.not_in_org_members:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['notInOrgMembers'] = []
+        if self.not_in_org_members is not None:
+            for k in self.not_in_org_members:
+                result['notInOrgMembers'].append(k.to_map() if k else None)
+        if self.save_success is not None:
+            result['saveSuccess'] = self.save_success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.not_in_org_members = []
+        if m.get('notInOrgMembers') is not None:
+            for k in m.get('notInOrgMembers'):
+                temp_model = RemoveTeamMembersResponseBodyNotInOrgMembers()
+                self.not_in_org_members.append(temp_model.from_map(k))
+        if m.get('saveSuccess') is not None:
+            self.save_success = m.get('saveSuccess')
+        return self
+
+
+class RemoveTeamMembersResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: RemoveTeamMembersResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = RemoveTeamMembersResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class RenameDentryHeaders(TeaModel):
     def __init__(
         self,
@@ -4256,6 +5345,265 @@ class RenameDentryResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = DentryVO()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SaveTeamMembersHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SaveTeamMembersRequestMembers(TeaModel):
+    def __init__(
+        self,
+        member_id: str = None,
+        member_type: int = None,
+        role_code: str = None,
+    ):
+        # 成员id。
+        self.member_id = member_id
+        # 成员类型。
+        # 1-群；2-用户；3-组织；4-部门；5-虚拟组织；6-通讯录角色组。
+        self.member_type = member_type
+        # 成员角色。
+        # 0-无权限；1-只读；2-只读/下载；3-编辑；4-管理员；5-所有者。
+        self.role_code = role_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.member_id is not None:
+            result['memberId'] = self.member_id
+        if self.member_type is not None:
+            result['memberType'] = self.member_type
+        if self.role_code is not None:
+            result['roleCode'] = self.role_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('memberId') is not None:
+            self.member_id = m.get('memberId')
+        if m.get('memberType') is not None:
+            self.member_type = m.get('memberType')
+        if m.get('roleCode') is not None:
+            self.role_code = m.get('roleCode')
+        return self
+
+
+class SaveTeamMembersRequest(TeaModel):
+    def __init__(
+        self,
+        members: List[SaveTeamMembersRequestMembers] = None,
+        notify: bool = None,
+        operator_id: str = None,
+    ):
+        # 待添加/修改的成员列表。
+        self.members = members
+        # 是否通知被授权成员，默认否。
+        self.notify = notify
+        # 操作人unionId。
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.members:
+            for k in self.members:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['members'] = []
+        if self.members is not None:
+            for k in self.members:
+                result['members'].append(k.to_map() if k else None)
+        if self.notify is not None:
+            result['notify'] = self.notify
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.members = []
+        if m.get('members') is not None:
+            for k in m.get('members'):
+                temp_model = SaveTeamMembersRequestMembers()
+                self.members.append(temp_model.from_map(k))
+        if m.get('notify') is not None:
+            self.notify = m.get('notify')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class SaveTeamMembersResponseBodyNotInOrgMembers(TeaModel):
+    def __init__(
+        self,
+        member_id: str = None,
+        member_type: int = None,
+        name: str = None,
+        role_code: str = None,
+    ):
+        # 成员id。
+        self.member_id = member_id
+        # 成员类型。
+        # 1-群；2-用户；3-组织；4-部门；5-虚拟组织；6-通讯录角色组。
+        self.member_type = member_type
+        # 成员名称。
+        self.name = name
+        # 成员角色。
+        # 0-无权限；1-只读；2-只读/下载；3-编辑、4-管理员；5-所有者。
+        self.role_code = role_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.member_id is not None:
+            result['memberId'] = self.member_id
+        if self.member_type is not None:
+            result['memberType'] = self.member_type
+        if self.name is not None:
+            result['name'] = self.name
+        if self.role_code is not None:
+            result['roleCode'] = self.role_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('memberId') is not None:
+            self.member_id = m.get('memberId')
+        if m.get('memberType') is not None:
+            self.member_type = m.get('memberType')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('roleCode') is not None:
+            self.role_code = m.get('roleCode')
+        return self
+
+
+class SaveTeamMembersResponseBody(TeaModel):
+    def __init__(
+        self,
+        not_in_org_members: List[SaveTeamMembersResponseBodyNotInOrgMembers] = None,
+        save_success: bool = None,
+    ):
+        # 企业外的成员列表。
+        # 保存失败的时候会返回此列表。
+        self.not_in_org_members = not_in_org_members
+        # 是否保存成功。
+        self.save_success = save_success
+
+    def validate(self):
+        if self.not_in_org_members:
+            for k in self.not_in_org_members:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['notInOrgMembers'] = []
+        if self.not_in_org_members is not None:
+            for k in self.not_in_org_members:
+                result['notInOrgMembers'].append(k.to_map() if k else None)
+        if self.save_success is not None:
+            result['saveSuccess'] = self.save_success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.not_in_org_members = []
+        if m.get('notInOrgMembers') is not None:
+            for k in m.get('notInOrgMembers'):
+                temp_model = SaveTeamMembersResponseBodyNotInOrgMembers()
+                self.not_in_org_members.append(temp_model.from_map(k))
+        if m.get('saveSuccess') is not None:
+            self.save_success = m.get('saveSuccess')
+        return self
+
+
+class SaveTeamMembersResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SaveTeamMembersResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SaveTeamMembersResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -4924,6 +6272,118 @@ class SearchResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = SearchResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateTeamHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateTeamRequest(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        name: str = None,
+        operator_id: str = None,
+    ):
+        # 小组介绍。和小组名称至少有一个必填。
+        self.description = description
+        # 小组名称。和小组介绍至少有一个必填。
+        self.name = name
+        # 操作人unionId。
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.name is not None:
+            result['name'] = self.name
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class UpdateTeamResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: TeamVO = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = TeamVO()
             self.body = temp_model.from_map(m['body'])
         return self
 
