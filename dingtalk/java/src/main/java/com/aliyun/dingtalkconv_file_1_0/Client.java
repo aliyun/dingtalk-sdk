@@ -38,10 +38,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("spaceId", request.spaceId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.targetUnionId)) {
-            body.put("targetUnionId", request.targetUnionId);
-        }
-
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;

@@ -4,6 +4,7 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCrmProcCodesResponseBody extends TeaModel {
+    // 模板code列表。
     @NameInMap("result")
     public java.util.List<String> result;
 

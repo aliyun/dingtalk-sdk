@@ -12,11 +12,6 @@ public class SendByAppRequest extends TeaModel {
     @NameInMap("spaceId")
     public String spaceId;
 
-    // 目标用户id
-    // 会通过应用发送消息给指定用户
-    @NameInMap("targetUnionId")
-    public String targetUnionId;
-
     // 用户id
     @NameInMap("unionId")
     public String unionId;
@@ -40,14 +35,6 @@ public class SendByAppRequest extends TeaModel {
     }
     public String getSpaceId() {
         return this.spaceId;
-    }
-
-    public SendByAppRequest setTargetUnionId(String targetUnionId) {
-        this.targetUnionId = targetUnionId;
-        return this;
-    }
-    public String getTargetUnionId() {
-        return this.targetUnionId;
     }
 
     public SendByAppRequest setUnionId(String unionId) {
