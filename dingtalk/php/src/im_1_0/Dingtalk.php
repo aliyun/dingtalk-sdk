@@ -33,6 +33,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateGroupConversationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateInterconnectionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateInterconnectionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateInterconnectionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateSceneGroupConversationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateSceneGroupConversationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateSceneGroupConversationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateStoreGroupConversationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateStoreGroupConversationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateStoreGroupConversationResponse;
@@ -588,6 +591,69 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateInterconnectionResponse::fromMap($this->doROARequest('CreateInterconnection', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interconnections', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateSceneGroupConversationRequest $request
+     *
+     * @return CreateSceneGroupConversationResponse
+     */
+    public function createSceneGroupConversation($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateSceneGroupConversationHeaders([]);
+
+        return $this->createSceneGroupConversationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateSceneGroupConversationRequest $request
+     * @param CreateSceneGroupConversationHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return CreateSceneGroupConversationResponse
+     */
+    public function createSceneGroupConversationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->features)) {
+            @$body['features'] = $request->features;
+        }
+        if (!Utils::isUnset($request->groupName)) {
+            @$body['groupName'] = $request->groupName;
+        }
+        if (!Utils::isUnset($request->groupOwnerId)) {
+            @$body['groupOwnerId'] = $request->groupOwnerId;
+        }
+        if (!Utils::isUnset($request->icon)) {
+            @$body['icon'] = $request->icon;
+        }
+        if (!Utils::isUnset($request->managementOptions)) {
+            @$body['managementOptions'] = $request->managementOptions;
+        }
+        if (!Utils::isUnset($request->templateId)) {
+            @$body['templateId'] = $request->templateId;
+        }
+        if (!Utils::isUnset($request->userIdList)) {
+            @$body['userIdList'] = $request->userIdList;
+        }
+        if (!Utils::isUnset($request->uuid)) {
+            @$body['uuid'] = $request->uuid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateSceneGroupConversationResponse::fromMap($this->doROARequest('CreateSceneGroupConversation', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/sceneGroups', 'json', $req, $runtime));
     }
 
     /**

@@ -16,6 +16,13 @@ class RedirectWorkflowTaskRequest extends Model
     public $actionName;
 
     /**
+     * @description 操作人的用户ID，需要跟任务的当前执行人保持一致，否则无法通过校验
+     *
+     * @var string
+     */
+    public $operateUserId;
+
+    /**
      * @description 转交备注信息
      *
      * @var string
@@ -36,10 +43,11 @@ class RedirectWorkflowTaskRequest extends Model
      */
     public $toUserId;
     protected $_name = [
-        'actionName' => 'actionName',
-        'remark'     => 'remark',
-        'taskId'     => 'taskId',
-        'toUserId'   => 'toUserId',
+        'actionName'    => 'actionName',
+        'operateUserId' => 'operateUserId',
+        'remark'        => 'remark',
+        'taskId'        => 'taskId',
+        'toUserId'      => 'toUserId',
     ];
 
     public function validate()
@@ -51,6 +59,9 @@ class RedirectWorkflowTaskRequest extends Model
         $res = [];
         if (null !== $this->actionName) {
             $res['actionName'] = $this->actionName;
+        }
+        if (null !== $this->operateUserId) {
+            $res['operateUserId'] = $this->operateUserId;
         }
         if (null !== $this->remark) {
             $res['remark'] = $this->remark;
@@ -75,6 +86,9 @@ class RedirectWorkflowTaskRequest extends Model
         $model = new self();
         if (isset($map['actionName'])) {
             $model->actionName = $map['actionName'];
+        }
+        if (isset($map['operateUserId'])) {
+            $model->operateUserId = $map['operateUserId'];
         }
         if (isset($map['remark'])) {
             $model->remark = $map['remark'];
