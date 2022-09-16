@@ -17,6 +17,13 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         public string ActionName { get; set; }
 
         /// <summary>
+        /// 操作人的用户ID，需要跟任务的当前执行人保持一致，否则无法通过校验
+        /// </summary>
+        [NameInMap("operateUserId")]
+        [Validation(Required=false)]
+        public string OperateUserId { get; set; }
+
+        /// <summary>
         /// 转交备注信息
         /// </summary>
         [NameInMap("remark")]
