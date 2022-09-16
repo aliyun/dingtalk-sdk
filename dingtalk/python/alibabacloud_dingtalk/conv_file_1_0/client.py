@@ -54,8 +54,6 @@ class Client(OpenApiClient):
             body['dentryId'] = request.dentry_id
         if not UtilClient.is_unset(request.space_id):
             body['spaceId'] = request.space_id
-        if not UtilClient.is_unset(request.target_union_id):
-            body['targetUnionId'] = request.target_union_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -86,8 +84,6 @@ class Client(OpenApiClient):
             body['dentryId'] = request.dentry_id
         if not UtilClient.is_unset(request.space_id):
             body['spaceId'] = request.space_id
-        if not UtilClient.is_unset(request.target_union_id):
-            body['targetUnionId'] = request.target_union_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

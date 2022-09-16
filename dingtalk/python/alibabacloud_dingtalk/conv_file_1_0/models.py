@@ -42,16 +42,12 @@ class SendByAppRequest(TeaModel):
         self,
         dentry_id: str = None,
         space_id: str = None,
-        target_union_id: str = None,
         union_id: str = None,
     ):
         # 文件id
         self.dentry_id = dentry_id
         # 文件所在空间id
         self.space_id = space_id
-        # 目标用户id
-        # 会通过应用发送消息给指定用户
-        self.target_union_id = target_union_id
         # 用户id
         self.union_id = union_id
 
@@ -68,8 +64,6 @@ class SendByAppRequest(TeaModel):
             result['dentryId'] = self.dentry_id
         if self.space_id is not None:
             result['spaceId'] = self.space_id
-        if self.target_union_id is not None:
-            result['targetUnionId'] = self.target_union_id
         if self.union_id is not None:
             result['unionId'] = self.union_id
         return result
@@ -80,8 +74,6 @@ class SendByAppRequest(TeaModel):
             self.dentry_id = m.get('dentryId')
         if m.get('spaceId') is not None:
             self.space_id = m.get('spaceId')
-        if m.get('targetUnionId') is not None:
-            self.target_union_id = m.get('targetUnionId')
         if m.get('unionId') is not None:
             self.union_id = m.get('unionId')
         return self
