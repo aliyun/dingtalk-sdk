@@ -58,9 +58,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->spaceId)) {
             @$body['spaceId'] = $request->spaceId;
         }
-        if (!Utils::isUnset($request->targetUnionId)) {
-            @$body['targetUnionId'] = $request->targetUnionId;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;

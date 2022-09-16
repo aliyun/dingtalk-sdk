@@ -6,16 +6,16 @@ namespace AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class GetCrmProcCodesResponseBody extends Model
+class CleanProcessDataResponseBody extends Model
 {
     /**
-     * @description 模板code列表。
+     * @description 是否调用成功。
      *
-     * @var string[]
+     * @var bool
      */
-    public $result;
+    public $success;
     protected $_name = [
-        'result' => 'result',
+        'success' => 'success',
     ];
 
     public function validate()
@@ -25,8 +25,8 @@ class GetCrmProcCodesResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->result) {
-            $res['result'] = $this->result;
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
         }
 
         return $res;
@@ -35,15 +35,13 @@ class GetCrmProcCodesResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return GetCrmProcCodesResponseBody
+     * @return CleanProcessDataResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['result'])) {
-            if (!empty($map['result'])) {
-                $model->result = $map['result'];
-            }
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
         }
 
         return $model;

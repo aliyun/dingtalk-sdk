@@ -23,23 +23,15 @@ class SendByAppRequest extends Model
     public $spaceId;
 
     /**
-     * @description 目标用户id
-     * 会通过应用发送消息给指定用户
-     * @var string
-     */
-    public $targetUnionId;
-
-    /**
      * @description 用户id
      *
      * @var string
      */
     public $unionId;
     protected $_name = [
-        'dentryId'      => 'dentryId',
-        'spaceId'       => 'spaceId',
-        'targetUnionId' => 'targetUnionId',
-        'unionId'       => 'unionId',
+        'dentryId' => 'dentryId',
+        'spaceId'  => 'spaceId',
+        'unionId'  => 'unionId',
     ];
 
     public function validate()
@@ -54,9 +46,6 @@ class SendByAppRequest extends Model
         }
         if (null !== $this->spaceId) {
             $res['spaceId'] = $this->spaceId;
-        }
-        if (null !== $this->targetUnionId) {
-            $res['targetUnionId'] = $this->targetUnionId;
         }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
@@ -78,9 +67,6 @@ class SendByAppRequest extends Model
         }
         if (isset($map['spaceId'])) {
             $model->spaceId = $map['spaceId'];
-        }
-        if (isset($map['targetUnionId'])) {
-            $model->targetUnionId = $map['targetUnionId'];
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];

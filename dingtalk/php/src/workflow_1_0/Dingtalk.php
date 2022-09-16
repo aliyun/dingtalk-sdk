@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\BatchUpdateProcessInstanceRes
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\CancelIntegratedTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\CancelIntegratedTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\CancelIntegratedTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\CleanProcessDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\CleanProcessDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\CleanProcessDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\CopyProcessHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\CopyProcessRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\CopyProcessResponse;
@@ -35,6 +38,9 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\FormCreateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetAttachmentSpaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetAttachmentSpaceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetAttachmentSpaceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetConditionFormComponentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetConditionFormComponentRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetConditionFormComponentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetCrmProcCodesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetCrmProcCodesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetManageProcessByStaffIdHeaders;
@@ -312,6 +318,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CancelIntegratedTaskResponse::fromMap($this->doROARequest('CancelIntegratedTask', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processCentres/tasks/cancel', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CleanProcessDataRequest $request
+     *
+     * @return CleanProcessDataResponse
+     */
+    public function cleanProcessData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CleanProcessDataHeaders([]);
+
+        return $this->cleanProcessDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CleanProcessDataRequest $request
+     * @param CleanProcessDataHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return CleanProcessDataResponse
+     */
+    public function cleanProcessDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->processCode)) {
+            @$body['processCode'] = $request->processCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CleanProcessDataResponse::fromMap($this->doROARequest('CleanProcessData', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processes/clean', 'json', $req, $runtime));
     }
 
     /**
@@ -609,6 +660,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetAttachmentSpaceResponse::fromMap($this->doROARequest('GetAttachmentSpace', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processInstances/spaces/infos/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetConditionFormComponentRequest $request
+     *
+     * @return GetConditionFormComponentResponse
+     */
+    public function getConditionFormComponent($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetConditionFormComponentHeaders([]);
+
+        return $this->getConditionFormComponentWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetConditionFormComponentRequest $request
+     * @param GetConditionFormComponentHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return GetConditionFormComponentResponse
+     */
+    public function getConditionFormComponentWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->agentId)) {
+            @$query['agentId'] = $request->agentId;
+        }
+        if (!Utils::isUnset($request->processCode)) {
+            @$query['processCode'] = $request->processCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetConditionFormComponentResponse::fromMap($this->doROARequest('GetConditionFormComponent', 'workflow_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workflow/processes/conditions/components', 'json', $req, $runtime));
     }
 
     /**
