@@ -344,6 +344,63 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("CreateInterconnection", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interconnections", "json", req, runtime), new CreateInterconnectionResponse());
     }
 
+    public CreateSceneGroupConversationResponse createSceneGroupConversation(CreateSceneGroupConversationRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateSceneGroupConversationHeaders headers = new CreateSceneGroupConversationHeaders();
+        return this.createSceneGroupConversationWithOptions(request, headers, runtime);
+    }
+
+    public CreateSceneGroupConversationResponse createSceneGroupConversationWithOptions(CreateSceneGroupConversationRequest request, CreateSceneGroupConversationHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.features)) {
+            body.put("features", request.features);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.groupName)) {
+            body.put("groupName", request.groupName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.groupOwnerId)) {
+            body.put("groupOwnerId", request.groupOwnerId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.icon)) {
+            body.put("icon", request.icon);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.managementOptions))) {
+            body.put("managementOptions", request.managementOptions);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.templateId)) {
+            body.put("templateId", request.templateId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userIdList)) {
+            body.put("userIdList", request.userIdList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.uuid)) {
+            body.put("uuid", request.uuid);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CreateSceneGroupConversation", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/sceneGroups", "json", req, runtime), new CreateSceneGroupConversationResponse());
+    }
+
     public CreateStoreGroupConversationResponse createStoreGroupConversation(CreateStoreGroupConversationRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateStoreGroupConversationHeaders headers = new CreateStoreGroupConversationHeaders();

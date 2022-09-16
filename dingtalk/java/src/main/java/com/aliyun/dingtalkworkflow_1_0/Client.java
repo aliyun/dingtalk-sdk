@@ -1149,6 +1149,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("actionName", request.actionName);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.operateUserId)) {
+            body.put("operateUserId", request.operateUserId);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.remark)) {
             body.put("remark", request.remark);
         }

@@ -8,6 +8,10 @@ public class RedirectWorkflowTaskRequest extends TeaModel {
     @NameInMap("actionName")
     public String actionName;
 
+    // 操作人的用户ID，需要跟任务的当前执行人保持一致，否则无法通过校验
+    @NameInMap("operateUserId")
+    public String operateUserId;
+
     // 转交备注信息
     @NameInMap("remark")
     public String remark;
@@ -31,6 +35,14 @@ public class RedirectWorkflowTaskRequest extends TeaModel {
     }
     public String getActionName() {
         return this.actionName;
+    }
+
+    public RedirectWorkflowTaskRequest setOperateUserId(String operateUserId) {
+        this.operateUserId = operateUserId;
+        return this;
+    }
+    public String getOperateUserId() {
+        return this.operateUserId;
     }
 
     public RedirectWorkflowTaskRequest setRemark(String remark) {
