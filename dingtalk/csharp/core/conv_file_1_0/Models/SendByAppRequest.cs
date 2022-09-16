@@ -24,14 +24,6 @@ namespace AlibabaCloud.SDK.Dingtalkconv_file_1_0.Models
         public string SpaceId { get; set; }
 
         /// <summary>
-        /// 目标用户id
-        /// 会通过应用发送消息给指定用户
-        /// </summary>
-        [NameInMap("targetUnionId")]
-        [Validation(Required=false)]
-        public string TargetUnionId { get; set; }
-
-        /// <summary>
         /// 用户id
         /// </summary>
         [NameInMap("unionId")]

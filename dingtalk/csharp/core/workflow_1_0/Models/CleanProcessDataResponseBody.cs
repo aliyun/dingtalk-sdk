@@ -8,13 +8,13 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
-    public class GetCrmProcCodesResponseBody : TeaModel {
+    public class CleanProcessDataResponseBody : TeaModel {
         /// <summary>
-        /// 模板code列表。
+        /// 是否调用成功。
         /// </summary>
-        [NameInMap("result")]
+        [NameInMap("success")]
         [Validation(Required=false)]
-        public List<string> Result { get; set; }
+        public bool? Success { get; set; }
 
     }
 

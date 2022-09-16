@@ -57,10 +57,6 @@ namespace AlibabaCloud.SDK.Dingtalkconv_file_1_0
             {
                 body["spaceId"] = request.SpaceId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetUnionId))
-            {
-                body["targetUnionId"] = request.TargetUnionId;
-            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -95,10 +91,6 @@ namespace AlibabaCloud.SDK.Dingtalkconv_file_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpaceId))
             {
                 body["spaceId"] = request.SpaceId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetUnionId))
-            {
-                body["targetUnionId"] = request.TargetUnionId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
