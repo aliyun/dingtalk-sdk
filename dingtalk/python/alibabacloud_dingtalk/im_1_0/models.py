@@ -1405,6 +1405,244 @@ class CreateInterconnectionResponse(TeaModel):
         return self
 
 
+class CreateSceneGroupConversationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateSceneGroupConversationRequestManagementOptions(TeaModel):
+    def __init__(
+        self,
+        chat_banned_type: int = None,
+        management_type: int = None,
+        mention_all_authority: int = None,
+        searchable: int = None,
+        show_history_type: int = None,
+        validation_type: int = None,
+    ):
+        # 群禁言，0-默认，不禁言，1-全员禁言
+        self.chat_banned_type = chat_banned_type
+        # 管理类型，0-默认，所有人可管理，1-仅群主可管理
+        self.management_type = management_type
+        # @ all 权限，0-默认，所有人，1-仅群主可@all
+        self.mention_all_authority = mention_all_authority
+        # 群可搜索，0-默认，不可搜索，1-可搜索
+        self.searchable = searchable
+        # 新成员是否可查看聊天历史消息，0-默认，否，1-是
+        self.show_history_type = show_history_type
+        # 入群验证，0：不入群验证（默认） 1：入群验证
+        self.validation_type = validation_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.chat_banned_type is not None:
+            result['chatBannedType'] = self.chat_banned_type
+        if self.management_type is not None:
+            result['managementType'] = self.management_type
+        if self.mention_all_authority is not None:
+            result['mentionAllAuthority'] = self.mention_all_authority
+        if self.searchable is not None:
+            result['searchable'] = self.searchable
+        if self.show_history_type is not None:
+            result['showHistoryType'] = self.show_history_type
+        if self.validation_type is not None:
+            result['validationType'] = self.validation_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('chatBannedType') is not None:
+            self.chat_banned_type = m.get('chatBannedType')
+        if m.get('managementType') is not None:
+            self.management_type = m.get('managementType')
+        if m.get('mentionAllAuthority') is not None:
+            self.mention_all_authority = m.get('mentionAllAuthority')
+        if m.get('searchable') is not None:
+            self.searchable = m.get('searchable')
+        if m.get('showHistoryType') is not None:
+            self.show_history_type = m.get('showHistoryType')
+        if m.get('validationType') is not None:
+            self.validation_type = m.get('validationType')
+        return self
+
+
+class CreateSceneGroupConversationRequest(TeaModel):
+    def __init__(
+        self,
+        features: Dict[str, str] = None,
+        group_name: str = None,
+        group_owner_id: str = None,
+        icon: str = None,
+        management_options: CreateSceneGroupConversationRequestManagementOptions = None,
+        template_id: str = None,
+        user_id_list: List[str] = None,
+        uuid: str = None,
+    ):
+        # 功能增强
+        self.features = features
+        # 群名称。
+        self.group_name = group_name
+        # 群主(钉外用户)userId。
+        self.group_owner_id = group_owner_id
+        # 群头像。
+        self.icon = icon
+        self.management_options = management_options
+        # 群模板Id。
+        self.template_id = template_id
+        self.user_id_list = user_id_list
+        # 建群去重的业务ID。
+        self.uuid = uuid
+
+    def validate(self):
+        if self.management_options:
+            self.management_options.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.features is not None:
+            result['features'] = self.features
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.group_owner_id is not None:
+            result['groupOwnerId'] = self.group_owner_id
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.management_options is not None:
+            result['managementOptions'] = self.management_options.to_map()
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.user_id_list is not None:
+            result['userIdList'] = self.user_id_list
+        if self.uuid is not None:
+            result['uuid'] = self.uuid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('features') is not None:
+            self.features = m.get('features')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('groupOwnerId') is not None:
+            self.group_owner_id = m.get('groupOwnerId')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('managementOptions') is not None:
+            temp_model = CreateSceneGroupConversationRequestManagementOptions()
+            self.management_options = temp_model.from_map(m['managementOptions'])
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('userIdList') is not None:
+            self.user_id_list = m.get('userIdList')
+        if m.get('uuid') is not None:
+            self.uuid = m.get('uuid')
+        return self
+
+
+class CreateSceneGroupConversationResponseBody(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+    ):
+        # 群会话Id。
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class CreateSceneGroupConversationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateSceneGroupConversationResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateSceneGroupConversationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateStoreGroupConversationHeaders(TeaModel):
     def __init__(
         self,

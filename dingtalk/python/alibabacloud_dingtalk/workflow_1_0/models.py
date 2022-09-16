@@ -9431,12 +9431,15 @@ class RedirectWorkflowTaskRequest(TeaModel):
     def __init__(
         self,
         action_name: str = None,
+        operate_user_id: str = None,
         remark: str = None,
         task_id: int = None,
         to_user_id: str = None,
     ):
         # 操作节点名
         self.action_name = action_name
+        # 操作人的用户ID，需要跟任务的当前执行人保持一致，否则无法通过校验
+        self.operate_user_id = operate_user_id
         # 转交备注信息
         self.remark = remark
         # OA审批任务ID
@@ -9455,6 +9458,8 @@ class RedirectWorkflowTaskRequest(TeaModel):
         result = dict()
         if self.action_name is not None:
             result['actionName'] = self.action_name
+        if self.operate_user_id is not None:
+            result['operateUserId'] = self.operate_user_id
         if self.remark is not None:
             result['remark'] = self.remark
         if self.task_id is not None:
@@ -9467,6 +9472,8 @@ class RedirectWorkflowTaskRequest(TeaModel):
         m = m or dict()
         if m.get('actionName') is not None:
             self.action_name = m.get('actionName')
+        if m.get('operateUserId') is not None:
+            self.operate_user_id = m.get('operateUserId')
         if m.get('remark') is not None:
             self.remark = m.get('remark')
         if m.get('taskId') is not None:

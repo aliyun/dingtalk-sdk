@@ -1076,6 +1076,221 @@ class QueryCloudRecordVideoPlayInfoResponse(TeaModel):
         return self
 
 
+class QueryConferenceInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryConferenceInfoResponseBodyConfInfo(TeaModel):
+    def __init__(
+        self,
+        active_num: int = None,
+        attend_num: int = None,
+        conf_duration: int = None,
+        conference_id: str = None,
+        creator_id: str = None,
+        creator_nick: str = None,
+        end_time: int = None,
+        external_link_url: str = None,
+        invited_num: int = None,
+        room_code: str = None,
+        start_time: int = None,
+        status: int = None,
+        title: str = None,
+    ):
+        # 当前在会人数
+        self.active_num = active_num
+        # 累积入会人数
+        self.attend_num = attend_num
+        # 会议时长
+        self.conf_duration = conf_duration
+        # 会议id
+        self.conference_id = conference_id
+        # 会议创建人unionId
+        self.creator_id = creator_id
+        # 会议创建人昵称
+        self.creator_nick = creator_nick
+        # 会议结束时间
+        self.end_time = end_time
+        # 会议web入会链接
+        self.external_link_url = external_link_url
+        # 邀请人数
+        self.invited_num = invited_num
+        # 会议码
+        self.room_code = room_code
+        # 会议开始时间
+        self.start_time = start_time
+        # 会议状态
+        # 0 初始化
+        # 1 开始
+        # 2 结束
+        self.status = status
+        # 会议标题
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active_num is not None:
+            result['activeNum'] = self.active_num
+        if self.attend_num is not None:
+            result['attendNum'] = self.attend_num
+        if self.conf_duration is not None:
+            result['confDuration'] = self.conf_duration
+        if self.conference_id is not None:
+            result['conferenceId'] = self.conference_id
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.creator_nick is not None:
+            result['creatorNick'] = self.creator_nick
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.external_link_url is not None:
+            result['externalLinkUrl'] = self.external_link_url
+        if self.invited_num is not None:
+            result['invitedNum'] = self.invited_num
+        if self.room_code is not None:
+            result['roomCode'] = self.room_code
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.status is not None:
+            result['status'] = self.status
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('activeNum') is not None:
+            self.active_num = m.get('activeNum')
+        if m.get('attendNum') is not None:
+            self.attend_num = m.get('attendNum')
+        if m.get('confDuration') is not None:
+            self.conf_duration = m.get('confDuration')
+        if m.get('conferenceId') is not None:
+            self.conference_id = m.get('conferenceId')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('creatorNick') is not None:
+            self.creator_nick = m.get('creatorNick')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('externalLinkUrl') is not None:
+            self.external_link_url = m.get('externalLinkUrl')
+        if m.get('invitedNum') is not None:
+            self.invited_num = m.get('invitedNum')
+        if m.get('roomCode') is not None:
+            self.room_code = m.get('roomCode')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class QueryConferenceInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        conf_info: QueryConferenceInfoResponseBodyConfInfo = None,
+    ):
+        # 会议信息结构体
+        self.conf_info = conf_info
+
+    def validate(self):
+        if self.conf_info:
+            self.conf_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.conf_info is not None:
+            result['confInfo'] = self.conf_info.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('confInfo') is not None:
+            temp_model = QueryConferenceInfoResponseBodyConfInfo()
+            self.conf_info = temp_model.from_map(m['confInfo'])
+        return self
+
+
+class QueryConferenceInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryConferenceInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryConferenceInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryConferenceInfoBatchHeaders(TeaModel):
     def __init__(
         self,
@@ -1339,6 +1554,265 @@ class QueryConferenceInfoBatchResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryConferenceInfoBatchResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryConferenceMembersHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryConferenceMembersRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+    ):
+        # 返回的最大结果数
+        self.max_results = max_results
+        # 分页token
+        self.next_token = next_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class QueryConferenceMembersResponseBodyMemberModels(TeaModel):
+    def __init__(
+        self,
+        attend_status: int = None,
+        co_host: bool = None,
+        conference_id: str = None,
+        duration: int = None,
+        host: bool = None,
+        join_time: int = None,
+        leave_time: int = None,
+        outer_org_member: bool = None,
+        pstn_join: bool = None,
+        user_id: str = None,
+        user_nick: str = None,
+    ):
+        # 成员状态 
+        # 1 初始化 
+        # 2 呼叫中
+        # 3 活跃（在会）
+        # 4 入会失败（拒接等）
+        # 5 被踢
+        # 6 离会
+        self.attend_status = attend_status
+        # 是否为联席主持人
+        self.co_host = co_host
+        # 会议id
+        self.conference_id = conference_id
+        # 在会时长
+        self.duration = duration
+        # 是否为主持人
+        self.host = host
+        # 入会时间
+        self.join_time = join_time
+        # 离会时间
+        self.leave_time = leave_time
+        # 是否为非会议所属企业内成员
+        self.outer_org_member = outer_org_member
+        # 是否为pstn入会
+        self.pstn_join = pstn_join
+        # 用户unionId
+        self.user_id = user_id
+        # 成员昵称
+        self.user_nick = user_nick
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.attend_status is not None:
+            result['attendStatus'] = self.attend_status
+        if self.co_host is not None:
+            result['coHost'] = self.co_host
+        if self.conference_id is not None:
+            result['conferenceId'] = self.conference_id
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.host is not None:
+            result['host'] = self.host
+        if self.join_time is not None:
+            result['joinTime'] = self.join_time
+        if self.leave_time is not None:
+            result['leaveTime'] = self.leave_time
+        if self.outer_org_member is not None:
+            result['outerOrgMember'] = self.outer_org_member
+        if self.pstn_join is not None:
+            result['pstnJoin'] = self.pstn_join
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_nick is not None:
+            result['userNick'] = self.user_nick
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('attendStatus') is not None:
+            self.attend_status = m.get('attendStatus')
+        if m.get('coHost') is not None:
+            self.co_host = m.get('coHost')
+        if m.get('conferenceId') is not None:
+            self.conference_id = m.get('conferenceId')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('host') is not None:
+            self.host = m.get('host')
+        if m.get('joinTime') is not None:
+            self.join_time = m.get('joinTime')
+        if m.get('leaveTime') is not None:
+            self.leave_time = m.get('leaveTime')
+        if m.get('outerOrgMember') is not None:
+            self.outer_org_member = m.get('outerOrgMember')
+        if m.get('pstnJoin') is not None:
+            self.pstn_join = m.get('pstnJoin')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userNick') is not None:
+            self.user_nick = m.get('userNick')
+        return self
+
+
+class QueryConferenceMembersResponseBody(TeaModel):
+    def __init__(
+        self,
+        member_models: List[QueryConferenceMembersResponseBodyMemberModels] = None,
+        next_token: str = None,
+        total_count: int = None,
+    ):
+        # 成员列表
+        self.member_models = member_models
+        # 分页查询下一页token
+        self.next_token = next_token
+        # 本次返回结果数
+        self.total_count = total_count
+
+    def validate(self):
+        if self.member_models:
+            for k in self.member_models:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['memberModels'] = []
+        if self.member_models is not None:
+            for k in self.member_models:
+                result['memberModels'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.member_models = []
+        if m.get('memberModels') is not None:
+            for k in m.get('memberModels'):
+                temp_model = QueryConferenceMembersResponseBodyMemberModels()
+                self.member_models.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QueryConferenceMembersResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryConferenceMembersResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryConferenceMembersResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

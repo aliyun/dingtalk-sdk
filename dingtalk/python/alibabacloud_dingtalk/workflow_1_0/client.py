@@ -2243,6 +2243,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.action_name):
             body['actionName'] = request.action_name
+        if not UtilClient.is_unset(request.operate_user_id):
+            body['operateUserId'] = request.operate_user_id
         if not UtilClient.is_unset(request.remark):
             body['remark'] = request.remark
         if not UtilClient.is_unset(request.task_id):
@@ -2273,6 +2275,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.action_name):
             body['actionName'] = request.action_name
+        if not UtilClient.is_unset(request.operate_user_id):
+            body['operateUserId'] = request.operate_user_id
         if not UtilClient.is_unset(request.remark):
             body['remark'] = request.remark
         if not UtilClient.is_unset(request.task_id):
