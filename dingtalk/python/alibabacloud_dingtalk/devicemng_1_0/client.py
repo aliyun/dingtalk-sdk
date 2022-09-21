@@ -1395,6 +1395,10 @@ class Client(OpenApiClient):
             body['deviceUuid'] = request.device_uuid
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.part_visible):
+            body['partVisible'] = request.part_visible
+        if not UtilClient.is_unset(request.receivers):
+            body['receivers'] = request.receivers
         if not UtilClient.is_unset(request.template_id):
             body['templateId'] = request.template_id
         if not UtilClient.is_unset(request.topbox):
@@ -1433,6 +1437,10 @@ class Client(OpenApiClient):
             body['deviceUuid'] = request.device_uuid
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.part_visible):
+            body['partVisible'] = request.part_visible
+        if not UtilClient.is_unset(request.receivers):
+            body['receivers'] = request.receivers
         if not UtilClient.is_unset(request.template_id):
             body['templateId'] = request.template_id
         if not UtilClient.is_unset(request.topbox):
@@ -1629,6 +1637,8 @@ class Client(OpenApiClient):
             body['bizId'] = request.biz_id
         if not UtilClient.is_unset(request.card_data):
             body['cardData'] = request.card_data
+        if not UtilClient.is_unset(request.tips):
+            body['tips'] = request.tips
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1655,6 +1665,8 @@ class Client(OpenApiClient):
             body['bizId'] = request.biz_id
         if not UtilClient.is_unset(request.card_data):
             body['cardData'] = request.card_data
+        if not UtilClient.is_unset(request.tips):
+            body['tips'] = request.tips
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

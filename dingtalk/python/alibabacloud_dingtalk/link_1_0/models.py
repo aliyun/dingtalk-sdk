@@ -1,7 +1,639 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict, List
+from typing import Dict, List, Any
+
+
+class ApplyFollowerAuthInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ApplyFollowerAuthInfoRequest(TeaModel):
+    def __init__(
+        self,
+        field_scope: str = None,
+        session_id: str = None,
+        user_id: str = None,
+    ):
+        # 申请的授权数据，多个数据时使用,分隔
+        self.field_scope = field_scope
+        # 客服会话sessionId
+        self.session_id = session_id
+        # 用户信息
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_scope is not None:
+            result['fieldScope'] = self.field_scope
+        if self.session_id is not None:
+            result['sessionId'] = self.session_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldScope') is not None:
+            self.field_scope = m.get('fieldScope')
+        if m.get('sessionId') is not None:
+            self.session_id = m.get('sessionId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ApplyFollowerAuthInfoResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        open_apply_id: str = None,
+    ):
+        # 发送申请ID
+        self.open_apply_id = open_apply_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_apply_id is not None:
+            result['openApplyId'] = self.open_apply_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openApplyId') is not None:
+            self.open_apply_id = m.get('openApplyId')
+        return self
+
+
+class ApplyFollowerAuthInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: ApplyFollowerAuthInfoResponseBodyResult = None,
+    ):
+        # 推送结果
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = ApplyFollowerAuthInfoResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class ApplyFollowerAuthInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ApplyFollowerAuthInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ApplyFollowerAuthInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CloseTopBoxInteractiveOTOMessageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CloseTopBoxInteractiveOTOMessageRequestDetail(TeaModel):
+    def __init__(
+        self,
+        card_biz_id: str = None,
+        card_template_id: str = None,
+        user_id: str = None,
+    ):
+        # 唯一标识一张卡片的ID，卡片幂等ID
+        self.card_biz_id = card_biz_id
+        # 卡片模板 ID
+        self.card_template_id = card_template_id
+        # 用户 userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_biz_id is not None:
+            result['cardBizId'] = self.card_biz_id
+        if self.card_template_id is not None:
+            result['cardTemplateId'] = self.card_template_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardBizId') is not None:
+            self.card_biz_id = m.get('cardBizId')
+        if m.get('cardTemplateId') is not None:
+            self.card_template_id = m.get('cardTemplateId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CloseTopBoxInteractiveOTOMessageRequest(TeaModel):
+    def __init__(
+        self,
+        detail: CloseTopBoxInteractiveOTOMessageRequestDetail = None,
+    ):
+        # 卡片参数
+        self.detail = detail
+
+    def validate(self):
+        if self.detail:
+            self.detail.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.detail is not None:
+            result['detail'] = self.detail.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('detail') is not None:
+            temp_model = CloseTopBoxInteractiveOTOMessageRequestDetail()
+            self.detail = temp_model.from_map(m['detail'])
+        return self
+
+
+class CloseTopBoxInteractiveOTOMessageResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: bool = None,
+    ):
+        # Id of the request
+        self.request_id = request_id
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class CloseTopBoxInteractiveOTOMessageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CloseTopBoxInteractiveOTOMessageResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CloseTopBoxInteractiveOTOMessageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetFollowerAuthInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetFollowerAuthInfoRequest(TeaModel):
+    def __init__(
+        self,
+        account_id: str = None,
+        user_id: str = None,
+    ):
+        # 服务窗帐号ID，用于非服务窗自建应用场景下指定服务窗帐号。
+        self.account_id = account_id
+        # 关注用户的userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.account_id is not None:
+            result['accountId'] = self.account_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountId') is not None:
+            self.account_id = m.get('accountId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetFollowerAuthInfoResponseBodyResultAuthInfoMainCorp(TeaModel):
+    def __init__(
+        self,
+        authorized: bool = None,
+        corp_name: str = None,
+    ):
+        # 是否授权主组织信息。
+        # 当且仅当此值为true时返回用户主组织信息。
+        self.authorized = authorized
+        # 主组织名
+        self.corp_name = corp_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.authorized is not None:
+            result['authorized'] = self.authorized
+        if self.corp_name is not None:
+            result['corpName'] = self.corp_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authorized') is not None:
+            self.authorized = m.get('authorized')
+        if m.get('corpName') is not None:
+            self.corp_name = m.get('corpName')
+        return self
+
+
+class GetFollowerAuthInfoResponseBodyResultAuthInfoMobile(TeaModel):
+    def __init__(
+        self,
+        authorized: bool = None,
+        mobile: str = None,
+        state_code: str = None,
+    ):
+        # 用户是否授权手机号码信息。
+        # 当且仅当此值为true时返回手机号码信息。
+        self.authorized = authorized
+        # 手机号码
+        self.mobile = mobile
+        # 地区码
+        self.state_code = state_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.authorized is not None:
+            result['authorized'] = self.authorized
+        if self.mobile is not None:
+            result['mobile'] = self.mobile
+        if self.state_code is not None:
+            result['stateCode'] = self.state_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authorized') is not None:
+            self.authorized = m.get('authorized')
+        if m.get('mobile') is not None:
+            self.mobile = m.get('mobile')
+        if m.get('stateCode') is not None:
+            self.state_code = m.get('stateCode')
+        return self
+
+
+class GetFollowerAuthInfoResponseBodyResultAuthInfo(TeaModel):
+    def __init__(
+        self,
+        main_corp: GetFollowerAuthInfoResponseBodyResultAuthInfoMainCorp = None,
+        mobile: GetFollowerAuthInfoResponseBodyResultAuthInfoMobile = None,
+    ):
+        # 用户主组织信息
+        # 需要用户授权给应用后返回此信息。
+        self.main_corp = main_corp
+        # 手机号码授权详情。
+        # 需要用户授权给应用后返回此信息。
+        self.mobile = mobile
+
+    def validate(self):
+        if self.main_corp:
+            self.main_corp.validate()
+        if self.mobile:
+            self.mobile.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.main_corp is not None:
+            result['mainCorp'] = self.main_corp.to_map()
+        if self.mobile is not None:
+            result['mobile'] = self.mobile.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('mainCorp') is not None:
+            temp_model = GetFollowerAuthInfoResponseBodyResultAuthInfoMainCorp()
+            self.main_corp = temp_model.from_map(m['mainCorp'])
+        if m.get('mobile') is not None:
+            temp_model = GetFollowerAuthInfoResponseBodyResultAuthInfoMobile()
+            self.mobile = temp_model.from_map(m['mobile'])
+        return self
+
+
+class GetFollowerAuthInfoResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        auth_info: GetFollowerAuthInfoResponseBodyResultAuthInfo = None,
+    ):
+        # 授权详情
+        self.auth_info = auth_info
+
+    def validate(self):
+        if self.auth_info:
+            self.auth_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auth_info is not None:
+            result['authInfo'] = self.auth_info.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authInfo') is not None:
+            temp_model = GetFollowerAuthInfoResponseBodyResultAuthInfo()
+            self.auth_info = temp_model.from_map(m['authInfo'])
+        return self
+
+
+class GetFollowerAuthInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetFollowerAuthInfoResponseBodyResult = None,
+    ):
+        # 响应结果
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetFollowerAuthInfoResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class GetFollowerAuthInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetFollowerAuthInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetFollowerAuthInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
 
 
 class GetFollowerInfoHeaders(TeaModel):
@@ -1341,6 +1973,291 @@ class SendInteractiveOTOMessageResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = SendInteractiveOTOMessageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SendTopBoxInteractiveOTOMessageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SendTopBoxInteractiveOTOMessageRequestDetailCardData(TeaModel):
+    def __init__(
+        self,
+        card_media_id_param_map: Dict[str, Any] = None,
+        card_param_map: Dict[str, Any] = None,
+    ):
+        # 富媒体卡片数据
+        self.card_media_id_param_map = card_media_id_param_map
+        # 普通文本卡片数据
+        self.card_param_map = card_param_map
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_media_id_param_map is not None:
+            result['cardMediaIdParamMap'] = self.card_media_id_param_map
+        if self.card_param_map is not None:
+            result['cardParamMap'] = self.card_param_map
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardMediaIdParamMap') is not None:
+            self.card_media_id_param_map = m.get('cardMediaIdParamMap')
+        if m.get('cardParamMap') is not None:
+            self.card_param_map = m.get('cardParamMap')
+        return self
+
+
+class DetailUserIdPrivateDataMapValue(TeaModel):
+    def __init__(
+        self,
+        card_param_map: Dict[str, Any] = None,
+        card_media_id_param_map: Dict[str, Any] = None,
+    ):
+        # 卡片模板的文本内容参数。
+        self.card_param_map = card_param_map
+        # 卡片模板的图片内容参数。
+        self.card_media_id_param_map = card_media_id_param_map
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_param_map is not None:
+            result['cardParamMap'] = self.card_param_map
+        if self.card_media_id_param_map is not None:
+            result['cardMediaIdParamMap'] = self.card_media_id_param_map
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardParamMap') is not None:
+            self.card_param_map = m.get('cardParamMap')
+        if m.get('cardMediaIdParamMap') is not None:
+            self.card_media_id_param_map = m.get('cardMediaIdParamMap')
+        return self
+
+
+class SendTopBoxInteractiveOTOMessageRequestDetail(TeaModel):
+    def __init__(
+        self,
+        callback_url: str = None,
+        card_biz_id: str = None,
+        card_data: SendTopBoxInteractiveOTOMessageRequestDetailCardData = None,
+        card_template_id: str = None,
+        expired_time: int = None,
+        user_id: str = None,
+        user_id_private_data_map: Dict[str, DetailUserIdPrivateDataMapValue] = None,
+    ):
+        # 卡片回调 URL 地址，不填则无回调
+        self.callback_url = callback_url
+        # 唯一标识一张卡片的ID，卡片幂等ID
+        self.card_biz_id = card_biz_id
+        # 卡片数据
+        self.card_data = card_data
+        # 卡片模板 ID
+        self.card_template_id = card_template_id
+        # 失效时间，时间戳（毫秒），最长时间不超过 90 天
+        self.expired_time = expired_time
+        # 接收人 userId
+        self.user_id = user_id
+        # 卡片用户差异化数据
+        self.user_id_private_data_map = user_id_private_data_map
+
+    def validate(self):
+        if self.card_data:
+            self.card_data.validate()
+        if self.user_id_private_data_map:
+            for v in self.user_id_private_data_map.values():
+                if v:
+                    v.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.callback_url is not None:
+            result['callbackUrl'] = self.callback_url
+        if self.card_biz_id is not None:
+            result['cardBizId'] = self.card_biz_id
+        if self.card_data is not None:
+            result['cardData'] = self.card_data.to_map()
+        if self.card_template_id is not None:
+            result['cardTemplateId'] = self.card_template_id
+        if self.expired_time is not None:
+            result['expiredTime'] = self.expired_time
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        result['userIdPrivateDataMap'] = {}
+        if self.user_id_private_data_map is not None:
+            for k, v in self.user_id_private_data_map.items():
+                result['userIdPrivateDataMap'][k] = v.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('callbackUrl') is not None:
+            self.callback_url = m.get('callbackUrl')
+        if m.get('cardBizId') is not None:
+            self.card_biz_id = m.get('cardBizId')
+        if m.get('cardData') is not None:
+            temp_model = SendTopBoxInteractiveOTOMessageRequestDetailCardData()
+            self.card_data = temp_model.from_map(m['cardData'])
+        if m.get('cardTemplateId') is not None:
+            self.card_template_id = m.get('cardTemplateId')
+        if m.get('expiredTime') is not None:
+            self.expired_time = m.get('expiredTime')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        self.user_id_private_data_map = {}
+        if m.get('userIdPrivateDataMap') is not None:
+            for k, v in m.get('userIdPrivateDataMap').items():
+                temp_model = DetailUserIdPrivateDataMapValue()
+                self.user_id_private_data_map[k] = temp_model.from_map(v)
+        return self
+
+
+class SendTopBoxInteractiveOTOMessageRequest(TeaModel):
+    def __init__(
+        self,
+        detail: SendTopBoxInteractiveOTOMessageRequestDetail = None,
+    ):
+        # 卡片信息
+        self.detail = detail
+
+    def validate(self):
+        if self.detail:
+            self.detail.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.detail is not None:
+            result['detail'] = self.detail.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('detail') is not None:
+            temp_model = SendTopBoxInteractiveOTOMessageRequestDetail()
+            self.detail = temp_model.from_map(m['detail'])
+        return self
+
+
+class SendTopBoxInteractiveOTOMessageResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: bool = None,
+    ):
+        # Id of the request
+        self.request_id = request_id
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class SendTopBoxInteractiveOTOMessageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SendTopBoxInteractiveOTOMessageResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SendTopBoxInteractiveOTOMessageResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

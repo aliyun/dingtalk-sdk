@@ -3496,6 +3496,8 @@ class SendCardRequest(TeaModel):
         device_code: str = None,
         device_uuid: str = None,
         open_conversation_id: str = None,
+        part_visible: bool = None,
+        receivers: List[str] = None,
         template_id: str = None,
         topbox: bool = None,
         user_id: str = None,
@@ -3510,6 +3512,10 @@ class SendCardRequest(TeaModel):
         self.device_uuid = device_uuid
         # 群id，群的唯一标识
         self.open_conversation_id = open_conversation_id
+        # 卡片是否群内部分人员可见
+        self.part_visible = part_visible
+        # 群内指定人员可见
+        self.receivers = receivers
         # 卡片模板唯一标识，开放平台获取
         self.template_id = template_id
         # 是否为吊顶卡片
@@ -3536,6 +3542,10 @@ class SendCardRequest(TeaModel):
             result['deviceUuid'] = self.device_uuid
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
+        if self.part_visible is not None:
+            result['partVisible'] = self.part_visible
+        if self.receivers is not None:
+            result['receivers'] = self.receivers
         if self.template_id is not None:
             result['templateId'] = self.template_id
         if self.topbox is not None:
@@ -3556,6 +3566,10 @@ class SendCardRequest(TeaModel):
             self.device_uuid = m.get('deviceUuid')
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
+        if m.get('partVisible') is not None:
+            self.part_visible = m.get('partVisible')
+        if m.get('receivers') is not None:
+            self.receivers = m.get('receivers')
         if m.get('templateId') is not None:
             self.template_id = m.get('templateId')
         if m.get('topbox') is not None:
@@ -3969,19 +3983,65 @@ class UpdateCardHeaders(TeaModel):
         return self
 
 
+class UpdateCardRequestTips(TeaModel):
+    def __init__(
+        self,
+        cids: str = None,
+        content: str = None,
+        sender: str = None,
+    ):
+        # 系统通知的群组
+        self.cids = cids
+        # 系统通知内容
+        self.content = content
+        # 发送人
+        self.sender = sender
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cids is not None:
+            result['cids'] = self.cids
+        if self.content is not None:
+            result['content'] = self.content
+        if self.sender is not None:
+            result['sender'] = self.sender
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cids') is not None:
+            self.cids = m.get('cids')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('sender') is not None:
+            self.sender = m.get('sender')
+        return self
+
+
 class UpdateCardRequest(TeaModel):
     def __init__(
         self,
         biz_id: str = None,
         card_data: str = None,
+        tips: UpdateCardRequestTips = None,
     ):
         # 卡片实例唯一标识
         self.biz_id = biz_id
         # 卡片变量赋值，json结构
         self.card_data = card_data
+        # 卡片更新群系统通知
+        self.tips = tips
 
     def validate(self):
-        pass
+        if self.tips:
+            self.tips.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -3993,6 +4053,8 @@ class UpdateCardRequest(TeaModel):
             result['bizId'] = self.biz_id
         if self.card_data is not None:
             result['cardData'] = self.card_data
+        if self.tips is not None:
+            result['tips'] = self.tips.to_map()
         return result
 
     def from_map(self, m: dict = None):
@@ -4001,16 +4063,18 @@ class UpdateCardRequest(TeaModel):
             self.biz_id = m.get('bizId')
         if m.get('cardData') is not None:
             self.card_data = m.get('cardData')
+        if m.get('tips') is not None:
+            temp_model = UpdateCardRequestTips()
+            self.tips = temp_model.from_map(m['tips'])
         return self
 
 
 class UpdateCardResponseBody(TeaModel):
     def __init__(
         self,
-        result: str = None,
+        result: bool = None,
         success: bool = None,
     ):
-        # 响应数据
         self.result = result
         # 是否成功
         self.success = success

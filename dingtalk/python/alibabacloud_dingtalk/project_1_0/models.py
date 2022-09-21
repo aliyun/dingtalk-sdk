@@ -655,6 +655,271 @@ class CreateOrganizationTaskResponse(TeaModel):
         return self
 
 
+class CreatePlanTimeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreatePlanTimeRequest(TeaModel):
+    def __init__(
+        self,
+        end_date: str = None,
+        includes_holidays: bool = None,
+        is_duration: bool = None,
+        object_id: str = None,
+        object_type: str = None,
+        opt_user: str = None,
+        plan_time: int = None,
+        start_date: str = None,
+        submitter_id: str = None,
+        tenant_type: str = None,
+    ):
+        # 结束时间
+        self.end_date = end_date
+        # 是否包含假期
+        self.includes_holidays = includes_holidays
+        # 是否连续
+        self.is_duration = is_duration
+        # 对象id，比如任务id
+        self.object_id = object_id
+        # 对象类型，默认为task
+        self.object_type = object_type
+        # 操作者用户id
+        self.opt_user = opt_user
+        # 计划工时数（单位：毫秒，1小时即为 3600000）
+        self.plan_time = plan_time
+        # 开始时间
+        self.start_date = start_date
+        # 工时提交人员用户id
+        self.submitter_id = submitter_id
+        self.tenant_type = tenant_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.includes_holidays is not None:
+            result['includesHolidays'] = self.includes_holidays
+        if self.is_duration is not None:
+            result['isDuration'] = self.is_duration
+        if self.object_id is not None:
+            result['objectId'] = self.object_id
+        if self.object_type is not None:
+            result['objectType'] = self.object_type
+        if self.opt_user is not None:
+            result['optUser'] = self.opt_user
+        if self.plan_time is not None:
+            result['planTime'] = self.plan_time
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.submitter_id is not None:
+            result['submitterId'] = self.submitter_id
+        if self.tenant_type is not None:
+            result['tenantType'] = self.tenant_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('includesHolidays') is not None:
+            self.includes_holidays = m.get('includesHolidays')
+        if m.get('isDuration') is not None:
+            self.is_duration = m.get('isDuration')
+        if m.get('objectId') is not None:
+            self.object_id = m.get('objectId')
+        if m.get('objectType') is not None:
+            self.object_type = m.get('objectType')
+        if m.get('optUser') is not None:
+            self.opt_user = m.get('optUser')
+        if m.get('planTime') is not None:
+            self.plan_time = m.get('planTime')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('submitterId') is not None:
+            self.submitter_id = m.get('submitterId')
+        if m.get('tenantType') is not None:
+            self.tenant_type = m.get('tenantType')
+        return self
+
+
+class CreatePlanTimeResponseBodyResultBody(TeaModel):
+    def __init__(
+        self,
+        object_id: str = None,
+    ):
+        # 工时关联的数据id
+        self.object_id = object_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.object_id is not None:
+            result['objectId'] = self.object_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('objectId') is not None:
+            self.object_id = m.get('objectId')
+        return self
+
+
+class CreatePlanTimeResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        body: List[CreatePlanTimeResponseBodyResultBody] = None,
+        message: str = None,
+        ok: bool = None,
+    ):
+        self.body = body
+        # 执行结果描述
+        self.message = message
+        self.ok = ok
+
+    def validate(self):
+        if self.body:
+            for k in self.body:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['body'] = []
+        if self.body is not None:
+            for k in self.body:
+                result['body'].append(k.to_map() if k else None)
+        if self.message is not None:
+            result['message'] = self.message
+        if self.ok is not None:
+            result['ok'] = self.ok
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.body = []
+        if m.get('body') is not None:
+            for k in m.get('body'):
+                temp_model = CreatePlanTimeResponseBodyResultBody()
+                self.body.append(temp_model.from_map(k))
+        if m.get('message') is not None:
+            self.message = m.get('message')
+        if m.get('ok') is not None:
+            self.ok = m.get('ok')
+        return self
+
+
+class CreatePlanTimeResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CreatePlanTimeResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CreatePlanTimeResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class CreatePlanTimeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreatePlanTimeResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreatePlanTimeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateProjectByTemplateHeaders(TeaModel):
     def __init__(
         self,
@@ -1489,6 +1754,271 @@ class CreateTaskObjectLinkResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CreateTaskObjectLinkResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateWorkTimeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateWorkTimeRequest(TeaModel):
+    def __init__(
+        self,
+        end_date: str = None,
+        includes_holidays: bool = None,
+        is_duration: bool = None,
+        object_id: str = None,
+        object_type: str = None,
+        opt_user: str = None,
+        start_date: str = None,
+        submitter_id: str = None,
+        work_time: int = None,
+        tenant_type: str = None,
+    ):
+        # 结束时间
+        self.end_date = end_date
+        # 是否包含节假日
+        self.includes_holidays = includes_holidays
+        # 是否连续
+        self.is_duration = is_duration
+        # 对象 ID，比如 任务 ID
+        self.object_id = object_id
+        # 对象类型，默认为 task
+        self.object_type = object_type
+        # 操作者用户id
+        self.opt_user = opt_user
+        # 开始时间
+        self.start_date = start_date
+        # 工时提交人员用户id
+        self.submitter_id = submitter_id
+        # 实际工时数（单位毫秒，1小时即为3600000）
+        self.work_time = work_time
+        self.tenant_type = tenant_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.includes_holidays is not None:
+            result['includesHolidays'] = self.includes_holidays
+        if self.is_duration is not None:
+            result['isDuration'] = self.is_duration
+        if self.object_id is not None:
+            result['objectId'] = self.object_id
+        if self.object_type is not None:
+            result['objectType'] = self.object_type
+        if self.opt_user is not None:
+            result['optUser'] = self.opt_user
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.submitter_id is not None:
+            result['submitterId'] = self.submitter_id
+        if self.work_time is not None:
+            result['workTime'] = self.work_time
+        if self.tenant_type is not None:
+            result['tenantType'] = self.tenant_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('includesHolidays') is not None:
+            self.includes_holidays = m.get('includesHolidays')
+        if m.get('isDuration') is not None:
+            self.is_duration = m.get('isDuration')
+        if m.get('objectId') is not None:
+            self.object_id = m.get('objectId')
+        if m.get('objectType') is not None:
+            self.object_type = m.get('objectType')
+        if m.get('optUser') is not None:
+            self.opt_user = m.get('optUser')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('submitterId') is not None:
+            self.submitter_id = m.get('submitterId')
+        if m.get('workTime') is not None:
+            self.work_time = m.get('workTime')
+        if m.get('tenantType') is not None:
+            self.tenant_type = m.get('tenantType')
+        return self
+
+
+class CreateWorkTimeResponseBodyResultBody(TeaModel):
+    def __init__(
+        self,
+        task_id: str = None,
+    ):
+        # 工时关联的数据 ID
+        self.task_id = task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class CreateWorkTimeResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        body: List[CreateWorkTimeResponseBodyResultBody] = None,
+        message: str = None,
+        ok: bool = None,
+    ):
+        self.body = body
+        # 执行结果描述
+        self.message = message
+        self.ok = ok
+
+    def validate(self):
+        if self.body:
+            for k in self.body:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['body'] = []
+        if self.body is not None:
+            for k in self.body:
+                result['body'].append(k.to_map() if k else None)
+        if self.message is not None:
+            result['message'] = self.message
+        if self.ok is not None:
+            result['ok'] = self.ok
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.body = []
+        if m.get('body') is not None:
+            for k in m.get('body'):
+                temp_model = CreateWorkTimeResponseBodyResultBody()
+                self.body.append(temp_model.from_map(k))
+        if m.get('message') is not None:
+            self.message = m.get('message')
+        if m.get('ok') is not None:
+            self.ok = m.get('ok')
+        return self
+
+
+class CreateWorkTimeResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CreateWorkTimeResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CreateWorkTimeResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class CreateWorkTimeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateWorkTimeResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateWorkTimeResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

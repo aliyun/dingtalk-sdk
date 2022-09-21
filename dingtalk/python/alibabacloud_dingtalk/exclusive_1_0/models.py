@@ -3723,7 +3723,7 @@ class GetConfBaseInfoByLogicalIdResponseBody(TeaModel):
         conference_id: str = None,
         logical_conference_id: str = None,
         nickname: str = None,
-        start_time: float = None,
+        start_time: int = None,
         title: str = None,
         union_id: str = None,
     ):

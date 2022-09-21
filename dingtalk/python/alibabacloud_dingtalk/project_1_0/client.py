@@ -205,6 +205,116 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateOrganizationTask', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/organizations/users/{user_id}/tasks', 'json', req, runtime)
         )
 
+    def create_plan_time(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.CreatePlanTimeRequest,
+    ) -> dingtalkproject__1__0_models.CreatePlanTimeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.CreatePlanTimeHeaders()
+        return self.create_plan_time_with_options(user_id, request, headers, runtime)
+
+    async def create_plan_time_async(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.CreatePlanTimeRequest,
+    ) -> dingtalkproject__1__0_models.CreatePlanTimeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.CreatePlanTimeHeaders()
+        return await self.create_plan_time_with_options_async(user_id, request, headers, runtime)
+
+    def create_plan_time_with_options(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.CreatePlanTimeRequest,
+        headers: dingtalkproject__1__0_models.CreatePlanTimeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.CreatePlanTimeResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        query = {}
+        if not UtilClient.is_unset(request.tenant_type):
+            query['tenantType'] = request.tenant_type
+        body = {}
+        if not UtilClient.is_unset(request.end_date):
+            body['endDate'] = request.end_date
+        if not UtilClient.is_unset(request.includes_holidays):
+            body['includesHolidays'] = request.includes_holidays
+        if not UtilClient.is_unset(request.is_duration):
+            body['isDuration'] = request.is_duration
+        if not UtilClient.is_unset(request.object_id):
+            body['objectId'] = request.object_id
+        if not UtilClient.is_unset(request.object_type):
+            body['objectType'] = request.object_type
+        if not UtilClient.is_unset(request.opt_user):
+            body['optUser'] = request.opt_user
+        if not UtilClient.is_unset(request.plan_time):
+            body['planTime'] = request.plan_time
+        if not UtilClient.is_unset(request.start_date):
+            body['startDate'] = request.start_date
+        if not UtilClient.is_unset(request.submitter_id):
+            body['submitterId'] = request.submitter_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.CreatePlanTimeResponse(),
+            self.do_roarequest('CreatePlanTime', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/planTimes', 'json', req, runtime)
+        )
+
+    async def create_plan_time_with_options_async(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.CreatePlanTimeRequest,
+        headers: dingtalkproject__1__0_models.CreatePlanTimeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.CreatePlanTimeResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        query = {}
+        if not UtilClient.is_unset(request.tenant_type):
+            query['tenantType'] = request.tenant_type
+        body = {}
+        if not UtilClient.is_unset(request.end_date):
+            body['endDate'] = request.end_date
+        if not UtilClient.is_unset(request.includes_holidays):
+            body['includesHolidays'] = request.includes_holidays
+        if not UtilClient.is_unset(request.is_duration):
+            body['isDuration'] = request.is_duration
+        if not UtilClient.is_unset(request.object_id):
+            body['objectId'] = request.object_id
+        if not UtilClient.is_unset(request.object_type):
+            body['objectType'] = request.object_type
+        if not UtilClient.is_unset(request.opt_user):
+            body['optUser'] = request.opt_user
+        if not UtilClient.is_unset(request.plan_time):
+            body['planTime'] = request.plan_time
+        if not UtilClient.is_unset(request.start_date):
+            body['startDate'] = request.start_date
+        if not UtilClient.is_unset(request.submitter_id):
+            body['submitterId'] = request.submitter_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.CreatePlanTimeResponse(),
+            await self.do_roarequest_async('CreatePlanTime', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/planTimes', 'json', req, runtime)
+        )
+
     def create_project_by_template(
         self,
         user_id: str,
@@ -447,6 +557,116 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkproject__1__0_models.CreateTaskObjectLinkResponse(),
             await self.do_roarequest_async('CreateTaskObjectLink', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/tasks/{task_id}/objectLinks', 'json', req, runtime)
+        )
+
+    def create_work_time(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.CreateWorkTimeRequest,
+    ) -> dingtalkproject__1__0_models.CreateWorkTimeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.CreateWorkTimeHeaders()
+        return self.create_work_time_with_options(user_id, request, headers, runtime)
+
+    async def create_work_time_async(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.CreateWorkTimeRequest,
+    ) -> dingtalkproject__1__0_models.CreateWorkTimeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.CreateWorkTimeHeaders()
+        return await self.create_work_time_with_options_async(user_id, request, headers, runtime)
+
+    def create_work_time_with_options(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.CreateWorkTimeRequest,
+        headers: dingtalkproject__1__0_models.CreateWorkTimeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.CreateWorkTimeResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        query = {}
+        if not UtilClient.is_unset(request.tenant_type):
+            query['tenantType'] = request.tenant_type
+        body = {}
+        if not UtilClient.is_unset(request.end_date):
+            body['endDate'] = request.end_date
+        if not UtilClient.is_unset(request.includes_holidays):
+            body['includesHolidays'] = request.includes_holidays
+        if not UtilClient.is_unset(request.is_duration):
+            body['isDuration'] = request.is_duration
+        if not UtilClient.is_unset(request.object_id):
+            body['objectId'] = request.object_id
+        if not UtilClient.is_unset(request.object_type):
+            body['objectType'] = request.object_type
+        if not UtilClient.is_unset(request.opt_user):
+            body['optUser'] = request.opt_user
+        if not UtilClient.is_unset(request.start_date):
+            body['startDate'] = request.start_date
+        if not UtilClient.is_unset(request.submitter_id):
+            body['submitterId'] = request.submitter_id
+        if not UtilClient.is_unset(request.work_time):
+            body['workTime'] = request.work_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.CreateWorkTimeResponse(),
+            self.do_roarequest('CreateWorkTime', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/workTimes', 'json', req, runtime)
+        )
+
+    async def create_work_time_with_options_async(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.CreateWorkTimeRequest,
+        headers: dingtalkproject__1__0_models.CreateWorkTimeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.CreateWorkTimeResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        query = {}
+        if not UtilClient.is_unset(request.tenant_type):
+            query['tenantType'] = request.tenant_type
+        body = {}
+        if not UtilClient.is_unset(request.end_date):
+            body['endDate'] = request.end_date
+        if not UtilClient.is_unset(request.includes_holidays):
+            body['includesHolidays'] = request.includes_holidays
+        if not UtilClient.is_unset(request.is_duration):
+            body['isDuration'] = request.is_duration
+        if not UtilClient.is_unset(request.object_id):
+            body['objectId'] = request.object_id
+        if not UtilClient.is_unset(request.object_type):
+            body['objectType'] = request.object_type
+        if not UtilClient.is_unset(request.opt_user):
+            body['optUser'] = request.opt_user
+        if not UtilClient.is_unset(request.start_date):
+            body['startDate'] = request.start_date
+        if not UtilClient.is_unset(request.submitter_id):
+            body['submitterId'] = request.submitter_id
+        if not UtilClient.is_unset(request.work_time):
+            body['workTime'] = request.work_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.CreateWorkTimeResponse(),
+            await self.do_roarequest_async('CreateWorkTime', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/workTimes', 'json', req, runtime)
         )
 
     def get_depts_by_org_id(

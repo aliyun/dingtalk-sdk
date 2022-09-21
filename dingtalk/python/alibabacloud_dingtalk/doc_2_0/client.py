@@ -1485,6 +1485,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryDentry', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/spaces/{space_id}/dentries/{dentry_id}', 'json', req, runtime)
         )
 
+    def query_item_by_url(
+        self,
+        request: dingtalkdoc__2__0_models.QueryItemByUrlRequest,
+    ) -> dingtalkdoc__2__0_models.QueryItemByUrlResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.QueryItemByUrlHeaders()
+        return self.query_item_by_url_with_options(request, headers, runtime)
+
+    async def query_item_by_url_async(
+        self,
+        request: dingtalkdoc__2__0_models.QueryItemByUrlRequest,
+    ) -> dingtalkdoc__2__0_models.QueryItemByUrlResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.QueryItemByUrlHeaders()
+        return await self.query_item_by_url_with_options_async(request, headers, runtime)
+
+    def query_item_by_url_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.QueryItemByUrlRequest,
+        headers: dingtalkdoc__2__0_models.QueryItemByUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.QueryItemByUrlResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.url):
+            query['url'] = request.url
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.QueryItemByUrlResponse(),
+            self.do_roarequest('QueryItemByUrl', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/items', 'json', req, runtime)
+        )
+
+    async def query_item_by_url_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.QueryItemByUrlRequest,
+        headers: dingtalkdoc__2__0_models.QueryItemByUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.QueryItemByUrlResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.url):
+            query['url'] = request.url
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.QueryItemByUrlResponse(),
+            await self.do_roarequest_async('QueryItemByUrl', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/items', 'json', req, runtime)
+        )
+
     def query_mine_space(
         self,
         union_id: str,

@@ -3543,6 +3543,86 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryActiveUsers', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/groups/queryActiveUsers', 'json', req, runtime)
         )
 
+    def query_crm_group_contact(
+        self,
+        request: dingtalkservice_group__1__0_models.QueryCrmGroupContactRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryCrmGroupContactResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.QueryCrmGroupContactHeaders()
+        return self.query_crm_group_contact_with_options(request, headers, runtime)
+
+    async def query_crm_group_contact_async(
+        self,
+        request: dingtalkservice_group__1__0_models.QueryCrmGroupContactRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryCrmGroupContactResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.QueryCrmGroupContactHeaders()
+        return await self.query_crm_group_contact_with_options_async(request, headers, runtime)
+
+    def query_crm_group_contact_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.QueryCrmGroupContactRequest,
+        headers: dingtalkservice_group__1__0_models.QueryCrmGroupContactHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.QueryCrmGroupContactResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.min_result):
+            body['minResult'] = request.min_result
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.search_fields):
+            body['searchFields'] = request.search_fields
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.QueryCrmGroupContactResponse(),
+            self.do_roarequest('QueryCrmGroupContact', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/contacts/query', 'json', req, runtime)
+        )
+
+    async def query_crm_group_contact_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.QueryCrmGroupContactRequest,
+        headers: dingtalkservice_group__1__0_models.QueryCrmGroupContactHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.QueryCrmGroupContactResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.min_result):
+            body['minResult'] = request.min_result
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.search_fields):
+            body['searchFields'] = request.search_fields
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.QueryCrmGroupContactResponse(),
+            await self.do_roarequest_async('QueryCrmGroupContact', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/contacts/query', 'json', req, runtime)
+        )
+
     def query_customer_card(
         self,
         request: dingtalkservice_group__1__0_models.QueryCustomerCardRequest,

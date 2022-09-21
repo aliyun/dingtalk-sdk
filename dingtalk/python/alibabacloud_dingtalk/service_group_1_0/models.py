@@ -8978,6 +8978,231 @@ class QueryActiveUsersResponse(TeaModel):
         return self
 
 
+class QueryCrmGroupContactHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryCrmGroupContactRequest(TeaModel):
+    def __init__(
+        self,
+        min_result: int = None,
+        next_token: str = None,
+        open_conversation_id: str = None,
+        open_team_id: str = None,
+        search_fields: str = None,
+    ):
+        # 条数
+        self.min_result = min_result
+        # 游标
+        self.next_token = next_token
+        # 群ID
+        self.open_conversation_id = open_conversation_id
+        # 开放团队ID
+        self.open_team_id = open_team_id
+        # 检索条件
+        self.search_fields = search_fields
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.min_result is not None:
+            result['minResult'] = self.min_result
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.search_fields is not None:
+            result['searchFields'] = self.search_fields
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('minResult') is not None:
+            self.min_result = m.get('minResult')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('searchFields') is not None:
+            self.search_fields = m.get('searchFields')
+        return self
+
+
+class QueryCrmGroupContactResponseBodyRecords(TeaModel):
+    def __init__(
+        self,
+        contact_data: str = None,
+        member_union_id: str = None,
+        nick_name: str = None,
+        user_id: str = None,
+    ):
+        # 联系人画像数据
+        self.contact_data = contact_data
+        # 成员unionId
+        self.member_union_id = member_union_id
+        # 成员昵称
+        self.nick_name = nick_name
+        # 成员ID
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.contact_data is not None:
+            result['contactData'] = self.contact_data
+        if self.member_union_id is not None:
+            result['memberUnionId'] = self.member_union_id
+        if self.nick_name is not None:
+            result['nickName'] = self.nick_name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('contactData') is not None:
+            self.contact_data = m.get('contactData')
+        if m.get('memberUnionId') is not None:
+            self.member_union_id = m.get('memberUnionId')
+        if m.get('nickName') is not None:
+            self.nick_name = m.get('nickName')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryCrmGroupContactResponseBody(TeaModel):
+    def __init__(
+        self,
+        next_token: str = None,
+        open_conversation_id: str = None,
+        records: List[QueryCrmGroupContactResponseBodyRecords] = None,
+    ):
+        # 游标
+        self.next_token = next_token
+        # 开放会话ID
+        self.open_conversation_id = open_conversation_id
+        # 群成员数据列表
+        self.records = records
+
+    def validate(self):
+        if self.records:
+            for k in self.records:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        result['records'] = []
+        if self.records is not None:
+            for k in self.records:
+                result['records'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        self.records = []
+        if m.get('records') is not None:
+            for k in m.get('records'):
+                temp_model = QueryCrmGroupContactResponseBodyRecords()
+                self.records.append(temp_model.from_map(k))
+        return self
+
+
+class QueryCrmGroupContactResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryCrmGroupContactResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryCrmGroupContactResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryCustomerCardHeaders(TeaModel):
     def __init__(
         self,

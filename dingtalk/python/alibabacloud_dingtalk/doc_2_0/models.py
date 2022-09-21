@@ -331,6 +331,7 @@ class SpaceModel(TeaModel):
         name: str = None,
         owner: SpaceModelOwner = None,
         recent_list: List[DentryModel] = None,
+        type: int = None,
         url: str = None,
         visitor_info: SpaceModelVisitorInfo = None,
     ):
@@ -348,6 +349,8 @@ class SpaceModel(TeaModel):
         self.owner = owner
         # 知识库中最近编辑的三篇文档。
         self.recent_list = recent_list
+        # 知识库类型。
+        self.type = type
         # 知识库访问url。
         self.url = url
         # 访问者对当前知识库的权限等信息。
@@ -387,6 +390,8 @@ class SpaceModel(TeaModel):
         if self.recent_list is not None:
             for k in self.recent_list:
                 result['recentList'].append(k.to_map() if k else None)
+        if self.type is not None:
+            result['type'] = self.type
         if self.url is not None:
             result['url'] = self.url
         if self.visitor_info is not None:
@@ -414,6 +419,8 @@ class SpaceModel(TeaModel):
             for k in m.get('recentList'):
                 temp_model = DentryModel()
                 self.recent_list.append(temp_model.from_map(k))
+        if m.get('type') is not None:
+            self.type = m.get('type')
         if m.get('url') is not None:
             self.url = m.get('url')
         if m.get('visitorInfo') is not None:
@@ -1012,6 +1019,7 @@ class SpaceVO(TeaModel):
         id: str = None,
         name: str = None,
         owner: SpaceVOOwner = None,
+        type: int = None,
         url: str = None,
         visitor_info: SpaceVOVisitorInfo = None,
     ):
@@ -1027,6 +1035,8 @@ class SpaceVO(TeaModel):
         self.name = name
         # 知识库所有者。
         self.owner = owner
+        # 知识库类型。
+        self.type = type
         # 知识库访问url。
         self.url = url
         # 访问者对当前知识库的权限等信息。
@@ -1058,6 +1068,8 @@ class SpaceVO(TeaModel):
             result['name'] = self.name
         if self.owner is not None:
             result['owner'] = self.owner.to_map()
+        if self.type is not None:
+            result['type'] = self.type
         if self.url is not None:
             result['url'] = self.url
         if self.visitor_info is not None:
@@ -1080,6 +1092,8 @@ class SpaceVO(TeaModel):
         if m.get('owner') is not None:
             temp_model = SpaceVOOwner()
             self.owner = temp_model.from_map(m['owner'])
+        if m.get('type') is not None:
+            self.type = m.get('type')
         if m.get('url') is not None:
             self.url = m.get('url')
         if m.get('visitorInfo') is not None:
@@ -4418,6 +4432,257 @@ class QueryDentryResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = DentryVO()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryItemByUrlHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryItemByUrlRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+        url: str = None,
+    ):
+        # 操作用户unionId。
+        self.operator_id = operator_id
+        # 链接url。
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class QueryItemByUrlResponseBodySpaceOwner(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        union_id: str = None,
+    ):
+        # 知识库所有者名称。
+        self.name = name
+        # 知识库所有者的unionId。
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class QueryItemByUrlResponseBodySpace(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        id: str = None,
+        name: str = None,
+        owner: QueryItemByUrlResponseBodySpaceOwner = None,
+        type: int = None,
+    ):
+        # 知识库简介。
+        self.description = description
+        # 知识库id。
+        self.id = id
+        # 知识库名称。
+        self.name = name
+        # 如果type=2，会返回其所有者。
+        self.owner = owner
+        # 知识库类型。1-知识库；2-我的文档。
+        self.type = type
+
+    def validate(self):
+        if self.owner:
+            self.owner.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.owner is not None:
+            result['owner'] = self.owner.to_map()
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('owner') is not None:
+            temp_model = QueryItemByUrlResponseBodySpaceOwner()
+            self.owner = temp_model.from_map(m['owner'])
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class QueryItemByUrlResponseBody(TeaModel):
+    def __init__(
+        self,
+        biz_type: str = None,
+        dentry: DentryModel = None,
+        resource_type: str = None,
+        space: QueryItemByUrlResponseBodySpace = None,
+    ):
+        # 业务类型。可选值：dingpan-云盘中的文档；mainsite-知识库中的文档。
+        self.biz_type = biz_type
+        self.dentry = dentry
+        # 资源类型。可选值有：space-知识库；file-文档；folder-文件夹。
+        self.resource_type = resource_type
+        # 当resourceType为space时，这里会返回知识库信息。
+        self.space = space
+
+    def validate(self):
+        if self.dentry:
+            self.dentry.validate()
+        if self.space:
+            self.space.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.dentry is not None:
+            result['dentry'] = self.dentry.to_map()
+        if self.resource_type is not None:
+            result['resourceType'] = self.resource_type
+        if self.space is not None:
+            result['space'] = self.space.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('dentry') is not None:
+            temp_model = DentryModel()
+            self.dentry = temp_model.from_map(m['dentry'])
+        if m.get('resourceType') is not None:
+            self.resource_type = m.get('resourceType')
+        if m.get('space') is not None:
+            temp_model = QueryItemByUrlResponseBodySpace()
+            self.space = temp_model.from_map(m['space'])
+        return self
+
+
+class QueryItemByUrlResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryItemByUrlResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryItemByUrlResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

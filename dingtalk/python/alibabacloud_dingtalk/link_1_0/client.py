@@ -23,6 +23,210 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def apply_follower_auth_info(
+        self,
+        request: dingtalklink__1__0_models.ApplyFollowerAuthInfoRequest,
+    ) -> dingtalklink__1__0_models.ApplyFollowerAuthInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklink__1__0_models.ApplyFollowerAuthInfoHeaders()
+        return self.apply_follower_auth_info_with_options(request, headers, runtime)
+
+    async def apply_follower_auth_info_async(
+        self,
+        request: dingtalklink__1__0_models.ApplyFollowerAuthInfoRequest,
+    ) -> dingtalklink__1__0_models.ApplyFollowerAuthInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklink__1__0_models.ApplyFollowerAuthInfoHeaders()
+        return await self.apply_follower_auth_info_with_options_async(request, headers, runtime)
+
+    def apply_follower_auth_info_with_options(
+        self,
+        request: dingtalklink__1__0_models.ApplyFollowerAuthInfoRequest,
+        headers: dingtalklink__1__0_models.ApplyFollowerAuthInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklink__1__0_models.ApplyFollowerAuthInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.field_scope):
+            body['fieldScope'] = request.field_scope
+        if not UtilClient.is_unset(request.session_id):
+            body['sessionId'] = request.session_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalklink__1__0_models.ApplyFollowerAuthInfoResponse(),
+            self.do_roarequest('ApplyFollowerAuthInfo', 'link_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/link/followers/authInfos/apply', 'json', req, runtime)
+        )
+
+    async def apply_follower_auth_info_with_options_async(
+        self,
+        request: dingtalklink__1__0_models.ApplyFollowerAuthInfoRequest,
+        headers: dingtalklink__1__0_models.ApplyFollowerAuthInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklink__1__0_models.ApplyFollowerAuthInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.field_scope):
+            body['fieldScope'] = request.field_scope
+        if not UtilClient.is_unset(request.session_id):
+            body['sessionId'] = request.session_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalklink__1__0_models.ApplyFollowerAuthInfoResponse(),
+            await self.do_roarequest_async('ApplyFollowerAuthInfo', 'link_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/link/followers/authInfos/apply', 'json', req, runtime)
+        )
+
+    def close_top_box_interactive_otomessage(
+        self,
+        request: dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageRequest,
+    ) -> dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageHeaders()
+        return self.close_top_box_interactive_otomessage_with_options(request, headers, runtime)
+
+    async def close_top_box_interactive_otomessage_async(
+        self,
+        request: dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageRequest,
+    ) -> dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageHeaders()
+        return await self.close_top_box_interactive_otomessage_with_options_async(request, headers, runtime)
+
+    def close_top_box_interactive_otomessage_with_options(
+        self,
+        request: dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageRequest,
+        headers: dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.detail):
+            body['detail'] = request.detail
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageResponse(),
+            self.do_roarequest('CloseTopBoxInteractiveOTOMessage', 'link_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/link/oToMessages/topBoxes/close', 'json', req, runtime)
+        )
+
+    async def close_top_box_interactive_otomessage_with_options_async(
+        self,
+        request: dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageRequest,
+        headers: dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.detail):
+            body['detail'] = request.detail
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageResponse(),
+            await self.do_roarequest_async('CloseTopBoxInteractiveOTOMessage', 'link_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/link/oToMessages/topBoxes/close', 'json', req, runtime)
+        )
+
+    def get_follower_auth_info(
+        self,
+        request: dingtalklink__1__0_models.GetFollowerAuthInfoRequest,
+    ) -> dingtalklink__1__0_models.GetFollowerAuthInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklink__1__0_models.GetFollowerAuthInfoHeaders()
+        return self.get_follower_auth_info_with_options(request, headers, runtime)
+
+    async def get_follower_auth_info_async(
+        self,
+        request: dingtalklink__1__0_models.GetFollowerAuthInfoRequest,
+    ) -> dingtalklink__1__0_models.GetFollowerAuthInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklink__1__0_models.GetFollowerAuthInfoHeaders()
+        return await self.get_follower_auth_info_with_options_async(request, headers, runtime)
+
+    def get_follower_auth_info_with_options(
+        self,
+        request: dingtalklink__1__0_models.GetFollowerAuthInfoRequest,
+        headers: dingtalklink__1__0_models.GetFollowerAuthInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklink__1__0_models.GetFollowerAuthInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.account_id):
+            query['accountId'] = request.account_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalklink__1__0_models.GetFollowerAuthInfoResponse(),
+            self.do_roarequest('GetFollowerAuthInfo', 'link_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/link/followers/authInfos', 'json', req, runtime)
+        )
+
+    async def get_follower_auth_info_with_options_async(
+        self,
+        request: dingtalklink__1__0_models.GetFollowerAuthInfoRequest,
+        headers: dingtalklink__1__0_models.GetFollowerAuthInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklink__1__0_models.GetFollowerAuthInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.account_id):
+            query['accountId'] = request.account_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalklink__1__0_models.GetFollowerAuthInfoResponse(),
+            await self.do_roarequest_async('GetFollowerAuthInfo', 'link_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/link/followers/authInfos', 'json', req, runtime)
+        )
+
     def get_follower_info(
         self,
         request: dingtalklink__1__0_models.GetFollowerInfoRequest,
@@ -361,6 +565,70 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalklink__1__0_models.SendInteractiveOTOMessageResponse(),
             await self.do_roarequest_async('SendInteractiveOTOMessage', 'link_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/link/oToMessages/interactiveMessages', 'json', req, runtime)
+        )
+
+    def send_top_box_interactive_otomessage(
+        self,
+        request: dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageRequest,
+    ) -> dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageHeaders()
+        return self.send_top_box_interactive_otomessage_with_options(request, headers, runtime)
+
+    async def send_top_box_interactive_otomessage_async(
+        self,
+        request: dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageRequest,
+    ) -> dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageHeaders()
+        return await self.send_top_box_interactive_otomessage_with_options_async(request, headers, runtime)
+
+    def send_top_box_interactive_otomessage_with_options(
+        self,
+        request: dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageRequest,
+        headers: dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.detail):
+            body['detail'] = request.detail
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageResponse(),
+            self.do_roarequest('SendTopBoxInteractiveOTOMessage', 'link_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/link/oToMessages/topBoxes/send', 'json', req, runtime)
+        )
+
+    async def send_top_box_interactive_otomessage_with_options_async(
+        self,
+        request: dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageRequest,
+        headers: dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.detail):
+            body['detail'] = request.detail
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageResponse(),
+            await self.do_roarequest_async('SendTopBoxInteractiveOTOMessage', 'link_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/link/oToMessages/topBoxes/send', 'json', req, runtime)
         )
 
     def update_interactive_otomessage(
