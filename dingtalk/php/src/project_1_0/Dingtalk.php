@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\AddProjectMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateOrganizationTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateOrganizationTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateOrganizationTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreatePlanTimeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreatePlanTimeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreatePlanTimeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateProjectByTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateProjectByTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateProjectByTemplateResponse;
@@ -20,6 +23,9 @@ use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateTaskObjectLinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateTaskObjectLinkResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateWorkTimeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateWorkTimeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateWorkTimeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetDeptsByOrgIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetDeptsByOrgIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetDeptsByOrgIdResponse;
@@ -214,6 +220,80 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string                $userId
+     * @param CreatePlanTimeRequest $request
+     *
+     * @return CreatePlanTimeResponse
+     */
+    public function createPlanTime($userId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreatePlanTimeHeaders([]);
+
+        return $this->createPlanTimeWithOptions($userId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                $userId
+     * @param CreatePlanTimeRequest $request
+     * @param CreatePlanTimeHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return CreatePlanTimeResponse
+     */
+    public function createPlanTimeWithOptions($userId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $query  = [];
+        if (!Utils::isUnset($request->tenantType)) {
+            @$query['tenantType'] = $request->tenantType;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->endDate)) {
+            @$body['endDate'] = $request->endDate;
+        }
+        if (!Utils::isUnset($request->includesHolidays)) {
+            @$body['includesHolidays'] = $request->includesHolidays;
+        }
+        if (!Utils::isUnset($request->isDuration)) {
+            @$body['isDuration'] = $request->isDuration;
+        }
+        if (!Utils::isUnset($request->objectId)) {
+            @$body['objectId'] = $request->objectId;
+        }
+        if (!Utils::isUnset($request->objectType)) {
+            @$body['objectType'] = $request->objectType;
+        }
+        if (!Utils::isUnset($request->optUser)) {
+            @$body['optUser'] = $request->optUser;
+        }
+        if (!Utils::isUnset($request->planTime)) {
+            @$body['planTime'] = $request->planTime;
+        }
+        if (!Utils::isUnset($request->startDate)) {
+            @$body['startDate'] = $request->startDate;
+        }
+        if (!Utils::isUnset($request->submitterId)) {
+            @$body['submitterId'] = $request->submitterId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreatePlanTimeResponse::fromMap($this->doROARequest('CreatePlanTime', 'project_1.0', 'HTTP', 'POST', 'AK', '/v1.0/project/users/' . $userId . '/planTimes', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string                         $userId
      * @param CreateProjectByTemplateRequest $request
      *
@@ -370,6 +450,80 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateTaskObjectLinkResponse::fromMap($this->doROARequest('CreateTaskObjectLink', 'project_1.0', 'HTTP', 'POST', 'AK', '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/objectLinks', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                $userId
+     * @param CreateWorkTimeRequest $request
+     *
+     * @return CreateWorkTimeResponse
+     */
+    public function createWorkTime($userId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateWorkTimeHeaders([]);
+
+        return $this->createWorkTimeWithOptions($userId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                $userId
+     * @param CreateWorkTimeRequest $request
+     * @param CreateWorkTimeHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return CreateWorkTimeResponse
+     */
+    public function createWorkTimeWithOptions($userId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $query  = [];
+        if (!Utils::isUnset($request->tenantType)) {
+            @$query['tenantType'] = $request->tenantType;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->endDate)) {
+            @$body['endDate'] = $request->endDate;
+        }
+        if (!Utils::isUnset($request->includesHolidays)) {
+            @$body['includesHolidays'] = $request->includesHolidays;
+        }
+        if (!Utils::isUnset($request->isDuration)) {
+            @$body['isDuration'] = $request->isDuration;
+        }
+        if (!Utils::isUnset($request->objectId)) {
+            @$body['objectId'] = $request->objectId;
+        }
+        if (!Utils::isUnset($request->objectType)) {
+            @$body['objectType'] = $request->objectType;
+        }
+        if (!Utils::isUnset($request->optUser)) {
+            @$body['optUser'] = $request->optUser;
+        }
+        if (!Utils::isUnset($request->startDate)) {
+            @$body['startDate'] = $request->startDate;
+        }
+        if (!Utils::isUnset($request->submitterId)) {
+            @$body['submitterId'] = $request->submitterId;
+        }
+        if (!Utils::isUnset($request->workTime)) {
+            @$body['workTime'] = $request->workTime;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateWorkTimeResponse::fromMap($this->doROARequest('CreateWorkTime', 'project_1.0', 'HTTP', 'POST', 'AK', '/v1.0/project/users/' . $userId . '/workTimes', 'json', $req, $runtime));
     }
 
     /**

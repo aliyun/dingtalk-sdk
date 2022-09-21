@@ -32,7 +32,7 @@ class GetConfBaseInfoByLogicalIdResponseBody extends Model
     /**
      * @description 开始时间
      *
-     * @var float
+     * @var int
      */
     public $startTime;
 

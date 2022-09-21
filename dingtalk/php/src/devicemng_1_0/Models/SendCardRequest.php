@@ -44,6 +44,20 @@ class SendCardRequest extends Model
     public $openConversationId;
 
     /**
+     * @description 卡片是否群内部分人员可见
+     *
+     * @var bool
+     */
+    public $partVisible;
+
+    /**
+     * @description 群内指定人员可见
+     *
+     * @var string[]
+     */
+    public $receivers;
+
+    /**
      * @description 卡片模板唯一标识，开放平台获取
      *
      * @var string
@@ -69,6 +83,8 @@ class SendCardRequest extends Model
         'deviceCode'         => 'deviceCode',
         'deviceUuid'         => 'deviceUuid',
         'openConversationId' => 'openConversationId',
+        'partVisible'        => 'partVisible',
+        'receivers'          => 'receivers',
         'templateId'         => 'templateId',
         'topbox'             => 'topbox',
         'userId'             => 'userId',
@@ -95,6 +111,12 @@ class SendCardRequest extends Model
         }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
+        }
+        if (null !== $this->partVisible) {
+            $res['partVisible'] = $this->partVisible;
+        }
+        if (null !== $this->receivers) {
+            $res['receivers'] = $this->receivers;
         }
         if (null !== $this->templateId) {
             $res['templateId'] = $this->templateId;
@@ -131,6 +153,14 @@ class SendCardRequest extends Model
         }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
+        }
+        if (isset($map['partVisible'])) {
+            $model->partVisible = $map['partVisible'];
+        }
+        if (isset($map['receivers'])) {
+            if (!empty($map['receivers'])) {
+                $model->receivers = $map['receivers'];
+            }
         }
         if (isset($map['templateId'])) {
             $model->templateId = $map['templateId'];

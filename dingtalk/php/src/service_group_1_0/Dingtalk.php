@@ -136,6 +136,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ListUserTeamsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryActiveUsersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryActiveUsersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryActiveUsersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryCrmGroupContactHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryCrmGroupContactRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryCrmGroupContactResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryCustomerCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryCustomerCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryCustomerCardResponse;
@@ -2611,6 +2614,60 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryActiveUsersResponse::fromMap($this->doROARequest('QueryActiveUsers', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', '/v1.0/serviceGroup/groups/queryActiveUsers', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryCrmGroupContactRequest $request
+     *
+     * @return QueryCrmGroupContactResponse
+     */
+    public function queryCrmGroupContact($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryCrmGroupContactHeaders([]);
+
+        return $this->queryCrmGroupContactWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryCrmGroupContactRequest $request
+     * @param QueryCrmGroupContactHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return QueryCrmGroupContactResponse
+     */
+    public function queryCrmGroupContactWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->minResult)) {
+            @$body['minResult'] = $request->minResult;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->searchFields)) {
+            @$body['searchFields'] = $request->searchFields;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return QueryCrmGroupContactResponse::fromMap($this->doROARequest('QueryCrmGroupContact', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/groups/contacts/query', 'json', $req, $runtime));
     }
 
     /**

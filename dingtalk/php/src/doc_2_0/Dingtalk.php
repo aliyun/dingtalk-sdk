@@ -62,6 +62,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\MoveDentryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryDentryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryDentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryDentryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryItemByUrlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryItemByUrlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryItemByUrlResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryMineSpaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryMineSpaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryRecentListHeaders;
@@ -1062,6 +1065,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryDentryResponse::fromMap($this->doROARequest('QueryDentry', 'doc_2.0', 'HTTP', 'GET', 'AK', '/v2.0/doc/spaces/' . $spaceId . '/dentries/' . $dentryId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryItemByUrlRequest $request
+     *
+     * @return QueryItemByUrlResponse
+     */
+    public function queryItemByUrl($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryItemByUrlHeaders([]);
+
+        return $this->queryItemByUrlWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryItemByUrlRequest $request
+     * @param QueryItemByUrlHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return QueryItemByUrlResponse
+     */
+    public function queryItemByUrlWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->url)) {
+            @$query['url'] = $request->url;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryItemByUrlResponse::fromMap($this->doROARequest('QueryItemByUrl', 'doc_2.0', 'HTTP', 'GET', 'AK', '/v2.0/doc/items', 'json', $req, $runtime));
     }
 
     /**

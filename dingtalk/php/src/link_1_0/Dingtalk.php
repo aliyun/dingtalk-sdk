@@ -5,6 +5,15 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vlink_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\ApplyFollowerAuthInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\ApplyFollowerAuthInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\ApplyFollowerAuthInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\CloseTopBoxInteractiveOTOMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\CloseTopBoxInteractiveOTOMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\CloseTopBoxInteractiveOTOMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\GetFollowerAuthInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\GetFollowerAuthInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\GetFollowerAuthInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\GetFollowerInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\GetFollowerInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\GetFollowerInfoResponse;
@@ -20,6 +29,9 @@ use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\SendAgentOTOMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\SendInteractiveOTOMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\SendInteractiveOTOMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\SendInteractiveOTOMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\SendTopBoxInteractiveOTOMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\SendTopBoxInteractiveOTOMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\SendTopBoxInteractiveOTOMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\UpdateInteractiveOTOMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\UpdateInteractiveOTOMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\UpdateInteractiveOTOMessageResponse;
@@ -37,6 +49,141 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param ApplyFollowerAuthInfoRequest $request
+     *
+     * @return ApplyFollowerAuthInfoResponse
+     */
+    public function applyFollowerAuthInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ApplyFollowerAuthInfoHeaders([]);
+
+        return $this->applyFollowerAuthInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ApplyFollowerAuthInfoRequest $request
+     * @param ApplyFollowerAuthInfoHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return ApplyFollowerAuthInfoResponse
+     */
+    public function applyFollowerAuthInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->fieldScope)) {
+            @$body['fieldScope'] = $request->fieldScope;
+        }
+        if (!Utils::isUnset($request->sessionId)) {
+            @$body['sessionId'] = $request->sessionId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ApplyFollowerAuthInfoResponse::fromMap($this->doROARequest('ApplyFollowerAuthInfo', 'link_1.0', 'HTTP', 'POST', 'AK', '/v1.0/link/followers/authInfos/apply', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CloseTopBoxInteractiveOTOMessageRequest $request
+     *
+     * @return CloseTopBoxInteractiveOTOMessageResponse
+     */
+    public function closeTopBoxInteractiveOTOMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CloseTopBoxInteractiveOTOMessageHeaders([]);
+
+        return $this->closeTopBoxInteractiveOTOMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CloseTopBoxInteractiveOTOMessageRequest $request
+     * @param CloseTopBoxInteractiveOTOMessageHeaders $headers
+     * @param RuntimeOptions                          $runtime
+     *
+     * @return CloseTopBoxInteractiveOTOMessageResponse
+     */
+    public function closeTopBoxInteractiveOTOMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->detail)) {
+            @$body['detail'] = $request->detail;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CloseTopBoxInteractiveOTOMessageResponse::fromMap($this->doROARequest('CloseTopBoxInteractiveOTOMessage', 'link_1.0', 'HTTP', 'POST', 'AK', '/v1.0/link/oToMessages/topBoxes/close', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetFollowerAuthInfoRequest $request
+     *
+     * @return GetFollowerAuthInfoResponse
+     */
+    public function getFollowerAuthInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetFollowerAuthInfoHeaders([]);
+
+        return $this->getFollowerAuthInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetFollowerAuthInfoRequest $request
+     * @param GetFollowerAuthInfoHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return GetFollowerAuthInfoResponse
+     */
+    public function getFollowerAuthInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->accountId)) {
+            @$query['accountId'] = $request->accountId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetFollowerAuthInfoResponse::fromMap($this->doROARequest('GetFollowerAuthInfo', 'link_1.0', 'HTTP', 'GET', 'AK', '/v1.0/link/followers/authInfos', 'json', $req, $runtime));
     }
 
     /**
@@ -262,6 +409,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SendInteractiveOTOMessageResponse::fromMap($this->doROARequest('SendInteractiveOTOMessage', 'link_1.0', 'HTTP', 'POST', 'AK', '/v1.0/link/oToMessages/interactiveMessages', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SendTopBoxInteractiveOTOMessageRequest $request
+     *
+     * @return SendTopBoxInteractiveOTOMessageResponse
+     */
+    public function sendTopBoxInteractiveOTOMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendTopBoxInteractiveOTOMessageHeaders([]);
+
+        return $this->sendTopBoxInteractiveOTOMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SendTopBoxInteractiveOTOMessageRequest $request
+     * @param SendTopBoxInteractiveOTOMessageHeaders $headers
+     * @param RuntimeOptions                         $runtime
+     *
+     * @return SendTopBoxInteractiveOTOMessageResponse
+     */
+    public function sendTopBoxInteractiveOTOMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->detail)) {
+            @$body['detail'] = $request->detail;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SendTopBoxInteractiveOTOMessageResponse::fromMap($this->doROARequest('SendTopBoxInteractiveOTOMessage', 'link_1.0', 'HTTP', 'POST', 'AK', '/v1.0/link/oToMessages/topBoxes/send', 'json', $req, $runtime));
     }
 
     /**

@@ -1028,6 +1028,12 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->openConversationId)) {
             @$body['openConversationId'] = $request->openConversationId;
         }
+        if (!Utils::isUnset($request->partVisible)) {
+            @$body['partVisible'] = $request->partVisible;
+        }
+        if (!Utils::isUnset($request->receivers)) {
+            @$body['receivers'] = $request->receivers;
+        }
         if (!Utils::isUnset($request->templateId)) {
             @$body['templateId'] = $request->templateId;
         }
@@ -1180,6 +1186,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->cardData)) {
             @$body['cardData'] = $request->cardData;
+        }
+        if (!Utils::isUnset($request->tips)) {
+            @$body['tips'] = $request->tips;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

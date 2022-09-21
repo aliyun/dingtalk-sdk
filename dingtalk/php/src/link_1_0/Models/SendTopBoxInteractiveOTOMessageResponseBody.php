@@ -2,26 +2,26 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class UpdateCardResponseBody extends Model
+class SendTopBoxInteractiveOTOMessageResponseBody extends Model
 {
+    /**
+     * @description Id of the request
+     *
+     * @var string
+     */
+    public $requestId;
+
     /**
      * @var bool
      */
     public $result;
-
-    /**
-     * @description 是否成功
-     *
-     * @var bool
-     */
-    public $success;
     protected $_name = [
-        'result'  => 'result',
-        'success' => 'success',
+        'requestId' => 'requestId',
+        'result'    => 'result',
     ];
 
     public function validate()
@@ -31,11 +31,11 @@ class UpdateCardResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->requestId) {
+            $res['requestId'] = $this->requestId;
+        }
         if (null !== $this->result) {
             $res['result'] = $this->result;
-        }
-        if (null !== $this->success) {
-            $res['success'] = $this->success;
         }
 
         return $res;
@@ -44,16 +44,16 @@ class UpdateCardResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return UpdateCardResponseBody
+     * @return SendTopBoxInteractiveOTOMessageResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['requestId'])) {
+            $model->requestId = $map['requestId'];
+        }
         if (isset($map['result'])) {
             $model->result = $map['result'];
-        }
-        if (isset($map['success'])) {
-            $model->success = $map['success'];
         }
 
         return $model;

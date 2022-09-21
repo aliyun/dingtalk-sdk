@@ -61,6 +61,13 @@ class SpaceModel extends Model
     public $recentList;
 
     /**
+     * @description 知识库类型。
+     *
+     * @var int
+     */
+    public $type;
+
+    /**
      * @description 知识库访问url。
      *
      * @var string
@@ -81,6 +88,7 @@ class SpaceModel extends Model
         'name'        => 'name',
         'owner'       => 'owner',
         'recentList'  => 'recentList',
+        'type'        => 'type',
         'url'         => 'url',
         'visitorInfo' => 'visitorInfo',
     ];
@@ -118,6 +126,9 @@ class SpaceModel extends Model
                     $res['recentList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
         if (null !== $this->url) {
             $res['url'] = $this->url;
@@ -163,6 +174,9 @@ class SpaceModel extends Model
                     $model->recentList[$n++] = null !== $item ? DentryModel::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
         if (isset($map['url'])) {
             $model->url = $map['url'];
