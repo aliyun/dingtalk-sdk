@@ -18,7 +18,7 @@ public class GetConfBaseInfoByLogicalIdResponseBody extends TeaModel {
 
     // 开始时间
     @NameInMap("startTime")
-    public Float startTime;
+    public Long startTime;
 
     // 会议标题
     @NameInMap("title")
@@ -57,11 +57,11 @@ public class GetConfBaseInfoByLogicalIdResponseBody extends TeaModel {
         return this.nickname;
     }
 
-    public GetConfBaseInfoByLogicalIdResponseBody setStartTime(Float startTime) {
+    public GetConfBaseInfoByLogicalIdResponseBody setStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
-    public Float getStartTime() {
+    public Long getStartTime() {
         return this.startTime;
     }
 

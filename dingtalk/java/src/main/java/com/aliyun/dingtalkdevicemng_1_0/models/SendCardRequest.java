@@ -24,6 +24,14 @@ public class SendCardRequest extends TeaModel {
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    // 卡片是否群内部分人员可见
+    @NameInMap("partVisible")
+    public Boolean partVisible;
+
+    // 群内指定人员可见
+    @NameInMap("receivers")
+    public java.util.List<String> receivers;
+
     // 卡片模板唯一标识，开放平台获取
     @NameInMap("templateId")
     public String templateId;
@@ -79,6 +87,22 @@ public class SendCardRequest extends TeaModel {
     }
     public String getOpenConversationId() {
         return this.openConversationId;
+    }
+
+    public SendCardRequest setPartVisible(Boolean partVisible) {
+        this.partVisible = partVisible;
+        return this;
+    }
+    public Boolean getPartVisible() {
+        return this.partVisible;
+    }
+
+    public SendCardRequest setReceivers(java.util.List<String> receivers) {
+        this.receivers = receivers;
+        return this;
+    }
+    public java.util.List<String> getReceivers() {
+        return this.receivers;
     }
 
     public SendCardRequest setTemplateId(String templateId) {

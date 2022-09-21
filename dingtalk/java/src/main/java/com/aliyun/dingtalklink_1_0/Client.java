@@ -16,6 +16,105 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public ApplyFollowerAuthInfoResponse applyFollowerAuthInfo(ApplyFollowerAuthInfoRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ApplyFollowerAuthInfoHeaders headers = new ApplyFollowerAuthInfoHeaders();
+        return this.applyFollowerAuthInfoWithOptions(request, headers, runtime);
+    }
+
+    public ApplyFollowerAuthInfoResponse applyFollowerAuthInfoWithOptions(ApplyFollowerAuthInfoRequest request, ApplyFollowerAuthInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.fieldScope)) {
+            body.put("fieldScope", request.fieldScope);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sessionId)) {
+            body.put("sessionId", request.sessionId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("ApplyFollowerAuthInfo", "link_1.0", "HTTP", "POST", "AK", "/v1.0/link/followers/authInfos/apply", "json", req, runtime), new ApplyFollowerAuthInfoResponse());
+    }
+
+    public CloseTopBoxInteractiveOTOMessageResponse closeTopBoxInteractiveOTOMessage(CloseTopBoxInteractiveOTOMessageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CloseTopBoxInteractiveOTOMessageHeaders headers = new CloseTopBoxInteractiveOTOMessageHeaders();
+        return this.closeTopBoxInteractiveOTOMessageWithOptions(request, headers, runtime);
+    }
+
+    public CloseTopBoxInteractiveOTOMessageResponse closeTopBoxInteractiveOTOMessageWithOptions(CloseTopBoxInteractiveOTOMessageRequest request, CloseTopBoxInteractiveOTOMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.detail))) {
+            body.put("detail", request.detail);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CloseTopBoxInteractiveOTOMessage", "link_1.0", "HTTP", "POST", "AK", "/v1.0/link/oToMessages/topBoxes/close", "json", req, runtime), new CloseTopBoxInteractiveOTOMessageResponse());
+    }
+
+    public GetFollowerAuthInfoResponse getFollowerAuthInfo(GetFollowerAuthInfoRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetFollowerAuthInfoHeaders headers = new GetFollowerAuthInfoHeaders();
+        return this.getFollowerAuthInfoWithOptions(request, headers, runtime);
+    }
+
+    public GetFollowerAuthInfoResponse getFollowerAuthInfoWithOptions(GetFollowerAuthInfoRequest request, GetFollowerAuthInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.accountId)) {
+            query.put("accountId", request.accountId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetFollowerAuthInfo", "link_1.0", "HTTP", "GET", "AK", "/v1.0/link/followers/authInfos", "json", req, runtime), new GetFollowerAuthInfoResponse());
+    }
+
     public GetFollowerInfoResponse getFollowerInfo(GetFollowerInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetFollowerInfoHeaders headers = new GetFollowerInfoHeaders();
@@ -179,6 +278,35 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("SendInteractiveOTOMessage", "link_1.0", "HTTP", "POST", "AK", "/v1.0/link/oToMessages/interactiveMessages", "json", req, runtime), new SendInteractiveOTOMessageResponse());
+    }
+
+    public SendTopBoxInteractiveOTOMessageResponse sendTopBoxInteractiveOTOMessage(SendTopBoxInteractiveOTOMessageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SendTopBoxInteractiveOTOMessageHeaders headers = new SendTopBoxInteractiveOTOMessageHeaders();
+        return this.sendTopBoxInteractiveOTOMessageWithOptions(request, headers, runtime);
+    }
+
+    public SendTopBoxInteractiveOTOMessageResponse sendTopBoxInteractiveOTOMessageWithOptions(SendTopBoxInteractiveOTOMessageRequest request, SendTopBoxInteractiveOTOMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.detail))) {
+            body.put("detail", request.detail);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("SendTopBoxInteractiveOTOMessage", "link_1.0", "HTTP", "POST", "AK", "/v1.0/link/oToMessages/topBoxes/send", "json", req, runtime), new SendTopBoxInteractiveOTOMessageResponse());
     }
 
     public UpdateInteractiveOTOMessageResponse updateInteractiveOTOMessage(UpdateInteractiveOTOMessageRequest request) throws Exception {

@@ -32,6 +32,10 @@ public class SpaceModel extends TeaModel {
     @NameInMap("recentList")
     public java.util.List<DentryModel> recentList;
 
+    // 知识库类型。
+    @NameInMap("type")
+    public Integer type;
+
     // 知识库访问url。
     @NameInMap("url")
     public String url;
@@ -99,6 +103,14 @@ public class SpaceModel extends TeaModel {
     }
     public java.util.List<DentryModel> getRecentList() {
         return this.recentList;
+    }
+
+    public SpaceModel setType(Integer type) {
+        this.type = type;
+        return this;
+    }
+    public Integer getType() {
+        return this.type;
     }
 
     public SpaceModel setUrl(String url) {

@@ -113,6 +113,74 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("CreateOrganizationTask", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/organizations/users/" + userId + "/tasks", "json", req, runtime), new CreateOrganizationTaskResponse());
     }
 
+    public CreatePlanTimeResponse createPlanTime(String userId, CreatePlanTimeRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreatePlanTimeHeaders headers = new CreatePlanTimeHeaders();
+        return this.createPlanTimeWithOptions(userId, request, headers, runtime);
+    }
+
+    public CreatePlanTimeResponse createPlanTimeWithOptions(String userId, CreatePlanTimeRequest request, CreatePlanTimeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.tenantType)) {
+            query.put("tenantType", request.tenantType);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.endDate)) {
+            body.put("endDate", request.endDate);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.includesHolidays)) {
+            body.put("includesHolidays", request.includesHolidays);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.isDuration)) {
+            body.put("isDuration", request.isDuration);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.objectId)) {
+            body.put("objectId", request.objectId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.objectType)) {
+            body.put("objectType", request.objectType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.optUser)) {
+            body.put("optUser", request.optUser);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.planTime)) {
+            body.put("planTime", request.planTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startDate)) {
+            body.put("startDate", request.startDate);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.submitterId)) {
+            body.put("submitterId", request.submitterId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CreatePlanTime", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/planTimes", "json", req, runtime), new CreatePlanTimeResponse());
+    }
+
     public CreateProjectByTemplateResponse createProjectByTemplate(String userId, CreateProjectByTemplateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateProjectByTemplateHeaders headers = new CreateProjectByTemplateHeaders();
@@ -230,6 +298,74 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("CreateTaskObjectLink", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/objectLinks", "json", req, runtime), new CreateTaskObjectLinkResponse());
+    }
+
+    public CreateWorkTimeResponse createWorkTime(String userId, CreateWorkTimeRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateWorkTimeHeaders headers = new CreateWorkTimeHeaders();
+        return this.createWorkTimeWithOptions(userId, request, headers, runtime);
+    }
+
+    public CreateWorkTimeResponse createWorkTimeWithOptions(String userId, CreateWorkTimeRequest request, CreateWorkTimeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.tenantType)) {
+            query.put("tenantType", request.tenantType);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.endDate)) {
+            body.put("endDate", request.endDate);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.includesHolidays)) {
+            body.put("includesHolidays", request.includesHolidays);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.isDuration)) {
+            body.put("isDuration", request.isDuration);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.objectId)) {
+            body.put("objectId", request.objectId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.objectType)) {
+            body.put("objectType", request.objectType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.optUser)) {
+            body.put("optUser", request.optUser);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startDate)) {
+            body.put("startDate", request.startDate);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.submitterId)) {
+            body.put("submitterId", request.submitterId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.workTime)) {
+            body.put("workTime", request.workTime);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CreateWorkTime", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/workTimes", "json", req, runtime), new CreateWorkTimeResponse());
     }
 
     public GetDeptsByOrgIdResponse getDeptsByOrgId(GetDeptsByOrgIdRequest request) throws Exception {

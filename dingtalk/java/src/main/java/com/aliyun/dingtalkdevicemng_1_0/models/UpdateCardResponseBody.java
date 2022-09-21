@@ -4,9 +4,8 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateCardResponseBody extends TeaModel {
-    // 响应数据
     @NameInMap("result")
-    public String result;
+    public Boolean result;
 
     // 是否成功
     @NameInMap("success")
@@ -17,11 +16,11 @@ public class UpdateCardResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public UpdateCardResponseBody setResult(String result) {
+    public UpdateCardResponseBody setResult(Boolean result) {
         this.result = result;
         return this;
     }
-    public String getResult() {
+    public Boolean getResult() {
         return this.result;
     }
 

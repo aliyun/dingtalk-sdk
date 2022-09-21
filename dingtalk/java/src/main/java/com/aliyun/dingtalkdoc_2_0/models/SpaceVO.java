@@ -28,6 +28,10 @@ public class SpaceVO extends TeaModel {
     @NameInMap("owner")
     public SpaceVOOwner owner;
 
+    // 知识库类型。
+    @NameInMap("type")
+    public Integer type;
+
     // 知识库访问url。
     @NameInMap("url")
     public String url;
@@ -87,6 +91,14 @@ public class SpaceVO extends TeaModel {
     }
     public SpaceVOOwner getOwner() {
         return this.owner;
+    }
+
+    public SpaceVO setType(Integer type) {
+        this.type = type;
+        return this;
+    }
+    public Integer getType() {
+        return this.type;
     }
 
     public SpaceVO setUrl(String url) {

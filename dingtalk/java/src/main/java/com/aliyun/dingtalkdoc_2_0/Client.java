@@ -738,6 +738,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("QueryDentry", "doc_2.0", "HTTP", "GET", "AK", "/v2.0/doc/spaces/" + spaceId + "/dentries/" + dentryId + "", "json", req, runtime), new QueryDentryResponse());
     }
 
+    public QueryItemByUrlResponse queryItemByUrl(QueryItemByUrlRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryItemByUrlHeaders headers = new QueryItemByUrlHeaders();
+        return this.queryItemByUrlWithOptions(request, headers, runtime);
+    }
+
+    public QueryItemByUrlResponse queryItemByUrlWithOptions(QueryItemByUrlRequest request, QueryItemByUrlHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.url)) {
+            query.put("url", request.url);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryItemByUrl", "doc_2.0", "HTTP", "GET", "AK", "/v2.0/doc/items", "json", req, runtime), new QueryItemByUrlResponse());
+    }
+
     public QueryMineSpaceResponse queryMineSpace(String unionId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryMineSpaceHeaders headers = new QueryMineSpaceHeaders();
