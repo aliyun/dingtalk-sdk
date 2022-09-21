@@ -35,7 +35,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         /// </summary>
         [NameInMap("startTime")]
         [Validation(Required=false)]
-        public float? StartTime { get; set; }
+        public long? StartTime { get; set; }
 
         /// <summary>
         /// 会议标题

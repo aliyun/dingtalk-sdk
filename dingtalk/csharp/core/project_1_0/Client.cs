@@ -232,6 +232,148 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             return TeaModel.ToObject<CreateOrganizationTaskResponse>(await DoROARequestAsync("CreateOrganizationTask", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/organizations/users/" + userId + "/tasks", "json", req, runtime));
         }
 
+        public CreatePlanTimeResponse CreatePlanTime(string userId, CreatePlanTimeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreatePlanTimeHeaders headers = new CreatePlanTimeHeaders();
+            return CreatePlanTimeWithOptions(userId, request, headers, runtime);
+        }
+
+        public async Task<CreatePlanTimeResponse> CreatePlanTimeAsync(string userId, CreatePlanTimeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreatePlanTimeHeaders headers = new CreatePlanTimeHeaders();
+            return await CreatePlanTimeWithOptionsAsync(userId, request, headers, runtime);
+        }
+
+        public CreatePlanTimeResponse CreatePlanTimeWithOptions(string userId, CreatePlanTimeRequest request, CreatePlanTimeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TenantType))
+            {
+                query["tenantType"] = request.TenantType;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndDate))
+            {
+                body["endDate"] = request.EndDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IncludesHolidays))
+            {
+                body["includesHolidays"] = request.IncludesHolidays;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsDuration))
+            {
+                body["isDuration"] = request.IsDuration;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectId))
+            {
+                body["objectId"] = request.ObjectId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectType))
+            {
+                body["objectType"] = request.ObjectType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptUser))
+            {
+                body["optUser"] = request.OptUser;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PlanTime))
+            {
+                body["planTime"] = request.PlanTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartDate))
+            {
+                body["startDate"] = request.StartDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubmitterId))
+            {
+                body["submitterId"] = request.SubmitterId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CreatePlanTimeResponse>(DoROARequest("CreatePlanTime", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/planTimes", "json", req, runtime));
+        }
+
+        public async Task<CreatePlanTimeResponse> CreatePlanTimeWithOptionsAsync(string userId, CreatePlanTimeRequest request, CreatePlanTimeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TenantType))
+            {
+                query["tenantType"] = request.TenantType;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndDate))
+            {
+                body["endDate"] = request.EndDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IncludesHolidays))
+            {
+                body["includesHolidays"] = request.IncludesHolidays;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsDuration))
+            {
+                body["isDuration"] = request.IsDuration;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectId))
+            {
+                body["objectId"] = request.ObjectId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectType))
+            {
+                body["objectType"] = request.ObjectType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptUser))
+            {
+                body["optUser"] = request.OptUser;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PlanTime))
+            {
+                body["planTime"] = request.PlanTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartDate))
+            {
+                body["startDate"] = request.StartDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubmitterId))
+            {
+                body["submitterId"] = request.SubmitterId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CreatePlanTimeResponse>(await DoROARequestAsync("CreatePlanTime", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/planTimes", "json", req, runtime));
+        }
+
         public CreateProjectByTemplateResponse CreateProjectByTemplate(string userId, CreateProjectByTemplateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -486,6 +628,148 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<CreateTaskObjectLinkResponse>(await DoROARequestAsync("CreateTaskObjectLink", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/objectLinks", "json", req, runtime));
+        }
+
+        public CreateWorkTimeResponse CreateWorkTime(string userId, CreateWorkTimeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateWorkTimeHeaders headers = new CreateWorkTimeHeaders();
+            return CreateWorkTimeWithOptions(userId, request, headers, runtime);
+        }
+
+        public async Task<CreateWorkTimeResponse> CreateWorkTimeAsync(string userId, CreateWorkTimeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateWorkTimeHeaders headers = new CreateWorkTimeHeaders();
+            return await CreateWorkTimeWithOptionsAsync(userId, request, headers, runtime);
+        }
+
+        public CreateWorkTimeResponse CreateWorkTimeWithOptions(string userId, CreateWorkTimeRequest request, CreateWorkTimeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TenantType))
+            {
+                query["tenantType"] = request.TenantType;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndDate))
+            {
+                body["endDate"] = request.EndDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IncludesHolidays))
+            {
+                body["includesHolidays"] = request.IncludesHolidays;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsDuration))
+            {
+                body["isDuration"] = request.IsDuration;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectId))
+            {
+                body["objectId"] = request.ObjectId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectType))
+            {
+                body["objectType"] = request.ObjectType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptUser))
+            {
+                body["optUser"] = request.OptUser;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartDate))
+            {
+                body["startDate"] = request.StartDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubmitterId))
+            {
+                body["submitterId"] = request.SubmitterId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkTime))
+            {
+                body["workTime"] = request.WorkTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CreateWorkTimeResponse>(DoROARequest("CreateWorkTime", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/workTimes", "json", req, runtime));
+        }
+
+        public async Task<CreateWorkTimeResponse> CreateWorkTimeWithOptionsAsync(string userId, CreateWorkTimeRequest request, CreateWorkTimeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TenantType))
+            {
+                query["tenantType"] = request.TenantType;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndDate))
+            {
+                body["endDate"] = request.EndDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IncludesHolidays))
+            {
+                body["includesHolidays"] = request.IncludesHolidays;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsDuration))
+            {
+                body["isDuration"] = request.IsDuration;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectId))
+            {
+                body["objectId"] = request.ObjectId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectType))
+            {
+                body["objectType"] = request.ObjectType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptUser))
+            {
+                body["optUser"] = request.OptUser;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartDate))
+            {
+                body["startDate"] = request.StartDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubmitterId))
+            {
+                body["submitterId"] = request.SubmitterId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkTime))
+            {
+                body["workTime"] = request.WorkTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CreateWorkTimeResponse>(await DoROARequestAsync("CreateWorkTime", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/workTimes", "json", req, runtime));
         }
 
         public GetDeptsByOrgIdResponse GetDeptsByOrgId(GetDeptsByOrgIdRequest request)

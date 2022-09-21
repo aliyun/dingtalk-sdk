@@ -1610,6 +1610,14 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0
             {
                 body["openConversationId"] = request.OpenConversationId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PartVisible))
+            {
+                body["partVisible"] = request.PartVisible;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Receivers))
+            {
+                body["receivers"] = request.Receivers;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
             {
                 body["templateId"] = request.TemplateId;
@@ -1662,6 +1670,14 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
             {
                 body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PartVisible))
+            {
+                body["partVisible"] = request.PartVisible;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Receivers))
+            {
+                body["receivers"] = request.Receivers;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
             {
@@ -1886,6 +1902,10 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0
             {
                 body["cardData"] = request.CardData;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tips.ToMap()))
+            {
+                body["tips"] = request.Tips;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1914,6 +1934,10 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData))
             {
                 body["cardData"] = request.CardData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tips.ToMap()))
+            {
+                body["tips"] = request.Tips;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

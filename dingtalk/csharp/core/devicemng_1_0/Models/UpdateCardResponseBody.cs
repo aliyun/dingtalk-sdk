@@ -9,12 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
 {
     public class UpdateCardResponseBody : TeaModel {
-        /// <summary>
-        /// 响应数据
-        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
-        public string Result { get; set; }
+        public bool? Result { get; set; }
 
         /// <summary>
         /// 是否成功

@@ -84,6 +84,13 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         }
 
         /// <summary>
+        /// 知识库类型。
+        /// </summary>
+        [NameInMap("type")]
+        [Validation(Required=false)]
+        public int? Type { get; set; }
+
+        /// <summary>
         /// 知识库访问url。
         /// </summary>
         [NameInMap("url")]

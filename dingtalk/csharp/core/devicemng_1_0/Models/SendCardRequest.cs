@@ -45,6 +45,20 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
         public string OpenConversationId { get; set; }
 
         /// <summary>
+        /// 卡片是否群内部分人员可见
+        /// </summary>
+        [NameInMap("partVisible")]
+        [Validation(Required=false)]
+        public bool? PartVisible { get; set; }
+
+        /// <summary>
+        /// 群内指定人员可见
+        /// </summary>
+        [NameInMap("receivers")]
+        [Validation(Required=false)]
+        public List<string> Receivers { get; set; }
+
+        /// <summary>
         /// 卡片模板唯一标识，开放平台获取
         /// </summary>
         [NameInMap("templateId")]
