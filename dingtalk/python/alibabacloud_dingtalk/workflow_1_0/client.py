@@ -2725,6 +2725,8 @@ class Client(OpenApiClient):
     ) -> dingtalkworkflow__1__0_models.UpdateProcessInstanceResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.notifiers):
+            body['notifiers'] = request.notifiers
         if not UtilClient.is_unset(request.process_instance_id):
             body['processInstanceId'] = request.process_instance_id
         if not UtilClient.is_unset(request.result):
@@ -2753,6 +2755,8 @@ class Client(OpenApiClient):
     ) -> dingtalkworkflow__1__0_models.UpdateProcessInstanceResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.notifiers):
+            body['notifiers'] = request.notifiers
         if not UtilClient.is_unset(request.process_instance_id):
             body['processInstanceId'] = request.process_instance_id
         if not UtilClient.is_unset(request.result):

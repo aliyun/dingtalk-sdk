@@ -746,7 +746,7 @@ class BatchGetWorkspacesRequest(TeaModel):
         self.include_recent = include_recent
         # 操作用户unionId
         self.operator_id = operator_id
-        # 待查询空间Id
+        # 待查询知识库id。
         self.workspace_ids = workspace_ids
 
     def validate(self):
@@ -836,17 +836,17 @@ class BatchGetWorkspacesResponseBodyWorkspacesWorkspace(TeaModel):
         url: str = None,
         workspace_id: str = None,
     ):
-        # 团队空间创建时间
+        # 知识库创建时间。
         self.create_time = create_time
-        # 团队空间名称
+        # 知识库名称。
         self.name = name
         # 是否全员公开
         self.org_published = org_published
         # 最近访问列表
         self.recent_list = recent_list
-        # 团队空间打开url
+        # 知识库打开url。
         self.url = url
-        # 团队空间Id
+        # 知识库id。
         self.workspace_id = workspace_id
 
     def validate(self):
@@ -903,9 +903,9 @@ class BatchGetWorkspacesResponseBodyWorkspaces(TeaModel):
         has_permission: bool = None,
         workspace: BatchGetWorkspacesResponseBodyWorkspacesWorkspace = None,
     ):
-        # 是否有访问团队空间权限
+        # 是否有访问知识库权限。
         self.has_permission = has_permission
-        # 团队空间信息
+        # 知识库信息。
         self.workspace = workspace
 
     def validate(self):
@@ -1578,11 +1578,11 @@ class CreateWorkspaceRequest(TeaModel):
         name: str = None,
         operator_id: str = None,
     ):
-        # 团队空间描述
+        # 知识库描述。
         self.description = description
-        # 团队空间名称
+        # 知识库名称。
         self.name = name
-        # 用户id
+        # 用户id。
         self.operator_id = operator_id
 
     def validate(self):
@@ -1621,13 +1621,13 @@ class CreateWorkspaceResponseBody(TeaModel):
         url: str = None,
         workspace_id: str = None,
     ):
-        # 工作空间描述
+        # 知识库描述。
         self.description = description
-        # 工作空间名称
+        # 知识库名称。
         self.name = name
-        # 工作空间打开url
+        # 知识库打开url。
         self.url = url
-        # 工作空间id
+        # 知识库id。
         self.workspace_id = workspace_id
 
     def validate(self):
@@ -1808,7 +1808,7 @@ class CreateWorkspaceDocResponseBody(TeaModel):
         self.node_id = node_id
         # 文档打开url
         self.url = url
-        # 团队空间Id
+        # 知识库id。
         self.workspace_id = workspace_id
 
     def validate(self):
@@ -3104,11 +3104,11 @@ class GetRecentEditDocsResponseBodyRecentListWorkspaceBO(TeaModel):
         workspace_id: str = None,
         workspace_name: str = None,
     ):
-        # 团队空间打开url
+        # 知识库打开url。
         self.url = url
-        # 团队空间Id
+        # 知识库id。
         self.workspace_id = workspace_id
-        # 团队空间名称
+        # 知识库名称。
         self.workspace_name = workspace_name
 
     def validate(self):
@@ -3147,7 +3147,7 @@ class GetRecentEditDocsResponseBodyRecentList(TeaModel):
     ):
         # 文档信息
         self.node_bo = node_bo
-        # 团队空间信息
+        # 知识库信息。
         self.workspace_bo = workspace_bo
 
     def validate(self):
@@ -3416,11 +3416,11 @@ class GetRecentOpenDocsResponseBodyRecentListWorkspaceBO(TeaModel):
         workspace_id: str = None,
         workspace_name: str = None,
     ):
-        # 团队空间打开url
+        # 知识库打开url。
         self.url = url
-        # 团队空间Id
+        # 知识库id。
         self.workspace_id = workspace_id
-        # 团队空间名称
+        # 知识库名称。
         self.workspace_name = workspace_name
 
     def validate(self):
@@ -3459,7 +3459,7 @@ class GetRecentOpenDocsResponseBodyRecentList(TeaModel):
     ):
         # 文档信息
         self.node_bo = node_bo
-        # 团队空间信息
+        # 知识库信息。
         self.workspace_bo = workspace_bo
 
     def validate(self):
@@ -3699,20 +3699,20 @@ class GetRelatedWorkspacesResponseBodyWorkspaces(TeaModel):
         url: str = None,
         workspace_id: str = None,
     ):
-        # 团队空间创建时间
+        # 知识库创建时间。
         self.create_time = create_time
-        # 团队空间是否被删除
+        # 知识库是否被删除。
         self.deleted = deleted
-        # 团队空间名称
+        # 知识库名称。
         self.name = name
         self.owner = owner
-        # 团队空间最近访问文档列表
+        # 知识库最近访问文档列表。
         self.recent_list = recent_list
         # 用户的角色
         self.role = role
-        # 团队空间打开url
+        # 知识库打开url。
         self.url = url
-        # 团队空间Id
+        # 知识库id。
         self.workspace_id = workspace_id
 
     def validate(self):
@@ -3776,7 +3776,7 @@ class GetRelatedWorkspacesResponseBody(TeaModel):
         self,
         workspaces: List[GetRelatedWorkspacesResponseBodyWorkspaces] = None,
     ):
-        # 团队空间结果集
+        # 知识库结果集。
         self.workspaces = workspaces
 
     def validate(self):
@@ -4109,7 +4109,7 @@ class GetTemplateByIdResponseBody(TeaModel):
         self.title = title
         # 模版修改时间
         self.update_time = update_time
-        # 模版归属空间Id
+        # 模版归属知识库id。
         self.workspace_id = workspace_id
 
     def validate(self):
@@ -4429,9 +4429,9 @@ class GetWorkspaceNodeResponseBodyWorkspaceBO(TeaModel):
         name: str = None,
         workspace_id: str = None,
     ):
-        # 团队空间名称
+        # 知识库名称。
         self.name = name
-        # 团队空间Id
+        # 知识库id。
         self.workspace_id = workspace_id
 
     def validate(self):
@@ -4469,7 +4469,7 @@ class GetWorkspaceNodeResponseBody(TeaModel):
         self.has_permission = has_permission
         # 节点信息
         self.node_bo = node_bo
-        # 节点所属团队空间信息
+        # 节点所属知识库信息。
         self.workspace_bo = workspace_bo
 
     def validate(self):
@@ -5247,7 +5247,7 @@ class ListTemplateRequest(TeaModel):
         self.operator_id = operator_id
         # 模版类型
         self.template_type = template_type
-        # 团队空间Id
+        # 知识库id。
         self.workspace_id = workspace_id
 
     def validate(self):
@@ -5312,7 +5312,7 @@ class ListTemplateResponseBodyTemplateList(TeaModel):
         self.title = title
         # 模版修改时间
         self.update_time = update_time
-        # 模版归属空间Id
+        # 模版归属知识库id。
         self.workspace_id = workspace_id
 
     def validate(self):
@@ -5829,7 +5829,7 @@ class SearchWorkspaceDocsRequest(TeaModel):
         self.next_token = next_token
         # 发起操作用户unionId
         self.operator_id = operator_id
-        # 团队空间Id
+        # 知识库id。
         self.workspace_id = workspace_id
 
     def validate(self):
@@ -5937,9 +5937,9 @@ class SearchWorkspaceDocsResponseBodyDocsWorkspaceBO(TeaModel):
         name: str = None,
         workspace_id: str = None,
     ):
-        # 团队空间名称
+        # 知识库名称。
         self.name = name
-        # 团队空间Id
+        # 知识库id。
         self.workspace_id = workspace_id
 
     def validate(self):

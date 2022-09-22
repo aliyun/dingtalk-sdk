@@ -692,11 +692,11 @@ class CreatePlanTimeRequest(TeaModel):
     def __init__(
         self,
         end_date: str = None,
+        executor_id: str = None,
         includes_holidays: bool = None,
         is_duration: bool = None,
         object_id: str = None,
         object_type: str = None,
-        opt_user: str = None,
         plan_time: int = None,
         start_date: str = None,
         submitter_id: str = None,
@@ -704,6 +704,8 @@ class CreatePlanTimeRequest(TeaModel):
     ):
         # 结束时间
         self.end_date = end_date
+        # 执行者userid
+        self.executor_id = executor_id
         # 是否包含假期
         self.includes_holidays = includes_holidays
         # 是否连续
@@ -712,14 +714,13 @@ class CreatePlanTimeRequest(TeaModel):
         self.object_id = object_id
         # 对象类型，默认为task
         self.object_type = object_type
-        # 操作者用户id
-        self.opt_user = opt_user
         # 计划工时数（单位：毫秒，1小时即为 3600000）
         self.plan_time = plan_time
         # 开始时间
         self.start_date = start_date
-        # 工时提交人员用户id
+        # 工时所属人员userid
         self.submitter_id = submitter_id
+        # 接口校验类型，当前默认organization
         self.tenant_type = tenant_type
 
     def validate(self):
@@ -733,6 +734,8 @@ class CreatePlanTimeRequest(TeaModel):
         result = dict()
         if self.end_date is not None:
             result['endDate'] = self.end_date
+        if self.executor_id is not None:
+            result['executorId'] = self.executor_id
         if self.includes_holidays is not None:
             result['includesHolidays'] = self.includes_holidays
         if self.is_duration is not None:
@@ -741,8 +744,6 @@ class CreatePlanTimeRequest(TeaModel):
             result['objectId'] = self.object_id
         if self.object_type is not None:
             result['objectType'] = self.object_type
-        if self.opt_user is not None:
-            result['optUser'] = self.opt_user
         if self.plan_time is not None:
             result['planTime'] = self.plan_time
         if self.start_date is not None:
@@ -757,6 +758,8 @@ class CreatePlanTimeRequest(TeaModel):
         m = m or dict()
         if m.get('endDate') is not None:
             self.end_date = m.get('endDate')
+        if m.get('executorId') is not None:
+            self.executor_id = m.get('executorId')
         if m.get('includesHolidays') is not None:
             self.includes_holidays = m.get('includesHolidays')
         if m.get('isDuration') is not None:
@@ -765,8 +768,6 @@ class CreatePlanTimeRequest(TeaModel):
             self.object_id = m.get('objectId')
         if m.get('objectType') is not None:
             self.object_type = m.get('objectType')
-        if m.get('optUser') is not None:
-            self.opt_user = m.get('optUser')
         if m.get('planTime') is not None:
             self.plan_time = m.get('planTime')
         if m.get('startDate') is not None:
@@ -1795,11 +1796,11 @@ class CreateWorkTimeRequest(TeaModel):
     def __init__(
         self,
         end_date: str = None,
+        executor_id: str = None,
         includes_holidays: bool = None,
         is_duration: bool = None,
         object_id: str = None,
         object_type: str = None,
-        opt_user: str = None,
         start_date: str = None,
         submitter_id: str = None,
         work_time: int = None,
@@ -1807,6 +1808,8 @@ class CreateWorkTimeRequest(TeaModel):
     ):
         # 结束时间
         self.end_date = end_date
+        # 执行者userid
+        self.executor_id = executor_id
         # 是否包含节假日
         self.includes_holidays = includes_holidays
         # 是否连续
@@ -1815,14 +1818,13 @@ class CreateWorkTimeRequest(TeaModel):
         self.object_id = object_id
         # 对象类型，默认为 task
         self.object_type = object_type
-        # 操作者用户id
-        self.opt_user = opt_user
         # 开始时间
         self.start_date = start_date
-        # 工时提交人员用户id
+        # 工时所属人员userid
         self.submitter_id = submitter_id
         # 实际工时数（单位毫秒，1小时即为3600000）
         self.work_time = work_time
+        # 接口校验类型，当前默认organization
         self.tenant_type = tenant_type
 
     def validate(self):
@@ -1836,6 +1838,8 @@ class CreateWorkTimeRequest(TeaModel):
         result = dict()
         if self.end_date is not None:
             result['endDate'] = self.end_date
+        if self.executor_id is not None:
+            result['executorId'] = self.executor_id
         if self.includes_holidays is not None:
             result['includesHolidays'] = self.includes_holidays
         if self.is_duration is not None:
@@ -1844,8 +1848,6 @@ class CreateWorkTimeRequest(TeaModel):
             result['objectId'] = self.object_id
         if self.object_type is not None:
             result['objectType'] = self.object_type
-        if self.opt_user is not None:
-            result['optUser'] = self.opt_user
         if self.start_date is not None:
             result['startDate'] = self.start_date
         if self.submitter_id is not None:
@@ -1860,6 +1862,8 @@ class CreateWorkTimeRequest(TeaModel):
         m = m or dict()
         if m.get('endDate') is not None:
             self.end_date = m.get('endDate')
+        if m.get('executorId') is not None:
+            self.executor_id = m.get('executorId')
         if m.get('includesHolidays') is not None:
             self.includes_holidays = m.get('includesHolidays')
         if m.get('isDuration') is not None:
@@ -1868,8 +1872,6 @@ class CreateWorkTimeRequest(TeaModel):
             self.object_id = m.get('objectId')
         if m.get('objectType') is not None:
             self.object_type = m.get('objectType')
-        if m.get('optUser') is not None:
-            self.opt_user = m.get('optUser')
         if m.get('startDate') is not None:
             self.start_date = m.get('startDate')
         if m.get('submitterId') is not None:

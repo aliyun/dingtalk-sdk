@@ -986,13 +986,44 @@ class BatchUpdateProcessInstanceHeaders(TeaModel):
         return self
 
 
+class BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+    ):
+        # 抄送接收人用户userId。
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
 class BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequests(TeaModel):
     def __init__(
         self,
+        notifiers: List[BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers] = None,
         process_instance_id: str = None,
         result: str = None,
         status: str = None,
     ):
+        # 抄送列表，注意最大抄送人数量不能超过30。
+        self.notifiers = notifiers
         # 实例id
         self.process_instance_id = process_instance_id
         # 实例结果：
@@ -1007,7 +1038,10 @@ class BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequests(TeaModel):
         self.status = status
 
     def validate(self):
-        pass
+        if self.notifiers:
+            for k in self.notifiers:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1015,6 +1049,10 @@ class BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequests(TeaModel):
             return _map
 
         result = dict()
+        result['notifiers'] = []
+        if self.notifiers is not None:
+            for k in self.notifiers:
+                result['notifiers'].append(k.to_map() if k else None)
         if self.process_instance_id is not None:
             result['processInstanceId'] = self.process_instance_id
         if self.result is not None:
@@ -1025,6 +1063,11 @@ class BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequests(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.notifiers = []
+        if m.get('notifiers') is not None:
+            for k in m.get('notifiers'):
+                temp_model = BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers()
+                self.notifiers.append(temp_model.from_map(k))
         if m.get('processInstanceId') is not None:
             self.process_instance_id = m.get('processInstanceId')
         if m.get('result') is not None:
@@ -11091,13 +11134,44 @@ class UpdateProcessInstanceHeaders(TeaModel):
         return self
 
 
+class UpdateProcessInstanceRequestNotifiers(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+    ):
+        # 抄送接收人用户userId。
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
 class UpdateProcessInstanceRequest(TeaModel):
     def __init__(
         self,
+        notifiers: List[UpdateProcessInstanceRequestNotifiers] = None,
         process_instance_id: str = None,
         result: str = None,
         status: str = None,
     ):
+        # 抄送列表，注意最大抄送人数量不能超过30。
+        self.notifiers = notifiers
         # 审批实例ID。
         self.process_instance_id = process_instance_id
         # 实例结果：
@@ -11112,7 +11186,10 @@ class UpdateProcessInstanceRequest(TeaModel):
         self.status = status
 
     def validate(self):
-        pass
+        if self.notifiers:
+            for k in self.notifiers:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -11120,6 +11197,10 @@ class UpdateProcessInstanceRequest(TeaModel):
             return _map
 
         result = dict()
+        result['notifiers'] = []
+        if self.notifiers is not None:
+            for k in self.notifiers:
+                result['notifiers'].append(k.to_map() if k else None)
         if self.process_instance_id is not None:
             result['processInstanceId'] = self.process_instance_id
         if self.result is not None:
@@ -11130,6 +11211,11 @@ class UpdateProcessInstanceRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.notifiers = []
+        if m.get('notifiers') is not None:
+            for k in m.get('notifiers'):
+                temp_model = UpdateProcessInstanceRequestNotifiers()
+                self.notifiers.append(temp_model.from_map(k))
         if m.get('processInstanceId') is not None:
             self.process_instance_id = m.get('processInstanceId')
         if m.get('result') is not None:

@@ -694,3 +694,71 @@ class Client(OpenApiClient):
             dingtalklink__1__0_models.UpdateInteractiveOTOMessageResponse(),
             await self.do_roarequest_async('UpdateInteractiveOTOMessage', 'link_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/link/oToMessages/interactiveMessages', 'json', req, runtime)
         )
+
+    def update_shortcuts(
+        self,
+        request: dingtalklink__1__0_models.UpdateShortcutsRequest,
+    ) -> dingtalklink__1__0_models.UpdateShortcutsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklink__1__0_models.UpdateShortcutsHeaders()
+        return self.update_shortcuts_with_options(request, headers, runtime)
+
+    async def update_shortcuts_async(
+        self,
+        request: dingtalklink__1__0_models.UpdateShortcutsRequest,
+    ) -> dingtalklink__1__0_models.UpdateShortcutsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklink__1__0_models.UpdateShortcutsHeaders()
+        return await self.update_shortcuts_with_options_async(request, headers, runtime)
+
+    def update_shortcuts_with_options(
+        self,
+        request: dingtalklink__1__0_models.UpdateShortcutsRequest,
+        headers: dingtalklink__1__0_models.UpdateShortcutsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklink__1__0_models.UpdateShortcutsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.details):
+            body['details'] = request.details
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalklink__1__0_models.UpdateShortcutsResponse(),
+            self.do_roarequest('UpdateShortcuts', 'link_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/link/shortcuts', 'json', req, runtime)
+        )
+
+    async def update_shortcuts_with_options_async(
+        self,
+        request: dingtalklink__1__0_models.UpdateShortcutsRequest,
+        headers: dingtalklink__1__0_models.UpdateShortcutsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklink__1__0_models.UpdateShortcutsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.details):
+            body['details'] = request.details
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalklink__1__0_models.UpdateShortcutsResponse(),
+            await self.do_roarequest_async('UpdateShortcuts', 'link_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/link/shortcuts', 'json', req, runtime)
+        )

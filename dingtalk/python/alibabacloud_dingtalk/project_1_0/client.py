@@ -238,6 +238,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.end_date):
             body['endDate'] = request.end_date
+        if not UtilClient.is_unset(request.executor_id):
+            body['executorId'] = request.executor_id
         if not UtilClient.is_unset(request.includes_holidays):
             body['includesHolidays'] = request.includes_holidays
         if not UtilClient.is_unset(request.is_duration):
@@ -246,8 +248,6 @@ class Client(OpenApiClient):
             body['objectId'] = request.object_id
         if not UtilClient.is_unset(request.object_type):
             body['objectType'] = request.object_type
-        if not UtilClient.is_unset(request.opt_user):
-            body['optUser'] = request.opt_user
         if not UtilClient.is_unset(request.plan_time):
             body['planTime'] = request.plan_time
         if not UtilClient.is_unset(request.start_date):
@@ -284,6 +284,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.end_date):
             body['endDate'] = request.end_date
+        if not UtilClient.is_unset(request.executor_id):
+            body['executorId'] = request.executor_id
         if not UtilClient.is_unset(request.includes_holidays):
             body['includesHolidays'] = request.includes_holidays
         if not UtilClient.is_unset(request.is_duration):
@@ -292,8 +294,6 @@ class Client(OpenApiClient):
             body['objectId'] = request.object_id
         if not UtilClient.is_unset(request.object_type):
             body['objectType'] = request.object_type
-        if not UtilClient.is_unset(request.opt_user):
-            body['optUser'] = request.opt_user
         if not UtilClient.is_unset(request.plan_time):
             body['planTime'] = request.plan_time
         if not UtilClient.is_unset(request.start_date):
@@ -592,6 +592,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.end_date):
             body['endDate'] = request.end_date
+        if not UtilClient.is_unset(request.executor_id):
+            body['executorId'] = request.executor_id
         if not UtilClient.is_unset(request.includes_holidays):
             body['includesHolidays'] = request.includes_holidays
         if not UtilClient.is_unset(request.is_duration):
@@ -600,8 +602,6 @@ class Client(OpenApiClient):
             body['objectId'] = request.object_id
         if not UtilClient.is_unset(request.object_type):
             body['objectType'] = request.object_type
-        if not UtilClient.is_unset(request.opt_user):
-            body['optUser'] = request.opt_user
         if not UtilClient.is_unset(request.start_date):
             body['startDate'] = request.start_date
         if not UtilClient.is_unset(request.submitter_id):
@@ -638,6 +638,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.end_date):
             body['endDate'] = request.end_date
+        if not UtilClient.is_unset(request.executor_id):
+            body['executorId'] = request.executor_id
         if not UtilClient.is_unset(request.includes_holidays):
             body['includesHolidays'] = request.includes_holidays
         if not UtilClient.is_unset(request.is_duration):
@@ -646,8 +648,6 @@ class Client(OpenApiClient):
             body['objectId'] = request.object_id
         if not UtilClient.is_unset(request.object_type):
             body['objectType'] = request.object_type
-        if not UtilClient.is_unset(request.opt_user):
-            body['optUser'] = request.opt_user
         if not UtilClient.is_unset(request.start_date):
             body['startDate'] = request.start_date
         if not UtilClient.is_unset(request.submitter_id):
