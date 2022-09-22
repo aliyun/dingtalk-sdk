@@ -37,7 +37,7 @@ class SearchWorkspaceDocsRequest extends Model
     public $operatorId;
 
     /**
-     * @description 团队空间Id
+     * @description 知识库id。
      *
      * @var string
      */

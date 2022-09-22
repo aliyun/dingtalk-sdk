@@ -30,7 +30,7 @@ class CreateWorkspaceDocResponseBody extends Model
     public $url;
 
     /**
-     * @description 团队空间Id
+     * @description 知识库id。
      *
      * @var string
      */

@@ -18,7 +18,7 @@ class recentList extends Model
     public $nodeBO;
 
     /**
-     * @description 团队空间信息
+     * @description 知识库信息。
      *
      * @var workspaceBO
      */

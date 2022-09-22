@@ -10,14 +10,14 @@ use AlibabaCloud\Tea\Model;
 class workspace extends Model
 {
     /**
-     * @description 团队空间创建时间
+     * @description 知识库创建时间。
      *
      * @var int
      */
     public $createTime;
 
     /**
-     * @description 团队空间名称
+     * @description 知识库名称。
      *
      * @var string
      */
@@ -38,14 +38,14 @@ class workspace extends Model
     public $recentList;
 
     /**
-     * @description 团队空间打开url
+     * @description 知识库打开url。
      *
      * @var string
      */
     public $url;
 
     /**
-     * @description 团队空间Id
+     * @description 知识库id。
      *
      * @var string
      */

@@ -10,21 +10,21 @@ use AlibabaCloud\Tea\Model;
 class workspaces extends Model
 {
     /**
-     * @description 团队空间创建时间
+     * @description 知识库创建时间。
      *
      * @var int
      */
     public $createTime;
 
     /**
-     * @description 团队空间是否被删除
+     * @description 知识库是否被删除。
      *
      * @var bool
      */
     public $deleted;
 
     /**
-     * @description 团队空间名称
+     * @description 知识库名称。
      *
      * @var string
      */
@@ -36,7 +36,7 @@ class workspaces extends Model
     public $owner;
 
     /**
-     * @description 团队空间最近访问文档列表
+     * @description 知识库最近访问文档列表。
      *
      * @var recentList[]
      */
@@ -50,14 +50,14 @@ class workspaces extends Model
     public $role;
 
     /**
-     * @description 团队空间打开url
+     * @description 知识库打开url。
      *
      * @var string
      */
     public $url;
 
     /**
-     * @description 团队空间Id
+     * @description 知识库id。
      *
      * @var string
      */

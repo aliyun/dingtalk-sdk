@@ -253,6 +253,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->endDate)) {
             @$body['endDate'] = $request->endDate;
         }
+        if (!Utils::isUnset($request->executorId)) {
+            @$body['executorId'] = $request->executorId;
+        }
         if (!Utils::isUnset($request->includesHolidays)) {
             @$body['includesHolidays'] = $request->includesHolidays;
         }
@@ -264,9 +267,6 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->objectType)) {
             @$body['objectType'] = $request->objectType;
-        }
-        if (!Utils::isUnset($request->optUser)) {
-            @$body['optUser'] = $request->optUser;
         }
         if (!Utils::isUnset($request->planTime)) {
             @$body['planTime'] = $request->planTime;
@@ -486,6 +486,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->endDate)) {
             @$body['endDate'] = $request->endDate;
         }
+        if (!Utils::isUnset($request->executorId)) {
+            @$body['executorId'] = $request->executorId;
+        }
         if (!Utils::isUnset($request->includesHolidays)) {
             @$body['includesHolidays'] = $request->includesHolidays;
         }
@@ -497,9 +500,6 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->objectType)) {
             @$body['objectType'] = $request->objectType;
-        }
-        if (!Utils::isUnset($request->optUser)) {
-            @$body['optUser'] = $request->optUser;
         }
         if (!Utils::isUnset($request->startDate)) {
             @$body['startDate'] = $request->startDate;

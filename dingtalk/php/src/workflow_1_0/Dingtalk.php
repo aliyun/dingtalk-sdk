@@ -1949,6 +1949,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->notifiers)) {
+            @$body['notifiers'] = $request->notifiers;
+        }
         if (!Utils::isUnset($request->processInstanceId)) {
             @$body['processInstanceId'] = $request->processInstanceId;
         }

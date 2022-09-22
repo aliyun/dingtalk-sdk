@@ -10,7 +10,7 @@ use AlibabaCloud\Tea\Model;
 class GetRelatedWorkspacesResponseBody extends Model
 {
     /**
-     * @description 团队空间结果集
+     * @description 知识库结果集。
      *
      * @var workspaces[]
      */

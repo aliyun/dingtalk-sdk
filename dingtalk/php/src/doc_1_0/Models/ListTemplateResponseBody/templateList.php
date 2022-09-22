@@ -58,7 +58,7 @@ class templateList extends Model
     public $updateTime;
 
     /**
-     * @description 模版归属空间Id
+     * @description 模版归属知识库id。
      *
      * @var string
      */

@@ -4,10 +4,18 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\BatchUpdateProcessInstanceRequest;
 
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\BatchUpdateProcessInstanceRequest\updateProcessInstanceRequests\notifiers;
 use AlibabaCloud\Tea\Model;
 
 class updateProcessInstanceRequests extends Model
 {
+    /**
+     * @description 抄送列表，注意最大抄送人数量不能超过30。
+     *
+     * @var notifiers[]
+     */
+    public $notifiers;
+
     /**
      * @description 实例id
      *
@@ -29,6 +37,7 @@ class updateProcessInstanceRequests extends Model
      */
     public $status;
     protected $_name = [
+        'notifiers'         => 'notifiers',
         'processInstanceId' => 'processInstanceId',
         'result'            => 'result',
         'status'            => 'status',
@@ -41,6 +50,15 @@ class updateProcessInstanceRequests extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->notifiers) {
+            $res['notifiers'] = [];
+            if (null !== $this->notifiers && \is_array($this->notifiers)) {
+                $n = 0;
+                foreach ($this->notifiers as $item) {
+                    $res['notifiers'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
         if (null !== $this->processInstanceId) {
             $res['processInstanceId'] = $this->processInstanceId;
         }
@@ -62,6 +80,15 @@ class updateProcessInstanceRequests extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['notifiers'])) {
+            if (!empty($map['notifiers'])) {
+                $model->notifiers = [];
+                $n                = 0;
+                foreach ($map['notifiers'] as $item) {
+                    $model->notifiers[$n++] = null !== $item ? notifiers::fromMap($item) : $item;
+                }
+            }
+        }
         if (isset($map['processInstanceId'])) {
             $model->processInstanceId = $map['processInstanceId'];
         }

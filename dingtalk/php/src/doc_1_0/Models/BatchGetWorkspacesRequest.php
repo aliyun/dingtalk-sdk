@@ -23,7 +23,7 @@ class BatchGetWorkspacesRequest extends Model
     public $operatorId;
 
     /**
-     * @description 待查询空间Id
+     * @description 待查询知识库id。
      *
      * @var string[]
      */

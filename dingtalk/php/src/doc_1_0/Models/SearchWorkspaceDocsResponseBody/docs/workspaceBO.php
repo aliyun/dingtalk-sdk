@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class workspaceBO extends Model
 {
     /**
-     * @description 团队空间名称
+     * @description 知识库名称。
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 团队空间Id
+     * @description 知识库id。
      *
      * @var string
      */

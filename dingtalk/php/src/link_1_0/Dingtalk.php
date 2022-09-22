@@ -35,6 +35,9 @@ use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\SendTopBoxInteractiveOTOMessageRe
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\UpdateInteractiveOTOMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\UpdateInteractiveOTOMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\UpdateInteractiveOTOMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\UpdateShortcutsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\UpdateShortcutsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\UpdateShortcutsResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -493,5 +496,50 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateInteractiveOTOMessageResponse::fromMap($this->doROARequest('UpdateInteractiveOTOMessage', 'link_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/link/oToMessages/interactiveMessages', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateShortcutsRequest $request
+     *
+     * @return UpdateShortcutsResponse
+     */
+    public function updateShortcuts($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateShortcutsHeaders([]);
+
+        return $this->updateShortcutsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateShortcutsRequest $request
+     * @param UpdateShortcutsHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return UpdateShortcutsResponse
+     */
+    public function updateShortcutsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->details)) {
+            @$body['details'] = $request->details;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateShortcutsResponse::fromMap($this->doROARequest('UpdateShortcuts', 'link_1.0', 'HTTP', 'POST', 'AK', '/v1.0/link/shortcuts', 'json', $req, $runtime));
     }
 }

@@ -37,7 +37,7 @@ class ListTemplateRequest extends Model
     public $templateType;
 
     /**
-     * @description 团队空间Id
+     * @description 知识库id。
      *
      * @var string
      */

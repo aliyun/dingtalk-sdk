@@ -16,6 +16,13 @@ class CreatePlanTimeRequest extends Model
     public $endDate;
 
     /**
+     * @description 执行者userid
+     *
+     * @var string
+     */
+    public $executorId;
+
+    /**
      * @description 是否包含假期
      *
      * @var bool
@@ -44,13 +51,6 @@ class CreatePlanTimeRequest extends Model
     public $objectType;
 
     /**
-     * @description 操作者用户id
-     *
-     * @var string
-     */
-    public $optUser;
-
-    /**
      * @description 计划工时数（单位：毫秒，1小时即为 3600000）
      *
      * @var int
@@ -65,23 +65,25 @@ class CreatePlanTimeRequest extends Model
     public $startDate;
 
     /**
-     * @description 工时提交人员用户id
+     * @description 工时所属人员userid
      *
      * @var string
      */
     public $submitterId;
 
     /**
+     * @description 接口校验类型，当前默认organization
+     *
      * @var string
      */
     public $tenantType;
     protected $_name = [
         'endDate'          => 'endDate',
+        'executorId'       => 'executorId',
         'includesHolidays' => 'includesHolidays',
         'isDuration'       => 'isDuration',
         'objectId'         => 'objectId',
         'objectType'       => 'objectType',
-        'optUser'          => 'optUser',
         'planTime'         => 'planTime',
         'startDate'        => 'startDate',
         'submitterId'      => 'submitterId',
@@ -98,6 +100,9 @@ class CreatePlanTimeRequest extends Model
         if (null !== $this->endDate) {
             $res['endDate'] = $this->endDate;
         }
+        if (null !== $this->executorId) {
+            $res['executorId'] = $this->executorId;
+        }
         if (null !== $this->includesHolidays) {
             $res['includesHolidays'] = $this->includesHolidays;
         }
@@ -109,9 +114,6 @@ class CreatePlanTimeRequest extends Model
         }
         if (null !== $this->objectType) {
             $res['objectType'] = $this->objectType;
-        }
-        if (null !== $this->optUser) {
-            $res['optUser'] = $this->optUser;
         }
         if (null !== $this->planTime) {
             $res['planTime'] = $this->planTime;
@@ -140,6 +142,9 @@ class CreatePlanTimeRequest extends Model
         if (isset($map['endDate'])) {
             $model->endDate = $map['endDate'];
         }
+        if (isset($map['executorId'])) {
+            $model->executorId = $map['executorId'];
+        }
         if (isset($map['includesHolidays'])) {
             $model->includesHolidays = $map['includesHolidays'];
         }
@@ -151,9 +156,6 @@ class CreatePlanTimeRequest extends Model
         }
         if (isset($map['objectType'])) {
             $model->objectType = $map['objectType'];
-        }
-        if (isset($map['optUser'])) {
-            $model->optUser = $map['optUser'];
         }
         if (isset($map['planTime'])) {
             $model->planTime = $map['planTime'];

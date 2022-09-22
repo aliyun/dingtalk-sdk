@@ -25,7 +25,7 @@ class GetWorkspaceNodeResponseBody extends Model
     public $nodeBO;
 
     /**
-     * @description 节点所属团队空间信息
+     * @description 节点所属知识库信息。
      *
      * @var workspaceBO
      */
