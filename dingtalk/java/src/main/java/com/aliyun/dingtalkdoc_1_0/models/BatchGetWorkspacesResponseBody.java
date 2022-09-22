@@ -78,11 +78,11 @@ public class BatchGetWorkspacesResponseBody extends TeaModel {
     }
 
     public static class BatchGetWorkspacesResponseBodyWorkspacesWorkspace extends TeaModel {
-        // 团队空间创建时间
+        // 知识库创建时间。
         @NameInMap("createTime")
         public Long createTime;
 
-        // 团队空间名称
+        // 知识库名称。
         @NameInMap("name")
         public String name;
 
@@ -94,11 +94,11 @@ public class BatchGetWorkspacesResponseBody extends TeaModel {
         @NameInMap("recentList")
         public java.util.List<BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList> recentList;
 
-        // 团队空间打开url
+        // 知识库打开url。
         @NameInMap("url")
         public String url;
 
-        // 团队空间Id
+        // 知识库id。
         @NameInMap("workspaceId")
         public String workspaceId;
 
@@ -158,11 +158,11 @@ public class BatchGetWorkspacesResponseBody extends TeaModel {
     }
 
     public static class BatchGetWorkspacesResponseBodyWorkspaces extends TeaModel {
-        // 是否有访问团队空间权限
+        // 是否有访问知识库权限。
         @NameInMap("hasPermission")
         public Boolean hasPermission;
 
-        // 团队空间信息
+        // 知识库信息。
         @NameInMap("workspace")
         public BatchGetWorkspacesResponseBodyWorkspacesWorkspace workspace;
 

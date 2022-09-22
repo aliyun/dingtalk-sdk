@@ -12,7 +12,7 @@ public class GetWorkspaceNodeResponseBody extends TeaModel {
     @NameInMap("nodeBO")
     public GetWorkspaceNodeResponseBodyNodeBO nodeBO;
 
-    // 节点所属团队空间信息
+    // 节点所属知识库信息。
     @NameInMap("workspaceBO")
     public GetWorkspaceNodeResponseBodyWorkspaceBO workspaceBO;
 
@@ -114,11 +114,11 @@ public class GetWorkspaceNodeResponseBody extends TeaModel {
     }
 
     public static class GetWorkspaceNodeResponseBodyWorkspaceBO extends TeaModel {
-        // 团队空间名称
+        // 知识库名称。
         @NameInMap("name")
         public String name;
 
-        // 团队空间Id
+        // 知识库id。
         @NameInMap("workspaceId")
         public String workspaceId;
 

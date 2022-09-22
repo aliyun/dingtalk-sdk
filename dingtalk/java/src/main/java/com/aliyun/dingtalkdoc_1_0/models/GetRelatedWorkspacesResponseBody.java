@@ -4,7 +4,7 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRelatedWorkspacesResponseBody extends TeaModel {
-    // 团队空间结果集
+    // 知识库结果集。
     @NameInMap("workspaces")
     public java.util.List<GetRelatedWorkspacesResponseBodyWorkspaces> workspaces;
 
@@ -78,22 +78,22 @@ public class GetRelatedWorkspacesResponseBody extends TeaModel {
     }
 
     public static class GetRelatedWorkspacesResponseBodyWorkspaces extends TeaModel {
-        // 团队空间创建时间
+        // 知识库创建时间。
         @NameInMap("createTime")
         public Long createTime;
 
-        // 团队空间是否被删除
+        // 知识库是否被删除。
         @NameInMap("deleted")
         public Boolean deleted;
 
-        // 团队空间名称
+        // 知识库名称。
         @NameInMap("name")
         public String name;
 
         @NameInMap("owner")
         public String owner;
 
-        // 团队空间最近访问文档列表
+        // 知识库最近访问文档列表。
         @NameInMap("recentList")
         public java.util.List<GetRelatedWorkspacesResponseBodyWorkspacesRecentList> recentList;
 
@@ -101,11 +101,11 @@ public class GetRelatedWorkspacesResponseBody extends TeaModel {
         @NameInMap("role")
         public String role;
 
-        // 团队空间打开url
+        // 知识库打开url。
         @NameInMap("url")
         public String url;
 
-        // 团队空间Id
+        // 知识库id。
         @NameInMap("workspaceId")
         public String workspaceId;
 

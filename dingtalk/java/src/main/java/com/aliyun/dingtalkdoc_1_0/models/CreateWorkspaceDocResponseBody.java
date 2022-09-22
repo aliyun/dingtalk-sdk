@@ -16,7 +16,7 @@ public class CreateWorkspaceDocResponseBody extends TeaModel {
     @NameInMap("url")
     public String url;
 
-    // 团队空间Id
+    // 知识库id。
     @NameInMap("workspaceId")
     public String workspaceId;
 

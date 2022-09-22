@@ -20,7 +20,7 @@ public class SearchWorkspaceDocsRequest extends TeaModel {
     @NameInMap("operatorId")
     public String operatorId;
 
-    // 团队空间Id
+    // 知识库id。
     @NameInMap("workspaceId")
     public String workspaceId;
 

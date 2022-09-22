@@ -8,6 +8,10 @@ public class CreatePlanTimeRequest extends TeaModel {
     @NameInMap("endDate")
     public String endDate;
 
+    // 执行者userid
+    @NameInMap("executorId")
+    public String executorId;
+
     // 是否包含假期
     @NameInMap("includesHolidays")
     public Boolean includesHolidays;
@@ -24,10 +28,6 @@ public class CreatePlanTimeRequest extends TeaModel {
     @NameInMap("objectType")
     public String objectType;
 
-    // 操作者用户id
-    @NameInMap("optUser")
-    public String optUser;
-
     // 计划工时数（单位：毫秒，1小时即为 3600000）
     @NameInMap("planTime")
     public Long planTime;
@@ -36,10 +36,11 @@ public class CreatePlanTimeRequest extends TeaModel {
     @NameInMap("startDate")
     public String startDate;
 
-    // 工时提交人员用户id
+    // 工时所属人员userid
     @NameInMap("submitterId")
     public String submitterId;
 
+    // 接口校验类型，当前默认organization
     @NameInMap("tenantType")
     public String tenantType;
 
@@ -54,6 +55,14 @@ public class CreatePlanTimeRequest extends TeaModel {
     }
     public String getEndDate() {
         return this.endDate;
+    }
+
+    public CreatePlanTimeRequest setExecutorId(String executorId) {
+        this.executorId = executorId;
+        return this;
+    }
+    public String getExecutorId() {
+        return this.executorId;
     }
 
     public CreatePlanTimeRequest setIncludesHolidays(Boolean includesHolidays) {
@@ -86,14 +95,6 @@ public class CreatePlanTimeRequest extends TeaModel {
     }
     public String getObjectType() {
         return this.objectType;
-    }
-
-    public CreatePlanTimeRequest setOptUser(String optUser) {
-        this.optUser = optUser;
-        return this;
-    }
-    public String getOptUser() {
-        return this.optUser;
     }
 
     public CreatePlanTimeRequest setPlanTime(Long planTime) {

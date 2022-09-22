@@ -132,6 +132,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("endDate", request.endDate);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.executorId)) {
+            body.put("executorId", request.executorId);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.includesHolidays)) {
             body.put("includesHolidays", request.includesHolidays);
         }
@@ -146,10 +150,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.objectType)) {
             body.put("objectType", request.objectType);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.optUser)) {
-            body.put("optUser", request.optUser);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.planTime)) {
@@ -319,6 +319,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("endDate", request.endDate);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.executorId)) {
+            body.put("executorId", request.executorId);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.includesHolidays)) {
             body.put("includesHolidays", request.includesHolidays);
         }
@@ -333,10 +337,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.objectType)) {
             body.put("objectType", request.objectType);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.optUser)) {
-            body.put("optUser", request.optUser);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.startDate)) {

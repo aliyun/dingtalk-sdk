@@ -74,7 +74,7 @@ public class ListTemplateResponseBody extends TeaModel {
         @NameInMap("updateTime")
         public Long updateTime;
 
-        // 模版归属空间Id
+        // 模版归属知识库id。
         @NameInMap("workspaceId")
         public String workspaceId;
 

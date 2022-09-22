@@ -12,7 +12,7 @@ public class BatchGetWorkspacesRequest extends TeaModel {
     @NameInMap("operatorId")
     public String operatorId;
 
-    // 待查询空间Id
+    // 待查询知识库id。
     @NameInMap("workspaceIds")
     public java.util.List<String> workspaceIds;
 

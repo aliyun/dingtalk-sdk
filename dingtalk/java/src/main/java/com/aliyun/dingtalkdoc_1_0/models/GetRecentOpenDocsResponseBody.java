@@ -137,15 +137,15 @@ public class GetRecentOpenDocsResponseBody extends TeaModel {
     }
 
     public static class GetRecentOpenDocsResponseBodyRecentListWorkspaceBO extends TeaModel {
-        // 团队空间打开url
+        // 知识库打开url。
         @NameInMap("url")
         public String url;
 
-        // 团队空间Id
+        // 知识库id。
         @NameInMap("workspaceId")
         public String workspaceId;
 
-        // 团队空间名称
+        // 知识库名称。
         @NameInMap("workspaceName")
         public String workspaceName;
 
@@ -185,7 +185,7 @@ public class GetRecentOpenDocsResponseBody extends TeaModel {
         @NameInMap("nodeBO")
         public GetRecentOpenDocsResponseBodyRecentListNodeBO nodeBO;
 
-        // 团队空间信息
+        // 知识库信息。
         @NameInMap("workspaceBO")
         public GetRecentOpenDocsResponseBodyRecentListWorkspaceBO workspaceBO;
 

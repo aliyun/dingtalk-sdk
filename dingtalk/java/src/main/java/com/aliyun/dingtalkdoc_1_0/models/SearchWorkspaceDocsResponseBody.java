@@ -124,11 +124,11 @@ public class SearchWorkspaceDocsResponseBody extends TeaModel {
     }
 
     public static class SearchWorkspaceDocsResponseBodyDocsWorkspaceBO extends TeaModel {
-        // 团队空间名称
+        // 知识库名称。
         @NameInMap("name")
         public String name;
 
-        // 团队空间Id
+        // 知识库id。
         @NameInMap("workspaceId")
         public String workspaceId;
 

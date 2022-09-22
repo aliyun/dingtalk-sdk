@@ -4,6 +4,10 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateProcessInstanceRequest extends TeaModel {
+    // 抄送列表，注意最大抄送人数量不能超过30。
+    @NameInMap("notifiers")
+    public java.util.List<UpdateProcessInstanceRequestNotifiers> notifiers;
+
     // 审批实例ID。
     @NameInMap("processInstanceId")
     public String processInstanceId;
@@ -25,6 +29,14 @@ public class UpdateProcessInstanceRequest extends TeaModel {
     public static UpdateProcessInstanceRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateProcessInstanceRequest self = new UpdateProcessInstanceRequest();
         return TeaModel.build(map, self);
+    }
+
+    public UpdateProcessInstanceRequest setNotifiers(java.util.List<UpdateProcessInstanceRequestNotifiers> notifiers) {
+        this.notifiers = notifiers;
+        return this;
+    }
+    public java.util.List<UpdateProcessInstanceRequestNotifiers> getNotifiers() {
+        return this.notifiers;
     }
 
     public UpdateProcessInstanceRequest setProcessInstanceId(String processInstanceId) {
@@ -51,7 +63,31 @@ public class UpdateProcessInstanceRequest extends TeaModel {
         return this.status;
     }
 
+    public static class BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers extends TeaModel {
+        // 抄送接收人用户userId。
+        @NameInMap("userId")
+        public String userId;
+
+        public static BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers build(java.util.Map<String, ?> map) throws Exception {
+            BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers self = new BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers();
+            return TeaModel.build(map, self);
+        }
+
+        public BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
+        }
+
+    }
+
     public static class BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequests extends TeaModel {
+        // 抄送列表，注意最大抄送人数量不能超过30。
+        @NameInMap("notifiers")
+        public java.util.List<BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers> notifiers;
+
         // 实例id
         @NameInMap("processInstanceId")
         public String processInstanceId;
@@ -73,6 +109,14 @@ public class UpdateProcessInstanceRequest extends TeaModel {
         public static BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequests build(java.util.Map<String, ?> map) throws Exception {
             BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequests self = new BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequests();
             return TeaModel.build(map, self);
+        }
+
+        public BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequests setNotifiers(java.util.List<BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers> notifiers) {
+            this.notifiers = notifiers;
+            return this;
+        }
+        public java.util.List<BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers> getNotifiers() {
+            return this.notifiers;
         }
 
         public BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequests setProcessInstanceId(String processInstanceId) {
@@ -97,6 +141,26 @@ public class UpdateProcessInstanceRequest extends TeaModel {
         }
         public String getStatus() {
             return this.status;
+        }
+
+    }
+
+    public static class UpdateProcessInstanceRequestNotifiers extends TeaModel {
+        // 抄送接收人用户userId。
+        @NameInMap("userId")
+        public String userId;
+
+        public static UpdateProcessInstanceRequestNotifiers build(java.util.Map<String, ?> map) throws Exception {
+            UpdateProcessInstanceRequestNotifiers self = new UpdateProcessInstanceRequestNotifiers();
+            return TeaModel.build(map, self);
+        }
+
+        public UpdateProcessInstanceRequestNotifiers setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
         }
 
     }

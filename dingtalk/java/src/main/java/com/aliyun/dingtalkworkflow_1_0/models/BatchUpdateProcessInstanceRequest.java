@@ -21,7 +21,31 @@ public class BatchUpdateProcessInstanceRequest extends TeaModel {
         return this.updateProcessInstanceRequests;
     }
 
+    public static class BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers extends TeaModel {
+        // 抄送接收人用户userId。
+        @NameInMap("userId")
+        public String userId;
+
+        public static BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers build(java.util.Map<String, ?> map) throws Exception {
+            BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers self = new BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers();
+            return TeaModel.build(map, self);
+        }
+
+        public BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
+        }
+
+    }
+
     public static class BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequests extends TeaModel {
+        // 抄送列表，注意最大抄送人数量不能超过30。
+        @NameInMap("notifiers")
+        public java.util.List<BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers> notifiers;
+
         // 实例id
         @NameInMap("processInstanceId")
         public String processInstanceId;
@@ -43,6 +67,14 @@ public class BatchUpdateProcessInstanceRequest extends TeaModel {
         public static BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequests build(java.util.Map<String, ?> map) throws Exception {
             BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequests self = new BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequests();
             return TeaModel.build(map, self);
+        }
+
+        public BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequests setNotifiers(java.util.List<BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers> notifiers) {
+            this.notifiers = notifiers;
+            return this;
+        }
+        public java.util.List<BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers> getNotifiers() {
+            return this.notifiers;
         }
 
         public BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequests setProcessInstanceId(String processInstanceId) {

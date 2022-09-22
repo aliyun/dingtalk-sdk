@@ -4,19 +4,19 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateWorkspaceResponseBody extends TeaModel {
-    // 工作空间描述
+    // 知识库描述。
     @NameInMap("description")
     public String description;
 
-    // 工作空间名称
+    // 知识库名称。
     @NameInMap("name")
     public String name;
 
-    // 工作空间打开url
+    // 知识库打开url。
     @NameInMap("url")
     public String url;
 
-    // 工作空间id
+    // 知识库id。
     @NameInMap("workspaceId")
     public String workspaceId;
 
