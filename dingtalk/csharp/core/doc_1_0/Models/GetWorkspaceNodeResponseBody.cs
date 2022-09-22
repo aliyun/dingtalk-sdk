@@ -61,21 +61,21 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         }
 
         /// <summary>
-        /// 节点所属团队空间信息
+        /// 节点所属知识库信息。
         /// </summary>
         [NameInMap("workspaceBO")]
         [Validation(Required=false)]
         public GetWorkspaceNodeResponseBodyWorkspaceBO WorkspaceBO { get; set; }
         public class GetWorkspaceNodeResponseBodyWorkspaceBO : TeaModel {
             /// <summary>
-            /// 团队空间名称
+            /// 知识库名称。
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
             /// <summary>
-            /// 团队空间Id
+            /// 知识库id。
             /// </summary>
             [NameInMap("workspaceId")]
             [Validation(Required=false)]

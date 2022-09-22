@@ -260,6 +260,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             {
                 body["endDate"] = request.EndDate;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExecutorId))
+            {
+                body["executorId"] = request.ExecutorId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IncludesHolidays))
             {
                 body["includesHolidays"] = request.IncludesHolidays;
@@ -275,10 +279,6 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectType))
             {
                 body["objectType"] = request.ObjectType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptUser))
-            {
-                body["optUser"] = request.OptUser;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PlanTime))
             {
@@ -324,6 +324,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             {
                 body["endDate"] = request.EndDate;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExecutorId))
+            {
+                body["executorId"] = request.ExecutorId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IncludesHolidays))
             {
                 body["includesHolidays"] = request.IncludesHolidays;
@@ -339,10 +343,6 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectType))
             {
                 body["objectType"] = request.ObjectType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptUser))
-            {
-                body["optUser"] = request.OptUser;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PlanTime))
             {
@@ -658,6 +658,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             {
                 body["endDate"] = request.EndDate;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExecutorId))
+            {
+                body["executorId"] = request.ExecutorId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IncludesHolidays))
             {
                 body["includesHolidays"] = request.IncludesHolidays;
@@ -673,10 +677,6 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectType))
             {
                 body["objectType"] = request.ObjectType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptUser))
-            {
-                body["optUser"] = request.OptUser;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartDate))
             {
@@ -722,6 +722,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             {
                 body["endDate"] = request.EndDate;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExecutorId))
+            {
+                body["executorId"] = request.ExecutorId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IncludesHolidays))
             {
                 body["includesHolidays"] = request.IncludesHolidays;
@@ -737,10 +741,6 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectType))
             {
                 body["objectType"] = request.ObjectType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptUser))
-            {
-                body["optUser"] = request.OptUser;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartDate))
             {

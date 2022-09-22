@@ -66,14 +66,14 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
             public SearchWorkspaceDocsResponseBodyDocsWorkspaceBO WorkspaceBO { get; set; }
             public class SearchWorkspaceDocsResponseBodyDocsWorkspaceBO : TeaModel {
                 /// <summary>
-                /// 团队空间名称
+                /// 知识库名称。
                 /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
 
                 /// <summary>
-                /// 团队空间Id
+                /// 知识库id。
                 /// </summary>
                 [NameInMap("workspaceId")]
                 [Validation(Required=false)]

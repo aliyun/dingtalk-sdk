@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class CreateWorkspaceRequest : TeaModel {
         /// <summary>
-        /// 团队空间描述
+        /// 知识库描述。
         /// </summary>
         [NameInMap("description")]
         [Validation(Required=false)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 团队空间名称
+        /// 知识库名称。
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 用户id
+        /// 用户id。
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

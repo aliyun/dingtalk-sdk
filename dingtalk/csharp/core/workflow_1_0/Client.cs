@@ -3054,6 +3054,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Notifiers))
+            {
+                body["notifiers"] = request.Notifiers;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
             {
                 body["processInstanceId"] = request.ProcessInstanceId;
@@ -3087,6 +3091,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Notifiers))
+            {
+                body["notifiers"] = request.Notifiers;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
             {
                 body["processInstanceId"] = request.ProcessInstanceId;

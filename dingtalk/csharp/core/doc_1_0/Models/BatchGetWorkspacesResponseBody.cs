@@ -17,28 +17,28 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         public List<BatchGetWorkspacesResponseBodyWorkspaces> Workspaces { get; set; }
         public class BatchGetWorkspacesResponseBodyWorkspaces : TeaModel {
             /// <summary>
-            /// 是否有访问团队空间权限
+            /// 是否有访问知识库权限。
             /// </summary>
             [NameInMap("hasPermission")]
             [Validation(Required=false)]
             public bool? HasPermission { get; set; }
 
             /// <summary>
-            /// 团队空间信息
+            /// 知识库信息。
             /// </summary>
             [NameInMap("workspace")]
             [Validation(Required=false)]
             public BatchGetWorkspacesResponseBodyWorkspacesWorkspace Workspace { get; set; }
             public class BatchGetWorkspacesResponseBodyWorkspacesWorkspace : TeaModel {
                 /// <summary>
-                /// 团队空间创建时间
+                /// 知识库创建时间。
                 /// </summary>
                 [NameInMap("createTime")]
                 [Validation(Required=false)]
                 public long? CreateTime { get; set; }
 
                 /// <summary>
-                /// 团队空间名称
+                /// 知识库名称。
                 /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
@@ -89,14 +89,14 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                 }
 
                 /// <summary>
-                /// 团队空间打开url
+                /// 知识库打开url。
                 /// </summary>
                 [NameInMap("url")]
                 [Validation(Required=false)]
                 public string Url { get; set; }
 
                 /// <summary>
-                /// 团队空间Id
+                /// 知识库id。
                 /// </summary>
                 [NameInMap("workspaceId")]
                 [Validation(Required=false)]

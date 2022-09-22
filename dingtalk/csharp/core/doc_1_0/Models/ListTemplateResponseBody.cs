@@ -80,7 +80,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
             public long? UpdateTime { get; set; }
 
             /// <summary>
-            /// 模版归属空间Id
+            /// 模版归属知识库id。
             /// </summary>
             [NameInMap("workspaceId")]
             [Validation(Required=false)]

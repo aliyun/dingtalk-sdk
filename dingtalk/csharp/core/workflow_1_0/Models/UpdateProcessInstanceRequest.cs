@@ -10,6 +10,22 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class UpdateProcessInstanceRequest : TeaModel {
         /// <summary>
+        /// 抄送列表，注意最大抄送人数量不能超过30。
+        /// </summary>
+        [NameInMap("notifiers")]
+        [Validation(Required=false)]
+        public List<UpdateProcessInstanceRequestNotifiers> Notifiers { get; set; }
+        public class UpdateProcessInstanceRequestNotifiers : TeaModel {
+            /// <summary>
+            /// 抄送接收人用户userId。
+            /// </summary>
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
+
+        }
+
+        /// <summary>
         /// 审批实例ID。
         /// </summary>
         [NameInMap("processInstanceId")]

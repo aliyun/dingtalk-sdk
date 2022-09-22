@@ -10,28 +10,28 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class GetRelatedWorkspacesResponseBody : TeaModel {
         /// <summary>
-        /// 团队空间结果集
+        /// 知识库结果集。
         /// </summary>
         [NameInMap("workspaces")]
         [Validation(Required=false)]
         public List<GetRelatedWorkspacesResponseBodyWorkspaces> Workspaces { get; set; }
         public class GetRelatedWorkspacesResponseBodyWorkspaces : TeaModel {
             /// <summary>
-            /// 团队空间创建时间
+            /// 知识库创建时间。
             /// </summary>
             [NameInMap("createTime")]
             [Validation(Required=false)]
             public long? CreateTime { get; set; }
 
             /// <summary>
-            /// 团队空间是否被删除
+            /// 知识库是否被删除。
             /// </summary>
             [NameInMap("deleted")]
             [Validation(Required=false)]
             public bool? Deleted { get; set; }
 
             /// <summary>
-            /// 团队空间名称
+            /// 知识库名称。
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
@@ -42,7 +42,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
             public string Owner { get; set; }
 
             /// <summary>
-            /// 团队空间最近访问文档列表
+            /// 知识库最近访问文档列表。
             /// </summary>
             [NameInMap("recentList")]
             [Validation(Required=false)]
@@ -86,14 +86,14 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
             public string Role { get; set; }
 
             /// <summary>
-            /// 团队空间打开url
+            /// 知识库打开url。
             /// </summary>
             [NameInMap("url")]
             [Validation(Required=false)]
             public string Url { get; set; }
 
             /// <summary>
-            /// 团队空间Id
+            /// 知识库id。
             /// </summary>
             [NameInMap("workspaceId")]
             [Validation(Required=false)]

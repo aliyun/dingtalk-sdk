@@ -17,6 +17,13 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         public string EndDate { get; set; }
 
         /// <summary>
+        /// 执行者userid
+        /// </summary>
+        [NameInMap("executorId")]
+        [Validation(Required=false)]
+        public string ExecutorId { get; set; }
+
+        /// <summary>
         /// 是否包含节假日
         /// </summary>
         [NameInMap("includesHolidays")]
@@ -45,13 +52,6 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         public string ObjectType { get; set; }
 
         /// <summary>
-        /// 操作者用户id
-        /// </summary>
-        [NameInMap("optUser")]
-        [Validation(Required=false)]
-        public string OptUser { get; set; }
-
-        /// <summary>
         /// 开始时间
         /// </summary>
         [NameInMap("startDate")]
@@ -59,7 +59,7 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         public string StartDate { get; set; }
 
         /// <summary>
-        /// 工时提交人员用户id
+        /// 工时所属人员userid
         /// </summary>
         [NameInMap("submitterId")]
         [Validation(Required=false)]
@@ -72,6 +72,9 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public long? WorkTime { get; set; }
 
+        /// <summary>
+        /// 接口校验类型，当前默认organization
+        /// </summary>
         [NameInMap("tenantType")]
         [Validation(Required=false)]
         public string TenantType { get; set; }

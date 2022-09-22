@@ -86,28 +86,28 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
             }
 
             /// <summary>
-            /// 团队空间信息
+            /// 知识库信息。
             /// </summary>
             [NameInMap("workspaceBO")]
             [Validation(Required=false)]
             public GetRecentEditDocsResponseBodyRecentListWorkspaceBO WorkspaceBO { get; set; }
             public class GetRecentEditDocsResponseBodyRecentListWorkspaceBO : TeaModel {
                 /// <summary>
-                /// 团队空间打开url
+                /// 知识库打开url。
                 /// </summary>
                 [NameInMap("url")]
                 [Validation(Required=false)]
                 public string Url { get; set; }
 
                 /// <summary>
-                /// 团队空间Id
+                /// 知识库id。
                 /// </summary>
                 [NameInMap("workspaceId")]
                 [Validation(Required=false)]
                 public string WorkspaceId { get; set; }
 
                 /// <summary>
-                /// 团队空间名称
+                /// 知识库名称。
                 /// </summary>
                 [NameInMap("workspaceName")]
                 [Validation(Required=false)]

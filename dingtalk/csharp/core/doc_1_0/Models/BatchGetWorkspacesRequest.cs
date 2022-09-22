@@ -24,7 +24,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         public string OperatorId { get; set; }
 
         /// <summary>
-        /// 待查询空间Id
+        /// 待查询知识库id。
         /// </summary>
         [NameInMap("workspaceIds")]
         [Validation(Required=false)]

@@ -31,7 +31,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         public string Url { get; set; }
 
         /// <summary>
-        /// 团队空间Id
+        /// 知识库id。
         /// </summary>
         [NameInMap("workspaceId")]
         [Validation(Required=false)]
