@@ -1465,6 +1465,76 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DeleteWorkspaceMembers', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workspaces/{workspace_id}/members/remove', 'none', req, runtime)
         )
 
+    def get_all_sheets(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.GetAllSheetsRequest,
+    ) -> dingtalkdoc__1__0_models.GetAllSheetsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetAllSheetsHeaders()
+        return self.get_all_sheets_with_options(workbook_id, request, headers, runtime)
+
+    async def get_all_sheets_async(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.GetAllSheetsRequest,
+    ) -> dingtalkdoc__1__0_models.GetAllSheetsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetAllSheetsHeaders()
+        return await self.get_all_sheets_with_options_async(workbook_id, request, headers, runtime)
+
+    def get_all_sheets_with_options(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.GetAllSheetsRequest,
+        headers: dingtalkdoc__1__0_models.GetAllSheetsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetAllSheetsResponse:
+        UtilClient.validate_model(request)
+        workbook_id = OpenApiUtilClient.get_encode_param(workbook_id)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetAllSheetsResponse(),
+            self.do_roarequest('GetAllSheets', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets', 'json', req, runtime)
+        )
+
+    async def get_all_sheets_with_options_async(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.GetAllSheetsRequest,
+        headers: dingtalkdoc__1__0_models.GetAllSheetsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetAllSheetsResponse:
+        UtilClient.validate_model(request)
+        workbook_id = OpenApiUtilClient.get_encode_param(workbook_id)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetAllSheetsResponse(),
+            await self.do_roarequest_async('GetAllSheets', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets', 'json', req, runtime)
+        )
+
     def get_range(
         self,
         workbook_id: str,
@@ -1503,6 +1573,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.select):
+            query['select'] = request.select
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1533,6 +1605,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.select):
+            query['select'] = request.select
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

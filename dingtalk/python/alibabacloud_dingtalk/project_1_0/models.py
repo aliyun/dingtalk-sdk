@@ -782,10 +782,16 @@ class CreatePlanTimeRequest(TeaModel):
 class CreatePlanTimeResponseBodyResultBody(TeaModel):
     def __init__(
         self,
+        date: str = None,
         object_id: str = None,
+        plan_time: int = None,
     ):
+        # 更新工时所属日期
+        self.date = date
         # 工时关联的数据id
         self.object_id = object_id
+        # 计划工时数
+        self.plan_time = plan_time
 
     def validate(self):
         pass
@@ -796,14 +802,22 @@ class CreatePlanTimeResponseBodyResultBody(TeaModel):
             return _map
 
         result = dict()
+        if self.date is not None:
+            result['date'] = self.date
         if self.object_id is not None:
             result['objectId'] = self.object_id
+        if self.plan_time is not None:
+            result['planTime'] = self.plan_time
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('date') is not None:
+            self.date = m.get('date')
         if m.get('objectId') is not None:
             self.object_id = m.get('objectId')
+        if m.get('planTime') is not None:
+            self.plan_time = m.get('planTime')
         return self
 
 
@@ -1886,10 +1900,16 @@ class CreateWorkTimeRequest(TeaModel):
 class CreateWorkTimeResponseBodyResultBody(TeaModel):
     def __init__(
         self,
+        date: str = None,
         task_id: str = None,
+        work_time: int = None,
     ):
+        # 工时所属日期
+        self.date = date
         # 工时关联的数据 ID
         self.task_id = task_id
+        # 实际工时
+        self.work_time = work_time
 
     def validate(self):
         pass
@@ -1900,14 +1920,22 @@ class CreateWorkTimeResponseBodyResultBody(TeaModel):
             return _map
 
         result = dict()
+        if self.date is not None:
+            result['date'] = self.date
         if self.task_id is not None:
             result['taskId'] = self.task_id
+        if self.work_time is not None:
+            result['workTime'] = self.work_time
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('date') is not None:
+            self.date = m.get('date')
         if m.get('taskId') is not None:
             self.task_id = m.get('taskId')
+        if m.get('workTime') is not None:
+            self.work_time = m.get('workTime')
         return self
 
 
