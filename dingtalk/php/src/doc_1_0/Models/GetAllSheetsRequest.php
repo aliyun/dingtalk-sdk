@@ -6,7 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class GetRangeRequest extends Model
+class GetAllSheetsRequest extends Model
 {
     /**
      * @description 操作人unionId
@@ -14,16 +14,8 @@ class GetRangeRequest extends Model
      * @var string
      */
     public $operatorId;
-
-    /**
-     * @description 限定要返回的字段
-     *
-     * @var string
-     */
-    public $select;
     protected $_name = [
         'operatorId' => 'operatorId',
-        'select'     => 'select',
     ];
 
     public function validate()
@@ -36,9 +28,6 @@ class GetRangeRequest extends Model
         if (null !== $this->operatorId) {
             $res['operatorId'] = $this->operatorId;
         }
-        if (null !== $this->select) {
-            $res['select'] = $this->select;
-        }
 
         return $res;
     }
@@ -46,16 +35,13 @@ class GetRangeRequest extends Model
     /**
      * @param array $map
      *
-     * @return GetRangeRequest
+     * @return GetAllSheetsRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
         if (isset($map['operatorId'])) {
             $model->operatorId = $map['operatorId'];
-        }
-        if (isset($map['select'])) {
-            $model->select = $map['select'];
         }
 
         return $model;
