@@ -21,13 +21,29 @@ public class CreatePlanTimeResponseBody extends TeaModel {
     }
 
     public static class CreatePlanTimeResponseBodyResultBody extends TeaModel {
+        // 更新工时所属日期
+        @NameInMap("date")
+        public String date;
+
         // 工时关联的数据id
         @NameInMap("objectId")
         public String objectId;
 
+        // 计划工时数
+        @NameInMap("planTime")
+        public Long planTime;
+
         public static CreatePlanTimeResponseBodyResultBody build(java.util.Map<String, ?> map) throws Exception {
             CreatePlanTimeResponseBodyResultBody self = new CreatePlanTimeResponseBodyResultBody();
             return TeaModel.build(map, self);
+        }
+
+        public CreatePlanTimeResponseBodyResultBody setDate(String date) {
+            this.date = date;
+            return this;
+        }
+        public String getDate() {
+            return this.date;
         }
 
         public CreatePlanTimeResponseBodyResultBody setObjectId(String objectId) {
@@ -36,6 +52,14 @@ public class CreatePlanTimeResponseBody extends TeaModel {
         }
         public String getObjectId() {
             return this.objectId;
+        }
+
+        public CreatePlanTimeResponseBodyResultBody setPlanTime(Long planTime) {
+            this.planTime = planTime;
+            return this;
+        }
+        public Long getPlanTime() {
+            return this.planTime;
         }
 
     }

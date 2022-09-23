@@ -8,6 +8,10 @@ public class GetRangeRequest extends TeaModel {
     @NameInMap("operatorId")
     public String operatorId;
 
+    // 限定要返回的字段
+    @NameInMap("select")
+    public String select;
+
     public static GetRangeRequest build(java.util.Map<String, ?> map) throws Exception {
         GetRangeRequest self = new GetRangeRequest();
         return TeaModel.build(map, self);
@@ -19,6 +23,14 @@ public class GetRangeRequest extends TeaModel {
     }
     public String getOperatorId() {
         return this.operatorId;
+    }
+
+    public GetRangeRequest setSelect(String select) {
+        this.select = select;
+        return this;
+    }
+    public String getSelect() {
+        return this.select;
     }
 
 }

@@ -663,6 +663,36 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("DeleteWorkspaceMembers", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workspaces/" + workspaceId + "/members/remove", "none", req, runtime), new DeleteWorkspaceMembersResponse());
     }
 
+    public GetAllSheetsResponse getAllSheets(String workbookId, GetAllSheetsRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetAllSheetsHeaders headers = new GetAllSheetsHeaders();
+        return this.getAllSheetsWithOptions(workbookId, request, headers, runtime);
+    }
+
+    public GetAllSheetsResponse getAllSheetsWithOptions(String workbookId, GetAllSheetsRequest request, GetAllSheetsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        workbookId = com.aliyun.openapiutil.Client.getEncodeParam(workbookId);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetAllSheets", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets", "json", req, runtime), new GetAllSheetsResponse());
+    }
+
     public GetRangeResponse getRange(String workbookId, String sheetId, String rangeAddress, GetRangeRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetRangeHeaders headers = new GetRangeHeaders();
@@ -677,6 +707,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
             query.put("operatorId", request.operatorId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.select)) {
+            query.put("select", request.select);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();

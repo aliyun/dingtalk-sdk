@@ -21,13 +21,29 @@ public class CreateWorkTimeResponseBody extends TeaModel {
     }
 
     public static class CreateWorkTimeResponseBodyResultBody extends TeaModel {
+        // 工时所属日期
+        @NameInMap("date")
+        public String date;
+
         // 工时关联的数据 ID
         @NameInMap("taskId")
         public String taskId;
 
+        // 实际工时
+        @NameInMap("workTime")
+        public Long workTime;
+
         public static CreateWorkTimeResponseBodyResultBody build(java.util.Map<String, ?> map) throws Exception {
             CreateWorkTimeResponseBodyResultBody self = new CreateWorkTimeResponseBodyResultBody();
             return TeaModel.build(map, self);
+        }
+
+        public CreateWorkTimeResponseBodyResultBody setDate(String date) {
+            this.date = date;
+            return this;
+        }
+        public String getDate() {
+            return this.date;
         }
 
         public CreateWorkTimeResponseBodyResultBody setTaskId(String taskId) {
@@ -36,6 +52,14 @@ public class CreateWorkTimeResponseBody extends TeaModel {
         }
         public String getTaskId() {
             return this.taskId;
+        }
+
+        public CreateWorkTimeResponseBodyResultBody setWorkTime(Long workTime) {
+            this.workTime = workTime;
+            return this;
+        }
+        public Long getWorkTime() {
+            return this.workTime;
         }
 
     }
