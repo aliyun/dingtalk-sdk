@@ -18,11 +18,25 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             public List<CreatePlanTimeResponseBodyResultBody> Body { get; set; }
             public class CreatePlanTimeResponseBodyResultBody : TeaModel {
                 /// <summary>
+                /// 更新工时所属日期
+                /// </summary>
+                [NameInMap("date")]
+                [Validation(Required=false)]
+                public string Date { get; set; }
+
+                /// <summary>
                 /// 工时关联的数据id
                 /// </summary>
                 [NameInMap("objectId")]
                 [Validation(Required=false)]
                 public string ObjectId { get; set; }
+
+                /// <summary>
+                /// 计划工时数
+                /// </summary>
+                [NameInMap("planTime")]
+                [Validation(Required=false)]
+                public long? PlanTime { get; set; }
 
             }
 
