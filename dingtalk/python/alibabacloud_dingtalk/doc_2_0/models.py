@@ -5129,7 +5129,7 @@ class RelatedSpacesRequest(TeaModel):
         self.next_token = next_token
         # 操作用户unionId。
         self.operator_id = operator_id
-        # 团队id。
+        # 小组id。
         self.team_id = team_id
 
     def validate(self):
@@ -6115,6 +6115,7 @@ class SearchResponseBodyDentryResultItems(TeaModel):
         name: str = None,
         origin_name: str = None,
         path: str = None,
+        scene_type: int = None,
         search_file_type: int = None,
         space_id: str = None,
         thumbnail_url: str = None,
@@ -6140,6 +6141,8 @@ class SearchResponseBodyDentryResultItems(TeaModel):
         self.origin_name = origin_name
         # 节点的路径。
         self.path = path
+        # 节点所属的业务场景。可选值有：1-知识库；2-我的文档；5-群聊。
+        self.scene_type = scene_type
         # 文件类型。1-文档；2-表格；3-脑图；4-演示；5-白板；6-office文字；7-office表格；8-office ppt；10-多维表格；11-文本；12-图片；13-视频；14-音频；15-压缩文件；16-其他。
         self.search_file_type = search_file_type
         # 节点所属的知识库id。
@@ -6181,6 +6184,8 @@ class SearchResponseBodyDentryResultItems(TeaModel):
             result['originName'] = self.origin_name
         if self.path is not None:
             result['path'] = self.path
+        if self.scene_type is not None:
+            result['sceneType'] = self.scene_type
         if self.search_file_type is not None:
             result['searchFileType'] = self.search_file_type
         if self.space_id is not None:
@@ -6215,6 +6220,8 @@ class SearchResponseBodyDentryResultItems(TeaModel):
             self.origin_name = m.get('originName')
         if m.get('path') is not None:
             self.path = m.get('path')
+        if m.get('sceneType') is not None:
+            self.scene_type = m.get('sceneType')
         if m.get('searchFileType') is not None:
             self.search_file_type = m.get('searchFileType')
         if m.get('spaceId') is not None:

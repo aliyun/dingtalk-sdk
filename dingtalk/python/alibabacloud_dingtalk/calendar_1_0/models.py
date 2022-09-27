@@ -2376,8 +2376,10 @@ class GetEventResponseBodyEnd(TeaModel):
 class GetEventResponseBodyExtendedPropertiesSharedProperties(TeaModel):
     def __init__(
         self,
+        belong_corp_id: str = None,
         source_open_cid: str = None,
     ):
+        self.belong_corp_id = belong_corp_id
         self.source_open_cid = source_open_cid
 
     def validate(self):
@@ -2389,12 +2391,16 @@ class GetEventResponseBodyExtendedPropertiesSharedProperties(TeaModel):
             return _map
 
         result = dict()
+        if self.belong_corp_id is not None:
+            result['belongCorpId'] = self.belong_corp_id
         if self.source_open_cid is not None:
             result['sourceOpenCid'] = self.source_open_cid
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('belongCorpId') is not None:
+            self.belong_corp_id = m.get('belongCorpId')
         if m.get('sourceOpenCid') is not None:
             self.source_open_cid = m.get('sourceOpenCid')
         return self
@@ -4655,8 +4661,10 @@ class ListEventsResponseBodyEventsEnd(TeaModel):
 class ListEventsResponseBodyEventsExtendedPropertiesSharedProperties(TeaModel):
     def __init__(
         self,
+        belong_corp_id: str = None,
         source_open_cid: str = None,
     ):
+        self.belong_corp_id = belong_corp_id
         self.source_open_cid = source_open_cid
 
     def validate(self):
@@ -4668,12 +4676,16 @@ class ListEventsResponseBodyEventsExtendedPropertiesSharedProperties(TeaModel):
             return _map
 
         result = dict()
+        if self.belong_corp_id is not None:
+            result['belongCorpId'] = self.belong_corp_id
         if self.source_open_cid is not None:
             result['sourceOpenCid'] = self.source_open_cid
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('belongCorpId') is not None:
+            self.belong_corp_id = m.get('belongCorpId')
         if m.get('sourceOpenCid') is not None:
             self.source_open_cid = m.get('sourceOpenCid')
         return self
@@ -6316,8 +6328,10 @@ class ListEventsViewResponseBodyEventsEnd(TeaModel):
 class ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties(TeaModel):
     def __init__(
         self,
+        belong_corp_id: str = None,
         source_open_cid: str = None,
     ):
+        self.belong_corp_id = belong_corp_id
         self.source_open_cid = source_open_cid
 
     def validate(self):
@@ -6329,12 +6343,16 @@ class ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties(TeaMode
             return _map
 
         result = dict()
+        if self.belong_corp_id is not None:
+            result['belongCorpId'] = self.belong_corp_id
         if self.source_open_cid is not None:
             result['sourceOpenCid'] = self.source_open_cid
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('belongCorpId') is not None:
+            self.belong_corp_id = m.get('belongCorpId')
         if m.get('sourceOpenCid') is not None:
             self.source_open_cid = m.get('sourceOpenCid')
         return self

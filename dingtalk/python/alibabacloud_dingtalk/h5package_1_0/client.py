@@ -64,7 +64,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkh_5package__1__0_models.CreatePackageResponse(),
-            self.do_roarequest('CreatePackage', 'h5package_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/h5package', 'json', req, runtime)
+            self.do_roarequest('CreatePackage', 'h5package_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/h5package/asyncUpload', 'json', req, runtime)
         )
 
     async def create_package_with_options_async(
@@ -92,7 +92,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkh_5package__1__0_models.CreatePackageResponse(),
-            await self.do_roarequest_async('CreatePackage', 'h5package_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/h5package', 'json', req, runtime)
+            await self.do_roarequest_async('CreatePackage', 'h5package_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/h5package/asyncUpload', 'json', req, runtime)
         )
 
     def get_access_token(
@@ -200,7 +200,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkh_5package__1__0_models.GetCreateStatusResponse(),
-            self.do_roarequest('GetCreateStatus', 'h5package_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/h5package/createStatus', 'json', req, runtime)
+            self.do_roarequest('GetCreateStatus', 'h5package_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/h5package/uploadStatus', 'json', req, runtime)
         )
 
     async def get_create_status_with_options_async(
@@ -224,7 +224,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkh_5package__1__0_models.GetCreateStatusResponse(),
-            await self.do_roarequest_async('GetCreateStatus', 'h5package_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/h5package/createStatus', 'json', req, runtime)
+            await self.do_roarequest_async('GetCreateStatus', 'h5package_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/h5package/uploadStatus', 'json', req, runtime)
         )
 
     def publish_package(
