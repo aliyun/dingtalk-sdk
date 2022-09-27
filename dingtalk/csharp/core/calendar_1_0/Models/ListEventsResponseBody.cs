@@ -100,6 +100,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 [Validation(Required=false)]
                 public ListEventsResponseBodyEventsExtendedPropertiesSharedProperties SharedProperties { get; set; }
                 public class ListEventsResponseBodyEventsExtendedPropertiesSharedProperties : TeaModel {
+                    [NameInMap("belongCorpId")]
+                    [Validation(Required=false)]
+                    public string BelongCorpId { get; set; }
+
                     [NameInMap("sourceOpenCid")]
                     [Validation(Required=false)]
                     public string SourceOpenCid { get; set; }

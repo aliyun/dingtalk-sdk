@@ -101,6 +101,13 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
                 public string Path { get; set; }
 
                 /// <summary>
+                /// 节点所属的业务场景。可选值有：1-知识库；2-我的文档；5-群聊。
+                /// </summary>
+                [NameInMap("sceneType")]
+                [Validation(Required=false)]
+                public int? SceneType { get; set; }
+
+                /// <summary>
                 /// 文件类型。1-文档；2-表格；3-脑图；4-演示；5-白板；6-office文字；7-office表格；8-office ppt；10-多维表格；11-文本；12-图片；13-视频；14-音频；15-压缩文件；16-其他。
                 /// </summary>
                 [NameInMap("searchFileType")]

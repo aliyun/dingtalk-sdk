@@ -31,7 +31,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         public string OperatorId { get; set; }
 
         /// <summary>
-        /// 团队id。
+        /// 小组id。
         /// </summary>
         [NameInMap("teamId")]
         [Validation(Required=false)]
