@@ -78,7 +78,7 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return CreatePackageResponse::fromMap($this->doROARequest('CreatePackage', 'h5package_1.0', 'HTTP', 'POST', 'AK', '/v1.0/h5package', 'json', $req, $runtime));
+        return CreatePackageResponse::fromMap($this->doROARequest('CreatePackage', 'h5package_1.0', 'HTTP', 'POST', 'AK', '/v1.0/h5package/asyncUpload', 'json', $req, $runtime));
     }
 
     /**
@@ -165,7 +165,7 @@ class Dingtalk extends OpenApiClient
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return GetCreateStatusResponse::fromMap($this->doROARequest('GetCreateStatus', 'h5package_1.0', 'HTTP', 'GET', 'AK', '/v1.0/h5package/createStatus', 'json', $req, $runtime));
+        return GetCreateStatusResponse::fromMap($this->doROARequest('GetCreateStatus', 'h5package_1.0', 'HTTP', 'GET', 'AK', '/v1.0/h5package/uploadStatus', 'json', $req, $runtime));
     }
 
     /**

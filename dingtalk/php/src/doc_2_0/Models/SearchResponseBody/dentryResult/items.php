@@ -80,6 +80,13 @@ class items extends Model
     public $path;
 
     /**
+     * @description 节点所属的业务场景。可选值有：1-知识库；2-我的文档；5-群聊。
+     *
+     * @var int
+     */
+    public $sceneType;
+
+    /**
      * @description 文件类型。1-文档；2-表格；3-脑图；4-演示；5-白板；6-office文字；7-office表格；8-office ppt；10-多维表格；11-文本；12-图片；13-视频；14-音频；15-压缩文件；16-其他。
      *
      * @var int
@@ -117,6 +124,7 @@ class items extends Model
         'name'           => 'name',
         'originName'     => 'originName',
         'path'           => 'path',
+        'sceneType'      => 'sceneType',
         'searchFileType' => 'searchFileType',
         'spaceId'        => 'spaceId',
         'thumbnailUrl'   => 'thumbnailUrl',
@@ -159,6 +167,9 @@ class items extends Model
         }
         if (null !== $this->path) {
             $res['path'] = $this->path;
+        }
+        if (null !== $this->sceneType) {
+            $res['sceneType'] = $this->sceneType;
         }
         if (null !== $this->searchFileType) {
             $res['searchFileType'] = $this->searchFileType;
@@ -213,6 +224,9 @@ class items extends Model
         }
         if (isset($map['path'])) {
             $model->path = $map['path'];
+        }
+        if (isset($map['sceneType'])) {
+            $model->sceneType = $map['sceneType'];
         }
         if (isset($map['searchFileType'])) {
             $model->searchFileType = $map['searchFileType'];

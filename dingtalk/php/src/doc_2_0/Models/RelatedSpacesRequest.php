@@ -30,7 +30,7 @@ class RelatedSpacesRequest extends Model
     public $operatorId;
 
     /**
-     * @description 团队id。
+     * @description 小组id。
      *
      * @var string
      */

@@ -11,8 +11,14 @@ class sharedProperties extends Model
     /**
      * @var string
      */
+    public $belongCorpId;
+
+    /**
+     * @var string
+     */
     public $sourceOpenCid;
     protected $_name = [
+        'belongCorpId'  => 'belongCorpId',
         'sourceOpenCid' => 'sourceOpenCid',
     ];
 
@@ -23,6 +29,9 @@ class sharedProperties extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->belongCorpId) {
+            $res['belongCorpId'] = $this->belongCorpId;
+        }
         if (null !== $this->sourceOpenCid) {
             $res['sourceOpenCid'] = $this->sourceOpenCid;
         }
@@ -38,6 +47,9 @@ class sharedProperties extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['belongCorpId'])) {
+            $model->belongCorpId = $map['belongCorpId'];
+        }
         if (isset($map['sourceOpenCid'])) {
             $model->sourceOpenCid = $map['sourceOpenCid'];
         }
