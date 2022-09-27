@@ -142,12 +142,23 @@ public class ListEventsViewResponseBody extends TeaModel {
     }
 
     public static class ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties extends TeaModel {
+        @NameInMap("belongCorpId")
+        public String belongCorpId;
+
         @NameInMap("sourceOpenCid")
         public String sourceOpenCid;
 
         public static ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties build(java.util.Map<String, ?> map) throws Exception {
             ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties self = new ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties();
             return TeaModel.build(map, self);
+        }
+
+        public ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties setBelongCorpId(String belongCorpId) {
+            this.belongCorpId = belongCorpId;
+            return this;
+        }
+        public String getBelongCorpId() {
+            return this.belongCorpId;
         }
 
         public ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties setSourceOpenCid(String sourceOpenCid) {

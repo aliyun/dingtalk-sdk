@@ -74,6 +74,10 @@ public class SearchResponseBody extends TeaModel {
         @NameInMap("path")
         public String path;
 
+        // 节点所属的业务场景。可选值有：1-知识库；2-我的文档；5-群聊。
+        @NameInMap("sceneType")
+        public Integer sceneType;
+
         // 文件类型。1-文档；2-表格；3-脑图；4-演示；5-白板；6-office文字；7-office表格；8-office ppt；10-多维表格；11-文本；12-图片；13-视频；14-音频；15-压缩文件；16-其他。
         @NameInMap("searchFileType")
         public Integer searchFileType;
@@ -173,6 +177,14 @@ public class SearchResponseBody extends TeaModel {
         }
         public String getPath() {
             return this.path;
+        }
+
+        public SearchResponseBodyDentryResultItems setSceneType(Integer sceneType) {
+            this.sceneType = sceneType;
+            return this;
+        }
+        public Integer getSceneType() {
+            return this.sceneType;
         }
 
         public SearchResponseBodyDentryResultItems setSearchFileType(Integer searchFileType) {

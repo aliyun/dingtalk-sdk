@@ -50,7 +50,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreatePackage", "h5package_1.0", "HTTP", "POST", "AK", "/v1.0/h5package", "json", req, runtime), new CreatePackageResponse());
+        return TeaModel.toModel(this.doROARequest("CreatePackage", "h5package_1.0", "HTTP", "POST", "AK", "/v1.0/h5package/asyncUpload", "json", req, runtime), new CreatePackageResponse());
     }
 
     public GetAccessTokenResponse getAccessToken(GetAccessTokenRequest request) throws Exception {
@@ -112,7 +112,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetCreateStatus", "h5package_1.0", "HTTP", "GET", "AK", "/v1.0/h5package/createStatus", "json", req, runtime), new GetCreateStatusResponse());
+        return TeaModel.toModel(this.doROARequest("GetCreateStatus", "h5package_1.0", "HTTP", "GET", "AK", "/v1.0/h5package/uploadStatus", "json", req, runtime), new GetCreateStatusResponse());
     }
 
     public PublishPackageResponse publishPackage(PublishPackageRequest request) throws Exception {

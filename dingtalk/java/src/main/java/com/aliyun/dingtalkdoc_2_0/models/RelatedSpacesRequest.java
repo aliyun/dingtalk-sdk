@@ -16,7 +16,7 @@ public class RelatedSpacesRequest extends TeaModel {
     @NameInMap("operatorId")
     public String operatorId;
 
-    // 团队id。
+    // 小组id。
     @NameInMap("teamId")
     public String teamId;
 
