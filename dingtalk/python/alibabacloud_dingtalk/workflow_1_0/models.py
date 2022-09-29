@@ -5208,6 +5208,220 @@ class GrantProcessInstanceForDownloadFileResponse(TeaModel):
         return self
 
 
+class InstallAppHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class InstallAppRequestInstallOption(TeaModel):
+    def __init__(
+        self,
+        is_sync: bool = None,
+    ):
+        # 是否同步，目前只有同步
+        self.is_sync = is_sync
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.is_sync is not None:
+            result['isSync'] = self.is_sync
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('isSync') is not None:
+            self.is_sync = m.get('isSync')
+        return self
+
+
+class InstallAppRequest(TeaModel):
+    def __init__(
+        self,
+        install_option: InstallAppRequestInstallOption = None,
+        source_dir_name: str = None,
+    ):
+        # 安装选项
+        # 
+        self.install_option = install_option
+        # 安装的目录名称
+        self.source_dir_name = source_dir_name
+
+    def validate(self):
+        if self.install_option:
+            self.install_option.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.install_option is not None:
+            result['installOption'] = self.install_option.to_map()
+        if self.source_dir_name is not None:
+            result['sourceDirName'] = self.source_dir_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('installOption') is not None:
+            temp_model = InstallAppRequestInstallOption()
+            self.install_option = temp_model.from_map(m['installOption'])
+        if m.get('sourceDirName') is not None:
+            self.source_dir_name = m.get('sourceDirName')
+        return self
+
+
+class InstallAppResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        biz_type: str = None,
+        name: str = None,
+        process_code: str = None,
+    ):
+        # 套件业务类型
+        self.biz_type = biz_type
+        # 模版名称
+        self.name = name
+        # 模版processcode
+        self.process_code = process_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.name is not None:
+            result['name'] = self.name
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        return self
+
+
+class InstallAppResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[InstallAppResponseBodyResult] = None,
+    ):
+        # 返回对象列表
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = InstallAppResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class InstallAppResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: InstallAppResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = InstallAppResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ListProcessInstanceIdsHeaders(TeaModel):
     def __init__(
         self,

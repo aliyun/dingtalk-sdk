@@ -1473,6 +1473,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GrantProcessInstanceForDownloadFile', 'workflow_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/workflow/processInstances/spaces/files/urls/download', 'json', req, runtime)
         )
 
+    def install_app(
+        self,
+        request: dingtalkworkflow__1__0_models.InstallAppRequest,
+    ) -> dingtalkworkflow__1__0_models.InstallAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.InstallAppHeaders()
+        return self.install_app_with_options(request, headers, runtime)
+
+    async def install_app_async(
+        self,
+        request: dingtalkworkflow__1__0_models.InstallAppRequest,
+    ) -> dingtalkworkflow__1__0_models.InstallAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.InstallAppHeaders()
+        return await self.install_app_with_options_async(request, headers, runtime)
+
+    def install_app_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.InstallAppRequest,
+        headers: dingtalkworkflow__1__0_models.InstallAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.InstallAppResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.install_option):
+            body['installOption'] = request.install_option
+        if not UtilClient.is_unset(request.source_dir_name):
+            body['sourceDirName'] = request.source_dir_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.InstallAppResponse(),
+            self.do_roarequest('InstallApp', 'workflow_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/workflow/processes/apps/install', 'json', req, runtime)
+        )
+
+    async def install_app_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.InstallAppRequest,
+        headers: dingtalkworkflow__1__0_models.InstallAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.InstallAppResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.install_option):
+            body['installOption'] = request.install_option
+        if not UtilClient.is_unset(request.source_dir_name):
+            body['sourceDirName'] = request.source_dir_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.InstallAppResponse(),
+            await self.do_roarequest_async('InstallApp', 'workflow_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/workflow/processes/apps/install', 'json', req, runtime)
+        )
+
     def list_process_instance_ids(
         self,
         request: dingtalkworkflow__1__0_models.ListProcessInstanceIdsRequest,
