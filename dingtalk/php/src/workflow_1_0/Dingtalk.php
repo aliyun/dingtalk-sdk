@@ -67,6 +67,9 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GrantCspaceAuthorizationRespo
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GrantProcessInstanceForDownloadFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GrantProcessInstanceForDownloadFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GrantProcessInstanceForDownloadFileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\InstallAppHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\InstallAppRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\InstallAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ListProcessInstanceIdsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ListProcessInstanceIdsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ListProcessInstanceIdsResponse;
@@ -1098,6 +1101,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GrantProcessInstanceForDownloadFileResponse::fromMap($this->doROARequest('GrantProcessInstanceForDownloadFile', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processInstances/spaces/files/urls/download', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param InstallAppRequest $request
+     *
+     * @return InstallAppResponse
+     */
+    public function installApp($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InstallAppHeaders([]);
+
+        return $this->installAppWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param InstallAppRequest $request
+     * @param InstallAppHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return InstallAppResponse
+     */
+    public function installAppWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->installOption)) {
+            @$body['installOption'] = $request->installOption;
+        }
+        if (!Utils::isUnset($request->sourceDirName)) {
+            @$body['sourceDirName'] = $request->sourceDirName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return InstallAppResponse::fromMap($this->doROARequest('InstallApp', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processes/apps/install', 'json', $req, $runtime));
     }
 
     /**
