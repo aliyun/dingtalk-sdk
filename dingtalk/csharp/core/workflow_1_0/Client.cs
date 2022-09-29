@@ -1604,6 +1604,78 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             return TeaModel.ToObject<GrantProcessInstanceForDownloadFileResponse>(await DoROARequestAsync("GrantProcessInstanceForDownloadFile", "workflow_1.0", "HTTP", "POST", "AK", "/v1.0/workflow/processInstances/spaces/files/urls/download", "json", req, runtime));
         }
 
+        public InstallAppResponse InstallApp(InstallAppRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            InstallAppHeaders headers = new InstallAppHeaders();
+            return InstallAppWithOptions(request, headers, runtime);
+        }
+
+        public async Task<InstallAppResponse> InstallAppAsync(InstallAppRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            InstallAppHeaders headers = new InstallAppHeaders();
+            return await InstallAppWithOptionsAsync(request, headers, runtime);
+        }
+
+        public InstallAppResponse InstallAppWithOptions(InstallAppRequest request, InstallAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InstallOption.ToMap()))
+            {
+                body["installOption"] = request.InstallOption;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceDirName))
+            {
+                body["sourceDirName"] = request.SourceDirName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<InstallAppResponse>(DoROARequest("InstallApp", "workflow_1.0", "HTTP", "POST", "AK", "/v1.0/workflow/processes/apps/install", "json", req, runtime));
+        }
+
+        public async Task<InstallAppResponse> InstallAppWithOptionsAsync(InstallAppRequest request, InstallAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InstallOption.ToMap()))
+            {
+                body["installOption"] = request.InstallOption;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceDirName))
+            {
+                body["sourceDirName"] = request.SourceDirName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<InstallAppResponse>(await DoROARequestAsync("InstallApp", "workflow_1.0", "HTTP", "POST", "AK", "/v1.0/workflow/processes/apps/install", "json", req, runtime));
+        }
+
         public ListProcessInstanceIdsResponse ListProcessInstanceIds(ListProcessInstanceIdsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
