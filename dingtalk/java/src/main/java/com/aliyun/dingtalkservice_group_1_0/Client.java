@@ -25,6 +25,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public AddContactMemberToGroupResponse addContactMemberToGroupWithOptions(AddContactMemberToGroupRequest request, AddContactMemberToGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.fissionType)) {
+            body.put("fissionType", request.fissionType);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.memberUnionId)) {
             body.put("memberUnionId", request.memberUnionId);
         }

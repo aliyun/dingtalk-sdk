@@ -4,6 +4,10 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddContactMemberToGroupRequest extends TeaModel {
+    // 裂变方式
+    @NameInMap("fissionType")
+    public String fissionType;
+
     // 员工unionId
     @NameInMap("memberUnionId")
     public String memberUnionId;
@@ -23,6 +27,14 @@ public class AddContactMemberToGroupRequest extends TeaModel {
     public static AddContactMemberToGroupRequest build(java.util.Map<String, ?> map) throws Exception {
         AddContactMemberToGroupRequest self = new AddContactMemberToGroupRequest();
         return TeaModel.build(map, self);
+    }
+
+    public AddContactMemberToGroupRequest setFissionType(String fissionType) {
+        this.fissionType = fissionType;
+        return this;
+    }
+    public String getFissionType() {
+        return this.fissionType;
     }
 
     public AddContactMemberToGroupRequest setMemberUnionId(String memberUnionId) {
