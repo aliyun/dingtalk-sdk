@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class AddContactMemberToGroupRequest : TeaModel {
         /// <summary>
+        /// 裂变方式
+        /// </summary>
+        [NameInMap("fissionType")]
+        [Validation(Required=false)]
+        public string FissionType { get; set; }
+
+        /// <summary>
         /// 员工unionId
         /// </summary>
         [NameInMap("memberUnionId")]

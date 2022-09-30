@@ -44,6 +44,10 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FissionType))
+            {
+                body["fissionType"] = request.FissionType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MemberUnionId))
             {
                 body["memberUnionId"] = request.MemberUnionId;
@@ -81,6 +85,10 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FissionType))
+            {
+                body["fissionType"] = request.FissionType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MemberUnionId))
             {
                 body["memberUnionId"] = request.MemberUnionId;
