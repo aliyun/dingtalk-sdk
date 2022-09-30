@@ -47,6 +47,8 @@ class Client(OpenApiClient):
     ) -> dingtalkservice_group__1__0_models.AddContactMemberToGroupResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.fission_type):
+            body['fissionType'] = request.fission_type
         if not UtilClient.is_unset(request.member_union_id):
             body['memberUnionId'] = request.member_union_id
         if not UtilClient.is_unset(request.member_user_id):
@@ -77,6 +79,8 @@ class Client(OpenApiClient):
     ) -> dingtalkservice_group__1__0_models.AddContactMemberToGroupResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.fission_type):
+            body['fissionType'] = request.fission_type
         if not UtilClient.is_unset(request.member_union_id):
             body['memberUnionId'] = request.member_union_id
         if not UtilClient.is_unset(request.member_user_id):

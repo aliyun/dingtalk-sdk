@@ -40,11 +40,14 @@ class AddContactMemberToGroupHeaders(TeaModel):
 class AddContactMemberToGroupRequest(TeaModel):
     def __init__(
         self,
+        fission_type: str = None,
         member_union_id: str = None,
         member_user_id: str = None,
         open_conversation_id: str = None,
         open_team_id: str = None,
     ):
+        # 裂变方式
+        self.fission_type = fission_type
         # 员工unionId
         self.member_union_id = member_union_id
         # 员工成员ID
@@ -63,6 +66,8 @@ class AddContactMemberToGroupRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.fission_type is not None:
+            result['fissionType'] = self.fission_type
         if self.member_union_id is not None:
             result['memberUnionId'] = self.member_union_id
         if self.member_user_id is not None:
@@ -75,6 +80,8 @@ class AddContactMemberToGroupRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('fissionType') is not None:
+            self.fission_type = m.get('fissionType')
         if m.get('memberUnionId') is not None:
             self.member_union_id = m.get('memberUnionId')
         if m.get('memberUserId') is not None:
