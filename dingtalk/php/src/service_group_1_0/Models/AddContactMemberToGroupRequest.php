@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class AddContactMemberToGroupRequest extends Model
 {
     /**
+     * @description 裂变方式
+     *
+     * @var string
+     */
+    public $fissionType;
+
+    /**
      * @description 员工unionId
      *
      * @var string
@@ -36,6 +43,7 @@ class AddContactMemberToGroupRequest extends Model
      */
     public $openTeamId;
     protected $_name = [
+        'fissionType'        => 'fissionType',
         'memberUnionId'      => 'memberUnionId',
         'memberUserId'       => 'memberUserId',
         'openConversationId' => 'openConversationId',
@@ -49,6 +57,9 @@ class AddContactMemberToGroupRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->fissionType) {
+            $res['fissionType'] = $this->fissionType;
+        }
         if (null !== $this->memberUnionId) {
             $res['memberUnionId'] = $this->memberUnionId;
         }
@@ -73,6 +84,9 @@ class AddContactMemberToGroupRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['fissionType'])) {
+            $model->fissionType = $map['fissionType'];
+        }
         if (isset($map['memberUnionId'])) {
             $model->memberUnionId = $map['memberUnionId'];
         }

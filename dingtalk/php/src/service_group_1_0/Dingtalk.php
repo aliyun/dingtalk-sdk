@@ -263,6 +263,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->fissionType)) {
+            @$body['fissionType'] = $request->fissionType;
+        }
         if (!Utils::isUnset($request->memberUnionId)) {
             @$body['memberUnionId'] = $request->memberUnionId;
         }
