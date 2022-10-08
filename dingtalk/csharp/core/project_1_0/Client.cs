@@ -1532,6 +1532,90 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             return TeaModel.ToObject<GetTbUserIdByStaffIdResponse>(await DoROARequestAsync("GetTbUserIdByStaffId", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/teambition/users", "json", req, runtime));
         }
 
+        public QueryTaskOfProjectResponse QueryTaskOfProject(string userId, string projectId, QueryTaskOfProjectRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryTaskOfProjectHeaders headers = new QueryTaskOfProjectHeaders();
+            return QueryTaskOfProjectWithOptions(userId, projectId, request, headers, runtime);
+        }
+
+        public async Task<QueryTaskOfProjectResponse> QueryTaskOfProjectAsync(string userId, string projectId, QueryTaskOfProjectRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryTaskOfProjectHeaders headers = new QueryTaskOfProjectHeaders();
+            return await QueryTaskOfProjectWithOptionsAsync(userId, projectId, request, headers, runtime);
+        }
+
+        public QueryTaskOfProjectResponse QueryTaskOfProjectWithOptions(string userId, string projectId, QueryTaskOfProjectRequest request, QueryTaskOfProjectHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            projectId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(projectId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Query))
+            {
+                query["query"] = request.Query;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<QueryTaskOfProjectResponse>(DoROARequest("QueryTaskOfProject", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/users/" + userId + "/projectIds/" + projectId + "/tasks", "json", req, runtime));
+        }
+
+        public async Task<QueryTaskOfProjectResponse> QueryTaskOfProjectWithOptionsAsync(string userId, string projectId, QueryTaskOfProjectRequest request, QueryTaskOfProjectHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            projectId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(projectId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Query))
+            {
+                query["query"] = request.Query;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<QueryTaskOfProjectResponse>(await DoROARequestAsync("QueryTaskOfProject", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/users/" + userId + "/projectIds/" + projectId + "/tasks", "json", req, runtime));
+        }
+
         public SearchProjectTemplateResponse SearchProjectTemplate(string userId, SearchProjectTemplateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
