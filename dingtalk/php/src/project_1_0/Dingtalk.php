@@ -53,6 +53,9 @@ use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbProjectSourceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbUserIdByStaffIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbUserIdByStaffIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\GetTbUserIdByStaffIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\QueryTaskOfProjectHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\QueryTaskOfProjectRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\QueryTaskOfProjectResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchProjectTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchProjectTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchProjectTemplateResponse;
@@ -991,6 +994,60 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetTbUserIdByStaffIdResponse::fromMap($this->doROARequest('GetTbUserIdByStaffId', 'project_1.0', 'HTTP', 'GET', 'AK', '/v1.0/project/teambition/users', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                    $userId
+     * @param string                    $projectId
+     * @param QueryTaskOfProjectRequest $request
+     *
+     * @return QueryTaskOfProjectResponse
+     */
+    public function queryTaskOfProject($userId, $projectId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryTaskOfProjectHeaders([]);
+
+        return $this->queryTaskOfProjectWithOptions($userId, $projectId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                    $userId
+     * @param string                    $projectId
+     * @param QueryTaskOfProjectRequest $request
+     * @param QueryTaskOfProjectHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return QueryTaskOfProjectResponse
+     */
+    public function queryTaskOfProjectWithOptions($userId, $projectId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $userId    = OpenApiUtilClient::getEncodeParam($userId);
+        $projectId = OpenApiUtilClient::getEncodeParam($projectId);
+        $query     = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->query)) {
+            @$query['query'] = $request->query;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryTaskOfProjectResponse::fromMap($this->doROARequest('QueryTaskOfProject', 'project_1.0', 'HTTP', 'GET', 'AK', '/v1.0/project/users/' . $userId . '/projectIds/' . $projectId . '/tasks', 'json', $req, $runtime));
     }
 
     /**

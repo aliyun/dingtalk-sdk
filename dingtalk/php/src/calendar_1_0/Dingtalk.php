@@ -76,6 +76,8 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\SignOutHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\SignOutResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\SubscribeCalendarHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\SubscribeCalendarResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\UnsubscribeCalendarHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\UnsubscribeCalendarResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\UpdateSubscribedCalendarsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\UpdateSubscribedCalendarsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\UpdateSubscribedCalendarsResponse;
@@ -1471,6 +1473,46 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SubscribeCalendarResponse::fromMap($this->doROARequest('SubscribeCalendar', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/subscribe', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param string $userId
+     * @param string $calendarId
+     *
+     * @return UnsubscribeCalendarResponse
+     */
+    public function unsubscribeCalendar($userId, $calendarId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UnsubscribeCalendarHeaders([]);
+
+        return $this->unsubscribeCalendarWithOptions($userId, $calendarId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                     $userId
+     * @param string                     $calendarId
+     * @param UnsubscribeCalendarHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return UnsubscribeCalendarResponse
+     */
+    public function unsubscribeCalendarWithOptions($userId, $calendarId, $headers, $runtime)
+    {
+        $userId      = OpenApiUtilClient::getEncodeParam($userId);
+        $calendarId  = OpenApiUtilClient::getEncodeParam($calendarId);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return UnsubscribeCalendarResponse::fromMap($this->doROARequest('UnsubscribeCalendar', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/unsubscribe', 'json', $req, $runtime));
     }
 
     /**
