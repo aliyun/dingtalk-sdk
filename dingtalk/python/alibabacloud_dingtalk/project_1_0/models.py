@@ -3979,6 +3979,378 @@ class GetTbUserIdByStaffIdResponse(TeaModel):
         return self
 
 
+class QueryTaskOfProjectHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryTaskOfProjectRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        query: str = None,
+    ):
+        # 每页返回最大数量。默认10，最大500。
+        self.max_results = max_results
+        # 供分页使用，下一页token，从当前页结果中获取。
+        self.next_token = next_token
+        # 查询条件。如：“content ~ 标题1” 表示查询任务标题包含“标题1”的任务；“executor=05178xxxxx” 表示执行者是05178xxxx的任务；”involveMembers NOT IN["061xx","06112xx"] AND executorId=0673xxx AND content~标题2“ 表示查询参与者不是”061xx“和”06112xx“ 并且 执行者是0673xxx 并且 标题类似 ”标题2“的所有任务。
+        self.query = query
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.query is not None:
+            result['query'] = self.query
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('query') is not None:
+            self.query = m.get('query')
+        return self
+
+
+class QueryTaskOfProjectResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        accomplished: str = None,
+        ancestor_ids: List[str] = None,
+        content: str = None,
+        created: str = None,
+        creator_id: str = None,
+        customfields: List[str] = None,
+        due_date: str = None,
+        executor_id: str = None,
+        involve_members: List[str] = None,
+        is_archived: bool = None,
+        is_deleted: bool = None,
+        is_done: bool = None,
+        labels: str = None,
+        note: str = None,
+        priority: int = None,
+        progress: int = None,
+        project_id: str = None,
+        scenariofieldconfig_id: str = None,
+        sprint_id: str = None,
+        stage_id: str = None,
+        start_date: str = None,
+        story_point: int = None,
+        tag_ids: str = None,
+        task_id: str = None,
+        taskflowstatus_id: str = None,
+        updated: str = None,
+        visible: str = None,
+    ):
+        # 任务完成时间。
+        self.accomplished = accomplished
+        # 父任务id列表。
+        self.ancestor_ids = ancestor_ids
+        # 任务标题。
+        self.content = content
+        # 创建时间。
+        self.created = created
+        # 创建者id。
+        self.creator_id = creator_id
+        # 自定义字段id列表。
+        self.customfields = customfields
+        # 任务截止时间。
+        self.due_date = due_date
+        # 执行者id。
+        self.executor_id = executor_id
+        # 参与者列表。
+        self.involve_members = involve_members
+        # 是否归档。
+        self.is_archived = is_archived
+        # 是否已删除。
+        self.is_deleted = is_deleted
+        # 任务是否已完成。
+        self.is_done = is_done
+        # 任务自定义标识。
+        self.labels = labels
+        # 备注。
+        self.note = note
+        # 任务优先级。
+        self.priority = priority
+        # 任务进度。
+        self.progress = progress
+        # 项目id。
+        self.project_id = project_id
+        # 任务类型id。
+        self.scenariofieldconfig_id = scenariofieldconfig_id
+        # 任务迭代id。
+        self.sprint_id = sprint_id
+        # 任务列表Id。
+        self.stage_id = stage_id
+        # 任务开始时间。
+        self.start_date = start_date
+        # 故事点数。
+        self.story_point = story_point
+        # 标签id集合。
+        self.tag_ids = tag_ids
+        # 任务id。
+        self.task_id = task_id
+        # 任务状态id。
+        self.taskflowstatus_id = taskflowstatus_id
+        # 更新时间。
+        self.updated = updated
+        # 任务的可见性规则 involves | members。
+        self.visible = visible
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.accomplished is not None:
+            result['accomplished'] = self.accomplished
+        if self.ancestor_ids is not None:
+            result['ancestorIds'] = self.ancestor_ids
+        if self.content is not None:
+            result['content'] = self.content
+        if self.created is not None:
+            result['created'] = self.created
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.customfields is not None:
+            result['customfields'] = self.customfields
+        if self.due_date is not None:
+            result['dueDate'] = self.due_date
+        if self.executor_id is not None:
+            result['executorId'] = self.executor_id
+        if self.involve_members is not None:
+            result['involveMembers'] = self.involve_members
+        if self.is_archived is not None:
+            result['isArchived'] = self.is_archived
+        if self.is_deleted is not None:
+            result['isDeleted'] = self.is_deleted
+        if self.is_done is not None:
+            result['isDone'] = self.is_done
+        if self.labels is not None:
+            result['labels'] = self.labels
+        if self.note is not None:
+            result['note'] = self.note
+        if self.priority is not None:
+            result['priority'] = self.priority
+        if self.progress is not None:
+            result['progress'] = self.progress
+        if self.project_id is not None:
+            result['projectId'] = self.project_id
+        if self.scenariofieldconfig_id is not None:
+            result['scenariofieldconfigId'] = self.scenariofieldconfig_id
+        if self.sprint_id is not None:
+            result['sprintId'] = self.sprint_id
+        if self.stage_id is not None:
+            result['stageId'] = self.stage_id
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.story_point is not None:
+            result['storyPoint'] = self.story_point
+        if self.tag_ids is not None:
+            result['tagIds'] = self.tag_ids
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.taskflowstatus_id is not None:
+            result['taskflowstatusId'] = self.taskflowstatus_id
+        if self.updated is not None:
+            result['updated'] = self.updated
+        if self.visible is not None:
+            result['visible'] = self.visible
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accomplished') is not None:
+            self.accomplished = m.get('accomplished')
+        if m.get('ancestorIds') is not None:
+            self.ancestor_ids = m.get('ancestorIds')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('created') is not None:
+            self.created = m.get('created')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('customfields') is not None:
+            self.customfields = m.get('customfields')
+        if m.get('dueDate') is not None:
+            self.due_date = m.get('dueDate')
+        if m.get('executorId') is not None:
+            self.executor_id = m.get('executorId')
+        if m.get('involveMembers') is not None:
+            self.involve_members = m.get('involveMembers')
+        if m.get('isArchived') is not None:
+            self.is_archived = m.get('isArchived')
+        if m.get('isDeleted') is not None:
+            self.is_deleted = m.get('isDeleted')
+        if m.get('isDone') is not None:
+            self.is_done = m.get('isDone')
+        if m.get('labels') is not None:
+            self.labels = m.get('labels')
+        if m.get('note') is not None:
+            self.note = m.get('note')
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
+        if m.get('progress') is not None:
+            self.progress = m.get('progress')
+        if m.get('projectId') is not None:
+            self.project_id = m.get('projectId')
+        if m.get('scenariofieldconfigId') is not None:
+            self.scenariofieldconfig_id = m.get('scenariofieldconfigId')
+        if m.get('sprintId') is not None:
+            self.sprint_id = m.get('sprintId')
+        if m.get('stageId') is not None:
+            self.stage_id = m.get('stageId')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('storyPoint') is not None:
+            self.story_point = m.get('storyPoint')
+        if m.get('tagIds') is not None:
+            self.tag_ids = m.get('tagIds')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('taskflowstatusId') is not None:
+            self.taskflowstatus_id = m.get('taskflowstatusId')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        if m.get('visible') is not None:
+            self.visible = m.get('visible')
+        return self
+
+
+class QueryTaskOfProjectResponseBody(TeaModel):
+    def __init__(
+        self,
+        next_token: str = None,
+        result: List[QueryTaskOfProjectResponseBodyResult] = None,
+        total_count: int = None,
+    ):
+        # 供分页使用，下一页token，从当前页结果中获取。
+        self.next_token = next_token
+        # 任务对象列表。
+        self.result = result
+        # 任务总数。
+        self.total_count = total_count
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = QueryTaskOfProjectResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QueryTaskOfProjectResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryTaskOfProjectResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryTaskOfProjectResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SearchProjectTemplateHeaders(TeaModel):
     def __init__(
         self,

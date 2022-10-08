@@ -1369,6 +1369,90 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetTbUserIdByStaffId', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/teambition/users', 'json', req, runtime)
         )
 
+    def query_task_of_project(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.QueryTaskOfProjectRequest,
+    ) -> dingtalkproject__1__0_models.QueryTaskOfProjectResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.QueryTaskOfProjectHeaders()
+        return self.query_task_of_project_with_options(user_id, project_id, request, headers, runtime)
+
+    async def query_task_of_project_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.QueryTaskOfProjectRequest,
+    ) -> dingtalkproject__1__0_models.QueryTaskOfProjectResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.QueryTaskOfProjectHeaders()
+        return await self.query_task_of_project_with_options_async(user_id, project_id, request, headers, runtime)
+
+    def query_task_of_project_with_options(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.QueryTaskOfProjectRequest,
+        headers: dingtalkproject__1__0_models.QueryTaskOfProjectHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.QueryTaskOfProjectResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.query):
+            query['query'] = request.query
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.QueryTaskOfProjectResponse(),
+            self.do_roarequest('QueryTaskOfProject', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/users/{user_id}/projectIds/{project_id}/tasks', 'json', req, runtime)
+        )
+
+    async def query_task_of_project_with_options_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.QueryTaskOfProjectRequest,
+        headers: dingtalkproject__1__0_models.QueryTaskOfProjectHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.QueryTaskOfProjectResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.query):
+            query['query'] = request.query
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.QueryTaskOfProjectResponse(),
+            await self.do_roarequest_async('QueryTaskOfProject', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/users/{user_id}/projectIds/{project_id}/tasks', 'json', req, runtime)
+        )
+
     def search_project_template(
         self,
         user_id: str,
