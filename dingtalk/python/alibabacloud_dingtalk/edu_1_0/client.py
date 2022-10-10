@@ -23,6 +23,86 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def activate_device(
+        self,
+        request: dingtalkedu__1__0_models.ActivateDeviceRequest,
+    ) -> dingtalkedu__1__0_models.ActivateDeviceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.ActivateDeviceHeaders()
+        return self.activate_device_with_options(request, headers, runtime)
+
+    async def activate_device_async(
+        self,
+        request: dingtalkedu__1__0_models.ActivateDeviceRequest,
+    ) -> dingtalkedu__1__0_models.ActivateDeviceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.ActivateDeviceHeaders()
+        return await self.activate_device_with_options_async(request, headers, runtime)
+
+    def activate_device_with_options(
+        self,
+        request: dingtalkedu__1__0_models.ActivateDeviceRequest,
+        headers: dingtalkedu__1__0_models.ActivateDeviceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.ActivateDeviceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.license_key):
+            body['licenseKey'] = request.license_key
+        if not UtilClient.is_unset(request.model):
+            body['model'] = request.model
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.sn):
+            body['sn'] = request.sn
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.ActivateDeviceResponse(),
+            self.do_roarequest('ActivateDevice', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/vpaas/devices/activate', 'json', req, runtime)
+        )
+
+    async def activate_device_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.ActivateDeviceRequest,
+        headers: dingtalkedu__1__0_models.ActivateDeviceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.ActivateDeviceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.license_key):
+            body['licenseKey'] = request.license_key
+        if not UtilClient.is_unset(request.model):
+            body['model'] = request.model
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.sn):
+            body['sn'] = request.sn
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.ActivateDeviceResponse(),
+            await self.do_roarequest_async('ActivateDevice', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/vpaas/devices/activate', 'json', req, runtime)
+        )
+
     def add_device(
         self,
         request: dingtalkedu__1__0_models.AddDeviceRequest,
@@ -1871,6 +1951,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateSectionConfig', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/universities/sectionConfigs', 'json', req, runtime)
         )
 
+    def create_sts_token(
+        self,
+        request: dingtalkedu__1__0_models.CreateStsTokenRequest,
+    ) -> dingtalkedu__1__0_models.CreateStsTokenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateStsTokenHeaders()
+        return self.create_sts_token_with_options(request, headers, runtime)
+
+    async def create_sts_token_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateStsTokenRequest,
+    ) -> dingtalkedu__1__0_models.CreateStsTokenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateStsTokenHeaders()
+        return await self.create_sts_token_with_options_async(request, headers, runtime)
+
+    def create_sts_token_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CreateStsTokenRequest,
+        headers: dingtalkedu__1__0_models.CreateStsTokenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateStsTokenResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.device_sn):
+            body['deviceSn'] = request.device_sn
+        if not UtilClient.is_unset(request.sts_type):
+            body['stsType'] = request.sts_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateStsTokenResponse(),
+            self.do_roarequest('CreateStsToken', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/vpaas/ststoken', 'json', req, runtime)
+        )
+
+    async def create_sts_token_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateStsTokenRequest,
+        headers: dingtalkedu__1__0_models.CreateStsTokenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateStsTokenResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.device_sn):
+            body['deviceSn'] = request.device_sn
+        if not UtilClient.is_unset(request.sts_type):
+            body['stsType'] = request.sts_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateStsTokenResponse(),
+            await self.do_roarequest_async('CreateStsToken', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/vpaas/ststoken', 'json', req, runtime)
+        )
+
     def create_token(
         self,
         request: dingtalkedu__1__0_models.CreateTokenRequest,
@@ -2213,6 +2361,78 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkedu__1__0_models.CreateUniversityTeacherResponse(),
             await self.do_roarequest_async('CreateUniversityTeacher', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/universities/teachers', 'json', req, runtime)
+        )
+
+    def deactivate_device(
+        self,
+        request: dingtalkedu__1__0_models.DeactivateDeviceRequest,
+    ) -> dingtalkedu__1__0_models.DeactivateDeviceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeactivateDeviceHeaders()
+        return self.deactivate_device_with_options(request, headers, runtime)
+
+    async def deactivate_device_async(
+        self,
+        request: dingtalkedu__1__0_models.DeactivateDeviceRequest,
+    ) -> dingtalkedu__1__0_models.DeactivateDeviceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeactivateDeviceHeaders()
+        return await self.deactivate_device_with_options_async(request, headers, runtime)
+
+    def deactivate_device_with_options(
+        self,
+        request: dingtalkedu__1__0_models.DeactivateDeviceRequest,
+        headers: dingtalkedu__1__0_models.DeactivateDeviceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeactivateDeviceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.model):
+            body['model'] = request.model
+        if not UtilClient.is_unset(request.sn):
+            body['sn'] = request.sn
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeactivateDeviceResponse(),
+            self.do_roarequest('DeactivateDevice', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/vpaas/devices/deactivate', 'json', req, runtime)
+        )
+
+    async def deactivate_device_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.DeactivateDeviceRequest,
+        headers: dingtalkedu__1__0_models.DeactivateDeviceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeactivateDeviceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.model):
+            body['model'] = request.model
+        if not UtilClient.is_unset(request.sn):
+            body['sn'] = request.sn
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeactivateDeviceResponse(),
+            await self.do_roarequest_async('DeactivateDevice', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/vpaas/devices/deactivate', 'json', req, runtime)
         )
 
     def delete_dept(
@@ -3867,6 +4087,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('InitDevice', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/devices/init', 'json', req, runtime)
         )
 
+    def init_vpaas_device(
+        self,
+        request: dingtalkedu__1__0_models.InitVPaasDeviceRequest,
+    ) -> dingtalkedu__1__0_models.InitVPaasDeviceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.InitVPaasDeviceHeaders()
+        return self.init_vpaas_device_with_options(request, headers, runtime)
+
+    async def init_vpaas_device_async(
+        self,
+        request: dingtalkedu__1__0_models.InitVPaasDeviceRequest,
+    ) -> dingtalkedu__1__0_models.InitVPaasDeviceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.InitVPaasDeviceHeaders()
+        return await self.init_vpaas_device_with_options_async(request, headers, runtime)
+
+    def init_vpaas_device_with_options(
+        self,
+        request: dingtalkedu__1__0_models.InitVPaasDeviceRequest,
+        headers: dingtalkedu__1__0_models.InitVPaasDeviceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.InitVPaasDeviceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.sn):
+            body['sn'] = request.sn
+        if not UtilClient.is_unset(request.timestamp):
+            body['timestamp'] = request.timestamp
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.InitVPaasDeviceResponse(),
+            self.do_roarequest('InitVPaasDevice', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/vpaas/devices/init', 'json', req, runtime)
+        )
+
+    async def init_vpaas_device_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.InitVPaasDeviceRequest,
+        headers: dingtalkedu__1__0_models.InitVPaasDeviceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.InitVPaasDeviceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.sn):
+            body['sn'] = request.sn
+        if not UtilClient.is_unset(request.timestamp):
+            body['timestamp'] = request.timestamp
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.InitVPaasDeviceResponse(),
+            await self.do_roarequest_async('InitVPaasDevice', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/vpaas/devices/init', 'json', req, runtime)
+        )
+
     def insert_section_config(
         self,
         request: dingtalkedu__1__0_models.InsertSectionConfigRequest,
@@ -4127,6 +4419,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('MoveStudent', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/students/move', 'json', req, runtime)
         )
 
+    def page_query_devices(
+        self,
+        request: dingtalkedu__1__0_models.PageQueryDevicesRequest,
+    ) -> dingtalkedu__1__0_models.PageQueryDevicesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.PageQueryDevicesHeaders()
+        return self.page_query_devices_with_options(request, headers, runtime)
+
+    async def page_query_devices_async(
+        self,
+        request: dingtalkedu__1__0_models.PageQueryDevicesRequest,
+    ) -> dingtalkedu__1__0_models.PageQueryDevicesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.PageQueryDevicesHeaders()
+        return await self.page_query_devices_with_options_async(request, headers, runtime)
+
+    def page_query_devices_with_options(
+        self,
+        request: dingtalkedu__1__0_models.PageQueryDevicesRequest,
+        headers: dingtalkedu__1__0_models.PageQueryDevicesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.PageQueryDevicesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.type):
+            query['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.PageQueryDevicesResponse(),
+            self.do_roarequest('PageQueryDevices', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/vpaas/devices', 'json', req, runtime)
+        )
+
+    async def page_query_devices_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.PageQueryDevicesRequest,
+        headers: dingtalkedu__1__0_models.PageQueryDevicesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.PageQueryDevicesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.type):
+            query['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.PageQueryDevicesResponse(),
+            await self.do_roarequest_async('PageQueryDevices', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/vpaas/devices', 'json', req, runtime)
+        )
+
     def pay_order(
         self,
         request: dingtalkedu__1__0_models.PayOrderRequest,
@@ -4289,6 +4653,82 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkedu__1__0_models.PollingConfirmStatusResponse(),
             await self.do_roarequest_async('PollingConfirmStatus', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/universities/courses/pollingConfirmStatus', 'json', req, runtime)
+        )
+
+    def pre_dial(
+        self,
+        request: dingtalkedu__1__0_models.PreDialRequest,
+    ) -> dingtalkedu__1__0_models.PreDialResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.PreDialHeaders()
+        return self.pre_dial_with_options(request, headers, runtime)
+
+    async def pre_dial_async(
+        self,
+        request: dingtalkedu__1__0_models.PreDialRequest,
+    ) -> dingtalkedu__1__0_models.PreDialResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.PreDialHeaders()
+        return await self.pre_dial_with_options_async(request, headers, runtime)
+
+    def pre_dial_with_options(
+        self,
+        request: dingtalkedu__1__0_models.PreDialRequest,
+        headers: dingtalkedu__1__0_models.PreDialHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.PreDialResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.caller_user_id):
+            body['callerUserId'] = request.caller_user_id
+        if not UtilClient.is_unset(request.receiver_user_id):
+            body['receiverUserId'] = request.receiver_user_id
+        if not UtilClient.is_unset(request.sn):
+            body['sn'] = request.sn
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.PreDialResponse(),
+            self.do_roarequest('PreDial', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/vpaas/devices/preDial', 'json', req, runtime)
+        )
+
+    async def pre_dial_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.PreDialRequest,
+        headers: dingtalkedu__1__0_models.PreDialHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.PreDialResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.caller_user_id):
+            body['callerUserId'] = request.caller_user_id
+        if not UtilClient.is_unset(request.receiver_user_id):
+            body['receiverUserId'] = request.receiver_user_id
+        if not UtilClient.is_unset(request.sn):
+            body['sn'] = request.sn
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.PreDialResponse(),
+            await self.do_roarequest_async('PreDial', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/vpaas/devices/preDial', 'json', req, runtime)
         )
 
     def query_all_subjects_from_class_schedule(
