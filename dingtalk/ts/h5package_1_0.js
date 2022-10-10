@@ -1,0 +1,1 @@
+module.exports = require('./dist').h5package_1_0;

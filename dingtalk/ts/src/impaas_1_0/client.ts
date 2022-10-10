@@ -1254,12 +1254,10 @@ export class UpdateGroupNameResponse extends $tea.Model {
 
 export class UpdateGroupOwnerHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
-  operationSource?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
-      operationSource: 'operationSource',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -1267,7 +1265,6 @@ export class UpdateGroupOwnerHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      operationSource: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -1302,17 +1299,39 @@ export class UpdateGroupOwnerRequest extends $tea.Model {
   }
 }
 
+export class UpdateGroupOwnerResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateGroupOwnerResponse extends $tea.Model {
   headers: { [key: string]: string };
+  body: UpdateGroupOwnerResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      body: 'body',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateGroupOwnerResponseBody,
     };
   }
 
@@ -2038,10 +2057,6 @@ export default class Client extends OpenApi {
       realHeaders = headers.commonHeaders;
     }
 
-    if (!Util.isUnset(headers.operationSource)) {
-      realHeaders["operationSource"] = Util.toJSONString(headers.operationSource);
-    }
-
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
       realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
@@ -2050,7 +2065,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateGroupOwnerResponse>(await this.doROARequest("UpdateGroupOwner", "impaas_1.0", "HTTP", "PUT", "AK", `/v1.0/impaas/interconnections/groups/owners`, "none", req, runtime), new UpdateGroupOwnerResponse({}));
+    return $tea.cast<UpdateGroupOwnerResponse>(await this.doROARequest("UpdateGroupOwner", "impaas_1.0", "HTTP", "PUT", "AK", `/v1.0/impaas/interconnections/groups/owners`, "json", req, runtime), new UpdateGroupOwnerResponse({}));
   }
 
 }

@@ -7,6 +7,100 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class ActivateDeviceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ActivateDeviceRequest extends $tea.Model {
+  licenseKey?: string;
+  model?: string;
+  name?: string;
+  sn?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      licenseKey: 'licenseKey',
+      model: 'model',
+      name: 'name',
+      sn: 'sn',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      licenseKey: 'string',
+      model: 'string',
+      name: 'string',
+      sn: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ActivateDeviceResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ActivateDeviceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ActivateDeviceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ActivateDeviceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddDeviceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -540,6 +634,118 @@ export class CancelOrderResponse extends $tea.Model {
   }
 }
 
+export class CancelUserOrderHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CancelUserOrderRequest extends $tea.Model {
+  alipayAppId?: string;
+  merchantId?: string;
+  orderNo?: string;
+  signature?: string;
+  timestamp?: number;
+  static names(): { [key: string]: string } {
+    return {
+      alipayAppId: 'alipayAppId',
+      merchantId: 'merchantId',
+      orderNo: 'orderNo',
+      signature: 'signature',
+      timestamp: 'timestamp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      alipayAppId: 'string',
+      merchantId: 'string',
+      orderNo: 'string',
+      signature: 'string',
+      timestamp: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CancelUserOrderResponseBody extends $tea.Model {
+  alipayAppId?: string;
+  merchantId?: string;
+  merchantOrderNo?: string;
+  orderNo?: string;
+  payStatus?: number;
+  refundStatus?: number;
+  totalAmount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      alipayAppId: 'alipayAppId',
+      merchantId: 'merchantId',
+      merchantOrderNo: 'merchantOrderNo',
+      orderNo: 'orderNo',
+      payStatus: 'payStatus',
+      refundStatus: 'refundStatus',
+      totalAmount: 'totalAmount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      alipayAppId: 'string',
+      merchantId: 'string',
+      merchantOrderNo: 'string',
+      orderNo: 'string',
+      payStatus: 'number',
+      refundStatus: 'number',
+      totalAmount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CancelUserOrderResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CancelUserOrderResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CancelUserOrderResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CheckRestrictionHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -708,6 +914,133 @@ export class CourseSchedulingComplimentNoticeResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: CourseSchedulingComplimentNoticeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAppOrderHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAppOrderRequest extends $tea.Model {
+  actualAmount?: number;
+  alipayAppId?: string;
+  bizCode?: number;
+  detailList?: CreateAppOrderRequestDetailList[];
+  labelAmount?: number;
+  merchantId?: string;
+  merchantOrderNo?: string;
+  signature?: string;
+  subject?: string;
+  timestamp?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      actualAmount: 'actualAmount',
+      alipayAppId: 'alipayAppId',
+      bizCode: 'bizCode',
+      detailList: 'detailList',
+      labelAmount: 'labelAmount',
+      merchantId: 'merchantId',
+      merchantOrderNo: 'merchantOrderNo',
+      signature: 'signature',
+      subject: 'subject',
+      timestamp: 'timestamp',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actualAmount: 'number',
+      alipayAppId: 'string',
+      bizCode: 'number',
+      detailList: { 'type': 'array', 'itemType': CreateAppOrderRequestDetailList },
+      labelAmount: 'number',
+      merchantId: 'string',
+      merchantOrderNo: 'string',
+      signature: 'string',
+      subject: 'string',
+      timestamp: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAppOrderResponseBody extends $tea.Model {
+  actualAmount?: number;
+  alipayAppId?: string;
+  body?: string;
+  merchantId?: string;
+  merchantOrderNo?: string;
+  orderNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      actualAmount: 'actualAmount',
+      alipayAppId: 'alipayAppId',
+      body: 'body',
+      merchantId: 'merchantId',
+      merchantOrderNo: 'merchantOrderNo',
+      orderNo: 'orderNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actualAmount: 'number',
+      alipayAppId: 'string',
+      body: 'string',
+      merchantId: 'string',
+      merchantOrderNo: 'string',
+      orderNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAppOrderResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateAppOrderResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateAppOrderResponseBody,
     };
   }
 
@@ -1952,6 +2285,106 @@ export class CreateSectionConfigResponse extends $tea.Model {
   }
 }
 
+export class CreateStsTokenHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateStsTokenRequest extends $tea.Model {
+  deviceSn?: string;
+  stsType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deviceSn: 'deviceSn',
+      stsType: 'stsType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceSn: 'string',
+      stsType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateStsTokenResponseBody extends $tea.Model {
+  accessKeyId?: string;
+  accessKeySecret?: string;
+  expiration?: string;
+  extInfo?: string;
+  securityToken?: string;
+  status?: string;
+  static names(): { [key: string]: string } {
+    return {
+      accessKeyId: 'accessKeyId',
+      accessKeySecret: 'accessKeySecret',
+      expiration: 'expiration',
+      extInfo: 'extInfo',
+      securityToken: 'securityToken',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accessKeyId: 'string',
+      accessKeySecret: 'string',
+      expiration: 'string',
+      extInfo: 'string',
+      securityToken: 'string',
+      status: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateStsTokenResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateStsTokenResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateStsTokenResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateTokenHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2347,6 +2780,94 @@ export class CreateUniversityTeacherResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: CreateUniversityTeacherResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeactivateDeviceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeactivateDeviceRequest extends $tea.Model {
+  model?: string;
+  sn?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      model: 'model',
+      sn: 'sn',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      model: 'string',
+      sn: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeactivateDeviceResponseBody extends $tea.Model {
+  activateTimes?: number;
+  static names(): { [key: string]: string } {
+    return {
+      activateTimes: 'activateTimes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      activateTimes: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeactivateDeviceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DeactivateDeviceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DeactivateDeviceResponseBody,
     };
   }
 
@@ -3726,6 +4247,91 @@ export class GetDefaultChildResponse extends $tea.Model {
   }
 }
 
+export class GetEduUserIdentityHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEduUserIdentityRequest extends $tea.Model {
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEduUserIdentityResponseBody extends $tea.Model {
+  data?: GetEduUserIdentityResponseBodyData;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: GetEduUserIdentityResponseBodyData,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEduUserIdentityResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetEduUserIdentityResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetEduUserIdentityResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetOpenCourseDetailHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4294,6 +4900,94 @@ export class InitDeviceResponse extends $tea.Model {
   }
 }
 
+export class InitVPaasDeviceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InitVPaasDeviceRequest extends $tea.Model {
+  sn?: string;
+  timestamp?: number;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      sn: 'sn',
+      timestamp: 'timestamp',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sn: 'string',
+      timestamp: 'number',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InitVPaasDeviceResponseBody extends $tea.Model {
+  pspk?: string;
+  static names(): { [key: string]: string } {
+    return {
+      pspk: 'pspk',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pspk: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InitVPaasDeviceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: InitVPaasDeviceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: InitVPaasDeviceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class InsertSectionConfigHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4591,6 +5285,100 @@ export class MoveStudentResponse extends $tea.Model {
   }
 }
 
+export class PageQueryDevicesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageQueryDevicesRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageQueryDevicesResponseBody extends $tea.Model {
+  list?: PageQueryDevicesResponseBodyList[];
+  nextToken?: string;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      list: 'list',
+      nextToken: 'nextToken',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      list: { 'type': 'array', 'itemType': PageQueryDevicesResponseBodyList },
+      nextToken: 'string',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageQueryDevicesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: PageQueryDevicesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: PageQueryDevicesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class PayOrderHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4774,6 +5562,97 @@ export class PollingConfirmStatusResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: PollingConfirmStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PreDialHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PreDialRequest extends $tea.Model {
+  callerUserId?: string;
+  receiverUserId?: string;
+  sn?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      callerUserId: 'callerUserId',
+      receiverUserId: 'receiverUserId',
+      sn: 'sn',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      callerUserId: 'string',
+      receiverUserId: 'string',
+      sn: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PreDialResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PreDialResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: PreDialResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: PreDialResponseBody,
     };
   }
 
@@ -5464,6 +6343,160 @@ export class QueryGroupIdResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryGroupIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOrderHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOrderRequest extends $tea.Model {
+  alipayAppId?: string;
+  merchantId?: string;
+  orderNo?: string;
+  signature?: string;
+  static names(): { [key: string]: string } {
+    return {
+      alipayAppId: 'alipayAppId',
+      merchantId: 'merchantId',
+      orderNo: 'orderNo',
+      signature: 'signature',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      alipayAppId: 'string',
+      merchantId: 'string',
+      orderNo: 'string',
+      signature: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOrderResponseBody extends $tea.Model {
+  actualAmount?: number;
+  alipayAppId?: string;
+  closeTime?: number;
+  createTime?: number;
+  feature?: string;
+  labelAmount?: number;
+  merchantId?: string;
+  merchantMergeOrderNo?: string;
+  merchantOrderNo?: string;
+  orderNo?: string;
+  orderType?: string;
+  payId?: string;
+  payLogonId?: string;
+  payStatus?: number;
+  payTime?: number;
+  payType?: string;
+  refundAmount?: number;
+  refundStatus?: number;
+  refundTime?: number;
+  subject?: string;
+  tradeNo?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      actualAmount: 'actualAmount',
+      alipayAppId: 'alipayAppId',
+      closeTime: 'closeTime',
+      createTime: 'createTime',
+      feature: 'feature',
+      labelAmount: 'labelAmount',
+      merchantId: 'merchantId',
+      merchantMergeOrderNo: 'merchantMergeOrderNo',
+      merchantOrderNo: 'merchantOrderNo',
+      orderNo: 'orderNo',
+      orderType: 'orderType',
+      payId: 'payId',
+      payLogonId: 'payLogonId',
+      payStatus: 'payStatus',
+      payTime: 'payTime',
+      payType: 'payType',
+      refundAmount: 'refundAmount',
+      refundStatus: 'refundStatus',
+      refundTime: 'refundTime',
+      subject: 'subject',
+      tradeNo: 'tradeNo',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actualAmount: 'number',
+      alipayAppId: 'string',
+      closeTime: 'number',
+      createTime: 'number',
+      feature: 'string',
+      labelAmount: 'number',
+      merchantId: 'string',
+      merchantMergeOrderNo: 'string',
+      merchantOrderNo: 'string',
+      orderNo: 'string',
+      orderType: 'string',
+      payId: 'string',
+      payLogonId: 'string',
+      payStatus: 'number',
+      payTime: 'number',
+      payType: 'string',
+      refundAmount: 'number',
+      refundStatus: 'number',
+      refundTime: 'number',
+      subject: 'string',
+      tradeNo: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOrderResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryOrderResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryOrderResponseBody,
     };
   }
 
@@ -8324,6 +9357,37 @@ export class BatchOrgCreateHWResponseBodyResult extends $tea.Model {
   }
 }
 
+export class CreateAppOrderRequestDetailList extends $tea.Model {
+  feature?: string;
+  goodsId?: string;
+  goodsName?: string;
+  goodsPrice?: number;
+  goodsQuantity?: number;
+  static names(): { [key: string]: string } {
+    return {
+      feature: 'feature',
+      goodsId: 'goodsId',
+      goodsName: 'goodsName',
+      goodsPrice: 'goodsPrice',
+      goodsQuantity: 'goodsQuantity',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      feature: 'string',
+      goodsId: 'string',
+      goodsName: 'string',
+      goodsPrice: 'number',
+      goodsQuantity: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateCustomClassRequestCustomClass extends $tea.Model {
   name?: string;
   static names(): { [key: string]: string } {
@@ -9018,6 +10082,31 @@ export class GetDefaultChildResponseBodyBindStudents extends $tea.Model {
   }
 }
 
+export class GetEduUserIdentityResponseBodyData extends $tea.Model {
+  matchGuardianRule?: boolean;
+  matchTeacherRule?: boolean;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      matchGuardianRule: 'matchGuardianRule',
+      matchTeacherRule: 'matchTeacherRule',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      matchGuardianRule: 'boolean',
+      matchTeacherRule: 'boolean',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetOpenCourseDetailResponseBodyPushModel extends $tea.Model {
   pushOrgNameList?: string[];
   pushRoleNameList?: string[];
@@ -9654,6 +10743,37 @@ export class ListOrderResponseBodyList extends $tea.Model {
       status: 'number',
       tradeNo: 'string',
       userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageQueryDevicesResponseBodyList extends $tea.Model {
+  gmtExpiry?: number;
+  model?: string;
+  name?: string;
+  sn?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      gmtExpiry: 'gmtExpiry',
+      model: 'model',
+      name: 'name',
+      sn: 'sn',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      gmtExpiry: 'number',
+      model: 'string',
+      name: 'string',
+      sn: 'string',
+      type: 'string',
     };
   }
 
@@ -11327,6 +12447,51 @@ export default class Client extends OpenApi {
   }
 
 
+  async activateDevice(request: ActivateDeviceRequest): Promise<ActivateDeviceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ActivateDeviceHeaders({ });
+    return await this.activateDeviceWithOptions(request, headers, runtime);
+  }
+
+  async activateDeviceWithOptions(request: ActivateDeviceRequest, headers: ActivateDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<ActivateDeviceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.licenseKey)) {
+      body["licenseKey"] = request.licenseKey;
+    }
+
+    if (!Util.isUnset(request.model)) {
+      body["model"] = request.model;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.sn)) {
+      body["sn"] = request.sn;
+    }
+
+    if (!Util.isUnset(request.type)) {
+      body["type"] = request.type;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ActivateDeviceResponse>(await this.doROARequest("ActivateDevice", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/vpaas/devices/activate`, "json", req, runtime), new ActivateDeviceResponse({}));
+  }
+
   async addDevice(request: AddDeviceRequest): Promise<AddDeviceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddDeviceHeaders({ });
@@ -11616,6 +12781,51 @@ export default class Client extends OpenApi {
     return $tea.cast<CancelOrderResponse>(await this.doROARequest("CancelOrder", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/orders/cancel`, "json", req, runtime), new CancelOrderResponse({}));
   }
 
+  async cancelUserOrder(request: CancelUserOrderRequest): Promise<CancelUserOrderResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CancelUserOrderHeaders({ });
+    return await this.cancelUserOrderWithOptions(request, headers, runtime);
+  }
+
+  async cancelUserOrderWithOptions(request: CancelUserOrderRequest, headers: CancelUserOrderHeaders, runtime: $Util.RuntimeOptions): Promise<CancelUserOrderResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.alipayAppId)) {
+      body["alipayAppId"] = request.alipayAppId;
+    }
+
+    if (!Util.isUnset(request.merchantId)) {
+      body["merchantId"] = request.merchantId;
+    }
+
+    if (!Util.isUnset(request.orderNo)) {
+      body["orderNo"] = request.orderNo;
+    }
+
+    if (!Util.isUnset(request.signature)) {
+      body["signature"] = request.signature;
+    }
+
+    if (!Util.isUnset(request.timestamp)) {
+      body["timestamp"] = request.timestamp;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CancelUserOrderResponse>(await this.doROARequest("CancelUserOrder", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/userOrders/cancel`, "json", req, runtime), new CancelUserOrderResponse({}));
+  }
+
   async checkRestriction(request: CheckRestrictionRequest): Promise<CheckRestrictionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CheckRestrictionHeaders({ });
@@ -11688,6 +12898,75 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<CourseSchedulingComplimentNoticeResponse>(await this.doROARequest("CourseSchedulingComplimentNotice", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/schedules/finishNotify`, "json", req, runtime), new CourseSchedulingComplimentNoticeResponse({}));
+  }
+
+  async createAppOrder(request: CreateAppOrderRequest): Promise<CreateAppOrderResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateAppOrderHeaders({ });
+    return await this.createAppOrderWithOptions(request, headers, runtime);
+  }
+
+  async createAppOrderWithOptions(request: CreateAppOrderRequest, headers: CreateAppOrderHeaders, runtime: $Util.RuntimeOptions): Promise<CreateAppOrderResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.actualAmount)) {
+      body["actualAmount"] = request.actualAmount;
+    }
+
+    if (!Util.isUnset(request.alipayAppId)) {
+      body["alipayAppId"] = request.alipayAppId;
+    }
+
+    if (!Util.isUnset(request.bizCode)) {
+      body["bizCode"] = request.bizCode;
+    }
+
+    if (!Util.isUnset(request.detailList)) {
+      body["detailList"] = request.detailList;
+    }
+
+    if (!Util.isUnset(request.labelAmount)) {
+      body["labelAmount"] = request.labelAmount;
+    }
+
+    if (!Util.isUnset(request.merchantId)) {
+      body["merchantId"] = request.merchantId;
+    }
+
+    if (!Util.isUnset(request.merchantOrderNo)) {
+      body["merchantOrderNo"] = request.merchantOrderNo;
+    }
+
+    if (!Util.isUnset(request.signature)) {
+      body["signature"] = request.signature;
+    }
+
+    if (!Util.isUnset(request.subject)) {
+      body["subject"] = request.subject;
+    }
+
+    if (!Util.isUnset(request.timestamp)) {
+      body["timestamp"] = request.timestamp;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateAppOrderResponse>(await this.doROARequest("CreateAppOrder", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/appOrders`, "json", req, runtime), new CreateAppOrderResponse({}));
   }
 
   async createCustomClass(request: CreateCustomClassRequest): Promise<CreateCustomClassResponse> {
@@ -12322,6 +13601,39 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateSectionConfigResponse>(await this.doROARequest("CreateSectionConfig", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/universities/sectionConfigs`, "json", req, runtime), new CreateSectionConfigResponse({}));
   }
 
+  async createStsToken(request: CreateStsTokenRequest): Promise<CreateStsTokenResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateStsTokenHeaders({ });
+    return await this.createStsTokenWithOptions(request, headers, runtime);
+  }
+
+  async createStsTokenWithOptions(request: CreateStsTokenRequest, headers: CreateStsTokenHeaders, runtime: $Util.RuntimeOptions): Promise<CreateStsTokenResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deviceSn)) {
+      body["deviceSn"] = request.deviceSn;
+    }
+
+    if (!Util.isUnset(request.stsType)) {
+      body["stsType"] = request.stsType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateStsTokenResponse>(await this.doROARequest("CreateStsToken", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/vpaas/ststoken`, "json", req, runtime), new CreateStsTokenResponse({}));
+  }
+
   async createToken(request: CreateTokenRequest): Promise<CreateTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateTokenHeaders({ });
@@ -12520,6 +13832,43 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateUniversityTeacherResponse>(await this.doROARequest("CreateUniversityTeacher", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/universities/teachers`, "json", req, runtime), new CreateUniversityTeacherResponse({}));
+  }
+
+  async deactivateDevice(request: DeactivateDeviceRequest): Promise<DeactivateDeviceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeactivateDeviceHeaders({ });
+    return await this.deactivateDeviceWithOptions(request, headers, runtime);
+  }
+
+  async deactivateDeviceWithOptions(request: DeactivateDeviceRequest, headers: DeactivateDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<DeactivateDeviceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.model)) {
+      body["model"] = request.model;
+    }
+
+    if (!Util.isUnset(request.sn)) {
+      body["sn"] = request.sn;
+    }
+
+    if (!Util.isUnset(request.type)) {
+      body["type"] = request.type;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<DeactivateDeviceResponse>(await this.doROARequest("DeactivateDevice", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/vpaas/devices/deactivate`, "json", req, runtime), new DeactivateDeviceResponse({}));
   }
 
   async deleteDept(deptId: string, request: DeleteDeptRequest): Promise<DeleteDeptResponse> {
@@ -13061,6 +14410,35 @@ export default class Client extends OpenApi {
     return $tea.cast<GetDefaultChildResponse>(await this.doROARequest("GetDefaultChild", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/defaultChildren`, "json", req, runtime), new GetDefaultChildResponse({}));
   }
 
+  async getEduUserIdentity(request: GetEduUserIdentityRequest): Promise<GetEduUserIdentityResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetEduUserIdentityHeaders({ });
+    return await this.getEduUserIdentityWithOptions(request, headers, runtime);
+  }
+
+  async getEduUserIdentityWithOptions(request: GetEduUserIdentityRequest, headers: GetEduUserIdentityHeaders, runtime: $Util.RuntimeOptions): Promise<GetEduUserIdentityResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetEduUserIdentityResponse>(await this.doROARequest("GetEduUserIdentity", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/apollos/activities/userIdentities`, "json", req, runtime), new GetEduUserIdentityResponse({}));
+  }
+
   async getOpenCourseDetail(courseId: string): Promise<GetOpenCourseDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetOpenCourseDetailHeaders({ });
@@ -13277,6 +14655,43 @@ export default class Client extends OpenApi {
     return $tea.cast<InitDeviceResponse>(await this.doROARequest("InitDevice", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/devices/init`, "json", req, runtime), new InitDeviceResponse({}));
   }
 
+  async initVPaasDevice(request: InitVPaasDeviceRequest): Promise<InitVPaasDeviceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new InitVPaasDeviceHeaders({ });
+    return await this.initVPaasDeviceWithOptions(request, headers, runtime);
+  }
+
+  async initVPaasDeviceWithOptions(request: InitVPaasDeviceRequest, headers: InitVPaasDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<InitVPaasDeviceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.sn)) {
+      body["sn"] = request.sn;
+    }
+
+    if (!Util.isUnset(request.timestamp)) {
+      body["timestamp"] = request.timestamp;
+    }
+
+    if (!Util.isUnset(request.type)) {
+      body["type"] = request.type;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<InitVPaasDeviceResponse>(await this.doROARequest("InitVPaasDevice", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/vpaas/devices/init`, "json", req, runtime), new InitVPaasDeviceResponse({}));
+  }
+
   async insertSectionConfig(request: InsertSectionConfigRequest): Promise<InsertSectionConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new InsertSectionConfigHeaders({ });
@@ -13430,6 +14845,43 @@ export default class Client extends OpenApi {
     return $tea.cast<MoveStudentResponse>(await this.doROARequest("MoveStudent", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/students/move`, "json", req, runtime), new MoveStudentResponse({}));
   }
 
+  async pageQueryDevices(request: PageQueryDevicesRequest): Promise<PageQueryDevicesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PageQueryDevicesHeaders({ });
+    return await this.pageQueryDevicesWithOptions(request, headers, runtime);
+  }
+
+  async pageQueryDevicesWithOptions(request: PageQueryDevicesRequest, headers: PageQueryDevicesHeaders, runtime: $Util.RuntimeOptions): Promise<PageQueryDevicesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.type)) {
+      query["type"] = request.type;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<PageQueryDevicesResponse>(await this.doROARequest("PageQueryDevices", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/vpaas/devices`, "json", req, runtime), new PageQueryDevicesResponse({}));
+  }
+
   async payOrder(request: PayOrderRequest): Promise<PayOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PayOrderHeaders({ });
@@ -13522,6 +14974,47 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<PollingConfirmStatusResponse>(await this.doROARequest("PollingConfirmStatus", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/universities/courses/pollingConfirmStatus`, "json", req, runtime), new PollingConfirmStatusResponse({}));
+  }
+
+  async preDial(request: PreDialRequest): Promise<PreDialResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PreDialHeaders({ });
+    return await this.preDialWithOptions(request, headers, runtime);
+  }
+
+  async preDialWithOptions(request: PreDialRequest, headers: PreDialHeaders, runtime: $Util.RuntimeOptions): Promise<PreDialResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.callerUserId)) {
+      body["callerUserId"] = request.callerUserId;
+    }
+
+    if (!Util.isUnset(request.receiverUserId)) {
+      body["receiverUserId"] = request.receiverUserId;
+    }
+
+    if (!Util.isUnset(request.sn)) {
+      body["sn"] = request.sn;
+    }
+
+    if (!Util.isUnset(request.type)) {
+      body["type"] = request.type;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<PreDialResponse>(await this.doROARequest("PreDial", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/vpaas/devices/preDial`, "json", req, runtime), new PreDialResponse({}));
   }
 
   async queryAllSubjectsFromClassSchedule(request: QueryAllSubjectsFromClassScheduleRequest): Promise<QueryAllSubjectsFromClassScheduleResponse> {
@@ -13795,6 +15288,47 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryGroupIdResponse>(await this.doROARequest("QueryGroupId", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/faces/groups`, "json", req, runtime), new QueryGroupIdResponse({}));
+  }
+
+  async queryOrder(request: QueryOrderRequest): Promise<QueryOrderResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryOrderHeaders({ });
+    return await this.queryOrderWithOptions(request, headers, runtime);
+  }
+
+  async queryOrderWithOptions(request: QueryOrderRequest, headers: QueryOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOrderResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.alipayAppId)) {
+      query["alipayAppId"] = request.alipayAppId;
+    }
+
+    if (!Util.isUnset(request.merchantId)) {
+      query["merchantId"] = request.merchantId;
+    }
+
+    if (!Util.isUnset(request.orderNo)) {
+      query["orderNo"] = request.orderNo;
+    }
+
+    if (!Util.isUnset(request.signature)) {
+      query["signature"] = request.signature;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryOrderResponse>(await this.doROARequest("QueryOrder", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/orders`, "json", req, runtime), new QueryOrderResponse({}));
   }
 
   async queryOrgRelationList(request: QueryOrgRelationListRequest): Promise<QueryOrgRelationListResponse> {

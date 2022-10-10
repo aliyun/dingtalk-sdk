@@ -7,6 +7,106 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class SyncBusinessSignInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncBusinessSignInfoRequest extends $tea.Model {
+  bizTypeList?: string[];
+  gmtOrgPay?: string;
+  gmtSign?: string;
+  orgPayStatus?: string;
+  signStatus?: string;
+  targetCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizTypeList: 'bizTypeList',
+      gmtOrgPay: 'gmtOrgPay',
+      gmtSign: 'gmtSign',
+      orgPayStatus: 'orgPayStatus',
+      signStatus: 'signStatus',
+      targetCorpId: 'targetCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizTypeList: { 'type': 'array', 'itemType': 'string' },
+      gmtOrgPay: 'string',
+      gmtSign: 'string',
+      orgPayStatus: 'string',
+      signStatus: 'string',
+      targetCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncBusinessSignInfoResponseBody extends $tea.Model {
+  requestId?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncBusinessSignInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SyncBusinessSignInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SyncBusinessSignInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SyncSecretKeyHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -130,6 +230,7 @@ export class SyncTripOrderHeaders extends $tea.Model {
 }
 
 export class SyncTripOrderRequest extends $tea.Model {
+  channelType?: string;
   currency?: string;
   dingUserId?: string;
   discountAmount?: string;
@@ -152,6 +253,7 @@ export class SyncTripOrderRequest extends $tea.Model {
   type?: string;
   static names(): { [key: string]: string } {
     return {
+      channelType: 'channelType',
       currency: 'currency',
       dingUserId: 'dingUserId',
       discountAmount: 'discountAmount',
@@ -177,6 +279,7 @@ export class SyncTripOrderRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      channelType: 'string',
       currency: 'string',
       dingUserId: 'string',
       discountAmount: 'string',
@@ -431,6 +534,55 @@ export default class Client extends OpenApi {
   }
 
 
+  async syncBusinessSignInfo(request: SyncBusinessSignInfoRequest): Promise<SyncBusinessSignInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SyncBusinessSignInfoHeaders({ });
+    return await this.syncBusinessSignInfoWithOptions(request, headers, runtime);
+  }
+
+  async syncBusinessSignInfoWithOptions(request: SyncBusinessSignInfoRequest, headers: SyncBusinessSignInfoHeaders, runtime: $Util.RuntimeOptions): Promise<SyncBusinessSignInfoResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizTypeList)) {
+      body["bizTypeList"] = request.bizTypeList;
+    }
+
+    if (!Util.isUnset(request.gmtOrgPay)) {
+      body["gmtOrgPay"] = request.gmtOrgPay;
+    }
+
+    if (!Util.isUnset(request.gmtSign)) {
+      body["gmtSign"] = request.gmtSign;
+    }
+
+    if (!Util.isUnset(request.orgPayStatus)) {
+      body["orgPayStatus"] = request.orgPayStatus;
+    }
+
+    if (!Util.isUnset(request.signStatus)) {
+      body["signStatus"] = request.signStatus;
+    }
+
+    if (!Util.isUnset(request.targetCorpId)) {
+      body["targetCorpId"] = request.targetCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SyncBusinessSignInfoResponse>(await this.doROARequest("SyncBusinessSignInfo", "trip_1.0", "HTTP", "POST", "AK", `/v1.0/trip/businessSignInfos/sync`, "json", req, runtime), new SyncBusinessSignInfoResponse({}));
+  }
+
   async syncSecretKey(request: SyncSecretKeyRequest): Promise<SyncSecretKeyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SyncSecretKeyHeaders({ });
@@ -489,6 +641,10 @@ export default class Client extends OpenApi {
   async syncTripOrderWithOptions(request: SyncTripOrderRequest, headers: SyncTripOrderHeaders, runtime: $Util.RuntimeOptions): Promise<SyncTripOrderResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.channelType)) {
+      body["channelType"] = request.channelType;
+    }
+
     if (!Util.isUnset(request.currency)) {
       body["currency"] = request.currency;
     }

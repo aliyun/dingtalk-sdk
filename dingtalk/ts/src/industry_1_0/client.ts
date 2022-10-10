@@ -5939,6 +5939,133 @@ export class ExternalQueryExternalOrgsResponse extends $tea.Model {
   }
 }
 
+export class HospitalDataCheckHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HospitalDataCheckRequest extends $tea.Model {
+  allDeptCount?: number;
+  allDeptUserCount?: number;
+  allGroupCount?: number;
+  allGroupUserCount?: number;
+  deptCount?: number;
+  deptUserCount?: number;
+  groupCount?: number;
+  groupUserCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      allDeptCount: 'allDeptCount',
+      allDeptUserCount: 'allDeptUserCount',
+      allGroupCount: 'allGroupCount',
+      allGroupUserCount: 'allGroupUserCount',
+      deptCount: 'deptCount',
+      deptUserCount: 'deptUserCount',
+      groupCount: 'groupCount',
+      groupUserCount: 'groupUserCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      allDeptCount: 'number',
+      allDeptUserCount: 'number',
+      allGroupCount: 'number',
+      allGroupUserCount: 'number',
+      deptCount: 'number',
+      deptUserCount: 'number',
+      groupCount: 'number',
+      groupUserCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HospitalDataCheckResponseBody extends $tea.Model {
+  allDeptCount?: number;
+  allDeptUserCount?: number;
+  allGroupCount?: number;
+  allGroupUserCount?: number;
+  deptCount?: number;
+  deptUserCount?: number;
+  groupCount?: number;
+  groupUserCount?: number;
+  match?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      allDeptCount: 'allDeptCount',
+      allDeptUserCount: 'allDeptUserCount',
+      allGroupCount: 'allGroupCount',
+      allGroupUserCount: 'allGroupUserCount',
+      deptCount: 'deptCount',
+      deptUserCount: 'deptUserCount',
+      groupCount: 'groupCount',
+      groupUserCount: 'groupUserCount',
+      match: 'match',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      allDeptCount: 'number',
+      allDeptUserCount: 'number',
+      allGroupCount: 'number',
+      allGroupUserCount: 'number',
+      deptCount: 'number',
+      deptUserCount: 'number',
+      groupCount: 'number',
+      groupUserCount: 'number',
+      match: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HospitalDataCheckResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: HospitalDataCheckResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: HospitalDataCheckResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class IndustryManufactureCommonEventHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -9487,6 +9614,25 @@ export class QueryUserInfoHeaders extends $tea.Model {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserInfoRequest extends $tea.Model {
+  monthMark?: string;
+  static names(): { [key: string]: string } {
+    return {
+      monthMark: 'monthMark',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      monthMark: 'string',
     };
   }
 
@@ -14947,6 +15093,63 @@ export default class Client extends OpenApi {
     return $tea.cast<ExternalQueryExternalOrgsResponse>(await this.doROARequest("ExternalQueryExternalOrgs", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/externals/organizations`, "json", req, runtime), new ExternalQueryExternalOrgsResponse({}));
   }
 
+  async hospitalDataCheck(request: HospitalDataCheckRequest): Promise<HospitalDataCheckResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new HospitalDataCheckHeaders({ });
+    return await this.hospitalDataCheckWithOptions(request, headers, runtime);
+  }
+
+  async hospitalDataCheckWithOptions(request: HospitalDataCheckRequest, headers: HospitalDataCheckHeaders, runtime: $Util.RuntimeOptions): Promise<HospitalDataCheckResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.allDeptCount)) {
+      body["allDeptCount"] = request.allDeptCount;
+    }
+
+    if (!Util.isUnset(request.allDeptUserCount)) {
+      body["allDeptUserCount"] = request.allDeptUserCount;
+    }
+
+    if (!Util.isUnset(request.allGroupCount)) {
+      body["allGroupCount"] = request.allGroupCount;
+    }
+
+    if (!Util.isUnset(request.allGroupUserCount)) {
+      body["allGroupUserCount"] = request.allGroupUserCount;
+    }
+
+    if (!Util.isUnset(request.deptCount)) {
+      body["deptCount"] = request.deptCount;
+    }
+
+    if (!Util.isUnset(request.deptUserCount)) {
+      body["deptUserCount"] = request.deptUserCount;
+    }
+
+    if (!Util.isUnset(request.groupCount)) {
+      body["groupCount"] = request.groupCount;
+    }
+
+    if (!Util.isUnset(request.groupUserCount)) {
+      body["groupUserCount"] = request.groupUserCount;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<HospitalDataCheckResponse>(await this.doROARequest("HospitalDataCheck", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/medicals/datas/check`, "json", req, runtime), new HospitalDataCheckResponse({}));
+  }
+
   async industryManufactureCommonEvent(request: IndustryManufactureCommonEventRequest): Promise<IndustryManufactureCommonEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new IndustryManufactureCommonEventHeaders({ });
@@ -16866,14 +17069,20 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryUserExtendValuesResponse>(await this.doROARequest("QueryUserExtendValues", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/medicals/users/extends/query`, "json", req, runtime), new QueryUserExtendValuesResponse({}));
   }
 
-  async queryUserInfo(userId: string): Promise<QueryUserInfoResponse> {
+  async queryUserInfo(userId: string, request: QueryUserInfoRequest): Promise<QueryUserInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryUserInfoHeaders({ });
-    return await this.queryUserInfoWithOptions(userId, headers, runtime);
+    return await this.queryUserInfoWithOptions(userId, request, headers, runtime);
   }
 
-  async queryUserInfoWithOptions(userId: string, headers: QueryUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserInfoResponse> {
+  async queryUserInfoWithOptions(userId: string, request: QueryUserInfoRequest, headers: QueryUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserInfoResponse> {
+    Util.validateModel(request);
     userId = OpenApiUtil.getEncodeParam(userId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.monthMark)) {
+      query["monthMark"] = request.monthMark;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -16885,6 +17094,7 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
+      query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryUserInfoResponse>(await this.doROARequest("QueryUserInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/users/${userId}`, "json", req, runtime), new QueryUserInfoResponse({}));
   }

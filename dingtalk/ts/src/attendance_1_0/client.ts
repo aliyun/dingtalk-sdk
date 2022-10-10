@@ -853,6 +853,94 @@ export class DingTalkSecurityCheckResponse extends $tea.Model {
   }
 }
 
+export class GetATManageScopeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetATManageScopeRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetATManageScopeResponseBody extends $tea.Model {
+  result?: GetATManageScopeResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetATManageScopeResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetATManageScopeResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetATManageScopeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetATManageScopeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetAdjustmentsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1591,6 +1679,383 @@ export class GetUserHolidaysResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetUserHolidaysResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupAddHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupAddRequest extends $tea.Model {
+  adjustmentSettingId?: number;
+  bleDeviceList?: GroupAddRequestBleDeviceList[];
+  checkNeedHealthyCode?: boolean;
+  defaultClassId?: number;
+  disableCheckWhenRest?: boolean;
+  disableCheckWithoutSchedule?: boolean;
+  enableCameraCheck?: boolean;
+  enableEmpSelectClass?: boolean;
+  enableFaceCheck?: boolean;
+  enableFaceStrictMode?: boolean;
+  enableNextDay?: boolean;
+  enableOutSideUpdateNormalCheck?: boolean;
+  enableOutsideApply?: boolean;
+  enableOutsideCameraCheck?: boolean;
+  enableOutsideCheck?: boolean;
+  enableOutsideRemark?: boolean;
+  enablePositionBle?: boolean;
+  enableTrimDistance?: boolean;
+  forbidHideOutSideAddress?: boolean;
+  freeCheckSetting?: GroupAddRequestFreeCheckSetting;
+  freeCheckTypeId?: number;
+  freecheckDayStartMinOffset?: number;
+  freecheckWorkDays?: number[];
+  groupId?: number;
+  groupName?: string;
+  managerList?: string[];
+  members?: GroupAddRequestMembers[];
+  modifyMember?: boolean;
+  offset?: number;
+  openFaceCheck?: boolean;
+  outsideCheckApproveModeId?: number;
+  overtimeSettingId?: number;
+  owner?: string;
+  positions?: GroupAddRequestPositions[];
+  resourcePermissionMap?: GroupAddRequestResourcePermissionMap[];
+  shiftVOList?: GroupAddRequestShiftVOList[];
+  skipHolidays?: boolean;
+  specialDays?: string;
+  trimDistance?: number;
+  type?: string;
+  wifis?: GroupAddRequestWifis[];
+  workdayClassList?: number[];
+  opUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      adjustmentSettingId: 'adjustmentSettingId',
+      bleDeviceList: 'bleDeviceList',
+      checkNeedHealthyCode: 'checkNeedHealthyCode',
+      defaultClassId: 'defaultClassId',
+      disableCheckWhenRest: 'disableCheckWhenRest',
+      disableCheckWithoutSchedule: 'disableCheckWithoutSchedule',
+      enableCameraCheck: 'enableCameraCheck',
+      enableEmpSelectClass: 'enableEmpSelectClass',
+      enableFaceCheck: 'enableFaceCheck',
+      enableFaceStrictMode: 'enableFaceStrictMode',
+      enableNextDay: 'enableNextDay',
+      enableOutSideUpdateNormalCheck: 'enableOutSideUpdateNormalCheck',
+      enableOutsideApply: 'enableOutsideApply',
+      enableOutsideCameraCheck: 'enableOutsideCameraCheck',
+      enableOutsideCheck: 'enableOutsideCheck',
+      enableOutsideRemark: 'enableOutsideRemark',
+      enablePositionBle: 'enablePositionBle',
+      enableTrimDistance: 'enableTrimDistance',
+      forbidHideOutSideAddress: 'forbidHideOutSideAddress',
+      freeCheckSetting: 'freeCheckSetting',
+      freeCheckTypeId: 'freeCheckTypeId',
+      freecheckDayStartMinOffset: 'freecheckDayStartMinOffset',
+      freecheckWorkDays: 'freecheckWorkDays',
+      groupId: 'groupId',
+      groupName: 'groupName',
+      managerList: 'managerList',
+      members: 'members',
+      modifyMember: 'modifyMember',
+      offset: 'offset',
+      openFaceCheck: 'openFaceCheck',
+      outsideCheckApproveModeId: 'outsideCheckApproveModeId',
+      overtimeSettingId: 'overtimeSettingId',
+      owner: 'owner',
+      positions: 'positions',
+      resourcePermissionMap: 'resourcePermissionMap',
+      shiftVOList: 'shiftVOList',
+      skipHolidays: 'skipHolidays',
+      specialDays: 'specialDays',
+      trimDistance: 'trimDistance',
+      type: 'type',
+      wifis: 'wifis',
+      workdayClassList: 'workdayClassList',
+      opUserId: 'opUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      adjustmentSettingId: 'number',
+      bleDeviceList: { 'type': 'array', 'itemType': GroupAddRequestBleDeviceList },
+      checkNeedHealthyCode: 'boolean',
+      defaultClassId: 'number',
+      disableCheckWhenRest: 'boolean',
+      disableCheckWithoutSchedule: 'boolean',
+      enableCameraCheck: 'boolean',
+      enableEmpSelectClass: 'boolean',
+      enableFaceCheck: 'boolean',
+      enableFaceStrictMode: 'boolean',
+      enableNextDay: 'boolean',
+      enableOutSideUpdateNormalCheck: 'boolean',
+      enableOutsideApply: 'boolean',
+      enableOutsideCameraCheck: 'boolean',
+      enableOutsideCheck: 'boolean',
+      enableOutsideRemark: 'boolean',
+      enablePositionBle: 'boolean',
+      enableTrimDistance: 'boolean',
+      forbidHideOutSideAddress: 'boolean',
+      freeCheckSetting: GroupAddRequestFreeCheckSetting,
+      freeCheckTypeId: 'number',
+      freecheckDayStartMinOffset: 'number',
+      freecheckWorkDays: { 'type': 'array', 'itemType': 'number' },
+      groupId: 'number',
+      groupName: 'string',
+      managerList: { 'type': 'array', 'itemType': 'string' },
+      members: { 'type': 'array', 'itemType': GroupAddRequestMembers },
+      modifyMember: 'boolean',
+      offset: 'number',
+      openFaceCheck: 'boolean',
+      outsideCheckApproveModeId: 'number',
+      overtimeSettingId: 'number',
+      owner: 'string',
+      positions: { 'type': 'array', 'itemType': GroupAddRequestPositions },
+      resourcePermissionMap: { 'type': 'array', 'itemType': GroupAddRequestResourcePermissionMap },
+      shiftVOList: { 'type': 'array', 'itemType': GroupAddRequestShiftVOList },
+      skipHolidays: 'boolean',
+      specialDays: 'string',
+      trimDistance: 'number',
+      type: 'string',
+      wifis: { 'type': 'array', 'itemType': GroupAddRequestWifis },
+      workdayClassList: { 'type': 'array', 'itemType': 'number' },
+      opUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupAddResponseBody extends $tea.Model {
+  result?: GroupAddResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GroupAddResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupAddResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GroupAddResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GroupAddResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupUpdateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupUpdateRequest extends $tea.Model {
+  adjustmentSettingId?: number;
+  disableCheckWhenRest?: boolean;
+  disableCheckWithoutSchedule?: boolean;
+  enableCameraCheck?: boolean;
+  enableEmpSelectClass?: boolean;
+  enableFaceCheck?: boolean;
+  enableFaceStrictMode?: boolean;
+  enableOutSideUpdateNormalCheck?: boolean;
+  enableOutsideApply?: boolean;
+  enableOutsideCheck?: boolean;
+  enableOutsideRemark?: boolean;
+  enableTrimDistance?: boolean;
+  forbidHideOutSideAddress?: boolean;
+  freeCheckSetting?: GroupUpdateRequestFreeCheckSetting;
+  freeCheckTypeId?: number;
+  groupId?: number;
+  groupName?: string;
+  managerList?: string[];
+  offset?: number;
+  openFaceCheck?: boolean;
+  outsideCheckApproveModeId?: number;
+  overtimeSettingId?: number;
+  owner?: string;
+  positions?: GroupUpdateRequestPositions[];
+  resourcePermissionMap?: GroupUpdateRequestResourcePermissionMap[];
+  shiftVOList?: GroupUpdateRequestShiftVOList[];
+  skipHolidays?: boolean;
+  trimDistance?: number;
+  workdayClassList?: number[];
+  opUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      adjustmentSettingId: 'adjustmentSettingId',
+      disableCheckWhenRest: 'disableCheckWhenRest',
+      disableCheckWithoutSchedule: 'disableCheckWithoutSchedule',
+      enableCameraCheck: 'enableCameraCheck',
+      enableEmpSelectClass: 'enableEmpSelectClass',
+      enableFaceCheck: 'enableFaceCheck',
+      enableFaceStrictMode: 'enableFaceStrictMode',
+      enableOutSideUpdateNormalCheck: 'enableOutSideUpdateNormalCheck',
+      enableOutsideApply: 'enableOutsideApply',
+      enableOutsideCheck: 'enableOutsideCheck',
+      enableOutsideRemark: 'enableOutsideRemark',
+      enableTrimDistance: 'enableTrimDistance',
+      forbidHideOutSideAddress: 'forbidHideOutSideAddress',
+      freeCheckSetting: 'freeCheckSetting',
+      freeCheckTypeId: 'freeCheckTypeId',
+      groupId: 'groupId',
+      groupName: 'groupName',
+      managerList: 'managerList',
+      offset: 'offset',
+      openFaceCheck: 'openFaceCheck',
+      outsideCheckApproveModeId: 'outsideCheckApproveModeId',
+      overtimeSettingId: 'overtimeSettingId',
+      owner: 'owner',
+      positions: 'positions',
+      resourcePermissionMap: 'resourcePermissionMap',
+      shiftVOList: 'shiftVOList',
+      skipHolidays: 'skipHolidays',
+      trimDistance: 'trimDistance',
+      workdayClassList: 'workdayClassList',
+      opUserId: 'opUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      adjustmentSettingId: 'number',
+      disableCheckWhenRest: 'boolean',
+      disableCheckWithoutSchedule: 'boolean',
+      enableCameraCheck: 'boolean',
+      enableEmpSelectClass: 'boolean',
+      enableFaceCheck: 'boolean',
+      enableFaceStrictMode: 'boolean',
+      enableOutSideUpdateNormalCheck: 'boolean',
+      enableOutsideApply: 'boolean',
+      enableOutsideCheck: 'boolean',
+      enableOutsideRemark: 'boolean',
+      enableTrimDistance: 'boolean',
+      forbidHideOutSideAddress: 'boolean',
+      freeCheckSetting: GroupUpdateRequestFreeCheckSetting,
+      freeCheckTypeId: 'number',
+      groupId: 'number',
+      groupName: 'string',
+      managerList: { 'type': 'array', 'itemType': 'string' },
+      offset: 'number',
+      openFaceCheck: 'boolean',
+      outsideCheckApproveModeId: 'number',
+      overtimeSettingId: 'number',
+      owner: 'string',
+      positions: { 'type': 'array', 'itemType': GroupUpdateRequestPositions },
+      resourcePermissionMap: { 'type': 'array', 'itemType': GroupUpdateRequestResourcePermissionMap },
+      shiftVOList: { 'type': 'array', 'itemType': GroupUpdateRequestShiftVOList },
+      skipHolidays: 'boolean',
+      trimDistance: 'number',
+      workdayClassList: { 'type': 'array', 'itemType': 'number' },
+      opUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupUpdateResponseBody extends $tea.Model {
+  result?: GroupUpdateResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GroupUpdateResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupUpdateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GroupUpdateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GroupUpdateResponseBody,
     };
   }
 
@@ -2613,13 +3078,40 @@ export class DingTalkSecurityCheckResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetATManageScopeResponseBodyResult extends $tea.Model {
+  hasMore?: boolean;
+  manageScope?: string;
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      manageScope: 'manageScope',
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      manageScope: 'string',
+      userIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetAdjustmentsResponseBodyResultItems extends $tea.Model {
   id?: number;
   name?: string;
+  settingId?: number;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
       name: 'name',
+      settingId: 'settingId',
     };
   }
 
@@ -2627,6 +3119,7 @@ export class GetAdjustmentsResponseBodyResultItems extends $tea.Model {
     return {
       id: 'number',
       name: 'string',
+      settingId: 'number',
     };
   }
 
@@ -3201,10 +3694,12 @@ export class GetOvertimeSettingResponseBodyResult extends $tea.Model {
 export class GetSimpleOvertimeSettingResponseBodyResultItems extends $tea.Model {
   id?: number;
   name?: string;
+  settingId?: number;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
       name: 'name',
+      settingId: 'settingId',
     };
   }
 
@@ -3212,6 +3707,7 @@ export class GetSimpleOvertimeSettingResponseBodyResultItems extends $tea.Model 
     return {
       id: 'number',
       name: 'string',
+      settingId: 'number',
     };
   }
 
@@ -3287,6 +3783,378 @@ export class GetUserHolidaysResponseBodyResult extends $tea.Model {
     return {
       holidays: { 'type': 'array', 'itemType': GetUserHolidaysResponseBodyResultHolidays },
       userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupAddRequestBleDeviceList extends $tea.Model {
+  deviceId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deviceId: 'deviceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupAddRequestFreeCheckSettingFreeCheckGap extends $tea.Model {
+  offOnCheckGapMinutes?: number;
+  onOffCheckGapMinutes?: number;
+  static names(): { [key: string]: string } {
+    return {
+      offOnCheckGapMinutes: 'offOnCheckGapMinutes',
+      onOffCheckGapMinutes: 'onOffCheckGapMinutes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      offOnCheckGapMinutes: 'number',
+      onOffCheckGapMinutes: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupAddRequestFreeCheckSetting extends $tea.Model {
+  freeCheckGap?: GroupAddRequestFreeCheckSettingFreeCheckGap;
+  static names(): { [key: string]: string } {
+    return {
+      freeCheckGap: 'freeCheckGap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      freeCheckGap: GroupAddRequestFreeCheckSettingFreeCheckGap,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupAddRequestMembers extends $tea.Model {
+  role?: string;
+  type?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      role: 'role',
+      type: 'type',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      role: 'string',
+      type: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupAddRequestPositions extends $tea.Model {
+  address?: string;
+  latitude?: string;
+  longitude?: string;
+  offset?: number;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      address: 'address',
+      latitude: 'latitude',
+      longitude: 'longitude',
+      offset: 'offset',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      address: 'string',
+      latitude: 'string',
+      longitude: 'string',
+      offset: 'number',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupAddRequestResourcePermissionMap extends $tea.Model {
+  cameraCheck?: string;
+  checkPositionType?: string;
+  checkTime?: string;
+  groupMember?: string;
+  groupType?: string;
+  outSideCheck?: string;
+  overTimeRule?: string;
+  schedule?: string;
+  static names(): { [key: string]: string } {
+    return {
+      cameraCheck: 'cameraCheck',
+      checkPositionType: 'checkPositionType',
+      checkTime: 'checkTime',
+      groupMember: 'groupMember',
+      groupType: 'groupType',
+      outSideCheck: 'outSideCheck',
+      overTimeRule: 'overTimeRule',
+      schedule: 'schedule',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cameraCheck: 'string',
+      checkPositionType: 'string',
+      checkTime: 'string',
+      groupMember: 'string',
+      groupType: 'string',
+      outSideCheck: 'string',
+      overTimeRule: 'string',
+      schedule: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupAddRequestShiftVOList extends $tea.Model {
+  shiftId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      shiftId: 'shiftId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      shiftId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupAddRequestWifis extends $tea.Model {
+  macAddr?: string;
+  ssid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      macAddr: 'macAddr',
+      ssid: 'ssid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      macAddr: 'string',
+      ssid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupAddResponseBodyResult extends $tea.Model {
+  groupId?: number;
+  groupName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      groupId: 'groupId',
+      groupName: 'groupName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupId: 'number',
+      groupName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupUpdateRequestFreeCheckSettingFreeCheckGap extends $tea.Model {
+  offOnCheckGapMinutes?: number;
+  onOffCheckGapMinutes?: number;
+  static names(): { [key: string]: string } {
+    return {
+      offOnCheckGapMinutes: 'offOnCheckGapMinutes',
+      onOffCheckGapMinutes: 'onOffCheckGapMinutes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      offOnCheckGapMinutes: 'number',
+      onOffCheckGapMinutes: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupUpdateRequestFreeCheckSetting extends $tea.Model {
+  freeCheckGap?: GroupUpdateRequestFreeCheckSettingFreeCheckGap;
+  static names(): { [key: string]: string } {
+    return {
+      freeCheckGap: 'freeCheckGap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      freeCheckGap: GroupUpdateRequestFreeCheckSettingFreeCheckGap,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupUpdateRequestPositions extends $tea.Model {
+  address?: string;
+  latitude?: string;
+  longitude?: string;
+  offset?: number;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      address: 'address',
+      latitude: 'latitude',
+      longitude: 'longitude',
+      offset: 'offset',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      address: 'string',
+      latitude: 'string',
+      longitude: 'string',
+      offset: 'number',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupUpdateRequestResourcePermissionMap extends $tea.Model {
+  cameraCheck?: string;
+  checkPositionType?: string;
+  checkTime?: string;
+  groupMember?: string;
+  groupType?: string;
+  outSideCheck?: string;
+  overTimeRule?: string;
+  schedule?: string;
+  static names(): { [key: string]: string } {
+    return {
+      cameraCheck: 'cameraCheck',
+      checkPositionType: 'checkPositionType',
+      checkTime: 'checkTime',
+      groupMember: 'groupMember',
+      groupType: 'groupType',
+      outSideCheck: 'outSideCheck',
+      overTimeRule: 'overTimeRule',
+      schedule: 'schedule',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cameraCheck: 'string',
+      checkPositionType: 'string',
+      checkTime: 'string',
+      groupMember: 'string',
+      groupType: 'string',
+      outSideCheck: 'string',
+      overTimeRule: 'string',
+      schedule: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupUpdateRequestShiftVOList extends $tea.Model {
+  shiftId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      shiftId: 'shiftId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      shiftId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupUpdateResponseBodyResult extends $tea.Model {
+  groupId?: number;
+  groupName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      groupId: 'groupId',
+      groupName: 'groupName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupId: 'number',
+      groupName: 'string',
     };
   }
 
@@ -4088,6 +4956,43 @@ export default class Client extends OpenApi {
     return $tea.cast<DingTalkSecurityCheckResponse>(await this.doROARequest("DingTalkSecurityCheck", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/securities/check`, "json", req, runtime), new DingTalkSecurityCheckResponse({}));
   }
 
+  async getATManageScope(request: GetATManageScopeRequest): Promise<GetATManageScopeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetATManageScopeHeaders({ });
+    return await this.getATManageScopeWithOptions(request, headers, runtime);
+  }
+
+  async getATManageScopeWithOptions(request: GetATManageScopeRequest, headers: GetATManageScopeHeaders, runtime: $Util.RuntimeOptions): Promise<GetATManageScopeResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetATManageScopeResponse>(await this.doROARequest("GetATManageScope", "attendance_1.0", "HTTP", "GET", "AK", `/v1.0/attendance/manageScopes`, "json", req, runtime), new GetATManageScopeResponse({}));
+  }
+
   async getAdjustments(request: GetAdjustmentsRequest): Promise<GetAdjustmentsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetAdjustmentsHeaders({ });
@@ -4378,6 +5283,352 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<GetUserHolidaysResponse>(await this.doROARequest("GetUserHolidays", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/holidays`, "json", req, runtime), new GetUserHolidaysResponse({}));
+  }
+
+  async groupAdd(request: GroupAddRequest): Promise<GroupAddResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GroupAddHeaders({ });
+    return await this.groupAddWithOptions(request, headers, runtime);
+  }
+
+  async groupAddWithOptions(request: GroupAddRequest, headers: GroupAddHeaders, runtime: $Util.RuntimeOptions): Promise<GroupAddResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.opUserId)) {
+      query["opUserId"] = request.opUserId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.adjustmentSettingId)) {
+      body["adjustmentSettingId"] = request.adjustmentSettingId;
+    }
+
+    if (!Util.isUnset(request.bleDeviceList)) {
+      body["bleDeviceList"] = request.bleDeviceList;
+    }
+
+    if (!Util.isUnset(request.checkNeedHealthyCode)) {
+      body["checkNeedHealthyCode"] = request.checkNeedHealthyCode;
+    }
+
+    if (!Util.isUnset(request.defaultClassId)) {
+      body["defaultClassId"] = request.defaultClassId;
+    }
+
+    if (!Util.isUnset(request.disableCheckWhenRest)) {
+      body["disableCheckWhenRest"] = request.disableCheckWhenRest;
+    }
+
+    if (!Util.isUnset(request.disableCheckWithoutSchedule)) {
+      body["disableCheckWithoutSchedule"] = request.disableCheckWithoutSchedule;
+    }
+
+    if (!Util.isUnset(request.enableCameraCheck)) {
+      body["enableCameraCheck"] = request.enableCameraCheck;
+    }
+
+    if (!Util.isUnset(request.enableEmpSelectClass)) {
+      body["enableEmpSelectClass"] = request.enableEmpSelectClass;
+    }
+
+    if (!Util.isUnset(request.enableFaceCheck)) {
+      body["enableFaceCheck"] = request.enableFaceCheck;
+    }
+
+    if (!Util.isUnset(request.enableFaceStrictMode)) {
+      body["enableFaceStrictMode"] = request.enableFaceStrictMode;
+    }
+
+    if (!Util.isUnset(request.enableNextDay)) {
+      body["enableNextDay"] = request.enableNextDay;
+    }
+
+    if (!Util.isUnset(request.enableOutSideUpdateNormalCheck)) {
+      body["enableOutSideUpdateNormalCheck"] = request.enableOutSideUpdateNormalCheck;
+    }
+
+    if (!Util.isUnset(request.enableOutsideApply)) {
+      body["enableOutsideApply"] = request.enableOutsideApply;
+    }
+
+    if (!Util.isUnset(request.enableOutsideCameraCheck)) {
+      body["enableOutsideCameraCheck"] = request.enableOutsideCameraCheck;
+    }
+
+    if (!Util.isUnset(request.enableOutsideCheck)) {
+      body["enableOutsideCheck"] = request.enableOutsideCheck;
+    }
+
+    if (!Util.isUnset(request.enableOutsideRemark)) {
+      body["enableOutsideRemark"] = request.enableOutsideRemark;
+    }
+
+    if (!Util.isUnset(request.enablePositionBle)) {
+      body["enablePositionBle"] = request.enablePositionBle;
+    }
+
+    if (!Util.isUnset(request.enableTrimDistance)) {
+      body["enableTrimDistance"] = request.enableTrimDistance;
+    }
+
+    if (!Util.isUnset(request.forbidHideOutSideAddress)) {
+      body["forbidHideOutSideAddress"] = request.forbidHideOutSideAddress;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.freeCheckSetting))) {
+      body["freeCheckSetting"] = request.freeCheckSetting;
+    }
+
+    if (!Util.isUnset(request.freeCheckTypeId)) {
+      body["freeCheckTypeId"] = request.freeCheckTypeId;
+    }
+
+    if (!Util.isUnset(request.freecheckDayStartMinOffset)) {
+      body["freecheckDayStartMinOffset"] = request.freecheckDayStartMinOffset;
+    }
+
+    if (!Util.isUnset(request.freecheckWorkDays)) {
+      body["freecheckWorkDays"] = request.freecheckWorkDays;
+    }
+
+    if (!Util.isUnset(request.groupId)) {
+      body["groupId"] = request.groupId;
+    }
+
+    if (!Util.isUnset(request.groupName)) {
+      body["groupName"] = request.groupName;
+    }
+
+    if (!Util.isUnset(request.managerList)) {
+      body["managerList"] = request.managerList;
+    }
+
+    if (!Util.isUnset(request.members)) {
+      body["members"] = request.members;
+    }
+
+    if (!Util.isUnset(request.modifyMember)) {
+      body["modifyMember"] = request.modifyMember;
+    }
+
+    if (!Util.isUnset(request.offset)) {
+      body["offset"] = request.offset;
+    }
+
+    if (!Util.isUnset(request.openFaceCheck)) {
+      body["openFaceCheck"] = request.openFaceCheck;
+    }
+
+    if (!Util.isUnset(request.outsideCheckApproveModeId)) {
+      body["outsideCheckApproveModeId"] = request.outsideCheckApproveModeId;
+    }
+
+    if (!Util.isUnset(request.overtimeSettingId)) {
+      body["overtimeSettingId"] = request.overtimeSettingId;
+    }
+
+    if (!Util.isUnset(request.owner)) {
+      body["owner"] = request.owner;
+    }
+
+    if (!Util.isUnset(request.positions)) {
+      body["positions"] = request.positions;
+    }
+
+    if (!Util.isUnset(request.resourcePermissionMap)) {
+      body["resourcePermissionMap"] = request.resourcePermissionMap;
+    }
+
+    if (!Util.isUnset(request.shiftVOList)) {
+      body["shiftVOList"] = request.shiftVOList;
+    }
+
+    if (!Util.isUnset(request.skipHolidays)) {
+      body["skipHolidays"] = request.skipHolidays;
+    }
+
+    if (!Util.isUnset(request.specialDays)) {
+      body["specialDays"] = request.specialDays;
+    }
+
+    if (!Util.isUnset(request.trimDistance)) {
+      body["trimDistance"] = request.trimDistance;
+    }
+
+    if (!Util.isUnset(request.type)) {
+      body["type"] = request.type;
+    }
+
+    if (!Util.isUnset(request.wifis)) {
+      body["wifis"] = request.wifis;
+    }
+
+    if (!Util.isUnset(request.workdayClassList)) {
+      body["workdayClassList"] = request.workdayClassList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GroupAddResponse>(await this.doROARequest("GroupAdd", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/groups`, "json", req, runtime), new GroupAddResponse({}));
+  }
+
+  async groupUpdate(request: GroupUpdateRequest): Promise<GroupUpdateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GroupUpdateHeaders({ });
+    return await this.groupUpdateWithOptions(request, headers, runtime);
+  }
+
+  async groupUpdateWithOptions(request: GroupUpdateRequest, headers: GroupUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<GroupUpdateResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.opUserId)) {
+      query["opUserId"] = request.opUserId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.adjustmentSettingId)) {
+      body["adjustmentSettingId"] = request.adjustmentSettingId;
+    }
+
+    if (!Util.isUnset(request.disableCheckWhenRest)) {
+      body["disableCheckWhenRest"] = request.disableCheckWhenRest;
+    }
+
+    if (!Util.isUnset(request.disableCheckWithoutSchedule)) {
+      body["disableCheckWithoutSchedule"] = request.disableCheckWithoutSchedule;
+    }
+
+    if (!Util.isUnset(request.enableCameraCheck)) {
+      body["enableCameraCheck"] = request.enableCameraCheck;
+    }
+
+    if (!Util.isUnset(request.enableEmpSelectClass)) {
+      body["enableEmpSelectClass"] = request.enableEmpSelectClass;
+    }
+
+    if (!Util.isUnset(request.enableFaceCheck)) {
+      body["enableFaceCheck"] = request.enableFaceCheck;
+    }
+
+    if (!Util.isUnset(request.enableFaceStrictMode)) {
+      body["enableFaceStrictMode"] = request.enableFaceStrictMode;
+    }
+
+    if (!Util.isUnset(request.enableOutSideUpdateNormalCheck)) {
+      body["enableOutSideUpdateNormalCheck"] = request.enableOutSideUpdateNormalCheck;
+    }
+
+    if (!Util.isUnset(request.enableOutsideApply)) {
+      body["enableOutsideApply"] = request.enableOutsideApply;
+    }
+
+    if (!Util.isUnset(request.enableOutsideCheck)) {
+      body["enableOutsideCheck"] = request.enableOutsideCheck;
+    }
+
+    if (!Util.isUnset(request.enableOutsideRemark)) {
+      body["enableOutsideRemark"] = request.enableOutsideRemark;
+    }
+
+    if (!Util.isUnset(request.enableTrimDistance)) {
+      body["enableTrimDistance"] = request.enableTrimDistance;
+    }
+
+    if (!Util.isUnset(request.forbidHideOutSideAddress)) {
+      body["forbidHideOutSideAddress"] = request.forbidHideOutSideAddress;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.freeCheckSetting))) {
+      body["freeCheckSetting"] = request.freeCheckSetting;
+    }
+
+    if (!Util.isUnset(request.freeCheckTypeId)) {
+      body["freeCheckTypeId"] = request.freeCheckTypeId;
+    }
+
+    if (!Util.isUnset(request.groupId)) {
+      body["groupId"] = request.groupId;
+    }
+
+    if (!Util.isUnset(request.groupName)) {
+      body["groupName"] = request.groupName;
+    }
+
+    if (!Util.isUnset(request.managerList)) {
+      body["managerList"] = request.managerList;
+    }
+
+    if (!Util.isUnset(request.offset)) {
+      body["offset"] = request.offset;
+    }
+
+    if (!Util.isUnset(request.openFaceCheck)) {
+      body["openFaceCheck"] = request.openFaceCheck;
+    }
+
+    if (!Util.isUnset(request.outsideCheckApproveModeId)) {
+      body["outsideCheckApproveModeId"] = request.outsideCheckApproveModeId;
+    }
+
+    if (!Util.isUnset(request.overtimeSettingId)) {
+      body["overtimeSettingId"] = request.overtimeSettingId;
+    }
+
+    if (!Util.isUnset(request.owner)) {
+      body["owner"] = request.owner;
+    }
+
+    if (!Util.isUnset(request.positions)) {
+      body["positions"] = request.positions;
+    }
+
+    if (!Util.isUnset(request.resourcePermissionMap)) {
+      body["resourcePermissionMap"] = request.resourcePermissionMap;
+    }
+
+    if (!Util.isUnset(request.shiftVOList)) {
+      body["shiftVOList"] = request.shiftVOList;
+    }
+
+    if (!Util.isUnset(request.skipHolidays)) {
+      body["skipHolidays"] = request.skipHolidays;
+    }
+
+    if (!Util.isUnset(request.trimDistance)) {
+      body["trimDistance"] = request.trimDistance;
+    }
+
+    if (!Util.isUnset(request.workdayClassList)) {
+      body["workdayClassList"] = request.workdayClassList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GroupUpdateResponse>(await this.doROARequest("GroupUpdate", "attendance_1.0", "HTTP", "PUT", "AK", `/v1.0/attendance/groups`, "json", req, runtime), new GroupUpdateResponse({}));
   }
 
   async initAndGetLeaveALlocationQuotas(request: InitAndGetLeaveALlocationQuotasRequest): Promise<InitAndGetLeaveALlocationQuotasResponse> {

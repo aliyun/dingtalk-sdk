@@ -12,6 +12,7 @@ import * as conference_1_0 from './conference_1_0/client';
 import * as connector_1_0 from './connector_1_0/client';
 import * as contact_1_0 from './contact_1_0/client';
 import * as content_1_0 from './content_1_0/client';
+import * as conv_file_1_0 from './conv_file_1_0/client';
 import * as crm_1_0 from './crm_1_0/client';
 import * as customer_service_1_0 from './customer_service_1_0/client';
 import * as datacenter_1_0 from './datacenter_1_0/client';
@@ -29,12 +30,14 @@ import * as finance_1_0 from './finance_1_0/client';
 import * as flashmeeting_1_0 from './flashmeeting_1_0/client';
 import * as group_blackboard_1_0 from './group_blackboard_1_0/client';
 import * as h3yun_1_0 from './h3yun_1_0/client';
+import * as h5package_1_0 from './h5package_1_0/client';
 import * as hrbrain_1_0 from './hrbrain_1_0/client';
 import * as hrm_1_0 from './hrm_1_0/client';
 import * as im_1_0 from './im_1_0/client';
 import * as impaas_1_0 from './impaas_1_0/client';
 import * as industry_1_0 from './industry_1_0/client';
 import * as jzcrm_1_0 from './jzcrm_1_0/client';
+import * as link_1_0 from './link_1_0/client';
 import * as live_1_0 from './live_1_0/client';
 import * as manufacturing_1_0 from './manufacturing_1_0/client';
 import * as micro_app_1_0 from './micro_app_1_0/client';
@@ -81,6 +84,7 @@ export = {
   connector_1_0,
   contact_1_0,
   content_1_0,
+  conv_file_1_0,
   crm_1_0,
   customer_service_1_0,
   datacenter_1_0,
@@ -98,12 +102,14 @@ export = {
   flashmeeting_1_0,
   group_blackboard_1_0,
   h3yun_1_0,
+  h5package_1_0,
   hrbrain_1_0,
   hrm_1_0,
   im_1_0,
   impaas_1_0,
   industry_1_0,
   jzcrm_1_0,
+  link_1_0,
   live_1_0,
   manufacturing_1_0,
   micro_app_1_0,

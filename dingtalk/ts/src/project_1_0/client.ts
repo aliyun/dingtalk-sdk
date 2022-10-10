@@ -198,6 +198,115 @@ export class CreateOrganizationTaskResponse extends $tea.Model {
   }
 }
 
+export class CreatePlanTimeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreatePlanTimeRequest extends $tea.Model {
+  endDate?: string;
+  executorId?: string;
+  includesHolidays?: boolean;
+  isDuration?: boolean;
+  objectId?: string;
+  objectType?: string;
+  planTime?: number;
+  startDate?: string;
+  submitterId?: string;
+  tenantType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      endDate: 'endDate',
+      executorId: 'executorId',
+      includesHolidays: 'includesHolidays',
+      isDuration: 'isDuration',
+      objectId: 'objectId',
+      objectType: 'objectType',
+      planTime: 'planTime',
+      startDate: 'startDate',
+      submitterId: 'submitterId',
+      tenantType: 'tenantType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endDate: 'string',
+      executorId: 'string',
+      includesHolidays: 'boolean',
+      isDuration: 'boolean',
+      objectId: 'string',
+      objectType: 'string',
+      planTime: 'number',
+      startDate: 'string',
+      submitterId: 'string',
+      tenantType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreatePlanTimeResponseBody extends $tea.Model {
+  result?: CreatePlanTimeResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: CreatePlanTimeResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreatePlanTimeResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreatePlanTimeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreatePlanTimeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateProjectByTemplateHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -307,6 +416,7 @@ export class CreateTaskHeaders extends $tea.Model {
 
 export class CreateTaskRequest extends $tea.Model {
   content?: string;
+  customfields?: CreateTaskRequestCustomfields[];
   dueDate?: string;
   executorId?: string;
   note?: string;
@@ -315,6 +425,7 @@ export class CreateTaskRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       content: 'content',
+      customfields: 'customfields',
       dueDate: 'dueDate',
       executorId: 'executorId',
       note: 'note',
@@ -326,6 +437,7 @@ export class CreateTaskRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       content: 'string',
+      customfields: { 'type': 'array', 'itemType': CreateTaskRequestCustomfields },
       dueDate: 'string',
       executorId: 'string',
       note: 'string',
@@ -454,6 +566,115 @@ export class CreateTaskObjectLinkResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: CreateTaskObjectLinkResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateWorkTimeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateWorkTimeRequest extends $tea.Model {
+  endDate?: string;
+  executorId?: string;
+  includesHolidays?: boolean;
+  isDuration?: boolean;
+  objectId?: string;
+  objectType?: string;
+  startDate?: string;
+  submitterId?: string;
+  workTime?: number;
+  tenantType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      endDate: 'endDate',
+      executorId: 'executorId',
+      includesHolidays: 'includesHolidays',
+      isDuration: 'isDuration',
+      objectId: 'objectId',
+      objectType: 'objectType',
+      startDate: 'startDate',
+      submitterId: 'submitterId',
+      workTime: 'workTime',
+      tenantType: 'tenantType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endDate: 'string',
+      executorId: 'string',
+      includesHolidays: 'boolean',
+      isDuration: 'boolean',
+      objectId: 'string',
+      objectType: 'string',
+      startDate: 'string',
+      submitterId: 'string',
+      workTime: 'number',
+      tenantType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateWorkTimeResponseBody extends $tea.Model {
+  result?: CreateWorkTimeResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: CreateWorkTimeResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateWorkTimeResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateWorkTimeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateWorkTimeResponseBody,
     };
   }
 
@@ -955,6 +1176,88 @@ export class GetProjectGroupResponse extends $tea.Model {
   }
 }
 
+export class GetTbOrgIdByDingOrgIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTbOrgIdByDingOrgIdRequest extends $tea.Model {
+  optUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      optUserId: 'optUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      optUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTbOrgIdByDingOrgIdResponseBody extends $tea.Model {
+  result?: GetTbOrgIdByDingOrgIdResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetTbOrgIdByDingOrgIdResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTbOrgIdByDingOrgIdResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetTbOrgIdByDingOrgIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetTbOrgIdByDingOrgIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetTbProjectGrayHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   dingAccessTokenType?: string;
@@ -1133,6 +1436,185 @@ export class GetTbProjectSourceResponse extends $tea.Model {
   }
 }
 
+export class GetTbUserIdByStaffIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTbUserIdByStaffIdRequest extends $tea.Model {
+  optUserId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      optUserId: 'optUserId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      optUserId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTbUserIdByStaffIdResponseBody extends $tea.Model {
+  result?: GetTbUserIdByStaffIdResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetTbUserIdByStaffIdResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTbUserIdByStaffIdResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetTbUserIdByStaffIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetTbUserIdByStaffIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTaskOfProjectHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTaskOfProjectRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: string;
+  query?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      query: 'query',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'string',
+      query: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTaskOfProjectResponseBody extends $tea.Model {
+  nextToken?: string;
+  result?: QueryTaskOfProjectResponseBodyResult[];
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      nextToken: 'nextToken',
+      result: 'result',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextToken: 'string',
+      result: { 'type': 'array', 'itemType': QueryTaskOfProjectResponseBodyResult },
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTaskOfProjectResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryTaskOfProjectResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryTaskOfProjectResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchProjectTemplateHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1207,6 +1689,94 @@ export class SearchProjectTemplateResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: SearchProjectTemplateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCustomfieldValueHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCustomfieldValueRequest extends $tea.Model {
+  customfieldId?: string;
+  customfieldName?: string;
+  value?: UpdateCustomfieldValueRequestValue[];
+  static names(): { [key: string]: string } {
+    return {
+      customfieldId: 'customfieldId',
+      customfieldName: 'customfieldName',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customfieldId: 'string',
+      customfieldName: 'string',
+      value: { 'type': 'array', 'itemType': UpdateCustomfieldValueRequestValue },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCustomfieldValueResponseBody extends $tea.Model {
+  result?: UpdateCustomfieldValueResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: UpdateCustomfieldValueResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCustomfieldValueResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateCustomfieldValueResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateCustomfieldValueResponseBody,
     };
   }
 
@@ -2092,6 +2662,56 @@ export class CreateOrganizationTaskResponseBodyResult extends $tea.Model {
   }
 }
 
+export class CreatePlanTimeResponseBodyResultBody extends $tea.Model {
+  date?: string;
+  objectId?: string;
+  planTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      date: 'date',
+      objectId: 'objectId',
+      planTime: 'planTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      date: 'string',
+      objectId: 'string',
+      planTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreatePlanTimeResponseBodyResult extends $tea.Model {
+  body?: CreatePlanTimeResponseBodyResultBody[];
+  message?: string;
+  ok?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      body: 'body',
+      message: 'message',
+      ok: 'ok',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      body: { 'type': 'array', 'itemType': CreatePlanTimeResponseBodyResultBody },
+      message: 'string',
+      ok: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateProjectByTemplateResponseBodyResult extends $tea.Model {
   created?: string;
   id?: string;
@@ -2120,10 +2740,96 @@ export class CreateProjectByTemplateResponseBodyResult extends $tea.Model {
   }
 }
 
+export class CreateTaskRequestCustomfieldsValue extends $tea.Model {
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTaskRequestCustomfields extends $tea.Model {
+  customfieldId?: string;
+  customfieldName?: string;
+  value?: CreateTaskRequestCustomfieldsValue[];
+  static names(): { [key: string]: string } {
+    return {
+      customfieldId: 'customfieldId',
+      customfieldName: 'customfieldName',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customfieldId: 'string',
+      customfieldName: 'string',
+      value: { 'type': 'array', 'itemType': CreateTaskRequestCustomfieldsValue },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTaskResponseBodyResultCustomfieldsValue extends $tea.Model {
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTaskResponseBodyResultCustomfields extends $tea.Model {
+  customfieldId?: string;
+  value?: CreateTaskResponseBodyResultCustomfieldsValue[];
+  static names(): { [key: string]: string } {
+    return {
+      customfieldId: 'customfieldId',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customfieldId: 'string',
+      value: { 'type': 'array', 'itemType': CreateTaskResponseBodyResultCustomfieldsValue },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateTaskResponseBodyResult extends $tea.Model {
   content?: string;
   created?: string;
   creatorId?: string;
+  customfields?: CreateTaskResponseBodyResultCustomfields[];
   dueDate?: string;
   executorId?: string;
   involveMembers?: string[];
@@ -2137,6 +2843,7 @@ export class CreateTaskResponseBodyResult extends $tea.Model {
       content: 'content',
       created: 'created',
       creatorId: 'creatorId',
+      customfields: 'customfields',
       dueDate: 'dueDate',
       executorId: 'executorId',
       involveMembers: 'involveMembers',
@@ -2153,6 +2860,7 @@ export class CreateTaskResponseBodyResult extends $tea.Model {
       content: 'string',
       created: 'string',
       creatorId: 'string',
+      customfields: { 'type': 'array', 'itemType': CreateTaskResponseBodyResultCustomfields },
       dueDate: 'string',
       executorId: 'string',
       involveMembers: { 'type': 'array', 'itemType': 'string' },
@@ -2211,6 +2919,56 @@ export class CreateTaskObjectLinkResponseBodyResult extends $tea.Model {
     return {
       created: 'string',
       objectLinkId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateWorkTimeResponseBodyResultBody extends $tea.Model {
+  date?: string;
+  taskId?: string;
+  workTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      date: 'date',
+      taskId: 'taskId',
+      workTime: 'workTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      date: 'string',
+      taskId: 'string',
+      workTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateWorkTimeResponseBodyResult extends $tea.Model {
+  body?: CreateWorkTimeResponseBodyResultBody[];
+  message?: string;
+  ok?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      body: 'body',
+      message: 'message',
+      ok: 'ok',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      body: { 'type': 'array', 'itemType': CreateWorkTimeResponseBodyResultBody },
+      message: 'string',
+      ok: 'boolean',
     };
   }
 
@@ -2474,6 +3232,141 @@ export class GetProjectGroupResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetTbOrgIdByDingOrgIdResponseBodyResult extends $tea.Model {
+  tbOrganizationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      tbOrganizationId: 'tbOrganizationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      tbOrganizationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTbUserIdByStaffIdResponseBodyResult extends $tea.Model {
+  tbUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      tbUserId: 'tbUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      tbUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTaskOfProjectResponseBodyResult extends $tea.Model {
+  accomplished?: string;
+  ancestorIds?: string[];
+  content?: string;
+  created?: string;
+  creatorId?: string;
+  customfields?: string[];
+  dueDate?: string;
+  executorId?: string;
+  involveMembers?: string[];
+  isArchived?: boolean;
+  isDeleted?: boolean;
+  isDone?: boolean;
+  labels?: string;
+  note?: string;
+  priority?: number;
+  progress?: number;
+  projectId?: string;
+  scenariofieldconfigId?: string;
+  sprintId?: string;
+  stageId?: string;
+  startDate?: string;
+  storyPoint?: number;
+  tagIds?: string;
+  taskId?: string;
+  taskflowstatusId?: string;
+  updated?: string;
+  visible?: string;
+  static names(): { [key: string]: string } {
+    return {
+      accomplished: 'accomplished',
+      ancestorIds: 'ancestorIds',
+      content: 'content',
+      created: 'created',
+      creatorId: 'creatorId',
+      customfields: 'customfields',
+      dueDate: 'dueDate',
+      executorId: 'executorId',
+      involveMembers: 'involveMembers',
+      isArchived: 'isArchived',
+      isDeleted: 'isDeleted',
+      isDone: 'isDone',
+      labels: 'labels',
+      note: 'note',
+      priority: 'priority',
+      progress: 'progress',
+      projectId: 'projectId',
+      scenariofieldconfigId: 'scenariofieldconfigId',
+      sprintId: 'sprintId',
+      stageId: 'stageId',
+      startDate: 'startDate',
+      storyPoint: 'storyPoint',
+      tagIds: 'tagIds',
+      taskId: 'taskId',
+      taskflowstatusId: 'taskflowstatusId',
+      updated: 'updated',
+      visible: 'visible',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accomplished: 'string',
+      ancestorIds: { 'type': 'array', 'itemType': 'string' },
+      content: 'string',
+      created: 'string',
+      creatorId: 'string',
+      customfields: { 'type': 'array', 'itemType': 'string' },
+      dueDate: 'string',
+      executorId: 'string',
+      involveMembers: { 'type': 'array', 'itemType': 'string' },
+      isArchived: 'boolean',
+      isDeleted: 'boolean',
+      isDone: 'boolean',
+      labels: 'string',
+      note: 'string',
+      priority: 'number',
+      progress: 'number',
+      projectId: 'string',
+      scenariofieldconfigId: 'string',
+      sprintId: 'string',
+      stageId: 'string',
+      startDate: 'string',
+      storyPoint: 'number',
+      tagIds: 'string',
+      taskId: 'string',
+      taskflowstatusId: 'string',
+      updated: 'string',
+      visible: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchProjectTemplateResponseBodyResult extends $tea.Model {
   created?: string;
   description?: string;
@@ -2509,6 +3402,85 @@ export class SearchProjectTemplateResponseBodyResult extends $tea.Model {
       name: 'string',
       updated: 'string',
       visible: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCustomfieldValueRequestValue extends $tea.Model {
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCustomfieldValueResponseBodyResultCustomfieldsValue extends $tea.Model {
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCustomfieldValueResponseBodyResultCustomfields extends $tea.Model {
+  customfieldId?: string;
+  value?: UpdateCustomfieldValueResponseBodyResultCustomfieldsValue[];
+  static names(): { [key: string]: string } {
+    return {
+      customfieldId: 'customfieldId',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customfieldId: 'string',
+      value: { 'type': 'array', 'itemType': UpdateCustomfieldValueResponseBodyResultCustomfieldsValue },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCustomfieldValueResponseBodyResult extends $tea.Model {
+  customfields?: UpdateCustomfieldValueResponseBodyResultCustomfields[];
+  static names(): { [key: string]: string } {
+    return {
+      customfields: 'customfields',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customfields: { 'type': 'array', 'itemType': UpdateCustomfieldValueResponseBodyResultCustomfields },
     };
   }
 
@@ -2881,6 +3853,74 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateOrganizationTaskResponse>(await this.doROARequest("CreateOrganizationTask", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/organizations/users/${userId}/tasks`, "json", req, runtime), new CreateOrganizationTaskResponse({}));
   }
 
+  async createPlanTime(userId: string, request: CreatePlanTimeRequest): Promise<CreatePlanTimeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreatePlanTimeHeaders({ });
+    return await this.createPlanTimeWithOptions(userId, request, headers, runtime);
+  }
+
+  async createPlanTimeWithOptions(userId: string, request: CreatePlanTimeRequest, headers: CreatePlanTimeHeaders, runtime: $Util.RuntimeOptions): Promise<CreatePlanTimeResponse> {
+    Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.tenantType)) {
+      query["tenantType"] = request.tenantType;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.endDate)) {
+      body["endDate"] = request.endDate;
+    }
+
+    if (!Util.isUnset(request.executorId)) {
+      body["executorId"] = request.executorId;
+    }
+
+    if (!Util.isUnset(request.includesHolidays)) {
+      body["includesHolidays"] = request.includesHolidays;
+    }
+
+    if (!Util.isUnset(request.isDuration)) {
+      body["isDuration"] = request.isDuration;
+    }
+
+    if (!Util.isUnset(request.objectId)) {
+      body["objectId"] = request.objectId;
+    }
+
+    if (!Util.isUnset(request.objectType)) {
+      body["objectType"] = request.objectType;
+    }
+
+    if (!Util.isUnset(request.planTime)) {
+      body["planTime"] = request.planTime;
+    }
+
+    if (!Util.isUnset(request.startDate)) {
+      body["startDate"] = request.startDate;
+    }
+
+    if (!Util.isUnset(request.submitterId)) {
+      body["submitterId"] = request.submitterId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreatePlanTimeResponse>(await this.doROARequest("CreatePlanTime", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/planTimes`, "json", req, runtime), new CreatePlanTimeResponse({}));
+  }
+
   async createProjectByTemplate(userId: string, request: CreateProjectByTemplateRequest): Promise<CreateProjectByTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateProjectByTemplateHeaders({ });
@@ -2927,6 +3967,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.content)) {
       body["content"] = request.content;
+    }
+
+    if (!Util.isUnset(request.customfields)) {
+      body["customfields"] = request.customfields;
     }
 
     if (!Util.isUnset(request.dueDate)) {
@@ -2994,6 +4038,74 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateTaskObjectLinkResponse>(await this.doROARequest("CreateTaskObjectLink", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/tasks/${taskId}/objectLinks`, "json", req, runtime), new CreateTaskObjectLinkResponse({}));
+  }
+
+  async createWorkTime(userId: string, request: CreateWorkTimeRequest): Promise<CreateWorkTimeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateWorkTimeHeaders({ });
+    return await this.createWorkTimeWithOptions(userId, request, headers, runtime);
+  }
+
+  async createWorkTimeWithOptions(userId: string, request: CreateWorkTimeRequest, headers: CreateWorkTimeHeaders, runtime: $Util.RuntimeOptions): Promise<CreateWorkTimeResponse> {
+    Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.tenantType)) {
+      query["tenantType"] = request.tenantType;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.endDate)) {
+      body["endDate"] = request.endDate;
+    }
+
+    if (!Util.isUnset(request.executorId)) {
+      body["executorId"] = request.executorId;
+    }
+
+    if (!Util.isUnset(request.includesHolidays)) {
+      body["includesHolidays"] = request.includesHolidays;
+    }
+
+    if (!Util.isUnset(request.isDuration)) {
+      body["isDuration"] = request.isDuration;
+    }
+
+    if (!Util.isUnset(request.objectId)) {
+      body["objectId"] = request.objectId;
+    }
+
+    if (!Util.isUnset(request.objectType)) {
+      body["objectType"] = request.objectType;
+    }
+
+    if (!Util.isUnset(request.startDate)) {
+      body["startDate"] = request.startDate;
+    }
+
+    if (!Util.isUnset(request.submitterId)) {
+      body["submitterId"] = request.submitterId;
+    }
+
+    if (!Util.isUnset(request.workTime)) {
+      body["workTime"] = request.workTime;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateWorkTimeResponse>(await this.doROARequest("CreateWorkTime", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/workTimes`, "json", req, runtime), new CreateWorkTimeResponse({}));
   }
 
   async getDeptsByOrgId(request: GetDeptsByOrgIdRequest): Promise<GetDeptsByOrgIdResponse> {
@@ -3193,6 +4305,35 @@ export default class Client extends OpenApi {
     return $tea.cast<GetProjectGroupResponse>(await this.doROARequest("GetProjectGroup", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/organizations/users/${userId}/groups`, "json", req, runtime), new GetProjectGroupResponse({}));
   }
 
+  async getTbOrgIdByDingOrgId(request: GetTbOrgIdByDingOrgIdRequest): Promise<GetTbOrgIdByDingOrgIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetTbOrgIdByDingOrgIdHeaders({ });
+    return await this.getTbOrgIdByDingOrgIdWithOptions(request, headers, runtime);
+  }
+
+  async getTbOrgIdByDingOrgIdWithOptions(request: GetTbOrgIdByDingOrgIdRequest, headers: GetTbOrgIdByDingOrgIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetTbOrgIdByDingOrgIdResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.optUserId)) {
+      query["optUserId"] = request.optUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetTbOrgIdByDingOrgIdResponse>(await this.doROARequest("GetTbOrgIdByDingOrgId", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/teambition/organizations`, "json", req, runtime), new GetTbOrgIdByDingOrgIdResponse({}));
+  }
+
   async getTbProjectGray(request: GetTbProjectGrayRequest): Promise<GetTbProjectGrayResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetTbProjectGrayHeaders({ });
@@ -3284,6 +4425,78 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTbProjectSourceResponse>(await this.doROARequest("GetTbProjectSource", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/projects/source`, "json", req, runtime), new GetTbProjectSourceResponse({}));
   }
 
+  async getTbUserIdByStaffId(request: GetTbUserIdByStaffIdRequest): Promise<GetTbUserIdByStaffIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetTbUserIdByStaffIdHeaders({ });
+    return await this.getTbUserIdByStaffIdWithOptions(request, headers, runtime);
+  }
+
+  async getTbUserIdByStaffIdWithOptions(request: GetTbUserIdByStaffIdRequest, headers: GetTbUserIdByStaffIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetTbUserIdByStaffIdResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.optUserId)) {
+      query["optUserId"] = request.optUserId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetTbUserIdByStaffIdResponse>(await this.doROARequest("GetTbUserIdByStaffId", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/teambition/users`, "json", req, runtime), new GetTbUserIdByStaffIdResponse({}));
+  }
+
+  async queryTaskOfProject(userId: string, projectId: string, request: QueryTaskOfProjectRequest): Promise<QueryTaskOfProjectResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryTaskOfProjectHeaders({ });
+    return await this.queryTaskOfProjectWithOptions(userId, projectId, request, headers, runtime);
+  }
+
+  async queryTaskOfProjectWithOptions(userId: string, projectId: string, request: QueryTaskOfProjectRequest, headers: QueryTaskOfProjectHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTaskOfProjectResponse> {
+    Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    projectId = OpenApiUtil.getEncodeParam(projectId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.query)) {
+      query["query"] = request.query;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryTaskOfProjectResponse>(await this.doROARequest("QueryTaskOfProject", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/users/${userId}/projectIds/${projectId}/tasks`, "json", req, runtime), new QueryTaskOfProjectResponse({}));
+  }
+
   async searchProjectTemplate(userId: string, request: SearchProjectTemplateRequest): Promise<SearchProjectTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SearchProjectTemplateHeaders({ });
@@ -3312,6 +4525,45 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<SearchProjectTemplateResponse>(await this.doROARequest("SearchProjectTemplate", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/organizations/users/${userId}/templates`, "json", req, runtime), new SearchProjectTemplateResponse({}));
+  }
+
+  async updateCustomfieldValue(userId: string, taskId: string, request: UpdateCustomfieldValueRequest): Promise<UpdateCustomfieldValueResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateCustomfieldValueHeaders({ });
+    return await this.updateCustomfieldValueWithOptions(userId, taskId, request, headers, runtime);
+  }
+
+  async updateCustomfieldValueWithOptions(userId: string, taskId: string, request: UpdateCustomfieldValueRequest, headers: UpdateCustomfieldValueHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCustomfieldValueResponse> {
+    Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    taskId = OpenApiUtil.getEncodeParam(taskId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.customfieldId)) {
+      body["customfieldId"] = request.customfieldId;
+    }
+
+    if (!Util.isUnset(request.customfieldName)) {
+      body["customfieldName"] = request.customfieldName;
+    }
+
+    if (!Util.isUnset(request.value)) {
+      body["value"] = request.value;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateCustomfieldValueResponse>(await this.doROARequest("UpdateCustomfieldValue", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/users/${userId}/tasks/${taskId}/customFields`, "json", req, runtime), new UpdateCustomfieldValueResponse({}));
   }
 
   async updateOrganizationTaskContent(taskId: string, userId: string, request: UpdateOrganizationTaskContentRequest): Promise<UpdateOrganizationTaskContentResponse> {

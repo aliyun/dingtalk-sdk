@@ -95,6 +95,94 @@ export class BatchAddInvoiceResponse extends $tea.Model {
   }
 }
 
+export class BatchCreateCustomerHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchCreateCustomerRequest extends $tea.Model {
+  createCustomerRequestList?: BatchCreateCustomerRequestCreateCustomerRequestList[];
+  operator?: string;
+  static names(): { [key: string]: string } {
+    return {
+      createCustomerRequestList: 'createCustomerRequestList',
+      operator: 'operator',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      createCustomerRequestList: { 'type': 'array', 'itemType': BatchCreateCustomerRequestCreateCustomerRequestList },
+      operator: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchCreateCustomerResponseBody extends $tea.Model {
+  errorResult?: BatchCreateCustomerResponseBodyErrorResult[];
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      errorResult: 'errorResult',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      errorResult: { 'type': 'array', 'itemType': BatchCreateCustomerResponseBodyErrorResult },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchCreateCustomerResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchCreateCustomerResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchCreateCustomerResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CheckVoucherStatusHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2461,6 +2549,97 @@ export class QuerySupplierByPageResponse extends $tea.Model {
   }
 }
 
+export class UnbindApplyReceiptAndInvoiceRelatedHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UnbindApplyReceiptAndInvoiceRelatedRequest extends $tea.Model {
+  instanceId?: string;
+  invoiceKeyVOList?: UnbindApplyReceiptAndInvoiceRelatedRequestInvoiceKeyVOList[];
+  operator?: string;
+  static names(): { [key: string]: string } {
+    return {
+      instanceId: 'instanceId',
+      invoiceKeyVOList: 'invoiceKeyVOList',
+      operator: 'operator',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      instanceId: 'string',
+      invoiceKeyVOList: { 'type': 'array', 'itemType': UnbindApplyReceiptAndInvoiceRelatedRequestInvoiceKeyVOList },
+      operator: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UnbindApplyReceiptAndInvoiceRelatedResponseBody extends $tea.Model {
+  batchUpdateInvoiceResponse?: UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      batchUpdateInvoiceResponse: 'batchUpdateInvoiceResponse',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      batchUpdateInvoiceResponse: UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UnbindApplyReceiptAndInvoiceRelatedResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UnbindApplyReceiptAndInvoiceRelatedResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UnbindApplyReceiptAndInvoiceRelatedResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateApplyReceiptAndInvoiceRelatedHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3823,6 +4002,68 @@ export class BatchAddInvoiceResponseBodySuccessResult extends $tea.Model {
   }
 }
 
+export class BatchCreateCustomerRequestCreateCustomerRequestList extends $tea.Model {
+  description?: string;
+  name?: string;
+  purchaserAccount?: string;
+  purchaserAddress?: string;
+  purchaserBankName?: string;
+  purchaserName?: string;
+  purchaserTaxNo?: string;
+  purchaserTel?: string;
+  static names(): { [key: string]: string } {
+    return {
+      description: 'description',
+      name: 'name',
+      purchaserAccount: 'purchaserAccount',
+      purchaserAddress: 'purchaserAddress',
+      purchaserBankName: 'purchaserBankName',
+      purchaserName: 'purchaserName',
+      purchaserTaxNo: 'purchaserTaxNo',
+      purchaserTel: 'purchaserTel',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      description: 'string',
+      name: 'string',
+      purchaserAccount: 'string',
+      purchaserAddress: 'string',
+      purchaserBankName: 'string',
+      purchaserName: 'string',
+      purchaserTaxNo: 'string',
+      purchaserTel: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchCreateCustomerResponseBodyErrorResult extends $tea.Model {
+  errorKey?: string;
+  errorMsg?: string;
+  static names(): { [key: string]: string } {
+    return {
+      errorKey: 'errorKey',
+      errorMsg: 'errorMsg',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      errorKey: 'string',
+      errorMsg: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateReceiptRequestReceipts extends $tea.Model {
   amount?: string;
   categoryCode?: string;
@@ -4971,6 +5212,69 @@ export class QuerySupplierByPageResponseBodyList extends $tea.Model {
       name: 'string',
       status: 'string',
       userDefineCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UnbindApplyReceiptAndInvoiceRelatedRequestInvoiceKeyVOList extends $tea.Model {
+  invoiceCode?: string;
+  invoiceNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      invoiceCode: 'invoiceCode',
+      invoiceNo: 'invoiceNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      invoiceCode: 'string',
+      invoiceNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList extends $tea.Model {
+  invoiceCode?: string;
+  invoiceNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      invoiceCode: 'invoiceCode',
+      invoiceNo: 'invoiceNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      invoiceCode: 'string',
+      invoiceNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse extends $tea.Model {
+  invoiceKeyVOList?: UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList[];
+  static names(): { [key: string]: string } {
+    return {
+      invoiceKeyVOList: 'invoiceKeyVOList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      invoiceKeyVOList: { 'type': 'array', 'itemType': UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList },
     };
   }
 
@@ -7419,6 +7723,39 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchAddInvoiceResponse>(await this.doROARequest("BatchAddInvoice", "bizfinance_1.0", "HTTP", "POST", "AK", `/v1.0/bizfinance/invoices/batch`, "json", req, runtime), new BatchAddInvoiceResponse({}));
   }
 
+  async batchCreateCustomer(request: BatchCreateCustomerRequest): Promise<BatchCreateCustomerResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchCreateCustomerHeaders({ });
+    return await this.batchCreateCustomerWithOptions(request, headers, runtime);
+  }
+
+  async batchCreateCustomerWithOptions(request: BatchCreateCustomerRequest, headers: BatchCreateCustomerHeaders, runtime: $Util.RuntimeOptions): Promise<BatchCreateCustomerResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.createCustomerRequestList)) {
+      body["createCustomerRequestList"] = request.createCustomerRequestList;
+    }
+
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchCreateCustomerResponse>(await this.doROARequest("BatchCreateCustomer", "bizfinance_1.0", "HTTP", "POST", "AK", `/v1.0/bizfinance/auxiliaries/batch`, "json", req, runtime), new BatchCreateCustomerResponse({}));
+  }
+
   async checkVoucherStatus(request: CheckVoucherStatusRequest): Promise<CheckVoucherStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CheckVoucherStatusHeaders({ });
@@ -8317,6 +8654,43 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QuerySupplierByPageResponse>(await this.doROARequest("QuerySupplierByPage", "bizfinance_1.0", "HTTP", "GET", "AK", `/v1.0/bizfinance/suppliers`, "json", req, runtime), new QuerySupplierByPageResponse({}));
+  }
+
+  async unbindApplyReceiptAndInvoiceRelated(request: UnbindApplyReceiptAndInvoiceRelatedRequest): Promise<UnbindApplyReceiptAndInvoiceRelatedResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UnbindApplyReceiptAndInvoiceRelatedHeaders({ });
+    return await this.unbindApplyReceiptAndInvoiceRelatedWithOptions(request, headers, runtime);
+  }
+
+  async unbindApplyReceiptAndInvoiceRelatedWithOptions(request: UnbindApplyReceiptAndInvoiceRelatedRequest, headers: UnbindApplyReceiptAndInvoiceRelatedHeaders, runtime: $Util.RuntimeOptions): Promise<UnbindApplyReceiptAndInvoiceRelatedResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.instanceId)) {
+      body["instanceId"] = request.instanceId;
+    }
+
+    if (!Util.isUnset(request.invoiceKeyVOList)) {
+      body["invoiceKeyVOList"] = request.invoiceKeyVOList;
+    }
+
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UnbindApplyReceiptAndInvoiceRelatedResponse>(await this.doROARequest("UnbindApplyReceiptAndInvoiceRelated", "bizfinance_1.0", "HTTP", "POST", "AK", `/v1.0/bizfinance/invoices/unbind`, "json", req, runtime), new UnbindApplyReceiptAndInvoiceRelatedResponse({}));
   }
 
   async updateApplyReceiptAndInvoiceRelated(request: UpdateApplyReceiptAndInvoiceRelatedRequest): Promise<UpdateApplyReceiptAndInvoiceRelatedResponse> {

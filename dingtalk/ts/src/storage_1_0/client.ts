@@ -1077,15 +1077,18 @@ export class GetDentryHeaders extends $tea.Model {
 }
 
 export class GetDentryRequest extends $tea.Model {
+  option?: GetDentryRequestOption;
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
+      option: 'option',
       unionId: 'unionId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      option: GetDentryRequestOption,
       unionId: 'string',
     };
   }
@@ -1128,6 +1131,91 @@ export class GetDentryResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetDentryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDentryOpenInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDentryOpenInfoRequest extends $tea.Model {
+  option?: GetDentryOpenInfoRequestOption;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      option: 'option',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      option: GetDentryOpenInfoRequestOption,
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDentryOpenInfoResponseBody extends $tea.Model {
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDentryOpenInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetDentryOpenInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetDentryOpenInfoResponseBody,
     };
   }
 
@@ -1316,6 +1404,88 @@ export class GetFileUploadInfoResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetFileUploadInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrgHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrgRequest extends $tea.Model {
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrgResponseBody extends $tea.Model {
+  org?: GetOrgResponseBodyOrg;
+  static names(): { [key: string]: string } {
+    return {
+      org: 'org',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      org: GetOrgResponseBodyOrg,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrgResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetOrgResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetOrgResponseBody,
     };
   }
 
@@ -2471,6 +2641,56 @@ export class UpdatePermissionResponse extends $tea.Model {
   }
 }
 
+export class DentryAppPropertiesValue extends $tea.Model {
+  name?: string;
+  value?: string;
+  visibility?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      value: 'value',
+      visibility: 'visibility',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      value: 'string',
+      visibility: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DentriesAppPropertiesValue extends $tea.Model {
+  name?: string;
+  value?: string;
+  visibility?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      value: 'value',
+      visibility: 'visibility',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      value: 'string',
+      visibility: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddFolderRequestOptionAppProperties extends $tea.Model {
   name?: string;
   value?: string;
@@ -2538,6 +2758,7 @@ export class AddFolderResponseBodyDentryProperties extends $tea.Model {
 }
 
 export class AddFolderResponseBodyDentry extends $tea.Model {
+  appProperties?: { [key: string]: DentryAppPropertiesValue[] };
   createTime?: string;
   creatorId?: string;
   extension?: string;
@@ -2558,6 +2779,7 @@ export class AddFolderResponseBodyDentry extends $tea.Model {
   version?: number;
   static names(): { [key: string]: string } {
     return {
+      appProperties: 'appProperties',
       createTime: 'createTime',
       creatorId: 'creatorId',
       extension: 'extension',
@@ -2581,6 +2803,7 @@ export class AddFolderResponseBodyDentry extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      appProperties: { 'type': 'map', 'keyType': 'string', 'valueType': { 'type': 'array', 'itemType': DentryAppPropertiesValue } },
       createTime: 'string',
       creatorId: 'string',
       extension: 'string',
@@ -2866,6 +3089,7 @@ export class CommitFileResponseBodyDentryProperties extends $tea.Model {
 }
 
 export class CommitFileResponseBodyDentry extends $tea.Model {
+  appProperties?: { [key: string]: DentryAppPropertiesValue[] };
   createTime?: string;
   creatorId?: string;
   extension?: string;
@@ -2886,6 +3110,7 @@ export class CommitFileResponseBodyDentry extends $tea.Model {
   version?: number;
   static names(): { [key: string]: string } {
     return {
+      appProperties: 'appProperties',
       createTime: 'createTime',
       creatorId: 'creatorId',
       extension: 'extension',
@@ -2909,6 +3134,7 @@ export class CommitFileResponseBodyDentry extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      appProperties: { 'type': 'map', 'keyType': 'string', 'valueType': { 'type': 'array', 'itemType': DentryAppPropertiesValue } },
       createTime: 'string',
       creatorId: 'string',
       extension: 'string',
@@ -2974,6 +3200,7 @@ export class CopyDentryResponseBodyDentryProperties extends $tea.Model {
 }
 
 export class CopyDentryResponseBodyDentry extends $tea.Model {
+  appProperties?: { [key: string]: DentryAppPropertiesValue[] };
   createTime?: string;
   creatorId?: string;
   extension?: string;
@@ -2994,6 +3221,7 @@ export class CopyDentryResponseBodyDentry extends $tea.Model {
   version?: number;
   static names(): { [key: string]: string } {
     return {
+      appProperties: 'appProperties',
       createTime: 'createTime',
       creatorId: 'creatorId',
       extension: 'extension',
@@ -3017,6 +3245,7 @@ export class CopyDentryResponseBodyDentry extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      appProperties: { 'type': 'map', 'keyType': 'string', 'valueType': { 'type': 'array', 'itemType': DentryAppPropertiesValue } },
       createTime: 'string',
       creatorId: 'string',
       extension: 'string',
@@ -3149,6 +3378,25 @@ export class GetCurrentAppResponseBodyApp extends $tea.Model {
   }
 }
 
+export class GetDentryRequestOption extends $tea.Model {
+  appIdsForAppProperties?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      appIdsForAppProperties: 'appIdsForAppProperties',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appIdsForAppProperties: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetDentryResponseBodyDentryProperties extends $tea.Model {
   readOnly?: boolean;
   static names(): { [key: string]: string } {
@@ -3169,6 +3417,7 @@ export class GetDentryResponseBodyDentryProperties extends $tea.Model {
 }
 
 export class GetDentryResponseBodyDentry extends $tea.Model {
+  appProperties?: { [key: string]: DentryAppPropertiesValue[] };
   createTime?: string;
   creatorId?: string;
   extension?: string;
@@ -3189,6 +3438,7 @@ export class GetDentryResponseBodyDentry extends $tea.Model {
   version?: number;
   static names(): { [key: string]: string } {
     return {
+      appProperties: 'appProperties',
       createTime: 'createTime',
       creatorId: 'creatorId',
       extension: 'extension',
@@ -3212,6 +3462,7 @@ export class GetDentryResponseBodyDentry extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      appProperties: { 'type': 'map', 'keyType': 'string', 'valueType': { 'type': 'array', 'itemType': DentryAppPropertiesValue } },
       createTime: 'string',
       creatorId: 'string',
       extension: 'string',
@@ -3230,6 +3481,34 @@ export class GetDentryResponseBodyDentry extends $tea.Model {
       type: 'string',
       uuid: 'string',
       version: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDentryOpenInfoRequestOption extends $tea.Model {
+  checkLogin?: boolean;
+  type?: string;
+  version?: number;
+  waterMark?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      checkLogin: 'checkLogin',
+      type: 'type',
+      version: 'version',
+      waterMark: 'waterMark',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      checkLogin: 'boolean',
+      type: 'string',
+      version: 'number',
+      waterMark: 'boolean',
     };
   }
 
@@ -3364,6 +3643,75 @@ export class GetFileUploadInfoResponseBodyHeaderSignatureInfo extends $tea.Model
       internalResourceUrls: { 'type': 'array', 'itemType': 'string' },
       region: 'string',
       resourceUrls: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrgResponseBodyOrgPartitionsQuota extends $tea.Model {
+  max?: number;
+  type?: string;
+  used?: number;
+  static names(): { [key: string]: string } {
+    return {
+      max: 'max',
+      type: 'type',
+      used: 'used',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      max: 'number',
+      type: 'string',
+      used: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrgResponseBodyOrgPartitions extends $tea.Model {
+  partitionType?: string;
+  quota?: GetOrgResponseBodyOrgPartitionsQuota;
+  static names(): { [key: string]: string } {
+    return {
+      partitionType: 'partitionType',
+      quota: 'quota',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      partitionType: 'string',
+      quota: GetOrgResponseBodyOrgPartitionsQuota,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrgResponseBodyOrg extends $tea.Model {
+  corpId?: string;
+  partitions?: GetOrgResponseBodyOrgPartitions[];
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      partitions: 'partitions',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      partitions: { 'type': 'array', 'itemType': GetOrgResponseBodyOrgPartitions },
     };
   }
 
@@ -3546,6 +3894,7 @@ export class ListDentriesResponseBodyDentriesProperties extends $tea.Model {
 }
 
 export class ListDentriesResponseBodyDentries extends $tea.Model {
+  appProperties?: { [key: string]: DentriesAppPropertiesValue[] };
   createTime?: string;
   creatorId?: string;
   extension?: string;
@@ -3566,6 +3915,7 @@ export class ListDentriesResponseBodyDentries extends $tea.Model {
   version?: number;
   static names(): { [key: string]: string } {
     return {
+      appProperties: 'appProperties',
       createTime: 'createTime',
       creatorId: 'creatorId',
       extension: 'extension',
@@ -3589,6 +3939,7 @@ export class ListDentriesResponseBodyDentries extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      appProperties: { 'type': 'map', 'keyType': 'string', 'valueType': { 'type': 'array', 'itemType': DentriesAppPropertiesValue } },
       createTime: 'string',
       creatorId: 'string',
       extension: 'string',
@@ -3635,6 +3986,7 @@ export class ListDentryVersionsResponseBodyDentriesProperties extends $tea.Model
 }
 
 export class ListDentryVersionsResponseBodyDentries extends $tea.Model {
+  appProperties?: { [key: string]: DentriesAppPropertiesValue[] };
   createTime?: string;
   creatorId?: string;
   extension?: string;
@@ -3655,6 +4007,7 @@ export class ListDentryVersionsResponseBodyDentries extends $tea.Model {
   version?: number;
   static names(): { [key: string]: string } {
     return {
+      appProperties: 'appProperties',
       createTime: 'createTime',
       creatorId: 'creatorId',
       extension: 'extension',
@@ -3678,6 +4031,7 @@ export class ListDentryVersionsResponseBodyDentries extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      appProperties: { 'type': 'map', 'keyType': 'string', 'valueType': { 'type': 'array', 'itemType': DentriesAppPropertiesValue } },
       createTime: 'string',
       creatorId: 'string',
       extension: 'string',
@@ -3782,7 +4136,7 @@ export class ListPermissionsResponseBodyPermissions extends $tea.Model {
   duration?: number;
   member?: ListPermissionsResponseBodyPermissionsMember;
   modifiedTime?: string;
-  operatorId?: number;
+  operatorId?: string;
   role?: ListPermissionsResponseBodyPermissionsRole;
   spaceId?: string;
   static names(): { [key: string]: string } {
@@ -3805,7 +4159,7 @@ export class ListPermissionsResponseBodyPermissions extends $tea.Model {
       duration: 'number',
       member: ListPermissionsResponseBodyPermissionsMember,
       modifiedTime: 'string',
-      operatorId: 'number',
+      operatorId: 'string',
       role: ListPermissionsResponseBodyPermissionsRole,
       spaceId: 'string',
     };
@@ -3901,6 +4255,7 @@ export class MoveDentryResponseBodyDentryProperties extends $tea.Model {
 }
 
 export class MoveDentryResponseBodyDentry extends $tea.Model {
+  appProperties?: { [key: string]: DentryAppPropertiesValue[] };
   createTime?: string;
   creatorId?: string;
   extension?: string;
@@ -3921,6 +4276,7 @@ export class MoveDentryResponseBodyDentry extends $tea.Model {
   version?: number;
   static names(): { [key: string]: string } {
     return {
+      appProperties: 'appProperties',
       createTime: 'createTime',
       creatorId: 'creatorId',
       extension: 'extension',
@@ -3944,6 +4300,7 @@ export class MoveDentryResponseBodyDentry extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      appProperties: { 'type': 'map', 'keyType': 'string', 'valueType': { 'type': 'array', 'itemType': DentryAppPropertiesValue } },
       createTime: 'string',
       creatorId: 'string',
       extension: 'string',
@@ -3990,6 +4347,7 @@ export class RenameDentryResponseBodyDentryProperties extends $tea.Model {
 }
 
 export class RenameDentryResponseBodyDentry extends $tea.Model {
+  appProperties?: { [key: string]: DentryAppPropertiesValue[] };
   createTime?: string;
   creatorId?: string;
   extension?: string;
@@ -4010,6 +4368,7 @@ export class RenameDentryResponseBodyDentry extends $tea.Model {
   version?: number;
   static names(): { [key: string]: string } {
     return {
+      appProperties: 'appProperties',
       createTime: 'createTime',
       creatorId: 'creatorId',
       extension: 'extension',
@@ -4033,6 +4392,7 @@ export class RenameDentryResponseBodyDentry extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      appProperties: { 'type': 'map', 'keyType': 'string', 'valueType': { 'type': 'array', 'itemType': DentryAppPropertiesValue } },
       createTime: 'string',
       creatorId: 'string',
       extension: 'string',
@@ -4628,6 +4988,11 @@ export default class Client extends OpenApi {
       query["unionId"] = request.unionId;
     }
 
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.option))) {
+      body["option"] = request.option;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -4640,8 +5005,46 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
       query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<GetDentryResponse>(await this.doROARequest("GetDentry", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/query`, "json", req, runtime), new GetDentryResponse({}));
+  }
+
+  async getDentryOpenInfo(spaceId: string, dentryId: string, request: GetDentryOpenInfoRequest): Promise<GetDentryOpenInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetDentryOpenInfoHeaders({ });
+    return await this.getDentryOpenInfoWithOptions(spaceId, dentryId, request, headers, runtime);
+  }
+
+  async getDentryOpenInfoWithOptions(spaceId: string, dentryId: string, request: GetDentryOpenInfoRequest, headers: GetDentryOpenInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetDentryOpenInfoResponse> {
+    Util.validateModel(request);
+    spaceId = OpenApiUtil.getEncodeParam(spaceId);
+    dentryId = OpenApiUtil.getEncodeParam(dentryId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.option))) {
+      body["option"] = request.option;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetDentryOpenInfoResponse>(await this.doROARequest("GetDentryOpenInfo", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/openInfos/query`, "json", req, runtime), new GetDentryOpenInfoResponse({}));
   }
 
   async getFileDownloadInfo(spaceId: string, dentryId: string, request: GetFileDownloadInfoRequest): Promise<GetFileDownloadInfoResponse> {
@@ -4723,6 +5126,36 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<GetFileUploadInfoResponse>(await this.doROARequest("GetFileUploadInfo", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/files/uploadInfos/query`, "json", req, runtime), new GetFileUploadInfoResponse({}));
+  }
+
+  async getOrg(corpId: string, request: GetOrgRequest): Promise<GetOrgResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetOrgHeaders({ });
+    return await this.getOrgWithOptions(corpId, request, headers, runtime);
+  }
+
+  async getOrgWithOptions(corpId: string, request: GetOrgRequest, headers: GetOrgHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrgResponse> {
+    Util.validateModel(request);
+    corpId = OpenApiUtil.getEncodeParam(corpId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetOrgResponse>(await this.doROARequest("GetOrg", "storage_1.0", "HTTP", "GET", "AK", `/v1.0/storage/orgs/${corpId}`, "json", req, runtime), new GetOrgResponse({}));
   }
 
   async getRecycleBin(request: GetRecycleBinRequest): Promise<GetRecycleBinResponse> {

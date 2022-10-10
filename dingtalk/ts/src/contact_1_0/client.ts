@@ -461,6 +461,100 @@ export class CreateManagementGroupResponse extends $tea.Model {
   }
 }
 
+export class CreateSecondaryManagementGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSecondaryManagementGroupRequest extends $tea.Model {
+  groupName?: string;
+  members?: CreateSecondaryManagementGroupRequestMembers[];
+  resourceIds?: string[];
+  scope?: CreateSecondaryManagementGroupRequestScope;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      groupName: 'groupName',
+      members: 'members',
+      resourceIds: 'resourceIds',
+      scope: 'scope',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupName: 'string',
+      members: { 'type': 'array', 'itemType': CreateSecondaryManagementGroupRequestMembers },
+      resourceIds: { 'type': 'array', 'itemType': 'string' },
+      scope: CreateSecondaryManagementGroupRequestScope,
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSecondaryManagementGroupResponseBody extends $tea.Model {
+  groupId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      groupId: 'groupId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSecondaryManagementGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateSecondaryManagementGroupResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateSecondaryManagementGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteContactHideSettingHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1902,6 +1996,91 @@ export class GetUserCardHolderListResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetUserCardHolderListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IsFriendHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IsFriendRequest extends $tea.Model {
+  mobileNo?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      mobileNo: 'mobileNo',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      mobileNo: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IsFriendResponseBody extends $tea.Model {
+  isFriend?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      isFriend: 'isFriend',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isFriend: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IsFriendResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: IsFriendResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: IsFriendResponseBody,
     };
   }
 
@@ -3724,15 +3903,18 @@ export class UniqueQueryUserCardHeaders extends $tea.Model {
 }
 
 export class UniqueQueryUserCardRequest extends $tea.Model {
+  templateId?: string;
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
+      templateId: 'templateId',
       unionId: 'unionId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      templateId: 'string',
       unionId: 'string',
     };
   }
@@ -4618,6 +4800,50 @@ export class CreateManagementGroupRequestMembers extends $tea.Model {
 }
 
 export class CreateManagementGroupRequestScope extends $tea.Model {
+  deptIds?: number[];
+  scopeType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptIds: 'deptIds',
+      scopeType: 'scopeType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptIds: { 'type': 'array', 'itemType': 'number' },
+      scopeType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSecondaryManagementGroupRequestMembers extends $tea.Model {
+  memberId?: string;
+  memberType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      memberId: 'memberId',
+      memberType: 'memberType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memberId: 'string',
+      memberType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSecondaryManagementGroupRequestScope extends $tea.Model {
   deptIds?: number[];
   scopeType?: number;
   static names(): { [key: string]: string } {
@@ -5694,6 +5920,53 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateManagementGroupResponse>(await this.doROARequest("CreateManagementGroup", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/managementGroups`, "json", req, runtime), new CreateManagementGroupResponse({}));
   }
 
+  async createSecondaryManagementGroup(request: CreateSecondaryManagementGroupRequest): Promise<CreateSecondaryManagementGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateSecondaryManagementGroupHeaders({ });
+    return await this.createSecondaryManagementGroupWithOptions(request, headers, runtime);
+  }
+
+  async createSecondaryManagementGroupWithOptions(request: CreateSecondaryManagementGroupRequest, headers: CreateSecondaryManagementGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSecondaryManagementGroupResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.groupName)) {
+      body["groupName"] = request.groupName;
+    }
+
+    if (!Util.isUnset(request.members)) {
+      body["members"] = request.members;
+    }
+
+    if (!Util.isUnset(request.resourceIds)) {
+      body["resourceIds"] = request.resourceIds;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.scope))) {
+      body["scope"] = request.scope;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateSecondaryManagementGroupResponse>(await this.doROARequest("CreateSecondaryManagementGroup", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/secondaryAdministrators/managementGroups`, "json", req, runtime), new CreateSecondaryManagementGroupResponse({}));
+  }
+
   async deleteContactHideSetting(settingId: string): Promise<DeleteContactHideSettingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteContactHideSettingHeaders({ });
@@ -6199,6 +6472,39 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetUserCardHolderListResponse>(await this.doROARequest("GetUserCardHolderList", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/cards/holders/lists`, "json", req, runtime), new GetUserCardHolderListResponse({}));
+  }
+
+  async isFriend(request: IsFriendRequest): Promise<IsFriendResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new IsFriendHeaders({ });
+    return await this.isFriendWithOptions(request, headers, runtime);
+  }
+
+  async isFriendWithOptions(request: IsFriendRequest, headers: IsFriendHeaders, runtime: $Util.RuntimeOptions): Promise<IsFriendResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.mobileNo)) {
+      body["mobileNo"] = request.mobileNo;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<IsFriendResponse>(await this.doROARequest("IsFriend", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/relationships/friends/judge`, "json", req, runtime), new IsFriendResponse({}));
   }
 
   async isvCardEventPush(request: IsvCardEventPushRequest): Promise<IsvCardEventPushResponse> {
@@ -6950,6 +7256,10 @@ export default class Client extends OpenApi {
   async uniqueQueryUserCardWithOptions(request: UniqueQueryUserCardRequest, headers: UniqueQueryUserCardHeaders, runtime: $Util.RuntimeOptions): Promise<UniqueQueryUserCardResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.templateId)) {
+      query["templateId"] = request.templateId;
+    }
+
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
     }

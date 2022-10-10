@@ -2623,6 +2623,94 @@ export class UpdateInvoiceVerifyStatusResponse extends $tea.Model {
   }
 }
 
+export class UploadInvoiceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadInvoiceRequest extends $tea.Model {
+  extension?: UploadInvoiceRequestExtension;
+  invoices?: UploadInvoiceRequestInvoices[];
+  userIdentity?: UploadInvoiceRequestUserIdentity;
+  static names(): { [key: string]: string } {
+    return {
+      extension: 'extension',
+      invoices: 'invoices',
+      userIdentity: 'userIdentity',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      extension: UploadInvoiceRequestExtension,
+      invoices: { 'type': 'array', 'itemType': UploadInvoiceRequestInvoices },
+      userIdentity: UploadInvoiceRequestUserIdentity,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadInvoiceResponseBody extends $tea.Model {
+  result?: UploadInvoiceResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: UploadInvoiceResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadInvoiceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UploadInvoiceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UploadInvoiceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UploadInvoiceByAuthHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2646,15 +2734,18 @@ export class UploadInvoiceByAuthHeaders extends $tea.Model {
 }
 
 export class UploadInvoiceByAuthRequest extends $tea.Model {
+  extension?: UploadInvoiceByAuthRequestExtension;
   invoices?: UploadInvoiceByAuthRequestInvoices[];
   static names(): { [key: string]: string } {
     return {
+      extension: 'extension',
       invoices: 'invoices',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      extension: UploadInvoiceByAuthRequestExtension,
       invoices: { 'type': 'array', 'itemType': UploadInvoiceByAuthRequestInvoices },
     };
   }
@@ -4486,6 +4577,198 @@ export class UpateUserCodeInstanceRequestAvailableTimes extends $tea.Model {
   }
 }
 
+export class UploadInvoiceRequestExtension extends $tea.Model {
+  bizCode?: string;
+  orderNo?: string;
+  orderType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizCode: 'bizCode',
+      orderNo: 'orderNo',
+      orderType: 'orderType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizCode: 'string',
+      orderNo: 'string',
+      orderType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadInvoiceRequestInvoices extends $tea.Model {
+  invoiceAmount?: string;
+  invoiceCode?: string;
+  invoiceDate?: string;
+  invoiceNo?: string;
+  invoiceType?: string;
+  logoUrl?: string;
+  payeeName?: string;
+  payeeTaxNo?: string;
+  payerName?: string;
+  payerTaxNo?: string;
+  pdfUrl?: string;
+  taxAmount?: string;
+  verifyCode?: string;
+  withoutTaxAmount?: string;
+  static names(): { [key: string]: string } {
+    return {
+      invoiceAmount: 'invoiceAmount',
+      invoiceCode: 'invoiceCode',
+      invoiceDate: 'invoiceDate',
+      invoiceNo: 'invoiceNo',
+      invoiceType: 'invoiceType',
+      logoUrl: 'logoUrl',
+      payeeName: 'payeeName',
+      payeeTaxNo: 'payeeTaxNo',
+      payerName: 'payerName',
+      payerTaxNo: 'payerTaxNo',
+      pdfUrl: 'pdfUrl',
+      taxAmount: 'taxAmount',
+      verifyCode: 'verifyCode',
+      withoutTaxAmount: 'withoutTaxAmount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      invoiceAmount: 'string',
+      invoiceCode: 'string',
+      invoiceDate: 'string',
+      invoiceNo: 'string',
+      invoiceType: 'string',
+      logoUrl: 'string',
+      payeeName: 'string',
+      payeeTaxNo: 'string',
+      payerName: 'string',
+      payerTaxNo: 'string',
+      pdfUrl: 'string',
+      taxAmount: 'string',
+      verifyCode: 'string',
+      withoutTaxAmount: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadInvoiceRequestUserIdentity extends $tea.Model {
+  mobile?: string;
+  mobileStateCode?: string;
+  targetCorpId?: string;
+  type?: string;
+  unionId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      mobile: 'mobile',
+      mobileStateCode: 'mobileStateCode',
+      targetCorpId: 'targetCorpId',
+      type: 'type',
+      unionId: 'unionId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      mobile: 'string',
+      mobileStateCode: 'string',
+      targetCorpId: 'string',
+      type: 'string',
+      unionId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadInvoiceResponseBodyResultResults extends $tea.Model {
+  errCode?: string;
+  invoiceCode?: string;
+  invoiceNo?: string;
+  reason?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      errCode: 'errCode',
+      invoiceCode: 'invoiceCode',
+      invoiceNo: 'invoiceNo',
+      reason: 'reason',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      errCode: 'string',
+      invoiceCode: 'string',
+      invoiceNo: 'string',
+      reason: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadInvoiceResponseBodyResult extends $tea.Model {
+  results?: UploadInvoiceResponseBodyResultResults[];
+  static names(): { [key: string]: string } {
+    return {
+      results: 'results',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      results: { 'type': 'array', 'itemType': UploadInvoiceResponseBodyResultResults },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadInvoiceByAuthRequestExtension extends $tea.Model {
+  bizCode?: string;
+  orderNo?: string;
+  orderType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizCode: 'bizCode',
+      orderNo: 'orderNo',
+      orderType: 'orderType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizCode: 'string',
+      orderNo: 'string',
+      orderType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UploadInvoiceByAuthRequestInvoices extends $tea.Model {
   invoiceAmount?: string;
   invoiceCode?: string;
@@ -6037,6 +6320,43 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateInvoiceVerifyStatusResponse>(await this.doROARequest("UpdateInvoiceVerifyStatus", "finance_1.0", "HTTP", "PUT", "AK", `/v1.0/finance/invoices/verifyStatus`, "json", req, runtime), new UpdateInvoiceVerifyStatusResponse({}));
   }
 
+  async uploadInvoice(request: UploadInvoiceRequest): Promise<UploadInvoiceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UploadInvoiceHeaders({ });
+    return await this.uploadInvoiceWithOptions(request, headers, runtime);
+  }
+
+  async uploadInvoiceWithOptions(request: UploadInvoiceRequest, headers: UploadInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<UploadInvoiceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.extension))) {
+      body["extension"] = request.extension;
+    }
+
+    if (!Util.isUnset(request.invoices)) {
+      body["invoices"] = request.invoices;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.userIdentity))) {
+      body["userIdentity"] = request.userIdentity;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UploadInvoiceResponse>(await this.doROARequest("UploadInvoice", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/invoices/upload`, "json", req, runtime), new UploadInvoiceResponse({}));
+  }
+
   async uploadInvoiceByAuth(request: UploadInvoiceByAuthRequest): Promise<UploadInvoiceByAuthResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UploadInvoiceByAuthHeaders({ });
@@ -6046,6 +6366,10 @@ export default class Client extends OpenApi {
   async uploadInvoiceByAuthWithOptions(request: UploadInvoiceByAuthRequest, headers: UploadInvoiceByAuthHeaders, runtime: $Util.RuntimeOptions): Promise<UploadInvoiceByAuthResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.extension))) {
+      body["extension"] = request.extension;
+    }
+
     if (!Util.isUnset(request.invoices)) {
       body["invoices"] = request.invoices;
     }

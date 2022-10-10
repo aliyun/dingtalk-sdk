@@ -1690,6 +1690,8 @@ export class SendCardRequest extends $tea.Model {
   deviceCode?: string;
   deviceUuid?: string;
   openConversationId?: string;
+  partVisible?: boolean;
+  receivers?: string[];
   templateId?: string;
   topbox?: boolean;
   userId?: string;
@@ -1700,6 +1702,8 @@ export class SendCardRequest extends $tea.Model {
       deviceCode: 'deviceCode',
       deviceUuid: 'deviceUuid',
       openConversationId: 'openConversationId',
+      partVisible: 'partVisible',
+      receivers: 'receivers',
       templateId: 'templateId',
       topbox: 'topbox',
       userId: 'userId',
@@ -1713,6 +1717,8 @@ export class SendCardRequest extends $tea.Model {
       deviceCode: 'string',
       deviceUuid: 'string',
       openConversationId: 'string',
+      partVisible: 'boolean',
+      receivers: { 'type': 'array', 'itemType': 'string' },
       templateId: 'string',
       topbox: 'boolean',
       userId: 'string',
@@ -1978,10 +1984,12 @@ export class UpdateCardHeaders extends $tea.Model {
 export class UpdateCardRequest extends $tea.Model {
   bizId?: string;
   cardData?: string;
+  tips?: UpdateCardRequestTips;
   static names(): { [key: string]: string } {
     return {
       bizId: 'bizId',
       cardData: 'cardData',
+      tips: 'tips',
     };
   }
 
@@ -1989,6 +1997,7 @@ export class UpdateCardRequest extends $tea.Model {
     return {
       bizId: 'string',
       cardData: 'string',
+      tips: UpdateCardRequestTips,
     };
   }
 
@@ -1998,7 +2007,7 @@ export class UpdateCardRequest extends $tea.Model {
 }
 
 export class UpdateCardResponseBody extends $tea.Model {
-  result?: string;
+  result?: boolean;
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2009,7 +2018,7 @@ export class UpdateCardResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      result: 'string',
+      result: 'boolean',
       success: 'boolean',
     };
   }
@@ -2558,6 +2567,31 @@ export class RegisterAndActivateDeviceBatchResponseBodySuccessItems extends $tea
       errorMsg: 'string',
       result: RegisterAndActivateDeviceBatchResponseBodySuccessItemsResult,
       success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCardRequestTips extends $tea.Model {
+  cids?: string;
+  content?: string;
+  sender?: string;
+  static names(): { [key: string]: string } {
+    return {
+      cids: 'cids',
+      content: 'content',
+      sender: 'sender',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cids: 'string',
+      content: 'string',
+      sender: 'string',
     };
   }
 
@@ -3327,6 +3361,14 @@ export default class Client extends OpenApi {
       body["openConversationId"] = request.openConversationId;
     }
 
+    if (!Util.isUnset(request.partVisible)) {
+      body["partVisible"] = request.partVisible;
+    }
+
+    if (!Util.isUnset(request.receivers)) {
+      body["receivers"] = request.receivers;
+    }
+
     if (!Util.isUnset(request.templateId)) {
       body["templateId"] = request.templateId;
     }
@@ -3448,6 +3490,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.cardData)) {
       body["cardData"] = request.cardData;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.tips))) {
+      body["tips"] = request.tips;
     }
 
     let realHeaders : {[key: string ]: string} = { };

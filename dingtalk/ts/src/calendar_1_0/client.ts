@@ -830,6 +830,7 @@ export class GetEventResponseBody extends $tea.Model {
   createTime?: string;
   description?: string;
   end?: GetEventResponseBodyEnd;
+  extendedProperties?: GetEventResponseBodyExtendedProperties;
   id?: string;
   isAllDay?: boolean;
   location?: GetEventResponseBodyLocation;
@@ -848,6 +849,7 @@ export class GetEventResponseBody extends $tea.Model {
       createTime: 'createTime',
       description: 'description',
       end: 'end',
+      extendedProperties: 'extendedProperties',
       id: 'id',
       isAllDay: 'isAllDay',
       location: 'location',
@@ -869,6 +871,7 @@ export class GetEventResponseBody extends $tea.Model {
       createTime: 'string',
       description: 'string',
       end: GetEventResponseBodyEnd,
+      extendedProperties: GetEventResponseBodyExtendedProperties,
       id: 'string',
       isAllDay: 'boolean',
       location: GetEventResponseBodyLocation,
@@ -2202,6 +2205,69 @@ export class SubscribeCalendarResponse extends $tea.Model {
   }
 }
 
+export class UnsubscribeCalendarHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UnsubscribeCalendarResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UnsubscribeCalendarResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UnsubscribeCalendarResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UnsubscribeCalendarResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateSubscribedCalendarsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2906,6 +2972,47 @@ export class GetEventResponseBodyEnd extends $tea.Model {
   }
 }
 
+export class GetEventResponseBodyExtendedPropertiesSharedProperties extends $tea.Model {
+  belongCorpId?: string;
+  sourceOpenCid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      belongCorpId: 'belongCorpId',
+      sourceOpenCid: 'sourceOpenCid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      belongCorpId: 'string',
+      sourceOpenCid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEventResponseBodyExtendedProperties extends $tea.Model {
+  sharedProperties?: GetEventResponseBodyExtendedPropertiesSharedProperties;
+  static names(): { [key: string]: string } {
+    return {
+      sharedProperties: 'sharedProperties',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sharedProperties: GetEventResponseBodyExtendedPropertiesSharedProperties,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetEventResponseBodyLocation extends $tea.Model {
   displayName?: string;
   meetingRooms?: string[];
@@ -3474,6 +3581,47 @@ export class ListEventsResponseBodyEventsEnd extends $tea.Model {
   }
 }
 
+export class ListEventsResponseBodyEventsExtendedPropertiesSharedProperties extends $tea.Model {
+  belongCorpId?: string;
+  sourceOpenCid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      belongCorpId: 'belongCorpId',
+      sourceOpenCid: 'sourceOpenCid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      belongCorpId: 'string',
+      sourceOpenCid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsResponseBodyEventsExtendedProperties extends $tea.Model {
+  sharedProperties?: ListEventsResponseBodyEventsExtendedPropertiesSharedProperties;
+  static names(): { [key: string]: string } {
+    return {
+      sharedProperties: 'sharedProperties',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sharedProperties: ListEventsResponseBodyEventsExtendedPropertiesSharedProperties,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListEventsResponseBodyEventsLocation extends $tea.Model {
   displayName?: string;
   meetingRooms?: string[];
@@ -3682,6 +3830,7 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
   createTime?: string;
   description?: string;
   end?: ListEventsResponseBodyEventsEnd;
+  extendedProperties?: ListEventsResponseBodyEventsExtendedProperties;
   id?: string;
   isAllDay?: boolean;
   location?: ListEventsResponseBodyEventsLocation;
@@ -3700,6 +3849,7 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
       createTime: 'createTime',
       description: 'description',
       end: 'end',
+      extendedProperties: 'extendedProperties',
       id: 'id',
       isAllDay: 'isAllDay',
       location: 'location',
@@ -3721,6 +3871,7 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
       createTime: 'string',
       description: 'string',
       end: ListEventsResponseBodyEventsEnd,
+      extendedProperties: ListEventsResponseBodyEventsExtendedProperties,
       id: 'string',
       isAllDay: 'boolean',
       location: ListEventsResponseBodyEventsLocation,
@@ -3789,6 +3940,44 @@ export class ListEventsInstancesResponseBodyEventsEnd extends $tea.Model {
       date: 'string',
       dateTime: 'string',
       timeZone: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsInstancesResponseBodyEventsExtendedPropertiesSharedProperties extends $tea.Model {
+  sourceOpenCid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      sourceOpenCid: 'sourceOpenCid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sourceOpenCid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsInstancesResponseBodyEventsExtendedProperties extends $tea.Model {
+  sharedProperties?: ListEventsInstancesResponseBodyEventsExtendedPropertiesSharedProperties;
+  static names(): { [key: string]: string } {
+    return {
+      sharedProperties: 'sharedProperties',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sharedProperties: ListEventsInstancesResponseBodyEventsExtendedPropertiesSharedProperties,
     };
   }
 
@@ -4002,6 +4191,7 @@ export class ListEventsInstancesResponseBodyEvents extends $tea.Model {
   createTime?: string;
   description?: string;
   end?: ListEventsInstancesResponseBodyEventsEnd;
+  extendedProperties?: ListEventsInstancesResponseBodyEventsExtendedProperties;
   id?: string;
   isAllDay?: boolean;
   location?: ListEventsInstancesResponseBodyEventsLocation;
@@ -4020,6 +4210,7 @@ export class ListEventsInstancesResponseBodyEvents extends $tea.Model {
       createTime: 'createTime',
       description: 'description',
       end: 'end',
+      extendedProperties: 'extendedProperties',
       id: 'id',
       isAllDay: 'isAllDay',
       location: 'location',
@@ -4041,6 +4232,7 @@ export class ListEventsInstancesResponseBodyEvents extends $tea.Model {
       createTime: 'string',
       description: 'string',
       end: ListEventsInstancesResponseBodyEventsEnd,
+      extendedProperties: ListEventsInstancesResponseBodyEventsExtendedProperties,
       id: 'string',
       isAllDay: 'boolean',
       location: ListEventsInstancesResponseBodyEventsLocation,
@@ -4109,6 +4301,47 @@ export class ListEventsViewResponseBodyEventsEnd extends $tea.Model {
       date: 'string',
       dateTime: 'string',
       timeZone: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties extends $tea.Model {
+  belongCorpId?: string;
+  sourceOpenCid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      belongCorpId: 'belongCorpId',
+      sourceOpenCid: 'sourceOpenCid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      belongCorpId: 'string',
+      sourceOpenCid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsViewResponseBodyEventsExtendedProperties extends $tea.Model {
+  sharedProperties?: ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties;
+  static names(): { [key: string]: string } {
+    return {
+      sharedProperties: 'sharedProperties',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sharedProperties: ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties,
     };
   }
 
@@ -4303,6 +4536,7 @@ export class ListEventsViewResponseBodyEvents extends $tea.Model {
   createTime?: string;
   description?: string;
   end?: ListEventsViewResponseBodyEventsEnd;
+  extendedProperties?: ListEventsViewResponseBodyEventsExtendedProperties;
   id?: string;
   isAllDay?: boolean;
   location?: ListEventsViewResponseBodyEventsLocation;
@@ -4320,6 +4554,7 @@ export class ListEventsViewResponseBodyEvents extends $tea.Model {
       createTime: 'createTime',
       description: 'description',
       end: 'end',
+      extendedProperties: 'extendedProperties',
       id: 'id',
       isAllDay: 'isAllDay',
       location: 'location',
@@ -4340,6 +4575,7 @@ export class ListEventsViewResponseBodyEvents extends $tea.Model {
       createTime: 'string',
       description: 'string',
       end: ListEventsViewResponseBodyEventsEnd,
+      extendedProperties: ListEventsViewResponseBodyEventsExtendedProperties,
       id: 'string',
       isAllDay: 'boolean',
       location: ListEventsViewResponseBodyEventsLocation,
@@ -5795,6 +6031,30 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<SubscribeCalendarResponse>(await this.doROARequest("SubscribeCalendar", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/subscribe`, "none", req, runtime), new SubscribeCalendarResponse({}));
+  }
+
+  async unsubscribeCalendar(userId: string, calendarId: string): Promise<UnsubscribeCalendarResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UnsubscribeCalendarHeaders({ });
+    return await this.unsubscribeCalendarWithOptions(userId, calendarId, headers, runtime);
+  }
+
+  async unsubscribeCalendarWithOptions(userId: string, calendarId: string, headers: UnsubscribeCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<UnsubscribeCalendarResponse> {
+    userId = OpenApiUtil.getEncodeParam(userId);
+    calendarId = OpenApiUtil.getEncodeParam(calendarId);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<UnsubscribeCalendarResponse>(await this.doROARequest("UnsubscribeCalendar", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/unsubscribe`, "json", req, runtime), new UnsubscribeCalendarResponse({}));
   }
 
   async updateSubscribedCalendars(calendarId: string, userId: string, request: UpdateSubscribedCalendarsRequest): Promise<UpdateSubscribedCalendarsResponse> {
