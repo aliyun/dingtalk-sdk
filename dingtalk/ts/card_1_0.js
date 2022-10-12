@@ -1,0 +1,1 @@
+module.exports = require('./dist').card_1_0;

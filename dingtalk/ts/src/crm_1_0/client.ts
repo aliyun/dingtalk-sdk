@@ -1723,6 +1723,97 @@ export class DescribeRelationMetaResponse extends $tea.Model {
   }
 }
 
+export class GetAllCustomerRecyclesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllCustomerRecyclesRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllCustomerRecyclesResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  nextToken?: string;
+  resultList?: GetAllCustomerRecyclesResponseBodyResultList[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      nextToken: 'nextToken',
+      resultList: 'resultList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      nextToken: 'string',
+      resultList: { 'type': 'array', 'itemType': GetAllCustomerRecyclesResponseBodyResultList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllCustomerRecyclesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetAllCustomerRecyclesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetAllCustomerRecyclesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetCrmGroupChatHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -7043,6 +7134,40 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOList extends $tea.Mo
   }
 }
 
+export class GetAllCustomerRecyclesResponseBodyResultList extends $tea.Model {
+  customerId?: string;
+  followUpActionTime?: string;
+  isDeleted?: boolean;
+  notifyTime?: string;
+  recycleRuleId?: number;
+  recycleTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      customerId: 'customerId',
+      followUpActionTime: 'followUpActionTime',
+      isDeleted: 'isDeleted',
+      notifyTime: 'notifyTime',
+      recycleRuleId: 'recycleRuleId',
+      recycleTime: 'recycleTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customerId: 'string',
+      followUpActionTime: 'string',
+      isDeleted: 'boolean',
+      notifyTime: 'string',
+      recycleRuleId: 'number',
+      recycleTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetCrmGroupChatMultiResponseBodyResult extends $tea.Model {
   gmtCreate?: number;
   iconUrl?: string;
@@ -9523,6 +9648,39 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<DescribeRelationMetaResponse>(await this.doROARequest("DescribeRelationMeta", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/relations/metas/query`, "json", req, runtime), new DescribeRelationMetaResponse({}));
+  }
+
+  async getAllCustomerRecycles(request: GetAllCustomerRecyclesRequest): Promise<GetAllCustomerRecyclesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetAllCustomerRecyclesHeaders({ });
+    return await this.getAllCustomerRecyclesWithOptions(request, headers, runtime);
+  }
+
+  async getAllCustomerRecyclesWithOptions(request: GetAllCustomerRecyclesRequest, headers: GetAllCustomerRecyclesHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllCustomerRecyclesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetAllCustomerRecyclesResponse>(await this.doROARequest("GetAllCustomerRecycles", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/customerRecycles`, "json", req, runtime), new GetAllCustomerRecyclesResponse({}));
   }
 
   async getCrmGroupChat(openConversationId: string): Promise<GetCrmGroupChatResponse> {
