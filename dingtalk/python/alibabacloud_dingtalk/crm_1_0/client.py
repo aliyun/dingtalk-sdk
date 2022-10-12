@@ -1419,6 +1419,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DescribeRelationMeta', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/relations/metas/query', 'json', req, runtime)
         )
 
+    def get_all_customer_recycles(
+        self,
+        request: dingtalkcrm__1__0_models.GetAllCustomerRecyclesRequest,
+    ) -> dingtalkcrm__1__0_models.GetAllCustomerRecyclesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetAllCustomerRecyclesHeaders()
+        return self.get_all_customer_recycles_with_options(request, headers, runtime)
+
+    async def get_all_customer_recycles_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetAllCustomerRecyclesRequest,
+    ) -> dingtalkcrm__1__0_models.GetAllCustomerRecyclesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetAllCustomerRecyclesHeaders()
+        return await self.get_all_customer_recycles_with_options_async(request, headers, runtime)
+
+    def get_all_customer_recycles_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.GetAllCustomerRecyclesRequest,
+        headers: dingtalkcrm__1__0_models.GetAllCustomerRecyclesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetAllCustomerRecyclesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetAllCustomerRecyclesResponse(),
+            self.do_roarequest('GetAllCustomerRecycles', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/customerRecycles', 'json', req, runtime)
+        )
+
+    async def get_all_customer_recycles_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetAllCustomerRecyclesRequest,
+        headers: dingtalkcrm__1__0_models.GetAllCustomerRecyclesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetAllCustomerRecyclesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetAllCustomerRecyclesResponse(),
+            await self.do_roarequest_async('GetAllCustomerRecycles', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/customerRecycles', 'json', req, runtime)
+        )
+
     def get_crm_group_chat(
         self,
         open_conversation_id: str,
