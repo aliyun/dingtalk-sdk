@@ -59,6 +59,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeCrmPersonalCustomerObjectM
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetAllCustomerRecyclesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetAllCustomerRecyclesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetAllCustomerRecyclesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmGroupChatHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmGroupChatMultiHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmGroupChatMultiRequest;
@@ -1085,6 +1088,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DescribeRelationMetaResponse::fromMap($this->doROARequest('DescribeRelationMeta', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/relations/metas/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetAllCustomerRecyclesRequest $request
+     *
+     * @return GetAllCustomerRecyclesResponse
+     */
+    public function getAllCustomerRecycles($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAllCustomerRecyclesHeaders([]);
+
+        return $this->getAllCustomerRecyclesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetAllCustomerRecyclesRequest $request
+     * @param GetAllCustomerRecyclesHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return GetAllCustomerRecyclesResponse
+     */
+    public function getAllCustomerRecyclesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetAllCustomerRecyclesResponse::fromMap($this->doROARequest('GetAllCustomerRecycles', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/customerRecycles', 'json', $req, $runtime));
     }
 
     /**
