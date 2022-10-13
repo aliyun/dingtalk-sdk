@@ -61,6 +61,13 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0.Models
         }
 
         /// <summary>
+        /// 会话id
+        /// </summary>
+        [NameInMap("sessionId")]
+        [Validation(Required=false)]
+        public string SessionId { get; set; }
+
+        /// <summary>
         /// 用户信息
         /// </summary>
         [NameInMap("userId")]

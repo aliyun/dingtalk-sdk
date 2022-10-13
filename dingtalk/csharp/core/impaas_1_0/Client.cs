@@ -1234,6 +1234,182 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             return TeaModel.ToObject<SendMessageResponse>(await DoROARequestAsync("SendMessage", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/messages/send", "json", req, runtime));
         }
 
+        public SendRobotMessageResponse SendRobotMessage(SendRobotMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SendRobotMessageHeaders headers = new SendRobotMessageHeaders();
+            return SendRobotMessageWithOptions(request, headers, runtime);
+        }
+
+        public async Task<SendRobotMessageResponse> SendRobotMessageAsync(SendRobotMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SendRobotMessageHeaders headers = new SendRobotMessageHeaders();
+            return await SendRobotMessageWithOptionsAsync(request, headers, runtime);
+        }
+
+        public SendRobotMessageResponse SendRobotMessageWithOptions(SendRobotMessageRequest request, SendRobotMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AtAppUids))
+            {
+                body["atAppUids"] = request.AtAppUids;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AtMobiles))
+            {
+                body["atMobiles"] = request.AtMobiles;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AtUnionIds))
+            {
+                body["atUnionIds"] = request.AtUnionIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AtUsers))
+            {
+                body["atUsers"] = request.AtUsers;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Channel))
+            {
+                body["channel"] = request.Channel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsAtAll))
+            {
+                body["isAtAll"] = request.IsAtAll;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgMediaIdParamMap))
+            {
+                body["msgMediaIdParamMap"] = request.MsgMediaIdParamMap;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgParamMap))
+            {
+                body["msgParamMap"] = request.MsgParamMap;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgTemplateId))
+            {
+                body["msgTemplateId"] = request.MsgTemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverAppUids))
+            {
+                body["receiverAppUids"] = request.ReceiverAppUids;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverMobiles))
+            {
+                body["receiverMobiles"] = request.ReceiverMobiles;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUnionIds))
+            {
+                body["receiverUnionIds"] = request.ReceiverUnionIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUserIds))
+            {
+                body["receiverUserIds"] = request.ReceiverUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                body["robotCode"] = request.RobotCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetOpenConversationId))
+            {
+                body["targetOpenConversationId"] = request.TargetOpenConversationId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<SendRobotMessageResponse>(DoROARequest("SendRobotMessage", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/robots/messages/send", "json", req, runtime));
+        }
+
+        public async Task<SendRobotMessageResponse> SendRobotMessageWithOptionsAsync(SendRobotMessageRequest request, SendRobotMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AtAppUids))
+            {
+                body["atAppUids"] = request.AtAppUids;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AtMobiles))
+            {
+                body["atMobiles"] = request.AtMobiles;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AtUnionIds))
+            {
+                body["atUnionIds"] = request.AtUnionIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AtUsers))
+            {
+                body["atUsers"] = request.AtUsers;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Channel))
+            {
+                body["channel"] = request.Channel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsAtAll))
+            {
+                body["isAtAll"] = request.IsAtAll;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgMediaIdParamMap))
+            {
+                body["msgMediaIdParamMap"] = request.MsgMediaIdParamMap;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgParamMap))
+            {
+                body["msgParamMap"] = request.MsgParamMap;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgTemplateId))
+            {
+                body["msgTemplateId"] = request.MsgTemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverAppUids))
+            {
+                body["receiverAppUids"] = request.ReceiverAppUids;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverMobiles))
+            {
+                body["receiverMobiles"] = request.ReceiverMobiles;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUnionIds))
+            {
+                body["receiverUnionIds"] = request.ReceiverUnionIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUserIds))
+            {
+                body["receiverUserIds"] = request.ReceiverUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                body["robotCode"] = request.RobotCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetOpenConversationId))
+            {
+                body["targetOpenConversationId"] = request.TargetOpenConversationId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<SendRobotMessageResponse>(await DoROARequestAsync("SendRobotMessage", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/robots/messages/send", "json", req, runtime));
+        }
+
         public UpdateGroupNameResponse UpdateGroupName(UpdateGroupNameRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

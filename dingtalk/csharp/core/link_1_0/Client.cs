@@ -752,6 +752,10 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             {
                 body["details"] = request.Details;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SessionId))
+            {
+                body["sessionId"] = request.SessionId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
                 body["userId"] = request.UserId;
@@ -780,6 +784,10 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Details))
             {
                 body["details"] = request.Details;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SessionId))
+            {
+                body["sessionId"] = request.SessionId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
