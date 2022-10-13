@@ -899,10 +899,12 @@ export class UpdateShortcutsHeaders extends $tea.Model {
 
 export class UpdateShortcutsRequest extends $tea.Model {
   details?: UpdateShortcutsRequestDetails[];
+  sessionId?: string;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
       details: 'details',
+      sessionId: 'sessionId',
       userId: 'userId',
     };
   }
@@ -910,6 +912,7 @@ export class UpdateShortcutsRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       details: { 'type': 'array', 'itemType': UpdateShortcutsRequestDetails },
+      sessionId: 'string',
       userId: 'string',
     };
   }
@@ -1988,6 +1991,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.details)) {
       body["details"] = request.details;
+    }
+
+    if (!Util.isUnset(request.sessionId)) {
+      body["sessionId"] = request.sessionId;
     }
 
     if (!Util.isUnset(request.userId)) {

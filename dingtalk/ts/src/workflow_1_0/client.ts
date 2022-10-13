@@ -2190,6 +2190,97 @@ export class ListProcessInstanceIdsResponse extends $tea.Model {
   }
 }
 
+export class ListTodoWorkRecordsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListTodoWorkRecordsRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: number;
+  status?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      status: 'status',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'number',
+      status: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListTodoWorkRecordsResponseBody extends $tea.Model {
+  result?: ListTodoWorkRecordsResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: ListTodoWorkRecordsResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListTodoWorkRecordsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListTodoWorkRecordsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListTodoWorkRecordsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListUserVisibleBpmsProcessesHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4734,6 +4825,81 @@ export class ListProcessInstanceIdsResponseBodyResult extends $tea.Model {
   }
 }
 
+export class ListTodoWorkRecordsResponseBodyResultListForms extends $tea.Model {
+  content?: string;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListTodoWorkRecordsResponseBodyResultList extends $tea.Model {
+  forms?: ListTodoWorkRecordsResponseBodyResultListForms[];
+  instanceId?: string;
+  taskId?: number;
+  title?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      forms: 'forms',
+      instanceId: 'instanceId',
+      taskId: 'taskId',
+      title: 'title',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      forms: { 'type': 'array', 'itemType': ListTodoWorkRecordsResponseBodyResultListForms },
+      instanceId: 'string',
+      taskId: 'number',
+      title: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListTodoWorkRecordsResponseBodyResult extends $tea.Model {
+  list?: ListTodoWorkRecordsResponseBodyResultList[];
+  nextToken?: number;
+  static names(): { [key: string]: string } {
+    return {
+      list: 'list',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      list: { 'type': 'array', 'itemType': ListTodoWorkRecordsResponseBodyResultList },
+      nextToken: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListUserVisibleBpmsProcessesResponseBodyResultProcessList extends $tea.Model {
   iconUrl?: string;
   name?: string;
@@ -7218,6 +7384,47 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<ListProcessInstanceIdsResponse>(await this.doROARequest("ListProcessInstanceIds", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/processes/instanceIds/query`, "json", req, runtime), new ListProcessInstanceIdsResponse({}));
+  }
+
+  async listTodoWorkRecords(request: ListTodoWorkRecordsRequest): Promise<ListTodoWorkRecordsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListTodoWorkRecordsHeaders({ });
+    return await this.listTodoWorkRecordsWithOptions(request, headers, runtime);
+  }
+
+  async listTodoWorkRecordsWithOptions(request: ListTodoWorkRecordsRequest, headers: ListTodoWorkRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<ListTodoWorkRecordsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.status)) {
+      query["status"] = request.status;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ListTodoWorkRecordsResponse>(await this.doROARequest("ListTodoWorkRecords", "workflow_1.0", "HTTP", "GET", "AK", `/v1.0/workflow/workRecords/todoTasks`, "json", req, runtime), new ListTodoWorkRecordsResponse({}));
   }
 
   async listUserVisibleBpmsProcesses(request: ListUserVisibleBpmsProcessesRequest): Promise<ListUserVisibleBpmsProcessesResponse> {

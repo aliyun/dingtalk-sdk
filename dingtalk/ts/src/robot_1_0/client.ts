@@ -371,6 +371,173 @@ export class BatchSendOTOResponse extends $tea.Model {
   }
 }
 
+export class ClearRobotPluginHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ClearRobotPluginRequest extends $tea.Model {
+  robotCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      robotCode: 'robotCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      robotCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ClearRobotPluginResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ClearRobotPluginResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ClearRobotPluginResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ClearRobotPluginResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ManageSingleChatRobotStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ManageSingleChatRobotStatusRequest extends $tea.Model {
+  robotCode?: string;
+  status?: string;
+  static names(): { [key: string]: string } {
+    return {
+      robotCode: 'robotCode',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      robotCode: 'string',
+      status: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ManageSingleChatRobotStatusResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ManageSingleChatRobotStatusResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ManageSingleChatRobotStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ManageSingleChatRobotStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class OrgGroupQueryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -665,6 +832,88 @@ export class OrgGroupSendResponse extends $tea.Model {
   }
 }
 
+export class QueryRobotPluginHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRobotPluginRequest extends $tea.Model {
+  robotCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      robotCode: 'robotCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      robotCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRobotPluginResponseBody extends $tea.Model {
+  pluginInfoList?: QueryRobotPluginResponseBodyPluginInfoList[];
+  static names(): { [key: string]: string } {
+    return {
+      pluginInfoList: 'pluginInfoList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pluginInfoList: { 'type': 'array', 'itemType': QueryRobotPluginResponseBodyPluginInfoList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRobotPluginResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryRobotPluginResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryRobotPluginResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SendRobotDingMessageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -751,6 +1000,91 @@ export class SendRobotDingMessageResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: SendRobotDingMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetRobotPluginHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetRobotPluginRequest extends $tea.Model {
+  pluginInfoList?: SetRobotPluginRequestPluginInfoList[];
+  robotCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      pluginInfoList: 'pluginInfoList',
+      robotCode: 'robotCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pluginInfoList: { 'type': 'array', 'itemType': SetRobotPluginRequestPluginInfoList },
+      robotCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetRobotPluginResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetRobotPluginResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SetRobotPluginResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SetRobotPluginResponseBody,
     };
   }
 
@@ -876,6 +1210,62 @@ export class BatchOTOQueryResponseBodyMessageReadInfoList extends $tea.Model {
       readStatus: 'string',
       readTimestamp: 'number',
       userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRobotPluginResponseBodyPluginInfoList extends $tea.Model {
+  icon?: string;
+  mobileUrl?: string;
+  name?: string;
+  pcUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      icon: 'icon',
+      mobileUrl: 'mobileUrl',
+      name: 'name',
+      pcUrl: 'pcUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      icon: 'string',
+      mobileUrl: 'string',
+      name: 'string',
+      pcUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetRobotPluginRequestPluginInfoList extends $tea.Model {
+  icon?: string;
+  mobileUrl?: string;
+  name?: string;
+  pcUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      icon: 'icon',
+      mobileUrl: 'mobileUrl',
+      name: 'name',
+      pcUrl: 'pcUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      icon: 'string',
+      mobileUrl: 'string',
+      name: 'string',
+      pcUrl: 'string',
     };
   }
 
@@ -1041,6 +1431,68 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchSendOTOResponse>(await this.doROARequest("BatchSendOTO", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/oToMessages/batchSend`, "json", req, runtime), new BatchSendOTOResponse({}));
   }
 
+  async clearRobotPlugin(request: ClearRobotPluginRequest): Promise<ClearRobotPluginResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ClearRobotPluginHeaders({ });
+    return await this.clearRobotPluginWithOptions(request, headers, runtime);
+  }
+
+  async clearRobotPluginWithOptions(request: ClearRobotPluginRequest, headers: ClearRobotPluginHeaders, runtime: $Util.RuntimeOptions): Promise<ClearRobotPluginResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ClearRobotPluginResponse>(await this.doROARequest("ClearRobotPlugin", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/plugins/clear`, "json", req, runtime), new ClearRobotPluginResponse({}));
+  }
+
+  async manageSingleChatRobotStatus(request: ManageSingleChatRobotStatusRequest): Promise<ManageSingleChatRobotStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ManageSingleChatRobotStatusHeaders({ });
+    return await this.manageSingleChatRobotStatusWithOptions(request, headers, runtime);
+  }
+
+  async manageSingleChatRobotStatusWithOptions(request: ManageSingleChatRobotStatusRequest, headers: ManageSingleChatRobotStatusHeaders, runtime: $Util.RuntimeOptions): Promise<ManageSingleChatRobotStatusResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
+    }
+
+    if (!Util.isUnset(request.status)) {
+      body["status"] = request.status;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ManageSingleChatRobotStatusResponse>(await this.doROARequest("ManageSingleChatRobotStatus", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/statuses/manage`, "json", req, runtime), new ManageSingleChatRobotStatusResponse({}));
+  }
+
   async orgGroupQuery(request: OrgGroupQueryRequest): Promise<OrgGroupQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new OrgGroupQueryHeaders({ });
@@ -1176,6 +1628,35 @@ export default class Client extends OpenApi {
     return $tea.cast<OrgGroupSendResponse>(await this.doROARequest("OrgGroupSend", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/groupMessages/send`, "json", req, runtime), new OrgGroupSendResponse({}));
   }
 
+  async queryRobotPlugin(request: QueryRobotPluginRequest): Promise<QueryRobotPluginResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryRobotPluginHeaders({ });
+    return await this.queryRobotPluginWithOptions(request, headers, runtime);
+  }
+
+  async queryRobotPluginWithOptions(request: QueryRobotPluginRequest, headers: QueryRobotPluginHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRobotPluginResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QueryRobotPluginResponse>(await this.doROARequest("QueryRobotPlugin", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/plugins/query`, "json", req, runtime), new QueryRobotPluginResponse({}));
+  }
+
   async sendRobotDingMessage(request: SendRobotDingMessageRequest): Promise<SendRobotDingMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendRobotDingMessageHeaders({ });
@@ -1219,6 +1700,39 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<SendRobotDingMessageResponse>(await this.doROARequest("SendRobotDingMessage", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/dingMessages/send`, "json", req, runtime), new SendRobotDingMessageResponse({}));
+  }
+
+  async setRobotPlugin(request: SetRobotPluginRequest): Promise<SetRobotPluginResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SetRobotPluginHeaders({ });
+    return await this.setRobotPluginWithOptions(request, headers, runtime);
+  }
+
+  async setRobotPluginWithOptions(request: SetRobotPluginRequest, headers: SetRobotPluginHeaders, runtime: $Util.RuntimeOptions): Promise<SetRobotPluginResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.pluginInfoList)) {
+      body["pluginInfoList"] = request.pluginInfoList;
+    }
+
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SetRobotPluginResponse>(await this.doROARequest("SetRobotPlugin", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/plugins/set`, "json", req, runtime), new SetRobotPluginResponse({}));
   }
 
   async updateInstalledRobot(request: UpdateInstalledRobotRequest): Promise<UpdateInstalledRobotResponse> {

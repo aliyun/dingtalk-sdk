@@ -1183,6 +1183,130 @@ export class SendMessageResponse extends $tea.Model {
   }
 }
 
+export class SendRobotMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendRobotMessageRequest extends $tea.Model {
+  atAppUids?: string[];
+  atMobiles?: string[];
+  atUnionIds?: string[];
+  atUsers?: string[];
+  channel?: string;
+  isAtAll?: boolean;
+  msgMediaIdParamMap?: { [key: string]: any };
+  msgParamMap?: { [key: string]: any };
+  msgTemplateId?: string;
+  receiverAppUids?: string[];
+  receiverMobiles?: string[];
+  receiverUnionIds?: string[];
+  receiverUserIds?: string[];
+  robotCode?: string;
+  targetOpenConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      atAppUids: 'atAppUids',
+      atMobiles: 'atMobiles',
+      atUnionIds: 'atUnionIds',
+      atUsers: 'atUsers',
+      channel: 'channel',
+      isAtAll: 'isAtAll',
+      msgMediaIdParamMap: 'msgMediaIdParamMap',
+      msgParamMap: 'msgParamMap',
+      msgTemplateId: 'msgTemplateId',
+      receiverAppUids: 'receiverAppUids',
+      receiverMobiles: 'receiverMobiles',
+      receiverUnionIds: 'receiverUnionIds',
+      receiverUserIds: 'receiverUserIds',
+      robotCode: 'robotCode',
+      targetOpenConversationId: 'targetOpenConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      atAppUids: { 'type': 'array', 'itemType': 'string' },
+      atMobiles: { 'type': 'array', 'itemType': 'string' },
+      atUnionIds: { 'type': 'array', 'itemType': 'string' },
+      atUsers: { 'type': 'array', 'itemType': 'string' },
+      channel: 'string',
+      isAtAll: 'boolean',
+      msgMediaIdParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      msgParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      msgTemplateId: 'string',
+      receiverAppUids: { 'type': 'array', 'itemType': 'string' },
+      receiverMobiles: { 'type': 'array', 'itemType': 'string' },
+      receiverUnionIds: { 'type': 'array', 'itemType': 'string' },
+      receiverUserIds: { 'type': 'array', 'itemType': 'string' },
+      robotCode: 'string',
+      targetOpenConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendRobotMessageResponseBody extends $tea.Model {
+  openMsgId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openMsgId: 'openMsgId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openMsgId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendRobotMessageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SendRobotMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SendRobotMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateGroupNameHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   operationSource?: string;
@@ -1988,6 +2112,91 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<SendMessageResponse>(await this.doROARequest("SendMessage", "impaas_1.0", "HTTP", "POST", "AK", `/v1.0/impaas/interconnections/messages/send`, "json", req, runtime), new SendMessageResponse({}));
+  }
+
+  async sendRobotMessage(request: SendRobotMessageRequest): Promise<SendRobotMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SendRobotMessageHeaders({ });
+    return await this.sendRobotMessageWithOptions(request, headers, runtime);
+  }
+
+  async sendRobotMessageWithOptions(request: SendRobotMessageRequest, headers: SendRobotMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendRobotMessageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.atAppUids)) {
+      body["atAppUids"] = request.atAppUids;
+    }
+
+    if (!Util.isUnset(request.atMobiles)) {
+      body["atMobiles"] = request.atMobiles;
+    }
+
+    if (!Util.isUnset(request.atUnionIds)) {
+      body["atUnionIds"] = request.atUnionIds;
+    }
+
+    if (!Util.isUnset(request.atUsers)) {
+      body["atUsers"] = request.atUsers;
+    }
+
+    if (!Util.isUnset(request.channel)) {
+      body["channel"] = request.channel;
+    }
+
+    if (!Util.isUnset(request.isAtAll)) {
+      body["isAtAll"] = request.isAtAll;
+    }
+
+    if (!Util.isUnset(request.msgMediaIdParamMap)) {
+      body["msgMediaIdParamMap"] = request.msgMediaIdParamMap;
+    }
+
+    if (!Util.isUnset(request.msgParamMap)) {
+      body["msgParamMap"] = request.msgParamMap;
+    }
+
+    if (!Util.isUnset(request.msgTemplateId)) {
+      body["msgTemplateId"] = request.msgTemplateId;
+    }
+
+    if (!Util.isUnset(request.receiverAppUids)) {
+      body["receiverAppUids"] = request.receiverAppUids;
+    }
+
+    if (!Util.isUnset(request.receiverMobiles)) {
+      body["receiverMobiles"] = request.receiverMobiles;
+    }
+
+    if (!Util.isUnset(request.receiverUnionIds)) {
+      body["receiverUnionIds"] = request.receiverUnionIds;
+    }
+
+    if (!Util.isUnset(request.receiverUserIds)) {
+      body["receiverUserIds"] = request.receiverUserIds;
+    }
+
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
+    }
+
+    if (!Util.isUnset(request.targetOpenConversationId)) {
+      body["targetOpenConversationId"] = request.targetOpenConversationId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SendRobotMessageResponse>(await this.doROARequest("SendRobotMessage", "impaas_1.0", "HTTP", "POST", "AK", `/v1.0/impaas/interconnections/robots/messages/send`, "json", req, runtime), new SendRobotMessageResponse({}));
   }
 
   async updateGroupName(request: UpdateGroupNameRequest): Promise<UpdateGroupNameResponse> {
