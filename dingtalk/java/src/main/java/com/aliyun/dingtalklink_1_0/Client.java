@@ -351,6 +351,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("details", request.details);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.sessionId)) {
+            body.put("sessionId", request.sessionId);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
             body.put("userId", request.userId);
         }

@@ -8,6 +8,10 @@ public class UpdateShortcutsRequest extends TeaModel {
     @NameInMap("details")
     public java.util.List<UpdateShortcutsRequestDetails> details;
 
+    // 会话id
+    @NameInMap("sessionId")
+    public String sessionId;
+
     // 用户信息
     @NameInMap("userId")
     public String userId;
@@ -23,6 +27,14 @@ public class UpdateShortcutsRequest extends TeaModel {
     }
     public java.util.List<UpdateShortcutsRequestDetails> getDetails() {
         return this.details;
+    }
+
+    public UpdateShortcutsRequest setSessionId(String sessionId) {
+        this.sessionId = sessionId;
+        return this;
+    }
+    public String getSessionId() {
+        return this.sessionId;
     }
 
     public UpdateShortcutsRequest setUserId(String userId) {

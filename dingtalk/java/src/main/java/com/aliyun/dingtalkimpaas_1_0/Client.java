@@ -578,6 +578,91 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("SendMessage", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/messages/send", "json", req, runtime), new SendMessageResponse());
     }
 
+    public SendRobotMessageResponse sendRobotMessage(SendRobotMessageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SendRobotMessageHeaders headers = new SendRobotMessageHeaders();
+        return this.sendRobotMessageWithOptions(request, headers, runtime);
+    }
+
+    public SendRobotMessageResponse sendRobotMessageWithOptions(SendRobotMessageRequest request, SendRobotMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.atAppUids)) {
+            body.put("atAppUids", request.atAppUids);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.atMobiles)) {
+            body.put("atMobiles", request.atMobiles);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.atUnionIds)) {
+            body.put("atUnionIds", request.atUnionIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.atUsers)) {
+            body.put("atUsers", request.atUsers);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.channel)) {
+            body.put("channel", request.channel);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.isAtAll)) {
+            body.put("isAtAll", request.isAtAll);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.msgMediaIdParamMap)) {
+            body.put("msgMediaIdParamMap", request.msgMediaIdParamMap);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.msgParamMap)) {
+            body.put("msgParamMap", request.msgParamMap);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.msgTemplateId)) {
+            body.put("msgTemplateId", request.msgTemplateId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.receiverAppUids)) {
+            body.put("receiverAppUids", request.receiverAppUids);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.receiverMobiles)) {
+            body.put("receiverMobiles", request.receiverMobiles);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.receiverUnionIds)) {
+            body.put("receiverUnionIds", request.receiverUnionIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.receiverUserIds)) {
+            body.put("receiverUserIds", request.receiverUserIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.robotCode)) {
+            body.put("robotCode", request.robotCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetOpenConversationId)) {
+            body.put("targetOpenConversationId", request.targetOpenConversationId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("SendRobotMessage", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/robots/messages/send", "json", req, runtime), new SendRobotMessageResponse());
+    }
+
     public UpdateGroupNameResponse updateGroupName(UpdateGroupNameRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateGroupNameHeaders headers = new UpdateGroupNameHeaders();
