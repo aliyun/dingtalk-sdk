@@ -17,14 +17,22 @@ class UpdateShortcutsRequest extends Model
     public $details;
 
     /**
+     * @description 会话id
+     *
+     * @var string
+     */
+    public $sessionId;
+
+    /**
      * @description 用户信息
      *
      * @var string
      */
     public $userId;
     protected $_name = [
-        'details' => 'details',
-        'userId'  => 'userId',
+        'details'   => 'details',
+        'sessionId' => 'sessionId',
+        'userId'    => 'userId',
     ];
 
     public function validate()
@@ -42,6 +50,9 @@ class UpdateShortcutsRequest extends Model
                     $res['details'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->sessionId) {
+            $res['sessionId'] = $this->sessionId;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -66,6 +77,9 @@ class UpdateShortcutsRequest extends Model
                     $model->details[$n++] = null !== $item ? details::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['sessionId'])) {
+            $model->sessionId = $map['sessionId'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];

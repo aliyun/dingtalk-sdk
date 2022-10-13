@@ -17,6 +17,12 @@ use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchRecallOTOResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchSendOTOHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchSendOTORequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchSendOTOResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\ClearRobotPluginHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\ClearRobotPluginRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\ClearRobotPluginResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\ManageSingleChatRobotStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\ManageSingleChatRobotStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\ManageSingleChatRobotStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupQueryResponse;
@@ -26,9 +32,15 @@ use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupRecallResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupSendHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupSendRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupSendResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotPluginHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotPluginRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotPluginResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\SendRobotDingMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\SendRobotDingMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\SendRobotDingMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\SetRobotPluginHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\SetRobotPluginRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\SetRobotPluginResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\UpdateInstalledRobotHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\UpdateInstalledRobotRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\UpdateInstalledRobotResponse;
@@ -238,6 +250,93 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param ClearRobotPluginRequest $request
+     *
+     * @return ClearRobotPluginResponse
+     */
+    public function clearRobotPlugin($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ClearRobotPluginHeaders([]);
+
+        return $this->clearRobotPluginWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ClearRobotPluginRequest $request
+     * @param ClearRobotPluginHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return ClearRobotPluginResponse
+     */
+    public function clearRobotPluginWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->robotCode)) {
+            @$body['robotCode'] = $request->robotCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ClearRobotPluginResponse::fromMap($this->doROARequest('ClearRobotPlugin', 'robot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/robot/plugins/clear', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ManageSingleChatRobotStatusRequest $request
+     *
+     * @return ManageSingleChatRobotStatusResponse
+     */
+    public function manageSingleChatRobotStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ManageSingleChatRobotStatusHeaders([]);
+
+        return $this->manageSingleChatRobotStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ManageSingleChatRobotStatusRequest $request
+     * @param ManageSingleChatRobotStatusHeaders $headers
+     * @param RuntimeOptions                     $runtime
+     *
+     * @return ManageSingleChatRobotStatusResponse
+     */
+    public function manageSingleChatRobotStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->robotCode)) {
+            @$body['robotCode'] = $request->robotCode;
+        }
+        if (!Utils::isUnset($request->status)) {
+            @$body['status'] = $request->status;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ManageSingleChatRobotStatusResponse::fromMap($this->doROARequest('ManageSingleChatRobotStatus', 'robot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/robot/statuses/manage', 'json', $req, $runtime));
+    }
+
+    /**
      * @param OrgGroupQueryRequest $request
      *
      * @return OrgGroupQueryResponse
@@ -400,6 +499,48 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param QueryRobotPluginRequest $request
+     *
+     * @return QueryRobotPluginResponse
+     */
+    public function queryRobotPlugin($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryRobotPluginHeaders([]);
+
+        return $this->queryRobotPluginWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryRobotPluginRequest $request
+     * @param QueryRobotPluginHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return QueryRobotPluginResponse
+     */
+    public function queryRobotPluginWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->robotCode)) {
+            @$body['robotCode'] = $request->robotCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return QueryRobotPluginResponse::fromMap($this->doROARequest('QueryRobotPlugin', 'robot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/robot/plugins/query', 'json', $req, $runtime));
+    }
+
+    /**
      * @param SendRobotDingMessageRequest $request
      *
      * @return SendRobotDingMessageResponse
@@ -451,6 +592,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SendRobotDingMessageResponse::fromMap($this->doROARequest('SendRobotDingMessage', 'robot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/robot/dingMessages/send', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SetRobotPluginRequest $request
+     *
+     * @return SetRobotPluginResponse
+     */
+    public function setRobotPlugin($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetRobotPluginHeaders([]);
+
+        return $this->setRobotPluginWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SetRobotPluginRequest $request
+     * @param SetRobotPluginHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return SetRobotPluginResponse
+     */
+    public function setRobotPluginWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->pluginInfoList)) {
+            @$body['pluginInfoList'] = $request->pluginInfoList;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            @$body['robotCode'] = $request->robotCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SetRobotPluginResponse::fromMap($this->doROARequest('SetRobotPlugin', 'robot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/robot/plugins/set', 'json', $req, $runtime));
     }
 
     /**

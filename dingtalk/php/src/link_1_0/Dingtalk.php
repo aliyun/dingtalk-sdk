@@ -525,6 +525,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->details)) {
             @$body['details'] = $request->details;
         }
+        if (!Utils::isUnset($request->sessionId)) {
+            @$body['sessionId'] = $request->sessionId;
+        }
         if (!Utils::isUnset($request->userId)) {
             @$body['userId'] = $request->userId;
         }

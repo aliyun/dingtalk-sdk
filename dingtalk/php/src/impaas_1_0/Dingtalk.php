@@ -47,6 +47,9 @@ use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\RemoveGroupMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\SendMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\SendMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\SendMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\SendRobotMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\SendRobotMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\SendRobotMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\UpdateGroupNameHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\UpdateGroupNameRequest;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\UpdateGroupNameResponse;
@@ -772,6 +775,90 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SendMessageResponse::fromMap($this->doROARequest('SendMessage', 'impaas_1.0', 'HTTP', 'POST', 'AK', '/v1.0/impaas/interconnections/messages/send', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SendRobotMessageRequest $request
+     *
+     * @return SendRobotMessageResponse
+     */
+    public function sendRobotMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendRobotMessageHeaders([]);
+
+        return $this->sendRobotMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SendRobotMessageRequest $request
+     * @param SendRobotMessageHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return SendRobotMessageResponse
+     */
+    public function sendRobotMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->atAppUids)) {
+            @$body['atAppUids'] = $request->atAppUids;
+        }
+        if (!Utils::isUnset($request->atMobiles)) {
+            @$body['atMobiles'] = $request->atMobiles;
+        }
+        if (!Utils::isUnset($request->atUnionIds)) {
+            @$body['atUnionIds'] = $request->atUnionIds;
+        }
+        if (!Utils::isUnset($request->atUsers)) {
+            @$body['atUsers'] = $request->atUsers;
+        }
+        if (!Utils::isUnset($request->channel)) {
+            @$body['channel'] = $request->channel;
+        }
+        if (!Utils::isUnset($request->isAtAll)) {
+            @$body['isAtAll'] = $request->isAtAll;
+        }
+        if (!Utils::isUnset($request->msgMediaIdParamMap)) {
+            @$body['msgMediaIdParamMap'] = $request->msgMediaIdParamMap;
+        }
+        if (!Utils::isUnset($request->msgParamMap)) {
+            @$body['msgParamMap'] = $request->msgParamMap;
+        }
+        if (!Utils::isUnset($request->msgTemplateId)) {
+            @$body['msgTemplateId'] = $request->msgTemplateId;
+        }
+        if (!Utils::isUnset($request->receiverAppUids)) {
+            @$body['receiverAppUids'] = $request->receiverAppUids;
+        }
+        if (!Utils::isUnset($request->receiverMobiles)) {
+            @$body['receiverMobiles'] = $request->receiverMobiles;
+        }
+        if (!Utils::isUnset($request->receiverUnionIds)) {
+            @$body['receiverUnionIds'] = $request->receiverUnionIds;
+        }
+        if (!Utils::isUnset($request->receiverUserIds)) {
+            @$body['receiverUserIds'] = $request->receiverUserIds;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            @$body['robotCode'] = $request->robotCode;
+        }
+        if (!Utils::isUnset($request->targetOpenConversationId)) {
+            @$body['targetOpenConversationId'] = $request->targetOpenConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SendRobotMessageResponse::fromMap($this->doROARequest('SendRobotMessage', 'impaas_1.0', 'HTTP', 'POST', 'AK', '/v1.0/impaas/interconnections/robots/messages/send', 'json', $req, $runtime));
     }
 
     /**

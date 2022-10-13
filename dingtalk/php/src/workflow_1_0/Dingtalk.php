@@ -73,6 +73,9 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\InstallAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ListProcessInstanceIdsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ListProcessInstanceIdsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ListProcessInstanceIdsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ListTodoWorkRecordsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ListTodoWorkRecordsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ListTodoWorkRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ListUserVisibleBpmsProcessesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ListUserVisibleBpmsProcessesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ListUserVisibleBpmsProcessesResponse;
@@ -1203,6 +1206,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListProcessInstanceIdsResponse::fromMap($this->doROARequest('ListProcessInstanceIds', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processes/instanceIds/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListTodoWorkRecordsRequest $request
+     *
+     * @return ListTodoWorkRecordsResponse
+     */
+    public function listTodoWorkRecords($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListTodoWorkRecordsHeaders([]);
+
+        return $this->listTodoWorkRecordsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListTodoWorkRecordsRequest $request
+     * @param ListTodoWorkRecordsHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return ListTodoWorkRecordsResponse
+     */
+    public function listTodoWorkRecordsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->status)) {
+            @$query['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListTodoWorkRecordsResponse::fromMap($this->doROARequest('ListTodoWorkRecords', 'workflow_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workflow/workRecords/todoTasks', 'json', $req, $runtime));
     }
 
     /**
