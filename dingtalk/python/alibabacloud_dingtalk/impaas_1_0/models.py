@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict, List
+from typing import Dict, List, Any
 
 
 class AddGroupMembersHeaders(TeaModel):
@@ -1989,6 +1989,229 @@ class SendMessageResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = SendMessageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SendRobotMessageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SendRobotMessageRequest(TeaModel):
+    def __init__(
+        self,
+        at_app_uids: List[str] = None,
+        at_mobiles: List[str] = None,
+        at_union_ids: List[str] = None,
+        at_users: List[str] = None,
+        channel: str = None,
+        is_at_all: bool = None,
+        msg_media_id_param_map: Dict[str, Any] = None,
+        msg_param_map: Dict[str, Any] = None,
+        msg_template_id: str = None,
+        receiver_app_uids: List[str] = None,
+        receiver_mobiles: List[str] = None,
+        receiver_union_ids: List[str] = None,
+        receiver_user_ids: List[str] = None,
+        robot_code: str = None,
+        target_open_conversation_id: str = None,
+    ):
+        # @人的appuid列表
+        self.at_app_uids = at_app_uids
+        # @人的手机号列表
+        self.at_mobiles = at_mobiles
+        # @人的unionid列表
+        self.at_union_ids = at_union_ids
+        # @人的userid列表
+        self.at_users = at_users
+        # 租户channel
+        self.channel = channel
+        # 是否@所有人。  true：是  false：否
+        self.is_at_all = is_at_all
+        # 消息模板内容替换参数，多媒体类型
+        self.msg_media_id_param_map = msg_media_id_param_map
+        # 消息模板内容替换参数，普通文本类型
+        self.msg_param_map = msg_param_map
+        # 消息模板id
+        self.msg_template_id = msg_template_id
+        # 消息接收人appuid列表
+        self.receiver_app_uids = receiver_app_uids
+        # 消息接收人手机号列表
+        self.receiver_mobiles = receiver_mobiles
+        # 消息接收人unionId列表
+        self.receiver_union_ids = receiver_union_ids
+        # 消息接收人userId列表
+        self.receiver_user_ids = receiver_user_ids
+        # 用于发送卡片的机器人编码，与场景群模板中的机器人编码保持一致
+        self.robot_code = robot_code
+        # 会话id
+        self.target_open_conversation_id = target_open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.at_app_uids is not None:
+            result['atAppUids'] = self.at_app_uids
+        if self.at_mobiles is not None:
+            result['atMobiles'] = self.at_mobiles
+        if self.at_union_ids is not None:
+            result['atUnionIds'] = self.at_union_ids
+        if self.at_users is not None:
+            result['atUsers'] = self.at_users
+        if self.channel is not None:
+            result['channel'] = self.channel
+        if self.is_at_all is not None:
+            result['isAtAll'] = self.is_at_all
+        if self.msg_media_id_param_map is not None:
+            result['msgMediaIdParamMap'] = self.msg_media_id_param_map
+        if self.msg_param_map is not None:
+            result['msgParamMap'] = self.msg_param_map
+        if self.msg_template_id is not None:
+            result['msgTemplateId'] = self.msg_template_id
+        if self.receiver_app_uids is not None:
+            result['receiverAppUids'] = self.receiver_app_uids
+        if self.receiver_mobiles is not None:
+            result['receiverMobiles'] = self.receiver_mobiles
+        if self.receiver_union_ids is not None:
+            result['receiverUnionIds'] = self.receiver_union_ids
+        if self.receiver_user_ids is not None:
+            result['receiverUserIds'] = self.receiver_user_ids
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
+        if self.target_open_conversation_id is not None:
+            result['targetOpenConversationId'] = self.target_open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('atAppUids') is not None:
+            self.at_app_uids = m.get('atAppUids')
+        if m.get('atMobiles') is not None:
+            self.at_mobiles = m.get('atMobiles')
+        if m.get('atUnionIds') is not None:
+            self.at_union_ids = m.get('atUnionIds')
+        if m.get('atUsers') is not None:
+            self.at_users = m.get('atUsers')
+        if m.get('channel') is not None:
+            self.channel = m.get('channel')
+        if m.get('isAtAll') is not None:
+            self.is_at_all = m.get('isAtAll')
+        if m.get('msgMediaIdParamMap') is not None:
+            self.msg_media_id_param_map = m.get('msgMediaIdParamMap')
+        if m.get('msgParamMap') is not None:
+            self.msg_param_map = m.get('msgParamMap')
+        if m.get('msgTemplateId') is not None:
+            self.msg_template_id = m.get('msgTemplateId')
+        if m.get('receiverAppUids') is not None:
+            self.receiver_app_uids = m.get('receiverAppUids')
+        if m.get('receiverMobiles') is not None:
+            self.receiver_mobiles = m.get('receiverMobiles')
+        if m.get('receiverUnionIds') is not None:
+            self.receiver_union_ids = m.get('receiverUnionIds')
+        if m.get('receiverUserIds') is not None:
+            self.receiver_user_ids = m.get('receiverUserIds')
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
+        if m.get('targetOpenConversationId') is not None:
+            self.target_open_conversation_id = m.get('targetOpenConversationId')
+        return self
+
+
+class SendRobotMessageResponseBody(TeaModel):
+    def __init__(
+        self,
+        open_msg_id: str = None,
+    ):
+        self.open_msg_id = open_msg_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_msg_id is not None:
+            result['openMsgId'] = self.open_msg_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openMsgId') is not None:
+            self.open_msg_id = m.get('openMsgId')
+        return self
+
+
+class SendRobotMessageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SendRobotMessageResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SendRobotMessageResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

@@ -1625,6 +1625,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListProcessInstanceIds', 'workflow_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/workflow/processes/instanceIds/query', 'json', req, runtime)
         )
 
+    def list_todo_work_records(
+        self,
+        request: dingtalkworkflow__1__0_models.ListTodoWorkRecordsRequest,
+    ) -> dingtalkworkflow__1__0_models.ListTodoWorkRecordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.ListTodoWorkRecordsHeaders()
+        return self.list_todo_work_records_with_options(request, headers, runtime)
+
+    async def list_todo_work_records_async(
+        self,
+        request: dingtalkworkflow__1__0_models.ListTodoWorkRecordsRequest,
+    ) -> dingtalkworkflow__1__0_models.ListTodoWorkRecordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.ListTodoWorkRecordsHeaders()
+        return await self.list_todo_work_records_with_options_async(request, headers, runtime)
+
+    def list_todo_work_records_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.ListTodoWorkRecordsRequest,
+        headers: dingtalkworkflow__1__0_models.ListTodoWorkRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.ListTodoWorkRecordsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.status):
+            query['status'] = request.status
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.ListTodoWorkRecordsResponse(),
+            self.do_roarequest('ListTodoWorkRecords', 'workflow_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workflow/workRecords/todoTasks', 'json', req, runtime)
+        )
+
+    async def list_todo_work_records_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.ListTodoWorkRecordsRequest,
+        headers: dingtalkworkflow__1__0_models.ListTodoWorkRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.ListTodoWorkRecordsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.status):
+            query['status'] = request.status
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.ListTodoWorkRecordsResponse(),
+            await self.do_roarequest_async('ListTodoWorkRecords', 'workflow_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workflow/workRecords/todoTasks', 'json', req, runtime)
+        )
+
     def list_user_visible_bpms_processes(
         self,
         request: dingtalkworkflow__1__0_models.ListUserVisibleBpmsProcessesRequest,

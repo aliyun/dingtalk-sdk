@@ -721,6 +721,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.details):
             body['details'] = request.details
+        if not UtilClient.is_unset(request.session_id):
+            body['sessionId'] = request.session_id
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         real_headers = {}
@@ -747,6 +749,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.details):
             body['details'] = request.details
+        if not UtilClient.is_unset(request.session_id):
+            body['sessionId'] = request.session_id
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         real_headers = {}

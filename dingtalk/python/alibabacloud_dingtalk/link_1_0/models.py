@@ -2607,10 +2607,13 @@ class UpdateShortcutsRequest(TeaModel):
     def __init__(
         self,
         details: List[UpdateShortcutsRequestDetails] = None,
+        session_id: str = None,
         user_id: str = None,
     ):
         # 配置详情
         self.details = details
+        # 会话id
+        self.session_id = session_id
         # 用户信息
         self.user_id = user_id
 
@@ -2630,6 +2633,8 @@ class UpdateShortcutsRequest(TeaModel):
         if self.details is not None:
             for k in self.details:
                 result['details'].append(k.to_map() if k else None)
+        if self.session_id is not None:
+            result['sessionId'] = self.session_id
         if self.user_id is not None:
             result['userId'] = self.user_id
         return result
@@ -2641,6 +2646,8 @@ class UpdateShortcutsRequest(TeaModel):
             for k in m.get('details'):
                 temp_model = UpdateShortcutsRequestDetails()
                 self.details.append(temp_model.from_map(k))
+        if m.get('sessionId') is not None:
+            self.session_id = m.get('sessionId')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
         return self

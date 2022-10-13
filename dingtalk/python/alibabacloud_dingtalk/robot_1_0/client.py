@@ -307,6 +307,138 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('BatchSendOTO', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/oToMessages/batchSend', 'json', req, runtime)
         )
 
+    def clear_robot_plugin(
+        self,
+        request: dingtalkrobot__1__0_models.ClearRobotPluginRequest,
+    ) -> dingtalkrobot__1__0_models.ClearRobotPluginResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.ClearRobotPluginHeaders()
+        return self.clear_robot_plugin_with_options(request, headers, runtime)
+
+    async def clear_robot_plugin_async(
+        self,
+        request: dingtalkrobot__1__0_models.ClearRobotPluginRequest,
+    ) -> dingtalkrobot__1__0_models.ClearRobotPluginResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.ClearRobotPluginHeaders()
+        return await self.clear_robot_plugin_with_options_async(request, headers, runtime)
+
+    def clear_robot_plugin_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.ClearRobotPluginRequest,
+        headers: dingtalkrobot__1__0_models.ClearRobotPluginHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.ClearRobotPluginResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.ClearRobotPluginResponse(),
+            self.do_roarequest('ClearRobotPlugin', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/plugins/clear', 'json', req, runtime)
+        )
+
+    async def clear_robot_plugin_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.ClearRobotPluginRequest,
+        headers: dingtalkrobot__1__0_models.ClearRobotPluginHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.ClearRobotPluginResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.ClearRobotPluginResponse(),
+            await self.do_roarequest_async('ClearRobotPlugin', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/plugins/clear', 'json', req, runtime)
+        )
+
+    def manage_single_chat_robot_status(
+        self,
+        request: dingtalkrobot__1__0_models.ManageSingleChatRobotStatusRequest,
+    ) -> dingtalkrobot__1__0_models.ManageSingleChatRobotStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.ManageSingleChatRobotStatusHeaders()
+        return self.manage_single_chat_robot_status_with_options(request, headers, runtime)
+
+    async def manage_single_chat_robot_status_async(
+        self,
+        request: dingtalkrobot__1__0_models.ManageSingleChatRobotStatusRequest,
+    ) -> dingtalkrobot__1__0_models.ManageSingleChatRobotStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.ManageSingleChatRobotStatusHeaders()
+        return await self.manage_single_chat_robot_status_with_options_async(request, headers, runtime)
+
+    def manage_single_chat_robot_status_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.ManageSingleChatRobotStatusRequest,
+        headers: dingtalkrobot__1__0_models.ManageSingleChatRobotStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.ManageSingleChatRobotStatusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.ManageSingleChatRobotStatusResponse(),
+            self.do_roarequest('ManageSingleChatRobotStatus', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/statuses/manage', 'json', req, runtime)
+        )
+
+    async def manage_single_chat_robot_status_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.ManageSingleChatRobotStatusRequest,
+        headers: dingtalkrobot__1__0_models.ManageSingleChatRobotStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.ManageSingleChatRobotStatusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.ManageSingleChatRobotStatusResponse(),
+            await self.do_roarequest_async('ManageSingleChatRobotStatus', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/statuses/manage', 'json', req, runtime)
+        )
+
     def org_group_query(
         self,
         request: dingtalkrobot__1__0_models.OrgGroupQueryRequest,
@@ -547,6 +679,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('OrgGroupSend', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groupMessages/send', 'json', req, runtime)
         )
 
+    def query_robot_plugin(
+        self,
+        request: dingtalkrobot__1__0_models.QueryRobotPluginRequest,
+    ) -> dingtalkrobot__1__0_models.QueryRobotPluginResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.QueryRobotPluginHeaders()
+        return self.query_robot_plugin_with_options(request, headers, runtime)
+
+    async def query_robot_plugin_async(
+        self,
+        request: dingtalkrobot__1__0_models.QueryRobotPluginRequest,
+    ) -> dingtalkrobot__1__0_models.QueryRobotPluginResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.QueryRobotPluginHeaders()
+        return await self.query_robot_plugin_with_options_async(request, headers, runtime)
+
+    def query_robot_plugin_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.QueryRobotPluginRequest,
+        headers: dingtalkrobot__1__0_models.QueryRobotPluginHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.QueryRobotPluginResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.QueryRobotPluginResponse(),
+            self.do_roarequest('QueryRobotPlugin', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/plugins/query', 'json', req, runtime)
+        )
+
+    async def query_robot_plugin_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.QueryRobotPluginRequest,
+        headers: dingtalkrobot__1__0_models.QueryRobotPluginHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.QueryRobotPluginResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.QueryRobotPluginResponse(),
+            await self.do_roarequest_async('QueryRobotPlugin', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/plugins/query', 'json', req, runtime)
+        )
+
     def send_robot_ding_message(
         self,
         request: dingtalkrobot__1__0_models.SendRobotDingMessageRequest,
@@ -625,6 +821,74 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.SendRobotDingMessageResponse(),
             await self.do_roarequest_async('SendRobotDingMessage', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/dingMessages/send', 'json', req, runtime)
+        )
+
+    def set_robot_plugin(
+        self,
+        request: dingtalkrobot__1__0_models.SetRobotPluginRequest,
+    ) -> dingtalkrobot__1__0_models.SetRobotPluginResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.SetRobotPluginHeaders()
+        return self.set_robot_plugin_with_options(request, headers, runtime)
+
+    async def set_robot_plugin_async(
+        self,
+        request: dingtalkrobot__1__0_models.SetRobotPluginRequest,
+    ) -> dingtalkrobot__1__0_models.SetRobotPluginResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.SetRobotPluginHeaders()
+        return await self.set_robot_plugin_with_options_async(request, headers, runtime)
+
+    def set_robot_plugin_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.SetRobotPluginRequest,
+        headers: dingtalkrobot__1__0_models.SetRobotPluginHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.SetRobotPluginResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.plugin_info_list):
+            body['pluginInfoList'] = request.plugin_info_list
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.SetRobotPluginResponse(),
+            self.do_roarequest('SetRobotPlugin', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/plugins/set', 'json', req, runtime)
+        )
+
+    async def set_robot_plugin_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.SetRobotPluginRequest,
+        headers: dingtalkrobot__1__0_models.SetRobotPluginHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.SetRobotPluginResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.plugin_info_list):
+            body['pluginInfoList'] = request.plugin_info_list
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.SetRobotPluginResponse(),
+            await self.do_roarequest_async('SetRobotPlugin', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/plugins/set', 'json', req, runtime)
         )
 
     def update_installed_robot(

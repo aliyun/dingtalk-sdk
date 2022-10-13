@@ -1075,6 +1075,126 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('SendMessage', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/messages/send', 'json', req, runtime)
         )
 
+    def send_robot_message(
+        self,
+        request: dingtalkimpaas__1__0_models.SendRobotMessageRequest,
+    ) -> dingtalkimpaas__1__0_models.SendRobotMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkimpaas__1__0_models.SendRobotMessageHeaders()
+        return self.send_robot_message_with_options(request, headers, runtime)
+
+    async def send_robot_message_async(
+        self,
+        request: dingtalkimpaas__1__0_models.SendRobotMessageRequest,
+    ) -> dingtalkimpaas__1__0_models.SendRobotMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkimpaas__1__0_models.SendRobotMessageHeaders()
+        return await self.send_robot_message_with_options_async(request, headers, runtime)
+
+    def send_robot_message_with_options(
+        self,
+        request: dingtalkimpaas__1__0_models.SendRobotMessageRequest,
+        headers: dingtalkimpaas__1__0_models.SendRobotMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkimpaas__1__0_models.SendRobotMessageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.at_app_uids):
+            body['atAppUids'] = request.at_app_uids
+        if not UtilClient.is_unset(request.at_mobiles):
+            body['atMobiles'] = request.at_mobiles
+        if not UtilClient.is_unset(request.at_union_ids):
+            body['atUnionIds'] = request.at_union_ids
+        if not UtilClient.is_unset(request.at_users):
+            body['atUsers'] = request.at_users
+        if not UtilClient.is_unset(request.channel):
+            body['channel'] = request.channel
+        if not UtilClient.is_unset(request.is_at_all):
+            body['isAtAll'] = request.is_at_all
+        if not UtilClient.is_unset(request.msg_media_id_param_map):
+            body['msgMediaIdParamMap'] = request.msg_media_id_param_map
+        if not UtilClient.is_unset(request.msg_param_map):
+            body['msgParamMap'] = request.msg_param_map
+        if not UtilClient.is_unset(request.msg_template_id):
+            body['msgTemplateId'] = request.msg_template_id
+        if not UtilClient.is_unset(request.receiver_app_uids):
+            body['receiverAppUids'] = request.receiver_app_uids
+        if not UtilClient.is_unset(request.receiver_mobiles):
+            body['receiverMobiles'] = request.receiver_mobiles
+        if not UtilClient.is_unset(request.receiver_union_ids):
+            body['receiverUnionIds'] = request.receiver_union_ids
+        if not UtilClient.is_unset(request.receiver_user_ids):
+            body['receiverUserIds'] = request.receiver_user_ids
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.target_open_conversation_id):
+            body['targetOpenConversationId'] = request.target_open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkimpaas__1__0_models.SendRobotMessageResponse(),
+            self.do_roarequest('SendRobotMessage', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/robots/messages/send', 'json', req, runtime)
+        )
+
+    async def send_robot_message_with_options_async(
+        self,
+        request: dingtalkimpaas__1__0_models.SendRobotMessageRequest,
+        headers: dingtalkimpaas__1__0_models.SendRobotMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkimpaas__1__0_models.SendRobotMessageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.at_app_uids):
+            body['atAppUids'] = request.at_app_uids
+        if not UtilClient.is_unset(request.at_mobiles):
+            body['atMobiles'] = request.at_mobiles
+        if not UtilClient.is_unset(request.at_union_ids):
+            body['atUnionIds'] = request.at_union_ids
+        if not UtilClient.is_unset(request.at_users):
+            body['atUsers'] = request.at_users
+        if not UtilClient.is_unset(request.channel):
+            body['channel'] = request.channel
+        if not UtilClient.is_unset(request.is_at_all):
+            body['isAtAll'] = request.is_at_all
+        if not UtilClient.is_unset(request.msg_media_id_param_map):
+            body['msgMediaIdParamMap'] = request.msg_media_id_param_map
+        if not UtilClient.is_unset(request.msg_param_map):
+            body['msgParamMap'] = request.msg_param_map
+        if not UtilClient.is_unset(request.msg_template_id):
+            body['msgTemplateId'] = request.msg_template_id
+        if not UtilClient.is_unset(request.receiver_app_uids):
+            body['receiverAppUids'] = request.receiver_app_uids
+        if not UtilClient.is_unset(request.receiver_mobiles):
+            body['receiverMobiles'] = request.receiver_mobiles
+        if not UtilClient.is_unset(request.receiver_union_ids):
+            body['receiverUnionIds'] = request.receiver_union_ids
+        if not UtilClient.is_unset(request.receiver_user_ids):
+            body['receiverUserIds'] = request.receiver_user_ids
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.target_open_conversation_id):
+            body['targetOpenConversationId'] = request.target_open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkimpaas__1__0_models.SendRobotMessageResponse(),
+            await self.do_roarequest_async('SendRobotMessage', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/robots/messages/send', 'json', req, runtime)
+        )
+
     def update_group_name(
         self,
         request: dingtalkimpaas__1__0_models.UpdateGroupNameRequest,
