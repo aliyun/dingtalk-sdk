@@ -1020,6 +1020,90 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             return TeaModel.ToObject<QueryPositionsResponse>(await DoROARequestAsync("QueryPositions", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/positions/query", "json", req, runtime));
         }
 
+        public RosterMetaFieldOptionsUpdateResponse RosterMetaFieldOptionsUpdate(RosterMetaFieldOptionsUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RosterMetaFieldOptionsUpdateHeaders headers = new RosterMetaFieldOptionsUpdateHeaders();
+            return RosterMetaFieldOptionsUpdateWithOptions(request, headers, runtime);
+        }
+
+        public async Task<RosterMetaFieldOptionsUpdateResponse> RosterMetaFieldOptionsUpdateAsync(RosterMetaFieldOptionsUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RosterMetaFieldOptionsUpdateHeaders headers = new RosterMetaFieldOptionsUpdateHeaders();
+            return await RosterMetaFieldOptionsUpdateWithOptionsAsync(request, headers, runtime);
+        }
+
+        public RosterMetaFieldOptionsUpdateResponse RosterMetaFieldOptionsUpdateWithOptions(RosterMetaFieldOptionsUpdateRequest tmpReq, RosterMetaFieldOptionsUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            RosterMetaFieldOptionsUpdateShrinkRequest request = new RosterMetaFieldOptionsUpdateShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body.ToMap()))
+            {
+                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body.ToMap(), "body", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppAgentId))
+            {
+                query["appAgentId"] = request.AppAgentId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BodyShrink))
+            {
+                query["body"] = request.BodyShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<RosterMetaFieldOptionsUpdateResponse>(DoROARequest("RosterMetaFieldOptionsUpdate", "hrm_1.0", "HTTP", "PUT", "AK", "/v1.0/hrm/rosters/meta/fields/options", "json", req, runtime));
+        }
+
+        public async Task<RosterMetaFieldOptionsUpdateResponse> RosterMetaFieldOptionsUpdateWithOptionsAsync(RosterMetaFieldOptionsUpdateRequest tmpReq, RosterMetaFieldOptionsUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            RosterMetaFieldOptionsUpdateShrinkRequest request = new RosterMetaFieldOptionsUpdateShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body.ToMap()))
+            {
+                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body.ToMap(), "body", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppAgentId))
+            {
+                query["appAgentId"] = request.AppAgentId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BodyShrink))
+            {
+                query["body"] = request.BodyShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<RosterMetaFieldOptionsUpdateResponse>(await DoROARequestAsync("RosterMetaFieldOptionsUpdate", "hrm_1.0", "HTTP", "PUT", "AK", "/v1.0/hrm/rosters/meta/fields/options", "json", req, runtime));
+        }
+
         public SolutionTaskInitResponse SolutionTaskInit(SolutionTaskInitRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

@@ -16,6 +16,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=false)]
         public List<List<string>> BackgroundColors { get; set; }
 
+        /// <summary>
+        /// 超链接
+        /// </summary>
         [NameInMap("hyperlinks")]
         [Validation(Required=false)]
         public List<List<UpdateRangeRequestHyperlinks>> Hyperlinks { get; set; }
@@ -42,6 +45,13 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
             public string Text { get; set; }
 
         }
+
+        /// <summary>
+        /// 数字格式
+        /// </summary>
+        [NameInMap("numberFormat")]
+        [Validation(Required=false)]
+        public string NumberFormat { get; set; }
 
         /// <summary>
         /// 值

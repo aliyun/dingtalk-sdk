@@ -8,14 +8,14 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
-    public class UpdateRangeResponse : TeaModel {
+    public class CreateConditionalFormattingRuleResponse : TeaModel {
         [NameInMap("headers")]
         [Validation(Required=true)]
         public Dictionary<string, string> Headers { get; set; }
 
         [NameInMap("body")]
         [Validation(Required=true)]
-        public UpdateRangeResponseBody Body { get; set; }
+        public CreateConditionalFormattingRuleResponseBody Body { get; set; }
 
     }
 

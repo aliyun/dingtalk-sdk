@@ -1338,6 +1338,90 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0
             return TeaModel.ToObject<GetFileUploadInfoResponse>(await DoROARequestAsync("GetFileUploadInfo", "storage_1.0", "HTTP", "POST", "AK", "/v1.0/storage/spaces/" + spaceId + "/files/uploadInfos/query", "json", req, runtime));
         }
 
+        public GetMultipartFileUploadInfosResponse GetMultipartFileUploadInfos(GetMultipartFileUploadInfosRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetMultipartFileUploadInfosHeaders headers = new GetMultipartFileUploadInfosHeaders();
+            return GetMultipartFileUploadInfosWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetMultipartFileUploadInfosResponse> GetMultipartFileUploadInfosAsync(GetMultipartFileUploadInfosRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetMultipartFileUploadInfosHeaders headers = new GetMultipartFileUploadInfosHeaders();
+            return await GetMultipartFileUploadInfosWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetMultipartFileUploadInfosResponse GetMultipartFileUploadInfosWithOptions(GetMultipartFileUploadInfosRequest request, GetMultipartFileUploadInfosHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PartNumbers))
+            {
+                body["partNumbers"] = request.PartNumbers;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UploadKey))
+            {
+                body["uploadKey"] = request.UploadKey;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<GetMultipartFileUploadInfosResponse>(DoROARequest("GetMultipartFileUploadInfos", "storage_1.0", "HTTP", "POST", "AK", "/v1.0/storage/spaces/files/multiPartUploadInfos/query", "json", req, runtime));
+        }
+
+        public async Task<GetMultipartFileUploadInfosResponse> GetMultipartFileUploadInfosWithOptionsAsync(GetMultipartFileUploadInfosRequest request, GetMultipartFileUploadInfosHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PartNumbers))
+            {
+                body["partNumbers"] = request.PartNumbers;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UploadKey))
+            {
+                body["uploadKey"] = request.UploadKey;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<GetMultipartFileUploadInfosResponse>(await DoROARequestAsync("GetMultipartFileUploadInfos", "storage_1.0", "HTTP", "POST", "AK", "/v1.0/storage/spaces/files/multiPartUploadInfos/query", "json", req, runtime));
+        }
+
         public GetOrgResponse GetOrg(string corpId, GetOrgRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1616,6 +1700,84 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             return TeaModel.ToObject<GetSpaceResponse>(await DoROARequestAsync("GetSpace", "storage_1.0", "HTTP", "GET", "AK", "/v1.0/storage/spaces/" + spaceId, "json", req, runtime));
+        }
+
+        public InitMultipartFileUploadResponse InitMultipartFileUpload(string spaceId, InitMultipartFileUploadRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            InitMultipartFileUploadHeaders headers = new InitMultipartFileUploadHeaders();
+            return InitMultipartFileUploadWithOptions(spaceId, request, headers, runtime);
+        }
+
+        public async Task<InitMultipartFileUploadResponse> InitMultipartFileUploadAsync(string spaceId, InitMultipartFileUploadRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            InitMultipartFileUploadHeaders headers = new InitMultipartFileUploadHeaders();
+            return await InitMultipartFileUploadWithOptionsAsync(spaceId, request, headers, runtime);
+        }
+
+        public InitMultipartFileUploadResponse InitMultipartFileUploadWithOptions(string spaceId, InitMultipartFileUploadRequest request, InitMultipartFileUploadHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Option.ToMap()))
+            {
+                body["option"] = request.Option;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<InitMultipartFileUploadResponse>(DoROARequest("InitMultipartFileUpload", "storage_1.0", "HTTP", "POST", "AK", "/v1.0/storage/spaces/" + spaceId + "/files/multiPartUploadInfos/init", "json", req, runtime));
+        }
+
+        public async Task<InitMultipartFileUploadResponse> InitMultipartFileUploadWithOptionsAsync(string spaceId, InitMultipartFileUploadRequest request, InitMultipartFileUploadHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Option.ToMap()))
+            {
+                body["option"] = request.Option;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<InitMultipartFileUploadResponse>(await DoROARequestAsync("InitMultipartFileUpload", "storage_1.0", "HTTP", "POST", "AK", "/v1.0/storage/spaces/" + spaceId + "/files/multiPartUploadInfos/init", "json", req, runtime));
         }
 
         public ListDentriesResponse ListDentries(string spaceId, ListDentriesRequest request)
