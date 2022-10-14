@@ -8,8 +8,13 @@ public class UpdateRangeRequest extends TeaModel {
     @NameInMap("backgroundColors")
     public java.util.List<java.util.List<String>> backgroundColors;
 
+    // 超链接
     @NameInMap("hyperlinks")
     public java.util.List<java.util.List<UpdateRangeRequestHyperlinks>> hyperlinks;
+
+    // 数字格式
+    @NameInMap("numberFormat")
+    public String numberFormat;
 
     // 值
     @NameInMap("values")
@@ -38,6 +43,14 @@ public class UpdateRangeRequest extends TeaModel {
     }
     public java.util.List<java.util.List<UpdateRangeRequestHyperlinks>> getHyperlinks() {
         return this.hyperlinks;
+    }
+
+    public UpdateRangeRequest setNumberFormat(String numberFormat) {
+        this.numberFormat = numberFormat;
+        return this;
+    }
+    public String getNumberFormat() {
+        return this.numberFormat;
     }
 
     public UpdateRangeRequest setValues(java.util.List<java.util.List<String>> values) {

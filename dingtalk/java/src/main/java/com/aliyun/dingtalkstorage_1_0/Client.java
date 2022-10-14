@@ -624,6 +624,45 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetFileUploadInfo", "storage_1.0", "HTTP", "POST", "AK", "/v1.0/storage/spaces/" + spaceId + "/files/uploadInfos/query", "json", req, runtime), new GetFileUploadInfoResponse());
     }
 
+    public GetMultipartFileUploadInfosResponse getMultipartFileUploadInfos(GetMultipartFileUploadInfosRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetMultipartFileUploadInfosHeaders headers = new GetMultipartFileUploadInfosHeaders();
+        return this.getMultipartFileUploadInfosWithOptions(request, headers, runtime);
+    }
+
+    public GetMultipartFileUploadInfosResponse getMultipartFileUploadInfosWithOptions(GetMultipartFileUploadInfosRequest request, GetMultipartFileUploadInfosHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.partNumbers)) {
+            body.put("partNumbers", request.partNumbers);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.uploadKey)) {
+            body.put("uploadKey", request.uploadKey);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetMultipartFileUploadInfos", "storage_1.0", "HTTP", "POST", "AK", "/v1.0/storage/spaces/files/multiPartUploadInfos/query", "json", req, runtime), new GetMultipartFileUploadInfosResponse());
+    }
+
     public GetOrgResponse getOrg(String corpId, GetOrgRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetOrgHeaders headers = new GetOrgHeaders();
@@ -750,6 +789,42 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("GetSpace", "storage_1.0", "HTTP", "GET", "AK", "/v1.0/storage/spaces/" + spaceId + "", "json", req, runtime), new GetSpaceResponse());
+    }
+
+    public InitMultipartFileUploadResponse initMultipartFileUpload(String spaceId, InitMultipartFileUploadRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        InitMultipartFileUploadHeaders headers = new InitMultipartFileUploadHeaders();
+        return this.initMultipartFileUploadWithOptions(spaceId, request, headers, runtime);
+    }
+
+    public InitMultipartFileUploadResponse initMultipartFileUploadWithOptions(String spaceId, InitMultipartFileUploadRequest request, InitMultipartFileUploadHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.option))) {
+            body.put("option", request.option);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("InitMultipartFileUpload", "storage_1.0", "HTTP", "POST", "AK", "/v1.0/storage/spaces/" + spaceId + "/files/multiPartUploadInfos/init", "json", req, runtime), new InitMultipartFileUploadResponse());
     }
 
     public ListDentriesResponse listDentries(String spaceId, ListDentriesRequest request) throws Exception {

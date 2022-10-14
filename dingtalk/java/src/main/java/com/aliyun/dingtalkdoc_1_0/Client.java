@@ -256,6 +256,51 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("ClearData", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/clearData", "json", req, runtime), new ClearDataResponse());
     }
 
+    public CreateConditionalFormattingRuleResponse createConditionalFormattingRule(String workbookId, String sheetId, CreateConditionalFormattingRuleRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateConditionalFormattingRuleHeaders headers = new CreateConditionalFormattingRuleHeaders();
+        return this.createConditionalFormattingRuleWithOptions(workbookId, sheetId, request, headers, runtime);
+    }
+
+    public CreateConditionalFormattingRuleResponse createConditionalFormattingRuleWithOptions(String workbookId, String sheetId, CreateConditionalFormattingRuleRequest request, CreateConditionalFormattingRuleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        workbookId = com.aliyun.openapiutil.Client.getEncodeParam(workbookId);
+        sheetId = com.aliyun.openapiutil.Client.getEncodeParam(sheetId);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.cellStyle))) {
+            body.put("cellStyle", request.cellStyle);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.duplicateCondition))) {
+            body.put("duplicateCondition", request.duplicateCondition);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.ranges)) {
+            body.put("ranges", request.ranges);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CreateConditionalFormattingRule", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/conditionalFormattingRules", "json", req, runtime), new CreateConditionalFormattingRuleResponse());
+    }
+
     public CreateRangeProtectionResponse createRangeProtection(String workbookId, String sheetId, String rangeAddress, CreateRangeProtectionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateRangeProtectionHeaders headers = new CreateRangeProtectionHeaders();
@@ -560,7 +605,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("DeleteSheet", "doc_1.0", "HTTP", "DELETE", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "", "none", req, runtime), new DeleteSheetResponse());
+        return TeaModel.toModel(this.doROARequest("DeleteSheet", "doc_1.0", "HTTP", "DELETE", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "", "json", req, runtime), new DeleteSheetResponse());
     }
 
     public DeleteWorkspaceDocResponse deleteWorkspaceDoc(String workspaceId, String nodeId, DeleteWorkspaceDocRequest request) throws Exception {
@@ -1399,6 +1444,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("hyperlinks", request.hyperlinks);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.numberFormat)) {
+            body.put("numberFormat", request.numberFormat);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.values)) {
             body.put("values", request.values);
         }
@@ -1417,7 +1466,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateRange", "doc_1.0", "HTTP", "PUT", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "", "none", req, runtime), new UpdateRangeResponse());
+        return TeaModel.toModel(this.doROARequest("UpdateRange", "doc_1.0", "HTTP", "PUT", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "", "json", req, runtime), new UpdateRangeResponse());
     }
 
     public UpdateSheetResponse updateSheet(String workbookId, String sheetId, UpdateSheetRequest request) throws Exception {

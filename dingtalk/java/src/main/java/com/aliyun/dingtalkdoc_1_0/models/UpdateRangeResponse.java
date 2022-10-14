@@ -8,6 +8,10 @@ public class UpdateRangeResponse extends TeaModel {
     @Validation(required = true)
     public java.util.Map<String, String> headers;
 
+    @NameInMap("body")
+    @Validation(required = true)
+    public UpdateRangeResponseBody body;
+
     public static UpdateRangeResponse build(java.util.Map<String, ?> map) throws Exception {
         UpdateRangeResponse self = new UpdateRangeResponse();
         return TeaModel.build(map, self);
@@ -19,6 +23,14 @@ public class UpdateRangeResponse extends TeaModel {
     }
     public java.util.Map<String, String> getHeaders() {
         return this.headers;
+    }
+
+    public UpdateRangeResponse setBody(UpdateRangeResponseBody body) {
+        this.body = body;
+        return this;
+    }
+    public UpdateRangeResponseBody getBody() {
+        return this.body;
     }
 
 }
