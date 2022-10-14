@@ -26,6 +26,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateConditionalFormattingRuleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateConditionalFormattingRuleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateConditionalFormattingRuleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateRangeProtectionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateRangeProtectionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateRangeProtectionResponse;
@@ -491,6 +494,65 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string                                 $workbookId
+     * @param string                                 $sheetId
+     * @param CreateConditionalFormattingRuleRequest $request
+     *
+     * @return CreateConditionalFormattingRuleResponse
+     */
+    public function createConditionalFormattingRule($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateConditionalFormattingRuleHeaders([]);
+
+        return $this->createConditionalFormattingRuleWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                                 $workbookId
+     * @param string                                 $sheetId
+     * @param CreateConditionalFormattingRuleRequest $request
+     * @param CreateConditionalFormattingRuleHeaders $headers
+     * @param RuntimeOptions                         $runtime
+     *
+     * @return CreateConditionalFormattingRuleResponse
+     */
+    public function createConditionalFormattingRuleWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $workbookId = OpenApiUtilClient::getEncodeParam($workbookId);
+        $sheetId    = OpenApiUtilClient::getEncodeParam($sheetId);
+        $query      = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->cellStyle)) {
+            @$body['cellStyle'] = $request->cellStyle;
+        }
+        if (!Utils::isUnset($request->duplicateCondition)) {
+            @$body['duplicateCondition'] = $request->duplicateCondition;
+        }
+        if (!Utils::isUnset($request->ranges)) {
+            @$body['ranges'] = $request->ranges;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateConditionalFormattingRuleResponse::fromMap($this->doROARequest('CreateConditionalFormattingRule', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/conditionalFormattingRules', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string                       $workbookId
      * @param string                       $sheetId
      * @param string                       $rangeAddress
@@ -915,7 +977,7 @@ class Dingtalk extends OpenApiClient
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return DeleteSheetResponse::fromMap($this->doROARequest('DeleteSheet', 'doc_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '', 'none', $req, $runtime));
+        return DeleteSheetResponse::fromMap($this->doROARequest('DeleteSheet', 'doc_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '', 'json', $req, $runtime));
     }
 
     /**
@@ -2087,6 +2149,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->hyperlinks)) {
             @$body['hyperlinks'] = $request->hyperlinks;
         }
+        if (!Utils::isUnset($request->numberFormat)) {
+            @$body['numberFormat'] = $request->numberFormat;
+        }
         if (!Utils::isUnset($request->values)) {
             @$body['values'] = $request->values;
         }
@@ -2103,7 +2168,7 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return UpdateRangeResponse::fromMap($this->doROARequest('UpdateRange', 'doc_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '', 'none', $req, $runtime));
+        return UpdateRangeResponse::fromMap($this->doROARequest('UpdateRange', 'doc_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '', 'json', $req, $runtime));
     }
 
     /**

@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class UpdateRangeResponse extends Model
+class GetMultipartFileUploadInfosResponse extends Model
 {
     /**
      * @var string[]
@@ -14,7 +14,7 @@ class UpdateRangeResponse extends Model
     public $headers;
 
     /**
-     * @var UpdateRangeResponseBody
+     * @var GetMultipartFileUploadInfosResponseBody
      */
     public $body;
     protected $_name = [
@@ -44,7 +44,7 @@ class UpdateRangeResponse extends Model
     /**
      * @param array $map
      *
-     * @return UpdateRangeResponse
+     * @return GetMultipartFileUploadInfosResponse
      */
     public static function fromMap($map = [])
     {
@@ -53,7 +53,7 @@ class UpdateRangeResponse extends Model
             $model->headers = $map['headers'];
         }
         if (isset($map['body'])) {
-            $model->body = UpdateRangeResponseBody::fromMap($map['body']);
+            $model->body = GetMultipartFileUploadInfosResponseBody::fromMap($map['body']);
         }
 
         return $model;

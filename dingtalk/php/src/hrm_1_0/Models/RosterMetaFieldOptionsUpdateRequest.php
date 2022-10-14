@@ -2,37 +2,36 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaFieldOptionsUpdateRequest\body;
 use AlibabaCloud\Tea\Model;
 
-class UpdateRangeResponse extends Model
+class RosterMetaFieldOptionsUpdateRequest extends Model
 {
     /**
-     * @var string[]
+     * @var int
      */
-    public $headers;
+    public $appAgentId;
 
     /**
-     * @var UpdateRangeResponseBody
+     * @var body
      */
     public $body;
     protected $_name = [
-        'headers' => 'headers',
-        'body'    => 'body',
+        'appAgentId' => 'appAgentId',
+        'body'       => 'body',
     ];
 
     public function validate()
     {
-        Model::validateRequired('headers', $this->headers, true);
-        Model::validateRequired('body', $this->body, true);
     }
 
     public function toMap()
     {
         $res = [];
-        if (null !== $this->headers) {
-            $res['headers'] = $this->headers;
+        if (null !== $this->appAgentId) {
+            $res['appAgentId'] = $this->appAgentId;
         }
         if (null !== $this->body) {
             $res['body'] = null !== $this->body ? $this->body->toMap() : null;
@@ -44,16 +43,16 @@ class UpdateRangeResponse extends Model
     /**
      * @param array $map
      *
-     * @return UpdateRangeResponse
+     * @return RosterMetaFieldOptionsUpdateRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['headers'])) {
-            $model->headers = $map['headers'];
+        if (isset($map['appAgentId'])) {
+            $model->appAgentId = $map['appAgentId'];
         }
         if (isset($map['body'])) {
-            $model->body = UpdateRangeResponseBody::fromMap($map['body']);
+            $model->body = body::fromMap($map['body']);
         }
 
         return $model;

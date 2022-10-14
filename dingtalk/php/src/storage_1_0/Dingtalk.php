@@ -53,6 +53,9 @@ use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetFileDownloadInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetFileUploadInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetFileUploadInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetFileUploadInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetMultipartFileUploadInfosHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetMultipartFileUploadInfosRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetMultipartFileUploadInfosResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetOrgHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetOrgRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetOrgResponse;
@@ -65,6 +68,9 @@ use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetRecycleItemResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetSpaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetSpaceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetSpaceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\InitMultipartFileUploadHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\InitMultipartFileUploadRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\InitMultipartFileUploadResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListDentriesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListDentriesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListDentriesResponse;
@@ -952,6 +958,56 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetMultipartFileUploadInfosRequest $request
+     *
+     * @return GetMultipartFileUploadInfosResponse
+     */
+    public function getMultipartFileUploadInfos($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetMultipartFileUploadInfosHeaders([]);
+
+        return $this->getMultipartFileUploadInfosWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetMultipartFileUploadInfosRequest $request
+     * @param GetMultipartFileUploadInfosHeaders $headers
+     * @param RuntimeOptions                     $runtime
+     *
+     * @return GetMultipartFileUploadInfosResponse
+     */
+    public function getMultipartFileUploadInfosWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->partNumbers)) {
+            @$body['partNumbers'] = $request->partNumbers;
+        }
+        if (!Utils::isUnset($request->uploadKey)) {
+            @$body['uploadKey'] = $request->uploadKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetMultipartFileUploadInfosResponse::fromMap($this->doROARequest('GetMultipartFileUploadInfos', 'storage_1.0', 'HTTP', 'POST', 'AK', '/v1.0/storage/spaces/files/multiPartUploadInfos/query', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string        $corpId
      * @param GetOrgRequest $request
      *
@@ -1135,6 +1191,56 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetSpaceResponse::fromMap($this->doROARequest('GetSpace', 'storage_1.0', 'HTTP', 'GET', 'AK', '/v1.0/storage/spaces/' . $spaceId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                         $spaceId
+     * @param InitMultipartFileUploadRequest $request
+     *
+     * @return InitMultipartFileUploadResponse
+     */
+    public function initMultipartFileUpload($spaceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InitMultipartFileUploadHeaders([]);
+
+        return $this->initMultipartFileUploadWithOptions($spaceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                         $spaceId
+     * @param InitMultipartFileUploadRequest $request
+     * @param InitMultipartFileUploadHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return InitMultipartFileUploadResponse
+     */
+    public function initMultipartFileUploadWithOptions($spaceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $spaceId = OpenApiUtilClient::getEncodeParam($spaceId);
+        $query   = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->option)) {
+            @$body['option'] = $request->option;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return InitMultipartFileUploadResponse::fromMap($this->doROARequest('InitMultipartFileUpload', 'storage_1.0', 'HTTP', 'POST', 'AK', '/v1.0/storage/spaces/' . $spaceId . '/files/multiPartUploadInfos/init', 'json', $req, $runtime));
     }
 
     /**

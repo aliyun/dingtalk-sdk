@@ -16,9 +16,18 @@ class UpdateRangeRequest extends Model
     public $backgroundColors;
 
     /**
+     * @description 超链接
+     *
      * @var undefined[][]
      */
     public $hyperlinks;
+
+    /**
+     * @description 数字格式
+     *
+     * @var string
+     */
+    public $numberFormat;
 
     /**
      * @description 值
@@ -36,6 +45,7 @@ class UpdateRangeRequest extends Model
     protected $_name = [
         'backgroundColors' => 'backgroundColors',
         'hyperlinks'       => 'hyperlinks',
+        'numberFormat'     => 'numberFormat',
         'values'           => 'values',
         'operatorId'       => 'operatorId',
     ];
@@ -52,6 +62,9 @@ class UpdateRangeRequest extends Model
         }
         if (null !== $this->hyperlinks) {
             $res['hyperlinks'] = $this->hyperlinks;
+        }
+        if (null !== $this->numberFormat) {
+            $res['numberFormat'] = $this->numberFormat;
         }
         if (null !== $this->values) {
             $res['values'] = $this->values;
@@ -80,6 +93,9 @@ class UpdateRangeRequest extends Model
             if (!empty($map['hyperlinks'])) {
                 $model->hyperlinks = $map['hyperlinks'];
             }
+        }
+        if (isset($map['numberFormat'])) {
+            $model->numberFormat = $map['numberFormat'];
         }
         if (isset($map['values'])) {
             if (!empty($map['values'])) {

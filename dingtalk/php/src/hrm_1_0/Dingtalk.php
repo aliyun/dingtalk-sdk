@@ -39,6 +39,10 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryJobsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaFieldOptionsUpdateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaFieldOptionsUpdateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaFieldOptionsUpdateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaFieldOptionsUpdateShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskInitHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskInitRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskInitResponse;
@@ -48,6 +52,7 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskSaveResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncTaskTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncTaskTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncTaskTemplateResponse;
+use AlibabaCloud\Tea\Tea;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -634,6 +639,56 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryPositionsResponse::fromMap($this->doROARequest('QueryPositions', 'hrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrm/positions/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param RosterMetaFieldOptionsUpdateRequest $request
+     *
+     * @return RosterMetaFieldOptionsUpdateResponse
+     */
+    public function rosterMetaFieldOptionsUpdate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RosterMetaFieldOptionsUpdateHeaders([]);
+
+        return $this->rosterMetaFieldOptionsUpdateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RosterMetaFieldOptionsUpdateRequest $tmpReq
+     * @param RosterMetaFieldOptionsUpdateHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return RosterMetaFieldOptionsUpdateResponse
+     */
+    public function rosterMetaFieldOptionsUpdateWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new RosterMetaFieldOptionsUpdateShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->body)) {
+            $request->bodyShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle(Tea::merge($tmpReq->body), 'body', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->appAgentId)) {
+            @$query['appAgentId'] = $request->appAgentId;
+        }
+        if (!Utils::isUnset($request->bodyShrink)) {
+            @$query['body'] = $request->bodyShrink;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return RosterMetaFieldOptionsUpdateResponse::fromMap($this->doROARequest('RosterMetaFieldOptionsUpdate', 'hrm_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/hrm/rosters/meta/fields/options', 'json', $req, $runtime));
     }
 
     /**
