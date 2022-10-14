@@ -1114,6 +1114,113 @@ export class QueryPositionsResponse extends $tea.Model {
   }
 }
 
+export class RosterMetaFieldOptionsUpdateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RosterMetaFieldOptionsUpdateRequest extends $tea.Model {
+  appAgentId?: number;
+  body?: RosterMetaFieldOptionsUpdateRequestBody;
+  static names(): { [key: string]: string } {
+    return {
+      appAgentId: 'appAgentId',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appAgentId: 'number',
+      body: RosterMetaFieldOptionsUpdateRequestBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RosterMetaFieldOptionsUpdateShrinkRequest extends $tea.Model {
+  appAgentId?: number;
+  bodyShrink?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appAgentId: 'appAgentId',
+      bodyShrink: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appAgentId: 'number',
+      bodyShrink: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RosterMetaFieldOptionsUpdateResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RosterMetaFieldOptionsUpdateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: RosterMetaFieldOptionsUpdateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: RosterMetaFieldOptionsUpdateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SolutionTaskInitHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1973,6 +2080,34 @@ export class QueryPositionsResponseBodyList extends $tea.Model {
   }
 }
 
+export class RosterMetaFieldOptionsUpdateRequestBody extends $tea.Model {
+  fieldCode?: string;
+  groupId?: string;
+  labels?: string[];
+  modifyType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldCode: 'fieldCode',
+      groupId: 'groupId',
+      labels: 'labels',
+      modifyType: 'modifyType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldCode: 'string',
+      groupId: 'string',
+      labels: { 'type': 'array', 'itemType': 'string' },
+      modifyType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SyncTaskTemplateRequestTaskScopeVO extends $tea.Model {
   deptIds?: number[];
   positionIds?: string[];
@@ -2476,6 +2611,45 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<QueryPositionsResponse>(await this.doROARequest("QueryPositions", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/positions/query`, "json", req, runtime), new QueryPositionsResponse({}));
+  }
+
+  async rosterMetaFieldOptionsUpdate(request: RosterMetaFieldOptionsUpdateRequest): Promise<RosterMetaFieldOptionsUpdateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RosterMetaFieldOptionsUpdateHeaders({ });
+    return await this.rosterMetaFieldOptionsUpdateWithOptions(request, headers, runtime);
+  }
+
+  async rosterMetaFieldOptionsUpdateWithOptions(tmpReq: RosterMetaFieldOptionsUpdateRequest, headers: RosterMetaFieldOptionsUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<RosterMetaFieldOptionsUpdateResponse> {
+    Util.validateModel(tmpReq);
+    let request = new RosterMetaFieldOptionsUpdateShrinkRequest({ });
+    OpenApiUtil.convert(tmpReq, request);
+    if (!Util.isUnset($tea.toMap(tmpReq.body))) {
+      request.bodyShrink = OpenApiUtil.arrayToStringWithSpecifiedStyle($tea.toMap(tmpReq.body), "body", "json");
+    }
+
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appAgentId)) {
+      query["appAgentId"] = request.appAgentId;
+    }
+
+    if (!Util.isUnset(request.bodyShrink)) {
+      query["body"] = request.bodyShrink;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<RosterMetaFieldOptionsUpdateResponse>(await this.doROARequest("RosterMetaFieldOptionsUpdate", "hrm_1.0", "HTTP", "PUT", "AK", `/v1.0/hrm/rosters/meta/fields/options`, "json", req, runtime), new RosterMetaFieldOptionsUpdateResponse({}));
   }
 
   async solutionTaskInit(request: SolutionTaskInitRequest): Promise<SolutionTaskInitResponse> {

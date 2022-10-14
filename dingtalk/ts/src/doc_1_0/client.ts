@@ -555,6 +555,97 @@ export class ClearDataResponse extends $tea.Model {
   }
 }
 
+export class CreateConditionalFormattingRuleHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateConditionalFormattingRuleRequest extends $tea.Model {
+  cellStyle?: CreateConditionalFormattingRuleRequestCellStyle;
+  duplicateCondition?: CreateConditionalFormattingRuleRequestDuplicateCondition;
+  ranges?: string[];
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      cellStyle: 'cellStyle',
+      duplicateCondition: 'duplicateCondition',
+      ranges: 'ranges',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cellStyle: CreateConditionalFormattingRuleRequestCellStyle,
+      duplicateCondition: CreateConditionalFormattingRuleRequestDuplicateCondition,
+      ranges: { 'type': 'array', 'itemType': 'string' },
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateConditionalFormattingRuleResponseBody extends $tea.Model {
+  id?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateConditionalFormattingRuleResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateConditionalFormattingRuleResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateConditionalFormattingRuleResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateRangeProtectionHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1233,17 +1324,39 @@ export class DeleteSheetRequest extends $tea.Model {
   }
 }
 
+export class DeleteSheetResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteSheetResponse extends $tea.Model {
   headers: { [key: string]: string };
+  body: DeleteSheetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      body: 'body',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DeleteSheetResponseBody,
     };
   }
 
@@ -3154,12 +3267,14 @@ export class UpdateRangeHeaders extends $tea.Model {
 export class UpdateRangeRequest extends $tea.Model {
   backgroundColors?: string[][];
   hyperlinks?: UpdateRangeRequestHyperlinks[][];
+  numberFormat?: string;
   values?: string[][];
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
       backgroundColors: 'backgroundColors',
       hyperlinks: 'hyperlinks',
+      numberFormat: 'numberFormat',
       values: 'values',
       operatorId: 'operatorId',
     };
@@ -3169,6 +3284,7 @@ export class UpdateRangeRequest extends $tea.Model {
     return {
       backgroundColors: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': 'string' } },
       hyperlinks: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': UpdateRangeRequestHyperlinks } },
+      numberFormat: 'string',
       values: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': 'string' } },
       operatorId: 'string',
     };
@@ -3179,17 +3295,39 @@ export class UpdateRangeRequest extends $tea.Model {
   }
 }
 
+export class UpdateRangeResponseBody extends $tea.Model {
+  a1Notation?: string;
+  static names(): { [key: string]: string } {
+    return {
+      a1Notation: 'a1Notation',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      a1Notation: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateRangeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  body: UpdateRangeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      body: 'body',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateRangeResponseBody,
     };
   }
 
@@ -3597,6 +3735,44 @@ export class BatchGetWorkspacesResponseBodyWorkspaces extends $tea.Model {
     return {
       hasPermission: 'boolean',
       workspace: BatchGetWorkspacesResponseBodyWorkspacesWorkspace,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateConditionalFormattingRuleRequestCellStyle extends $tea.Model {
+  backgroundColor?: string;
+  static names(): { [key: string]: string } {
+    return {
+      backgroundColor: 'backgroundColor',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      backgroundColor: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateConditionalFormattingRuleRequestDuplicateCondition extends $tea.Model {
+  operator?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operator: 'operator',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operator: 'string',
     };
   }
 
@@ -4628,6 +4804,51 @@ export default class Client extends OpenApi {
     return $tea.cast<ClearDataResponse>(await this.doROARequest("ClearData", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}/clearData`, "json", req, runtime), new ClearDataResponse({}));
   }
 
+  async createConditionalFormattingRule(workbookId: string, sheetId: string, request: CreateConditionalFormattingRuleRequest): Promise<CreateConditionalFormattingRuleResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateConditionalFormattingRuleHeaders({ });
+    return await this.createConditionalFormattingRuleWithOptions(workbookId, sheetId, request, headers, runtime);
+  }
+
+  async createConditionalFormattingRuleWithOptions(workbookId: string, sheetId: string, request: CreateConditionalFormattingRuleRequest, headers: CreateConditionalFormattingRuleHeaders, runtime: $Util.RuntimeOptions): Promise<CreateConditionalFormattingRuleResponse> {
+    Util.validateModel(request);
+    workbookId = OpenApiUtil.getEncodeParam(workbookId);
+    sheetId = OpenApiUtil.getEncodeParam(sheetId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.cellStyle))) {
+      body["cellStyle"] = request.cellStyle;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.duplicateCondition))) {
+      body["duplicateCondition"] = request.duplicateCondition;
+    }
+
+    if (!Util.isUnset(request.ranges)) {
+      body["ranges"] = request.ranges;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateConditionalFormattingRuleResponse>(await this.doROARequest("CreateConditionalFormattingRule", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/conditionalFormattingRules`, "json", req, runtime), new CreateConditionalFormattingRuleResponse({}));
+  }
+
   async createRangeProtection(workbookId: string, sheetId: string, rangeAddress: string, request: CreateRangeProtectionRequest): Promise<CreateRangeProtectionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateRangeProtectionHeaders({ });
@@ -4932,7 +5153,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteSheetResponse>(await this.doROARequest("DeleteSheet", "doc_1.0", "HTTP", "DELETE", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}`, "none", req, runtime), new DeleteSheetResponse({}));
+    return $tea.cast<DeleteSheetResponse>(await this.doROARequest("DeleteSheet", "doc_1.0", "HTTP", "DELETE", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}`, "json", req, runtime), new DeleteSheetResponse({}));
   }
 
   async deleteWorkspaceDoc(workspaceId: string, nodeId: string, request: DeleteWorkspaceDocRequest): Promise<DeleteWorkspaceDocResponse> {
@@ -5771,6 +5992,10 @@ export default class Client extends OpenApi {
       body["hyperlinks"] = request.hyperlinks;
     }
 
+    if (!Util.isUnset(request.numberFormat)) {
+      body["numberFormat"] = request.numberFormat;
+    }
+
     if (!Util.isUnset(request.values)) {
       body["values"] = request.values;
     }
@@ -5789,7 +6014,7 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateRangeResponse>(await this.doROARequest("UpdateRange", "doc_1.0", "HTTP", "PUT", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}`, "none", req, runtime), new UpdateRangeResponse({}));
+    return $tea.cast<UpdateRangeResponse>(await this.doROARequest("UpdateRange", "doc_1.0", "HTTP", "PUT", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}`, "json", req, runtime), new UpdateRangeResponse({}));
   }
 
   async updateSheet(workbookId: string, sheetId: string, request: UpdateSheetRequest): Promise<UpdateSheetResponse> {

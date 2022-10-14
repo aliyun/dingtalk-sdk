@@ -1412,6 +1412,94 @@ export class GetFileUploadInfoResponse extends $tea.Model {
   }
 }
 
+export class GetMultipartFileUploadInfosHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMultipartFileUploadInfosRequest extends $tea.Model {
+  partNumbers?: number[];
+  uploadKey?: string;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      partNumbers: 'partNumbers',
+      uploadKey: 'uploadKey',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      partNumbers: { 'type': 'array', 'itemType': 'number' },
+      uploadKey: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMultipartFileUploadInfosResponseBody extends $tea.Model {
+  multipartHeaderSignatureInfos?: GetMultipartFileUploadInfosResponseBodyMultipartHeaderSignatureInfos[];
+  static names(): { [key: string]: string } {
+    return {
+      multipartHeaderSignatureInfos: 'multipartHeaderSignatureInfos',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      multipartHeaderSignatureInfos: { 'type': 'array', 'itemType': GetMultipartFileUploadInfosResponseBodyMultipartHeaderSignatureInfos },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMultipartFileUploadInfosResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetMultipartFileUploadInfosResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetMultipartFileUploadInfosResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetOrgHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1738,6 +1826,94 @@ export class GetSpaceResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetSpaceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InitMultipartFileUploadHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InitMultipartFileUploadRequest extends $tea.Model {
+  option?: InitMultipartFileUploadRequestOption;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      option: 'option',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      option: InitMultipartFileUploadRequestOption,
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InitMultipartFileUploadResponseBody extends $tea.Model {
+  storageDriver?: string;
+  uploadKey?: string;
+  static names(): { [key: string]: string } {
+    return {
+      storageDriver: 'storageDriver',
+      uploadKey: 'uploadKey',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      storageDriver: 'string',
+      uploadKey: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InitMultipartFileUploadResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: InitMultipartFileUploadResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: InitMultipartFileUploadResponseBody,
     };
   }
 
@@ -3651,6 +3827,59 @@ export class GetFileUploadInfoResponseBodyHeaderSignatureInfo extends $tea.Model
   }
 }
 
+export class GetMultipartFileUploadInfosResponseBodyMultipartHeaderSignatureInfosHeaderSignatureInfo extends $tea.Model {
+  expirationSeconds?: number;
+  headers?: { [key: string]: string };
+  internalResourceUrls?: string[];
+  region?: string;
+  resourceUrls?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      expirationSeconds: 'expirationSeconds',
+      headers: 'headers',
+      internalResourceUrls: 'internalResourceUrls',
+      region: 'region',
+      resourceUrls: 'resourceUrls',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      expirationSeconds: 'number',
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      internalResourceUrls: { 'type': 'array', 'itemType': 'string' },
+      region: 'string',
+      resourceUrls: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMultipartFileUploadInfosResponseBodyMultipartHeaderSignatureInfos extends $tea.Model {
+  headerSignatureInfo?: GetMultipartFileUploadInfosResponseBodyMultipartHeaderSignatureInfosHeaderSignatureInfo;
+  partNumber?: number;
+  static names(): { [key: string]: string } {
+    return {
+      headerSignatureInfo: 'headerSignatureInfo',
+      partNumber: 'partNumber',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headerSignatureInfo: GetMultipartFileUploadInfosResponseBodyMultipartHeaderSignatureInfosHeaderSignatureInfo,
+      partNumber: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetOrgResponseBodyOrgPartitionsQuota extends $tea.Model {
   max?: number;
   type?: string;
@@ -3866,6 +4095,59 @@ export class GetSpaceResponseBodySpace extends $tea.Model {
       sceneId: 'string',
       status: 'string',
       usedQuota: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InitMultipartFileUploadRequestOptionPreCheckParam extends $tea.Model {
+  md5?: string;
+  name?: string;
+  parentId?: string;
+  size?: number;
+  static names(): { [key: string]: string } {
+    return {
+      md5: 'md5',
+      name: 'name',
+      parentId: 'parentId',
+      size: 'size',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      md5: 'string',
+      name: 'string',
+      parentId: 'string',
+      size: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InitMultipartFileUploadRequestOption extends $tea.Model {
+  preCheckParam?: InitMultipartFileUploadRequestOptionPreCheckParam;
+  preferRegion?: string;
+  storageDriver?: string;
+  static names(): { [key: string]: string } {
+    return {
+      preCheckParam: 'preCheckParam',
+      preferRegion: 'preferRegion',
+      storageDriver: 'storageDriver',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      preCheckParam: InitMultipartFileUploadRequestOptionPreCheckParam,
+      preferRegion: 'string',
+      storageDriver: 'string',
     };
   }
 
@@ -5128,6 +5410,45 @@ export default class Client extends OpenApi {
     return $tea.cast<GetFileUploadInfoResponse>(await this.doROARequest("GetFileUploadInfo", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/files/uploadInfos/query`, "json", req, runtime), new GetFileUploadInfoResponse({}));
   }
 
+  async getMultipartFileUploadInfos(request: GetMultipartFileUploadInfosRequest): Promise<GetMultipartFileUploadInfosResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetMultipartFileUploadInfosHeaders({ });
+    return await this.getMultipartFileUploadInfosWithOptions(request, headers, runtime);
+  }
+
+  async getMultipartFileUploadInfosWithOptions(request: GetMultipartFileUploadInfosRequest, headers: GetMultipartFileUploadInfosHeaders, runtime: $Util.RuntimeOptions): Promise<GetMultipartFileUploadInfosResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.partNumbers)) {
+      body["partNumbers"] = request.partNumbers;
+    }
+
+    if (!Util.isUnset(request.uploadKey)) {
+      body["uploadKey"] = request.uploadKey;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetMultipartFileUploadInfosResponse>(await this.doROARequest("GetMultipartFileUploadInfos", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/files/multiPartUploadInfos/query`, "json", req, runtime), new GetMultipartFileUploadInfosResponse({}));
+  }
+
   async getOrg(corpId: string, request: GetOrgRequest): Promise<GetOrgResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetOrgHeaders({ });
@@ -5254,6 +5575,42 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetSpaceResponse>(await this.doROARequest("GetSpace", "storage_1.0", "HTTP", "GET", "AK", `/v1.0/storage/spaces/${spaceId}`, "json", req, runtime), new GetSpaceResponse({}));
+  }
+
+  async initMultipartFileUpload(spaceId: string, request: InitMultipartFileUploadRequest): Promise<InitMultipartFileUploadResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new InitMultipartFileUploadHeaders({ });
+    return await this.initMultipartFileUploadWithOptions(spaceId, request, headers, runtime);
+  }
+
+  async initMultipartFileUploadWithOptions(spaceId: string, request: InitMultipartFileUploadRequest, headers: InitMultipartFileUploadHeaders, runtime: $Util.RuntimeOptions): Promise<InitMultipartFileUploadResponse> {
+    Util.validateModel(request);
+    spaceId = OpenApiUtil.getEncodeParam(spaceId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.option))) {
+      body["option"] = request.option;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<InitMultipartFileUploadResponse>(await this.doROARequest("InitMultipartFileUpload", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/files/multiPartUploadInfos/init`, "json", req, runtime), new InitMultipartFileUploadResponse({}));
   }
 
   async listDentries(spaceId: string, request: ListDentriesRequest): Promise<ListDentriesResponse> {
