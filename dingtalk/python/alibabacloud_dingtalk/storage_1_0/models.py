@@ -4425,6 +4425,255 @@ class GetFileUploadInfoResponse(TeaModel):
         return self
 
 
+class GetMultipartFileUploadInfosHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetMultipartFileUploadInfosRequest(TeaModel):
+    def __init__(
+        self,
+        part_numbers: List[int] = None,
+        upload_key: str = None,
+        union_id: str = None,
+    ):
+        # 分片id列表
+        # 分片id取值: 1~10000
+        # 分片大小限制: 100KB~5GB
+        self.part_numbers = part_numbers
+        # 上传唯一标识
+        self.upload_key = upload_key
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.part_numbers is not None:
+            result['partNumbers'] = self.part_numbers
+        if self.upload_key is not None:
+            result['uploadKey'] = self.upload_key
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('partNumbers') is not None:
+            self.part_numbers = m.get('partNumbers')
+        if m.get('uploadKey') is not None:
+            self.upload_key = m.get('uploadKey')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class GetMultipartFileUploadInfosResponseBodyMultipartHeaderSignatureInfosHeaderSignatureInfo(TeaModel):
+    def __init__(
+        self,
+        expiration_seconds: int = None,
+        headers: Dict[str, str] = None,
+        internal_resource_urls: List[str] = None,
+        region: str = None,
+        resource_urls: List[str] = None,
+    ):
+        # 过期时间，单位秒
+        self.expiration_seconds = expiration_seconds
+        # 请求头
+        self.headers = headers
+        # 内网URL, 在网络连通的情况下，使用内网URL可加速服务器间上传
+        self.internal_resource_urls = internal_resource_urls
+        # 地域
+        # 枚举值:
+        # 	ZHANGJIAKOU: 张家口
+        # 	SHENZHEN: 深圳
+        # 	SHANGHAI: 上海
+        # 	SINGAPORE: 新加坡
+        # 	UNKNOWN: 未知
+        self.region = region
+        # 多个上传下载URL, 前面url优先
+        self.resource_urls = resource_urls
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.expiration_seconds is not None:
+            result['expirationSeconds'] = self.expiration_seconds
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.internal_resource_urls is not None:
+            result['internalResourceUrls'] = self.internal_resource_urls
+        if self.region is not None:
+            result['region'] = self.region
+        if self.resource_urls is not None:
+            result['resourceUrls'] = self.resource_urls
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('expirationSeconds') is not None:
+            self.expiration_seconds = m.get('expirationSeconds')
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('internalResourceUrls') is not None:
+            self.internal_resource_urls = m.get('internalResourceUrls')
+        if m.get('region') is not None:
+            self.region = m.get('region')
+        if m.get('resourceUrls') is not None:
+            self.resource_urls = m.get('resourceUrls')
+        return self
+
+
+class GetMultipartFileUploadInfosResponseBodyMultipartHeaderSignatureInfos(TeaModel):
+    def __init__(
+        self,
+        header_signature_info: GetMultipartFileUploadInfosResponseBodyMultipartHeaderSignatureInfosHeaderSignatureInfo = None,
+        part_number: int = None,
+    ):
+        # header信息
+        self.header_signature_info = header_signature_info
+        # 分片number
+        self.part_number = part_number
+
+    def validate(self):
+        if self.header_signature_info:
+            self.header_signature_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.header_signature_info is not None:
+            result['headerSignatureInfo'] = self.header_signature_info.to_map()
+        if self.part_number is not None:
+            result['partNumber'] = self.part_number
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headerSignatureInfo') is not None:
+            temp_model = GetMultipartFileUploadInfosResponseBodyMultipartHeaderSignatureInfosHeaderSignatureInfo()
+            self.header_signature_info = temp_model.from_map(m['headerSignatureInfo'])
+        if m.get('partNumber') is not None:
+            self.part_number = m.get('partNumber')
+        return self
+
+
+class GetMultipartFileUploadInfosResponseBody(TeaModel):
+    def __init__(
+        self,
+        multipart_header_signature_infos: List[GetMultipartFileUploadInfosResponseBodyMultipartHeaderSignatureInfos] = None,
+    ):
+        # 分片Header加签上传信息列表
+        self.multipart_header_signature_infos = multipart_header_signature_infos
+
+    def validate(self):
+        if self.multipart_header_signature_infos:
+            for k in self.multipart_header_signature_infos:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['multipartHeaderSignatureInfos'] = []
+        if self.multipart_header_signature_infos is not None:
+            for k in self.multipart_header_signature_infos:
+                result['multipartHeaderSignatureInfos'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.multipart_header_signature_infos = []
+        if m.get('multipartHeaderSignatureInfos') is not None:
+            for k in m.get('multipartHeaderSignatureInfos'):
+                temp_model = GetMultipartFileUploadInfosResponseBodyMultipartHeaderSignatureInfos()
+                self.multipart_header_signature_infos.append(temp_model.from_map(k))
+        return self
+
+
+class GetMultipartFileUploadInfosResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetMultipartFileUploadInfosResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetMultipartFileUploadInfosResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetOrgHeaders(TeaModel):
     def __init__(
         self,
@@ -5408,6 +5657,265 @@ class GetSpaceResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetSpaceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class InitMultipartFileUploadHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class InitMultipartFileUploadRequestOptionPreCheckParam(TeaModel):
+    def __init__(
+        self,
+        md_5: str = None,
+        name: str = None,
+        parent_id: str = None,
+        size: int = None,
+    ):
+        # 文件md5值, 做文件完整性校验。不传则不做校验。
+        self.md_5 = md_5
+        # 文件名称, 文件名称合法性和文件名称冲突校验
+        # 规则：
+        # 1. 头尾不能包含空格，否则会自动去除
+        # 2. 不能包含特殊字符，包括：制表符、*、"、<、>、|
+        # 3. 不能以"."结尾
+        self.name = name
+        # 父目录id
+        # 根目录id值为0
+        # 用于同目录文件名冲突校验
+        self.parent_id = parent_id
+        # 文件大小, 做容量相关校验。不传则不做校验。
+        self.size = size
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.md_5 is not None:
+            result['md5'] = self.md_5
+        if self.name is not None:
+            result['name'] = self.name
+        if self.parent_id is not None:
+            result['parentId'] = self.parent_id
+        if self.size is not None:
+            result['size'] = self.size
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('md5') is not None:
+            self.md_5 = m.get('md5')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('parentId') is not None:
+            self.parent_id = m.get('parentId')
+        if m.get('size') is not None:
+            self.size = m.get('size')
+        return self
+
+
+class InitMultipartFileUploadRequestOption(TeaModel):
+    def __init__(
+        self,
+        pre_check_param: InitMultipartFileUploadRequestOptionPreCheckParam = None,
+        prefer_region: str = None,
+        storage_driver: str = None,
+    ):
+        # 预检查的字段。可实现对文件名称，文件完整性，容量的校验
+        self.pre_check_param = pre_check_param
+        # 优先地域, 倾向于将资源存到哪个地域，可实现就近上传等功能
+        # 枚举值:
+        # 	ZHANGJIAKOU: 张家口
+        # 	SHENZHEN: 深圳
+        # 	SHANGHAI: 上海
+        # 	SINGAPORE: 新加坡
+        # 	UNKNOWN: 未知
+        self.prefer_region = prefer_region
+        # 文件存储驱动类型, 当前只支持DINGTALK
+        # 枚举值:
+        # 	DINGTALK: 钉钉统一存储驱动
+        # 	ALIDOC: 钉钉文档存储驱动
+        # 	SHANJI: 闪记存储驱动
+        # 	UNKNOWN: 未知驱动
+        # 默认值:
+        # 	DINGTALK
+        self.storage_driver = storage_driver
+
+    def validate(self):
+        if self.pre_check_param:
+            self.pre_check_param.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.pre_check_param is not None:
+            result['preCheckParam'] = self.pre_check_param.to_map()
+        if self.prefer_region is not None:
+            result['preferRegion'] = self.prefer_region
+        if self.storage_driver is not None:
+            result['storageDriver'] = self.storage_driver
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('preCheckParam') is not None:
+            temp_model = InitMultipartFileUploadRequestOptionPreCheckParam()
+            self.pre_check_param = temp_model.from_map(m['preCheckParam'])
+        if m.get('preferRegion') is not None:
+            self.prefer_region = m.get('preferRegion')
+        if m.get('storageDriver') is not None:
+            self.storage_driver = m.get('storageDriver')
+        return self
+
+
+class InitMultipartFileUploadRequest(TeaModel):
+    def __init__(
+        self,
+        option: InitMultipartFileUploadRequestOption = None,
+        union_id: str = None,
+    ):
+        # 可选参数
+        self.option = option
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        if self.option:
+            self.option.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.option is not None:
+            result['option'] = self.option.to_map()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('option') is not None:
+            temp_model = InitMultipartFileUploadRequestOption()
+            self.option = temp_model.from_map(m['option'])
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class InitMultipartFileUploadResponseBody(TeaModel):
+    def __init__(
+        self,
+        storage_driver: str = None,
+        upload_key: str = None,
+    ):
+        # 文件存储类型
+        # 枚举值:
+        # 	DINGTALK: 钉钉统一存储驱动
+        # 	ALIDOC: 钉钉文档存储驱动
+        # 	SHANJI: 闪记存储驱动
+        # 	UNKNOWN: 未知驱动
+        self.storage_driver = storage_driver
+        # 上传唯一标识
+        self.upload_key = upload_key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.storage_driver is not None:
+            result['storageDriver'] = self.storage_driver
+        if self.upload_key is not None:
+            result['uploadKey'] = self.upload_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('storageDriver') is not None:
+            self.storage_driver = m.get('storageDriver')
+        if m.get('uploadKey') is not None:
+            self.upload_key = m.get('uploadKey')
+        return self
+
+
+class InitMultipartFileUploadResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: InitMultipartFileUploadResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = InitMultipartFileUploadResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

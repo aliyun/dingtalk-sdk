@@ -565,6 +565,98 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ClearData', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/ranges/{range_address}/clearData', 'json', req, runtime)
         )
 
+    def create_conditional_formatting_rule(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.CreateConditionalFormattingRuleRequest,
+    ) -> dingtalkdoc__1__0_models.CreateConditionalFormattingRuleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.CreateConditionalFormattingRuleHeaders()
+        return self.create_conditional_formatting_rule_with_options(workbook_id, sheet_id, request, headers, runtime)
+
+    async def create_conditional_formatting_rule_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.CreateConditionalFormattingRuleRequest,
+    ) -> dingtalkdoc__1__0_models.CreateConditionalFormattingRuleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.CreateConditionalFormattingRuleHeaders()
+        return await self.create_conditional_formatting_rule_with_options_async(workbook_id, sheet_id, request, headers, runtime)
+
+    def create_conditional_formatting_rule_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.CreateConditionalFormattingRuleRequest,
+        headers: dingtalkdoc__1__0_models.CreateConditionalFormattingRuleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.CreateConditionalFormattingRuleResponse:
+        UtilClient.validate_model(request)
+        workbook_id = OpenApiUtilClient.get_encode_param(workbook_id)
+        sheet_id = OpenApiUtilClient.get_encode_param(sheet_id)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.cell_style):
+            body['cellStyle'] = request.cell_style
+        if not UtilClient.is_unset(request.duplicate_condition):
+            body['duplicateCondition'] = request.duplicate_condition
+        if not UtilClient.is_unset(request.ranges):
+            body['ranges'] = request.ranges
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.CreateConditionalFormattingRuleResponse(),
+            self.do_roarequest('CreateConditionalFormattingRule', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/conditionalFormattingRules', 'json', req, runtime)
+        )
+
+    async def create_conditional_formatting_rule_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.CreateConditionalFormattingRuleRequest,
+        headers: dingtalkdoc__1__0_models.CreateConditionalFormattingRuleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.CreateConditionalFormattingRuleResponse:
+        UtilClient.validate_model(request)
+        workbook_id = OpenApiUtilClient.get_encode_param(workbook_id)
+        sheet_id = OpenApiUtilClient.get_encode_param(sheet_id)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.cell_style):
+            body['cellStyle'] = request.cell_style
+        if not UtilClient.is_unset(request.duplicate_condition):
+            body['duplicateCondition'] = request.duplicate_condition
+        if not UtilClient.is_unset(request.ranges):
+            body['ranges'] = request.ranges
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.CreateConditionalFormattingRuleResponse(),
+            await self.do_roarequest_async('CreateConditionalFormattingRule', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/conditionalFormattingRules', 'json', req, runtime)
+        )
+
     def create_range_protection(
         self,
         workbook_id: str,
@@ -1204,7 +1296,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdoc__1__0_models.DeleteSheetResponse(),
-            self.do_roarequest('DeleteSheet', 'doc_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}', 'none', req, runtime)
+            self.do_roarequest('DeleteSheet', 'doc_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}', 'json', req, runtime)
         )
 
     async def delete_sheet_with_options_async(
@@ -1232,7 +1324,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdoc__1__0_models.DeleteSheetResponse(),
-            await self.do_roarequest_async('DeleteSheet', 'doc_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}', 'none', req, runtime)
+            await self.do_roarequest_async('DeleteSheet', 'doc_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}', 'json', req, runtime)
         )
 
     def delete_workspace_doc(
@@ -3024,6 +3116,8 @@ class Client(OpenApiClient):
             body['backgroundColors'] = request.background_colors
         if not UtilClient.is_unset(request.hyperlinks):
             body['hyperlinks'] = request.hyperlinks
+        if not UtilClient.is_unset(request.number_format):
+            body['numberFormat'] = request.number_format
         if not UtilClient.is_unset(request.values):
             body['values'] = request.values
         real_headers = {}
@@ -3038,7 +3132,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdoc__1__0_models.UpdateRangeResponse(),
-            self.do_roarequest('UpdateRange', 'doc_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/ranges/{range_address}', 'none', req, runtime)
+            self.do_roarequest('UpdateRange', 'doc_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/ranges/{range_address}', 'json', req, runtime)
         )
 
     async def update_range_with_options_async(
@@ -3062,6 +3156,8 @@ class Client(OpenApiClient):
             body['backgroundColors'] = request.background_colors
         if not UtilClient.is_unset(request.hyperlinks):
             body['hyperlinks'] = request.hyperlinks
+        if not UtilClient.is_unset(request.number_format):
+            body['numberFormat'] = request.number_format
         if not UtilClient.is_unset(request.values):
             body['values'] = request.values
         real_headers = {}
@@ -3076,7 +3172,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdoc__1__0_models.UpdateRangeResponse(),
-            await self.do_roarequest_async('UpdateRange', 'doc_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/ranges/{range_address}', 'none', req, runtime)
+            await self.do_roarequest_async('UpdateRange', 'doc_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/ranges/{range_address}', 'json', req, runtime)
         )
 
     def update_sheet(

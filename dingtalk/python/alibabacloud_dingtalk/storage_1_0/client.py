@@ -1335,6 +1335,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetFileUploadInfo', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/files/uploadInfos/query', 'json', req, runtime)
         )
 
+    def get_multipart_file_upload_infos(
+        self,
+        request: dingtalkstorage__1__0_models.GetMultipartFileUploadInfosRequest,
+    ) -> dingtalkstorage__1__0_models.GetMultipartFileUploadInfosResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.GetMultipartFileUploadInfosHeaders()
+        return self.get_multipart_file_upload_infos_with_options(request, headers, runtime)
+
+    async def get_multipart_file_upload_infos_async(
+        self,
+        request: dingtalkstorage__1__0_models.GetMultipartFileUploadInfosRequest,
+    ) -> dingtalkstorage__1__0_models.GetMultipartFileUploadInfosResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.GetMultipartFileUploadInfosHeaders()
+        return await self.get_multipart_file_upload_infos_with_options_async(request, headers, runtime)
+
+    def get_multipart_file_upload_infos_with_options(
+        self,
+        request: dingtalkstorage__1__0_models.GetMultipartFileUploadInfosRequest,
+        headers: dingtalkstorage__1__0_models.GetMultipartFileUploadInfosHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.GetMultipartFileUploadInfosResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.part_numbers):
+            body['partNumbers'] = request.part_numbers
+        if not UtilClient.is_unset(request.upload_key):
+            body['uploadKey'] = request.upload_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.GetMultipartFileUploadInfosResponse(),
+            self.do_roarequest('GetMultipartFileUploadInfos', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/files/multiPartUploadInfos/query', 'json', req, runtime)
+        )
+
+    async def get_multipart_file_upload_infos_with_options_async(
+        self,
+        request: dingtalkstorage__1__0_models.GetMultipartFileUploadInfosRequest,
+        headers: dingtalkstorage__1__0_models.GetMultipartFileUploadInfosHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.GetMultipartFileUploadInfosResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.part_numbers):
+            body['partNumbers'] = request.part_numbers
+        if not UtilClient.is_unset(request.upload_key):
+            body['uploadKey'] = request.upload_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.GetMultipartFileUploadInfosResponse(),
+            await self.do_roarequest_async('GetMultipartFileUploadInfos', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/files/multiPartUploadInfos/query', 'json', req, runtime)
+        )
+
     def get_org(
         self,
         corp_id: str,
@@ -1621,6 +1697,84 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkstorage__1__0_models.GetSpaceResponse(),
             await self.do_roarequest_async('GetSpace', 'storage_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/storage/spaces/{space_id}', 'json', req, runtime)
+        )
+
+    def init_multipart_file_upload(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.InitMultipartFileUploadRequest,
+    ) -> dingtalkstorage__1__0_models.InitMultipartFileUploadResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.InitMultipartFileUploadHeaders()
+        return self.init_multipart_file_upload_with_options(space_id, request, headers, runtime)
+
+    async def init_multipart_file_upload_async(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.InitMultipartFileUploadRequest,
+    ) -> dingtalkstorage__1__0_models.InitMultipartFileUploadResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.InitMultipartFileUploadHeaders()
+        return await self.init_multipart_file_upload_with_options_async(space_id, request, headers, runtime)
+
+    def init_multipart_file_upload_with_options(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.InitMultipartFileUploadRequest,
+        headers: dingtalkstorage__1__0_models.InitMultipartFileUploadHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.InitMultipartFileUploadResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.InitMultipartFileUploadResponse(),
+            self.do_roarequest('InitMultipartFileUpload', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/files/multiPartUploadInfos/init', 'json', req, runtime)
+        )
+
+    async def init_multipart_file_upload_with_options_async(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.InitMultipartFileUploadRequest,
+        headers: dingtalkstorage__1__0_models.InitMultipartFileUploadHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.InitMultipartFileUploadResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.InitMultipartFileUploadResponse(),
+            await self.do_roarequest_async('InitMultipartFileUpload', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/files/multiPartUploadInfos/init', 'json', req, runtime)
         )
 
     def list_dentries(

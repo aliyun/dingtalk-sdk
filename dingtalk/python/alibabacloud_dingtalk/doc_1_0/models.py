@@ -1259,6 +1259,213 @@ class ClearDataResponse(TeaModel):
         return self
 
 
+class CreateConditionalFormattingRuleHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateConditionalFormattingRuleRequestCellStyle(TeaModel):
+    def __init__(
+        self,
+        background_color: str = None,
+    ):
+        # 背景色，使用十六进制颜色表示法，如#ff0000
+        self.background_color = background_color
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.background_color is not None:
+            result['backgroundColor'] = self.background_color
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('backgroundColor') is not None:
+            self.background_color = m.get('backgroundColor')
+        return self
+
+
+class CreateConditionalFormattingRuleRequestDuplicateCondition(TeaModel):
+    def __init__(
+        self,
+        operator: str = None,
+    ):
+        self.operator = operator
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator is not None:
+            result['operator'] = self.operator
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
+        return self
+
+
+class CreateConditionalFormattingRuleRequest(TeaModel):
+    def __init__(
+        self,
+        cell_style: CreateConditionalFormattingRuleRequestCellStyle = None,
+        duplicate_condition: CreateConditionalFormattingRuleRequestDuplicateCondition = None,
+        ranges: List[str] = None,
+        operator_id: str = None,
+    ):
+        # 设定当前配置的规则的单元格样式
+        self.cell_style = cell_style
+        # 重复值规则
+        self.duplicate_condition = duplicate_condition
+        # 条件格式生效的区域。
+        self.ranges = ranges
+        # 操作人unionId
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.cell_style:
+            self.cell_style.validate()
+        if self.duplicate_condition:
+            self.duplicate_condition.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cell_style is not None:
+            result['cellStyle'] = self.cell_style.to_map()
+        if self.duplicate_condition is not None:
+            result['duplicateCondition'] = self.duplicate_condition.to_map()
+        if self.ranges is not None:
+            result['ranges'] = self.ranges
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cellStyle') is not None:
+            temp_model = CreateConditionalFormattingRuleRequestCellStyle()
+            self.cell_style = temp_model.from_map(m['cellStyle'])
+        if m.get('duplicateCondition') is not None:
+            temp_model = CreateConditionalFormattingRuleRequestDuplicateCondition()
+            self.duplicate_condition = temp_model.from_map(m['duplicateCondition'])
+        if m.get('ranges') is not None:
+            self.ranges = m.get('ranges')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class CreateConditionalFormattingRuleResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+    ):
+        # 条件格式ID
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class CreateConditionalFormattingRuleResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateConditionalFormattingRuleResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateConditionalFormattingRuleResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateRangeProtectionHeaders(TeaModel):
     def __init__(
         self,
@@ -2347,15 +2554,47 @@ class DeleteSheetRequest(TeaModel):
         return self
 
 
+class DeleteSheetResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
 class DeleteSheetResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        body: DeleteSheetResponseBody = None,
     ):
         self.headers = headers
+        self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -2365,12 +2604,17 @@ class DeleteSheetResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DeleteSheetResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 
@@ -6785,12 +7029,16 @@ class UpdateRangeRequest(TeaModel):
         self,
         background_colors: List[List[str]] = None,
         hyperlinks: List[List[UpdateRangeRequestHyperlinks]] = None,
+        number_format: str = None,
         values: List[List[str]] = None,
         operator_id: str = None,
     ):
         # 背景色
         self.background_colors = background_colors
+        # 超链接
         self.hyperlinks = hyperlinks
+        # 数字格式
+        self.number_format = number_format
         # 值
         self.values = values
         # 操作人unionId
@@ -6818,6 +7066,8 @@ class UpdateRangeRequest(TeaModel):
                 for k1 in k:
                     l1.append(k1.to_map() if k1 else None)
                 result['hyperlinks'].append(l1)
+        if self.number_format is not None:
+            result['numberFormat'] = self.number_format
         if self.values is not None:
             result['values'] = self.values
         if self.operator_id is not None:
@@ -6836,6 +7086,8 @@ class UpdateRangeRequest(TeaModel):
                     temp_model = UpdateRangeRequestHyperlinks()
                     l1.append(temp_model.from_map(k1))
                 self.hyperlinks.append(l1)
+        if m.get('numberFormat') is not None:
+            self.number_format = m.get('numberFormat')
         if m.get('values') is not None:
             self.values = m.get('values')
         if m.get('operatorId') is not None:
@@ -6843,15 +7095,48 @@ class UpdateRangeRequest(TeaModel):
         return self
 
 
+class UpdateRangeResponseBody(TeaModel):
+    def __init__(
+        self,
+        a_1notation: str = None,
+    ):
+        # 使用A1表示法的Range地址
+        self.a_1notation = a_1notation
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.a_1notation is not None:
+            result['a1Notation'] = self.a_1notation
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('a1Notation') is not None:
+            self.a_1notation = m.get('a1Notation')
+        return self
+
+
 class UpdateRangeResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        body: UpdateRangeResponseBody = None,
     ):
         self.headers = headers
+        self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -6861,12 +7146,17 @@ class UpdateRangeResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateRangeResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 

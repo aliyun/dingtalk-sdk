@@ -2908,6 +2908,220 @@ class QueryPositionsResponse(TeaModel):
         return self
 
 
+class RosterMetaFieldOptionsUpdateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RosterMetaFieldOptionsUpdateRequestBody(TeaModel):
+    def __init__(
+        self,
+        field_code: str = None,
+        group_id: str = None,
+        labels: List[str] = None,
+        modify_type: str = None,
+    ):
+        # 字段fieldCode
+        self.field_code = field_code
+        # 花名册分组id
+        self.group_id = group_id
+        # 需要修改的选项值
+        self.labels = labels
+        # 修改类型，OPTIONS_ADD选项添加，OPTIONS_DELETE选项删除
+        self.modify_type = modify_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_code is not None:
+            result['fieldCode'] = self.field_code
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        if self.labels is not None:
+            result['labels'] = self.labels
+        if self.modify_type is not None:
+            result['modifyType'] = self.modify_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldCode') is not None:
+            self.field_code = m.get('fieldCode')
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        if m.get('labels') is not None:
+            self.labels = m.get('labels')
+        if m.get('modifyType') is not None:
+            self.modify_type = m.get('modifyType')
+        return self
+
+
+class RosterMetaFieldOptionsUpdateRequest(TeaModel):
+    def __init__(
+        self,
+        app_agent_id: int = None,
+        body: RosterMetaFieldOptionsUpdateRequestBody = None,
+    ):
+        self.app_agent_id = app_agent_id
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_agent_id is not None:
+            result['appAgentId'] = self.app_agent_id
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appAgentId') is not None:
+            self.app_agent_id = m.get('appAgentId')
+        if m.get('body') is not None:
+            temp_model = RosterMetaFieldOptionsUpdateRequestBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class RosterMetaFieldOptionsUpdateShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        app_agent_id: int = None,
+        body_shrink: str = None,
+    ):
+        self.app_agent_id = app_agent_id
+        self.body_shrink = body_shrink
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_agent_id is not None:
+            result['appAgentId'] = self.app_agent_id
+        if self.body_shrink is not None:
+            result['body'] = self.body_shrink
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appAgentId') is not None:
+            self.app_agent_id = m.get('appAgentId')
+        if m.get('body') is not None:
+            self.body_shrink = m.get('body')
+        return self
+
+
+class RosterMetaFieldOptionsUpdateResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class RosterMetaFieldOptionsUpdateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: RosterMetaFieldOptionsUpdateResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = RosterMetaFieldOptionsUpdateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SolutionTaskInitHeaders(TeaModel):
     def __init__(
         self,
