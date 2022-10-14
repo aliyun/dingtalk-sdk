@@ -35,6 +35,7 @@ import * as h5package_1_0 from './h5package_1_0/client';
 import * as hrbrain_1_0 from './hrbrain_1_0/client';
 import * as hrm_1_0 from './hrm_1_0/client';
 import * as im_1_0 from './im_1_0/client';
+import * as im_2_0 from './im_2_0/client';
 import * as impaas_1_0 from './impaas_1_0/client';
 import * as industry_1_0 from './industry_1_0/client';
 import * as jzcrm_1_0 from './jzcrm_1_0/client';
@@ -108,6 +109,7 @@ export = {
   hrbrain_1_0,
   hrm_1_0,
   im_1_0,
+  im_2_0,
   impaas_1_0,
   industry_1_0,
   jzcrm_1_0,
