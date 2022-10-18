@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class SendRobotMessageRequest : TeaModel {
         /// <summary>
+        /// 是否@全员
+        /// </summary>
+        [NameInMap("atAll")]
+        [Validation(Required=false)]
+        public bool? AtAll { get; set; }
+
+        /// <summary>
         /// @人的appuid列表
         /// </summary>
         [NameInMap("atAppUids")]
@@ -43,13 +50,6 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
         [NameInMap("channel")]
         [Validation(Required=false)]
         public string Channel { get; set; }
-
-        /// <summary>
-        /// 是否@所有人。  true：是  false：否
-        /// </summary>
-        [NameInMap("isAtAll")]
-        [Validation(Required=false)]
-        public bool? IsAtAll { get; set; }
 
         /// <summary>
         /// 消息模板内容替换参数，多媒体类型

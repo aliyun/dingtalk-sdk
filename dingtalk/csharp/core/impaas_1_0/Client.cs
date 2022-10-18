@@ -1252,6 +1252,10 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AtAll))
+            {
+                body["atAll"] = request.AtAll;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AtAppUids))
             {
                 body["atAppUids"] = request.AtAppUids;
@@ -1271,10 +1275,6 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Channel))
             {
                 body["channel"] = request.Channel;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsAtAll))
-            {
-                body["isAtAll"] = request.IsAtAll;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgMediaIdParamMap))
             {
@@ -1333,6 +1333,10 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AtAll))
+            {
+                body["atAll"] = request.AtAll;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AtAppUids))
             {
                 body["atAppUids"] = request.AtAppUids;
@@ -1352,10 +1356,6 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Channel))
             {
                 body["channel"] = request.Channel;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsAtAll))
-            {
-                body["isAtAll"] = request.IsAtAll;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgMediaIdParamMap))
             {
