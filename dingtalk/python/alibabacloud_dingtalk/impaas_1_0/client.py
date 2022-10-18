@@ -1099,6 +1099,8 @@ class Client(OpenApiClient):
     ) -> dingtalkimpaas__1__0_models.SendRobotMessageResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.at_all):
+            body['atAll'] = request.at_all
         if not UtilClient.is_unset(request.at_app_uids):
             body['atAppUids'] = request.at_app_uids
         if not UtilClient.is_unset(request.at_mobiles):
@@ -1109,8 +1111,6 @@ class Client(OpenApiClient):
             body['atUsers'] = request.at_users
         if not UtilClient.is_unset(request.channel):
             body['channel'] = request.channel
-        if not UtilClient.is_unset(request.is_at_all):
-            body['isAtAll'] = request.is_at_all
         if not UtilClient.is_unset(request.msg_media_id_param_map):
             body['msgMediaIdParamMap'] = request.msg_media_id_param_map
         if not UtilClient.is_unset(request.msg_param_map):
@@ -1151,6 +1151,8 @@ class Client(OpenApiClient):
     ) -> dingtalkimpaas__1__0_models.SendRobotMessageResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.at_all):
+            body['atAll'] = request.at_all
         if not UtilClient.is_unset(request.at_app_uids):
             body['atAppUids'] = request.at_app_uids
         if not UtilClient.is_unset(request.at_mobiles):
@@ -1161,8 +1163,6 @@ class Client(OpenApiClient):
             body['atUsers'] = request.at_users
         if not UtilClient.is_unset(request.channel):
             body['channel'] = request.channel
-        if not UtilClient.is_unset(request.is_at_all):
-            body['isAtAll'] = request.is_at_all
         if not UtilClient.is_unset(request.msg_media_id_param_map):
             body['msgMediaIdParamMap'] = request.msg_media_id_param_map
         if not UtilClient.is_unset(request.msg_param_map):

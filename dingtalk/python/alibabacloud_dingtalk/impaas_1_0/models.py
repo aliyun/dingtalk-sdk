@@ -2029,12 +2029,12 @@ class SendRobotMessageHeaders(TeaModel):
 class SendRobotMessageRequest(TeaModel):
     def __init__(
         self,
+        at_all: bool = None,
         at_app_uids: List[str] = None,
         at_mobiles: List[str] = None,
         at_union_ids: List[str] = None,
         at_users: List[str] = None,
         channel: str = None,
-        is_at_all: bool = None,
         msg_media_id_param_map: Dict[str, Any] = None,
         msg_param_map: Dict[str, Any] = None,
         msg_template_id: str = None,
@@ -2045,6 +2045,8 @@ class SendRobotMessageRequest(TeaModel):
         robot_code: str = None,
         target_open_conversation_id: str = None,
     ):
+        # 是否@全员
+        self.at_all = at_all
         # @人的appuid列表
         self.at_app_uids = at_app_uids
         # @人的手机号列表
@@ -2055,8 +2057,6 @@ class SendRobotMessageRequest(TeaModel):
         self.at_users = at_users
         # 租户channel
         self.channel = channel
-        # 是否@所有人。  true：是  false：否
-        self.is_at_all = is_at_all
         # 消息模板内容替换参数，多媒体类型
         self.msg_media_id_param_map = msg_media_id_param_map
         # 消息模板内容替换参数，普通文本类型
@@ -2085,6 +2085,8 @@ class SendRobotMessageRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.at_all is not None:
+            result['atAll'] = self.at_all
         if self.at_app_uids is not None:
             result['atAppUids'] = self.at_app_uids
         if self.at_mobiles is not None:
@@ -2095,8 +2097,6 @@ class SendRobotMessageRequest(TeaModel):
             result['atUsers'] = self.at_users
         if self.channel is not None:
             result['channel'] = self.channel
-        if self.is_at_all is not None:
-            result['isAtAll'] = self.is_at_all
         if self.msg_media_id_param_map is not None:
             result['msgMediaIdParamMap'] = self.msg_media_id_param_map
         if self.msg_param_map is not None:
@@ -2119,6 +2119,8 @@ class SendRobotMessageRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('atAll') is not None:
+            self.at_all = m.get('atAll')
         if m.get('atAppUids') is not None:
             self.at_app_uids = m.get('atAppUids')
         if m.get('atMobiles') is not None:
@@ -2129,8 +2131,6 @@ class SendRobotMessageRequest(TeaModel):
             self.at_users = m.get('atUsers')
         if m.get('channel') is not None:
             self.channel = m.get('channel')
-        if m.get('isAtAll') is not None:
-            self.is_at_all = m.get('isAtAll')
         if m.get('msgMediaIdParamMap') is not None:
             self.msg_media_id_param_map = m.get('msgMediaIdParamMap')
         if m.get('msgParamMap') is not None:
