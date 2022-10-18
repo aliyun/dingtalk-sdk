@@ -4,6 +4,10 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendRobotMessageRequest extends TeaModel {
+    // 是否@全员
+    @NameInMap("atAll")
+    public Boolean atAll;
+
     // @人的appuid列表
     @NameInMap("atAppUids")
     public java.util.List<String> atAppUids;
@@ -23,10 +27,6 @@ public class SendRobotMessageRequest extends TeaModel {
     // 租户channel
     @NameInMap("channel")
     public String channel;
-
-    // 是否@所有人。  true：是  false：否
-    @NameInMap("isAtAll")
-    public Boolean isAtAll;
 
     // 消息模板内容替换参数，多媒体类型
     @NameInMap("msgMediaIdParamMap")
@@ -69,6 +69,14 @@ public class SendRobotMessageRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
+    public SendRobotMessageRequest setAtAll(Boolean atAll) {
+        this.atAll = atAll;
+        return this;
+    }
+    public Boolean getAtAll() {
+        return this.atAll;
+    }
+
     public SendRobotMessageRequest setAtAppUids(java.util.List<String> atAppUids) {
         this.atAppUids = atAppUids;
         return this;
@@ -107,14 +115,6 @@ public class SendRobotMessageRequest extends TeaModel {
     }
     public String getChannel() {
         return this.channel;
-    }
-
-    public SendRobotMessageRequest setIsAtAll(Boolean isAtAll) {
-        this.isAtAll = isAtAll;
-        return this;
-    }
-    public Boolean getIsAtAll() {
-        return this.isAtAll;
     }
 
     public SendRobotMessageRequest setMsgMediaIdParamMap(java.util.Map<String, ?> msgMediaIdParamMap) {

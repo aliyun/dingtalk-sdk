@@ -587,6 +587,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public SendRobotMessageResponse sendRobotMessageWithOptions(SendRobotMessageRequest request, SendRobotMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.atAll)) {
+            body.put("atAll", request.atAll);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.atAppUids)) {
             body.put("atAppUids", request.atAppUids);
         }
@@ -605,10 +609,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.channel)) {
             body.put("channel", request.channel);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.isAtAll)) {
-            body.put("isAtAll", request.isAtAll);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.msgMediaIdParamMap)) {
