@@ -1206,12 +1206,12 @@ export class SendRobotMessageHeaders extends $tea.Model {
 }
 
 export class SendRobotMessageRequest extends $tea.Model {
+  atAll?: boolean;
   atAppUids?: string[];
   atMobiles?: string[];
   atUnionIds?: string[];
   atUsers?: string[];
   channel?: string;
-  isAtAll?: boolean;
   msgMediaIdParamMap?: { [key: string]: any };
   msgParamMap?: { [key: string]: any };
   msgTemplateId?: string;
@@ -1223,12 +1223,12 @@ export class SendRobotMessageRequest extends $tea.Model {
   targetOpenConversationId?: string;
   static names(): { [key: string]: string } {
     return {
+      atAll: 'atAll',
       atAppUids: 'atAppUids',
       atMobiles: 'atMobiles',
       atUnionIds: 'atUnionIds',
       atUsers: 'atUsers',
       channel: 'channel',
-      isAtAll: 'isAtAll',
       msgMediaIdParamMap: 'msgMediaIdParamMap',
       msgParamMap: 'msgParamMap',
       msgTemplateId: 'msgTemplateId',
@@ -1243,12 +1243,12 @@ export class SendRobotMessageRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      atAll: 'boolean',
       atAppUids: { 'type': 'array', 'itemType': 'string' },
       atMobiles: { 'type': 'array', 'itemType': 'string' },
       atUnionIds: { 'type': 'array', 'itemType': 'string' },
       atUsers: { 'type': 'array', 'itemType': 'string' },
       channel: 'string',
-      isAtAll: 'boolean',
       msgMediaIdParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       msgParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       msgTemplateId: 'string',
@@ -2123,6 +2123,10 @@ export default class Client extends OpenApi {
   async sendRobotMessageWithOptions(request: SendRobotMessageRequest, headers: SendRobotMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendRobotMessageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.atAll)) {
+      body["atAll"] = request.atAll;
+    }
+
     if (!Util.isUnset(request.atAppUids)) {
       body["atAppUids"] = request.atAppUids;
     }
@@ -2141,10 +2145,6 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.channel)) {
       body["channel"] = request.channel;
-    }
-
-    if (!Util.isUnset(request.isAtAll)) {
-      body["isAtAll"] = request.isAtAll;
     }
 
     if (!Util.isUnset(request.msgMediaIdParamMap)) {
