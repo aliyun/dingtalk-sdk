@@ -801,6 +801,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->atAll)) {
+            @$body['atAll'] = $request->atAll;
+        }
         if (!Utils::isUnset($request->atAppUids)) {
             @$body['atAppUids'] = $request->atAppUids;
         }
@@ -815,9 +818,6 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->channel)) {
             @$body['channel'] = $request->channel;
-        }
-        if (!Utils::isUnset($request->isAtAll)) {
-            @$body['isAtAll'] = $request->isAtAll;
         }
         if (!Utils::isUnset($request->msgMediaIdParamMap)) {
             @$body['msgMediaIdParamMap'] = $request->msgMediaIdParamMap;

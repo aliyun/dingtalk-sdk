@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class SendRobotMessageRequest extends Model
 {
     /**
+     * @description 是否@全员
+     *
+     * @var bool
+     */
+    public $atAll;
+
+    /**
      * @description @人的appuid列表
      *
      * @var string[]
@@ -42,13 +49,6 @@ class SendRobotMessageRequest extends Model
      * @var string
      */
     public $channel;
-
-    /**
-     * @description 是否@所有人。  true：是  false：否
-     *
-     * @var bool
-     */
-    public $isAtAll;
 
     /**
      * @description 消息模板内容替换参数，多媒体类型
@@ -113,12 +113,12 @@ class SendRobotMessageRequest extends Model
      */
     public $targetOpenConversationId;
     protected $_name = [
+        'atAll'                    => 'atAll',
         'atAppUids'                => 'atAppUids',
         'atMobiles'                => 'atMobiles',
         'atUnionIds'               => 'atUnionIds',
         'atUsers'                  => 'atUsers',
         'channel'                  => 'channel',
-        'isAtAll'                  => 'isAtAll',
         'msgMediaIdParamMap'       => 'msgMediaIdParamMap',
         'msgParamMap'              => 'msgParamMap',
         'msgTemplateId'            => 'msgTemplateId',
@@ -137,6 +137,9 @@ class SendRobotMessageRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->atAll) {
+            $res['atAll'] = $this->atAll;
+        }
         if (null !== $this->atAppUids) {
             $res['atAppUids'] = $this->atAppUids;
         }
@@ -151,9 +154,6 @@ class SendRobotMessageRequest extends Model
         }
         if (null !== $this->channel) {
             $res['channel'] = $this->channel;
-        }
-        if (null !== $this->isAtAll) {
-            $res['isAtAll'] = $this->isAtAll;
         }
         if (null !== $this->msgMediaIdParamMap) {
             $res['msgMediaIdParamMap'] = $this->msgMediaIdParamMap;
@@ -194,6 +194,9 @@ class SendRobotMessageRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['atAll'])) {
+            $model->atAll = $map['atAll'];
+        }
         if (isset($map['atAppUids'])) {
             if (!empty($map['atAppUids'])) {
                 $model->atAppUids = $map['atAppUids'];
@@ -216,9 +219,6 @@ class SendRobotMessageRequest extends Model
         }
         if (isset($map['channel'])) {
             $model->channel = $map['channel'];
-        }
-        if (isset($map['isAtAll'])) {
-            $model->isAtAll = $map['isAtAll'];
         }
         if (isset($map['msgMediaIdParamMap'])) {
             $model->msgMediaIdParamMap = $map['msgMediaIdParamMap'];
