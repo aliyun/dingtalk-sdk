@@ -2389,6 +2389,94 @@ export class MoveDentryResponse extends $tea.Model {
   }
 }
 
+export class RegisterOpenInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RegisterOpenInfoRequest extends $tea.Model {
+  openInfos?: RegisterOpenInfoRequestOpenInfos[];
+  provider?: string;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openInfos: 'openInfos',
+      provider: 'provider',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openInfos: { 'type': 'array', 'itemType': RegisterOpenInfoRequestOpenInfos },
+      provider: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RegisterOpenInfoResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RegisterOpenInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: RegisterOpenInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: RegisterOpenInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RenameDentryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4609,6 +4697,28 @@ export class MoveDentryResponseBodyDentry extends $tea.Model {
   }
 }
 
+export class RegisterOpenInfoRequestOpenInfos extends $tea.Model {
+  openType?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openType: 'openType',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openType: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RenameDentryResponseBodyDentryProperties extends $tea.Model {
   readOnly?: boolean;
   static names(): { [key: string]: string } {
@@ -5820,6 +5930,47 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<MoveDentryResponse>(await this.doROARequest("MoveDentry", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/move`, "json", req, runtime), new MoveDentryResponse({}));
+  }
+
+  async registerOpenInfo(spaceId: string, dentryId: string, request: RegisterOpenInfoRequest): Promise<RegisterOpenInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RegisterOpenInfoHeaders({ });
+    return await this.registerOpenInfoWithOptions(spaceId, dentryId, request, headers, runtime);
+  }
+
+  async registerOpenInfoWithOptions(spaceId: string, dentryId: string, request: RegisterOpenInfoRequest, headers: RegisterOpenInfoHeaders, runtime: $Util.RuntimeOptions): Promise<RegisterOpenInfoResponse> {
+    Util.validateModel(request);
+    spaceId = OpenApiUtil.getEncodeParam(spaceId);
+    dentryId = OpenApiUtil.getEncodeParam(dentryId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openInfos)) {
+      body["openInfos"] = request.openInfos;
+    }
+
+    if (!Util.isUnset(request.provider)) {
+      body["provider"] = request.provider;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<RegisterOpenInfoResponse>(await this.doROARequest("RegisterOpenInfo", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/openInfos/register`, "json", req, runtime), new RegisterOpenInfoResponse({}));
   }
 
   async renameDentry(spaceId: string, dentryId: string, request: RenameDentryRequest): Promise<RenameDentryResponse> {
