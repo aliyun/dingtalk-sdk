@@ -37,6 +37,13 @@ class data extends Model
     public $platform;
 
     /**
+     * @description 1. 姓名匹配阶段失败 2. 认证阶段失败 3. 实人流程阶段失败 4. 协议签署阶段失败 5. 人脸录入阶段失败 6. 人脸录入阶段用户主动取消 7. 人脸录入阶段成功 8. 人脸识别阶段失败 9. 人脸识别阶段主动取消 10. 人脸识别阶段成功  11.去实人场景
+     *
+     * @var int
+     */
+    public $scene;
+
+    /**
      * @description userId
      *
      * @var string
@@ -47,6 +54,7 @@ class data extends Model
         'invokeTime'           => 'invokeTime',
         'personIdentification' => 'personIdentification',
         'platform'             => 'platform',
+        'scene'                => 'scene',
         'userId'               => 'userId',
     ];
 
@@ -68,6 +76,9 @@ class data extends Model
         }
         if (null !== $this->platform) {
             $res['platform'] = $this->platform;
+        }
+        if (null !== $this->scene) {
+            $res['scene'] = $this->scene;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -95,6 +106,9 @@ class data extends Model
         }
         if (isset($map['platform'])) {
             $model->platform = $map['platform'];
+        }
+        if (isset($map['scene'])) {
+            $model->scene = $map['scene'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];

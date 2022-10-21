@@ -92,9 +92,12 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeactivateDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeptHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeptRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeviceOrgHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeviceOrgRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeviceOrgResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeviceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteGuardianHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteGuardianRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteGuardianResponse;
@@ -290,6 +293,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateRemoteClassDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateUniversityCourseGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateUniversityCourseGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateUniversityCourseGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\VPaasProxyHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\VPaasProxyRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\VPaasProxyResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -1986,6 +1992,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeleteDeptResponse::fromMap($this->doROARequest('DeleteDept', 'edu_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/edu/depts/' . $deptId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DeleteDeviceRequest $request
+     *
+     * @return DeleteDeviceResponse
+     */
+    public function deleteDevice($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteDeviceHeaders([]);
+
+        return $this->deleteDeviceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DeleteDeviceRequest $request
+     * @param DeleteDeviceHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return DeleteDeviceResponse
+     */
+    public function deleteDeviceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->sn)) {
+            @$query['sn'] = $request->sn;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return DeleteDeviceResponse::fromMap($this->doROARequest('DeleteDevice', 'edu_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/edu/vpaas/devices', 'json', $req, $runtime));
     }
 
     /**
@@ -5274,5 +5322,53 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateUniversityCourseGroupResponse::fromMap($this->doROARequest('UpdateUniversityCourseGroup', 'edu_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/edu/universities/courseGroups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param VPaasProxyRequest $request
+     *
+     * @return VPaasProxyResponse
+     */
+    public function vPaasProxy($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new VPaasProxyHeaders([]);
+
+        return $this->vPaasProxyWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param VPaasProxyRequest $request
+     * @param VPaasProxyHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return VPaasProxyResponse
+     */
+    public function vPaasProxyWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->actionCode)) {
+            @$body['actionCode'] = $request->actionCode;
+        }
+        if (!Utils::isUnset($request->params)) {
+            @$body['params'] = $request->params;
+        }
+        if (!Utils::isUnset($request->publicKey)) {
+            @$body['publicKey'] = $request->publicKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return VPaasProxyResponse::fromMap($this->doROARequest('VPaasProxy', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/vpaas/proxy', 'json', $req, $runtime));
     }
 }

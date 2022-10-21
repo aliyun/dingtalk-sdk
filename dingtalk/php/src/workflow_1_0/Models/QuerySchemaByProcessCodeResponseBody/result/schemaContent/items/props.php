@@ -69,9 +69,9 @@ class props extends Model
     public $bizType;
 
     /**
-     * @description 套件内子组件可见性。
+     * @description 套件内子组件可见性
      *
-     * @var bool
+     * @var bool[]
      */
     public $childFieldVisible;
 

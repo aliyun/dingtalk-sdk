@@ -1863,6 +1863,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->personIdentification)) {
             @$body['personIdentification'] = $request->personIdentification;
         }
+        if (!Utils::isUnset($request->scene)) {
+            @$body['scene'] = $request->scene;
+        }
         if (!Utils::isUnset($request->toTime)) {
             @$body['toTime'] = $request->toTime;
         }
