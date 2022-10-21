@@ -62,6 +62,10 @@ public class GetRealPeopleRecordsResponseBody extends TeaModel {
         @NameInMap("platform")
         public Integer platform;
 
+        // 1. 姓名匹配阶段失败 2. 认证阶段失败 3. 实人流程阶段失败 4. 协议签署阶段失败 5. 人脸录入阶段失败 6. 人脸录入阶段用户主动取消 7. 人脸录入阶段成功 8. 人脸识别阶段失败 9. 人脸识别阶段主动取消 10. 人脸识别阶段成功  11.去实人场景
+        @NameInMap("scene")
+        public Integer scene;
+
         // userId
         @NameInMap("userId")
         public String userId;
@@ -101,6 +105,14 @@ public class GetRealPeopleRecordsResponseBody extends TeaModel {
         }
         public Integer getPlatform() {
             return this.platform;
+        }
+
+        public GetRealPeopleRecordsResponseBodyData setScene(Integer scene) {
+            this.scene = scene;
+            return this;
+        }
+        public Integer getScene() {
+            return this.scene;
         }
 
         public GetRealPeopleRecordsResponseBodyData setUserId(String userId) {

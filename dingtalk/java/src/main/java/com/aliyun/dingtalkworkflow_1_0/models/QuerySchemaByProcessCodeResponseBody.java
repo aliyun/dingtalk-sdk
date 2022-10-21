@@ -325,9 +325,9 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
         @NameInMap("bizType")
         public String bizType;
 
-        // 套件内子组件可见性。
+        // 套件内子组件可见性
         @NameInMap("childFieldVisible")
-        public Boolean childFieldVisible;
+        public java.util.Map<String, Boolean> childFieldVisible;
 
         // 内部联系人choice，1表示多选，0表示单选。
         @NameInMap("choice")
@@ -542,11 +542,11 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
             return this.bizType;
         }
 
-        public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps setChildFieldVisible(Boolean childFieldVisible) {
+        public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps setChildFieldVisible(java.util.Map<String, Boolean> childFieldVisible) {
             this.childFieldVisible = childFieldVisible;
             return this;
         }
-        public Boolean getChildFieldVisible() {
+        public java.util.Map<String, Boolean> getChildFieldVisible() {
             return this.childFieldVisible;
         }
 

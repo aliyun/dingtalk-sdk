@@ -1218,6 +1218,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("personIdentification", request.personIdentification);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.scene)) {
+            body.put("scene", request.scene);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.toTime)) {
             body.put("toTime", request.toTime);
         }
