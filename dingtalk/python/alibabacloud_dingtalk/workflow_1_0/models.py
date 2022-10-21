@@ -9271,7 +9271,7 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps(TeaModel
         behavior_linkage: List[QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkage] = None,
         biz_alias: str = None,
         biz_type: str = None,
-        child_field_visible: bool = None,
+        child_field_visible: Dict[str, bool] = None,
         choice: int = None,
         common_biz_type: str = None,
         disabled: bool = None,
@@ -9325,7 +9325,7 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps(TeaModel
         self.biz_alias = biz_alias
         # 业务套件类型。
         self.biz_type = biz_type
-        # 套件内子组件可见性。
+        # 套件内子组件可见性
         self.child_field_visible = child_field_visible
         # 内部联系人choice，1表示多选，0表示单选。
         self.choice = choice
@@ -11470,8 +11470,8 @@ class UpdateIntegratedTaskRequestTasks(TeaModel):
         task_id: int = None,
     ):
         # 当status为COMPLETED时，必须指定任务结果：
-        # agree：同意
-        # refuse：拒绝
+        # AGREE：同意
+        # REFUSE：拒绝
         # 
         # 说明 当status为CANCELED时，不需要传result。
         self.result = result

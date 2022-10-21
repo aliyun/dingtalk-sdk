@@ -6453,6 +6453,7 @@ class GetRealPeopleRecordsRequest(TeaModel):
         max_results: int = None,
         next_token: int = None,
         person_identification: int = None,
+        scene: int = None,
         to_time: int = None,
         user_ids: List[str] = None,
     ):
@@ -6466,6 +6467,8 @@ class GetRealPeopleRecordsRequest(TeaModel):
         self.next_token = next_token
         # 实人认证结果 1-成功 2-失败
         self.person_identification = person_identification
+        # 1. 姓名匹配阶段失败 2. 认证阶段失败 3. 实人流程阶段失败 4. 协议签署阶段失败 5. 人脸录入阶段失败 6. 人脸录入阶段用户主动取消 7. 人脸录入阶段成功 8. 人脸识别阶段失败 9. 人脸识别阶段主动取消 10. 人脸识别阶段成功  11.去实人场景
+        self.scene = scene
         # 记录结束时间(毫秒时间戳)
         self.to_time = to_time
         # 员工userIds
@@ -6490,6 +6493,8 @@ class GetRealPeopleRecordsRequest(TeaModel):
             result['nextToken'] = self.next_token
         if self.person_identification is not None:
             result['personIdentification'] = self.person_identification
+        if self.scene is not None:
+            result['scene'] = self.scene
         if self.to_time is not None:
             result['toTime'] = self.to_time
         if self.user_ids is not None:
@@ -6508,6 +6513,8 @@ class GetRealPeopleRecordsRequest(TeaModel):
             self.next_token = m.get('nextToken')
         if m.get('personIdentification') is not None:
             self.person_identification = m.get('personIdentification')
+        if m.get('scene') is not None:
+            self.scene = m.get('scene')
         if m.get('toTime') is not None:
             self.to_time = m.get('toTime')
         if m.get('userIds') is not None:
@@ -6522,6 +6529,7 @@ class GetRealPeopleRecordsResponseBodyData(TeaModel):
         invoke_time: int = None,
         person_identification: int = None,
         platform: int = None,
+        scene: int = None,
         user_id: str = None,
     ):
         # agentId
@@ -6532,6 +6540,8 @@ class GetRealPeopleRecordsResponseBodyData(TeaModel):
         self.person_identification = person_identification
         # 平台 0-Android 或 1-iOS
         self.platform = platform
+        # 1. 姓名匹配阶段失败 2. 认证阶段失败 3. 实人流程阶段失败 4. 协议签署阶段失败 5. 人脸录入阶段失败 6. 人脸录入阶段用户主动取消 7. 人脸录入阶段成功 8. 人脸识别阶段失败 9. 人脸识别阶段主动取消 10. 人脸识别阶段成功  11.去实人场景
+        self.scene = scene
         # userId
         self.user_id = user_id
 
@@ -6552,6 +6562,8 @@ class GetRealPeopleRecordsResponseBodyData(TeaModel):
             result['personIdentification'] = self.person_identification
         if self.platform is not None:
             result['platform'] = self.platform
+        if self.scene is not None:
+            result['scene'] = self.scene
         if self.user_id is not None:
             result['userId'] = self.user_id
         return result
@@ -6566,6 +6578,8 @@ class GetRealPeopleRecordsResponseBodyData(TeaModel):
             self.person_identification = m.get('personIdentification')
         if m.get('platform') is not None:
             self.platform = m.get('platform')
+        if m.get('scene') is not None:
+            self.scene = m.get('scene')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
         return self

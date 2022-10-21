@@ -2491,6 +2491,8 @@ class Client(OpenApiClient):
             body['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.person_identification):
             body['personIdentification'] = request.person_identification
+        if not UtilClient.is_unset(request.scene):
+            body['scene'] = request.scene
         if not UtilClient.is_unset(request.to_time):
             body['toTime'] = request.to_time
         if not UtilClient.is_unset(request.user_ids):
@@ -2527,6 +2529,8 @@ class Client(OpenApiClient):
             body['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.person_identification):
             body['personIdentification'] = request.person_identification
+        if not UtilClient.is_unset(request.scene):
+            body['scene'] = request.scene
         if not UtilClient.is_unset(request.to_time):
             body['toTime'] = request.to_time
         if not UtilClient.is_unset(request.user_ids):
