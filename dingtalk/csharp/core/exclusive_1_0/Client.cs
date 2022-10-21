@@ -2626,6 +2626,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             {
                 body["personIdentification"] = request.PersonIdentification;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scene))
+            {
+                body["scene"] = request.Scene;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToTime))
             {
                 body["toTime"] = request.ToTime;
@@ -2674,6 +2678,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PersonIdentification))
             {
                 body["personIdentification"] = request.PersonIdentification;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scene))
+            {
+                body["scene"] = request.Scene;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToTime))
             {

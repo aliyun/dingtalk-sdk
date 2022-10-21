@@ -305,11 +305,11 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                         public string BizType { get; set; }
 
                         /// <summary>
-                        /// 套件内子组件可见性。
+                        /// 套件内子组件可见性
                         /// </summary>
                         [NameInMap("childFieldVisible")]
                         [Validation(Required=false)]
-                        public bool? ChildFieldVisible { get; set; }
+                        public Dictionary<string, bool?> ChildFieldVisible { get; set; }
 
                         /// <summary>
                         /// 内部联系人choice，1表示多选，0表示单选。

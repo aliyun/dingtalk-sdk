@@ -22,8 +22,8 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         public class UpdateIntegratedTaskRequestTasks : TeaModel {
             /// <summary>
             /// 当status为COMPLETED时，必须指定任务结果：
-            /// agree：同意
-            /// refuse：拒绝
+            /// AGREE：同意
+            /// REFUSE：拒绝
             /// 
             /// 说明 当status为CANCELED时，不需要传result。
             /// </summary>
