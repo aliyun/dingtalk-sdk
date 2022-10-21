@@ -3069,6 +3069,7 @@ export class GetRealPeopleRecordsRequest extends $tea.Model {
   maxResults?: number;
   nextToken?: number;
   personIdentification?: number;
+  scene?: number;
   toTime?: number;
   userIds?: string[];
   static names(): { [key: string]: string } {
@@ -3078,6 +3079,7 @@ export class GetRealPeopleRecordsRequest extends $tea.Model {
       maxResults: 'maxResults',
       nextToken: 'nextToken',
       personIdentification: 'personIdentification',
+      scene: 'scene',
       toTime: 'toTime',
       userIds: 'userIds',
     };
@@ -3090,6 +3092,7 @@ export class GetRealPeopleRecordsRequest extends $tea.Model {
       maxResults: 'number',
       nextToken: 'number',
       personIdentification: 'number',
+      scene: 'number',
       toTime: 'number',
       userIds: { 'type': 'array', 'itemType': 'string' },
     };
@@ -6518,6 +6521,7 @@ export class GetRealPeopleRecordsResponseBodyData extends $tea.Model {
   invokeTime?: number;
   personIdentification?: number;
   platform?: number;
+  scene?: number;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6525,6 +6529,7 @@ export class GetRealPeopleRecordsResponseBodyData extends $tea.Model {
       invokeTime: 'invokeTime',
       personIdentification: 'personIdentification',
       platform: 'platform',
+      scene: 'scene',
       userId: 'userId',
     };
   }
@@ -6535,6 +6540,7 @@ export class GetRealPeopleRecordsResponseBodyData extends $tea.Model {
       invokeTime: 'number',
       personIdentification: 'number',
       platform: 'number',
+      scene: 'number',
       userId: 'string',
     };
   }
@@ -8504,6 +8510,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.personIdentification)) {
       body["personIdentification"] = request.personIdentification;
+    }
+
+    if (!Util.isUnset(request.scene)) {
+      body["scene"] = request.scene;
     }
 
     if (!Util.isUnset(request.toTime)) {

@@ -2958,6 +2958,88 @@ export class DeleteDeptResponse extends $tea.Model {
   }
 }
 
+export class DeleteDeviceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteDeviceRequest extends $tea.Model {
+  sn?: string;
+  static names(): { [key: string]: string } {
+    return {
+      sn: 'sn',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sn: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteDeviceResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteDeviceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DeleteDeviceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DeleteDeviceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteDeviceOrgHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -9049,6 +9131,97 @@ export class UpdateUniversityCourseGroupResponse extends $tea.Model {
   }
 }
 
+export class VPaasProxyHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class VPaasProxyRequest extends $tea.Model {
+  actionCode?: string;
+  params?: string;
+  publicKey?: string;
+  static names(): { [key: string]: string } {
+    return {
+      actionCode: 'actionCode',
+      params: 'params',
+      publicKey: 'publicKey',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actionCode: 'string',
+      params: 'string',
+      publicKey: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class VPaasProxyResponseBody extends $tea.Model {
+  result?: string;
+  ticket?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      ticket: 'ticket',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+      ticket: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class VPaasProxyResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: VPaasProxyResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: VPaasProxyResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchCreateRequestDataCardRuleItemParamList extends $tea.Model {
   cardRuleAttr?: string;
   cardTaskCode?: string;
@@ -13901,6 +14074,35 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteDeptResponse>(await this.doROARequest("DeleteDept", "edu_1.0", "HTTP", "DELETE", "AK", `/v1.0/edu/depts/${deptId}`, "json", req, runtime), new DeleteDeptResponse({}));
   }
 
+  async deleteDevice(request: DeleteDeviceRequest): Promise<DeleteDeviceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteDeviceHeaders({ });
+    return await this.deleteDeviceWithOptions(request, headers, runtime);
+  }
+
+  async deleteDeviceWithOptions(request: DeleteDeviceRequest, headers: DeleteDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteDeviceResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.sn)) {
+      query["sn"] = request.sn;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<DeleteDeviceResponse>(await this.doROARequest("DeleteDevice", "edu_1.0", "HTTP", "DELETE", "AK", `/v1.0/edu/vpaas/devices`, "json", req, runtime), new DeleteDeviceResponse({}));
+  }
+
   async deleteDeviceOrg(request: DeleteDeviceOrgRequest): Promise<DeleteDeviceOrgResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteDeviceOrgHeaders({ });
@@ -16451,6 +16653,43 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateUniversityCourseGroupResponse>(await this.doROARequest("UpdateUniversityCourseGroup", "edu_1.0", "HTTP", "PUT", "AK", `/v1.0/edu/universities/courseGroups`, "json", req, runtime), new UpdateUniversityCourseGroupResponse({}));
+  }
+
+  async vPaasProxy(request: VPaasProxyRequest): Promise<VPaasProxyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new VPaasProxyHeaders({ });
+    return await this.vPaasProxyWithOptions(request, headers, runtime);
+  }
+
+  async vPaasProxyWithOptions(request: VPaasProxyRequest, headers: VPaasProxyHeaders, runtime: $Util.RuntimeOptions): Promise<VPaasProxyResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.actionCode)) {
+      body["actionCode"] = request.actionCode;
+    }
+
+    if (!Util.isUnset(request.params)) {
+      body["params"] = request.params;
+    }
+
+    if (!Util.isUnset(request.publicKey)) {
+      body["publicKey"] = request.publicKey;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<VPaasProxyResponse>(await this.doROARequest("VPaasProxy", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/vpaas/proxy`, "json", req, runtime), new VPaasProxyResponse({}));
   }
 
 }

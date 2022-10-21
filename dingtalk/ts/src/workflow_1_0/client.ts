@@ -5938,7 +5938,7 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps e
   behaviorLinkage?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkage[];
   bizAlias?: string;
   bizType?: string;
-  childFieldVisible?: boolean;
+  childFieldVisible?: { [key: string]: boolean };
   choice?: number;
   commonBizType?: string;
   disabled?: boolean;
@@ -6035,7 +6035,7 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps e
       behaviorLinkage: { 'type': 'array', 'itemType': QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkage },
       bizAlias: 'string',
       bizType: 'string',
-      childFieldVisible: 'boolean',
+      childFieldVisible: { 'type': 'map', 'keyType': 'string', 'valueType': 'boolean' },
       choice: 'number',
       commonBizType: 'string',
       disabled: 'boolean',
