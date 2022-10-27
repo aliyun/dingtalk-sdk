@@ -384,6 +384,10 @@ public class SyncTripOrderRequest extends TeaModel {
         @NameInMap("departTime")
         public String departTime;
 
+        // 目的地城市
+        @NameInMap("destinationCity")
+        public String destinationCity;
+
         // 目的地城市码
         @NameInMap("destinationCityCode")
         public String destinationCityCode;
@@ -403,6 +407,10 @@ public class SyncTripOrderRequest extends TeaModel {
         // 酒店名称
         @NameInMap("hotelName")
         public String hotelName;
+
+        // 出发地城市
+        @NameInMap("originCity")
+        public String originCity;
 
         // 出发地城市码
         @NameInMap("originCityCode")
@@ -517,6 +525,14 @@ public class SyncTripOrderRequest extends TeaModel {
             return this.departTime;
         }
 
+        public SyncTripOrderRequestOrderDetails setDestinationCity(String destinationCity) {
+            this.destinationCity = destinationCity;
+            return this;
+        }
+        public String getDestinationCity() {
+            return this.destinationCity;
+        }
+
         public SyncTripOrderRequestOrderDetails setDestinationCityCode(String destinationCityCode) {
             this.destinationCityCode = destinationCityCode;
             return this;
@@ -555,6 +571,14 @@ public class SyncTripOrderRequest extends TeaModel {
         }
         public String getHotelName() {
             return this.hotelName;
+        }
+
+        public SyncTripOrderRequestOrderDetails setOriginCity(String originCity) {
+            this.originCity = originCity;
+            return this;
+        }
+        public String getOriginCity() {
+            return this.originCity;
         }
 
         public SyncTripOrderRequestOrderDetails setOriginCityCode(String originCityCode) {
