@@ -163,6 +163,13 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
             public string DepartTime { get; set; }
 
             /// <summary>
+            /// 目的地城市
+            /// </summary>
+            [NameInMap("destinationCity")]
+            [Validation(Required=false)]
+            public string DestinationCity { get; set; }
+
+            /// <summary>
             /// 目的地城市码
             /// </summary>
             [NameInMap("destinationCityCode")]
@@ -229,6 +236,13 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
             [NameInMap("hotelName")]
             [Validation(Required=false)]
             public string HotelName { get; set; }
+
+            /// <summary>
+            /// 出发地城市
+            /// </summary>
+            [NameInMap("originCity")]
+            [Validation(Required=false)]
+            public string OriginCity { get; set; }
 
             /// <summary>
             /// 出发地城市码
