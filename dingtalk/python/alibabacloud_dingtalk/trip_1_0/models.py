@@ -533,11 +533,13 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
         check_in_time: str = None,
         check_out_time: str = None,
         depart_time: str = None,
+        destination_city: str = None,
         destination_city_code: str = None,
         destination_station: str = None,
         hotel_address: str = None,
         hotel_location: SyncTripOrderRequestOrderDetailsHotelLocation = None,
         hotel_name: str = None,
+        origin_city: str = None,
         origin_city_code: str = None,
         origin_station: str = None,
         room_count: int = None,
@@ -566,6 +568,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
         self.check_out_time = check_out_time
         # 出发时间
         self.depart_time = depart_time
+        # 目的地城市
+        self.destination_city = destination_city
         # 目的地城市码
         self.destination_city_code = destination_city_code
         # 目的站名称
@@ -576,6 +580,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
         self.hotel_location = hotel_location
         # 酒店名称
         self.hotel_name = hotel_name
+        # 出发地城市
+        self.origin_city = origin_city
         # 出发地城市码
         self.origin_city_code = origin_city_code
         # 出发站名称
@@ -625,6 +631,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
             result['checkOutTime'] = self.check_out_time
         if self.depart_time is not None:
             result['departTime'] = self.depart_time
+        if self.destination_city is not None:
+            result['destinationCity'] = self.destination_city
         if self.destination_city_code is not None:
             result['destinationCityCode'] = self.destination_city_code
         if self.destination_station is not None:
@@ -635,6 +643,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
             result['hotelLocation'] = self.hotel_location.to_map()
         if self.hotel_name is not None:
             result['hotelName'] = self.hotel_name
+        if self.origin_city is not None:
+            result['originCity'] = self.origin_city
         if self.origin_city_code is not None:
             result['originCityCode'] = self.origin_city_code
         if self.origin_station is not None:
@@ -677,6 +687,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
             self.check_out_time = m.get('checkOutTime')
         if m.get('departTime') is not None:
             self.depart_time = m.get('departTime')
+        if m.get('destinationCity') is not None:
+            self.destination_city = m.get('destinationCity')
         if m.get('destinationCityCode') is not None:
             self.destination_city_code = m.get('destinationCityCode')
         if m.get('destinationStation') is not None:
@@ -688,6 +700,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
             self.hotel_location = temp_model.from_map(m['hotelLocation'])
         if m.get('hotelName') is not None:
             self.hotel_name = m.get('hotelName')
+        if m.get('originCity') is not None:
+            self.origin_city = m.get('originCity')
         if m.get('originCityCode') is not None:
             self.origin_city_code = m.get('originCityCode')
         if m.get('originStation') is not None:
