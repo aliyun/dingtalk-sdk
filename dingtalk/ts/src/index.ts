@@ -53,6 +53,7 @@ import * as project_integration_1_0 from './project_integration_1_0/client';
 import * as rcs_call_1_0 from './rcs_call_1_0/client';
 import * as resident_1_0 from './resident_1_0/client';
 import * as robot_1_0 from './robot_1_0/client';
+import * as rooms_1_0 from './rooms_1_0/client';
 import * as search_1_0 from './search_1_0/client';
 import * as service_group_1_0 from './service_group_1_0/client';
 import * as smart_device_1_0 from './smart_device_1_0/client';
@@ -127,6 +128,7 @@ export = {
   rcs_call_1_0,
   resident_1_0,
   robot_1_0,
+  rooms_1_0,
   search_1_0,
   service_group_1_0,
   smart_device_1_0,

@@ -1,0 +1,1 @@
+module.exports = require('./dist').rooms_1_0;

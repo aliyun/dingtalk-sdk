@@ -442,11 +442,13 @@ export class SyncTripOrderRequestOrderDetails extends $tea.Model {
   checkInTime?: string;
   checkOutTime?: string;
   departTime?: string;
+  destinationCity?: string;
   destinationCityCode?: string;
   destinationStation?: string;
   hotelAddress?: string;
   hotelLocation?: SyncTripOrderRequestOrderDetailsHotelLocation;
   hotelName?: string;
+  originCity?: string;
   originCityCode?: string;
   originStation?: string;
   roomCount?: number;
@@ -468,11 +470,13 @@ export class SyncTripOrderRequestOrderDetails extends $tea.Model {
       checkInTime: 'checkInTime',
       checkOutTime: 'checkOutTime',
       departTime: 'departTime',
+      destinationCity: 'destinationCity',
       destinationCityCode: 'destinationCityCode',
       destinationStation: 'destinationStation',
       hotelAddress: 'hotelAddress',
       hotelLocation: 'hotelLocation',
       hotelName: 'hotelName',
+      originCity: 'originCity',
       originCityCode: 'originCityCode',
       originStation: 'originStation',
       roomCount: 'roomCount',
@@ -497,11 +501,13 @@ export class SyncTripOrderRequestOrderDetails extends $tea.Model {
       checkInTime: 'string',
       checkOutTime: 'string',
       departTime: 'string',
+      destinationCity: 'string',
       destinationCityCode: 'string',
       destinationStation: 'string',
       hotelAddress: 'string',
       hotelLocation: SyncTripOrderRequestOrderDetailsHotelLocation,
       hotelName: 'string',
+      originCity: 'string',
       originCityCode: 'string',
       originStation: 'string',
       roomCount: 'number',
