@@ -66,6 +66,13 @@ class orderDetails extends Model
     public $departTime;
 
     /**
+     * @description 目的地城市
+     *
+     * @var string
+     */
+    public $destinationCity;
+
+    /**
      * @description 目的地城市码
      *
      * @var string
@@ -99,6 +106,13 @@ class orderDetails extends Model
      * @var string
      */
     public $hotelName;
+
+    /**
+     * @description 出发地城市
+     *
+     * @var string
+     */
+    public $originCity;
 
     /**
      * @description 出发地城市码
@@ -185,11 +199,13 @@ class orderDetails extends Model
         'checkInTime'         => 'checkInTime',
         'checkOutTime'        => 'checkOutTime',
         'departTime'          => 'departTime',
+        'destinationCity'     => 'destinationCity',
         'destinationCityCode' => 'destinationCityCode',
         'destinationStation'  => 'destinationStation',
         'hotelAddress'        => 'hotelAddress',
         'hotelLocation'       => 'hotelLocation',
         'hotelName'           => 'hotelName',
+        'originCity'          => 'originCity',
         'originCityCode'      => 'originCityCode',
         'originStation'       => 'originStation',
         'roomCount'           => 'roomCount',
@@ -234,6 +250,9 @@ class orderDetails extends Model
         if (null !== $this->departTime) {
             $res['departTime'] = $this->departTime;
         }
+        if (null !== $this->destinationCity) {
+            $res['destinationCity'] = $this->destinationCity;
+        }
         if (null !== $this->destinationCityCode) {
             $res['destinationCityCode'] = $this->destinationCityCode;
         }
@@ -248,6 +267,9 @@ class orderDetails extends Model
         }
         if (null !== $this->hotelName) {
             $res['hotelName'] = $this->hotelName;
+        }
+        if (null !== $this->originCity) {
+            $res['originCity'] = $this->originCity;
         }
         if (null !== $this->originCityCode) {
             $res['originCityCode'] = $this->originCityCode;
@@ -318,6 +340,9 @@ class orderDetails extends Model
         if (isset($map['departTime'])) {
             $model->departTime = $map['departTime'];
         }
+        if (isset($map['destinationCity'])) {
+            $model->destinationCity = $map['destinationCity'];
+        }
         if (isset($map['destinationCityCode'])) {
             $model->destinationCityCode = $map['destinationCityCode'];
         }
@@ -332,6 +357,9 @@ class orderDetails extends Model
         }
         if (isset($map['hotelName'])) {
             $model->hotelName = $map['hotelName'];
+        }
+        if (isset($map['originCity'])) {
+            $model->originCity = $map['originCity'];
         }
         if (isset($map['originCityCode'])) {
             $model->originCityCode = $map['originCityCode'];
