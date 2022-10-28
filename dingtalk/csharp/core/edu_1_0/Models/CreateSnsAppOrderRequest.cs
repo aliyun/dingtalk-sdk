@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
-    public class CreateAppOrderRequest : TeaModel {
+    public class CreateSnsAppOrderRequest : TeaModel {
         /// <summary>
         /// 实际金额，单位分。
         /// </summary>
@@ -35,8 +35,8 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         /// </summary>
         [NameInMap("detailList")]
         [Validation(Required=false)]
-        public List<CreateAppOrderRequestDetailList> DetailList { get; set; }
-        public class CreateAppOrderRequestDetailList : TeaModel {
+        public List<CreateSnsAppOrderRequestDetailList> DetailList { get; set; }
+        public class CreateSnsAppOrderRequestDetailList : TeaModel {
             /// <summary>
             /// 扩展字段。
             /// </summary>
@@ -94,13 +94,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [NameInMap("merchantOrderNo")]
         [Validation(Required=false)]
         public string MerchantOrderNo { get; set; }
-
-        /// <summary>
-        /// 用户唯一id。
-        /// </summary>
-        [NameInMap("outerUserId")]
-        [Validation(Required=false)]
-        public string OuterUserId { get; set; }
 
         /// <summary>
         /// 签名。

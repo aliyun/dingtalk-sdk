@@ -1266,6 +1266,72 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             return TeaModel.ToObject<CreateRelationMetaResponse>(await DoROARequestAsync("CreateRelationMeta", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/relations/metas/create", "json", req, runtime));
         }
 
+        public DeleteCrmCustomObjectDataResponse DeleteCrmCustomObjectData(string instanceId, DeleteCrmCustomObjectDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteCrmCustomObjectDataHeaders headers = new DeleteCrmCustomObjectDataHeaders();
+            return DeleteCrmCustomObjectDataWithOptions(instanceId, request, headers, runtime);
+        }
+
+        public async Task<DeleteCrmCustomObjectDataResponse> DeleteCrmCustomObjectDataAsync(string instanceId, DeleteCrmCustomObjectDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteCrmCustomObjectDataHeaders headers = new DeleteCrmCustomObjectDataHeaders();
+            return await DeleteCrmCustomObjectDataWithOptionsAsync(instanceId, request, headers, runtime);
+        }
+
+        public DeleteCrmCustomObjectDataResponse DeleteCrmCustomObjectDataWithOptions(string instanceId, DeleteCrmCustomObjectDataRequest request, DeleteCrmCustomObjectDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            instanceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(instanceId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormCode))
+            {
+                query["formCode"] = request.FormCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<DeleteCrmCustomObjectDataResponse>(DoROARequest("DeleteCrmCustomObjectData", "crm_1.0", "HTTP", "DELETE", "AK", "/v1.0/crm/customObjectDatas/instances/" + instanceId, "json", req, runtime));
+        }
+
+        public async Task<DeleteCrmCustomObjectDataResponse> DeleteCrmCustomObjectDataWithOptionsAsync(string instanceId, DeleteCrmCustomObjectDataRequest request, DeleteCrmCustomObjectDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            instanceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(instanceId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormCode))
+            {
+                query["formCode"] = request.FormCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<DeleteCrmCustomObjectDataResponse>(await DoROARequestAsync("DeleteCrmCustomObjectData", "crm_1.0", "HTTP", "DELETE", "AK", "/v1.0/crm/customObjectDatas/instances/" + instanceId, "json", req, runtime));
+        }
+
         public DeleteCrmFormInstanceResponse DeleteCrmFormInstance(string instanceId, DeleteCrmFormInstanceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

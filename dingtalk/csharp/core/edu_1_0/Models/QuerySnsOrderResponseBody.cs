@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
-    public class QueryOrderResponseBody : TeaModel {
+    public class QuerySnsOrderResponseBody : TeaModel {
         [NameInMap("actualAmount")]
         [Validation(Required=false)]
         public long? ActualAmount { get; set; }

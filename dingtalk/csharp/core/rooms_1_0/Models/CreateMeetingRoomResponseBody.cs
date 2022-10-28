@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
-        public long? Result { get; set; }
+        public string Result { get; set; }
 
     }
 
