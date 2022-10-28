@@ -567,6 +567,86 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CancelOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/orders/cancel', 'json', req, runtime)
         )
 
+    def cancel_sns_order(
+        self,
+        request: dingtalkedu__1__0_models.CancelSnsOrderRequest,
+    ) -> dingtalkedu__1__0_models.CancelSnsOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CancelSnsOrderHeaders()
+        return self.cancel_sns_order_with_options(request, headers, runtime)
+
+    async def cancel_sns_order_async(
+        self,
+        request: dingtalkedu__1__0_models.CancelSnsOrderRequest,
+    ) -> dingtalkedu__1__0_models.CancelSnsOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CancelSnsOrderHeaders()
+        return await self.cancel_sns_order_with_options_async(request, headers, runtime)
+
+    def cancel_sns_order_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CancelSnsOrderRequest,
+        headers: dingtalkedu__1__0_models.CancelSnsOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CancelSnsOrderResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.alipay_app_id):
+            body['alipayAppId'] = request.alipay_app_id
+        if not UtilClient.is_unset(request.merchant_id):
+            body['merchantId'] = request.merchant_id
+        if not UtilClient.is_unset(request.order_no):
+            body['orderNo'] = request.order_no
+        if not UtilClient.is_unset(request.signature):
+            body['signature'] = request.signature
+        if not UtilClient.is_unset(request.timestamp):
+            body['timestamp'] = request.timestamp
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CancelSnsOrderResponse(),
+            self.do_roarequest('CancelSnsOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/snsUserOrders/cancel', 'json', req, runtime)
+        )
+
+    async def cancel_sns_order_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CancelSnsOrderRequest,
+        headers: dingtalkedu__1__0_models.CancelSnsOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CancelSnsOrderResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.alipay_app_id):
+            body['alipayAppId'] = request.alipay_app_id
+        if not UtilClient.is_unset(request.merchant_id):
+            body['merchantId'] = request.merchant_id
+        if not UtilClient.is_unset(request.order_no):
+            body['orderNo'] = request.order_no
+        if not UtilClient.is_unset(request.signature):
+            body['signature'] = request.signature
+        if not UtilClient.is_unset(request.timestamp):
+            body['timestamp'] = request.timestamp
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CancelSnsOrderResponse(),
+            await self.do_roarequest_async('CancelSnsOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/snsUserOrders/cancel', 'json', req, runtime)
+        )
+
     def cancel_user_order(
         self,
         request: dingtalkedu__1__0_models.CancelUserOrderRequest,
@@ -829,14 +909,14 @@ class Client(OpenApiClient):
             body['merchantId'] = request.merchant_id
         if not UtilClient.is_unset(request.merchant_order_no):
             body['merchantOrderNo'] = request.merchant_order_no
+        if not UtilClient.is_unset(request.outer_user_id):
+            body['outerUserId'] = request.outer_user_id
         if not UtilClient.is_unset(request.signature):
             body['signature'] = request.signature
         if not UtilClient.is_unset(request.subject):
             body['subject'] = request.subject
         if not UtilClient.is_unset(request.timestamp):
             body['timestamp'] = request.timestamp
-        if not UtilClient.is_unset(request.user_id):
-            body['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -873,14 +953,14 @@ class Client(OpenApiClient):
             body['merchantId'] = request.merchant_id
         if not UtilClient.is_unset(request.merchant_order_no):
             body['merchantOrderNo'] = request.merchant_order_no
+        if not UtilClient.is_unset(request.outer_user_id):
+            body['outerUserId'] = request.outer_user_id
         if not UtilClient.is_unset(request.signature):
             body['signature'] = request.signature
         if not UtilClient.is_unset(request.subject):
             body['subject'] = request.subject
         if not UtilClient.is_unset(request.timestamp):
             body['timestamp'] = request.timestamp
-        if not UtilClient.is_unset(request.user_id):
-            body['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1949,6 +2029,106 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkedu__1__0_models.CreateSectionConfigResponse(),
             await self.do_roarequest_async('CreateSectionConfig', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/universities/sectionConfigs', 'json', req, runtime)
+        )
+
+    def create_sns_app_order(
+        self,
+        request: dingtalkedu__1__0_models.CreateSnsAppOrderRequest,
+    ) -> dingtalkedu__1__0_models.CreateSnsAppOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateSnsAppOrderHeaders()
+        return self.create_sns_app_order_with_options(request, headers, runtime)
+
+    async def create_sns_app_order_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateSnsAppOrderRequest,
+    ) -> dingtalkedu__1__0_models.CreateSnsAppOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateSnsAppOrderHeaders()
+        return await self.create_sns_app_order_with_options_async(request, headers, runtime)
+
+    def create_sns_app_order_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CreateSnsAppOrderRequest,
+        headers: dingtalkedu__1__0_models.CreateSnsAppOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateSnsAppOrderResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.actual_amount):
+            body['actualAmount'] = request.actual_amount
+        if not UtilClient.is_unset(request.alipay_app_id):
+            body['alipayAppId'] = request.alipay_app_id
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.detail_list):
+            body['detailList'] = request.detail_list
+        if not UtilClient.is_unset(request.label_amount):
+            body['labelAmount'] = request.label_amount
+        if not UtilClient.is_unset(request.merchant_id):
+            body['merchantId'] = request.merchant_id
+        if not UtilClient.is_unset(request.merchant_order_no):
+            body['merchantOrderNo'] = request.merchant_order_no
+        if not UtilClient.is_unset(request.signature):
+            body['signature'] = request.signature
+        if not UtilClient.is_unset(request.subject):
+            body['subject'] = request.subject
+        if not UtilClient.is_unset(request.timestamp):
+            body['timestamp'] = request.timestamp
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateSnsAppOrderResponse(),
+            self.do_roarequest('CreateSnsAppOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/snsAppOrders', 'json', req, runtime)
+        )
+
+    async def create_sns_app_order_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateSnsAppOrderRequest,
+        headers: dingtalkedu__1__0_models.CreateSnsAppOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateSnsAppOrderResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.actual_amount):
+            body['actualAmount'] = request.actual_amount
+        if not UtilClient.is_unset(request.alipay_app_id):
+            body['alipayAppId'] = request.alipay_app_id
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.detail_list):
+            body['detailList'] = request.detail_list
+        if not UtilClient.is_unset(request.label_amount):
+            body['labelAmount'] = request.label_amount
+        if not UtilClient.is_unset(request.merchant_id):
+            body['merchantId'] = request.merchant_id
+        if not UtilClient.is_unset(request.merchant_order_no):
+            body['merchantOrderNo'] = request.merchant_order_no
+        if not UtilClient.is_unset(request.signature):
+            body['signature'] = request.signature
+        if not UtilClient.is_unset(request.subject):
+            body['subject'] = request.subject
+        if not UtilClient.is_unset(request.timestamp):
+            body['timestamp'] = request.timestamp
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateSnsAppOrderResponse(),
+            await self.do_roarequest_async('CreateSnsAppOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/snsAppOrders', 'json', req, runtime)
         )
 
     def create_sts_token(
@@ -5951,6 +6131,82 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkedu__1__0_models.QuerySchoolUserFaceResponse(),
             await self.do_roarequest_async('QuerySchoolUserFace', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/schools/faces', 'json', req, runtime)
+        )
+
+    def query_sns_order(
+        self,
+        request: dingtalkedu__1__0_models.QuerySnsOrderRequest,
+    ) -> dingtalkedu__1__0_models.QuerySnsOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QuerySnsOrderHeaders()
+        return self.query_sns_order_with_options(request, headers, runtime)
+
+    async def query_sns_order_async(
+        self,
+        request: dingtalkedu__1__0_models.QuerySnsOrderRequest,
+    ) -> dingtalkedu__1__0_models.QuerySnsOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QuerySnsOrderHeaders()
+        return await self.query_sns_order_with_options_async(request, headers, runtime)
+
+    def query_sns_order_with_options(
+        self,
+        request: dingtalkedu__1__0_models.QuerySnsOrderRequest,
+        headers: dingtalkedu__1__0_models.QuerySnsOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QuerySnsOrderResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.alipay_app_id):
+            query['alipayAppId'] = request.alipay_app_id
+        if not UtilClient.is_unset(request.merchant_id):
+            query['merchantId'] = request.merchant_id
+        if not UtilClient.is_unset(request.order_no):
+            query['orderNo'] = request.order_no
+        if not UtilClient.is_unset(request.signature):
+            query['signature'] = request.signature
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QuerySnsOrderResponse(),
+            self.do_roarequest('QuerySnsOrder', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/snsOrders', 'json', req, runtime)
+        )
+
+    async def query_sns_order_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.QuerySnsOrderRequest,
+        headers: dingtalkedu__1__0_models.QuerySnsOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QuerySnsOrderResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.alipay_app_id):
+            query['alipayAppId'] = request.alipay_app_id
+        if not UtilClient.is_unset(request.merchant_id):
+            query['merchantId'] = request.merchant_id
+        if not UtilClient.is_unset(request.order_no):
+            query['orderNo'] = request.order_no
+        if not UtilClient.is_unset(request.signature):
+            query['signature'] = request.signature
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QuerySnsOrderResponse(),
+            await self.do_roarequest_async('QuerySnsOrder', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/snsOrders', 'json', req, runtime)
         )
 
     def query_statistics_data(

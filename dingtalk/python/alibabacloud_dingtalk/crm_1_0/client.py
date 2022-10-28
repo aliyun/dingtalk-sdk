@@ -1059,6 +1059,76 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateRelationMeta', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/relations/metas/create', 'json', req, runtime)
         )
 
+    def delete_crm_custom_object_data(
+        self,
+        instance_id: str,
+        request: dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataRequest,
+    ) -> dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataHeaders()
+        return self.delete_crm_custom_object_data_with_options(instance_id, request, headers, runtime)
+
+    async def delete_crm_custom_object_data_async(
+        self,
+        instance_id: str,
+        request: dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataRequest,
+    ) -> dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataHeaders()
+        return await self.delete_crm_custom_object_data_with_options_async(instance_id, request, headers, runtime)
+
+    def delete_crm_custom_object_data_with_options(
+        self,
+        instance_id: str,
+        request: dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataRequest,
+        headers: dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataResponse:
+        UtilClient.validate_model(request)
+        instance_id = OpenApiUtilClient.get_encode_param(instance_id)
+        query = {}
+        if not UtilClient.is_unset(request.form_code):
+            query['formCode'] = request.form_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataResponse(),
+            self.do_roarequest('DeleteCrmCustomObjectData', 'crm_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/crm/customObjectDatas/instances/{instance_id}', 'json', req, runtime)
+        )
+
+    async def delete_crm_custom_object_data_with_options_async(
+        self,
+        instance_id: str,
+        request: dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataRequest,
+        headers: dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataResponse:
+        UtilClient.validate_model(request)
+        instance_id = OpenApiUtilClient.get_encode_param(instance_id)
+        query = {}
+        if not UtilClient.is_unset(request.form_code):
+            query['formCode'] = request.form_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataResponse(),
+            await self.do_roarequest_async('DeleteCrmCustomObjectData', 'crm_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/crm/customObjectDatas/instances/{instance_id}', 'json', req, runtime)
+        )
+
     def delete_crm_form_instance(
         self,
         instance_id: str,

@@ -1678,6 +1678,199 @@ class CancelOrderResponse(TeaModel):
         return self
 
 
+class CancelSnsOrderHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CancelSnsOrderRequest(TeaModel):
+    def __init__(
+        self,
+        alipay_app_id: str = None,
+        merchant_id: str = None,
+        order_no: str = None,
+        signature: str = None,
+        timestamp: int = None,
+    ):
+        # 支付宝应用id。
+        self.alipay_app_id = alipay_app_id
+        # 商户id。
+        self.merchant_id = merchant_id
+        # 订单号。
+        self.order_no = order_no
+        # 签名。
+        self.signature = signature
+        # 时间戳。
+        self.timestamp = timestamp
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.alipay_app_id is not None:
+            result['alipayAppId'] = self.alipay_app_id
+        if self.merchant_id is not None:
+            result['merchantId'] = self.merchant_id
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        if self.signature is not None:
+            result['signature'] = self.signature
+        if self.timestamp is not None:
+            result['timestamp'] = self.timestamp
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('alipayAppId') is not None:
+            self.alipay_app_id = m.get('alipayAppId')
+        if m.get('merchantId') is not None:
+            self.merchant_id = m.get('merchantId')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        if m.get('signature') is not None:
+            self.signature = m.get('signature')
+        if m.get('timestamp') is not None:
+            self.timestamp = m.get('timestamp')
+        return self
+
+
+class CancelSnsOrderResponseBody(TeaModel):
+    def __init__(
+        self,
+        alipay_app_id: str = None,
+        merchant_id: str = None,
+        merchant_order_no: str = None,
+        order_no: str = None,
+        pay_status: int = None,
+        refund_status: int = None,
+        total_amount: int = None,
+    ):
+        # 支付宝应用id。
+        self.alipay_app_id = alipay_app_id
+        # 商户id。
+        self.merchant_id = merchant_id
+        # 商户订单号。
+        self.merchant_order_no = merchant_order_no
+        # 订单号。
+        self.order_no = order_no
+        self.pay_status = pay_status
+        self.refund_status = refund_status
+        self.total_amount = total_amount
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.alipay_app_id is not None:
+            result['alipayAppId'] = self.alipay_app_id
+        if self.merchant_id is not None:
+            result['merchantId'] = self.merchant_id
+        if self.merchant_order_no is not None:
+            result['merchantOrderNo'] = self.merchant_order_no
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        if self.pay_status is not None:
+            result['payStatus'] = self.pay_status
+        if self.refund_status is not None:
+            result['refundStatus'] = self.refund_status
+        if self.total_amount is not None:
+            result['totalAmount'] = self.total_amount
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('alipayAppId') is not None:
+            self.alipay_app_id = m.get('alipayAppId')
+        if m.get('merchantId') is not None:
+            self.merchant_id = m.get('merchantId')
+        if m.get('merchantOrderNo') is not None:
+            self.merchant_order_no = m.get('merchantOrderNo')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        if m.get('payStatus') is not None:
+            self.pay_status = m.get('payStatus')
+        if m.get('refundStatus') is not None:
+            self.refund_status = m.get('refundStatus')
+        if m.get('totalAmount') is not None:
+            self.total_amount = m.get('totalAmount')
+        return self
+
+
+class CancelSnsOrderResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CancelSnsOrderResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CancelSnsOrderResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CancelUserOrderHeaders(TeaModel):
     def __init__(
         self,
@@ -2250,10 +2443,10 @@ class CreateAppOrderRequest(TeaModel):
         label_amount: int = None,
         merchant_id: str = None,
         merchant_order_no: str = None,
+        outer_user_id: str = None,
         signature: str = None,
         subject: str = None,
         timestamp: int = None,
-        user_id: str = None,
     ):
         # 实际金额，单位分。
         self.actual_amount = actual_amount
@@ -2269,14 +2462,14 @@ class CreateAppOrderRequest(TeaModel):
         self.merchant_id = merchant_id
         # 商户订单号。
         self.merchant_order_no = merchant_order_no
+        # 用户唯一id。
+        self.outer_user_id = outer_user_id
         # 签名。
         self.signature = signature
         # 订单标题。
         self.subject = subject
         # 时间戳。
         self.timestamp = timestamp
-        # 用户唯一id。
-        self.user_id = user_id
 
     def validate(self):
         if self.detail_list:
@@ -2306,14 +2499,14 @@ class CreateAppOrderRequest(TeaModel):
             result['merchantId'] = self.merchant_id
         if self.merchant_order_no is not None:
             result['merchantOrderNo'] = self.merchant_order_no
+        if self.outer_user_id is not None:
+            result['outerUserId'] = self.outer_user_id
         if self.signature is not None:
             result['signature'] = self.signature
         if self.subject is not None:
             result['subject'] = self.subject
         if self.timestamp is not None:
             result['timestamp'] = self.timestamp
-        if self.user_id is not None:
-            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -2335,14 +2528,14 @@ class CreateAppOrderRequest(TeaModel):
             self.merchant_id = m.get('merchantId')
         if m.get('merchantOrderNo') is not None:
             self.merchant_order_no = m.get('merchantOrderNo')
+        if m.get('outerUserId') is not None:
+            self.outer_user_id = m.get('outerUserId')
         if m.get('signature') is not None:
             self.signature = m.get('signature')
         if m.get('subject') is not None:
             self.subject = m.get('subject')
         if m.get('timestamp') is not None:
             self.timestamp = m.get('timestamp')
-        if m.get('userId') is not None:
-            self.user_id = m.get('userId')
         return self
 
 
@@ -5311,6 +5504,294 @@ class CreateSectionConfigResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CreateSectionConfigResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateSnsAppOrderHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateSnsAppOrderRequestDetailList(TeaModel):
+    def __init__(
+        self,
+        feature: str = None,
+        goods_id: str = None,
+        goods_name: str = None,
+        goods_price: int = None,
+        goods_quantity: int = None,
+    ):
+        # 扩展字段。
+        self.feature = feature
+        # 商品id。
+        self.goods_id = goods_id
+        # 商品名称。
+        self.goods_name = goods_name
+        # 商品价格，单位分。
+        self.goods_price = goods_price
+        # 商品数量。
+        self.goods_quantity = goods_quantity
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.feature is not None:
+            result['feature'] = self.feature
+        if self.goods_id is not None:
+            result['goodsId'] = self.goods_id
+        if self.goods_name is not None:
+            result['goodsName'] = self.goods_name
+        if self.goods_price is not None:
+            result['goodsPrice'] = self.goods_price
+        if self.goods_quantity is not None:
+            result['goodsQuantity'] = self.goods_quantity
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('feature') is not None:
+            self.feature = m.get('feature')
+        if m.get('goodsId') is not None:
+            self.goods_id = m.get('goodsId')
+        if m.get('goodsName') is not None:
+            self.goods_name = m.get('goodsName')
+        if m.get('goodsPrice') is not None:
+            self.goods_price = m.get('goodsPrice')
+        if m.get('goodsQuantity') is not None:
+            self.goods_quantity = m.get('goodsQuantity')
+        return self
+
+
+class CreateSnsAppOrderRequest(TeaModel):
+    def __init__(
+        self,
+        actual_amount: int = None,
+        alipay_app_id: str = None,
+        biz_code: int = None,
+        detail_list: List[CreateSnsAppOrderRequestDetailList] = None,
+        label_amount: int = None,
+        merchant_id: str = None,
+        merchant_order_no: str = None,
+        signature: str = None,
+        subject: str = None,
+        timestamp: int = None,
+    ):
+        # 实际金额，单位分。
+        self.actual_amount = actual_amount
+        # 支付宝应用id。
+        self.alipay_app_id = alipay_app_id
+        # 业务编码。
+        self.biz_code = biz_code
+        # 订单明细列表。
+        self.detail_list = detail_list
+        # 标签金额，单位分。
+        self.label_amount = label_amount
+        # 商户id。
+        self.merchant_id = merchant_id
+        # 商户订单号。
+        self.merchant_order_no = merchant_order_no
+        # 签名。
+        self.signature = signature
+        # 订单标题。
+        self.subject = subject
+        # 时间戳。
+        self.timestamp = timestamp
+
+    def validate(self):
+        if self.detail_list:
+            for k in self.detail_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.actual_amount is not None:
+            result['actualAmount'] = self.actual_amount
+        if self.alipay_app_id is not None:
+            result['alipayAppId'] = self.alipay_app_id
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
+        result['detailList'] = []
+        if self.detail_list is not None:
+            for k in self.detail_list:
+                result['detailList'].append(k.to_map() if k else None)
+        if self.label_amount is not None:
+            result['labelAmount'] = self.label_amount
+        if self.merchant_id is not None:
+            result['merchantId'] = self.merchant_id
+        if self.merchant_order_no is not None:
+            result['merchantOrderNo'] = self.merchant_order_no
+        if self.signature is not None:
+            result['signature'] = self.signature
+        if self.subject is not None:
+            result['subject'] = self.subject
+        if self.timestamp is not None:
+            result['timestamp'] = self.timestamp
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actualAmount') is not None:
+            self.actual_amount = m.get('actualAmount')
+        if m.get('alipayAppId') is not None:
+            self.alipay_app_id = m.get('alipayAppId')
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
+        self.detail_list = []
+        if m.get('detailList') is not None:
+            for k in m.get('detailList'):
+                temp_model = CreateSnsAppOrderRequestDetailList()
+                self.detail_list.append(temp_model.from_map(k))
+        if m.get('labelAmount') is not None:
+            self.label_amount = m.get('labelAmount')
+        if m.get('merchantId') is not None:
+            self.merchant_id = m.get('merchantId')
+        if m.get('merchantOrderNo') is not None:
+            self.merchant_order_no = m.get('merchantOrderNo')
+        if m.get('signature') is not None:
+            self.signature = m.get('signature')
+        if m.get('subject') is not None:
+            self.subject = m.get('subject')
+        if m.get('timestamp') is not None:
+            self.timestamp = m.get('timestamp')
+        return self
+
+
+class CreateSnsAppOrderResponseBody(TeaModel):
+    def __init__(
+        self,
+        actual_amount: int = None,
+        alipay_app_id: str = None,
+        body: str = None,
+        merchant_id: str = None,
+        merchant_order_no: str = None,
+        order_no: str = None,
+    ):
+        # 实际金额，单位分。
+        self.actual_amount = actual_amount
+        # 支付宝应用id。
+        self.alipay_app_id = alipay_app_id
+        # 订单信息。
+        self.body = body
+        # 商户id。
+        self.merchant_id = merchant_id
+        # 商户订单号。
+        self.merchant_order_no = merchant_order_no
+        # 订单号。
+        self.order_no = order_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.actual_amount is not None:
+            result['actualAmount'] = self.actual_amount
+        if self.alipay_app_id is not None:
+            result['alipayAppId'] = self.alipay_app_id
+        if self.body is not None:
+            result['body'] = self.body
+        if self.merchant_id is not None:
+            result['merchantId'] = self.merchant_id
+        if self.merchant_order_no is not None:
+            result['merchantOrderNo'] = self.merchant_order_no
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actualAmount') is not None:
+            self.actual_amount = m.get('actualAmount')
+        if m.get('alipayAppId') is not None:
+            self.alipay_app_id = m.get('alipayAppId')
+        if m.get('body') is not None:
+            self.body = m.get('body')
+        if m.get('merchantId') is not None:
+            self.merchant_id = m.get('merchantId')
+        if m.get('merchantOrderNo') is not None:
+            self.merchant_order_no = m.get('merchantOrderNo')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        return self
+
+
+class CreateSnsAppOrderResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateSnsAppOrderResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateSnsAppOrderResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -15450,6 +15931,7 @@ class QueryOrderResponseBody(TeaModel):
         merchant_order_no: str = None,
         order_no: str = None,
         order_type: str = None,
+        outer_uid: str = None,
         pay_id: str = None,
         pay_logon_id: str = None,
         pay_status: int = None,
@@ -15460,7 +15942,6 @@ class QueryOrderResponseBody(TeaModel):
         refund_time: int = None,
         subject: str = None,
         trade_no: str = None,
-        user_id: str = None,
     ):
         self.actual_amount = actual_amount
         # 支付宝应用id。
@@ -15482,6 +15963,8 @@ class QueryOrderResponseBody(TeaModel):
         self.order_no = order_no
         # 订单类型。
         self.order_type = order_type
+        # 用户唯一id。
+        self.outer_uid = outer_uid
         # 买家支付id。
         self.pay_id = pay_id
         # 买家支付登陆id。
@@ -15499,8 +15982,6 @@ class QueryOrderResponseBody(TeaModel):
         self.subject = subject
         # 交易流水号。
         self.trade_no = trade_no
-        # 用户唯一id。
-        self.user_id = user_id
 
     def validate(self):
         pass
@@ -15533,6 +16014,8 @@ class QueryOrderResponseBody(TeaModel):
             result['orderNo'] = self.order_no
         if self.order_type is not None:
             result['orderType'] = self.order_type
+        if self.outer_uid is not None:
+            result['outerUid'] = self.outer_uid
         if self.pay_id is not None:
             result['payId'] = self.pay_id
         if self.pay_logon_id is not None:
@@ -15553,8 +16036,6 @@ class QueryOrderResponseBody(TeaModel):
             result['subject'] = self.subject
         if self.trade_no is not None:
             result['tradeNo'] = self.trade_no
-        if self.user_id is not None:
-            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -15581,6 +16062,8 @@ class QueryOrderResponseBody(TeaModel):
             self.order_no = m.get('orderNo')
         if m.get('orderType') is not None:
             self.order_type = m.get('orderType')
+        if m.get('outerUid') is not None:
+            self.outer_uid = m.get('outerUid')
         if m.get('payId') is not None:
             self.pay_id = m.get('payId')
         if m.get('payLogonId') is not None:
@@ -15601,8 +16084,6 @@ class QueryOrderResponseBody(TeaModel):
             self.subject = m.get('subject')
         if m.get('tradeNo') is not None:
             self.trade_no = m.get('tradeNo')
-        if m.get('userId') is not None:
-            self.user_id = m.get('userId')
         return self
 
 
@@ -17205,6 +17686,295 @@ class QuerySchoolUserFaceResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QuerySchoolUserFaceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QuerySnsOrderHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QuerySnsOrderRequest(TeaModel):
+    def __init__(
+        self,
+        alipay_app_id: str = None,
+        merchant_id: str = None,
+        order_no: str = None,
+        signature: str = None,
+    ):
+        # 支付宝应用id。
+        self.alipay_app_id = alipay_app_id
+        # 商户id。
+        self.merchant_id = merchant_id
+        # 订单号。
+        self.order_no = order_no
+        # 签名。
+        self.signature = signature
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.alipay_app_id is not None:
+            result['alipayAppId'] = self.alipay_app_id
+        if self.merchant_id is not None:
+            result['merchantId'] = self.merchant_id
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        if self.signature is not None:
+            result['signature'] = self.signature
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('alipayAppId') is not None:
+            self.alipay_app_id = m.get('alipayAppId')
+        if m.get('merchantId') is not None:
+            self.merchant_id = m.get('merchantId')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        if m.get('signature') is not None:
+            self.signature = m.get('signature')
+        return self
+
+
+class QuerySnsOrderResponseBody(TeaModel):
+    def __init__(
+        self,
+        actual_amount: int = None,
+        alipay_app_id: str = None,
+        close_time: int = None,
+        create_time: int = None,
+        feature: str = None,
+        label_amount: int = None,
+        merchant_id: str = None,
+        merchant_merge_order_no: str = None,
+        merchant_order_no: str = None,
+        order_no: str = None,
+        order_type: str = None,
+        outer_uid: str = None,
+        pay_id: str = None,
+        pay_logon_id: str = None,
+        pay_status: int = None,
+        pay_time: int = None,
+        pay_type: str = None,
+        refund_amount: int = None,
+        refund_status: int = None,
+        refund_time: int = None,
+        subject: str = None,
+        trade_no: str = None,
+    ):
+        self.actual_amount = actual_amount
+        # 支付宝应用id。
+        self.alipay_app_id = alipay_app_id
+        # 订单关单时间。
+        self.close_time = close_time
+        # 订单创建时间。
+        self.create_time = create_time
+        # 扩展字段。
+        self.feature = feature
+        self.label_amount = label_amount
+        # 商户id。
+        self.merchant_id = merchant_id
+        # 商户聚合支付订单号。
+        self.merchant_merge_order_no = merchant_merge_order_no
+        # 商户订单号。
+        self.merchant_order_no = merchant_order_no
+        # 订单号。
+        self.order_no = order_no
+        # 订单类型。
+        self.order_type = order_type
+        # 用户唯一id。
+        self.outer_uid = outer_uid
+        # 买家支付id。
+        self.pay_id = pay_id
+        # 买家支付登陆id。
+        self.pay_logon_id = pay_logon_id
+        self.pay_status = pay_status
+        # 订单支付时间。
+        self.pay_time = pay_time
+        # 买家支付渠道类型。
+        self.pay_type = pay_type
+        self.refund_amount = refund_amount
+        self.refund_status = refund_status
+        # 订单退款时间。
+        self.refund_time = refund_time
+        # 订单标题。
+        self.subject = subject
+        # 交易流水号。
+        self.trade_no = trade_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.actual_amount is not None:
+            result['actualAmount'] = self.actual_amount
+        if self.alipay_app_id is not None:
+            result['alipayAppId'] = self.alipay_app_id
+        if self.close_time is not None:
+            result['closeTime'] = self.close_time
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.feature is not None:
+            result['feature'] = self.feature
+        if self.label_amount is not None:
+            result['labelAmount'] = self.label_amount
+        if self.merchant_id is not None:
+            result['merchantId'] = self.merchant_id
+        if self.merchant_merge_order_no is not None:
+            result['merchantMergeOrderNo'] = self.merchant_merge_order_no
+        if self.merchant_order_no is not None:
+            result['merchantOrderNo'] = self.merchant_order_no
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        if self.order_type is not None:
+            result['orderType'] = self.order_type
+        if self.outer_uid is not None:
+            result['outerUid'] = self.outer_uid
+        if self.pay_id is not None:
+            result['payId'] = self.pay_id
+        if self.pay_logon_id is not None:
+            result['payLogonId'] = self.pay_logon_id
+        if self.pay_status is not None:
+            result['payStatus'] = self.pay_status
+        if self.pay_time is not None:
+            result['payTime'] = self.pay_time
+        if self.pay_type is not None:
+            result['payType'] = self.pay_type
+        if self.refund_amount is not None:
+            result['refundAmount'] = self.refund_amount
+        if self.refund_status is not None:
+            result['refundStatus'] = self.refund_status
+        if self.refund_time is not None:
+            result['refundTime'] = self.refund_time
+        if self.subject is not None:
+            result['subject'] = self.subject
+        if self.trade_no is not None:
+            result['tradeNo'] = self.trade_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actualAmount') is not None:
+            self.actual_amount = m.get('actualAmount')
+        if m.get('alipayAppId') is not None:
+            self.alipay_app_id = m.get('alipayAppId')
+        if m.get('closeTime') is not None:
+            self.close_time = m.get('closeTime')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('feature') is not None:
+            self.feature = m.get('feature')
+        if m.get('labelAmount') is not None:
+            self.label_amount = m.get('labelAmount')
+        if m.get('merchantId') is not None:
+            self.merchant_id = m.get('merchantId')
+        if m.get('merchantMergeOrderNo') is not None:
+            self.merchant_merge_order_no = m.get('merchantMergeOrderNo')
+        if m.get('merchantOrderNo') is not None:
+            self.merchant_order_no = m.get('merchantOrderNo')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        if m.get('orderType') is not None:
+            self.order_type = m.get('orderType')
+        if m.get('outerUid') is not None:
+            self.outer_uid = m.get('outerUid')
+        if m.get('payId') is not None:
+            self.pay_id = m.get('payId')
+        if m.get('payLogonId') is not None:
+            self.pay_logon_id = m.get('payLogonId')
+        if m.get('payStatus') is not None:
+            self.pay_status = m.get('payStatus')
+        if m.get('payTime') is not None:
+            self.pay_time = m.get('payTime')
+        if m.get('payType') is not None:
+            self.pay_type = m.get('payType')
+        if m.get('refundAmount') is not None:
+            self.refund_amount = m.get('refundAmount')
+        if m.get('refundStatus') is not None:
+            self.refund_status = m.get('refundStatus')
+        if m.get('refundTime') is not None:
+            self.refund_time = m.get('refundTime')
+        if m.get('subject') is not None:
+            self.subject = m.get('subject')
+        if m.get('tradeNo') is not None:
+            self.trade_no = m.get('tradeNo')
+        return self
+
+
+class QuerySnsOrderResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QuerySnsOrderResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QuerySnsOrderResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

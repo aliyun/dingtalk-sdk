@@ -175,7 +175,7 @@ class CreateMeetingRoomRequest(TeaModel):
 class CreateMeetingRoomResponseBody(TeaModel):
     def __init__(
         self,
-        result: int = None,
+        result: str = None,
     ):
         # 创建的会议室id
         self.result = result
