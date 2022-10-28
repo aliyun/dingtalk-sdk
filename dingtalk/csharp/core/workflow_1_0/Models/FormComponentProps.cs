@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class FormComponentProps : TeaModel {
         /// <summary>
+        /// 明细控件按钮显示文案
+        /// </summary>
+        [NameInMap("actionName")]
+        [Validation(Required=false)]
+        public string ActionName { get; set; }
+
+        /// <summary>
         /// 地址控件模式city省市,district省市区,street省市区街道
         /// </summary>
         [NameInMap("addressModel")]
@@ -141,6 +148,13 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [NameInMap("link")]
         [Validation(Required=false)]
         public string Link { get; set; }
+
+        /// <summary>
+        /// 文本控件支持的最大长度
+        /// </summary>
+        [NameInMap("maxLength")]
+        [Validation(Required=false)]
+        public int? MaxLength { get; set; }
 
         /// <summary>
         /// 电话控件支持的类型
