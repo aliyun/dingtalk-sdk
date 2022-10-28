@@ -6,7 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class QueryOrderResponseBody extends Model
+class QuerySnsOrderResponseBody extends Model
 {
     /**
      * @var int
@@ -256,7 +256,7 @@ class QueryOrderResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return QueryOrderResponseBody
+     * @return QuerySnsOrderResponseBody
      */
     public static function fromMap($map = [])
     {

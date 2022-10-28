@@ -2,20 +2,20 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class CreateMeetingRoomResponseBody extends Model
+class DeleteCrmCustomObjectDataRequest extends Model
 {
     /**
-     * @description 创建的会议室id
+     * @description 自定义对象表单code。
      *
      * @var string
      */
-    public $result;
+    public $formCode;
     protected $_name = [
-        'result' => 'result',
+        'formCode' => 'formCode',
     ];
 
     public function validate()
@@ -25,8 +25,8 @@ class CreateMeetingRoomResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->result) {
-            $res['result'] = $this->result;
+        if (null !== $this->formCode) {
+            $res['formCode'] = $this->formCode;
         }
 
         return $res;
@@ -35,13 +35,13 @@ class CreateMeetingRoomResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return CreateMeetingRoomResponseBody
+     * @return DeleteCrmCustomObjectDataRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['result'])) {
-            $model->result = $map['result'];
+        if (isset($map['formCode'])) {
+            $model->formCode = $map['formCode'];
         }
 
         return $model;

@@ -4,10 +4,10 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateAppOrderRequest\detailList;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateSnsAppOrderRequest\detailList;
 use AlibabaCloud\Tea\Model;
 
-class CreateAppOrderRequest extends Model
+class CreateSnsAppOrderRequest extends Model
 {
     /**
      * @description 实际金额，单位分。
@@ -59,13 +59,6 @@ class CreateAppOrderRequest extends Model
     public $merchantOrderNo;
 
     /**
-     * @description 用户唯一id。
-     *
-     * @var string
-     */
-    public $outerUserId;
-
-    /**
      * @description 签名。
      *
      * @var string
@@ -93,7 +86,6 @@ class CreateAppOrderRequest extends Model
         'labelAmount'     => 'labelAmount',
         'merchantId'      => 'merchantId',
         'merchantOrderNo' => 'merchantOrderNo',
-        'outerUserId'     => 'outerUserId',
         'signature'       => 'signature',
         'subject'         => 'subject',
         'timestamp'       => 'timestamp',
@@ -133,9 +125,6 @@ class CreateAppOrderRequest extends Model
         if (null !== $this->merchantOrderNo) {
             $res['merchantOrderNo'] = $this->merchantOrderNo;
         }
-        if (null !== $this->outerUserId) {
-            $res['outerUserId'] = $this->outerUserId;
-        }
         if (null !== $this->signature) {
             $res['signature'] = $this->signature;
         }
@@ -152,7 +141,7 @@ class CreateAppOrderRequest extends Model
     /**
      * @param array $map
      *
-     * @return CreateAppOrderRequest
+     * @return CreateSnsAppOrderRequest
      */
     public static function fromMap($map = [])
     {
@@ -183,9 +172,6 @@ class CreateAppOrderRequest extends Model
         }
         if (isset($map['merchantOrderNo'])) {
             $model->merchantOrderNo = $map['merchantOrderNo'];
-        }
-        if (isset($map['outerUserId'])) {
-            $model->outerUserId = $map['outerUserId'];
         }
         if (isset($map['signature'])) {
             $model->signature = $map['signature'];

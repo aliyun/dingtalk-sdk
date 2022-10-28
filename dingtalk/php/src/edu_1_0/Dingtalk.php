@@ -23,6 +23,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchOrgCreateHWResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelOrderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelSnsOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelSnsOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelSnsOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelUserOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelUserOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelUserOrderResponse;
@@ -71,6 +74,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateRemoteClassCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateSectionConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateSectionConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateSectionConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateSnsAppOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateSnsAppOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateSnsAppOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateStsTokenHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateStsTokenRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateStsTokenResponse;
@@ -233,6 +239,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryRemoteClassCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySchoolUserFaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySchoolUserFaceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySchoolUserFaceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySnsOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySnsOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySnsOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryStatisticsDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryStatisticsDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryStatisticsDataResponse;
@@ -685,6 +694,60 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param CancelSnsOrderRequest $request
+     *
+     * @return CancelSnsOrderResponse
+     */
+    public function cancelSnsOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CancelSnsOrderHeaders([]);
+
+        return $this->cancelSnsOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CancelSnsOrderRequest $request
+     * @param CancelSnsOrderHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return CancelSnsOrderResponse
+     */
+    public function cancelSnsOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->alipayAppId)) {
+            @$body['alipayAppId'] = $request->alipayAppId;
+        }
+        if (!Utils::isUnset($request->merchantId)) {
+            @$body['merchantId'] = $request->merchantId;
+        }
+        if (!Utils::isUnset($request->orderNo)) {
+            @$body['orderNo'] = $request->orderNo;
+        }
+        if (!Utils::isUnset($request->signature)) {
+            @$body['signature'] = $request->signature;
+        }
+        if (!Utils::isUnset($request->timestamp)) {
+            @$body['timestamp'] = $request->timestamp;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CancelSnsOrderResponse::fromMap($this->doROARequest('CancelSnsOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/snsUserOrders/cancel', 'json', $req, $runtime));
+    }
+
+    /**
      * @param CancelUserOrderRequest $request
      *
      * @return CancelUserOrderResponse
@@ -879,6 +942,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->merchantOrderNo)) {
             @$body['merchantOrderNo'] = $request->merchantOrderNo;
         }
+        if (!Utils::isUnset($request->outerUserId)) {
+            @$body['outerUserId'] = $request->outerUserId;
+        }
         if (!Utils::isUnset($request->signature)) {
             @$body['signature'] = $request->signature;
         }
@@ -887,9 +953,6 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->timestamp)) {
             @$body['timestamp'] = $request->timestamp;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -1622,6 +1685,75 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateSectionConfigResponse::fromMap($this->doROARequest('CreateSectionConfig', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/universities/sectionConfigs', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateSnsAppOrderRequest $request
+     *
+     * @return CreateSnsAppOrderResponse
+     */
+    public function createSnsAppOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateSnsAppOrderHeaders([]);
+
+        return $this->createSnsAppOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateSnsAppOrderRequest $request
+     * @param CreateSnsAppOrderHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return CreateSnsAppOrderResponse
+     */
+    public function createSnsAppOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->actualAmount)) {
+            @$body['actualAmount'] = $request->actualAmount;
+        }
+        if (!Utils::isUnset($request->alipayAppId)) {
+            @$body['alipayAppId'] = $request->alipayAppId;
+        }
+        if (!Utils::isUnset($request->bizCode)) {
+            @$body['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->detailList)) {
+            @$body['detailList'] = $request->detailList;
+        }
+        if (!Utils::isUnset($request->labelAmount)) {
+            @$body['labelAmount'] = $request->labelAmount;
+        }
+        if (!Utils::isUnset($request->merchantId)) {
+            @$body['merchantId'] = $request->merchantId;
+        }
+        if (!Utils::isUnset($request->merchantOrderNo)) {
+            @$body['merchantOrderNo'] = $request->merchantOrderNo;
+        }
+        if (!Utils::isUnset($request->signature)) {
+            @$body['signature'] = $request->signature;
+        }
+        if (!Utils::isUnset($request->subject)) {
+            @$body['subject'] = $request->subject;
+        }
+        if (!Utils::isUnset($request->timestamp)) {
+            @$body['timestamp'] = $request->timestamp;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateSnsAppOrderResponse::fromMap($this->doROARequest('CreateSnsAppOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/snsAppOrders', 'json', $req, $runtime));
     }
 
     /**
@@ -4286,6 +4418,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QuerySchoolUserFaceResponse::fromMap($this->doROARequest('QuerySchoolUserFace', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/schools/faces', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QuerySnsOrderRequest $request
+     *
+     * @return QuerySnsOrderResponse
+     */
+    public function querySnsOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QuerySnsOrderHeaders([]);
+
+        return $this->querySnsOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QuerySnsOrderRequest $request
+     * @param QuerySnsOrderHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return QuerySnsOrderResponse
+     */
+    public function querySnsOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->alipayAppId)) {
+            @$query['alipayAppId'] = $request->alipayAppId;
+        }
+        if (!Utils::isUnset($request->merchantId)) {
+            @$query['merchantId'] = $request->merchantId;
+        }
+        if (!Utils::isUnset($request->orderNo)) {
+            @$query['orderNo'] = $request->orderNo;
+        }
+        if (!Utils::isUnset($request->signature)) {
+            @$query['signature'] = $request->signature;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QuerySnsOrderResponse::fromMap($this->doROARequest('QuerySnsOrder', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/snsOrders', 'json', $req, $runtime));
     }
 
     /**

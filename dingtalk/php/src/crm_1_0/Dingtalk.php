@@ -44,6 +44,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateGroupSetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateRelationMetaHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateRelationMetaRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateRelationMetaResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmCustomObjectDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmCustomObjectDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmCustomObjectDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmFormInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmFormInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmFormInstanceResponse;
@@ -851,6 +854,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateRelationMetaResponse::fromMap($this->doROARequest('CreateRelationMeta', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/relations/metas/create', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                           $instanceId
+     * @param DeleteCrmCustomObjectDataRequest $request
+     *
+     * @return DeleteCrmCustomObjectDataResponse
+     */
+    public function deleteCrmCustomObjectData($instanceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteCrmCustomObjectDataHeaders([]);
+
+        return $this->deleteCrmCustomObjectDataWithOptions($instanceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                           $instanceId
+     * @param DeleteCrmCustomObjectDataRequest $request
+     * @param DeleteCrmCustomObjectDataHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return DeleteCrmCustomObjectDataResponse
+     */
+    public function deleteCrmCustomObjectDataWithOptions($instanceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $instanceId = OpenApiUtilClient::getEncodeParam($instanceId);
+        $query      = [];
+        if (!Utils::isUnset($request->formCode)) {
+            @$query['formCode'] = $request->formCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return DeleteCrmCustomObjectDataResponse::fromMap($this->doROARequest('DeleteCrmCustomObjectData', 'crm_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/crm/customObjectDatas/instances/' . $instanceId . '', 'json', $req, $runtime));
     }
 
     /**
