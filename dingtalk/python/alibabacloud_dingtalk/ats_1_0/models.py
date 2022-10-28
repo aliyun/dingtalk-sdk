@@ -2056,3 +2056,184 @@ class UpdateInterviewSignInInfoResponse(TeaModel):
         return self
 
 
+class UpdateJobDeliverHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateJobDeliverRequest(TeaModel):
+    def __init__(
+        self,
+        biz_code: str = None,
+        channel_outer_id: str = None,
+        error_code: str = None,
+        error_msg: str = None,
+        op_time: int = None,
+        op_user_id: str = None,
+        status: int = None,
+        corp_id: str = None,
+        job_id: str = None,
+    ):
+        # 招聘业务标识，目前固定ddats
+        self.biz_code = biz_code
+        # 渠道侧职位唯一标识
+        self.channel_outer_id = channel_outer_id
+        # 渠道侧错误码
+        self.error_code = error_code
+        # 渠道侧错误信息
+        self.error_msg = error_msg
+        # 操作时间
+        self.op_time = op_time
+        # 操作人userId
+        self.op_user_id = op_user_id
+        # 职位投递状态
+        self.status = status
+        # 企业corpId
+        self.corp_id = corp_id
+        # 钉钉侧职位唯一标识
+        self.job_id = job_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
+        if self.channel_outer_id is not None:
+            result['channelOuterId'] = self.channel_outer_id
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.op_time is not None:
+            result['opTime'] = self.op_time
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.status is not None:
+            result['status'] = self.status
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.job_id is not None:
+            result['jobId'] = self.job_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
+        if m.get('channelOuterId') is not None:
+            self.channel_outer_id = m.get('channelOuterId')
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('opTime') is not None:
+            self.op_time = m.get('opTime')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('jobId') is not None:
+            self.job_id = m.get('jobId')
+        return self
+
+
+class UpdateJobDeliverResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateJobDeliverResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateJobDeliverResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateJobDeliverResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+

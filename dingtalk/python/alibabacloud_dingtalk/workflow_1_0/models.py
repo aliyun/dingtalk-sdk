@@ -205,6 +205,7 @@ class FormComponentPropsStatField(TeaModel):
 class FormComponentProps(TeaModel):
     def __init__(
         self,
+        action_name: str = None,
         address_model: str = None,
         align: str = None,
         async_condition: bool = None,
@@ -224,6 +225,7 @@ class FormComponentProps(TeaModel):
         label: str = None,
         limit: int = None,
         link: str = None,
+        max_length: int = None,
         mode: str = None,
         multiple: bool = None,
         options: List[SelectOption] = None,
@@ -236,6 +238,8 @@ class FormComponentProps(TeaModel):
         upper: str = None,
         vertical_print: bool = None,
     ):
+        # 明细控件按钮显示文案
+        self.action_name = action_name
         # 地址控件模式city省市,district省市区,street省市区街道
         self.address_model = address_model
         # 文字提示控件显示方式:top|middle|bottom
@@ -274,6 +278,8 @@ class FormComponentProps(TeaModel):
         self.limit = limit
         # 说明文字控件链接地址
         self.link = link
+        # 文本控件支持的最大长度
+        self.max_length = max_length
         # 电话控件支持的类型
         self.mode = mode
         # 部门控件是否可多选
@@ -319,6 +325,8 @@ class FormComponentProps(TeaModel):
             return _map
 
         result = dict()
+        if self.action_name is not None:
+            result['actionName'] = self.action_name
         if self.address_model is not None:
             result['addressModel'] = self.address_model
         if self.align is not None:
@@ -359,6 +367,8 @@ class FormComponentProps(TeaModel):
             result['limit'] = self.limit
         if self.link is not None:
             result['link'] = self.link
+        if self.max_length is not None:
+            result['maxLength'] = self.max_length
         if self.mode is not None:
             result['mode'] = self.mode
         if self.multiple is not None:
@@ -389,6 +399,8 @@ class FormComponentProps(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('actionName') is not None:
+            self.action_name = m.get('actionName')
         if m.get('addressModel') is not None:
             self.address_model = m.get('addressModel')
         if m.get('align') is not None:
@@ -431,6 +443,8 @@ class FormComponentProps(TeaModel):
             self.limit = m.get('limit')
         if m.get('link') is not None:
             self.link = m.get('link')
+        if m.get('maxLength') is not None:
+            self.max_length = m.get('maxLength')
         if m.get('mode') is not None:
             self.mode = m.get('mode')
         if m.get('multiple') is not None:

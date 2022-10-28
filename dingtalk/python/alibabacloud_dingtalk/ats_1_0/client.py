@@ -938,3 +938,103 @@ class Client(OpenApiClient):
             dingtalkats__1__0_models.UpdateInterviewSignInInfoResponse(),
             await self.do_roarequest_async('UpdateInterviewSignInInfo', 'ats_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/ats/interviews/{interview_id}/signInInfos', 'none', req, runtime)
         )
+
+    def update_job_deliver(
+        self,
+        request: dingtalkats__1__0_models.UpdateJobDeliverRequest,
+    ) -> dingtalkats__1__0_models.UpdateJobDeliverResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.UpdateJobDeliverHeaders()
+        return self.update_job_deliver_with_options(request, headers, runtime)
+
+    async def update_job_deliver_async(
+        self,
+        request: dingtalkats__1__0_models.UpdateJobDeliverRequest,
+    ) -> dingtalkats__1__0_models.UpdateJobDeliverResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.UpdateJobDeliverHeaders()
+        return await self.update_job_deliver_with_options_async(request, headers, runtime)
+
+    def update_job_deliver_with_options(
+        self,
+        request: dingtalkats__1__0_models.UpdateJobDeliverRequest,
+        headers: dingtalkats__1__0_models.UpdateJobDeliverHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.UpdateJobDeliverResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_code):
+            query['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.job_id):
+            query['jobId'] = request.job_id
+        body = {}
+        if not UtilClient.is_unset(request.channel_outer_id):
+            body['channelOuterId'] = request.channel_outer_id
+        if not UtilClient.is_unset(request.error_code):
+            body['errorCode'] = request.error_code
+        if not UtilClient.is_unset(request.error_msg):
+            body['errorMsg'] = request.error_msg
+        if not UtilClient.is_unset(request.op_time):
+            body['opTime'] = request.op_time
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.UpdateJobDeliverResponse(),
+            self.do_roarequest('UpdateJobDeliver', 'ats_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/ats/jobs/deliveryStatus', 'json', req, runtime)
+        )
+
+    async def update_job_deliver_with_options_async(
+        self,
+        request: dingtalkats__1__0_models.UpdateJobDeliverRequest,
+        headers: dingtalkats__1__0_models.UpdateJobDeliverHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.UpdateJobDeliverResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_code):
+            query['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.job_id):
+            query['jobId'] = request.job_id
+        body = {}
+        if not UtilClient.is_unset(request.channel_outer_id):
+            body['channelOuterId'] = request.channel_outer_id
+        if not UtilClient.is_unset(request.error_code):
+            body['errorCode'] = request.error_code
+        if not UtilClient.is_unset(request.error_msg):
+            body['errorMsg'] = request.error_msg
+        if not UtilClient.is_unset(request.op_time):
+            body['opTime'] = request.op_time
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.UpdateJobDeliverResponse(),
+            await self.do_roarequest_async('UpdateJobDeliver', 'ats_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/ats/jobs/deliveryStatus', 'json', req, runtime)
+        )
