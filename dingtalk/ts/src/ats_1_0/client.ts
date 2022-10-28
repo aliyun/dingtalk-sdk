@@ -1125,6 +1125,112 @@ export class UpdateInterviewSignInInfoResponse extends $tea.Model {
   }
 }
 
+export class UpdateJobDeliverHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateJobDeliverRequest extends $tea.Model {
+  bizCode?: string;
+  channelOuterId?: string;
+  errorCode?: string;
+  errorMsg?: string;
+  opTime?: number;
+  opUserId?: string;
+  status?: number;
+  corpId?: string;
+  jobId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizCode: 'bizCode',
+      channelOuterId: 'channelOuterId',
+      errorCode: 'errorCode',
+      errorMsg: 'errorMsg',
+      opTime: 'opTime',
+      opUserId: 'opUserId',
+      status: 'status',
+      corpId: 'corpId',
+      jobId: 'jobId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizCode: 'string',
+      channelOuterId: 'string',
+      errorCode: 'string',
+      errorMsg: 'string',
+      opTime: 'number',
+      opUserId: 'string',
+      status: 'number',
+      corpId: 'string',
+      jobId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateJobDeliverResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateJobDeliverResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateJobDeliverResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateJobDeliverResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetJobAuthResponseBodyJobOwners extends $tea.Model {
   name?: string;
   userId?: string;
@@ -1701,6 +1807,69 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateInterviewSignInInfoResponse>(await this.doROARequest("UpdateInterviewSignInInfo", "ats_1.0", "HTTP", "PUT", "AK", `/v1.0/ats/interviews/${interviewId}/signInInfos`, "none", req, runtime), new UpdateInterviewSignInInfoResponse({}));
+  }
+
+  async updateJobDeliver(request: UpdateJobDeliverRequest): Promise<UpdateJobDeliverResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateJobDeliverHeaders({ });
+    return await this.updateJobDeliverWithOptions(request, headers, runtime);
+  }
+
+  async updateJobDeliverWithOptions(request: UpdateJobDeliverRequest, headers: UpdateJobDeliverHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateJobDeliverResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizCode)) {
+      query["bizCode"] = request.bizCode;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.jobId)) {
+      query["jobId"] = request.jobId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.channelOuterId)) {
+      body["channelOuterId"] = request.channelOuterId;
+    }
+
+    if (!Util.isUnset(request.errorCode)) {
+      body["errorCode"] = request.errorCode;
+    }
+
+    if (!Util.isUnset(request.errorMsg)) {
+      body["errorMsg"] = request.errorMsg;
+    }
+
+    if (!Util.isUnset(request.opTime)) {
+      body["opTime"] = request.opTime;
+    }
+
+    if (!Util.isUnset(request.opUserId)) {
+      body["opUserId"] = request.opUserId;
+    }
+
+    if (!Util.isUnset(request.status)) {
+      body["status"] = request.status;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateJobDeliverResponse>(await this.doROARequest("UpdateJobDeliver", "ats_1.0", "HTTP", "PUT", "AK", `/v1.0/ats/jobs/deliveryStatus`, "json", req, runtime), new UpdateJobDeliverResponse({}));
   }
 
 }

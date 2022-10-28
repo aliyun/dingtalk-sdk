@@ -55,6 +55,7 @@ export class FormComponent extends $tea.Model {
 }
 
 export class FormComponentProps extends $tea.Model {
+  actionName?: string;
   addressModel?: string;
   align?: string;
   asyncCondition?: boolean;
@@ -74,6 +75,7 @@ export class FormComponentProps extends $tea.Model {
   label?: string;
   limit?: number;
   link?: string;
+  maxLength?: number;
   mode?: string;
   multiple?: boolean;
   options?: SelectOption[];
@@ -87,6 +89,7 @@ export class FormComponentProps extends $tea.Model {
   verticalPrint?: boolean;
   static names(): { [key: string]: string } {
     return {
+      actionName: 'actionName',
       addressModel: 'addressModel',
       align: 'align',
       asyncCondition: 'asyncCondition',
@@ -106,6 +109,7 @@ export class FormComponentProps extends $tea.Model {
       label: 'label',
       limit: 'limit',
       link: 'link',
+      maxLength: 'maxLength',
       mode: 'mode',
       multiple: 'multiple',
       options: 'options',
@@ -122,6 +126,7 @@ export class FormComponentProps extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      actionName: 'string',
       addressModel: 'string',
       align: 'string',
       asyncCondition: 'boolean',
@@ -141,6 +146,7 @@ export class FormComponentProps extends $tea.Model {
       label: 'string',
       limit: 'number',
       link: 'string',
+      maxLength: 'number',
       mode: 'string',
       multiple: 'boolean',
       options: { 'type': 'array', 'itemType': SelectOption },
