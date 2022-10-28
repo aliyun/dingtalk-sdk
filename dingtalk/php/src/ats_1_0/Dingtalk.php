@@ -41,6 +41,9 @@ use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\UpdateApplicationRegFormResponse;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\UpdateInterviewSignInInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\UpdateInterviewSignInInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\UpdateInterviewSignInInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\UpdateJobDeliverHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\UpdateJobDeliverRequest;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\UpdateJobDeliverResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -656,5 +659,73 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateInterviewSignInInfoResponse::fromMap($this->doROARequest('UpdateInterviewSignInInfo', 'ats_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/ats/interviews/' . $interviewId . '/signInInfos', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateJobDeliverRequest $request
+     *
+     * @return UpdateJobDeliverResponse
+     */
+    public function updateJobDeliver($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateJobDeliverHeaders([]);
+
+        return $this->updateJobDeliverWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateJobDeliverRequest $request
+     * @param UpdateJobDeliverHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return UpdateJobDeliverResponse
+     */
+    public function updateJobDeliverWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            @$query['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            @$query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->jobId)) {
+            @$query['jobId'] = $request->jobId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->channelOuterId)) {
+            @$body['channelOuterId'] = $request->channelOuterId;
+        }
+        if (!Utils::isUnset($request->errorCode)) {
+            @$body['errorCode'] = $request->errorCode;
+        }
+        if (!Utils::isUnset($request->errorMsg)) {
+            @$body['errorMsg'] = $request->errorMsg;
+        }
+        if (!Utils::isUnset($request->opTime)) {
+            @$body['opTime'] = $request->opTime;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            @$body['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->status)) {
+            @$body['status'] = $request->status;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateJobDeliverResponse::fromMap($this->doROARequest('UpdateJobDeliver', 'ats_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/ats/jobs/deliveryStatus', 'json', $req, $runtime));
     }
 }

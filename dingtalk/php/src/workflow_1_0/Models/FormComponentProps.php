@@ -10,6 +10,13 @@ use AlibabaCloud\Tea\Model;
 class FormComponentProps extends Model
 {
     /**
+     * @description 明细控件按钮显示文案
+     *
+     * @var string
+     */
+    public $actionName;
+
+    /**
      * @description 地址控件模式city省市,district省市区,street省市区街道
      *
      * @var string
@@ -143,6 +150,13 @@ class FormComponentProps extends Model
     public $link;
 
     /**
+     * @description 文本控件支持的最大长度
+     *
+     * @var int
+     */
+    public $maxLength;
+
+    /**
      * @description 电话控件支持的类型
      *
      * @var string
@@ -219,6 +233,7 @@ class FormComponentProps extends Model
      */
     public $verticalPrint;
     protected $_name = [
+        'actionName'         => 'actionName',
         'addressModel'       => 'addressModel',
         'align'              => 'align',
         'asyncCondition'     => 'asyncCondition',
@@ -238,6 +253,7 @@ class FormComponentProps extends Model
         'label'              => 'label',
         'limit'              => 'limit',
         'link'               => 'link',
+        'maxLength'          => 'maxLength',
         'mode'               => 'mode',
         'multiple'           => 'multiple',
         'options'            => 'options',
@@ -258,6 +274,9 @@ class FormComponentProps extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->actionName) {
+            $res['actionName'] = $this->actionName;
+        }
         if (null !== $this->addressModel) {
             $res['addressModel'] = $this->addressModel;
         }
@@ -321,6 +340,9 @@ class FormComponentProps extends Model
         if (null !== $this->link) {
             $res['link'] = $this->link;
         }
+        if (null !== $this->maxLength) {
+            $res['maxLength'] = $this->maxLength;
+        }
         if (null !== $this->mode) {
             $res['mode'] = $this->mode;
         }
@@ -378,6 +400,9 @@ class FormComponentProps extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['actionName'])) {
+            $model->actionName = $map['actionName'];
+        }
         if (isset($map['addressModel'])) {
             $model->addressModel = $map['addressModel'];
         }
@@ -440,6 +465,9 @@ class FormComponentProps extends Model
         }
         if (isset($map['link'])) {
             $model->link = $map['link'];
+        }
+        if (isset($map['maxLength'])) {
+            $model->maxLength = $map['maxLength'];
         }
         if (isset($map['mode'])) {
             $model->mode = $map['mode'];
