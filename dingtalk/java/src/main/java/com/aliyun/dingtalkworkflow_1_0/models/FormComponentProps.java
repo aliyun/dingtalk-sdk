@@ -4,6 +4,10 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class FormComponentProps extends TeaModel {
+    // 明细控件按钮显示文案
+    @NameInMap("actionName")
+    public String actionName;
+
     // 地址控件模式city省市,district省市区,street省市区街道
     @NameInMap("addressModel")
     public String addressModel;
@@ -80,6 +84,10 @@ public class FormComponentProps extends TeaModel {
     @NameInMap("link")
     public String link;
 
+    // 文本控件支持的最大长度
+    @NameInMap("maxLength")
+    public Integer maxLength;
+
     // 电话控件支持的类型
     @NameInMap("mode")
     public String mode;
@@ -127,6 +135,14 @@ public class FormComponentProps extends TeaModel {
     public static FormComponentProps build(java.util.Map<String, ?> map) throws Exception {
         FormComponentProps self = new FormComponentProps();
         return TeaModel.build(map, self);
+    }
+
+    public FormComponentProps setActionName(String actionName) {
+        this.actionName = actionName;
+        return this;
+    }
+    public String getActionName() {
+        return this.actionName;
     }
 
     public FormComponentProps setAddressModel(String addressModel) {
@@ -279,6 +295,14 @@ public class FormComponentProps extends TeaModel {
     }
     public String getLink() {
         return this.link;
+    }
+
+    public FormComponentProps setMaxLength(Integer maxLength) {
+        this.maxLength = maxLength;
+        return this;
+    }
+    public Integer getMaxLength() {
+        return this.maxLength;
     }
 
     public FormComponentProps setMode(String mode) {

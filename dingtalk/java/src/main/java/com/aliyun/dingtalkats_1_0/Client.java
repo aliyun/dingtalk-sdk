@@ -471,4 +471,67 @@ public class Client extends com.aliyun.teaopenapi.Client {
         ));
         return TeaModel.toModel(this.doROARequest("UpdateInterviewSignInInfo", "ats_1.0", "HTTP", "PUT", "AK", "/v1.0/ats/interviews/" + interviewId + "/signInInfos", "none", req, runtime), new UpdateInterviewSignInInfoResponse());
     }
+
+    public UpdateJobDeliverResponse updateJobDeliver(UpdateJobDeliverRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateJobDeliverHeaders headers = new UpdateJobDeliverHeaders();
+        return this.updateJobDeliverWithOptions(request, headers, runtime);
+    }
+
+    public UpdateJobDeliverResponse updateJobDeliverWithOptions(UpdateJobDeliverRequest request, UpdateJobDeliverHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizCode)) {
+            query.put("bizCode", request.bizCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            query.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.jobId)) {
+            query.put("jobId", request.jobId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.channelOuterId)) {
+            body.put("channelOuterId", request.channelOuterId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.errorCode)) {
+            body.put("errorCode", request.errorCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.errorMsg)) {
+            body.put("errorMsg", request.errorMsg);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.opTime)) {
+            body.put("opTime", request.opTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.opUserId)) {
+            body.put("opUserId", request.opUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.status)) {
+            body.put("status", request.status);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UpdateJobDeliver", "ats_1.0", "HTTP", "PUT", "AK", "/v1.0/ats/jobs/deliveryStatus", "json", req, runtime), new UpdateJobDeliverResponse());
+    }
 }
