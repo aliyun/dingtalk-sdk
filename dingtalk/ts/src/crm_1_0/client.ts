@@ -1280,6 +1280,88 @@ export class CreateRelationMetaResponse extends $tea.Model {
   }
 }
 
+export class DeleteCrmCustomObjectDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteCrmCustomObjectDataRequest extends $tea.Model {
+  formCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      formCode: 'formCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      formCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteCrmCustomObjectDataResponseBody extends $tea.Model {
+  instanceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      instanceId: 'instanceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      instanceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteCrmCustomObjectDataResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DeleteCrmCustomObjectDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DeleteCrmCustomObjectDataResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteCrmFormInstanceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -9473,6 +9555,36 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateRelationMetaResponse>(await this.doROARequest("CreateRelationMeta", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/relations/metas/create`, "json", req, runtime), new CreateRelationMetaResponse({}));
+  }
+
+  async deleteCrmCustomObjectData(instanceId: string, request: DeleteCrmCustomObjectDataRequest): Promise<DeleteCrmCustomObjectDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteCrmCustomObjectDataHeaders({ });
+    return await this.deleteCrmCustomObjectDataWithOptions(instanceId, request, headers, runtime);
+  }
+
+  async deleteCrmCustomObjectDataWithOptions(instanceId: string, request: DeleteCrmCustomObjectDataRequest, headers: DeleteCrmCustomObjectDataHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteCrmCustomObjectDataResponse> {
+    Util.validateModel(request);
+    instanceId = OpenApiUtil.getEncodeParam(instanceId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.formCode)) {
+      query["formCode"] = request.formCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<DeleteCrmCustomObjectDataResponse>(await this.doROARequest("DeleteCrmCustomObjectData", "crm_1.0", "HTTP", "DELETE", "AK", `/v1.0/crm/customObjectDatas/instances/${instanceId}`, "json", req, runtime), new DeleteCrmCustomObjectDataResponse({}));
   }
 
   async deleteCrmFormInstance(instanceId: string, request: DeleteCrmFormInstanceRequest): Promise<DeleteCrmFormInstanceResponse> {

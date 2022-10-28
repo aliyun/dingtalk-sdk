@@ -634,6 +634,118 @@ export class CancelOrderResponse extends $tea.Model {
   }
 }
 
+export class CancelSnsOrderHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CancelSnsOrderRequest extends $tea.Model {
+  alipayAppId?: string;
+  merchantId?: string;
+  orderNo?: string;
+  signature?: string;
+  timestamp?: number;
+  static names(): { [key: string]: string } {
+    return {
+      alipayAppId: 'alipayAppId',
+      merchantId: 'merchantId',
+      orderNo: 'orderNo',
+      signature: 'signature',
+      timestamp: 'timestamp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      alipayAppId: 'string',
+      merchantId: 'string',
+      orderNo: 'string',
+      signature: 'string',
+      timestamp: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CancelSnsOrderResponseBody extends $tea.Model {
+  alipayAppId?: string;
+  merchantId?: string;
+  merchantOrderNo?: string;
+  orderNo?: string;
+  payStatus?: number;
+  refundStatus?: number;
+  totalAmount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      alipayAppId: 'alipayAppId',
+      merchantId: 'merchantId',
+      merchantOrderNo: 'merchantOrderNo',
+      orderNo: 'orderNo',
+      payStatus: 'payStatus',
+      refundStatus: 'refundStatus',
+      totalAmount: 'totalAmount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      alipayAppId: 'string',
+      merchantId: 'string',
+      merchantOrderNo: 'string',
+      orderNo: 'string',
+      payStatus: 'number',
+      refundStatus: 'number',
+      totalAmount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CancelSnsOrderResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CancelSnsOrderResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CancelSnsOrderResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CancelUserOrderHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -952,10 +1064,10 @@ export class CreateAppOrderRequest extends $tea.Model {
   labelAmount?: number;
   merchantId?: string;
   merchantOrderNo?: string;
+  outerUserId?: string;
   signature?: string;
   subject?: string;
   timestamp?: number;
-  userId?: string;
   static names(): { [key: string]: string } {
     return {
       actualAmount: 'actualAmount',
@@ -965,10 +1077,10 @@ export class CreateAppOrderRequest extends $tea.Model {
       labelAmount: 'labelAmount',
       merchantId: 'merchantId',
       merchantOrderNo: 'merchantOrderNo',
+      outerUserId: 'outerUserId',
       signature: 'signature',
       subject: 'subject',
       timestamp: 'timestamp',
-      userId: 'userId',
     };
   }
 
@@ -981,10 +1093,10 @@ export class CreateAppOrderRequest extends $tea.Model {
       labelAmount: 'number',
       merchantId: 'string',
       merchantOrderNo: 'string',
+      outerUserId: 'string',
       signature: 'string',
       subject: 'string',
       timestamp: 'number',
-      userId: 'string',
     };
   }
 
@@ -2277,6 +2389,130 @@ export class CreateSectionConfigResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: CreateSectionConfigResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSnsAppOrderHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSnsAppOrderRequest extends $tea.Model {
+  actualAmount?: number;
+  alipayAppId?: string;
+  bizCode?: number;
+  detailList?: CreateSnsAppOrderRequestDetailList[];
+  labelAmount?: number;
+  merchantId?: string;
+  merchantOrderNo?: string;
+  signature?: string;
+  subject?: string;
+  timestamp?: number;
+  static names(): { [key: string]: string } {
+    return {
+      actualAmount: 'actualAmount',
+      alipayAppId: 'alipayAppId',
+      bizCode: 'bizCode',
+      detailList: 'detailList',
+      labelAmount: 'labelAmount',
+      merchantId: 'merchantId',
+      merchantOrderNo: 'merchantOrderNo',
+      signature: 'signature',
+      subject: 'subject',
+      timestamp: 'timestamp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actualAmount: 'number',
+      alipayAppId: 'string',
+      bizCode: 'number',
+      detailList: { 'type': 'array', 'itemType': CreateSnsAppOrderRequestDetailList },
+      labelAmount: 'number',
+      merchantId: 'string',
+      merchantOrderNo: 'string',
+      signature: 'string',
+      subject: 'string',
+      timestamp: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSnsAppOrderResponseBody extends $tea.Model {
+  actualAmount?: number;
+  alipayAppId?: string;
+  body?: string;
+  merchantId?: string;
+  merchantOrderNo?: string;
+  orderNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      actualAmount: 'actualAmount',
+      alipayAppId: 'alipayAppId',
+      body: 'body',
+      merchantId: 'merchantId',
+      merchantOrderNo: 'merchantOrderNo',
+      orderNo: 'orderNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actualAmount: 'number',
+      alipayAppId: 'string',
+      body: 'string',
+      merchantId: 'string',
+      merchantOrderNo: 'string',
+      orderNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSnsAppOrderResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateSnsAppOrderResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateSnsAppOrderResponseBody,
     };
   }
 
@@ -6495,6 +6731,7 @@ export class QueryOrderResponseBody extends $tea.Model {
   merchantOrderNo?: string;
   orderNo?: string;
   orderType?: string;
+  outerUid?: string;
   payId?: string;
   payLogonId?: string;
   payStatus?: number;
@@ -6505,7 +6742,6 @@ export class QueryOrderResponseBody extends $tea.Model {
   refundTime?: number;
   subject?: string;
   tradeNo?: string;
-  userId?: string;
   static names(): { [key: string]: string } {
     return {
       actualAmount: 'actualAmount',
@@ -6519,6 +6755,7 @@ export class QueryOrderResponseBody extends $tea.Model {
       merchantOrderNo: 'merchantOrderNo',
       orderNo: 'orderNo',
       orderType: 'orderType',
+      outerUid: 'outerUid',
       payId: 'payId',
       payLogonId: 'payLogonId',
       payStatus: 'payStatus',
@@ -6529,7 +6766,6 @@ export class QueryOrderResponseBody extends $tea.Model {
       refundTime: 'refundTime',
       subject: 'subject',
       tradeNo: 'tradeNo',
-      userId: 'userId',
     };
   }
 
@@ -6546,6 +6782,7 @@ export class QueryOrderResponseBody extends $tea.Model {
       merchantOrderNo: 'string',
       orderNo: 'string',
       orderType: 'string',
+      outerUid: 'string',
       payId: 'string',
       payLogonId: 'string',
       payStatus: 'number',
@@ -6556,7 +6793,6 @@ export class QueryOrderResponseBody extends $tea.Model {
       refundTime: 'number',
       subject: 'string',
       tradeNo: 'string',
-      userId: 'string',
     };
   }
 
@@ -7294,6 +7530,160 @@ export class QuerySchoolUserFaceResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QuerySchoolUserFaceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySnsOrderHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySnsOrderRequest extends $tea.Model {
+  alipayAppId?: string;
+  merchantId?: string;
+  orderNo?: string;
+  signature?: string;
+  static names(): { [key: string]: string } {
+    return {
+      alipayAppId: 'alipayAppId',
+      merchantId: 'merchantId',
+      orderNo: 'orderNo',
+      signature: 'signature',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      alipayAppId: 'string',
+      merchantId: 'string',
+      orderNo: 'string',
+      signature: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySnsOrderResponseBody extends $tea.Model {
+  actualAmount?: number;
+  alipayAppId?: string;
+  closeTime?: number;
+  createTime?: number;
+  feature?: string;
+  labelAmount?: number;
+  merchantId?: string;
+  merchantMergeOrderNo?: string;
+  merchantOrderNo?: string;
+  orderNo?: string;
+  orderType?: string;
+  outerUid?: string;
+  payId?: string;
+  payLogonId?: string;
+  payStatus?: number;
+  payTime?: number;
+  payType?: string;
+  refundAmount?: number;
+  refundStatus?: number;
+  refundTime?: number;
+  subject?: string;
+  tradeNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      actualAmount: 'actualAmount',
+      alipayAppId: 'alipayAppId',
+      closeTime: 'closeTime',
+      createTime: 'createTime',
+      feature: 'feature',
+      labelAmount: 'labelAmount',
+      merchantId: 'merchantId',
+      merchantMergeOrderNo: 'merchantMergeOrderNo',
+      merchantOrderNo: 'merchantOrderNo',
+      orderNo: 'orderNo',
+      orderType: 'orderType',
+      outerUid: 'outerUid',
+      payId: 'payId',
+      payLogonId: 'payLogonId',
+      payStatus: 'payStatus',
+      payTime: 'payTime',
+      payType: 'payType',
+      refundAmount: 'refundAmount',
+      refundStatus: 'refundStatus',
+      refundTime: 'refundTime',
+      subject: 'subject',
+      tradeNo: 'tradeNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actualAmount: 'number',
+      alipayAppId: 'string',
+      closeTime: 'number',
+      createTime: 'number',
+      feature: 'string',
+      labelAmount: 'number',
+      merchantId: 'string',
+      merchantMergeOrderNo: 'string',
+      merchantOrderNo: 'string',
+      orderNo: 'string',
+      orderType: 'string',
+      outerUid: 'string',
+      payId: 'string',
+      payLogonId: 'string',
+      payStatus: 'number',
+      payTime: 'number',
+      payType: 'string',
+      refundAmount: 'number',
+      refundStatus: 'number',
+      refundTime: 'number',
+      subject: 'string',
+      tradeNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySnsOrderResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QuerySnsOrderResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QuerySnsOrderResponseBody,
     };
   }
 
@@ -9988,6 +10378,37 @@ export class CreateSectionConfigRequestSectionConfigs extends $tea.Model {
       semester: 'number',
       semesterEndDate: CreateSectionConfigRequestSectionConfigsSemesterEndDate,
       semesterStartDate: CreateSectionConfigRequestSectionConfigsSemesterStartDate,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateSnsAppOrderRequestDetailList extends $tea.Model {
+  feature?: string;
+  goodsId?: string;
+  goodsName?: string;
+  goodsPrice?: number;
+  goodsQuantity?: number;
+  static names(): { [key: string]: string } {
+    return {
+      feature: 'feature',
+      goodsId: 'goodsId',
+      goodsName: 'goodsName',
+      goodsPrice: 'goodsPrice',
+      goodsQuantity: 'goodsQuantity',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      feature: 'string',
+      goodsId: 'string',
+      goodsName: 'string',
+      goodsPrice: 'number',
+      goodsQuantity: 'number',
     };
   }
 
@@ -12954,6 +13375,51 @@ export default class Client extends OpenApi {
     return $tea.cast<CancelOrderResponse>(await this.doROARequest("CancelOrder", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/orders/cancel`, "json", req, runtime), new CancelOrderResponse({}));
   }
 
+  async cancelSnsOrder(request: CancelSnsOrderRequest): Promise<CancelSnsOrderResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CancelSnsOrderHeaders({ });
+    return await this.cancelSnsOrderWithOptions(request, headers, runtime);
+  }
+
+  async cancelSnsOrderWithOptions(request: CancelSnsOrderRequest, headers: CancelSnsOrderHeaders, runtime: $Util.RuntimeOptions): Promise<CancelSnsOrderResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.alipayAppId)) {
+      body["alipayAppId"] = request.alipayAppId;
+    }
+
+    if (!Util.isUnset(request.merchantId)) {
+      body["merchantId"] = request.merchantId;
+    }
+
+    if (!Util.isUnset(request.orderNo)) {
+      body["orderNo"] = request.orderNo;
+    }
+
+    if (!Util.isUnset(request.signature)) {
+      body["signature"] = request.signature;
+    }
+
+    if (!Util.isUnset(request.timestamp)) {
+      body["timestamp"] = request.timestamp;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CancelSnsOrderResponse>(await this.doROARequest("CancelSnsOrder", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/snsUserOrders/cancel`, "json", req, runtime), new CancelSnsOrderResponse({}));
+  }
+
   async cancelUserOrder(request: CancelUserOrderRequest): Promise<CancelUserOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CancelUserOrderHeaders({ });
@@ -13110,6 +13576,10 @@ export default class Client extends OpenApi {
       body["merchantOrderNo"] = request.merchantOrderNo;
     }
 
+    if (!Util.isUnset(request.outerUserId)) {
+      body["outerUserId"] = request.outerUserId;
+    }
+
     if (!Util.isUnset(request.signature)) {
       body["signature"] = request.signature;
     }
@@ -13120,10 +13590,6 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.timestamp)) {
       body["timestamp"] = request.timestamp;
-    }
-
-    if (!Util.isUnset(request.userId)) {
-      body["userId"] = request.userId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -13772,6 +14238,71 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateSectionConfigResponse>(await this.doROARequest("CreateSectionConfig", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/universities/sectionConfigs`, "json", req, runtime), new CreateSectionConfigResponse({}));
+  }
+
+  async createSnsAppOrder(request: CreateSnsAppOrderRequest): Promise<CreateSnsAppOrderResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateSnsAppOrderHeaders({ });
+    return await this.createSnsAppOrderWithOptions(request, headers, runtime);
+  }
+
+  async createSnsAppOrderWithOptions(request: CreateSnsAppOrderRequest, headers: CreateSnsAppOrderHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSnsAppOrderResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.actualAmount)) {
+      body["actualAmount"] = request.actualAmount;
+    }
+
+    if (!Util.isUnset(request.alipayAppId)) {
+      body["alipayAppId"] = request.alipayAppId;
+    }
+
+    if (!Util.isUnset(request.bizCode)) {
+      body["bizCode"] = request.bizCode;
+    }
+
+    if (!Util.isUnset(request.detailList)) {
+      body["detailList"] = request.detailList;
+    }
+
+    if (!Util.isUnset(request.labelAmount)) {
+      body["labelAmount"] = request.labelAmount;
+    }
+
+    if (!Util.isUnset(request.merchantId)) {
+      body["merchantId"] = request.merchantId;
+    }
+
+    if (!Util.isUnset(request.merchantOrderNo)) {
+      body["merchantOrderNo"] = request.merchantOrderNo;
+    }
+
+    if (!Util.isUnset(request.signature)) {
+      body["signature"] = request.signature;
+    }
+
+    if (!Util.isUnset(request.subject)) {
+      body["subject"] = request.subject;
+    }
+
+    if (!Util.isUnset(request.timestamp)) {
+      body["timestamp"] = request.timestamp;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateSnsAppOrderResponse>(await this.doROARequest("CreateSnsAppOrder", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/snsAppOrders`, "json", req, runtime), new CreateSnsAppOrderResponse({}));
   }
 
   async createStsToken(request: CreateStsTokenRequest): Promise<CreateStsTokenResponse> {
@@ -15820,6 +16351,47 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QuerySchoolUserFaceResponse>(await this.doROARequest("QuerySchoolUserFace", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/schools/faces`, "json", req, runtime), new QuerySchoolUserFaceResponse({}));
+  }
+
+  async querySnsOrder(request: QuerySnsOrderRequest): Promise<QuerySnsOrderResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QuerySnsOrderHeaders({ });
+    return await this.querySnsOrderWithOptions(request, headers, runtime);
+  }
+
+  async querySnsOrderWithOptions(request: QuerySnsOrderRequest, headers: QuerySnsOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySnsOrderResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.alipayAppId)) {
+      query["alipayAppId"] = request.alipayAppId;
+    }
+
+    if (!Util.isUnset(request.merchantId)) {
+      query["merchantId"] = request.merchantId;
+    }
+
+    if (!Util.isUnset(request.orderNo)) {
+      query["orderNo"] = request.orderNo;
+    }
+
+    if (!Util.isUnset(request.signature)) {
+      query["signature"] = request.signature;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QuerySnsOrderResponse>(await this.doROARequest("QuerySnsOrder", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/snsOrders`, "json", req, runtime), new QuerySnsOrderResponse({}));
   }
 
   async queryStatisticsData(request: QueryStatisticsDataRequest): Promise<QueryStatisticsDataResponse> {

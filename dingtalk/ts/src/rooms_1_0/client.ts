@@ -73,7 +73,7 @@ export class CreateMeetingRoomRequest extends $tea.Model {
 }
 
 export class CreateMeetingRoomResponseBody extends $tea.Model {
-  result?: number;
+  result?: string;
   static names(): { [key: string]: string } {
     return {
       result: 'result',
@@ -82,7 +82,7 @@ export class CreateMeetingRoomResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      result: 'number',
+      result: 'string',
     };
   }
 
