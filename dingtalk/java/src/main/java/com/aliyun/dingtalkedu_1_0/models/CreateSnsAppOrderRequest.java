@@ -3,7 +3,7 @@ package com.aliyun.dingtalkedu_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class CreateAppOrderRequest extends TeaModel {
+public class CreateSnsAppOrderRequest extends TeaModel {
     // 实际金额，单位分。
     @NameInMap("actualAmount")
     public Long actualAmount;
@@ -18,7 +18,7 @@ public class CreateAppOrderRequest extends TeaModel {
 
     // 订单明细列表。
     @NameInMap("detailList")
-    public java.util.List<CreateAppOrderRequestDetailList> detailList;
+    public java.util.List<CreateSnsAppOrderRequestDetailList> detailList;
 
     // 标签金额，单位分。
     @NameInMap("labelAmount")
@@ -32,10 +32,6 @@ public class CreateAppOrderRequest extends TeaModel {
     @NameInMap("merchantOrderNo")
     public String merchantOrderNo;
 
-    // 用户唯一id。
-    @NameInMap("outerUserId")
-    public String outerUserId;
-
     // 签名。
     @NameInMap("signature")
     public String signature;
@@ -48,12 +44,12 @@ public class CreateAppOrderRequest extends TeaModel {
     @NameInMap("timestamp")
     public Long timestamp;
 
-    public static CreateAppOrderRequest build(java.util.Map<String, ?> map) throws Exception {
-        CreateAppOrderRequest self = new CreateAppOrderRequest();
+    public static CreateSnsAppOrderRequest build(java.util.Map<String, ?> map) throws Exception {
+        CreateSnsAppOrderRequest self = new CreateSnsAppOrderRequest();
         return TeaModel.build(map, self);
     }
 
-    public CreateAppOrderRequest setActualAmount(Long actualAmount) {
+    public CreateSnsAppOrderRequest setActualAmount(Long actualAmount) {
         this.actualAmount = actualAmount;
         return this;
     }
@@ -61,7 +57,7 @@ public class CreateAppOrderRequest extends TeaModel {
         return this.actualAmount;
     }
 
-    public CreateAppOrderRequest setAlipayAppId(String alipayAppId) {
+    public CreateSnsAppOrderRequest setAlipayAppId(String alipayAppId) {
         this.alipayAppId = alipayAppId;
         return this;
     }
@@ -69,7 +65,7 @@ public class CreateAppOrderRequest extends TeaModel {
         return this.alipayAppId;
     }
 
-    public CreateAppOrderRequest setBizCode(Integer bizCode) {
+    public CreateSnsAppOrderRequest setBizCode(Integer bizCode) {
         this.bizCode = bizCode;
         return this;
     }
@@ -77,15 +73,15 @@ public class CreateAppOrderRequest extends TeaModel {
         return this.bizCode;
     }
 
-    public CreateAppOrderRequest setDetailList(java.util.List<CreateAppOrderRequestDetailList> detailList) {
+    public CreateSnsAppOrderRequest setDetailList(java.util.List<CreateSnsAppOrderRequestDetailList> detailList) {
         this.detailList = detailList;
         return this;
     }
-    public java.util.List<CreateAppOrderRequestDetailList> getDetailList() {
+    public java.util.List<CreateSnsAppOrderRequestDetailList> getDetailList() {
         return this.detailList;
     }
 
-    public CreateAppOrderRequest setLabelAmount(Long labelAmount) {
+    public CreateSnsAppOrderRequest setLabelAmount(Long labelAmount) {
         this.labelAmount = labelAmount;
         return this;
     }
@@ -93,7 +89,7 @@ public class CreateAppOrderRequest extends TeaModel {
         return this.labelAmount;
     }
 
-    public CreateAppOrderRequest setMerchantId(String merchantId) {
+    public CreateSnsAppOrderRequest setMerchantId(String merchantId) {
         this.merchantId = merchantId;
         return this;
     }
@@ -101,7 +97,7 @@ public class CreateAppOrderRequest extends TeaModel {
         return this.merchantId;
     }
 
-    public CreateAppOrderRequest setMerchantOrderNo(String merchantOrderNo) {
+    public CreateSnsAppOrderRequest setMerchantOrderNo(String merchantOrderNo) {
         this.merchantOrderNo = merchantOrderNo;
         return this;
     }
@@ -109,15 +105,7 @@ public class CreateAppOrderRequest extends TeaModel {
         return this.merchantOrderNo;
     }
 
-    public CreateAppOrderRequest setOuterUserId(String outerUserId) {
-        this.outerUserId = outerUserId;
-        return this;
-    }
-    public String getOuterUserId() {
-        return this.outerUserId;
-    }
-
-    public CreateAppOrderRequest setSignature(String signature) {
+    public CreateSnsAppOrderRequest setSignature(String signature) {
         this.signature = signature;
         return this;
     }
@@ -125,7 +113,7 @@ public class CreateAppOrderRequest extends TeaModel {
         return this.signature;
     }
 
-    public CreateAppOrderRequest setSubject(String subject) {
+    public CreateSnsAppOrderRequest setSubject(String subject) {
         this.subject = subject;
         return this;
     }
@@ -133,7 +121,7 @@ public class CreateAppOrderRequest extends TeaModel {
         return this.subject;
     }
 
-    public CreateAppOrderRequest setTimestamp(Long timestamp) {
+    public CreateSnsAppOrderRequest setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
@@ -141,7 +129,7 @@ public class CreateAppOrderRequest extends TeaModel {
         return this.timestamp;
     }
 
-    public static class CreateAppOrderRequestDetailList extends TeaModel {
+    public static class CreateSnsAppOrderRequestDetailList extends TeaModel {
         // 扩展字段。
         @NameInMap("feature")
         public String feature;
@@ -162,12 +150,12 @@ public class CreateAppOrderRequest extends TeaModel {
         @NameInMap("goodsQuantity")
         public Integer goodsQuantity;
 
-        public static CreateAppOrderRequestDetailList build(java.util.Map<String, ?> map) throws Exception {
-            CreateAppOrderRequestDetailList self = new CreateAppOrderRequestDetailList();
+        public static CreateSnsAppOrderRequestDetailList build(java.util.Map<String, ?> map) throws Exception {
+            CreateSnsAppOrderRequestDetailList self = new CreateSnsAppOrderRequestDetailList();
             return TeaModel.build(map, self);
         }
 
-        public CreateAppOrderRequestDetailList setFeature(String feature) {
+        public CreateSnsAppOrderRequestDetailList setFeature(String feature) {
             this.feature = feature;
             return this;
         }
@@ -175,7 +163,7 @@ public class CreateAppOrderRequest extends TeaModel {
             return this.feature;
         }
 
-        public CreateAppOrderRequestDetailList setGoodsId(String goodsId) {
+        public CreateSnsAppOrderRequestDetailList setGoodsId(String goodsId) {
             this.goodsId = goodsId;
             return this;
         }
@@ -183,7 +171,7 @@ public class CreateAppOrderRequest extends TeaModel {
             return this.goodsId;
         }
 
-        public CreateAppOrderRequestDetailList setGoodsName(String goodsName) {
+        public CreateSnsAppOrderRequestDetailList setGoodsName(String goodsName) {
             this.goodsName = goodsName;
             return this;
         }
@@ -191,7 +179,7 @@ public class CreateAppOrderRequest extends TeaModel {
             return this.goodsName;
         }
 
-        public CreateAppOrderRequestDetailList setGoodsPrice(Long goodsPrice) {
+        public CreateSnsAppOrderRequestDetailList setGoodsPrice(Long goodsPrice) {
             this.goodsPrice = goodsPrice;
             return this;
         }
@@ -199,7 +187,7 @@ public class CreateAppOrderRequest extends TeaModel {
             return this.goodsPrice;
         }
 
-        public CreateAppOrderRequestDetailList setGoodsQuantity(Integer goodsQuantity) {
+        public CreateSnsAppOrderRequestDetailList setGoodsQuantity(Integer goodsQuantity) {
             this.goodsQuantity = goodsQuantity;
             return this;
         }

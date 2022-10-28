@@ -3,7 +3,7 @@ package com.aliyun.dingtalkedu_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class QueryOrderResponseBody extends TeaModel {
+public class QuerySnsOrderResponseBody extends TeaModel {
     @NameInMap("actualAmount")
     public Long actualAmount;
 
@@ -87,12 +87,12 @@ public class QueryOrderResponseBody extends TeaModel {
     @NameInMap("tradeNo")
     public String tradeNo;
 
-    public static QueryOrderResponseBody build(java.util.Map<String, ?> map) throws Exception {
-        QueryOrderResponseBody self = new QueryOrderResponseBody();
+    public static QuerySnsOrderResponseBody build(java.util.Map<String, ?> map) throws Exception {
+        QuerySnsOrderResponseBody self = new QuerySnsOrderResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public QueryOrderResponseBody setActualAmount(Long actualAmount) {
+    public QuerySnsOrderResponseBody setActualAmount(Long actualAmount) {
         this.actualAmount = actualAmount;
         return this;
     }
@@ -100,7 +100,7 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.actualAmount;
     }
 
-    public QueryOrderResponseBody setAlipayAppId(String alipayAppId) {
+    public QuerySnsOrderResponseBody setAlipayAppId(String alipayAppId) {
         this.alipayAppId = alipayAppId;
         return this;
     }
@@ -108,7 +108,7 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.alipayAppId;
     }
 
-    public QueryOrderResponseBody setCloseTime(Long closeTime) {
+    public QuerySnsOrderResponseBody setCloseTime(Long closeTime) {
         this.closeTime = closeTime;
         return this;
     }
@@ -116,7 +116,7 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.closeTime;
     }
 
-    public QueryOrderResponseBody setCreateTime(Long createTime) {
+    public QuerySnsOrderResponseBody setCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -124,7 +124,7 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.createTime;
     }
 
-    public QueryOrderResponseBody setFeature(String feature) {
+    public QuerySnsOrderResponseBody setFeature(String feature) {
         this.feature = feature;
         return this;
     }
@@ -132,7 +132,7 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.feature;
     }
 
-    public QueryOrderResponseBody setLabelAmount(Long labelAmount) {
+    public QuerySnsOrderResponseBody setLabelAmount(Long labelAmount) {
         this.labelAmount = labelAmount;
         return this;
     }
@@ -140,7 +140,7 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.labelAmount;
     }
 
-    public QueryOrderResponseBody setMerchantId(String merchantId) {
+    public QuerySnsOrderResponseBody setMerchantId(String merchantId) {
         this.merchantId = merchantId;
         return this;
     }
@@ -148,7 +148,7 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.merchantId;
     }
 
-    public QueryOrderResponseBody setMerchantMergeOrderNo(String merchantMergeOrderNo) {
+    public QuerySnsOrderResponseBody setMerchantMergeOrderNo(String merchantMergeOrderNo) {
         this.merchantMergeOrderNo = merchantMergeOrderNo;
         return this;
     }
@@ -156,7 +156,7 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.merchantMergeOrderNo;
     }
 
-    public QueryOrderResponseBody setMerchantOrderNo(String merchantOrderNo) {
+    public QuerySnsOrderResponseBody setMerchantOrderNo(String merchantOrderNo) {
         this.merchantOrderNo = merchantOrderNo;
         return this;
     }
@@ -164,7 +164,7 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.merchantOrderNo;
     }
 
-    public QueryOrderResponseBody setOrderNo(String orderNo) {
+    public QuerySnsOrderResponseBody setOrderNo(String orderNo) {
         this.orderNo = orderNo;
         return this;
     }
@@ -172,7 +172,7 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.orderNo;
     }
 
-    public QueryOrderResponseBody setOrderType(String orderType) {
+    public QuerySnsOrderResponseBody setOrderType(String orderType) {
         this.orderType = orderType;
         return this;
     }
@@ -180,7 +180,7 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.orderType;
     }
 
-    public QueryOrderResponseBody setOuterUid(String outerUid) {
+    public QuerySnsOrderResponseBody setOuterUid(String outerUid) {
         this.outerUid = outerUid;
         return this;
     }
@@ -188,7 +188,7 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.outerUid;
     }
 
-    public QueryOrderResponseBody setPayId(String payId) {
+    public QuerySnsOrderResponseBody setPayId(String payId) {
         this.payId = payId;
         return this;
     }
@@ -196,7 +196,7 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.payId;
     }
 
-    public QueryOrderResponseBody setPayLogonId(String payLogonId) {
+    public QuerySnsOrderResponseBody setPayLogonId(String payLogonId) {
         this.payLogonId = payLogonId;
         return this;
     }
@@ -204,7 +204,7 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.payLogonId;
     }
 
-    public QueryOrderResponseBody setPayStatus(Integer payStatus) {
+    public QuerySnsOrderResponseBody setPayStatus(Integer payStatus) {
         this.payStatus = payStatus;
         return this;
     }
@@ -212,7 +212,7 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.payStatus;
     }
 
-    public QueryOrderResponseBody setPayTime(Long payTime) {
+    public QuerySnsOrderResponseBody setPayTime(Long payTime) {
         this.payTime = payTime;
         return this;
     }
@@ -220,7 +220,7 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.payTime;
     }
 
-    public QueryOrderResponseBody setPayType(String payType) {
+    public QuerySnsOrderResponseBody setPayType(String payType) {
         this.payType = payType;
         return this;
     }
@@ -228,7 +228,7 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.payType;
     }
 
-    public QueryOrderResponseBody setRefundAmount(Long refundAmount) {
+    public QuerySnsOrderResponseBody setRefundAmount(Long refundAmount) {
         this.refundAmount = refundAmount;
         return this;
     }
@@ -236,7 +236,7 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.refundAmount;
     }
 
-    public QueryOrderResponseBody setRefundStatus(Integer refundStatus) {
+    public QuerySnsOrderResponseBody setRefundStatus(Integer refundStatus) {
         this.refundStatus = refundStatus;
         return this;
     }
@@ -244,7 +244,7 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.refundStatus;
     }
 
-    public QueryOrderResponseBody setRefundTime(Long refundTime) {
+    public QuerySnsOrderResponseBody setRefundTime(Long refundTime) {
         this.refundTime = refundTime;
         return this;
     }
@@ -252,7 +252,7 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.refundTime;
     }
 
-    public QueryOrderResponseBody setSubject(String subject) {
+    public QuerySnsOrderResponseBody setSubject(String subject) {
         this.subject = subject;
         return this;
     }
@@ -260,7 +260,7 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.subject;
     }
 
-    public QueryOrderResponseBody setTradeNo(String tradeNo) {
+    public QuerySnsOrderResponseBody setTradeNo(String tradeNo) {
         this.tradeNo = tradeNo;
         return this;
     }
