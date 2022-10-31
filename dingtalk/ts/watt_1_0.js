@@ -1,0 +1,1 @@
+module.exports = require('./dist').watt_1_0;
