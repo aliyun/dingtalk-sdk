@@ -132,6 +132,165 @@ class AddAttendeeResponse(TeaModel):
         return self
 
 
+class AddMeetingRoomsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddMeetingRoomsRequestMeetingRoomsToAdd(TeaModel):
+    def __init__(
+        self,
+        room_id: str = None,
+    ):
+        self.room_id = room_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.room_id is not None:
+            result['roomId'] = self.room_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('roomId') is not None:
+            self.room_id = m.get('roomId')
+        return self
+
+
+class AddMeetingRoomsRequest(TeaModel):
+    def __init__(
+        self,
+        meeting_rooms_to_add: List[AddMeetingRoomsRequestMeetingRoomsToAdd] = None,
+    ):
+        self.meeting_rooms_to_add = meeting_rooms_to_add
+
+    def validate(self):
+        if self.meeting_rooms_to_add:
+            for k in self.meeting_rooms_to_add:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['meetingRoomsToAdd'] = []
+        if self.meeting_rooms_to_add is not None:
+            for k in self.meeting_rooms_to_add:
+                result['meetingRoomsToAdd'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.meeting_rooms_to_add = []
+        if m.get('meetingRoomsToAdd') is not None:
+            for k in m.get('meetingRoomsToAdd'):
+                temp_model = AddMeetingRoomsRequestMeetingRoomsToAdd()
+                self.meeting_rooms_to_add.append(temp_model.from_map(k))
+        return self
+
+
+class AddMeetingRoomsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class AddMeetingRoomsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AddMeetingRoomsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AddMeetingRoomsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CheckInHeaders(TeaModel):
     def __init__(
         self,
@@ -2468,6 +2627,45 @@ class GetEventResponseBodyLocation(TeaModel):
         return self
 
 
+class GetEventResponseBodyMeetingRooms(TeaModel):
+    def __init__(
+        self,
+        display_name: str = None,
+        response_status: str = None,
+        room_id: str = None,
+    ):
+        self.display_name = display_name
+        self.response_status = response_status
+        self.room_id = room_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.display_name is not None:
+            result['displayName'] = self.display_name
+        if self.response_status is not None:
+            result['responseStatus'] = self.response_status
+        if self.room_id is not None:
+            result['roomId'] = self.room_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('displayName') is not None:
+            self.display_name = m.get('displayName')
+        if m.get('responseStatus') is not None:
+            self.response_status = m.get('responseStatus')
+        if m.get('roomId') is not None:
+            self.room_id = m.get('roomId')
+        return self
+
+
 class GetEventResponseBodyOnlineMeetingInfo(TeaModel):
     def __init__(
         self,
@@ -2779,6 +2977,7 @@ class GetEventResponseBody(TeaModel):
         id: str = None,
         is_all_day: bool = None,
         location: GetEventResponseBodyLocation = None,
+        meeting_rooms: List[GetEventResponseBodyMeetingRooms] = None,
         online_meeting_info: GetEventResponseBodyOnlineMeetingInfo = None,
         organizer: GetEventResponseBodyOrganizer = None,
         recurrence: GetEventResponseBodyRecurrence = None,
@@ -2801,6 +3000,7 @@ class GetEventResponseBody(TeaModel):
         # 是否为全天日程
         self.is_all_day = is_all_day
         self.location = location
+        self.meeting_rooms = meeting_rooms
         self.online_meeting_info = online_meeting_info
         self.organizer = organizer
         self.recurrence = recurrence
@@ -2827,6 +3027,10 @@ class GetEventResponseBody(TeaModel):
             self.extended_properties.validate()
         if self.location:
             self.location.validate()
+        if self.meeting_rooms:
+            for k in self.meeting_rooms:
+                if k:
+                    k.validate()
         if self.online_meeting_info:
             self.online_meeting_info.validate()
         if self.organizer:
@@ -2864,6 +3068,10 @@ class GetEventResponseBody(TeaModel):
             result['isAllDay'] = self.is_all_day
         if self.location is not None:
             result['location'] = self.location.to_map()
+        result['meetingRooms'] = []
+        if self.meeting_rooms is not None:
+            for k in self.meeting_rooms:
+                result['meetingRooms'].append(k.to_map() if k else None)
         if self.online_meeting_info is not None:
             result['onlineMeetingInfo'] = self.online_meeting_info.to_map()
         if self.organizer is not None:
@@ -2910,6 +3118,11 @@ class GetEventResponseBody(TeaModel):
         if m.get('location') is not None:
             temp_model = GetEventResponseBodyLocation()
             self.location = temp_model.from_map(m['location'])
+        self.meeting_rooms = []
+        if m.get('meetingRooms') is not None:
+            for k in m.get('meetingRooms'):
+                temp_model = GetEventResponseBodyMeetingRooms()
+                self.meeting_rooms.append(temp_model.from_map(k))
         if m.get('onlineMeetingInfo') is not None:
             temp_model = GetEventResponseBodyOnlineMeetingInfo()
             self.online_meeting_info = temp_model.from_map(m['onlineMeetingInfo'])
@@ -2971,6 +3184,334 @@ class GetEventResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetEventResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetMeetingRoomsScheduleHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetMeetingRoomsScheduleRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: str = None,
+        room_ids: List[str] = None,
+        start_time: str = None,
+    ):
+        # 查询结束时间
+        self.end_time = end_time
+        # 待查询的用户列表
+        self.room_ids = room_ids
+        # 查询开始时间
+        self.start_time = start_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.room_ids is not None:
+            result['roomIds'] = self.room_ids
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('roomIds') is not None:
+            self.room_ids = m.get('roomIds')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        return self
+
+
+class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd(TeaModel):
+    def __init__(
+        self,
+        date: str = None,
+        date_time: str = None,
+        time_zone: str = None,
+    ):
+        # 结束日期
+        self.date = date
+        # 结束时间戳，按照ISO 8601格式
+        self.date_time = date_time
+        # 时间戳所属时区
+        self.time_zone = time_zone
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.date is not None:
+            result['date'] = self.date
+        if self.date_time is not None:
+            result['dateTime'] = self.date_time
+        if self.time_zone is not None:
+            result['timeZone'] = self.time_zone
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('date') is not None:
+            self.date = m.get('date')
+        if m.get('dateTime') is not None:
+            self.date_time = m.get('dateTime')
+        if m.get('timeZone') is not None:
+            self.time_zone = m.get('timeZone')
+        return self
+
+
+class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart(TeaModel):
+    def __init__(
+        self,
+        date: str = None,
+        date_time: str = None,
+        time_zone: str = None,
+    ):
+        # 开始日期
+        self.date = date
+        # 开始时间戳，按照ISO 8601格式
+        self.date_time = date_time
+        # 所属时区
+        self.time_zone = time_zone
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.date is not None:
+            result['date'] = self.date
+        if self.date_time is not None:
+            result['dateTime'] = self.date_time
+        if self.time_zone is not None:
+            result['timeZone'] = self.time_zone
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('date') is not None:
+            self.date = m.get('date')
+        if m.get('dateTime') is not None:
+            self.date_time = m.get('dateTime')
+        if m.get('timeZone') is not None:
+            self.time_zone = m.get('timeZone')
+        return self
+
+
+class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems(TeaModel):
+    def __init__(
+        self,
+        end: GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd = None,
+        start: GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart = None,
+        status: str = None,
+    ):
+        # 结束时间，表示一个日期，或者一个带时区的时间戳
+        self.end = end
+        # 开始时间，表示一个日期，或者一个带时区的时间戳
+        self.start = start
+        # 状态: - BUSY：繁忙, - TENTATIVE：暂定繁忙
+        self.status = status
+
+    def validate(self):
+        if self.end:
+            self.end.validate()
+        if self.start:
+            self.start.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end is not None:
+            result['end'] = self.end.to_map()
+        if self.start is not None:
+            result['start'] = self.start.to_map()
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('end') is not None:
+            temp_model = GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd()
+            self.end = temp_model.from_map(m['end'])
+        if m.get('start') is not None:
+            temp_model = GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart()
+            self.start = temp_model.from_map(m['start'])
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class GetMeetingRoomsScheduleResponseBodyScheduleInformation(TeaModel):
+    def __init__(
+        self,
+        error: str = None,
+        room_id: str = None,
+        schedule_items: List[GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems] = None,
+    ):
+        # 异常描述
+        self.error = error
+        # 用户userId
+        self.room_id = room_id
+        self.schedule_items = schedule_items
+
+    def validate(self):
+        if self.schedule_items:
+            for k in self.schedule_items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error is not None:
+            result['error'] = self.error
+        if self.room_id is not None:
+            result['roomId'] = self.room_id
+        result['scheduleItems'] = []
+        if self.schedule_items is not None:
+            for k in self.schedule_items:
+                result['scheduleItems'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('error') is not None:
+            self.error = m.get('error')
+        if m.get('roomId') is not None:
+            self.room_id = m.get('roomId')
+        self.schedule_items = []
+        if m.get('scheduleItems') is not None:
+            for k in m.get('scheduleItems'):
+                temp_model = GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems()
+                self.schedule_items.append(temp_model.from_map(k))
+        return self
+
+
+class GetMeetingRoomsScheduleResponseBody(TeaModel):
+    def __init__(
+        self,
+        schedule_information: List[GetMeetingRoomsScheduleResponseBodyScheduleInformation] = None,
+    ):
+        # 闲忙信息
+        self.schedule_information = schedule_information
+
+    def validate(self):
+        if self.schedule_information:
+            for k in self.schedule_information:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['scheduleInformation'] = []
+        if self.schedule_information is not None:
+            for k in self.schedule_information:
+                result['scheduleInformation'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.schedule_information = []
+        if m.get('scheduleInformation') is not None:
+            for k in m.get('scheduleInformation'):
+                temp_model = GetMeetingRoomsScheduleResponseBodyScheduleInformation()
+                self.schedule_information.append(temp_model.from_map(k))
+        return self
+
+
+class GetMeetingRoomsScheduleResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetMeetingRoomsScheduleResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetMeetingRoomsScheduleResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -8045,6 +8586,165 @@ class RemoveAttendeeResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        return self
+
+
+class RemoveMeetingRoomsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RemoveMeetingRoomsRequestMeetingRoomsToRemove(TeaModel):
+    def __init__(
+        self,
+        room_id: str = None,
+    ):
+        self.room_id = room_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.room_id is not None:
+            result['roomId'] = self.room_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('roomId') is not None:
+            self.room_id = m.get('roomId')
+        return self
+
+
+class RemoveMeetingRoomsRequest(TeaModel):
+    def __init__(
+        self,
+        meeting_rooms_to_remove: List[RemoveMeetingRoomsRequestMeetingRoomsToRemove] = None,
+    ):
+        self.meeting_rooms_to_remove = meeting_rooms_to_remove
+
+    def validate(self):
+        if self.meeting_rooms_to_remove:
+            for k in self.meeting_rooms_to_remove:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['meetingRoomsToRemove'] = []
+        if self.meeting_rooms_to_remove is not None:
+            for k in self.meeting_rooms_to_remove:
+                result['meetingRoomsToRemove'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.meeting_rooms_to_remove = []
+        if m.get('meetingRoomsToRemove') is not None:
+            for k in m.get('meetingRoomsToRemove'):
+                temp_model = RemoveMeetingRoomsRequestMeetingRoomsToRemove()
+                self.meeting_rooms_to_remove.append(temp_model.from_map(k))
+        return self
+
+
+class RemoveMeetingRoomsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class RemoveMeetingRoomsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: RemoveMeetingRoomsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = RemoveMeetingRoomsResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 

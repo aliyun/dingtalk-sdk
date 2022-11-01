@@ -367,6 +367,52 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetPictureDownloadUrl', 'link_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/link/oToMessages/pictures/downloadUrls', 'json', req, runtime)
         )
 
+    def list_account(self) -> dingtalklink__1__0_models.ListAccountResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklink__1__0_models.ListAccountHeaders()
+        return self.list_account_with_options(headers, runtime)
+
+    async def list_account_async(self) -> dingtalklink__1__0_models.ListAccountResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklink__1__0_models.ListAccountHeaders()
+        return await self.list_account_with_options_async(headers, runtime)
+
+    def list_account_with_options(
+        self,
+        headers: dingtalklink__1__0_models.ListAccountHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklink__1__0_models.ListAccountResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalklink__1__0_models.ListAccountResponse(),
+            self.do_roarequest('ListAccount', 'link_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/link/accounts', 'json', req, runtime)
+        )
+
+    async def list_account_with_options_async(
+        self,
+        headers: dingtalklink__1__0_models.ListAccountHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklink__1__0_models.ListAccountResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalklink__1__0_models.ListAccountResponse(),
+            await self.do_roarequest_async('ListAccount', 'link_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/link/accounts', 'json', req, runtime)
+        )
+
     def list_follower(
         self,
         request: dingtalklink__1__0_models.ListFollowerRequest,

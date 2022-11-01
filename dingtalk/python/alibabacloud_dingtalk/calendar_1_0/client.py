@@ -105,6 +105,88 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('AddAttendee', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/attendees', 'none', req, runtime)
         )
 
+    def add_meeting_rooms(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.AddMeetingRoomsRequest,
+    ) -> dingtalkcalendar__1__0_models.AddMeetingRoomsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.AddMeetingRoomsHeaders()
+        return self.add_meeting_rooms_with_options(user_id, calendar_id, event_id, request, headers, runtime)
+
+    async def add_meeting_rooms_async(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.AddMeetingRoomsRequest,
+    ) -> dingtalkcalendar__1__0_models.AddMeetingRoomsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.AddMeetingRoomsHeaders()
+        return await self.add_meeting_rooms_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
+
+    def add_meeting_rooms_with_options(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.AddMeetingRoomsRequest,
+        headers: dingtalkcalendar__1__0_models.AddMeetingRoomsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.AddMeetingRoomsResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
+        body = {}
+        if not UtilClient.is_unset(request.meeting_rooms_to_add):
+            body['meetingRoomsToAdd'] = request.meeting_rooms_to_add
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.AddMeetingRoomsResponse(),
+            self.do_roarequest('AddMeetingRooms', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/meetingRooms', 'json', req, runtime)
+        )
+
+    async def add_meeting_rooms_with_options_async(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.AddMeetingRoomsRequest,
+        headers: dingtalkcalendar__1__0_models.AddMeetingRoomsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.AddMeetingRoomsResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
+        body = {}
+        if not UtilClient.is_unset(request.meeting_rooms_to_add):
+            body['meetingRoomsToAdd'] = request.meeting_rooms_to_add
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.AddMeetingRoomsResponse(),
+            await self.do_roarequest_async('AddMeetingRooms', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/meetingRooms', 'json', req, runtime)
+        )
+
     def check_in(
         self,
         user_id: str,
@@ -877,6 +959,84 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcalendar__1__0_models.GetEventResponse(),
             await self.do_roarequest_async('GetEvent', 'calendar_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}', 'json', req, runtime)
+        )
+
+    def get_meeting_rooms_schedule(
+        self,
+        user_id: str,
+        request: dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleRequest,
+    ) -> dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleHeaders()
+        return self.get_meeting_rooms_schedule_with_options(user_id, request, headers, runtime)
+
+    async def get_meeting_rooms_schedule_async(
+        self,
+        user_id: str,
+        request: dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleRequest,
+    ) -> dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleHeaders()
+        return await self.get_meeting_rooms_schedule_with_options_async(user_id, request, headers, runtime)
+
+    def get_meeting_rooms_schedule_with_options(
+        self,
+        user_id: str,
+        request: dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleRequest,
+        headers: dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.room_ids):
+            body['roomIds'] = request.room_ids
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleResponse(),
+            self.do_roarequest('GetMeetingRoomsSchedule', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/meetingRooms/schedules/query', 'json', req, runtime)
+        )
+
+    async def get_meeting_rooms_schedule_with_options_async(
+        self,
+        user_id: str,
+        request: dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleRequest,
+        headers: dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.room_ids):
+            body['roomIds'] = request.room_ids
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleResponse(),
+            await self.do_roarequest_async('GetMeetingRoomsSchedule', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/meetingRooms/schedules/query', 'json', req, runtime)
         )
 
     def get_schedule(
@@ -1885,6 +2045,88 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcalendar__1__0_models.RemoveAttendeeResponse(),
             await self.do_roarequest_async('RemoveAttendee', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/attendees/batchRemove', 'none', req, runtime)
+        )
+
+    def remove_meeting_rooms(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.RemoveMeetingRoomsRequest,
+    ) -> dingtalkcalendar__1__0_models.RemoveMeetingRoomsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.RemoveMeetingRoomsHeaders()
+        return self.remove_meeting_rooms_with_options(user_id, calendar_id, event_id, request, headers, runtime)
+
+    async def remove_meeting_rooms_async(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.RemoveMeetingRoomsRequest,
+    ) -> dingtalkcalendar__1__0_models.RemoveMeetingRoomsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.RemoveMeetingRoomsHeaders()
+        return await self.remove_meeting_rooms_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
+
+    def remove_meeting_rooms_with_options(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.RemoveMeetingRoomsRequest,
+        headers: dingtalkcalendar__1__0_models.RemoveMeetingRoomsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.RemoveMeetingRoomsResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
+        body = {}
+        if not UtilClient.is_unset(request.meeting_rooms_to_remove):
+            body['meetingRoomsToRemove'] = request.meeting_rooms_to_remove
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.RemoveMeetingRoomsResponse(),
+            self.do_roarequest('RemoveMeetingRooms', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/meetingRooms/batchRemove', 'json', req, runtime)
+        )
+
+    async def remove_meeting_rooms_with_options_async(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.RemoveMeetingRoomsRequest,
+        headers: dingtalkcalendar__1__0_models.RemoveMeetingRoomsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.RemoveMeetingRoomsResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
+        body = {}
+        if not UtilClient.is_unset(request.meeting_rooms_to_remove):
+            body['meetingRoomsToRemove'] = request.meeting_rooms_to_remove
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.RemoveMeetingRoomsResponse(),
+            await self.do_roarequest_async('RemoveMeetingRooms', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/meetingRooms/batchRemove', 'json', req, runtime)
         )
 
     def respond_event(

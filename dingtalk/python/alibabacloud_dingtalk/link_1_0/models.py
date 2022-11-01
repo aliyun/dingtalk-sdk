@@ -44,11 +44,13 @@ class ApplyFollowerAuthInfoRequest(TeaModel):
         session_id: str = None,
         user_id: str = None,
     ):
-        # 申请的授权数据，多个数据时使用,分隔
+        # 申请的授权数据，多个数据时使用,分隔。
+        # 暂时仅支持申请手机号码授权：Contact.User.mobile
         self.field_scope = field_scope
-        # 客服会话sessionId
+        # 服务窗机器人消息sessionId。
+        # 开发者需要接入服务窗自建机器人后通过回调消息获取到的sessionId。
         self.session_id = session_id
-        # 用户信息
+        # 服务窗关注用户userId。
         self.user_id = user_id
 
     def validate(self):
@@ -676,8 +678,12 @@ class GetFollowerInfoRequest(TeaModel):
         union_id: str = None,
         user_id: str = None,
     ):
+        # 服务窗帐号ID，可选参数。
+        # 帐号ID用于开发者应用为服务窗所属组织应用场景，此ID可以通过服务窗帐号信息查询接口获取。
         self.account_id = account_id
+        # 待查询的服务窗关注者unionId。
         self.union_id = union_id
+        # 待查询的服务窗关注者userId。
         self.user_id = user_id
 
     def validate(self):
@@ -889,7 +895,11 @@ class GetPictureDownloadUrlRequest(TeaModel):
         download_code: str = None,
         session_id: str = None,
     ):
+        # 服务窗机器人图片消息图片下载码。
+        # 开发者需要接入服务窗自建机器人后根据图片回调消息内容获取到对应的downloadCode。
         self.download_code = download_code
+        # 服务窗机器人消息sessionId。
+        # 开发者需要接入服务窗自建机器人后通过回调消息获取到的sessionId。
         self.session_id = session_id
 
     def validate(self):
@@ -1018,6 +1028,146 @@ class GetPictureDownloadUrlResponse(TeaModel):
         return self
 
 
+class ListAccountHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListAccountResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        account_id: str = None,
+        account_name: str = None,
+    ):
+        # 服务窗帐号ID
+        self.account_id = account_id
+        # 服务窗名称
+        self.account_name = account_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.account_id is not None:
+            result['accountId'] = self.account_id
+        if self.account_name is not None:
+            result['accountName'] = self.account_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountId') is not None:
+            self.account_id = m.get('accountId')
+        if m.get('accountName') is not None:
+            self.account_name = m.get('accountName')
+        return self
+
+
+class ListAccountResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[ListAccountResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = ListAccountResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class ListAccountResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListAccountResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListAccountResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ListFollowerHeaders(TeaModel):
     def __init__(
         self,
@@ -1058,7 +1208,8 @@ class ListFollowerRequest(TeaModel):
         max_results: int = None,
         next_token: str = None,
     ):
-        # 服务窗帐号ID，用于非服务窗自建应用场景下指定服务窗帐号。
+        # 服务窗帐号ID，用于服务窗归属组织下应用AK(非服务窗自建应用)指定服务窗帐号。
+        # 帐号ID可以通过服务窗帐号查询接口获取。
         self.account_id = account_id
         # 分页查询页大小。
         self.max_results = max_results
@@ -1797,12 +1948,22 @@ class SendInteractiveOTOMessageRequestDetail(TeaModel):
         user_id: str = None,
         user_id_private_data_map: str = None,
     ):
+        # 卡片回调的URL地址，不传此参数则无回调。
+        # 回调URL暂不支持query参数。
         self.callback_url = callback_url
+        # 唯一标识一张卡片的ID，卡片幂等ID，可用于后续卡片更新。
+        # > 该参数由开发者传入，确保唯一。
         self.card_biz_id = card_biz_id
+        # 卡片模板内容参数，JsonObject结构型。
+        # 卡片数据结构需要与卡片搭建平台上定义的参数结构一致。
         self.card_data = card_data
+        # 卡片搭建平台模板ID，详情可查阅 [创建消息模板](https://open.dingtalk.com/document/group/create-message-template) 。
         self.card_template_id = card_template_id
         # 消息接收人id
         self.user_id = user_id
+        # 卡片模板userId差异用户参数，json结构体。
+        # 用户对应的数据结构需要与卡片搭建平台上定义的参数结构一致。
+        # 
         self.user_id_private_data_map = user_id_private_data_map
 
     def validate(self):
