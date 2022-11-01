@@ -67,6 +67,88 @@ export class AddAttendeeResponse extends $tea.Model {
   }
 }
 
+export class AddMeetingRoomsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddMeetingRoomsRequest extends $tea.Model {
+  meetingRoomsToAdd?: AddMeetingRoomsRequestMeetingRoomsToAdd[];
+  static names(): { [key: string]: string } {
+    return {
+      meetingRoomsToAdd: 'meetingRoomsToAdd',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      meetingRoomsToAdd: { 'type': 'array', 'itemType': AddMeetingRoomsRequestMeetingRoomsToAdd },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddMeetingRoomsResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddMeetingRoomsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AddMeetingRoomsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AddMeetingRoomsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CheckInHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -834,6 +916,7 @@ export class GetEventResponseBody extends $tea.Model {
   id?: string;
   isAllDay?: boolean;
   location?: GetEventResponseBodyLocation;
+  meetingRooms?: GetEventResponseBodyMeetingRooms[];
   onlineMeetingInfo?: GetEventResponseBodyOnlineMeetingInfo;
   organizer?: GetEventResponseBodyOrganizer;
   recurrence?: GetEventResponseBodyRecurrence;
@@ -853,6 +936,7 @@ export class GetEventResponseBody extends $tea.Model {
       id: 'id',
       isAllDay: 'isAllDay',
       location: 'location',
+      meetingRooms: 'meetingRooms',
       onlineMeetingInfo: 'onlineMeetingInfo',
       organizer: 'organizer',
       recurrence: 'recurrence',
@@ -875,6 +959,7 @@ export class GetEventResponseBody extends $tea.Model {
       id: 'string',
       isAllDay: 'boolean',
       location: GetEventResponseBodyLocation,
+      meetingRooms: { 'type': 'array', 'itemType': GetEventResponseBodyMeetingRooms },
       onlineMeetingInfo: GetEventResponseBodyOnlineMeetingInfo,
       organizer: GetEventResponseBodyOrganizer,
       recurrence: GetEventResponseBodyRecurrence,
@@ -906,6 +991,94 @@ export class GetEventResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetEventResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMeetingRoomsScheduleHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMeetingRoomsScheduleRequest extends $tea.Model {
+  endTime?: string;
+  roomIds?: string[];
+  startTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      roomIds: 'roomIds',
+      startTime: 'startTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'string',
+      roomIds: { 'type': 'array', 'itemType': 'string' },
+      startTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMeetingRoomsScheduleResponseBody extends $tea.Model {
+  scheduleInformation?: GetMeetingRoomsScheduleResponseBodyScheduleInformation[];
+  static names(): { [key: string]: string } {
+    return {
+      scheduleInformation: 'scheduleInformation',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      scheduleInformation: { 'type': 'array', 'itemType': GetMeetingRoomsScheduleResponseBodyScheduleInformation },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMeetingRoomsScheduleResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetMeetingRoomsScheduleResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetMeetingRoomsScheduleResponseBody,
     };
   }
 
@@ -1978,6 +2151,88 @@ export class RemoveAttendeeResponse extends $tea.Model {
   }
 }
 
+export class RemoveMeetingRoomsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RemoveMeetingRoomsRequest extends $tea.Model {
+  meetingRoomsToRemove?: RemoveMeetingRoomsRequestMeetingRoomsToRemove[];
+  static names(): { [key: string]: string } {
+    return {
+      meetingRoomsToRemove: 'meetingRoomsToRemove',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      meetingRoomsToRemove: { 'type': 'array', 'itemType': RemoveMeetingRoomsRequestMeetingRoomsToRemove },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RemoveMeetingRoomsResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RemoveMeetingRoomsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: RemoveMeetingRoomsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: RemoveMeetingRoomsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RespondEventHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2373,6 +2628,25 @@ export class AddAttendeeRequestAttendeesToAdd extends $tea.Model {
     return {
       id: 'string',
       isOptional: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddMeetingRoomsRequestMeetingRoomsToAdd extends $tea.Model {
+  roomId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      roomId: 'roomId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      roomId: 'string',
     };
   }
 
@@ -3035,6 +3309,31 @@ export class GetEventResponseBodyLocation extends $tea.Model {
   }
 }
 
+export class GetEventResponseBodyMeetingRooms extends $tea.Model {
+  displayName?: string;
+  responseStatus?: string;
+  roomId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      displayName: 'displayName',
+      responseStatus: 'responseStatus',
+      roomId: 'roomId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      displayName: 'string',
+      responseStatus: 'string',
+      roomId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetEventResponseBodyOnlineMeetingInfo extends $tea.Model {
   conferenceId?: string;
   extraInfo?: { [key: string]: any };
@@ -3208,6 +3507,106 @@ export class GetEventResponseBodyStart extends $tea.Model {
       date: 'string',
       dateTime: 'string',
       timeZone: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd extends $tea.Model {
+  date?: string;
+  dateTime?: string;
+  timeZone?: string;
+  static names(): { [key: string]: string } {
+    return {
+      date: 'date',
+      dateTime: 'dateTime',
+      timeZone: 'timeZone',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      date: 'string',
+      dateTime: 'string',
+      timeZone: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart extends $tea.Model {
+  date?: string;
+  dateTime?: string;
+  timeZone?: string;
+  static names(): { [key: string]: string } {
+    return {
+      date: 'date',
+      dateTime: 'dateTime',
+      timeZone: 'timeZone',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      date: 'string',
+      dateTime: 'string',
+      timeZone: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems extends $tea.Model {
+  end?: GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd;
+  start?: GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart;
+  status?: string;
+  static names(): { [key: string]: string } {
+    return {
+      end: 'end',
+      start: 'start',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      end: GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd,
+      start: GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart,
+      status: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMeetingRoomsScheduleResponseBodyScheduleInformation extends $tea.Model {
+  error?: string;
+  roomId?: string;
+  scheduleItems?: GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems[];
+  static names(): { [key: string]: string } {
+    return {
+      error: 'error',
+      roomId: 'roomId',
+      scheduleItems: 'scheduleItems',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      error: 'string',
+      roomId: 'string',
+      scheduleItems: { 'type': 'array', 'itemType': GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems },
     };
   }
 
@@ -5036,6 +5435,25 @@ export class RemoveAttendeeRequestAttendeesToRemove extends $tea.Model {
   }
 }
 
+export class RemoveMeetingRoomsRequestMeetingRoomsToRemove extends $tea.Model {
+  roomId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      roomId: 'roomId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      roomId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateSubscribedCalendarsRequestSubscribeScope extends $tea.Model {
   corpIds?: string[];
   openConversationIds?: string[];
@@ -5104,6 +5522,38 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<AddAttendeeResponse>(await this.doROARequest("AddAttendee", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/attendees`, "none", req, runtime), new AddAttendeeResponse({}));
+  }
+
+  async addMeetingRooms(userId: string, calendarId: string, eventId: string, request: AddMeetingRoomsRequest): Promise<AddMeetingRoomsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddMeetingRoomsHeaders({ });
+    return await this.addMeetingRoomsWithOptions(userId, calendarId, eventId, request, headers, runtime);
+  }
+
+  async addMeetingRoomsWithOptions(userId: string, calendarId: string, eventId: string, request: AddMeetingRoomsRequest, headers: AddMeetingRoomsHeaders, runtime: $Util.RuntimeOptions): Promise<AddMeetingRoomsResponse> {
+    Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    calendarId = OpenApiUtil.getEncodeParam(calendarId);
+    eventId = OpenApiUtil.getEncodeParam(eventId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.meetingRoomsToAdd)) {
+      body["meetingRoomsToAdd"] = request.meetingRoomsToAdd;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AddMeetingRoomsResponse>(await this.doROARequest("AddMeetingRooms", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/meetingRooms`, "json", req, runtime), new AddMeetingRoomsResponse({}));
   }
 
   async checkIn(userId: string, calendarId: string, eventId: string): Promise<CheckInResponse> {
@@ -5451,6 +5901,44 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetEventResponse>(await this.doROARequest("GetEvent", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}`, "json", req, runtime), new GetEventResponse({}));
+  }
+
+  async getMeetingRoomsSchedule(userId: string, request: GetMeetingRoomsScheduleRequest): Promise<GetMeetingRoomsScheduleResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetMeetingRoomsScheduleHeaders({ });
+    return await this.getMeetingRoomsScheduleWithOptions(userId, request, headers, runtime);
+  }
+
+  async getMeetingRoomsScheduleWithOptions(userId: string, request: GetMeetingRoomsScheduleRequest, headers: GetMeetingRoomsScheduleHeaders, runtime: $Util.RuntimeOptions): Promise<GetMeetingRoomsScheduleResponse> {
+    Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.endTime)) {
+      body["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.roomIds)) {
+      body["roomIds"] = request.roomIds;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      body["startTime"] = request.startTime;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetMeetingRoomsScheduleResponse>(await this.doROARequest("GetMeetingRoomsSchedule", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/meetingRooms/schedules/query`, "json", req, runtime), new GetMeetingRoomsScheduleResponse({}));
   }
 
   async getSchedule(userId: string, request: GetScheduleRequest): Promise<GetScheduleResponse> {
@@ -5925,6 +6413,38 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<RemoveAttendeeResponse>(await this.doROARequest("RemoveAttendee", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/attendees/batchRemove`, "none", req, runtime), new RemoveAttendeeResponse({}));
+  }
+
+  async removeMeetingRooms(userId: string, calendarId: string, eventId: string, request: RemoveMeetingRoomsRequest): Promise<RemoveMeetingRoomsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RemoveMeetingRoomsHeaders({ });
+    return await this.removeMeetingRoomsWithOptions(userId, calendarId, eventId, request, headers, runtime);
+  }
+
+  async removeMeetingRoomsWithOptions(userId: string, calendarId: string, eventId: string, request: RemoveMeetingRoomsRequest, headers: RemoveMeetingRoomsHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveMeetingRoomsResponse> {
+    Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    calendarId = OpenApiUtil.getEncodeParam(calendarId);
+    eventId = OpenApiUtil.getEncodeParam(eventId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.meetingRoomsToRemove)) {
+      body["meetingRoomsToRemove"] = request.meetingRoomsToRemove;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<RemoveMeetingRoomsResponse>(await this.doROARequest("RemoveMeetingRooms", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/meetingRooms/batchRemove`, "json", req, runtime), new RemoveMeetingRoomsResponse({}));
   }
 
   async respondEvent(userId: string, calendarId: string, eventId: string, request: RespondEventRequest): Promise<RespondEventResponse> {
