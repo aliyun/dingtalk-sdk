@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class GetFollowerInfoRequest extends Model
 {
     /**
+     * @description 服务窗帐号ID，可选参数。
+     * 帐号ID用于开发者应用为服务窗所属组织应用场景，此ID可以通过服务窗帐号信息查询接口获取。
      * @var string
      */
     public $accountId;
 
     /**
+     * @description 待查询的服务窗关注者unionId。
+     *
      * @var string
      */
     public $unionId;
 
     /**
+     * @description 待查询的服务窗关注者userId。
+     *
      * @var string
      */
     public $userId;

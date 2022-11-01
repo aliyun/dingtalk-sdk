@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class ApplyFollowerAuthInfoRequest extends Model
 {
     /**
-     * @description 申请的授权数据，多个数据时使用,分隔
-     *
+     * @description 申请的授权数据，多个数据时使用,分隔。
+     * 暂时仅支持申请手机号码授权：Contact.User.mobile
      * @var string
      */
     public $fieldScope;
 
     /**
-     * @description 客服会话sessionId
-     *
+     * @description 服务窗机器人消息sessionId。
+     * 开发者需要接入服务窗自建机器人后通过回调消息获取到的sessionId。
      * @var string
      */
     public $sessionId;
 
     /**
-     * @description 用户信息
+     * @description 服务窗关注用户userId。
      *
      * @var string
      */

@@ -20,6 +20,8 @@ use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\GetFollowerInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\GetPictureDownloadUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\GetPictureDownloadUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\GetPictureDownloadUrlResponse;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\ListAccountHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\ListAccountResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\ListFollowerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\ListFollowerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\ListFollowerResponse;
@@ -280,6 +282,39 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetPictureDownloadUrlResponse::fromMap($this->doROARequest('GetPictureDownloadUrl', 'link_1.0', 'HTTP', 'GET', 'AK', '/v1.0/link/oToMessages/pictures/downloadUrls', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return ListAccountResponse
+     */
+    public function listAccount()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListAccountHeaders([]);
+
+        return $this->listAccountWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param ListAccountHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return ListAccountResponse
+     */
+    public function listAccountWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return ListAccountResponse::fromMap($this->doROARequest('ListAccount', 'link_1.0', 'HTTP', 'GET', 'AK', '/v1.0/link/accounts', 'json', $req, $runtime));
     }
 
     /**

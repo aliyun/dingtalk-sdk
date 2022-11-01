@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\AddAttendeeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\AddAttendeeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\AddAttendeeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\AddMeetingRoomsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\AddMeetingRoomsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\AddMeetingRoomsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CheckInHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CheckInResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ConvertLegacyEventIdHeaders;
@@ -34,6 +37,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GenerateCaldavAccountResponse
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetMeetingRoomsScheduleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetMeetingRoomsScheduleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetMeetingRoomsScheduleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleResponse;
@@ -67,6 +73,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\RemoveAttendeeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\RemoveAttendeeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\RemoveAttendeeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\RemoveMeetingRoomsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\RemoveMeetingRoomsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\RemoveMeetingRoomsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\RespondEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\RespondEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\RespondEventResponse;
@@ -146,6 +155,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return AddAttendeeResponse::fromMap($this->doROARequest('AddAttendee', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/attendees', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param string                 $userId
+     * @param string                 $calendarId
+     * @param string                 $eventId
+     * @param AddMeetingRoomsRequest $request
+     *
+     * @return AddMeetingRoomsResponse
+     */
+    public function addMeetingRooms($userId, $calendarId, $eventId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddMeetingRoomsHeaders([]);
+
+        return $this->addMeetingRoomsWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                 $userId
+     * @param string                 $calendarId
+     * @param string                 $eventId
+     * @param AddMeetingRoomsRequest $request
+     * @param AddMeetingRoomsHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return AddMeetingRoomsResponse
+     */
+    public function addMeetingRoomsWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $userId     = OpenApiUtilClient::getEncodeParam($userId);
+        $calendarId = OpenApiUtilClient::getEncodeParam($calendarId);
+        $eventId    = OpenApiUtilClient::getEncodeParam($eventId);
+        $body       = [];
+        if (!Utils::isUnset($request->meetingRoomsToAdd)) {
+            @$body['meetingRoomsToAdd'] = $request->meetingRoomsToAdd;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddMeetingRoomsResponse::fromMap($this->doROARequest('AddMeetingRooms', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/meetingRooms', 'json', $req, $runtime));
     }
 
     /**
@@ -645,6 +705,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetEventResponse::fromMap($this->doROARequest('GetEvent', 'calendar_1.0', 'HTTP', 'GET', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                         $userId
+     * @param GetMeetingRoomsScheduleRequest $request
+     *
+     * @return GetMeetingRoomsScheduleResponse
+     */
+    public function getMeetingRoomsSchedule($userId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetMeetingRoomsScheduleHeaders([]);
+
+        return $this->getMeetingRoomsScheduleWithOptions($userId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                         $userId
+     * @param GetMeetingRoomsScheduleRequest $request
+     * @param GetMeetingRoomsScheduleHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return GetMeetingRoomsScheduleResponse
+     */
+    public function getMeetingRoomsScheduleWithOptions($userId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $body   = [];
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->roomIds)) {
+            @$body['roomIds'] = $request->roomIds;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetMeetingRoomsScheduleResponse::fromMap($this->doROARequest('GetMeetingRoomsSchedule', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/meetingRooms/schedules/query', 'json', $req, $runtime));
     }
 
     /**
@@ -1296,6 +1407,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return RemoveAttendeeResponse::fromMap($this->doROARequest('RemoveAttendee', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/attendees/batchRemove', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param string                    $userId
+     * @param string                    $calendarId
+     * @param string                    $eventId
+     * @param RemoveMeetingRoomsRequest $request
+     *
+     * @return RemoveMeetingRoomsResponse
+     */
+    public function removeMeetingRooms($userId, $calendarId, $eventId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RemoveMeetingRoomsHeaders([]);
+
+        return $this->removeMeetingRoomsWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                    $userId
+     * @param string                    $calendarId
+     * @param string                    $eventId
+     * @param RemoveMeetingRoomsRequest $request
+     * @param RemoveMeetingRoomsHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return RemoveMeetingRoomsResponse
+     */
+    public function removeMeetingRoomsWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $userId     = OpenApiUtilClient::getEncodeParam($userId);
+        $calendarId = OpenApiUtilClient::getEncodeParam($calendarId);
+        $eventId    = OpenApiUtilClient::getEncodeParam($eventId);
+        $body       = [];
+        if (!Utils::isUnset($request->meetingRoomsToRemove)) {
+            @$body['meetingRoomsToRemove'] = $request->meetingRoomsToRemove;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return RemoveMeetingRoomsResponse::fromMap($this->doROARequest('RemoveMeetingRooms', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/meetingRooms/batchRemove', 'json', $req, $runtime));
     }
 
     /**

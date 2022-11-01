@@ -8,6 +8,7 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\attendee
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\end;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\extendedProperties;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\location;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\meetingRooms;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\onlineMeetingInfo;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\organizer;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\recurrence;
@@ -64,6 +65,11 @@ class GetEventResponseBody extends Model
      * @var location
      */
     public $location;
+
+    /**
+     * @var meetingRooms[]
+     */
+    public $meetingRooms;
 
     /**
      * @var onlineMeetingInfo
@@ -128,6 +134,7 @@ class GetEventResponseBody extends Model
         'id'                 => 'id',
         'isAllDay'           => 'isAllDay',
         'location'           => 'location',
+        'meetingRooms'       => 'meetingRooms',
         'onlineMeetingInfo'  => 'onlineMeetingInfo',
         'organizer'          => 'organizer',
         'recurrence'         => 'recurrence',
@@ -175,6 +182,15 @@ class GetEventResponseBody extends Model
         }
         if (null !== $this->location) {
             $res['location'] = null !== $this->location ? $this->location->toMap() : null;
+        }
+        if (null !== $this->meetingRooms) {
+            $res['meetingRooms'] = [];
+            if (null !== $this->meetingRooms && \is_array($this->meetingRooms)) {
+                $n = 0;
+                foreach ($this->meetingRooms as $item) {
+                    $res['meetingRooms'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->onlineMeetingInfo) {
             $res['onlineMeetingInfo'] = null !== $this->onlineMeetingInfo ? $this->onlineMeetingInfo->toMap() : null;
@@ -250,6 +266,15 @@ class GetEventResponseBody extends Model
         }
         if (isset($map['location'])) {
             $model->location = location::fromMap($map['location']);
+        }
+        if (isset($map['meetingRooms'])) {
+            if (!empty($map['meetingRooms'])) {
+                $model->meetingRooms = [];
+                $n                   = 0;
+                foreach ($map['meetingRooms'] as $item) {
+                    $model->meetingRooms[$n++] = null !== $item ? meetingRooms::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['onlineMeetingInfo'])) {
             $model->onlineMeetingInfo = onlineMeetingInfo::fromMap($map['onlineMeetingInfo']);
