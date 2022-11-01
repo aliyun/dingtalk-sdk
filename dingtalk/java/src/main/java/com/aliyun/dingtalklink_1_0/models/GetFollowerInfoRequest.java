@@ -4,12 +4,16 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFollowerInfoRequest extends TeaModel {
+    // 服务窗帐号ID，可选参数。
+    // 帐号ID用于开发者应用为服务窗所属组织应用场景，此ID可以通过服务窗帐号信息查询接口获取。
     @NameInMap("accountId")
     public String accountId;
 
+    // 待查询的服务窗关注者unionId。
     @NameInMap("unionId")
     public String unionId;
 
+    // 待查询的服务窗关注者userId。
     @NameInMap("userId")
     public String userId;
 

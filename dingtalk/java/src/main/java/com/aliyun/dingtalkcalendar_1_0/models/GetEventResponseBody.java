@@ -32,6 +32,9 @@ public class GetEventResponseBody extends TeaModel {
     @NameInMap("location")
     public GetEventResponseBodyLocation location;
 
+    @NameInMap("meetingRooms")
+    public java.util.List<GetEventResponseBodyMeetingRooms> meetingRooms;
+
     @NameInMap("onlineMeetingInfo")
     public GetEventResponseBodyOnlineMeetingInfo onlineMeetingInfo;
 
@@ -131,6 +134,14 @@ public class GetEventResponseBody extends TeaModel {
     }
     public GetEventResponseBodyLocation getLocation() {
         return this.location;
+    }
+
+    public GetEventResponseBody setMeetingRooms(java.util.List<GetEventResponseBodyMeetingRooms> meetingRooms) {
+        this.meetingRooms = meetingRooms;
+        return this;
+    }
+    public java.util.List<GetEventResponseBodyMeetingRooms> getMeetingRooms() {
+        return this.meetingRooms;
     }
 
     public GetEventResponseBody setOnlineMeetingInfo(GetEventResponseBodyOnlineMeetingInfo onlineMeetingInfo) {
@@ -387,6 +398,47 @@ public class GetEventResponseBody extends TeaModel {
         }
         public java.util.List<String> getMeetingRooms() {
             return this.meetingRooms;
+        }
+
+    }
+
+    public static class GetEventResponseBodyMeetingRooms extends TeaModel {
+        @NameInMap("displayName")
+        public String displayName;
+
+        @NameInMap("responseStatus")
+        public String responseStatus;
+
+        @NameInMap("roomId")
+        public String roomId;
+
+        public static GetEventResponseBodyMeetingRooms build(java.util.Map<String, ?> map) throws Exception {
+            GetEventResponseBodyMeetingRooms self = new GetEventResponseBodyMeetingRooms();
+            return TeaModel.build(map, self);
+        }
+
+        public GetEventResponseBodyMeetingRooms setDisplayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+        public String getDisplayName() {
+            return this.displayName;
+        }
+
+        public GetEventResponseBodyMeetingRooms setResponseStatus(String responseStatus) {
+            this.responseStatus = responseStatus;
+            return this;
+        }
+        public String getResponseStatus() {
+            return this.responseStatus;
+        }
+
+        public GetEventResponseBodyMeetingRooms setRoomId(String roomId) {
+            this.roomId = roomId;
+            return this;
+        }
+        public String getRoomId() {
+            return this.roomId;
         }
 
     }
