@@ -10,7 +10,8 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0.Models
 {
     public class ListFollowerRequest : TeaModel {
         /// <summary>
-        /// 服务窗帐号ID，用于非服务窗自建应用场景下指定服务窗帐号。
+        /// 服务窗帐号ID，用于服务窗归属组织下应用AK(非服务窗自建应用)指定服务窗帐号。
+        /// 帐号ID可以通过服务窗帐号查询接口获取。
         /// </summary>
         [NameInMap("accountId")]
         [Validation(Required=false)]

@@ -124,6 +124,24 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
+        [NameInMap("meetingRooms")]
+        [Validation(Required=false)]
+        public List<GetEventResponseBodyMeetingRooms> MeetingRooms { get; set; }
+        public class GetEventResponseBodyMeetingRooms : TeaModel {
+            [NameInMap("displayName")]
+            [Validation(Required=false)]
+            public string DisplayName { get; set; }
+
+            [NameInMap("responseStatus")]
+            [Validation(Required=false)]
+            public string ResponseStatus { get; set; }
+
+            [NameInMap("roomId")]
+            [Validation(Required=false)]
+            public string RoomId { get; set; }
+
+        }
+
         [NameInMap("onlineMeetingInfo")]
         [Validation(Required=false)]
         public GetEventResponseBodyOnlineMeetingInfo OnlineMeetingInfo { get; set; }
