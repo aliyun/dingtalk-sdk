@@ -23,7 +23,7 @@ class QueryRecentListRequest extends Model
     public $fileType;
 
     /**
-     * @description 每页最大条目数，最大值50。
+     * @description 每页最大条目数，最大值10。
      *
      * @var int
      */

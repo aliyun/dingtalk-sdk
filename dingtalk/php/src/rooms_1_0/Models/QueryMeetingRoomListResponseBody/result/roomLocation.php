@@ -16,30 +16,14 @@ class roomLocation extends Model
     public $desc;
 
     /**
-     * @description 纬度
-     *
-     * @var string
-     */
-    public $latitude;
-
-    /**
-     * @description 经度
-     *
-     * @var string
-     */
-    public $longitude;
-
-    /**
      * @description 位置名称
      *
      * @var string
      */
     public $title;
     protected $_name = [
-        'desc'      => 'desc',
-        'latitude'  => 'latitude',
-        'longitude' => 'longitude',
-        'title'     => 'title',
+        'desc'  => 'desc',
+        'title' => 'title',
     ];
 
     public function validate()
@@ -51,12 +35,6 @@ class roomLocation extends Model
         $res = [];
         if (null !== $this->desc) {
             $res['desc'] = $this->desc;
-        }
-        if (null !== $this->latitude) {
-            $res['latitude'] = $this->latitude;
-        }
-        if (null !== $this->longitude) {
-            $res['longitude'] = $this->longitude;
         }
         if (null !== $this->title) {
             $res['title'] = $this->title;
@@ -75,12 +53,6 @@ class roomLocation extends Model
         $model = new self();
         if (isset($map['desc'])) {
             $model->desc = $map['desc'];
-        }
-        if (isset($map['latitude'])) {
-            $model->latitude = $map['latitude'];
-        }
-        if (isset($map['longitude'])) {
-            $model->longitude = $map['longitude'];
         }
         if (isset($map['title'])) {
             $model->title = $map['title'];

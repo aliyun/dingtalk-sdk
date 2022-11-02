@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\AddApplicationRegFormTemplateRespo
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\AddFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\AddFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\AddFileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\AddUserAccountHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\AddUserAccountRequest;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\AddUserAccountResponse;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ConfirmRightsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ConfirmRightsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ConfirmRightsResponse;
@@ -167,6 +170,65 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return AddFileResponse::fromMap($this->doROARequest('AddFile', 'ats_1.0', 'HTTP', 'POST', 'AK', '/v1.0/ats/files', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param AddUserAccountRequest $request
+     *
+     * @return AddUserAccountResponse
+     */
+    public function addUserAccount($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddUserAccountHeaders([]);
+
+        return $this->addUserAccountWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddUserAccountRequest $request
+     * @param AddUserAccountHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return AddUserAccountResponse
+     */
+    public function addUserAccountWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            @$query['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            @$query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->channelAccountName)) {
+            @$body['channelAccountName'] = $request->channelAccountName;
+        }
+        if (!Utils::isUnset($request->channelUserIdentify)) {
+            @$body['channelUserIdentify'] = $request->channelUserIdentify;
+        }
+        if (!Utils::isUnset($request->phoneNumber)) {
+            @$body['phoneNumber'] = $request->phoneNumber;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddUserAccountResponse::fromMap($this->doROARequest('AddUserAccount', 'ats_1.0', 'HTTP', 'POST', 'AK', '/v1.0/ats/channels/users/accounts', 'json', $req, $runtime));
     }
 
     /**

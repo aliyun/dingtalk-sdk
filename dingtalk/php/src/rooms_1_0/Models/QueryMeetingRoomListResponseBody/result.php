@@ -4,7 +4,6 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomListResponseBody;
 
-use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomListResponseBody\result\roomGroup;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomListResponseBody\result\roomLabels;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomListResponseBody\result\roomLocation;
 use AlibabaCloud\Tea\Model;
@@ -31,13 +30,6 @@ class result extends Model
      * @var int
      */
     public $roomCapacity;
-
-    /**
-     * @description 会议室分组
-     *
-     * @var roomGroup
-     */
-    public $roomGroup;
 
     /**
      * @description 会议室id
@@ -89,7 +81,6 @@ class result extends Model
         'corpId'       => 'corpId',
         'isvRoomId'    => 'isvRoomId',
         'roomCapacity' => 'roomCapacity',
-        'roomGroup'    => 'roomGroup',
         'roomId'       => 'roomId',
         'roomLabels'   => 'roomLabels',
         'roomLocation' => 'roomLocation',
@@ -114,9 +105,6 @@ class result extends Model
         }
         if (null !== $this->roomCapacity) {
             $res['roomCapacity'] = $this->roomCapacity;
-        }
-        if (null !== $this->roomGroup) {
-            $res['roomGroup'] = null !== $this->roomGroup ? $this->roomGroup->toMap() : null;
         }
         if (null !== $this->roomId) {
             $res['roomId'] = $this->roomId;
@@ -165,9 +153,6 @@ class result extends Model
         }
         if (isset($map['roomCapacity'])) {
             $model->roomCapacity = $map['roomCapacity'];
-        }
-        if (isset($map['roomGroup'])) {
-            $model->roomGroup = roomGroup::fromMap($map['roomGroup']);
         }
         if (isset($map['roomId'])) {
             $model->roomId = $map['roomId'];
