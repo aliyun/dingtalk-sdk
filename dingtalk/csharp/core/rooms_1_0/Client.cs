@@ -44,10 +44,6 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupId))
-            {
-                body["groupId"] = request.GroupId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvRoomId))
             {
                 body["isvRoomId"] = request.IsvRoomId;
@@ -101,10 +97,6 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupId))
-            {
-                body["groupId"] = request.GroupId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvRoomId))
             {
                 body["isvRoomId"] = request.IsvRoomId;
@@ -660,10 +652,6 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupId))
-            {
-                body["groupId"] = request.GroupId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvRoomId))
             {
                 body["isvRoomId"] = request.IsvRoomId;
@@ -721,10 +709,6 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupId))
-            {
-                body["groupId"] = request.GroupId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvRoomId))
             {
                 body["isvRoomId"] = request.IsvRoomId;

@@ -24,7 +24,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         public int? FileType { get; set; }
 
         /// <summary>
-        /// 每页最大条目数，最大值50。
+        /// 每页最大条目数，最大值10。
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]

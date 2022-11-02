@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
 {
     public class CreateMeetingRoomRequest : TeaModel {
         /// <summary>
-        /// 分组id
-        /// </summary>
-        [NameInMap("groupId")]
-        [Validation(Required=false)]
-        public long? GroupId { get; set; }
-
-        /// <summary>
         /// isv外部会议室id
         /// </summary>
         [NameInMap("isvRoomId")]
@@ -50,20 +43,6 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
             [NameInMap("desc")]
             [Validation(Required=false)]
             public string Desc { get; set; }
-
-            /// <summary>
-            /// 纬度
-            /// </summary>
-            [NameInMap("latitude")]
-            [Validation(Required=false)]
-            public string Latitude { get; set; }
-
-            /// <summary>
-            /// 经度
-            /// </summary>
-            [NameInMap("longitude")]
-            [Validation(Required=false)]
-            public string Longitude { get; set; }
 
             /// <summary>
             /// 位置标题

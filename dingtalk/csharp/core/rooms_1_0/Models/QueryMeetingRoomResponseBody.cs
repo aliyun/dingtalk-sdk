@@ -35,36 +35,6 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
             public int? RoomCapacity { get; set; }
 
             /// <summary>
-            /// 会议室分组
-            /// </summary>
-            [NameInMap("roomGroup")]
-            [Validation(Required=false)]
-            public QueryMeetingRoomResponseBodyResultRoomGroup RoomGroup { get; set; }
-            public class QueryMeetingRoomResponseBodyResultRoomGroup : TeaModel {
-                /// <summary>
-                /// 分组id
-                /// </summary>
-                [NameInMap("groupId")]
-                [Validation(Required=false)]
-                public long? GroupId { get; set; }
-
-                /// <summary>
-                /// 分组名称
-                /// </summary>
-                [NameInMap("groupName")]
-                [Validation(Required=false)]
-                public string GroupName { get; set; }
-
-                /// <summary>
-                /// 父分组id
-                /// </summary>
-                [NameInMap("parentId")]
-                [Validation(Required=false)]
-                public long? ParentId { get; set; }
-
-            }
-
-            /// <summary>
             /// 会议室id
             /// </summary>
             [NameInMap("roomId")]
@@ -98,20 +68,6 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
                 [NameInMap("desc")]
                 [Validation(Required=false)]
                 public string Desc { get; set; }
-
-                /// <summary>
-                /// 纬度
-                /// </summary>
-                [NameInMap("latitude")]
-                [Validation(Required=false)]
-                public string Latitude { get; set; }
-
-                /// <summary>
-                /// 经度
-                /// </summary>
-                [NameInMap("longitude")]
-                [Validation(Required=false)]
-                public string Longitude { get; set; }
 
                 /// <summary>
                 /// 位置名称
