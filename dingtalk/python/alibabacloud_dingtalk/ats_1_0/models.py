@@ -326,6 +326,166 @@ class AddFileResponse(TeaModel):
         return self
 
 
+class AddUserAccountHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddUserAccountRequest(TeaModel):
+    def __init__(
+        self,
+        biz_code: str = None,
+        channel_account_name: str = None,
+        channel_user_identify: str = None,
+        phone_number: str = None,
+        corp_id: str = None,
+        user_id: str = None,
+    ):
+        # 业务标识
+        self.biz_code = biz_code
+        # 渠道账号名
+        self.channel_account_name = channel_account_name
+        # 渠道用户标识
+        self.channel_user_identify = channel_user_identify
+        # 手机号
+        self.phone_number = phone_number
+        # 企业标识
+        self.corp_id = corp_id
+        # 用户标识
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
+        if self.channel_account_name is not None:
+            result['channelAccountName'] = self.channel_account_name
+        if self.channel_user_identify is not None:
+            result['channelUserIdentify'] = self.channel_user_identify
+        if self.phone_number is not None:
+            result['phoneNumber'] = self.phone_number
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
+        if m.get('channelAccountName') is not None:
+            self.channel_account_name = m.get('channelAccountName')
+        if m.get('channelUserIdentify') is not None:
+            self.channel_user_identify = m.get('channelUserIdentify')
+        if m.get('phoneNumber') is not None:
+            self.phone_number = m.get('phoneNumber')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class AddUserAccountResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AddUserAccountResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AddUserAccountResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AddUserAccountResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ConfirmRightsHeaders(TeaModel):
     def __init__(
         self,

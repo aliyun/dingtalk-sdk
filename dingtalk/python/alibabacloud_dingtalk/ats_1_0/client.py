@@ -187,6 +187,94 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('AddFile', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/files', 'json', req, runtime)
         )
 
+    def add_user_account(
+        self,
+        request: dingtalkats__1__0_models.AddUserAccountRequest,
+    ) -> dingtalkats__1__0_models.AddUserAccountResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.AddUserAccountHeaders()
+        return self.add_user_account_with_options(request, headers, runtime)
+
+    async def add_user_account_async(
+        self,
+        request: dingtalkats__1__0_models.AddUserAccountRequest,
+    ) -> dingtalkats__1__0_models.AddUserAccountResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.AddUserAccountHeaders()
+        return await self.add_user_account_with_options_async(request, headers, runtime)
+
+    def add_user_account_with_options(
+        self,
+        request: dingtalkats__1__0_models.AddUserAccountRequest,
+        headers: dingtalkats__1__0_models.AddUserAccountHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.AddUserAccountResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_code):
+            query['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        body = {}
+        if not UtilClient.is_unset(request.channel_account_name):
+            body['channelAccountName'] = request.channel_account_name
+        if not UtilClient.is_unset(request.channel_user_identify):
+            body['channelUserIdentify'] = request.channel_user_identify
+        if not UtilClient.is_unset(request.phone_number):
+            body['phoneNumber'] = request.phone_number
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.AddUserAccountResponse(),
+            self.do_roarequest('AddUserAccount', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/channels/users/accounts', 'json', req, runtime)
+        )
+
+    async def add_user_account_with_options_async(
+        self,
+        request: dingtalkats__1__0_models.AddUserAccountRequest,
+        headers: dingtalkats__1__0_models.AddUserAccountHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.AddUserAccountResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_code):
+            query['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        body = {}
+        if not UtilClient.is_unset(request.channel_account_name):
+            body['channelAccountName'] = request.channel_account_name
+        if not UtilClient.is_unset(request.channel_user_identify):
+            body['channelUserIdentify'] = request.channel_user_identify
+        if not UtilClient.is_unset(request.phone_number):
+            body['phoneNumber'] = request.phone_number
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.AddUserAccountResponse(),
+            await self.do_roarequest_async('AddUserAccount', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/channels/users/accounts', 'json', req, runtime)
+        )
+
     def confirm_rights(
         self,
         rights_code: str,
