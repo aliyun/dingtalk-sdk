@@ -30,7 +30,6 @@ export class CreateMeetingRoomHeaders extends $tea.Model {
 }
 
 export class CreateMeetingRoomRequest extends $tea.Model {
-  groupId?: number;
   isvRoomId?: string;
   roomCapacity?: number;
   roomLabelIds?: number[];
@@ -41,7 +40,6 @@ export class CreateMeetingRoomRequest extends $tea.Model {
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
-      groupId: 'groupId',
       isvRoomId: 'isvRoomId',
       roomCapacity: 'roomCapacity',
       roomLabelIds: 'roomLabelIds',
@@ -55,7 +53,6 @@ export class CreateMeetingRoomRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      groupId: 'number',
       isvRoomId: 'string',
       roomCapacity: 'number',
       roomLabelIds: { 'type': 'array', 'itemType': 'number' },
@@ -734,7 +731,6 @@ export class UpdateMeetingRoomHeaders extends $tea.Model {
 }
 
 export class UpdateMeetingRoomRequest extends $tea.Model {
-  groupId?: number;
   isvRoomId?: string;
   roomCapacity?: number;
   roomId?: string;
@@ -746,7 +742,6 @@ export class UpdateMeetingRoomRequest extends $tea.Model {
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
-      groupId: 'groupId',
       isvRoomId: 'isvRoomId',
       roomCapacity: 'roomCapacity',
       roomId: 'roomId',
@@ -761,7 +756,6 @@ export class UpdateMeetingRoomRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      groupId: 'number',
       isvRoomId: 'string',
       roomCapacity: 'number',
       roomId: 'string',
@@ -910,14 +904,10 @@ export class UpdateMeetingRoomGroupResponse extends $tea.Model {
 
 export class CreateMeetingRoomRequestRoomLocation extends $tea.Model {
   desc?: string;
-  latitude?: string;
-  longitude?: string;
   title?: string;
   static names(): { [key: string]: string } {
     return {
       desc: 'desc',
-      latitude: 'latitude',
-      longitude: 'longitude',
       title: 'title',
     };
   }
@@ -925,34 +915,7 @@ export class CreateMeetingRoomRequestRoomLocation extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       desc: 'string',
-      latitude: 'string',
-      longitude: 'string',
       title: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryMeetingRoomResponseBodyResultRoomGroup extends $tea.Model {
-  groupId?: number;
-  groupName?: string;
-  parentId?: number;
-  static names(): { [key: string]: string } {
-    return {
-      groupId: 'groupId',
-      groupName: 'groupName',
-      parentId: 'parentId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      groupId: 'number',
-      groupName: 'string',
-      parentId: 'number',
     };
   }
 
@@ -985,14 +948,10 @@ export class QueryMeetingRoomResponseBodyResultRoomLabels extends $tea.Model {
 
 export class QueryMeetingRoomResponseBodyResultRoomLocation extends $tea.Model {
   desc?: string;
-  latitude?: string;
-  longitude?: string;
   title?: string;
   static names(): { [key: string]: string } {
     return {
       desc: 'desc',
-      latitude: 'latitude',
-      longitude: 'longitude',
       title: 'title',
     };
   }
@@ -1000,8 +959,6 @@ export class QueryMeetingRoomResponseBodyResultRoomLocation extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       desc: 'string',
-      latitude: 'string',
-      longitude: 'string',
       title: 'string',
     };
   }
@@ -1015,7 +972,6 @@ export class QueryMeetingRoomResponseBodyResult extends $tea.Model {
   corpId?: string;
   isvRoomId?: string;
   roomCapacity?: number;
-  roomGroup?: QueryMeetingRoomResponseBodyResultRoomGroup;
   roomId?: string;
   roomLabels?: QueryMeetingRoomResponseBodyResultRoomLabels[];
   roomLocation?: QueryMeetingRoomResponseBodyResultRoomLocation;
@@ -1028,7 +984,6 @@ export class QueryMeetingRoomResponseBodyResult extends $tea.Model {
       corpId: 'corpId',
       isvRoomId: 'isvRoomId',
       roomCapacity: 'roomCapacity',
-      roomGroup: 'roomGroup',
       roomId: 'roomId',
       roomLabels: 'roomLabels',
       roomLocation: 'roomLocation',
@@ -1044,7 +999,6 @@ export class QueryMeetingRoomResponseBodyResult extends $tea.Model {
       corpId: 'string',
       isvRoomId: 'string',
       roomCapacity: 'number',
-      roomGroup: QueryMeetingRoomResponseBodyResultRoomGroup,
       roomId: 'string',
       roomLabels: { 'type': 'array', 'itemType': QueryMeetingRoomResponseBodyResultRoomLabels },
       roomLocation: QueryMeetingRoomResponseBodyResultRoomLocation,
@@ -1061,31 +1015,6 @@ export class QueryMeetingRoomResponseBodyResult extends $tea.Model {
 }
 
 export class QueryMeetingRoomGroupListResponseBodyResult extends $tea.Model {
-  groupId?: number;
-  groupName?: string;
-  parentId?: number;
-  static names(): { [key: string]: string } {
-    return {
-      groupId: 'groupId',
-      groupName: 'groupName',
-      parentId: 'parentId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      groupId: 'number',
-      groupName: 'string',
-      parentId: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryMeetingRoomListResponseBodyResultRoomGroup extends $tea.Model {
   groupId?: number;
   groupName?: string;
   parentId?: number;
@@ -1134,14 +1063,10 @@ export class QueryMeetingRoomListResponseBodyResultRoomLabels extends $tea.Model
 
 export class QueryMeetingRoomListResponseBodyResultRoomLocation extends $tea.Model {
   desc?: string;
-  latitude?: string;
-  longitude?: string;
   title?: string;
   static names(): { [key: string]: string } {
     return {
       desc: 'desc',
-      latitude: 'latitude',
-      longitude: 'longitude',
       title: 'title',
     };
   }
@@ -1149,8 +1074,6 @@ export class QueryMeetingRoomListResponseBodyResultRoomLocation extends $tea.Mod
   static types(): { [key: string]: any } {
     return {
       desc: 'string',
-      latitude: 'string',
-      longitude: 'string',
       title: 'string',
     };
   }
@@ -1164,7 +1087,6 @@ export class QueryMeetingRoomListResponseBodyResult extends $tea.Model {
   corpId?: string;
   isvRoomId?: string;
   roomCapacity?: number;
-  roomGroup?: QueryMeetingRoomListResponseBodyResultRoomGroup;
   roomId?: string;
   roomLabels?: QueryMeetingRoomListResponseBodyResultRoomLabels[];
   roomLocation?: QueryMeetingRoomListResponseBodyResultRoomLocation;
@@ -1177,7 +1099,6 @@ export class QueryMeetingRoomListResponseBodyResult extends $tea.Model {
       corpId: 'corpId',
       isvRoomId: 'isvRoomId',
       roomCapacity: 'roomCapacity',
-      roomGroup: 'roomGroup',
       roomId: 'roomId',
       roomLabels: 'roomLabels',
       roomLocation: 'roomLocation',
@@ -1193,7 +1114,6 @@ export class QueryMeetingRoomListResponseBodyResult extends $tea.Model {
       corpId: 'string',
       isvRoomId: 'string',
       roomCapacity: 'number',
-      roomGroup: QueryMeetingRoomListResponseBodyResultRoomGroup,
       roomId: 'string',
       roomLabels: { 'type': 'array', 'itemType': QueryMeetingRoomListResponseBodyResultRoomLabels },
       roomLocation: QueryMeetingRoomListResponseBodyResultRoomLocation,
@@ -1211,14 +1131,10 @@ export class QueryMeetingRoomListResponseBodyResult extends $tea.Model {
 
 export class UpdateMeetingRoomRequestRoomLocation extends $tea.Model {
   desc?: string;
-  latitude?: string;
-  longitude?: string;
   title?: string;
   static names(): { [key: string]: string } {
     return {
       desc: 'desc',
-      latitude: 'latitude',
-      longitude: 'longitude',
       title: 'title',
     };
   }
@@ -1226,8 +1142,6 @@ export class UpdateMeetingRoomRequestRoomLocation extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       desc: 'string',
-      latitude: 'string',
-      longitude: 'string',
       title: 'string',
     };
   }
@@ -1259,10 +1173,6 @@ export default class Client extends OpenApi {
   async createMeetingRoomWithOptions(request: CreateMeetingRoomRequest, headers: CreateMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<CreateMeetingRoomResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.groupId)) {
-      body["groupId"] = request.groupId;
-    }
-
     if (!Util.isUnset(request.isvRoomId)) {
       body["isvRoomId"] = request.isvRoomId;
     }
@@ -1543,10 +1453,6 @@ export default class Client extends OpenApi {
   async updateMeetingRoomWithOptions(request: UpdateMeetingRoomRequest, headers: UpdateMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateMeetingRoomResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.groupId)) {
-      body["groupId"] = request.groupId;
-    }
-
     if (!Util.isUnset(request.isvRoomId)) {
       body["isvRoomId"] = request.isvRoomId;
     }

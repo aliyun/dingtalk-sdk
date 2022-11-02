@@ -201,6 +201,103 @@ export class AddFileResponse extends $tea.Model {
   }
 }
 
+export class AddUserAccountHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddUserAccountRequest extends $tea.Model {
+  bizCode?: string;
+  channelAccountName?: string;
+  channelUserIdentify?: string;
+  phoneNumber?: string;
+  corpId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizCode: 'bizCode',
+      channelAccountName: 'channelAccountName',
+      channelUserIdentify: 'channelUserIdentify',
+      phoneNumber: 'phoneNumber',
+      corpId: 'corpId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizCode: 'string',
+      channelAccountName: 'string',
+      channelUserIdentify: 'string',
+      phoneNumber: 'string',
+      corpId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddUserAccountResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddUserAccountResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AddUserAccountResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AddUserAccountResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ConfirmRightsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1441,6 +1538,57 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<AddFileResponse>(await this.doROARequest("AddFile", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/files`, "json", req, runtime), new AddFileResponse({}));
+  }
+
+  async addUserAccount(request: AddUserAccountRequest): Promise<AddUserAccountResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddUserAccountHeaders({ });
+    return await this.addUserAccountWithOptions(request, headers, runtime);
+  }
+
+  async addUserAccountWithOptions(request: AddUserAccountRequest, headers: AddUserAccountHeaders, runtime: $Util.RuntimeOptions): Promise<AddUserAccountResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizCode)) {
+      query["bizCode"] = request.bizCode;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.channelAccountName)) {
+      body["channelAccountName"] = request.channelAccountName;
+    }
+
+    if (!Util.isUnset(request.channelUserIdentify)) {
+      body["channelUserIdentify"] = request.channelUserIdentify;
+    }
+
+    if (!Util.isUnset(request.phoneNumber)) {
+      body["phoneNumber"] = request.phoneNumber;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AddUserAccountResponse>(await this.doROARequest("AddUserAccount", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/channels/users/accounts`, "json", req, runtime), new AddUserAccountResponse({}));
   }
 
   async confirmRights(rightsCode: string, request: ConfirmRightsRequest): Promise<ConfirmRightsResponse> {
