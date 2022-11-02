@@ -20,50 +20,6 @@ public class QueryMeetingRoomResponseBody extends TeaModel {
         return this.result;
     }
 
-    public static class QueryMeetingRoomResponseBodyResultRoomGroup extends TeaModel {
-        // 分组id
-        @NameInMap("groupId")
-        public Long groupId;
-
-        // 分组名称
-        @NameInMap("groupName")
-        public String groupName;
-
-        // 父分组id
-        @NameInMap("parentId")
-        public Long parentId;
-
-        public static QueryMeetingRoomResponseBodyResultRoomGroup build(java.util.Map<String, ?> map) throws Exception {
-            QueryMeetingRoomResponseBodyResultRoomGroup self = new QueryMeetingRoomResponseBodyResultRoomGroup();
-            return TeaModel.build(map, self);
-        }
-
-        public QueryMeetingRoomResponseBodyResultRoomGroup setGroupId(Long groupId) {
-            this.groupId = groupId;
-            return this;
-        }
-        public Long getGroupId() {
-            return this.groupId;
-        }
-
-        public QueryMeetingRoomResponseBodyResultRoomGroup setGroupName(String groupName) {
-            this.groupName = groupName;
-            return this;
-        }
-        public String getGroupName() {
-            return this.groupName;
-        }
-
-        public QueryMeetingRoomResponseBodyResultRoomGroup setParentId(Long parentId) {
-            this.parentId = parentId;
-            return this;
-        }
-        public Long getParentId() {
-            return this.parentId;
-        }
-
-    }
-
     public static class QueryMeetingRoomResponseBodyResultRoomLabels extends TeaModel {
         @NameInMap("labelId")
         public Long labelId;
@@ -99,14 +55,6 @@ public class QueryMeetingRoomResponseBody extends TeaModel {
         @NameInMap("desc")
         public String desc;
 
-        // 纬度
-        @NameInMap("latitude")
-        public String latitude;
-
-        // 经度
-        @NameInMap("longitude")
-        public String longitude;
-
         // 位置名称
         @NameInMap("title")
         public String title;
@@ -122,22 +70,6 @@ public class QueryMeetingRoomResponseBody extends TeaModel {
         }
         public String getDesc() {
             return this.desc;
-        }
-
-        public QueryMeetingRoomResponseBodyResultRoomLocation setLatitude(String latitude) {
-            this.latitude = latitude;
-            return this;
-        }
-        public String getLatitude() {
-            return this.latitude;
-        }
-
-        public QueryMeetingRoomResponseBodyResultRoomLocation setLongitude(String longitude) {
-            this.longitude = longitude;
-            return this;
-        }
-        public String getLongitude() {
-            return this.longitude;
         }
 
         public QueryMeetingRoomResponseBodyResultRoomLocation setTitle(String title) {
@@ -162,10 +94,6 @@ public class QueryMeetingRoomResponseBody extends TeaModel {
         // 会议室容量
         @NameInMap("roomCapacity")
         public Integer roomCapacity;
-
-        // 会议室分组
-        @NameInMap("roomGroup")
-        public QueryMeetingRoomResponseBodyResultRoomGroup roomGroup;
 
         // 会议室id
         @NameInMap("roomId")
@@ -221,14 +149,6 @@ public class QueryMeetingRoomResponseBody extends TeaModel {
         }
         public Integer getRoomCapacity() {
             return this.roomCapacity;
-        }
-
-        public QueryMeetingRoomResponseBodyResult setRoomGroup(QueryMeetingRoomResponseBodyResultRoomGroup roomGroup) {
-            this.roomGroup = roomGroup;
-            return this;
-        }
-        public QueryMeetingRoomResponseBodyResultRoomGroup getRoomGroup() {
-            return this.roomGroup;
         }
 
         public QueryMeetingRoomResponseBodyResult setRoomId(String roomId) {

@@ -12,7 +12,7 @@ public class QueryRecentListRequest extends TeaModel {
     @NameInMap("fileType")
     public Integer fileType;
 
-    // 每页最大条目数，最大值50。
+    // 每页最大条目数，最大值10。
     @NameInMap("maxResults")
     public Integer maxResults;
 

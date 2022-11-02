@@ -4,10 +4,6 @@ package com.aliyun.dingtalkrooms_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateMeetingRoomRequest extends TeaModel {
-    // 分组id
-    @NameInMap("groupId")
-    public Long groupId;
-
     // isv外部会议室id
     @NameInMap("isvRoomId")
     public String isvRoomId;
@@ -47,14 +43,6 @@ public class UpdateMeetingRoomRequest extends TeaModel {
     public static UpdateMeetingRoomRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateMeetingRoomRequest self = new UpdateMeetingRoomRequest();
         return TeaModel.build(map, self);
-    }
-
-    public UpdateMeetingRoomRequest setGroupId(Long groupId) {
-        this.groupId = groupId;
-        return this;
-    }
-    public Long getGroupId() {
-        return this.groupId;
     }
 
     public UpdateMeetingRoomRequest setIsvRoomId(String isvRoomId) {
@@ -134,14 +122,6 @@ public class UpdateMeetingRoomRequest extends TeaModel {
         @NameInMap("desc")
         public String desc;
 
-        // 纬度
-        @NameInMap("latitude")
-        public String latitude;
-
-        // 经度
-        @NameInMap("longitude")
-        public String longitude;
-
         // 位置标题
         @NameInMap("title")
         public String title;
@@ -157,22 +137,6 @@ public class UpdateMeetingRoomRequest extends TeaModel {
         }
         public String getDesc() {
             return this.desc;
-        }
-
-        public UpdateMeetingRoomRequestRoomLocation setLatitude(String latitude) {
-            this.latitude = latitude;
-            return this;
-        }
-        public String getLatitude() {
-            return this.latitude;
-        }
-
-        public UpdateMeetingRoomRequestRoomLocation setLongitude(String longitude) {
-            this.longitude = longitude;
-            return this;
-        }
-        public String getLongitude() {
-            return this.longitude;
         }
 
         public UpdateMeetingRoomRequestRoomLocation setTitle(String title) {
