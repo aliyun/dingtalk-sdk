@@ -24,7 +24,7 @@ from setuptools import setup, find_packages
 """
 setup module for alibabacloud_dingtalk.
 
-Created on 02/11/2022
+Created on 03/11/2022
 
 @author: Alibaba Cloud SDK
 """
