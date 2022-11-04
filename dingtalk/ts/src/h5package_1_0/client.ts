@@ -32,11 +32,13 @@ export class CreatePackageHeaders extends $tea.Model {
 export class CreatePackageRequest extends $tea.Model {
   agentId?: number;
   appId?: number;
+  homeUrl?: string;
   ossObjectKey?: string;
   static names(): { [key: string]: string } {
     return {
       agentId: 'agentId',
       appId: 'appId',
+      homeUrl: 'homeUrl',
       ossObjectKey: 'ossObjectKey',
     };
   }
@@ -45,6 +47,7 @@ export class CreatePackageRequest extends $tea.Model {
     return {
       agentId: 'number',
       appId: 'number',
+      homeUrl: 'string',
       ossObjectKey: 'string',
     };
   }
@@ -414,6 +417,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.appId)) {
       body["appId"] = request.appId;
+    }
+
+    if (!Util.isUnset(request.homeUrl)) {
+      body["homeUrl"] = request.homeUrl;
     }
 
     if (!Util.isUnset(request.ossObjectKey)) {
