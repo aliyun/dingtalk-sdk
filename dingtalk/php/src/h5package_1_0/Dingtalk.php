@@ -63,6 +63,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->appId)) {
             @$body['appId'] = $request->appId;
         }
+        if (!Utils::isUnset($request->homeUrl)) {
+            @$body['homeUrl'] = $request->homeUrl;
+        }
         if (!Utils::isUnset($request->ossObjectKey)) {
             @$body['ossObjectKey'] = $request->ossObjectKey;
         }

@@ -23,6 +23,13 @@ class CreatePackageRequest extends Model
     public $appId;
 
     /**
+     * @description 离线包入口页面地址。没有设置时，默认值是应用设置中的应用首页地址。
+     *
+     * @var string
+     */
+    public $homeUrl;
+
+    /**
      * @description 通过获取上传凭据接口返回的name值
      *
      * @var string
@@ -31,6 +38,7 @@ class CreatePackageRequest extends Model
     protected $_name = [
         'agentId'      => 'agentId',
         'appId'        => 'appId',
+        'homeUrl'      => 'homeUrl',
         'ossObjectKey' => 'ossObjectKey',
     ];
 
@@ -46,6 +54,9 @@ class CreatePackageRequest extends Model
         }
         if (null !== $this->appId) {
             $res['appId'] = $this->appId;
+        }
+        if (null !== $this->homeUrl) {
+            $res['homeUrl'] = $this->homeUrl;
         }
         if (null !== $this->ossObjectKey) {
             $res['ossObjectKey'] = $this->ossObjectKey;
@@ -67,6 +78,9 @@ class CreatePackageRequest extends Model
         }
         if (isset($map['appId'])) {
             $model->appId = $map['appId'];
+        }
+        if (isset($map['homeUrl'])) {
+            $model->homeUrl = $map['homeUrl'];
         }
         if (isset($map['ossObjectKey'])) {
             $model->ossObjectKey = $map['ossObjectKey'];
