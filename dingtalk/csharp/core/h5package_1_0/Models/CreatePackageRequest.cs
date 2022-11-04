@@ -24,6 +24,13 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0.Models
         public long? AppId { get; set; }
 
         /// <summary>
+        /// 离线包入口页面地址。没有设置时，默认值是应用设置中的应用首页地址。
+        /// </summary>
+        [NameInMap("homeUrl")]
+        [Validation(Required=false)]
+        public string HomeUrl { get; set; }
+
+        /// <summary>
         /// 通过获取上传凭据接口返回的name值
         /// </summary>
         [NameInMap("ossObjectKey")]

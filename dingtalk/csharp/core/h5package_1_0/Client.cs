@@ -52,6 +52,10 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
             {
                 body["appId"] = request.AppId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HomeUrl))
+            {
+                body["homeUrl"] = request.HomeUrl;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OssObjectKey))
             {
                 body["ossObjectKey"] = request.OssObjectKey;
@@ -84,6 +88,10 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
             {
                 body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HomeUrl))
+            {
+                body["homeUrl"] = request.HomeUrl;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OssObjectKey))
             {
