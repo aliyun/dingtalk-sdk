@@ -33,6 +33,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("appId", request.appId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.homeUrl)) {
+            body.put("homeUrl", request.homeUrl);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.ossObjectKey)) {
             body.put("ossObjectKey", request.ossObjectKey);
         }
