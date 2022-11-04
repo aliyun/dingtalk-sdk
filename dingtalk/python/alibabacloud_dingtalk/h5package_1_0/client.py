@@ -51,6 +51,8 @@ class Client(OpenApiClient):
             body['agentId'] = request.agent_id
         if not UtilClient.is_unset(request.app_id):
             body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.home_url):
+            body['homeUrl'] = request.home_url
         if not UtilClient.is_unset(request.oss_object_key):
             body['ossObjectKey'] = request.oss_object_key
         real_headers = {}
@@ -79,6 +81,8 @@ class Client(OpenApiClient):
             body['agentId'] = request.agent_id
         if not UtilClient.is_unset(request.app_id):
             body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.home_url):
+            body['homeUrl'] = request.home_url
         if not UtilClient.is_unset(request.oss_object_key):
             body['ossObjectKey'] = request.oss_object_key
         real_headers = {}

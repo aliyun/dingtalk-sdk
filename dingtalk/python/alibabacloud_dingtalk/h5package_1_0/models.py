@@ -42,12 +42,15 @@ class CreatePackageRequest(TeaModel):
         self,
         agent_id: int = None,
         app_id: int = None,
+        home_url: str = None,
         oss_object_key: str = None,
     ):
         # 企业内部微应用agentId
         self.agent_id = agent_id
         # 第三方企业应用appId
         self.app_id = app_id
+        # 离线包入口页面地址。没有设置时，默认值是应用设置中的应用首页地址。
+        self.home_url = home_url
         # 通过获取上传凭据接口返回的name值
         self.oss_object_key = oss_object_key
 
@@ -64,6 +67,8 @@ class CreatePackageRequest(TeaModel):
             result['agentId'] = self.agent_id
         if self.app_id is not None:
             result['appId'] = self.app_id
+        if self.home_url is not None:
+            result['homeUrl'] = self.home_url
         if self.oss_object_key is not None:
             result['ossObjectKey'] = self.oss_object_key
         return result
@@ -74,6 +79,8 @@ class CreatePackageRequest(TeaModel):
             self.agent_id = m.get('agentId')
         if m.get('appId') is not None:
             self.app_id = m.get('appId')
+        if m.get('homeUrl') is not None:
+            self.home_url = m.get('homeUrl')
         if m.get('ossObjectKey') is not None:
             self.oss_object_key = m.get('ossObjectKey')
         return self
