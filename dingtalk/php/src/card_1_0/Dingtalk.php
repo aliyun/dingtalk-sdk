@@ -123,6 +123,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->callbackRouteKey)) {
             @$body['callbackRouteKey'] = $request->callbackRouteKey;
         }
+        if (!Utils::isUnset($request->cardAtUserIds)) {
+            @$body['cardAtUserIds'] = $request->cardAtUserIds;
+        }
         if (!Utils::isUnset($request->cardData)) {
             @$body['cardData'] = $request->cardData;
         }
@@ -167,6 +170,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->userId)) {
             @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->userIdType)) {
+            @$body['userIdType'] = $request->userIdType;
         }
         if (!Utils::isUnset($request->workBenchOpenDeliverModel)) {
             @$body['workBenchOpenDeliverModel'] = $request->workBenchOpenDeliverModel;
@@ -216,6 +222,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->callbackRouteKey)) {
             @$body['callbackRouteKey'] = $request->callbackRouteKey;
         }
+        if (!Utils::isUnset($request->cardAtUserIds)) {
+            @$body['cardAtUserIds'] = $request->cardAtUserIds;
+        }
         if (!Utils::isUnset($request->cardData)) {
             @$body['cardData'] = $request->cardData;
         }
@@ -245,6 +254,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->userId)) {
             @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->userIdType)) {
+            @$body['userIdType'] = $request->userIdType;
         }
         if (!Utils::isUnset($request->workBenchOpenSpaceModel)) {
             @$body['workBenchOpenSpaceModel'] = $request->workBenchOpenSpaceModel;

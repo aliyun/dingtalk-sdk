@@ -28,6 +28,11 @@ class CreateAndDeliverRequest extends Model
     public $callbackRouteKey;
 
     /**
+     * @var string[]
+     */
+    public $cardAtUserIds;
+
+    /**
      * @description 卡片数据
      *
      * @var cardData
@@ -131,6 +136,11 @@ class CreateAndDeliverRequest extends Model
     public $userId;
 
     /**
+     * @var int
+     */
+    public $userIdType;
+
+    /**
      * @description 工作台投放参数
      *
      * @var workBenchOpenDeliverModel
@@ -145,6 +155,7 @@ class CreateAndDeliverRequest extends Model
     public $workBenchOpenSpaceModel;
     protected $_name = [
         'callbackRouteKey'          => 'callbackRouteKey',
+        'cardAtUserIds'             => 'cardAtUserIds',
         'cardData'                  => 'cardData',
         'cardTemplateId'            => 'cardTemplateId',
         'coFeedOpenDeliverModel'    => 'coFeedOpenDeliverModel',
@@ -160,6 +171,7 @@ class CreateAndDeliverRequest extends Model
         'topOpenDeliverModel'       => 'topOpenDeliverModel',
         'topOpenSpaceModel'         => 'topOpenSpaceModel',
         'userId'                    => 'userId',
+        'userIdType'                => 'userIdType',
         'workBenchOpenDeliverModel' => 'workBenchOpenDeliverModel',
         'workBenchOpenSpaceModel'   => 'workBenchOpenSpaceModel',
     ];
@@ -173,6 +185,9 @@ class CreateAndDeliverRequest extends Model
         $res = [];
         if (null !== $this->callbackRouteKey) {
             $res['callbackRouteKey'] = $this->callbackRouteKey;
+        }
+        if (null !== $this->cardAtUserIds) {
+            $res['cardAtUserIds'] = $this->cardAtUserIds;
         }
         if (null !== $this->cardData) {
             $res['cardData'] = null !== $this->cardData ? $this->cardData->toMap() : null;
@@ -224,6 +239,9 @@ class CreateAndDeliverRequest extends Model
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
         }
+        if (null !== $this->userIdType) {
+            $res['userIdType'] = $this->userIdType;
+        }
         if (null !== $this->workBenchOpenDeliverModel) {
             $res['workBenchOpenDeliverModel'] = null !== $this->workBenchOpenDeliverModel ? $this->workBenchOpenDeliverModel->toMap() : null;
         }
@@ -244,6 +262,11 @@ class CreateAndDeliverRequest extends Model
         $model = new self();
         if (isset($map['callbackRouteKey'])) {
             $model->callbackRouteKey = $map['callbackRouteKey'];
+        }
+        if (isset($map['cardAtUserIds'])) {
+            if (!empty($map['cardAtUserIds'])) {
+                $model->cardAtUserIds = $map['cardAtUserIds'];
+            }
         }
         if (isset($map['cardData'])) {
             $model->cardData = cardData::fromMap($map['cardData']);
@@ -289,6 +312,9 @@ class CreateAndDeliverRequest extends Model
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
+        }
+        if (isset($map['userIdType'])) {
+            $model->userIdType = $map['userIdType'];
         }
         if (isset($map['workBenchOpenDeliverModel'])) {
             $model->workBenchOpenDeliverModel = workBenchOpenDeliverModel::fromMap($map['workBenchOpenDeliverModel']);

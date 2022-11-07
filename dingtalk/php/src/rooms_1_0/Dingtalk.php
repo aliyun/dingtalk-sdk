@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteMeetingRoomGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteMeetingRoomHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteMeetingRoomRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteMeetingRoomResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryDeviceIpByCodeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryDeviceIpByCodeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryDeviceIpByCodeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomGroupListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomGroupListRequest;
@@ -250,6 +253,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeleteMeetingRoomGroupResponse::fromMap($this->doROARequest('DeleteMeetingRoomGroup', 'rooms_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/rooms/groups/' . $groupId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                     $shareCode
+     * @param QueryDeviceIpByCodeRequest $request
+     *
+     * @return QueryDeviceIpByCodeResponse
+     */
+    public function queryDeviceIpByCode($shareCode, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryDeviceIpByCodeHeaders([]);
+
+        return $this->queryDeviceIpByCodeWithOptions($shareCode, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                     $shareCode
+     * @param QueryDeviceIpByCodeRequest $request
+     * @param QueryDeviceIpByCodeHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return QueryDeviceIpByCodeResponse
+     */
+    public function queryDeviceIpByCodeWithOptions($shareCode, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $shareCode = OpenApiUtilClient::getEncodeParam($shareCode);
+        $query     = [];
+        if (!Utils::isUnset($request->deviceSn)) {
+            @$query['deviceSn'] = $request->deviceSn;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryDeviceIpByCodeResponse::fromMap($this->doROARequest('QueryDeviceIpByCode', 'rooms_1.0', 'HTTP', 'GET', 'AK', '/v1.0/rooms/devices/shareCodes/' . $shareCode . '', 'json', $req, $runtime));
     }
 
     /**
