@@ -133,6 +133,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
             body['callbackRouteKey'] = request.callback_route_key
+        if not UtilClient.is_unset(request.card_at_user_ids):
+            body['cardAtUserIds'] = request.card_at_user_ids
         if not UtilClient.is_unset(request.card_data):
             body['cardData'] = request.card_data
         if not UtilClient.is_unset(request.card_template_id):
@@ -163,6 +165,8 @@ class Client(OpenApiClient):
             body['topOpenSpaceModel'] = request.top_open_space_model
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.user_id_type):
+            body['userIdType'] = request.user_id_type
         if not UtilClient.is_unset(request.work_bench_open_deliver_model):
             body['workBenchOpenDeliverModel'] = request.work_bench_open_deliver_model
         if not UtilClient.is_unset(request.work_bench_open_space_model):
@@ -191,6 +195,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
             body['callbackRouteKey'] = request.callback_route_key
+        if not UtilClient.is_unset(request.card_at_user_ids):
+            body['cardAtUserIds'] = request.card_at_user_ids
         if not UtilClient.is_unset(request.card_data):
             body['cardData'] = request.card_data
         if not UtilClient.is_unset(request.card_template_id):
@@ -221,6 +227,8 @@ class Client(OpenApiClient):
             body['topOpenSpaceModel'] = request.top_open_space_model
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.user_id_type):
+            body['userIdType'] = request.user_id_type
         if not UtilClient.is_unset(request.work_bench_open_deliver_model):
             body['workBenchOpenDeliverModel'] = request.work_bench_open_deliver_model
         if not UtilClient.is_unset(request.work_bench_open_space_model):
@@ -265,6 +273,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
             body['callbackRouteKey'] = request.callback_route_key
+        if not UtilClient.is_unset(request.card_at_user_ids):
+            body['cardAtUserIds'] = request.card_at_user_ids
         if not UtilClient.is_unset(request.card_data):
             body['cardData'] = request.card_data
         if not UtilClient.is_unset(request.card_template_id):
@@ -285,6 +295,8 @@ class Client(OpenApiClient):
             body['topOpenSpaceModel'] = request.top_open_space_model
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.user_id_type):
+            body['userIdType'] = request.user_id_type
         if not UtilClient.is_unset(request.work_bench_open_space_model):
             body['workBenchOpenSpaceModel'] = request.work_bench_open_space_model
         real_headers = {}
@@ -311,6 +323,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
             body['callbackRouteKey'] = request.callback_route_key
+        if not UtilClient.is_unset(request.card_at_user_ids):
+            body['cardAtUserIds'] = request.card_at_user_ids
         if not UtilClient.is_unset(request.card_data):
             body['cardData'] = request.card_data
         if not UtilClient.is_unset(request.card_template_id):
@@ -331,6 +345,8 @@ class Client(OpenApiClient):
             body['topOpenSpaceModel'] = request.top_open_space_model
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.user_id_type):
+            body['userIdType'] = request.user_id_type
         if not UtilClient.is_unset(request.work_bench_open_space_model):
             body['workBenchOpenSpaceModel'] = request.work_bench_open_space_model
         real_headers = {}

@@ -1339,6 +1339,7 @@ class CreateAndDeliverRequest(TeaModel):
     def __init__(
         self,
         callback_route_key: str = None,
+        card_at_user_ids: List[str] = None,
         card_data: CreateAndDeliverRequestCardData = None,
         card_template_id: str = None,
         co_feed_open_deliver_model: CreateAndDeliverRequestCoFeedOpenDeliverModel = None,
@@ -1354,11 +1355,13 @@ class CreateAndDeliverRequest(TeaModel):
         top_open_deliver_model: CreateAndDeliverRequestTopOpenDeliverModel = None,
         top_open_space_model: CreateAndDeliverRequestTopOpenSpaceModel = None,
         user_id: str = None,
+        user_id_type: int = None,
         work_bench_open_deliver_model: CreateAndDeliverRequestWorkBenchOpenDeliverModel = None,
         work_bench_open_space_model: CreateAndDeliverRequestWorkBenchOpenSpaceModel = None,
     ):
         # 卡片回调时的路由 key
         self.callback_route_key = callback_route_key
+        self.card_at_user_ids = card_at_user_ids
         # 卡片数据
         self.card_data = card_data
         # 卡片内容模板ID
@@ -1388,6 +1391,7 @@ class CreateAndDeliverRequest(TeaModel):
         self.top_open_space_model = top_open_space_model
         # 卡片创建者 id
         self.user_id = user_id
+        self.user_id_type = user_id_type
         # 工作台投放参数
         self.work_bench_open_deliver_model = work_bench_open_deliver_model
         # 工作台场域信息
@@ -1431,6 +1435,8 @@ class CreateAndDeliverRequest(TeaModel):
         result = dict()
         if self.callback_route_key is not None:
             result['callbackRouteKey'] = self.callback_route_key
+        if self.card_at_user_ids is not None:
+            result['cardAtUserIds'] = self.card_at_user_ids
         if self.card_data is not None:
             result['cardData'] = self.card_data.to_map()
         if self.card_template_id is not None:
@@ -1463,6 +1469,8 @@ class CreateAndDeliverRequest(TeaModel):
             result['topOpenSpaceModel'] = self.top_open_space_model.to_map()
         if self.user_id is not None:
             result['userId'] = self.user_id
+        if self.user_id_type is not None:
+            result['userIdType'] = self.user_id_type
         if self.work_bench_open_deliver_model is not None:
             result['workBenchOpenDeliverModel'] = self.work_bench_open_deliver_model.to_map()
         if self.work_bench_open_space_model is not None:
@@ -1473,6 +1481,8 @@ class CreateAndDeliverRequest(TeaModel):
         m = m or dict()
         if m.get('callbackRouteKey') is not None:
             self.callback_route_key = m.get('callbackRouteKey')
+        if m.get('cardAtUserIds') is not None:
+            self.card_at_user_ids = m.get('cardAtUserIds')
         if m.get('cardData') is not None:
             temp_model = CreateAndDeliverRequestCardData()
             self.card_data = temp_model.from_map(m['cardData'])
@@ -1516,6 +1526,8 @@ class CreateAndDeliverRequest(TeaModel):
             self.top_open_space_model = temp_model.from_map(m['topOpenSpaceModel'])
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
+        if m.get('userIdType') is not None:
+            self.user_id_type = m.get('userIdType')
         if m.get('workBenchOpenDeliverModel') is not None:
             temp_model = CreateAndDeliverRequestWorkBenchOpenDeliverModel()
             self.work_bench_open_deliver_model = temp_model.from_map(m['workBenchOpenDeliverModel'])
@@ -2277,6 +2289,7 @@ class CreateCardRequest(TeaModel):
     def __init__(
         self,
         callback_route_key: str = None,
+        card_at_user_ids: List[str] = None,
         card_data: CreateCardRequestCardData = None,
         card_template_id: str = None,
         co_feed_open_space_model: CreateCardRequestCoFeedOpenSpaceModel = None,
@@ -2287,10 +2300,12 @@ class CreateCardRequest(TeaModel):
         private_data: Dict[str, PrivateDataValue] = None,
         top_open_space_model: CreateCardRequestTopOpenSpaceModel = None,
         user_id: str = None,
+        user_id_type: int = None,
         work_bench_open_space_model: CreateCardRequestWorkBenchOpenSpaceModel = None,
     ):
         # 卡片回调时的路由 Key，用于查询注册的 callbackUrl
         self.callback_route_key = callback_route_key
+        self.card_at_user_ids = card_at_user_ids
         # 卡片数据
         self.card_data = card_data
         # 卡片的模版 Id
@@ -2313,6 +2328,7 @@ class CreateCardRequest(TeaModel):
         self.top_open_space_model = top_open_space_model
         # 卡片创建者的 userId
         self.user_id = user_id
+        self.user_id_type = user_id_type
         # 工作台场域信息
         self.work_bench_open_space_model = work_bench_open_space_model
 
@@ -2344,6 +2360,8 @@ class CreateCardRequest(TeaModel):
         result = dict()
         if self.callback_route_key is not None:
             result['callbackRouteKey'] = self.callback_route_key
+        if self.card_at_user_ids is not None:
+            result['cardAtUserIds'] = self.card_at_user_ids
         if self.card_data is not None:
             result['cardData'] = self.card_data.to_map()
         if self.card_template_id is not None:
@@ -2366,6 +2384,8 @@ class CreateCardRequest(TeaModel):
             result['topOpenSpaceModel'] = self.top_open_space_model.to_map()
         if self.user_id is not None:
             result['userId'] = self.user_id
+        if self.user_id_type is not None:
+            result['userIdType'] = self.user_id_type
         if self.work_bench_open_space_model is not None:
             result['workBenchOpenSpaceModel'] = self.work_bench_open_space_model.to_map()
         return result
@@ -2374,6 +2394,8 @@ class CreateCardRequest(TeaModel):
         m = m or dict()
         if m.get('callbackRouteKey') is not None:
             self.callback_route_key = m.get('callbackRouteKey')
+        if m.get('cardAtUserIds') is not None:
+            self.card_at_user_ids = m.get('cardAtUserIds')
         if m.get('cardData') is not None:
             temp_model = CreateCardRequestCardData()
             self.card_data = temp_model.from_map(m['cardData'])
@@ -2403,6 +2425,8 @@ class CreateCardRequest(TeaModel):
             self.top_open_space_model = temp_model.from_map(m['topOpenSpaceModel'])
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
+        if m.get('userIdType') is not None:
+            self.user_id_type = m.get('userIdType')
         if m.get('workBenchOpenSpaceModel') is not None:
             temp_model = CreateCardRequestWorkBenchOpenSpaceModel()
             self.work_bench_open_space_model = temp_model.from_map(m['workBenchOpenSpaceModel'])

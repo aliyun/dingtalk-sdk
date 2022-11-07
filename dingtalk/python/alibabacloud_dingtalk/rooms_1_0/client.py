@@ -327,6 +327,76 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DeleteMeetingRoomGroup', 'rooms_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/rooms/groups/{group_id}', 'json', req, runtime)
         )
 
+    def query_device_ip_by_code(
+        self,
+        share_code: str,
+        request: dingtalkrooms__1__0_models.QueryDeviceIpByCodeRequest,
+    ) -> dingtalkrooms__1__0_models.QueryDeviceIpByCodeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.QueryDeviceIpByCodeHeaders()
+        return self.query_device_ip_by_code_with_options(share_code, request, headers, runtime)
+
+    async def query_device_ip_by_code_async(
+        self,
+        share_code: str,
+        request: dingtalkrooms__1__0_models.QueryDeviceIpByCodeRequest,
+    ) -> dingtalkrooms__1__0_models.QueryDeviceIpByCodeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.QueryDeviceIpByCodeHeaders()
+        return await self.query_device_ip_by_code_with_options_async(share_code, request, headers, runtime)
+
+    def query_device_ip_by_code_with_options(
+        self,
+        share_code: str,
+        request: dingtalkrooms__1__0_models.QueryDeviceIpByCodeRequest,
+        headers: dingtalkrooms__1__0_models.QueryDeviceIpByCodeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.QueryDeviceIpByCodeResponse:
+        UtilClient.validate_model(request)
+        share_code = OpenApiUtilClient.get_encode_param(share_code)
+        query = {}
+        if not UtilClient.is_unset(request.device_sn):
+            query['deviceSn'] = request.device_sn
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.QueryDeviceIpByCodeResponse(),
+            self.do_roarequest('QueryDeviceIpByCode', 'rooms_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/rooms/devices/shareCodes/{share_code}', 'json', req, runtime)
+        )
+
+    async def query_device_ip_by_code_with_options_async(
+        self,
+        share_code: str,
+        request: dingtalkrooms__1__0_models.QueryDeviceIpByCodeRequest,
+        headers: dingtalkrooms__1__0_models.QueryDeviceIpByCodeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.QueryDeviceIpByCodeResponse:
+        UtilClient.validate_model(request)
+        share_code = OpenApiUtilClient.get_encode_param(share_code)
+        query = {}
+        if not UtilClient.is_unset(request.device_sn):
+            query['deviceSn'] = request.device_sn
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.QueryDeviceIpByCodeResponse(),
+            await self.do_roarequest_async('QueryDeviceIpByCode', 'rooms_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/rooms/devices/shareCodes/{share_code}', 'json', req, runtime)
+        )
+
     def query_meeting_room(
         self,
         room_id: str,
