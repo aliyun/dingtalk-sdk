@@ -170,6 +170,36 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("DeleteMeetingRoomGroup", "rooms_1.0", "HTTP", "DELETE", "AK", "/v1.0/rooms/groups/" + groupId + "", "json", req, runtime), new DeleteMeetingRoomGroupResponse());
     }
 
+    public QueryDeviceIpByCodeResponse queryDeviceIpByCode(String shareCode, QueryDeviceIpByCodeRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryDeviceIpByCodeHeaders headers = new QueryDeviceIpByCodeHeaders();
+        return this.queryDeviceIpByCodeWithOptions(shareCode, request, headers, runtime);
+    }
+
+    public QueryDeviceIpByCodeResponse queryDeviceIpByCodeWithOptions(String shareCode, QueryDeviceIpByCodeRequest request, QueryDeviceIpByCodeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        shareCode = com.aliyun.openapiutil.Client.getEncodeParam(shareCode);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceSn)) {
+            query.put("deviceSn", request.deviceSn);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryDeviceIpByCode", "rooms_1.0", "HTTP", "GET", "AK", "/v1.0/rooms/devices/shareCodes/" + shareCode + "", "json", req, runtime), new QueryDeviceIpByCodeResponse());
+    }
+
     public QueryMeetingRoomResponse queryMeetingRoom(String roomId, QueryMeetingRoomRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryMeetingRoomHeaders headers = new QueryMeetingRoomHeaders();

@@ -78,6 +78,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("callbackRouteKey", request.callbackRouteKey);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.cardAtUserIds)) {
+            body.put("cardAtUserIds", request.cardAtUserIds);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.cardData))) {
             body.put("cardData", request.cardData);
         }
@@ -138,6 +142,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("userId", request.userId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.userIdType)) {
+            body.put("userIdType", request.userIdType);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.workBenchOpenDeliverModel))) {
             body.put("workBenchOpenDeliverModel", request.workBenchOpenDeliverModel);
         }
@@ -173,6 +181,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.callbackRouteKey)) {
             body.put("callbackRouteKey", request.callbackRouteKey);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.cardAtUserIds)) {
+            body.put("cardAtUserIds", request.cardAtUserIds);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.cardData))) {
@@ -213,6 +225,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
             body.put("userId", request.userId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userIdType)) {
+            body.put("userIdType", request.userIdType);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.workBenchOpenSpaceModel))) {

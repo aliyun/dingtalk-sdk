@@ -8,6 +8,9 @@ public class CreateAndDeliverRequest extends TeaModel {
     @NameInMap("callbackRouteKey")
     public String callbackRouteKey;
 
+    @NameInMap("cardAtUserIds")
+    public java.util.List<String> cardAtUserIds;
+
     // 卡片数据
     @NameInMap("cardData")
     public CreateAndDeliverRequestCardData cardData;
@@ -67,6 +70,9 @@ public class CreateAndDeliverRequest extends TeaModel {
     @NameInMap("userId")
     public String userId;
 
+    @NameInMap("userIdType")
+    public Integer userIdType;
+
     // 工作台投放参数
     @NameInMap("workBenchOpenDeliverModel")
     public CreateAndDeliverRequestWorkBenchOpenDeliverModel workBenchOpenDeliverModel;
@@ -86,6 +92,14 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
     public String getCallbackRouteKey() {
         return this.callbackRouteKey;
+    }
+
+    public CreateAndDeliverRequest setCardAtUserIds(java.util.List<String> cardAtUserIds) {
+        this.cardAtUserIds = cardAtUserIds;
+        return this;
+    }
+    public java.util.List<String> getCardAtUserIds() {
+        return this.cardAtUserIds;
     }
 
     public CreateAndDeliverRequest setCardData(CreateAndDeliverRequestCardData cardData) {
@@ -206,6 +220,14 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
     public String getUserId() {
         return this.userId;
+    }
+
+    public CreateAndDeliverRequest setUserIdType(Integer userIdType) {
+        this.userIdType = userIdType;
+        return this;
+    }
+    public Integer getUserIdType() {
+        return this.userIdType;
     }
 
     public CreateAndDeliverRequest setWorkBenchOpenDeliverModel(CreateAndDeliverRequestWorkBenchOpenDeliverModel workBenchOpenDeliverModel) {

@@ -8,6 +8,9 @@ public class CreateCardRequest extends TeaModel {
     @NameInMap("callbackRouteKey")
     public String callbackRouteKey;
 
+    @NameInMap("cardAtUserIds")
+    public java.util.List<String> cardAtUserIds;
+
     // 卡片数据
     @NameInMap("cardData")
     public CreateCardRequestCardData cardData;
@@ -50,6 +53,9 @@ public class CreateCardRequest extends TeaModel {
     @NameInMap("userId")
     public String userId;
 
+    @NameInMap("userIdType")
+    public Integer userIdType;
+
     // 工作台场域信息
     @NameInMap("workBenchOpenSpaceModel")
     public CreateCardRequestWorkBenchOpenSpaceModel workBenchOpenSpaceModel;
@@ -65,6 +71,14 @@ public class CreateCardRequest extends TeaModel {
     }
     public String getCallbackRouteKey() {
         return this.callbackRouteKey;
+    }
+
+    public CreateCardRequest setCardAtUserIds(java.util.List<String> cardAtUserIds) {
+        this.cardAtUserIds = cardAtUserIds;
+        return this;
+    }
+    public java.util.List<String> getCardAtUserIds() {
+        return this.cardAtUserIds;
     }
 
     public CreateCardRequest setCardData(CreateCardRequestCardData cardData) {
@@ -145,6 +159,14 @@ public class CreateCardRequest extends TeaModel {
     }
     public String getUserId() {
         return this.userId;
+    }
+
+    public CreateCardRequest setUserIdType(Integer userIdType) {
+        this.userIdType = userIdType;
+        return this;
+    }
+    public Integer getUserIdType() {
+        return this.userIdType;
     }
 
     public CreateCardRequest setWorkBenchOpenSpaceModel(CreateCardRequestWorkBenchOpenSpaceModel workBenchOpenSpaceModel) {
