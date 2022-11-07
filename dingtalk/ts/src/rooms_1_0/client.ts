@@ -362,6 +362,88 @@ export class DeleteMeetingRoomGroupResponse extends $tea.Model {
   }
 }
 
+export class QueryDeviceIpByCodeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDeviceIpByCodeRequest extends $tea.Model {
+  deviceSn?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deviceSn: 'deviceSn',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceSn: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDeviceIpByCodeResponseBody extends $tea.Model {
+  result?: QueryDeviceIpByCodeResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryDeviceIpByCodeResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDeviceIpByCodeResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryDeviceIpByCodeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryDeviceIpByCodeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryMeetingRoomHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -924,6 +1006,25 @@ export class CreateMeetingRoomRequestRoomLocation extends $tea.Model {
   }
 }
 
+export class QueryDeviceIpByCodeResponseBodyResult extends $tea.Model {
+  deviceIp?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deviceIp: 'deviceIp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceIp: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryMeetingRoomResponseBodyResultRoomLabels extends $tea.Model {
   labelId?: number;
   labelName?: string;
@@ -1316,6 +1417,36 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<DeleteMeetingRoomGroupResponse>(await this.doROARequest("DeleteMeetingRoomGroup", "rooms_1.0", "HTTP", "DELETE", "AK", `/v1.0/rooms/groups/${groupId}`, "json", req, runtime), new DeleteMeetingRoomGroupResponse({}));
+  }
+
+  async queryDeviceIpByCode(shareCode: string, request: QueryDeviceIpByCodeRequest): Promise<QueryDeviceIpByCodeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryDeviceIpByCodeHeaders({ });
+    return await this.queryDeviceIpByCodeWithOptions(shareCode, request, headers, runtime);
+  }
+
+  async queryDeviceIpByCodeWithOptions(shareCode: string, request: QueryDeviceIpByCodeRequest, headers: QueryDeviceIpByCodeHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDeviceIpByCodeResponse> {
+    Util.validateModel(request);
+    shareCode = OpenApiUtil.getEncodeParam(shareCode);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deviceSn)) {
+      query["deviceSn"] = request.deviceSn;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryDeviceIpByCodeResponse>(await this.doROARequest("QueryDeviceIpByCode", "rooms_1.0", "HTTP", "GET", "AK", `/v1.0/rooms/devices/shareCodes/${shareCode}`, "json", req, runtime), new QueryDeviceIpByCodeResponse({}));
   }
 
   async queryMeetingRoom(roomId: string, request: QueryMeetingRoomRequest): Promise<QueryMeetingRoomResponse> {

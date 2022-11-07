@@ -131,6 +131,7 @@ export class CreateAndDeliverHeaders extends $tea.Model {
 
 export class CreateAndDeliverRequest extends $tea.Model {
   callbackRouteKey?: string;
+  cardAtUserIds?: string[];
   cardData?: CreateAndDeliverRequestCardData;
   cardTemplateId?: string;
   coFeedOpenDeliverModel?: CreateAndDeliverRequestCoFeedOpenDeliverModel;
@@ -146,11 +147,13 @@ export class CreateAndDeliverRequest extends $tea.Model {
   topOpenDeliverModel?: CreateAndDeliverRequestTopOpenDeliverModel;
   topOpenSpaceModel?: CreateAndDeliverRequestTopOpenSpaceModel;
   userId?: string;
+  userIdType?: number;
   workBenchOpenDeliverModel?: CreateAndDeliverRequestWorkBenchOpenDeliverModel;
   workBenchOpenSpaceModel?: CreateAndDeliverRequestWorkBenchOpenSpaceModel;
   static names(): { [key: string]: string } {
     return {
       callbackRouteKey: 'callbackRouteKey',
+      cardAtUserIds: 'cardAtUserIds',
       cardData: 'cardData',
       cardTemplateId: 'cardTemplateId',
       coFeedOpenDeliverModel: 'coFeedOpenDeliverModel',
@@ -166,6 +169,7 @@ export class CreateAndDeliverRequest extends $tea.Model {
       topOpenDeliverModel: 'topOpenDeliverModel',
       topOpenSpaceModel: 'topOpenSpaceModel',
       userId: 'userId',
+      userIdType: 'userIdType',
       workBenchOpenDeliverModel: 'workBenchOpenDeliverModel',
       workBenchOpenSpaceModel: 'workBenchOpenSpaceModel',
     };
@@ -174,6 +178,7 @@ export class CreateAndDeliverRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       callbackRouteKey: 'string',
+      cardAtUserIds: { 'type': 'array', 'itemType': 'string' },
       cardData: CreateAndDeliverRequestCardData,
       cardTemplateId: 'string',
       coFeedOpenDeliverModel: CreateAndDeliverRequestCoFeedOpenDeliverModel,
@@ -189,6 +194,7 @@ export class CreateAndDeliverRequest extends $tea.Model {
       topOpenDeliverModel: CreateAndDeliverRequestTopOpenDeliverModel,
       topOpenSpaceModel: CreateAndDeliverRequestTopOpenSpaceModel,
       userId: 'string',
+      userIdType: 'number',
       workBenchOpenDeliverModel: CreateAndDeliverRequestWorkBenchOpenDeliverModel,
       workBenchOpenSpaceModel: CreateAndDeliverRequestWorkBenchOpenSpaceModel,
     };
@@ -267,6 +273,7 @@ export class CreateCardHeaders extends $tea.Model {
 
 export class CreateCardRequest extends $tea.Model {
   callbackRouteKey?: string;
+  cardAtUserIds?: string[];
   cardData?: CreateCardRequestCardData;
   cardTemplateId?: string;
   coFeedOpenSpaceModel?: CreateCardRequestCoFeedOpenSpaceModel;
@@ -277,10 +284,12 @@ export class CreateCardRequest extends $tea.Model {
   privateData?: { [key: string]: PrivateDataValue };
   topOpenSpaceModel?: CreateCardRequestTopOpenSpaceModel;
   userId?: string;
+  userIdType?: number;
   workBenchOpenSpaceModel?: CreateCardRequestWorkBenchOpenSpaceModel;
   static names(): { [key: string]: string } {
     return {
       callbackRouteKey: 'callbackRouteKey',
+      cardAtUserIds: 'cardAtUserIds',
       cardData: 'cardData',
       cardTemplateId: 'cardTemplateId',
       coFeedOpenSpaceModel: 'coFeedOpenSpaceModel',
@@ -291,6 +300,7 @@ export class CreateCardRequest extends $tea.Model {
       privateData: 'privateData',
       topOpenSpaceModel: 'topOpenSpaceModel',
       userId: 'userId',
+      userIdType: 'userIdType',
       workBenchOpenSpaceModel: 'workBenchOpenSpaceModel',
     };
   }
@@ -298,6 +308,7 @@ export class CreateCardRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       callbackRouteKey: 'string',
+      cardAtUserIds: { 'type': 'array', 'itemType': 'string' },
       cardData: CreateCardRequestCardData,
       cardTemplateId: 'string',
       coFeedOpenSpaceModel: CreateCardRequestCoFeedOpenSpaceModel,
@@ -308,6 +319,7 @@ export class CreateCardRequest extends $tea.Model {
       privateData: { 'type': 'map', 'keyType': 'string', 'valueType': PrivateDataValue },
       topOpenSpaceModel: CreateCardRequestTopOpenSpaceModel,
       userId: 'string',
+      userIdType: 'number',
       workBenchOpenSpaceModel: CreateCardRequestWorkBenchOpenSpaceModel,
     };
   }
@@ -1965,6 +1977,10 @@ export default class Client extends OpenApi {
       body["callbackRouteKey"] = request.callbackRouteKey;
     }
 
+    if (!Util.isUnset(request.cardAtUserIds)) {
+      body["cardAtUserIds"] = request.cardAtUserIds;
+    }
+
     if (!Util.isUnset($tea.toMap(request.cardData))) {
       body["cardData"] = request.cardData;
     }
@@ -2025,6 +2041,10 @@ export default class Client extends OpenApi {
       body["userId"] = request.userId;
     }
 
+    if (!Util.isUnset(request.userIdType)) {
+      body["userIdType"] = request.userIdType;
+    }
+
     if (!Util.isUnset($tea.toMap(request.workBenchOpenDeliverModel))) {
       body["workBenchOpenDeliverModel"] = request.workBenchOpenDeliverModel;
     }
@@ -2060,6 +2080,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.callbackRouteKey)) {
       body["callbackRouteKey"] = request.callbackRouteKey;
+    }
+
+    if (!Util.isUnset(request.cardAtUserIds)) {
+      body["cardAtUserIds"] = request.cardAtUserIds;
     }
 
     if (!Util.isUnset($tea.toMap(request.cardData))) {
@@ -2100,6 +2124,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.userId)) {
       body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.userIdType)) {
+      body["userIdType"] = request.userIdType;
     }
 
     if (!Util.isUnset($tea.toMap(request.workBenchOpenSpaceModel))) {
