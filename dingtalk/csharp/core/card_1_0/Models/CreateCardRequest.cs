@@ -16,6 +16,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [Validation(Required=false)]
         public string CallbackRouteKey { get; set; }
 
+        [NameInMap("cardAtUserIds")]
+        [Validation(Required=false)]
+        public List<string> CardAtUserIds { get; set; }
+
         /// <summary>
         /// 卡片数据
         /// </summary>
@@ -353,6 +357,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }
+
+        [NameInMap("userIdType")]
+        [Validation(Required=false)]
+        public int? UserIdType { get; set; }
 
         /// <summary>
         /// 工作台场域信息

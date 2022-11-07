@@ -358,6 +358,72 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<DeleteMeetingRoomGroupResponse>(await DoROARequestAsync("DeleteMeetingRoomGroup", "rooms_1.0", "HTTP", "DELETE", "AK", "/v1.0/rooms/groups/" + groupId, "json", req, runtime));
         }
 
+        public QueryDeviceIpByCodeResponse QueryDeviceIpByCode(string shareCode, QueryDeviceIpByCodeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryDeviceIpByCodeHeaders headers = new QueryDeviceIpByCodeHeaders();
+            return QueryDeviceIpByCodeWithOptions(shareCode, request, headers, runtime);
+        }
+
+        public async Task<QueryDeviceIpByCodeResponse> QueryDeviceIpByCodeAsync(string shareCode, QueryDeviceIpByCodeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryDeviceIpByCodeHeaders headers = new QueryDeviceIpByCodeHeaders();
+            return await QueryDeviceIpByCodeWithOptionsAsync(shareCode, request, headers, runtime);
+        }
+
+        public QueryDeviceIpByCodeResponse QueryDeviceIpByCodeWithOptions(string shareCode, QueryDeviceIpByCodeRequest request, QueryDeviceIpByCodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            shareCode = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(shareCode);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceSn))
+            {
+                query["deviceSn"] = request.DeviceSn;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<QueryDeviceIpByCodeResponse>(DoROARequest("QueryDeviceIpByCode", "rooms_1.0", "HTTP", "GET", "AK", "/v1.0/rooms/devices/shareCodes/" + shareCode, "json", req, runtime));
+        }
+
+        public async Task<QueryDeviceIpByCodeResponse> QueryDeviceIpByCodeWithOptionsAsync(string shareCode, QueryDeviceIpByCodeRequest request, QueryDeviceIpByCodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            shareCode = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(shareCode);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceSn))
+            {
+                query["deviceSn"] = request.DeviceSn;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<QueryDeviceIpByCodeResponse>(await DoROARequestAsync("QueryDeviceIpByCode", "rooms_1.0", "HTTP", "GET", "AK", "/v1.0/rooms/devices/shareCodes/" + shareCode, "json", req, runtime));
+        }
+
         public QueryMeetingRoomResponse QueryMeetingRoom(string roomId, QueryMeetingRoomRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
