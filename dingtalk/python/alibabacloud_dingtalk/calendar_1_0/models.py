@@ -3266,12 +3266,9 @@ class GetMeetingRoomsScheduleRequest(TeaModel):
 class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd(TeaModel):
     def __init__(
         self,
-        date: str = None,
         date_time: str = None,
         time_zone: str = None,
     ):
-        # 结束日期
-        self.date = date
         # 结束时间戳，按照ISO 8601格式
         self.date_time = date_time
         # 时间戳所属时区
@@ -3286,8 +3283,6 @@ class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd(Tea
             return _map
 
         result = dict()
-        if self.date is not None:
-            result['date'] = self.date
         if self.date_time is not None:
             result['dateTime'] = self.date_time
         if self.time_zone is not None:
@@ -3296,8 +3291,6 @@ class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd(Tea
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('date') is not None:
-            self.date = m.get('date')
         if m.get('dateTime') is not None:
             self.date_time = m.get('dateTime')
         if m.get('timeZone') is not None:
@@ -3305,15 +3298,47 @@ class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd(Tea
         return self
 
 
+class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer(TeaModel):
+    def __init__(
+        self,
+        display_name: str = None,
+        id: str = None,
+    ):
+        # 组织者名称。
+        self.display_name = display_name
+        # 组织者unionId。
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.display_name is not None:
+            result['displayName'] = self.display_name
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('displayName') is not None:
+            self.display_name = m.get('displayName')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
 class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart(TeaModel):
     def __init__(
         self,
-        date: str = None,
         date_time: str = None,
         time_zone: str = None,
     ):
-        # 开始日期
-        self.date = date
         # 开始时间戳，按照ISO 8601格式
         self.date_time = date_time
         # 所属时区
@@ -3328,8 +3353,6 @@ class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart(T
             return _map
 
         result = dict()
-        if self.date is not None:
-            result['date'] = self.date
         if self.date_time is not None:
             result['dateTime'] = self.date_time
         if self.time_zone is not None:
@@ -3338,8 +3361,6 @@ class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart(T
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('date') is not None:
-            self.date = m.get('date')
         if m.get('dateTime') is not None:
             self.date_time = m.get('dateTime')
         if m.get('timeZone') is not None:
@@ -3351,11 +3372,17 @@ class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems(TeaMod
     def __init__(
         self,
         end: GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd = None,
+        event_id: str = None,
+        organizer: GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer = None,
         start: GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart = None,
         status: str = None,
     ):
         # 结束时间，表示一个日期，或者一个带时区的时间戳
         self.end = end
+        # 日程id。
+        self.event_id = event_id
+        # 日程组织者。
+        self.organizer = organizer
         # 开始时间，表示一个日期，或者一个带时区的时间戳
         self.start = start
         # 状态: - BUSY：繁忙, - TENTATIVE：暂定繁忙
@@ -3364,6 +3391,8 @@ class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems(TeaMod
     def validate(self):
         if self.end:
             self.end.validate()
+        if self.organizer:
+            self.organizer.validate()
         if self.start:
             self.start.validate()
 
@@ -3375,6 +3404,10 @@ class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems(TeaMod
         result = dict()
         if self.end is not None:
             result['end'] = self.end.to_map()
+        if self.event_id is not None:
+            result['eventId'] = self.event_id
+        if self.organizer is not None:
+            result['organizer'] = self.organizer.to_map()
         if self.start is not None:
             result['start'] = self.start.to_map()
         if self.status is not None:
@@ -3386,6 +3419,11 @@ class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems(TeaMod
         if m.get('end') is not None:
             temp_model = GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd()
             self.end = temp_model.from_map(m['end'])
+        if m.get('eventId') is not None:
+            self.event_id = m.get('eventId')
+        if m.get('organizer') is not None:
+            temp_model = GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer()
+            self.organizer = temp_model.from_map(m['organizer'])
         if m.get('start') is not None:
             temp_model = GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart()
             self.start = temp_model.from_map(m['start'])
