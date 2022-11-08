@@ -6,24 +6,24 @@ namespace AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetMeetingRoomsSchedule
 
 use AlibabaCloud\Tea\Model;
 
-class start extends Model
+class organizer extends Model
 {
     /**
-     * @description 开始时间戳，按照ISO 8601格式
+     * @description 组织者名称。
      *
      * @var string
      */
-    public $dateTime;
+    public $displayName;
 
     /**
-     * @description 所属时区
+     * @description 组织者unionId。
      *
      * @var string
      */
-    public $timeZone;
+    public $id;
     protected $_name = [
-        'dateTime' => 'dateTime',
-        'timeZone' => 'timeZone',
+        'displayName' => 'displayName',
+        'id'          => 'id',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class start extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dateTime) {
-            $res['dateTime'] = $this->dateTime;
+        if (null !== $this->displayName) {
+            $res['displayName'] = $this->displayName;
         }
-        if (null !== $this->timeZone) {
-            $res['timeZone'] = $this->timeZone;
+        if (null !== $this->id) {
+            $res['id'] = $this->id;
         }
 
         return $res;
@@ -46,16 +46,16 @@ class start extends Model
     /**
      * @param array $map
      *
-     * @return start
+     * @return organizer
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dateTime'])) {
-            $model->dateTime = $map['dateTime'];
+        if (isset($map['displayName'])) {
+            $model->displayName = $map['displayName'];
         }
-        if (isset($map['timeZone'])) {
-            $model->timeZone = $map['timeZone'];
+        if (isset($map['id'])) {
+            $model->id = $map['id'];
         }
 
         return $model;

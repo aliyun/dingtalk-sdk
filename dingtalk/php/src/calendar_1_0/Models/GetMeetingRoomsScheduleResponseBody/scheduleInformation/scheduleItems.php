@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetMeetingRoomsScheduleResponseBody\scheduleInformation;
 
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetMeetingRoomsScheduleResponseBody\scheduleInformation\scheduleItems\end;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetMeetingRoomsScheduleResponseBody\scheduleInformation\scheduleItems\organizer;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetMeetingRoomsScheduleResponseBody\scheduleInformation\scheduleItems\start;
 use AlibabaCloud\Tea\Model;
 
@@ -16,6 +17,20 @@ class scheduleItems extends Model
      * @var end
      */
     public $end;
+
+    /**
+     * @description 日程id。
+     *
+     * @var string
+     */
+    public $eventId;
+
+    /**
+     * @description 日程组织者。
+     *
+     * @var organizer
+     */
+    public $organizer;
 
     /**
      * @description 开始时间，表示一个日期，或者一个带时区的时间戳
@@ -31,9 +46,11 @@ class scheduleItems extends Model
      */
     public $status;
     protected $_name = [
-        'end'    => 'end',
-        'start'  => 'start',
-        'status' => 'status',
+        'end'       => 'end',
+        'eventId'   => 'eventId',
+        'organizer' => 'organizer',
+        'start'     => 'start',
+        'status'    => 'status',
     ];
 
     public function validate()
@@ -45,6 +62,12 @@ class scheduleItems extends Model
         $res = [];
         if (null !== $this->end) {
             $res['end'] = null !== $this->end ? $this->end->toMap() : null;
+        }
+        if (null !== $this->eventId) {
+            $res['eventId'] = $this->eventId;
+        }
+        if (null !== $this->organizer) {
+            $res['organizer'] = null !== $this->organizer ? $this->organizer->toMap() : null;
         }
         if (null !== $this->start) {
             $res['start'] = null !== $this->start ? $this->start->toMap() : null;
@@ -66,6 +89,12 @@ class scheduleItems extends Model
         $model = new self();
         if (isset($map['end'])) {
             $model->end = end::fromMap($map['end']);
+        }
+        if (isset($map['eventId'])) {
+            $model->eventId = $map['eventId'];
+        }
+        if (isset($map['organizer'])) {
+            $model->organizer = organizer::fromMap($map['organizer']);
         }
         if (isset($map['start'])) {
             $model->start = start::fromMap($map['start']);

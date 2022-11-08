@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class end extends Model
 {
     /**
-     * @description 结束日期
-     *
-     * @var string
-     */
-    public $date;
-
-    /**
      * @description 结束时间戳，按照ISO 8601格式
      *
      * @var string
@@ -29,7 +22,6 @@ class end extends Model
      */
     public $timeZone;
     protected $_name = [
-        'date'     => 'date',
         'dateTime' => 'dateTime',
         'timeZone' => 'timeZone',
     ];
@@ -41,9 +33,6 @@ class end extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->date) {
-            $res['date'] = $this->date;
-        }
         if (null !== $this->dateTime) {
             $res['dateTime'] = $this->dateTime;
         }
@@ -62,9 +51,6 @@ class end extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['date'])) {
-            $model->date = $map['date'];
-        }
         if (isset($map['dateTime'])) {
             $model->dateTime = $map['dateTime'];
         }
