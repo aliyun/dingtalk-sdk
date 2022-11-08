@@ -3516,12 +3516,10 @@ export class GetEventResponseBodyStart extends $tea.Model {
 }
 
 export class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd extends $tea.Model {
-  date?: string;
   dateTime?: string;
   timeZone?: string;
   static names(): { [key: string]: string } {
     return {
-      date: 'date',
       dateTime: 'dateTime',
       timeZone: 'timeZone',
     };
@@ -3529,7 +3527,6 @@ export class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems
 
   static types(): { [key: string]: any } {
     return {
-      date: 'string',
       dateTime: 'string',
       timeZone: 'string',
     };
@@ -3540,13 +3537,33 @@ export class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems
   }
 }
 
+export class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer extends $tea.Model {
+  displayName?: string;
+  id?: string;
+  static names(): { [key: string]: string } {
+    return {
+      displayName: 'displayName',
+      id: 'id',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      displayName: 'string',
+      id: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart extends $tea.Model {
-  date?: string;
   dateTime?: string;
   timeZone?: string;
   static names(): { [key: string]: string } {
     return {
-      date: 'date',
       dateTime: 'dateTime',
       timeZone: 'timeZone',
     };
@@ -3554,7 +3571,6 @@ export class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems
 
   static types(): { [key: string]: any } {
     return {
-      date: 'string',
       dateTime: 'string',
       timeZone: 'string',
     };
@@ -3567,11 +3583,15 @@ export class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems
 
 export class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems extends $tea.Model {
   end?: GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd;
+  eventId?: string;
+  organizer?: GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer;
   start?: GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart;
   status?: string;
   static names(): { [key: string]: string } {
     return {
       end: 'end',
+      eventId: 'eventId',
+      organizer: 'organizer',
       start: 'start',
       status: 'status',
     };
@@ -3580,6 +3600,8 @@ export class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems
   static types(): { [key: string]: any } {
     return {
       end: GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd,
+      eventId: 'string',
+      organizer: GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer,
       start: GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart,
       status: 'string',
     };
