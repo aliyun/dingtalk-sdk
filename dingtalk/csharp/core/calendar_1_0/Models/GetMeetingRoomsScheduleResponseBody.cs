@@ -42,13 +42,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd End { get; set; }
                 public class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd : TeaModel {
                     /// <summary>
-                    /// 结束日期
-                    /// </summary>
-                    [NameInMap("date")]
-                    [Validation(Required=false)]
-                    public string Date { get; set; }
-
-                    /// <summary>
                     /// 结束时间戳，按照ISO 8601格式
                     /// </summary>
                     [NameInMap("dateTime")]
@@ -65,19 +58,42 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 }
 
                 /// <summary>
+                /// 日程id。
+                /// </summary>
+                [NameInMap("eventId")]
+                [Validation(Required=false)]
+                public string EventId { get; set; }
+
+                /// <summary>
+                /// 日程组织者。
+                /// </summary>
+                [NameInMap("organizer")]
+                [Validation(Required=false)]
+                public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer Organizer { get; set; }
+                public class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer : TeaModel {
+                    /// <summary>
+                    /// 组织者名称。
+                    /// </summary>
+                    [NameInMap("displayName")]
+                    [Validation(Required=false)]
+                    public string DisplayName { get; set; }
+
+                    /// <summary>
+                    /// 组织者unionId。
+                    /// </summary>
+                    [NameInMap("id")]
+                    [Validation(Required=false)]
+                    public string Id { get; set; }
+
+                }
+
+                /// <summary>
                 /// 开始时间，表示一个日期，或者一个带时区的时间戳
                 /// </summary>
                 [NameInMap("start")]
                 [Validation(Required=false)]
                 public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart Start { get; set; }
                 public class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart : TeaModel {
-                    /// <summary>
-                    /// 开始日期
-                    /// </summary>
-                    [NameInMap("date")]
-                    [Validation(Required=false)]
-                    public string Date { get; set; }
-
                     /// <summary>
                     /// 开始时间戳，按照ISO 8601格式
                     /// </summary>
