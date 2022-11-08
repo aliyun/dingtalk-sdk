@@ -22,10 +22,6 @@ public class GetMeetingRoomsScheduleResponseBody extends TeaModel {
     }
 
     public static class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd extends TeaModel {
-        // 结束日期
-        @NameInMap("date")
-        public String date;
-
         // 结束时间戳，按照ISO 8601格式
         @NameInMap("dateTime")
         public String dateTime;
@@ -37,14 +33,6 @@ public class GetMeetingRoomsScheduleResponseBody extends TeaModel {
         public static GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd build(java.util.Map<String, ?> map) throws Exception {
             GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd self = new GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd();
             return TeaModel.build(map, self);
-        }
-
-        public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd setDate(String date) {
-            this.date = date;
-            return this;
-        }
-        public String getDate() {
-            return this.date;
         }
 
         public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd setDateTime(String dateTime) {
@@ -65,11 +53,39 @@ public class GetMeetingRoomsScheduleResponseBody extends TeaModel {
 
     }
 
-    public static class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart extends TeaModel {
-        // 开始日期
-        @NameInMap("date")
-        public String date;
+    public static class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer extends TeaModel {
+        // 组织者名称。
+        @NameInMap("displayName")
+        public String displayName;
 
+        // 组织者unionId。
+        @NameInMap("id")
+        public String id;
+
+        public static GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer build(java.util.Map<String, ?> map) throws Exception {
+            GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer self = new GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer();
+            return TeaModel.build(map, self);
+        }
+
+        public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer setDisplayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+        public String getDisplayName() {
+            return this.displayName;
+        }
+
+        public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer setId(String id) {
+            this.id = id;
+            return this;
+        }
+        public String getId() {
+            return this.id;
+        }
+
+    }
+
+    public static class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart extends TeaModel {
         // 开始时间戳，按照ISO 8601格式
         @NameInMap("dateTime")
         public String dateTime;
@@ -81,14 +97,6 @@ public class GetMeetingRoomsScheduleResponseBody extends TeaModel {
         public static GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart build(java.util.Map<String, ?> map) throws Exception {
             GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart self = new GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart();
             return TeaModel.build(map, self);
-        }
-
-        public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart setDate(String date) {
-            this.date = date;
-            return this;
-        }
-        public String getDate() {
-            return this.date;
         }
 
         public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart setDateTime(String dateTime) {
@@ -114,6 +122,14 @@ public class GetMeetingRoomsScheduleResponseBody extends TeaModel {
         @NameInMap("end")
         public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd end;
 
+        // 日程id。
+        @NameInMap("eventId")
+        public String eventId;
+
+        // 日程组织者。
+        @NameInMap("organizer")
+        public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer organizer;
+
         // 开始时间，表示一个日期，或者一个带时区的时间戳
         @NameInMap("start")
         public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart start;
@@ -133,6 +149,22 @@ public class GetMeetingRoomsScheduleResponseBody extends TeaModel {
         }
         public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd getEnd() {
             return this.end;
+        }
+
+        public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems setEventId(String eventId) {
+            this.eventId = eventId;
+            return this;
+        }
+        public String getEventId() {
+            return this.eventId;
+        }
+
+        public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems setOrganizer(GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer organizer) {
+            this.organizer = organizer;
+            return this;
+        }
+        public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer getOrganizer() {
+            return this.organizer;
         }
 
         public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems setStart(GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart start) {
