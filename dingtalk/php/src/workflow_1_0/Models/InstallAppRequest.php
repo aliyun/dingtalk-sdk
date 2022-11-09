@@ -10,6 +10,13 @@ use AlibabaCloud\Tea\Model;
 class InstallAppRequest extends Model
 {
     /**
+     * @description 业务分组
+     *
+     * @var string
+     */
+    public $bizGroup;
+
+    /**
      * @description 安装选项
      *
      *
@@ -24,6 +31,7 @@ class InstallAppRequest extends Model
      */
     public $sourceDirName;
     protected $_name = [
+        'bizGroup'      => 'bizGroup',
         'installOption' => 'installOption',
         'sourceDirName' => 'sourceDirName',
     ];
@@ -35,6 +43,9 @@ class InstallAppRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->bizGroup) {
+            $res['bizGroup'] = $this->bizGroup;
+        }
         if (null !== $this->installOption) {
             $res['installOption'] = null !== $this->installOption ? $this->installOption->toMap() : null;
         }
@@ -53,6 +64,9 @@ class InstallAppRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['bizGroup'])) {
+            $model->bizGroup = $map['bizGroup'];
+        }
         if (isset($map['installOption'])) {
             $model->installOption = installOption::fromMap($map['installOption']);
         }

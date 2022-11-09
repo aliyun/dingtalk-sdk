@@ -15,8 +15,14 @@ class QueryDeviceIpByCodeResponseBody extends Model
      * @var result
      */
     public $result;
+
+    /**
+     * @var bool
+     */
+    public $success;
     protected $_name = [
-        'result' => 'result',
+        'result'  => 'result',
+        'success' => 'success',
     ];
 
     public function validate()
@@ -28,6 +34,9 @@ class QueryDeviceIpByCodeResponseBody extends Model
         $res = [];
         if (null !== $this->result) {
             $res['result'] = null !== $this->result ? $this->result->toMap() : null;
+        }
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
         }
 
         return $res;
@@ -43,6 +52,9 @@ class QueryDeviceIpByCodeResponseBody extends Model
         $model = new self();
         if (isset($map['result'])) {
             $model->result = result::fromMap($map['result']);
+        }
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
         }
 
         return $model;

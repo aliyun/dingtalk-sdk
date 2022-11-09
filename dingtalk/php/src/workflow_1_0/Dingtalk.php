@@ -1130,6 +1130,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->bizGroup)) {
+            @$body['bizGroup'] = $request->bizGroup;
+        }
         if (!Utils::isUnset($request->installOption)) {
             @$body['installOption'] = $request->installOption;
         }

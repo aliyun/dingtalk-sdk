@@ -2,20 +2,20 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetMeetingRoomsScheduleResponseBody\scheduleInformation\scheduleItems;
+namespace AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class organizer extends Model
+class CollectResumeDetailResponseBody extends Model
 {
     /**
-     * @description 组织者unionId。
+     * @description 简历标识
      *
      * @var string
      */
-    public $id;
+    public $resumeId;
     protected $_name = [
-        'id' => 'id',
+        'resumeId' => 'resumeId',
     ];
 
     public function validate()
@@ -25,8 +25,8 @@ class organizer extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->id) {
-            $res['id'] = $this->id;
+        if (null !== $this->resumeId) {
+            $res['resumeId'] = $this->resumeId;
         }
 
         return $res;
@@ -35,13 +35,13 @@ class organizer extends Model
     /**
      * @param array $map
      *
-     * @return organizer
+     * @return CollectResumeDetailResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['id'])) {
-            $model->id = $map['id'];
+        if (isset($map['resumeId'])) {
+            $model->resumeId = $map['resumeId'];
         }
 
         return $model;
