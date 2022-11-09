@@ -54,10 +54,6 @@ public class GetMeetingRoomsScheduleResponseBody extends TeaModel {
     }
 
     public static class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer extends TeaModel {
-        // 组织者名称。
-        @NameInMap("displayName")
-        public String displayName;
-
         // 组织者unionId。
         @NameInMap("id")
         public String id;
@@ -65,14 +61,6 @@ public class GetMeetingRoomsScheduleResponseBody extends TeaModel {
         public static GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer build(java.util.Map<String, ?> map) throws Exception {
             GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer self = new GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer();
             return TeaModel.build(map, self);
-        }
-
-        public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer setDisplayName(String displayName) {
-            this.displayName = displayName;
-            return this;
-        }
-        public String getDisplayName() {
-            return this.displayName;
         }
 
         public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer setId(String id) {

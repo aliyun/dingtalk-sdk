@@ -751,6 +751,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public InstallAppResponse installAppWithOptions(InstallAppRequest request, InstallAppHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizGroup)) {
+            body.put("bizGroup", request.bizGroup);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.installOption))) {
             body.put("installOption", request.installOption);
         }

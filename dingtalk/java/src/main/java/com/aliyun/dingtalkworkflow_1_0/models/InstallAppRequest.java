@@ -4,6 +4,10 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class InstallAppRequest extends TeaModel {
+    // 业务分组
+    @NameInMap("bizGroup")
+    public String bizGroup;
+
     // 安装选项
     // 
     @NameInMap("installOption")
@@ -16,6 +20,14 @@ public class InstallAppRequest extends TeaModel {
     public static InstallAppRequest build(java.util.Map<String, ?> map) throws Exception {
         InstallAppRequest self = new InstallAppRequest();
         return TeaModel.build(map, self);
+    }
+
+    public InstallAppRequest setBizGroup(String bizGroup) {
+        this.bizGroup = bizGroup;
+        return this;
+    }
+    public String getBizGroup() {
+        return this.bizGroup;
     }
 
     public InstallAppRequest setInstallOption(InstallAppRequestInstallOption installOption) {

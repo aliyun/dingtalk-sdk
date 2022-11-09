@@ -8,6 +8,9 @@ public class QueryDeviceIpByCodeResponseBody extends TeaModel {
     @NameInMap("result")
     public QueryDeviceIpByCodeResponseBodyResult result;
 
+    @NameInMap("success")
+    public Boolean success;
+
     public static QueryDeviceIpByCodeResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryDeviceIpByCodeResponseBody self = new QueryDeviceIpByCodeResponseBody();
         return TeaModel.build(map, self);
@@ -19,6 +22,14 @@ public class QueryDeviceIpByCodeResponseBody extends TeaModel {
     }
     public QueryDeviceIpByCodeResponseBodyResult getResult() {
         return this.result;
+    }
+
+    public QueryDeviceIpByCodeResponseBody setSuccess(Boolean success) {
+        this.success = success;
+        return this;
+    }
+    public Boolean getSuccess() {
+        return this.success;
     }
 
     public static class QueryDeviceIpByCodeResponseBodyResult extends TeaModel {

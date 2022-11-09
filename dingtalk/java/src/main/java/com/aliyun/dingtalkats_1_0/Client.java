@@ -157,6 +157,53 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("AddUserAccount", "ats_1.0", "HTTP", "POST", "AK", "/v1.0/ats/channels/users/accounts", "json", req, runtime), new AddUserAccountResponse());
     }
 
+    public CollectResumeDetailResponse collectResumeDetail(CollectResumeDetailRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CollectResumeDetailHeaders headers = new CollectResumeDetailHeaders();
+        return this.collectResumeDetailWithOptions(request, headers, runtime);
+    }
+
+    public CollectResumeDetailResponse collectResumeDetailWithOptions(CollectResumeDetailRequest request, CollectResumeDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizCode)) {
+            query.put("bizCode", request.bizCode);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.channelOuterId)) {
+            body.put("channelOuterId", request.channelOuterId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deliverJobId)) {
+            body.put("deliverJobId", request.deliverJobId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.optUserId)) {
+            body.put("optUserId", request.optUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.resumeData))) {
+            body.put("resumeData", request.resumeData);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CollectResumeDetail", "ats_1.0", "HTTP", "POST", "AK", "/v1.0/ats/resumes/details", "json", req, runtime), new CollectResumeDetailResponse());
+    }
+
     public ConfirmRightsResponse confirmRights(String rightsCode, ConfirmRightsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ConfirmRightsHeaders headers = new ConfirmRightsHeaders();
