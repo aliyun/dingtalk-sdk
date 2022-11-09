@@ -1622,6 +1622,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizGroup))
+            {
+                body["bizGroup"] = request.BizGroup;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InstallOption.ToMap()))
             {
                 body["installOption"] = request.InstallOption;
@@ -1651,6 +1655,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizGroup))
+            {
+                body["bizGroup"] = request.BizGroup;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InstallOption.ToMap()))
             {
                 body["installOption"] = request.InstallOption;

@@ -72,13 +72,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer Organizer { get; set; }
                 public class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer : TeaModel {
                     /// <summary>
-                    /// 组织者名称。
-                    /// </summary>
-                    [NameInMap("displayName")]
-                    [Validation(Required=false)]
-                    public string DisplayName { get; set; }
-
-                    /// <summary>
                     /// 组织者unionId。
                     /// </summary>
                     [NameInMap("id")]

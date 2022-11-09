@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class InstallAppRequest : TeaModel {
         /// <summary>
+        /// 业务分组
+        /// </summary>
+        [NameInMap("bizGroup")]
+        [Validation(Required=false)]
+        public string BizGroup { get; set; }
+
+        /// <summary>
         /// 安装选项
         /// 
         /// </summary>
