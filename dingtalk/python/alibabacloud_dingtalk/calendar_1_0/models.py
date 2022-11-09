@@ -3301,11 +3301,8 @@ class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd(Tea
 class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer(TeaModel):
     def __init__(
         self,
-        display_name: str = None,
         id: str = None,
     ):
-        # 组织者名称。
-        self.display_name = display_name
         # 组织者unionId。
         self.id = id
 
@@ -3318,16 +3315,12 @@ class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganiz
             return _map
 
         result = dict()
-        if self.display_name is not None:
-            result['displayName'] = self.display_name
         if self.id is not None:
             result['id'] = self.id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('displayName') is not None:
-            self.display_name = m.get('displayName')
         if m.get('id') is not None:
             self.id = m.get('id')
         return self

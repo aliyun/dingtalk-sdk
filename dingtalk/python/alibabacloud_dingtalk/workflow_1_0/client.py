@@ -1497,6 +1497,8 @@ class Client(OpenApiClient):
     ) -> dingtalkworkflow__1__0_models.InstallAppResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.biz_group):
+            body['bizGroup'] = request.biz_group
         if not UtilClient.is_unset(request.install_option):
             body['installOption'] = request.install_option
         if not UtilClient.is_unset(request.source_dir_name):
@@ -1523,6 +1525,8 @@ class Client(OpenApiClient):
     ) -> dingtalkworkflow__1__0_models.InstallAppResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.biz_group):
+            body['bizGroup'] = request.biz_group
         if not UtilClient.is_unset(request.install_option):
             body['installOption'] = request.install_option
         if not UtilClient.is_unset(request.source_dir_name):

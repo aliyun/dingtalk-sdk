@@ -486,6 +486,771 @@ class AddUserAccountResponse(TeaModel):
         return self
 
 
+class CollectResumeDetailHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CollectResumeDetailRequestResumeDataBaseInfo(TeaModel):
+    def __init__(
+        self,
+        age: int = None,
+        avatar: str = None,
+        begin_work_time: str = None,
+        birthday: str = None,
+        email: str = None,
+        english_name: str = None,
+        graduate_time: str = None,
+        highest_education: int = None,
+        job_title: str = None,
+        last_school_name: str = None,
+        married: int = None,
+        name: str = None,
+        native_place: str = None,
+        now_location: str = None,
+        personal_honor: str = None,
+        phone_num: str = None,
+        political_status: int = None,
+        self_evaluation: str = None,
+        sex: int = None,
+        virtual_phone_num: str = None,
+        working_years: int = None,
+    ):
+        # 年龄
+        self.age = age
+        # 头像cdn地址，http链接
+        self.avatar = avatar
+        # 初次工作时间
+        self.begin_work_time = begin_work_time
+        # 生日
+        self.birthday = birthday
+        # 邮箱地址
+        self.email = email
+        # 英文名称
+        self.english_name = english_name
+        # 毕业时间
+        self.graduate_time = graduate_time
+        # 最高学历
+        self.highest_education = highest_education
+        # 当前工作职位名称
+        self.job_title = job_title
+        # 最高学历毕业院校名称
+        self.last_school_name = last_school_name
+        # 婚姻状况
+        self.married = married
+        # 名称
+        self.name = name
+        # 籍贯地址
+        self.native_place = native_place
+        # 现居住地址
+        self.now_location = now_location
+        # 个人荣誉
+        self.personal_honor = personal_honor
+        # 手机号
+        self.phone_num = phone_num
+        # 政治面貌
+        self.political_status = political_status
+        # 自我评价
+        self.self_evaluation = self_evaluation
+        # 性别
+        self.sex = sex
+        # 虚拟手机号
+        self.virtual_phone_num = virtual_phone_num
+        # 工作年限
+        self.working_years = working_years
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.age is not None:
+            result['age'] = self.age
+        if self.avatar is not None:
+            result['avatar'] = self.avatar
+        if self.begin_work_time is not None:
+            result['beginWorkTime'] = self.begin_work_time
+        if self.birthday is not None:
+            result['birthday'] = self.birthday
+        if self.email is not None:
+            result['email'] = self.email
+        if self.english_name is not None:
+            result['englishName'] = self.english_name
+        if self.graduate_time is not None:
+            result['graduateTime'] = self.graduate_time
+        if self.highest_education is not None:
+            result['highestEducation'] = self.highest_education
+        if self.job_title is not None:
+            result['jobTitle'] = self.job_title
+        if self.last_school_name is not None:
+            result['lastSchoolName'] = self.last_school_name
+        if self.married is not None:
+            result['married'] = self.married
+        if self.name is not None:
+            result['name'] = self.name
+        if self.native_place is not None:
+            result['nativePlace'] = self.native_place
+        if self.now_location is not None:
+            result['nowLocation'] = self.now_location
+        if self.personal_honor is not None:
+            result['personalHonor'] = self.personal_honor
+        if self.phone_num is not None:
+            result['phoneNum'] = self.phone_num
+        if self.political_status is not None:
+            result['politicalStatus'] = self.political_status
+        if self.self_evaluation is not None:
+            result['selfEvaluation'] = self.self_evaluation
+        if self.sex is not None:
+            result['sex'] = self.sex
+        if self.virtual_phone_num is not None:
+            result['virtualPhoneNum'] = self.virtual_phone_num
+        if self.working_years is not None:
+            result['workingYears'] = self.working_years
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('age') is not None:
+            self.age = m.get('age')
+        if m.get('avatar') is not None:
+            self.avatar = m.get('avatar')
+        if m.get('beginWorkTime') is not None:
+            self.begin_work_time = m.get('beginWorkTime')
+        if m.get('birthday') is not None:
+            self.birthday = m.get('birthday')
+        if m.get('email') is not None:
+            self.email = m.get('email')
+        if m.get('englishName') is not None:
+            self.english_name = m.get('englishName')
+        if m.get('graduateTime') is not None:
+            self.graduate_time = m.get('graduateTime')
+        if m.get('highestEducation') is not None:
+            self.highest_education = m.get('highestEducation')
+        if m.get('jobTitle') is not None:
+            self.job_title = m.get('jobTitle')
+        if m.get('lastSchoolName') is not None:
+            self.last_school_name = m.get('lastSchoolName')
+        if m.get('married') is not None:
+            self.married = m.get('married')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('nativePlace') is not None:
+            self.native_place = m.get('nativePlace')
+        if m.get('nowLocation') is not None:
+            self.now_location = m.get('nowLocation')
+        if m.get('personalHonor') is not None:
+            self.personal_honor = m.get('personalHonor')
+        if m.get('phoneNum') is not None:
+            self.phone_num = m.get('phoneNum')
+        if m.get('politicalStatus') is not None:
+            self.political_status = m.get('politicalStatus')
+        if m.get('selfEvaluation') is not None:
+            self.self_evaluation = m.get('selfEvaluation')
+        if m.get('sex') is not None:
+            self.sex = m.get('sex')
+        if m.get('virtualPhoneNum') is not None:
+            self.virtual_phone_num = m.get('virtualPhoneNum')
+        if m.get('workingYears') is not None:
+            self.working_years = m.get('workingYears')
+        return self
+
+
+class CollectResumeDetailRequestResumeDataCertificates(TeaModel):
+    def __init__(
+        self,
+        certificate_name: str = None,
+        grant_time: str = None,
+    ):
+        # 证书名称
+        self.certificate_name = certificate_name
+        # 证书授予时间
+        self.grant_time = grant_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.certificate_name is not None:
+            result['certificateName'] = self.certificate_name
+        if self.grant_time is not None:
+            result['grantTime'] = self.grant_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('certificateName') is not None:
+            self.certificate_name = m.get('certificateName')
+        if m.get('grantTime') is not None:
+            self.grant_time = m.get('grantTime')
+        return self
+
+
+class CollectResumeDetailRequestResumeDataEducationExperiences(TeaModel):
+    def __init__(
+        self,
+        degree: int = None,
+        department: str = None,
+        description: str = None,
+        end_date: str = None,
+        major: str = None,
+        school_name: str = None,
+        start_date: str = None,
+    ):
+        # 学历
+        self.degree = degree
+        # 院系
+        self.department = department
+        # 详细描述
+        self.description = description
+        # 结束时间
+        self.end_date = end_date
+        # 专业
+        self.major = major
+        # 学校名称
+        self.school_name = school_name
+        # 开始时间
+        self.start_date = start_date
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.degree is not None:
+            result['degree'] = self.degree
+        if self.department is not None:
+            result['department'] = self.department
+        if self.description is not None:
+            result['description'] = self.description
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.major is not None:
+            result['major'] = self.major
+        if self.school_name is not None:
+            result['schoolName'] = self.school_name
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('degree') is not None:
+            self.degree = m.get('degree')
+        if m.get('department') is not None:
+            self.department = m.get('department')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('major') is not None:
+            self.major = m.get('major')
+        if m.get('schoolName') is not None:
+            self.school_name = m.get('schoolName')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        return self
+
+
+class CollectResumeDetailRequestResumeDataJobExpect(TeaModel):
+    def __init__(
+        self,
+        job_name: str = None,
+        locations: List[str] = None,
+        max_salary: str = None,
+        min_salary: str = None,
+        onboard_time: str = None,
+    ):
+        # 期望职位名称
+        self.job_name = job_name
+        # 期望工作地
+        self.locations = locations
+        # 最高期望工资
+        self.max_salary = max_salary
+        # 最低期望工资
+        self.min_salary = min_salary
+        # 期望入职时间
+        self.onboard_time = onboard_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.job_name is not None:
+            result['jobName'] = self.job_name
+        if self.locations is not None:
+            result['locations'] = self.locations
+        if self.max_salary is not None:
+            result['maxSalary'] = self.max_salary
+        if self.min_salary is not None:
+            result['minSalary'] = self.min_salary
+        if self.onboard_time is not None:
+            result['onboardTime'] = self.onboard_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('jobName') is not None:
+            self.job_name = m.get('jobName')
+        if m.get('locations') is not None:
+            self.locations = m.get('locations')
+        if m.get('maxSalary') is not None:
+            self.max_salary = m.get('maxSalary')
+        if m.get('minSalary') is not None:
+            self.min_salary = m.get('minSalary')
+        if m.get('onboardTime') is not None:
+            self.onboard_time = m.get('onboardTime')
+        return self
+
+
+class CollectResumeDetailRequestResumeDataLanguageSkill(TeaModel):
+    def __init__(
+        self,
+        certificate_name: str = None,
+        language_name: str = None,
+    ):
+        # 证书名称
+        self.certificate_name = certificate_name
+        # 语言名称
+        self.language_name = language_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.certificate_name is not None:
+            result['certificateName'] = self.certificate_name
+        if self.language_name is not None:
+            result['languageName'] = self.language_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('certificateName') is not None:
+            self.certificate_name = m.get('certificateName')
+        if m.get('languageName') is not None:
+            self.language_name = m.get('languageName')
+        return self
+
+
+class CollectResumeDetailRequestResumeDataTrainingExperiences(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        end_date: str = None,
+        institution_name: str = None,
+        location: str = None,
+        name: str = None,
+        start_date: str = None,
+    ):
+        # 详细内容描述
+        self.description = description
+        # 结束时间
+        self.end_date = end_date
+        # 培训机构名称
+        self.institution_name = institution_name
+        # 培训地点
+        self.location = location
+        # 培训名称
+        self.name = name
+        # 开始时间
+        self.start_date = start_date
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.institution_name is not None:
+            result['institutionName'] = self.institution_name
+        if self.location is not None:
+            result['location'] = self.location
+        if self.name is not None:
+            result['name'] = self.name
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('institutionName') is not None:
+            self.institution_name = m.get('institutionName')
+        if m.get('location') is not None:
+            self.location = m.get('location')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        return self
+
+
+class CollectResumeDetailRequestResumeDataWorkExperiences(TeaModel):
+    def __init__(
+        self,
+        company_name: str = None,
+        department: str = None,
+        description: str = None,
+        job_title: str = None,
+        location: str = None,
+        responsibility: str = None,
+    ):
+        # 公司名称
+        self.company_name = company_name
+        # 部门
+        self.department = department
+        # 工作详情描述
+        self.description = description
+        # 职位名称
+        self.job_title = job_title
+        # 工作地点
+        self.location = location
+        # 工作职责
+        self.responsibility = responsibility
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.company_name is not None:
+            result['companyName'] = self.company_name
+        if self.department is not None:
+            result['department'] = self.department
+        if self.description is not None:
+            result['description'] = self.description
+        if self.job_title is not None:
+            result['jobTitle'] = self.job_title
+        if self.location is not None:
+            result['location'] = self.location
+        if self.responsibility is not None:
+            result['responsibility'] = self.responsibility
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('companyName') is not None:
+            self.company_name = m.get('companyName')
+        if m.get('department') is not None:
+            self.department = m.get('department')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('jobTitle') is not None:
+            self.job_title = m.get('jobTitle')
+        if m.get('location') is not None:
+            self.location = m.get('location')
+        if m.get('responsibility') is not None:
+            self.responsibility = m.get('responsibility')
+        return self
+
+
+class CollectResumeDetailRequestResumeData(TeaModel):
+    def __init__(
+        self,
+        base_info: CollectResumeDetailRequestResumeDataBaseInfo = None,
+        certificates: List[CollectResumeDetailRequestResumeDataCertificates] = None,
+        education_experiences: List[CollectResumeDetailRequestResumeDataEducationExperiences] = None,
+        job_expect: CollectResumeDetailRequestResumeDataJobExpect = None,
+        language_skill: List[CollectResumeDetailRequestResumeDataLanguageSkill] = None,
+        training_experiences: List[CollectResumeDetailRequestResumeDataTrainingExperiences] = None,
+        work_experiences: List[CollectResumeDetailRequestResumeDataWorkExperiences] = None,
+    ):
+        # 简历基础信息
+        self.base_info = base_info
+        # 证书信息
+        self.certificates = certificates
+        # 教育经历
+        self.education_experiences = education_experiences
+        # 期望职位信息
+        self.job_expect = job_expect
+        # 语言能力
+        self.language_skill = language_skill
+        # 培训经历
+        self.training_experiences = training_experiences
+        # 工作经历
+        self.work_experiences = work_experiences
+
+    def validate(self):
+        if self.base_info:
+            self.base_info.validate()
+        if self.certificates:
+            for k in self.certificates:
+                if k:
+                    k.validate()
+        if self.education_experiences:
+            for k in self.education_experiences:
+                if k:
+                    k.validate()
+        if self.job_expect:
+            self.job_expect.validate()
+        if self.language_skill:
+            for k in self.language_skill:
+                if k:
+                    k.validate()
+        if self.training_experiences:
+            for k in self.training_experiences:
+                if k:
+                    k.validate()
+        if self.work_experiences:
+            for k in self.work_experiences:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.base_info is not None:
+            result['baseInfo'] = self.base_info.to_map()
+        result['certificates'] = []
+        if self.certificates is not None:
+            for k in self.certificates:
+                result['certificates'].append(k.to_map() if k else None)
+        result['educationExperiences'] = []
+        if self.education_experiences is not None:
+            for k in self.education_experiences:
+                result['educationExperiences'].append(k.to_map() if k else None)
+        if self.job_expect is not None:
+            result['jobExpect'] = self.job_expect.to_map()
+        result['languageSkill'] = []
+        if self.language_skill is not None:
+            for k in self.language_skill:
+                result['languageSkill'].append(k.to_map() if k else None)
+        result['trainingExperiences'] = []
+        if self.training_experiences is not None:
+            for k in self.training_experiences:
+                result['trainingExperiences'].append(k.to_map() if k else None)
+        result['workExperiences'] = []
+        if self.work_experiences is not None:
+            for k in self.work_experiences:
+                result['workExperiences'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('baseInfo') is not None:
+            temp_model = CollectResumeDetailRequestResumeDataBaseInfo()
+            self.base_info = temp_model.from_map(m['baseInfo'])
+        self.certificates = []
+        if m.get('certificates') is not None:
+            for k in m.get('certificates'):
+                temp_model = CollectResumeDetailRequestResumeDataCertificates()
+                self.certificates.append(temp_model.from_map(k))
+        self.education_experiences = []
+        if m.get('educationExperiences') is not None:
+            for k in m.get('educationExperiences'):
+                temp_model = CollectResumeDetailRequestResumeDataEducationExperiences()
+                self.education_experiences.append(temp_model.from_map(k))
+        if m.get('jobExpect') is not None:
+            temp_model = CollectResumeDetailRequestResumeDataJobExpect()
+            self.job_expect = temp_model.from_map(m['jobExpect'])
+        self.language_skill = []
+        if m.get('languageSkill') is not None:
+            for k in m.get('languageSkill'):
+                temp_model = CollectResumeDetailRequestResumeDataLanguageSkill()
+                self.language_skill.append(temp_model.from_map(k))
+        self.training_experiences = []
+        if m.get('trainingExperiences') is not None:
+            for k in m.get('trainingExperiences'):
+                temp_model = CollectResumeDetailRequestResumeDataTrainingExperiences()
+                self.training_experiences.append(temp_model.from_map(k))
+        self.work_experiences = []
+        if m.get('workExperiences') is not None:
+            for k in m.get('workExperiences'):
+                temp_model = CollectResumeDetailRequestResumeDataWorkExperiences()
+                self.work_experiences.append(temp_model.from_map(k))
+        return self
+
+
+class CollectResumeDetailRequest(TeaModel):
+    def __init__(
+        self,
+        biz_code: str = None,
+        channel_outer_id: str = None,
+        deliver_job_id: str = None,
+        opt_user_id: str = None,
+        resume_data: CollectResumeDetailRequestResumeData = None,
+    ):
+        # 业务标识，目前固定为ddats
+        self.biz_code = biz_code
+        # 渠道侧简历标识
+        self.channel_outer_id = channel_outer_id
+        # 简历投递职位标识
+        self.deliver_job_id = deliver_job_id
+        self.opt_user_id = opt_user_id
+        # 简历详情信息
+        self.resume_data = resume_data
+
+    def validate(self):
+        if self.resume_data:
+            self.resume_data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
+        if self.channel_outer_id is not None:
+            result['channelOuterId'] = self.channel_outer_id
+        if self.deliver_job_id is not None:
+            result['deliverJobId'] = self.deliver_job_id
+        if self.opt_user_id is not None:
+            result['optUserId'] = self.opt_user_id
+        if self.resume_data is not None:
+            result['resumeData'] = self.resume_data.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
+        if m.get('channelOuterId') is not None:
+            self.channel_outer_id = m.get('channelOuterId')
+        if m.get('deliverJobId') is not None:
+            self.deliver_job_id = m.get('deliverJobId')
+        if m.get('optUserId') is not None:
+            self.opt_user_id = m.get('optUserId')
+        if m.get('resumeData') is not None:
+            temp_model = CollectResumeDetailRequestResumeData()
+            self.resume_data = temp_model.from_map(m['resumeData'])
+        return self
+
+
+class CollectResumeDetailResponseBody(TeaModel):
+    def __init__(
+        self,
+        resume_id: str = None,
+    ):
+        # 简历标识
+        self.resume_id = resume_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.resume_id is not None:
+            result['resumeId'] = self.resume_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('resumeId') is not None:
+            self.resume_id = m.get('resumeId')
+        return self
+
+
+class CollectResumeDetailResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CollectResumeDetailResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CollectResumeDetailResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ConfirmRightsHeaders(TeaModel):
     def __init__(
         self,

@@ -275,6 +275,90 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('AddUserAccount', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/channels/users/accounts', 'json', req, runtime)
         )
 
+    def collect_resume_detail(
+        self,
+        request: dingtalkats__1__0_models.CollectResumeDetailRequest,
+    ) -> dingtalkats__1__0_models.CollectResumeDetailResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.CollectResumeDetailHeaders()
+        return self.collect_resume_detail_with_options(request, headers, runtime)
+
+    async def collect_resume_detail_async(
+        self,
+        request: dingtalkats__1__0_models.CollectResumeDetailRequest,
+    ) -> dingtalkats__1__0_models.CollectResumeDetailResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.CollectResumeDetailHeaders()
+        return await self.collect_resume_detail_with_options_async(request, headers, runtime)
+
+    def collect_resume_detail_with_options(
+        self,
+        request: dingtalkats__1__0_models.CollectResumeDetailRequest,
+        headers: dingtalkats__1__0_models.CollectResumeDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.CollectResumeDetailResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_code):
+            query['bizCode'] = request.biz_code
+        body = {}
+        if not UtilClient.is_unset(request.channel_outer_id):
+            body['channelOuterId'] = request.channel_outer_id
+        if not UtilClient.is_unset(request.deliver_job_id):
+            body['deliverJobId'] = request.deliver_job_id
+        if not UtilClient.is_unset(request.opt_user_id):
+            body['optUserId'] = request.opt_user_id
+        if not UtilClient.is_unset(request.resume_data):
+            body['resumeData'] = request.resume_data
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.CollectResumeDetailResponse(),
+            self.do_roarequest('CollectResumeDetail', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/resumes/details', 'json', req, runtime)
+        )
+
+    async def collect_resume_detail_with_options_async(
+        self,
+        request: dingtalkats__1__0_models.CollectResumeDetailRequest,
+        headers: dingtalkats__1__0_models.CollectResumeDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.CollectResumeDetailResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_code):
+            query['bizCode'] = request.biz_code
+        body = {}
+        if not UtilClient.is_unset(request.channel_outer_id):
+            body['channelOuterId'] = request.channel_outer_id
+        if not UtilClient.is_unset(request.deliver_job_id):
+            body['deliverJobId'] = request.deliver_job_id
+        if not UtilClient.is_unset(request.opt_user_id):
+            body['optUserId'] = request.opt_user_id
+        if not UtilClient.is_unset(request.resume_data):
+            body['resumeData'] = request.resume_data
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.CollectResumeDetailResponse(),
+            await self.do_roarequest_async('CollectResumeDetail', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/resumes/details', 'json', req, runtime)
+        )
+
     def confirm_rights(
         self,
         rights_code: str,

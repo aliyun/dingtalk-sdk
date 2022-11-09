@@ -5286,9 +5286,12 @@ class InstallAppRequestInstallOption(TeaModel):
 class InstallAppRequest(TeaModel):
     def __init__(
         self,
+        biz_group: str = None,
         install_option: InstallAppRequestInstallOption = None,
         source_dir_name: str = None,
     ):
+        # 业务分组
+        self.biz_group = biz_group
         # 安装选项
         # 
         self.install_option = install_option
@@ -5305,6 +5308,8 @@ class InstallAppRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.biz_group is not None:
+            result['bizGroup'] = self.biz_group
         if self.install_option is not None:
             result['installOption'] = self.install_option.to_map()
         if self.source_dir_name is not None:
@@ -5313,6 +5318,8 @@ class InstallAppRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('bizGroup') is not None:
+            self.biz_group = m.get('bizGroup')
         if m.get('installOption') is not None:
             temp_model = InstallAppRequestInstallOption()
             self.install_option = temp_model.from_map(m['installOption'])

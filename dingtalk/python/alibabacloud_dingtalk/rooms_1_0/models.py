@@ -701,9 +701,11 @@ class QueryDeviceIpByCodeResponseBody(TeaModel):
     def __init__(
         self,
         result: QueryDeviceIpByCodeResponseBodyResult = None,
+        success: bool = None,
     ):
         # 结果
         self.result = result
+        self.success = success
 
     def validate(self):
         if self.result:
@@ -717,6 +719,8 @@ class QueryDeviceIpByCodeResponseBody(TeaModel):
         result = dict()
         if self.result is not None:
             result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
         return result
 
     def from_map(self, m: dict = None):
@@ -724,6 +728,8 @@ class QueryDeviceIpByCodeResponseBody(TeaModel):
         if m.get('result') is not None:
             temp_model = QueryDeviceIpByCodeResponseBodyResult()
             self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
         return self
 
 
