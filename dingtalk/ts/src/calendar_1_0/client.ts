@@ -3538,18 +3538,15 @@ export class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems
 }
 
 export class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer extends $tea.Model {
-  displayName?: string;
   id?: string;
   static names(): { [key: string]: string } {
     return {
-      displayName: 'displayName',
       id: 'id',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      displayName: 'string',
       id: 'string',
     };
   }

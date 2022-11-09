@@ -298,6 +298,100 @@ export class AddUserAccountResponse extends $tea.Model {
   }
 }
 
+export class CollectResumeDetailHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollectResumeDetailRequest extends $tea.Model {
+  bizCode?: string;
+  channelOuterId?: string;
+  deliverJobId?: string;
+  optUserId?: string;
+  resumeData?: CollectResumeDetailRequestResumeData;
+  static names(): { [key: string]: string } {
+    return {
+      bizCode: 'bizCode',
+      channelOuterId: 'channelOuterId',
+      deliverJobId: 'deliverJobId',
+      optUserId: 'optUserId',
+      resumeData: 'resumeData',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizCode: 'string',
+      channelOuterId: 'string',
+      deliverJobId: 'string',
+      optUserId: 'string',
+      resumeData: CollectResumeDetailRequestResumeData,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollectResumeDetailResponseBody extends $tea.Model {
+  resumeId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      resumeId: 'resumeId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      resumeId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollectResumeDetailResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollectResumeDetailResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollectResumeDetailResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ConfirmRightsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1328,6 +1422,302 @@ export class UpdateJobDeliverResponse extends $tea.Model {
   }
 }
 
+export class CollectResumeDetailRequestResumeDataBaseInfo extends $tea.Model {
+  age?: number;
+  avatar?: string;
+  beginWorkTime?: string;
+  birthday?: string;
+  email?: string;
+  englishName?: string;
+  graduateTime?: string;
+  highestEducation?: number;
+  jobTitle?: string;
+  lastSchoolName?: string;
+  married?: number;
+  name?: string;
+  nativePlace?: string;
+  nowLocation?: string;
+  personalHonor?: string;
+  phoneNum?: string;
+  politicalStatus?: number;
+  selfEvaluation?: string;
+  sex?: number;
+  virtualPhoneNum?: string;
+  workingYears?: number;
+  static names(): { [key: string]: string } {
+    return {
+      age: 'age',
+      avatar: 'avatar',
+      beginWorkTime: 'beginWorkTime',
+      birthday: 'birthday',
+      email: 'email',
+      englishName: 'englishName',
+      graduateTime: 'graduateTime',
+      highestEducation: 'highestEducation',
+      jobTitle: 'jobTitle',
+      lastSchoolName: 'lastSchoolName',
+      married: 'married',
+      name: 'name',
+      nativePlace: 'nativePlace',
+      nowLocation: 'nowLocation',
+      personalHonor: 'personalHonor',
+      phoneNum: 'phoneNum',
+      politicalStatus: 'politicalStatus',
+      selfEvaluation: 'selfEvaluation',
+      sex: 'sex',
+      virtualPhoneNum: 'virtualPhoneNum',
+      workingYears: 'workingYears',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      age: 'number',
+      avatar: 'string',
+      beginWorkTime: 'string',
+      birthday: 'string',
+      email: 'string',
+      englishName: 'string',
+      graduateTime: 'string',
+      highestEducation: 'number',
+      jobTitle: 'string',
+      lastSchoolName: 'string',
+      married: 'number',
+      name: 'string',
+      nativePlace: 'string',
+      nowLocation: 'string',
+      personalHonor: 'string',
+      phoneNum: 'string',
+      politicalStatus: 'number',
+      selfEvaluation: 'string',
+      sex: 'number',
+      virtualPhoneNum: 'string',
+      workingYears: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollectResumeDetailRequestResumeDataCertificates extends $tea.Model {
+  certificateName?: string;
+  grantTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      certificateName: 'certificateName',
+      grantTime: 'grantTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      certificateName: 'string',
+      grantTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollectResumeDetailRequestResumeDataEducationExperiences extends $tea.Model {
+  degree?: number;
+  department?: string;
+  description?: string;
+  endDate?: string;
+  major?: string;
+  schoolName?: string;
+  startDate?: string;
+  static names(): { [key: string]: string } {
+    return {
+      degree: 'degree',
+      department: 'department',
+      description: 'description',
+      endDate: 'endDate',
+      major: 'major',
+      schoolName: 'schoolName',
+      startDate: 'startDate',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      degree: 'number',
+      department: 'string',
+      description: 'string',
+      endDate: 'string',
+      major: 'string',
+      schoolName: 'string',
+      startDate: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollectResumeDetailRequestResumeDataJobExpect extends $tea.Model {
+  jobName?: string;
+  locations?: string[];
+  maxSalary?: string;
+  minSalary?: string;
+  onboardTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      jobName: 'jobName',
+      locations: 'locations',
+      maxSalary: 'maxSalary',
+      minSalary: 'minSalary',
+      onboardTime: 'onboardTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      jobName: 'string',
+      locations: { 'type': 'array', 'itemType': 'string' },
+      maxSalary: 'string',
+      minSalary: 'string',
+      onboardTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollectResumeDetailRequestResumeDataLanguageSkill extends $tea.Model {
+  certificateName?: string;
+  languageName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      certificateName: 'certificateName',
+      languageName: 'languageName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      certificateName: 'string',
+      languageName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollectResumeDetailRequestResumeDataTrainingExperiences extends $tea.Model {
+  description?: string;
+  endDate?: string;
+  institutionName?: string;
+  location?: string;
+  name?: string;
+  startDate?: string;
+  static names(): { [key: string]: string } {
+    return {
+      description: 'description',
+      endDate: 'endDate',
+      institutionName: 'institutionName',
+      location: 'location',
+      name: 'name',
+      startDate: 'startDate',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      description: 'string',
+      endDate: 'string',
+      institutionName: 'string',
+      location: 'string',
+      name: 'string',
+      startDate: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollectResumeDetailRequestResumeDataWorkExperiences extends $tea.Model {
+  companyName?: string;
+  department?: string;
+  description?: string;
+  jobTitle?: string;
+  location?: string;
+  responsibility?: string;
+  static names(): { [key: string]: string } {
+    return {
+      companyName: 'companyName',
+      department: 'department',
+      description: 'description',
+      jobTitle: 'jobTitle',
+      location: 'location',
+      responsibility: 'responsibility',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      companyName: 'string',
+      department: 'string',
+      description: 'string',
+      jobTitle: 'string',
+      location: 'string',
+      responsibility: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollectResumeDetailRequestResumeData extends $tea.Model {
+  baseInfo?: CollectResumeDetailRequestResumeDataBaseInfo;
+  certificates?: CollectResumeDetailRequestResumeDataCertificates[];
+  educationExperiences?: CollectResumeDetailRequestResumeDataEducationExperiences[];
+  jobExpect?: CollectResumeDetailRequestResumeDataJobExpect;
+  languageSkill?: CollectResumeDetailRequestResumeDataLanguageSkill[];
+  trainingExperiences?: CollectResumeDetailRequestResumeDataTrainingExperiences[];
+  workExperiences?: CollectResumeDetailRequestResumeDataWorkExperiences[];
+  static names(): { [key: string]: string } {
+    return {
+      baseInfo: 'baseInfo',
+      certificates: 'certificates',
+      educationExperiences: 'educationExperiences',
+      jobExpect: 'jobExpect',
+      languageSkill: 'languageSkill',
+      trainingExperiences: 'trainingExperiences',
+      workExperiences: 'workExperiences',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      baseInfo: CollectResumeDetailRequestResumeDataBaseInfo,
+      certificates: { 'type': 'array', 'itemType': CollectResumeDetailRequestResumeDataCertificates },
+      educationExperiences: { 'type': 'array', 'itemType': CollectResumeDetailRequestResumeDataEducationExperiences },
+      jobExpect: CollectResumeDetailRequestResumeDataJobExpect,
+      languageSkill: { 'type': 'array', 'itemType': CollectResumeDetailRequestResumeDataLanguageSkill },
+      trainingExperiences: { 'type': 'array', 'itemType': CollectResumeDetailRequestResumeDataTrainingExperiences },
+      workExperiences: { 'type': 'array', 'itemType': CollectResumeDetailRequestResumeDataWorkExperiences },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetJobAuthResponseBodyJobOwners extends $tea.Model {
   name?: string;
   userId?: string;
@@ -1589,6 +1979,53 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<AddUserAccountResponse>(await this.doROARequest("AddUserAccount", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/channels/users/accounts`, "json", req, runtime), new AddUserAccountResponse({}));
+  }
+
+  async collectResumeDetail(request: CollectResumeDetailRequest): Promise<CollectResumeDetailResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollectResumeDetailHeaders({ });
+    return await this.collectResumeDetailWithOptions(request, headers, runtime);
+  }
+
+  async collectResumeDetailWithOptions(request: CollectResumeDetailRequest, headers: CollectResumeDetailHeaders, runtime: $Util.RuntimeOptions): Promise<CollectResumeDetailResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizCode)) {
+      query["bizCode"] = request.bizCode;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.channelOuterId)) {
+      body["channelOuterId"] = request.channelOuterId;
+    }
+
+    if (!Util.isUnset(request.deliverJobId)) {
+      body["deliverJobId"] = request.deliverJobId;
+    }
+
+    if (!Util.isUnset(request.optUserId)) {
+      body["optUserId"] = request.optUserId;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.resumeData))) {
+      body["resumeData"] = request.resumeData;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CollectResumeDetailResponse>(await this.doROARequest("CollectResumeDetail", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/resumes/details`, "json", req, runtime), new CollectResumeDetailResponse({}));
   }
 
   async confirmRights(rightsCode: string, request: ConfirmRightsRequest): Promise<ConfirmRightsResponse> {

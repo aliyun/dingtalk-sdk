@@ -405,15 +405,18 @@ export class QueryDeviceIpByCodeRequest extends $tea.Model {
 
 export class QueryDeviceIpByCodeResponseBody extends $tea.Model {
   result?: QueryDeviceIpByCodeResponseBodyResult;
+  success?: boolean;
   static names(): { [key: string]: string } {
     return {
       result: 'result',
+      success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       result: QueryDeviceIpByCodeResponseBodyResult,
+      success: 'boolean',
     };
   }
 

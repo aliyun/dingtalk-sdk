@@ -2034,10 +2034,12 @@ export class InstallAppHeaders extends $tea.Model {
 }
 
 export class InstallAppRequest extends $tea.Model {
+  bizGroup?: string;
   installOption?: InstallAppRequestInstallOption;
   sourceDirName?: string;
   static names(): { [key: string]: string } {
     return {
+      bizGroup: 'bizGroup',
       installOption: 'installOption',
       sourceDirName: 'sourceDirName',
     };
@@ -2045,6 +2047,7 @@ export class InstallAppRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      bizGroup: 'string',
       installOption: InstallAppRequestInstallOption,
       sourceDirName: 'string',
     };
@@ -7319,6 +7322,10 @@ export default class Client extends OpenApi {
   async installAppWithOptions(request: InstallAppRequest, headers: InstallAppHeaders, runtime: $Util.RuntimeOptions): Promise<InstallAppResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizGroup)) {
+      body["bizGroup"] = request.bizGroup;
+    }
+
     if (!Util.isUnset($tea.toMap(request.installOption))) {
       body["installOption"] = request.installOption;
     }
