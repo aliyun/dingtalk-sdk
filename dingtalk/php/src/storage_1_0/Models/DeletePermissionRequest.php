@@ -11,7 +11,7 @@ class DeletePermissionRequest extends Model
 {
     /**
      * @description 权限成员列表
-     *
+     * 30
      * @var members[]
      */
     public $members;

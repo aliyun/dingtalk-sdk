@@ -1,0 +1,91 @@
+<?php
+
+// This file is auto-generated, don't edit it. Thanks.
+
+namespace AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models;
+
+use AlibabaCloud\Tea\Model;
+
+class ReportMessageStatusRequest extends Model
+{
+    /**
+     * @description 渠道标识。
+     *
+     * @var string
+     */
+    public $channel;
+
+    /**
+     * @description 错误码。
+     *
+     * @var string
+     */
+    public $errorCode;
+
+    /**
+     * @description 错误信息描述。
+     *
+     * @var string
+     */
+    public $errorMsg;
+
+    /**
+     * @description 消息ID。
+     *
+     * @var string
+     */
+    public $messageId;
+    protected $_name = [
+        'channel'   => 'channel',
+        'errorCode' => 'errorCode',
+        'errorMsg'  => 'errorMsg',
+        'messageId' => 'messageId',
+    ];
+
+    public function validate()
+    {
+    }
+
+    public function toMap()
+    {
+        $res = [];
+        if (null !== $this->channel) {
+            $res['channel'] = $this->channel;
+        }
+        if (null !== $this->errorCode) {
+            $res['errorCode'] = $this->errorCode;
+        }
+        if (null !== $this->errorMsg) {
+            $res['errorMsg'] = $this->errorMsg;
+        }
+        if (null !== $this->messageId) {
+            $res['messageId'] = $this->messageId;
+        }
+
+        return $res;
+    }
+
+    /**
+     * @param array $map
+     *
+     * @return ReportMessageStatusRequest
+     */
+    public static function fromMap($map = [])
+    {
+        $model = new self();
+        if (isset($map['channel'])) {
+            $model->channel = $map['channel'];
+        }
+        if (isset($map['errorCode'])) {
+            $model->errorCode = $map['errorCode'];
+        }
+        if (isset($map['errorMsg'])) {
+            $model->errorMsg = $map['errorMsg'];
+        }
+        if (isset($map['messageId'])) {
+            $model->messageId = $map['messageId'];
+        }
+
+        return $model;
+    }
+}

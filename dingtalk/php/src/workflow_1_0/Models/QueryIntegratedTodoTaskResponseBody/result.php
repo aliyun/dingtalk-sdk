@@ -4,10 +4,10 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryIntegratedTodoTaskResponseBody;
 
-use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryIntegratedTodoTaskResponseBody\taskPage\list_;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryIntegratedTodoTaskResponseBody\result\list_;
 use AlibabaCloud\Tea\Model;
 
-class taskPage extends Model
+class result extends Model
 {
     /**
      * @description 是否还有下一页
@@ -51,7 +51,7 @@ class taskPage extends Model
     /**
      * @param array $map
      *
-     * @return taskPage
+     * @return result
      */
     public static function fromMap($map = [])
     {

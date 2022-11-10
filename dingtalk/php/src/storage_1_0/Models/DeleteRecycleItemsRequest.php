@@ -10,7 +10,7 @@ class DeleteRecycleItemsRequest extends Model
 {
     /**
      * @description 回收项id列表
-     *
+     * 50
      * @var string[]
      */
     public $recycleItemIds;

@@ -38,6 +38,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchBindingGroupBizIdsR
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchGetGroupSetConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchGetGroupSetConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchGetGroupSetConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchQueryGroupMemberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchQueryGroupMemberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchQueryGroupMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchQuerySendMessageTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchQuerySendMessageTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchQuerySendMessageTaskResponse;
@@ -885,6 +888,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return BatchGetGroupSetConfigResponse::fromMap($this->doROARequest('BatchGetGroupSetConfig', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/groupSetConfigs/batchQuery', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BatchQueryGroupMemberRequest $request
+     *
+     * @return BatchQueryGroupMemberResponse
+     */
+    public function batchQueryGroupMember($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchQueryGroupMemberHeaders([]);
+
+        return $this->batchQueryGroupMemberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchQueryGroupMemberRequest $request
+     * @param BatchQueryGroupMemberHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return BatchQueryGroupMemberResponse
+     */
+    public function batchQueryGroupMemberWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchQueryGroupMemberResponse::fromMap($this->doROARequest('BatchQueryGroupMember', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/groups/members/batchQuery', 'json', $req, $runtime));
     }
 
     /**

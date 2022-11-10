@@ -10,7 +10,7 @@ class GetMultipartFileUploadInfosRequest extends Model
 {
     /**
      * @description 分片id列表
-     * 分片大小限制: 100KB~5GB
+     * 30
      * @var int[]
      */
     public $partNumbers;

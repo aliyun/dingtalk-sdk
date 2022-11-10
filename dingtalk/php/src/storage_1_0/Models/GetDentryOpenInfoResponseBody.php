@@ -9,13 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetDentryOpenInfoResponseBody extends Model
 {
     /**
+     * @description 是否支持水印
+     *
+     * @var bool
+     */
+    public $hasWaterMark;
+
+    /**
      * @description 链接, 用于编辑或预览
      *
      * @var string
      */
     public $url;
     protected $_name = [
-        'url' => 'url',
+        'hasWaterMark' => 'hasWaterMark',
+        'url'          => 'url',
     ];
 
     public function validate()
@@ -25,6 +33,9 @@ class GetDentryOpenInfoResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->hasWaterMark) {
+            $res['hasWaterMark'] = $this->hasWaterMark;
+        }
         if (null !== $this->url) {
             $res['url'] = $this->url;
         }
@@ -40,6 +51,9 @@ class GetDentryOpenInfoResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['hasWaterMark'])) {
+            $model->hasWaterMark = $map['hasWaterMark'];
+        }
         if (isset($map['url'])) {
             $model->url = $map['url'];
         }

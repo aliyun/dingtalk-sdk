@@ -11,7 +11,7 @@ class ListDentryVersionsResponseBody extends Model
 {
     /**
      * @description 文件版本列表
-     *
+     * 100
      * @var dentries[]
      */
     public $dentries;

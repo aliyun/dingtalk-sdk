@@ -18,7 +18,7 @@ class ListRecycleItemsResponseBody extends Model
 
     /**
      * @description 回收项列表
-     *
+     * 50
      * @var recycleItems[]
      */
     public $recycleItems;

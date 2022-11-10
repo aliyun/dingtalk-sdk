@@ -10,8 +10,8 @@ use AlibabaCloud\Tea\Model;
 class GetFileUploadInfoRequest extends Model
 {
     /**
-     * @description 是否需要分片上传
-     * 具体参考文档: https://help.aliyun.com/document_detail/84778.html
+     * @description 已废弃
+     *
      * @var bool
      */
     public $multipart;

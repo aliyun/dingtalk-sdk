@@ -11,7 +11,7 @@ class option extends Model
 {
     /**
      * @description 文件夹在应用上的属性, 一个应用最多只能设置3个属性
-     *
+     * 3
      * @var appProperties[]
      */
     public $appProperties;

@@ -41,6 +41,12 @@ use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetJobAuthResponse;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\QueryInterviewsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\QueryInterviewsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\QueryInterviewsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ReportMessageStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ReportMessageStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ReportMessageStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\SyncChannelMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\SyncChannelMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\SyncChannelMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\UpdateApplicationRegFormHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\UpdateApplicationRegFormRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\UpdateApplicationRegFormResponse;
@@ -680,6 +686,114 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param ReportMessageStatusRequest $request
+     *
+     * @return ReportMessageStatusResponse
+     */
+    public function reportMessageStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ReportMessageStatusHeaders([]);
+
+        return $this->reportMessageStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ReportMessageStatusRequest $request
+     * @param ReportMessageStatusHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return ReportMessageStatusResponse
+     */
+    public function reportMessageStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->channel)) {
+            @$body['channel'] = $request->channel;
+        }
+        if (!Utils::isUnset($request->errorCode)) {
+            @$body['errorCode'] = $request->errorCode;
+        }
+        if (!Utils::isUnset($request->errorMsg)) {
+            @$body['errorMsg'] = $request->errorMsg;
+        }
+        if (!Utils::isUnset($request->messageId)) {
+            @$body['messageId'] = $request->messageId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ReportMessageStatusResponse::fromMap($this->doROARequest('ReportMessageStatus', 'ats_1.0', 'HTTP', 'POST', 'AK', '/v1.0/ats/channels/messages/statuses/report', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SyncChannelMessageRequest $request
+     *
+     * @return SyncChannelMessageResponse
+     */
+    public function syncChannelMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SyncChannelMessageHeaders([]);
+
+        return $this->syncChannelMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SyncChannelMessageRequest $request
+     * @param SyncChannelMessageHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return SyncChannelMessageResponse
+     */
+    public function syncChannelMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->channel)) {
+            @$body['channel'] = $request->channel;
+        }
+        if (!Utils::isUnset($request->content)) {
+            @$body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->createTime)) {
+            @$body['createTime'] = $request->createTime;
+        }
+        if (!Utils::isUnset($request->receiverUserId)) {
+            @$body['receiverUserId'] = $request->receiverUserId;
+        }
+        if (!Utils::isUnset($request->senderUserId)) {
+            @$body['senderUserId'] = $request->senderUserId;
+        }
+        if (!Utils::isUnset($request->uuid)) {
+            @$body['uuid'] = $request->uuid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SyncChannelMessageResponse::fromMap($this->doROARequest('SyncChannelMessage', 'ats_1.0', 'HTTP', 'POST', 'AK', '/v1.0/ats/channels/messages/sync', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string                          $flowId
      * @param UpdateApplicationRegFormRequest $request
      *
@@ -809,15 +923,15 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->bizCode)) {
             @$query['bizCode'] = $request->bizCode;
         }
-        if (!Utils::isUnset($request->corpId)) {
-            @$query['corpId'] = $request->corpId;
-        }
         if (!Utils::isUnset($request->jobId)) {
             @$query['jobId'] = $request->jobId;
         }
         $body = [];
         if (!Utils::isUnset($request->channelOuterId)) {
             @$body['channelOuterId'] = $request->channelOuterId;
+        }
+        if (!Utils::isUnset($request->deliverUserId)) {
+            @$body['deliverUserId'] = $request->deliverUserId;
         }
         if (!Utils::isUnset($request->errorCode)) {
             @$body['errorCode'] = $request->errorCode;

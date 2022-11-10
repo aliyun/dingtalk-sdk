@@ -24,7 +24,7 @@ class MoveDentryResponseBody extends Model
     public $dentry;
 
     /**
-     * @description 任务id，用于查询任务执行状态; 查询接口开发中
+     * @description 任务id，用于查询任务执行状态
      *
      * @var string
      */

@@ -18,7 +18,7 @@ class ListPermissionsResponseBody extends Model
 
     /**
      * @description 权限列表分页数据
-     *
+     * 500
      * @var permissions[]
      */
     public $permissions;

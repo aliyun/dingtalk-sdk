@@ -10,7 +10,7 @@ class option extends Model
 {
     /**
      * @description 有效时间(秒)
-     *
+     * 3600
      * @var int
      */
     public $duration;

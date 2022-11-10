@@ -16,22 +16,30 @@ class quota extends Model
     public $max;
 
     /**
+     * @description 预分配剩余容量, 单位: Byte
+     * 如果没有设置预分配容，此字段是空
+     * @var int
+     */
+    public $reserved;
+
+    /**
      * @description 容量类型
-     * 使用场景：当需要保证单个应用的可用容量不受其他应用影响时, 可使用共享容量
+     * 使用场景：需要保证单个应用的可用容量不受其他应用影响时, 可使用预分配容量（专享容量）
      * @var string
      */
     public $type;
 
     /**
-     * @description 已使用容量, 单位: Byte
-     * 表示该应用下所用文件占用容量的总和，文件的上传、复制、删除相关操作会对used的值做相应变更
+     * @description 实际已使用容量, 单位: Byte
+     * 0
      * @var int
      */
     public $used;
     protected $_name = [
-        'max'  => 'max',
-        'type' => 'type',
-        'used' => 'used',
+        'max'      => 'max',
+        'reserved' => 'reserved',
+        'type'     => 'type',
+        'used'     => 'used',
     ];
 
     public function validate()
@@ -43,6 +51,9 @@ class quota extends Model
         $res = [];
         if (null !== $this->max) {
             $res['max'] = $this->max;
+        }
+        if (null !== $this->reserved) {
+            $res['reserved'] = $this->reserved;
         }
         if (null !== $this->type) {
             $res['type'] = $this->type;
@@ -64,6 +75,9 @@ class quota extends Model
         $model = new self();
         if (isset($map['max'])) {
             $model->max = $map['max'];
+        }
+        if (isset($map['reserved'])) {
+            $model->reserved = $map['reserved'];
         }
         if (isset($map['type'])) {
             $model->type = $map['type'];

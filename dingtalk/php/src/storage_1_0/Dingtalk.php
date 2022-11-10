@@ -20,9 +20,15 @@ use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ClearRecycleBinResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\CommitFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\CommitFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\CommitFileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\CopyDentriesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\CopyDentriesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\CopyDentriesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\CopyDentryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\CopyDentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\CopyDentryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\DeleteDentriesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\DeleteDentriesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\DeleteDentriesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\DeleteDentryAppPropertiesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\DeleteDentryAppPropertiesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\DeleteDentryAppPropertiesResponse;
@@ -68,6 +74,9 @@ use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetRecycleItemResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetSpaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetSpaceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetSpaceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\InitMultipartFileUploadHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\InitMultipartFileUploadRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\InitMultipartFileUploadResponse;
@@ -83,6 +92,9 @@ use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListPermissionsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListRecycleItemsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListRecycleItemsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListRecycleItemsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\MoveDentriesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\MoveDentriesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\MoveDentriesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\MoveDentryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\MoveDentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\MoveDentryResponse;
@@ -95,6 +107,9 @@ use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\RenameDentryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\RestoreRecycleItemHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\RestoreRecycleItemRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\RestoreRecycleItemResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\RestoreRecycleItemsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\RestoreRecycleItemsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\RestoreRecycleItemsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\RevertDentryVersionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\RevertDentryVersionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\RevertDentryVersionResponse;
@@ -387,6 +402,65 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string              $spaceId
+     * @param CopyDentriesRequest $request
+     *
+     * @return CopyDentriesResponse
+     */
+    public function copyDentries($spaceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CopyDentriesHeaders([]);
+
+        return $this->copyDentriesWithOptions($spaceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string              $spaceId
+     * @param CopyDentriesRequest $request
+     * @param CopyDentriesHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return CopyDentriesResponse
+     */
+    public function copyDentriesWithOptions($spaceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $spaceId = OpenApiUtilClient::getEncodeParam($spaceId);
+        $query   = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->dentryIds)) {
+            @$body['dentryIds'] = $request->dentryIds;
+        }
+        if (!Utils::isUnset($request->option)) {
+            @$body['option'] = $request->option;
+        }
+        if (!Utils::isUnset($request->targetFolderId)) {
+            @$body['targetFolderId'] = $request->targetFolderId;
+        }
+        if (!Utils::isUnset($request->targetSpaceId)) {
+            @$body['targetSpaceId'] = $request->targetSpaceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CopyDentriesResponse::fromMap($this->doROARequest('CopyDentries', 'storage_1.0', 'HTTP', 'POST', 'AK', '/v1.0/storage/spaces/' . $spaceId . '/dentries/batchCopy', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string            $spaceId
      * @param string            $dentryId
      * @param CopyDentryRequest $request
@@ -443,6 +517,59 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CopyDentryResponse::fromMap($this->doROARequest('CopyDentry', 'storage_1.0', 'HTTP', 'POST', 'AK', '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/copy', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                $spaceId
+     * @param DeleteDentriesRequest $request
+     *
+     * @return DeleteDentriesResponse
+     */
+    public function deleteDentries($spaceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteDentriesHeaders([]);
+
+        return $this->deleteDentriesWithOptions($spaceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                $spaceId
+     * @param DeleteDentriesRequest $request
+     * @param DeleteDentriesHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return DeleteDentriesResponse
+     */
+    public function deleteDentriesWithOptions($spaceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $spaceId = OpenApiUtilClient::getEncodeParam($spaceId);
+        $query   = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->dentryIds)) {
+            @$body['dentryIds'] = $request->dentryIds;
+        }
+        if (!Utils::isUnset($request->option)) {
+            @$body['option'] = $request->option;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DeleteDentriesResponse::fromMap($this->doROARequest('DeleteDentries', 'storage_1.0', 'HTTP', 'POST', 'AK', '/v1.0/storage/spaces/' . $spaceId . '/dentries/batchRemove', 'json', $req, $runtime));
     }
 
     /**
@@ -1197,6 +1324,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string         $taskId
+     * @param GetTaskRequest $request
+     *
+     * @return GetTaskResponse
+     */
+    public function getTask($taskId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetTaskHeaders([]);
+
+        return $this->getTaskWithOptions($taskId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string         $taskId
+     * @param GetTaskRequest $request
+     * @param GetTaskHeaders $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return GetTaskResponse
+     */
+    public function getTaskWithOptions($taskId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $taskId = OpenApiUtilClient::getEncodeParam($taskId);
+        $query  = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetTaskResponse::fromMap($this->doROARequest('GetTask', 'storage_1.0', 'HTTP', 'GET', 'AK', '/v1.0/storage/tasks/' . $taskId . '', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string                         $spaceId
      * @param InitMultipartFileUploadRequest $request
      *
@@ -1465,6 +1637,65 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string              $spaceId
+     * @param MoveDentriesRequest $request
+     *
+     * @return MoveDentriesResponse
+     */
+    public function moveDentries($spaceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new MoveDentriesHeaders([]);
+
+        return $this->moveDentriesWithOptions($spaceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string              $spaceId
+     * @param MoveDentriesRequest $request
+     * @param MoveDentriesHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return MoveDentriesResponse
+     */
+    public function moveDentriesWithOptions($spaceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $spaceId = OpenApiUtilClient::getEncodeParam($spaceId);
+        $query   = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->dentryIds)) {
+            @$body['dentryIds'] = $request->dentryIds;
+        }
+        if (!Utils::isUnset($request->option)) {
+            @$body['option'] = $request->option;
+        }
+        if (!Utils::isUnset($request->targetFolderId)) {
+            @$body['targetFolderId'] = $request->targetFolderId;
+        }
+        if (!Utils::isUnset($request->targetSpaceId)) {
+            @$body['targetSpaceId'] = $request->targetSpaceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return MoveDentriesResponse::fromMap($this->doROARequest('MoveDentries', 'storage_1.0', 'HTTP', 'POST', 'AK', '/v1.0/storage/spaces/' . $spaceId . '/dentries/batchMove', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string            $spaceId
      * @param string            $dentryId
      * @param MoveDentryRequest $request
@@ -1683,6 +1914,59 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return RestoreRecycleItemResponse::fromMap($this->doROARequest('RestoreRecycleItem', 'storage_1.0', 'HTTP', 'POST', 'AK', '/v1.0/storage/recycleBins/' . $recycleBinId . '/recycleItems/' . $recycleItemId . '/restore', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                     $recycleBinId
+     * @param RestoreRecycleItemsRequest $request
+     *
+     * @return RestoreRecycleItemsResponse
+     */
+    public function restoreRecycleItems($recycleBinId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RestoreRecycleItemsHeaders([]);
+
+        return $this->restoreRecycleItemsWithOptions($recycleBinId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                     $recycleBinId
+     * @param RestoreRecycleItemsRequest $request
+     * @param RestoreRecycleItemsHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return RestoreRecycleItemsResponse
+     */
+    public function restoreRecycleItemsWithOptions($recycleBinId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $recycleBinId = OpenApiUtilClient::getEncodeParam($recycleBinId);
+        $query        = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->option)) {
+            @$body['option'] = $request->option;
+        }
+        if (!Utils::isUnset($request->recycleItemIds)) {
+            @$body['recycleItemIds'] = $request->recycleItemIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return RestoreRecycleItemsResponse::fromMap($this->doROARequest('RestoreRecycleItems', 'storage_1.0', 'HTTP', 'POST', 'AK', '/v1.0/storage/recycleBins/' . $recycleBinId . '/recycleItems/batchRestore', 'json', $req, $runtime));
     }
 
     /**

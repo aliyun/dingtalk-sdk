@@ -11,7 +11,7 @@ class UpdateDentryAppPropertiesRequest extends Model
 {
     /**
      * @description App属性列表 属性不存在时则新增，存在则覆盖原值
-     *
+     * 3
      * @var appProperties[]
      */
     public $appProperties;

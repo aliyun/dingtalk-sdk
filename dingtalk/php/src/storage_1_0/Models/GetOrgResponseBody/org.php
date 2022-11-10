@@ -18,7 +18,7 @@ class org extends Model
 
     /**
      * @description 分区容量信息
-     *
+     * 2
      * @var partitions[]
      */
     public $partitions;

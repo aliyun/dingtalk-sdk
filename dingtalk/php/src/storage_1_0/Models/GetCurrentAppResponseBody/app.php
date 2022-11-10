@@ -46,7 +46,7 @@ class app extends Model
 
     /**
      * @description 分区容量信息
-     *
+     * 3
      * @var partitions[]
      */
     public $partitions;

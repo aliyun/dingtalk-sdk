@@ -4,23 +4,17 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryIntegratedTodoTaskResponseBody\taskPage;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryIntegratedTodoTaskResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
 class QueryIntegratedTodoTaskResponseBody extends Model
 {
     /**
-     * @var string
+     * @var result
      */
-    public $requestId;
-
-    /**
-     * @var taskPage
-     */
-    public $taskPage;
+    public $result;
     protected $_name = [
-        'requestId' => 'requestId',
-        'taskPage'  => 'taskPage',
+        'result' => 'result',
     ];
 
     public function validate()
@@ -30,11 +24,8 @@ class QueryIntegratedTodoTaskResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->requestId) {
-            $res['requestId'] = $this->requestId;
-        }
-        if (null !== $this->taskPage) {
-            $res['taskPage'] = null !== $this->taskPage ? $this->taskPage->toMap() : null;
+        if (null !== $this->result) {
+            $res['result'] = null !== $this->result ? $this->result->toMap() : null;
         }
 
         return $res;
@@ -48,11 +39,8 @@ class QueryIntegratedTodoTaskResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['requestId'])) {
-            $model->requestId = $map['requestId'];
-        }
-        if (isset($map['taskPage'])) {
-            $model->taskPage = taskPage::fromMap($map['taskPage']);
+        if (isset($map['result'])) {
+            $model->result = result::fromMap($map['result']);
         }
 
         return $model;

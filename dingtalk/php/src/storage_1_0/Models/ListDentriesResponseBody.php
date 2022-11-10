@@ -11,7 +11,7 @@ class ListDentriesResponseBody extends Model
 {
     /**
      * @description 文件列表
-     *
+     * 50
      * @var dentries[]
      */
     public $dentries;

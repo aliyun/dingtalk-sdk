@@ -10,7 +10,7 @@ class DeleteDentryAppPropertiesRequest extends Model
 {
     /**
      * @description 文件上App属性名称
-     *
+     * 3
      * @var string[]
      */
     public $propertyNames;

@@ -23,6 +23,13 @@ class UpdateJobDeliverRequest extends Model
     public $channelOuterId;
 
     /**
+     * @description 职位投递人userId
+     *
+     * @var string
+     */
+    public $deliverUserId;
+
+    /**
      * @description 渠道侧错误码
      *
      * @var string
@@ -58,13 +65,6 @@ class UpdateJobDeliverRequest extends Model
     public $status;
 
     /**
-     * @description 企业corpId
-     *
-     * @var string
-     */
-    public $corpId;
-
-    /**
      * @description 钉钉侧职位唯一标识
      *
      * @var string
@@ -73,12 +73,12 @@ class UpdateJobDeliverRequest extends Model
     protected $_name = [
         'bizCode'        => 'bizCode',
         'channelOuterId' => 'channelOuterId',
+        'deliverUserId'  => 'deliverUserId',
         'errorCode'      => 'errorCode',
         'errorMsg'       => 'errorMsg',
         'opTime'         => 'opTime',
         'opUserId'       => 'opUserId',
         'status'         => 'status',
-        'corpId'         => 'corpId',
         'jobId'          => 'jobId',
     ];
 
@@ -95,6 +95,9 @@ class UpdateJobDeliverRequest extends Model
         if (null !== $this->channelOuterId) {
             $res['channelOuterId'] = $this->channelOuterId;
         }
+        if (null !== $this->deliverUserId) {
+            $res['deliverUserId'] = $this->deliverUserId;
+        }
         if (null !== $this->errorCode) {
             $res['errorCode'] = $this->errorCode;
         }
@@ -109,9 +112,6 @@ class UpdateJobDeliverRequest extends Model
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
-        }
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
         }
         if (null !== $this->jobId) {
             $res['jobId'] = $this->jobId;
@@ -134,6 +134,9 @@ class UpdateJobDeliverRequest extends Model
         if (isset($map['channelOuterId'])) {
             $model->channelOuterId = $map['channelOuterId'];
         }
+        if (isset($map['deliverUserId'])) {
+            $model->deliverUserId = $map['deliverUserId'];
+        }
         if (isset($map['errorCode'])) {
             $model->errorCode = $map['errorCode'];
         }
@@ -148,9 +151,6 @@ class UpdateJobDeliverRequest extends Model
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
-        }
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
         }
         if (isset($map['jobId'])) {
             $model->jobId = $map['jobId'];

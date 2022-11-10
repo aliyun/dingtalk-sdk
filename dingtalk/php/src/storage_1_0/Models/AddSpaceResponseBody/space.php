@@ -5,10 +5,18 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\AddSpaceResponseBody;
 
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\AddSpaceResponseBody\space\capabilities;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\AddSpaceResponseBody\space\partitions;
 use AlibabaCloud\Tea\Model;
 
 class space extends Model
 {
+    /**
+     * @description 开放平台应用appId
+     *
+     * @var string
+     */
+    public $appId;
+
     /**
      * @description 空间能力项
      *
@@ -80,8 +88,15 @@ class space extends Model
     public $ownerType;
 
     /**
-     * @description 总容量
-     *
+     * @description 分区容量信息
+     * 2
+     * @var partitions[]
+     */
+    public $partitions;
+
+    /**
+     * @description 容量上限
+     * 建议使用分区上容量信息字段
      * @var int
      */
     public $quota;
@@ -108,12 +123,13 @@ class space extends Model
     public $status;
 
     /**
-     * @description 已使用容量
-     *
+     * @description 已使用容量, 包含各分区已使用容量和
+     * 建议使用分区上容量信息字段
      * @var int
      */
     public $usedQuota;
     protected $_name = [
+        'appId'        => 'appId',
         'capabilities' => 'capabilities',
         'corpId'       => 'corpId',
         'createTime'   => 'createTime',
@@ -124,6 +140,7 @@ class space extends Model
         'name'         => 'name',
         'ownerId'      => 'ownerId',
         'ownerType'    => 'ownerType',
+        'partitions'   => 'partitions',
         'quota'        => 'quota',
         'scene'        => 'scene',
         'sceneId'      => 'sceneId',
@@ -138,6 +155,9 @@ class space extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->appId) {
+            $res['appId'] = $this->appId;
+        }
         if (null !== $this->capabilities) {
             $res['capabilities'] = null !== $this->capabilities ? $this->capabilities->toMap() : null;
         }
@@ -168,6 +188,15 @@ class space extends Model
         if (null !== $this->ownerType) {
             $res['ownerType'] = $this->ownerType;
         }
+        if (null !== $this->partitions) {
+            $res['partitions'] = [];
+            if (null !== $this->partitions && \is_array($this->partitions)) {
+                $n = 0;
+                foreach ($this->partitions as $item) {
+                    $res['partitions'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
         if (null !== $this->quota) {
             $res['quota'] = $this->quota;
         }
@@ -195,6 +224,9 @@ class space extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['appId'])) {
+            $model->appId = $map['appId'];
+        }
         if (isset($map['capabilities'])) {
             $model->capabilities = capabilities::fromMap($map['capabilities']);
         }
@@ -224,6 +256,15 @@ class space extends Model
         }
         if (isset($map['ownerType'])) {
             $model->ownerType = $map['ownerType'];
+        }
+        if (isset($map['partitions'])) {
+            if (!empty($map['partitions'])) {
+                $model->partitions = [];
+                $n                 = 0;
+                foreach ($map['partitions'] as $item) {
+                    $model->partitions[$n++] = null !== $item ? partitions::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['quota'])) {
             $model->quota = $map['quota'];
