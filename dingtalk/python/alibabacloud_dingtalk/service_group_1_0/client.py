@@ -975,6 +975,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('BatchGetGroupSetConfig', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groupSetConfigs/batchQuery', 'json', req, runtime)
         )
 
+    def batch_query_group_member(
+        self,
+        request: dingtalkservice_group__1__0_models.BatchQueryGroupMemberRequest,
+    ) -> dingtalkservice_group__1__0_models.BatchQueryGroupMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.BatchQueryGroupMemberHeaders()
+        return self.batch_query_group_member_with_options(request, headers, runtime)
+
+    async def batch_query_group_member_async(
+        self,
+        request: dingtalkservice_group__1__0_models.BatchQueryGroupMemberRequest,
+    ) -> dingtalkservice_group__1__0_models.BatchQueryGroupMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.BatchQueryGroupMemberHeaders()
+        return await self.batch_query_group_member_with_options_async(request, headers, runtime)
+
+    def batch_query_group_member_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.BatchQueryGroupMemberRequest,
+        headers: dingtalkservice_group__1__0_models.BatchQueryGroupMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.BatchQueryGroupMemberResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.BatchQueryGroupMemberResponse(),
+            self.do_roarequest('BatchQueryGroupMember', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/members/batchQuery', 'json', req, runtime)
+        )
+
+    async def batch_query_group_member_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.BatchQueryGroupMemberRequest,
+        headers: dingtalkservice_group__1__0_models.BatchQueryGroupMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.BatchQueryGroupMemberResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.BatchQueryGroupMemberResponse(),
+            await self.do_roarequest_async('BatchQueryGroupMember', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/members/batchQuery', 'json', req, runtime)
+        )
+
     def batch_query_send_message_task(
         self,
         request: dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskRequest,

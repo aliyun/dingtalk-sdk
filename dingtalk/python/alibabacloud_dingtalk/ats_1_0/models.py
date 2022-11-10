@@ -2646,6 +2646,314 @@ class QueryInterviewsResponse(TeaModel):
         return self
 
 
+class ReportMessageStatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ReportMessageStatusRequest(TeaModel):
+    def __init__(
+        self,
+        channel: str = None,
+        error_code: str = None,
+        error_msg: str = None,
+        message_id: str = None,
+    ):
+        # 渠道标识。
+        self.channel = channel
+        # 错误码。
+        self.error_code = error_code
+        # 错误信息描述。
+        self.error_msg = error_msg
+        # 消息ID。
+        self.message_id = message_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.channel is not None:
+            result['channel'] = self.channel
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.message_id is not None:
+            result['messageId'] = self.message_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('channel') is not None:
+            self.channel = m.get('channel')
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('messageId') is not None:
+            self.message_id = m.get('messageId')
+        return self
+
+
+class ReportMessageStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+    ):
+        # Id of the request
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class ReportMessageStatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ReportMessageStatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ReportMessageStatusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SyncChannelMessageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SyncChannelMessageRequest(TeaModel):
+    def __init__(
+        self,
+        channel: str = None,
+        content: str = None,
+        create_time: int = None,
+        receiver_user_id: str = None,
+        sender_user_id: str = None,
+        uuid: str = None,
+    ):
+        # 渠道标识。
+        self.channel = channel
+        # 消息内容。
+        self.content = content
+        # 消息创建时间。
+        self.create_time = create_time
+        # 消息接收者ID。
+        self.receiver_user_id = receiver_user_id
+        # 消息发送者用户ID。
+        self.sender_user_id = sender_user_id
+        # 消息UUID，业务方产生用于去重。
+        self.uuid = uuid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.channel is not None:
+            result['channel'] = self.channel
+        if self.content is not None:
+            result['content'] = self.content
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.receiver_user_id is not None:
+            result['receiverUserId'] = self.receiver_user_id
+        if self.sender_user_id is not None:
+            result['senderUserId'] = self.sender_user_id
+        if self.uuid is not None:
+            result['uuid'] = self.uuid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('channel') is not None:
+            self.channel = m.get('channel')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('receiverUserId') is not None:
+            self.receiver_user_id = m.get('receiverUserId')
+        if m.get('senderUserId') is not None:
+            self.sender_user_id = m.get('senderUserId')
+        if m.get('uuid') is not None:
+            self.uuid = m.get('uuid')
+        return self
+
+
+class SyncChannelMessageResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+    ):
+        # Id of the request
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class SyncChannelMessageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SyncChannelMessageResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SyncChannelMessageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UpdateApplicationRegFormHeaders(TeaModel):
     def __init__(
         self,
@@ -3019,18 +3327,20 @@ class UpdateJobDeliverRequest(TeaModel):
         self,
         biz_code: str = None,
         channel_outer_id: str = None,
+        deliver_user_id: str = None,
         error_code: str = None,
         error_msg: str = None,
         op_time: int = None,
         op_user_id: str = None,
         status: int = None,
-        corp_id: str = None,
         job_id: str = None,
     ):
         # 招聘业务标识，目前固定ddats
         self.biz_code = biz_code
         # 渠道侧职位唯一标识
         self.channel_outer_id = channel_outer_id
+        # 职位投递人userId
+        self.deliver_user_id = deliver_user_id
         # 渠道侧错误码
         self.error_code = error_code
         # 渠道侧错误信息
@@ -3041,8 +3351,6 @@ class UpdateJobDeliverRequest(TeaModel):
         self.op_user_id = op_user_id
         # 职位投递状态
         self.status = status
-        # 企业corpId
-        self.corp_id = corp_id
         # 钉钉侧职位唯一标识
         self.job_id = job_id
 
@@ -3059,6 +3367,8 @@ class UpdateJobDeliverRequest(TeaModel):
             result['bizCode'] = self.biz_code
         if self.channel_outer_id is not None:
             result['channelOuterId'] = self.channel_outer_id
+        if self.deliver_user_id is not None:
+            result['deliverUserId'] = self.deliver_user_id
         if self.error_code is not None:
             result['errorCode'] = self.error_code
         if self.error_msg is not None:
@@ -3069,8 +3379,6 @@ class UpdateJobDeliverRequest(TeaModel):
             result['opUserId'] = self.op_user_id
         if self.status is not None:
             result['status'] = self.status
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
         if self.job_id is not None:
             result['jobId'] = self.job_id
         return result
@@ -3081,6 +3389,8 @@ class UpdateJobDeliverRequest(TeaModel):
             self.biz_code = m.get('bizCode')
         if m.get('channelOuterId') is not None:
             self.channel_outer_id = m.get('channelOuterId')
+        if m.get('deliverUserId') is not None:
+            self.deliver_user_id = m.get('deliverUserId')
         if m.get('errorCode') is not None:
             self.error_code = m.get('errorCode')
         if m.get('errorMsg') is not None:
@@ -3091,8 +3401,6 @@ class UpdateJobDeliverRequest(TeaModel):
             self.op_user_id = m.get('opUserId')
         if m.get('status') is not None:
             self.status = m.get('status')
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
         if m.get('jobId') is not None:
             self.job_id = m.get('jobId')
         return self

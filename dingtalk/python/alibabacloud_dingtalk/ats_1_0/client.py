@@ -951,6 +951,166 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryInterviews', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/interviews/query', 'json', req, runtime)
         )
 
+    def report_message_status(
+        self,
+        request: dingtalkats__1__0_models.ReportMessageStatusRequest,
+    ) -> dingtalkats__1__0_models.ReportMessageStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.ReportMessageStatusHeaders()
+        return self.report_message_status_with_options(request, headers, runtime)
+
+    async def report_message_status_async(
+        self,
+        request: dingtalkats__1__0_models.ReportMessageStatusRequest,
+    ) -> dingtalkats__1__0_models.ReportMessageStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.ReportMessageStatusHeaders()
+        return await self.report_message_status_with_options_async(request, headers, runtime)
+
+    def report_message_status_with_options(
+        self,
+        request: dingtalkats__1__0_models.ReportMessageStatusRequest,
+        headers: dingtalkats__1__0_models.ReportMessageStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.ReportMessageStatusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel):
+            body['channel'] = request.channel
+        if not UtilClient.is_unset(request.error_code):
+            body['errorCode'] = request.error_code
+        if not UtilClient.is_unset(request.error_msg):
+            body['errorMsg'] = request.error_msg
+        if not UtilClient.is_unset(request.message_id):
+            body['messageId'] = request.message_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.ReportMessageStatusResponse(),
+            self.do_roarequest('ReportMessageStatus', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/channels/messages/statuses/report', 'json', req, runtime)
+        )
+
+    async def report_message_status_with_options_async(
+        self,
+        request: dingtalkats__1__0_models.ReportMessageStatusRequest,
+        headers: dingtalkats__1__0_models.ReportMessageStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.ReportMessageStatusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel):
+            body['channel'] = request.channel
+        if not UtilClient.is_unset(request.error_code):
+            body['errorCode'] = request.error_code
+        if not UtilClient.is_unset(request.error_msg):
+            body['errorMsg'] = request.error_msg
+        if not UtilClient.is_unset(request.message_id):
+            body['messageId'] = request.message_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.ReportMessageStatusResponse(),
+            await self.do_roarequest_async('ReportMessageStatus', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/channels/messages/statuses/report', 'json', req, runtime)
+        )
+
+    def sync_channel_message(
+        self,
+        request: dingtalkats__1__0_models.SyncChannelMessageRequest,
+    ) -> dingtalkats__1__0_models.SyncChannelMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.SyncChannelMessageHeaders()
+        return self.sync_channel_message_with_options(request, headers, runtime)
+
+    async def sync_channel_message_async(
+        self,
+        request: dingtalkats__1__0_models.SyncChannelMessageRequest,
+    ) -> dingtalkats__1__0_models.SyncChannelMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.SyncChannelMessageHeaders()
+        return await self.sync_channel_message_with_options_async(request, headers, runtime)
+
+    def sync_channel_message_with_options(
+        self,
+        request: dingtalkats__1__0_models.SyncChannelMessageRequest,
+        headers: dingtalkats__1__0_models.SyncChannelMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.SyncChannelMessageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel):
+            body['channel'] = request.channel
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.create_time):
+            body['createTime'] = request.create_time
+        if not UtilClient.is_unset(request.receiver_user_id):
+            body['receiverUserId'] = request.receiver_user_id
+        if not UtilClient.is_unset(request.sender_user_id):
+            body['senderUserId'] = request.sender_user_id
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.SyncChannelMessageResponse(),
+            self.do_roarequest('SyncChannelMessage', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/channels/messages/sync', 'json', req, runtime)
+        )
+
+    async def sync_channel_message_with_options_async(
+        self,
+        request: dingtalkats__1__0_models.SyncChannelMessageRequest,
+        headers: dingtalkats__1__0_models.SyncChannelMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.SyncChannelMessageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel):
+            body['channel'] = request.channel
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.create_time):
+            body['createTime'] = request.create_time
+        if not UtilClient.is_unset(request.receiver_user_id):
+            body['receiverUserId'] = request.receiver_user_id
+        if not UtilClient.is_unset(request.sender_user_id):
+            body['senderUserId'] = request.sender_user_id
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.SyncChannelMessageResponse(),
+            await self.do_roarequest_async('SyncChannelMessage', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/channels/messages/sync', 'json', req, runtime)
+        )
+
     def update_application_reg_form(
         self,
         flow_id: str,
@@ -1137,13 +1297,13 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.biz_code):
             query['bizCode'] = request.biz_code
-        if not UtilClient.is_unset(request.corp_id):
-            query['corpId'] = request.corp_id
         if not UtilClient.is_unset(request.job_id):
             query['jobId'] = request.job_id
         body = {}
         if not UtilClient.is_unset(request.channel_outer_id):
             body['channelOuterId'] = request.channel_outer_id
+        if not UtilClient.is_unset(request.deliver_user_id):
+            body['deliverUserId'] = request.deliver_user_id
         if not UtilClient.is_unset(request.error_code):
             body['errorCode'] = request.error_code
         if not UtilClient.is_unset(request.error_msg):
@@ -1179,13 +1339,13 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.biz_code):
             query['bizCode'] = request.biz_code
-        if not UtilClient.is_unset(request.corp_id):
-            query['corpId'] = request.corp_id
         if not UtilClient.is_unset(request.job_id):
             query['jobId'] = request.job_id
         body = {}
         if not UtilClient.is_unset(request.channel_outer_id):
             body['channelOuterId'] = request.channel_outer_id
+        if not UtilClient.is_unset(request.deliver_user_id):
+            body['deliverUserId'] = request.deliver_user_id
         if not UtilClient.is_unset(request.error_code):
             body['errorCode'] = request.error_code
         if not UtilClient.is_unset(request.error_msg):

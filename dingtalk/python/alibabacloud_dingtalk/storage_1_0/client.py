@@ -435,6 +435,96 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CommitFile', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/files/commit', 'json', req, runtime)
         )
 
+    def copy_dentries(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.CopyDentriesRequest,
+    ) -> dingtalkstorage__1__0_models.CopyDentriesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.CopyDentriesHeaders()
+        return self.copy_dentries_with_options(space_id, request, headers, runtime)
+
+    async def copy_dentries_async(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.CopyDentriesRequest,
+    ) -> dingtalkstorage__1__0_models.CopyDentriesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.CopyDentriesHeaders()
+        return await self.copy_dentries_with_options_async(space_id, request, headers, runtime)
+
+    def copy_dentries_with_options(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.CopyDentriesRequest,
+        headers: dingtalkstorage__1__0_models.CopyDentriesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.CopyDentriesResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.dentry_ids):
+            body['dentryIds'] = request.dentry_ids
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.target_folder_id):
+            body['targetFolderId'] = request.target_folder_id
+        if not UtilClient.is_unset(request.target_space_id):
+            body['targetSpaceId'] = request.target_space_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.CopyDentriesResponse(),
+            self.do_roarequest('CopyDentries', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/batchCopy', 'json', req, runtime)
+        )
+
+    async def copy_dentries_with_options_async(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.CopyDentriesRequest,
+        headers: dingtalkstorage__1__0_models.CopyDentriesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.CopyDentriesResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.dentry_ids):
+            body['dentryIds'] = request.dentry_ids
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.target_folder_id):
+            body['targetFolderId'] = request.target_folder_id
+        if not UtilClient.is_unset(request.target_space_id):
+            body['targetSpaceId'] = request.target_space_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.CopyDentriesResponse(),
+            await self.do_roarequest_async('CopyDentries', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/batchCopy', 'json', req, runtime)
+        )
+
     def copy_dentry(
         self,
         space_id: str,
@@ -525,6 +615,88 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkstorage__1__0_models.CopyDentryResponse(),
             await self.do_roarequest_async('CopyDentry', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/{dentry_id}/copy', 'json', req, runtime)
+        )
+
+    def delete_dentries(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.DeleteDentriesRequest,
+    ) -> dingtalkstorage__1__0_models.DeleteDentriesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.DeleteDentriesHeaders()
+        return self.delete_dentries_with_options(space_id, request, headers, runtime)
+
+    async def delete_dentries_async(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.DeleteDentriesRequest,
+    ) -> dingtalkstorage__1__0_models.DeleteDentriesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.DeleteDentriesHeaders()
+        return await self.delete_dentries_with_options_async(space_id, request, headers, runtime)
+
+    def delete_dentries_with_options(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.DeleteDentriesRequest,
+        headers: dingtalkstorage__1__0_models.DeleteDentriesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.DeleteDentriesResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.dentry_ids):
+            body['dentryIds'] = request.dentry_ids
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.DeleteDentriesResponse(),
+            self.do_roarequest('DeleteDentries', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/batchRemove', 'json', req, runtime)
+        )
+
+    async def delete_dentries_with_options_async(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.DeleteDentriesRequest,
+        headers: dingtalkstorage__1__0_models.DeleteDentriesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.DeleteDentriesResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.dentry_ids):
+            body['dentryIds'] = request.dentry_ids
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.DeleteDentriesResponse(),
+            await self.do_roarequest_async('DeleteDentries', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/batchRemove', 'json', req, runtime)
         )
 
     def delete_dentry(
@@ -1699,6 +1871,76 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetSpace', 'storage_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/storage/spaces/{space_id}', 'json', req, runtime)
         )
 
+    def get_task(
+        self,
+        task_id: str,
+        request: dingtalkstorage__1__0_models.GetTaskRequest,
+    ) -> dingtalkstorage__1__0_models.GetTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.GetTaskHeaders()
+        return self.get_task_with_options(task_id, request, headers, runtime)
+
+    async def get_task_async(
+        self,
+        task_id: str,
+        request: dingtalkstorage__1__0_models.GetTaskRequest,
+    ) -> dingtalkstorage__1__0_models.GetTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.GetTaskHeaders()
+        return await self.get_task_with_options_async(task_id, request, headers, runtime)
+
+    def get_task_with_options(
+        self,
+        task_id: str,
+        request: dingtalkstorage__1__0_models.GetTaskRequest,
+        headers: dingtalkstorage__1__0_models.GetTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.GetTaskResponse:
+        UtilClient.validate_model(request)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.GetTaskResponse(),
+            self.do_roarequest('GetTask', 'storage_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/storage/tasks/{task_id}', 'json', req, runtime)
+        )
+
+    async def get_task_with_options_async(
+        self,
+        task_id: str,
+        request: dingtalkstorage__1__0_models.GetTaskRequest,
+        headers: dingtalkstorage__1__0_models.GetTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.GetTaskResponse:
+        UtilClient.validate_model(request)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.GetTaskResponse(),
+            await self.do_roarequest_async('GetTask', 'storage_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/storage/tasks/{task_id}', 'json', req, runtime)
+        )
+
     def init_multipart_file_upload(
         self,
         space_id: str,
@@ -2113,6 +2355,96 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListRecycleItems', 'storage_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/storage/recycleBins/{recycle_bin_id}/recycleItems', 'json', req, runtime)
         )
 
+    def move_dentries(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.MoveDentriesRequest,
+    ) -> dingtalkstorage__1__0_models.MoveDentriesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.MoveDentriesHeaders()
+        return self.move_dentries_with_options(space_id, request, headers, runtime)
+
+    async def move_dentries_async(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.MoveDentriesRequest,
+    ) -> dingtalkstorage__1__0_models.MoveDentriesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.MoveDentriesHeaders()
+        return await self.move_dentries_with_options_async(space_id, request, headers, runtime)
+
+    def move_dentries_with_options(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.MoveDentriesRequest,
+        headers: dingtalkstorage__1__0_models.MoveDentriesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.MoveDentriesResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.dentry_ids):
+            body['dentryIds'] = request.dentry_ids
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.target_folder_id):
+            body['targetFolderId'] = request.target_folder_id
+        if not UtilClient.is_unset(request.target_space_id):
+            body['targetSpaceId'] = request.target_space_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.MoveDentriesResponse(),
+            self.do_roarequest('MoveDentries', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/batchMove', 'json', req, runtime)
+        )
+
+    async def move_dentries_with_options_async(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.MoveDentriesRequest,
+        headers: dingtalkstorage__1__0_models.MoveDentriesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.MoveDentriesResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.dentry_ids):
+            body['dentryIds'] = request.dentry_ids
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.target_folder_id):
+            body['targetFolderId'] = request.target_folder_id
+        if not UtilClient.is_unset(request.target_space_id):
+            body['targetSpaceId'] = request.target_space_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.MoveDentriesResponse(),
+            await self.do_roarequest_async('MoveDentries', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/batchMove', 'json', req, runtime)
+        )
+
     def move_dentry(
         self,
         space_id: str,
@@ -2459,6 +2791,88 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkstorage__1__0_models.RestoreRecycleItemResponse(),
             await self.do_roarequest_async('RestoreRecycleItem', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/recycleBins/{recycle_bin_id}/recycleItems/{recycle_item_id}/restore', 'json', req, runtime)
+        )
+
+    def restore_recycle_items(
+        self,
+        recycle_bin_id: str,
+        request: dingtalkstorage__1__0_models.RestoreRecycleItemsRequest,
+    ) -> dingtalkstorage__1__0_models.RestoreRecycleItemsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.RestoreRecycleItemsHeaders()
+        return self.restore_recycle_items_with_options(recycle_bin_id, request, headers, runtime)
+
+    async def restore_recycle_items_async(
+        self,
+        recycle_bin_id: str,
+        request: dingtalkstorage__1__0_models.RestoreRecycleItemsRequest,
+    ) -> dingtalkstorage__1__0_models.RestoreRecycleItemsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.RestoreRecycleItemsHeaders()
+        return await self.restore_recycle_items_with_options_async(recycle_bin_id, request, headers, runtime)
+
+    def restore_recycle_items_with_options(
+        self,
+        recycle_bin_id: str,
+        request: dingtalkstorage__1__0_models.RestoreRecycleItemsRequest,
+        headers: dingtalkstorage__1__0_models.RestoreRecycleItemsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.RestoreRecycleItemsResponse:
+        UtilClient.validate_model(request)
+        recycle_bin_id = OpenApiUtilClient.get_encode_param(recycle_bin_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.recycle_item_ids):
+            body['recycleItemIds'] = request.recycle_item_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.RestoreRecycleItemsResponse(),
+            self.do_roarequest('RestoreRecycleItems', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/recycleBins/{recycle_bin_id}/recycleItems/batchRestore', 'json', req, runtime)
+        )
+
+    async def restore_recycle_items_with_options_async(
+        self,
+        recycle_bin_id: str,
+        request: dingtalkstorage__1__0_models.RestoreRecycleItemsRequest,
+        headers: dingtalkstorage__1__0_models.RestoreRecycleItemsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.RestoreRecycleItemsResponse:
+        UtilClient.validate_model(request)
+        recycle_bin_id = OpenApiUtilClient.get_encode_param(recycle_bin_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.recycle_item_ids):
+            body['recycleItemIds'] = request.recycle_item_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.RestoreRecycleItemsResponse(),
+            await self.do_roarequest_async('RestoreRecycleItems', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/recycleBins/{recycle_bin_id}/recycleItems/batchRestore', 'json', req, runtime)
         )
 
     def revert_dentry_version(

@@ -8545,7 +8545,7 @@ class QueryIntegratedTodoTaskRequest(TeaModel):
         return self
 
 
-class QueryIntegratedTodoTaskResponseBodyTaskPageList(TeaModel):
+class QueryIntegratedTodoTaskResponseBodyResultList(TeaModel):
     def __init__(
         self,
         activity_id: str = None,
@@ -8622,11 +8622,11 @@ class QueryIntegratedTodoTaskResponseBodyTaskPageList(TeaModel):
         return self
 
 
-class QueryIntegratedTodoTaskResponseBodyTaskPage(TeaModel):
+class QueryIntegratedTodoTaskResponseBodyResult(TeaModel):
     def __init__(
         self,
         has_more: bool = None,
-        list: List[QueryIntegratedTodoTaskResponseBodyTaskPageList] = None,
+        list: List[QueryIntegratedTodoTaskResponseBodyResultList] = None,
     ):
         # 是否还有下一页
         self.has_more = has_more
@@ -8659,7 +8659,7 @@ class QueryIntegratedTodoTaskResponseBodyTaskPage(TeaModel):
         self.list = []
         if m.get('list') is not None:
             for k in m.get('list'):
-                temp_model = QueryIntegratedTodoTaskResponseBodyTaskPageList()
+                temp_model = QueryIntegratedTodoTaskResponseBodyResultList()
                 self.list.append(temp_model.from_map(k))
         return self
 
@@ -8667,15 +8667,13 @@ class QueryIntegratedTodoTaskResponseBodyTaskPage(TeaModel):
 class QueryIntegratedTodoTaskResponseBody(TeaModel):
     def __init__(
         self,
-        request_id: str = None,
-        task_page: QueryIntegratedTodoTaskResponseBodyTaskPage = None,
+        result: QueryIntegratedTodoTaskResponseBodyResult = None,
     ):
-        self.request_id = request_id
-        self.task_page = task_page
+        self.result = result
 
     def validate(self):
-        if self.task_page:
-            self.task_page.validate()
+        if self.result:
+            self.result.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -8683,19 +8681,15 @@ class QueryIntegratedTodoTaskResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.request_id is not None:
-            result['requestId'] = self.request_id
-        if self.task_page is not None:
-            result['taskPage'] = self.task_page.to_map()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('requestId') is not None:
-            self.request_id = m.get('requestId')
-        if m.get('taskPage') is not None:
-            temp_model = QueryIntegratedTodoTaskResponseBodyTaskPage()
-            self.task_page = temp_model.from_map(m['taskPage'])
+        if m.get('result') is not None:
+            temp_model = QueryIntegratedTodoTaskResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
         return self
 
 

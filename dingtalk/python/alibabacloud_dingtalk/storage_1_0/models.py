@@ -89,6 +89,8 @@ class AddFolderRequestOption(TeaModel):
         conflict_strategy: str = None,
     ):
         # 文件夹在应用上的属性, 一个应用最多只能设置3个属性
+        # 最大size:
+        # 	3
         self.app_properties = app_properties
         # 文件夹名称冲突策略
         # 枚举值:
@@ -277,6 +279,8 @@ class AddFolderResponseBodyDentry(TeaModel):
     ):
         # 在特定应用上的属性。key是微应用Id, value是属性列表。
         # 可以通过修改DentryAppProperty里的scope来设置属性的可见性
+        # 最大size:
+        # 	10
         self.app_properties = app_properties
         # 创建时间
         self.create_time = create_time
@@ -600,6 +604,8 @@ class AddPermissionRequestOption(TeaModel):
         duration: int = None,
     ):
         # 有效时间(秒)
+        # 最大值:
+        # 	3600
         self.duration = duration
 
     def validate(self):
@@ -631,6 +637,8 @@ class AddPermissionRequest(TeaModel):
         union_id: str = None,
     ):
         # 权限成员列表
+        # 最大size:
+        # 	30
         self.members = members
         # 可选参数
         self.option = option
@@ -990,9 +998,114 @@ class AddSpaceResponseBodySpaceCapabilities(TeaModel):
         return self
 
 
+class AddSpaceResponseBodySpacePartitionsQuota(TeaModel):
+    def __init__(
+        self,
+        max: int = None,
+        reserved: int = None,
+        type: str = None,
+        used: int = None,
+    ):
+        # 最大容量, 单位: Byte
+        # 当前应用容量被设置为max时，代表当前应用容量设置了上限，used<=max
+        # 当前应用容量未设置max时，返回空，此时应用共享该企业剩余可用容量
+        self.max = max
+        # 预分配剩余容量, 单位: Byte
+        # 背景：
+        #    管理后台可以给应用或空间预分配容量，此字段表示预分剩余容量，即预分配容量中未使用部分
+        # 如果没有设置预分配容，此字段是空
+        self.reserved = reserved
+        # 容量类型
+        # 如果是企业维度容量，此值是PRIVATE, 表示企业独占
+        # 枚举值:
+        # 	SHARE: 共享容量
+        # 此模式下，Quota.max为空，表示共享企业容量
+        # 	PRIVATE: 预分配容量（专享容量）
+        # 当Quota.max设置值后，表示容量独占
+        # 使用场景：需要保证单个应用的可用容量不受其他应用影响时, 可使用预分配容量（专享容量）
+        self.type = type
+        # 实际已使用容量, 单位: Byte
+        # 表示该应用下所用文件占用容量的总和，文件的上传、复制、删除相关操作会对used的值做相应变更
+        # 最小值:
+        # 	0
+        self.used = used
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max is not None:
+            result['max'] = self.max
+        if self.reserved is not None:
+            result['reserved'] = self.reserved
+        if self.type is not None:
+            result['type'] = self.type
+        if self.used is not None:
+            result['used'] = self.used
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('max') is not None:
+            self.max = m.get('max')
+        if m.get('reserved') is not None:
+            self.reserved = m.get('reserved')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('used') is not None:
+            self.used = m.get('used')
+        return self
+
+
+class AddSpaceResponseBodySpacePartitions(TeaModel):
+    def __init__(
+        self,
+        partition_type: str = None,
+        quota: AddSpaceResponseBodySpacePartitionsQuota = None,
+    ):
+        # 分区类型
+        # 枚举值:
+        # 	PUBLIC_OSS_PARTITION: 公有云OSS存储分区
+        # 	MINI_OSS_PARTITION: 专属Mini OSS存储分区
+        self.partition_type = partition_type
+        # 容量信息
+        self.quota = quota
+
+    def validate(self):
+        if self.quota:
+            self.quota.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.partition_type is not None:
+            result['partitionType'] = self.partition_type
+        if self.quota is not None:
+            result['quota'] = self.quota.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('partitionType') is not None:
+            self.partition_type = m.get('partitionType')
+        if m.get('quota') is not None:
+            temp_model = AddSpaceResponseBodySpacePartitionsQuota()
+            self.quota = temp_model.from_map(m['quota'])
+        return self
+
+
 class AddSpaceResponseBodySpace(TeaModel):
     def __init__(
         self,
+        app_id: str = None,
         capabilities: AddSpaceResponseBodySpaceCapabilities = None,
         corp_id: str = None,
         create_time: str = None,
@@ -1003,12 +1116,15 @@ class AddSpaceResponseBodySpace(TeaModel):
         name: str = None,
         owner_id: str = None,
         owner_type: str = None,
+        partitions: List[AddSpaceResponseBodySpacePartitions] = None,
         quota: int = None,
         scene: str = None,
         scene_id: str = None,
         status: str = None,
         used_quota: int = None,
     ):
+        # 开放平台应用appId
+        self.app_id = app_id
         # 空间能力项
         self.capabilities = capabilities
         # 空间归属企业的id
@@ -1032,7 +1148,13 @@ class AddSpaceResponseBodySpace(TeaModel):
         # 	USER: 用户类型
         # 	APP: App类型
         self.owner_type = owner_type
-        # 总容量
+        # 分区容量信息
+        # 最大size:
+        # 	2
+        self.partitions = partitions
+        # 容量上限
+        # 管理后台设置的容量上限
+        # 建议使用分区上容量信息字段
         self.quota = quota
         # 业务场景，可以自定义，表示多个不同空间的聚合，可以提供对特定场景做能力设计、容量管理，如根据场景来做搜索或查询。
         # 创建空间时，不指定scene, 默认值是default
@@ -1048,12 +1170,17 @@ class AddSpaceResponseBodySpace(TeaModel):
         # 	NORMAL: 正常
         # 	DELETE: 已删除
         self.status = status
-        # 已使用容量
+        # 已使用容量, 包含各分区已使用容量和
+        # 建议使用分区上容量信息字段
         self.used_quota = used_quota
 
     def validate(self):
         if self.capabilities:
             self.capabilities.validate()
+        if self.partitions:
+            for k in self.partitions:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1061,6 +1188,8 @@ class AddSpaceResponseBodySpace(TeaModel):
             return _map
 
         result = dict()
+        if self.app_id is not None:
+            result['appId'] = self.app_id
         if self.capabilities is not None:
             result['capabilities'] = self.capabilities.to_map()
         if self.corp_id is not None:
@@ -1081,6 +1210,10 @@ class AddSpaceResponseBodySpace(TeaModel):
             result['ownerId'] = self.owner_id
         if self.owner_type is not None:
             result['ownerType'] = self.owner_type
+        result['partitions'] = []
+        if self.partitions is not None:
+            for k in self.partitions:
+                result['partitions'].append(k.to_map() if k else None)
         if self.quota is not None:
             result['quota'] = self.quota
         if self.scene is not None:
@@ -1095,6 +1228,8 @@ class AddSpaceResponseBodySpace(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
         if m.get('capabilities') is not None:
             temp_model = AddSpaceResponseBodySpaceCapabilities()
             self.capabilities = temp_model.from_map(m['capabilities'])
@@ -1116,6 +1251,11 @@ class AddSpaceResponseBodySpace(TeaModel):
             self.owner_id = m.get('ownerId')
         if m.get('ownerType') is not None:
             self.owner_type = m.get('ownerType')
+        self.partitions = []
+        if m.get('partitions') is not None:
+            for k in m.get('partitions'):
+                temp_model = AddSpaceResponseBodySpacePartitions()
+                self.partitions.append(temp_model.from_map(k))
         if m.get('quota') is not None:
             self.quota = m.get('quota')
         if m.get('scene') is not None:
@@ -1803,6 +1943,289 @@ class CommitFileResponse(TeaModel):
         return self
 
 
+class CopyDentriesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CopyDentriesRequestOption(TeaModel):
+    def __init__(
+        self,
+        conflict_strategy: str = None,
+    ):
+        # 文件(夹)名称冲突策略
+        # 枚举值:
+        # 	AUTO_RENAME: 自动重命名
+        # 	OVERWRITE: 覆盖
+        # 	RETURN_DENTRY_IF_EXISTS: 返回已存在文件
+        # 	RETURN_ERROR_IF_EXISTS: 文件已存在时报错
+        # 默认值:
+        # 	AUTO_RENAME
+        self.conflict_strategy = conflict_strategy
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.conflict_strategy is not None:
+            result['conflictStrategy'] = self.conflict_strategy
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('conflictStrategy') is not None:
+            self.conflict_strategy = m.get('conflictStrategy')
+        return self
+
+
+class CopyDentriesRequest(TeaModel):
+    def __init__(
+        self,
+        dentry_ids: List[str] = None,
+        option: CopyDentriesRequestOption = None,
+        target_folder_id: str = None,
+        target_space_id: str = None,
+        union_id: str = None,
+    ):
+        # 源文件(夹)id列表
+        # 最大size:
+        # 	30
+        self.dentry_ids = dentry_ids
+        # 可选参数
+        self.option = option
+        # 目标文件夹id, 根目录id值为0
+        self.target_folder_id = target_folder_id
+        # 目标文件夹空间id
+        self.target_space_id = target_space_id
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        if self.option:
+            self.option.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dentry_ids is not None:
+            result['dentryIds'] = self.dentry_ids
+        if self.option is not None:
+            result['option'] = self.option.to_map()
+        if self.target_folder_id is not None:
+            result['targetFolderId'] = self.target_folder_id
+        if self.target_space_id is not None:
+            result['targetSpaceId'] = self.target_space_id
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dentryIds') is not None:
+            self.dentry_ids = m.get('dentryIds')
+        if m.get('option') is not None:
+            temp_model = CopyDentriesRequestOption()
+            self.option = temp_model.from_map(m['option'])
+        if m.get('targetFolderId') is not None:
+            self.target_folder_id = m.get('targetFolderId')
+        if m.get('targetSpaceId') is not None:
+            self.target_space_id = m.get('targetSpaceId')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class CopyDentriesResponseBodyResultItems(TeaModel):
+    def __init__(
+        self,
+        async_: bool = None,
+        dentry_id: str = None,
+        error_code: str = None,
+        space_id: str = None,
+        success: bool = None,
+        target_dentry_id: str = None,
+        target_space_id: str = None,
+        task_id: str = None,
+    ):
+        # 是否是异步任务
+        # 如果操作对象有子节点，则会异步处理
+        self.async_ = async_
+        # 源文件(夹)id
+        self.dentry_id = dentry_id
+        # 错误原因, 异步任务该字段不返回
+        self.error_code = error_code
+        # 源文件(夹)空间id
+        self.space_id = space_id
+        # 是否成功, 异步任务该字段不返回
+        self.success = success
+        # 操作对应根节点复制之后的文件id
+        # 非失败的情况下同步或者异步都会返回
+        self.target_dentry_id = target_dentry_id
+        # 操作对应根节点复制之后的空间id
+        # 非失败的情况下同步或者异步都会返回
+        self.target_space_id = target_space_id
+        # 异步任务id，用于查询任务执行状态
+        self.task_id = task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.async_ is not None:
+            result['async'] = self.async_
+        if self.dentry_id is not None:
+            result['dentryId'] = self.dentry_id
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        if self.success is not None:
+            result['success'] = self.success
+        if self.target_dentry_id is not None:
+            result['targetDentryId'] = self.target_dentry_id
+        if self.target_space_id is not None:
+            result['targetSpaceId'] = self.target_space_id
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('async') is not None:
+            self.async_ = m.get('async')
+        if m.get('dentryId') is not None:
+            self.dentry_id = m.get('dentryId')
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('targetDentryId') is not None:
+            self.target_dentry_id = m.get('targetDentryId')
+        if m.get('targetSpaceId') is not None:
+            self.target_space_id = m.get('targetSpaceId')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class CopyDentriesResponseBody(TeaModel):
+    def __init__(
+        self,
+        result_items: List[CopyDentriesResponseBodyResultItems] = None,
+    ):
+        # 批量复制文件(夹)结果列表
+        # 最大size:
+        # 	30
+        self.result_items = result_items
+
+    def validate(self):
+        if self.result_items:
+            for k in self.result_items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['resultItems'] = []
+        if self.result_items is not None:
+            for k in self.result_items:
+                result['resultItems'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result_items = []
+        if m.get('resultItems') is not None:
+            for k in m.get('resultItems'):
+                temp_model = CopyDentriesResponseBodyResultItems()
+                self.result_items.append(temp_model.from_map(k))
+        return self
+
+
+class CopyDentriesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CopyDentriesResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CopyDentriesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CopyDentryHeaders(TeaModel):
     def __init__(
         self,
@@ -1975,6 +2398,8 @@ class CopyDentryResponseBodyDentry(TeaModel):
     ):
         # 在特定应用上的属性。key是微应用Id, value是属性列表。
         # 可以通过修改DentryAppProperty里的scope来设置属性的可见性
+        # 最大size:
+        # 	10
         self.app_properties = app_properties
         # 创建时间
         self.create_time = create_time
@@ -2151,7 +2576,7 @@ class CopyDentryResponseBody(TeaModel):
         self.async_ = async_
         # 文件信息
         self.dentry = dentry
-        # 任务id，用于查询任务执行状态; 查询接口开发中
+        # 任务id，用于查询任务执行状态
         self.task_id = task_id
 
     def validate(self):
@@ -2217,6 +2642,254 @@ class CopyDentryResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CopyDentryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteDentriesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteDentriesRequestOption(TeaModel):
+    def __init__(
+        self,
+        to_recycle_bin: bool = None,
+    ):
+        # 是否删除到回收站，默认不删除到回收站，直接删除
+        # 默认值:
+        # 	false
+        self.to_recycle_bin = to_recycle_bin
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.to_recycle_bin is not None:
+            result['toRecycleBin'] = self.to_recycle_bin
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('toRecycleBin') is not None:
+            self.to_recycle_bin = m.get('toRecycleBin')
+        return self
+
+
+class DeleteDentriesRequest(TeaModel):
+    def __init__(
+        self,
+        dentry_ids: List[str] = None,
+        option: DeleteDentriesRequestOption = None,
+        union_id: str = None,
+    ):
+        # 文件(夹)id列表
+        # 最大size:
+        # 	50
+        self.dentry_ids = dentry_ids
+        # 可选参数
+        self.option = option
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        if self.option:
+            self.option.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dentry_ids is not None:
+            result['dentryIds'] = self.dentry_ids
+        if self.option is not None:
+            result['option'] = self.option.to_map()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dentryIds') is not None:
+            self.dentry_ids = m.get('dentryIds')
+        if m.get('option') is not None:
+            temp_model = DeleteDentriesRequestOption()
+            self.option = temp_model.from_map(m['option'])
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class DeleteDentriesResponseBodyResultItems(TeaModel):
+    def __init__(
+        self,
+        async_: bool = None,
+        dentry_id: str = None,
+        error_code: str = None,
+        space_id: str = None,
+        success: bool = None,
+        task_id: str = None,
+    ):
+        # 是否是异步任务
+        # 如果操作对象有子节点，则会异步处理
+        self.async_ = async_
+        # 源文件(夹)id
+        self.dentry_id = dentry_id
+        # 错误原因, 如果为异步任务, 该字段为空
+        self.error_code = error_code
+        # 源文件(夹)空间id
+        self.space_id = space_id
+        # 是否成功, 如果为异步任务, 该字段为空
+        self.success = success
+        # 异步任务id，用于查询任务执行状态
+        self.task_id = task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.async_ is not None:
+            result['async'] = self.async_
+        if self.dentry_id is not None:
+            result['dentryId'] = self.dentry_id
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        if self.success is not None:
+            result['success'] = self.success
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('async') is not None:
+            self.async_ = m.get('async')
+        if m.get('dentryId') is not None:
+            self.dentry_id = m.get('dentryId')
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class DeleteDentriesResponseBody(TeaModel):
+    def __init__(
+        self,
+        result_items: List[DeleteDentriesResponseBodyResultItems] = None,
+    ):
+        # 批量删除文件结果列表
+        # 最大size:
+        # 	50
+        self.result_items = result_items
+
+    def validate(self):
+        if self.result_items:
+            for k in self.result_items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['resultItems'] = []
+        if self.result_items is not None:
+            for k in self.result_items:
+                result['resultItems'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result_items = []
+        if m.get('resultItems') is not None:
+            for k in m.get('resultItems'):
+                temp_model = DeleteDentriesResponseBodyResultItems()
+                self.result_items.append(temp_model.from_map(k))
+        return self
+
+
+class DeleteDentriesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DeleteDentriesResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DeleteDentriesResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -2300,7 +2973,7 @@ class DeleteDentryResponseBody(TeaModel):
         # 是否是异步任务
         # 如果操作对象有子节点，则会异步处理
         self.async_ = async_
-        # 任务id，用于查询任务执行状态; 查询接口开发中
+        # 任务id，用于查询任务执行状态
         self.task_id = task_id
 
     def validate(self):
@@ -2404,6 +3077,8 @@ class DeleteDentryAppPropertiesRequest(TeaModel):
         union_id: str = None,
     ):
         # 文件上App属性名称
+        # 最大size:
+        # 	3
         self.property_names = property_names
         # 用户id
         self.union_id = union_id
@@ -2590,6 +3265,8 @@ class DeletePermissionRequest(TeaModel):
         union_id: str = None,
     ):
         # 权限成员列表
+        # 最大size:
+        # 	30
         self.members = members
         # 权限角色id
         self.role_id = role_id
@@ -2863,6 +3540,8 @@ class DeleteRecycleItemsRequest(TeaModel):
         union_id: str = None,
     ):
         # 回收项id列表
+        # 最大size:
+        # 	50
         self.recycle_item_ids = recycle_item_ids
         # 用户id
         self.union_id = union_id
@@ -3021,6 +3700,7 @@ class GetCurrentAppResponseBodyAppPartitionsQuota(TeaModel):
     def __init__(
         self,
         max: int = None,
+        reserved: int = None,
         type: str = None,
         used: int = None,
     ):
@@ -3028,17 +3708,24 @@ class GetCurrentAppResponseBodyAppPartitionsQuota(TeaModel):
         # 当前应用容量被设置为max时，代表当前应用容量设置了上限，used<=max
         # 当前应用容量未设置max时，返回空，此时应用共享该企业剩余可用容量
         self.max = max
+        # 预分配剩余容量, 单位: Byte
+        # 背景：
+        #    管理后台可以给应用或空间预分配容量，此字段表示预分剩余容量，即预分配容量中未使用部分
+        # 如果没有设置预分配容，此字段是空
+        self.reserved = reserved
         # 容量类型
         # 如果是企业维度容量，此值是PRIVATE, 表示企业独占
         # 枚举值:
         # 	SHARE: 共享容量
         # 此模式下，Quota.max为空，表示共享企业容量
-        # 	PRIVATE: 专享容量
+        # 	PRIVATE: 预分配容量（专享容量）
         # 当Quota.max设置值后，表示容量独占
-        # 使用场景：当需要保证单个应用的可用容量不受其他应用影响时, 可使用共享容量
+        # 使用场景：需要保证单个应用的可用容量不受其他应用影响时, 可使用预分配容量（专享容量）
         self.type = type
-        # 已使用容量, 单位: Byte
+        # 实际已使用容量, 单位: Byte
         # 表示该应用下所用文件占用容量的总和，文件的上传、复制、删除相关操作会对used的值做相应变更
+        # 最小值:
+        # 	0
         self.used = used
 
     def validate(self):
@@ -3052,6 +3739,8 @@ class GetCurrentAppResponseBodyAppPartitionsQuota(TeaModel):
         result = dict()
         if self.max is not None:
             result['max'] = self.max
+        if self.reserved is not None:
+            result['reserved'] = self.reserved
         if self.type is not None:
             result['type'] = self.type
         if self.used is not None:
@@ -3062,6 +3751,8 @@ class GetCurrentAppResponseBodyAppPartitionsQuota(TeaModel):
         m = m or dict()
         if m.get('max') is not None:
             self.max = m.get('max')
+        if m.get('reserved') is not None:
+            self.reserved = m.get('reserved')
         if m.get('type') is not None:
             self.type = m.get('type')
         if m.get('used') is not None:
@@ -3130,6 +3821,8 @@ class GetCurrentAppResponseBodyApp(TeaModel):
         # 应用名称，对应开放平台应用名称
         self.name = name
         # 分区容量信息
+        # 最大size:
+        # 	3
         self.partitions = partitions
 
     def validate(self):
@@ -3288,6 +3981,8 @@ class GetDentryRequestOption(TeaModel):
         # 通过指定应用id, 返回对应的可见属性，即dentry.appProperties，
         # 默认都会返回当前应用的属性，
         # 如不指定appIds, 则默认返回当前应用的appProperties
+        # 最大size:
+        # 	20
         self.app_ids_for_app_properties = app_ids_for_app_properties
 
     def validate(self):
@@ -3400,6 +4095,8 @@ class GetDentryResponseBodyDentry(TeaModel):
     ):
         # 在特定应用上的属性。key是微应用Id, value是属性列表。
         # 可以通过修改DentryAppProperty里的scope来设置属性的可见性
+        # 最大size:
+        # 	10
         self.app_properties = app_properties
         # 创建时间
         self.create_time = create_time
@@ -3767,8 +4464,11 @@ class GetDentryOpenInfoRequest(TeaModel):
 class GetDentryOpenInfoResponseBody(TeaModel):
     def __init__(
         self,
+        has_water_mark: bool = None,
         url: str = None,
     ):
+        # 是否支持水印
+        self.has_water_mark = has_water_mark
         # 链接, 用于编辑或预览
         self.url = url
 
@@ -3781,12 +4481,16 @@ class GetDentryOpenInfoResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.has_water_mark is not None:
+            result['hasWaterMark'] = self.has_water_mark
         if self.url is not None:
             result['url'] = self.url
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('hasWaterMark') is not None:
+            self.has_water_mark = m.get('hasWaterMark')
         if m.get('url') is not None:
             self.url = m.get('url')
         return self
@@ -3939,8 +4643,12 @@ class GetFileDownloadInfoResponseBodyHeaderSignatureInfo(TeaModel):
         # 过期时间，单位秒
         self.expiration_seconds = expiration_seconds
         # 请求头
+        # 最大size:
+        # 	20
         self.headers = headers
         # 内网URL, 在网络连通的情况下，使用内网URL可加速服务器间上传
+        # 最大size:
+        # 	10
         self.internal_resource_urls = internal_resource_urls
         # 地域
         # 枚举值:
@@ -3951,6 +4659,8 @@ class GetFileDownloadInfoResponseBodyHeaderSignatureInfo(TeaModel):
         # 	UNKNOWN: 未知
         self.region = region
         # 多个上传下载URL, 前面url优先
+        # 最大size:
+        # 	10
         self.resource_urls = resource_urls
 
     def validate(self):
@@ -4218,10 +4928,7 @@ class GetFileUploadInfoRequest(TeaModel):
         protocol: str = None,
         union_id: str = None,
     ):
-        # 是否需要分片上传
-        # 5G以下文件，建议设为false，简化上传步骤
-        # 5G以上文件，必须设为true, 否则上传会失败
-        # 具体参考文档: https://help.aliyun.com/document_detail/84778.html
+        # 已废弃
         self.multipart = multipart
         # 可选参数
         self.option = option
@@ -4280,8 +4987,12 @@ class GetFileUploadInfoResponseBodyHeaderSignatureInfo(TeaModel):
         # 过期时间，单位秒
         self.expiration_seconds = expiration_seconds
         # 请求头
+        # 最大size:
+        # 	20
         self.headers = headers
         # 内网URL, 在网络连通的情况下，使用内网URL可加速服务器间上传
+        # 最大size:
+        # 	10
         self.internal_resource_urls = internal_resource_urls
         # 地域
         # 枚举值:
@@ -4292,6 +5003,8 @@ class GetFileUploadInfoResponseBodyHeaderSignatureInfo(TeaModel):
         # 	UNKNOWN: 未知
         self.region = region
         # 多个上传下载URL, 前面url优先
+        # 最大size:
+        # 	10
         self.resource_urls = resource_urls
 
     def validate(self):
@@ -4468,6 +5181,8 @@ class GetMultipartFileUploadInfosRequest(TeaModel):
         # 分片id列表
         # 分片id取值: 1~10000
         # 分片大小限制: 100KB~5GB
+        # 最大size:
+        # 	30
         self.part_numbers = part_numbers
         # 上传唯一标识
         self.upload_key = upload_key
@@ -4514,8 +5229,12 @@ class GetMultipartFileUploadInfosResponseBodyMultipartHeaderSignatureInfosHeader
         # 过期时间，单位秒
         self.expiration_seconds = expiration_seconds
         # 请求头
+        # 最大size:
+        # 	20
         self.headers = headers
         # 内网URL, 在网络连通的情况下，使用内网URL可加速服务器间上传
+        # 最大size:
+        # 	10
         self.internal_resource_urls = internal_resource_urls
         # 地域
         # 枚举值:
@@ -4526,6 +5245,8 @@ class GetMultipartFileUploadInfosResponseBodyMultipartHeaderSignatureInfosHeader
         # 	UNKNOWN: 未知
         self.region = region
         # 多个上传下载URL, 前面url优先
+        # 最大size:
+        # 	10
         self.resource_urls = resource_urls
 
     def validate(self):
@@ -4607,6 +5328,8 @@ class GetMultipartFileUploadInfosResponseBody(TeaModel):
         multipart_header_signature_infos: List[GetMultipartFileUploadInfosResponseBodyMultipartHeaderSignatureInfos] = None,
     ):
         # 分片Header加签上传信息列表
+        # 最大size:
+        # 	30
         self.multipart_header_signature_infos = multipart_header_signature_infos
 
     def validate(self):
@@ -4739,6 +5462,7 @@ class GetOrgResponseBodyOrgPartitionsQuota(TeaModel):
     def __init__(
         self,
         max: int = None,
+        reserved: int = None,
         type: str = None,
         used: int = None,
     ):
@@ -4746,17 +5470,24 @@ class GetOrgResponseBodyOrgPartitionsQuota(TeaModel):
         # 当前应用容量被设置为max时，代表当前应用容量设置了上限，used<=max
         # 当前应用容量未设置max时，返回空，此时应用共享该企业剩余可用容量
         self.max = max
+        # 预分配剩余容量, 单位: Byte
+        # 背景：
+        #    管理后台可以给应用或空间预分配容量，此字段表示预分剩余容量，即预分配容量中未使用部分
+        # 如果没有设置预分配容，此字段是空
+        self.reserved = reserved
         # 容量类型
         # 如果是企业维度容量，此值是PRIVATE, 表示企业独占
         # 枚举值:
         # 	SHARE: 共享容量
         # 此模式下，Quota.max为空，表示共享企业容量
-        # 	PRIVATE: 专享容量
+        # 	PRIVATE: 预分配容量（专享容量）
         # 当Quota.max设置值后，表示容量独占
-        # 使用场景：当需要保证单个应用的可用容量不受其他应用影响时, 可使用共享容量
+        # 使用场景：需要保证单个应用的可用容量不受其他应用影响时, 可使用预分配容量（专享容量）
         self.type = type
-        # 已使用容量, 单位: Byte
+        # 实际已使用容量, 单位: Byte
         # 表示该应用下所用文件占用容量的总和，文件的上传、复制、删除相关操作会对used的值做相应变更
+        # 最小值:
+        # 	0
         self.used = used
 
     def validate(self):
@@ -4770,6 +5501,8 @@ class GetOrgResponseBodyOrgPartitionsQuota(TeaModel):
         result = dict()
         if self.max is not None:
             result['max'] = self.max
+        if self.reserved is not None:
+            result['reserved'] = self.reserved
         if self.type is not None:
             result['type'] = self.type
         if self.used is not None:
@@ -4780,6 +5513,8 @@ class GetOrgResponseBodyOrgPartitionsQuota(TeaModel):
         m = m or dict()
         if m.get('max') is not None:
             self.max = m.get('max')
+        if m.get('reserved') is not None:
+            self.reserved = m.get('reserved')
         if m.get('type') is not None:
             self.type = m.get('type')
         if m.get('used') is not None:
@@ -4836,6 +5571,8 @@ class GetOrgResponseBodyOrg(TeaModel):
         # 企业id
         self.corp_id = corp_id
         # 分区容量信息
+        # 最大size:
+        # 	2
         self.partitions = partitions
 
     def validate(self):
@@ -5455,9 +6192,114 @@ class GetSpaceResponseBodySpaceCapabilities(TeaModel):
         return self
 
 
+class GetSpaceResponseBodySpacePartitionsQuota(TeaModel):
+    def __init__(
+        self,
+        max: int = None,
+        reserved: int = None,
+        type: str = None,
+        used: int = None,
+    ):
+        # 最大容量, 单位: Byte
+        # 当前应用容量被设置为max时，代表当前应用容量设置了上限，used<=max
+        # 当前应用容量未设置max时，返回空，此时应用共享该企业剩余可用容量
+        self.max = max
+        # 预分配剩余容量, 单位: Byte
+        # 背景：
+        #    管理后台可以给应用或空间预分配容量，此字段表示预分剩余容量，即预分配容量中未使用部分
+        # 如果没有设置预分配容，此字段是空
+        self.reserved = reserved
+        # 容量类型
+        # 如果是企业维度容量，此值是PRIVATE, 表示企业独占
+        # 枚举值:
+        # 	SHARE: 共享容量
+        # 此模式下，Quota.max为空，表示共享企业容量
+        # 	PRIVATE: 预分配容量（专享容量）
+        # 当Quota.max设置值后，表示容量独占
+        # 使用场景：需要保证单个应用的可用容量不受其他应用影响时, 可使用预分配容量（专享容量）
+        self.type = type
+        # 实际已使用容量, 单位: Byte
+        # 表示该应用下所用文件占用容量的总和，文件的上传、复制、删除相关操作会对used的值做相应变更
+        # 最小值:
+        # 	0
+        self.used = used
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max is not None:
+            result['max'] = self.max
+        if self.reserved is not None:
+            result['reserved'] = self.reserved
+        if self.type is not None:
+            result['type'] = self.type
+        if self.used is not None:
+            result['used'] = self.used
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('max') is not None:
+            self.max = m.get('max')
+        if m.get('reserved') is not None:
+            self.reserved = m.get('reserved')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('used') is not None:
+            self.used = m.get('used')
+        return self
+
+
+class GetSpaceResponseBodySpacePartitions(TeaModel):
+    def __init__(
+        self,
+        partition_type: str = None,
+        quota: GetSpaceResponseBodySpacePartitionsQuota = None,
+    ):
+        # 分区类型
+        # 枚举值:
+        # 	PUBLIC_OSS_PARTITION: 公有云OSS存储分区
+        # 	MINI_OSS_PARTITION: 专属Mini OSS存储分区
+        self.partition_type = partition_type
+        # 容量信息
+        self.quota = quota
+
+    def validate(self):
+        if self.quota:
+            self.quota.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.partition_type is not None:
+            result['partitionType'] = self.partition_type
+        if self.quota is not None:
+            result['quota'] = self.quota.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('partitionType') is not None:
+            self.partition_type = m.get('partitionType')
+        if m.get('quota') is not None:
+            temp_model = GetSpaceResponseBodySpacePartitionsQuota()
+            self.quota = temp_model.from_map(m['quota'])
+        return self
+
+
 class GetSpaceResponseBodySpace(TeaModel):
     def __init__(
         self,
+        app_id: str = None,
         capabilities: GetSpaceResponseBodySpaceCapabilities = None,
         corp_id: str = None,
         create_time: str = None,
@@ -5468,12 +6310,15 @@ class GetSpaceResponseBodySpace(TeaModel):
         name: str = None,
         owner_id: str = None,
         owner_type: str = None,
+        partitions: List[GetSpaceResponseBodySpacePartitions] = None,
         quota: int = None,
         scene: str = None,
         scene_id: str = None,
         status: str = None,
         used_quota: int = None,
     ):
+        # 开放平台应用appId
+        self.app_id = app_id
         # 空间能力项
         self.capabilities = capabilities
         # 空间归属企业的id
@@ -5497,7 +6342,13 @@ class GetSpaceResponseBodySpace(TeaModel):
         # 	USER: 用户类型
         # 	APP: App类型
         self.owner_type = owner_type
-        # 总容量
+        # 分区容量信息
+        # 最大size:
+        # 	2
+        self.partitions = partitions
+        # 容量上限
+        # 管理后台设置的容量上限
+        # 建议使用分区上容量信息字段
         self.quota = quota
         # 业务场景，可以自定义，表示多个不同空间的聚合，可以提供对特定场景做能力设计、容量管理，如根据场景来做搜索或查询。
         # 创建空间时，不指定scene, 默认值是default
@@ -5513,12 +6364,17 @@ class GetSpaceResponseBodySpace(TeaModel):
         # 	NORMAL: 正常
         # 	DELETE: 已删除
         self.status = status
-        # 已使用容量
+        # 已使用容量, 包含各分区已使用容量和
+        # 建议使用分区上容量信息字段
         self.used_quota = used_quota
 
     def validate(self):
         if self.capabilities:
             self.capabilities.validate()
+        if self.partitions:
+            for k in self.partitions:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -5526,6 +6382,8 @@ class GetSpaceResponseBodySpace(TeaModel):
             return _map
 
         result = dict()
+        if self.app_id is not None:
+            result['appId'] = self.app_id
         if self.capabilities is not None:
             result['capabilities'] = self.capabilities.to_map()
         if self.corp_id is not None:
@@ -5546,6 +6404,10 @@ class GetSpaceResponseBodySpace(TeaModel):
             result['ownerId'] = self.owner_id
         if self.owner_type is not None:
             result['ownerType'] = self.owner_type
+        result['partitions'] = []
+        if self.partitions is not None:
+            for k in self.partitions:
+                result['partitions'].append(k.to_map() if k else None)
         if self.quota is not None:
             result['quota'] = self.quota
         if self.scene is not None:
@@ -5560,6 +6422,8 @@ class GetSpaceResponseBodySpace(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
         if m.get('capabilities') is not None:
             temp_model = GetSpaceResponseBodySpaceCapabilities()
             self.capabilities = temp_model.from_map(m['capabilities'])
@@ -5581,6 +6445,11 @@ class GetSpaceResponseBodySpace(TeaModel):
             self.owner_id = m.get('ownerId')
         if m.get('ownerType') is not None:
             self.owner_type = m.get('ownerType')
+        self.partitions = []
+        if m.get('partitions') is not None:
+            for k in m.get('partitions'):
+                temp_model = GetSpaceResponseBodySpacePartitions()
+                self.partitions.append(temp_model.from_map(k))
         if m.get('quota') is not None:
             self.quota = m.get('quota')
         if m.get('scene') is not None:
@@ -5657,6 +6526,216 @@ class GetSpaceResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetSpaceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetTaskRequest(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+    ):
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class GetTaskResponseBodyTask(TeaModel):
+    def __init__(
+        self,
+        begin_time: str = None,
+        end_time: str = None,
+        fail_count: int = None,
+        fail_message: str = None,
+        id: str = None,
+        status: str = None,
+        success_count: int = None,
+        total_count: int = None,
+    ):
+        # 任务开始时间
+        self.begin_time = begin_time
+        # 任务结束时间
+        self.end_time = end_time
+        # 子任务失败总数
+        self.fail_count = fail_count
+        # 任务失败原因
+        self.fail_message = fail_message
+        # 任务id
+        self.id = id
+        # 任务状态
+        # 枚举值:
+        # 	INIT: 初始化
+        # 	IN_PROGRESS: 进行中
+        # 	SUCCESS: 成功
+        # 	FAIL: 失败
+        self.status = status
+        # 子任务成功总数
+        self.success_count = success_count
+        # 子任务总数
+        self.total_count = total_count
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.begin_time is not None:
+            result['beginTime'] = self.begin_time
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.fail_count is not None:
+            result['failCount'] = self.fail_count
+        if self.fail_message is not None:
+            result['failMessage'] = self.fail_message
+        if self.id is not None:
+            result['id'] = self.id
+        if self.status is not None:
+            result['status'] = self.status
+        if self.success_count is not None:
+            result['successCount'] = self.success_count
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('beginTime') is not None:
+            self.begin_time = m.get('beginTime')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('failCount') is not None:
+            self.fail_count = m.get('failCount')
+        if m.get('failMessage') is not None:
+            self.fail_message = m.get('failMessage')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('successCount') is not None:
+            self.success_count = m.get('successCount')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class GetTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        task: GetTaskResponseBodyTask = None,
+    ):
+        # 任务信息
+        self.task = task
+
+    def validate(self):
+        if self.task:
+            self.task.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.task is not None:
+            result['task'] = self.task.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('task') is not None:
+            temp_model = GetTaskResponseBodyTask()
+            self.task = temp_model.from_map(m['task'])
+        return self
+
+
+class GetTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetTaskResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -5966,6 +7045,8 @@ class ListDentriesRequest(TeaModel):
         # 分页大小
         # 默认值:
         # 	50
+        # 最大值:
+        # 	50
         self.max_results = max_results
         # 分页游标, 首次拉取不用传
         self.next_token = next_token
@@ -6128,6 +7209,8 @@ class ListDentriesResponseBodyDentries(TeaModel):
     ):
         # 在特定应用上的属性。key是微应用Id, value是属性列表。
         # 可以通过修改DentryAppProperty里的scope来设置属性的可见性
+        # 最大size:
+        # 	10
         self.app_properties = app_properties
         # 创建时间
         self.create_time = create_time
@@ -6299,6 +7382,8 @@ class ListDentriesResponseBody(TeaModel):
         next_token: str = None,
     ):
         # 文件列表
+        # 最大size:
+        # 	50
         self.dentries = dentries
         # 分页游标
         # 不为空表示有更多数据
@@ -6416,6 +7501,8 @@ class ListDentryVersionsRequest(TeaModel):
         # 历史版本分页大小，默认100
         # 默认值:
         # 	100
+        # 最大值:
+        # 	100
         self.max_results = max_results
         # 下一页的游标位置
         self.next_token = next_token
@@ -6503,6 +7590,8 @@ class ListDentryVersionsResponseBodyDentries(TeaModel):
     ):
         # 在特定应用上的属性。key是微应用Id, value是属性列表。
         # 可以通过修改DentryAppProperty里的scope来设置属性的可见性
+        # 最大size:
+        # 	10
         self.app_properties = app_properties
         # 创建时间
         self.create_time = create_time
@@ -6674,6 +7763,8 @@ class ListDentryVersionsResponseBody(TeaModel):
         next_token: str = None,
     ):
         # 文件版本列表
+        # 最大size:
+        # 	100
         self.dentries = dentries
         # 分页游标
         # 不为空表示有更多数据
@@ -6789,6 +7880,8 @@ class ListPermissionsRequestOption(TeaModel):
         next_token: str = None,
     ):
         # 角色过滤列表
+        # 最大size:
+        # 	30
         self.filter_role_ids = filter_role_ids
         # 分页大小
         # 默认值:
@@ -7040,6 +8133,8 @@ class ListPermissionsResponseBody(TeaModel):
         # 分页游标, nextToken不为空表示有更多数据
         self.next_token = next_token
         # 权限列表分页数据
+        # 最大size:
+        # 	500
         self.permissions = permissions
 
     def validate(self):
@@ -7153,6 +8248,8 @@ class ListRecycleItemsRequest(TeaModel):
     ):
         # 分页大小, 不保证全量返回
         # 默认值:
+        # 	50
+        # 最大值:
         # 	50
         self.max_results = max_results
         # 分页游标，首次拉取nextToken传空
@@ -7285,6 +8382,8 @@ class ListRecycleItemsResponseBody(TeaModel):
         # 不为空表示有更多数据
         self.next_token = next_token
         # 回收项列表
+        # 最大size:
+        # 	50
         self.recycle_items = recycle_items
 
     def validate(self):
@@ -7352,6 +8451,298 @@ class ListRecycleItemsResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = ListRecycleItemsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class MoveDentriesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class MoveDentriesRequestOption(TeaModel):
+    def __init__(
+        self,
+        conflict_strategy: str = None,
+        preserve_permissions: bool = None,
+    ):
+        # 文件(夹)名称冲突策略
+        # 枚举值:
+        # 	AUTO_RENAME: 自动重命名
+        # 	OVERWRITE: 覆盖
+        # 	RETURN_DENTRY_IF_EXISTS: 返回已存在文件
+        # 	RETURN_ERROR_IF_EXISTS: 文件已存在时报错
+        # 默认值:
+        # 	AUTO_RENAME
+        self.conflict_strategy = conflict_strategy
+        # 移动后，是否保留权限
+        # 默认值:
+        # 	false
+        self.preserve_permissions = preserve_permissions
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.conflict_strategy is not None:
+            result['conflictStrategy'] = self.conflict_strategy
+        if self.preserve_permissions is not None:
+            result['preservePermissions'] = self.preserve_permissions
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('conflictStrategy') is not None:
+            self.conflict_strategy = m.get('conflictStrategy')
+        if m.get('preservePermissions') is not None:
+            self.preserve_permissions = m.get('preservePermissions')
+        return self
+
+
+class MoveDentriesRequest(TeaModel):
+    def __init__(
+        self,
+        dentry_ids: List[str] = None,
+        option: MoveDentriesRequestOption = None,
+        target_folder_id: str = None,
+        target_space_id: str = None,
+        union_id: str = None,
+    ):
+        # 源文件(夹)id列表
+        # 最大size:
+        # 	30
+        self.dentry_ids = dentry_ids
+        # 可选参数
+        self.option = option
+        # 目标文件夹id, 根目录id值为0
+        self.target_folder_id = target_folder_id
+        # 目标文件(夹)空间id
+        self.target_space_id = target_space_id
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        if self.option:
+            self.option.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dentry_ids is not None:
+            result['dentryIds'] = self.dentry_ids
+        if self.option is not None:
+            result['option'] = self.option.to_map()
+        if self.target_folder_id is not None:
+            result['targetFolderId'] = self.target_folder_id
+        if self.target_space_id is not None:
+            result['targetSpaceId'] = self.target_space_id
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dentryIds') is not None:
+            self.dentry_ids = m.get('dentryIds')
+        if m.get('option') is not None:
+            temp_model = MoveDentriesRequestOption()
+            self.option = temp_model.from_map(m['option'])
+        if m.get('targetFolderId') is not None:
+            self.target_folder_id = m.get('targetFolderId')
+        if m.get('targetSpaceId') is not None:
+            self.target_space_id = m.get('targetSpaceId')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class MoveDentriesResponseBodyResultItems(TeaModel):
+    def __init__(
+        self,
+        async_: bool = None,
+        dentry_id: str = None,
+        error_code: str = None,
+        space_id: str = None,
+        success: bool = None,
+        target_dentry_id: str = None,
+        target_space_id: str = None,
+        task_id: str = None,
+    ):
+        # 是否是异步任务
+        # 如果操作对象有子节点，则会异步处理
+        self.async_ = async_
+        # 源文件(夹)id
+        self.dentry_id = dentry_id
+        # 错误原因, 异步任务该字段不返回
+        self.error_code = error_code
+        # 源文件(夹)空间id
+        self.space_id = space_id
+        # 是否成功, 异步任务该字段不返回
+        self.success = success
+        # 操作对应根节点移动之后的文件id
+        # 非失败的情况下同步或者异步都会返回
+        self.target_dentry_id = target_dentry_id
+        # 操作对应根节点移动之后的空间id
+        # 非失败的情况下同步或者异步都会返回
+        self.target_space_id = target_space_id
+        # 异步任务id，用于查询任务执行状态
+        self.task_id = task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.async_ is not None:
+            result['async'] = self.async_
+        if self.dentry_id is not None:
+            result['dentryId'] = self.dentry_id
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        if self.success is not None:
+            result['success'] = self.success
+        if self.target_dentry_id is not None:
+            result['targetDentryId'] = self.target_dentry_id
+        if self.target_space_id is not None:
+            result['targetSpaceId'] = self.target_space_id
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('async') is not None:
+            self.async_ = m.get('async')
+        if m.get('dentryId') is not None:
+            self.dentry_id = m.get('dentryId')
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('targetDentryId') is not None:
+            self.target_dentry_id = m.get('targetDentryId')
+        if m.get('targetSpaceId') is not None:
+            self.target_space_id = m.get('targetSpaceId')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class MoveDentriesResponseBody(TeaModel):
+    def __init__(
+        self,
+        result_items: List[MoveDentriesResponseBodyResultItems] = None,
+    ):
+        # 批量移动文件(夹)结果列表
+        # 最大size:
+        # 	30
+        self.result_items = result_items
+
+    def validate(self):
+        if self.result_items:
+            for k in self.result_items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['resultItems'] = []
+        if self.result_items is not None:
+            for k in self.result_items:
+                result['resultItems'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result_items = []
+        if m.get('resultItems') is not None:
+            for k in m.get('resultItems'):
+                temp_model = MoveDentriesResponseBodyResultItems()
+                self.result_items.append(temp_model.from_map(k))
+        return self
+
+
+class MoveDentriesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: MoveDentriesResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = MoveDentriesResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -7537,6 +8928,8 @@ class MoveDentryResponseBodyDentry(TeaModel):
     ):
         # 在特定应用上的属性。key是微应用Id, value是属性列表。
         # 可以通过修改DentryAppProperty里的scope来设置属性的可见性
+        # 最大size:
+        # 	10
         self.app_properties = app_properties
         # 创建时间
         self.create_time = create_time
@@ -7713,7 +9106,7 @@ class MoveDentryResponseBody(TeaModel):
         self.async_ = async_
         # 文件信息
         self.dentry = dentry
-        # 任务id，用于查询任务执行状态; 查询接口开发中
+        # 任务id，用于查询任务执行状态
         self.task_id = task_id
 
     def validate(self):
@@ -8095,6 +9488,8 @@ class RenameDentryResponseBodyDentry(TeaModel):
     ):
         # 在特定应用上的属性。key是微应用Id, value是属性列表。
         # 可以通过修改DentryAppProperty里的scope来设置属性的可见性
+        # 最大size:
+        # 	10
         self.app_properties = app_properties
         # 创建时间
         self.create_time = create_time
@@ -8435,10 +9830,22 @@ class RestoreRecycleItemRequest(TeaModel):
 class RestoreRecycleItemResponseBody(TeaModel):
     def __init__(
         self,
-        success: bool = None,
+        async_: bool = None,
+        dentry_id: str = None,
+        space_id: str = None,
+        task_id: str = None,
     ):
-        # 本次操作是否成功
-        self.success = success
+        # 是否是异步任务
+        # 如果操作对象有子节点，则会异步处理
+        self.async_ = async_
+        # 操作对应根节点还原之后的文件id
+        # 非失败的情况下同步或者异步都会返回
+        self.dentry_id = dentry_id
+        # 操作对应根节点还原之后的空间id
+        # 非失败的情况下同步或者异步都会返回
+        self.space_id = space_id
+        # 异步任务id，用于查询任务执行状态
+        self.task_id = task_id
 
     def validate(self):
         pass
@@ -8449,14 +9856,26 @@ class RestoreRecycleItemResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.success is not None:
-            result['success'] = self.success
+        if self.async_ is not None:
+            result['async'] = self.async_
+        if self.dentry_id is not None:
+            result['dentryId'] = self.dentry_id
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('success') is not None:
-            self.success = m.get('success')
+        if m.get('async') is not None:
+            self.async_ = m.get('async')
+        if m.get('dentryId') is not None:
+            self.dentry_id = m.get('dentryId')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
         return self
 
 
@@ -8493,6 +9912,277 @@ class RestoreRecycleItemResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = RestoreRecycleItemResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class RestoreRecycleItemsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RestoreRecycleItemsRequestOption(TeaModel):
+    def __init__(
+        self,
+        conflict_strategy: str = None,
+    ):
+        # 文件名称冲突策略
+        # 还原时原路径可能已经存在同名的文件
+        # 枚举值:
+        # 	AUTO_RENAME: 自动重命名
+        # 	OVERWRITE: 覆盖
+        # 	RETURN_DENTRY_IF_EXISTS: 返回已存在文件
+        # 	RETURN_ERROR_IF_EXISTS: 文件已存在时报错
+        # 默认值:
+        # 	AUTO_RENAME
+        self.conflict_strategy = conflict_strategy
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.conflict_strategy is not None:
+            result['conflictStrategy'] = self.conflict_strategy
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('conflictStrategy') is not None:
+            self.conflict_strategy = m.get('conflictStrategy')
+        return self
+
+
+class RestoreRecycleItemsRequest(TeaModel):
+    def __init__(
+        self,
+        option: RestoreRecycleItemsRequestOption = None,
+        recycle_item_ids: List[str] = None,
+        union_id: str = None,
+    ):
+        # 可选参数
+        self.option = option
+        # 回收项id列表
+        # 最大size:
+        # 	30
+        self.recycle_item_ids = recycle_item_ids
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        if self.option:
+            self.option.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.option is not None:
+            result['option'] = self.option.to_map()
+        if self.recycle_item_ids is not None:
+            result['recycleItemIds'] = self.recycle_item_ids
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('option') is not None:
+            temp_model = RestoreRecycleItemsRequestOption()
+            self.option = temp_model.from_map(m['option'])
+        if m.get('recycleItemIds') is not None:
+            self.recycle_item_ids = m.get('recycleItemIds')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class RestoreRecycleItemsResponseBodyResultItems(TeaModel):
+    def __init__(
+        self,
+        async_: bool = None,
+        dentry_id: str = None,
+        error_code: str = None,
+        recycle_bin_id: str = None,
+        recycle_item_id: str = None,
+        space_id: str = None,
+        success: bool = None,
+        task_id: str = None,
+    ):
+        # 是否是异步任务
+        # 如果操作对象有子节点，则会异步处理
+        self.async_ = async_
+        # 操作对应根节点还原之后的文件id
+        # 非失败的情况下同步或者异步都会返回
+        self.dentry_id = dentry_id
+        # 错误原因, 异步任务该字段不返回
+        self.error_code = error_code
+        # 回收站id
+        # 可以通过GetRecycleBin API获取
+        self.recycle_bin_id = recycle_bin_id
+        # 回收项id
+        self.recycle_item_id = recycle_item_id
+        # 操作对应根节点还原之后的空间id
+        # 非失败的情况下同步或者异步都会返回
+        self.space_id = space_id
+        # 是否成功, 异步任务该字段不返回
+        self.success = success
+        # 异步任务id，用于查询任务执行状态
+        self.task_id = task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.async_ is not None:
+            result['async'] = self.async_
+        if self.dentry_id is not None:
+            result['dentryId'] = self.dentry_id
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.recycle_bin_id is not None:
+            result['recycleBinId'] = self.recycle_bin_id
+        if self.recycle_item_id is not None:
+            result['recycleItemId'] = self.recycle_item_id
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        if self.success is not None:
+            result['success'] = self.success
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('async') is not None:
+            self.async_ = m.get('async')
+        if m.get('dentryId') is not None:
+            self.dentry_id = m.get('dentryId')
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('recycleBinId') is not None:
+            self.recycle_bin_id = m.get('recycleBinId')
+        if m.get('recycleItemId') is not None:
+            self.recycle_item_id = m.get('recycleItemId')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class RestoreRecycleItemsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result_items: List[RestoreRecycleItemsResponseBodyResultItems] = None,
+    ):
+        # 批量还原文件(夹)结果列表
+        # 最大size:
+        # 	30
+        self.result_items = result_items
+
+    def validate(self):
+        if self.result_items:
+            for k in self.result_items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['resultItems'] = []
+        if self.result_items is not None:
+            for k in self.result_items:
+                result['resultItems'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result_items = []
+        if m.get('resultItems') is not None:
+            for k in m.get('resultItems'):
+                temp_model = RestoreRecycleItemsResponseBodyResultItems()
+                self.result_items.append(temp_model.from_map(k))
+        return self
+
+
+class RestoreRecycleItemsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: RestoreRecycleItemsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = RestoreRecycleItemsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -8708,6 +10398,8 @@ class UpdateDentryAppPropertiesRequest(TeaModel):
         union_id: str = None,
     ):
         # App属性列表 属性不存在时则新增，存在则覆盖原值
+        # 最大size:
+        # 	3
         self.app_properties = app_properties
         # 用户id
         self.union_id = union_id
@@ -8900,6 +10592,8 @@ class UpdatePermissionRequestOption(TeaModel):
         duration: int = None,
     ):
         # 有效时间(秒)
+        # 最大值:
+        # 	3600
         self.duration = duration
 
     def validate(self):
@@ -8931,6 +10625,8 @@ class UpdatePermissionRequest(TeaModel):
         union_id: str = None,
     ):
         # 权限成员列表
+        # 最大size:
+        # 	30
         self.members = members
         # 可选参数
         self.option = option
