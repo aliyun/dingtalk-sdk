@@ -13,6 +13,8 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         /// 历史版本分页大小，默认100
         /// 默认值:
         /// 	100
+        /// 最大值:
+        /// 	100
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]

@@ -18,6 +18,8 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         public class ListPermissionsRequestOption : TeaModel {
             /// <summary>
             /// 角色过滤列表
+            /// 最大size:
+            /// 	30
             /// </summary>
             [NameInMap("filterRoleIds")]
             [Validation(Required=false)]

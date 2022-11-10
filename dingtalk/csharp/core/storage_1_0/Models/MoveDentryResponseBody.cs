@@ -27,6 +27,8 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
             /// <summary>
             /// 在特定应用上的属性。key是微应用Id, value是属性列表。
             /// 可以通过修改DentryAppProperty里的scope来设置属性的可见性
+            /// 最大size:
+            /// 	10
             /// </summary>
             [NameInMap("appProperties")]
             [Validation(Required=false)]
@@ -186,7 +188,7 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         }
 
         /// <summary>
-        /// 任务id，用于查询任务执行状态; 查询接口开发中
+        /// 任务id，用于查询任务执行状态
         /// </summary>
         [NameInMap("taskId")]
         [Validation(Required=false)]

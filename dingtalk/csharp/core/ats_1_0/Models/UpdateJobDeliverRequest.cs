@@ -24,6 +24,13 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
         public string ChannelOuterId { get; set; }
 
         /// <summary>
+        /// 职位投递人userId
+        /// </summary>
+        [NameInMap("deliverUserId")]
+        [Validation(Required=false)]
+        public string DeliverUserId { get; set; }
+
+        /// <summary>
         /// 渠道侧错误码
         /// </summary>
         [NameInMap("errorCode")]
@@ -57,13 +64,6 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
         [NameInMap("status")]
         [Validation(Required=false)]
         public int? Status { get; set; }
-
-        /// <summary>
-        /// 企业corpId
-        /// </summary>
-        [NameInMap("corpId")]
-        [Validation(Required=false)]
-        public string CorpId { get; set; }
 
         /// <summary>
         /// 钉钉侧职位唯一标识

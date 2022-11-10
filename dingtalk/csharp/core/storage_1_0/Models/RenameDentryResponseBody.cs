@@ -19,6 +19,8 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
             /// <summary>
             /// 在特定应用上的属性。key是微应用Id, value是属性列表。
             /// 可以通过修改DentryAppProperty里的scope来设置属性的可见性
+            /// 最大size:
+            /// 	10
             /// </summary>
             [NameInMap("appProperties")]
             [Validation(Required=false)]

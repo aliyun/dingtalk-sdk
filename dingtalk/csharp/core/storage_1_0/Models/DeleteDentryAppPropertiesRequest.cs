@@ -11,6 +11,8 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
     public class DeleteDentryAppPropertiesRequest : TeaModel {
         /// <summary>
         /// 文件上App属性名称
+        /// 最大size:
+        /// 	3
         /// </summary>
         [NameInMap("propertyNames")]
         [Validation(Required=false)]

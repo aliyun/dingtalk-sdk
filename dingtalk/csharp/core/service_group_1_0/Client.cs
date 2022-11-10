@@ -1226,6 +1226,94 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0
             return TeaModel.ToObject<BatchGetGroupSetConfigResponse>(await DoROARequestAsync("BatchGetGroupSetConfig", "serviceGroup_1.0", "HTTP", "POST", "AK", "/v1.0/serviceGroup/groupSetConfigs/batchQuery", "json", req, runtime));
         }
 
+        public BatchQueryGroupMemberResponse BatchQueryGroupMember(BatchQueryGroupMemberRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchQueryGroupMemberHeaders headers = new BatchQueryGroupMemberHeaders();
+            return BatchQueryGroupMemberWithOptions(request, headers, runtime);
+        }
+
+        public async Task<BatchQueryGroupMemberResponse> BatchQueryGroupMemberAsync(BatchQueryGroupMemberRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchQueryGroupMemberHeaders headers = new BatchQueryGroupMemberHeaders();
+            return await BatchQueryGroupMemberWithOptionsAsync(request, headers, runtime);
+        }
+
+        public BatchQueryGroupMemberResponse BatchQueryGroupMemberWithOptions(BatchQueryGroupMemberRequest request, BatchQueryGroupMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                body["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenTeamId))
+            {
+                body["openTeamId"] = request.OpenTeamId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<BatchQueryGroupMemberResponse>(DoROARequest("BatchQueryGroupMember", "serviceGroup_1.0", "HTTP", "POST", "AK", "/v1.0/serviceGroup/groups/members/batchQuery", "json", req, runtime));
+        }
+
+        public async Task<BatchQueryGroupMemberResponse> BatchQueryGroupMemberWithOptionsAsync(BatchQueryGroupMemberRequest request, BatchQueryGroupMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                body["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenTeamId))
+            {
+                body["openTeamId"] = request.OpenTeamId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<BatchQueryGroupMemberResponse>(await DoROARequestAsync("BatchQueryGroupMember", "serviceGroup_1.0", "HTTP", "POST", "AK", "/v1.0/serviceGroup/groups/members/batchQuery", "json", req, runtime));
+        }
+
         public BatchQuerySendMessageTaskResponse BatchQuerySendMessageTask(BatchQuerySendMessageTaskRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

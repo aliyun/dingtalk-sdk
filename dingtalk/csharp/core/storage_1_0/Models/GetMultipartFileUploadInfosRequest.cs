@@ -13,6 +13,8 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         /// 分片id列表
         /// 分片id取值: 1~10000
         /// 分片大小限制: 100KB~5GB
+        /// 最大size:
+        /// 	30
         /// </summary>
         [NameInMap("partNumbers")]
         [Validation(Required=false)]

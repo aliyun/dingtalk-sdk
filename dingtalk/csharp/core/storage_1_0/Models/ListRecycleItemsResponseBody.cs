@@ -19,6 +19,8 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 
         /// <summary>
         /// 回收项列表
+        /// 最大size:
+        /// 	50
         /// </summary>
         [NameInMap("recycleItems")]
         [Validation(Required=false)]

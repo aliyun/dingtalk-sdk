@@ -11,6 +11,8 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
     public class UpdateDentryAppPropertiesRequest : TeaModel {
         /// <summary>
         /// App属性列表 属性不存在时则新增，存在则覆盖原值
+        /// 最大size:
+        /// 	3
         /// </summary>
         [NameInMap("appProperties")]
         [Validation(Required=false)]

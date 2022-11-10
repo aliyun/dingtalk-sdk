@@ -18,6 +18,8 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 
         /// <summary>
         /// 权限列表分页数据
+        /// 最大size:
+        /// 	500
         /// </summary>
         [NameInMap("permissions")]
         [Validation(Required=false)]

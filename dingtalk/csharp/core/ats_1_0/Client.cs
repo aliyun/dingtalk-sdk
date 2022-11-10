@@ -1054,6 +1054,198 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             return TeaModel.ToObject<QueryInterviewsResponse>(await DoROARequestAsync("QueryInterviews", "ats_1.0", "HTTP", "POST", "AK", "/v1.0/ats/interviews/query", "json", req, runtime));
         }
 
+        public ReportMessageStatusResponse ReportMessageStatus(ReportMessageStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ReportMessageStatusHeaders headers = new ReportMessageStatusHeaders();
+            return ReportMessageStatusWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ReportMessageStatusResponse> ReportMessageStatusAsync(ReportMessageStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ReportMessageStatusHeaders headers = new ReportMessageStatusHeaders();
+            return await ReportMessageStatusWithOptionsAsync(request, headers, runtime);
+        }
+
+        public ReportMessageStatusResponse ReportMessageStatusWithOptions(ReportMessageStatusRequest request, ReportMessageStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Channel))
+            {
+                body["channel"] = request.Channel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ErrorCode))
+            {
+                body["errorCode"] = request.ErrorCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ErrorMsg))
+            {
+                body["errorMsg"] = request.ErrorMsg;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MessageId))
+            {
+                body["messageId"] = request.MessageId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<ReportMessageStatusResponse>(DoROARequest("ReportMessageStatus", "ats_1.0", "HTTP", "POST", "AK", "/v1.0/ats/channels/messages/statuses/report", "json", req, runtime));
+        }
+
+        public async Task<ReportMessageStatusResponse> ReportMessageStatusWithOptionsAsync(ReportMessageStatusRequest request, ReportMessageStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Channel))
+            {
+                body["channel"] = request.Channel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ErrorCode))
+            {
+                body["errorCode"] = request.ErrorCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ErrorMsg))
+            {
+                body["errorMsg"] = request.ErrorMsg;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MessageId))
+            {
+                body["messageId"] = request.MessageId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<ReportMessageStatusResponse>(await DoROARequestAsync("ReportMessageStatus", "ats_1.0", "HTTP", "POST", "AK", "/v1.0/ats/channels/messages/statuses/report", "json", req, runtime));
+        }
+
+        public SyncChannelMessageResponse SyncChannelMessage(SyncChannelMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SyncChannelMessageHeaders headers = new SyncChannelMessageHeaders();
+            return SyncChannelMessageWithOptions(request, headers, runtime);
+        }
+
+        public async Task<SyncChannelMessageResponse> SyncChannelMessageAsync(SyncChannelMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SyncChannelMessageHeaders headers = new SyncChannelMessageHeaders();
+            return await SyncChannelMessageWithOptionsAsync(request, headers, runtime);
+        }
+
+        public SyncChannelMessageResponse SyncChannelMessageWithOptions(SyncChannelMessageRequest request, SyncChannelMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Channel))
+            {
+                body["channel"] = request.Channel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
+            {
+                body["content"] = request.Content;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateTime))
+            {
+                body["createTime"] = request.CreateTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUserId))
+            {
+                body["receiverUserId"] = request.ReceiverUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SenderUserId))
+            {
+                body["senderUserId"] = request.SenderUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            {
+                body["uuid"] = request.Uuid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<SyncChannelMessageResponse>(DoROARequest("SyncChannelMessage", "ats_1.0", "HTTP", "POST", "AK", "/v1.0/ats/channels/messages/sync", "json", req, runtime));
+        }
+
+        public async Task<SyncChannelMessageResponse> SyncChannelMessageWithOptionsAsync(SyncChannelMessageRequest request, SyncChannelMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Channel))
+            {
+                body["channel"] = request.Channel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
+            {
+                body["content"] = request.Content;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateTime))
+            {
+                body["createTime"] = request.CreateTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUserId))
+            {
+                body["receiverUserId"] = request.ReceiverUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SenderUserId))
+            {
+                body["senderUserId"] = request.SenderUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            {
+                body["uuid"] = request.Uuid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<SyncChannelMessageResponse>(await DoROARequestAsync("SyncChannelMessage", "ats_1.0", "HTTP", "POST", "AK", "/v1.0/ats/channels/messages/sync", "json", req, runtime));
+        }
+
         public UpdateApplicationRegFormResponse UpdateApplicationRegForm(string flowId, UpdateApplicationRegFormRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1240,10 +1432,6 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             {
                 query["bizCode"] = request.BizCode;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
-            {
-                query["corpId"] = request.CorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobId))
             {
                 query["jobId"] = request.JobId;
@@ -1252,6 +1440,10 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChannelOuterId))
             {
                 body["channelOuterId"] = request.ChannelOuterId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeliverUserId))
+            {
+                body["deliverUserId"] = request.DeliverUserId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ErrorCode))
             {
@@ -1299,10 +1491,6 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             {
                 query["bizCode"] = request.BizCode;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
-            {
-                query["corpId"] = request.CorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobId))
             {
                 query["jobId"] = request.JobId;
@@ -1311,6 +1499,10 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChannelOuterId))
             {
                 body["channelOuterId"] = request.ChannelOuterId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeliverUserId))
+            {
+                body["deliverUserId"] = request.DeliverUserId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ErrorCode))
             {

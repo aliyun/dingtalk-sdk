@@ -11,6 +11,8 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
     public class GetMultipartFileUploadInfosResponseBody : TeaModel {
         /// <summary>
         /// 分片Header加签上传信息列表
+        /// 最大size:
+        /// 	30
         /// </summary>
         [NameInMap("multipartHeaderSignatureInfos")]
         [Validation(Required=false)]
@@ -32,6 +34,8 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 
                 /// <summary>
                 /// 请求头
+                /// 最大size:
+                /// 	20
                 /// </summary>
                 [NameInMap("headers")]
                 [Validation(Required=false)]
@@ -39,6 +43,8 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 
                 /// <summary>
                 /// 内网URL, 在网络连通的情况下，使用内网URL可加速服务器间上传
+                /// 最大size:
+                /// 	10
                 /// </summary>
                 [NameInMap("internalResourceUrls")]
                 [Validation(Required=false)]
@@ -59,6 +65,8 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 
                 /// <summary>
                 /// 多个上传下载URL, 前面url优先
+                /// 最大size:
+                /// 	10
                 /// </summary>
                 [NameInMap("resourceUrls")]
                 [Validation(Required=false)]

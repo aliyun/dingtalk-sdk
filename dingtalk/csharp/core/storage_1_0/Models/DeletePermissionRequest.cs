@@ -11,6 +11,8 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
     public class DeletePermissionRequest : TeaModel {
         /// <summary>
         /// 权限成员列表
+        /// 最大size:
+        /// 	30
         /// </summary>
         [NameInMap("members")]
         [Validation(Required=false)]

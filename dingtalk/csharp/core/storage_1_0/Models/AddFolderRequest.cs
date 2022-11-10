@@ -28,6 +28,8 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         public class AddFolderRequestOption : TeaModel {
             /// <summary>
             /// 文件夹在应用上的属性, 一个应用最多只能设置3个属性
+            /// 最大size:
+            /// 	3
             /// </summary>
             [NameInMap("appProperties")]
             [Validation(Required=false)]

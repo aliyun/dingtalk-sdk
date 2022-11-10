@@ -9,14 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class QueryIntegratedTodoTaskResponseBody : TeaModel {
-        [NameInMap("requestId")]
+        [NameInMap("result")]
         [Validation(Required=false)]
-        public string RequestId { get; set; }
-
-        [NameInMap("taskPage")]
-        [Validation(Required=false)]
-        public QueryIntegratedTodoTaskResponseBodyTaskPage TaskPage { get; set; }
-        public class QueryIntegratedTodoTaskResponseBodyTaskPage : TeaModel {
+        public QueryIntegratedTodoTaskResponseBodyResult Result { get; set; }
+        public class QueryIntegratedTodoTaskResponseBodyResult : TeaModel {
             /// <summary>
             /// 是否还有下一页
             /// </summary>
@@ -26,8 +22,8 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 
             [NameInMap("list")]
             [Validation(Required=false)]
-            public List<QueryIntegratedTodoTaskResponseBodyTaskPageList> List { get; set; }
-            public class QueryIntegratedTodoTaskResponseBodyTaskPageList : TeaModel {
+            public List<QueryIntegratedTodoTaskResponseBodyResultList> List { get; set; }
+            public class QueryIntegratedTodoTaskResponseBodyResultList : TeaModel {
                 /// <summary>
                 /// 待办组ID，需要在调用创建流程中心集成任务接口时，主动设置该值。
                 /// </summary>

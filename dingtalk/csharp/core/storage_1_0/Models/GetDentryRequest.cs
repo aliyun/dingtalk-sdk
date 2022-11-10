@@ -20,6 +20,8 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
             /// 通过指定应用id, 返回对应的可见属性，即dentry.appProperties，
             /// 默认都会返回当前应用的属性，
             /// 如不指定appIds, 则默认返回当前应用的appProperties
+            /// 最大size:
+            /// 	20
             /// </summary>
             [NameInMap("appIdsForAppProperties")]
             [Validation(Required=false)]
