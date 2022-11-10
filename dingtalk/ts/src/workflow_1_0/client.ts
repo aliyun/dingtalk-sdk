@@ -2914,19 +2914,16 @@ export class QueryIntegratedTodoTaskRequest extends $tea.Model {
 }
 
 export class QueryIntegratedTodoTaskResponseBody extends $tea.Model {
-  requestId?: string;
-  taskPage?: QueryIntegratedTodoTaskResponseBodyTaskPage;
+  result?: QueryIntegratedTodoTaskResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
-      requestId: 'requestId',
-      taskPage: 'taskPage',
+      result: 'result',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      requestId: 'string',
-      taskPage: QueryIntegratedTodoTaskResponseBodyTaskPage,
+      result: QueryIntegratedTodoTaskResponseBodyResult,
     };
   }
 
@@ -5682,7 +5679,7 @@ export class QueryFormInstanceResponseBodyFormInstDataList extends $tea.Model {
   }
 }
 
-export class QueryIntegratedTodoTaskResponseBodyTaskPageList extends $tea.Model {
+export class QueryIntegratedTodoTaskResponseBodyResultList extends $tea.Model {
   activityId?: string;
   createTime?: number;
   finishTime?: string;
@@ -5722,9 +5719,9 @@ export class QueryIntegratedTodoTaskResponseBodyTaskPageList extends $tea.Model 
   }
 }
 
-export class QueryIntegratedTodoTaskResponseBodyTaskPage extends $tea.Model {
+export class QueryIntegratedTodoTaskResponseBodyResult extends $tea.Model {
   hasMore?: boolean;
-  list?: QueryIntegratedTodoTaskResponseBodyTaskPageList[];
+  list?: QueryIntegratedTodoTaskResponseBodyResultList[];
   static names(): { [key: string]: string } {
     return {
       hasMore: 'hasMore',
@@ -5735,7 +5732,7 @@ export class QueryIntegratedTodoTaskResponseBodyTaskPage extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       hasMore: 'boolean',
-      list: { 'type': 'array', 'itemType': QueryIntegratedTodoTaskResponseBodyTaskPageList },
+      list: { 'type': 'array', 'itemType': QueryIntegratedTodoTaskResponseBodyResultList },
     };
   }
 

@@ -1147,6 +1147,194 @@ export class QueryInterviewsResponse extends $tea.Model {
   }
 }
 
+export class ReportMessageStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReportMessageStatusRequest extends $tea.Model {
+  channel?: string;
+  errorCode?: string;
+  errorMsg?: string;
+  messageId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      channel: 'channel',
+      errorCode: 'errorCode',
+      errorMsg: 'errorMsg',
+      messageId: 'messageId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      channel: 'string',
+      errorCode: 'string',
+      errorMsg: 'string',
+      messageId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReportMessageStatusResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReportMessageStatusResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ReportMessageStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ReportMessageStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncChannelMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncChannelMessageRequest extends $tea.Model {
+  channel?: string;
+  content?: string;
+  createTime?: number;
+  receiverUserId?: string;
+  senderUserId?: string;
+  uuid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      channel: 'channel',
+      content: 'content',
+      createTime: 'createTime',
+      receiverUserId: 'receiverUserId',
+      senderUserId: 'senderUserId',
+      uuid: 'uuid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      channel: 'string',
+      content: 'string',
+      createTime: 'number',
+      receiverUserId: 'string',
+      senderUserId: 'string',
+      uuid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncChannelMessageResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncChannelMessageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SyncChannelMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SyncChannelMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateApplicationRegFormHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1341,23 +1529,23 @@ export class UpdateJobDeliverHeaders extends $tea.Model {
 export class UpdateJobDeliverRequest extends $tea.Model {
   bizCode?: string;
   channelOuterId?: string;
+  deliverUserId?: string;
   errorCode?: string;
   errorMsg?: string;
   opTime?: number;
   opUserId?: string;
   status?: number;
-  corpId?: string;
   jobId?: string;
   static names(): { [key: string]: string } {
     return {
       bizCode: 'bizCode',
       channelOuterId: 'channelOuterId',
+      deliverUserId: 'deliverUserId',
       errorCode: 'errorCode',
       errorMsg: 'errorMsg',
       opTime: 'opTime',
       opUserId: 'opUserId',
       status: 'status',
-      corpId: 'corpId',
       jobId: 'jobId',
     };
   }
@@ -1366,12 +1554,12 @@ export class UpdateJobDeliverRequest extends $tea.Model {
     return {
       bizCode: 'string',
       channelOuterId: 'string',
+      deliverUserId: 'string',
       errorCode: 'string',
       errorMsg: 'string',
       opTime: 'number',
       opUserId: 'string',
       status: 'number',
-      corpId: 'string',
       jobId: 'string',
     };
   }
@@ -2318,6 +2506,96 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryInterviewsResponse>(await this.doROARequest("QueryInterviews", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/interviews/query`, "json", req, runtime), new QueryInterviewsResponse({}));
   }
 
+  async reportMessageStatus(request: ReportMessageStatusRequest): Promise<ReportMessageStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ReportMessageStatusHeaders({ });
+    return await this.reportMessageStatusWithOptions(request, headers, runtime);
+  }
+
+  async reportMessageStatusWithOptions(request: ReportMessageStatusRequest, headers: ReportMessageStatusHeaders, runtime: $Util.RuntimeOptions): Promise<ReportMessageStatusResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.channel)) {
+      body["channel"] = request.channel;
+    }
+
+    if (!Util.isUnset(request.errorCode)) {
+      body["errorCode"] = request.errorCode;
+    }
+
+    if (!Util.isUnset(request.errorMsg)) {
+      body["errorMsg"] = request.errorMsg;
+    }
+
+    if (!Util.isUnset(request.messageId)) {
+      body["messageId"] = request.messageId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ReportMessageStatusResponse>(await this.doROARequest("ReportMessageStatus", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/channels/messages/statuses/report`, "json", req, runtime), new ReportMessageStatusResponse({}));
+  }
+
+  async syncChannelMessage(request: SyncChannelMessageRequest): Promise<SyncChannelMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SyncChannelMessageHeaders({ });
+    return await this.syncChannelMessageWithOptions(request, headers, runtime);
+  }
+
+  async syncChannelMessageWithOptions(request: SyncChannelMessageRequest, headers: SyncChannelMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SyncChannelMessageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.channel)) {
+      body["channel"] = request.channel;
+    }
+
+    if (!Util.isUnset(request.content)) {
+      body["content"] = request.content;
+    }
+
+    if (!Util.isUnset(request.createTime)) {
+      body["createTime"] = request.createTime;
+    }
+
+    if (!Util.isUnset(request.receiverUserId)) {
+      body["receiverUserId"] = request.receiverUserId;
+    }
+
+    if (!Util.isUnset(request.senderUserId)) {
+      body["senderUserId"] = request.senderUserId;
+    }
+
+    if (!Util.isUnset(request.uuid)) {
+      body["uuid"] = request.uuid;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SyncChannelMessageResponse>(await this.doROARequest("SyncChannelMessage", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/channels/messages/sync`, "json", req, runtime), new SyncChannelMessageResponse({}));
+  }
+
   async updateApplicationRegForm(flowId: string, request: UpdateApplicationRegFormRequest): Promise<UpdateApplicationRegFormResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateApplicationRegFormHeaders({ });
@@ -2407,10 +2685,6 @@ export default class Client extends OpenApi {
       query["bizCode"] = request.bizCode;
     }
 
-    if (!Util.isUnset(request.corpId)) {
-      query["corpId"] = request.corpId;
-    }
-
     if (!Util.isUnset(request.jobId)) {
       query["jobId"] = request.jobId;
     }
@@ -2418,6 +2692,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.channelOuterId)) {
       body["channelOuterId"] = request.channelOuterId;
+    }
+
+    if (!Util.isUnset(request.deliverUserId)) {
+      body["deliverUserId"] = request.deliverUserId;
     }
 
     if (!Util.isUnset(request.errorCode)) {
