@@ -4,10 +4,7 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFileUploadInfoRequest extends TeaModel {
-    // 是否需要分片上传
-    // 5G以下文件，建议设为false，简化上传步骤
-    // 5G以上文件，必须设为true, 否则上传会失败
-    // 具体参考文档: https://help.aliyun.com/document_detail/84778.html
+    // 已废弃
     @NameInMap("multipart")
     public Boolean multipart;
 

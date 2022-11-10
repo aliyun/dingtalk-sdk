@@ -9,6 +9,8 @@ public class ListPermissionsResponseBody extends TeaModel {
     public String nextToken;
 
     // 权限列表分页数据
+    // 最大size:
+    // 	500
     @NameInMap("permissions")
     public java.util.List<ListPermissionsResponseBodyPermissions> permissions;
 

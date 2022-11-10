@@ -494,6 +494,96 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("QueryInterviews", "ats_1.0", "HTTP", "POST", "AK", "/v1.0/ats/interviews/query", "json", req, runtime), new QueryInterviewsResponse());
     }
 
+    public ReportMessageStatusResponse reportMessageStatus(ReportMessageStatusRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ReportMessageStatusHeaders headers = new ReportMessageStatusHeaders();
+        return this.reportMessageStatusWithOptions(request, headers, runtime);
+    }
+
+    public ReportMessageStatusResponse reportMessageStatusWithOptions(ReportMessageStatusRequest request, ReportMessageStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.channel)) {
+            body.put("channel", request.channel);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.errorCode)) {
+            body.put("errorCode", request.errorCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.errorMsg)) {
+            body.put("errorMsg", request.errorMsg);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.messageId)) {
+            body.put("messageId", request.messageId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("ReportMessageStatus", "ats_1.0", "HTTP", "POST", "AK", "/v1.0/ats/channels/messages/statuses/report", "json", req, runtime), new ReportMessageStatusResponse());
+    }
+
+    public SyncChannelMessageResponse syncChannelMessage(SyncChannelMessageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SyncChannelMessageHeaders headers = new SyncChannelMessageHeaders();
+        return this.syncChannelMessageWithOptions(request, headers, runtime);
+    }
+
+    public SyncChannelMessageResponse syncChannelMessageWithOptions(SyncChannelMessageRequest request, SyncChannelMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.channel)) {
+            body.put("channel", request.channel);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.content)) {
+            body.put("content", request.content);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.createTime)) {
+            body.put("createTime", request.createTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.receiverUserId)) {
+            body.put("receiverUserId", request.receiverUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.senderUserId)) {
+            body.put("senderUserId", request.senderUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.uuid)) {
+            body.put("uuid", request.uuid);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("SyncChannelMessage", "ats_1.0", "HTTP", "POST", "AK", "/v1.0/ats/channels/messages/sync", "json", req, runtime), new SyncChannelMessageResponse());
+    }
+
     public UpdateApplicationRegFormResponse updateApplicationRegForm(String flowId, UpdateApplicationRegFormRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateApplicationRegFormHeaders headers = new UpdateApplicationRegFormHeaders();
@@ -583,10 +673,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("bizCode", request.bizCode);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
-            query.put("corpId", request.corpId);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.jobId)) {
             query.put("jobId", request.jobId);
         }
@@ -594,6 +680,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.channelOuterId)) {
             body.put("channelOuterId", request.channelOuterId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deliverUserId)) {
+            body.put("deliverUserId", request.deliverUserId);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.errorCode)) {

@@ -5,6 +5,8 @@ import com.aliyun.tea.*;
 
 public class ListDentriesResponseBody extends TeaModel {
     // 文件列表
+    // 最大size:
+    // 	50
     @NameInMap("dentries")
     public java.util.List<ListDentriesResponseBodyDentries> dentries;
 
@@ -57,6 +59,8 @@ public class ListDentriesResponseBody extends TeaModel {
     public static class ListDentriesResponseBodyDentries extends TeaModel {
         // 在特定应用上的属性。key是微应用Id, value是属性列表。
         // 可以通过修改DentryAppProperty里的scope来设置属性的可见性
+        // 最大size:
+        // 	10
         @NameInMap("appProperties")
         public java.util.Map<String, java.util.List<DentriesAppPropertiesValue>> appProperties;
 

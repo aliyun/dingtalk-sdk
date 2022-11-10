@@ -13,7 +13,7 @@ public class MoveDentryResponseBody extends TeaModel {
     @NameInMap("dentry")
     public MoveDentryResponseBodyDentry dentry;
 
-    // 任务id，用于查询任务执行状态; 查询接口开发中
+    // 任务id，用于查询任务执行状态
     @NameInMap("taskId")
     public String taskId;
 
@@ -69,6 +69,8 @@ public class MoveDentryResponseBody extends TeaModel {
     public static class MoveDentryResponseBodyDentry extends TeaModel {
         // 在特定应用上的属性。key是微应用Id, value是属性列表。
         // 可以通过修改DentryAppProperty里的scope来设置属性的可见性
+        // 最大size:
+        // 	10
         @NameInMap("appProperties")
         public java.util.Map<String, java.util.List<DentryAppPropertiesValue>> appProperties;
 

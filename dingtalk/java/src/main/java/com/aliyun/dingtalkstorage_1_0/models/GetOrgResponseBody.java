@@ -28,19 +28,28 @@ public class GetOrgResponseBody extends TeaModel {
         @NameInMap("max")
         public Long max;
 
+        // 预分配剩余容量, 单位: Byte
+        // 背景：
+        //    管理后台可以给应用或空间预分配容量，此字段表示预分剩余容量，即预分配容量中未使用部分
+        // 如果没有设置预分配容，此字段是空
+        @NameInMap("reserved")
+        public Long reserved;
+
         // 容量类型
         // 如果是企业维度容量，此值是PRIVATE, 表示企业独占
         // 枚举值:
         // 	SHARE: 共享容量
         // 此模式下，Quota.max为空，表示共享企业容量
-        // 	PRIVATE: 专享容量
+        // 	PRIVATE: 预分配容量（专享容量）
         // 当Quota.max设置值后，表示容量独占
-        // 使用场景：当需要保证单个应用的可用容量不受其他应用影响时, 可使用共享容量
+        // 使用场景：需要保证单个应用的可用容量不受其他应用影响时, 可使用预分配容量（专享容量）
         @NameInMap("type")
         public String type;
 
-        // 已使用容量, 单位: Byte
+        // 实际已使用容量, 单位: Byte
         // 表示该应用下所用文件占用容量的总和，文件的上传、复制、删除相关操作会对used的值做相应变更
+        // 最小值:
+        // 	0
         @NameInMap("used")
         public Long used;
 
@@ -55,6 +64,14 @@ public class GetOrgResponseBody extends TeaModel {
         }
         public Long getMax() {
             return this.max;
+        }
+
+        public GetOrgResponseBodyOrgPartitionsQuota setReserved(Long reserved) {
+            this.reserved = reserved;
+            return this;
+        }
+        public Long getReserved() {
+            return this.reserved;
         }
 
         public GetOrgResponseBodyOrgPartitionsQuota setType(String type) {
@@ -116,6 +133,8 @@ public class GetOrgResponseBody extends TeaModel {
         public String corpId;
 
         // 分区容量信息
+        // 最大size:
+        // 	2
         @NameInMap("partitions")
         public java.util.List<GetOrgResponseBodyOrgPartitions> partitions;
 

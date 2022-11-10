@@ -7,6 +7,8 @@ public class ListDentriesRequest extends TeaModel {
     // 分页大小
     // 默认值:
     // 	50
+    // 最大值:
+    // 	50
     @NameInMap("maxResults")
     public Integer maxResults;
 

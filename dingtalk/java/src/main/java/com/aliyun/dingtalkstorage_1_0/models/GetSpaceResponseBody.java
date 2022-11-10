@@ -71,7 +71,117 @@ public class GetSpaceResponseBody extends TeaModel {
 
     }
 
+    public static class GetSpaceResponseBodySpacePartitionsQuota extends TeaModel {
+        // 最大容量, 单位: Byte
+        // 当前应用容量被设置为max时，代表当前应用容量设置了上限，used<=max
+        // 当前应用容量未设置max时，返回空，此时应用共享该企业剩余可用容量
+        @NameInMap("max")
+        public Long max;
+
+        // 预分配剩余容量, 单位: Byte
+        // 背景：
+        //    管理后台可以给应用或空间预分配容量，此字段表示预分剩余容量，即预分配容量中未使用部分
+        // 如果没有设置预分配容，此字段是空
+        @NameInMap("reserved")
+        public Long reserved;
+
+        // 容量类型
+        // 如果是企业维度容量，此值是PRIVATE, 表示企业独占
+        // 枚举值:
+        // 	SHARE: 共享容量
+        // 此模式下，Quota.max为空，表示共享企业容量
+        // 	PRIVATE: 预分配容量（专享容量）
+        // 当Quota.max设置值后，表示容量独占
+        // 使用场景：需要保证单个应用的可用容量不受其他应用影响时, 可使用预分配容量（专享容量）
+        @NameInMap("type")
+        public String type;
+
+        // 实际已使用容量, 单位: Byte
+        // 表示该应用下所用文件占用容量的总和，文件的上传、复制、删除相关操作会对used的值做相应变更
+        // 最小值:
+        // 	0
+        @NameInMap("used")
+        public Long used;
+
+        public static GetSpaceResponseBodySpacePartitionsQuota build(java.util.Map<String, ?> map) throws Exception {
+            GetSpaceResponseBodySpacePartitionsQuota self = new GetSpaceResponseBodySpacePartitionsQuota();
+            return TeaModel.build(map, self);
+        }
+
+        public GetSpaceResponseBodySpacePartitionsQuota setMax(Long max) {
+            this.max = max;
+            return this;
+        }
+        public Long getMax() {
+            return this.max;
+        }
+
+        public GetSpaceResponseBodySpacePartitionsQuota setReserved(Long reserved) {
+            this.reserved = reserved;
+            return this;
+        }
+        public Long getReserved() {
+            return this.reserved;
+        }
+
+        public GetSpaceResponseBodySpacePartitionsQuota setType(String type) {
+            this.type = type;
+            return this;
+        }
+        public String getType() {
+            return this.type;
+        }
+
+        public GetSpaceResponseBodySpacePartitionsQuota setUsed(Long used) {
+            this.used = used;
+            return this;
+        }
+        public Long getUsed() {
+            return this.used;
+        }
+
+    }
+
+    public static class GetSpaceResponseBodySpacePartitions extends TeaModel {
+        // 分区类型
+        // 枚举值:
+        // 	PUBLIC_OSS_PARTITION: 公有云OSS存储分区
+        // 	MINI_OSS_PARTITION: 专属Mini OSS存储分区
+        @NameInMap("partitionType")
+        public String partitionType;
+
+        // 容量信息
+        @NameInMap("quota")
+        public GetSpaceResponseBodySpacePartitionsQuota quota;
+
+        public static GetSpaceResponseBodySpacePartitions build(java.util.Map<String, ?> map) throws Exception {
+            GetSpaceResponseBodySpacePartitions self = new GetSpaceResponseBodySpacePartitions();
+            return TeaModel.build(map, self);
+        }
+
+        public GetSpaceResponseBodySpacePartitions setPartitionType(String partitionType) {
+            this.partitionType = partitionType;
+            return this;
+        }
+        public String getPartitionType() {
+            return this.partitionType;
+        }
+
+        public GetSpaceResponseBodySpacePartitions setQuota(GetSpaceResponseBodySpacePartitionsQuota quota) {
+            this.quota = quota;
+            return this;
+        }
+        public GetSpaceResponseBodySpacePartitionsQuota getQuota() {
+            return this.quota;
+        }
+
+    }
+
     public static class GetSpaceResponseBodySpace extends TeaModel {
+        // 开放平台应用appId
+        @NameInMap("appId")
+        public String appId;
+
         // 空间能力项
         @NameInMap("capabilities")
         public GetSpaceResponseBodySpaceCapabilities capabilities;
@@ -115,7 +225,15 @@ public class GetSpaceResponseBody extends TeaModel {
         @NameInMap("ownerType")
         public String ownerType;
 
-        // 总容量
+        // 分区容量信息
+        // 最大size:
+        // 	2
+        @NameInMap("partitions")
+        public java.util.List<GetSpaceResponseBodySpacePartitions> partitions;
+
+        // 容量上限
+        // 管理后台设置的容量上限
+        // 建议使用分区上容量信息字段
         @NameInMap("quota")
         public Long quota;
 
@@ -139,13 +257,22 @@ public class GetSpaceResponseBody extends TeaModel {
         @NameInMap("status")
         public String status;
 
-        // 已使用容量
+        // 已使用容量, 包含各分区已使用容量和
+        // 建议使用分区上容量信息字段
         @NameInMap("usedQuota")
         public Long usedQuota;
 
         public static GetSpaceResponseBodySpace build(java.util.Map<String, ?> map) throws Exception {
             GetSpaceResponseBodySpace self = new GetSpaceResponseBodySpace();
             return TeaModel.build(map, self);
+        }
+
+        public GetSpaceResponseBodySpace setAppId(String appId) {
+            this.appId = appId;
+            return this;
+        }
+        public String getAppId() {
+            return this.appId;
         }
 
         public GetSpaceResponseBodySpace setCapabilities(GetSpaceResponseBodySpaceCapabilities capabilities) {
@@ -226,6 +353,14 @@ public class GetSpaceResponseBody extends TeaModel {
         }
         public String getOwnerType() {
             return this.ownerType;
+        }
+
+        public GetSpaceResponseBodySpace setPartitions(java.util.List<GetSpaceResponseBodySpacePartitions> partitions) {
+            this.partitions = partitions;
+            return this;
+        }
+        public java.util.List<GetSpaceResponseBodySpacePartitions> getPartitions() {
+            return this.partitions;
         }
 
         public GetSpaceResponseBodySpace setQuota(Long quota) {

@@ -5,6 +5,8 @@ import com.aliyun.tea.*;
 
 public class DeleteRecycleItemsRequest extends TeaModel {
     // 回收项id列表
+    // 最大size:
+    // 	50
     @NameInMap("recycleItemIds")
     public java.util.List<String> recycleItemIds;
 

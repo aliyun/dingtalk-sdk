@@ -10,6 +10,8 @@ public class ListRecycleItemsResponseBody extends TeaModel {
     public String nextToken;
 
     // 回收项列表
+    // 最大size:
+    // 	50
     @NameInMap("recycleItems")
     public java.util.List<ListRecycleItemsResponseBodyRecycleItems> recycleItems;
 

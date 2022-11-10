@@ -12,6 +12,10 @@ public class UpdateJobDeliverRequest extends TeaModel {
     @NameInMap("channelOuterId")
     public String channelOuterId;
 
+    // 职位投递人userId
+    @NameInMap("deliverUserId")
+    public String deliverUserId;
+
     // 渠道侧错误码
     @NameInMap("errorCode")
     public String errorCode;
@@ -31,10 +35,6 @@ public class UpdateJobDeliverRequest extends TeaModel {
     // 职位投递状态
     @NameInMap("status")
     public Integer status;
-
-    // 企业corpId
-    @NameInMap("corpId")
-    public String corpId;
 
     // 钉钉侧职位唯一标识
     @NameInMap("jobId")
@@ -59,6 +59,14 @@ public class UpdateJobDeliverRequest extends TeaModel {
     }
     public String getChannelOuterId() {
         return this.channelOuterId;
+    }
+
+    public UpdateJobDeliverRequest setDeliverUserId(String deliverUserId) {
+        this.deliverUserId = deliverUserId;
+        return this;
+    }
+    public String getDeliverUserId() {
+        return this.deliverUserId;
     }
 
     public UpdateJobDeliverRequest setErrorCode(String errorCode) {
@@ -99,14 +107,6 @@ public class UpdateJobDeliverRequest extends TeaModel {
     }
     public Integer getStatus() {
         return this.status;
-    }
-
-    public UpdateJobDeliverRequest setCorpId(String corpId) {
-        this.corpId = corpId;
-        return this;
-    }
-    public String getCorpId() {
-        return this.corpId;
     }
 
     public UpdateJobDeliverRequest setJobId(String jobId) {

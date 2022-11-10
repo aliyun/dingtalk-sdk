@@ -5,6 +5,8 @@ import com.aliyun.tea.*;
 
 public class AddPermissionRequest extends TeaModel {
     // 权限成员列表
+    // 最大size:
+    // 	30
     @NameInMap("members")
     public java.util.List<AddPermissionRequestMembers> members;
 
@@ -113,6 +115,8 @@ public class AddPermissionRequest extends TeaModel {
 
     public static class AddPermissionRequestOption extends TeaModel {
         // 有效时间(秒)
+        // 最大值:
+        // 	3600
         @NameInMap("duration")
         public Long duration;
 

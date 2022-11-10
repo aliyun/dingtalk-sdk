@@ -5,6 +5,8 @@ import com.aliyun.tea.*;
 
 public class UpdateDentryAppPropertiesRequest extends TeaModel {
     // App属性列表 属性不存在时则新增，存在则覆盖原值
+    // 最大size:
+    // 	3
     @NameInMap("appProperties")
     public java.util.List<UpdateDentryAppPropertiesRequestAppProperties> appProperties;
 

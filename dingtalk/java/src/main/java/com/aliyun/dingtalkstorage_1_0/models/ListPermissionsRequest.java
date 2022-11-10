@@ -35,6 +35,8 @@ public class ListPermissionsRequest extends TeaModel {
 
     public static class ListPermissionsRequestOption extends TeaModel {
         // 角色过滤列表
+        // 最大size:
+        // 	30
         @NameInMap("filterRoleIds")
         public java.util.List<String> filterRoleIds;
 

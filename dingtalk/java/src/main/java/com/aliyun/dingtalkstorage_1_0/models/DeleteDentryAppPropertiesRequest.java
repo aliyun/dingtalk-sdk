@@ -5,6 +5,8 @@ import com.aliyun.tea.*;
 
 public class DeleteDentryAppPropertiesRequest extends TeaModel {
     // 文件上App属性名称
+    // 最大size:
+    // 	3
     @NameInMap("propertyNames")
     public java.util.List<String> propertyNames;
 

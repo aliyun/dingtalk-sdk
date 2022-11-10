@@ -7,6 +7,8 @@ public class ListRecycleItemsRequest extends TeaModel {
     // 分页大小, 不保证全量返回
     // 默认值:
     // 	50
+    // 最大值:
+    // 	50
     @NameInMap("maxResults")
     public Integer maxResults;
 

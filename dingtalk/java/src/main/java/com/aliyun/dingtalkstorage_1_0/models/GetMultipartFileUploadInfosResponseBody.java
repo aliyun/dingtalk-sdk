@@ -5,6 +5,8 @@ import com.aliyun.tea.*;
 
 public class GetMultipartFileUploadInfosResponseBody extends TeaModel {
     // 分片Header加签上传信息列表
+    // 最大size:
+    // 	30
     @NameInMap("multipartHeaderSignatureInfos")
     public java.util.List<GetMultipartFileUploadInfosResponseBodyMultipartHeaderSignatureInfos> multipartHeaderSignatureInfos;
 
@@ -27,10 +29,14 @@ public class GetMultipartFileUploadInfosResponseBody extends TeaModel {
         public Integer expirationSeconds;
 
         // 请求头
+        // 最大size:
+        // 	20
         @NameInMap("headers")
         public java.util.Map<String, String> headers;
 
         // 内网URL, 在网络连通的情况下，使用内网URL可加速服务器间上传
+        // 最大size:
+        // 	10
         @NameInMap("internalResourceUrls")
         public java.util.List<String> internalResourceUrls;
 
@@ -45,6 +51,8 @@ public class GetMultipartFileUploadInfosResponseBody extends TeaModel {
         public String region;
 
         // 多个上传下载URL, 前面url优先
+        // 最大size:
+        // 	10
         @NameInMap("resourceUrls")
         public java.util.List<String> resourceUrls;
 

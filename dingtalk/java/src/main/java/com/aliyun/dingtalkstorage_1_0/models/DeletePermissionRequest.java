@@ -5,6 +5,8 @@ import com.aliyun.tea.*;
 
 public class DeletePermissionRequest extends TeaModel {
     // 权限成员列表
+    // 最大size:
+    // 	30
     @NameInMap("members")
     public java.util.List<DeletePermissionRequestMembers> members;
 

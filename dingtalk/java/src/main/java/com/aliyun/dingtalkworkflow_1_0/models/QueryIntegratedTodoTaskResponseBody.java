@@ -4,34 +4,23 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryIntegratedTodoTaskResponseBody extends TeaModel {
-    @NameInMap("requestId")
-    public String requestId;
-
-    @NameInMap("taskPage")
-    public QueryIntegratedTodoTaskResponseBodyTaskPage taskPage;
+    @NameInMap("result")
+    public QueryIntegratedTodoTaskResponseBodyResult result;
 
     public static QueryIntegratedTodoTaskResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryIntegratedTodoTaskResponseBody self = new QueryIntegratedTodoTaskResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public QueryIntegratedTodoTaskResponseBody setRequestId(String requestId) {
-        this.requestId = requestId;
+    public QueryIntegratedTodoTaskResponseBody setResult(QueryIntegratedTodoTaskResponseBodyResult result) {
+        this.result = result;
         return this;
     }
-    public String getRequestId() {
-        return this.requestId;
+    public QueryIntegratedTodoTaskResponseBodyResult getResult() {
+        return this.result;
     }
 
-    public QueryIntegratedTodoTaskResponseBody setTaskPage(QueryIntegratedTodoTaskResponseBodyTaskPage taskPage) {
-        this.taskPage = taskPage;
-        return this;
-    }
-    public QueryIntegratedTodoTaskResponseBodyTaskPage getTaskPage() {
-        return this.taskPage;
-    }
-
-    public static class QueryIntegratedTodoTaskResponseBodyTaskPageList extends TeaModel {
+    public static class QueryIntegratedTodoTaskResponseBodyResultList extends TeaModel {
         // 待办组ID，需要在调用创建流程中心集成任务接口时，主动设置该值。
         @NameInMap("activityId")
         public String activityId;
@@ -64,12 +53,12 @@ public class QueryIntegratedTodoTaskResponseBody extends TeaModel {
         @NameInMap("userId")
         public String userId;
 
-        public static QueryIntegratedTodoTaskResponseBodyTaskPageList build(java.util.Map<String, ?> map) throws Exception {
-            QueryIntegratedTodoTaskResponseBodyTaskPageList self = new QueryIntegratedTodoTaskResponseBodyTaskPageList();
+        public static QueryIntegratedTodoTaskResponseBodyResultList build(java.util.Map<String, ?> map) throws Exception {
+            QueryIntegratedTodoTaskResponseBodyResultList self = new QueryIntegratedTodoTaskResponseBodyResultList();
             return TeaModel.build(map, self);
         }
 
-        public QueryIntegratedTodoTaskResponseBodyTaskPageList setActivityId(String activityId) {
+        public QueryIntegratedTodoTaskResponseBodyResultList setActivityId(String activityId) {
             this.activityId = activityId;
             return this;
         }
@@ -77,7 +66,7 @@ public class QueryIntegratedTodoTaskResponseBody extends TeaModel {
             return this.activityId;
         }
 
-        public QueryIntegratedTodoTaskResponseBodyTaskPageList setCreateTime(Long createTime) {
+        public QueryIntegratedTodoTaskResponseBodyResultList setCreateTime(Long createTime) {
             this.createTime = createTime;
             return this;
         }
@@ -85,7 +74,7 @@ public class QueryIntegratedTodoTaskResponseBody extends TeaModel {
             return this.createTime;
         }
 
-        public QueryIntegratedTodoTaskResponseBodyTaskPageList setFinishTime(String finishTime) {
+        public QueryIntegratedTodoTaskResponseBodyResultList setFinishTime(String finishTime) {
             this.finishTime = finishTime;
             return this;
         }
@@ -93,7 +82,7 @@ public class QueryIntegratedTodoTaskResponseBody extends TeaModel {
             return this.finishTime;
         }
 
-        public QueryIntegratedTodoTaskResponseBodyTaskPageList setProcessInstanceId(String processInstanceId) {
+        public QueryIntegratedTodoTaskResponseBodyResultList setProcessInstanceId(String processInstanceId) {
             this.processInstanceId = processInstanceId;
             return this;
         }
@@ -101,7 +90,7 @@ public class QueryIntegratedTodoTaskResponseBody extends TeaModel {
             return this.processInstanceId;
         }
 
-        public QueryIntegratedTodoTaskResponseBodyTaskPageList setResult(String result) {
+        public QueryIntegratedTodoTaskResponseBodyResultList setResult(String result) {
             this.result = result;
             return this;
         }
@@ -109,7 +98,7 @@ public class QueryIntegratedTodoTaskResponseBody extends TeaModel {
             return this.result;
         }
 
-        public QueryIntegratedTodoTaskResponseBodyTaskPageList setStatus(String status) {
+        public QueryIntegratedTodoTaskResponseBodyResultList setStatus(String status) {
             this.status = status;
             return this;
         }
@@ -117,7 +106,7 @@ public class QueryIntegratedTodoTaskResponseBody extends TeaModel {
             return this.status;
         }
 
-        public QueryIntegratedTodoTaskResponseBodyTaskPageList setTaskId(Long taskId) {
+        public QueryIntegratedTodoTaskResponseBodyResultList setTaskId(Long taskId) {
             this.taskId = taskId;
             return this;
         }
@@ -125,7 +114,7 @@ public class QueryIntegratedTodoTaskResponseBody extends TeaModel {
             return this.taskId;
         }
 
-        public QueryIntegratedTodoTaskResponseBodyTaskPageList setUserId(String userId) {
+        public QueryIntegratedTodoTaskResponseBodyResultList setUserId(String userId) {
             this.userId = userId;
             return this;
         }
@@ -135,20 +124,20 @@ public class QueryIntegratedTodoTaskResponseBody extends TeaModel {
 
     }
 
-    public static class QueryIntegratedTodoTaskResponseBodyTaskPage extends TeaModel {
+    public static class QueryIntegratedTodoTaskResponseBodyResult extends TeaModel {
         // 是否还有下一页
         @NameInMap("hasMore")
         public Boolean hasMore;
 
         @NameInMap("list")
-        public java.util.List<QueryIntegratedTodoTaskResponseBodyTaskPageList> list;
+        public java.util.List<QueryIntegratedTodoTaskResponseBodyResultList> list;
 
-        public static QueryIntegratedTodoTaskResponseBodyTaskPage build(java.util.Map<String, ?> map) throws Exception {
-            QueryIntegratedTodoTaskResponseBodyTaskPage self = new QueryIntegratedTodoTaskResponseBodyTaskPage();
+        public static QueryIntegratedTodoTaskResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
+            QueryIntegratedTodoTaskResponseBodyResult self = new QueryIntegratedTodoTaskResponseBodyResult();
             return TeaModel.build(map, self);
         }
 
-        public QueryIntegratedTodoTaskResponseBodyTaskPage setHasMore(Boolean hasMore) {
+        public QueryIntegratedTodoTaskResponseBodyResult setHasMore(Boolean hasMore) {
             this.hasMore = hasMore;
             return this;
         }
@@ -156,11 +145,11 @@ public class QueryIntegratedTodoTaskResponseBody extends TeaModel {
             return this.hasMore;
         }
 
-        public QueryIntegratedTodoTaskResponseBodyTaskPage setList(java.util.List<QueryIntegratedTodoTaskResponseBodyTaskPageList> list) {
+        public QueryIntegratedTodoTaskResponseBodyResult setList(java.util.List<QueryIntegratedTodoTaskResponseBodyResultList> list) {
             this.list = list;
             return this;
         }
-        public java.util.List<QueryIntegratedTodoTaskResponseBodyTaskPageList> getList() {
+        public java.util.List<QueryIntegratedTodoTaskResponseBodyResultList> getList() {
             return this.list;
         }
 

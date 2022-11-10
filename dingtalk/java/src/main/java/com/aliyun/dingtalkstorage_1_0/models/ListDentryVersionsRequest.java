@@ -7,6 +7,8 @@ public class ListDentryVersionsRequest extends TeaModel {
     // 历史版本分页大小，默认100
     // 默认值:
     // 	100
+    // 最大值:
+    // 	100
     @NameInMap("maxResults")
     public Integer maxResults;
 

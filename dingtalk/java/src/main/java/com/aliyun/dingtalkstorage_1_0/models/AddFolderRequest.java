@@ -97,6 +97,8 @@ public class AddFolderRequest extends TeaModel {
 
     public static class AddFolderRequestOption extends TeaModel {
         // 文件夹在应用上的属性, 一个应用最多只能设置3个属性
+        // 最大size:
+        // 	3
         @NameInMap("appProperties")
         public java.util.List<AddFolderRequestOptionAppProperties> appProperties;
 

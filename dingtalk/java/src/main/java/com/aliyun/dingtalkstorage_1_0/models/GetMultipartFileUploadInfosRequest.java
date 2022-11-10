@@ -7,6 +7,8 @@ public class GetMultipartFileUploadInfosRequest extends TeaModel {
     // 分片id列表
     // 分片id取值: 1~10000
     // 分片大小限制: 100KB~5GB
+    // 最大size:
+    // 	30
     @NameInMap("partNumbers")
     public java.util.List<Integer> partNumbers;
 
