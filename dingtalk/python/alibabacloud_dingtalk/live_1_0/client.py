@@ -1139,7 +1139,7 @@ class Client(OpenApiClient):
         request = dingtalklive__1__0_models.QuerySubscribeStatusShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
         if not UtilClient.is_unset(tmp_req.body):
-            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.body), 'body', 'json')
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
         query = {}
         if not UtilClient.is_unset(request.body_shrink):
             query['body'] = request.body_shrink
@@ -1169,7 +1169,7 @@ class Client(OpenApiClient):
         request = dingtalklive__1__0_models.QuerySubscribeStatusShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
         if not UtilClient.is_unset(tmp_req.body):
-            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.body), 'body', 'json')
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
         query = {}
         if not UtilClient.is_unset(request.body_shrink):
             query['body'] = request.body_shrink

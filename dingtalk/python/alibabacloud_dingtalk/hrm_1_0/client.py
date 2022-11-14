@@ -971,7 +971,7 @@ class Client(OpenApiClient):
         request = dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
         if not UtilClient.is_unset(tmp_req.body):
-            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.body), 'body', 'json')
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
         query = {}
         if not UtilClient.is_unset(request.app_agent_id):
             query['appAgentId'] = request.app_agent_id
@@ -1001,7 +1001,7 @@ class Client(OpenApiClient):
         request = dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
         if not UtilClient.is_unset(tmp_req.body):
-            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.body), 'body', 'json')
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
         query = {}
         if not UtilClient.is_unset(request.app_agent_id):
             query['appAgentId'] = request.app_agent_id

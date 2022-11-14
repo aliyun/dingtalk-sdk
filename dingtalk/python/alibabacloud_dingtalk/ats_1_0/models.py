@@ -2682,11 +2682,13 @@ class ReportMessageStatusHeaders(TeaModel):
 class ReportMessageStatusRequest(TeaModel):
     def __init__(
         self,
+        biz_code: str = None,
         channel: str = None,
         error_code: str = None,
         error_msg: str = None,
         message_id: str = None,
     ):
+        self.biz_code = biz_code
         # 渠道标识。
         self.channel = channel
         # 错误码。
@@ -2705,6 +2707,8 @@ class ReportMessageStatusRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
         if self.channel is not None:
             result['channel'] = self.channel
         if self.error_code is not None:
@@ -2717,6 +2721,8 @@ class ReportMessageStatusRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
         if m.get('channel') is not None:
             self.channel = m.get('channel')
         if m.get('errorCode') is not None:
@@ -2829,6 +2835,7 @@ class SyncChannelMessageHeaders(TeaModel):
 class SyncChannelMessageRequest(TeaModel):
     def __init__(
         self,
+        biz_code: str = None,
         channel: str = None,
         content: str = None,
         create_time: int = None,
@@ -2836,6 +2843,7 @@ class SyncChannelMessageRequest(TeaModel):
         sender_user_id: str = None,
         uuid: str = None,
     ):
+        self.biz_code = biz_code
         # 渠道标识。
         self.channel = channel
         # 消息内容。
@@ -2858,6 +2866,8 @@ class SyncChannelMessageRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
         if self.channel is not None:
             result['channel'] = self.channel
         if self.content is not None:
@@ -2874,6 +2884,8 @@ class SyncChannelMessageRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
         if m.get('channel') is not None:
             self.channel = m.get('channel')
         if m.get('content') is not None:

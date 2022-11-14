@@ -743,7 +743,7 @@ class Client(OpenApiClient):
         request = dingtalkbizfinance__1__0_models.GetInvoiceByPageShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
         if not UtilClient.is_unset(tmp_req.request):
-            request.request_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.request), 'request', 'json')
+            request.request_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.request, 'request', 'json')
         query = {}
         if not UtilClient.is_unset(request.request_shrink):
             query['request'] = request.request_shrink
@@ -771,7 +771,7 @@ class Client(OpenApiClient):
         request = dingtalkbizfinance__1__0_models.GetInvoiceByPageShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
         if not UtilClient.is_unset(tmp_req.request):
-            request.request_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.request), 'request', 'json')
+            request.request_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.request, 'request', 'json')
         query = {}
         if not UtilClient.is_unset(request.request_shrink):
             query['request'] = request.request_shrink
