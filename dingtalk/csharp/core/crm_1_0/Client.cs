@@ -152,7 +152,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             {
                 body["extendData"] = request.ExtendData;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Permission.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Permission))
             {
                 body["permission"] = request.Permission;
             }
@@ -205,7 +205,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             {
                 body["extendData"] = request.ExtendData;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Permission.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Permission))
             {
                 body["permission"] = request.Permission;
             }
@@ -628,7 +628,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             {
                 body["bizId"] = request.BizId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail))
             {
                 body["detail"] = request.Detail;
             }
@@ -661,7 +661,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             {
                 body["bizId"] = request.BizId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail))
             {
                 body["detail"] = request.Detail;
             }
@@ -884,11 +884,11 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             {
                 body["objectType"] = request.ObjectType;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Permission.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Permission))
             {
                 body["permission"] = request.Permission;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SaveOption.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SaveOption))
             {
                 body["saveOption"] = request.SaveOption;
             }
@@ -937,11 +937,11 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             {
                 body["objectType"] = request.ObjectType;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Permission.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Permission))
             {
                 body["permission"] = request.Permission;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SaveOption.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SaveOption))
             {
                 body["saveOption"] = request.SaveOption;
             }
@@ -1208,7 +1208,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             {
                 body["operatorUserId"] = request.OperatorUserId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RelationMetaDTO.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RelationMetaDTO))
             {
                 body["relationMetaDTO"] = request.RelationMetaDTO;
             }
@@ -1241,7 +1241,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             {
                 body["operatorUserId"] = request.OperatorUserId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RelationMetaDTO.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RelationMetaDTO))
             {
                 body["relationMetaDTO"] = request.RelationMetaDTO;
             }
@@ -3286,7 +3286,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             {
                 body["bizId"] = request.BizId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail))
             {
                 body["detail"] = request.Detail;
             }
@@ -3319,7 +3319,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             {
                 body["bizId"] = request.BizId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail))
             {
                 body["detail"] = request.Detail;
             }
@@ -3366,7 +3366,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             {
                 body["bizId"] = request.BizId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail))
             {
                 body["detail"] = request.Detail;
             }
@@ -3399,7 +3399,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             {
                 body["bizId"] = request.BizId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail))
             {
                 body["detail"] = request.Detail;
             }
@@ -3442,7 +3442,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             {
                 body["bizId"] = request.BizId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail))
             {
                 body["detail"] = request.Detail;
             }
@@ -3471,7 +3471,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             {
                 body["bizId"] = request.BizId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail))
             {
                 body["detail"] = request.Detail;
             }
@@ -3534,7 +3534,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             {
                 body["modifierUserId"] = request.ModifierUserId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Permission.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Permission))
             {
                 body["permission"] = request.Permission;
             }
@@ -3591,7 +3591,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             {
                 body["modifierUserId"] = request.ModifierUserId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Permission.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Permission))
             {
                 body["permission"] = request.Permission;
             }

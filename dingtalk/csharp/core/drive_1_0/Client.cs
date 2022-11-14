@@ -2114,7 +2114,7 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Order.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Order))
             {
                 body["order"] = request.Order;
             }
@@ -2147,7 +2147,7 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Order.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Order))
             {
                 body["order"] = request.Order;
             }

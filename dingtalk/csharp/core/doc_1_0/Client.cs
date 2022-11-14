@@ -573,11 +573,11 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CellStyle.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CellStyle))
             {
                 body["cellStyle"] = request.CellStyle;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DuplicateCondition.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DuplicateCondition))
             {
                 body["duplicateCondition"] = request.DuplicateCondition;
             }
@@ -614,11 +614,11 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CellStyle.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CellStyle))
             {
                 body["cellStyle"] = request.CellStyle;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DuplicateCondition.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DuplicateCondition))
             {
                 body["duplicateCondition"] = request.DuplicateCondition;
             }
@@ -2185,7 +2185,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 body["blocks"] = request.Blocks;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location))
             {
                 body["location"] = request.Location;
             }
@@ -2219,7 +2219,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 body["blocks"] = request.Blocks;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location))
             {
                 body["location"] = request.Location;
             }
@@ -2612,7 +2612,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FindOptions.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FindOptions))
             {
                 body["findOptions"] = request.FindOptions;
             }
@@ -2650,7 +2650,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FindOptions.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FindOptions))
             {
                 body["findOptions"] = request.FindOptions;
             }

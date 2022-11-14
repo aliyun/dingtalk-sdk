@@ -1267,9 +1267,9 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
             QuerySubscribeStatusShrinkRequest request = new QuerySubscribeStatusShrinkRequest();
             AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body))
             {
-                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body.ToMap(), "body", "json");
+                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body, "body", "json");
             }
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BodyShrink))
@@ -1302,9 +1302,9 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
             QuerySubscribeStatusShrinkRequest request = new QuerySubscribeStatusShrinkRequest();
             AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body))
             {
-                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body.ToMap(), "body", "json");
+                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body, "body", "json");
             }
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BodyShrink))

@@ -56,7 +56,7 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             {
                 body["roomLabelIds"] = request.RoomLabelIds;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoomLocation.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoomLocation))
             {
                 body["roomLocation"] = request.RoomLocation;
             }
@@ -109,7 +109,7 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             {
                 body["roomLabelIds"] = request.RoomLabelIds;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoomLocation.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoomLocation))
             {
                 body["roomLocation"] = request.RoomLocation;
             }
@@ -734,7 +734,7 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             {
                 body["roomLabelIds"] = request.RoomLabelIds;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoomLocation.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoomLocation))
             {
                 body["roomLocation"] = request.RoomLocation;
             }
@@ -791,7 +791,7 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             {
                 body["roomLabelIds"] = request.RoomLabelIds;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoomLocation.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoomLocation))
             {
                 body["roomLocation"] = request.RoomLocation;
             }

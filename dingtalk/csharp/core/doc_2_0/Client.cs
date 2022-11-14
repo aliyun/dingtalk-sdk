@@ -270,7 +270,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0
             {
                 body["sectionId"] = request.SectionId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShareScope.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShareScope))
             {
                 body["shareScope"] = request.ShareScope;
             }
@@ -319,7 +319,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0
             {
                 body["sectionId"] = request.SectionId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShareScope.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShareScope))
             {
                 body["shareScope"] = request.ShareScope;
             }
@@ -2224,7 +2224,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DentryRequest.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DentryRequest))
             {
                 body["dentryRequest"] = request.DentryRequest;
             }
@@ -2236,7 +2236,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0
             {
                 body["operatorId"] = request.OperatorId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpaceRequest.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpaceRequest))
             {
                 body["spaceRequest"] = request.SpaceRequest;
             }
@@ -2261,7 +2261,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DentryRequest.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DentryRequest))
             {
                 body["dentryRequest"] = request.DentryRequest;
             }
@@ -2273,7 +2273,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0
             {
                 body["operatorId"] = request.OperatorId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpaceRequest.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpaceRequest))
             {
                 body["spaceRequest"] = request.SpaceRequest;
             }

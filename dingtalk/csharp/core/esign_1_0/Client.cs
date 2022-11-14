@@ -790,7 +790,7 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0
             {
                 body["redirectUrl"] = request.RedirectUrl;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceInfo.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceInfo))
             {
                 body["sourceInfo"] = request.SourceInfo;
             }
@@ -839,7 +839,7 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0
             {
                 body["redirectUrl"] = request.RedirectUrl;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceInfo.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceInfo))
             {
                 body["sourceInfo"] = request.SourceInfo;
             }

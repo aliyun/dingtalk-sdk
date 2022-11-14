@@ -168,11 +168,11 @@ namespace AlibabaCloud.SDK.Dingtalkim_2_0
             {
                 body["callbackRouteKey"] = request.CallbackRouteKey;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData))
             {
                 body["cardData"] = request.CardData;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardSettings.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardSettings))
             {
                 body["cardSettings"] = request.CardSettings;
             }
@@ -261,11 +261,11 @@ namespace AlibabaCloud.SDK.Dingtalkim_2_0
             {
                 body["callbackRouteKey"] = request.CallbackRouteKey;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData))
             {
                 body["cardData"] = request.CardData;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardSettings.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardSettings))
             {
                 body["cardSettings"] = request.CardSettings;
             }

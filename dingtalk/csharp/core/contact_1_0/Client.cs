@@ -454,7 +454,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             {
                 body["resourceIds"] = request.ResourceIds;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scope.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scope))
             {
                 body["scope"] = request.Scope;
             }
@@ -491,7 +491,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             {
                 body["resourceIds"] = request.ResourceIds;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scope.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scope))
             {
                 body["scope"] = request.Scope;
             }
@@ -547,7 +547,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             {
                 body["resourceIds"] = request.ResourceIds;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scope.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scope))
             {
                 body["scope"] = request.Scope;
             }
@@ -590,7 +590,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             {
                 body["resourceIds"] = request.ResourceIds;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scope.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scope))
             {
                 body["scope"] = request.Scope;
             }
@@ -4155,7 +4155,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             {
                 body["resourceIds"] = request.ResourceIds;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scope.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scope))
             {
                 body["scope"] = request.Scope;
             }
@@ -4193,7 +4193,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             {
                 body["resourceIds"] = request.ResourceIds;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scope.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scope))
             {
                 body["scope"] = request.Scope;
             }

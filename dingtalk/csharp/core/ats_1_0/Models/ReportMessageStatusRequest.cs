@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
 {
     public class ReportMessageStatusRequest : TeaModel {
+        [NameInMap("bizCode")]
+        [Validation(Required=false)]
+        public string BizCode { get; set; }
+
         /// <summary>
         /// 渠道标识。
         /// </summary>

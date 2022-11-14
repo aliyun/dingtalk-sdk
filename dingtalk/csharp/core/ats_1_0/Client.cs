@@ -361,7 +361,7 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             {
                 body["optUserId"] = request.OptUserId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResumeData.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResumeData))
             {
                 body["resumeData"] = request.ResumeData;
             }
@@ -404,7 +404,7 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             {
                 body["optUserId"] = request.OptUserId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResumeData.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResumeData))
             {
                 body["resumeData"] = request.ResumeData;
             }
@@ -1071,6 +1071,11 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
         public ReportMessageStatusResponse ReportMessageStatusWithOptions(ReportMessageStatusRequest request, ReportMessageStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                query["bizCode"] = request.BizCode;
+            }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Channel))
             {
@@ -1100,6 +1105,7 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<ReportMessageStatusResponse>(DoROARequest("ReportMessageStatus", "ats_1.0", "HTTP", "POST", "AK", "/v1.0/ats/channels/messages/statuses/report", "json", req, runtime));
@@ -1108,6 +1114,11 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
         public async Task<ReportMessageStatusResponse> ReportMessageStatusWithOptionsAsync(ReportMessageStatusRequest request, ReportMessageStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                query["bizCode"] = request.BizCode;
+            }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Channel))
             {
@@ -1137,6 +1148,7 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<ReportMessageStatusResponse>(await DoROARequestAsync("ReportMessageStatus", "ats_1.0", "HTTP", "POST", "AK", "/v1.0/ats/channels/messages/statuses/report", "json", req, runtime));
@@ -1159,6 +1171,11 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
         public SyncChannelMessageResponse SyncChannelMessageWithOptions(SyncChannelMessageRequest request, SyncChannelMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                query["bizCode"] = request.BizCode;
+            }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Channel))
             {
@@ -1196,6 +1213,7 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<SyncChannelMessageResponse>(DoROARequest("SyncChannelMessage", "ats_1.0", "HTTP", "POST", "AK", "/v1.0/ats/channels/messages/sync", "json", req, runtime));
@@ -1204,6 +1222,11 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
         public async Task<SyncChannelMessageResponse> SyncChannelMessageWithOptionsAsync(SyncChannelMessageRequest request, SyncChannelMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                query["bizCode"] = request.BizCode;
+            }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Channel))
             {
@@ -1241,6 +1264,7 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<SyncChannelMessageResponse>(await DoROARequestAsync("SyncChannelMessage", "ats_1.0", "HTTP", "POST", "AK", "/v1.0/ats/channels/messages/sync", "json", req, runtime));
@@ -1274,7 +1298,7 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             {
                 body["content"] = request.Content;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingPanFile.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingPanFile))
             {
                 body["dingPanFile"] = request.DingPanFile;
             }
@@ -1310,7 +1334,7 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             {
                 body["content"] = request.Content;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingPanFile.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingPanFile))
             {
                 body["dingPanFile"] = request.DingPanFile;
             }

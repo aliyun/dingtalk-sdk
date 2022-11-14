@@ -44,7 +44,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CourseInfo.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CourseInfo))
             {
                 body["courseInfo"] = request.CourseInfo;
             }
@@ -52,7 +52,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             {
                 body["createUserId"] = request.CreateUserId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FeedInfo.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FeedInfo))
             {
                 body["feedInfo"] = request.FeedInfo;
             }
@@ -77,7 +77,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CourseInfo.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CourseInfo))
             {
                 body["courseInfo"] = request.CourseInfo;
             }
@@ -85,7 +85,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             {
                 body["createUserId"] = request.CreateUserId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FeedInfo.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FeedInfo))
             {
                 body["feedInfo"] = request.FeedInfo;
             }
