@@ -708,6 +708,10 @@ class Dingtalk extends OpenApiClient
     public function reportMessageStatusWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            @$query['bizCode'] = $request->bizCode;
+        }
         $body = [];
         if (!Utils::isUnset($request->channel)) {
             @$body['channel'] = $request->channel;
@@ -730,6 +734,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
@@ -759,6 +764,10 @@ class Dingtalk extends OpenApiClient
     public function syncChannelMessageWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            @$query['bizCode'] = $request->bizCode;
+        }
         $body = [];
         if (!Utils::isUnset($request->channel)) {
             @$body['channel'] = $request->channel;
@@ -787,6 +796,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 

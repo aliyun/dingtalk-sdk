@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class ReportMessageStatusRequest extends Model
 {
     /**
+     * @var string
+     */
+    public $bizCode;
+
+    /**
      * @description 渠道标识。
      *
      * @var string
@@ -36,6 +41,7 @@ class ReportMessageStatusRequest extends Model
      */
     public $messageId;
     protected $_name = [
+        'bizCode'   => 'bizCode',
         'channel'   => 'channel',
         'errorCode' => 'errorCode',
         'errorMsg'  => 'errorMsg',
@@ -49,6 +55,9 @@ class ReportMessageStatusRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->bizCode) {
+            $res['bizCode'] = $this->bizCode;
+        }
         if (null !== $this->channel) {
             $res['channel'] = $this->channel;
         }
@@ -73,6 +82,9 @@ class ReportMessageStatusRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['bizCode'])) {
+            $model->bizCode = $map['bizCode'];
+        }
         if (isset($map['channel'])) {
             $model->channel = $map['channel'];
         }

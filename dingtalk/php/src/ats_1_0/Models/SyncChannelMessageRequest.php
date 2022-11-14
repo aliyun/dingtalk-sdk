@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class SyncChannelMessageRequest extends Model
 {
     /**
+     * @var string
+     */
+    public $bizCode;
+
+    /**
      * @description 渠道标识。
      *
      * @var string
@@ -50,6 +55,7 @@ class SyncChannelMessageRequest extends Model
      */
     public $uuid;
     protected $_name = [
+        'bizCode'        => 'bizCode',
         'channel'        => 'channel',
         'content'        => 'content',
         'createTime'     => 'createTime',
@@ -65,6 +71,9 @@ class SyncChannelMessageRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->bizCode) {
+            $res['bizCode'] = $this->bizCode;
+        }
         if (null !== $this->channel) {
             $res['channel'] = $this->channel;
         }
@@ -95,6 +104,9 @@ class SyncChannelMessageRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['bizCode'])) {
+            $model->bizCode = $map['bizCode'];
+        }
         if (isset($map['channel'])) {
             $model->channel = $map['channel'];
         }
