@@ -4,6 +4,9 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReportMessageStatusRequest extends TeaModel {
+    @NameInMap("bizCode")
+    public String bizCode;
+
     // 渠道标识。
     @NameInMap("channel")
     public String channel;
@@ -23,6 +26,14 @@ public class ReportMessageStatusRequest extends TeaModel {
     public static ReportMessageStatusRequest build(java.util.Map<String, ?> map) throws Exception {
         ReportMessageStatusRequest self = new ReportMessageStatusRequest();
         return TeaModel.build(map, self);
+    }
+
+    public ReportMessageStatusRequest setBizCode(String bizCode) {
+        this.bizCode = bizCode;
+        return this;
+    }
+    public String getBizCode() {
+        return this.bizCode;
     }
 
     public ReportMessageStatusRequest setChannel(String channel) {
