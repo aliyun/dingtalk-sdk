@@ -1170,12 +1170,14 @@ export class ReportMessageStatusHeaders extends $tea.Model {
 }
 
 export class ReportMessageStatusRequest extends $tea.Model {
+  bizCode?: string;
   channel?: string;
   errorCode?: string;
   errorMsg?: string;
   messageId?: string;
   static names(): { [key: string]: string } {
     return {
+      bizCode: 'bizCode',
       channel: 'channel',
       errorCode: 'errorCode',
       errorMsg: 'errorMsg',
@@ -1185,6 +1187,7 @@ export class ReportMessageStatusRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      bizCode: 'string',
       channel: 'string',
       errorCode: 'string',
       errorMsg: 'string',
@@ -1261,6 +1264,7 @@ export class SyncChannelMessageHeaders extends $tea.Model {
 }
 
 export class SyncChannelMessageRequest extends $tea.Model {
+  bizCode?: string;
   channel?: string;
   content?: string;
   createTime?: number;
@@ -1269,6 +1273,7 @@ export class SyncChannelMessageRequest extends $tea.Model {
   uuid?: string;
   static names(): { [key: string]: string } {
     return {
+      bizCode: 'bizCode',
       channel: 'channel',
       content: 'content',
       createTime: 'createTime',
@@ -1280,6 +1285,7 @@ export class SyncChannelMessageRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      bizCode: 'string',
       channel: 'string',
       content: 'string',
       createTime: 'number',
@@ -2195,7 +2201,7 @@ export default class Client extends OpenApi {
       body["optUserId"] = request.optUserId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.resumeData))) {
+    if (!Util.isUnset(request.resumeData)) {
       body["resumeData"] = request.resumeData;
     }
 
@@ -2514,6 +2520,11 @@ export default class Client extends OpenApi {
 
   async reportMessageStatusWithOptions(request: ReportMessageStatusRequest, headers: ReportMessageStatusHeaders, runtime: $Util.RuntimeOptions): Promise<ReportMessageStatusResponse> {
     Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizCode)) {
+      query["bizCode"] = request.bizCode;
+    }
+
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.channel)) {
       body["channel"] = request.channel;
@@ -2542,6 +2553,7 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
+      query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<ReportMessageStatusResponse>(await this.doROARequest("ReportMessageStatus", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/channels/messages/statuses/report`, "json", req, runtime), new ReportMessageStatusResponse({}));
@@ -2555,6 +2567,11 @@ export default class Client extends OpenApi {
 
   async syncChannelMessageWithOptions(request: SyncChannelMessageRequest, headers: SyncChannelMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SyncChannelMessageResponse> {
     Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizCode)) {
+      query["bizCode"] = request.bizCode;
+    }
+
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.channel)) {
       body["channel"] = request.channel;
@@ -2591,6 +2608,7 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
+      query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<SyncChannelMessageResponse>(await this.doROARequest("SyncChannelMessage", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/channels/messages/sync`, "json", req, runtime), new SyncChannelMessageResponse({}));
@@ -2615,7 +2633,7 @@ export default class Client extends OpenApi {
       body["content"] = request.content;
     }
 
-    if (!Util.isUnset($tea.toMap(request.dingPanFile))) {
+    if (!Util.isUnset(request.dingPanFile)) {
       body["dingPanFile"] = request.dingPanFile;
     }
 

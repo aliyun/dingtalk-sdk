@@ -1289,7 +1289,7 @@ export default class Client extends OpenApi {
       body["roomLabelIds"] = request.roomLabelIds;
     }
 
-    if (!Util.isUnset($tea.toMap(request.roomLocation))) {
+    if (!Util.isUnset(request.roomLocation)) {
       body["roomLocation"] = request.roomLocation;
     }
 
@@ -1603,7 +1603,7 @@ export default class Client extends OpenApi {
       body["roomLabelIds"] = request.roomLabelIds;
     }
 
-    if (!Util.isUnset($tea.toMap(request.roomLocation))) {
+    if (!Util.isUnset(request.roomLocation)) {
       body["roomLocation"] = request.roomLocation;
     }
 

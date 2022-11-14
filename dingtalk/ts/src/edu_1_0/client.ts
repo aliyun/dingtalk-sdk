@@ -13189,7 +13189,7 @@ export default class Client extends OpenApi {
       body["cardBizCode"] = request.cardBizCode;
     }
 
-    if (!Util.isUnset($tea.toMap(request.data))) {
+    if (!Util.isUnset(request.data)) {
       body["data"] = request.data;
     }
 
@@ -13617,7 +13617,7 @@ export default class Client extends OpenApi {
   async createCustomClassWithOptions(request: CreateCustomClassRequest, headers: CreateCustomClassHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCustomClassResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.customClass))) {
+    if (!Util.isUnset(request.customClass)) {
       body["customClass"] = request.customClass;
     }
 
@@ -13654,7 +13654,7 @@ export default class Client extends OpenApi {
   async createCustomDeptWithOptions(request: CreateCustomDeptRequest, headers: CreateCustomDeptHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCustomDeptResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.customDept))) {
+    if (!Util.isUnset(request.customDept)) {
       body["customDept"] = request.customDept;
     }
 
@@ -14181,7 +14181,7 @@ export default class Client extends OpenApi {
       body["startTime"] = request.startTime;
     }
 
-    if (!Util.isUnset($tea.toMap(request.teachingParticipant))) {
+    if (!Util.isUnset(request.teachingParticipant)) {
       body["teachingParticipant"] = request.teachingParticipant;
     }
 
@@ -15322,7 +15322,7 @@ export default class Client extends OpenApi {
       body["courses"] = request.courses;
     }
 
-    if (!Util.isUnset($tea.toMap(request.sectionConfig))) {
+    if (!Util.isUnset(request.sectionConfig)) {
       body["sectionConfig"] = request.sectionConfig;
     }
 
@@ -15439,7 +15439,7 @@ export default class Client extends OpenApi {
     }
 
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.end))) {
+    if (!Util.isUnset(request.end)) {
       body["end"] = request.end;
     }
 
@@ -15451,7 +15451,7 @@ export default class Client extends OpenApi {
       body["sectionModels"] = request.sectionModels;
     }
 
-    if (!Util.isUnset($tea.toMap(request.start))) {
+    if (!Util.isUnset(request.start)) {
       body["start"] = request.start;
     }
 
@@ -17002,7 +17002,7 @@ export default class Client extends OpenApi {
       body["courses"] = request.courses;
     }
 
-    if (!Util.isUnset($tea.toMap(request.sectionConfig))) {
+    if (!Util.isUnset(request.sectionConfig)) {
       body["sectionConfig"] = request.sectionConfig;
     }
 
@@ -17119,7 +17119,7 @@ export default class Client extends OpenApi {
       body["startTime"] = request.startTime;
     }
 
-    if (!Util.isUnset($tea.toMap(request.teachingParticipant))) {
+    if (!Util.isUnset(request.teachingParticipant)) {
       body["teachingParticipant"] = request.teachingParticipant;
     }
 

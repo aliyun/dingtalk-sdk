@@ -4672,7 +4672,7 @@ export default class Client extends OpenApi {
   async managementBuyQuotaWithOptions(request: ManagementBuyQuotaRequest, headers: ManagementBuyQuotaHeaders, runtime: $Util.RuntimeOptions): Promise<ManagementBuyQuotaResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.order))) {
+    if (!Util.isUnset(request.order)) {
       body["order"] = request.order;
     }
 

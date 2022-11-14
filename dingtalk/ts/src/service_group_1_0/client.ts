@@ -9565,7 +9565,7 @@ export default class Client extends OpenApi {
       body["processorUnionId"] = request.processorUnionId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
+    if (!Util.isUnset(request.ticketMemo)) {
       body["ticketMemo"] = request.ticketMemo;
     }
 
@@ -9594,7 +9594,7 @@ export default class Client extends OpenApi {
   async assignTicketWithOptions(request: AssignTicketRequest, headers: AssignTicketHeaders, runtime: $Util.RuntimeOptions): Promise<AssignTicketResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.notify))) {
+    if (!Util.isUnset(request.notify)) {
       body["notify"] = request.notify;
     }
 
@@ -9614,7 +9614,7 @@ export default class Client extends OpenApi {
       body["processorUnionIds"] = request.processorUnionIds;
     }
 
-    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
+    if (!Util.isUnset(request.ticketMemo)) {
       body["ticketMemo"] = request.ticketMemo;
     }
 
@@ -9860,7 +9860,7 @@ export default class Client extends OpenApi {
   async cancelTicketWithOptions(request: CancelTicketRequest, headers: CancelTicketHeaders, runtime: $Util.RuntimeOptions): Promise<CancelTicketResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.notify))) {
+    if (!Util.isUnset(request.notify)) {
       body["notify"] = request.notify;
     }
 
@@ -9876,7 +9876,7 @@ export default class Client extends OpenApi {
       body["operatorUnionId"] = request.operatorUnionId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
+    if (!Util.isUnset(request.ticketMemo)) {
       body["ticketMemo"] = request.ticketMemo;
     }
 
@@ -10436,7 +10436,7 @@ export default class Client extends OpenApi {
       body["customFields"] = request.customFields;
     }
 
-    if (!Util.isUnset($tea.toMap(request.notify))) {
+    if (!Util.isUnset(request.notify)) {
       body["notify"] = request.notify;
     }
 
@@ -10456,7 +10456,7 @@ export default class Client extends OpenApi {
       body["scene"] = request.scene;
     }
 
-    if (!Util.isUnset($tea.toMap(request.sceneContext))) {
+    if (!Util.isUnset(request.sceneContext)) {
       body["sceneContext"] = request.sceneContext;
     }
 
@@ -10669,7 +10669,7 @@ export default class Client extends OpenApi {
   async finishTicketWithOptions(request: FinishTicketRequest, headers: FinishTicketHeaders, runtime: $Util.RuntimeOptions): Promise<FinishTicketResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.notify))) {
+    if (!Util.isUnset(request.notify)) {
       body["notify"] = request.notify;
     }
 
@@ -10685,7 +10685,7 @@ export default class Client extends OpenApi {
       body["processorUnionId"] = request.processorUnionId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
+    if (!Util.isUnset(request.ticketMemo)) {
       body["ticketMemo"] = request.ticketMemo;
     }
 
@@ -11746,7 +11746,7 @@ export default class Client extends OpenApi {
       body["customFields"] = request.customFields;
     }
 
-    if (!Util.isUnset($tea.toMap(request.notify))) {
+    if (!Util.isUnset(request.notify)) {
       body["notify"] = request.notify;
     }
 
@@ -11770,11 +11770,11 @@ export default class Client extends OpenApi {
       body["scene"] = request.scene;
     }
 
-    if (!Util.isUnset($tea.toMap(request.sceneContext))) {
+    if (!Util.isUnset(request.sceneContext)) {
       body["sceneContext"] = request.sceneContext;
     }
 
-    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
+    if (!Util.isUnset(request.ticketMemo)) {
       body["ticketMemo"] = request.ticketMemo;
     }
 
@@ -11807,7 +11807,7 @@ export default class Client extends OpenApi {
   async retractTicketWithOptions(request: RetractTicketRequest, headers: RetractTicketHeaders, runtime: $Util.RuntimeOptions): Promise<RetractTicketResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.notify))) {
+    if (!Util.isUnset(request.notify)) {
       body["notify"] = request.notify;
     }
 
@@ -11823,7 +11823,7 @@ export default class Client extends OpenApi {
       body["operatorUnionId"] = request.operatorUnionId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
+    if (!Util.isUnset(request.ticketMemo)) {
       body["ticketMemo"] = request.ticketMemo;
     }
 
@@ -11942,7 +11942,7 @@ export default class Client extends OpenApi {
   async sendMsgByTaskWithOptions(request: SendMsgByTaskRequest, headers: SendMsgByTaskHeaders, runtime: $Util.RuntimeOptions): Promise<SendMsgByTaskResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.messageContent))) {
+    if (!Util.isUnset(request.messageContent)) {
       body["messageContent"] = request.messageContent;
     }
 
@@ -11950,11 +11950,11 @@ export default class Client extends OpenApi {
       body["openTeamId"] = request.openTeamId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.queryGroup))) {
+    if (!Util.isUnset(request.queryGroup)) {
       body["queryGroup"] = request.queryGroup;
     }
 
-    if (!Util.isUnset($tea.toMap(request.sendConfig))) {
+    if (!Util.isUnset(request.sendConfig)) {
       body["sendConfig"] = request.sendConfig;
     }
 
@@ -12203,7 +12203,7 @@ export default class Client extends OpenApi {
   async transferTicketWithOptions(request: TransferTicketRequest, headers: TransferTicketHeaders, runtime: $Util.RuntimeOptions): Promise<TransferTicketResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.notify))) {
+    if (!Util.isUnset(request.notify)) {
       body["notify"] = request.notify;
     }
 
@@ -12223,7 +12223,7 @@ export default class Client extends OpenApi {
       body["processorUnionIds"] = request.processorUnionIds;
     }
 
-    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
+    if (!Util.isUnset(request.ticketMemo)) {
       body["ticketMemo"] = request.ticketMemo;
     }
 
@@ -12358,7 +12358,7 @@ export default class Client extends OpenApi {
       body["processorUnionId"] = request.processorUnionId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
+    if (!Util.isUnset(request.ticketMemo)) {
       body["ticketMemo"] = request.ticketMemo;
     }
 
@@ -12485,7 +12485,7 @@ export default class Client extends OpenApi {
       body["operatorUnionId"] = request.operatorUnionId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
+    if (!Util.isUnset(request.ticketMemo)) {
       body["ticketMemo"] = request.ticketMemo;
     }
 
