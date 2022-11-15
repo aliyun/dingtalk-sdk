@@ -4,6 +4,153 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
+class AddRobotToConversationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddRobotToConversationRequest(TeaModel):
+    def __init__(
+        self,
+        icon: str = None,
+        name: str = None,
+        open_conversation_id: str = None,
+        robot_code: str = None,
+    ):
+        # 机器人meidaId
+        self.icon = icon
+        # 机器人名称
+        self.name = name
+        # 会话id
+        self.open_conversation_id = open_conversation_id
+        # 机器人编码
+        self.robot_code = robot_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.name is not None:
+            result['name'] = self.name
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
+        return self
+
+
+class AddRobotToConversationResponseBody(TeaModel):
+    def __init__(
+        self,
+        chat_bot_user_id: str = None,
+    ):
+        # Id of the request
+        self.chat_bot_user_id = chat_bot_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.chat_bot_user_id is not None:
+            result['chatBotUserId'] = self.chat_bot_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('chatBotUserId') is not None:
+            self.chat_bot_user_id = m.get('chatBotUserId')
+        return self
+
+
+class AddRobotToConversationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AddRobotToConversationResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AddRobotToConversationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AutoOpenDingTalkConnectHeaders(TeaModel):
     def __init__(
         self,
@@ -3800,6 +3947,181 @@ class GroupManageReduceResponse(TeaModel):
         return self
 
 
+class InstallRobotToOrgHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class InstallRobotToOrgRequest(TeaModel):
+    def __init__(
+        self,
+        brief: str = None,
+        description: str = None,
+        icon: str = None,
+        name: str = None,
+        outgoing_token: str = None,
+        outgoing_url: str = None,
+        preview_media_id: str = None,
+        robot_code: str = None,
+    ):
+        # 简介
+        self.brief = brief
+        # 描述
+        self.description = description
+        # 机器人meidaId
+        self.icon = icon
+        # 机器人名称
+        self.name = name
+        # 消息回调验证token
+        self.outgoing_token = outgoing_token
+        # 消息回调地址
+        self.outgoing_url = outgoing_url
+        # 预览图mediaId
+        self.preview_media_id = preview_media_id
+        # 机器人编码
+        self.robot_code = robot_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.brief is not None:
+            result['brief'] = self.brief
+        if self.description is not None:
+            result['description'] = self.description
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.name is not None:
+            result['name'] = self.name
+        if self.outgoing_token is not None:
+            result['outgoingToken'] = self.outgoing_token
+        if self.outgoing_url is not None:
+            result['outgoingUrl'] = self.outgoing_url
+        if self.preview_media_id is not None:
+            result['previewMediaId'] = self.preview_media_id
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('brief') is not None:
+            self.brief = m.get('brief')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('outgoingToken') is not None:
+            self.outgoing_token = m.get('outgoingToken')
+        if m.get('outgoingUrl') is not None:
+            self.outgoing_url = m.get('outgoingUrl')
+        if m.get('previewMediaId') is not None:
+            self.preview_media_id = m.get('previewMediaId')
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
+        return self
+
+
+class InstallRobotToOrgResponseBody(TeaModel):
+    def __init__(
+        self,
+        robot_code: str = None,
+    ):
+        # Id of the request
+        self.robot_code = robot_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
+        return self
+
+
+class InstallRobotToOrgResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: InstallRobotToOrgResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = InstallRobotToOrgResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class InteractiveCardCreateInstanceHeaders(TeaModel):
     def __init__(
         self,
@@ -5507,6 +5829,139 @@ class QueryUnReadMessageResponse(TeaModel):
         return self
 
 
+class RemoveRobotFromConversationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RemoveRobotFromConversationRequest(TeaModel):
+    def __init__(
+        self,
+        chat_bot_user_id: str = None,
+        open_conversation_id: str = None,
+    ):
+        # 机器人在会话里的id
+        self.chat_bot_user_id = chat_bot_user_id
+        # 会话id
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.chat_bot_user_id is not None:
+            result['chatBotUserId'] = self.chat_bot_user_id
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('chatBotUserId') is not None:
+            self.chat_bot_user_id = m.get('chatBotUserId')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class RemoveRobotFromConversationResponseBody(TeaModel):
+    def __init__(
+        self,
+        chat_bot_user_id: str = None,
+    ):
+        # Id of the request
+        self.chat_bot_user_id = chat_bot_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.chat_bot_user_id is not None:
+            result['chatBotUserId'] = self.chat_bot_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('chatBotUserId') is not None:
+            self.chat_bot_user_id = m.get('chatBotUserId')
+        return self
+
+
+class RemoveRobotFromConversationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: RemoveRobotFromConversationResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = RemoveRobotFromConversationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SendInteractiveCardHeaders(TeaModel):
     def __init__(
         self,
@@ -6127,6 +6582,7 @@ class SendRobotMessageRequest(TeaModel):
         msg_content: str = None,
         msg_type: str = None,
         open_conversation_ids: List[str] = None,
+        robot_code: str = None,
     ):
         # @群所有人为true， 默认false。
         self.at_all = at_all
@@ -6140,6 +6596,8 @@ class SendRobotMessageRequest(TeaModel):
         self.msg_type = msg_type
         # 群会话列表。
         self.open_conversation_ids = open_conversation_ids
+        # 机器人robotId（robotCode），指定哪个机器人发送消息
+        self.robot_code = robot_code
 
     def validate(self):
         pass
@@ -6162,6 +6620,8 @@ class SendRobotMessageRequest(TeaModel):
             result['msgType'] = self.msg_type
         if self.open_conversation_ids is not None:
             result['openConversationIds'] = self.open_conversation_ids
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
         return result
 
     def from_map(self, m: dict = None):
@@ -6178,6 +6638,8 @@ class SendRobotMessageRequest(TeaModel):
             self.msg_type = m.get('msgType')
         if m.get('openConversationIds') is not None:
             self.open_conversation_ids = m.get('openConversationIds')
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
         return self
 
 
@@ -7761,6 +8223,181 @@ class UpdateMemberGroupNickResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = UpdateMemberGroupNickResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateRobotInOrgHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateRobotInOrgRequest(TeaModel):
+    def __init__(
+        self,
+        brief: str = None,
+        description: str = None,
+        icon: str = None,
+        name: str = None,
+        outgoing_token: str = None,
+        outgoing_url: str = None,
+        preview_media_id: str = None,
+        robot_code: str = None,
+    ):
+        # 简介
+        self.brief = brief
+        # 描述
+        self.description = description
+        # 机器人meidaId
+        self.icon = icon
+        # 机器人名称
+        self.name = name
+        # 消息回调验证token
+        self.outgoing_token = outgoing_token
+        # 消息回调地址
+        self.outgoing_url = outgoing_url
+        # 预览图mediaId
+        self.preview_media_id = preview_media_id
+        # 机器人编码
+        self.robot_code = robot_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.brief is not None:
+            result['brief'] = self.brief
+        if self.description is not None:
+            result['description'] = self.description
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.name is not None:
+            result['name'] = self.name
+        if self.outgoing_token is not None:
+            result['outgoingToken'] = self.outgoing_token
+        if self.outgoing_url is not None:
+            result['outgoingUrl'] = self.outgoing_url
+        if self.preview_media_id is not None:
+            result['previewMediaId'] = self.preview_media_id
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('brief') is not None:
+            self.brief = m.get('brief')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('outgoingToken') is not None:
+            self.outgoing_token = m.get('outgoingToken')
+        if m.get('outgoingUrl') is not None:
+            self.outgoing_url = m.get('outgoingUrl')
+        if m.get('previewMediaId') is not None:
+            self.preview_media_id = m.get('previewMediaId')
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
+        return self
+
+
+class UpdateRobotInOrgResponseBody(TeaModel):
+    def __init__(
+        self,
+        robot_code: str = None,
+    ):
+        # Id of the request
+        self.robot_code = robot_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
+        return self
+
+
+class UpdateRobotInOrgResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateRobotInOrgResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateRobotInOrgResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

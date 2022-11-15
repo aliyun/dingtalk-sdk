@@ -23,6 +23,82 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def add_robot_to_conversation(
+        self,
+        request: dingtalkim__1__0_models.AddRobotToConversationRequest,
+    ) -> dingtalkim__1__0_models.AddRobotToConversationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.AddRobotToConversationHeaders()
+        return self.add_robot_to_conversation_with_options(request, headers, runtime)
+
+    async def add_robot_to_conversation_async(
+        self,
+        request: dingtalkim__1__0_models.AddRobotToConversationRequest,
+    ) -> dingtalkim__1__0_models.AddRobotToConversationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.AddRobotToConversationHeaders()
+        return await self.add_robot_to_conversation_with_options_async(request, headers, runtime)
+
+    def add_robot_to_conversation_with_options(
+        self,
+        request: dingtalkim__1__0_models.AddRobotToConversationRequest,
+        headers: dingtalkim__1__0_models.AddRobotToConversationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.AddRobotToConversationResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.icon):
+            query['icon'] = request.icon
+        if not UtilClient.is_unset(request.name):
+            query['name'] = request.name
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.robot_code):
+            query['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.AddRobotToConversationResponse(),
+            self.do_roarequest('AddRobotToConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/robots', 'json', req, runtime)
+        )
+
+    async def add_robot_to_conversation_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.AddRobotToConversationRequest,
+        headers: dingtalkim__1__0_models.AddRobotToConversationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.AddRobotToConversationResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.icon):
+            query['icon'] = request.icon
+        if not UtilClient.is_unset(request.name):
+            query['name'] = request.name
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.robot_code):
+            query['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.AddRobotToConversationResponse(),
+            await self.do_roarequest_async('AddRobotToConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/robots', 'json', req, runtime)
+        )
+
     def auto_open_ding_talk_connect(self) -> dingtalkim__1__0_models.AutoOpenDingTalkConnectResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.AutoOpenDingTalkConnectHeaders()
@@ -1721,6 +1797,98 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GroupManageReduce', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/groups/capacities/reduce', 'none', req, runtime)
         )
 
+    def install_robot_to_org(
+        self,
+        request: dingtalkim__1__0_models.InstallRobotToOrgRequest,
+    ) -> dingtalkim__1__0_models.InstallRobotToOrgResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.InstallRobotToOrgHeaders()
+        return self.install_robot_to_org_with_options(request, headers, runtime)
+
+    async def install_robot_to_org_async(
+        self,
+        request: dingtalkim__1__0_models.InstallRobotToOrgRequest,
+    ) -> dingtalkim__1__0_models.InstallRobotToOrgResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.InstallRobotToOrgHeaders()
+        return await self.install_robot_to_org_with_options_async(request, headers, runtime)
+
+    def install_robot_to_org_with_options(
+        self,
+        request: dingtalkim__1__0_models.InstallRobotToOrgRequest,
+        headers: dingtalkim__1__0_models.InstallRobotToOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.InstallRobotToOrgResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.brief):
+            query['brief'] = request.brief
+        if not UtilClient.is_unset(request.description):
+            query['description'] = request.description
+        if not UtilClient.is_unset(request.icon):
+            query['icon'] = request.icon
+        if not UtilClient.is_unset(request.name):
+            query['name'] = request.name
+        if not UtilClient.is_unset(request.outgoing_token):
+            query['outgoingToken'] = request.outgoing_token
+        if not UtilClient.is_unset(request.outgoing_url):
+            query['outgoingUrl'] = request.outgoing_url
+        if not UtilClient.is_unset(request.preview_media_id):
+            query['previewMediaId'] = request.preview_media_id
+        if not UtilClient.is_unset(request.robot_code):
+            query['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.InstallRobotToOrgResponse(),
+            self.do_roarequest('InstallRobotToOrg', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/organizations/robots/install', 'json', req, runtime)
+        )
+
+    async def install_robot_to_org_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.InstallRobotToOrgRequest,
+        headers: dingtalkim__1__0_models.InstallRobotToOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.InstallRobotToOrgResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.brief):
+            query['brief'] = request.brief
+        if not UtilClient.is_unset(request.description):
+            query['description'] = request.description
+        if not UtilClient.is_unset(request.icon):
+            query['icon'] = request.icon
+        if not UtilClient.is_unset(request.name):
+            query['name'] = request.name
+        if not UtilClient.is_unset(request.outgoing_token):
+            query['outgoingToken'] = request.outgoing_token
+        if not UtilClient.is_unset(request.outgoing_url):
+            query['outgoingUrl'] = request.outgoing_url
+        if not UtilClient.is_unset(request.preview_media_id):
+            query['previewMediaId'] = request.preview_media_id
+        if not UtilClient.is_unset(request.robot_code):
+            query['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.InstallRobotToOrgResponse(),
+            await self.do_roarequest_async('InstallRobotToOrg', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/organizations/robots/install', 'json', req, runtime)
+        )
+
     def interactive_card_create_instance(
         self,
         request: dingtalkim__1__0_models.InteractiveCardCreateInstanceRequest,
@@ -2373,6 +2541,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryUnReadMessage', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/unReadMsgs/query', 'json', req, runtime)
         )
 
+    def remove_robot_from_conversation(
+        self,
+        request: dingtalkim__1__0_models.RemoveRobotFromConversationRequest,
+    ) -> dingtalkim__1__0_models.RemoveRobotFromConversationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.RemoveRobotFromConversationHeaders()
+        return self.remove_robot_from_conversation_with_options(request, headers, runtime)
+
+    async def remove_robot_from_conversation_async(
+        self,
+        request: dingtalkim__1__0_models.RemoveRobotFromConversationRequest,
+    ) -> dingtalkim__1__0_models.RemoveRobotFromConversationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.RemoveRobotFromConversationHeaders()
+        return await self.remove_robot_from_conversation_with_options_async(request, headers, runtime)
+
+    def remove_robot_from_conversation_with_options(
+        self,
+        request: dingtalkim__1__0_models.RemoveRobotFromConversationRequest,
+        headers: dingtalkim__1__0_models.RemoveRobotFromConversationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.RemoveRobotFromConversationResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.chat_bot_user_id):
+            query['chatBotUserId'] = request.chat_bot_user_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.RemoveRobotFromConversationResponse(),
+            self.do_roarequest('RemoveRobotFromConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/robots/remove', 'json', req, runtime)
+        )
+
+    async def remove_robot_from_conversation_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.RemoveRobotFromConversationRequest,
+        headers: dingtalkim__1__0_models.RemoveRobotFromConversationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.RemoveRobotFromConversationResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.chat_bot_user_id):
+            query['chatBotUserId'] = request.chat_bot_user_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.RemoveRobotFromConversationResponse(),
+            await self.do_roarequest_async('RemoveRobotFromConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/robots/remove', 'json', req, runtime)
+        )
+
     def send_interactive_card(
         self,
         request: dingtalkim__1__0_models.SendInteractiveCardRequest,
@@ -2629,6 +2865,8 @@ class Client(OpenApiClient):
             body['msgType'] = request.msg_type
         if not UtilClient.is_unset(request.open_conversation_ids):
             body['openConversationIds'] = request.open_conversation_ids
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2663,6 +2901,8 @@ class Client(OpenApiClient):
             body['msgType'] = request.msg_type
         if not UtilClient.is_unset(request.open_conversation_ids):
             body['openConversationIds'] = request.open_conversation_ids
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3451,6 +3691,98 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateMemberGroupNickResponse(),
             await self.do_roarequest_async('UpdateMemberGroupNick', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/sceneGroups/members/groupNicks', 'json', req, runtime)
+        )
+
+    def update_robot_in_org(
+        self,
+        request: dingtalkim__1__0_models.UpdateRobotInOrgRequest,
+    ) -> dingtalkim__1__0_models.UpdateRobotInOrgResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateRobotInOrgHeaders()
+        return self.update_robot_in_org_with_options(request, headers, runtime)
+
+    async def update_robot_in_org_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateRobotInOrgRequest,
+    ) -> dingtalkim__1__0_models.UpdateRobotInOrgResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateRobotInOrgHeaders()
+        return await self.update_robot_in_org_with_options_async(request, headers, runtime)
+
+    def update_robot_in_org_with_options(
+        self,
+        request: dingtalkim__1__0_models.UpdateRobotInOrgRequest,
+        headers: dingtalkim__1__0_models.UpdateRobotInOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateRobotInOrgResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.brief):
+            query['brief'] = request.brief
+        if not UtilClient.is_unset(request.description):
+            query['description'] = request.description
+        if not UtilClient.is_unset(request.icon):
+            query['icon'] = request.icon
+        if not UtilClient.is_unset(request.name):
+            query['name'] = request.name
+        if not UtilClient.is_unset(request.outgoing_token):
+            query['outgoingToken'] = request.outgoing_token
+        if not UtilClient.is_unset(request.outgoing_url):
+            query['outgoingUrl'] = request.outgoing_url
+        if not UtilClient.is_unset(request.preview_media_id):
+            query['previewMediaId'] = request.preview_media_id
+        if not UtilClient.is_unset(request.robot_code):
+            query['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateRobotInOrgResponse(),
+            self.do_roarequest('UpdateRobotInOrg', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/organizations/robots', 'json', req, runtime)
+        )
+
+    async def update_robot_in_org_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateRobotInOrgRequest,
+        headers: dingtalkim__1__0_models.UpdateRobotInOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateRobotInOrgResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.brief):
+            query['brief'] = request.brief
+        if not UtilClient.is_unset(request.description):
+            query['description'] = request.description
+        if not UtilClient.is_unset(request.icon):
+            query['icon'] = request.icon
+        if not UtilClient.is_unset(request.name):
+            query['name'] = request.name
+        if not UtilClient.is_unset(request.outgoing_token):
+            query['outgoingToken'] = request.outgoing_token
+        if not UtilClient.is_unset(request.outgoing_url):
+            query['outgoingUrl'] = request.outgoing_url
+        if not UtilClient.is_unset(request.preview_media_id):
+            query['previewMediaId'] = request.preview_media_id
+        if not UtilClient.is_unset(request.robot_code):
+            query['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateRobotInOrgResponse(),
+            await self.do_roarequest_async('UpdateRobotInOrg', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/organizations/robots', 'json', req, runtime)
         )
 
     def update_robot_interactive_card(
