@@ -49,6 +49,13 @@ class SendRobotMessageRequest extends Model
      * @var string[]
      */
     public $openConversationIds;
+
+    /**
+     * @description 机器人robotId（robotCode），指定哪个机器人发送消息
+     *
+     * @var string
+     */
+    public $robotCode;
     protected $_name = [
         'atAll'               => 'atAll',
         'atAppUserId'         => 'atAppUserId',
@@ -56,6 +63,7 @@ class SendRobotMessageRequest extends Model
         'msgContent'          => 'msgContent',
         'msgType'             => 'msgType',
         'openConversationIds' => 'openConversationIds',
+        'robotCode'           => 'robotCode',
     ];
 
     public function validate()
@@ -82,6 +90,9 @@ class SendRobotMessageRequest extends Model
         }
         if (null !== $this->openConversationIds) {
             $res['openConversationIds'] = $this->openConversationIds;
+        }
+        if (null !== $this->robotCode) {
+            $res['robotCode'] = $this->robotCode;
         }
 
         return $res;
@@ -114,6 +125,9 @@ class SendRobotMessageRequest extends Model
             if (!empty($map['openConversationIds'])) {
                 $model->openConversationIds = $map['openConversationIds'];
             }
+        }
+        if (isset($map['robotCode'])) {
+            $model->robotCode = $map['robotCode'];
         }
 
         return $model;
