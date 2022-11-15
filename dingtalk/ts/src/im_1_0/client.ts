@@ -7,6 +7,97 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class AddRobotToConversationHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddRobotToConversationRequest extends $tea.Model {
+  icon?: string;
+  name?: string;
+  openConversationId?: string;
+  robotCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      icon: 'icon',
+      name: 'name',
+      openConversationId: 'openConversationId',
+      robotCode: 'robotCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      icon: 'string',
+      name: 'string',
+      openConversationId: 'string',
+      robotCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddRobotToConversationResponseBody extends $tea.Model {
+  chatBotUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      chatBotUserId: 'chatBotUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      chatBotUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddRobotToConversationResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AddRobotToConversationResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AddRobotToConversationResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AutoOpenDingTalkConnectHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2101,6 +2192,109 @@ export class GroupManageReduceResponse extends $tea.Model {
   }
 }
 
+export class InstallRobotToOrgHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InstallRobotToOrgRequest extends $tea.Model {
+  brief?: string;
+  description?: string;
+  icon?: string;
+  name?: string;
+  outgoingToken?: string;
+  outgoingUrl?: string;
+  previewMediaId?: string;
+  robotCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      brief: 'brief',
+      description: 'description',
+      icon: 'icon',
+      name: 'name',
+      outgoingToken: 'outgoingToken',
+      outgoingUrl: 'outgoingUrl',
+      previewMediaId: 'previewMediaId',
+      robotCode: 'robotCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      brief: 'string',
+      description: 'string',
+      icon: 'string',
+      name: 'string',
+      outgoingToken: 'string',
+      outgoingUrl: 'string',
+      previewMediaId: 'string',
+      robotCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InstallRobotToOrgResponseBody extends $tea.Model {
+  robotCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      robotCode: 'robotCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      robotCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InstallRobotToOrgResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: InstallRobotToOrgResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: InstallRobotToOrgResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class InteractiveCardCreateInstanceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2908,6 +3102,91 @@ export class QueryUnReadMessageResponse extends $tea.Model {
   }
 }
 
+export class RemoveRobotFromConversationHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RemoveRobotFromConversationRequest extends $tea.Model {
+  chatBotUserId?: string;
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      chatBotUserId: 'chatBotUserId',
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      chatBotUserId: 'string',
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RemoveRobotFromConversationResponseBody extends $tea.Model {
+  chatBotUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      chatBotUserId: 'chatBotUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      chatBotUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RemoveRobotFromConversationResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: RemoveRobotFromConversationResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: RemoveRobotFromConversationResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SendInteractiveCardHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3173,6 +3452,7 @@ export class SendRobotMessageRequest extends $tea.Model {
   msgContent?: string;
   msgType?: string;
   openConversationIds?: string[];
+  robotCode?: string;
   static names(): { [key: string]: string } {
     return {
       atAll: 'atAll',
@@ -3181,6 +3461,7 @@ export class SendRobotMessageRequest extends $tea.Model {
       msgContent: 'msgContent',
       msgType: 'msgType',
       openConversationIds: 'openConversationIds',
+      robotCode: 'robotCode',
     };
   }
 
@@ -3192,6 +3473,7 @@ export class SendRobotMessageRequest extends $tea.Model {
       msgContent: 'string',
       msgType: 'string',
       openConversationIds: { 'type': 'array', 'itemType': 'string' },
+      robotCode: 'string',
     };
   }
 
@@ -4089,6 +4371,109 @@ export class UpdateMemberGroupNickResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: UpdateMemberGroupNickResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRobotInOrgHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRobotInOrgRequest extends $tea.Model {
+  brief?: string;
+  description?: string;
+  icon?: string;
+  name?: string;
+  outgoingToken?: string;
+  outgoingUrl?: string;
+  previewMediaId?: string;
+  robotCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      brief: 'brief',
+      description: 'description',
+      icon: 'icon',
+      name: 'name',
+      outgoingToken: 'outgoingToken',
+      outgoingUrl: 'outgoingUrl',
+      previewMediaId: 'previewMediaId',
+      robotCode: 'robotCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      brief: 'string',
+      description: 'string',
+      icon: 'string',
+      name: 'string',
+      outgoingToken: 'string',
+      outgoingUrl: 'string',
+      previewMediaId: 'string',
+      robotCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRobotInOrgResponseBody extends $tea.Model {
+  robotCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      robotCode: 'robotCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      robotCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRobotInOrgResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateRobotInOrgResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateRobotInOrgResponseBody,
     };
   }
 
@@ -5214,6 +5599,47 @@ export default class Client extends OpenApi {
   }
 
 
+  async addRobotToConversation(request: AddRobotToConversationRequest): Promise<AddRobotToConversationResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddRobotToConversationHeaders({ });
+    return await this.addRobotToConversationWithOptions(request, headers, runtime);
+  }
+
+  async addRobotToConversationWithOptions(request: AddRobotToConversationRequest, headers: AddRobotToConversationHeaders, runtime: $Util.RuntimeOptions): Promise<AddRobotToConversationResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.icon)) {
+      query["icon"] = request.icon;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      query["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      query["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.robotCode)) {
+      query["robotCode"] = request.robotCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<AddRobotToConversationResponse>(await this.doROARequest("AddRobotToConversation", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/conversations/robots`, "json", req, runtime), new AddRobotToConversationResponse({}));
+  }
+
   async autoOpenDingTalkConnect(): Promise<AutoOpenDingTalkConnectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AutoOpenDingTalkConnectHeaders({ });
@@ -6155,6 +6581,63 @@ export default class Client extends OpenApi {
     return $tea.cast<GroupManageReduceResponse>(await this.doROARequest("GroupManageReduce", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/groups/capacities/reduce`, "none", req, runtime), new GroupManageReduceResponse({}));
   }
 
+  async installRobotToOrg(request: InstallRobotToOrgRequest): Promise<InstallRobotToOrgResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new InstallRobotToOrgHeaders({ });
+    return await this.installRobotToOrgWithOptions(request, headers, runtime);
+  }
+
+  async installRobotToOrgWithOptions(request: InstallRobotToOrgRequest, headers: InstallRobotToOrgHeaders, runtime: $Util.RuntimeOptions): Promise<InstallRobotToOrgResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.brief)) {
+      query["brief"] = request.brief;
+    }
+
+    if (!Util.isUnset(request.description)) {
+      query["description"] = request.description;
+    }
+
+    if (!Util.isUnset(request.icon)) {
+      query["icon"] = request.icon;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      query["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.outgoingToken)) {
+      query["outgoingToken"] = request.outgoingToken;
+    }
+
+    if (!Util.isUnset(request.outgoingUrl)) {
+      query["outgoingUrl"] = request.outgoingUrl;
+    }
+
+    if (!Util.isUnset(request.previewMediaId)) {
+      query["previewMediaId"] = request.previewMediaId;
+    }
+
+    if (!Util.isUnset(request.robotCode)) {
+      query["robotCode"] = request.robotCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<InstallRobotToOrgResponse>(await this.doROARequest("InstallRobotToOrg", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/organizations/robots/install`, "json", req, runtime), new InstallRobotToOrgResponse({}));
+  }
+
   async interactiveCardCreateInstance(request: InteractiveCardCreateInstanceRequest): Promise<InteractiveCardCreateInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new InteractiveCardCreateInstanceHeaders({ });
@@ -6492,6 +6975,39 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryUnReadMessageResponse>(await this.doROARequest("QueryUnReadMessage", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/unReadMsgs/query`, "json", req, runtime), new QueryUnReadMessageResponse({}));
   }
 
+  async removeRobotFromConversation(request: RemoveRobotFromConversationRequest): Promise<RemoveRobotFromConversationResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RemoveRobotFromConversationHeaders({ });
+    return await this.removeRobotFromConversationWithOptions(request, headers, runtime);
+  }
+
+  async removeRobotFromConversationWithOptions(request: RemoveRobotFromConversationRequest, headers: RemoveRobotFromConversationHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveRobotFromConversationResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.chatBotUserId)) {
+      query["chatBotUserId"] = request.chatBotUserId;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      query["openConversationId"] = request.openConversationId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<RemoveRobotFromConversationResponse>(await this.doROARequest("RemoveRobotFromConversation", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/conversations/robots/remove`, "json", req, runtime), new RemoveRobotFromConversationResponse({}));
+  }
+
   async sendInteractiveCard(request: SendInteractiveCardRequest): Promise<SendInteractiveCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendInteractiveCardHeaders({ });
@@ -6673,6 +7189,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.openConversationIds)) {
       body["openConversationIds"] = request.openConversationIds;
+    }
+
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -7115,6 +7635,63 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateMemberGroupNickResponse>(await this.doROARequest("UpdateMemberGroupNick", "im_1.0", "HTTP", "PUT", "AK", `/v1.0/im/sceneGroups/members/groupNicks`, "json", req, runtime), new UpdateMemberGroupNickResponse({}));
+  }
+
+  async updateRobotInOrg(request: UpdateRobotInOrgRequest): Promise<UpdateRobotInOrgResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateRobotInOrgHeaders({ });
+    return await this.updateRobotInOrgWithOptions(request, headers, runtime);
+  }
+
+  async updateRobotInOrgWithOptions(request: UpdateRobotInOrgRequest, headers: UpdateRobotInOrgHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateRobotInOrgResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.brief)) {
+      query["brief"] = request.brief;
+    }
+
+    if (!Util.isUnset(request.description)) {
+      query["description"] = request.description;
+    }
+
+    if (!Util.isUnset(request.icon)) {
+      query["icon"] = request.icon;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      query["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.outgoingToken)) {
+      query["outgoingToken"] = request.outgoingToken;
+    }
+
+    if (!Util.isUnset(request.outgoingUrl)) {
+      query["outgoingUrl"] = request.outgoingUrl;
+    }
+
+    if (!Util.isUnset(request.previewMediaId)) {
+      query["previewMediaId"] = request.previewMediaId;
+    }
+
+    if (!Util.isUnset(request.robotCode)) {
+      query["robotCode"] = request.robotCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<UpdateRobotInOrgResponse>(await this.doROARequest("UpdateRobotInOrg", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/organizations/robots`, "json", req, runtime), new UpdateRobotInOrgResponse({}));
   }
 
   async updateRobotInteractiveCard(request: UpdateRobotInteractiveCardRequest): Promise<UpdateRobotInteractiveCardResponse> {
