@@ -28,6 +28,10 @@ public class SendRobotMessageRequest extends TeaModel {
     @NameInMap("openConversationIds")
     public java.util.List<String> openConversationIds;
 
+    // 机器人robotId（robotCode），指定哪个机器人发送消息
+    @NameInMap("robotCode")
+    public String robotCode;
+
     public static SendRobotMessageRequest build(java.util.Map<String, ?> map) throws Exception {
         SendRobotMessageRequest self = new SendRobotMessageRequest();
         return TeaModel.build(map, self);
@@ -79,6 +83,14 @@ public class SendRobotMessageRequest extends TeaModel {
     }
     public java.util.List<String> getOpenConversationIds() {
         return this.openConversationIds;
+    }
+
+    public SendRobotMessageRequest setRobotCode(String robotCode) {
+        this.robotCode = robotCode;
+        return this;
+    }
+    public String getRobotCode() {
+        return this.robotCode;
     }
 
 }
