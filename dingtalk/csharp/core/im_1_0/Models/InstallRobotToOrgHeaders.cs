@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
-    public class AutoOpenDingTalkConnectHeaders : TeaModel {
+    public class InstallRobotToOrgHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }

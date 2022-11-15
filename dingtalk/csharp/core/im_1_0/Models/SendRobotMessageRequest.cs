@@ -51,6 +51,13 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public List<string> OpenConversationIds { get; set; }
 
+        /// <summary>
+        /// 机器人robotId（robotCode），指定哪个机器人发送消息
+        /// </summary>
+        [NameInMap("robotCode")]
+        [Validation(Required=false)]
+        public string RobotCode { get; set; }
+
     }
 
 }
