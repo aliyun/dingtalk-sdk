@@ -5507,6 +5507,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('TransferTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/transfer', 'none', req, runtime)
         )
 
+    def update_group_set(
+        self,
+        request: dingtalkservice_group__1__0_models.UpdateGroupSetRequest,
+    ) -> dingtalkservice_group__1__0_models.UpdateGroupSetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.UpdateGroupSetHeaders()
+        return self.update_group_set_with_options(request, headers, runtime)
+
+    async def update_group_set_async(
+        self,
+        request: dingtalkservice_group__1__0_models.UpdateGroupSetRequest,
+    ) -> dingtalkservice_group__1__0_models.UpdateGroupSetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.UpdateGroupSetHeaders()
+        return await self.update_group_set_with_options_async(request, headers, runtime)
+
+    def update_group_set_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.UpdateGroupSetRequest,
+        headers: dingtalkservice_group__1__0_models.UpdateGroupSetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.UpdateGroupSetResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_group_set_id):
+            body['openGroupSetId'] = request.open_group_set_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.UpdateGroupSetResponse(),
+            self.do_roarequest('UpdateGroupSet', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/serviceGroup/groups/configurations', 'json', req, runtime)
+        )
+
+    async def update_group_set_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.UpdateGroupSetRequest,
+        headers: dingtalkservice_group__1__0_models.UpdateGroupSetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.UpdateGroupSetResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_group_set_id):
+            body['openGroupSetId'] = request.open_group_set_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.UpdateGroupSetResponse(),
+            await self.do_roarequest_async('UpdateGroupSet', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/serviceGroup/groups/configurations', 'json', req, runtime)
+        )
+
     def update_group_tag(
         self,
         request: dingtalkservice_group__1__0_models.UpdateGroupTagRequest,
