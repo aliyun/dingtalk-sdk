@@ -208,6 +208,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\TopicStatisticsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\TransferTicketHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\TransferTicketRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\TransferTicketResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateGroupSetHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateGroupSetRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateGroupSetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateGroupTagHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateGroupTagRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateGroupTagResponse;
@@ -3946,6 +3949,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return TransferTicketResponse::fromMap($this->doROARequest('TransferTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/tickets/transfer', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateGroupSetRequest $request
+     *
+     * @return UpdateGroupSetResponse
+     */
+    public function updateGroupSet($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateGroupSetHeaders([]);
+
+        return $this->updateGroupSetWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateGroupSetRequest $request
+     * @param UpdateGroupSetHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return UpdateGroupSetResponse
+     */
+    public function updateGroupSetWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->openGroupSetId)) {
+            @$body['openGroupSetId'] = $request->openGroupSetId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateGroupSetResponse::fromMap($this->doROARequest('UpdateGroupSet', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/serviceGroup/groups/configurations', 'json', $req, $runtime));
     }
 
     /**
