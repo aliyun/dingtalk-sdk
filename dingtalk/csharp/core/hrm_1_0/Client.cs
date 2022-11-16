@@ -1111,9 +1111,9 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
             RosterMetaFieldOptionsUpdateShrinkRequest request = new RosterMetaFieldOptionsUpdateShrinkRequest();
             AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body.ToMap()))
             {
-                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body, "body", "json");
+                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body.ToMap(), "body", "json");
             }
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppAgentId))
@@ -1146,9 +1146,9 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
             RosterMetaFieldOptionsUpdateShrinkRequest request = new RosterMetaFieldOptionsUpdateShrinkRequest();
             AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body.ToMap()))
             {
-                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body, "body", "json");
+                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body.ToMap(), "body", "json");
             }
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppAgentId))
@@ -1511,7 +1511,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             {
                 body["outerId"] = request.OuterId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskScopeVO))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskScopeVO.ToMap()))
             {
                 body["taskScopeVO"] = request.TaskScopeVO;
             }
@@ -1570,7 +1570,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             {
                 body["outerId"] = request.OuterId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskScopeVO))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskScopeVO.ToMap()))
             {
                 body["taskScopeVO"] = request.TaskScopeVO;
             }

@@ -858,7 +858,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["icon"] = request.Icon;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManagementOptions))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManagementOptions.ToMap()))
             {
                 body["managementOptions"] = request.ManagementOptions;
             }
@@ -911,7 +911,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["icon"] = request.Icon;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManagementOptions))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManagementOptions.ToMap()))
             {
                 body["managementOptions"] = request.ManagementOptions;
             }
@@ -2270,7 +2270,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["callbackRouteKey"] = request.CallbackRouteKey;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData.ToMap()))
             {
                 body["cardData"] = request.CardData;
             }
@@ -2339,7 +2339,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["callbackRouteKey"] = request.CallbackRouteKey;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData.ToMap()))
             {
                 body["cardData"] = request.CardData;
             }
@@ -3074,11 +3074,11 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["callbackRouteKey"] = request.CallbackRouteKey;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData.ToMap()))
             {
                 body["cardData"] = request.CardData;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardOptions))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardOptions.ToMap()))
             {
                 body["cardOptions"] = request.CardOptions;
             }
@@ -3151,11 +3151,11 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["callbackRouteKey"] = request.CallbackRouteKey;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData.ToMap()))
             {
                 body["cardData"] = request.CardData;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardOptions))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardOptions.ToMap()))
             {
                 body["cardOptions"] = request.CardOptions;
             }
@@ -3262,7 +3262,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["robotCode"] = request.RobotCode;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SendOptions))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SendOptions.ToMap()))
             {
                 body["sendOptions"] = request.SendOptions;
             }
@@ -3327,7 +3327,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["robotCode"] = request.RobotCode;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SendOptions))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SendOptions.ToMap()))
             {
                 body["sendOptions"] = request.SendOptions;
             }
@@ -3514,7 +3514,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["robotCode"] = request.RobotCode;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SendOptions))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SendOptions.ToMap()))
             {
                 body["sendOptions"] = request.SendOptions;
             }
@@ -3567,7 +3567,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["robotCode"] = request.RobotCode;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SendOptions))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SendOptions.ToMap()))
             {
                 body["sendOptions"] = request.SendOptions;
             }
@@ -4138,11 +4138,11 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData.ToMap()))
             {
                 body["cardData"] = request.CardData;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardOptions))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardOptions.ToMap()))
             {
                 body["cardOptions"] = request.CardOptions;
             }
@@ -4179,11 +4179,11 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData.ToMap()))
             {
                 body["cardData"] = request.CardData;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardOptions))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardOptions.ToMap()))
             {
                 body["cardOptions"] = request.CardOptions;
             }
@@ -4534,7 +4534,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["unionIdPrivateDataMap"] = request.UnionIdPrivateDataMap;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UpdateOptions))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UpdateOptions.ToMap()))
             {
                 body["updateOptions"] = request.UpdateOptions;
             }
@@ -4575,7 +4575,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["unionIdPrivateDataMap"] = request.UnionIdPrivateDataMap;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UpdateOptions))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UpdateOptions.ToMap()))
             {
                 body["updateOptions"] = request.UpdateOptions;
             }

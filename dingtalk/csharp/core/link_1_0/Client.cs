@@ -124,7 +124,7 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail.ToMap()))
             {
                 body["detail"] = request.Detail;
             }
@@ -149,7 +149,7 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail.ToMap()))
             {
                 body["detail"] = request.Detail;
             }
@@ -542,7 +542,7 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail.ToMap()))
             {
                 body["detail"] = request.Detail;
             }
@@ -567,7 +567,7 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail.ToMap()))
             {
                 body["detail"] = request.Detail;
             }
@@ -606,7 +606,7 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail.ToMap()))
             {
                 body["detail"] = request.Detail;
             }
@@ -631,7 +631,7 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail.ToMap()))
             {
                 body["detail"] = request.Detail;
             }
@@ -670,7 +670,7 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail.ToMap()))
             {
                 body["detail"] = request.Detail;
             }
@@ -695,7 +695,7 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail.ToMap()))
             {
                 body["detail"] = request.Detail;
             }
@@ -734,7 +734,7 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail.ToMap()))
             {
                 body["detail"] = request.Detail;
             }
@@ -759,7 +759,7 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail.ToMap()))
             {
                 body["detail"] = request.Detail;
             }

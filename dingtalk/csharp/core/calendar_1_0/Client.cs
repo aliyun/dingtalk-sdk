@@ -312,7 +312,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["privilege"] = request.Privilege;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scope))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scope.ToMap()))
             {
                 body["scope"] = request.Scope;
             }
@@ -347,7 +347,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["privilege"] = request.Privilege;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scope))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scope.ToMap()))
             {
                 body["scope"] = request.Scope;
             }
@@ -400,7 +400,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["description"] = request.Description;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.End))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.End.ToMap()))
             {
                 body["end"] = request.End;
             }
@@ -412,15 +412,15 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["isAllDay"] = request.IsAllDay;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location.ToMap()))
             {
                 body["location"] = request.Location;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnlineMeetingInfo))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnlineMeetingInfo.ToMap()))
             {
                 body["onlineMeetingInfo"] = request.OnlineMeetingInfo;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence.ToMap()))
             {
                 body["recurrence"] = request.Recurrence;
             }
@@ -428,7 +428,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["reminders"] = request.Reminders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Start))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Start.ToMap()))
             {
                 body["start"] = request.Start;
             }
@@ -467,7 +467,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["description"] = request.Description;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.End))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.End.ToMap()))
             {
                 body["end"] = request.End;
             }
@@ -479,15 +479,15 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["isAllDay"] = request.IsAllDay;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location.ToMap()))
             {
                 body["location"] = request.Location;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnlineMeetingInfo))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnlineMeetingInfo.ToMap()))
             {
                 body["onlineMeetingInfo"] = request.OnlineMeetingInfo;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence.ToMap()))
             {
                 body["recurrence"] = request.Recurrence;
             }
@@ -495,7 +495,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["reminders"] = request.Reminders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Start))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Start.ToMap()))
             {
                 body["start"] = request.Start;
             }
@@ -551,7 +551,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["name"] = request.Name;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubscribeScope))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubscribeScope.ToMap()))
             {
                 body["subscribeScope"] = request.SubscribeScope;
             }
@@ -589,7 +589,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["name"] = request.Name;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubscribeScope))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubscribeScope.ToMap()))
             {
                 body["subscribeScope"] = request.SubscribeScope;
             }
@@ -1831,7 +1831,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["description"] = request.Description;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.End))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.End.ToMap()))
             {
                 body["end"] = request.End;
             }
@@ -1847,11 +1847,11 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["isAllDay"] = request.IsAllDay;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location.ToMap()))
             {
                 body["location"] = request.Location;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence.ToMap()))
             {
                 body["recurrence"] = request.Recurrence;
             }
@@ -1859,7 +1859,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["reminders"] = request.Reminders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Start))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Start.ToMap()))
             {
                 body["start"] = request.Start;
             }
@@ -1899,7 +1899,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["description"] = request.Description;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.End))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.End.ToMap()))
             {
                 body["end"] = request.End;
             }
@@ -1915,11 +1915,11 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["isAllDay"] = request.IsAllDay;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location.ToMap()))
             {
                 body["location"] = request.Location;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence.ToMap()))
             {
                 body["recurrence"] = request.Recurrence;
             }
@@ -1927,7 +1927,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["reminders"] = request.Reminders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Start))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Start.ToMap()))
             {
                 body["start"] = request.Start;
             }
@@ -2414,7 +2414,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["name"] = request.Name;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubscribeScope))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubscribeScope.ToMap()))
             {
                 body["subscribeScope"] = request.SubscribeScope;
             }
@@ -2453,7 +2453,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["name"] = request.Name;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubscribeScope))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubscribeScope.ToMap()))
             {
                 body["subscribeScope"] = request.SubscribeScope;
             }

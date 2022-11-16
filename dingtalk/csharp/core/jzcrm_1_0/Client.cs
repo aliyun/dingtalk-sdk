@@ -44,7 +44,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -81,7 +81,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -132,7 +132,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -169,7 +169,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -220,7 +220,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -257,7 +257,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -308,7 +308,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -345,7 +345,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -396,7 +396,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -433,7 +433,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -484,7 +484,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -521,7 +521,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -572,7 +572,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -609,7 +609,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -660,7 +660,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -697,7 +697,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -748,7 +748,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -785,7 +785,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -836,7 +836,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -873,7 +873,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -924,7 +924,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -961,7 +961,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -1012,7 +1012,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -1049,7 +1049,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -1100,7 +1100,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }
@@ -1137,7 +1137,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data.ToMap()))
             {
                 body["data"] = request.Data;
             }

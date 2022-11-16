@@ -582,7 +582,7 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LinkedData))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LinkedData.ToMap()))
             {
                 body["linkedData"] = request.LinkedData;
             }
@@ -609,7 +609,7 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LinkedData))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LinkedData.ToMap()))
             {
                 body["linkedData"] = request.LinkedData;
             }

@@ -272,7 +272,7 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
             {
                 body["endorseFlag"] = request.EndorseFlag;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Event))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Event.ToMap()))
             {
                 body["event"] = request.Event;
             }
@@ -377,7 +377,7 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
             {
                 body["endorseFlag"] = request.EndorseFlag;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Event))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Event.ToMap()))
             {
                 body["event"] = request.Event;
             }

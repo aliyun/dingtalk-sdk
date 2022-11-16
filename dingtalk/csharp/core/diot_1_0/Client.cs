@@ -884,7 +884,7 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
             {
                 body["id"] = request.Id;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveUrls))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveUrls.ToMap()))
             {
                 body["liveUrls"] = request.LiveUrls;
             }
@@ -949,7 +949,7 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
             {
                 body["id"] = request.Id;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveUrls))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveUrls.ToMap()))
             {
                 body["liveUrls"] = request.LiveUrls;
             }
