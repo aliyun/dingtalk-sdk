@@ -2201,7 +2201,7 @@ export default class Client extends OpenApi {
       body["optUserId"] = request.optUserId;
     }
 
-    if (!Util.isUnset(request.resumeData)) {
+    if (!Util.isUnset($tea.toMap(request.resumeData))) {
       body["resumeData"] = request.resumeData;
     }
 
@@ -2633,7 +2633,7 @@ export default class Client extends OpenApi {
       body["content"] = request.content;
     }
 
-    if (!Util.isUnset(request.dingPanFile)) {
+    if (!Util.isUnset($tea.toMap(request.dingPanFile))) {
       body["dingPanFile"] = request.dingPanFile;
     }
 

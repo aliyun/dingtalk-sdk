@@ -2713,7 +2713,7 @@ export default class Client extends OpenApi {
       body["redirectUrl"] = request.redirectUrl;
     }
 
-    if (!Util.isUnset(request.sourceInfo)) {
+    if (!Util.isUnset($tea.toMap(request.sourceInfo))) {
       body["sourceInfo"] = request.sourceInfo;
     }
 

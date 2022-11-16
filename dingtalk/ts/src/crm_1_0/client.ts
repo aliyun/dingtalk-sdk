@@ -9046,7 +9046,7 @@ export default class Client extends OpenApi {
       body["extendData"] = request.extendData;
     }
 
-    if (!Util.isUnset(request.permission)) {
+    if (!Util.isUnset($tea.toMap(request.permission))) {
       body["permission"] = request.permission;
     }
 
@@ -9263,7 +9263,7 @@ export default class Client extends OpenApi {
       body["bizId"] = request.bizId;
     }
 
-    if (!Util.isUnset(request.detail)) {
+    if (!Util.isUnset($tea.toMap(request.detail))) {
       body["detail"] = request.detail;
     }
 
@@ -9390,11 +9390,11 @@ export default class Client extends OpenApi {
       body["objectType"] = request.objectType;
     }
 
-    if (!Util.isUnset(request.permission)) {
+    if (!Util.isUnset($tea.toMap(request.permission))) {
       body["permission"] = request.permission;
     }
 
-    if (!Util.isUnset(request.saveOption)) {
+    if (!Util.isUnset($tea.toMap(request.saveOption))) {
       body["saveOption"] = request.saveOption;
     }
 
@@ -9533,7 +9533,7 @@ export default class Client extends OpenApi {
       body["operatorUserId"] = request.operatorUserId;
     }
 
-    if (!Util.isUnset(request.relationMetaDTO)) {
+    if (!Util.isUnset($tea.toMap(request.relationMetaDTO))) {
       body["relationMetaDTO"] = request.relationMetaDTO;
     }
 
@@ -10490,7 +10490,7 @@ export default class Client extends OpenApi {
       body["bizId"] = request.bizId;
     }
 
-    if (!Util.isUnset(request.detail)) {
+    if (!Util.isUnset($tea.toMap(request.detail))) {
       body["detail"] = request.detail;
     }
 
@@ -10527,7 +10527,7 @@ export default class Client extends OpenApi {
       body["bizId"] = request.bizId;
     }
 
-    if (!Util.isUnset(request.detail)) {
+    if (!Util.isUnset($tea.toMap(request.detail))) {
       body["detail"] = request.detail;
     }
 
@@ -10560,7 +10560,7 @@ export default class Client extends OpenApi {
       body["bizId"] = request.bizId;
     }
 
-    if (!Util.isUnset(request.detail)) {
+    if (!Util.isUnset($tea.toMap(request.detail))) {
       body["detail"] = request.detail;
     }
 
@@ -10613,7 +10613,7 @@ export default class Client extends OpenApi {
       body["modifierUserId"] = request.modifierUserId;
     }
 
-    if (!Util.isUnset(request.permission)) {
+    if (!Util.isUnset($tea.toMap(request.permission))) {
       body["permission"] = request.permission;
     }
 

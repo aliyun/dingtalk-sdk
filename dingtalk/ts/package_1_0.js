@@ -1,0 +1,1 @@
+module.exports = require('./dist').package_1_0;

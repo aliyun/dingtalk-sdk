@@ -6630,7 +6630,7 @@ export default class Client extends OpenApi {
       body["commentUserId"] = request.commentUserId;
     }
 
-    if (!Util.isUnset(request.file)) {
+    if (!Util.isUnset($tea.toMap(request.file))) {
       body["file"] = request.file;
     }
 
@@ -6766,7 +6766,7 @@ export default class Client extends OpenApi {
   async copyProcessWithOptions(request: CopyProcessRequest, headers: CopyProcessHeaders, runtime: $Util.RuntimeOptions): Promise<CopyProcessResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.copyOptions)) {
+    if (!Util.isUnset($tea.toMap(request.copyOptions))) {
       body["copyOptions"] = request.copyOptions;
     }
 
@@ -6877,7 +6877,7 @@ export default class Client extends OpenApi {
       body["actionerUserId"] = request.actionerUserId;
     }
 
-    if (!Util.isUnset(request.file)) {
+    if (!Util.isUnset($tea.toMap(request.file))) {
       body["file"] = request.file;
     }
 
@@ -6938,7 +6938,7 @@ export default class Client extends OpenApi {
       body["processCode"] = request.processCode;
     }
 
-    if (!Util.isUnset(request.templateConfig)) {
+    if (!Util.isUnset($tea.toMap(request.templateConfig))) {
       body["templateConfig"] = request.templateConfig;
     }
 
@@ -7323,7 +7323,7 @@ export default class Client extends OpenApi {
       body["bizGroup"] = request.bizGroup;
     }
 
-    if (!Util.isUnset(request.installOption)) {
+    if (!Util.isUnset($tea.toMap(request.installOption))) {
       body["installOption"] = request.installOption;
     }
 
@@ -7901,7 +7901,7 @@ export default class Client extends OpenApi {
       body["processCode"] = request.processCode;
     }
 
-    if (!Util.isUnset(request.processFeatureConfig)) {
+    if (!Util.isUnset($tea.toMap(request.processFeatureConfig))) {
       body["processFeatureConfig"] = request.processFeatureConfig;
     }
 

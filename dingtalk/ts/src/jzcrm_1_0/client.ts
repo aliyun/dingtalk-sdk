@@ -2660,7 +2660,7 @@ export default class Client extends OpenApi {
   async editContactWithOptions(request: EditContactRequest, headers: EditContactHeaders, runtime: $Util.RuntimeOptions): Promise<EditContactResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.data)) {
+    if (!Util.isUnset($tea.toMap(request.data))) {
       body["data"] = request.data;
     }
 
@@ -2701,7 +2701,7 @@ export default class Client extends OpenApi {
   async editCustomerWithOptions(request: EditCustomerRequest, headers: EditCustomerHeaders, runtime: $Util.RuntimeOptions): Promise<EditCustomerResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.data)) {
+    if (!Util.isUnset($tea.toMap(request.data))) {
       body["data"] = request.data;
     }
 
@@ -2742,7 +2742,7 @@ export default class Client extends OpenApi {
   async editCustomerPoolWithOptions(request: EditCustomerPoolRequest, headers: EditCustomerPoolHeaders, runtime: $Util.RuntimeOptions): Promise<EditCustomerPoolResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.data)) {
+    if (!Util.isUnset($tea.toMap(request.data))) {
       body["data"] = request.data;
     }
 
@@ -2783,7 +2783,7 @@ export default class Client extends OpenApi {
   async editExchangeWithOptions(request: EditExchangeRequest, headers: EditExchangeHeaders, runtime: $Util.RuntimeOptions): Promise<EditExchangeResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.data)) {
+    if (!Util.isUnset($tea.toMap(request.data))) {
       body["data"] = request.data;
     }
 
@@ -2824,7 +2824,7 @@ export default class Client extends OpenApi {
   async editGoodsWithOptions(request: EditGoodsRequest, headers: EditGoodsHeaders, runtime: $Util.RuntimeOptions): Promise<EditGoodsResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.data)) {
+    if (!Util.isUnset($tea.toMap(request.data))) {
       body["data"] = request.data;
     }
 
@@ -2865,7 +2865,7 @@ export default class Client extends OpenApi {
   async editIntostockWithOptions(request: EditIntostockRequest, headers: EditIntostockHeaders, runtime: $Util.RuntimeOptions): Promise<EditIntostockResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.data)) {
+    if (!Util.isUnset($tea.toMap(request.data))) {
       body["data"] = request.data;
     }
 
@@ -2906,7 +2906,7 @@ export default class Client extends OpenApi {
   async editInvoiceWithOptions(request: EditInvoiceRequest, headers: EditInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<EditInvoiceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.data)) {
+    if (!Util.isUnset($tea.toMap(request.data))) {
       body["data"] = request.data;
     }
 
@@ -2947,7 +2947,7 @@ export default class Client extends OpenApi {
   async editOrderWithOptions(request: EditOrderRequest, headers: EditOrderHeaders, runtime: $Util.RuntimeOptions): Promise<EditOrderResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.data)) {
+    if (!Util.isUnset($tea.toMap(request.data))) {
       body["data"] = request.data;
     }
 
@@ -2988,7 +2988,7 @@ export default class Client extends OpenApi {
   async editOutstockWithOptions(request: EditOutstockRequest, headers: EditOutstockHeaders, runtime: $Util.RuntimeOptions): Promise<EditOutstockResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.data)) {
+    if (!Util.isUnset($tea.toMap(request.data))) {
       body["data"] = request.data;
     }
 
@@ -3029,7 +3029,7 @@ export default class Client extends OpenApi {
   async editProductionWithOptions(request: EditProductionRequest, headers: EditProductionHeaders, runtime: $Util.RuntimeOptions): Promise<EditProductionResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.data)) {
+    if (!Util.isUnset($tea.toMap(request.data))) {
       body["data"] = request.data;
     }
 
@@ -3070,7 +3070,7 @@ export default class Client extends OpenApi {
   async editPurchaseWithOptions(request: EditPurchaseRequest, headers: EditPurchaseHeaders, runtime: $Util.RuntimeOptions): Promise<EditPurchaseResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.data)) {
+    if (!Util.isUnset($tea.toMap(request.data))) {
       body["data"] = request.data;
     }
 
@@ -3111,7 +3111,7 @@ export default class Client extends OpenApi {
   async editQuotationRecordWithOptions(request: EditQuotationRecordRequest, headers: EditQuotationRecordHeaders, runtime: $Util.RuntimeOptions): Promise<EditQuotationRecordResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.data)) {
+    if (!Util.isUnset($tea.toMap(request.data))) {
       body["data"] = request.data;
     }
 
@@ -3152,7 +3152,7 @@ export default class Client extends OpenApi {
   async editSalesWithOptions(request: EditSalesRequest, headers: EditSalesHeaders, runtime: $Util.RuntimeOptions): Promise<EditSalesResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.data)) {
+    if (!Util.isUnset($tea.toMap(request.data))) {
       body["data"] = request.data;
     }
 

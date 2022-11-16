@@ -667,7 +667,7 @@ export default class Client extends OpenApi {
       body["endorseFlag"] = request.endorseFlag;
     }
 
-    if (!Util.isUnset(request.event)) {
+    if (!Util.isUnset($tea.toMap(request.event))) {
       body["event"] = request.event;
     }
 

@@ -3492,7 +3492,7 @@ export default class Client extends OpenApi {
       body["cardData"] = request.cardData;
     }
 
-    if (!Util.isUnset(request.tips)) {
+    if (!Util.isUnset($tea.toMap(request.tips))) {
       body["tips"] = request.tips;
     }
 

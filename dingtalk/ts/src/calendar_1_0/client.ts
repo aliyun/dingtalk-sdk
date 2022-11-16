@@ -5645,7 +5645,7 @@ export default class Client extends OpenApi {
       body["privilege"] = request.privilege;
     }
 
-    if (!Util.isUnset(request.scope)) {
+    if (!Util.isUnset($tea.toMap(request.scope))) {
       body["scope"] = request.scope;
     }
 
@@ -5688,7 +5688,7 @@ export default class Client extends OpenApi {
       body["description"] = request.description;
     }
 
-    if (!Util.isUnset(request.end)) {
+    if (!Util.isUnset($tea.toMap(request.end))) {
       body["end"] = request.end;
     }
 
@@ -5700,15 +5700,15 @@ export default class Client extends OpenApi {
       body["isAllDay"] = request.isAllDay;
     }
 
-    if (!Util.isUnset(request.location)) {
+    if (!Util.isUnset($tea.toMap(request.location))) {
       body["location"] = request.location;
     }
 
-    if (!Util.isUnset(request.onlineMeetingInfo)) {
+    if (!Util.isUnset($tea.toMap(request.onlineMeetingInfo))) {
       body["onlineMeetingInfo"] = request.onlineMeetingInfo;
     }
 
-    if (!Util.isUnset(request.recurrence)) {
+    if (!Util.isUnset($tea.toMap(request.recurrence))) {
       body["recurrence"] = request.recurrence;
     }
 
@@ -5716,7 +5716,7 @@ export default class Client extends OpenApi {
       body["reminders"] = request.reminders;
     }
 
-    if (!Util.isUnset(request.start)) {
+    if (!Util.isUnset($tea.toMap(request.start))) {
       body["start"] = request.start;
     }
 
@@ -5762,7 +5762,7 @@ export default class Client extends OpenApi {
       body["name"] = request.name;
     }
 
-    if (!Util.isUnset(request.subscribeScope)) {
+    if (!Util.isUnset($tea.toMap(request.subscribeScope))) {
       body["subscribeScope"] = request.subscribeScope;
     }
 
@@ -6350,7 +6350,7 @@ export default class Client extends OpenApi {
       body["description"] = request.description;
     }
 
-    if (!Util.isUnset(request.end)) {
+    if (!Util.isUnset($tea.toMap(request.end))) {
       body["end"] = request.end;
     }
 
@@ -6366,11 +6366,11 @@ export default class Client extends OpenApi {
       body["isAllDay"] = request.isAllDay;
     }
 
-    if (!Util.isUnset(request.location)) {
+    if (!Util.isUnset($tea.toMap(request.location))) {
       body["location"] = request.location;
     }
 
-    if (!Util.isUnset(request.recurrence)) {
+    if (!Util.isUnset($tea.toMap(request.recurrence))) {
       body["recurrence"] = request.recurrence;
     }
 
@@ -6378,7 +6378,7 @@ export default class Client extends OpenApi {
       body["reminders"] = request.reminders;
     }
 
-    if (!Util.isUnset(request.start)) {
+    if (!Util.isUnset($tea.toMap(request.start))) {
       body["start"] = request.start;
     }
 
@@ -6619,7 +6619,7 @@ export default class Client extends OpenApi {
       body["name"] = request.name;
     }
 
-    if (!Util.isUnset(request.subscribeScope)) {
+    if (!Util.isUnset($tea.toMap(request.subscribeScope))) {
       body["subscribeScope"] = request.subscribeScope;
     }
 

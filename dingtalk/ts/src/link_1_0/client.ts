@@ -1789,7 +1789,7 @@ export default class Client extends OpenApi {
   async closeTopBoxInteractiveOTOMessageWithOptions(request: CloseTopBoxInteractiveOTOMessageRequest, headers: CloseTopBoxInteractiveOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<CloseTopBoxInteractiveOTOMessageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.detail)) {
+    if (!Util.isUnset($tea.toMap(request.detail))) {
       body["detail"] = request.detail;
     }
 
@@ -1980,7 +1980,7 @@ export default class Client extends OpenApi {
   async sendAgentOTOMessageWithOptions(request: SendAgentOTOMessageRequest, headers: SendAgentOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendAgentOTOMessageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.detail)) {
+    if (!Util.isUnset($tea.toMap(request.detail))) {
       body["detail"] = request.detail;
     }
 
@@ -2009,7 +2009,7 @@ export default class Client extends OpenApi {
   async sendInteractiveOTOMessageWithOptions(request: SendInteractiveOTOMessageRequest, headers: SendInteractiveOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendInteractiveOTOMessageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.detail)) {
+    if (!Util.isUnset($tea.toMap(request.detail))) {
       body["detail"] = request.detail;
     }
 
@@ -2038,7 +2038,7 @@ export default class Client extends OpenApi {
   async sendTopBoxInteractiveOTOMessageWithOptions(request: SendTopBoxInteractiveOTOMessageRequest, headers: SendTopBoxInteractiveOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendTopBoxInteractiveOTOMessageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.detail)) {
+    if (!Util.isUnset($tea.toMap(request.detail))) {
       body["detail"] = request.detail;
     }
 
@@ -2067,7 +2067,7 @@ export default class Client extends OpenApi {
   async updateInteractiveOTOMessageWithOptions(request: UpdateInteractiveOTOMessageRequest, headers: UpdateInteractiveOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInteractiveOTOMessageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.detail)) {
+    if (!Util.isUnset($tea.toMap(request.detail))) {
       body["detail"] = request.detail;
     }
 

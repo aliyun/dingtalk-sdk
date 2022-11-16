@@ -429,7 +429,7 @@ export default class Client extends OpenApi {
   async nlpWordDistinguishWithOptions(request: NlpWordDistinguishRequest, headers: NlpWordDistinguishHeaders, runtime: $Util.RuntimeOptions): Promise<NlpWordDistinguishResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.attachExtractDecisionInfo)) {
+    if (!Util.isUnset($tea.toMap(request.attachExtractDecisionInfo))) {
       body["attachExtractDecisionInfo"] = request.attachExtractDecisionInfo;
     }
 

@@ -1677,7 +1677,7 @@ export default class Client extends OpenApi {
       body["id"] = request.id;
     }
 
-    if (!Util.isUnset(request.liveUrls)) {
+    if (!Util.isUnset($tea.toMap(request.liveUrls))) {
       body["liveUrls"] = request.liveUrls;
     }
 

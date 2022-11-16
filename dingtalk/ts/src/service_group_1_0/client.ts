@@ -6501,6 +6501,94 @@ export class TransferTicketResponse extends $tea.Model {
   }
 }
 
+export class UpdateGroupSetHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateGroupSetRequest extends $tea.Model {
+  openConversationId?: string;
+  openGroupSetId?: string;
+  openTeamId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      openGroupSetId: 'openGroupSetId',
+      openTeamId: 'openTeamId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      openGroupSetId: 'string',
+      openTeamId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateGroupSetResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateGroupSetResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateGroupSetResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateGroupSetResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateGroupTagHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -9565,7 +9653,7 @@ export default class Client extends OpenApi {
       body["processorUnionId"] = request.processorUnionId;
     }
 
-    if (!Util.isUnset(request.ticketMemo)) {
+    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
       body["ticketMemo"] = request.ticketMemo;
     }
 
@@ -9594,7 +9682,7 @@ export default class Client extends OpenApi {
   async assignTicketWithOptions(request: AssignTicketRequest, headers: AssignTicketHeaders, runtime: $Util.RuntimeOptions): Promise<AssignTicketResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.notify)) {
+    if (!Util.isUnset($tea.toMap(request.notify))) {
       body["notify"] = request.notify;
     }
 
@@ -9614,7 +9702,7 @@ export default class Client extends OpenApi {
       body["processorUnionIds"] = request.processorUnionIds;
     }
 
-    if (!Util.isUnset(request.ticketMemo)) {
+    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
       body["ticketMemo"] = request.ticketMemo;
     }
 
@@ -9860,7 +9948,7 @@ export default class Client extends OpenApi {
   async cancelTicketWithOptions(request: CancelTicketRequest, headers: CancelTicketHeaders, runtime: $Util.RuntimeOptions): Promise<CancelTicketResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.notify)) {
+    if (!Util.isUnset($tea.toMap(request.notify))) {
       body["notify"] = request.notify;
     }
 
@@ -9876,7 +9964,7 @@ export default class Client extends OpenApi {
       body["operatorUnionId"] = request.operatorUnionId;
     }
 
-    if (!Util.isUnset(request.ticketMemo)) {
+    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
       body["ticketMemo"] = request.ticketMemo;
     }
 
@@ -10436,7 +10524,7 @@ export default class Client extends OpenApi {
       body["customFields"] = request.customFields;
     }
 
-    if (!Util.isUnset(request.notify)) {
+    if (!Util.isUnset($tea.toMap(request.notify))) {
       body["notify"] = request.notify;
     }
 
@@ -10456,7 +10544,7 @@ export default class Client extends OpenApi {
       body["scene"] = request.scene;
     }
 
-    if (!Util.isUnset(request.sceneContext)) {
+    if (!Util.isUnset($tea.toMap(request.sceneContext))) {
       body["sceneContext"] = request.sceneContext;
     }
 
@@ -10669,7 +10757,7 @@ export default class Client extends OpenApi {
   async finishTicketWithOptions(request: FinishTicketRequest, headers: FinishTicketHeaders, runtime: $Util.RuntimeOptions): Promise<FinishTicketResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.notify)) {
+    if (!Util.isUnset($tea.toMap(request.notify))) {
       body["notify"] = request.notify;
     }
 
@@ -10685,7 +10773,7 @@ export default class Client extends OpenApi {
       body["processorUnionId"] = request.processorUnionId;
     }
 
-    if (!Util.isUnset(request.ticketMemo)) {
+    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
       body["ticketMemo"] = request.ticketMemo;
     }
 
@@ -11746,7 +11834,7 @@ export default class Client extends OpenApi {
       body["customFields"] = request.customFields;
     }
 
-    if (!Util.isUnset(request.notify)) {
+    if (!Util.isUnset($tea.toMap(request.notify))) {
       body["notify"] = request.notify;
     }
 
@@ -11770,11 +11858,11 @@ export default class Client extends OpenApi {
       body["scene"] = request.scene;
     }
 
-    if (!Util.isUnset(request.sceneContext)) {
+    if (!Util.isUnset($tea.toMap(request.sceneContext))) {
       body["sceneContext"] = request.sceneContext;
     }
 
-    if (!Util.isUnset(request.ticketMemo)) {
+    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
       body["ticketMemo"] = request.ticketMemo;
     }
 
@@ -11807,7 +11895,7 @@ export default class Client extends OpenApi {
   async retractTicketWithOptions(request: RetractTicketRequest, headers: RetractTicketHeaders, runtime: $Util.RuntimeOptions): Promise<RetractTicketResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.notify)) {
+    if (!Util.isUnset($tea.toMap(request.notify))) {
       body["notify"] = request.notify;
     }
 
@@ -11823,7 +11911,7 @@ export default class Client extends OpenApi {
       body["operatorUnionId"] = request.operatorUnionId;
     }
 
-    if (!Util.isUnset(request.ticketMemo)) {
+    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
       body["ticketMemo"] = request.ticketMemo;
     }
 
@@ -11942,7 +12030,7 @@ export default class Client extends OpenApi {
   async sendMsgByTaskWithOptions(request: SendMsgByTaskRequest, headers: SendMsgByTaskHeaders, runtime: $Util.RuntimeOptions): Promise<SendMsgByTaskResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.messageContent)) {
+    if (!Util.isUnset($tea.toMap(request.messageContent))) {
       body["messageContent"] = request.messageContent;
     }
 
@@ -11950,11 +12038,11 @@ export default class Client extends OpenApi {
       body["openTeamId"] = request.openTeamId;
     }
 
-    if (!Util.isUnset(request.queryGroup)) {
+    if (!Util.isUnset($tea.toMap(request.queryGroup))) {
       body["queryGroup"] = request.queryGroup;
     }
 
-    if (!Util.isUnset(request.sendConfig)) {
+    if (!Util.isUnset($tea.toMap(request.sendConfig))) {
       body["sendConfig"] = request.sendConfig;
     }
 
@@ -12203,7 +12291,7 @@ export default class Client extends OpenApi {
   async transferTicketWithOptions(request: TransferTicketRequest, headers: TransferTicketHeaders, runtime: $Util.RuntimeOptions): Promise<TransferTicketResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.notify)) {
+    if (!Util.isUnset($tea.toMap(request.notify))) {
       body["notify"] = request.notify;
     }
 
@@ -12223,7 +12311,7 @@ export default class Client extends OpenApi {
       body["processorUnionIds"] = request.processorUnionIds;
     }
 
-    if (!Util.isUnset(request.ticketMemo)) {
+    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
       body["ticketMemo"] = request.ticketMemo;
     }
 
@@ -12241,6 +12329,43 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<TransferTicketResponse>(await this.doROARequest("TransferTicket", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/tickets/transfer`, "none", req, runtime), new TransferTicketResponse({}));
+  }
+
+  async updateGroupSet(request: UpdateGroupSetRequest): Promise<UpdateGroupSetResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateGroupSetHeaders({ });
+    return await this.updateGroupSetWithOptions(request, headers, runtime);
+  }
+
+  async updateGroupSetWithOptions(request: UpdateGroupSetRequest, headers: UpdateGroupSetHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateGroupSetResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.openGroupSetId)) {
+      body["openGroupSetId"] = request.openGroupSetId;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateGroupSetResponse>(await this.doROARequest("UpdateGroupSet", "serviceGroup_1.0", "HTTP", "PUT", "AK", `/v1.0/serviceGroup/groups/configurations`, "json", req, runtime), new UpdateGroupSetResponse({}));
   }
 
   async updateGroupTag(request: UpdateGroupTagRequest): Promise<UpdateGroupTagResponse> {
@@ -12358,7 +12483,7 @@ export default class Client extends OpenApi {
       body["processorUnionId"] = request.processorUnionId;
     }
 
-    if (!Util.isUnset(request.ticketMemo)) {
+    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
       body["ticketMemo"] = request.ticketMemo;
     }
 
@@ -12485,7 +12610,7 @@ export default class Client extends OpenApi {
       body["operatorUnionId"] = request.operatorUnionId;
     }
 
-    if (!Util.isUnset(request.ticketMemo)) {
+    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
       body["ticketMemo"] = request.ticketMemo;
     }
 

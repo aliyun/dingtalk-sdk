@@ -5993,7 +5993,7 @@ export default class Client extends OpenApi {
       body["icon"] = request.icon;
     }
 
-    if (!Util.isUnset(request.managementOptions)) {
+    if (!Util.isUnset($tea.toMap(request.managementOptions))) {
       body["managementOptions"] = request.managementOptions;
     }
 
@@ -6651,7 +6651,7 @@ export default class Client extends OpenApi {
       body["callbackRouteKey"] = request.callbackRouteKey;
     }
 
-    if (!Util.isUnset(request.cardData)) {
+    if (!Util.isUnset($tea.toMap(request.cardData))) {
       body["cardData"] = request.cardData;
     }
 
@@ -7025,11 +7025,11 @@ export default class Client extends OpenApi {
       body["callbackRouteKey"] = request.callbackRouteKey;
     }
 
-    if (!Util.isUnset(request.cardData)) {
+    if (!Util.isUnset($tea.toMap(request.cardData))) {
       body["cardData"] = request.cardData;
     }
 
-    if (!Util.isUnset(request.cardOptions)) {
+    if (!Util.isUnset($tea.toMap(request.cardOptions))) {
       body["cardOptions"] = request.cardOptions;
     }
 
@@ -7126,7 +7126,7 @@ export default class Client extends OpenApi {
       body["robotCode"] = request.robotCode;
     }
 
-    if (!Util.isUnset(request.sendOptions)) {
+    if (!Util.isUnset($tea.toMap(request.sendOptions))) {
       body["sendOptions"] = request.sendOptions;
     }
 
@@ -7244,7 +7244,7 @@ export default class Client extends OpenApi {
       body["robotCode"] = request.robotCode;
     }
 
-    if (!Util.isUnset(request.sendOptions)) {
+    if (!Util.isUnset($tea.toMap(request.sendOptions))) {
       body["sendOptions"] = request.sendOptions;
     }
 
@@ -7523,11 +7523,11 @@ export default class Client extends OpenApi {
   async updateInteractiveCardWithOptions(request: UpdateInteractiveCardRequest, headers: UpdateInteractiveCardHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInteractiveCardResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.cardData)) {
+    if (!Util.isUnset($tea.toMap(request.cardData))) {
       body["cardData"] = request.cardData;
     }
 
-    if (!Util.isUnset(request.cardOptions)) {
+    if (!Util.isUnset($tea.toMap(request.cardOptions))) {
       body["cardOptions"] = request.cardOptions;
     }
 
@@ -7715,7 +7715,7 @@ export default class Client extends OpenApi {
       body["unionIdPrivateDataMap"] = request.unionIdPrivateDataMap;
     }
 
-    if (!Util.isUnset(request.updateOptions)) {
+    if (!Util.isUnset($tea.toMap(request.updateOptions))) {
       body["updateOptions"] = request.updateOptions;
     }
 

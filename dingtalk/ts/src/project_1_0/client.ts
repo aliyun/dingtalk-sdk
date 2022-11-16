@@ -4020,7 +4020,7 @@ export default class Client extends OpenApi {
     userId = OpenApiUtil.getEncodeParam(userId);
     taskId = OpenApiUtil.getEncodeParam(taskId);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.linkedData)) {
+    if (!Util.isUnset($tea.toMap(request.linkedData))) {
       body["linkedData"] = request.linkedData;
     }
 

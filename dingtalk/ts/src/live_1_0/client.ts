@@ -3148,8 +3148,8 @@ export default class Client extends OpenApi {
     Util.validateModel(tmpReq);
     let request = new QuerySubscribeStatusShrinkRequest({ });
     OpenApiUtil.convert(tmpReq, request);
-    if (!Util.isUnset(tmpReq.body)) {
-      request.bodyShrink = OpenApiUtil.arrayToStringWithSpecifiedStyle(tmpReq.body, "body", "json");
+    if (!Util.isUnset($tea.toMap(tmpReq.body))) {
+      request.bodyShrink = OpenApiUtil.arrayToStringWithSpecifiedStyle($tea.toMap(tmpReq.body), "body", "json");
     }
 
     let query : {[key: string ]: any} = { };

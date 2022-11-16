@@ -819,7 +819,7 @@ export default class Client extends OpenApi {
   async createFeedWithOptions(request: CreateFeedRequest, headers: CreateFeedHeaders, runtime: $Util.RuntimeOptions): Promise<CreateFeedResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.courseInfo)) {
+    if (!Util.isUnset($tea.toMap(request.courseInfo))) {
       body["courseInfo"] = request.courseInfo;
     }
 
@@ -827,7 +827,7 @@ export default class Client extends OpenApi {
       body["createUserId"] = request.createUserId;
     }
 
-    if (!Util.isUnset(request.feedInfo)) {
+    if (!Util.isUnset($tea.toMap(request.feedInfo))) {
       body["feedInfo"] = request.feedInfo;
     }
 

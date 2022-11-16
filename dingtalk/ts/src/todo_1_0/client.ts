@@ -2621,7 +2621,7 @@ export default class Client extends OpenApi {
       body["description"] = request.description;
     }
 
-    if (!Util.isUnset(request.detailUrl)) {
+    if (!Util.isUnset($tea.toMap(request.detailUrl))) {
       body["detailUrl"] = request.detailUrl;
     }
 
@@ -2637,7 +2637,7 @@ export default class Client extends OpenApi {
       body["isOnlyShowExecutor"] = request.isOnlyShowExecutor;
     }
 
-    if (!Util.isUnset(request.notifyConfigs)) {
+    if (!Util.isUnset($tea.toMap(request.notifyConfigs))) {
       body["notifyConfigs"] = request.notifyConfigs;
     }
 

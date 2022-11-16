@@ -4820,11 +4820,11 @@ export default class Client extends OpenApi {
     }
 
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.cellStyle)) {
+    if (!Util.isUnset($tea.toMap(request.cellStyle))) {
       body["cellStyle"] = request.cellStyle;
     }
 
-    if (!Util.isUnset(request.duplicateCondition)) {
+    if (!Util.isUnset($tea.toMap(request.duplicateCondition))) {
       body["duplicateCondition"] = request.duplicateCondition;
     }
 
@@ -5562,7 +5562,7 @@ export default class Client extends OpenApi {
       body["blocks"] = request.blocks;
     }
 
-    if (!Util.isUnset(request.location)) {
+    if (!Util.isUnset($tea.toMap(request.location))) {
       body["location"] = request.location;
     }
 
@@ -5762,7 +5762,7 @@ export default class Client extends OpenApi {
     }
 
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.findOptions)) {
+    if (!Util.isUnset($tea.toMap(request.findOptions))) {
       body["findOptions"] = request.findOptions;
     }
 

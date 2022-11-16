@@ -3500,7 +3500,7 @@ export default class Client extends OpenApi {
   async addResidentMemberWithOptions(request: AddResidentMemberRequest, headers: AddResidentMemberHeaders, runtime: $Util.RuntimeOptions): Promise<AddResidentMemberResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.residentAddInfo)) {
+    if (!Util.isUnset($tea.toMap(request.residentAddInfo))) {
       body["residentAddInfo"] = request.residentAddInfo;
     }
 
@@ -4480,7 +4480,7 @@ export default class Client extends OpenApi {
   async updateResidentMemberWithOptions(request: UpdateResidentMemberRequest, headers: UpdateResidentMemberHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResidentMemberResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.residentUpdateInfo)) {
+    if (!Util.isUnset($tea.toMap(request.residentUpdateInfo))) {
       body["residentUpdateInfo"] = request.residentUpdateInfo;
     }
 

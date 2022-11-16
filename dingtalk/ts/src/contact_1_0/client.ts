@@ -5900,7 +5900,7 @@ export default class Client extends OpenApi {
       body["resourceIds"] = request.resourceIds;
     }
 
-    if (!Util.isUnset(request.scope)) {
+    if (!Util.isUnset($tea.toMap(request.scope))) {
       body["scope"] = request.scope;
     }
 
@@ -5946,7 +5946,7 @@ export default class Client extends OpenApi {
       body["resourceIds"] = request.resourceIds;
     }
 
-    if (!Util.isUnset(request.scope)) {
+    if (!Util.isUnset($tea.toMap(request.scope))) {
       body["scope"] = request.scope;
     }
 
@@ -7598,7 +7598,7 @@ export default class Client extends OpenApi {
       body["resourceIds"] = request.resourceIds;
     }
 
-    if (!Util.isUnset(request.scope)) {
+    if (!Util.isUnset($tea.toMap(request.scope))) {
       body["scope"] = request.scope;
     }
 
