@@ -78,6 +78,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->groupId)) {
+            @$body['groupId'] = $request->groupId;
+        }
         if (!Utils::isUnset($request->isvRoomId)) {
             @$body['isvRoomId'] = $request->isvRoomId;
         }
@@ -504,6 +507,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->groupId)) {
+            @$body['groupId'] = $request->groupId;
+        }
         if (!Utils::isUnset($request->isvRoomId)) {
             @$body['isvRoomId'] = $request->isvRoomId;
         }

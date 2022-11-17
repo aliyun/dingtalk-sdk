@@ -271,6 +271,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->channelOuterId)) {
             @$body['channelOuterId'] = $request->channelOuterId;
         }
+        if (!Utils::isUnset($request->channelTalentId)) {
+            @$body['channelTalentId'] = $request->channelTalentId;
+        }
         if (!Utils::isUnset($request->deliverJobId)) {
             @$body['deliverJobId'] = $request->deliverJobId;
         }

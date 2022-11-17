@@ -24,6 +24,13 @@ class CollectResumeDetailRequest extends Model
     public $channelOuterId;
 
     /**
+     * @description 渠道侧候选人标识。
+     *
+     * @var string
+     */
+    public $channelTalentId;
+
+    /**
      * @description 简历投递职位标识
      *
      * @var string
@@ -42,11 +49,12 @@ class CollectResumeDetailRequest extends Model
      */
     public $resumeData;
     protected $_name = [
-        'bizCode'        => 'bizCode',
-        'channelOuterId' => 'channelOuterId',
-        'deliverJobId'   => 'deliverJobId',
-        'optUserId'      => 'optUserId',
-        'resumeData'     => 'resumeData',
+        'bizCode'         => 'bizCode',
+        'channelOuterId'  => 'channelOuterId',
+        'channelTalentId' => 'channelTalentId',
+        'deliverJobId'    => 'deliverJobId',
+        'optUserId'       => 'optUserId',
+        'resumeData'      => 'resumeData',
     ];
 
     public function validate()
@@ -61,6 +69,9 @@ class CollectResumeDetailRequest extends Model
         }
         if (null !== $this->channelOuterId) {
             $res['channelOuterId'] = $this->channelOuterId;
+        }
+        if (null !== $this->channelTalentId) {
+            $res['channelTalentId'] = $this->channelTalentId;
         }
         if (null !== $this->deliverJobId) {
             $res['deliverJobId'] = $this->deliverJobId;
@@ -88,6 +99,9 @@ class CollectResumeDetailRequest extends Model
         }
         if (isset($map['channelOuterId'])) {
             $model->channelOuterId = $map['channelOuterId'];
+        }
+        if (isset($map['channelTalentId'])) {
+            $model->channelTalentId = $map['channelTalentId'];
         }
         if (isset($map['deliverJobId'])) {
             $model->deliverJobId = $map['deliverJobId'];

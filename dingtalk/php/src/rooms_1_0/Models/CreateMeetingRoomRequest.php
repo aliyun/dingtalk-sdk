@@ -10,6 +10,13 @@ use AlibabaCloud\Tea\Model;
 class CreateMeetingRoomRequest extends Model
 {
     /**
+     * @description 会议室所属分组id
+     *
+     * @var int
+     */
+    public $groupId;
+
+    /**
      * @description isv外部会议室id
      *
      * @var string
@@ -65,6 +72,7 @@ class CreateMeetingRoomRequest extends Model
      */
     public $unionId;
     protected $_name = [
+        'groupId'      => 'groupId',
         'isvRoomId'    => 'isvRoomId',
         'roomCapacity' => 'roomCapacity',
         'roomLabelIds' => 'roomLabelIds',
@@ -82,6 +90,9 @@ class CreateMeetingRoomRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->groupId) {
+            $res['groupId'] = $this->groupId;
+        }
         if (null !== $this->isvRoomId) {
             $res['isvRoomId'] = $this->isvRoomId;
         }
@@ -118,6 +129,9 @@ class CreateMeetingRoomRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['groupId'])) {
+            $model->groupId = $map['groupId'];
+        }
         if (isset($map['isvRoomId'])) {
             $model->isvRoomId = $map['isvRoomId'];
         }
