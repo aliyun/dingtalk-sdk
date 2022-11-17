@@ -25,6 +25,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public CreateMeetingRoomResponse createMeetingRoomWithOptions(CreateMeetingRoomRequest request, CreateMeetingRoomHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.groupId)) {
+            body.put("groupId", request.groupId);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.isvRoomId)) {
             body.put("isvRoomId", request.isvRoomId);
         }
@@ -335,6 +339,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public UpdateMeetingRoomResponse updateMeetingRoomWithOptions(UpdateMeetingRoomRequest request, UpdateMeetingRoomHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.groupId)) {
+            body.put("groupId", request.groupId);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.isvRoomId)) {
             body.put("isvRoomId", request.isvRoomId);
         }

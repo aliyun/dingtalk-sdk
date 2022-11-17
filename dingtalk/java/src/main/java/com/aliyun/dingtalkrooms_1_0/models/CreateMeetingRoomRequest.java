@@ -4,6 +4,10 @@ package com.aliyun.dingtalkrooms_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateMeetingRoomRequest extends TeaModel {
+    // 会议室所属分组id
+    @NameInMap("groupId")
+    public Long groupId;
+
     // isv外部会议室id
     @NameInMap("isvRoomId")
     public String isvRoomId;
@@ -39,6 +43,14 @@ public class CreateMeetingRoomRequest extends TeaModel {
     public static CreateMeetingRoomRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateMeetingRoomRequest self = new CreateMeetingRoomRequest();
         return TeaModel.build(map, self);
+    }
+
+    public CreateMeetingRoomRequest setGroupId(Long groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+    public Long getGroupId() {
+        return this.groupId;
     }
 
     public CreateMeetingRoomRequest setIsvRoomId(String isvRoomId) {

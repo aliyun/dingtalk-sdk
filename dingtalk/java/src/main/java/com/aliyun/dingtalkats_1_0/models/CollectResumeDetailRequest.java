@@ -12,6 +12,10 @@ public class CollectResumeDetailRequest extends TeaModel {
     @NameInMap("channelOuterId")
     public String channelOuterId;
 
+    // 渠道侧候选人标识。
+    @NameInMap("channelTalentId")
+    public String channelTalentId;
+
     // 简历投递职位标识
     @NameInMap("deliverJobId")
     public String deliverJobId;
@@ -42,6 +46,14 @@ public class CollectResumeDetailRequest extends TeaModel {
     }
     public String getChannelOuterId() {
         return this.channelOuterId;
+    }
+
+    public CollectResumeDetailRequest setChannelTalentId(String channelTalentId) {
+        this.channelTalentId = channelTalentId;
+        return this;
+    }
+    public String getChannelTalentId() {
+        return this.channelTalentId;
     }
 
     public CollectResumeDetailRequest setDeliverJobId(String deliverJobId) {

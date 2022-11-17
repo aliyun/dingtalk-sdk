@@ -175,6 +175,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("channelOuterId", request.channelOuterId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.channelTalentId)) {
+            body.put("channelTalentId", request.channelTalentId);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.deliverJobId)) {
             body.put("deliverJobId", request.deliverJobId);
         }

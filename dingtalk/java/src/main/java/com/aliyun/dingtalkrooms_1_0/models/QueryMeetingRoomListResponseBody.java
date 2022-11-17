@@ -45,6 +45,50 @@ public class QueryMeetingRoomListResponseBody extends TeaModel {
         return this.result;
     }
 
+    public static class QueryMeetingRoomListResponseBodyResultRoomGroup extends TeaModel {
+        // 分组id
+        @NameInMap("groupId")
+        public Long groupId;
+
+        // 分组名称
+        @NameInMap("groupName")
+        public String groupName;
+
+        // 父分组id
+        @NameInMap("parentId")
+        public Long parentId;
+
+        public static QueryMeetingRoomListResponseBodyResultRoomGroup build(java.util.Map<String, ?> map) throws Exception {
+            QueryMeetingRoomListResponseBodyResultRoomGroup self = new QueryMeetingRoomListResponseBodyResultRoomGroup();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryMeetingRoomListResponseBodyResultRoomGroup setGroupId(Long groupId) {
+            this.groupId = groupId;
+            return this;
+        }
+        public Long getGroupId() {
+            return this.groupId;
+        }
+
+        public QueryMeetingRoomListResponseBodyResultRoomGroup setGroupName(String groupName) {
+            this.groupName = groupName;
+            return this;
+        }
+        public String getGroupName() {
+            return this.groupName;
+        }
+
+        public QueryMeetingRoomListResponseBodyResultRoomGroup setParentId(Long parentId) {
+            this.parentId = parentId;
+            return this;
+        }
+        public Long getParentId() {
+            return this.parentId;
+        }
+
+    }
+
     public static class QueryMeetingRoomListResponseBodyResultRoomLabels extends TeaModel {
         @NameInMap("labelId")
         public Long labelId;
@@ -120,6 +164,10 @@ public class QueryMeetingRoomListResponseBody extends TeaModel {
         @NameInMap("roomCapacity")
         public Integer roomCapacity;
 
+        // 会议室分组
+        @NameInMap("roomGroup")
+        public QueryMeetingRoomListResponseBodyResultRoomGroup roomGroup;
+
         // 会议室id
         @NameInMap("roomId")
         public String roomId;
@@ -174,6 +222,14 @@ public class QueryMeetingRoomListResponseBody extends TeaModel {
         }
         public Integer getRoomCapacity() {
             return this.roomCapacity;
+        }
+
+        public QueryMeetingRoomListResponseBodyResult setRoomGroup(QueryMeetingRoomListResponseBodyResultRoomGroup roomGroup) {
+            this.roomGroup = roomGroup;
+            return this;
+        }
+        public QueryMeetingRoomListResponseBodyResultRoomGroup getRoomGroup() {
+            return this.roomGroup;
         }
 
         public QueryMeetingRoomListResponseBodyResult setRoomId(String roomId) {
