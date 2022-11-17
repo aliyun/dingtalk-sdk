@@ -323,6 +323,7 @@ export class CollectResumeDetailHeaders extends $tea.Model {
 export class CollectResumeDetailRequest extends $tea.Model {
   bizCode?: string;
   channelOuterId?: string;
+  channelTalentId?: string;
   deliverJobId?: string;
   optUserId?: string;
   resumeData?: CollectResumeDetailRequestResumeData;
@@ -330,6 +331,7 @@ export class CollectResumeDetailRequest extends $tea.Model {
     return {
       bizCode: 'bizCode',
       channelOuterId: 'channelOuterId',
+      channelTalentId: 'channelTalentId',
       deliverJobId: 'deliverJobId',
       optUserId: 'optUserId',
       resumeData: 'resumeData',
@@ -340,6 +342,7 @@ export class CollectResumeDetailRequest extends $tea.Model {
     return {
       bizCode: 'string',
       channelOuterId: 'string',
+      channelTalentId: 'string',
       deliverJobId: 'string',
       optUserId: 'string',
       resumeData: CollectResumeDetailRequestResumeData,
@@ -2191,6 +2194,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.channelOuterId)) {
       body["channelOuterId"] = request.channelOuterId;
+    }
+
+    if (!Util.isUnset(request.channelTalentId)) {
+      body["channelTalentId"] = request.channelTalentId;
     }
 
     if (!Util.isUnset(request.deliverJobId)) {
