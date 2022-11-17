@@ -47,6 +47,8 @@ class Client(OpenApiClient):
     ) -> dingtalkrooms__1__0_models.CreateMeetingRoomResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.group_id):
+            body['groupId'] = request.group_id
         if not UtilClient.is_unset(request.isv_room_id):
             body['isvRoomId'] = request.isv_room_id
         if not UtilClient.is_unset(request.room_capacity):
@@ -85,6 +87,8 @@ class Client(OpenApiClient):
     ) -> dingtalkrooms__1__0_models.CreateMeetingRoomResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.group_id):
+            body['groupId'] = request.group_id
         if not UtilClient.is_unset(request.isv_room_id):
             body['isvRoomId'] = request.isv_room_id
         if not UtilClient.is_unset(request.room_capacity):
@@ -697,6 +701,8 @@ class Client(OpenApiClient):
     ) -> dingtalkrooms__1__0_models.UpdateMeetingRoomResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.group_id):
+            body['groupId'] = request.group_id
         if not UtilClient.is_unset(request.isv_room_id):
             body['isvRoomId'] = request.isv_room_id
         if not UtilClient.is_unset(request.room_capacity):
@@ -737,6 +743,8 @@ class Client(OpenApiClient):
     ) -> dingtalkrooms__1__0_models.UpdateMeetingRoomResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.group_id):
+            body['groupId'] = request.group_id
         if not UtilClient.is_unset(request.isv_room_id):
             body['isvRoomId'] = request.isv_room_id
         if not UtilClient.is_unset(request.room_capacity):

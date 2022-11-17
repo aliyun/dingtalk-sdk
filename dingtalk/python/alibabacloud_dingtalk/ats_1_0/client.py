@@ -304,6 +304,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.channel_outer_id):
             body['channelOuterId'] = request.channel_outer_id
+        if not UtilClient.is_unset(request.channel_talent_id):
+            body['channelTalentId'] = request.channel_talent_id
         if not UtilClient.is_unset(request.deliver_job_id):
             body['deliverJobId'] = request.deliver_job_id
         if not UtilClient.is_unset(request.opt_user_id):
@@ -338,6 +340,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.channel_outer_id):
             body['channelOuterId'] = request.channel_outer_id
+        if not UtilClient.is_unset(request.channel_talent_id):
+            body['channelTalentId'] = request.channel_talent_id
         if not UtilClient.is_unset(request.deliver_job_id):
             body['deliverJobId'] = request.deliver_job_id
         if not UtilClient.is_unset(request.opt_user_id):

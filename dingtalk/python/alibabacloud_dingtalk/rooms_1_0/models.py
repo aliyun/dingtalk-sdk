@@ -75,6 +75,7 @@ class CreateMeetingRoomRequestRoomLocation(TeaModel):
 class CreateMeetingRoomRequest(TeaModel):
     def __init__(
         self,
+        group_id: int = None,
         isv_room_id: str = None,
         room_capacity: int = None,
         room_label_ids: List[int] = None,
@@ -84,6 +85,8 @@ class CreateMeetingRoomRequest(TeaModel):
         room_status: int = None,
         union_id: str = None,
     ):
+        # 会议室所属分组id
+        self.group_id = group_id
         # isv外部会议室id
         self.isv_room_id = isv_room_id
         # 会议室容量
@@ -111,6 +114,8 @@ class CreateMeetingRoomRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
         if self.isv_room_id is not None:
             result['isvRoomId'] = self.isv_room_id
         if self.room_capacity is not None:
@@ -131,6 +136,8 @@ class CreateMeetingRoomRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
         if m.get('isvRoomId') is not None:
             self.isv_room_id = m.get('isvRoomId')
         if m.get('roomCapacity') is not None:
@@ -831,6 +838,48 @@ class QueryMeetingRoomRequest(TeaModel):
         return self
 
 
+class QueryMeetingRoomResponseBodyResultRoomGroup(TeaModel):
+    def __init__(
+        self,
+        group_id: int = None,
+        group_name: str = None,
+        parent_id: int = None,
+    ):
+        # 分组id
+        self.group_id = group_id
+        # 分组名称
+        self.group_name = group_name
+        # 父分组id
+        self.parent_id = parent_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.parent_id is not None:
+            result['parentId'] = self.parent_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('parentId') is not None:
+            self.parent_id = m.get('parentId')
+        return self
+
+
 class QueryMeetingRoomResponseBodyResultRoomLabels(TeaModel):
     def __init__(
         self,
@@ -905,6 +954,7 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
         corp_id: str = None,
         isv_room_id: str = None,
         room_capacity: int = None,
+        room_group: QueryMeetingRoomResponseBodyResultRoomGroup = None,
         room_id: str = None,
         room_labels: List[QueryMeetingRoomResponseBodyResultRoomLabels] = None,
         room_location: QueryMeetingRoomResponseBodyResultRoomLocation = None,
@@ -919,6 +969,8 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
         self.isv_room_id = isv_room_id
         # 会议室容量
         self.room_capacity = room_capacity
+        # 会议室分组
+        self.room_group = room_group
         # 会议室id
         self.room_id = room_id
         self.room_labels = room_labels
@@ -934,6 +986,8 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
         self.room_status = room_status
 
     def validate(self):
+        if self.room_group:
+            self.room_group.validate()
         if self.room_labels:
             for k in self.room_labels:
                 if k:
@@ -953,6 +1007,8 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
             result['isvRoomId'] = self.isv_room_id
         if self.room_capacity is not None:
             result['roomCapacity'] = self.room_capacity
+        if self.room_group is not None:
+            result['roomGroup'] = self.room_group.to_map()
         if self.room_id is not None:
             result['roomId'] = self.room_id
         result['roomLabels'] = []
@@ -979,6 +1035,9 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
             self.isv_room_id = m.get('isvRoomId')
         if m.get('roomCapacity') is not None:
             self.room_capacity = m.get('roomCapacity')
+        if m.get('roomGroup') is not None:
+            temp_model = QueryMeetingRoomResponseBodyResultRoomGroup()
+            self.room_group = temp_model.from_map(m['roomGroup'])
         if m.get('roomId') is not None:
             self.room_id = m.get('roomId')
         self.room_labels = []
@@ -1457,6 +1516,48 @@ class QueryMeetingRoomListRequest(TeaModel):
         return self
 
 
+class QueryMeetingRoomListResponseBodyResultRoomGroup(TeaModel):
+    def __init__(
+        self,
+        group_id: int = None,
+        group_name: str = None,
+        parent_id: int = None,
+    ):
+        # 分组id
+        self.group_id = group_id
+        # 分组名称
+        self.group_name = group_name
+        # 父分组id
+        self.parent_id = parent_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.parent_id is not None:
+            result['parentId'] = self.parent_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('parentId') is not None:
+            self.parent_id = m.get('parentId')
+        return self
+
+
 class QueryMeetingRoomListResponseBodyResultRoomLabels(TeaModel):
     def __init__(
         self,
@@ -1531,6 +1632,7 @@ class QueryMeetingRoomListResponseBodyResult(TeaModel):
         corp_id: str = None,
         isv_room_id: str = None,
         room_capacity: int = None,
+        room_group: QueryMeetingRoomListResponseBodyResultRoomGroup = None,
         room_id: str = None,
         room_labels: List[QueryMeetingRoomListResponseBodyResultRoomLabels] = None,
         room_location: QueryMeetingRoomListResponseBodyResultRoomLocation = None,
@@ -1545,6 +1647,8 @@ class QueryMeetingRoomListResponseBodyResult(TeaModel):
         self.isv_room_id = isv_room_id
         # 会议室容量
         self.room_capacity = room_capacity
+        # 会议室分组
+        self.room_group = room_group
         # 会议室id
         self.room_id = room_id
         self.room_labels = room_labels
@@ -1560,6 +1664,8 @@ class QueryMeetingRoomListResponseBodyResult(TeaModel):
         self.room_status = room_status
 
     def validate(self):
+        if self.room_group:
+            self.room_group.validate()
         if self.room_labels:
             for k in self.room_labels:
                 if k:
@@ -1579,6 +1685,8 @@ class QueryMeetingRoomListResponseBodyResult(TeaModel):
             result['isvRoomId'] = self.isv_room_id
         if self.room_capacity is not None:
             result['roomCapacity'] = self.room_capacity
+        if self.room_group is not None:
+            result['roomGroup'] = self.room_group.to_map()
         if self.room_id is not None:
             result['roomId'] = self.room_id
         result['roomLabels'] = []
@@ -1605,6 +1713,9 @@ class QueryMeetingRoomListResponseBodyResult(TeaModel):
             self.isv_room_id = m.get('isvRoomId')
         if m.get('roomCapacity') is not None:
             self.room_capacity = m.get('roomCapacity')
+        if m.get('roomGroup') is not None:
+            temp_model = QueryMeetingRoomListResponseBodyResultRoomGroup()
+            self.room_group = temp_model.from_map(m['roomGroup'])
         if m.get('roomId') is not None:
             self.room_id = m.get('roomId')
         self.room_labels = []
@@ -1784,6 +1895,7 @@ class UpdateMeetingRoomRequestRoomLocation(TeaModel):
 class UpdateMeetingRoomRequest(TeaModel):
     def __init__(
         self,
+        group_id: int = None,
         isv_room_id: str = None,
         room_capacity: int = None,
         room_id: str = None,
@@ -1794,6 +1906,8 @@ class UpdateMeetingRoomRequest(TeaModel):
         room_status: int = None,
         union_id: str = None,
     ):
+        # 会议室所属分组id
+        self.group_id = group_id
         # isv外部会议室id
         self.isv_room_id = isv_room_id
         # 会议室容量
@@ -1823,6 +1937,8 @@ class UpdateMeetingRoomRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
         if self.isv_room_id is not None:
             result['isvRoomId'] = self.isv_room_id
         if self.room_capacity is not None:
@@ -1845,6 +1961,8 @@ class UpdateMeetingRoomRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
         if m.get('isvRoomId') is not None:
             self.isv_room_id = m.get('isvRoomId')
         if m.get('roomCapacity') is not None:

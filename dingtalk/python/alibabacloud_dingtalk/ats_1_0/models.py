@@ -1134,6 +1134,7 @@ class CollectResumeDetailRequest(TeaModel):
         self,
         biz_code: str = None,
         channel_outer_id: str = None,
+        channel_talent_id: str = None,
         deliver_job_id: str = None,
         opt_user_id: str = None,
         resume_data: CollectResumeDetailRequestResumeData = None,
@@ -1142,6 +1143,8 @@ class CollectResumeDetailRequest(TeaModel):
         self.biz_code = biz_code
         # 渠道侧简历标识
         self.channel_outer_id = channel_outer_id
+        # 渠道侧候选人标识。
+        self.channel_talent_id = channel_talent_id
         # 简历投递职位标识
         self.deliver_job_id = deliver_job_id
         self.opt_user_id = opt_user_id
@@ -1162,6 +1165,8 @@ class CollectResumeDetailRequest(TeaModel):
             result['bizCode'] = self.biz_code
         if self.channel_outer_id is not None:
             result['channelOuterId'] = self.channel_outer_id
+        if self.channel_talent_id is not None:
+            result['channelTalentId'] = self.channel_talent_id
         if self.deliver_job_id is not None:
             result['deliverJobId'] = self.deliver_job_id
         if self.opt_user_id is not None:
@@ -1176,6 +1181,8 @@ class CollectResumeDetailRequest(TeaModel):
             self.biz_code = m.get('bizCode')
         if m.get('channelOuterId') is not None:
             self.channel_outer_id = m.get('channelOuterId')
+        if m.get('channelTalentId') is not None:
+            self.channel_talent_id = m.get('channelTalentId')
         if m.get('deliverJobId') is not None:
             self.deliver_job_id = m.get('deliverJobId')
         if m.get('optUserId') is not None:
