@@ -24,6 +24,13 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
         public string ChannelOuterId { get; set; }
 
         /// <summary>
+        /// 渠道侧候选人标识。
+        /// </summary>
+        [NameInMap("channelTalentId")]
+        [Validation(Required=false)]
+        public string ChannelTalentId { get; set; }
+
+        /// <summary>
         /// 简历投递职位标识
         /// </summary>
         [NameInMap("deliverJobId")]

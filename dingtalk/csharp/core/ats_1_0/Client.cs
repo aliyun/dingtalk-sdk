@@ -353,6 +353,10 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             {
                 body["channelOuterId"] = request.ChannelOuterId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChannelTalentId))
+            {
+                body["channelTalentId"] = request.ChannelTalentId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeliverJobId))
             {
                 body["deliverJobId"] = request.DeliverJobId;
@@ -395,6 +399,10 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChannelOuterId))
             {
                 body["channelOuterId"] = request.ChannelOuterId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChannelTalentId))
+            {
+                body["channelTalentId"] = request.ChannelTalentId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeliverJobId))
             {

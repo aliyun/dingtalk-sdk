@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
 {
     public class UpdateMeetingRoomRequest : TeaModel {
         /// <summary>
+        /// 会议室所属分组id
+        /// </summary>
+        [NameInMap("groupId")]
+        [Validation(Required=false)]
+        public long? GroupId { get; set; }
+
+        /// <summary>
         /// isv外部会议室id
         /// </summary>
         [NameInMap("isvRoomId")]
