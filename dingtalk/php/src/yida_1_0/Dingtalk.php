@@ -80,12 +80,18 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetCorpLevelByAccountIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetCorpTasksHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetCorpTasksRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetCorpTasksResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetFieldDefByUuidHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetFieldDefByUuidRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetFieldDefByUuidResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetFormComponentDefinitionListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetFormComponentDefinitionListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetFormComponentDefinitionListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetFormDataByIDHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetFormDataByIDRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetFormDataByIDResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetFormListInAppHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetFormListInAppRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetFormListInAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetInstanceByIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetInstanceByIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetInstanceByIdResponse;
@@ -1762,6 +1768,57 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetFieldDefByUuidRequest $request
+     *
+     * @return GetFieldDefByUuidResponse
+     */
+    public function getFieldDefByUuid($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetFieldDefByUuidHeaders([]);
+
+        return $this->getFieldDefByUuidWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetFieldDefByUuidRequest $request
+     * @param GetFieldDefByUuidHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return GetFieldDefByUuidResponse
+     */
+    public function getFieldDefByUuidWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$query['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->formUuid)) {
+            @$query['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$query['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetFieldDefByUuidResponse::fromMap($this->doROARequest('GetFieldDefByUuid', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/forms/formFields', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string                                $appType
      * @param string                                $formUuid
      * @param GetFormComponentDefinitionListRequest $request
@@ -1870,6 +1927,63 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetFormDataByIDResponse::fromMap($this->doROARequest('GetFormDataByID', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/forms/instances/' . $id . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetFormListInAppRequest $request
+     *
+     * @return GetFormListInAppResponse
+     */
+    public function getFormListInApp($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetFormListInAppHeaders([]);
+
+        return $this->getFormListInAppWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetFormListInAppRequest $request
+     * @param GetFormListInAppHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return GetFormListInAppResponse
+     */
+    public function getFormListInAppWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$query['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->formTypes)) {
+            @$query['formTypes'] = $request->formTypes;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$query['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetFormListInAppResponse::fromMap($this->doROARequest('GetFormListInApp', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/forms', 'json', $req, $runtime));
     }
 
     /**
