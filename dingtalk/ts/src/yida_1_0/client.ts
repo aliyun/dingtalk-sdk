@@ -2372,6 +2372,100 @@ export class GetCorpTasksResponse extends $tea.Model {
   }
 }
 
+export class GetFieldDefByUuidHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFieldDefByUuidRequest extends $tea.Model {
+  appType?: string;
+  formUuid?: string;
+  systemToken?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      formUuid: 'formUuid',
+      systemToken: 'systemToken',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      formUuid: 'string',
+      systemToken: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFieldDefByUuidResponseBody extends $tea.Model {
+  result?: GetFieldDefByUuidResponseBodyResult[];
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetFieldDefByUuidResponseBodyResult },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFieldDefByUuidResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetFieldDefByUuidResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetFieldDefByUuidResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetFormComponentDefinitionListHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2558,6 +2652,106 @@ export class GetFormDataByIDResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetFormDataByIDResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFormListInAppHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFormListInAppRequest extends $tea.Model {
+  appType?: string;
+  formTypes?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  systemToken?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      formTypes: 'formTypes',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      systemToken: 'systemToken',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      formTypes: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      systemToken: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFormListInAppResponseBody extends $tea.Model {
+  result?: GetFormListInAppResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetFormListInAppResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFormListInAppResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetFormListInAppResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetFormListInAppResponseBody,
     };
   }
 
@@ -9111,6 +9305,40 @@ export class GetCorpTasksResponseBodyData extends $tea.Model {
   }
 }
 
+export class GetFieldDefByUuidResponseBodyResult extends $tea.Model {
+  behavior?: string;
+  children?: string;
+  componentName?: string;
+  fieldId?: string;
+  label?: any;
+  props?: any;
+  static names(): { [key: string]: string } {
+    return {
+      behavior: 'behavior',
+      children: 'children',
+      componentName: 'componentName',
+      fieldId: 'fieldId',
+      label: 'label',
+      props: 'props',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      behavior: 'string',
+      children: 'string',
+      componentName: 'string',
+      fieldId: 'string',
+      label: 'any',
+      props: 'any',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetFormComponentDefinitionListResponseBodyResult extends $tea.Model {
   componentName?: string;
   fieldId?: string;
@@ -9184,6 +9412,84 @@ export class GetFormDataByIDResponseBodyOriginator extends $tea.Model {
       email: 'string',
       name: GetFormDataByIDResponseBodyOriginatorName,
       userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFormListInAppResponseBodyResultDataTitle extends $tea.Model {
+  enUS?: string;
+  zhCN?: string;
+  static names(): { [key: string]: string } {
+    return {
+      enUS: 'enUS',
+      zhCN: 'zhCN',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      enUS: 'string',
+      zhCN: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFormListInAppResponseBodyResultData extends $tea.Model {
+  creator?: string;
+  formType?: string;
+  formUuid?: string;
+  gmtCreate?: string;
+  title?: GetFormListInAppResponseBodyResultDataTitle;
+  static names(): { [key: string]: string } {
+    return {
+      creator: 'creator',
+      formType: 'formType',
+      formUuid: 'formUuid',
+      gmtCreate: 'gmtCreate',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      creator: 'string',
+      formType: 'string',
+      formUuid: 'string',
+      gmtCreate: 'string',
+      title: GetFormListInAppResponseBodyResultDataTitle,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFormListInAppResponseBodyResult extends $tea.Model {
+  currentPage?: number;
+  data?: GetFormListInAppResponseBodyResultData[];
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      currentPage: 'currentPage',
+      data: 'data',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      currentPage: 'number',
+      data: { 'type': 'array', 'itemType': GetFormListInAppResponseBodyResultData },
+      totalCount: 'number',
     };
   }
 
@@ -12908,6 +13214,47 @@ export default class Client extends OpenApi {
     return $tea.cast<GetCorpTasksResponse>(await this.doROARequest("GetCorpTasks", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/corpTasks`, "json", req, runtime), new GetCorpTasksResponse({}));
   }
 
+  async getFieldDefByUuid(request: GetFieldDefByUuidRequest): Promise<GetFieldDefByUuidResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetFieldDefByUuidHeaders({ });
+    return await this.getFieldDefByUuidWithOptions(request, headers, runtime);
+  }
+
+  async getFieldDefByUuidWithOptions(request: GetFieldDefByUuidRequest, headers: GetFieldDefByUuidHeaders, runtime: $Util.RuntimeOptions): Promise<GetFieldDefByUuidResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      query["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.formUuid)) {
+      query["formUuid"] = request.formUuid;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      query["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetFieldDefByUuidResponse>(await this.doROARequest("GetFieldDefByUuid", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/forms/formFields`, "json", req, runtime), new GetFieldDefByUuidResponse({}));
+  }
+
   async getFormComponentDefinitionList(appType: string, formUuid: string, request: GetFormComponentDefinitionListRequest): Promise<GetFormComponentDefinitionListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetFormComponentDefinitionListHeaders({ });
@@ -12991,6 +13338,55 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetFormDataByIDResponse>(await this.doROARequest("GetFormDataByID", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/forms/instances/${id}`, "json", req, runtime), new GetFormDataByIDResponse({}));
+  }
+
+  async getFormListInApp(request: GetFormListInAppRequest): Promise<GetFormListInAppResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetFormListInAppHeaders({ });
+    return await this.getFormListInAppWithOptions(request, headers, runtime);
+  }
+
+  async getFormListInAppWithOptions(request: GetFormListInAppRequest, headers: GetFormListInAppHeaders, runtime: $Util.RuntimeOptions): Promise<GetFormListInAppResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      query["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.formTypes)) {
+      query["formTypes"] = request.formTypes;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      query["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetFormListInAppResponse>(await this.doROARequest("GetFormListInApp", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/forms`, "json", req, runtime), new GetFormListInAppResponse({}));
   }
 
   async getInstanceById(id: string, request: GetInstanceByIdRequest): Promise<GetInstanceByIdResponse> {
