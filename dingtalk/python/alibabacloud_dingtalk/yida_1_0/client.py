@@ -2201,6 +2201,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetCorpTasks', 'yida_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/yida/corpTasks', 'json', req, runtime)
         )
 
+    def get_field_def_by_uuid(
+        self,
+        request: dingtalkyida__1__0_models.GetFieldDefByUuidRequest,
+    ) -> dingtalkyida__1__0_models.GetFieldDefByUuidResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.GetFieldDefByUuidHeaders()
+        return self.get_field_def_by_uuid_with_options(request, headers, runtime)
+
+    async def get_field_def_by_uuid_async(
+        self,
+        request: dingtalkyida__1__0_models.GetFieldDefByUuidRequest,
+    ) -> dingtalkyida__1__0_models.GetFieldDefByUuidResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.GetFieldDefByUuidHeaders()
+        return await self.get_field_def_by_uuid_with_options_async(request, headers, runtime)
+
+    def get_field_def_by_uuid_with_options(
+        self,
+        request: dingtalkyida__1__0_models.GetFieldDefByUuidRequest,
+        headers: dingtalkyida__1__0_models.GetFieldDefByUuidHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.GetFieldDefByUuidResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_type):
+            query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.form_uuid):
+            query['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.system_token):
+            query['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.GetFieldDefByUuidResponse(),
+            self.do_roarequest('GetFieldDefByUuid', 'yida_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/yida/forms/formFields', 'json', req, runtime)
+        )
+
+    async def get_field_def_by_uuid_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.GetFieldDefByUuidRequest,
+        headers: dingtalkyida__1__0_models.GetFieldDefByUuidHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.GetFieldDefByUuidResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_type):
+            query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.form_uuid):
+            query['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.system_token):
+            query['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.GetFieldDefByUuidResponse(),
+            await self.do_roarequest_async('GetFieldDefByUuid', 'yida_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/yida/forms/formFields', 'json', req, runtime)
+        )
+
     def get_form_component_definition_list(
         self,
         app_type: str,
@@ -2369,6 +2445,90 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkyida__1__0_models.GetFormDataByIDResponse(),
             await self.do_roarequest_async('GetFormDataByID', 'yida_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/yida/forms/instances/{id}', 'json', req, runtime)
+        )
+
+    def get_form_list_in_app(
+        self,
+        request: dingtalkyida__1__0_models.GetFormListInAppRequest,
+    ) -> dingtalkyida__1__0_models.GetFormListInAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.GetFormListInAppHeaders()
+        return self.get_form_list_in_app_with_options(request, headers, runtime)
+
+    async def get_form_list_in_app_async(
+        self,
+        request: dingtalkyida__1__0_models.GetFormListInAppRequest,
+    ) -> dingtalkyida__1__0_models.GetFormListInAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.GetFormListInAppHeaders()
+        return await self.get_form_list_in_app_with_options_async(request, headers, runtime)
+
+    def get_form_list_in_app_with_options(
+        self,
+        request: dingtalkyida__1__0_models.GetFormListInAppRequest,
+        headers: dingtalkyida__1__0_models.GetFormListInAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.GetFormListInAppResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_type):
+            query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.form_types):
+            query['formTypes'] = request.form_types
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.system_token):
+            query['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.GetFormListInAppResponse(),
+            self.do_roarequest('GetFormListInApp', 'yida_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/yida/forms', 'json', req, runtime)
+        )
+
+    async def get_form_list_in_app_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.GetFormListInAppRequest,
+        headers: dingtalkyida__1__0_models.GetFormListInAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.GetFormListInAppResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_type):
+            query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.form_types):
+            query['formTypes'] = request.form_types
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.system_token):
+            query['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.GetFormListInAppResponse(),
+            await self.do_roarequest_async('GetFormListInApp', 'yida_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/yida/forms', 'json', req, runtime)
         )
 
     def get_instance_by_id(

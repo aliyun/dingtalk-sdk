@@ -23,6 +23,78 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def get_space(
+        self,
+        request: dingtalkconv_file__1__0_models.GetSpaceRequest,
+    ) -> dingtalkconv_file__1__0_models.GetSpaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconv_file__1__0_models.GetSpaceHeaders()
+        return self.get_space_with_options(request, headers, runtime)
+
+    async def get_space_async(
+        self,
+        request: dingtalkconv_file__1__0_models.GetSpaceRequest,
+    ) -> dingtalkconv_file__1__0_models.GetSpaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconv_file__1__0_models.GetSpaceHeaders()
+        return await self.get_space_with_options_async(request, headers, runtime)
+
+    def get_space_with_options(
+        self,
+        request: dingtalkconv_file__1__0_models.GetSpaceRequest,
+        headers: dingtalkconv_file__1__0_models.GetSpaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconv_file__1__0_models.GetSpaceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkconv_file__1__0_models.GetSpaceResponse(),
+            self.do_roarequest('GetSpace', 'convFile_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/convFile/conversations/spaces/query', 'json', req, runtime)
+        )
+
+    async def get_space_with_options_async(
+        self,
+        request: dingtalkconv_file__1__0_models.GetSpaceRequest,
+        headers: dingtalkconv_file__1__0_models.GetSpaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconv_file__1__0_models.GetSpaceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkconv_file__1__0_models.GetSpaceResponse(),
+            await self.do_roarequest_async('GetSpace', 'convFile_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/convFile/conversations/spaces/query', 'json', req, runtime)
+        )
+
     def send_by_app(
         self,
         request: dingtalkconv_file__1__0_models.SendByAppRequest,

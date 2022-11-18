@@ -4,6 +4,190 @@ from Tea.model import TeaModel
 from typing import Dict
 
 
+class GetSpaceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetSpaceRequest(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+        union_id: str = None,
+    ):
+        # 会话id
+        self.open_conversation_id = open_conversation_id
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class GetSpaceResponseBodySpace(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        create_time: str = None,
+        modified_time: str = None,
+        space_id: str = None,
+    ):
+        # 空间归属企业的id
+        self.corp_id = corp_id
+        # 创建时间
+        self.create_time = create_time
+        # 修改时间
+        self.modified_time = modified_time
+        # 空间id
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.modified_time is not None:
+            result['modifiedTime'] = self.modified_time
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('modifiedTime') is not None:
+            self.modified_time = m.get('modifiedTime')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class GetSpaceResponseBody(TeaModel):
+    def __init__(
+        self,
+        space: GetSpaceResponseBodySpace = None,
+    ):
+        # IM会话存储空间信息
+        self.space = space
+
+    def validate(self):
+        if self.space:
+            self.space.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.space is not None:
+            result['space'] = self.space.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('space') is not None:
+            temp_model = GetSpaceResponseBodySpace()
+            self.space = temp_model.from_map(m['space'])
+        return self
+
+
+class GetSpaceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetSpaceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetSpaceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SendByAppHeaders(TeaModel):
     def __init__(
         self,

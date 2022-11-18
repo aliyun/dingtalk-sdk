@@ -4651,6 +4651,231 @@ class GetCorpTasksResponse(TeaModel):
         return self
 
 
+class GetFieldDefByUuidHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetFieldDefByUuidRequest(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        form_uuid: str = None,
+        system_token: str = None,
+        user_id: str = None,
+    ):
+        # 应用编码。应用唯一标识。如：APP_XXX
+        self.app_type = app_type
+        # 表单唯一标识
+        self.form_uuid = form_uuid
+        # 应用秘钥。在应用设置-部署运维-应用密钥中获取。
+        self.system_token = system_token
+        # 操作人userId
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetFieldDefByUuidResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        behavior: str = None,
+        children: str = None,
+        component_name: str = None,
+        field_id: str = None,
+        label: Any = None,
+        props: Any = None,
+    ):
+        # 组件展示状态 
+        # 普通NORMAL/禁用DISABLED/只读READONLY/隐藏HIDDEN
+        self.behavior = behavior
+        # 子组件信息
+        self.children = children
+        # 组件类型，如文本类型：TextField
+        self.component_name = component_name
+        # 字段ID，字段唯一标识
+        self.field_id = field_id
+        # 字段名称。符合国际化标准。
+        self.label = label
+        #  组件属性
+        self.props = props
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.behavior is not None:
+            result['behavior'] = self.behavior
+        if self.children is not None:
+            result['children'] = self.children
+        if self.component_name is not None:
+            result['componentName'] = self.component_name
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.props is not None:
+            result['props'] = self.props
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('behavior') is not None:
+            self.behavior = m.get('behavior')
+        if m.get('children') is not None:
+            self.children = m.get('children')
+        if m.get('componentName') is not None:
+            self.component_name = m.get('componentName')
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('props') is not None:
+            self.props = m.get('props')
+        return self
+
+
+class GetFieldDefByUuidResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[GetFieldDefByUuidResponseBodyResult] = None,
+        success: bool = None,
+    ):
+        self.result = result
+        # 是否成功，true代表成功
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetFieldDefByUuidResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetFieldDefByUuidResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetFieldDefByUuidResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetFieldDefByUuidResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetFormComponentDefinitionListHeaders(TeaModel):
     def __init__(
         self,
@@ -5120,6 +5345,317 @@ class GetFormDataByIDResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetFormDataByIDResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetFormListInAppHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetFormListInAppRequest(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        form_types: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        system_token: str = None,
+        user_id: str = None,
+    ):
+        # 应用编码。应用唯一标识。如：APP_XXX
+        self.app_type = app_type
+        # 支持两种表单类型。
+        # receipt :  普通单据表单
+        # process ： 流程表单
+        # 如需查询多种类型，可用英文逗号分隔。
+        # 不传时默认单据和流程均返回。
+        self.form_types = form_types
+        # 页码，不填默认为1。
+        self.page_number = page_number
+        # 单页返回的条目数，最大值100。
+        # 不填默认为100。
+        self.page_size = page_size
+        # 应用秘钥。在应用设置-部署运维-应用密钥中获取。
+        self.system_token = system_token
+        # 操作人userId。
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.form_types is not None:
+            result['formTypes'] = self.form_types
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('formTypes') is not None:
+            self.form_types = m.get('formTypes')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetFormListInAppResponseBodyResultDataTitle(TeaModel):
+    def __init__(
+        self,
+        en_us: str = None,
+        zh_cn: str = None,
+    ):
+        self.en_us = en_us
+        self.zh_cn = zh_cn
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.en_us is not None:
+            result['enUS'] = self.en_us
+        if self.zh_cn is not None:
+            result['zhCN'] = self.zh_cn
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enUS') is not None:
+            self.en_us = m.get('enUS')
+        if m.get('zhCN') is not None:
+            self.zh_cn = m.get('zhCN')
+        return self
+
+
+class GetFormListInAppResponseBodyResultData(TeaModel):
+    def __init__(
+        self,
+        creator: str = None,
+        form_type: str = None,
+        form_uuid: str = None,
+        gmt_create: str = None,
+        title: GetFormListInAppResponseBodyResultDataTitle = None,
+    ):
+        self.creator = creator
+        self.form_type = form_type
+        self.form_uuid = form_uuid
+        self.gmt_create = gmt_create
+        self.title = title
+
+    def validate(self):
+        if self.title:
+            self.title.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.creator is not None:
+            result['creator'] = self.creator
+        if self.form_type is not None:
+            result['formType'] = self.form_type
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.title is not None:
+            result['title'] = self.title.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('creator') is not None:
+            self.creator = m.get('creator')
+        if m.get('formType') is not None:
+            self.form_type = m.get('formType')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('title') is not None:
+            temp_model = GetFormListInAppResponseBodyResultDataTitle()
+            self.title = temp_model.from_map(m['title'])
+        return self
+
+
+class GetFormListInAppResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        current_page: int = None,
+        data: List[GetFormListInAppResponseBodyResultData] = None,
+        total_count: int = None,
+    ):
+        # 分页参数，当前页码
+        self.current_page = current_page
+        # 返回的表单列表
+        self.data = data
+        # 符合条件的总数目
+        self.total_count = total_count
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.current_page is not None:
+            result['currentPage'] = self.current_page
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('currentPage') is not None:
+            self.current_page = m.get('currentPage')
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = GetFormListInAppResponseBodyResultData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class GetFormListInAppResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetFormListInAppResponseBodyResult = None,
+        success: bool = None,
+    ):
+        # 接口返回的结果
+        self.result = result
+        # 是否成功，true代表成功
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetFormListInAppResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetFormListInAppResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetFormListInAppResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetFormListInAppResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
