@@ -469,6 +469,97 @@ export class DeleteCommentResponse extends $tea.Model {
   }
 }
 
+export class DeleteTrustedDeviceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteTrustedDeviceRequest extends $tea.Model {
+  did?: string;
+  kickOff?: boolean;
+  macAddress?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      did: 'did',
+      kickOff: 'kickOff',
+      macAddress: 'macAddress',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      did: 'string',
+      kickOff: 'boolean',
+      macAddress: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteTrustedDeviceResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteTrustedDeviceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DeleteTrustedDeviceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DeleteTrustedDeviceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DistributePartnerAppHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -7503,6 +7594,47 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<DeleteCommentResponse>(await this.doROARequest("DeleteComment", "exclusive_1.0", "HTTP", "DELETE", "AK", `/v1.0/exclusive/publishers/${publisherId}/comments/${commentId}`, "boolean", req, runtime), new DeleteCommentResponse({}));
+  }
+
+  async deleteTrustedDevice(request: DeleteTrustedDeviceRequest): Promise<DeleteTrustedDeviceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteTrustedDeviceHeaders({ });
+    return await this.deleteTrustedDeviceWithOptions(request, headers, runtime);
+  }
+
+  async deleteTrustedDeviceWithOptions(request: DeleteTrustedDeviceRequest, headers: DeleteTrustedDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteTrustedDeviceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.did)) {
+      body["did"] = request.did;
+    }
+
+    if (!Util.isUnset(request.kickOff)) {
+      body["kickOff"] = request.kickOff;
+    }
+
+    if (!Util.isUnset(request.macAddress)) {
+      body["macAddress"] = request.macAddress;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<DeleteTrustedDeviceResponse>(await this.doROARequest("DeleteTrustedDevice", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/trustedDevices/remove`, "json", req, runtime), new DeleteTrustedDeviceResponse({}));
   }
 
   async distributePartnerApp(request: DistributePartnerAppRequest): Promise<DistributePartnerAppResponse> {
