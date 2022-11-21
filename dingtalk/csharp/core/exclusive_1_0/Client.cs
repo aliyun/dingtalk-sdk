@@ -452,6 +452,94 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             return TeaModel.ToObject<DeleteCommentResponse>(await DoROARequestAsync("DeleteComment", "exclusive_1.0", "HTTP", "DELETE", "AK", "/v1.0/exclusive/publishers/" + publisherId + "/comments/" + commentId, "boolean", req, runtime));
         }
 
+        public DeleteTrustedDeviceResponse DeleteTrustedDevice(DeleteTrustedDeviceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteTrustedDeviceHeaders headers = new DeleteTrustedDeviceHeaders();
+            return DeleteTrustedDeviceWithOptions(request, headers, runtime);
+        }
+
+        public async Task<DeleteTrustedDeviceResponse> DeleteTrustedDeviceAsync(DeleteTrustedDeviceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteTrustedDeviceHeaders headers = new DeleteTrustedDeviceHeaders();
+            return await DeleteTrustedDeviceWithOptionsAsync(request, headers, runtime);
+        }
+
+        public DeleteTrustedDeviceResponse DeleteTrustedDeviceWithOptions(DeleteTrustedDeviceRequest request, DeleteTrustedDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Did))
+            {
+                body["did"] = request.Did;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.KickOff))
+            {
+                body["kickOff"] = request.KickOff;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MacAddress))
+            {
+                body["macAddress"] = request.MacAddress;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<DeleteTrustedDeviceResponse>(DoROARequest("DeleteTrustedDevice", "exclusive_1.0", "HTTP", "POST", "AK", "/v1.0/exclusive/trustedDevices/remove", "json", req, runtime));
+        }
+
+        public async Task<DeleteTrustedDeviceResponse> DeleteTrustedDeviceWithOptionsAsync(DeleteTrustedDeviceRequest request, DeleteTrustedDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Did))
+            {
+                body["did"] = request.Did;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.KickOff))
+            {
+                body["kickOff"] = request.KickOff;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MacAddress))
+            {
+                body["macAddress"] = request.MacAddress;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<DeleteTrustedDeviceResponse>(await DoROARequestAsync("DeleteTrustedDevice", "exclusive_1.0", "HTTP", "POST", "AK", "/v1.0/exclusive/trustedDevices/remove", "json", req, runtime));
+        }
+
         public DistributePartnerAppResponse DistributePartnerApp(DistributePartnerAppRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
