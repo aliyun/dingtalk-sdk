@@ -429,6 +429,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DeleteComment', 'exclusive_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/exclusive/publishers/{publisher_id}/comments/{comment_id}', 'boolean', req, runtime)
         )
 
+    def delete_trusted_device(
+        self,
+        request: dingtalkexclusive__1__0_models.DeleteTrustedDeviceRequest,
+    ) -> dingtalkexclusive__1__0_models.DeleteTrustedDeviceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.DeleteTrustedDeviceHeaders()
+        return self.delete_trusted_device_with_options(request, headers, runtime)
+
+    async def delete_trusted_device_async(
+        self,
+        request: dingtalkexclusive__1__0_models.DeleteTrustedDeviceRequest,
+    ) -> dingtalkexclusive__1__0_models.DeleteTrustedDeviceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.DeleteTrustedDeviceHeaders()
+        return await self.delete_trusted_device_with_options_async(request, headers, runtime)
+
+    def delete_trusted_device_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.DeleteTrustedDeviceRequest,
+        headers: dingtalkexclusive__1__0_models.DeleteTrustedDeviceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.DeleteTrustedDeviceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.did):
+            body['did'] = request.did
+        if not UtilClient.is_unset(request.kick_off):
+            body['kickOff'] = request.kick_off
+        if not UtilClient.is_unset(request.mac_address):
+            body['macAddress'] = request.mac_address
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.DeleteTrustedDeviceResponse(),
+            self.do_roarequest('DeleteTrustedDevice', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/trustedDevices/remove', 'json', req, runtime)
+        )
+
+    async def delete_trusted_device_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.DeleteTrustedDeviceRequest,
+        headers: dingtalkexclusive__1__0_models.DeleteTrustedDeviceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.DeleteTrustedDeviceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.did):
+            body['did'] = request.did
+        if not UtilClient.is_unset(request.kick_off):
+            body['kickOff'] = request.kick_off
+        if not UtilClient.is_unset(request.mac_address):
+            body['macAddress'] = request.mac_address
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.DeleteTrustedDeviceResponse(),
+            await self.do_roarequest_async('DeleteTrustedDevice', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/trustedDevices/remove', 'json', req, runtime)
+        )
+
     def distribute_partner_app(
         self,
         request: dingtalkexclusive__1__0_models.DistributePartnerAppRequest,
