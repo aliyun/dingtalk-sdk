@@ -21,6 +21,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteAcrossCloudStroageConf
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteAcrossCloudStroageConfigsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteCommentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteCommentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteTrustedDeviceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteTrustedDeviceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteTrustedDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DistributePartnerAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DistributePartnerAppRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DistributePartnerAppResponse;
@@ -477,6 +480,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeleteCommentResponse::fromMap($this->doROARequest('DeleteComment', 'exclusive_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/exclusive/publishers/' . $publisherId . '/comments/' . $commentId . '', 'boolean', $req, $runtime));
+    }
+
+    /**
+     * @param DeleteTrustedDeviceRequest $request
+     *
+     * @return DeleteTrustedDeviceResponse
+     */
+    public function deleteTrustedDevice($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteTrustedDeviceHeaders([]);
+
+        return $this->deleteTrustedDeviceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DeleteTrustedDeviceRequest $request
+     * @param DeleteTrustedDeviceHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return DeleteTrustedDeviceResponse
+     */
+    public function deleteTrustedDeviceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->did)) {
+            @$body['did'] = $request->did;
+        }
+        if (!Utils::isUnset($request->kickOff)) {
+            @$body['kickOff'] = $request->kickOff;
+        }
+        if (!Utils::isUnset($request->macAddress)) {
+            @$body['macAddress'] = $request->macAddress;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DeleteTrustedDeviceResponse::fromMap($this->doROARequest('DeleteTrustedDevice', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/trustedDevices/remove', 'json', $req, $runtime));
     }
 
     /**
