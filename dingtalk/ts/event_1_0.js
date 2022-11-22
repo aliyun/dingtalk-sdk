@@ -1,0 +1,1 @@
+module.exports = require('./dist').event_1_0;

@@ -26,6 +26,7 @@ import * as drive_1_0 from './drive_1_0/client';
 import * as edu_1_0 from './edu_1_0/client';
 import * as esign_1_0 from './esign_1_0/client';
 import * as esign_2_0 from './esign_2_0/client';
+import * as event_1_0 from './event_1_0/client';
 import * as exclusive_1_0 from './exclusive_1_0/client';
 import * as finance_1_0 from './finance_1_0/client';
 import * as flashmeeting_1_0 from './flashmeeting_1_0/client';
@@ -103,6 +104,7 @@ export = {
   edu_1_0,
   esign_1_0,
   esign_2_0,
+  event_1_0,
   exclusive_1_0,
   finance_1_0,
   flashmeeting_1_0,
