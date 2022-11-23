@@ -3311,6 +3311,124 @@ export class SendInteractiveCardResponse extends $tea.Model {
   }
 }
 
+export class SendOTOInteractiveCardHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOTOInteractiveCardRequest extends $tea.Model {
+  atOpenIds?: { [key: string]: string };
+  callbackRouteKey?: string;
+  cardData?: SendOTOInteractiveCardRequestCardData;
+  cardOptions?: SendOTOInteractiveCardRequestCardOptions;
+  cardTemplateId?: string;
+  openConversationId?: string;
+  outTrackId?: string;
+  privateData?: { [key: string]: PrivateDataValue };
+  pullStrategy?: boolean;
+  receiverUserIdList?: string[];
+  robotCode?: string;
+  userIdType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      atOpenIds: 'atOpenIds',
+      callbackRouteKey: 'callbackRouteKey',
+      cardData: 'cardData',
+      cardOptions: 'cardOptions',
+      cardTemplateId: 'cardTemplateId',
+      openConversationId: 'openConversationId',
+      outTrackId: 'outTrackId',
+      privateData: 'privateData',
+      pullStrategy: 'pullStrategy',
+      receiverUserIdList: 'receiverUserIdList',
+      robotCode: 'robotCode',
+      userIdType: 'userIdType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      atOpenIds: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      callbackRouteKey: 'string',
+      cardData: SendOTOInteractiveCardRequestCardData,
+      cardOptions: SendOTOInteractiveCardRequestCardOptions,
+      cardTemplateId: 'string',
+      openConversationId: 'string',
+      outTrackId: 'string',
+      privateData: { 'type': 'map', 'keyType': 'string', 'valueType': PrivateDataValue },
+      pullStrategy: 'boolean',
+      receiverUserIdList: { 'type': 'array', 'itemType': 'string' },
+      robotCode: 'string',
+      userIdType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOTOInteractiveCardResponseBody extends $tea.Model {
+  result?: SendOTOInteractiveCardResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: SendOTOInteractiveCardResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOTOInteractiveCardResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SendOTOInteractiveCardResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SendOTOInteractiveCardResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SendRobotInteractiveCardHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5464,6 +5582,63 @@ export class SendInteractiveCardResponseBodyResult extends $tea.Model {
   }
 }
 
+export class SendOTOInteractiveCardRequestCardData extends $tea.Model {
+  cardParamMap?: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      cardParamMap: 'cardParamMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOTOInteractiveCardRequestCardOptions extends $tea.Model {
+  supportForward?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      supportForward: 'supportForward',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      supportForward: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOTOInteractiveCardResponseBodyResult extends $tea.Model {
+  processQueryKey?: string;
+  static names(): { [key: string]: string } {
+    return {
+      processQueryKey: 'processQueryKey',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      processQueryKey: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SendRobotInteractiveCardRequestSendOptions extends $tea.Model {
   atAll?: boolean;
   atUserListJson?: string;
@@ -7087,6 +7262,79 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<SendInteractiveCardResponse>(await this.doROARequest("SendInteractiveCard", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interactiveCards/send`, "json", req, runtime), new SendInteractiveCardResponse({}));
+  }
+
+  async sendOTOInteractiveCard(request: SendOTOInteractiveCardRequest): Promise<SendOTOInteractiveCardResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SendOTOInteractiveCardHeaders({ });
+    return await this.sendOTOInteractiveCardWithOptions(request, headers, runtime);
+  }
+
+  async sendOTOInteractiveCardWithOptions(request: SendOTOInteractiveCardRequest, headers: SendOTOInteractiveCardHeaders, runtime: $Util.RuntimeOptions): Promise<SendOTOInteractiveCardResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.atOpenIds)) {
+      body["atOpenIds"] = request.atOpenIds;
+    }
+
+    if (!Util.isUnset(request.callbackRouteKey)) {
+      body["callbackRouteKey"] = request.callbackRouteKey;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.cardData))) {
+      body["cardData"] = request.cardData;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.cardOptions))) {
+      body["cardOptions"] = request.cardOptions;
+    }
+
+    if (!Util.isUnset(request.cardTemplateId)) {
+      body["cardTemplateId"] = request.cardTemplateId;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.outTrackId)) {
+      body["outTrackId"] = request.outTrackId;
+    }
+
+    if (!Util.isUnset(request.privateData)) {
+      body["privateData"] = request.privateData;
+    }
+
+    if (!Util.isUnset(request.pullStrategy)) {
+      body["pullStrategy"] = request.pullStrategy;
+    }
+
+    if (!Util.isUnset(request.receiverUserIdList)) {
+      body["receiverUserIdList"] = request.receiverUserIdList;
+    }
+
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
+    }
+
+    if (!Util.isUnset(request.userIdType)) {
+      body["userIdType"] = request.userIdType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SendOTOInteractiveCardResponse>(await this.doROARequest("SendOTOInteractiveCard", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/privateChat/interactiveCards/send`, "json", req, runtime), new SendOTOInteractiveCardResponse({}));
   }
 
   async sendRobotInteractiveCard(request: SendRobotInteractiveCardRequest): Promise<SendRobotInteractiveCardResponse> {
