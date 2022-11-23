@@ -120,6 +120,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendInteractiveCardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendOTOInteractiveCardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendOTOInteractiveCardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendOTOInteractiveCardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendRobotInteractiveCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendRobotInteractiveCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendRobotInteractiveCardResponse;
@@ -2001,6 +2004,81 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SendInteractiveCardResponse::fromMap($this->doROARequest('SendInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interactiveCards/send', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SendOTOInteractiveCardRequest $request
+     *
+     * @return SendOTOInteractiveCardResponse
+     */
+    public function sendOTOInteractiveCard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendOTOInteractiveCardHeaders([]);
+
+        return $this->sendOTOInteractiveCardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SendOTOInteractiveCardRequest $request
+     * @param SendOTOInteractiveCardHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return SendOTOInteractiveCardResponse
+     */
+    public function sendOTOInteractiveCardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->atOpenIds)) {
+            @$body['atOpenIds'] = $request->atOpenIds;
+        }
+        if (!Utils::isUnset($request->callbackRouteKey)) {
+            @$body['callbackRouteKey'] = $request->callbackRouteKey;
+        }
+        if (!Utils::isUnset($request->cardData)) {
+            @$body['cardData'] = $request->cardData;
+        }
+        if (!Utils::isUnset($request->cardOptions)) {
+            @$body['cardOptions'] = $request->cardOptions;
+        }
+        if (!Utils::isUnset($request->cardTemplateId)) {
+            @$body['cardTemplateId'] = $request->cardTemplateId;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->outTrackId)) {
+            @$body['outTrackId'] = $request->outTrackId;
+        }
+        if (!Utils::isUnset($request->privateData)) {
+            @$body['privateData'] = $request->privateData;
+        }
+        if (!Utils::isUnset($request->pullStrategy)) {
+            @$body['pullStrategy'] = $request->pullStrategy;
+        }
+        if (!Utils::isUnset($request->receiverUserIdList)) {
+            @$body['receiverUserIdList'] = $request->receiverUserIdList;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            @$body['robotCode'] = $request->robotCode;
+        }
+        if (!Utils::isUnset($request->userIdType)) {
+            @$body['userIdType'] = $request->userIdType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SendOTOInteractiveCardResponse::fromMap($this->doROARequest('SendOTOInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/privateChat/interactiveCards/send', 'json', $req, $runtime));
     }
 
     /**
