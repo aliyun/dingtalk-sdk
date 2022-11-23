@@ -61,7 +61,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["hoursInPerDay"] = request.HoursInPerDay;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveCertificate.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveCertificate))
             {
                 body["leaveCertificate"] = request.LeaveCertificate;
             }
@@ -77,7 +77,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["naturalDayLeave"] = request.NaturalDayLeave;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubmitTimeRule.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubmitTimeRule))
             {
                 body["submitTimeRule"] = request.SubmitTimeRule;
             }
@@ -124,7 +124,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["hoursInPerDay"] = request.HoursInPerDay;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveCertificate.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveCertificate))
             {
                 body["leaveCertificate"] = request.LeaveCertificate;
             }
@@ -140,7 +140,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["naturalDayLeave"] = request.NaturalDayLeave;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubmitTimeRule.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubmitTimeRule))
             {
                 body["submitTimeRule"] = request.SubmitTimeRule;
             }
@@ -592,7 +592,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["opUserid"] = request.OpUserid;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PunchParam.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PunchParam))
             {
                 body["punchParam"] = request.PunchParam;
             }
@@ -637,7 +637,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["opUserid"] = request.OpUserid;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PunchParam.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PunchParam))
             {
                 body["punchParam"] = request.PunchParam;
             }
@@ -1679,7 +1679,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["forbidHideOutSideAddress"] = request.ForbidHideOutSideAddress;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeCheckSetting.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeCheckSetting))
             {
                 body["freeCheckSetting"] = request.FreeCheckSetting;
             }
@@ -1874,7 +1874,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["forbidHideOutSideAddress"] = request.ForbidHideOutSideAddress;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeCheckSetting.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeCheckSetting))
             {
                 body["freeCheckSetting"] = request.FreeCheckSetting;
             }
@@ -2059,7 +2059,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["forbidHideOutSideAddress"] = request.ForbidHideOutSideAddress;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeCheckSetting.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeCheckSetting))
             {
                 body["freeCheckSetting"] = request.FreeCheckSetting;
             }
@@ -2202,7 +2202,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["forbidHideOutSideAddress"] = request.ForbidHideOutSideAddress;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeCheckSetting.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeCheckSetting))
             {
                 body["freeCheckSetting"] = request.FreeCheckSetting;
             }
@@ -2514,7 +2514,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["opUserId"] = request.OpUserId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PunchParam.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PunchParam))
             {
                 body["punchParam"] = request.PunchParam;
             }
@@ -2559,7 +2559,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["opUserId"] = request.OpUserId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PunchParam.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PunchParam))
             {
                 body["punchParam"] = request.PunchParam;
             }
@@ -2823,7 +2823,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["hoursInPerDay"] = request.HoursInPerDay;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveCertificate.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveCertificate))
             {
                 body["leaveCertificate"] = request.LeaveCertificate;
             }
@@ -2843,7 +2843,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["naturalDayLeave"] = request.NaturalDayLeave;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubmitTimeRule.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubmitTimeRule))
             {
                 body["submitTimeRule"] = request.SubmitTimeRule;
             }
@@ -2890,7 +2890,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["hoursInPerDay"] = request.HoursInPerDay;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveCertificate.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveCertificate))
             {
                 body["leaveCertificate"] = request.LeaveCertificate;
             }
@@ -2910,7 +2910,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["naturalDayLeave"] = request.NaturalDayLeave;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubmitTimeRule.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubmitTimeRule))
             {
                 body["submitTimeRule"] = request.SubmitTimeRule;
             }

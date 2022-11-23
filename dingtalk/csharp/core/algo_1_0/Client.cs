@@ -44,7 +44,7 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AttachExtractDecisionInfo.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AttachExtractDecisionInfo))
             {
                 body["attachExtractDecisionInfo"] = request.AttachExtractDecisionInfo;
             }
@@ -77,7 +77,7 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AttachExtractDecisionInfo.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AttachExtractDecisionInfo))
             {
                 body["attachExtractDecisionInfo"] = request.AttachExtractDecisionInfo;
             }

@@ -1902,7 +1902,7 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0
             {
                 body["cardData"] = request.CardData;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tips.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tips))
             {
                 body["tips"] = request.Tips;
             }
@@ -1935,7 +1935,7 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0
             {
                 body["cardData"] = request.CardData;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tips.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tips))
             {
                 body["tips"] = request.Tips;
             }

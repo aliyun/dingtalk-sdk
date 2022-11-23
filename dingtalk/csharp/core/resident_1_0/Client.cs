@@ -236,7 +236,7 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResidentAddInfo.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResidentAddInfo))
             {
                 body["residentAddInfo"] = request.ResidentAddInfo;
             }
@@ -261,7 +261,7 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResidentAddInfo.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResidentAddInfo))
             {
                 body["residentAddInfo"] = request.ResidentAddInfo;
             }
@@ -2358,7 +2358,7 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResidentUpdateInfo.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResidentUpdateInfo))
             {
                 body["residentUpdateInfo"] = request.ResidentUpdateInfo;
             }
@@ -2387,7 +2387,7 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResidentUpdateInfo.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResidentUpdateInfo))
             {
                 body["residentUpdateInfo"] = request.ResidentUpdateInfo;
             }

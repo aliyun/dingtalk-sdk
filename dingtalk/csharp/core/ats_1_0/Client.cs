@@ -365,7 +365,7 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             {
                 body["optUserId"] = request.OptUserId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResumeData.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResumeData))
             {
                 body["resumeData"] = request.ResumeData;
             }
@@ -412,7 +412,7 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             {
                 body["optUserId"] = request.OptUserId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResumeData.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResumeData))
             {
                 body["resumeData"] = request.ResumeData;
             }
@@ -1306,7 +1306,7 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             {
                 body["content"] = request.Content;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingPanFile.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingPanFile))
             {
                 body["dingPanFile"] = request.DingPanFile;
             }
@@ -1342,7 +1342,7 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             {
                 body["content"] = request.Content;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingPanFile.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingPanFile))
             {
                 body["dingPanFile"] = request.DingPanFile;
             }

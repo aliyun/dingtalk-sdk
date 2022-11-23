@@ -815,9 +815,9 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
             GetInvoiceByPageShrinkRequest request = new GetInvoiceByPageShrinkRequest();
             AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Request.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Request))
             {
-                request.RequestShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Request.ToMap(), "request", "json");
+                request.RequestShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Request, "request", "json");
             }
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RequestShrink))
@@ -846,9 +846,9 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
             GetInvoiceByPageShrinkRequest request = new GetInvoiceByPageShrinkRequest();
             AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Request.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Request))
             {
-                request.RequestShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Request.ToMap(), "request", "json");
+                request.RequestShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Request, "request", "json");
             }
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RequestShrink))
@@ -2392,7 +2392,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BlueGeneralInvoiceVO.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BlueGeneralInvoiceVO))
             {
                 body["blueGeneralInvoiceVO"] = request.BlueGeneralInvoiceVO;
             }
@@ -2412,7 +2412,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 body["operator"] = request.Operator;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedGeneralInvoiceVO.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedGeneralInvoiceVO))
             {
                 body["redGeneralInvoiceVO"] = request.RedGeneralInvoiceVO;
             }
@@ -2453,7 +2453,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BlueGeneralInvoiceVO.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BlueGeneralInvoiceVO))
             {
                 body["blueGeneralInvoiceVO"] = request.BlueGeneralInvoiceVO;
             }
@@ -2473,7 +2473,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 body["operator"] = request.Operator;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedGeneralInvoiceVO.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedGeneralInvoiceVO))
             {
                 body["redGeneralInvoiceVO"] = request.RedGeneralInvoiceVO;
             }
@@ -2616,7 +2616,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GeneralInvoiceVO.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GeneralInvoiceVO))
             {
                 body["generalInvoiceVO"] = request.GeneralInvoiceVO;
             }
@@ -2657,7 +2657,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GeneralInvoiceVO.ToMap()))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GeneralInvoiceVO))
             {
                 body["generalInvoiceVO"] = request.GeneralInvoiceVO;
             }
