@@ -2725,6 +2725,114 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('SendInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interactiveCards/send', 'json', req, runtime)
         )
 
+    def send_otointeractive_card(
+        self,
+        request: dingtalkim__1__0_models.SendOTOInteractiveCardRequest,
+    ) -> dingtalkim__1__0_models.SendOTOInteractiveCardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.SendOTOInteractiveCardHeaders()
+        return self.send_otointeractive_card_with_options(request, headers, runtime)
+
+    async def send_otointeractive_card_async(
+        self,
+        request: dingtalkim__1__0_models.SendOTOInteractiveCardRequest,
+    ) -> dingtalkim__1__0_models.SendOTOInteractiveCardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.SendOTOInteractiveCardHeaders()
+        return await self.send_otointeractive_card_with_options_async(request, headers, runtime)
+
+    def send_otointeractive_card_with_options(
+        self,
+        request: dingtalkim__1__0_models.SendOTOInteractiveCardRequest,
+        headers: dingtalkim__1__0_models.SendOTOInteractiveCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.SendOTOInteractiveCardResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.at_open_ids):
+            body['atOpenIds'] = request.at_open_ids
+        if not UtilClient.is_unset(request.callback_route_key):
+            body['callbackRouteKey'] = request.callback_route_key
+        if not UtilClient.is_unset(request.card_data):
+            body['cardData'] = request.card_data
+        if not UtilClient.is_unset(request.card_options):
+            body['cardOptions'] = request.card_options
+        if not UtilClient.is_unset(request.card_template_id):
+            body['cardTemplateId'] = request.card_template_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.out_track_id):
+            body['outTrackId'] = request.out_track_id
+        if not UtilClient.is_unset(request.private_data):
+            body['privateData'] = request.private_data
+        if not UtilClient.is_unset(request.pull_strategy):
+            body['pullStrategy'] = request.pull_strategy
+        if not UtilClient.is_unset(request.receiver_user_id_list):
+            body['receiverUserIdList'] = request.receiver_user_id_list
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.user_id_type):
+            body['userIdType'] = request.user_id_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.SendOTOInteractiveCardResponse(),
+            self.do_roarequest('SendOTOInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/privateChat/interactiveCards/send', 'json', req, runtime)
+        )
+
+    async def send_otointeractive_card_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.SendOTOInteractiveCardRequest,
+        headers: dingtalkim__1__0_models.SendOTOInteractiveCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.SendOTOInteractiveCardResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.at_open_ids):
+            body['atOpenIds'] = request.at_open_ids
+        if not UtilClient.is_unset(request.callback_route_key):
+            body['callbackRouteKey'] = request.callback_route_key
+        if not UtilClient.is_unset(request.card_data):
+            body['cardData'] = request.card_data
+        if not UtilClient.is_unset(request.card_options):
+            body['cardOptions'] = request.card_options
+        if not UtilClient.is_unset(request.card_template_id):
+            body['cardTemplateId'] = request.card_template_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.out_track_id):
+            body['outTrackId'] = request.out_track_id
+        if not UtilClient.is_unset(request.private_data):
+            body['privateData'] = request.private_data
+        if not UtilClient.is_unset(request.pull_strategy):
+            body['pullStrategy'] = request.pull_strategy
+        if not UtilClient.is_unset(request.receiver_user_id_list):
+            body['receiverUserIdList'] = request.receiver_user_id_list
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.user_id_type):
+            body['userIdType'] = request.user_id_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.SendOTOInteractiveCardResponse(),
+            await self.do_roarequest_async('SendOTOInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/privateChat/interactiveCards/send', 'json', req, runtime)
+        )
+
     def send_robot_interactive_card(
         self,
         request: dingtalkim__1__0_models.SendRobotInteractiveCardRequest,
