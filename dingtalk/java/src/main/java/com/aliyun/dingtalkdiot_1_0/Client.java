@@ -430,7 +430,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("id", request.id);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.liveUrls))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.liveUrls)) {
             body.put("liveUrls", request.liveUrls);
         }
 

@@ -25,7 +25,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public NlpWordDistinguishResponse nlpWordDistinguishWithOptions(NlpWordDistinguishRequest request, NlpWordDistinguishHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.attachExtractDecisionInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.attachExtractDecisionInfo)) {
             body.put("attachExtractDecisionInfo", request.attachExtractDecisionInfo);
         }
 

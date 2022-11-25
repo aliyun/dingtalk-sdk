@@ -36,7 +36,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("name", request.name);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.option))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.option)) {
             body.put("option", request.option);
         }
 
@@ -77,7 +77,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("members", request.members);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.option))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.option)) {
             body.put("option", request.option);
         }
 
@@ -116,7 +116,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.option))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.option)) {
             body.put("option", request.option);
         }
 
@@ -186,7 +186,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("name", request.name);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.option))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.option)) {
             body.put("option", request.option);
         }
 
@@ -234,7 +234,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("dentryIds", request.dentryIds);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.option))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.option)) {
             body.put("option", request.option);
         }
 
@@ -279,7 +279,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.option))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.option)) {
             body.put("option", request.option);
         }
 
@@ -327,7 +327,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("dentryIds", request.dentryIds);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.option))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.option)) {
             body.put("option", request.option);
         }
 
@@ -573,7 +573,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.option))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.option)) {
             body.put("option", request.option);
         }
 
@@ -610,7 +610,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.option))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.option)) {
             body.put("option", request.option);
         }
 
@@ -647,7 +647,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.option))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.option)) {
             body.put("option", request.option);
         }
 
@@ -687,7 +687,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("multipart", request.multipart);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.option))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.option)) {
             body.put("option", request.option);
         }
 
@@ -924,7 +924,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.option))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.option)) {
             body.put("option", request.option);
         }
 
@@ -1050,7 +1050,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.option))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.option)) {
             body.put("option", request.option);
         }
 
@@ -1128,7 +1128,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("dentryIds", request.dentryIds);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.option))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.option)) {
             body.put("option", request.option);
         }
 
@@ -1173,7 +1173,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.option))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.option)) {
             body.put("option", request.option);
         }
 
@@ -1296,7 +1296,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.option))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.option)) {
             body.put("option", request.option);
         }
 
@@ -1332,7 +1332,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.option))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.option)) {
             body.put("option", request.option);
         }
 
@@ -1446,7 +1446,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("members", request.members);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.option))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.option)) {
             body.put("option", request.option);
         }
 

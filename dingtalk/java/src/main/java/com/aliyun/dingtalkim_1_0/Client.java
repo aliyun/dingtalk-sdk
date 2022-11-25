@@ -410,7 +410,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("icon", request.icon);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.managementOptions))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.managementOptions)) {
             body.put("managementOptions", request.managementOptions);
         }
 
@@ -1068,7 +1068,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("callbackRouteKey", request.callbackRouteKey);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.cardData))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.cardData)) {
             body.put("cardData", request.cardData);
         }
 
@@ -1442,11 +1442,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("callbackRouteKey", request.callbackRouteKey);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.cardData))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.cardData)) {
             body.put("cardData", request.cardData);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.cardOptions))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.cardOptions)) {
             body.put("cardOptions", request.cardOptions);
         }
 
@@ -1523,11 +1523,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("callbackRouteKey", request.callbackRouteKey);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.cardData))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.cardData)) {
             body.put("cardData", request.cardData);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.cardOptions))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.cardOptions)) {
             body.put("cardOptions", request.cardOptions);
         }
 
@@ -1616,7 +1616,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("robotCode", request.robotCode);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.sendOptions))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.sendOptions)) {
             body.put("sendOptions", request.sendOptions);
         }
 
@@ -1734,7 +1734,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("robotCode", request.robotCode);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.sendOptions))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.sendOptions)) {
             body.put("sendOptions", request.sendOptions);
         }
 
@@ -2013,11 +2013,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public UpdateInteractiveCardResponse updateInteractiveCardWithOptions(UpdateInteractiveCardRequest request, UpdateInteractiveCardHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.cardData))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.cardData)) {
             body.put("cardData", request.cardData);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.cardOptions))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.cardOptions)) {
             body.put("cardOptions", request.cardOptions);
         }
 
@@ -2205,7 +2205,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("unionIdPrivateDataMap", request.unionIdPrivateDataMap);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.updateOptions))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.updateOptions)) {
             body.put("updateOptions", request.updateOptions);
         }
 

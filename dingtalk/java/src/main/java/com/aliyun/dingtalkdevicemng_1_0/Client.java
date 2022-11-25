@@ -895,7 +895,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("cardData", request.cardData);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.tips))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.tips)) {
             body.put("tips", request.tips);
         }
 

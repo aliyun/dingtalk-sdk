@@ -224,7 +224,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("resourceIds", request.resourceIds);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.scope))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.scope)) {
             body.put("scope", request.scope);
         }
 
@@ -270,7 +270,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("resourceIds", request.resourceIds);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.scope))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.scope)) {
             body.put("scope", request.scope);
         }
 
@@ -1922,7 +1922,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("resourceIds", request.resourceIds);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.scope))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.scope)) {
             body.put("scope", request.scope);
         }
 

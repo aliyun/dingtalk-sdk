@@ -143,7 +143,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("endorseFlag", request.endorseFlag);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.event))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.event)) {
             body.put("event", request.event);
         }
 

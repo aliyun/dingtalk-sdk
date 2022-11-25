@@ -86,7 +86,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("extendData", request.extendData);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.permission))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.permission)) {
             body.put("permission", request.permission);
         }
 
@@ -303,7 +303,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("bizId", request.bizId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.detail))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.detail)) {
             body.put("detail", request.detail);
         }
 
@@ -430,11 +430,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("objectType", request.objectType);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.permission))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.permission)) {
             body.put("permission", request.permission);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.saveOption))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.saveOption)) {
             body.put("saveOption", request.saveOption);
         }
 
@@ -573,7 +573,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("operatorUserId", request.operatorUserId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.relationMetaDTO))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.relationMetaDTO)) {
             body.put("relationMetaDTO", request.relationMetaDTO);
         }
 
@@ -1530,7 +1530,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("bizId", request.bizId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.detail))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.detail)) {
             body.put("detail", request.detail);
         }
 
@@ -1567,7 +1567,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("bizId", request.bizId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.detail))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.detail)) {
             body.put("detail", request.detail);
         }
 
@@ -1600,7 +1600,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("bizId", request.bizId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.detail))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.detail)) {
             body.put("detail", request.detail);
         }
 
@@ -1653,7 +1653,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("modifierUserId", request.modifierUserId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.permission))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.permission)) {
             body.put("permission", request.permission);
         }
 

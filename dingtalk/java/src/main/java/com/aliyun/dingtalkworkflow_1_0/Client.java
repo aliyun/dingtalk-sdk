@@ -62,7 +62,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("commentUserId", request.commentUserId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.file))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.file)) {
             body.put("file", request.file);
         }
 
@@ -198,7 +198,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public CopyProcessResponse copyProcessWithOptions(CopyProcessRequest request, CopyProcessHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.copyOptions))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.copyOptions)) {
             body.put("copyOptions", request.copyOptions);
         }
 
@@ -309,7 +309,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("actionerUserId", request.actionerUserId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.file))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.file)) {
             body.put("file", request.file);
         }
 
@@ -370,7 +370,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("processCode", request.processCode);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.templateConfig))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.templateConfig)) {
             body.put("templateConfig", request.templateConfig);
         }
 
@@ -755,7 +755,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("bizGroup", request.bizGroup);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.installOption))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.installOption)) {
             body.put("installOption", request.installOption);
         }
 
@@ -1333,7 +1333,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("processCode", request.processCode);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.processFeatureConfig))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.processFeatureConfig)) {
             body.put("processFeatureConfig", request.processFeatureConfig);
         }
 

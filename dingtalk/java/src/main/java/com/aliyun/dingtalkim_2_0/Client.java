@@ -86,11 +86,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("callbackRouteKey", request.callbackRouteKey);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.cardData))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.cardData)) {
             body.put("cardData", request.cardData);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.cardSettings))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.cardSettings)) {
             body.put("cardSettings", request.cardSettings);
         }
 

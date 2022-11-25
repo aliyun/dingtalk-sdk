@@ -25,7 +25,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public CreateFeedResponse createFeedWithOptions(CreateFeedRequest request, CreateFeedHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.courseInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.courseInfo)) {
             body.put("courseInfo", request.courseInfo);
         }
 
@@ -33,7 +33,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("createUserId", request.createUserId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.feedInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.feedInfo)) {
             body.put("feedInfo", request.feedInfo);
         }
 

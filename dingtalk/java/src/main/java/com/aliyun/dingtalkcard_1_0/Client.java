@@ -25,15 +25,15 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public AppendSpaceResponse appendSpaceWithOptions(AppendSpaceRequest request, AppendSpaceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.coFeedOpenSpaceModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.coFeedOpenSpaceModel)) {
             body.put("coFeedOpenSpaceModel", request.coFeedOpenSpaceModel);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.imGroupOpenSpaceModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.imGroupOpenSpaceModel)) {
             body.put("imGroupOpenSpaceModel", request.imGroupOpenSpaceModel);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.imSingleOpenSpaceModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.imSingleOpenSpaceModel)) {
             body.put("imSingleOpenSpaceModel", request.imSingleOpenSpaceModel);
         }
 
@@ -41,11 +41,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("outTrackId", request.outTrackId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.topOpenSpaceModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.topOpenSpaceModel)) {
             body.put("topOpenSpaceModel", request.topOpenSpaceModel);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.workBenchOpenSpaceModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.workBenchOpenSpaceModel)) {
             body.put("workBenchOpenSpaceModel", request.workBenchOpenSpaceModel);
         }
 
@@ -82,7 +82,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("cardAtUserIds", request.cardAtUserIds);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.cardData))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.cardData)) {
             body.put("cardData", request.cardData);
         }
 
@@ -90,31 +90,31 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("cardTemplateId", request.cardTemplateId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.coFeedOpenDeliverModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.coFeedOpenDeliverModel)) {
             body.put("coFeedOpenDeliverModel", request.coFeedOpenDeliverModel);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.coFeedOpenSpaceModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.coFeedOpenSpaceModel)) {
             body.put("coFeedOpenSpaceModel", request.coFeedOpenSpaceModel);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.imGroupOpenDeliverModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.imGroupOpenDeliverModel)) {
             body.put("imGroupOpenDeliverModel", request.imGroupOpenDeliverModel);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.imGroupOpenSpaceModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.imGroupOpenSpaceModel)) {
             body.put("imGroupOpenSpaceModel", request.imGroupOpenSpaceModel);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.imSingleOpenDeliverModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.imSingleOpenDeliverModel)) {
             body.put("imSingleOpenDeliverModel", request.imSingleOpenDeliverModel);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.imSingleOpenSpaceModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.imSingleOpenSpaceModel)) {
             body.put("imSingleOpenSpaceModel", request.imSingleOpenSpaceModel);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.openDynamicDataConfig))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.openDynamicDataConfig)) {
             body.put("openDynamicDataConfig", request.openDynamicDataConfig);
         }
 
@@ -130,11 +130,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("privateData", request.privateData);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.topOpenDeliverModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.topOpenDeliverModel)) {
             body.put("topOpenDeliverModel", request.topOpenDeliverModel);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.topOpenSpaceModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.topOpenSpaceModel)) {
             body.put("topOpenSpaceModel", request.topOpenSpaceModel);
         }
 
@@ -146,11 +146,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("userIdType", request.userIdType);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.workBenchOpenDeliverModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.workBenchOpenDeliverModel)) {
             body.put("workBenchOpenDeliverModel", request.workBenchOpenDeliverModel);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.workBenchOpenSpaceModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.workBenchOpenSpaceModel)) {
             body.put("workBenchOpenSpaceModel", request.workBenchOpenSpaceModel);
         }
 
@@ -187,7 +187,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("cardAtUserIds", request.cardAtUserIds);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.cardData))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.cardData)) {
             body.put("cardData", request.cardData);
         }
 
@@ -195,19 +195,19 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("cardTemplateId", request.cardTemplateId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.coFeedOpenSpaceModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.coFeedOpenSpaceModel)) {
             body.put("coFeedOpenSpaceModel", request.coFeedOpenSpaceModel);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.imGroupOpenSpaceModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.imGroupOpenSpaceModel)) {
             body.put("imGroupOpenSpaceModel", request.imGroupOpenSpaceModel);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.imSingleOpenSpaceModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.imSingleOpenSpaceModel)) {
             body.put("imSingleOpenSpaceModel", request.imSingleOpenSpaceModel);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.openDynamicDataConfig))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.openDynamicDataConfig)) {
             body.put("openDynamicDataConfig", request.openDynamicDataConfig);
         }
 
@@ -219,7 +219,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("privateData", request.privateData);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.topOpenSpaceModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.topOpenSpaceModel)) {
             body.put("topOpenSpaceModel", request.topOpenSpaceModel);
         }
 
@@ -231,7 +231,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("userIdType", request.userIdType);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.workBenchOpenSpaceModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.workBenchOpenSpaceModel)) {
             body.put("workBenchOpenSpaceModel", request.workBenchOpenSpaceModel);
         }
 
@@ -260,15 +260,15 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public DeliverCardResponse deliverCardWithOptions(DeliverCardRequest request, DeliverCardHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.coFeedOpenDeliverModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.coFeedOpenDeliverModel)) {
             body.put("coFeedOpenDeliverModel", request.coFeedOpenDeliverModel);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.imGroupOpenDeliverModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.imGroupOpenDeliverModel)) {
             body.put("imGroupOpenDeliverModel", request.imGroupOpenDeliverModel);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.imSingleOpenDeliverModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.imSingleOpenDeliverModel)) {
             body.put("imSingleOpenDeliverModel", request.imSingleOpenDeliverModel);
         }
 
@@ -280,11 +280,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("outTrackId", request.outTrackId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.topOpenDeliverModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.topOpenDeliverModel)) {
             body.put("topOpenDeliverModel", request.topOpenDeliverModel);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.workBenchOpenDeliverModel))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.workBenchOpenDeliverModel)) {
             body.put("workBenchOpenDeliverModel", request.workBenchOpenDeliverModel);
         }
 
@@ -354,11 +354,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public UpdateCardResponse updateCardWithOptions(UpdateCardRequest request, UpdateCardHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.cardData))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.cardData)) {
             body.put("cardData", request.cardData);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.cardUpdateOptions))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.cardUpdateOptions)) {
             body.put("cardUpdateOptions", request.cardUpdateOptions);
         }
 

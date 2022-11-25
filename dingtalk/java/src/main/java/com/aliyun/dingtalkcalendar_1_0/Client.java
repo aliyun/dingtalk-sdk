@@ -150,7 +150,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("privilege", request.privilege);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.scope))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.scope)) {
             body.put("scope", request.scope);
         }
 
@@ -193,7 +193,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("description", request.description);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.end))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.end)) {
             body.put("end", request.end);
         }
 
@@ -205,15 +205,15 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("isAllDay", request.isAllDay);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.location))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.location)) {
             body.put("location", request.location);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.onlineMeetingInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.onlineMeetingInfo)) {
             body.put("onlineMeetingInfo", request.onlineMeetingInfo);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.recurrence))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.recurrence)) {
             body.put("recurrence", request.recurrence);
         }
 
@@ -221,7 +221,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("reminders", request.reminders);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.start))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.start)) {
             body.put("start", request.start);
         }
 
@@ -267,7 +267,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("name", request.name);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.subscribeScope))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.subscribeScope)) {
             body.put("subscribeScope", request.subscribeScope);
         }
 
@@ -855,7 +855,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("description", request.description);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.end))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.end)) {
             body.put("end", request.end);
         }
 
@@ -871,11 +871,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("isAllDay", request.isAllDay);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.location))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.location)) {
             body.put("location", request.location);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.recurrence))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.recurrence)) {
             body.put("recurrence", request.recurrence);
         }
 
@@ -883,7 +883,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("reminders", request.reminders);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.start))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.start)) {
             body.put("start", request.start);
         }
 
@@ -1124,7 +1124,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("name", request.name);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.subscribeScope))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.subscribeScope)) {
             body.put("subscribeScope", request.subscribeScope);
         }
 

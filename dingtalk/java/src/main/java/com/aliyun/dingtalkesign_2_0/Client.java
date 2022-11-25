@@ -226,7 +226,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("signEndTime", request.signEndTime);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.sourceInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.sourceInfo)) {
             body.put("sourceInfo", request.sourceInfo);
         }
 
@@ -676,7 +676,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("redirectUrl", request.redirectUrl);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.sourceInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.sourceInfo)) {
             body.put("sourceInfo", request.sourceInfo);
         }
 

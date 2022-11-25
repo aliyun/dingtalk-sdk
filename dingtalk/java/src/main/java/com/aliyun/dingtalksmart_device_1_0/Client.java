@@ -150,7 +150,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public MachineManagerUpdateResponse machineManagerUpdateWithOptions(MachineManagerUpdateRequest request, MachineManagerUpdateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.atmManagerRightMap))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.atmManagerRightMap)) {
             body.put("atmManagerRightMap", request.atmManagerRightMap);
         }
 

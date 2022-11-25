@@ -62,7 +62,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public CloseTopBoxInteractiveOTOMessageResponse closeTopBoxInteractiveOTOMessageWithOptions(CloseTopBoxInteractiveOTOMessageRequest request, CloseTopBoxInteractiveOTOMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.detail))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.detail)) {
             body.put("detail", request.detail);
         }
 
@@ -253,7 +253,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public SendAgentOTOMessageResponse sendAgentOTOMessageWithOptions(SendAgentOTOMessageRequest request, SendAgentOTOMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.detail))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.detail)) {
             body.put("detail", request.detail);
         }
 
@@ -282,7 +282,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public SendInteractiveOTOMessageResponse sendInteractiveOTOMessageWithOptions(SendInteractiveOTOMessageRequest request, SendInteractiveOTOMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.detail))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.detail)) {
             body.put("detail", request.detail);
         }
 
@@ -311,7 +311,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public SendTopBoxInteractiveOTOMessageResponse sendTopBoxInteractiveOTOMessageWithOptions(SendTopBoxInteractiveOTOMessageRequest request, SendTopBoxInteractiveOTOMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.detail))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.detail)) {
             body.put("detail", request.detail);
         }
 
@@ -340,7 +340,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public UpdateInteractiveOTOMessageResponse updateInteractiveOTOMessageWithOptions(UpdateInteractiveOTOMessageRequest request, UpdateInteractiveOTOMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.detail))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.detail)) {
             body.put("detail", request.detail);
         }
 

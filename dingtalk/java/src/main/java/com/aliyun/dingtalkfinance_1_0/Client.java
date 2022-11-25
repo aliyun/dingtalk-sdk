@@ -86,7 +86,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("bindingAlipayLogonId", request.bindingAlipayLogonId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.contactInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.contactInfo)) {
             body.put("contactInfo", request.contactInfo);
         }
 
@@ -94,7 +94,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("instId", request.instId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.legalPersonCertInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.legalPersonCertInfo)) {
             body.put("legalPersonCertInfo", request.legalPersonCertInfo);
         }
 
@@ -114,7 +114,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("services", request.services);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.settleInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.settleInfo)) {
             body.put("settleInfo", request.settleInfo);
         }
 
@@ -122,19 +122,19 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("solution", request.solution);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.subInstAddressInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.subInstAddressInfo)) {
             body.put("subInstAddressInfo", request.subInstAddressInfo);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.subInstAuthInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.subInstAuthInfo)) {
             body.put("subInstAuthInfo", request.subInstAuthInfo);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.subInstBasicInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.subInstBasicInfo)) {
             body.put("subInstBasicInfo", request.subInstBasicInfo);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.subInstCertifyInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.subInstCertifyInfo)) {
             body.put("subInstCertifyInfo", request.subInstCertifyInfo);
         }
 
@@ -142,11 +142,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("subInstId", request.subInstId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.subInstInvoiceInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.subInstInvoiceInfo)) {
             body.put("subInstInvoiceInfo", request.subInstInvoiceInfo);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.subInstShopInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.subInstShopInfo)) {
             body.put("subInstShopInfo", request.subInstShopInfo);
         }
 
@@ -366,7 +366,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("bindingAlipayLogonId", request.bindingAlipayLogonId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.contactInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.contactInfo)) {
             body.put("contactInfo", request.contactInfo);
         }
 
@@ -374,7 +374,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("instId", request.instId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.legalPersonCertInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.legalPersonCertInfo)) {
             body.put("legalPersonCertInfo", request.legalPersonCertInfo);
         }
 
@@ -394,7 +394,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("services", request.services);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.settleInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.settleInfo)) {
             body.put("settleInfo", request.settleInfo);
         }
 
@@ -402,19 +402,19 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("solution", request.solution);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.subInstAddressInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.subInstAddressInfo)) {
             body.put("subInstAddressInfo", request.subInstAddressInfo);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.subInstAuthInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.subInstAuthInfo)) {
             body.put("subInstAuthInfo", request.subInstAuthInfo);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.subInstBasicInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.subInstBasicInfo)) {
             body.put("subInstBasicInfo", request.subInstBasicInfo);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.subInstCertifyInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.subInstCertifyInfo)) {
             body.put("subInstCertifyInfo", request.subInstCertifyInfo);
         }
 
@@ -422,11 +422,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("subInstId", request.subInstId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.subInstInvoiceInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.subInstInvoiceInfo)) {
             body.put("subInstInvoiceInfo", request.subInstInvoiceInfo);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.subInstShopInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.subInstShopInfo)) {
             body.put("subInstShopInfo", request.subInstShopInfo);
         }
 
@@ -561,7 +561,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("bindingAlipayLogonId", request.bindingAlipayLogonId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.contactInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.contactInfo)) {
             body.put("contactInfo", request.contactInfo);
         }
 
@@ -569,7 +569,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("instId", request.instId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.legalPersonCertInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.legalPersonCertInfo)) {
             body.put("legalPersonCertInfo", request.legalPersonCertInfo);
         }
 
@@ -589,23 +589,23 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("services", request.services);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.settleInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.settleInfo)) {
             body.put("settleInfo", request.settleInfo);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.subInstAddressInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.subInstAddressInfo)) {
             body.put("subInstAddressInfo", request.subInstAddressInfo);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.subInstAuthInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.subInstAuthInfo)) {
             body.put("subInstAuthInfo", request.subInstAuthInfo);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.subInstBasicInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.subInstBasicInfo)) {
             body.put("subInstBasicInfo", request.subInstBasicInfo);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.subInstCertifyInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.subInstCertifyInfo)) {
             body.put("subInstCertifyInfo", request.subInstCertifyInfo);
         }
 
@@ -613,11 +613,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("subInstId", request.subInstId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.subInstInvoiceInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.subInstInvoiceInfo)) {
             body.put("subInstInvoiceInfo", request.subInstInvoiceInfo);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.subInstShopInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.subInstShopInfo)) {
             body.put("subInstShopInfo", request.subInstShopInfo);
         }
 
@@ -1347,7 +1347,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public UploadInvoiceResponse uploadInvoiceWithOptions(UploadInvoiceRequest request, UploadInvoiceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.extension))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.extension)) {
             body.put("extension", request.extension);
         }
 
@@ -1355,7 +1355,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("invoices", request.invoices);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.userIdentity))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.userIdentity)) {
             body.put("userIdentity", request.userIdentity);
         }
 
@@ -1384,7 +1384,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public UploadInvoiceByAuthResponse uploadInvoiceByAuthWithOptions(UploadInvoiceByAuthRequest request, UploadInvoiceByAuthHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.extension))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.extension)) {
             body.put("extension", request.extension);
         }
 

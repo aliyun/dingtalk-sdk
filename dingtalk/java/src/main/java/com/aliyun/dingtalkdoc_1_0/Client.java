@@ -272,11 +272,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.cellStyle))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.cellStyle)) {
             body.put("cellStyle", request.cellStyle);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.duplicateCondition))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.duplicateCondition)) {
             body.put("duplicateCondition", request.duplicateCondition);
         }
 
@@ -1014,7 +1014,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("blocks", request.blocks);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.location))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.location)) {
             body.put("location", request.location);
         }
 
@@ -1214,7 +1214,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.findOptions))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.findOptions)) {
             body.put("findOptions", request.findOptions);
         }
 

@@ -42,7 +42,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("hoursInPerDay", request.hoursInPerDay);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.leaveCertificate))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.leaveCertificate)) {
             body.put("leaveCertificate", request.leaveCertificate);
         }
 
@@ -58,7 +58,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("naturalDayLeave", request.naturalDayLeave);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.submitTimeRule))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.submitTimeRule)) {
             body.put("submitTimeRule", request.submitTimeRule);
         }
 
@@ -285,7 +285,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("opUserid", request.opUserid);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.punchParam))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.punchParam)) {
             body.put("punchParam", request.punchParam);
         }
 
@@ -826,7 +826,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("forbidHideOutSideAddress", request.forbidHideOutSideAddress);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.freeCheckSetting))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.freeCheckSetting)) {
             body.put("freeCheckSetting", request.freeCheckSetting);
         }
 
@@ -1001,7 +1001,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("forbidHideOutSideAddress", request.forbidHideOutSideAddress);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.freeCheckSetting))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.freeCheckSetting)) {
             body.put("freeCheckSetting", request.freeCheckSetting);
         }
 
@@ -1195,7 +1195,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("opUserId", request.opUserId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.punchParam))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.punchParam)) {
             body.put("punchParam", request.punchParam);
         }
 
@@ -1345,7 +1345,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("hoursInPerDay", request.hoursInPerDay);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.leaveCertificate))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.leaveCertificate)) {
             body.put("leaveCertificate", request.leaveCertificate);
         }
 
@@ -1365,7 +1365,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("naturalDayLeave", request.naturalDayLeave);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.submitTimeRule))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.submitTimeRule)) {
             body.put("submitTimeRule", request.submitTimeRule);
         }
 

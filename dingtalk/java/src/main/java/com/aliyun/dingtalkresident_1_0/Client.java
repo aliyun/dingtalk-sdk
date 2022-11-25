@@ -115,7 +115,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public AddResidentMemberResponse addResidentMemberWithOptions(AddResidentMemberRequest request, AddResidentMemberHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.residentAddInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.residentAddInfo)) {
             body.put("residentAddInfo", request.residentAddInfo);
         }
 
@@ -1095,7 +1095,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public UpdateResidentMemberResponse updateResidentMemberWithOptions(UpdateResidentMemberRequest request, UpdateResidentMemberHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.residentUpdateInfo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.residentUpdateInfo)) {
             body.put("residentUpdateInfo", request.residentUpdateInfo);
         }
 

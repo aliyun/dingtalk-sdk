@@ -444,7 +444,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("processorUnionId", request.processorUnionId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.ticketMemo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.ticketMemo)) {
             body.put("ticketMemo", request.ticketMemo);
         }
 
@@ -473,7 +473,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public AssignTicketResponse assignTicketWithOptions(AssignTicketRequest request, AssignTicketHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.notify))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.notify)) {
             body.put("notify", request.notify);
         }
 
@@ -493,7 +493,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("processorUnionIds", request.processorUnionIds);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.ticketMemo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.ticketMemo)) {
             body.put("ticketMemo", request.ticketMemo);
         }
 
@@ -739,7 +739,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public CancelTicketResponse cancelTicketWithOptions(CancelTicketRequest request, CancelTicketHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.notify))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.notify)) {
             body.put("notify", request.notify);
         }
 
@@ -755,7 +755,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("operatorUnionId", request.operatorUnionId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.ticketMemo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.ticketMemo)) {
             body.put("ticketMemo", request.ticketMemo);
         }
 
@@ -1315,7 +1315,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("customFields", request.customFields);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.notify))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.notify)) {
             body.put("notify", request.notify);
         }
 
@@ -1335,7 +1335,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("scene", request.scene);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.sceneContext))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.sceneContext)) {
             body.put("sceneContext", request.sceneContext);
         }
 
@@ -1548,7 +1548,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public FinishTicketResponse finishTicketWithOptions(FinishTicketRequest request, FinishTicketHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.notify))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.notify)) {
             body.put("notify", request.notify);
         }
 
@@ -1564,7 +1564,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("processorUnionId", request.processorUnionId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.ticketMemo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.ticketMemo)) {
             body.put("ticketMemo", request.ticketMemo);
         }
 
@@ -2625,7 +2625,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("customFields", request.customFields);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.notify))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.notify)) {
             body.put("notify", request.notify);
         }
 
@@ -2649,11 +2649,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("scene", request.scene);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.sceneContext))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.sceneContext)) {
             body.put("sceneContext", request.sceneContext);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.ticketMemo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.ticketMemo)) {
             body.put("ticketMemo", request.ticketMemo);
         }
 
@@ -2686,7 +2686,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public RetractTicketResponse retractTicketWithOptions(RetractTicketRequest request, RetractTicketHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.notify))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.notify)) {
             body.put("notify", request.notify);
         }
 
@@ -2702,7 +2702,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("operatorUnionId", request.operatorUnionId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.ticketMemo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.ticketMemo)) {
             body.put("ticketMemo", request.ticketMemo);
         }
 
@@ -2821,7 +2821,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public SendMsgByTaskResponse sendMsgByTaskWithOptions(SendMsgByTaskRequest request, SendMsgByTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.messageContent))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.messageContent)) {
             body.put("messageContent", request.messageContent);
         }
 
@@ -2829,11 +2829,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("openTeamId", request.openTeamId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.queryGroup))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.queryGroup)) {
             body.put("queryGroup", request.queryGroup);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.sendConfig))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.sendConfig)) {
             body.put("sendConfig", request.sendConfig);
         }
 
@@ -3082,7 +3082,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public TransferTicketResponse transferTicketWithOptions(TransferTicketRequest request, TransferTicketHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.notify))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.notify)) {
             body.put("notify", request.notify);
         }
 
@@ -3102,7 +3102,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("processorUnionIds", request.processorUnionIds);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.ticketMemo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.ticketMemo)) {
             body.put("ticketMemo", request.ticketMemo);
         }
 
@@ -3274,7 +3274,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("processorUnionId", request.processorUnionId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.ticketMemo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.ticketMemo)) {
             body.put("ticketMemo", request.ticketMemo);
         }
 
@@ -3401,7 +3401,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("operatorUnionId", request.operatorUnionId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.ticketMemo))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.ticketMemo)) {
             body.put("ticketMemo", request.ticketMemo);
         }
 

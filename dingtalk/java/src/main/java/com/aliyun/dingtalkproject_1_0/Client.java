@@ -280,7 +280,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.linkedData))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.linkedData)) {
             body.put("linkedData", request.linkedData);
         }
 

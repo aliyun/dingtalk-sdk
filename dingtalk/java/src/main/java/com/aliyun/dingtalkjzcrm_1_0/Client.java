@@ -25,7 +25,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public EditContactResponse editContactWithOptions(EditContactRequest request, EditContactHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.data))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.data)) {
             body.put("data", request.data);
         }
 
@@ -66,7 +66,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public EditCustomerResponse editCustomerWithOptions(EditCustomerRequest request, EditCustomerHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.data))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.data)) {
             body.put("data", request.data);
         }
 
@@ -107,7 +107,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public EditCustomerPoolResponse editCustomerPoolWithOptions(EditCustomerPoolRequest request, EditCustomerPoolHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.data))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.data)) {
             body.put("data", request.data);
         }
 
@@ -148,7 +148,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public EditExchangeResponse editExchangeWithOptions(EditExchangeRequest request, EditExchangeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.data))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.data)) {
             body.put("data", request.data);
         }
 
@@ -189,7 +189,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public EditGoodsResponse editGoodsWithOptions(EditGoodsRequest request, EditGoodsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.data))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.data)) {
             body.put("data", request.data);
         }
 
@@ -230,7 +230,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public EditIntostockResponse editIntostockWithOptions(EditIntostockRequest request, EditIntostockHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.data))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.data)) {
             body.put("data", request.data);
         }
 
@@ -271,7 +271,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public EditInvoiceResponse editInvoiceWithOptions(EditInvoiceRequest request, EditInvoiceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.data))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.data)) {
             body.put("data", request.data);
         }
 
@@ -312,7 +312,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public EditOrderResponse editOrderWithOptions(EditOrderRequest request, EditOrderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.data))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.data)) {
             body.put("data", request.data);
         }
 
@@ -353,7 +353,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public EditOutstockResponse editOutstockWithOptions(EditOutstockRequest request, EditOutstockHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.data))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.data)) {
             body.put("data", request.data);
         }
 
@@ -394,7 +394,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public EditProductionResponse editProductionWithOptions(EditProductionRequest request, EditProductionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.data))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.data)) {
             body.put("data", request.data);
         }
 
@@ -435,7 +435,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public EditPurchaseResponse editPurchaseWithOptions(EditPurchaseRequest request, EditPurchaseHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.data))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.data)) {
             body.put("data", request.data);
         }
 
@@ -476,7 +476,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public EditQuotationRecordResponse editQuotationRecordWithOptions(EditQuotationRecordRequest request, EditQuotationRecordHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.data))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.data)) {
             body.put("data", request.data);
         }
 
@@ -517,7 +517,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public EditSalesResponse editSalesWithOptions(EditSalesRequest request, EditSalesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.data))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.data)) {
             body.put("data", request.data);
         }
 

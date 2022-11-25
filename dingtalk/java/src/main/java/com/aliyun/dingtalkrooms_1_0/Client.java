@@ -41,7 +41,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("roomLabelIds", request.roomLabelIds);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.roomLocation))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.roomLocation)) {
             body.put("roomLocation", request.roomLocation);
         }
 
@@ -359,7 +359,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("roomLabelIds", request.roomLabelIds);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.roomLocation))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.roomLocation)) {
             body.put("roomLocation", request.roomLocation);
         }
 

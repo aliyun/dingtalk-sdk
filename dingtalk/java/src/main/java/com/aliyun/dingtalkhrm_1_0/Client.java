@@ -523,8 +523,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.Common.validateModel(tmpReq);
         RosterMetaFieldOptionsUpdateShrinkRequest request = new RosterMetaFieldOptionsUpdateShrinkRequest();
         com.aliyun.openapiutil.Client.convert(tmpReq, request);
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(tmpReq.body))) {
-            request.bodyShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(TeaModel.buildMap(tmpReq.body), "body", "json");
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.body)) {
+            request.bodyShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.body, "body", "json");
         }
 
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -728,7 +728,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("outerId", request.outerId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.taskScopeVO))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.taskScopeVO)) {
             body.put("taskScopeVO", request.taskScopeVO);
         }
 

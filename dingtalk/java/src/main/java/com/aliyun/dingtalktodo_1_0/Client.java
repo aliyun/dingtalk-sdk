@@ -101,7 +101,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("description", request.description);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.detailUrl))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.detailUrl)) {
             body.put("detailUrl", request.detailUrl);
         }
 
@@ -117,7 +117,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("isOnlyShowExecutor", request.isOnlyShowExecutor);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.notifyConfigs))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.notifyConfigs)) {
             body.put("notifyConfigs", request.notifyConfigs);
         }
 

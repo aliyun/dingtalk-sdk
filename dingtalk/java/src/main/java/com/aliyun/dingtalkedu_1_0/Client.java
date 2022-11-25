@@ -164,7 +164,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("cardBizCode", request.cardBizCode);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.data))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.data)) {
             body.put("data", request.data);
         }
 
@@ -592,7 +592,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public CreateCustomClassResponse createCustomClassWithOptions(CreateCustomClassRequest request, CreateCustomClassHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.customClass))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.customClass)) {
             body.put("customClass", request.customClass);
         }
 
@@ -629,7 +629,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public CreateCustomDeptResponse createCustomDeptWithOptions(CreateCustomDeptRequest request, CreateCustomDeptHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.customDept))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.customDept)) {
             body.put("customDept", request.customDept);
         }
 
@@ -1156,7 +1156,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("startTime", request.startTime);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.teachingParticipant))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.teachingParticipant)) {
             body.put("teachingParticipant", request.teachingParticipant);
         }
 
@@ -2297,7 +2297,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("courses", request.courses);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.sectionConfig))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.sectionConfig)) {
             body.put("sectionConfig", request.sectionConfig);
         }
 
@@ -2414,7 +2414,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.end))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.end)) {
             body.put("end", request.end);
         }
 
@@ -2426,7 +2426,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("sectionModels", request.sectionModels);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.start))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.start)) {
             body.put("start", request.start);
         }
 
@@ -3977,7 +3977,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("courses", request.courses);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.sectionConfig))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.sectionConfig)) {
             body.put("sectionConfig", request.sectionConfig);
         }
 
@@ -4094,7 +4094,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("startTime", request.startTime);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.teachingParticipant))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.teachingParticipant)) {
             body.put("teachingParticipant", request.teachingParticipant);
         }
 

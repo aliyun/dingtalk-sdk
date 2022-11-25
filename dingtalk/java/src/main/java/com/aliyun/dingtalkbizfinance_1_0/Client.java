@@ -381,8 +381,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.Common.validateModel(tmpReq);
         GetInvoiceByPageShrinkRequest request = new GetInvoiceByPageShrinkRequest();
         com.aliyun.openapiutil.Client.convert(tmpReq, request);
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(tmpReq.request))) {
-            request.requestShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(TeaModel.buildMap(tmpReq.request), "request", "json");
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.request)) {
+            request.requestShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.request, "request", "json");
         }
 
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1106,7 +1106,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public UpdateInvoiceAbandonStatusResponse updateInvoiceAbandonStatusWithOptions(UpdateInvoiceAbandonStatusRequest request, UpdateInvoiceAbandonStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.blueGeneralInvoiceVO))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.blueGeneralInvoiceVO)) {
             body.put("blueGeneralInvoiceVO", request.blueGeneralInvoiceVO);
         }
 
@@ -1126,7 +1126,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("operator", request.operator);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.redGeneralInvoiceVO))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.redGeneralInvoiceVO)) {
             body.put("redGeneralInvoiceVO", request.redGeneralInvoiceVO);
         }
 
@@ -1212,7 +1212,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public UpdateInvoiceAndReceiptRelatedResponse updateInvoiceAndReceiptRelatedWithOptions(UpdateInvoiceAndReceiptRelatedRequest request, UpdateInvoiceAndReceiptRelatedHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.generalInvoiceVO))) {
+        if (!com.aliyun.teautil.Common.isUnset(request.generalInvoiceVO)) {
             body.put("generalInvoiceVO", request.generalInvoiceVO);
         }
 
