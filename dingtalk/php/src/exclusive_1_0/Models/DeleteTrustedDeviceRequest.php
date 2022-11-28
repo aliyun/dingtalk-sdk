@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class DeleteTrustedDeviceRequest extends Model
 {
     /**
-     * @description DID设备唯一码：与mac地址任一必填一个
-     *
-     * @var string
-     */
-    public $did;
-
-    /**
      * @description 是否踢下线
      *
      * @var bool
@@ -23,7 +16,7 @@ class DeleteTrustedDeviceRequest extends Model
     public $kickOff;
 
     /**
-     * @description mac地址：与DID任一必填一个
+     * @description mac地址
      *
      * @var string
      */
@@ -36,7 +29,6 @@ class DeleteTrustedDeviceRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'did'        => 'did',
         'kickOff'    => 'kickOff',
         'macAddress' => 'macAddress',
         'userId'     => 'userId',
@@ -49,9 +41,6 @@ class DeleteTrustedDeviceRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->did) {
-            $res['did'] = $this->did;
-        }
         if (null !== $this->kickOff) {
             $res['kickOff'] = $this->kickOff;
         }
@@ -73,9 +62,6 @@ class DeleteTrustedDeviceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['did'])) {
-            $model->did = $map['did'];
-        }
         if (isset($map['kickOff'])) {
             $model->kickOff = $map['kickOff'];
         }

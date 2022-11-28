@@ -506,9 +506,6 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->did)) {
-            @$body['did'] = $request->did;
-        }
         if (!Utils::isUnset($request->kickOff)) {
             @$body['kickOff'] = $request->kickOff;
         }
