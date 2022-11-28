@@ -492,13 +492,11 @@ export class DeleteTrustedDeviceHeaders extends $tea.Model {
 }
 
 export class DeleteTrustedDeviceRequest extends $tea.Model {
-  did?: string;
   kickOff?: boolean;
   macAddress?: string;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
-      did: 'did',
       kickOff: 'kickOff',
       macAddress: 'macAddress',
       userId: 'userId',
@@ -507,7 +505,6 @@ export class DeleteTrustedDeviceRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      did: 'string',
       kickOff: 'boolean',
       macAddress: 'string',
       userId: 'string',
@@ -7605,10 +7602,6 @@ export default class Client extends OpenApi {
   async deleteTrustedDeviceWithOptions(request: DeleteTrustedDeviceRequest, headers: DeleteTrustedDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteTrustedDeviceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.did)) {
-      body["did"] = request.did;
-    }
-
     if (!Util.isUnset(request.kickOff)) {
       body["kickOff"] = request.kickOff;
     }
