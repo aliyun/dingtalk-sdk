@@ -220,10 +220,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public DeleteTrustedDeviceResponse deleteTrustedDeviceWithOptions(DeleteTrustedDeviceRequest request, DeleteTrustedDeviceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.did)) {
-            body.put("did", request.did);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.kickOff)) {
             body.put("kickOff", request.kickOff);
         }
