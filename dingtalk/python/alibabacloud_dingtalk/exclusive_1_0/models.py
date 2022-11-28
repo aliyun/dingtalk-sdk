@@ -771,16 +771,13 @@ class DeleteTrustedDeviceHeaders(TeaModel):
 class DeleteTrustedDeviceRequest(TeaModel):
     def __init__(
         self,
-        did: str = None,
         kick_off: bool = None,
         mac_address: str = None,
         user_id: str = None,
     ):
-        # DID设备唯一码：与mac地址任一必填一个
-        self.did = did
         # 是否踢下线
         self.kick_off = kick_off
-        # mac地址：与DID任一必填一个
+        # mac地址
         self.mac_address = mac_address
         # 员工userId
         self.user_id = user_id
@@ -794,8 +791,6 @@ class DeleteTrustedDeviceRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.did is not None:
-            result['did'] = self.did
         if self.kick_off is not None:
             result['kickOff'] = self.kick_off
         if self.mac_address is not None:
@@ -806,8 +801,6 @@ class DeleteTrustedDeviceRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('did') is not None:
-            self.did = m.get('did')
         if m.get('kickOff') is not None:
             self.kick_off = m.get('kickOff')
         if m.get('macAddress') is not None:

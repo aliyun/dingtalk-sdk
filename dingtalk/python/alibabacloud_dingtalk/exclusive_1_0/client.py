@@ -453,8 +453,6 @@ class Client(OpenApiClient):
     ) -> dingtalkexclusive__1__0_models.DeleteTrustedDeviceResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.did):
-            body['did'] = request.did
         if not UtilClient.is_unset(request.kick_off):
             body['kickOff'] = request.kick_off
         if not UtilClient.is_unset(request.mac_address):
@@ -483,8 +481,6 @@ class Client(OpenApiClient):
     ) -> dingtalkexclusive__1__0_models.DeleteTrustedDeviceResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.did):
-            body['did'] = request.did
         if not UtilClient.is_unset(request.kick_off):
             body['kickOff'] = request.kick_off
         if not UtilClient.is_unset(request.mac_address):
