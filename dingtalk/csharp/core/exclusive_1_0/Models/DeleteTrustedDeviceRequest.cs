@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class DeleteTrustedDeviceRequest : TeaModel {
         /// <summary>
-        /// DID设备唯一码：与mac地址任一必填一个
-        /// </summary>
-        [NameInMap("did")]
-        [Validation(Required=false)]
-        public string Did { get; set; }
-
-        /// <summary>
         /// 是否踢下线
         /// </summary>
         [NameInMap("kickOff")]
@@ -24,7 +17,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public bool? KickOff { get; set; }
 
         /// <summary>
-        /// mac地址：与DID任一必填一个
+        /// mac地址
         /// </summary>
         [NameInMap("macAddress")]
         [Validation(Required=false)]

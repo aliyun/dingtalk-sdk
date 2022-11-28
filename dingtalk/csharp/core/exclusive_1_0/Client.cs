@@ -470,10 +470,6 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Did))
-            {
-                body["did"] = request.Did;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.KickOff))
             {
                 body["kickOff"] = request.KickOff;
@@ -507,10 +503,6 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Did))
-            {
-                body["did"] = request.Did;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.KickOff))
             {
                 body["kickOff"] = request.KickOff;
