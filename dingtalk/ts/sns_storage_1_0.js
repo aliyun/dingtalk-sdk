@@ -1,0 +1,1 @@
+module.exports = require('./dist').sns_storage_1_0;
