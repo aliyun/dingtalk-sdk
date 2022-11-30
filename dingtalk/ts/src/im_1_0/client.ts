@@ -5782,21 +5782,21 @@ export default class Client extends OpenApi {
 
   async addRobotToConversationWithOptions(request: AddRobotToConversationRequest, headers: AddRobotToConversationHeaders, runtime: $Util.RuntimeOptions): Promise<AddRobotToConversationResponse> {
     Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
+    let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.icon)) {
-      query["icon"] = request.icon;
+      body["icon"] = request.icon;
     }
 
     if (!Util.isUnset(request.name)) {
-      query["name"] = request.name;
+      body["name"] = request.name;
     }
 
     if (!Util.isUnset(request.openConversationId)) {
-      query["openConversationId"] = request.openConversationId;
+      body["openConversationId"] = request.openConversationId;
     }
 
     if (!Util.isUnset(request.robotCode)) {
-      query["robotCode"] = request.robotCode;
+      body["robotCode"] = request.robotCode;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -5810,7 +5810,7 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<AddRobotToConversationResponse>(await this.doROARequest("AddRobotToConversation", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/conversations/robots`, "json", req, runtime), new AddRobotToConversationResponse({}));
   }
@@ -6764,37 +6764,37 @@ export default class Client extends OpenApi {
 
   async installRobotToOrgWithOptions(request: InstallRobotToOrgRequest, headers: InstallRobotToOrgHeaders, runtime: $Util.RuntimeOptions): Promise<InstallRobotToOrgResponse> {
     Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
+    let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.brief)) {
-      query["brief"] = request.brief;
+      body["brief"] = request.brief;
     }
 
     if (!Util.isUnset(request.description)) {
-      query["description"] = request.description;
+      body["description"] = request.description;
     }
 
     if (!Util.isUnset(request.icon)) {
-      query["icon"] = request.icon;
+      body["icon"] = request.icon;
     }
 
     if (!Util.isUnset(request.name)) {
-      query["name"] = request.name;
+      body["name"] = request.name;
     }
 
     if (!Util.isUnset(request.outgoingToken)) {
-      query["outgoingToken"] = request.outgoingToken;
+      body["outgoingToken"] = request.outgoingToken;
     }
 
     if (!Util.isUnset(request.outgoingUrl)) {
-      query["outgoingUrl"] = request.outgoingUrl;
+      body["outgoingUrl"] = request.outgoingUrl;
     }
 
     if (!Util.isUnset(request.previewMediaId)) {
-      query["previewMediaId"] = request.previewMediaId;
+      body["previewMediaId"] = request.previewMediaId;
     }
 
     if (!Util.isUnset(request.robotCode)) {
-      query["robotCode"] = request.robotCode;
+      body["robotCode"] = request.robotCode;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -6808,7 +6808,7 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<InstallRobotToOrgResponse>(await this.doROARequest("InstallRobotToOrg", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/organizations/robots/install`, "json", req, runtime), new InstallRobotToOrgResponse({}));
   }
@@ -7158,13 +7158,13 @@ export default class Client extends OpenApi {
 
   async removeRobotFromConversationWithOptions(request: RemoveRobotFromConversationRequest, headers: RemoveRobotFromConversationHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveRobotFromConversationResponse> {
     Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
+    let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.chatBotUserId)) {
-      query["chatBotUserId"] = request.chatBotUserId;
+      body["chatBotUserId"] = request.chatBotUserId;
     }
 
     if (!Util.isUnset(request.openConversationId)) {
-      query["openConversationId"] = request.openConversationId;
+      body["openConversationId"] = request.openConversationId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -7178,7 +7178,7 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<RemoveRobotFromConversationResponse>(await this.doROARequest("RemoveRobotFromConversation", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/conversations/robots/remove`, "json", req, runtime), new RemoveRobotFromConversationResponse({}));
   }
@@ -7893,37 +7893,37 @@ export default class Client extends OpenApi {
 
   async updateRobotInOrgWithOptions(request: UpdateRobotInOrgRequest, headers: UpdateRobotInOrgHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateRobotInOrgResponse> {
     Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
+    let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.brief)) {
-      query["brief"] = request.brief;
+      body["brief"] = request.brief;
     }
 
     if (!Util.isUnset(request.description)) {
-      query["description"] = request.description;
+      body["description"] = request.description;
     }
 
     if (!Util.isUnset(request.icon)) {
-      query["icon"] = request.icon;
+      body["icon"] = request.icon;
     }
 
     if (!Util.isUnset(request.name)) {
-      query["name"] = request.name;
+      body["name"] = request.name;
     }
 
     if (!Util.isUnset(request.outgoingToken)) {
-      query["outgoingToken"] = request.outgoingToken;
+      body["outgoingToken"] = request.outgoingToken;
     }
 
     if (!Util.isUnset(request.outgoingUrl)) {
-      query["outgoingUrl"] = request.outgoingUrl;
+      body["outgoingUrl"] = request.outgoingUrl;
     }
 
     if (!Util.isUnset(request.previewMediaId)) {
-      query["previewMediaId"] = request.previewMediaId;
+      body["previewMediaId"] = request.previewMediaId;
     }
 
     if (!Util.isUnset(request.robotCode)) {
-      query["robotCode"] = request.robotCode;
+      body["robotCode"] = request.robotCode;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -7937,7 +7937,7 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateRobotInOrgResponse>(await this.doROARequest("UpdateRobotInOrg", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/organizations/robots`, "json", req, runtime), new UpdateRobotInOrgResponse({}));
   }

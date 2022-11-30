@@ -32,6 +32,7 @@ export class AppendSpaceHeaders extends $tea.Model {
 export class AppendSpaceRequest extends $tea.Model {
   coFeedOpenSpaceModel?: AppendSpaceRequestCoFeedOpenSpaceModel;
   imGroupOpenSpaceModel?: AppendSpaceRequestImGroupOpenSpaceModel;
+  imRobotOpenSpaceModel?: AppendSpaceRequestImRobotOpenSpaceModel;
   imSingleOpenSpaceModel?: AppendSpaceRequestImSingleOpenSpaceModel;
   outTrackId?: string;
   topOpenSpaceModel?: AppendSpaceRequestTopOpenSpaceModel;
@@ -40,6 +41,7 @@ export class AppendSpaceRequest extends $tea.Model {
     return {
       coFeedOpenSpaceModel: 'coFeedOpenSpaceModel',
       imGroupOpenSpaceModel: 'imGroupOpenSpaceModel',
+      imRobotOpenSpaceModel: 'imRobotOpenSpaceModel',
       imSingleOpenSpaceModel: 'imSingleOpenSpaceModel',
       outTrackId: 'outTrackId',
       topOpenSpaceModel: 'topOpenSpaceModel',
@@ -51,6 +53,7 @@ export class AppendSpaceRequest extends $tea.Model {
     return {
       coFeedOpenSpaceModel: AppendSpaceRequestCoFeedOpenSpaceModel,
       imGroupOpenSpaceModel: AppendSpaceRequestImGroupOpenSpaceModel,
+      imRobotOpenSpaceModel: AppendSpaceRequestImRobotOpenSpaceModel,
       imSingleOpenSpaceModel: AppendSpaceRequestImSingleOpenSpaceModel,
       outTrackId: 'string',
       topOpenSpaceModel: AppendSpaceRequestTopOpenSpaceModel,
@@ -138,6 +141,8 @@ export class CreateAndDeliverRequest extends $tea.Model {
   coFeedOpenSpaceModel?: CreateAndDeliverRequestCoFeedOpenSpaceModel;
   imGroupOpenDeliverModel?: CreateAndDeliverRequestImGroupOpenDeliverModel;
   imGroupOpenSpaceModel?: CreateAndDeliverRequestImGroupOpenSpaceModel;
+  imRobotOpenDeliverModel?: CreateAndDeliverRequestImRobotOpenDeliverModel;
+  imRobotOpenSpaceModel?: CreateAndDeliverRequestImRobotOpenSpaceModel;
   imSingleOpenDeliverModel?: CreateAndDeliverRequestImSingleOpenDeliverModel;
   imSingleOpenSpaceModel?: CreateAndDeliverRequestImSingleOpenSpaceModel;
   openDynamicDataConfig?: CreateAndDeliverRequestOpenDynamicDataConfig;
@@ -160,6 +165,8 @@ export class CreateAndDeliverRequest extends $tea.Model {
       coFeedOpenSpaceModel: 'coFeedOpenSpaceModel',
       imGroupOpenDeliverModel: 'imGroupOpenDeliverModel',
       imGroupOpenSpaceModel: 'imGroupOpenSpaceModel',
+      imRobotOpenDeliverModel: 'imRobotOpenDeliverModel',
+      imRobotOpenSpaceModel: 'imRobotOpenSpaceModel',
       imSingleOpenDeliverModel: 'imSingleOpenDeliverModel',
       imSingleOpenSpaceModel: 'imSingleOpenSpaceModel',
       openDynamicDataConfig: 'openDynamicDataConfig',
@@ -185,6 +192,8 @@ export class CreateAndDeliverRequest extends $tea.Model {
       coFeedOpenSpaceModel: CreateAndDeliverRequestCoFeedOpenSpaceModel,
       imGroupOpenDeliverModel: CreateAndDeliverRequestImGroupOpenDeliverModel,
       imGroupOpenSpaceModel: CreateAndDeliverRequestImGroupOpenSpaceModel,
+      imRobotOpenDeliverModel: CreateAndDeliverRequestImRobotOpenDeliverModel,
+      imRobotOpenSpaceModel: CreateAndDeliverRequestImRobotOpenSpaceModel,
       imSingleOpenDeliverModel: CreateAndDeliverRequestImSingleOpenDeliverModel,
       imSingleOpenSpaceModel: CreateAndDeliverRequestImSingleOpenSpaceModel,
       openDynamicDataConfig: CreateAndDeliverRequestOpenDynamicDataConfig,
@@ -278,6 +287,7 @@ export class CreateCardRequest extends $tea.Model {
   cardTemplateId?: string;
   coFeedOpenSpaceModel?: CreateCardRequestCoFeedOpenSpaceModel;
   imGroupOpenSpaceModel?: CreateCardRequestImGroupOpenSpaceModel;
+  imRobotOpenSpaceModel?: CreateCardRequestImRobotOpenSpaceModel;
   imSingleOpenSpaceModel?: CreateCardRequestImSingleOpenSpaceModel;
   openDynamicDataConfig?: CreateCardRequestOpenDynamicDataConfig;
   outTrackId?: string;
@@ -294,6 +304,7 @@ export class CreateCardRequest extends $tea.Model {
       cardTemplateId: 'cardTemplateId',
       coFeedOpenSpaceModel: 'coFeedOpenSpaceModel',
       imGroupOpenSpaceModel: 'imGroupOpenSpaceModel',
+      imRobotOpenSpaceModel: 'imRobotOpenSpaceModel',
       imSingleOpenSpaceModel: 'imSingleOpenSpaceModel',
       openDynamicDataConfig: 'openDynamicDataConfig',
       outTrackId: 'outTrackId',
@@ -313,6 +324,7 @@ export class CreateCardRequest extends $tea.Model {
       cardTemplateId: 'string',
       coFeedOpenSpaceModel: CreateCardRequestCoFeedOpenSpaceModel,
       imGroupOpenSpaceModel: CreateCardRequestImGroupOpenSpaceModel,
+      imRobotOpenSpaceModel: CreateCardRequestImRobotOpenSpaceModel,
       imSingleOpenSpaceModel: CreateCardRequestImSingleOpenSpaceModel,
       openDynamicDataConfig: CreateCardRequestOpenDynamicDataConfig,
       outTrackId: 'string',
@@ -398,6 +410,7 @@ export class DeliverCardHeaders extends $tea.Model {
 export class DeliverCardRequest extends $tea.Model {
   coFeedOpenDeliverModel?: DeliverCardRequestCoFeedOpenDeliverModel;
   imGroupOpenDeliverModel?: DeliverCardRequestImGroupOpenDeliverModel;
+  imRobotOpenDeliverModel?: DeliverCardRequestImRobotOpenDeliverModel;
   imSingleOpenDeliverModel?: DeliverCardRequestImSingleOpenDeliverModel;
   openSpaceId?: string;
   outTrackId?: string;
@@ -407,6 +420,7 @@ export class DeliverCardRequest extends $tea.Model {
     return {
       coFeedOpenDeliverModel: 'coFeedOpenDeliverModel',
       imGroupOpenDeliverModel: 'imGroupOpenDeliverModel',
+      imRobotOpenDeliverModel: 'imRobotOpenDeliverModel',
       imSingleOpenDeliverModel: 'imSingleOpenDeliverModel',
       openSpaceId: 'openSpaceId',
       outTrackId: 'outTrackId',
@@ -419,6 +433,7 @@ export class DeliverCardRequest extends $tea.Model {
     return {
       coFeedOpenDeliverModel: DeliverCardRequestCoFeedOpenDeliverModel,
       imGroupOpenDeliverModel: DeliverCardRequestImGroupOpenDeliverModel,
+      imRobotOpenDeliverModel: DeliverCardRequestImRobotOpenDeliverModel,
       imSingleOpenDeliverModel: DeliverCardRequestImSingleOpenDeliverModel,
       openSpaceId: 'string',
       outTrackId: 'string',
@@ -799,6 +814,81 @@ export class AppendSpaceRequestImGroupOpenSpaceModel extends $tea.Model {
   }
 }
 
+export class AppendSpaceRequestImRobotOpenSpaceModelNotification extends $tea.Model {
+  alertContent?: string;
+  notificationOff?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      alertContent: 'alertContent',
+      notificationOff: 'notificationOff',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      alertContent: 'string',
+      notificationOff: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppendSpaceRequestImRobotOpenSpaceModelSearchSupport extends $tea.Model {
+  searchDesc?: string;
+  searchIcon?: string;
+  searchTypeName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      searchDesc: 'searchDesc',
+      searchIcon: 'searchIcon',
+      searchTypeName: 'searchTypeName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      searchDesc: 'string',
+      searchIcon: 'string',
+      searchTypeName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppendSpaceRequestImRobotOpenSpaceModel extends $tea.Model {
+  lastMessageI18n?: { [key: string]: string };
+  notification?: AppendSpaceRequestImRobotOpenSpaceModelNotification;
+  searchSupport?: AppendSpaceRequestImRobotOpenSpaceModelSearchSupport;
+  supportForward?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      lastMessageI18n: 'lastMessageI18n',
+      notification: 'notification',
+      searchSupport: 'searchSupport',
+      supportForward: 'supportForward',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      lastMessageI18n: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      notification: AppendSpaceRequestImRobotOpenSpaceModelNotification,
+      searchSupport: AppendSpaceRequestImRobotOpenSpaceModelSearchSupport,
+      supportForward: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AppendSpaceRequestImSingleOpenSpaceModelNotification extends $tea.Model {
   alertContent?: string;
   notificationOff?: boolean;
@@ -1063,6 +1153,100 @@ export class CreateAndDeliverRequestImGroupOpenSpaceModel extends $tea.Model {
       lastMessageI18n: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       notification: CreateAndDeliverRequestImGroupOpenSpaceModelNotification,
       searchSupport: CreateAndDeliverRequestImGroupOpenSpaceModelSearchSupport,
+      supportForward: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverRequestImRobotOpenDeliverModel extends $tea.Model {
+  spaceType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      spaceType: 'spaceType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      spaceType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverRequestImRobotOpenSpaceModelNotification extends $tea.Model {
+  alertContent?: string;
+  notificationOff?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      alertContent: 'alertContent',
+      notificationOff: 'notificationOff',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      alertContent: 'string',
+      notificationOff: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverRequestImRobotOpenSpaceModelSearchSupport extends $tea.Model {
+  searchDesc?: string;
+  searchIcon?: string;
+  searchTypeName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      searchDesc: 'searchDesc',
+      searchIcon: 'searchIcon',
+      searchTypeName: 'searchTypeName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      searchDesc: 'string',
+      searchIcon: 'string',
+      searchTypeName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverRequestImRobotOpenSpaceModel extends $tea.Model {
+  lastMessageI18n?: { [key: string]: string };
+  notification?: CreateAndDeliverRequestImRobotOpenSpaceModelNotification;
+  searchSupport?: CreateAndDeliverRequestImRobotOpenSpaceModelSearchSupport;
+  supportForward?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      lastMessageI18n: 'lastMessageI18n',
+      notification: 'notification',
+      searchSupport: 'searchSupport',
+      supportForward: 'supportForward',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      lastMessageI18n: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      notification: CreateAndDeliverRequestImRobotOpenSpaceModelNotification,
+      searchSupport: CreateAndDeliverRequestImRobotOpenSpaceModelSearchSupport,
       supportForward: 'boolean',
     };
   }
@@ -1501,6 +1685,81 @@ export class CreateCardRequestImGroupOpenSpaceModel extends $tea.Model {
   }
 }
 
+export class CreateCardRequestImRobotOpenSpaceModelNotification extends $tea.Model {
+  alertContent?: string;
+  notificationOff?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      alertContent: 'alertContent',
+      notificationOff: 'notificationOff',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      alertContent: 'string',
+      notificationOff: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCardRequestImRobotOpenSpaceModelSearchSupport extends $tea.Model {
+  searchDesc?: string;
+  searchIcon?: string;
+  searchTypeName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      searchDesc: 'searchDesc',
+      searchIcon: 'searchIcon',
+      searchTypeName: 'searchTypeName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      searchDesc: 'string',
+      searchIcon: 'string',
+      searchTypeName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCardRequestImRobotOpenSpaceModel extends $tea.Model {
+  lastMessageI18n?: { [key: string]: string };
+  notification?: CreateCardRequestImRobotOpenSpaceModelNotification;
+  searchSupport?: CreateCardRequestImRobotOpenSpaceModelSearchSupport;
+  supportForward?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      lastMessageI18n: 'lastMessageI18n',
+      notification: 'notification',
+      searchSupport: 'searchSupport',
+      supportForward: 'supportForward',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      lastMessageI18n: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      notification: CreateCardRequestImRobotOpenSpaceModelNotification,
+      searchSupport: CreateCardRequestImRobotOpenSpaceModelSearchSupport,
+      supportForward: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateCardRequestImSingleOpenSpaceModelNotification extends $tea.Model {
   alertContent?: string;
   notificationOff?: boolean;
@@ -1736,6 +1995,25 @@ export class DeliverCardRequestImGroupOpenDeliverModel extends $tea.Model {
   }
 }
 
+export class DeliverCardRequestImRobotOpenDeliverModel extends $tea.Model {
+  spaceType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      spaceType: 'spaceType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      spaceType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeliverCardRequestImSingleOpenDeliverModel extends $tea.Model {
   atUserIds?: { [key: string]: string };
   static names(): { [key: string]: string } {
@@ -1932,6 +2210,10 @@ export default class Client extends OpenApi {
       body["imGroupOpenSpaceModel"] = request.imGroupOpenSpaceModel;
     }
 
+    if (!Util.isUnset($tea.toMap(request.imRobotOpenSpaceModel))) {
+      body["imRobotOpenSpaceModel"] = request.imRobotOpenSpaceModel;
+    }
+
     if (!Util.isUnset($tea.toMap(request.imSingleOpenSpaceModel))) {
       body["imSingleOpenSpaceModel"] = request.imSingleOpenSpaceModel;
     }
@@ -2003,6 +2285,14 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset($tea.toMap(request.imGroupOpenSpaceModel))) {
       body["imGroupOpenSpaceModel"] = request.imGroupOpenSpaceModel;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.imRobotOpenDeliverModel))) {
+      body["imRobotOpenDeliverModel"] = request.imRobotOpenDeliverModel;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.imRobotOpenSpaceModel))) {
+      body["imRobotOpenSpaceModel"] = request.imRobotOpenSpaceModel;
     }
 
     if (!Util.isUnset($tea.toMap(request.imSingleOpenDeliverModel))) {
@@ -2102,6 +2392,10 @@ export default class Client extends OpenApi {
       body["imGroupOpenSpaceModel"] = request.imGroupOpenSpaceModel;
     }
 
+    if (!Util.isUnset($tea.toMap(request.imRobotOpenSpaceModel))) {
+      body["imRobotOpenSpaceModel"] = request.imRobotOpenSpaceModel;
+    }
+
     if (!Util.isUnset($tea.toMap(request.imSingleOpenSpaceModel))) {
       body["imSingleOpenSpaceModel"] = request.imSingleOpenSpaceModel;
     }
@@ -2165,6 +2459,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset($tea.toMap(request.imGroupOpenDeliverModel))) {
       body["imGroupOpenDeliverModel"] = request.imGroupOpenDeliverModel;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.imRobotOpenDeliverModel))) {
+      body["imRobotOpenDeliverModel"] = request.imRobotOpenDeliverModel;
     }
 
     if (!Util.isUnset($tea.toMap(request.imSingleOpenDeliverModel))) {
