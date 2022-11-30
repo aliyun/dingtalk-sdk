@@ -9,6 +9,8 @@ use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\coFeedOpe
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\coFeedOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\imGroupOpenDeliverModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\imGroupOpenSpaceModel;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\imRobotOpenDeliverModel;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\imRobotOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\imSingleOpenDeliverModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\imSingleOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\openDynamicDataConfig;
@@ -73,6 +75,20 @@ class CreateAndDeliverRequest extends Model
      * @var imGroupOpenSpaceModel
      */
     public $imGroupOpenSpaceModel;
+
+    /**
+     * @description 单聊场域投放参数
+     *
+     * @var imRobotOpenDeliverModel
+     */
+    public $imRobotOpenDeliverModel;
+
+    /**
+     * @description IM单聊场域信息
+     *
+     * @var imRobotOpenSpaceModel
+     */
+    public $imRobotOpenSpaceModel;
 
     /**
      * @description 单聊场域投放参数
@@ -162,6 +178,8 @@ class CreateAndDeliverRequest extends Model
         'coFeedOpenSpaceModel'      => 'coFeedOpenSpaceModel',
         'imGroupOpenDeliverModel'   => 'imGroupOpenDeliverModel',
         'imGroupOpenSpaceModel'     => 'imGroupOpenSpaceModel',
+        'imRobotOpenDeliverModel'   => 'imRobotOpenDeliverModel',
+        'imRobotOpenSpaceModel'     => 'imRobotOpenSpaceModel',
         'imSingleOpenDeliverModel'  => 'imSingleOpenDeliverModel',
         'imSingleOpenSpaceModel'    => 'imSingleOpenSpaceModel',
         'openDynamicDataConfig'     => 'openDynamicDataConfig',
@@ -206,6 +224,12 @@ class CreateAndDeliverRequest extends Model
         }
         if (null !== $this->imGroupOpenSpaceModel) {
             $res['imGroupOpenSpaceModel'] = null !== $this->imGroupOpenSpaceModel ? $this->imGroupOpenSpaceModel->toMap() : null;
+        }
+        if (null !== $this->imRobotOpenDeliverModel) {
+            $res['imRobotOpenDeliverModel'] = null !== $this->imRobotOpenDeliverModel ? $this->imRobotOpenDeliverModel->toMap() : null;
+        }
+        if (null !== $this->imRobotOpenSpaceModel) {
+            $res['imRobotOpenSpaceModel'] = null !== $this->imRobotOpenSpaceModel ? $this->imRobotOpenSpaceModel->toMap() : null;
         }
         if (null !== $this->imSingleOpenDeliverModel) {
             $res['imSingleOpenDeliverModel'] = null !== $this->imSingleOpenDeliverModel ? $this->imSingleOpenDeliverModel->toMap() : null;
@@ -285,6 +309,12 @@ class CreateAndDeliverRequest extends Model
         }
         if (isset($map['imGroupOpenSpaceModel'])) {
             $model->imGroupOpenSpaceModel = imGroupOpenSpaceModel::fromMap($map['imGroupOpenSpaceModel']);
+        }
+        if (isset($map['imRobotOpenDeliverModel'])) {
+            $model->imRobotOpenDeliverModel = imRobotOpenDeliverModel::fromMap($map['imRobotOpenDeliverModel']);
+        }
+        if (isset($map['imRobotOpenSpaceModel'])) {
+            $model->imRobotOpenSpaceModel = imRobotOpenSpaceModel::fromMap($map['imRobotOpenSpaceModel']);
         }
         if (isset($map['imSingleOpenDeliverModel'])) {
             $model->imSingleOpenDeliverModel = imSingleOpenDeliverModel::fromMap($map['imSingleOpenDeliverModel']);

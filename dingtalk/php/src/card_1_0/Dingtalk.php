@@ -69,6 +69,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->imGroupOpenSpaceModel)) {
             @$body['imGroupOpenSpaceModel'] = $request->imGroupOpenSpaceModel;
         }
+        if (!Utils::isUnset($request->imRobotOpenSpaceModel)) {
+            @$body['imRobotOpenSpaceModel'] = $request->imRobotOpenSpaceModel;
+        }
         if (!Utils::isUnset($request->imSingleOpenSpaceModel)) {
             @$body['imSingleOpenSpaceModel'] = $request->imSingleOpenSpaceModel;
         }
@@ -143,6 +146,12 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->imGroupOpenSpaceModel)) {
             @$body['imGroupOpenSpaceModel'] = $request->imGroupOpenSpaceModel;
+        }
+        if (!Utils::isUnset($request->imRobotOpenDeliverModel)) {
+            @$body['imRobotOpenDeliverModel'] = $request->imRobotOpenDeliverModel;
+        }
+        if (!Utils::isUnset($request->imRobotOpenSpaceModel)) {
+            @$body['imRobotOpenSpaceModel'] = $request->imRobotOpenSpaceModel;
         }
         if (!Utils::isUnset($request->imSingleOpenDeliverModel)) {
             @$body['imSingleOpenDeliverModel'] = $request->imSingleOpenDeliverModel;
@@ -237,6 +246,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->imGroupOpenSpaceModel)) {
             @$body['imGroupOpenSpaceModel'] = $request->imGroupOpenSpaceModel;
         }
+        if (!Utils::isUnset($request->imRobotOpenSpaceModel)) {
+            @$body['imRobotOpenSpaceModel'] = $request->imRobotOpenSpaceModel;
+        }
         if (!Utils::isUnset($request->imSingleOpenSpaceModel)) {
             @$body['imSingleOpenSpaceModel'] = $request->imSingleOpenSpaceModel;
         }
@@ -305,6 +317,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->imGroupOpenDeliverModel)) {
             @$body['imGroupOpenDeliverModel'] = $request->imGroupOpenDeliverModel;
+        }
+        if (!Utils::isUnset($request->imRobotOpenDeliverModel)) {
+            @$body['imRobotOpenDeliverModel'] = $request->imRobotOpenDeliverModel;
         }
         if (!Utils::isUnset($request->imSingleOpenDeliverModel)) {
             @$body['imSingleOpenDeliverModel'] = $request->imSingleOpenDeliverModel;

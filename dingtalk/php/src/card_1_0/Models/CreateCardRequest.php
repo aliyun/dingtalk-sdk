@@ -7,6 +7,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardRequest\cardData;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardRequest\coFeedOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardRequest\imGroupOpenSpaceModel;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardRequest\imRobotOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardRequest\imSingleOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardRequest\openDynamicDataConfig;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardRequest\topOpenSpaceModel;
@@ -54,6 +55,13 @@ class CreateCardRequest extends Model
      * @var imGroupOpenSpaceModel
      */
     public $imGroupOpenSpaceModel;
+
+    /**
+     * @description IM 单聊场域信息
+     *
+     * @var imRobotOpenSpaceModel
+     */
+    public $imRobotOpenSpaceModel;
 
     /**
      * @description IM 单聊场域信息
@@ -115,6 +123,7 @@ class CreateCardRequest extends Model
         'cardTemplateId'          => 'cardTemplateId',
         'coFeedOpenSpaceModel'    => 'coFeedOpenSpaceModel',
         'imGroupOpenSpaceModel'   => 'imGroupOpenSpaceModel',
+        'imRobotOpenSpaceModel'   => 'imRobotOpenSpaceModel',
         'imSingleOpenSpaceModel'  => 'imSingleOpenSpaceModel',
         'openDynamicDataConfig'   => 'openDynamicDataConfig',
         'outTrackId'              => 'outTrackId',
@@ -149,6 +158,9 @@ class CreateCardRequest extends Model
         }
         if (null !== $this->imGroupOpenSpaceModel) {
             $res['imGroupOpenSpaceModel'] = null !== $this->imGroupOpenSpaceModel ? $this->imGroupOpenSpaceModel->toMap() : null;
+        }
+        if (null !== $this->imRobotOpenSpaceModel) {
+            $res['imRobotOpenSpaceModel'] = null !== $this->imRobotOpenSpaceModel ? $this->imRobotOpenSpaceModel->toMap() : null;
         }
         if (null !== $this->imSingleOpenSpaceModel) {
             $res['imSingleOpenSpaceModel'] = null !== $this->imSingleOpenSpaceModel ? $this->imSingleOpenSpaceModel->toMap() : null;
@@ -210,6 +222,9 @@ class CreateCardRequest extends Model
         }
         if (isset($map['imGroupOpenSpaceModel'])) {
             $model->imGroupOpenSpaceModel = imGroupOpenSpaceModel::fromMap($map['imGroupOpenSpaceModel']);
+        }
+        if (isset($map['imRobotOpenSpaceModel'])) {
+            $model->imRobotOpenSpaceModel = imRobotOpenSpaceModel::fromMap($map['imRobotOpenSpaceModel']);
         }
         if (isset($map['imSingleOpenSpaceModel'])) {
             $model->imSingleOpenSpaceModel = imSingleOpenSpaceModel::fromMap($map['imSingleOpenSpaceModel']);

@@ -6,6 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceRequest\coFeedOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceRequest\imGroupOpenSpaceModel;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceRequest\imRobotOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceRequest\imSingleOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceRequest\topOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceRequest\workBenchOpenSpaceModel;
@@ -26,6 +27,13 @@ class AppendSpaceRequest extends Model
      * @var imGroupOpenSpaceModel
      */
     public $imGroupOpenSpaceModel;
+
+    /**
+     * @description IM群聊场域信息
+     *
+     * @var imRobotOpenSpaceModel
+     */
+    public $imRobotOpenSpaceModel;
 
     /**
      * @description IM单聊场域信息
@@ -57,6 +65,7 @@ class AppendSpaceRequest extends Model
     protected $_name = [
         'coFeedOpenSpaceModel'    => 'coFeedOpenSpaceModel',
         'imGroupOpenSpaceModel'   => 'imGroupOpenSpaceModel',
+        'imRobotOpenSpaceModel'   => 'imRobotOpenSpaceModel',
         'imSingleOpenSpaceModel'  => 'imSingleOpenSpaceModel',
         'outTrackId'              => 'outTrackId',
         'topOpenSpaceModel'       => 'topOpenSpaceModel',
@@ -75,6 +84,9 @@ class AppendSpaceRequest extends Model
         }
         if (null !== $this->imGroupOpenSpaceModel) {
             $res['imGroupOpenSpaceModel'] = null !== $this->imGroupOpenSpaceModel ? $this->imGroupOpenSpaceModel->toMap() : null;
+        }
+        if (null !== $this->imRobotOpenSpaceModel) {
+            $res['imRobotOpenSpaceModel'] = null !== $this->imRobotOpenSpaceModel ? $this->imRobotOpenSpaceModel->toMap() : null;
         }
         if (null !== $this->imSingleOpenSpaceModel) {
             $res['imSingleOpenSpaceModel'] = null !== $this->imSingleOpenSpaceModel ? $this->imSingleOpenSpaceModel->toMap() : null;
@@ -105,6 +117,9 @@ class AppendSpaceRequest extends Model
         }
         if (isset($map['imGroupOpenSpaceModel'])) {
             $model->imGroupOpenSpaceModel = imGroupOpenSpaceModel::fromMap($map['imGroupOpenSpaceModel']);
+        }
+        if (isset($map['imRobotOpenSpaceModel'])) {
+            $model->imRobotOpenSpaceModel = imRobotOpenSpaceModel::fromMap($map['imRobotOpenSpaceModel']);
         }
         if (isset($map['imSingleOpenSpaceModel'])) {
             $model->imSingleOpenSpaceModel = imSingleOpenSpaceModel::fromMap($map['imSingleOpenSpaceModel']);

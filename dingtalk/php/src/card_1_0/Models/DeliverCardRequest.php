@@ -6,6 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest\coFeedOpenDeliverModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest\imGroupOpenDeliverModel;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest\imRobotOpenDeliverModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest\imSingleOpenDeliverModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest\topOpenDeliverModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest\workBenchOpenDeliverModel;
@@ -26,6 +27,13 @@ class DeliverCardRequest extends Model
      * @var imGroupOpenDeliverModel
      */
     public $imGroupOpenDeliverModel;
+
+    /**
+     * @description 单聊场域投放参数
+     *
+     * @var imRobotOpenDeliverModel
+     */
+    public $imRobotOpenDeliverModel;
 
     /**
      * @description 单聊场域投放参数
@@ -64,6 +72,7 @@ class DeliverCardRequest extends Model
     protected $_name = [
         'coFeedOpenDeliverModel'    => 'coFeedOpenDeliverModel',
         'imGroupOpenDeliverModel'   => 'imGroupOpenDeliverModel',
+        'imRobotOpenDeliverModel'   => 'imRobotOpenDeliverModel',
         'imSingleOpenDeliverModel'  => 'imSingleOpenDeliverModel',
         'openSpaceId'               => 'openSpaceId',
         'outTrackId'                => 'outTrackId',
@@ -83,6 +92,9 @@ class DeliverCardRequest extends Model
         }
         if (null !== $this->imGroupOpenDeliverModel) {
             $res['imGroupOpenDeliverModel'] = null !== $this->imGroupOpenDeliverModel ? $this->imGroupOpenDeliverModel->toMap() : null;
+        }
+        if (null !== $this->imRobotOpenDeliverModel) {
+            $res['imRobotOpenDeliverModel'] = null !== $this->imRobotOpenDeliverModel ? $this->imRobotOpenDeliverModel->toMap() : null;
         }
         if (null !== $this->imSingleOpenDeliverModel) {
             $res['imSingleOpenDeliverModel'] = null !== $this->imSingleOpenDeliverModel ? $this->imSingleOpenDeliverModel->toMap() : null;
@@ -116,6 +128,9 @@ class DeliverCardRequest extends Model
         }
         if (isset($map['imGroupOpenDeliverModel'])) {
             $model->imGroupOpenDeliverModel = imGroupOpenDeliverModel::fromMap($map['imGroupOpenDeliverModel']);
+        }
+        if (isset($map['imRobotOpenDeliverModel'])) {
+            $model->imRobotOpenDeliverModel = imRobotOpenDeliverModel::fromMap($map['imRobotOpenDeliverModel']);
         }
         if (isset($map['imSingleOpenDeliverModel'])) {
             $model->imSingleOpenDeliverModel = imSingleOpenDeliverModel::fromMap($map['imSingleOpenDeliverModel']);

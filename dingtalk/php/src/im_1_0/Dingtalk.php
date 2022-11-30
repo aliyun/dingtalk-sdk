@@ -207,18 +207,18 @@ class Dingtalk extends OpenApiClient
     public function addRobotToConversationWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $body = [];
         if (!Utils::isUnset($request->icon)) {
-            @$query['icon'] = $request->icon;
+            @$body['icon'] = $request->icon;
         }
         if (!Utils::isUnset($request->name)) {
-            @$query['name'] = $request->name;
+            @$body['name'] = $request->name;
         }
         if (!Utils::isUnset($request->openConversationId)) {
-            @$query['openConversationId'] = $request->openConversationId;
+            @$body['openConversationId'] = $request->openConversationId;
         }
         if (!Utils::isUnset($request->robotCode)) {
-            @$query['robotCode'] = $request->robotCode;
+            @$body['robotCode'] = $request->robotCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -229,7 +229,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
         return AddRobotToConversationResponse::fromMap($this->doROARequest('AddRobotToConversation', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/conversations/robots', 'json', $req, $runtime));
@@ -1405,30 +1405,30 @@ class Dingtalk extends OpenApiClient
     public function installRobotToOrgWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $body = [];
         if (!Utils::isUnset($request->brief)) {
-            @$query['brief'] = $request->brief;
+            @$body['brief'] = $request->brief;
         }
         if (!Utils::isUnset($request->description)) {
-            @$query['description'] = $request->description;
+            @$body['description'] = $request->description;
         }
         if (!Utils::isUnset($request->icon)) {
-            @$query['icon'] = $request->icon;
+            @$body['icon'] = $request->icon;
         }
         if (!Utils::isUnset($request->name)) {
-            @$query['name'] = $request->name;
+            @$body['name'] = $request->name;
         }
         if (!Utils::isUnset($request->outgoingToken)) {
-            @$query['outgoingToken'] = $request->outgoingToken;
+            @$body['outgoingToken'] = $request->outgoingToken;
         }
         if (!Utils::isUnset($request->outgoingUrl)) {
-            @$query['outgoingUrl'] = $request->outgoingUrl;
+            @$body['outgoingUrl'] = $request->outgoingUrl;
         }
         if (!Utils::isUnset($request->previewMediaId)) {
-            @$query['previewMediaId'] = $request->previewMediaId;
+            @$body['previewMediaId'] = $request->previewMediaId;
         }
         if (!Utils::isUnset($request->robotCode)) {
-            @$query['robotCode'] = $request->robotCode;
+            @$body['robotCode'] = $request->robotCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -1439,7 +1439,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
         return InstallRobotToOrgResponse::fromMap($this->doROARequest('InstallRobotToOrg', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/organizations/robots/install', 'json', $req, $runtime));
@@ -1903,12 +1903,12 @@ class Dingtalk extends OpenApiClient
     public function removeRobotFromConversationWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $body = [];
         if (!Utils::isUnset($request->chatBotUserId)) {
-            @$query['chatBotUserId'] = $request->chatBotUserId;
+            @$body['chatBotUserId'] = $request->chatBotUserId;
         }
         if (!Utils::isUnset($request->openConversationId)) {
-            @$query['openConversationId'] = $request->openConversationId;
+            @$body['openConversationId'] = $request->openConversationId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -1919,7 +1919,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
         return RemoveRobotFromConversationResponse::fromMap($this->doROARequest('RemoveRobotFromConversation', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/conversations/robots/remove', 'json', $req, $runtime));
@@ -2758,30 +2758,30 @@ class Dingtalk extends OpenApiClient
     public function updateRobotInOrgWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $body = [];
         if (!Utils::isUnset($request->brief)) {
-            @$query['brief'] = $request->brief;
+            @$body['brief'] = $request->brief;
         }
         if (!Utils::isUnset($request->description)) {
-            @$query['description'] = $request->description;
+            @$body['description'] = $request->description;
         }
         if (!Utils::isUnset($request->icon)) {
-            @$query['icon'] = $request->icon;
+            @$body['icon'] = $request->icon;
         }
         if (!Utils::isUnset($request->name)) {
-            @$query['name'] = $request->name;
+            @$body['name'] = $request->name;
         }
         if (!Utils::isUnset($request->outgoingToken)) {
-            @$query['outgoingToken'] = $request->outgoingToken;
+            @$body['outgoingToken'] = $request->outgoingToken;
         }
         if (!Utils::isUnset($request->outgoingUrl)) {
-            @$query['outgoingUrl'] = $request->outgoingUrl;
+            @$body['outgoingUrl'] = $request->outgoingUrl;
         }
         if (!Utils::isUnset($request->previewMediaId)) {
-            @$query['previewMediaId'] = $request->previewMediaId;
+            @$body['previewMediaId'] = $request->previewMediaId;
         }
         if (!Utils::isUnset($request->robotCode)) {
-            @$query['robotCode'] = $request->robotCode;
+            @$body['robotCode'] = $request->robotCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -2792,7 +2792,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
         return UpdateRobotInOrgResponse::fromMap($this->doROARequest('UpdateRobotInOrg', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/organizations/robots', 'json', $req, $runtime));
