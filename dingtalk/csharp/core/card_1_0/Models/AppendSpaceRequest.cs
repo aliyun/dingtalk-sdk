@@ -87,6 +87,67 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         }
 
         /// <summary>
+        /// IM群聊场域信息
+        /// </summary>
+        [NameInMap("imRobotOpenSpaceModel")]
+        [Validation(Required=false)]
+        public AppendSpaceRequestImRobotOpenSpaceModel ImRobotOpenSpaceModel { get; set; }
+        public class AppendSpaceRequestImRobotOpenSpaceModel : TeaModel {
+            /// <summary>
+            /// 支持国际化的LastMessage
+            /// </summary>
+            [NameInMap("lastMessageI18n")]
+            [Validation(Required=false)]
+            public Dictionary<string, string> LastMessageI18n { get; set; }
+
+            /// <summary>
+            /// xpn信息
+            /// </summary>
+            [NameInMap("notification")]
+            [Validation(Required=false)]
+            public AppendSpaceRequestImRobotOpenSpaceModelNotification Notification { get; set; }
+            public class AppendSpaceRequestImRobotOpenSpaceModelNotification : TeaModel {
+                [NameInMap("alertContent")]
+                [Validation(Required=false)]
+                public string AlertContent { get; set; }
+
+                [NameInMap("notificationOff")]
+                [Validation(Required=false)]
+                public bool? NotificationOff { get; set; }
+
+            }
+
+            /// <summary>
+            /// 支持卡片消息可被搜索字段
+            /// </summary>
+            [NameInMap("searchSupport")]
+            [Validation(Required=false)]
+            public AppendSpaceRequestImRobotOpenSpaceModelSearchSupport SearchSupport { get; set; }
+            public class AppendSpaceRequestImRobotOpenSpaceModelSearchSupport : TeaModel {
+                [NameInMap("searchDesc")]
+                [Validation(Required=false)]
+                public string SearchDesc { get; set; }
+
+                [NameInMap("searchIcon")]
+                [Validation(Required=false)]
+                public string SearchIcon { get; set; }
+
+                [NameInMap("searchTypeName")]
+                [Validation(Required=false)]
+                public string SearchTypeName { get; set; }
+
+            }
+
+            /// <summary>
+            /// 是否支持转发, 默认false
+            /// </summary>
+            [NameInMap("supportForward")]
+            [Validation(Required=false)]
+            public bool? SupportForward { get; set; }
+
+        }
+
+        /// <summary>
         /// IM单聊场域信息
         /// </summary>
         [NameInMap("imSingleOpenSpaceModel")]

@@ -176,6 +176,80 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         /// <summary>
         /// 单聊场域投放参数
         /// </summary>
+        [NameInMap("imRobotOpenDeliverModel")]
+        [Validation(Required=false)]
+        public CreateAndDeliverRequestImRobotOpenDeliverModel ImRobotOpenDeliverModel { get; set; }
+        public class CreateAndDeliverRequestImRobotOpenDeliverModel : TeaModel {
+            [NameInMap("spaceType")]
+            [Validation(Required=false)]
+            public string SpaceType { get; set; }
+
+        }
+
+        /// <summary>
+        /// IM单聊场域信息
+        /// </summary>
+        [NameInMap("imRobotOpenSpaceModel")]
+        [Validation(Required=false)]
+        public CreateAndDeliverRequestImRobotOpenSpaceModel ImRobotOpenSpaceModel { get; set; }
+        public class CreateAndDeliverRequestImRobotOpenSpaceModel : TeaModel {
+            /// <summary>
+            /// 支持国际化的LastMessage
+            /// </summary>
+            [NameInMap("lastMessageI18n")]
+            [Validation(Required=false)]
+            public Dictionary<string, string> LastMessageI18n { get; set; }
+
+            /// <summary>
+            /// 通知信息
+            /// </summary>
+            [NameInMap("notification")]
+            [Validation(Required=false)]
+            public CreateAndDeliverRequestImRobotOpenSpaceModelNotification Notification { get; set; }
+            public class CreateAndDeliverRequestImRobotOpenSpaceModelNotification : TeaModel {
+                [NameInMap("alertContent")]
+                [Validation(Required=false)]
+                public string AlertContent { get; set; }
+
+                [NameInMap("notificationOff")]
+                [Validation(Required=false)]
+                public bool? NotificationOff { get; set; }
+
+            }
+
+            /// <summary>
+            /// 支持卡片消息可被搜索字段
+            /// </summary>
+            [NameInMap("searchSupport")]
+            [Validation(Required=false)]
+            public CreateAndDeliverRequestImRobotOpenSpaceModelSearchSupport SearchSupport { get; set; }
+            public class CreateAndDeliverRequestImRobotOpenSpaceModelSearchSupport : TeaModel {
+                [NameInMap("searchDesc")]
+                [Validation(Required=false)]
+                public string SearchDesc { get; set; }
+
+                [NameInMap("searchIcon")]
+                [Validation(Required=false)]
+                public string SearchIcon { get; set; }
+
+                [NameInMap("searchTypeName")]
+                [Validation(Required=false)]
+                public string SearchTypeName { get; set; }
+
+            }
+
+            /// <summary>
+            /// 是否支持转发, 默认false
+            /// </summary>
+            [NameInMap("supportForward")]
+            [Validation(Required=false)]
+            public bool? SupportForward { get; set; }
+
+        }
+
+        /// <summary>
+        /// 单聊场域投放参数
+        /// </summary>
         [NameInMap("imSingleOpenDeliverModel")]
         [Validation(Required=false)]
         public CreateAndDeliverRequestImSingleOpenDeliverModel ImSingleOpenDeliverModel { get; set; }

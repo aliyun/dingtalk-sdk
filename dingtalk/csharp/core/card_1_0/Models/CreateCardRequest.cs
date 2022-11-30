@@ -149,6 +149,91 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         /// <summary>
         /// IM 单聊场域信息
         /// </summary>
+        [NameInMap("imRobotOpenSpaceModel")]
+        [Validation(Required=false)]
+        public CreateCardRequestImRobotOpenSpaceModel ImRobotOpenSpaceModel { get; set; }
+        public class CreateCardRequestImRobotOpenSpaceModel : TeaModel {
+            /// <summary>
+            /// 支持国际化的LastMessage
+            /// key为语言枚举值，value为lastMessage内容
+            /// 目前支持的语言枚举值：
+            /// 简体中文: ZH_CN
+            /// 繁体中文: ZH_TW
+            /// 英文： EN_US
+            /// 日语: JA_JP
+            /// 越南语: VI_VN
+            /// </summary>
+            [NameInMap("lastMessageI18n")]
+            [Validation(Required=false)]
+            public Dictionary<string, string> LastMessageI18n { get; set; }
+
+            /// <summary>
+            /// 卡片的通知属性信息
+            /// </summary>
+            [NameInMap("notification")]
+            [Validation(Required=false)]
+            public CreateCardRequestImRobotOpenSpaceModelNotification Notification { get; set; }
+            public class CreateCardRequestImRobotOpenSpaceModelNotification : TeaModel {
+                /// <summary>
+                /// 【条件必填】通知内容
+                /// 若不填写则使用默认文案：如你收到1条新消息
+                /// </summary>
+                [NameInMap("alertContent")]
+                [Validation(Required=false)]
+                public string AlertContent { get; set; }
+
+                /// <summary>
+                /// 是否推送通知，默认为 false
+                /// </summary>
+                [NameInMap("notificationOff")]
+                [Validation(Required=false)]
+                public bool? NotificationOff { get; set; }
+
+            }
+
+            /// <summary>
+            /// 支持卡片消息可被搜索字段
+            /// </summary>
+            [NameInMap("searchSupport")]
+            [Validation(Required=false)]
+            public CreateCardRequestImRobotOpenSpaceModelSearchSupport SearchSupport { get; set; }
+            public class CreateCardRequestImRobotOpenSpaceModelSearchSupport : TeaModel {
+                /// <summary>
+                /// 【条件必填】供消息展示与搜索的字段
+                ///  【注意】最大限制200个字符，超过存储截断200
+                /// </summary>
+                [NameInMap("searchDesc")]
+                [Validation(Required=false)]
+                public string SearchDesc { get; set; }
+
+                /// <summary>
+                /// 类型的icon，供搜索展示使用
+                /// </summary>
+                [NameInMap("searchIcon")]
+                [Validation(Required=false)]
+                public string SearchIcon { get; set; }
+
+                /// <summary>
+                /// 卡片类型名
+                /// </summary>
+                [NameInMap("searchTypeName")]
+                [Validation(Required=false)]
+                public string SearchTypeName { get; set; }
+
+            }
+
+            /// <summary>
+            /// 是否支持转发, 默认 false
+            /// </summary>
+            [NameInMap("supportForward")]
+            [Validation(Required=false)]
+            public bool? SupportForward { get; set; }
+
+        }
+
+        /// <summary>
+        /// IM 单聊场域信息
+        /// </summary>
         [NameInMap("imSingleOpenSpaceModel")]
         [Validation(Required=false)]
         public CreateCardRequestImSingleOpenSpaceModel ImSingleOpenSpaceModel { get; set; }

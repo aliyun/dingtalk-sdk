@@ -43,22 +43,22 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         public AddRobotToConversationResponse AddRobotToConversationWithOptions(AddRobotToConversationRequest request, AddRobotToConversationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Icon))
             {
-                query["icon"] = request.Icon;
+                body["icon"] = request.Icon;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
-                query["name"] = request.Name;
+                body["name"] = request.Name;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
             {
-                query["openConversationId"] = request.OpenConversationId;
+                body["openConversationId"] = request.OpenConversationId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
             {
-                query["robotCode"] = request.RobotCode;
+                body["robotCode"] = request.RobotCode;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -72,7 +72,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<AddRobotToConversationResponse>(DoROARequest("AddRobotToConversation", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/conversations/robots", "json", req, runtime));
         }
@@ -80,22 +80,22 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         public async Task<AddRobotToConversationResponse> AddRobotToConversationWithOptionsAsync(AddRobotToConversationRequest request, AddRobotToConversationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Icon))
             {
-                query["icon"] = request.Icon;
+                body["icon"] = request.Icon;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
-                query["name"] = request.Name;
+                body["name"] = request.Name;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
             {
-                query["openConversationId"] = request.OpenConversationId;
+                body["openConversationId"] = request.OpenConversationId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
             {
-                query["robotCode"] = request.RobotCode;
+                body["robotCode"] = request.RobotCode;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -109,7 +109,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<AddRobotToConversationResponse>(await DoROARequestAsync("AddRobotToConversation", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/conversations/robots", "json", req, runtime));
         }
@@ -2145,38 +2145,38 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         public InstallRobotToOrgResponse InstallRobotToOrgWithOptions(InstallRobotToOrgRequest request, InstallRobotToOrgHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Brief))
             {
-                query["brief"] = request.Brief;
+                body["brief"] = request.Brief;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
             {
-                query["description"] = request.Description;
+                body["description"] = request.Description;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Icon))
             {
-                query["icon"] = request.Icon;
+                body["icon"] = request.Icon;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
-                query["name"] = request.Name;
+                body["name"] = request.Name;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutgoingToken))
             {
-                query["outgoingToken"] = request.OutgoingToken;
+                body["outgoingToken"] = request.OutgoingToken;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutgoingUrl))
             {
-                query["outgoingUrl"] = request.OutgoingUrl;
+                body["outgoingUrl"] = request.OutgoingUrl;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PreviewMediaId))
             {
-                query["previewMediaId"] = request.PreviewMediaId;
+                body["previewMediaId"] = request.PreviewMediaId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
             {
-                query["robotCode"] = request.RobotCode;
+                body["robotCode"] = request.RobotCode;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -2190,7 +2190,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<InstallRobotToOrgResponse>(DoROARequest("InstallRobotToOrg", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/organizations/robots/install", "json", req, runtime));
         }
@@ -2198,38 +2198,38 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         public async Task<InstallRobotToOrgResponse> InstallRobotToOrgWithOptionsAsync(InstallRobotToOrgRequest request, InstallRobotToOrgHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Brief))
             {
-                query["brief"] = request.Brief;
+                body["brief"] = request.Brief;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
             {
-                query["description"] = request.Description;
+                body["description"] = request.Description;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Icon))
             {
-                query["icon"] = request.Icon;
+                body["icon"] = request.Icon;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
-                query["name"] = request.Name;
+                body["name"] = request.Name;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutgoingToken))
             {
-                query["outgoingToken"] = request.OutgoingToken;
+                body["outgoingToken"] = request.OutgoingToken;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutgoingUrl))
             {
-                query["outgoingUrl"] = request.OutgoingUrl;
+                body["outgoingUrl"] = request.OutgoingUrl;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PreviewMediaId))
             {
-                query["previewMediaId"] = request.PreviewMediaId;
+                body["previewMediaId"] = request.PreviewMediaId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
             {
-                query["robotCode"] = request.RobotCode;
+                body["robotCode"] = request.RobotCode;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -2243,7 +2243,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<InstallRobotToOrgResponse>(await DoROARequestAsync("InstallRobotToOrg", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/organizations/robots/install", "json", req, runtime));
         }
@@ -2993,14 +2993,14 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         public RemoveRobotFromConversationResponse RemoveRobotFromConversationWithOptions(RemoveRobotFromConversationRequest request, RemoveRobotFromConversationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChatBotUserId))
             {
-                query["chatBotUserId"] = request.ChatBotUserId;
+                body["chatBotUserId"] = request.ChatBotUserId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
             {
-                query["openConversationId"] = request.OpenConversationId;
+                body["openConversationId"] = request.OpenConversationId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -3014,7 +3014,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<RemoveRobotFromConversationResponse>(DoROARequest("RemoveRobotFromConversation", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/conversations/robots/remove", "json", req, runtime));
         }
@@ -3022,14 +3022,14 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         public async Task<RemoveRobotFromConversationResponse> RemoveRobotFromConversationWithOptionsAsync(RemoveRobotFromConversationRequest request, RemoveRobotFromConversationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChatBotUserId))
             {
-                query["chatBotUserId"] = request.ChatBotUserId;
+                body["chatBotUserId"] = request.ChatBotUserId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
             {
-                query["openConversationId"] = request.OpenConversationId;
+                body["openConversationId"] = request.OpenConversationId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -3043,7 +3043,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<RemoveRobotFromConversationResponse>(await DoROARequestAsync("RemoveRobotFromConversation", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/conversations/robots/remove", "json", req, runtime));
         }
@@ -4553,38 +4553,38 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         public UpdateRobotInOrgResponse UpdateRobotInOrgWithOptions(UpdateRobotInOrgRequest request, UpdateRobotInOrgHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Brief))
             {
-                query["brief"] = request.Brief;
+                body["brief"] = request.Brief;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
             {
-                query["description"] = request.Description;
+                body["description"] = request.Description;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Icon))
             {
-                query["icon"] = request.Icon;
+                body["icon"] = request.Icon;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
-                query["name"] = request.Name;
+                body["name"] = request.Name;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutgoingToken))
             {
-                query["outgoingToken"] = request.OutgoingToken;
+                body["outgoingToken"] = request.OutgoingToken;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutgoingUrl))
             {
-                query["outgoingUrl"] = request.OutgoingUrl;
+                body["outgoingUrl"] = request.OutgoingUrl;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PreviewMediaId))
             {
-                query["previewMediaId"] = request.PreviewMediaId;
+                body["previewMediaId"] = request.PreviewMediaId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
             {
-                query["robotCode"] = request.RobotCode;
+                body["robotCode"] = request.RobotCode;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -4598,7 +4598,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<UpdateRobotInOrgResponse>(DoROARequest("UpdateRobotInOrg", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/organizations/robots", "json", req, runtime));
         }
@@ -4606,38 +4606,38 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         public async Task<UpdateRobotInOrgResponse> UpdateRobotInOrgWithOptionsAsync(UpdateRobotInOrgRequest request, UpdateRobotInOrgHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Brief))
             {
-                query["brief"] = request.Brief;
+                body["brief"] = request.Brief;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
             {
-                query["description"] = request.Description;
+                body["description"] = request.Description;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Icon))
             {
-                query["icon"] = request.Icon;
+                body["icon"] = request.Icon;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
-                query["name"] = request.Name;
+                body["name"] = request.Name;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutgoingToken))
             {
-                query["outgoingToken"] = request.OutgoingToken;
+                body["outgoingToken"] = request.OutgoingToken;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutgoingUrl))
             {
-                query["outgoingUrl"] = request.OutgoingUrl;
+                body["outgoingUrl"] = request.OutgoingUrl;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PreviewMediaId))
             {
-                query["previewMediaId"] = request.PreviewMediaId;
+                body["previewMediaId"] = request.PreviewMediaId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
             {
-                query["robotCode"] = request.RobotCode;
+                body["robotCode"] = request.RobotCode;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -4651,7 +4651,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<UpdateRobotInOrgResponse>(await DoROARequestAsync("UpdateRobotInOrg", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/organizations/robots", "json", req, runtime));
         }

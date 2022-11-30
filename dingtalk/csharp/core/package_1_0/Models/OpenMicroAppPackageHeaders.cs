@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkpackage_1_0.Models
 {
-    public class GetUploadTokenHeaders : TeaModel {
+    public class OpenMicroAppPackageHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }

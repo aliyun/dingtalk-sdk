@@ -65,6 +65,19 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         /// <summary>
         /// 单聊场域投放参数
         /// </summary>
+        [NameInMap("imRobotOpenDeliverModel")]
+        [Validation(Required=false)]
+        public DeliverCardRequestImRobotOpenDeliverModel ImRobotOpenDeliverModel { get; set; }
+        public class DeliverCardRequestImRobotOpenDeliverModel : TeaModel {
+            [NameInMap("spaceType")]
+            [Validation(Required=false)]
+            public string SpaceType { get; set; }
+
+        }
+
+        /// <summary>
+        /// 单聊场域投放参数
+        /// </summary>
         [NameInMap("imSingleOpenDeliverModel")]
         [Validation(Required=false)]
         public DeliverCardRequestImSingleOpenDeliverModel ImSingleOpenDeliverModel { get; set; }
