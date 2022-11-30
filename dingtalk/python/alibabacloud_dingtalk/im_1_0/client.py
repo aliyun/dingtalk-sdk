@@ -46,15 +46,15 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.AddRobotToConversationResponse:
         UtilClient.validate_model(request)
-        query = {}
+        body = {}
         if not UtilClient.is_unset(request.icon):
-            query['icon'] = request.icon
+            body['icon'] = request.icon
         if not UtilClient.is_unset(request.name):
-            query['name'] = request.name
+            body['name'] = request.name
         if not UtilClient.is_unset(request.open_conversation_id):
-            query['openConversationId'] = request.open_conversation_id
+            body['openConversationId'] = request.open_conversation_id
         if not UtilClient.is_unset(request.robot_code):
-            query['robotCode'] = request.robot_code
+            body['robotCode'] = request.robot_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -62,7 +62,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
             dingtalkim__1__0_models.AddRobotToConversationResponse(),
@@ -76,15 +76,15 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.AddRobotToConversationResponse:
         UtilClient.validate_model(request)
-        query = {}
+        body = {}
         if not UtilClient.is_unset(request.icon):
-            query['icon'] = request.icon
+            body['icon'] = request.icon
         if not UtilClient.is_unset(request.name):
-            query['name'] = request.name
+            body['name'] = request.name
         if not UtilClient.is_unset(request.open_conversation_id):
-            query['openConversationId'] = request.open_conversation_id
+            body['openConversationId'] = request.open_conversation_id
         if not UtilClient.is_unset(request.robot_code):
-            query['robotCode'] = request.robot_code
+            body['robotCode'] = request.robot_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -92,7 +92,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
             dingtalkim__1__0_models.AddRobotToConversationResponse(),
@@ -1820,23 +1820,23 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.InstallRobotToOrgResponse:
         UtilClient.validate_model(request)
-        query = {}
+        body = {}
         if not UtilClient.is_unset(request.brief):
-            query['brief'] = request.brief
+            body['brief'] = request.brief
         if not UtilClient.is_unset(request.description):
-            query['description'] = request.description
+            body['description'] = request.description
         if not UtilClient.is_unset(request.icon):
-            query['icon'] = request.icon
+            body['icon'] = request.icon
         if not UtilClient.is_unset(request.name):
-            query['name'] = request.name
+            body['name'] = request.name
         if not UtilClient.is_unset(request.outgoing_token):
-            query['outgoingToken'] = request.outgoing_token
+            body['outgoingToken'] = request.outgoing_token
         if not UtilClient.is_unset(request.outgoing_url):
-            query['outgoingUrl'] = request.outgoing_url
+            body['outgoingUrl'] = request.outgoing_url
         if not UtilClient.is_unset(request.preview_media_id):
-            query['previewMediaId'] = request.preview_media_id
+            body['previewMediaId'] = request.preview_media_id
         if not UtilClient.is_unset(request.robot_code):
-            query['robotCode'] = request.robot_code
+            body['robotCode'] = request.robot_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1844,7 +1844,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
             dingtalkim__1__0_models.InstallRobotToOrgResponse(),
@@ -1858,23 +1858,23 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.InstallRobotToOrgResponse:
         UtilClient.validate_model(request)
-        query = {}
+        body = {}
         if not UtilClient.is_unset(request.brief):
-            query['brief'] = request.brief
+            body['brief'] = request.brief
         if not UtilClient.is_unset(request.description):
-            query['description'] = request.description
+            body['description'] = request.description
         if not UtilClient.is_unset(request.icon):
-            query['icon'] = request.icon
+            body['icon'] = request.icon
         if not UtilClient.is_unset(request.name):
-            query['name'] = request.name
+            body['name'] = request.name
         if not UtilClient.is_unset(request.outgoing_token):
-            query['outgoingToken'] = request.outgoing_token
+            body['outgoingToken'] = request.outgoing_token
         if not UtilClient.is_unset(request.outgoing_url):
-            query['outgoingUrl'] = request.outgoing_url
+            body['outgoingUrl'] = request.outgoing_url
         if not UtilClient.is_unset(request.preview_media_id):
-            query['previewMediaId'] = request.preview_media_id
+            body['previewMediaId'] = request.preview_media_id
         if not UtilClient.is_unset(request.robot_code):
-            query['robotCode'] = request.robot_code
+            body['robotCode'] = request.robot_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1882,7 +1882,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
             dingtalkim__1__0_models.InstallRobotToOrgResponse(),
@@ -2564,11 +2564,11 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.RemoveRobotFromConversationResponse:
         UtilClient.validate_model(request)
-        query = {}
+        body = {}
         if not UtilClient.is_unset(request.chat_bot_user_id):
-            query['chatBotUserId'] = request.chat_bot_user_id
+            body['chatBotUserId'] = request.chat_bot_user_id
         if not UtilClient.is_unset(request.open_conversation_id):
-            query['openConversationId'] = request.open_conversation_id
+            body['openConversationId'] = request.open_conversation_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2576,7 +2576,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
             dingtalkim__1__0_models.RemoveRobotFromConversationResponse(),
@@ -2590,11 +2590,11 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.RemoveRobotFromConversationResponse:
         UtilClient.validate_model(request)
-        query = {}
+        body = {}
         if not UtilClient.is_unset(request.chat_bot_user_id):
-            query['chatBotUserId'] = request.chat_bot_user_id
+            body['chatBotUserId'] = request.chat_bot_user_id
         if not UtilClient.is_unset(request.open_conversation_id):
-            query['openConversationId'] = request.open_conversation_id
+            body['openConversationId'] = request.open_conversation_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2602,7 +2602,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
             dingtalkim__1__0_models.RemoveRobotFromConversationResponse(),
@@ -3824,23 +3824,23 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateRobotInOrgResponse:
         UtilClient.validate_model(request)
-        query = {}
+        body = {}
         if not UtilClient.is_unset(request.brief):
-            query['brief'] = request.brief
+            body['brief'] = request.brief
         if not UtilClient.is_unset(request.description):
-            query['description'] = request.description
+            body['description'] = request.description
         if not UtilClient.is_unset(request.icon):
-            query['icon'] = request.icon
+            body['icon'] = request.icon
         if not UtilClient.is_unset(request.name):
-            query['name'] = request.name
+            body['name'] = request.name
         if not UtilClient.is_unset(request.outgoing_token):
-            query['outgoingToken'] = request.outgoing_token
+            body['outgoingToken'] = request.outgoing_token
         if not UtilClient.is_unset(request.outgoing_url):
-            query['outgoingUrl'] = request.outgoing_url
+            body['outgoingUrl'] = request.outgoing_url
         if not UtilClient.is_unset(request.preview_media_id):
-            query['previewMediaId'] = request.preview_media_id
+            body['previewMediaId'] = request.preview_media_id
         if not UtilClient.is_unset(request.robot_code):
-            query['robotCode'] = request.robot_code
+            body['robotCode'] = request.robot_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3848,7 +3848,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateRobotInOrgResponse(),
@@ -3862,23 +3862,23 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateRobotInOrgResponse:
         UtilClient.validate_model(request)
-        query = {}
+        body = {}
         if not UtilClient.is_unset(request.brief):
-            query['brief'] = request.brief
+            body['brief'] = request.brief
         if not UtilClient.is_unset(request.description):
-            query['description'] = request.description
+            body['description'] = request.description
         if not UtilClient.is_unset(request.icon):
-            query['icon'] = request.icon
+            body['icon'] = request.icon
         if not UtilClient.is_unset(request.name):
-            query['name'] = request.name
+            body['name'] = request.name
         if not UtilClient.is_unset(request.outgoing_token):
-            query['outgoingToken'] = request.outgoing_token
+            body['outgoingToken'] = request.outgoing_token
         if not UtilClient.is_unset(request.outgoing_url):
-            query['outgoingUrl'] = request.outgoing_url
+            body['outgoingUrl'] = request.outgoing_url
         if not UtilClient.is_unset(request.preview_media_id):
-            query['previewMediaId'] = request.preview_media_id
+            body['previewMediaId'] = request.preview_media_id
         if not UtilClient.is_unset(request.robot_code):
-            query['robotCode'] = request.robot_code
+            body['robotCode'] = request.robot_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3886,7 +3886,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateRobotInOrgResponse(),

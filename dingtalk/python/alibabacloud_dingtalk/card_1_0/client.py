@@ -51,6 +51,8 @@ class Client(OpenApiClient):
             body['coFeedOpenSpaceModel'] = request.co_feed_open_space_model
         if not UtilClient.is_unset(request.im_group_open_space_model):
             body['imGroupOpenSpaceModel'] = request.im_group_open_space_model
+        if not UtilClient.is_unset(request.im_robot_open_space_model):
+            body['imRobotOpenSpaceModel'] = request.im_robot_open_space_model
         if not UtilClient.is_unset(request.im_single_open_space_model):
             body['imSingleOpenSpaceModel'] = request.im_single_open_space_model
         if not UtilClient.is_unset(request.out_track_id):
@@ -85,6 +87,8 @@ class Client(OpenApiClient):
             body['coFeedOpenSpaceModel'] = request.co_feed_open_space_model
         if not UtilClient.is_unset(request.im_group_open_space_model):
             body['imGroupOpenSpaceModel'] = request.im_group_open_space_model
+        if not UtilClient.is_unset(request.im_robot_open_space_model):
+            body['imRobotOpenSpaceModel'] = request.im_robot_open_space_model
         if not UtilClient.is_unset(request.im_single_open_space_model):
             body['imSingleOpenSpaceModel'] = request.im_single_open_space_model
         if not UtilClient.is_unset(request.out_track_id):
@@ -147,6 +151,10 @@ class Client(OpenApiClient):
             body['imGroupOpenDeliverModel'] = request.im_group_open_deliver_model
         if not UtilClient.is_unset(request.im_group_open_space_model):
             body['imGroupOpenSpaceModel'] = request.im_group_open_space_model
+        if not UtilClient.is_unset(request.im_robot_open_deliver_model):
+            body['imRobotOpenDeliverModel'] = request.im_robot_open_deliver_model
+        if not UtilClient.is_unset(request.im_robot_open_space_model):
+            body['imRobotOpenSpaceModel'] = request.im_robot_open_space_model
         if not UtilClient.is_unset(request.im_single_open_deliver_model):
             body['imSingleOpenDeliverModel'] = request.im_single_open_deliver_model
         if not UtilClient.is_unset(request.im_single_open_space_model):
@@ -209,6 +217,10 @@ class Client(OpenApiClient):
             body['imGroupOpenDeliverModel'] = request.im_group_open_deliver_model
         if not UtilClient.is_unset(request.im_group_open_space_model):
             body['imGroupOpenSpaceModel'] = request.im_group_open_space_model
+        if not UtilClient.is_unset(request.im_robot_open_deliver_model):
+            body['imRobotOpenDeliverModel'] = request.im_robot_open_deliver_model
+        if not UtilClient.is_unset(request.im_robot_open_space_model):
+            body['imRobotOpenSpaceModel'] = request.im_robot_open_space_model
         if not UtilClient.is_unset(request.im_single_open_deliver_model):
             body['imSingleOpenDeliverModel'] = request.im_single_open_deliver_model
         if not UtilClient.is_unset(request.im_single_open_space_model):
@@ -283,6 +295,8 @@ class Client(OpenApiClient):
             body['coFeedOpenSpaceModel'] = request.co_feed_open_space_model
         if not UtilClient.is_unset(request.im_group_open_space_model):
             body['imGroupOpenSpaceModel'] = request.im_group_open_space_model
+        if not UtilClient.is_unset(request.im_robot_open_space_model):
+            body['imRobotOpenSpaceModel'] = request.im_robot_open_space_model
         if not UtilClient.is_unset(request.im_single_open_space_model):
             body['imSingleOpenSpaceModel'] = request.im_single_open_space_model
         if not UtilClient.is_unset(request.open_dynamic_data_config):
@@ -333,6 +347,8 @@ class Client(OpenApiClient):
             body['coFeedOpenSpaceModel'] = request.co_feed_open_space_model
         if not UtilClient.is_unset(request.im_group_open_space_model):
             body['imGroupOpenSpaceModel'] = request.im_group_open_space_model
+        if not UtilClient.is_unset(request.im_robot_open_space_model):
+            body['imRobotOpenSpaceModel'] = request.im_robot_open_space_model
         if not UtilClient.is_unset(request.im_single_open_space_model):
             body['imSingleOpenSpaceModel'] = request.im_single_open_space_model
         if not UtilClient.is_unset(request.open_dynamic_data_config):
@@ -391,6 +407,8 @@ class Client(OpenApiClient):
             body['coFeedOpenDeliverModel'] = request.co_feed_open_deliver_model
         if not UtilClient.is_unset(request.im_group_open_deliver_model):
             body['imGroupOpenDeliverModel'] = request.im_group_open_deliver_model
+        if not UtilClient.is_unset(request.im_robot_open_deliver_model):
+            body['imRobotOpenDeliverModel'] = request.im_robot_open_deliver_model
         if not UtilClient.is_unset(request.im_single_open_deliver_model):
             body['imSingleOpenDeliverModel'] = request.im_single_open_deliver_model
         if not UtilClient.is_unset(request.open_space_id):
@@ -427,6 +445,8 @@ class Client(OpenApiClient):
             body['coFeedOpenDeliverModel'] = request.co_feed_open_deliver_model
         if not UtilClient.is_unset(request.im_group_open_deliver_model):
             body['imGroupOpenDeliverModel'] = request.im_group_open_deliver_model
+        if not UtilClient.is_unset(request.im_robot_open_deliver_model):
+            body['imRobotOpenDeliverModel'] = request.im_robot_open_deliver_model
         if not UtilClient.is_unset(request.im_single_open_deliver_model):
             body['imSingleOpenDeliverModel'] = request.im_single_open_deliver_model
         if not UtilClient.is_unset(request.open_space_id):
