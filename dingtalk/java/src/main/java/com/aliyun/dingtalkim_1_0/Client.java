@@ -24,21 +24,21 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public AddRobotToConversationResponse addRobotToConversationWithOptions(AddRobotToConversationRequest request, AddRobotToConversationHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.icon)) {
-            query.put("icon", request.icon);
+            body.put("icon", request.icon);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.name)) {
-            query.put("name", request.name);
+            body.put("name", request.name);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
-            query.put("openConversationId", request.openConversationId);
+            body.put("openConversationId", request.openConversationId);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.robotCode)) {
-            query.put("robotCode", request.robotCode);
+            body.put("robotCode", request.robotCode);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -52,7 +52,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("AddRobotToConversation", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/conversations/robots", "json", req, runtime), new AddRobotToConversationResponse());
     }
@@ -1006,37 +1006,37 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public InstallRobotToOrgResponse installRobotToOrgWithOptions(InstallRobotToOrgRequest request, InstallRobotToOrgHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.brief)) {
-            query.put("brief", request.brief);
+            body.put("brief", request.brief);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.description)) {
-            query.put("description", request.description);
+            body.put("description", request.description);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.icon)) {
-            query.put("icon", request.icon);
+            body.put("icon", request.icon);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.name)) {
-            query.put("name", request.name);
+            body.put("name", request.name);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.outgoingToken)) {
-            query.put("outgoingToken", request.outgoingToken);
+            body.put("outgoingToken", request.outgoingToken);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.outgoingUrl)) {
-            query.put("outgoingUrl", request.outgoingUrl);
+            body.put("outgoingUrl", request.outgoingUrl);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.previewMediaId)) {
-            query.put("previewMediaId", request.previewMediaId);
+            body.put("previewMediaId", request.previewMediaId);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.robotCode)) {
-            query.put("robotCode", request.robotCode);
+            body.put("robotCode", request.robotCode);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -1050,7 +1050,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("InstallRobotToOrg", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/organizations/robots/install", "json", req, runtime), new InstallRobotToOrgResponse());
     }
@@ -1400,13 +1400,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public RemoveRobotFromConversationResponse removeRobotFromConversationWithOptions(RemoveRobotFromConversationRequest request, RemoveRobotFromConversationHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.chatBotUserId)) {
-            query.put("chatBotUserId", request.chatBotUserId);
+            body.put("chatBotUserId", request.chatBotUserId);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
-            query.put("openConversationId", request.openConversationId);
+            body.put("openConversationId", request.openConversationId);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -1420,7 +1420,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("RemoveRobotFromConversation", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/conversations/robots/remove", "json", req, runtime), new RemoveRobotFromConversationResponse());
     }
@@ -2135,37 +2135,37 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public UpdateRobotInOrgResponse updateRobotInOrgWithOptions(UpdateRobotInOrgRequest request, UpdateRobotInOrgHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.brief)) {
-            query.put("brief", request.brief);
+            body.put("brief", request.brief);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.description)) {
-            query.put("description", request.description);
+            body.put("description", request.description);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.icon)) {
-            query.put("icon", request.icon);
+            body.put("icon", request.icon);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.name)) {
-            query.put("name", request.name);
+            body.put("name", request.name);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.outgoingToken)) {
-            query.put("outgoingToken", request.outgoingToken);
+            body.put("outgoingToken", request.outgoingToken);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.outgoingUrl)) {
-            query.put("outgoingUrl", request.outgoingUrl);
+            body.put("outgoingUrl", request.outgoingUrl);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.previewMediaId)) {
-            query.put("previewMediaId", request.previewMediaId);
+            body.put("previewMediaId", request.previewMediaId);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.robotCode)) {
-            query.put("robotCode", request.robotCode);
+            body.put("robotCode", request.robotCode);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -2179,7 +2179,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("UpdateRobotInOrg", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/organizations/robots", "json", req, runtime), new UpdateRobotInOrgResponse());
     }

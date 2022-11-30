@@ -36,6 +36,14 @@ public class CreateAndDeliverRequest extends TeaModel {
     public CreateAndDeliverRequestImGroupOpenSpaceModel imGroupOpenSpaceModel;
 
     // 单聊场域投放参数
+    @NameInMap("imRobotOpenDeliverModel")
+    public CreateAndDeliverRequestImRobotOpenDeliverModel imRobotOpenDeliverModel;
+
+    // IM单聊场域信息
+    @NameInMap("imRobotOpenSpaceModel")
+    public CreateAndDeliverRequestImRobotOpenSpaceModel imRobotOpenSpaceModel;
+
+    // 单聊场域投放参数
     @NameInMap("imSingleOpenDeliverModel")
     public CreateAndDeliverRequestImSingleOpenDeliverModel imSingleOpenDeliverModel;
 
@@ -148,6 +156,22 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
     public CreateAndDeliverRequestImGroupOpenSpaceModel getImGroupOpenSpaceModel() {
         return this.imGroupOpenSpaceModel;
+    }
+
+    public CreateAndDeliverRequest setImRobotOpenDeliverModel(CreateAndDeliverRequestImRobotOpenDeliverModel imRobotOpenDeliverModel) {
+        this.imRobotOpenDeliverModel = imRobotOpenDeliverModel;
+        return this;
+    }
+    public CreateAndDeliverRequestImRobotOpenDeliverModel getImRobotOpenDeliverModel() {
+        return this.imRobotOpenDeliverModel;
+    }
+
+    public CreateAndDeliverRequest setImRobotOpenSpaceModel(CreateAndDeliverRequestImRobotOpenSpaceModel imRobotOpenSpaceModel) {
+        this.imRobotOpenSpaceModel = imRobotOpenSpaceModel;
+        return this;
+    }
+    public CreateAndDeliverRequestImRobotOpenSpaceModel getImRobotOpenSpaceModel() {
+        return this.imRobotOpenSpaceModel;
     }
 
     public CreateAndDeliverRequest setImSingleOpenDeliverModel(CreateAndDeliverRequestImSingleOpenDeliverModel imSingleOpenDeliverModel) {
@@ -480,6 +504,152 @@ public class CreateAndDeliverRequest extends TeaModel {
         }
 
         public CreateAndDeliverRequestImGroupOpenSpaceModel setSupportForward(Boolean supportForward) {
+            this.supportForward = supportForward;
+            return this;
+        }
+        public Boolean getSupportForward() {
+            return this.supportForward;
+        }
+
+    }
+
+    public static class CreateAndDeliverRequestImRobotOpenDeliverModel extends TeaModel {
+        @NameInMap("spaceType")
+        public String spaceType;
+
+        public static CreateAndDeliverRequestImRobotOpenDeliverModel build(java.util.Map<String, ?> map) throws Exception {
+            CreateAndDeliverRequestImRobotOpenDeliverModel self = new CreateAndDeliverRequestImRobotOpenDeliverModel();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateAndDeliverRequestImRobotOpenDeliverModel setSpaceType(String spaceType) {
+            this.spaceType = spaceType;
+            return this;
+        }
+        public String getSpaceType() {
+            return this.spaceType;
+        }
+
+    }
+
+    public static class CreateAndDeliverRequestImRobotOpenSpaceModelNotification extends TeaModel {
+        @NameInMap("alertContent")
+        public String alertContent;
+
+        @NameInMap("notificationOff")
+        public Boolean notificationOff;
+
+        public static CreateAndDeliverRequestImRobotOpenSpaceModelNotification build(java.util.Map<String, ?> map) throws Exception {
+            CreateAndDeliverRequestImRobotOpenSpaceModelNotification self = new CreateAndDeliverRequestImRobotOpenSpaceModelNotification();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateAndDeliverRequestImRobotOpenSpaceModelNotification setAlertContent(String alertContent) {
+            this.alertContent = alertContent;
+            return this;
+        }
+        public String getAlertContent() {
+            return this.alertContent;
+        }
+
+        public CreateAndDeliverRequestImRobotOpenSpaceModelNotification setNotificationOff(Boolean notificationOff) {
+            this.notificationOff = notificationOff;
+            return this;
+        }
+        public Boolean getNotificationOff() {
+            return this.notificationOff;
+        }
+
+    }
+
+    public static class CreateAndDeliverRequestImRobotOpenSpaceModelSearchSupport extends TeaModel {
+        @NameInMap("searchDesc")
+        public String searchDesc;
+
+        @NameInMap("searchIcon")
+        public String searchIcon;
+
+        @NameInMap("searchTypeName")
+        public String searchTypeName;
+
+        public static CreateAndDeliverRequestImRobotOpenSpaceModelSearchSupport build(java.util.Map<String, ?> map) throws Exception {
+            CreateAndDeliverRequestImRobotOpenSpaceModelSearchSupport self = new CreateAndDeliverRequestImRobotOpenSpaceModelSearchSupport();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateAndDeliverRequestImRobotOpenSpaceModelSearchSupport setSearchDesc(String searchDesc) {
+            this.searchDesc = searchDesc;
+            return this;
+        }
+        public String getSearchDesc() {
+            return this.searchDesc;
+        }
+
+        public CreateAndDeliverRequestImRobotOpenSpaceModelSearchSupport setSearchIcon(String searchIcon) {
+            this.searchIcon = searchIcon;
+            return this;
+        }
+        public String getSearchIcon() {
+            return this.searchIcon;
+        }
+
+        public CreateAndDeliverRequestImRobotOpenSpaceModelSearchSupport setSearchTypeName(String searchTypeName) {
+            this.searchTypeName = searchTypeName;
+            return this;
+        }
+        public String getSearchTypeName() {
+            return this.searchTypeName;
+        }
+
+    }
+
+    public static class CreateAndDeliverRequestImRobotOpenSpaceModel extends TeaModel {
+        // 支持国际化的LastMessage
+        @NameInMap("lastMessageI18n")
+        public java.util.Map<String, String> lastMessageI18n;
+
+        // 通知信息
+        @NameInMap("notification")
+        public CreateAndDeliverRequestImRobotOpenSpaceModelNotification notification;
+
+        // 支持卡片消息可被搜索字段
+        @NameInMap("searchSupport")
+        public CreateAndDeliverRequestImRobotOpenSpaceModelSearchSupport searchSupport;
+
+        // 是否支持转发, 默认false
+        @NameInMap("supportForward")
+        public Boolean supportForward;
+
+        public static CreateAndDeliverRequestImRobotOpenSpaceModel build(java.util.Map<String, ?> map) throws Exception {
+            CreateAndDeliverRequestImRobotOpenSpaceModel self = new CreateAndDeliverRequestImRobotOpenSpaceModel();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateAndDeliverRequestImRobotOpenSpaceModel setLastMessageI18n(java.util.Map<String, String> lastMessageI18n) {
+            this.lastMessageI18n = lastMessageI18n;
+            return this;
+        }
+        public java.util.Map<String, String> getLastMessageI18n() {
+            return this.lastMessageI18n;
+        }
+
+        public CreateAndDeliverRequestImRobotOpenSpaceModel setNotification(CreateAndDeliverRequestImRobotOpenSpaceModelNotification notification) {
+            this.notification = notification;
+            return this;
+        }
+        public CreateAndDeliverRequestImRobotOpenSpaceModelNotification getNotification() {
+            return this.notification;
+        }
+
+        public CreateAndDeliverRequestImRobotOpenSpaceModel setSearchSupport(CreateAndDeliverRequestImRobotOpenSpaceModelSearchSupport searchSupport) {
+            this.searchSupport = searchSupport;
+            return this;
+        }
+        public CreateAndDeliverRequestImRobotOpenSpaceModelSearchSupport getSearchSupport() {
+            return this.searchSupport;
+        }
+
+        public CreateAndDeliverRequestImRobotOpenSpaceModel setSupportForward(Boolean supportForward) {
             this.supportForward = supportForward;
             return this;
         }

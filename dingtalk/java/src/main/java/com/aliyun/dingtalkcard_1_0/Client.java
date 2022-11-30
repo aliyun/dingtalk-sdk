@@ -33,6 +33,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("imGroupOpenSpaceModel", request.imGroupOpenSpaceModel);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.imRobotOpenSpaceModel)) {
+            body.put("imRobotOpenSpaceModel", request.imRobotOpenSpaceModel);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.imSingleOpenSpaceModel)) {
             body.put("imSingleOpenSpaceModel", request.imSingleOpenSpaceModel);
         }
@@ -104,6 +108,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.imGroupOpenSpaceModel)) {
             body.put("imGroupOpenSpaceModel", request.imGroupOpenSpaceModel);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.imRobotOpenDeliverModel)) {
+            body.put("imRobotOpenDeliverModel", request.imRobotOpenDeliverModel);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.imRobotOpenSpaceModel)) {
+            body.put("imRobotOpenSpaceModel", request.imRobotOpenSpaceModel);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.imSingleOpenDeliverModel)) {
@@ -203,6 +215,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("imGroupOpenSpaceModel", request.imGroupOpenSpaceModel);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.imRobotOpenSpaceModel)) {
+            body.put("imRobotOpenSpaceModel", request.imRobotOpenSpaceModel);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.imSingleOpenSpaceModel)) {
             body.put("imSingleOpenSpaceModel", request.imSingleOpenSpaceModel);
         }
@@ -266,6 +282,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.imGroupOpenDeliverModel)) {
             body.put("imGroupOpenDeliverModel", request.imGroupOpenDeliverModel);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.imRobotOpenDeliverModel)) {
+            body.put("imRobotOpenDeliverModel", request.imRobotOpenDeliverModel);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.imSingleOpenDeliverModel)) {

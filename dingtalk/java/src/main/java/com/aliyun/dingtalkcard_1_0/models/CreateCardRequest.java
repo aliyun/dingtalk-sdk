@@ -28,6 +28,10 @@ public class CreateCardRequest extends TeaModel {
     public CreateCardRequestImGroupOpenSpaceModel imGroupOpenSpaceModel;
 
     // IM 单聊场域信息
+    @NameInMap("imRobotOpenSpaceModel")
+    public CreateCardRequestImRobotOpenSpaceModel imRobotOpenSpaceModel;
+
+    // IM 单聊场域信息
     @NameInMap("imSingleOpenSpaceModel")
     public CreateCardRequestImSingleOpenSpaceModel imSingleOpenSpaceModel;
 
@@ -111,6 +115,14 @@ public class CreateCardRequest extends TeaModel {
     }
     public CreateCardRequestImGroupOpenSpaceModel getImGroupOpenSpaceModel() {
         return this.imGroupOpenSpaceModel;
+    }
+
+    public CreateCardRequest setImRobotOpenSpaceModel(CreateCardRequestImRobotOpenSpaceModel imRobotOpenSpaceModel) {
+        this.imRobotOpenSpaceModel = imRobotOpenSpaceModel;
+        return this;
+    }
+    public CreateCardRequestImRobotOpenSpaceModel getImRobotOpenSpaceModel() {
+        return this.imRobotOpenSpaceModel;
     }
 
     public CreateCardRequest setImSingleOpenSpaceModel(CreateCardRequestImSingleOpenSpaceModel imSingleOpenSpaceModel) {
@@ -351,6 +363,147 @@ public class CreateCardRequest extends TeaModel {
         }
 
         public CreateCardRequestImGroupOpenSpaceModel setSupportForward(Boolean supportForward) {
+            this.supportForward = supportForward;
+            return this;
+        }
+        public Boolean getSupportForward() {
+            return this.supportForward;
+        }
+
+    }
+
+    public static class CreateCardRequestImRobotOpenSpaceModelNotification extends TeaModel {
+        // 【条件必填】通知内容
+        // 若不填写则使用默认文案：如你收到1条新消息
+        @NameInMap("alertContent")
+        public String alertContent;
+
+        // 是否推送通知，默认为 false
+        @NameInMap("notificationOff")
+        public Boolean notificationOff;
+
+        public static CreateCardRequestImRobotOpenSpaceModelNotification build(java.util.Map<String, ?> map) throws Exception {
+            CreateCardRequestImRobotOpenSpaceModelNotification self = new CreateCardRequestImRobotOpenSpaceModelNotification();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateCardRequestImRobotOpenSpaceModelNotification setAlertContent(String alertContent) {
+            this.alertContent = alertContent;
+            return this;
+        }
+        public String getAlertContent() {
+            return this.alertContent;
+        }
+
+        public CreateCardRequestImRobotOpenSpaceModelNotification setNotificationOff(Boolean notificationOff) {
+            this.notificationOff = notificationOff;
+            return this;
+        }
+        public Boolean getNotificationOff() {
+            return this.notificationOff;
+        }
+
+    }
+
+    public static class CreateCardRequestImRobotOpenSpaceModelSearchSupport extends TeaModel {
+        // 【条件必填】供消息展示与搜索的字段
+        //  【注意】最大限制200个字符，超过存储截断200
+        @NameInMap("searchDesc")
+        public String searchDesc;
+
+        // 类型的icon，供搜索展示使用
+        @NameInMap("searchIcon")
+        public String searchIcon;
+
+        // 卡片类型名
+        @NameInMap("searchTypeName")
+        public String searchTypeName;
+
+        public static CreateCardRequestImRobotOpenSpaceModelSearchSupport build(java.util.Map<String, ?> map) throws Exception {
+            CreateCardRequestImRobotOpenSpaceModelSearchSupport self = new CreateCardRequestImRobotOpenSpaceModelSearchSupport();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateCardRequestImRobotOpenSpaceModelSearchSupport setSearchDesc(String searchDesc) {
+            this.searchDesc = searchDesc;
+            return this;
+        }
+        public String getSearchDesc() {
+            return this.searchDesc;
+        }
+
+        public CreateCardRequestImRobotOpenSpaceModelSearchSupport setSearchIcon(String searchIcon) {
+            this.searchIcon = searchIcon;
+            return this;
+        }
+        public String getSearchIcon() {
+            return this.searchIcon;
+        }
+
+        public CreateCardRequestImRobotOpenSpaceModelSearchSupport setSearchTypeName(String searchTypeName) {
+            this.searchTypeName = searchTypeName;
+            return this;
+        }
+        public String getSearchTypeName() {
+            return this.searchTypeName;
+        }
+
+    }
+
+    public static class CreateCardRequestImRobotOpenSpaceModel extends TeaModel {
+        // 支持国际化的LastMessage
+        // key为语言枚举值，value为lastMessage内容
+        // 目前支持的语言枚举值：
+        // 简体中文: ZH_CN
+        // 繁体中文: ZH_TW
+        // 英文： EN_US
+        // 日语: JA_JP
+        // 越南语: VI_VN
+        @NameInMap("lastMessageI18n")
+        public java.util.Map<String, String> lastMessageI18n;
+
+        // 卡片的通知属性信息
+        @NameInMap("notification")
+        public CreateCardRequestImRobotOpenSpaceModelNotification notification;
+
+        // 支持卡片消息可被搜索字段
+        @NameInMap("searchSupport")
+        public CreateCardRequestImRobotOpenSpaceModelSearchSupport searchSupport;
+
+        // 是否支持转发, 默认 false
+        @NameInMap("supportForward")
+        public Boolean supportForward;
+
+        public static CreateCardRequestImRobotOpenSpaceModel build(java.util.Map<String, ?> map) throws Exception {
+            CreateCardRequestImRobotOpenSpaceModel self = new CreateCardRequestImRobotOpenSpaceModel();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateCardRequestImRobotOpenSpaceModel setLastMessageI18n(java.util.Map<String, String> lastMessageI18n) {
+            this.lastMessageI18n = lastMessageI18n;
+            return this;
+        }
+        public java.util.Map<String, String> getLastMessageI18n() {
+            return this.lastMessageI18n;
+        }
+
+        public CreateCardRequestImRobotOpenSpaceModel setNotification(CreateCardRequestImRobotOpenSpaceModelNotification notification) {
+            this.notification = notification;
+            return this;
+        }
+        public CreateCardRequestImRobotOpenSpaceModelNotification getNotification() {
+            return this.notification;
+        }
+
+        public CreateCardRequestImRobotOpenSpaceModel setSearchSupport(CreateCardRequestImRobotOpenSpaceModelSearchSupport searchSupport) {
+            this.searchSupport = searchSupport;
+            return this;
+        }
+        public CreateCardRequestImRobotOpenSpaceModelSearchSupport getSearchSupport() {
+            return this.searchSupport;
+        }
+
+        public CreateCardRequestImRobotOpenSpaceModel setSupportForward(Boolean supportForward) {
             this.supportForward = supportForward;
             return this;
         }

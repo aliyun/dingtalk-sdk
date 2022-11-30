@@ -13,6 +13,10 @@ public class DeliverCardRequest extends TeaModel {
     public DeliverCardRequestImGroupOpenDeliverModel imGroupOpenDeliverModel;
 
     // 单聊场域投放参数
+    @NameInMap("imRobotOpenDeliverModel")
+    public DeliverCardRequestImRobotOpenDeliverModel imRobotOpenDeliverModel;
+
+    // 单聊场域投放参数
     @NameInMap("imSingleOpenDeliverModel")
     public DeliverCardRequestImSingleOpenDeliverModel imSingleOpenDeliverModel;
 
@@ -51,6 +55,14 @@ public class DeliverCardRequest extends TeaModel {
     }
     public DeliverCardRequestImGroupOpenDeliverModel getImGroupOpenDeliverModel() {
         return this.imGroupOpenDeliverModel;
+    }
+
+    public DeliverCardRequest setImRobotOpenDeliverModel(DeliverCardRequestImRobotOpenDeliverModel imRobotOpenDeliverModel) {
+        this.imRobotOpenDeliverModel = imRobotOpenDeliverModel;
+        return this;
+    }
+    public DeliverCardRequestImRobotOpenDeliverModel getImRobotOpenDeliverModel() {
+        return this.imRobotOpenDeliverModel;
     }
 
     public DeliverCardRequest setImSingleOpenDeliverModel(DeliverCardRequestImSingleOpenDeliverModel imSingleOpenDeliverModel) {
@@ -165,6 +177,25 @@ public class DeliverCardRequest extends TeaModel {
         }
         public String getRobotCode() {
             return this.robotCode;
+        }
+
+    }
+
+    public static class DeliverCardRequestImRobotOpenDeliverModel extends TeaModel {
+        @NameInMap("spaceType")
+        public String spaceType;
+
+        public static DeliverCardRequestImRobotOpenDeliverModel build(java.util.Map<String, ?> map) throws Exception {
+            DeliverCardRequestImRobotOpenDeliverModel self = new DeliverCardRequestImRobotOpenDeliverModel();
+            return TeaModel.build(map, self);
+        }
+
+        public DeliverCardRequestImRobotOpenDeliverModel setSpaceType(String spaceType) {
+            this.spaceType = spaceType;
+            return this;
+        }
+        public String getSpaceType() {
+            return this.spaceType;
         }
 
     }

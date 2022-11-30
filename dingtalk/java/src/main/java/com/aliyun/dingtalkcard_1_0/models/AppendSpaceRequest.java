@@ -12,6 +12,10 @@ public class AppendSpaceRequest extends TeaModel {
     @NameInMap("imGroupOpenSpaceModel")
     public AppendSpaceRequestImGroupOpenSpaceModel imGroupOpenSpaceModel;
 
+    // IM群聊场域信息
+    @NameInMap("imRobotOpenSpaceModel")
+    public AppendSpaceRequestImRobotOpenSpaceModel imRobotOpenSpaceModel;
+
     // IM单聊场域信息
     @NameInMap("imSingleOpenSpaceModel")
     public AppendSpaceRequestImSingleOpenSpaceModel imSingleOpenSpaceModel;
@@ -47,6 +51,14 @@ public class AppendSpaceRequest extends TeaModel {
     }
     public AppendSpaceRequestImGroupOpenSpaceModel getImGroupOpenSpaceModel() {
         return this.imGroupOpenSpaceModel;
+    }
+
+    public AppendSpaceRequest setImRobotOpenSpaceModel(AppendSpaceRequestImRobotOpenSpaceModel imRobotOpenSpaceModel) {
+        this.imRobotOpenSpaceModel = imRobotOpenSpaceModel;
+        return this;
+    }
+    public AppendSpaceRequestImRobotOpenSpaceModel getImRobotOpenSpaceModel() {
+        return this.imRobotOpenSpaceModel;
     }
 
     public AppendSpaceRequest setImSingleOpenSpaceModel(AppendSpaceRequestImSingleOpenSpaceModel imSingleOpenSpaceModel) {
@@ -219,6 +231,133 @@ public class AppendSpaceRequest extends TeaModel {
         }
 
         public AppendSpaceRequestImGroupOpenSpaceModel setSupportForward(Boolean supportForward) {
+            this.supportForward = supportForward;
+            return this;
+        }
+        public Boolean getSupportForward() {
+            return this.supportForward;
+        }
+
+    }
+
+    public static class AppendSpaceRequestImRobotOpenSpaceModelNotification extends TeaModel {
+        @NameInMap("alertContent")
+        public String alertContent;
+
+        @NameInMap("notificationOff")
+        public Boolean notificationOff;
+
+        public static AppendSpaceRequestImRobotOpenSpaceModelNotification build(java.util.Map<String, ?> map) throws Exception {
+            AppendSpaceRequestImRobotOpenSpaceModelNotification self = new AppendSpaceRequestImRobotOpenSpaceModelNotification();
+            return TeaModel.build(map, self);
+        }
+
+        public AppendSpaceRequestImRobotOpenSpaceModelNotification setAlertContent(String alertContent) {
+            this.alertContent = alertContent;
+            return this;
+        }
+        public String getAlertContent() {
+            return this.alertContent;
+        }
+
+        public AppendSpaceRequestImRobotOpenSpaceModelNotification setNotificationOff(Boolean notificationOff) {
+            this.notificationOff = notificationOff;
+            return this;
+        }
+        public Boolean getNotificationOff() {
+            return this.notificationOff;
+        }
+
+    }
+
+    public static class AppendSpaceRequestImRobotOpenSpaceModelSearchSupport extends TeaModel {
+        @NameInMap("searchDesc")
+        public String searchDesc;
+
+        @NameInMap("searchIcon")
+        public String searchIcon;
+
+        @NameInMap("searchTypeName")
+        public String searchTypeName;
+
+        public static AppendSpaceRequestImRobotOpenSpaceModelSearchSupport build(java.util.Map<String, ?> map) throws Exception {
+            AppendSpaceRequestImRobotOpenSpaceModelSearchSupport self = new AppendSpaceRequestImRobotOpenSpaceModelSearchSupport();
+            return TeaModel.build(map, self);
+        }
+
+        public AppendSpaceRequestImRobotOpenSpaceModelSearchSupport setSearchDesc(String searchDesc) {
+            this.searchDesc = searchDesc;
+            return this;
+        }
+        public String getSearchDesc() {
+            return this.searchDesc;
+        }
+
+        public AppendSpaceRequestImRobotOpenSpaceModelSearchSupport setSearchIcon(String searchIcon) {
+            this.searchIcon = searchIcon;
+            return this;
+        }
+        public String getSearchIcon() {
+            return this.searchIcon;
+        }
+
+        public AppendSpaceRequestImRobotOpenSpaceModelSearchSupport setSearchTypeName(String searchTypeName) {
+            this.searchTypeName = searchTypeName;
+            return this;
+        }
+        public String getSearchTypeName() {
+            return this.searchTypeName;
+        }
+
+    }
+
+    public static class AppendSpaceRequestImRobotOpenSpaceModel extends TeaModel {
+        // 支持国际化的LastMessage
+        @NameInMap("lastMessageI18n")
+        public java.util.Map<String, String> lastMessageI18n;
+
+        // xpn信息
+        @NameInMap("notification")
+        public AppendSpaceRequestImRobotOpenSpaceModelNotification notification;
+
+        // 支持卡片消息可被搜索字段
+        @NameInMap("searchSupport")
+        public AppendSpaceRequestImRobotOpenSpaceModelSearchSupport searchSupport;
+
+        // 是否支持转发, 默认false
+        @NameInMap("supportForward")
+        public Boolean supportForward;
+
+        public static AppendSpaceRequestImRobotOpenSpaceModel build(java.util.Map<String, ?> map) throws Exception {
+            AppendSpaceRequestImRobotOpenSpaceModel self = new AppendSpaceRequestImRobotOpenSpaceModel();
+            return TeaModel.build(map, self);
+        }
+
+        public AppendSpaceRequestImRobotOpenSpaceModel setLastMessageI18n(java.util.Map<String, String> lastMessageI18n) {
+            this.lastMessageI18n = lastMessageI18n;
+            return this;
+        }
+        public java.util.Map<String, String> getLastMessageI18n() {
+            return this.lastMessageI18n;
+        }
+
+        public AppendSpaceRequestImRobotOpenSpaceModel setNotification(AppendSpaceRequestImRobotOpenSpaceModelNotification notification) {
+            this.notification = notification;
+            return this;
+        }
+        public AppendSpaceRequestImRobotOpenSpaceModelNotification getNotification() {
+            return this.notification;
+        }
+
+        public AppendSpaceRequestImRobotOpenSpaceModel setSearchSupport(AppendSpaceRequestImRobotOpenSpaceModelSearchSupport searchSupport) {
+            this.searchSupport = searchSupport;
+            return this;
+        }
+        public AppendSpaceRequestImRobotOpenSpaceModelSearchSupport getSearchSupport() {
+            return this.searchSupport;
+        }
+
+        public AppendSpaceRequestImRobotOpenSpaceModel setSupportForward(Boolean supportForward) {
             this.supportForward = supportForward;
             return this;
         }
