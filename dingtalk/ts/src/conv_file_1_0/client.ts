@@ -92,6 +92,97 @@ export class GetSpaceResponse extends $tea.Model {
   }
 }
 
+export class SendHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendRequest extends $tea.Model {
+  dentryId?: string;
+  openConversationId?: string;
+  spaceId?: string;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dentryId: 'dentryId',
+      openConversationId: 'openConversationId',
+      spaceId: 'spaceId',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dentryId: 'string',
+      openConversationId: 'string',
+      spaceId: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendResponseBody extends $tea.Model {
+  file?: SendResponseBodyFile;
+  static names(): { [key: string]: string } {
+    return {
+      file: 'file',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      file: SendResponseBodyFile,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SendResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SendResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SendByAppHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -180,6 +271,97 @@ export class SendByAppResponse extends $tea.Model {
   }
 }
 
+export class SendLinkHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendLinkRequest extends $tea.Model {
+  dentryId?: string;
+  openConversationId?: string;
+  spaceId?: string;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dentryId: 'dentryId',
+      openConversationId: 'openConversationId',
+      spaceId: 'spaceId',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dentryId: 'string',
+      openConversationId: 'string',
+      spaceId: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendLinkResponseBody extends $tea.Model {
+  file?: SendLinkResponseBodyFile;
+  static names(): { [key: string]: string } {
+    return {
+      file: 'file',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      file: SendLinkResponseBodyFile,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendLinkResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SendLinkResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SendLinkResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetSpaceResponseBodySpace extends $tea.Model {
   corpId?: string;
   createTime?: string;
@@ -208,7 +390,135 @@ export class GetSpaceResponseBodySpace extends $tea.Model {
   }
 }
 
+export class SendResponseBodyFile extends $tea.Model {
+  conversationId?: string;
+  createTime?: string;
+  creatorId?: string;
+  extension?: string;
+  id?: string;
+  modifiedTime?: string;
+  modifierId?: string;
+  name?: string;
+  parentId?: string;
+  path?: string;
+  size?: number;
+  spaceId?: string;
+  status?: string;
+  type?: string;
+  uuid?: string;
+  version?: number;
+  static names(): { [key: string]: string } {
+    return {
+      conversationId: 'conversationId',
+      createTime: 'createTime',
+      creatorId: 'creatorId',
+      extension: 'extension',
+      id: 'id',
+      modifiedTime: 'modifiedTime',
+      modifierId: 'modifierId',
+      name: 'name',
+      parentId: 'parentId',
+      path: 'path',
+      size: 'size',
+      spaceId: 'spaceId',
+      status: 'status',
+      type: 'type',
+      uuid: 'uuid',
+      version: 'version',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conversationId: 'string',
+      createTime: 'string',
+      creatorId: 'string',
+      extension: 'string',
+      id: 'string',
+      modifiedTime: 'string',
+      modifierId: 'string',
+      name: 'string',
+      parentId: 'string',
+      path: 'string',
+      size: 'number',
+      spaceId: 'string',
+      status: 'string',
+      type: 'string',
+      uuid: 'string',
+      version: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SendByAppResponseBodyFile extends $tea.Model {
+  conversationId?: string;
+  createTime?: string;
+  creatorId?: string;
+  extension?: string;
+  id?: string;
+  modifiedTime?: string;
+  modifierId?: string;
+  name?: string;
+  parentId?: string;
+  path?: string;
+  size?: number;
+  spaceId?: string;
+  status?: string;
+  type?: string;
+  uuid?: string;
+  version?: number;
+  static names(): { [key: string]: string } {
+    return {
+      conversationId: 'conversationId',
+      createTime: 'createTime',
+      creatorId: 'creatorId',
+      extension: 'extension',
+      id: 'id',
+      modifiedTime: 'modifiedTime',
+      modifierId: 'modifierId',
+      name: 'name',
+      parentId: 'parentId',
+      path: 'path',
+      size: 'size',
+      spaceId: 'spaceId',
+      status: 'status',
+      type: 'type',
+      uuid: 'uuid',
+      version: 'version',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conversationId: 'string',
+      createTime: 'string',
+      creatorId: 'string',
+      extension: 'string',
+      id: 'string',
+      modifiedTime: 'string',
+      modifierId: 'string',
+      name: 'string',
+      parentId: 'string',
+      path: 'string',
+      size: 'number',
+      spaceId: 'string',
+      status: 'string',
+      type: 'string',
+      uuid: 'string',
+      version: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendLinkResponseBodyFile extends $tea.Model {
   conversationId?: string;
   createTime?: string;
   creatorId?: string;
@@ -320,6 +630,49 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSpaceResponse>(await this.doROARequest("GetSpace", "convFile_1.0", "HTTP", "POST", "AK", `/v1.0/convFile/conversations/spaces/query`, "json", req, runtime), new GetSpaceResponse({}));
   }
 
+  async send(request: SendRequest): Promise<SendResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SendHeaders({ });
+    return await this.sendWithOptions(request, headers, runtime);
+  }
+
+  async sendWithOptions(request: SendRequest, headers: SendHeaders, runtime: $Util.RuntimeOptions): Promise<SendResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dentryId)) {
+      body["dentryId"] = request.dentryId;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.spaceId)) {
+      body["spaceId"] = request.spaceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SendResponse>(await this.doROARequest("Send", "convFile_1.0", "HTTP", "POST", "AK", `/v1.0/convFile/conversations/files/send`, "json", req, runtime), new SendResponse({}));
+  }
+
   async sendByApp(request: SendByAppRequest): Promise<SendByAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendByAppHeaders({ });
@@ -357,6 +710,49 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<SendByAppResponse>(await this.doROARequest("SendByApp", "convFile_1.0", "HTTP", "POST", "AK", `/v1.0/convFile/apps/conversations/files/send`, "json", req, runtime), new SendByAppResponse({}));
+  }
+
+  async sendLink(request: SendLinkRequest): Promise<SendLinkResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SendLinkHeaders({ });
+    return await this.sendLinkWithOptions(request, headers, runtime);
+  }
+
+  async sendLinkWithOptions(request: SendLinkRequest, headers: SendLinkHeaders, runtime: $Util.RuntimeOptions): Promise<SendLinkResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dentryId)) {
+      body["dentryId"] = request.dentryId;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.spaceId)) {
+      body["spaceId"] = request.spaceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SendLinkResponse>(await this.doROARequest("SendLink", "convFile_1.0", "HTTP", "POST", "AK", `/v1.0/convFile/conversations/files/links/send`, "json", req, runtime), new SendLinkResponse({}));
   }
 
 }

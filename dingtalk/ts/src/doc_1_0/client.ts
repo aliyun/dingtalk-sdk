@@ -669,10 +669,12 @@ export class CreateRangeProtectionHeaders extends $tea.Model {
 }
 
 export class CreateRangeProtectionRequest extends $tea.Model {
+  editableSetting?: CreateRangeProtectionRequestEditableSetting;
   otherUserPermission?: string;
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
+      editableSetting: 'editableSetting',
       otherUserPermission: 'otherUserPermission',
       operatorId: 'operatorId',
     };
@@ -680,6 +682,7 @@ export class CreateRangeProtectionRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      editableSetting: CreateRangeProtectionRequestEditableSetting,
       otherUserPermission: 'string',
       operatorId: 'string',
     };
@@ -3781,6 +3784,40 @@ export class CreateConditionalFormattingRuleRequestDuplicateCondition extends $t
   }
 }
 
+export class CreateRangeProtectionRequestEditableSetting extends $tea.Model {
+  deleteColumns?: boolean;
+  deleteRows?: boolean;
+  editCells?: boolean;
+  formatCells?: boolean;
+  insertColumns?: boolean;
+  insertRows?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      deleteColumns: 'deleteColumns',
+      deleteRows: 'deleteRows',
+      editCells: 'editCells',
+      formatCells: 'formatCells',
+      insertColumns: 'insertColumns',
+      insertRows: 'insertRows',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deleteColumns: 'boolean',
+      deleteRows: 'boolean',
+      editCells: 'boolean',
+      formatCells: 'boolean',
+      insertColumns: 'boolean',
+      insertRows: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteWorkspaceDocMembersRequestMembers extends $tea.Model {
   memberId?: string;
   memberType?: string;
@@ -4866,6 +4903,10 @@ export default class Client extends OpenApi {
     }
 
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.editableSetting))) {
+      body["editableSetting"] = request.editableSetting;
+    }
+
     if (!Util.isUnset(request.otherUserPermission)) {
       body["otherUserPermission"] = request.otherUserPermission;
     }
