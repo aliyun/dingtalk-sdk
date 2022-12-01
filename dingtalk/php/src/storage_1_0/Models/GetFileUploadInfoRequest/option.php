@@ -17,6 +17,13 @@ class option extends Model
     public $preCheckParam;
 
     /**
+     * @description 优先使用内网传输
+     * true
+     * @var bool
+     */
+    public $preferIntranet;
+
+    /**
      * @description 优先地域, 倾向于将资源存到哪个地域，可实现就近上传等功能
      * UNKNOWN: 未知
      * @var string
@@ -30,9 +37,10 @@ class option extends Model
      */
     public $storageDriver;
     protected $_name = [
-        'preCheckParam' => 'preCheckParam',
-        'preferRegion'  => 'preferRegion',
-        'storageDriver' => 'storageDriver',
+        'preCheckParam'  => 'preCheckParam',
+        'preferIntranet' => 'preferIntranet',
+        'preferRegion'   => 'preferRegion',
+        'storageDriver'  => 'storageDriver',
     ];
 
     public function validate()
@@ -44,6 +52,9 @@ class option extends Model
         $res = [];
         if (null !== $this->preCheckParam) {
             $res['preCheckParam'] = null !== $this->preCheckParam ? $this->preCheckParam->toMap() : null;
+        }
+        if (null !== $this->preferIntranet) {
+            $res['preferIntranet'] = $this->preferIntranet;
         }
         if (null !== $this->preferRegion) {
             $res['preferRegion'] = $this->preferRegion;
@@ -65,6 +76,9 @@ class option extends Model
         $model = new self();
         if (isset($map['preCheckParam'])) {
             $model->preCheckParam = preCheckParam::fromMap($map['preCheckParam']);
+        }
+        if (isset($map['preferIntranet'])) {
+            $model->preferIntranet = $map['preferIntranet'];
         }
         if (isset($map['preferRegion'])) {
             $model->preferRegion = $map['preferRegion'];

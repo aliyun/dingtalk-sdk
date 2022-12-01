@@ -6,6 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListDentriesResponseBody
 
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\DentriesAppPropertiesValue;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListDentriesResponseBody\dentries\properties;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListDentriesResponseBody\dentries\thumbnail;
 use AlibabaCloud\Tea\Model;
 
 class dentries extends Model
@@ -123,6 +124,13 @@ class dentries extends Model
     public $storageDriver;
 
     /**
+     * @description 缩略图信息
+     *
+     * @var thumbnail
+     */
+    public $thumbnail;
+
+    /**
      * @description 类型，目录或文件
      * FOLDER: 文件夹
      * @var string
@@ -159,6 +167,7 @@ class dentries extends Model
         'spaceId'       => 'spaceId',
         'status'        => 'status',
         'storageDriver' => 'storageDriver',
+        'thumbnail'     => 'thumbnail',
         'type'          => 'type',
         'uuid'          => 'uuid',
         'version'       => 'version',
@@ -218,6 +227,9 @@ class dentries extends Model
         }
         if (null !== $this->storageDriver) {
             $res['storageDriver'] = $this->storageDriver;
+        }
+        if (null !== $this->thumbnail) {
+            $res['thumbnail'] = null !== $this->thumbnail ? $this->thumbnail->toMap() : null;
         }
         if (null !== $this->type) {
             $res['type'] = $this->type;
@@ -287,6 +299,9 @@ class dentries extends Model
         }
         if (isset($map['storageDriver'])) {
             $model->storageDriver = $map['storageDriver'];
+        }
+        if (isset($map['thumbnail'])) {
+            $model->thumbnail = thumbnail::fromMap($map['thumbnail']);
         }
         if (isset($map['type'])) {
             $model->type = $map['type'];

@@ -2,7 +2,7 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetDentryRequest;
+namespace AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetDentriesRequest;
 
 use AlibabaCloud\Tea\Model;
 

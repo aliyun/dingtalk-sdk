@@ -589,6 +589,9 @@ class Dingtalk extends OpenApiClient
             @$query['operatorId'] = $request->operatorId;
         }
         $body = [];
+        if (!Utils::isUnset($request->editableSetting)) {
+            @$body['editableSetting'] = $request->editableSetting;
+        }
         if (!Utils::isUnset($request->otherUserPermission)) {
             @$body['otherUserPermission'] = $request->otherUserPermission;
         }

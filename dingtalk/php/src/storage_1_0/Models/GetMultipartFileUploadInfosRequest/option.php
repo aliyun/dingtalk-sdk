@@ -2,7 +2,7 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetFileDownloadInfoRequest;
+namespace AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetMultipartFileUploadInfosRequest;
 
 use AlibabaCloud\Tea\Model;
 
@@ -14,16 +14,8 @@ class option extends Model
      * @var bool
      */
     public $preferIntranet;
-
-    /**
-     * @description 历史版本号
-     *
-     * @var int
-     */
-    public $version;
     protected $_name = [
         'preferIntranet' => 'preferIntranet',
-        'version'        => 'version',
     ];
 
     public function validate()
@@ -35,9 +27,6 @@ class option extends Model
         $res = [];
         if (null !== $this->preferIntranet) {
             $res['preferIntranet'] = $this->preferIntranet;
-        }
-        if (null !== $this->version) {
-            $res['version'] = $this->version;
         }
 
         return $res;
@@ -53,9 +42,6 @@ class option extends Model
         $model = new self();
         if (isset($map['preferIntranet'])) {
             $model->preferIntranet = $map['preferIntranet'];
-        }
-        if (isset($map['version'])) {
-            $model->version = $map['version'];
         }
 
         return $model;

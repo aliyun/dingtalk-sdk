@@ -4,10 +4,10 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetMultipartFileUploadInfosRequest\option;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListAllDentriesRequest\option;
 use AlibabaCloud\Tea\Model;
 
-class GetMultipartFileUploadInfosRequest extends Model
+class ListAllDentriesRequest extends Model
 {
     /**
      * @description 可选参数
@@ -17,30 +17,14 @@ class GetMultipartFileUploadInfosRequest extends Model
     public $option;
 
     /**
-     * @description 分片id列表
-     * 30
-     * @var int[]
-     */
-    public $partNumbers;
-
-    /**
-     * @description 上传唯一标识
-     *
-     * @var string
-     */
-    public $uploadKey;
-
-    /**
      * @description 用户id
      *
      * @var string
      */
     public $unionId;
     protected $_name = [
-        'option'      => 'option',
-        'partNumbers' => 'partNumbers',
-        'uploadKey'   => 'uploadKey',
-        'unionId'     => 'unionId',
+        'option'  => 'option',
+        'unionId' => 'unionId',
     ];
 
     public function validate()
@@ -53,12 +37,6 @@ class GetMultipartFileUploadInfosRequest extends Model
         if (null !== $this->option) {
             $res['option'] = null !== $this->option ? $this->option->toMap() : null;
         }
-        if (null !== $this->partNumbers) {
-            $res['partNumbers'] = $this->partNumbers;
-        }
-        if (null !== $this->uploadKey) {
-            $res['uploadKey'] = $this->uploadKey;
-        }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
         }
@@ -69,21 +47,13 @@ class GetMultipartFileUploadInfosRequest extends Model
     /**
      * @param array $map
      *
-     * @return GetMultipartFileUploadInfosRequest
+     * @return ListAllDentriesRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
         if (isset($map['option'])) {
             $model->option = option::fromMap($map['option']);
-        }
-        if (isset($map['partNumbers'])) {
-            if (!empty($map['partNumbers'])) {
-                $model->partNumbers = $map['partNumbers'];
-            }
-        }
-        if (isset($map['uploadKey'])) {
-            $model->uploadKey = $map['uploadKey'];
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];

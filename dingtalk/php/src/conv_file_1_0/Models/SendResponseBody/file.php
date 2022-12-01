@@ -2,21 +2,18 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetDentryResponseBody;
+namespace AlibabaCloud\SDK\Dingtalk\Vconv_file_1_0\Models\SendResponseBody;
 
-use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\DentryAppPropertiesValue;
-use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetDentryResponseBody\dentry\properties;
-use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetDentryResponseBody\dentry\thumbnail;
 use AlibabaCloud\Tea\Model;
 
-class dentry extends Model
+class file extends Model
 {
     /**
-     * @description 在特定应用上的属性。key是微应用Id, value是属性列表。
-     * 10
-     * @var DentryAppPropertiesValue[][]
+     * @description 文件所在会话id
+     *
+     * @var string
      */
-    public $appProperties;
+    public $conversationId;
 
     /**
      * @description 创建时间
@@ -33,14 +30,14 @@ class dentry extends Model
     public $creatorId;
 
     /**
-     * @description 后缀
+     * @description 文件后缀
      *
      * @var string
      */
     public $extension;
 
     /**
-     * @description id
+     * @description 文件id
      *
      * @var string
      */
@@ -61,77 +58,49 @@ class dentry extends Model
     public $modifierId;
 
     /**
-     * @description 名称
+     * @description 文件(夹)名称
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 父目录id, 根目录id值为0
-     * 空值代表根目录的parentId不存在
+     * @description 文件所在的父目录id, 根目录id值为0
+     *
      * @var string
      */
     public $parentId;
 
     /**
-     * @description 存储分区，目前包括公有云OSS存储分区和专属Mini OSS存储分区
-     * MINI_OSS_PARTITION: 专属Mini OSS存储分区
-     * @var string
-     */
-    public $partitionType;
-
-    /**
-     * @description 路径
+     * @description 文件路径
      *
      * @var string
      */
     public $path;
 
     /**
-     * @description 属性
-     *
-     * @var properties
-     */
-    public $properties;
-
-    /**
-     * @description 大小, 单位:Byte
+     * @description 文件大小, 单位:Byte
      *
      * @var int
      */
     public $size;
 
     /**
-     * @description 所在空间id
+     * @description 文件所在空间id
      *
      * @var string
      */
     public $spaceId;
 
     /**
-     * @description 状态
+     * @description 文件状态
      * EXPIRED: 已过期
      * @var string
      */
     public $status;
 
     /**
-     * @description 驱动类型
-     * UNKNOWN: 未知驱动
-     * @var string
-     */
-    public $storageDriver;
-
-    /**
-     * @description 缩略图信息
-     *
-     * @var thumbnail
-     */
-    public $thumbnail;
-
-    /**
-     * @description 类型，目录或文件
+     * @description 文件类型：文件、文件夹
      * FOLDER: 文件夹
      * @var string
      */
@@ -145,32 +114,28 @@ class dentry extends Model
     public $uuid;
 
     /**
-     * @description 版本
+     * @description 文件版本
      *
      * @var int
      */
     public $version;
     protected $_name = [
-        'appProperties' => 'appProperties',
-        'createTime'    => 'createTime',
-        'creatorId'     => 'creatorId',
-        'extension'     => 'extension',
-        'id'            => 'id',
-        'modifiedTime'  => 'modifiedTime',
-        'modifierId'    => 'modifierId',
-        'name'          => 'name',
-        'parentId'      => 'parentId',
-        'partitionType' => 'partitionType',
-        'path'          => 'path',
-        'properties'    => 'properties',
-        'size'          => 'size',
-        'spaceId'       => 'spaceId',
-        'status'        => 'status',
-        'storageDriver' => 'storageDriver',
-        'thumbnail'     => 'thumbnail',
-        'type'          => 'type',
-        'uuid'          => 'uuid',
-        'version'       => 'version',
+        'conversationId' => 'conversationId',
+        'createTime'     => 'createTime',
+        'creatorId'      => 'creatorId',
+        'extension'      => 'extension',
+        'id'             => 'id',
+        'modifiedTime'   => 'modifiedTime',
+        'modifierId'     => 'modifierId',
+        'name'           => 'name',
+        'parentId'       => 'parentId',
+        'path'           => 'path',
+        'size'           => 'size',
+        'spaceId'        => 'spaceId',
+        'status'         => 'status',
+        'type'           => 'type',
+        'uuid'           => 'uuid',
+        'version'        => 'version',
     ];
 
     public function validate()
@@ -180,8 +145,8 @@ class dentry extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->appProperties) {
-            $res['appProperties'] = $this->appProperties;
+        if (null !== $this->conversationId) {
+            $res['conversationId'] = $this->conversationId;
         }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
@@ -207,14 +172,8 @@ class dentry extends Model
         if (null !== $this->parentId) {
             $res['parentId'] = $this->parentId;
         }
-        if (null !== $this->partitionType) {
-            $res['partitionType'] = $this->partitionType;
-        }
         if (null !== $this->path) {
             $res['path'] = $this->path;
-        }
-        if (null !== $this->properties) {
-            $res['properties'] = null !== $this->properties ? $this->properties->toMap() : null;
         }
         if (null !== $this->size) {
             $res['size'] = $this->size;
@@ -224,12 +183,6 @@ class dentry extends Model
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
-        }
-        if (null !== $this->storageDriver) {
-            $res['storageDriver'] = $this->storageDriver;
-        }
-        if (null !== $this->thumbnail) {
-            $res['thumbnail'] = null !== $this->thumbnail ? $this->thumbnail->toMap() : null;
         }
         if (null !== $this->type) {
             $res['type'] = $this->type;
@@ -247,13 +200,13 @@ class dentry extends Model
     /**
      * @param array $map
      *
-     * @return dentry
+     * @return file
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['appProperties'])) {
-            $model->appProperties = $map['appProperties'];
+        if (isset($map['conversationId'])) {
+            $model->conversationId = $map['conversationId'];
         }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];
@@ -279,14 +232,8 @@ class dentry extends Model
         if (isset($map['parentId'])) {
             $model->parentId = $map['parentId'];
         }
-        if (isset($map['partitionType'])) {
-            $model->partitionType = $map['partitionType'];
-        }
         if (isset($map['path'])) {
             $model->path = $map['path'];
-        }
-        if (isset($map['properties'])) {
-            $model->properties = properties::fromMap($map['properties']);
         }
         if (isset($map['size'])) {
             $model->size = $map['size'];
@@ -296,12 +243,6 @@ class dentry extends Model
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
-        }
-        if (isset($map['storageDriver'])) {
-            $model->storageDriver = $map['storageDriver'];
-        }
-        if (isset($map['thumbnail'])) {
-            $model->thumbnail = thumbnail::fromMap($map['thumbnail']);
         }
         if (isset($map['type'])) {
             $model->type = $map['type'];

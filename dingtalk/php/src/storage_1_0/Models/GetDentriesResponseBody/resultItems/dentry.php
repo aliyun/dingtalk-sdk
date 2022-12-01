@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetDentryResponseBody;
+namespace AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetDentriesResponseBody\resultItems;
 
-use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\DentryAppPropertiesValue;
-use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetDentryResponseBody\dentry\properties;
-use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetDentryResponseBody\dentry\thumbnail;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetDentriesResponseBody\resultItems\dentry\properties;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetDentriesResponseBody\resultItems\dentry\thumbnail;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ResultItemsDentryAppPropertiesValue;
 use AlibabaCloud\Tea\Model;
 
 class dentry extends Model
@@ -14,7 +14,7 @@ class dentry extends Model
     /**
      * @description 在特定应用上的属性。key是微应用Id, value是属性列表。
      * 10
-     * @var DentryAppPropertiesValue[][]
+     * @var ResultItemsDentryAppPropertiesValue[][]
      */
     public $appProperties;
 

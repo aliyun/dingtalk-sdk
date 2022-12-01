@@ -2,19 +2,19 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetDentryResponseBody;
+namespace AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListAllDentriesResponseBody;
 
-use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\DentryAppPropertiesValue;
-use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetDentryResponseBody\dentry\properties;
-use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetDentryResponseBody\dentry\thumbnail;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\DentriesAppPropertiesValue;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListAllDentriesResponseBody\dentries\properties;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ListAllDentriesResponseBody\dentries\thumbnail;
 use AlibabaCloud\Tea\Model;
 
-class dentry extends Model
+class dentries extends Model
 {
     /**
      * @description 在特定应用上的属性。key是微应用Id, value是属性列表。
      * 10
-     * @var DentryAppPropertiesValue[][]
+     * @var DentriesAppPropertiesValue[][]
      */
     public $appProperties;
 
@@ -247,7 +247,7 @@ class dentry extends Model
     /**
      * @param array $map
      *
-     * @return dentry
+     * @return dentries
      */
     public static function fromMap($map = [])
     {
