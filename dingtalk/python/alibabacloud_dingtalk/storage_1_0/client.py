@@ -1169,6 +1169,88 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetCurrentApp', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/currentApps/query', 'json', req, runtime)
         )
 
+    def get_dentries(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.GetDentriesRequest,
+    ) -> dingtalkstorage__1__0_models.GetDentriesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.GetDentriesHeaders()
+        return self.get_dentries_with_options(space_id, request, headers, runtime)
+
+    async def get_dentries_async(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.GetDentriesRequest,
+    ) -> dingtalkstorage__1__0_models.GetDentriesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.GetDentriesHeaders()
+        return await self.get_dentries_with_options_async(space_id, request, headers, runtime)
+
+    def get_dentries_with_options(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.GetDentriesRequest,
+        headers: dingtalkstorage__1__0_models.GetDentriesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.GetDentriesResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.dentry_ids):
+            body['dentryIds'] = request.dentry_ids
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.GetDentriesResponse(),
+            self.do_roarequest('GetDentries', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/query', 'json', req, runtime)
+        )
+
+    async def get_dentries_with_options_async(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.GetDentriesRequest,
+        headers: dingtalkstorage__1__0_models.GetDentriesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.GetDentriesResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.dentry_ids):
+            body['dentryIds'] = request.dentry_ids
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.GetDentriesResponse(),
+            await self.do_roarequest_async('GetDentries', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/query', 'json', req, runtime)
+        )
+
     def get_dentry(
         self,
         space_id: str,
@@ -1335,6 +1417,84 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkstorage__1__0_models.GetDentryOpenInfoResponse(),
             await self.do_roarequest_async('GetDentryOpenInfo', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/{dentry_id}/openInfos/query', 'json', req, runtime)
+        )
+
+    def get_dentry_thumbnails(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.GetDentryThumbnailsRequest,
+    ) -> dingtalkstorage__1__0_models.GetDentryThumbnailsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.GetDentryThumbnailsHeaders()
+        return self.get_dentry_thumbnails_with_options(space_id, request, headers, runtime)
+
+    async def get_dentry_thumbnails_async(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.GetDentryThumbnailsRequest,
+    ) -> dingtalkstorage__1__0_models.GetDentryThumbnailsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.GetDentryThumbnailsHeaders()
+        return await self.get_dentry_thumbnails_with_options_async(space_id, request, headers, runtime)
+
+    def get_dentry_thumbnails_with_options(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.GetDentryThumbnailsRequest,
+        headers: dingtalkstorage__1__0_models.GetDentryThumbnailsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.GetDentryThumbnailsResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.dentry_ids):
+            body['dentryIds'] = request.dentry_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.GetDentryThumbnailsResponse(),
+            self.do_roarequest('GetDentryThumbnails', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/thumbnails/query', 'json', req, runtime)
+        )
+
+    async def get_dentry_thumbnails_with_options_async(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.GetDentryThumbnailsRequest,
+        headers: dingtalkstorage__1__0_models.GetDentryThumbnailsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.GetDentryThumbnailsResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.dentry_ids):
+            body['dentryIds'] = request.dentry_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.GetDentryThumbnailsResponse(),
+            await self.do_roarequest_async('GetDentryThumbnails', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/thumbnails/query', 'json', req, runtime)
         )
 
     def get_file_download_info(
@@ -1534,6 +1694,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
         body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
         if not UtilClient.is_unset(request.part_numbers):
             body['partNumbers'] = request.part_numbers
         if not UtilClient.is_unset(request.upload_key):
@@ -1564,6 +1726,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
         body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
         if not UtilClient.is_unset(request.part_numbers):
             body['partNumbers'] = request.part_numbers
         if not UtilClient.is_unset(request.upload_key):
@@ -2019,6 +2183,84 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('InitMultipartFileUpload', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/files/multiPartUploadInfos/init', 'json', req, runtime)
         )
 
+    def list_all_dentries(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.ListAllDentriesRequest,
+    ) -> dingtalkstorage__1__0_models.ListAllDentriesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.ListAllDentriesHeaders()
+        return self.list_all_dentries_with_options(space_id, request, headers, runtime)
+
+    async def list_all_dentries_async(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.ListAllDentriesRequest,
+    ) -> dingtalkstorage__1__0_models.ListAllDentriesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.ListAllDentriesHeaders()
+        return await self.list_all_dentries_with_options_async(space_id, request, headers, runtime)
+
+    def list_all_dentries_with_options(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.ListAllDentriesRequest,
+        headers: dingtalkstorage__1__0_models.ListAllDentriesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.ListAllDentriesResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.ListAllDentriesResponse(),
+            self.do_roarequest('ListAllDentries', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/listAll', 'json', req, runtime)
+        )
+
+    async def list_all_dentries_with_options_async(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.ListAllDentriesRequest,
+        headers: dingtalkstorage__1__0_models.ListAllDentriesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.ListAllDentriesResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.ListAllDentriesResponse(),
+            await self.do_roarequest_async('ListAllDentries', 'storage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/storage/spaces/{space_id}/dentries/listAll', 'json', req, runtime)
+        )
+
     def list_dentries(
         self,
         space_id: str,
@@ -2059,6 +2301,8 @@ class Client(OpenApiClient):
             query['parentId'] = request.parent_id
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.with_thumbnail):
+            query['withThumbnail'] = request.with_thumbnail
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2095,6 +2339,8 @@ class Client(OpenApiClient):
             query['parentId'] = request.parent_id
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.with_thumbnail):
+            query['withThumbnail'] = request.with_thumbnail
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

@@ -1499,16 +1499,28 @@ class CreateRangeProtectionHeaders(TeaModel):
         return self
 
 
-class CreateRangeProtectionRequest(TeaModel):
+class CreateRangeProtectionRequestEditableSetting(TeaModel):
     def __init__(
         self,
-        other_user_permission: str = None,
-        operator_id: str = None,
+        delete_columns: bool = None,
+        delete_rows: bool = None,
+        edit_cells: bool = None,
+        format_cells: bool = None,
+        insert_columns: bool = None,
+        insert_rows: bool = None,
     ):
-        # 其它用户的权限
-        self.other_user_permission = other_user_permission
-        # 操作人unionId
-        self.operator_id = operator_id
+        # 是否可删除列
+        self.delete_columns = delete_columns
+        # 是否可删除行
+        self.delete_rows = delete_rows
+        # 是否可修改单元格的值
+        self.edit_cells = edit_cells
+        # 是否可修改单元格样式
+        self.format_cells = format_cells
+        # 是否可插入列
+        self.insert_columns = insert_columns
+        # 是否可插入行
+        self.insert_rows = insert_rows
 
     def validate(self):
         pass
@@ -1519,6 +1531,63 @@ class CreateRangeProtectionRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.delete_columns is not None:
+            result['deleteColumns'] = self.delete_columns
+        if self.delete_rows is not None:
+            result['deleteRows'] = self.delete_rows
+        if self.edit_cells is not None:
+            result['editCells'] = self.edit_cells
+        if self.format_cells is not None:
+            result['formatCells'] = self.format_cells
+        if self.insert_columns is not None:
+            result['insertColumns'] = self.insert_columns
+        if self.insert_rows is not None:
+            result['insertRows'] = self.insert_rows
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deleteColumns') is not None:
+            self.delete_columns = m.get('deleteColumns')
+        if m.get('deleteRows') is not None:
+            self.delete_rows = m.get('deleteRows')
+        if m.get('editCells') is not None:
+            self.edit_cells = m.get('editCells')
+        if m.get('formatCells') is not None:
+            self.format_cells = m.get('formatCells')
+        if m.get('insertColumns') is not None:
+            self.insert_columns = m.get('insertColumns')
+        if m.get('insertRows') is not None:
+            self.insert_rows = m.get('insertRows')
+        return self
+
+
+class CreateRangeProtectionRequest(TeaModel):
+    def __init__(
+        self,
+        editable_setting: CreateRangeProtectionRequestEditableSetting = None,
+        other_user_permission: str = None,
+        operator_id: str = None,
+    ):
+        # 对于拥有「可编辑」权限的用户的细化权限配置。
+        self.editable_setting = editable_setting
+        # 其它用户的权限
+        self.other_user_permission = other_user_permission
+        # 操作人unionId
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.editable_setting:
+            self.editable_setting.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.editable_setting is not None:
+            result['editableSetting'] = self.editable_setting.to_map()
         if self.other_user_permission is not None:
             result['otherUserPermission'] = self.other_user_permission
         if self.operator_id is not None:
@@ -1527,6 +1596,9 @@ class CreateRangeProtectionRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('editableSetting') is not None:
+            temp_model = CreateRangeProtectionRequestEditableSetting()
+            self.editable_setting = temp_model.from_map(m['editableSetting'])
         if m.get('otherUserPermission') is not None:
             self.other_user_permission = m.get('otherUserPermission')
         if m.get('operatorId') is not None:
