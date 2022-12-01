@@ -128,6 +128,13 @@ public class GetFileUploadInfoRequest extends TeaModel {
         @NameInMap("preCheckParam")
         public GetFileUploadInfoRequestOptionPreCheckParam preCheckParam;
 
+        // 优先使用内网传输
+        // 前提: 配置了专属存储内网传输
+        // 默认值:
+        // 	true
+        @NameInMap("preferIntranet")
+        public Boolean preferIntranet;
+
         // 优先地域, 倾向于将资源存到哪个地域，可实现就近上传等功能
         // 枚举值:
         // 	ZHANGJIAKOU: 张家口
@@ -160,6 +167,14 @@ public class GetFileUploadInfoRequest extends TeaModel {
         }
         public GetFileUploadInfoRequestOptionPreCheckParam getPreCheckParam() {
             return this.preCheckParam;
+        }
+
+        public GetFileUploadInfoRequestOption setPreferIntranet(Boolean preferIntranet) {
+            this.preferIntranet = preferIntranet;
+            return this;
+        }
+        public Boolean getPreferIntranet() {
+            return this.preferIntranet;
         }
 
         public GetFileUploadInfoRequestOption setPreferRegion(String preferRegion) {

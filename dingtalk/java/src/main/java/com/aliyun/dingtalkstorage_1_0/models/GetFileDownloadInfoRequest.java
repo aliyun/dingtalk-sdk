@@ -34,6 +34,13 @@ public class GetFileDownloadInfoRequest extends TeaModel {
     }
 
     public static class GetFileDownloadInfoRequestOption extends TeaModel {
+        // 优先使用内网传输
+        // 前提: 配置了专属存储内网传输
+        // 默认值:
+        // 	true
+        @NameInMap("preferIntranet")
+        public Boolean preferIntranet;
+
         // 历史版本号
         @NameInMap("version")
         public Long version;
@@ -41,6 +48,14 @@ public class GetFileDownloadInfoRequest extends TeaModel {
         public static GetFileDownloadInfoRequestOption build(java.util.Map<String, ?> map) throws Exception {
             GetFileDownloadInfoRequestOption self = new GetFileDownloadInfoRequestOption();
             return TeaModel.build(map, self);
+        }
+
+        public GetFileDownloadInfoRequestOption setPreferIntranet(Boolean preferIntranet) {
+            this.preferIntranet = preferIntranet;
+            return this;
+        }
+        public Boolean getPreferIntranet() {
+            return this.preferIntranet;
         }
 
         public GetFileDownloadInfoRequestOption setVersion(Long version) {

@@ -3,35 +3,37 @@ package com.aliyun.dingtalkstorage_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class GetDentryResponseBody extends TeaModel {
-    // 文件(夹)信息
-    @NameInMap("dentry")
-    public GetDentryResponseBodyDentry dentry;
+public class GetDentriesResponseBody extends TeaModel {
+    // 批量获取文件(夹)信息结果列表
+    // 最大size:
+    // 	30
+    @NameInMap("resultItems")
+    public java.util.List<GetDentriesResponseBodyResultItems> resultItems;
 
-    public static GetDentryResponseBody build(java.util.Map<String, ?> map) throws Exception {
-        GetDentryResponseBody self = new GetDentryResponseBody();
+    public static GetDentriesResponseBody build(java.util.Map<String, ?> map) throws Exception {
+        GetDentriesResponseBody self = new GetDentriesResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public GetDentryResponseBody setDentry(GetDentryResponseBodyDentry dentry) {
-        this.dentry = dentry;
+    public GetDentriesResponseBody setResultItems(java.util.List<GetDentriesResponseBodyResultItems> resultItems) {
+        this.resultItems = resultItems;
         return this;
     }
-    public GetDentryResponseBodyDentry getDentry() {
-        return this.dentry;
+    public java.util.List<GetDentriesResponseBodyResultItems> getResultItems() {
+        return this.resultItems;
     }
 
-    public static class GetDentryResponseBodyDentryProperties extends TeaModel {
+    public static class GetDentriesResponseBodyResultItemsDentryProperties extends TeaModel {
         // 文件是否只读
         @NameInMap("readOnly")
         public Boolean readOnly;
 
-        public static GetDentryResponseBodyDentryProperties build(java.util.Map<String, ?> map) throws Exception {
-            GetDentryResponseBodyDentryProperties self = new GetDentryResponseBodyDentryProperties();
+        public static GetDentriesResponseBodyResultItemsDentryProperties build(java.util.Map<String, ?> map) throws Exception {
+            GetDentriesResponseBodyResultItemsDentryProperties self = new GetDentriesResponseBodyResultItemsDentryProperties();
             return TeaModel.build(map, self);
         }
 
-        public GetDentryResponseBodyDentryProperties setReadOnly(Boolean readOnly) {
+        public GetDentriesResponseBodyResultItemsDentryProperties setReadOnly(Boolean readOnly) {
             this.readOnly = readOnly;
             return this;
         }
@@ -41,7 +43,7 @@ public class GetDentryResponseBody extends TeaModel {
 
     }
 
-    public static class GetDentryResponseBodyDentryThumbnail extends TeaModel {
+    public static class GetDentriesResponseBodyResultItemsDentryThumbnail extends TeaModel {
         // 缩略图高度
         @NameInMap("height")
         public Integer height;
@@ -54,12 +56,12 @@ public class GetDentryResponseBody extends TeaModel {
         @NameInMap("width")
         public Integer width;
 
-        public static GetDentryResponseBodyDentryThumbnail build(java.util.Map<String, ?> map) throws Exception {
-            GetDentryResponseBodyDentryThumbnail self = new GetDentryResponseBodyDentryThumbnail();
+        public static GetDentriesResponseBodyResultItemsDentryThumbnail build(java.util.Map<String, ?> map) throws Exception {
+            GetDentriesResponseBodyResultItemsDentryThumbnail self = new GetDentriesResponseBodyResultItemsDentryThumbnail();
             return TeaModel.build(map, self);
         }
 
-        public GetDentryResponseBodyDentryThumbnail setHeight(Integer height) {
+        public GetDentriesResponseBodyResultItemsDentryThumbnail setHeight(Integer height) {
             this.height = height;
             return this;
         }
@@ -67,7 +69,7 @@ public class GetDentryResponseBody extends TeaModel {
             return this.height;
         }
 
-        public GetDentryResponseBodyDentryThumbnail setUrl(String url) {
+        public GetDentriesResponseBodyResultItemsDentryThumbnail setUrl(String url) {
             this.url = url;
             return this;
         }
@@ -75,7 +77,7 @@ public class GetDentryResponseBody extends TeaModel {
             return this.url;
         }
 
-        public GetDentryResponseBodyDentryThumbnail setWidth(Integer width) {
+        public GetDentriesResponseBodyResultItemsDentryThumbnail setWidth(Integer width) {
             this.width = width;
             return this;
         }
@@ -85,13 +87,13 @@ public class GetDentryResponseBody extends TeaModel {
 
     }
 
-    public static class GetDentryResponseBodyDentry extends TeaModel {
+    public static class GetDentriesResponseBodyResultItemsDentry extends TeaModel {
         // 在特定应用上的属性。key是微应用Id, value是属性列表。
         // 可以通过修改DentryAppProperty里的scope来设置属性的可见性
         // 最大size:
         // 	10
         @NameInMap("appProperties")
-        public java.util.Map<String, java.util.List<DentryAppPropertiesValue>> appProperties;
+        public java.util.Map<String, java.util.List<ResultItemsDentryAppPropertiesValue>> appProperties;
 
         // 创建时间
         @NameInMap("createTime")
@@ -139,7 +141,7 @@ public class GetDentryResponseBody extends TeaModel {
 
         // 属性
         @NameInMap("properties")
-        public GetDentryResponseBodyDentryProperties properties;
+        public GetDentriesResponseBodyResultItemsDentryProperties properties;
 
         // 大小, 单位:Byte
         @NameInMap("size")
@@ -168,7 +170,7 @@ public class GetDentryResponseBody extends TeaModel {
 
         // 缩略图信息
         @NameInMap("thumbnail")
-        public GetDentryResponseBodyDentryThumbnail thumbnail;
+        public GetDentriesResponseBodyResultItemsDentryThumbnail thumbnail;
 
         // 类型，目录或文件
         // 枚举值:
@@ -185,20 +187,20 @@ public class GetDentryResponseBody extends TeaModel {
         @NameInMap("version")
         public Long version;
 
-        public static GetDentryResponseBodyDentry build(java.util.Map<String, ?> map) throws Exception {
-            GetDentryResponseBodyDentry self = new GetDentryResponseBodyDentry();
+        public static GetDentriesResponseBodyResultItemsDentry build(java.util.Map<String, ?> map) throws Exception {
+            GetDentriesResponseBodyResultItemsDentry self = new GetDentriesResponseBodyResultItemsDentry();
             return TeaModel.build(map, self);
         }
 
-        public GetDentryResponseBodyDentry setAppProperties(java.util.Map<String, java.util.List<DentryAppPropertiesValue>> appProperties) {
+        public GetDentriesResponseBodyResultItemsDentry setAppProperties(java.util.Map<String, java.util.List<ResultItemsDentryAppPropertiesValue>> appProperties) {
             this.appProperties = appProperties;
             return this;
         }
-        public java.util.Map<String, java.util.List<DentryAppPropertiesValue>> getAppProperties() {
+        public java.util.Map<String, java.util.List<ResultItemsDentryAppPropertiesValue>> getAppProperties() {
             return this.appProperties;
         }
 
-        public GetDentryResponseBodyDentry setCreateTime(String createTime) {
+        public GetDentriesResponseBodyResultItemsDentry setCreateTime(String createTime) {
             this.createTime = createTime;
             return this;
         }
@@ -206,7 +208,7 @@ public class GetDentryResponseBody extends TeaModel {
             return this.createTime;
         }
 
-        public GetDentryResponseBodyDentry setCreatorId(String creatorId) {
+        public GetDentriesResponseBodyResultItemsDentry setCreatorId(String creatorId) {
             this.creatorId = creatorId;
             return this;
         }
@@ -214,7 +216,7 @@ public class GetDentryResponseBody extends TeaModel {
             return this.creatorId;
         }
 
-        public GetDentryResponseBodyDentry setExtension(String extension) {
+        public GetDentriesResponseBodyResultItemsDentry setExtension(String extension) {
             this.extension = extension;
             return this;
         }
@@ -222,7 +224,7 @@ public class GetDentryResponseBody extends TeaModel {
             return this.extension;
         }
 
-        public GetDentryResponseBodyDentry setId(String id) {
+        public GetDentriesResponseBodyResultItemsDentry setId(String id) {
             this.id = id;
             return this;
         }
@@ -230,7 +232,7 @@ public class GetDentryResponseBody extends TeaModel {
             return this.id;
         }
 
-        public GetDentryResponseBodyDentry setModifiedTime(String modifiedTime) {
+        public GetDentriesResponseBodyResultItemsDentry setModifiedTime(String modifiedTime) {
             this.modifiedTime = modifiedTime;
             return this;
         }
@@ -238,7 +240,7 @@ public class GetDentryResponseBody extends TeaModel {
             return this.modifiedTime;
         }
 
-        public GetDentryResponseBodyDentry setModifierId(String modifierId) {
+        public GetDentriesResponseBodyResultItemsDentry setModifierId(String modifierId) {
             this.modifierId = modifierId;
             return this;
         }
@@ -246,7 +248,7 @@ public class GetDentryResponseBody extends TeaModel {
             return this.modifierId;
         }
 
-        public GetDentryResponseBodyDentry setName(String name) {
+        public GetDentriesResponseBodyResultItemsDentry setName(String name) {
             this.name = name;
             return this;
         }
@@ -254,7 +256,7 @@ public class GetDentryResponseBody extends TeaModel {
             return this.name;
         }
 
-        public GetDentryResponseBodyDentry setParentId(String parentId) {
+        public GetDentriesResponseBodyResultItemsDentry setParentId(String parentId) {
             this.parentId = parentId;
             return this;
         }
@@ -262,7 +264,7 @@ public class GetDentryResponseBody extends TeaModel {
             return this.parentId;
         }
 
-        public GetDentryResponseBodyDentry setPartitionType(String partitionType) {
+        public GetDentriesResponseBodyResultItemsDentry setPartitionType(String partitionType) {
             this.partitionType = partitionType;
             return this;
         }
@@ -270,7 +272,7 @@ public class GetDentryResponseBody extends TeaModel {
             return this.partitionType;
         }
 
-        public GetDentryResponseBodyDentry setPath(String path) {
+        public GetDentriesResponseBodyResultItemsDentry setPath(String path) {
             this.path = path;
             return this;
         }
@@ -278,15 +280,15 @@ public class GetDentryResponseBody extends TeaModel {
             return this.path;
         }
 
-        public GetDentryResponseBodyDentry setProperties(GetDentryResponseBodyDentryProperties properties) {
+        public GetDentriesResponseBodyResultItemsDentry setProperties(GetDentriesResponseBodyResultItemsDentryProperties properties) {
             this.properties = properties;
             return this;
         }
-        public GetDentryResponseBodyDentryProperties getProperties() {
+        public GetDentriesResponseBodyResultItemsDentryProperties getProperties() {
             return this.properties;
         }
 
-        public GetDentryResponseBodyDentry setSize(Long size) {
+        public GetDentriesResponseBodyResultItemsDentry setSize(Long size) {
             this.size = size;
             return this;
         }
@@ -294,7 +296,7 @@ public class GetDentryResponseBody extends TeaModel {
             return this.size;
         }
 
-        public GetDentryResponseBodyDentry setSpaceId(String spaceId) {
+        public GetDentriesResponseBodyResultItemsDentry setSpaceId(String spaceId) {
             this.spaceId = spaceId;
             return this;
         }
@@ -302,7 +304,7 @@ public class GetDentryResponseBody extends TeaModel {
             return this.spaceId;
         }
 
-        public GetDentryResponseBodyDentry setStatus(String status) {
+        public GetDentriesResponseBodyResultItemsDentry setStatus(String status) {
             this.status = status;
             return this;
         }
@@ -310,7 +312,7 @@ public class GetDentryResponseBody extends TeaModel {
             return this.status;
         }
 
-        public GetDentryResponseBodyDentry setStorageDriver(String storageDriver) {
+        public GetDentriesResponseBodyResultItemsDentry setStorageDriver(String storageDriver) {
             this.storageDriver = storageDriver;
             return this;
         }
@@ -318,15 +320,15 @@ public class GetDentryResponseBody extends TeaModel {
             return this.storageDriver;
         }
 
-        public GetDentryResponseBodyDentry setThumbnail(GetDentryResponseBodyDentryThumbnail thumbnail) {
+        public GetDentriesResponseBodyResultItemsDentry setThumbnail(GetDentriesResponseBodyResultItemsDentryThumbnail thumbnail) {
             this.thumbnail = thumbnail;
             return this;
         }
-        public GetDentryResponseBodyDentryThumbnail getThumbnail() {
+        public GetDentriesResponseBodyResultItemsDentryThumbnail getThumbnail() {
             return this.thumbnail;
         }
 
-        public GetDentryResponseBodyDentry setType(String type) {
+        public GetDentriesResponseBodyResultItemsDentry setType(String type) {
             this.type = type;
             return this;
         }
@@ -334,7 +336,7 @@ public class GetDentryResponseBody extends TeaModel {
             return this.type;
         }
 
-        public GetDentryResponseBodyDentry setUuid(String uuid) {
+        public GetDentriesResponseBodyResultItemsDentry setUuid(String uuid) {
             this.uuid = uuid;
             return this;
         }
@@ -342,12 +344,80 @@ public class GetDentryResponseBody extends TeaModel {
             return this.uuid;
         }
 
-        public GetDentryResponseBodyDentry setVersion(Long version) {
+        public GetDentriesResponseBodyResultItemsDentry setVersion(Long version) {
             this.version = version;
             return this;
         }
         public Long getVersion() {
             return this.version;
+        }
+
+    }
+
+    public static class GetDentriesResponseBodyResultItems extends TeaModel {
+        // 文件(夹)信息
+        @NameInMap("dentry")
+        public GetDentriesResponseBodyResultItemsDentry dentry;
+
+        // 文件(夹)id
+        @NameInMap("dentryId")
+        public String dentryId;
+
+        // 错误原因
+        @NameInMap("errorCode")
+        public String errorCode;
+
+        // 文件(夹)空间id
+        @NameInMap("spaceId")
+        public String spaceId;
+
+        // 是否成功
+        @NameInMap("success")
+        public Boolean success;
+
+        public static GetDentriesResponseBodyResultItems build(java.util.Map<String, ?> map) throws Exception {
+            GetDentriesResponseBodyResultItems self = new GetDentriesResponseBodyResultItems();
+            return TeaModel.build(map, self);
+        }
+
+        public GetDentriesResponseBodyResultItems setDentry(GetDentriesResponseBodyResultItemsDentry dentry) {
+            this.dentry = dentry;
+            return this;
+        }
+        public GetDentriesResponseBodyResultItemsDentry getDentry() {
+            return this.dentry;
+        }
+
+        public GetDentriesResponseBodyResultItems setDentryId(String dentryId) {
+            this.dentryId = dentryId;
+            return this;
+        }
+        public String getDentryId() {
+            return this.dentryId;
+        }
+
+        public GetDentriesResponseBodyResultItems setErrorCode(String errorCode) {
+            this.errorCode = errorCode;
+            return this;
+        }
+        public String getErrorCode() {
+            return this.errorCode;
+        }
+
+        public GetDentriesResponseBodyResultItems setSpaceId(String spaceId) {
+            this.spaceId = spaceId;
+            return this;
+        }
+        public String getSpaceId() {
+            return this.spaceId;
+        }
+
+        public GetDentriesResponseBodyResultItems setSuccess(Boolean success) {
+            this.success = success;
+            return this;
+        }
+        public Boolean getSuccess() {
+            return this.success;
         }
 
     }

@@ -56,6 +56,50 @@ public class ListDentriesResponseBody extends TeaModel {
 
     }
 
+    public static class ListDentriesResponseBodyDentriesThumbnail extends TeaModel {
+        // 缩略图高度
+        @NameInMap("height")
+        public Integer height;
+
+        // 缩略图url
+        @NameInMap("url")
+        public String url;
+
+        // 缩略图宽度
+        @NameInMap("width")
+        public Integer width;
+
+        public static ListDentriesResponseBodyDentriesThumbnail build(java.util.Map<String, ?> map) throws Exception {
+            ListDentriesResponseBodyDentriesThumbnail self = new ListDentriesResponseBodyDentriesThumbnail();
+            return TeaModel.build(map, self);
+        }
+
+        public ListDentriesResponseBodyDentriesThumbnail setHeight(Integer height) {
+            this.height = height;
+            return this;
+        }
+        public Integer getHeight() {
+            return this.height;
+        }
+
+        public ListDentriesResponseBodyDentriesThumbnail setUrl(String url) {
+            this.url = url;
+            return this;
+        }
+        public String getUrl() {
+            return this.url;
+        }
+
+        public ListDentriesResponseBodyDentriesThumbnail setWidth(Integer width) {
+            this.width = width;
+            return this;
+        }
+        public Integer getWidth() {
+            return this.width;
+        }
+
+    }
+
     public static class ListDentriesResponseBodyDentries extends TeaModel {
         // 在特定应用上的属性。key是微应用Id, value是属性列表。
         // 可以通过修改DentryAppProperty里的scope来设置属性的可见性
@@ -136,6 +180,10 @@ public class ListDentriesResponseBody extends TeaModel {
         // 	UNKNOWN: 未知驱动
         @NameInMap("storageDriver")
         public String storageDriver;
+
+        // 缩略图信息
+        @NameInMap("thumbnail")
+        public ListDentriesResponseBodyDentriesThumbnail thumbnail;
 
         // 类型，目录或文件
         // 枚举值:
@@ -283,6 +331,14 @@ public class ListDentriesResponseBody extends TeaModel {
         }
         public String getStorageDriver() {
             return this.storageDriver;
+        }
+
+        public ListDentriesResponseBodyDentries setThumbnail(ListDentriesResponseBodyDentriesThumbnail thumbnail) {
+            this.thumbnail = thumbnail;
+            return this;
+        }
+        public ListDentriesResponseBodyDentriesThumbnail getThumbnail() {
+            return this.thumbnail;
         }
 
         public ListDentriesResponseBodyDentries setType(String type) {

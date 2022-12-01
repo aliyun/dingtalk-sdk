@@ -44,6 +44,13 @@ public class ListDentriesRequest extends TeaModel {
     @NameInMap("unionId")
     public String unionId;
 
+    // 是否获取文件缩略图临时链接
+    // 注: 按需获取, 会影响接口耗时
+    // 默认值:
+    // 	false
+    @NameInMap("withThumbnail")
+    public Boolean withThumbnail;
+
     public static ListDentriesRequest build(java.util.Map<String, ?> map) throws Exception {
         ListDentriesRequest self = new ListDentriesRequest();
         return TeaModel.build(map, self);
@@ -95,6 +102,14 @@ public class ListDentriesRequest extends TeaModel {
     }
     public String getUnionId() {
         return this.unionId;
+    }
+
+    public ListDentriesRequest setWithThumbnail(Boolean withThumbnail) {
+        this.withThumbnail = withThumbnail;
+        return this;
+    }
+    public Boolean getWithThumbnail() {
+        return this.withThumbnail;
     }
 
 }
