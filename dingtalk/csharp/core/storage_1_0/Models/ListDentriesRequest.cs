@@ -67,6 +67,16 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         [Validation(Required=false)]
         public string UnionId { get; set; }
 
+        /// <summary>
+        /// 是否获取文件缩略图临时链接
+        /// 注: 按需获取, 会影响接口耗时
+        /// 默认值:
+        /// 	false
+        /// </summary>
+        [NameInMap("withThumbnail")]
+        [Validation(Required=false)]
+        public bool? WithThumbnail { get; set; }
+
     }
 
 }

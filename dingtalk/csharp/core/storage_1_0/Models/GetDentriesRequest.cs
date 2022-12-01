@@ -8,14 +8,23 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 {
-    public class GetDentryRequest : TeaModel {
+    public class GetDentriesRequest : TeaModel {
+        /// <summary>
+        /// 文件(夹)id列表
+        /// 最大size:
+        /// 	30
+        /// </summary>
+        [NameInMap("dentryIds")]
+        [Validation(Required=false)]
+        public List<string> DentryIds { get; set; }
+
         /// <summary>
         /// 可选参数
         /// </summary>
         [NameInMap("option")]
         [Validation(Required=false)]
-        public GetDentryRequestOption Option { get; set; }
-        public class GetDentryRequestOption : TeaModel {
+        public GetDentriesRequestOption Option { get; set; }
+        public class GetDentriesRequestOption : TeaModel {
             /// <summary>
             /// 通过指定应用id, 返回对应的可见属性，即dentry.appProperties，
             /// 默认都会返回当前应用的属性，

@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 {
-    public class ListDentriesResponseBody : TeaModel {
+    public class ListAllDentriesResponseBody : TeaModel {
         /// <summary>
         /// 文件列表
         /// 最大size:
@@ -16,8 +16,8 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         /// </summary>
         [NameInMap("dentries")]
         [Validation(Required=false)]
-        public List<ListDentriesResponseBodyDentries> Dentries { get; set; }
-        public class ListDentriesResponseBodyDentries : TeaModel {
+        public List<ListAllDentriesResponseBodyDentries> Dentries { get; set; }
+        public class ListAllDentriesResponseBodyDentries : TeaModel {
             /// <summary>
             /// 在特定应用上的属性。key是微应用Id, value是属性列表。
             /// 可以通过修改DentryAppProperty里的scope来设置属性的可见性
@@ -107,8 +107,8 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
             /// </summary>
             [NameInMap("properties")]
             [Validation(Required=false)]
-            public ListDentriesResponseBodyDentriesProperties Properties { get; set; }
-            public class ListDentriesResponseBodyDentriesProperties : TeaModel {
+            public ListAllDentriesResponseBodyDentriesProperties Properties { get; set; }
+            public class ListAllDentriesResponseBodyDentriesProperties : TeaModel {
                 /// <summary>
                 /// 文件是否只读
                 /// </summary>
@@ -160,8 +160,8 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
             /// </summary>
             [NameInMap("thumbnail")]
             [Validation(Required=false)]
-            public ListDentriesResponseBodyDentriesThumbnail Thumbnail { get; set; }
-            public class ListDentriesResponseBodyDentriesThumbnail : TeaModel {
+            public ListAllDentriesResponseBodyDentriesThumbnail Thumbnail { get; set; }
+            public class ListAllDentriesResponseBodyDentriesThumbnail : TeaModel {
                 /// <summary>
                 /// 缩略图高度
                 /// </summary>

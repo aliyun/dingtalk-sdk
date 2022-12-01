@@ -67,6 +67,16 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
             }
 
             /// <summary>
+            /// 优先使用内网传输
+            /// 前提: 配置了专属存储内网传输
+            /// 默认值:
+            /// 	true
+            /// </summary>
+            [NameInMap("preferIntranet")]
+            [Validation(Required=false)]
+            public bool? PreferIntranet { get; set; }
+
+            /// <summary>
             /// 优先地域, 倾向于将资源存到哪个地域，可实现就近上传等功能
             /// 枚举值:
             /// 	ZHANGJIAKOU: 张家口

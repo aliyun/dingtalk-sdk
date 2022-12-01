@@ -154,6 +154,36 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
             public string StorageDriver { get; set; }
 
             /// <summary>
+            /// 缩略图信息
+            /// </summary>
+            [NameInMap("thumbnail")]
+            [Validation(Required=false)]
+            public GetDentryResponseBodyDentryThumbnail Thumbnail { get; set; }
+            public class GetDentryResponseBodyDentryThumbnail : TeaModel {
+                /// <summary>
+                /// 缩略图高度
+                /// </summary>
+                [NameInMap("height")]
+                [Validation(Required=false)]
+                public int? Height { get; set; }
+
+                /// <summary>
+                /// 缩略图url
+                /// </summary>
+                [NameInMap("url")]
+                [Validation(Required=false)]
+                public string Url { get; set; }
+
+                /// <summary>
+                /// 缩略图宽度
+                /// </summary>
+                [NameInMap("width")]
+                [Validation(Required=false)]
+                public int? Width { get; set; }
+
+            }
+
+            /// <summary>
             /// 类型，目录或文件
             /// 枚举值:
             /// 	FILE: 文件
